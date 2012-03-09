@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+   <data>
+
+      <report id="mgmtsystem_audit_report"
+         string="Print Report" 
+         model="mgmtsystem.audit"
+         name="mgmtsystem.audit.report"
+         rml="mgmtsystem_audit/report/audit_report.rml"
+         auto="False"
+         menu="True"/>
+
+   </data>
+</openerp>
