@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+   <data>
+
+      <report id="mgmtsystem_audit_verification_list"
+         string="Print Verification List" 
+         model="mgmtsystem.audit"
+         name="mgmtsystem.audit.verificationlist"
+         rml="mgmtsystem_audit/report/verification_list.rml"
+         auto="False"
+         menu="True"/>
+
+   </data>
+</openerp>
