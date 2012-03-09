@@ -1,0 +1,182 @@
+<openerp>
+    <data>
+
+        <!-- Verification Lines -->
+
+        <record id="view_mgmtsystem_verification_line_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.verification.line.tree</field>
+            <field name="model">mgmtsystem.verification.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Verification Lines">
+                    <field name="seq"/>
+                    <field name="name"/>
+                    <field name="is_conformed"/>
+                    <field name="procedure_id"/>
+                    <field name="comments"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_verification_line_filter" model="ir.ui.view">
+            <field name="name">mgmtsystem.verification.line.filter</field>
+            <field name="model">mgmtsystem.verification.line</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Verification Lines">
+                    <group>
+                        <field name="seq"/>
+                        <field name="name"/>
+                        <field name="procedure_id" domain="[('group_id','=','Procedure')]"/>
+                        <field name="is_conformed"/>
+                        <field name="comments"/>
+                    </group>
+                </search>
+            </field>
+        </record>        
+
+        <record id="view_mgmtsystem_verification_line_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.verification.line.form</field>
+            <field name="type">form</field>
+            <field name="model">mgmtsystem.verification.line</field>
+            <field name="arch" type="xml">
+                <form string="Verification Line">
+                    <group colspan="4" col="4">
+                        <field name="name"/>
+                        <field name="is_conformed"/>
+                        <newline/>
+                        <field name="procedure_id" domain="[('group_id','=','Procedure')]"/>
+                        <field name="seq"/>
+                        <newline/>
+                        <field name="comments"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_verification_line_list" model="ir.actions.act_window">
+            <field name="name">Verification Lines</field>
+            <field name="res_model">mgmtsystem.verification.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Audits -->
+
+        <record id="view_mgmtsystem_audit_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.audit.tree</field>
+            <field name="model">mgmtsystem.audit</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Audits">
+                    <field name="name" attrs="{'readonly':[('state','=','c')]}"/>
+                    <field name="date" attrs="{'readonly':[('state','=','c')]}"/>
+                    <field name="reference"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_audit_filter" model="ir.ui.view">
+            <field name="name">mgmtsystem.audit.filter</field>
+            <field name="model">mgmtsystem.audit</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Audits">
+                    <group>
+                        <filter name="current" icon="terp-document-new" domain="[('state','=','o')]" string="Open" help="Open Audits"/>
+                        <filter icon="terp-camera_test" domain="[('state','=','c')]" string="Closed" help="Closed Audits"/>
+                        <separator orientation="vertical"/>
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="reference"/>
+                    </group>
+                </search>
+            </field>
+        </record>        
+
+        <record id="view_mgmtsystem_audit_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.audit.form</field>
+            <field name="type">form</field>
+            <field name="model">mgmtsystem.audit</field>
+            <field name="arch" type="xml">
+                <form string="Audit">
+                    <group col="6" colspan="6">
+                        <field name="name" attrs="{'readonly':[('state','=','c')]}"/>
+                        <field name="reference"/>
+                        <field name="date" attrs="{'readonly':[('state','=','c')]}"/>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Auditors">
+                            <field name="auditor_user_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                        </page>
+                        <page string="Auditees">
+                            <field name="auditee_user_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                        </page>
+                        <page string="Verification List">
+                            <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                        </page>
+                        <page string="Strong Points">
+                            <field name="strong_points" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                        </page>
+                        <page string="To Improve Points">
+                            <field name="to_improve_points" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                        </page>
+                        <page string="Improvement Opportunities">
+                            <field name="imp_opp_ids" domain="[('type_action','=','improvement')]" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                        </page>
+                        <page string="Nonconformities">
+                            <field name="nonconformity_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                        </page>
+                    </notebook>
+                    <group colspan="4">
+                        <field name="state" select="1" readonly="1"/>
+                        <button name="button_close" string="Close" states="o" type="object" icon="gtk-jump-to"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_audit_calendar" model="ir.ui.view">
+            <field name="name">mgmtsystem.audit.calendar</field>
+            <field name="model">mgmtsystem.audit</field>
+            <field name="type">calendar</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <calendar color="name" date_start="date" string="Audits">
+                    <field name="name"/>
+                    <field name="auditor_user_ids"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_audit_list" model="ir.actions.act_window">
+            <field name="name">Audits</field>
+            <field name="res_model">mgmtsystem.audit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_id" ref="view_mgmtsystem_audit_tree"/>
+            <field name="search_view_id" ref="view_mgmtsystem_audit_filter"/>
+            <field name="context">{"search_default_current":1}</field>
+        </record>
+
+        <menuitem id="menu_open_audit" 
+            action="open_mgmtsystem_audit_list" 
+            parent="mgmtsystem.menu_mgmtsystem_main" 
+            sequence="10" 
+            groups="base.group_mgmtsystem_manager,base.group_mgmtsystem_auditor"/>
+
+        <!-- audittrail rule -->
+
+        <record id="mgmtsystem_audit_audit_rule" model="audittrail.rule">
+            <field name="name">Audit on Management System Audits</field>
+            <field name="object_id" search="[('model','=','mgmtsystem.audit')]"/>
+            <field name="log_create">1</field>
+            <field name="log_workflow">1</field>
+            <field name="log_unlink">1</field>
+            <field name="log_action">1</field>
+            <field name="log_workflow">1</field>
+            <field name="state">subscribed</field>
+        </record>
+
+    </data>
+</openerp>

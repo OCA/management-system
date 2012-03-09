@@ -1,0 +1,6 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_mgmtsystem_audit_user","mgmtsystem.audit.user","model_mgmtsystem_audit","base.group_user",1,0,0,0
+"access_mgmtsystem_audit_auditor","mgmtsystem.audit.auditor","model_mgmtsystem_audit","base.group_mgmtsystem_auditor",1,1,0,0
+"access_mgmtsystem_audit_manager","mgmtsystem.audit.manager","model_mgmtsystem_audit","base.group_mgmtsystem_manager",1,1,1,0
+"access_mgmtsystem_verification_line_user","mgmtsystem.verification.line.user","model_mgmtsystem_verification_line","base.group_user",1,0,0,0
+"access_mgmtsystem_verification_line_auditor","mgmtsystem.verification.line.auditor","model_mgmtsystem_verification_line","base.group_mgmtsystem_auditor",1,1,1,1
