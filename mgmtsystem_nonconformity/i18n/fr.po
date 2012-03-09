@@ -1,0 +1,233 @@
+# French translation for openobject-addons
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# This file is distributed under the same license as the openobject-addons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openobject-addons\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-12-02 23:49+0000\n"
+"PO-Revision-Date: 2011-02-24 21:54+0000\n"
+"Last-Translator: Maxime Chambreuil (http://www.savoirfairelinux.com) "
+"<maxime.chambreuil@savoirfairelinux.com>\n"
+"Language-Team: French <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2012-01-17 05:05+0000\n"
+"X-Generator: Launchpad (build 14676)\n"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.module.module,description:mgmtsystem_nonconformity.module_meta_information
+msgid ""
+"\n"
+"\tThis module enables you to manage the nonconformities of your management \n"
+"        system : quality (ISO9001), environment (ISO14001) or security "
+"(ISO27001).\t\n"
+"    "
+msgstr ""
+"\n"
+"\tCe module vous permet de gérer les non-conformités de votre système de "
+"gestion :\n"
+"de la qualité (ISO9001), environnemental (ISO14001) ou sécurité (ISO27001).\t"
+"\n"
+"    "
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Author"
+msgstr "Auteur"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,responsible_user_id:0
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity
+msgid "Nonconformities"
+msgstr "Non-conformités"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_origin
+msgid "Origin of nonconformity of the management system"
+msgstr "Origine de la non-conformité"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Group By..."
+msgstr "Regrouper par..."
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,state:0
+msgid "State"
+msgstr "État"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_procedure
+msgid "Procedure involved in the nonconformity of the management system"
+msgstr "Procédure impliquée dans la non-conformité"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+#: selection:mgmtsystem.nonconformity,state:0
+msgid "Closed"
+msgstr "Fermée"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,cause_ids:0
+#: field:mgmtsystem.nonconformity.cause,name:0
+msgid "Cause"
+msgstr "Cause"
+
+#. module: mgmtsystem_nonconformity
+#: view:board.board:0
+msgid "Open Nonconformities"
+msgstr "Non-conformités ouvertes"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,description:0
+#: field:mgmtsystem.nonconformity.cause,description:0
+#: field:mgmtsystem.nonconformity.origin,description:0
+#: field:mgmtsystem.nonconformity.procedure,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,immediate_action_id:0
+msgid "Immediate action"
+msgstr "Action immédiate"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.module.module,shortdesc:mgmtsystem_nonconformity.module_meta_information
+msgid "Management System - Nonconformity"
+msgstr "Système de gestion - Non-conformité"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Nonconformity"
+msgstr "Non-conformité"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,corrective_action_id:0
+msgid "Corrective action"
+msgstr "Action corrective"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_procedure_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_procedure
+#: view:mgmtsystem.nonconformity:0
+#: view:mgmtsystem.nonconformity.procedure:0
+msgid "Procedures"
+msgstr "Procédures"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,preventive_action_id:0
+msgid "Preventive action"
+msgstr "Action préventive"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,partner_id:0
+msgid "Customer"
+msgstr "Partenaire"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,origin_ids:0
+#: field:mgmtsystem.nonconformity.origin,name:0
+msgid "Origin"
+msgstr "Origine"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_origin_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_origin
+#: view:mgmtsystem.nonconformity:0
+#: view:mgmtsystem.nonconformity.origin:0
+msgid "Origins"
+msgstr "Origines"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity.origin:0
+msgid "Origins of nonconformity"
+msgstr "Origines de la non-conformité"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,analysis:0
+msgid "Analysis"
+msgstr "Analyse"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity.procedure:0
+msgid "Procedures of nonconformity"
+msgstr "Procédures de la non-conformité"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity.cause:0
+msgid "Causes of nonconformity"
+msgstr "Causes de la non-conformité"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,id:0
+#: field:mgmtsystem.nonconformity.cause,id:0
+#: field:mgmtsystem.nonconformity.origin,id:0
+#: field:mgmtsystem.nonconformity.procedure,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+#: field:mgmtsystem.nonconformity,procedure_ids:0
+#: field:mgmtsystem.nonconformity.procedure,name:0
+msgid "Procedure"
+msgstr "Procédure"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,author_user_id:0
+msgid "Filled in by"
+msgstr "Remplie par"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,reference:0
+msgid "Reference"
+msgstr "Référence"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity
+msgid "Nonconformity of the management system"
+msgstr "Non-conformité du système de gestion"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_cause
+msgid "Cause of the nonconformity of the management system"
+msgstr "Cause de la non-conformité du système de gestion"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,manager_user_id:0
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Close"
+msgstr "Fermer"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+#: selection:mgmtsystem.nonconformity,state:0
+msgid "Open"
+msgstr "Ouverte"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_cause_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_cause
+#: view:mgmtsystem.nonconformity:0
+#: view:mgmtsystem.nonconformity.cause:0
+msgid "Causes"
+msgstr "Causes"
