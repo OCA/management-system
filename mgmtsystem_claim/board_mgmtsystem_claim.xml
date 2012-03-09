@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.actions.act_window" id="action_mgmtsystem_claim">
+            <field name="res_model">mgmtsystem.claim</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="mgmtsystem_claims_tree_view"/>
+            <field name="domain">[('state', 'in', ('draft','open','pending'))]</field>
+        </record>
+
+        <record id="board_mgmtsystem_claim_form" model="ir.ui.view">
+            <field name="name">board.mgmtsystem.claim.form</field>
+            <field name="model">board.board</field>
+            <field name="inherit_id" ref="mgmtsystem.board_mgmtsystem_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/hpaned/child1" position="inside">
+		    <action name="%(action_mgmtsystem_claim)d" string="Open Claims"/>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>
