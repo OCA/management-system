@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+      <record model="ir.actions.act_window" id="action_procedures">
+            <field name="name">Procedures</field>
+            <field name="res_model">wiki.wiki</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="wiki.view_wiki_tree"/>
+            <field name="search_view_id" ref="wiki.view_wiki_filter"/>
+            <field name="help">Procedures of your management system.</field>
+        </record>
+
+      <menuitem id="menu_mgmtsystem_manuals_procedures" 
+          name="Procedures"
+          action="action_procedures"
+          parent="mgmtsystem.menu_mgmtsystem_manuals" 
+          sequence="10" 
+          groups="base.group_user"/>
+
+      <record id="wiki_group_procedure" model="wiki.groups">
+        <field name="name">Procedure</field>
+        <field name="section">2</field>
+      </record>
+
+      <record id="wiki_procedure" model="wiki.wiki">
+        <field name="name">Procedure</field>
+        <field name="group_id" ref="wiki_group_procedure"/>
+        <field name="tags">procedure</field>
+        <field name="minor_edit">0</field>
+        <field name="toc">1</field>
+        <field name="review">1</field>
+        <field name="section">2</field>
+        <field name="summary">Procedure template</field>
+        <field name="text_area">
+=Objective=
+
+=Application Domain=
+
+=Terms and Definitions=
+
+=Responsibilities=
+
+=Process=
+        </field>
+      </record>
+
+      <record id="wiki_group_procedure" model="wiki.groups">
+        <field name="home" ref="wiki_procedure"/>
+      </record>
+
+      <record model="ir.actions.act_window" id="action_procedures">
+            <field name="domain" eval="[('group_id','=',ref('wiki_group_procedure'))]" />
+      </record>
+
+    </data>
+</openerp>

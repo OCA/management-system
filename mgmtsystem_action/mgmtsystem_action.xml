@@ -1,0 +1,161 @@
+<openerp>
+    <data>
+
+        <record id="view_mgmtsystem_action_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.action.tree</field>
+            <field name="model">mgmtsystem.action</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Action">
+                    <field name="reference"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="user_id"/>
+                    <field name="type_action"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_action_filter" model="ir.ui.view">
+            <field name="name">mgmtsystem.action.filter</field>
+            <field name="model">mgmtsystem.action</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Action">
+                    <group>
+                        <filter name="current" icon="terp-document-new" domain="[('state','in',('draft','open','pending'))]" string="Open" help="Open Actions"/>
+                        <filter icon="terp-camera_test" domain="[('state','in',('cancelled','closed'))]" string="Closed" help="Closed Actions"/>
+                        <separator orientation="vertical"/>
+                        <field name="reference"/>
+                        <field name="date" select='1'/>
+                        <field name="user_id"/>
+                    </group>
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="User" icon="terp-personal" domain="[]" context="{'group_by':'user_id'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Type" icon="terp-personal" domain="[]" context="{'group_by':'type_action'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>        
+
+        <record id="view_mgmtsystem_action_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.action.form</field>
+            <field name="type">form</field>
+            <field name="model">mgmtsystem.action</field>
+            <field name="arch" type="xml">
+                <form string="Action">
+                    <group colspan="4" col="4">
+                        <group colspan="1" col="2">
+                            <field name="name"/>
+                            <field name="user_id" string="Responsible"/>
+                        </group>
+                        <group colspan="1" col="2">
+                            <field name="date" string="Date"/>
+                            <field name="type_action" required="True"/>
+                        </group>
+                        <group colspan="1" col="2">
+                            <field name="date_deadline" string="Deadline"/>
+                            <field name="reference"/>
+                        </group>
+                        <separator colspan="4" string="Action Description"/>
+                        <field name="description" colspan="4" nolabel="1"/>
+                    </group>
+                    <group colspan="4" col="4">
+
+                        <notebook>
+                            <page string="History" groups="base.group_extended">
+                                <group colspan="4">
+                                    <field colspan="4" name="email_cc" string="Global CC" widget="char"/>
+                                </group>
+                    		<field name="message_ids" colspan="4" nolabel="1" mode="tree,form" readonly="1">
+                        		<tree string="History">
+                            			<field name="display_text" string="History Information"/>
+                            			<field name="email_from" invisible="1"/>
+                            			<button
+                                			string="Reply" attrs="{'invisible': [('email_from', '=', False)]}"
+                                			name="%(mail.action_email_compose_message_wizard)d"
+                                			context="{'mail.compose.message.mode':'reply', 'message_id':active_id}"
+                                			icon="terp-mail-replied" type="action" />
+                        		</tree>
+                        		<form string="History">
+                            			<group col="4" colspan="4">
+                                			<group col="2" colspan="2" attrs="{'invisible': [('email_from', '=', False)]}">
+                                    				<field name="email_from"/>
+                                    				<field name="email_to" size="512"/>
+                                			</group>
+                                			<group col="2" colspan="2">
+                                    				<field name="date"/>
+                                    				<field name="email_cc" size="512" attrs="{'invisible': [('email_from', '=', False)]}"/>
+                                			</group>
+                                			<field name="subject" colspan="4" widget="char" attrs="{'invisible': [('email_from', '=', False)]}" size="512"/>
+                                			<field name="body_text" colspan="4" attrs="{'invisible': [('email_from', '!=', False)]}"/>
+                            			</group>
+                            			<notebook colspan="4">
+                                			<page string="Details" attrs="{'invisible': [('email_from', '=', False)]}">
+                                    				<field name="body_text" colspan="4" nolabel="1"/>
+                                    				<group attrs="{'invisible': [('email_from', '=', False)]}">
+                                       					<button colspan="4" string="Reply"
+                                      						name="%(mail.action_email_compose_message_wizard)d"
+                                      						context="{'mail.compose.message.mode':'reply'}"
+                                       						icon="terp-mail-replied" type="action"/>
+                                       				</group>
+	
+	                                		</page>
+        	                        		<page string="Attachments" attrs="{'invisible': [('email_from', '=', False)]}">
+        	                            			<field name="attachment_ids" colspan="4" readonly="1" nolabel="1"/>
+        	                        		</page>
+                                		</notebook>
+                        		</form>
+                    		</field>
+                    		<button string="Add Internal Note"
+                        		name="%(crm.action_crm_add_note)d"
+                        		context="{'model': 'mgmtsystem.action' }"
+                        		icon="terp-document-new" type="action" />
+                    		<button string="Send New Email"
+                        		name="%(mail.action_email_compose_message_wizard)d"
+                        		icon="terp-mail-message-new" type="action"/>
+                            </page>
+                        </notebook>
+                    </group>
+                    <group col="8" colspan="4">
+                        <field name="state" select="1"/>
+                        <button name="case_open" string="Open" states="draft,pending" type="object" icon="gtk-go-forward"/>
+                        <button name="case_close" string="Done" states="open,draft,pending" type="object" icon="gtk-jump-to"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_action_list" model="ir.actions.act_window">
+            <field name="name">Actions</field>
+            <field name="res_model">mgmtsystem.action</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_mgmtsystem_action_tree"/>
+            <field name="search_view_id" ref="view_mgmtsystem_action_filter"/>
+            <field name="context">{"search_default_current":1,"search_default_user_id":uid}</field>
+        </record>
+
+        <menuitem id="menu_open_action" 
+            action="open_mgmtsystem_action_list" 
+            parent="mgmtsystem.menu_mgmtsystem_main" 
+            sequence="30" 
+            groups="base.group_mgmtsystem_manager,base.group_mgmtsystem_auditor,base.group_user"/>
+
+        <!-- audittrail rule -->
+
+        <record id="mgmtsystem_action_audit_rule" model="audittrail.rule">
+            <field name="name">Audit on Management System Actions</field>
+            <field name="object_id" search="[('model','=','mgmtsystem.action')]"/>
+            <field name="log_create">1</field>
+            <field name="log_workflow">1</field>
+            <field name="log_unlink">1</field>
+            <field name="log_action">1</field>
+            <field name="log_workflow">1</field>
+            <field name="state">subscribed</field>
+        </record>
+
+    </data>
+</openerp>

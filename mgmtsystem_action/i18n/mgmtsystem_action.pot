@@ -1,0 +1,362 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* mgmtsystem_action
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.0.0-rc1\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2010-12-02 23:47:57+0000\n"
+"PO-Revision-Date: 2010-12-02 23:47:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,categ_id:0
+msgid "Category"
+msgstr "Category"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "History"
+msgstr "History"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "History Information"
+msgstr "History Information"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+#: field:mgmtsystem.action,user_id:0
+msgid "Responsible"
+msgstr "Responsible"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Date of Claim"
+msgstr "Date of Claim"
+
+#. module: mgmtsystem_action
+#: model:ir.module.module,shortdesc:mgmtsystem_action.module_meta_information
+msgid "Management System - Action"
+msgstr "Management System - Action"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,priority:0
+msgid "Priority"
+msgstr "Priority"
+
+#. module: mgmtsystem_action
+#: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Action"
+msgstr "Action"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Send New Email"
+msgstr "Send New Email"
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Details"
+msgstr "Details"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+#: field:mgmtsystem.action,date_closed:0
+#: selection:mgmtsystem.action,state:0
+msgid "Closed"
+msgstr "Closed"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Reply"
+msgstr "Reply"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,cause:0
+msgid "Root Cause"
+msgstr "Root Cause"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Type"
+msgstr "Type"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,email_from:0
+msgid "Email"
+msgstr "Email"
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,state:0
+msgid "Pending"
+msgstr "Pending"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Claim/Action Description"
+msgstr "Claim/Action Description"
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,priority:0
+msgid "Lowest"
+msgstr "Lowest"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,action_next:0
+msgid "Next Action"
+msgstr "Next Action"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,priority:0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,create_date:0
+msgid "Creation Date"
+msgstr "Creation Date"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,name:0
+msgid "Claim Subject"
+msgstr "Claim Subject"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,company_id:0
+msgid "Company"
+msgstr "Company"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,email_cc:0
+msgid "Watchers Emails"
+msgstr "Watchers Emails"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,date_action_next:0
+msgid "Next Action Date"
+msgstr "Next Action Date"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,partner_phone:0
+msgid "Phone"
+msgstr "Phone"
+
+#. module: mgmtsystem_action
+#: view:board.board:0
+msgid "Open Actions"
+msgstr "Open Actions"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "User"
+msgstr "User"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Done"
+msgstr "Done"
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,priority:0
+msgid "Highest"
+msgstr "Highest"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,stage_id:0
+msgid "Stage"
+msgstr "Stage"
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,state:0
+msgid "The state is set to 'Draft', when a case is created.                                  \n"
+"If the case is in progress the state is set to 'Open'.                                  \n"
+"When the case is over, the state is set to 'Done'.                                  \n"
+"If the case needs to be reviewed then the state is set to 'Pending'."
+msgstr "The state is set to 'Draft', when a case is created.                                  \n"
+"If the case is in progress the state is set to 'Open'.                                  \n"
+"When the case is over, the state is set to 'Done'.                                  \n"
+"If the case needs to be reviewed then the state is set to 'Pending'."
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Add Internal Note"
+msgstr "Add Internal Note"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,user_fault:0
+msgid "Trouble Responsible"
+msgstr "Trouble Responsible"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,section_id:0
+msgid "Sales Team"
+msgstr "Sales Team"
+
+#. module: mgmtsystem_action
+#: model:ir.module.module,description:mgmtsystem_action.module_meta_information
+msgid "\n"
+"	This module enables you to manage the different actions of your management \n"
+"        system :\n"
+"            * immediate actions\n"
+"            * corrective actions\n"
+"            * preventive actions.\n"
+"    "
+msgstr "\n"
+"	This module enables you to manage the different actions of your management \n"
+"        system :\n"
+"            * immediate actions\n"
+"            * corrective actions\n"
+"            * preventive actions.\n"
+"    "
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,type_action:0
+msgid "Immediate Action"
+msgstr "Immediate Action"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,date:0
+msgid "Claim Date"
+msgstr "Claim Date"
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,type_action:0
+msgid "Improvement Opportunity"
+msgstr "Improvement Opportunity"
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,email_from:0
+msgid "These people will receive email."
+msgstr "These people will receive email."
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,type_action:0
+msgid "Preventive Action"
+msgstr "Preventive Action"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,partner_address_id:0
+msgid "Partner Contact"
+msgstr "Partner Contact"
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,state:0
+msgid "Cancelled"
+msgstr "Cancelled"
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,type_action:0
+msgid "Corrective Action"
+msgstr "Corrective Action"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,resolution:0
+msgid "Resolution"
+msgstr "Resolution"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,section_id:0
+msgid "Sales team to which Case belongs to.Define Responsible user and Email account for mail gateway."
+msgstr "Sales team to which Case belongs to.Define Responsible user and Email account for mail gateway."
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Global CC"
+msgstr "Global CC"
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,email_cc:0
+msgid "These email addresses will be added to the CC field of all inbound and outbound emails for this record before being sent. Separate multiple email addresses with a comma"
+msgstr "These email addresses will be added to the CC field of all inbound and outbound emails for this record before being sent. Separate multiple email addresses with a comma"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Attachments"
+msgstr "Attachments"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,ref:0
+msgid "Reference"
+msgstr "Reference"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Group By..."
+msgstr "Group By..."
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,state:0
+msgid "State"
+msgstr "State"
+
+#. module: mgmtsystem_action
+#: model:ir.actions.act_window,name:mgmtsystem_action.open_mgmtsystem_action_list
+#: model:ir.ui.menu,name:mgmtsystem_action.menu_open_action
+msgid "Actions"
+msgstr "Actions"
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,priority:0
+msgid "High"
+msgstr "High"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,type_action:0
+msgid "Action Type"
+msgstr "Action Type"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+#: field:mgmtsystem.action,date_deadline:0
+msgid "Deadline"
+msgstr "Deadline"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,write_date:0
+msgid "Update Date"
+msgstr "Update Date"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+#: selection:mgmtsystem.action,state:0
+msgid "Open"
+msgstr "Open"
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,priority:0
+msgid "Low"
+msgstr "Low"
+

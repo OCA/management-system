@@ -1,0 +1,6 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_mgmtsystem_nonconformity","mgmtsystem.nonconformity.user","model_mgmtsystem_nonconformity","base.group_user",1,1,1,0
+"access_mgmtsystem_nonconformity_origin_user","mgmtsystem.nonconformity.origin.user","model_mgmtsystem_nonconformity_origin","base.group_user",1,0,0,0
+"access_mgmtsystem_nonconformity_origin_manager","mgmtsystem.nonconformity.origin.manager","model_mgmtsystem_nonconformity_origin","base.group_mgmtsystem_manager",1,1,1,1
+"access_mgmtsystem_nonconformity_cause_user","mgmtsystem.nonconformity.cause.user","model_mgmtsystem_nonconformity_cause","base.group_user",1,0,0,0
+"access_mgmtsystem_nonconformity_cause_manager","mgmtsystem.nonconformity.cause.manager","model_mgmtsystem_nonconformity_cause","base.group_mgmtsystem_manager",1,1,1,1
