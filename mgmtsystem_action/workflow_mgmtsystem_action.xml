@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Workflow -->
+        <record model="workflow" id="mgmtsystem_action_workflow">
+            <field name="name">Management System Workflow</field>
+            <field name="osv">mgmtsystem.action</field>
+            <field name="on_create">True</field>
+        </record>
+
+        <!-- Server Action -->
+        <record model="ir.actions.server" id="mgmtsystem_action_server_action">
+            <field name="name">Notify the person in charge of the new action</field>
+            <field name="model_id" ref="model_mgmtsystem_action" />
+            <field name="state">email</field>
+            <field name="sequence">5</field>
+            <field name="condition">True</field>
+            <field name="email">object.user_id.user_email</field>
+            <field name="subject">[[object.name]]</field>
+            <field name="message">Hello,
+&lt;br /&gt;
+&lt;br /&gt;
+A new action has been assigned to you:
+&lt;br /&gt;
+&lt;a href="http://localhost:8080"&gt;http://localhost:8080&lt;/a&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+[[object.description]]
+&lt;br /&gt;
+&lt;br /&gt;
+Thank you.
+&lt;br /&gt;
+--
+&lt;br /&gt;
+OpenERP</field>
+        </record>
+
+        <!-- Activities -->
+        <record model="workflow.activity" id="mgmtsystem_action_open">
+            <field name="name">Open Management System Action</field>
+            <field name="wkf_id" ref="mgmtsystem_action_workflow"/>
+            <field name="kind">dummy</field>
+            <field name="flow_start">True</field>
+            <field name="split_mode">XOR</field>
+            <field name="join_mode">XOR</field>
+            <field name="action_id" ref="mgmtsystem_action_server_action"/>
+        </record>
+        
+        <record model="workflow.activity" id="mgmtsystem_action_close">
+            <field name="name">Close Management System Action</field>
+            <field name="wkf_id" ref="mgmtsystem_action_workflow"/>
+            <field name="kind">dummy</field>
+            <field name="flow_stop">True</field>
+            <field name="split_mode">XOR</field>
+            <field name="join_mode">XOR</field>
+        </record>
+
+        <!-- Transitions -->
+        <record model="workflow.transition" id="mgmtsystem_action_transition_close">
+            <field name="act_from" ref="mgmtsystem_action_open"/>
+            <field name="act_to" ref="mgmtsystem_action_close"/>
+            <field name="signal">case_close</field>
+            <field name="condition">True</field>
+        </record>
+
+    </data>
+</openerp>
