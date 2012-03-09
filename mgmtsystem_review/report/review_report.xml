@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+   <data>
+
+      <report id="mgmtsystem_review_report"
+         string="Print Report" 
+         model="mgmtsystem.review"
+         name="mgmtsystem.review.report"
+         rml="mgmtsystem_review/report/review_report.rml"
+         auto="False"
+         menu="True"/>
+
+   </data>
+</openerp>
