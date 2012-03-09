@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Sequences for mgmtsystem.review -->
+        <record id="seq_type_mgmtsystem_review" model="ir.sequence.type">
+            <field name="name">Management System Review</field>
+            <field name="code">mgmtsystem.review</field>
+        </record>
+
+        <record id="seq_mgmtsystem_review" model="ir.sequence">
+            <field name="name">Management System Review</field>
+            <field name="code">mgmtsystem.review</field>
+            <field name="prefix">MSR</field>
+            <field name="padding">3</field>
+        </record>
+
+    </data>
+</openerp>
