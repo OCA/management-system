@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.actions.act_window" id="action_mgmtsystem_action">
+            <field name="res_model">mgmtsystem.action</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_mgmtsystem_action_tree"/>
+            <field name="domain">[('state', 'in', ('draft','open','pending'))]</field>
+        </record>
+
+        <record id="board_mgmtsystem_action_form" model="ir.ui.view">
+            <field name="name">board.mgmtsystem.action.form</field>
+            <field name="model">board.board</field>
+            <field name="inherit_id" ref="mgmtsystem.board_mgmtsystem_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/hpaned/child1" position="inside">
+		    <action name="%(action_mgmtsystem_action)d" string="Open Actions"/>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>
