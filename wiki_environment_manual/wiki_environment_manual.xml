@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+      <record id="wiki_environment_manual" model="wiki.wiki">
+        <field name="name">Environment Manual</field>
+        <field name="tags">environment, faq, manual</field>
+        <field name="minor_edit">0</field>
+        <field name="toc">1</field>
+        <field name="review">1</field>
+        <field name="section">2</field>
+        <field name="summary">Base template</field>
+        <field name="text_area">
+=Application Domain=
+
+==General==
+
+==Application Perimeter==
+
+=Standards References=
+
+=Terms and Definitions=
+
+==Confidentiality==
+
+=Environment Management System=
+
+==General Requirements==
+
+==Environmental Policy==
+
+==Planning==
+
+===Environmental Aspects===
+
+===Legal and Other Requirements===
+
+===Objectives, Targets and Programs===
+
+==Implementation and Operation==
+
+===Resources, Roles, Responsibilities and Authority===
+
+===Training, Awareness and Competence===
+
+===Communication===
+
+===Documentation===
+
+===Documentation Control===
+
+===Operational Control===
+
+===Emergency Preparedness and Response===
+
+==Control==
+
+===Monitoring and Measurement===
+
+===Evaluation of Compliance===
+
+===Non­conformity, Corrective Action and Preventive Action===
+
+===Control of Records===
+
+===Internal Audit===
+
+==Management Review==
+        </field>
+      </record>
+      <record id="wiki_group_environment_manual" model="wiki.groups">
+        <field name="name">Environment Manual</field>
+        <field name="section">2</field>
+        <field name="home" ref="wiki_environment_manual"/>
+      </record>
+    </data>
+    <data>
+      <record id="wiki_environment_manual" model="wiki.wiki">
+        <field name="group_id" ref="wiki_group_environment_manual"/>
+      </record>
+    </data>
+</openerp>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+      <record id="wiki_group_health_safety_manual" model="wiki.groups">
+        <field name="name">Health and Safety Manual</field>
+        <field name="section">2</field>
+      </record>
+
+      <record id="wiki_health_safety_manual" model="wiki.wiki">
+        <field name="name">Health and Safety Manual</field>
+        <field name="group_id" ref="wiki_group_health_safety_manual"/>
+        <field name="tags">health, safety, manual</field>
+        <field name="minor_edit">0</field>
+        <field name="toc">1</field>
+        <field name="review">1</field>
+        <field name="section">2</field>
+        <field name="summary">Base template</field>
+        <field name="text_area">
+TODO: Add the structure of the health and safety manual from the OHSAS 18001 standard.
+        </field>
+      </record>
+
+      <record id="wiki_group_health_safety_manual" model="wiki.groups">
+        <field name="home" ref="wiki_health_safety_manual"/>
+      </record>
+
+    </data>
+</openerp>

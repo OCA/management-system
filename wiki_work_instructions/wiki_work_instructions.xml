@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.actions.act_window" id="work_instructions_action">
+            <field name="name">Work Instructions</field>
+            <field name="res_model">wiki.wiki</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="wiki.view_wiki_tree"/>
+            <field name="search_view_id" ref="wiki.view_wiki_filter"/>
+            <field name="help">Work instructions of your management system.</field>
+        </record>
+    
+        <menuitem id="menu_mgmtsystem_manuals_work_instructions" 
+            name="Work Instructions"
+            action="work_instructions_action" 
+            parent="mgmtsystem.menu_mgmtsystem_manuals" 
+            sequence="90" 
+            groups="base.group_user"/>
+    
+        <record id="wiki_group_work_instructions" model="wiki.groups">
+            <field name="name">Work Instructions</field>
+            <field name="section">2</field>
+        </record>
+    
+        <record id="wiki_work_instruction" model="wiki.wiki">
+            <field name="name">Work Instructions</field>
+            <field name="group_id" ref="wiki_group_work_instructions"/>
+            <field name="tags">work_instruction</field>
+            <field name="minor_edit">0</field>
+            <field name="toc">1</field>
+            <field name="review">1</field>
+            <field name="section">2</field>
+            <field name="summary">Work instruction template</field>
+            <field name="text_area">
+= Step 1 =
+
+= Step 2 =
+
+= Step 3 =
+            </field>
+        </record>
+    
+        <record id="wiki_group_work_instructions" model="wiki.groups">
+            <field name="home" ref="wiki_work_instruction"/>
+        </record>
+    
+        <record model="ir.actions.act_window" id="work_instructions_action">
+            <field name="domain" eval="[('group_id','=',ref('wiki_group_work_instructions'))]"/>
+        </record>
+
+    </data>
+</openerp>
