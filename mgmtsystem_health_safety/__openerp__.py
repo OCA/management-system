@@ -45,8 +45,8 @@
         'letter_mgmt_v6',
         'wiki_health_safety_manual',
         'mgmtsystem_hazard',
-#       'mgmtsystem_equipments',
-        'training_hr'
+#        'mgmtsystem_equipments',
+#        'training_hr'
     ],
     "init_xml" : [],
     "update_xml" : [],
