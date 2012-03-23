@@ -40,7 +40,7 @@
         'mgmtsystem_review',
         'wiki_environment_manual',
         'wiki_environmental_aspect',
-        'training_hr',
+#        'training_hr',
     ],
     "init_xml" : [],
     "update_xml" : [],
