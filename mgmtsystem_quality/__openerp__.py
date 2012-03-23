@@ -40,7 +40,7 @@
         'wiki_quality_manual',
         'mgmtsystem_manuals',
         'mgmtsystem_review',
-        'training_hr',
+#        'training_hr',
     ],
     "init_xml" : [],
     "update_xml" : [],
