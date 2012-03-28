@@ -22,6 +22,10 @@
 from osv import fields, osv
 import time
 
+def _parse_risk_formule(formule, a, b, c):
+    f = formule.replace('A', str(a)).replace('B', str(b)).replace('C', str(c))
+    return eval(f)
+
 class mgmtsystem_hazard_type(osv.osv):
 
     _name = "mgmtsystem.hazard.type"
@@ -158,12 +162,16 @@ class mgmtsystem_hazard_residual_risk(osv.osv):
         for obj in self.browse(cr, uid, ids):
             # TODO: Use res.company.risk_computation_id to determine the risk computation
             if obj.probability_id and obj.severity_id and obj.usage_id:
-                result[obj.id] = obj.probability_id.value * obj.severity_id.value * obj.usage_id.value
+                mycompany = self.pool.get('res.company').browse(cr, uid, ids, context)[0]
+                result[obj.id] = _parse_risk_formule(mycompany.risk_computation_id.name,
+                                                     obj.probability_id.value,
+                                                     obj.severity_id.value,
+                                                     obj.usage_id.value)
             else:
                 result[obj.id] = False
 
         return result
-
+    
     _columns = {
         'name': fields.char('Name', size=50, required=True),
         'probability_id': fields.many2one('mgmtsystem.hazard.probability','Probability', required=True),
@@ -187,7 +195,12 @@ class mgmtsystem_hazard(osv.osv):
         for obj in self.browse(cr, uid, ids):
             # TODO: Use res.company.risk_computation_id to determine the risk computation
             if obj.probability_id and obj.severity_id and obj.usage_id:
-                result[obj.id] = obj.probability_id.value * obj.severity_id.value * obj.usage_id.value
+                #result[obj.id] = obj.probability_id.value * obj.severity_id.value * obj.usage_id.value
+                mycompany = self.pool.get('res.company').browse(cr, uid, ids, context)[0]
+                result[obj.id] = _parse_risk_formule(mycompany.risk_computation_id.name,
+                                                     obj.probability_id.value,
+                                                     obj.severity_id.value,
+                                                     obj.usage_id.value)
             else:
                 result[obj.id] = False
 
