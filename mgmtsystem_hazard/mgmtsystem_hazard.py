@@ -23,6 +23,7 @@ from osv import fields, osv
 import time
 
 def _parse_risk_formule(formule, a, b, c):
+    """Calculate the risk replacing the variables A, B, C into the formula."""
     f = formule.replace('A', str(a)).replace('B', str(b)).replace('C', str(c))
     return eval(f)
 
@@ -159,10 +160,11 @@ class mgmtsystem_hazard_residual_risk(osv.osv):
 
     def _compute_risk(self, cr, uid, ids, field_name, arg, context=None):
         result = {}
+        user = self.pool.get('res.users').browse(cr, uid, uid)
+
         for obj in self.browse(cr, uid, ids):
-            # TODO: Use res.company.risk_computation_id to determine the risk computation
             if obj.probability_id and obj.severity_id and obj.usage_id:
-                mycompany = self.pool.get('res.company').browse(cr, uid, ids, context)[0]
+                mycompany = self.pool.get('res.company').browse(cr, uid, user.company_id.id, context)[0]
                 result[obj.id] = _parse_risk_formule(mycompany.risk_computation_id.name,
                                                      obj.probability_id.value,
                                                      obj.severity_id.value,
@@ -192,11 +194,12 @@ class mgmtsystem_hazard(osv.osv):
 
     def _compute_risk(self, cr, uid, ids, field_name, arg, context=None):
         result = {}
+        user = self.pool.get('res.users').browse(cr, uid, uid)
         for obj in self.browse(cr, uid, ids):
             # TODO: Use res.company.risk_computation_id to determine the risk computation
             if obj.probability_id and obj.severity_id and obj.usage_id:
                 #result[obj.id] = obj.probability_id.value * obj.severity_id.value * obj.usage_id.value
-                mycompany = self.pool.get('res.company').browse(cr, uid, ids, context)[0]
+                mycompany = self.pool.get('res.company').browse(cr, uid, user.company_id.id, context)
                 result[obj.id] = _parse_risk_formule(mycompany.risk_computation_id.name,
                                                      obj.probability_id.value,
                                                      obj.severity_id.value,
