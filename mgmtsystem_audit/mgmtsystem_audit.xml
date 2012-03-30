@@ -72,6 +72,7 @@
                     <field name="name" attrs="{'readonly':[('state','=','c')]}"/>
                     <field name="date" attrs="{'readonly':[('state','=','c')]}"/>
                     <field name="reference"/>
+		    <field name="system_id"/>
                 </tree>
             </field>
         </record>
@@ -89,6 +90,7 @@
                         <field name="name"/>
                         <field name="date"/>
                         <field name="reference"/>
+			<field name="system_id"/>
                     </group>
                 </search>
             </field>
@@ -100,10 +102,11 @@
             <field name="model">mgmtsystem.audit</field>
             <field name="arch" type="xml">
                 <form string="Audit">
-                    <group col="6" colspan="6">
+                    <group col="8" colspan="6">
                         <field name="name" attrs="{'readonly':[('state','=','c')]}"/>
                         <field name="reference"/>
                         <field name="date" attrs="{'readonly':[('state','=','c')]}"/>
+			<field name="system_id"/>
                     </group>
                     <notebook colspan="4">
                         <page string="Auditors">
