@@ -44,7 +44,7 @@
     ],
     "init_xml" : [],
     "update_xml" : [],
-    "demo_xml" : [],
+    "demo_xml" : ['demo_environment.xml'],
     "installable" : True,
     "certificate" : ''
 }
