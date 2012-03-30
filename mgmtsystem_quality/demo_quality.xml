@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <!-- <record id="mgmtsystem_quality_manual" model="wiki.wiki"> -->
+    <!--   <field name="name">Quality Manual</field> -->
+    <!--   <field name="write_date">2012-03-29</field> -->
+    <!--   <field name="text_area"> === Quality Manual === </field> -->
+    <!-- </record> -->
+
+    <record id="system_quality" model="mgmtsystem.system">
+      <field name="name">Quality</field>
+      <!-- <field name="manual" ref="mgmtsystem_quality_manual"/> -->
+    </record>
+  </data>
+</openerp>
