@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <!-- <record id="mgmtsystem_healt_safety_manual" model="wiki.wiki"> -->
+    <!--   <field name="name">Healt and Safety Manual</field> -->
+    <!--   <field name="write_date">2012-03-29</field> -->
+    <!--   <field name="text_area"> === Healt and Safety Manual === </field> -->
+    <!-- </record> -->
+
+    <record id="system_audit" model="mgmtsystem.system">
+      <field name="name">Healt and Safety</field>
+      <!-- <field name="manual" ref="mgmtsystem_healt_safety_manual"/> -->
+    </record>
+  </data>
+</openerp>
