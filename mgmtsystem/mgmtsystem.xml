@@ -28,5 +28,43 @@
             groups="base.group_mgmtsystem_manager" 
             sequence="50"/>
 
+       <record model="ir.ui.view" id="mgmtsystem_system_tree">
+            <field name="name">mgmtsystem.system.tree</field>
+            <field name="model">mgmtsystem.system</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Systems">
+                    <field name="name"/>
+		    <field name="manual"/>
+                </tree>
+            </field>
+        </record>
+
+       <record model="ir.ui.view" id="mgmtsystem_system_form">
+            <field name="name">mgmtsystem.system.form</field>
+            <field name="model">mgmtsystem.system</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Systems">
+                    <field name="name"/>
+		    <field name="manual"/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_system_form">
+            <field name="name">Systems</field>
+            <field name="res_model">mgmtsystem.system</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_mgmtsystem_configuration_system" 
+            name="Systems" 
+            parent="menu_mgmtsystem_configuration" 
+            groups="base.group_mgmtsystem_manager"
+	    action="action_system_form"
+            sequence="60"/>
+
     </data>
 </openerp>
