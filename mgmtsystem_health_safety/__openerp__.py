@@ -50,7 +50,7 @@
     ],
     "init_xml" : [],
     "update_xml" : [],
-    "demo_xml" : [],
+    "demo_xml" : ['demo_healt_safety.xml'],
     "installable" : True,
     "certificate" : ''
 }
