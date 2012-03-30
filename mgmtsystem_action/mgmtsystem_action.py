@@ -28,8 +28,16 @@ class mgmtsystem_action(osv.osv):
     _inherit = "crm.claim"
     _columns = {
         'reference': fields.char('Reference', size=64, required=True, readonly=True),
-	'type_action': fields.selection([('immediate','Immediate Action'),('correction','Corrective Action'),('prevention','Preventive Action'),('improvement','Improvement Opportunity')], 'Action Type'),
-        'message_ids': fields.one2many('mailgate.message', 'res_id', 'Messages', domain=[('model','=',_name)]),
+	'type_action': fields.selection([('immediate','Immediate Action'),
+                                         ('correction','Corrective Action'),
+                                         ('prevention','Preventive Action'),
+                                         ('improvement','Improvement Opportunity')],
+                                        'Action Type'),
+        'message_ids': fields.one2many('mail.message',
+                                       'res_id',
+                                       'Messages',
+                                       domain=[('model','=',_name)]),
+        'system_id': fields.many2one('mgmtsystem.system', 'System')
     }
 
     _defaults = {
