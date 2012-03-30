@@ -116,13 +116,13 @@
     </blockTable>
     <section>
       <blockTable colWidths="11cm,2cm,5cm" repeatRows="1" style="Table1">
-      <para>[[ repeatIn(o.line_ids,'line') ]]</para>
+      <para>[[ repeatIn(get_lines_by_procedure(o.line_ids),'line') ]]</para>
       <tr>
         <td>
-          <para>[[ line.procedure_id.name ]] : [[ line.name ]]</para>
+          <para> [[ line['procedure'] ]] [[ line['name'] ]]</para>
         </td>
         <td>
-          <para style="terp_default_Centre_9">Yes / No</para>
+          <para style="terp_default_Centre_9">[[ line['yes_no'] ]]</para>
         </td>
         <td>
           <para></para>

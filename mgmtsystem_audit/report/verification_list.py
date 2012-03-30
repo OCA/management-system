@@ -27,8 +27,46 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
         super(mgmtsystem_audit_verification_list, self).__init__(cr, uid, name, context)
         self.localcontext.update({
             'time': time,
+            'get_lines_by_procedure': self.get_lines_by_procedure,
         })
+        self.context = context
 
+    def get_lines_by_procedure(self, verification_lines):
+        v = {}
+        p = []
+        for l in verification_lines:
+            proc_nm = self.pool.get('wiki.wiki').read(self.cr, self.uid, l.procedure_id.id, ['name'])
+            p.append({"id": l.id,
+                      "procedure": proc_nm['name'],
+                      "name": l.name,
+                      "yes_no": "Yes / No"})
+                    
+        p = sorted(p, key=lambda k: k["procedure"])
+
+        proc_line = False
+        q = []
+        proc_name = ''
+        for i in range(len(p)):
+            if proc_name != p[i]['procedure']:
+                proc_line = True
+                
+            if proc_line:
+                q.append({"id": p[i]['id'],
+                          "procedure": p[i]['procedure'],
+                          "name": "",
+                          "yes_no": ""})
+                proc_line = False
+                proc_name = p[i]['procedure']
+
+            q.append({"id": p[i]['id'],
+                      "procedure": "",
+                      "name": p[i]['name'],
+                      "yes_no": "Yes / No"})
+
+            
+
+        return q
+        
 report_sxw.report_sxw(
     'report.mgmtsystem.audit.verificationlist',
     'mgmtsystem.audit',
