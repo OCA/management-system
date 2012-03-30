@@ -28,7 +28,7 @@
     "description": """
 	This module enables you to manage the claims of your management system.
     """,
-    "depends" : ['mgmtsystem','crm_claim'],
+    "depends" : ['mgmtsystem','crm_claim', 'mail'],
     "init_xml" : [],
     "update_xml" : [
         'security/ir.model.access.csv',
