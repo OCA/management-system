@@ -2,7 +2,7 @@
 ##############################################################################
 #    
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as
@@ -18,6 +18,17 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
 #
 ##############################################################################
-import mgmtsystem_system
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+from osv import fields, osv
+
+class mgmtsystem_system(osv.osv):
+
+    _name = 'mgmtsystem.system'
+    description = 'System'
+
+    _columns = {
+        'name': fields.char('System', size=30, required=True),
+        'manual': fields.many2one('wiki.wiki', 'Manual')
+        }
+
+mgmtsystem_system()

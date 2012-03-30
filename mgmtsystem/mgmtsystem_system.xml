@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+  <data>
+
+    <record model="ir.ui.view" id="system_form">
+      <field name="name">system_form</field>
+      <field name="model">mgmtsystem.system</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+	<form string="System Entry">
+	  <field name="name"/>
+	  <field name="manual"/>
+	</form>
+      </field>
+    </record>
+
+    <record id="action_system_form" model="ir.actions.act_window">
+      <field name="name">Systems</field>
+      <field name="res_model">mgmtsystem.system</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="system_form"/>
+    </record>
+
+    <menuitem id="menu_mgmtsystem_configuration_system" 
+	      name="Systems"
+	      parent="mgmtsystem.menu_mgmtsystem_configuration"
+	      groups="base.group_mgmtsystem_manager" 
+	      sequence="60"
+	      action="action_system_form"/>
+  </data>
+</openerp>
