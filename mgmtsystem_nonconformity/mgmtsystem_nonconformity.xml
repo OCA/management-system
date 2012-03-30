@@ -19,6 +19,7 @@
                     <field name="description" attrs="{'readonly':[('state','=','c')]}"/>
                     <field name="responsible_user_id" attrs="{'readonly':[('state','=','c')]}"/>
                     <field name="author_user_id" attrs="{'readonly':[('state','=','c')]}"/>
+		    <field name="system_id"/>
                 </tree>
             </field>
         </record>
@@ -36,6 +37,7 @@
                         <field name="ref"/>
                         <field name="date"/>
                         <field name="author_user_id"/>
+			<field name="system_id"/>
                     </group>
                     <newline />
                     <group expand="0" string="Group By...">
@@ -63,6 +65,7 @@
                         <field name="responsible_user_id" attrs="{'readonly':[('state','=','c')]}"/>
                         <field name="manager_user_id" attrs="{'readonly':[('state','=','c')]}"/>
                         <field name="author_user_id" attrs="{'readonly':[('state','=','c')]}"/>
+			<field name="system_id"/>
                     </group>
                     <notebook colspan="4">
                         <page string="Origins">
