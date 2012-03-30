@@ -35,7 +35,7 @@
          * corrective actions,
          * improvement opportunities.	
     """,
-    "depends" : ['base','board','audittrail'],
+    "depends" : ['base','board','audittrail', 'wiki'],
     "init_xml" : [],
     "update_xml" : [
         'security/mgmtsystem_security.xml',
