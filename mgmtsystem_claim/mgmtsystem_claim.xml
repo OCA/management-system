@@ -132,10 +132,10 @@
 							<field name="message_ids" colspan="4" nolabel="1" mode="tree,form" readonly="1">
 								<tree string="History">
 									<field name="display_text" string="History Information"/>
-									<field name="history" invisible="1"/>
+									<!-- <field name="history" invisible="1"/> -->
 									<button
 										string="Reply"
-										name="%(crm.action_crm_send_mail)d"
+										name="%(mail.action_email_compose_message_wizard)d"
 										context="{'mail':'reply', 'model': 'crm.claim', 'include_original' : True}"
 										icon="terp-mail-replied" type="action" attrs="{'invisible': [('history', '!=', True)]}" />
 								</tree>
@@ -146,22 +146,22 @@
 										<field name="date"/>
 										<field name="email_to" widget="char" size="512"/>
 										<field name="email_cc" widget="char" size="512"/>
-										<field name="name" colspan="4" widget="char" size="512"/>
-										<field name="history" invisible="1"/>
+										<field name="subject" colspan="4" widget="char" size="512"/>
+										<!-- <field name="history" invisible="1"/> -->
 									</group>
 	
 									<notebook colspan="4">
 										<page string="Details">
-											<group attrs="{'invisible': [('history', '!=', True)]}">
-												<field name="description" colspan="4" nolabel="1" height="250"/>
+											<group>
+												<!-- <field name="description" colspan="4" nolabel="1" height="250"/> -->
 												<button colspan="4"
 													string="Reply"
-													name="%(crm.action_crm_send_mail)d"
+													name="%(mail.action_email_compose_message_wizard)d"
 													context="{'mail':'reply', 'model': 'crm.claim', 'include_original' : True}"
 													icon="terp-mail-replied" type="action" />
 											</group>
 	
-											<group attrs="{'invisible': [('history', '=', True)]}">
+											<group>
 												<field name="display_text" colspan="4" nolabel="1"  height="250"/>
 											</group>
 										</page>
@@ -178,7 +178,7 @@
 								context="{'model': 'crm.lead' }"
 								icon="terp-document-new" type="action" />
 							<button string="Send New Email"
-								name="%(crm.action_crm_send_mail)d"
+								name="%(mail.action_email_compose_message_wizard)d"
 								context="{'mail':'new', 'model': 'crm.claim'}"
 								icon="terp-mail-message-new" type="action" />
 						</page>
