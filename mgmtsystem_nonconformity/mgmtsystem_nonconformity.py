@@ -80,6 +80,7 @@ class mgmtsystem_nonconformity(osv.osv):
         'preventive_action_id': fields.many2one('mgmtsystem.action', 'Preventive action'),
         'efficiency_preventive': fields.text('Efficiency of the preventive action'),
         'state': fields.selection((('o','Open'),('c','Closed')), 'State', size=16, readonly=True),
+        'system_id': fields.many2one('mgmtsystem.system', 'System')
     }
     _defaults = {
         'date': lambda *a: time.strftime('%Y-%m-%d'),

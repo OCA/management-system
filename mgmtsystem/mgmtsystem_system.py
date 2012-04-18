@@ -2,7 +2,7 @@
 ##############################################################################
 #    
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as
@@ -20,27 +20,20 @@
 ##############################################################################
 
 from osv import fields, osv
-from crm import crm
 
-class mgmtsystem_claim(osv.osv):
-    _name = "mgmtsystem.claim"
-    _description = "Claim"
-    _inherit = "crm.claim"
+class mgmtsystem_system(osv.osv):
+
+    _name = 'mgmtsystem.system'
+    description = 'System'
+
     _columns = {
-        'reference': fields.char('Reference', size=64, required=True, readonly=True),
-        'message_ids': fields.one2many('mail.message', 'res_id', 'Messages', domain=[('model','=',_name)]),
-    }
+        'name': fields.char('System', size=30, required=True),
+        'manual': fields.many2one('wiki.wiki', 'Manual'),
+        'company_id': fields.many2one('res.company', 'Company')
+        }
 
     _defaults = {
-        'reference': 'NEW',
+        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
     }
 
-    def create(self, cr, uid, vals, context=None):
-        vals.update({
-            'reference': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.claim')
-        })
-        return super(mgmtsystem_claim, self).create(cr, uid, vals, context)
-
-mgmtsystem_claim()
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+mgmtsystem_system()

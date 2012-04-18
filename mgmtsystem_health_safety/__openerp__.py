@@ -49,7 +49,7 @@
 #        'training_hr'
     ],
     "init_xml" : [],
-    "update_xml" : [],
+    "update_xml" : ['health_safety.xml'],
     "demo_xml" : [],
     "installable" : True,
     "certificate" : ''
