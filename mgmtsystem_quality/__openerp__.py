@@ -43,8 +43,8 @@
 #        'training_hr',
     ],
     "init_xml" : [],
-    "update_xml" : [],
-    "demo_xml" : ['demo_quality.xml'],
+    "update_xml" : ['quality.xml'],
+    "demo_xml" : [],
     "installable" : True,
     "certificate" : ''
 }
