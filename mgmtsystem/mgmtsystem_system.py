@@ -28,12 +28,12 @@ class mgmtsystem_system(osv.osv):
 
     _columns = {
         'name': fields.char('System', size=30, required=True),
-        'manual': fields.many2one('wiki.wiki', 'Manual')
+        'manual': fields.many2one('wiki.wiki', 'Manual'),
         'company_id': fields.many2one('res.company', 'Company')
         }
 
     _defaults = {
-        'company_id': user.company_id.id
+        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
     }
 
 mgmtsystem_system()
