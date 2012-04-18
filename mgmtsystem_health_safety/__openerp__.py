@@ -49,8 +49,8 @@
 #        'training_hr'
     ],
     "init_xml" : [],
-    "update_xml" : [],
-    "demo_xml" : ['demo_healt_safety.xml'],
+    "update_xml" : ['health_safety.xml'],
+    "demo_xml" : [],
     "installable" : True,
     "certificate" : ''
 }
