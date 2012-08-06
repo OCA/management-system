@@ -277,7 +277,7 @@
 		parent="mgmtsystem.menu_mgmtsystem_main" 
 		action="mgmtsystem_claim_action" 
 		sequence="90"
-		groups="base.group_mgmtsystem_manager,base.group_mgmtsystem_auditor,base.group_user"/>
+		groups="group_mgmtsystem_manager,group_mgmtsystem_auditor,base.group_user"/>
 
 	<menuitem 
 		id="menu_config_claim" 
