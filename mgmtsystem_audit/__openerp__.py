@@ -29,7 +29,7 @@
 	This module enables you to manage audits and verifications lists of 
         your management system.
     """,
-    "depends" : ['mgmtsystem_nonconformity'],
+    "depends" : ['mgmtsystem_nonconformity','audittrail'],
     "init_xml" : [
 	'audit_sequence.xml',
     ],
