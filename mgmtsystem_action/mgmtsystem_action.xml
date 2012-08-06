@@ -142,7 +142,7 @@
             action="open_mgmtsystem_action_list" 
             parent="mgmtsystem.menu_mgmtsystem_main" 
             sequence="30" 
-            groups="base.group_mgmtsystem_manager,base.group_mgmtsystem_auditor,base.group_user"/>
+            groups="group_mgmtsystem_manager,group_mgmtsystem_auditor,base.group_user"/>
 
         <!-- audittrail rule -->
 
