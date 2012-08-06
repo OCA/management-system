@@ -28,7 +28,8 @@
     "complexity" : "normal",
     "description": """
 	This module provides the basis for creating key performance indicators,
-        including static and dynamic thresholds (SQL query or Python code).
+        including static and dynamic thresholds (SQL query or Python code), 
+        on local and remote data sources.
 
         The module also provides the mecanism to update KPIs automatically. 
         A scheduler is executed every hour and updates the KPI values, based 
@@ -42,9 +43,13 @@
          * color (RGB code like #00FF00 for green, #FFA500 for orange, 
            #FF0000 for red)
     """,
-    "depends" : ['mgmtsystem'],
+    "depends" : [
+        'mgmtsystem',
+        'base_external_dbsource',
+    ],
     "data" : [
-        'mgmtsystem_kpi.xml',
+        'mgmtsystem_kpi_view.xml',
+        'security/ir.model.access.csv',
     ],
     "images" : [
         "images/kpi_definition.png",
@@ -55,7 +60,6 @@
     "demo" : [],
     "test" : [],
     "installable" : True,
-    "complexity": "normal",
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

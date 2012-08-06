@@ -13,6 +13,7 @@
                     <field name="name"/>
                     <field name="value" widget="progressbar"/>
                     <field name="category_id"/>
+                    <field name="kpi_type"/>
                 </tree>
             </field>
         </record>
@@ -32,6 +33,7 @@
                     <newline />
                     <group expand="0" string="Group By...">
                         <filter string="Category" context="{'group_by':'category_id'}"/>
+                        <filter string="Type" context="{'group_by':'kpi_type'}"/>
                     </group>
                 </search>
             </field>
@@ -64,6 +66,7 @@
                                 <separator string="KPI Computation" colspan="6"/>
                                 <newline/>
                                 <field name="kpi_type" colspan="2"/>
+                                <field name="dbsource_id" colspan="2" attrs="{'invisible' : [('kpi_type', '!=', 'external')]}"/>
                                 <newline/>
                                 <field name="kpi_code" colspan="6"/>
                             </group>
@@ -103,6 +106,7 @@
                     <field name="name"/>
                     <field name="date"/>
                     <field name="value"/>
+                    <field name="color"/>
                 </tree>
             </field>
         </record>
@@ -112,7 +116,7 @@
         <menuitem id="menu_mgmtsystem_configuration_kpi" 
             name="KPI" 
             parent="mgmtsystem.menu_mgmtsystem_configuration" 
-            groups="base.group_mgmtsystem_manager" 
+            groups="mgmtsystem.group_mgmtsystem_manager" 
             sequence="20"/>
 
 	<!-- Categories -->
@@ -153,7 +157,7 @@
             name="Categories"
             action="open_mgmtsystem_category_list"
             parent="menu_mgmtsystem_configuration_kpi" 
-            groups="base.group_mgmtsystem_manager" 
+            groups="mgmtsystem.group_mgmtsystem_manager" 
             sequence="10"/>
 
 	<!-- Thresholds -->
@@ -165,6 +169,7 @@
             <field name="arch" type="xml">
                 <tree string="Thresholds">
                     <field name="name"/>
+                    <field name="invalid_message"/>
                 </tree>
             </field>
         </record>
@@ -177,14 +182,15 @@
                 <form string="Threshold">
                     <field name="name"/>
                     <newline/>
-                    <field name="range_ids" nolabel="1" colspan="2">
-                        <tree string="Ranges">
-                            <field name="name"/>
-                            <field name="min_value"/>
-                            <field name="max_value"/>
-                            <field name="color"/>
-                        </tree>
-                    </field>
+                    <separator string="Ranges" colspan="2"/>
+                    <newline/>
+                    <field name="range_ids" nolabel="1" colspan="2"/>
+                    <newline/>
+                    <separator string="KPIs" colspan="2"/>
+                    <newline/>
+                    <field name="kpi_ids" nolabel="1" colspan="2"/>
+                    <newline/>
+                    <field name="invalid_message" nolabel="1" attrs="{'invisible' : [('invalid_message', '=', '')]}" colspan="2"/>
                 </form>
             </field>
         </record>
@@ -201,7 +207,7 @@
             name="Thresholds"
             action="open_mgmtsystem_threshold_list"
             parent="menu_mgmtsystem_configuration_kpi" 
-            groups="base.group_mgmtsystem_manager" 
+            groups="mgmtsystem.group_mgmtsystem_manager" 
             sequence="10"/>
 
 	<!-- Ranges -->
@@ -216,6 +222,7 @@
                     <field name="min_value"/>
                     <field name="max_value"/>
                     <field name="color"/>
+                    <field name="invalid_message"/>
                 </tree>
             </field>
         </record>
@@ -233,15 +240,21 @@
                     <newline/>
                     <field name="min_type"/>
                     <field name="min_fixed_value" attrs="{'invisible' : [('min_type', '!=', 'static')]}"/>
+                    <field name="min_dbsource_id" attrs="{'invisible' : [('min_type', '!=', 'external')]}"/>
                     <newline/>
-                    <field name="min_code" colspan="4" attrs="{'invisible' : [('min_type', 'NOT IN', ('sql','python'))]}"/>
+                    <field name="min_code" colspan="4" attrs="{'invisible' : [('min_type', 'NOT IN', ('local','external','python'))]}"/>
                     <newline/>
                     <separator string="Maximum" colspan="4"/>
                     <newline/>
                     <field name="max_type"/>
                     <field name="max_fixed_value" attrs="{'invisible' : [('max_type', '!=', 'static')]}"/>
+                    <field name="max_dbsource_id" attrs="{'invisible' : [('max_type', '!=', 'external')]}"/>
                     <newline/>
-                    <field name="max_code" colspan="4" attrs="{'invisible' : [('max_type', 'NOT IN', ('sql','python'))]}"/>
+                    <field name="max_code" colspan="4" attrs="{'invisible' : [('max_type', 'NOT IN', ('local','external','python'))]}"/>
+                    <newline/>
+                    <separator string="Thresholds" colspan="4"/>
+                    <field name="threshold_ids" nolabel="1" colspan="4"/>
+                    <field name="invalid_message" nolabel="1" attrs="{'invisible' : [('invalid_message', '=', '')]}" colspan="4"/>
                 </form>
             </field>
         </record>
@@ -258,7 +271,14 @@
             name="Ranges"
             action="open_mgmtsystem_threshold_range_list"
             parent="menu_mgmtsystem_configuration_kpi" 
-            groups="base.group_mgmtsystem_manager" 
+            groups="mgmtsystem.group_mgmtsystem_manager" 
+            sequence="20"/>
+
+        <menuitem id="menu_mgmtsystem_configuration_kpi_dbsource"
+            name="Data Sources"
+            action="base_external_dbsource.action_dbsource"
+            parent="menu_mgmtsystem_configuration_kpi" 
+            groups="mgmtsystem.group_mgmtsystem_manager" 
             sequence="20"/>
 
     </data>
