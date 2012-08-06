@@ -166,7 +166,7 @@
             action="open_mgmtsystem_audit_list" 
             parent="mgmtsystem.menu_mgmtsystem_main" 
             sequence="10" 
-            groups="base.group_mgmtsystem_manager,base.group_mgmtsystem_auditor"/>
+            groups="group_mgmtsystem_manager,group_mgmtsystem_auditor"/>
 
         <!-- audittrail rule -->
 
