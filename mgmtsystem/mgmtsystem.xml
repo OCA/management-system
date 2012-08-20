@@ -5,7 +5,7 @@
         <menuitem id="menu_mgmtsystem_root" 
             name="Management System" 
             sequence="15" 
-            groups="group_mgmtsystem_manager,base.group_user"
+            groups="mgmtsystem.group_mgmtsystem_manager,base.group_user"
             web_icon="images/mgmtsystem.png"
             web_icon_hover="images/mgmtsystem-hover.png"
             />
@@ -25,7 +25,7 @@
         <menuitem id="menu_mgmtsystem_configuration" 
             name="Configuration" 
             parent="mgmtsystem.menu_mgmtsystem_root" 
-            groups="group_mgmtsystem_manager" 
+            groups="mgmtsystem.group_mgmtsystem_manager" 
             sequence="50"/>
 
        <record model="ir.ui.view" id="mgmtsystem_system_tree">
@@ -62,7 +62,7 @@
         <menuitem id="menu_mgmtsystem_configuration_system" 
             name="Systems" 
             parent="menu_mgmtsystem_configuration" 
-            groups="base.group_mgmtsystem_manager"
+            groups="mgmtsystem.group_mgmtsystem_manager"
 	    action="action_system_form"
             sequence="60"/>
 
