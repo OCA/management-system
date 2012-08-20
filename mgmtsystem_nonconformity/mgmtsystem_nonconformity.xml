@@ -4,7 +4,7 @@
         <menuitem id="menu_mgmtsystem_configuration_nonconformities" 
             name="Nonconformities"
             parent="mgmtsystem.menu_mgmtsystem_configuration"
-            groups="group_mgmtsystem_manager" 
+            groups="mgmtsystem.group_mgmtsystem_manager" 
             sequence="10"/>
 
         <record id="view_mgmtsystem_nonconformity_tree" model="ir.ui.view">
@@ -121,7 +121,7 @@
             action="open_mgmtsystem_nonconformity_list" 
             parent="mgmtsystem.menu_mgmtsystem_main" 
             sequence="20" 
-            groups="group_mgmtsystem_manager,group_mgmtsystem_auditor,base.group_user"/>
+            groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
         <!-- Origin -->
         
@@ -176,7 +176,7 @@
             action="open_mgmtsystem_nonconformity_origin_list" 
             parent="menu_mgmtsystem_configuration_nonconformities" 
             sequence="20" 
-            groups="group_mgmtsystem_manager"/>
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Cause -->
         
@@ -231,7 +231,7 @@
             action="open_mgmtsystem_nonconformity_cause_list" 
             parent="menu_mgmtsystem_configuration_nonconformities"
             sequence="30" 
-            groups="group_mgmtsystem_manager"/>
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
     </data>
 </openerp>
