@@ -4,7 +4,7 @@
         <menuitem id="menu_mgmtsystem_configuration_hazards" 
             name="Hazards"
             parent="mgmtsystem.menu_mgmtsystem_configuration"
-            groups="group_mgmtsystem_manager" 
+            groups="mgmtsystem.group_mgmtsystem_manager" 
             sequence="10"/>
 
         <record id="view_mgmtsystem_hazard_tree" model="ir.ui.view">
@@ -107,7 +107,7 @@
             action="open_mgmtsystem_hazard_list" 
             parent="mgmtsystem.menu_mgmtsystem_manuals" 
             sequence="20" 
-            groups="group_mgmtsystem_manager,group_mgmtsystem_auditor,base.group_user"/>
+            groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
         <!-- Hazard Hazard -->
         
@@ -163,7 +163,7 @@
             action="open_mgmtsystem_hazard_hazard_list" 
             parent="menu_mgmtsystem_configuration_hazards" 
             sequence="20" 
-            groups="group_mgmtsystem_manager"/>
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Origin -->
         
@@ -219,7 +219,7 @@
             action="open_mgmtsystem_hazard_origin_list" 
             parent="menu_mgmtsystem_configuration_hazards" 
             sequence="20" 
-            groups="group_mgmtsystem_manager"/>
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Type -->
         
@@ -275,7 +275,7 @@
             action="open_mgmtsystem_hazard_type_list" 
             parent="menu_mgmtsystem_configuration_hazards" 
             sequence="20" 
-            groups="group_mgmtsystem_manager"/>
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Risk Computation -->
         
@@ -331,7 +331,7 @@
             action="open_mgmtsystem_hazard_risk_computation_list" 
             parent="menu_mgmtsystem_configuration_hazards" 
             sequence="20" 
-            groups="group_mgmtsystem_manager"/>
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- res.company -->
 
@@ -402,7 +402,7 @@
             action="open_mgmtsystem_hazard_risk_type_list" 
             parent="menu_mgmtsystem_configuration_hazards" 
             sequence="20" 
-            groups="group_mgmtsystem_manager"/>
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Hazard Probability -->
         
@@ -461,7 +461,7 @@
             action="open_mgmtsystem_hazard_probability_list" 
             parent="menu_mgmtsystem_configuration_hazards" 
             sequence="20" 
-            groups="group_mgmtsystem_manager"/>
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Hazard Severity -->
         
@@ -520,7 +520,7 @@
             action="open_mgmtsystem_hazard_severity_list" 
             parent="menu_mgmtsystem_configuration_hazards" 
             sequence="20" 
-            groups="group_mgmtsystem_manager"/>
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Hazard Usage -->
         
@@ -579,7 +579,7 @@
             action="open_mgmtsystem_hazard_usage_list" 
             parent="menu_mgmtsystem_configuration_hazards" 
             sequence="20" 
-            groups="group_mgmtsystem_manager"/>
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Control Measures  -->
         
