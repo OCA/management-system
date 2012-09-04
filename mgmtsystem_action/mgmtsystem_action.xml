@@ -24,7 +24,7 @@
                 <search string="Action">
                     <group>
                         <filter name="current" icon="terp-document-new" domain="[('state','in',('draft','open','pending'))]" string="Open" help="Open Actions"/>
-                        <filter icon="terp-camera_test" domain="[('state','in',('cancelled','closed'))]" string="Closed" help="Closed Actions"/>
+                        <filter icon="terp-camera_test" domain="[('state','in',('cancelled','done'))]" string="Closed" help="Closed Actions"/>
                         <separator orientation="vertical"/>
                         <field name="reference"/>
                         <field name="date" select='1'/>
@@ -117,12 +117,19 @@
                         		name="%(mail.action_email_compose_message_wizard)d"
                         		icon="terp-mail-message-new" type="action"/>
                             </page>
+                            <page string="Review" attrs="{'invisible': [('state', '!=', 'pending')]}">
+                                <field name="review" nolabel="1" colspan="4"/>
+                                <newline/>
+                                <field name="reviewer_id"/>
+                                <field name="review_date" readonly="1"/>
+                            </page>
                         </notebook>
                     </group>
                     <group col="8" colspan="4">
-                        <field name="state" select="1"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,pending,done"/>
                         <button name="case_open" string="Open" states="draft,pending" type="object" icon="gtk-go-forward"/>
-                        <button name="case_close" string="Done" states="open,draft,pending" type="object" icon="gtk-jump-to"/>
+                        <button name="case_pending" string="Submit to reviewer" states="open" type="object" icon="gtk-go-forward"/>
+                        <button name="case_close" string="Close" states="pending" type="object" icon="gtk-jump-to"/>
                     </group>
                 </form>
             </field>
