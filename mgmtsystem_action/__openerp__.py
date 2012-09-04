@@ -33,7 +33,7 @@
             * preventive actions
             * improvement opportunities.
     """,
-    "depends" : ['mgmtsystem','crm_claim'],
+    "depends" : ['mgmtsystem','audittrail','crm_claim'],
     "init_xml" : [],
     "update_xml" : [
         'security/ir.model.access.csv',
