@@ -19,7 +19,7 @@
                     <field name="description" attrs="{'readonly':[('state','=','c')]}"/>
                     <field name="responsible_user_id" attrs="{'readonly':[('state','=','c')]}"/>
                     <field name="author_user_id" attrs="{'readonly':[('state','=','c')]}"/>
-		    <field name="system_id"/>
+		    <field name="system_id" attrs="{'readonly':[('state','=','c')]}"/>
                 </tree>
             </field>
         </record>
@@ -67,7 +67,7 @@
                         <field name="responsible_user_id" attrs="{'readonly':[('state','=','c')]}"/>
                         <field name="manager_user_id" attrs="{'readonly':[('state','=','c')]}"/>
                         <field name="author_user_id" attrs="{'readonly':[('state','=','c')]}"/>
-			<field name="system_id"/>
+			<field name="system_id" attrs="{'readonly':[('state','=','c')]}"/>
                     </group>
                     <notebook colspan="4">
                         <page string="Inputs">
@@ -108,7 +108,7 @@
                     </notebook>
                     <group col="8" colspan="4">
                         <field name="state" widget="statusbar" statusbar_visible="d,p,o,c"/>
-                        <button name="button_cancel" string="Cancel" icon="gtk-cancel"/>
+                        <button name="button_cancel" string="Cancel" states="d,p,o" icon="gtk-cancel"/>
                         <button name="button_review" string="Send for Review" states="d" icon="gtk-jump-to"/>
                         <button name="button_open" string="Start/Open" states="p" icon="gtk-jump-to"/>
                         <button name="button_close" string="Close" states="o" icon="gtk-jump-to"/>
