@@ -92,16 +92,16 @@ class mgmtsystem_nonconformity(osv.osv):
         return super(mgmtsystem_nonconformity, self).create(cr, uid, vals, context)
 
 
-    def button_cancel(self, cr, uid, ids, context=None):
+    def wkf_cancel(self, cr, uid, ids, context=None):
         return self.write(cr, uid, ids, {'state': 'x'})
 
-    def button_review(self, cr, uid, ids, context=None):
+    def wkf_review(self, cr, uid, ids, context=None):
         return self.write(cr, uid, ids, {'state': 'p'})
 
-    def button_open(self, cr, uid, ids, context=None):
+    def wkf_open(self, cr, uid, ids, context=None):
         return self.write(cr, uid, ids, {'state': 'o'})
 
-    def button_close(self, cr, uid, ids, context=None):
+    def wkf_close(self, cr, uid, ids, context=None):
         return self.write(cr, uid, ids, {'state': 'c'})
 
 mgmtsystem_nonconformity()

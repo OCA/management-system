@@ -31,7 +31,9 @@
             <field name="arch" type="xml">
                 <search string="Nonconformity">
                     <group>
-                        <filter name="current" icon="terp-document-new" domain="[('state','=','o')]" string="Open" help="Open Nonconformities"/>
+                        <filter name="draft" icon="terp-document-new" domain="[('state','=','d')]" string="Draft" help="Draft/New nonconformities"/>
+                        <filter name="pending" icon="terp-gtk-media-pause" domain="[('state','=','p')]" string="Pending" help="Nonconformities pending review"/>
+                        <filter name="current" icon="terp-check" domain="[('state','=','o')]" string="Open" help="Open Nonconformities"/>
                         <filter icon="terp-camera_test" domain="[('state','=','c')]" string="Closed" help="Closed Nonconformities"/>
                         <separator orientation="vertical"/>
                         <field name="ref"/>
@@ -106,10 +108,10 @@
                     </notebook>
                     <group col="8" colspan="4">
                         <field name="state" widget="statusbar" statusbar_visible="d,p,o,c"/>
-                        <button name="button_cancel" string="Cancel" type="object" icon="gtk-cancel"/>
-                        <button name="button_review" string="Send for Review" states="d" type="object" icon="gtk-jump-to"/>
-                        <button name="button_open" string="Start/Open" states="p" type="object" icon="gtk-jump-to"/>
-                        <button name="button_close" string="Close" states="o" type="object" icon="gtk-jump-to"/>
+                        <button name="button_cancel" string="Cancel" icon="gtk-cancel"/>
+                        <button name="button_review" string="Send for Review" states="d" icon="gtk-jump-to"/>
+                        <button name="button_open" string="Start/Open" states="p" icon="gtk-jump-to"/>
+                        <button name="button_close" string="Close" states="o" icon="gtk-jump-to"/>
                     </group>
                 </form>
             </field>

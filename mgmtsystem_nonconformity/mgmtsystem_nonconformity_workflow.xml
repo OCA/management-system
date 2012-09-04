@@ -21,7 +21,8 @@
         <record model="workflow.activity" id="mgmtsystem_nonconformity_pending">
             <field name="name">Pending</field>
             <field name="wkf_id" ref="mgmtsystem_nonconformity_workflow"/>
-            <field name="kind">dummy</field>
+            <field name="kind">function</field>
+            <field name="action">wkf_review()</field>
             <field name="split_mode">XOR</field>
             <field name="join_mode">XOR</field>
         </record>
@@ -29,7 +30,8 @@
         <record model="workflow.activity" id="mgmtsystem_nonconformity_open">
             <field name="name">Started/Opened</field>
             <field name="wkf_id" ref="mgmtsystem_nonconformity_workflow"/>
-            <field name="kind">dummy</field>
+            <field name="kind">function</field>
+            <field name="action">wkf_open()</field>
             <field name="split_mode">XOR</field>
             <field name="join_mode">XOR</field>
         </record>
@@ -37,7 +39,8 @@
         <record model="workflow.activity" id="mgmtsystem_nonconformity_close">
             <field name="name">Closed</field>
             <field name="wkf_id" ref="mgmtsystem_nonconformity_workflow"/>
-            <field name="kind">dummy</field>
+            <field name="kind">function</field>
+            <field name="action">wkf_close()</field>
             <field name="flow_stop">True</field>
             <field name="split_mode">XOR</field>
             <field name="join_mode">XOR</field>
@@ -46,7 +49,8 @@
         <record model="workflow.activity" id="mgmtsystem_nonconformity_cancel">
             <field name="name">Cancelled</field>
             <field name="wkf_id" ref="mgmtsystem_nonconformity_workflow"/>
-            <field name="kind">dummy</field>
+            <field name="kind">function</field>
+            <field name="action">wkf_cancel()</field>
             <field name="flow_stop">True</field>
             <field name="split_mode">XOR</field>
             <field name="join_mode">XOR</field>
