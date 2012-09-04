@@ -33,14 +33,15 @@
         'mgmtsystem_action',
         'wiki_procedure',
     ],
-    "init_xml" : [],
-    "update_xml" : [
+    "init" : [],
+    "data" : [
         'security/ir.model.access.csv',
 	'mgmtsystem_nonconformity.xml',
+	'mgmtsystem_nonconformity_workflow.xml',
         'nonconformity_sequence.xml',
 	'board_mgmtsystem_nonconformity.xml',
     ],
-    "demo_xml" : [
+    "demo" : [
 	'demo_nonconformity.xml',
     ],
     "installable" : True,

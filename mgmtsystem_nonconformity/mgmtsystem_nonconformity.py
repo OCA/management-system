@@ -74,17 +74,13 @@ class mgmtsystem_nonconformity(osv.osv):
         'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause','mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
         'analysis': fields.text('Analysis'),
         'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action'),
-        'effectiveness_immediate': fields.text('Effectiveness of the immediate action'),
-        'corrective_action_id': fields.many2one('mgmtsystem.action', 'Corrective action'),
-        'effectiveness_corrective': fields.text('Effectiveness of the corrective action'),
-        'preventive_action_id': fields.many2one('mgmtsystem.action', 'Preventive action'),
-        'effectiveness_preventive': fields.text('Effectiveness of the preventive action'),
-        'state': fields.selection((('o','Open'),('c','Closed')), 'State', size=16, readonly=True),
+        'action_ids': fields.many2many('mgmtsystem.action', 'mgmtsystem_nonconformity_action_rel', 'nonconformity_id', 'action_id', 'Actions'),
+        'state': fields.selection((('d','Draft'),('p','Pending'),('o','Open'),('c','Closed'),('x','Cancelled')), 'State', size=16, readonly=True),
         'system_id': fields.many2one('mgmtsystem.system', 'System')
     }
     _defaults = {
         'date': lambda *a: time.strftime('%Y-%m-%d'),
-        'state': 'o',
+        'state': 'd',
         'author_user_id': lambda cr, uid, id, c={}: id,
         'ref': 'NEW',
     }
@@ -95,6 +91,15 @@ class mgmtsystem_nonconformity(osv.osv):
         })
         return super(mgmtsystem_nonconformity, self).create(cr, uid, vals, context)
 
+
+    def button_cancel(self, cr, uid, ids, context=None):
+        return self.write(cr, uid, ids, {'state': 'x'})
+
+    def button_review(self, cr, uid, ids, context=None):
+        return self.write(cr, uid, ids, {'state': 'p'})
+
+    def button_open(self, cr, uid, ids, context=None):
+        return self.write(cr, uid, ids, {'state': 'o'})
 
     def button_close(self, cr, uid, ids, context=None):
         return self.write(cr, uid, ids, {'state': 'c'})
