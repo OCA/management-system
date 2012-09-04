@@ -37,7 +37,10 @@ class mgmtsystem_action(osv.osv):
                                        'res_id',
                                        'Messages',
                                        domain=[('model','=',_name)]),
-        'system_id': fields.many2one('mgmtsystem.system', 'System')
+        'system_id': fields.many2one('mgmtsystem.system', 'System'),
+        'review': fields.text('Review'),
+        'reviewer_id': fields.many2one('res.users', 'Reviewer'),
+        'review_date': fields.datetime('Review date')
     }
 
     _defaults = {
