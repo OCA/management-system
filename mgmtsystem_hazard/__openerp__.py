@@ -32,6 +32,7 @@
     "depends" : [
         'mgmtsystem',
         'hr',
+        'audittrail',
     ],
     "init_xml" : [],
     "update_xml" : [
