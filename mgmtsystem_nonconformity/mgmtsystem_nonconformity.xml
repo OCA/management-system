@@ -39,13 +39,14 @@
                         <field name="ref"/>
                         <field name="date"/>
                         <field name="author_user_id"/>
+                        <field name="procedure_ids"/>
 			<field name="system_id"/>
                     </group>
                     <newline />
                     <group expand="0" string="Group By...">
                         <filter string="Author" icon="terp-personal" domain="[]" context="{'group_by':'author_user_id'}"/>
                         <separator orientation="vertical"/>
-                        <filter string="Procedure" icon="terp-personal+" domain="[]" context="{'group_by':'procedure_ids'}"/>
+                        <filter string="Partner" icon="terp-personal+" domain="[]" context="{'group_by':'partner_id'}"/>
                     </group>
                 </search>
             </field>
