@@ -1,4 +1,4 @@
-# French translation for openerp-mgmtsystem
+# Swedish translation for openerp-mgmtsystem
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the openerp-mgmtsystem package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
@@ -8,10 +8,9 @@ msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-07-25 18:15+0000\n"
-"PO-Revision-Date: 2012-09-09 04:50+0000\n"
-"Last-Translator: Maxime Chambreuil (http://www.savoirfairelinux.com) "
-"<maxime.chambreuil@savoirfairelinux.com>\n"
-"Language-Team: French <fr@li.org>\n"
+"PO-Revision-Date: 2012-12-03 13:32+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,88 +20,88 @@ msgstr ""
 #. module: mgmtsystem_review
 #: model:ir.module.module,shortdesc:mgmtsystem_review.module_meta_information
 msgid "Management System - Review"
-msgstr "Système de gestion - Revue de direction"
+msgstr "LedningsSystem - Granskning"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Review Report"
-msgstr "Rapport de la revue"
+msgstr "Granskningsrapport"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 msgid "Closed Reviews"
-msgstr "Revues archivées"
+msgstr "Stängda Granskning"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 #: report:mgmtsystem.review.report:0
 msgid "Changes affecting the management systems"
-msgstr "Changements affectant les systèmes de gestion"
+msgstr "Förändringar som påverkar ledningssystem"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Date:"
-msgstr "Date :"
+msgstr "Datum:"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Confidentiality: Direction Review"
-msgstr "Confidentialité : Revue de direction"
+msgstr "Sekretess: Riktning Granskning"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 #: field:mgmtsystem.review,user_ids:0
 msgid "Participants"
-msgstr "Participants"
+msgstr "Deltagare"
 
 #. module: mgmtsystem_review
 #: model:ir.actions.report.xml,name:mgmtsystem_review.mgmtsystem_review_report
 msgid "Print Report"
-msgstr "Imprimer le rapport"
+msgstr "Skriv ut rapport"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 #: selection:mgmtsystem.review,state:0
 msgid "Closed"
-msgstr "Fermée"
+msgstr "Stängd"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 #: field:mgmtsystem.review,policy:0
 msgid "Policy"
-msgstr "Politique"
+msgstr "Policy"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review.line,decision:0
 msgid "Decision"
-msgstr "Décision"
+msgstr "Beslut"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review.line,type:0
 msgid "Type"
-msgstr "Type"
+msgstr "Typ"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 #: field:mgmtsystem.review,conclusion:0
 #: report:mgmtsystem.review.report:0
 msgid "Conclusion"
-msgstr "Conclusion"
+msgstr "Slutsats"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Satisfaction Survey Answers"
-msgstr "Réponses au questionnaire de satisfaction"
+msgstr "Enkät Svar"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Comments:"
-msgstr "Commentaires :"
+msgstr "Kommentarer:"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Action:"
-msgstr "Action :"
+msgstr "Åtgärd"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
@@ -117,7 +116,7 @@ msgstr "("
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review.line,name:0
 msgid "Title"
-msgstr "Intitulé"
+msgstr "Titel"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
@@ -127,91 +126,91 @@ msgstr "-"
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Decision:"
-msgstr "Décision :"
+msgstr "Beslut:"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review,date:0
 msgid "Date"
-msgstr "Date"
+msgstr "Datum"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "State:"
-msgstr "État :"
+msgstr "Status:"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review.line,nonconformity_id:0
 msgid "Nonconformity"
-msgstr "Non-conformité"
+msgstr "Avvikelse"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Improvements:"
-msgstr "Améliorations :"
+msgstr "Förbättringar:"
 
 #. module: mgmtsystem_review
 #: selection:mgmtsystem.review.line,type:0
 msgid "Noncomformity"
-msgstr "Non-conformité"
+msgstr "Avvikelse"
 
 #. module: mgmtsystem_review
 #: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review
 #: view:mgmtsystem.review:0
 #: field:mgmtsystem.review.line,review_id:0
 msgid "Review"
-msgstr "Revue"
+msgstr "Granskning"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review,name:0
 msgid "Name"
-msgstr "Nom"
+msgstr "Namn"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 #: report:mgmtsystem.review.report:0
 msgid "Inputs"
-msgstr "Éléments d'entrée"
+msgstr "Ingångsvärde"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 #: field:mgmtsystem.review,line_ids:0
 msgid "Lines"
-msgstr "Lignes"
+msgstr "Rader"
 
 #. module: mgmtsystem_review
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_list
 #: model:ir.ui.menu,name:mgmtsystem_review.menu_open_review
 #: view:mgmtsystem.review:0
 msgid "Reviews"
-msgstr "Revues"
+msgstr "Recensioner"
 
 #. module: mgmtsystem_review
 #: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review_line
 #: view:mgmtsystem.review.line:0
 msgid "Review Line"
-msgstr "Ligne de revue"
+msgstr "Bedömning Rader"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review,state:0
 msgid "State"
-msgstr "État"
+msgstr "Status"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Policies"
-msgstr "Politiques"
+msgstr "Policy"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 #: field:mgmtsystem.review,response_ids:0
 msgid "Survey Answers"
-msgstr "Réponses au questionnaire"
+msgstr "Enkätsvar"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review.line,action_id:0
 #: selection:mgmtsystem.review.line,type:0
 msgid "Action"
-msgstr "Action"
+msgstr "Åtgärd"
 
 #. module: mgmtsystem_review
 #: model:ir.module.module,description:mgmtsystem_review.module_meta_information
@@ -222,53 +221,53 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"\tCe module vous permet de gérer les revues de direction\n"
-"       de vos systèmes de gestion.\n"
+"\tDenna modulen kan hantera granskningar av \n"
+" ert ledningssystem.\n"
 "    "
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review,changes:0
 msgid "Changes"
-msgstr "Changements"
+msgstr "Ändringar"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review,reference:0
 msgid "Reference"
-msgstr "Référence"
+msgstr "Referens"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Participants:"
-msgstr "Participants :"
+msgstr "Deltagare:"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Reference:"
-msgstr "Référence :"
+msgstr "Referens"
 
 #. module: mgmtsystem_review
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_line_list
 #: view:mgmtsystem.review.line:0
 msgid "Review Lines"
-msgstr "Lignes de revue"
+msgstr "Granskningsrader"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 msgid "Open Reviews"
-msgstr "Revues ouvertes"
+msgstr "Öppna Granskningar"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Expectations:"
-msgstr "Attentes :"
+msgstr "Förväntningar:"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 msgid "Close"
-msgstr "Archiver"
+msgstr "Stäng"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 #: selection:mgmtsystem.review,state:0
 msgid "Open"
-msgstr "Ouverte"
+msgstr "Öppna"
