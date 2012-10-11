@@ -19,6 +19,8 @@
 #
 ##############################################################################
 
+from tools.translate import _
+import netsvc as netsvc
 from osv import fields, osv
 import time
 
@@ -60,6 +62,7 @@ class mgmtsystem_nonconformity(osv.osv):
     _order = "date desc"
 
     _columns = {
+        #1. Description
         'id': fields.integer('ID', readonly=True),
         'ref': fields.char('Reference', size=64, required=True, readonly=True),
         'date': fields.date('Date', required=True),
@@ -71,12 +74,22 @@ class mgmtsystem_nonconformity(osv.osv):
         'origin_ids': fields.many2many('mgmtsystem.nonconformity.origin','mgmtsystem_nonconformity_origin_rel', 'nonconformity_id', 'origin_id', 'Origin', required=True),
         'procedure_ids': fields.many2many('wiki.wiki','mgmtsystem_nonconformity_procedure_rel', 'nonconformity_id', 'procedure_id', 'Procedure'),
         'description': fields.text('Description', required=True),
+        'state': fields.selection((('d','Draft'),('p','Pending'),('o','Open'),('c','Closed'),('x','Cancelled')), 'State', size=16, readonly=True),
+        'system_id': fields.many2one('mgmtsystem.system', 'System'),
+        #2. Root Cause Analysis
         'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause','mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
         'analysis': fields.text('Analysis'),
         'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action'),
+        'analysis_date': fields.date('Analysis Date', readonly=True),
+        'analysis_user_id': fields.many2one('res.users','Analysis by', readonly=True),
+        #3. Action Plan
         'action_ids': fields.many2many('mgmtsystem.action', 'mgmtsystem_nonconformity_action_rel', 'nonconformity_id', 'action_id', 'Actions'),
-        'state': fields.selection((('d','Draft'),('p','Pending'),('o','Open'),('c','Closed'),('x','Cancelled')), 'State', size=16, readonly=True),
-        'system_id': fields.many2one('mgmtsystem.system', 'System')
+        'actions_date': fields.date('Action Plan Date', readonly=True),
+        'actions_user_id': fields.many2one('res.users','Action Plan by', readonly=True),
+        #4. Effectiveness Evaluation
+        'evaluation_date': fields.date('Evaluation Date', readonly=True),
+        'evaluation_user_id': fields.many2one('res.users','Evaluation by', readonly=True),
+        'evaluation_comments': fields.text('Evaluation Comments'),
     }
     _defaults = {
         'date': lambda *a: time.strftime('%Y-%m-%d'),
@@ -92,6 +105,28 @@ class mgmtsystem_nonconformity(osv.osv):
         return super(mgmtsystem_nonconformity, self).create(cr, uid, vals, context)
 
 
+    def action_sign_analysis(self, cr, uid, ids, context=None):
+        if not self.browse(cr, uid, ids)[0].analysis:
+            raise osv.except_osv(_('Error !'), _('Please provide an analysis before approving.'))
+        vals = {'analysis_date': time.strftime('%Y-%m-%d'), 
+                'analysis_user_id': uid }
+        self.write(cr, uid, ids, vals, context=context)
+        return True
+
+    def action_sign_actions(self, cr, uid, ids, context=None):
+        if not self.browse(cr, uid, ids)[0].analysis_date:
+            raise osv.except_osv(_('Error !'), _('Analysis and causes identification must be performed before an action plan is approved.'))
+        vals = {'actions_date': time.strftime('%Y-%m-%d'), 
+                'actions_user_id': uid }
+        self.write(cr, uid, ids, vals, context=context)
+        return True
+
+    def action_sign_evaluation(self, cr, uid, ids, context=None):
+        vals = {'evaluation_date': time.strftime('%Y-%m-%d'), 
+                'evaluation_user_id': uid }
+        self.write(cr, uid, ids, vals, context=context)
+        return True
+
     def wkf_cancel(self, cr, uid, ids, context=None):
         return self.write(cr, uid, ids, {'state': 'x'})
 
@@ -99,9 +134,13 @@ class mgmtsystem_nonconformity(osv.osv):
         return self.write(cr, uid, ids, {'state': 'p'})
 
     def wkf_open(self, cr, uid, ids, context=None):
+        if not self.browse(cr, uid, ids)[0].actions_date:
+            raise osv.except_osv(_('Error !'), _('Action plan must be approved in order to be able to Open.'))
         return self.write(cr, uid, ids, {'state': 'o'})
 
     def wkf_close(self, cr, uid, ids, context=None):
+        if not self.browse(cr, uid, ids)[0].evaluation_date:
+            raise osv.except_osv(_('Error !'), _('Effectiveness evaluation must be performed in order be able to Close.'))
         return self.write(cr, uid, ids, {'state': 'c'})
 
     def _restart_workflow(self, cr, uid, ids, *args):
