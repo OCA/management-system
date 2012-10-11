@@ -25,7 +25,7 @@
     'description': """\
 Extends the nonconformity model so it can also represent other types of feedback, 
 such as complaints, measurements, suggestions, etc.""",
-    'depends' : ['mgmtsystem_audit', 'mgmtsystem_nonconformity'],
+    'depends' : ['mgmtsystem_audit', 'mgmtsystem_nonconformity','hr'],
     'data' : [
         'security/ir.model.access.csv',
 	    'mgmtsystem_feedback.xml',
