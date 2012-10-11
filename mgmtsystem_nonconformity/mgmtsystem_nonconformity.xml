@@ -20,6 +20,7 @@
                     <field name="responsible_user_id" attrs="{'readonly':[('state','=','c')]}"/>
                     <field name="author_user_id" attrs="{'readonly':[('state','=','c')]}"/>
 		            <field name="system_id" attrs="{'readonly':[('state','=','c')]}"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
@@ -83,10 +84,16 @@
                             <field name="origin_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','=','c')]}"/>
                         </page>
                         <page string="Procedures">
-                            <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}" domain="[('group_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
+                            <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}" 
+                                   domain="[('group_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
                         </page>
-                        <page string="Causes and Analysis">
+                        <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['d','x'])]}">
                             <separator string="Causes" colspan="4"/>
+		                    <field name="analysis_user_id"/>
+		                    <label/>
+		                    <button name="action_sign_analysis" string="Approve" icon="terp-camera_test"
+		                            type="object" states="p"/>
+		                    <field name="analysis_date"/>
                             <field name="cause_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','=','c')]}"/>
                             <newline/>
                             <separator string="Analysis" colspan="4"/>
@@ -95,8 +102,13 @@
                             <separator string="Immediate action" colspan="4"/>
                             <field name="immediate_action_id" nolabel="1" colspan="4" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','=','c')]}"/>
                         </page>
-                        <page string="Action Plan" attrs="{'invisible':[('state','=','d')]}">
+                        <page string="Action Plan" attrs="{'invisible':[('state','in',['d','x'])]}">
                             <group colspan="4">
+			                    <field name="actions_user_id"/>
+			                    <label/>
+			                    <button name="action_sign_actions" string="Approve" icon="terp-camera_test"
+			                            type="object" states="p"/>
+			                    <field name="actions_date"/>
                                 <field name="action_ids" nolabel="1" colspan="4" widget="one2many_list" attrs="{'readonly':[('state','=','c')]}">
                                     <tree string="Actions">
                                         <field name="reference"/>
@@ -109,6 +121,16 @@
                                     </tree>
                                 </field>
                             </group>
+                            <group colspan="4" attrs="{'invisible':[('state','in',['d','x','p'])]}">
+			                    <separator string="Effectiveness Evaluation" colspan="4" />
+			                    <field name="evaluation_user_id"/>
+			                    <label/>
+			                    <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test"
+			                            type="object" states="o" 
+			                            groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
+			                    <field name="evaluation_date"/>
+			                    <field name="evaluation_comments" colspan="4" attrs="{'readonly':[('state','=','c')]}"/>
+                            </group>
                         </page>
                     </notebook>
                     <group col="8" colspan="4">
@@ -116,7 +138,8 @@
                         <button name="button_cancel" string="Cancel" states="d,p,o" icon="gtk-cancel"/>
                         <button name="button_review" string="Send for Review" states="d,o" icon="gtk-goto-top"/>
                         <button name="button_open" string="Start/Open" states="p" icon="gtk-go-forward"/>
-                        <button name="button_close" string="Close" states="o" icon="terp-dialog-close"/>
+                        <button name="button_close" string="Close" states="o" icon="terp-dialog-close"
+                                groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
                         <button name="case_reset" string="Reset to New" states="c,x" type="object" icon="gtk-undo"/>
                     </group>
                 </form>
