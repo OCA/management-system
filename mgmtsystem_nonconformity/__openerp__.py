@@ -25,9 +25,9 @@
     "website" : "http://www.savoirfairelinux.com",
     "license" : "GPL-3",
     "category" : "Management System",
-    "description": """
-	This module enables you to manage the nonconformities of your management 
-        system : quality (ISO9001), environment (ISO14001) or security (ISO27001).	
+    "description": """\
+This module enables you to manage the nonconformities of your management 
+system : quality (ISO9001), environment (ISO14001) or security (ISO27001).	
     """,
     "depends" : [
         'mgmtsystem_action',

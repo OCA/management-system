@@ -30,7 +30,7 @@ class mgmtsystem_nonconformity_cause(osv.osv):
     _description = "Cause of the nonconformity of the management system"
     _columns = {
         'id': fields.integer('ID', readonly=True),
-        'name': fields.char('Cause', size=50, required=True),
+        'name': fields.char('Cause', size=50, required=True, translate=True),
         'description': fields.text('Description')
     }
 
@@ -44,7 +44,7 @@ class mgmtsystem_nonconformity_origin(osv.osv):
     _description = "Origin of nonconformity of the management system"
     _columns = {
         'id': fields.integer('ID', readonly=True),
-        'name': fields.char('Origin', size=50, required=True),
+        'name': fields.char('Origin', size=50, required=True, translate=True),
         'description': fields.text('Description')
     }
 
@@ -103,6 +103,17 @@ class mgmtsystem_nonconformity(osv.osv):
 
     def wkf_close(self, cr, uid, ids, context=None):
         return self.write(cr, uid, ids, {'state': 'c'})
+
+    def _restart_workflow(self, cr, uid, ids, *args):
+        wf_service = netsvc.LocalService("workflow")
+        for id in ids:
+            wf_service.trg_create(uid, self._name, id, cr)
+        return True
+
+    def case_reset(self, cr, uid, ids, *args):
+        """If model has a workflow, it's restarted."""
+        return self._restart_workflow(cr, uid, ids, *args)
+
 
 mgmtsystem_nonconformity()
 

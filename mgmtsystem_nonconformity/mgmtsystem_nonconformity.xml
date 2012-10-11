@@ -19,7 +19,7 @@
                     <field name="description" attrs="{'readonly':[('state','=','c')]}"/>
                     <field name="responsible_user_id" attrs="{'readonly':[('state','=','c')]}"/>
                     <field name="author_user_id" attrs="{'readonly':[('state','=','c')]}"/>
-		    <field name="system_id" attrs="{'readonly':[('state','=','c')]}"/>
+		            <field name="system_id" attrs="{'readonly':[('state','=','c')]}"/>
                 </tree>
             </field>
         </record>
@@ -39,8 +39,12 @@
                         <field name="ref"/>
                         <field name="date"/>
                         <field name="author_user_id"/>
+<<<<<<< 50119301cf1c89e7a2bf47886ee60ee6c3be771a
                         <field name="procedure_ids"/>
 			<field name="system_id"/>
+=======
+			            <field name="system_id"/>
+>>>>>>> ADD workflow reset option. ADD workflow transition from Open to Pending. CHG config tables are translatable. ADD pt translation.
                     </group>
                     <newline />
                     <group expand="0" string="Group By...">
@@ -68,7 +72,7 @@
                         <field name="responsible_user_id" attrs="{'readonly':[('state','=','c')]}"/>
                         <field name="manager_user_id" attrs="{'readonly':[('state','=','c')]}"/>
                         <field name="author_user_id" attrs="{'readonly':[('state','=','c')]}"/>
-			<field name="system_id" attrs="{'readonly':[('state','=','c')]}"/>
+			            <field name="system_id" attrs="{'readonly':[('state','=','c')]}"/>
                     </group>
                     <notebook colspan="4">
                         <page string="Inputs">
@@ -110,9 +114,10 @@
                     <group col="8" colspan="4">
                         <field name="state" widget="statusbar" statusbar_visible="d,p,o,c"/>
                         <button name="button_cancel" string="Cancel" states="d,p,o" icon="gtk-cancel"/>
-                        <button name="button_review" string="Send for Review" states="d" icon="gtk-jump-to"/>
-                        <button name="button_open" string="Start/Open" states="p" icon="gtk-jump-to"/>
-                        <button name="button_close" string="Close" states="o" icon="gtk-jump-to"/>
+                        <button name="button_review" string="Send for Review" states="d,o" icon="gtk-goto-top"/>
+                        <button name="button_open" string="Start/Open" states="p" icon="gtk-go-forward"/>
+                        <button name="button_close" string="Close" states="o" icon="terp-dialog-close"/>
+                        <button name="case_reset" string="Reset to New" states="c,x" type="object" icon="gtk-undo"/>
                     </group>
                 </form>
             </field>
@@ -125,7 +130,7 @@
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="view_mgmtsystem_nonconformity_tree"/>
             <field name="search_view_id" ref="view_mgmtsystem_nonconformity_filter"/>
-            <field name="context">{"search_default_current":1,"search_default_author_user_id":uid}</field>
+            <field name="context">{"search_default_pending":1,"search_default_current":1,"search_default_author_user_id":uid}</field>
         </record>
 
         <menuitem id="menu_open_nonconformity" 
