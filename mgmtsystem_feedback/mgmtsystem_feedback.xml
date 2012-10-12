@@ -16,7 +16,8 @@
                     <field name="categ_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                 </field>
                 <field name="responsible_user_id" position="before">
-                    <field name="department_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                    <field name="department_id" attrs="{'readonly':[('state','in',['c','x'])]}"
+                           on_change="onchange_department_id(department_id)" />
                 </field>
                 
                 <field name="system_id" position="after">
