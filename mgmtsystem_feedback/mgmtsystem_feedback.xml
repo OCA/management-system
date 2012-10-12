@@ -13,18 +13,18 @@
             <field name="inherit_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"/>
             <field name="arch" type="xml">
                 <field name="reference" position="after">
-                    <field name="categ_id" attrs="{'readonly':[('state','=','c')]}"/>
+                    <field name="categ_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                 </field>
                 <field name="responsible_user_id" position="before">
-                    <field name="department_id" attrs="{'readonly':[('state','=','c')]}"/>
+                    <field name="department_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                 </field>
                 
-                <field name="system_id" position="before">
-                    <field name="type_id" attrs="{'readonly':[('state','=','c')]}"/>
+                <field name="system_id" position="after">
+                    <field name="type_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                 </field>
 
-                <field name="analysis_date" position="after">
-                    <field name="severity_id" attrs="{'readonly':[('state','=','c')]}"/>
+                <field name="immediate_action_id" position="before">
+                    <field name="severity_id" colspan="4" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                 </field>
 
             </field>

@@ -80,16 +80,19 @@ class mgmtsystem_nonconformity(osv.osv):
         'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause','mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
         'analysis': fields.text('Analysis'),
         'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action'),
-        'analysis_date': fields.date('Analysis Date', readonly=True),
+        'analysis_date': fields.datetime('Analysis Date', readonly=True),
         'analysis_user_id': fields.many2one('res.users','Analysis by', readonly=True),
         #3. Action Plan
         'action_ids': fields.many2many('mgmtsystem.action', 'mgmtsystem_nonconformity_action_rel', 'nonconformity_id', 'action_id', 'Actions'),
-        'actions_date': fields.date('Action Plan Date', readonly=True),
+        'actions_date': fields.datetime('Action Plan Date', readonly=True),
         'actions_user_id': fields.many2one('res.users','Action Plan by', readonly=True),
-        #4. Effectiveness Evaluation
-        'evaluation_date': fields.date('Evaluation Date', readonly=True),
+        'action_comments': fields.text('Action Plan Comments',
+            help="Comments on the action plan."),
+#4. Effectiveness Evaluation
+        'evaluation_date': fields.datetime('Evaluation Date', readonly=True),
         'evaluation_user_id': fields.many2one('res.users','Evaluation by', readonly=True),
-        'evaluation_comments': fields.text('Evaluation Comments'),
+        'evaluation_comments': fields.text('Evaluation Comments',
+            help="Conclusions from the last effectiveness evaluation."),
     }
     _defaults = {
         'date': lambda *a: time.strftime('%Y-%m-%d'),
@@ -108,7 +111,7 @@ class mgmtsystem_nonconformity(osv.osv):
     def action_sign_analysis(self, cr, uid, ids, context=None):
         if not self.browse(cr, uid, ids)[0].analysis:
             raise osv.except_osv(_('Error !'), _('Please provide an analysis before approving.'))
-        vals = {'analysis_date': time.strftime('%Y-%m-%d'), 
+        vals = {'analysis_date': time.strftime('%Y-%m-%d %H:%M'), 
                 'analysis_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         return True
@@ -116,13 +119,13 @@ class mgmtsystem_nonconformity(osv.osv):
     def action_sign_actions(self, cr, uid, ids, context=None):
         if not self.browse(cr, uid, ids)[0].analysis_date:
             raise osv.except_osv(_('Error !'), _('Analysis and causes identification must be performed before an action plan is approved.'))
-        vals = {'actions_date': time.strftime('%Y-%m-%d'), 
+        vals = {'actions_date': time.strftime('%Y-%m-%d %H:%M'), 
                 'actions_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         return True
 
     def action_sign_evaluation(self, cr, uid, ids, context=None):
-        vals = {'evaluation_date': time.strftime('%Y-%m-%d'), 
+        vals = {'evaluation_date': time.strftime('%Y-%m-%d %H:%M'), 
                 'evaluation_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         return True
