@@ -47,24 +47,17 @@
             <field name="arch" type="xml">
                 <form string="Action">
                     <group colspan="4" col="4">
-                        <group colspan="1" col="2">
-                            <field name="name"/>
-                            <field name="user_id" string="Responsible"/>
-                        </group>
-                        <group colspan="1" col="2">
-                            <field name="date" string="Date"/>
-                            <field name="type_action" required="True"/>
-                        </group>
-                        <group colspan="1" col="2">
-                            <field name="date_deadline" string="Deadline"/>
-                            <field name="reference"/>
-                        </group>
-                        <separator colspan="4" string="Action Description"/>
-                        <field name="description" colspan="4" nolabel="1"/>
+                        <field name="name" colspan="4"/>
+                        <field name="type_action" required="True"/>
+                        <field name="reference"/>
+                        <field name="user_id" string="Responsible" required="1"/>
+                        <field name="date" string="Date"/>
+                        <field name="date_deadline" string="Deadline"/>
                     </group>
-                    <group colspan="4" col="4">
-
-                        <notebook>
+                    <notebook colspan="4">
+                            <page string="Description">
+                                <field name="description" colspan="4" nolabel="1"/>
+                            </page>
                             <page string="History" groups="base.group_extended">
                                 <group colspan="4">
                                     <field colspan="4" name="email_cc" string="Global CC" widget="char"/>
@@ -117,18 +110,11 @@
                         		name="%(mail.action_email_compose_message_wizard)d"
                         		icon="terp-mail-message-new" type="action"/>
                             </page>
-                            <page string="Review" attrs="{'invisible': [('state', '!=', 'pending')]}">
-                                <field name="review" nolabel="1" colspan="4"/>
-                                <newline/>
-                                <field name="reviewer_id"/>
-                                <field name="review_date" readonly="1"/>
-                            </page>
-                        </notebook>
-                    </group>
+                    </notebook>
                     <group col="8" colspan="4">
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,pending,done"/>
                         <button name="case_open" string="Open" states="draft,pending" type="object" icon="gtk-go-forward"/>
-                        <button name="case_pending" string="Submit to reviewer" states="open" type="object" icon="gtk-go-forward"/>
+                        <button name="case_pending" string="Pending" states="open" type="object" icon="gtk-go-forward"/>
                         <button name="case_close" string="Close" states="pending" type="object" icon="gtk-jump-to"/>
                     </group>
                 </form>

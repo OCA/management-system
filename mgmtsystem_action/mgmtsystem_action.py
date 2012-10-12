@@ -28,7 +28,7 @@ class mgmtsystem_action(osv.osv):
     _inherit = "crm.claim"
     _columns = {
         'reference': fields.char('Reference', size=64, required=True, readonly=True),
-	'type_action': fields.selection([('immediate','Immediate Action'),
+	    'type_action': fields.selection([('immediate','Immediate Action'),
                                          ('correction','Corrective Action'),
                                          ('prevention','Preventive Action'),
                                          ('improvement','Improvement Opportunity')],
@@ -38,9 +38,6 @@ class mgmtsystem_action(osv.osv):
                                        'Messages',
                                        domain=[('model','=',_name)]),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
-        'review': fields.text('Review'),
-        'reviewer_id': fields.many2one('res.users', 'Reviewer'),
-        'review_date': fields.datetime('Review date')
     }
 
     _defaults = {
