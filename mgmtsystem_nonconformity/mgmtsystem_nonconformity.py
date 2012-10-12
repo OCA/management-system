@@ -117,6 +117,7 @@ class mgmtsystem_nonconformity(osv.osv):
         vals = {'analysis_date': time.strftime('%Y-%m-%d %H:%M'), 
                 'analysis_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Analysis Approved'))
         return True
 
     def action_sign_actions(self, cr, uid, ids, context=None):
@@ -125,28 +126,34 @@ class mgmtsystem_nonconformity(osv.osv):
         vals = {'actions_date': time.strftime('%Y-%m-%d %H:%M'), 
                 'actions_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Action Plan Approved'))
         return True
 
     def action_sign_evaluation(self, cr, uid, ids, context=None):
         vals = {'evaluation_date': time.strftime('%Y-%m-%d %H:%M'), 
                 'evaluation_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Effectiveness Evaluation Approved'))
         return True
 
     def wkf_cancel(self, cr, uid, ids, context=None):
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Cancel'))
         return self.write(cr, uid, ids, {'state': 'x'})
 
     def wkf_review(self, cr, uid, ids, context=None):
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Pending'))
         return self.write(cr, uid, ids, {'state': 'p'})
 
     def wkf_open(self, cr, uid, ids, context=None):
         if not self.browse(cr, uid, ids)[0].actions_date:
             raise osv.except_osv(_('Error !'), _('Action plan must be approved in order to be able to Open.'))
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Open'))
         return self.write(cr, uid, ids, {'state': 'o'})
 
     def wkf_close(self, cr, uid, ids, context=None):
         if not self.browse(cr, uid, ids)[0].evaluation_date:
             raise osv.except_osv(_('Error !'), _('Effectiveness evaluation must be performed in order be able to Close.'))
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Close'))
         return self.write(cr, uid, ids, {'state': 'c'})
 
     def _restart_workflow(self, cr, uid, ids, *args):
@@ -157,7 +164,9 @@ class mgmtsystem_nonconformity(osv.osv):
 
     def case_reset(self, cr, uid, ids, *args):
         """If model has a workflow, it's restarted."""
-        return self._restart_workflow(cr, uid, ids, *args)
+        res = self._restart_workflow(cr, uid, ids, *args)
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Draft'))
+        return res
 
 mgmtsystem_nonconformity()
 
