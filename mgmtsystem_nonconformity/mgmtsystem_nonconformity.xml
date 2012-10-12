@@ -14,12 +14,12 @@
             <field name="arch" type="xml">
                 <tree string="Nonconformity">
                     <field name="ref"/>
-                    <field name="date" attrs="{'readonly':[('state','=','c')]}"/>
-                    <field name="partner_id" attrs="{'readonly':[('state','=','c')]}"/>
-                    <field name="description" attrs="{'readonly':[('state','=','c')]}"/>
-                    <field name="responsible_user_id" attrs="{'readonly':[('state','=','c')]}"/>
-                    <field name="author_user_id" attrs="{'readonly':[('state','=','c')]}"/>
-		            <field name="system_id" attrs="{'readonly':[('state','=','c')]}"/>
+                    <field name="date" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                    <field name="partner_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                    <field name="description" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                    <field name="responsible_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                    <field name="author_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+		            <field name="system_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                     <field name="state"/>
                 </tree>
             </field>
@@ -65,51 +65,62 @@
                 <form string="Nonconformity">
                     <group colspan="2" col="2">
                         <field name="ref"/>
-                        <field name="date" attrs="{'readonly':[('state','=','c')]}"/>
-                        <field name="partner_id" attrs="{'readonly':[('state','=','c')]}"/>
-                        <field name="reference" attrs="{'readonly':[('state','=','c')]}"/>
+                        <field name="date" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                        <field name="partner_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                        <field name="reference" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                     </group>
                     <group colspan="2" col="2">
-                        <field name="responsible_user_id" attrs="{'readonly':[('state','=','c')]}"/>
-                        <field name="manager_user_id" attrs="{'readonly':[('state','=','c')]}"/>
-                        <field name="author_user_id" attrs="{'readonly':[('state','=','c')]}"/>
-			            <field name="system_id" attrs="{'readonly':[('state','=','c')]}"/>
+                        <field name="responsible_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                        <field name="manager_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                        <field name="author_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+			            <field name="system_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                     </group>
                     <notebook colspan="4">
                         <page string="Inputs">
                             <separator string="Description" colspan="4"/>
-                            <field name="description" nolabel="1" colspan="4" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="description" nolabel="1" colspan="4" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                             <newline/>
                             <separator string="Origins" colspan="4"/>
-                            <field name="origin_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="origin_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                         </page>
                         <page string="Procedures">
-                            <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}" 
+                            <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','in',['c','x'])]}" 
                                    domain="[('group_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
                         </page>
+
                         <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['d','x'])]}">
+                            <separator string="Analysis" colspan="4"/>
+                            <field name="analysis" nolabel="1" colspan="4" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                            <newline/>
+
                             <separator string="Causes" colspan="4"/>
-		                    <field name="analysis_user_id"/>
+                            <field name="cause_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                            <newline/>
+
+                            <separator string="Analysis Confirmation" colspan="4"/>
+                            <field name="immediate_action_id" colspan="4" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                            <field name="analysis_user_id"/>
 		                    <label/>
 		                    <button name="action_sign_analysis" string="Approve" icon="terp-camera_test"
 		                            type="object" states="p"/>
 		                    <field name="analysis_date"/>
-                            <field name="cause_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','=','c')]}"/>
-                            <newline/>
-                            <separator string="Analysis" colspan="4"/>
-                            <field name="analysis" nolabel="1" colspan="4" attrs="{'readonly':[('state','=','c')]}"/>
-                            <newline/>
-                            <separator string="Immediate action" colspan="4"/>
-                            <field name="immediate_action_id" nolabel="1" colspan="4" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','=','c')]}"/>
+		                    <newline/>
                         </page>
-                        <page string="Action Plan" attrs="{'invisible':[('state','in',['d','x'])]}">
+
+                        <page string="Actions" attrs="{'invisible':[('state','in',['d','x'])]}">
                             <group colspan="4">
-			                    <field name="actions_user_id"/>
-			                    <label/>
-			                    <button name="action_sign_actions" string="Approve" icon="terp-camera_test"
-			                            type="object" states="p"/>
-			                    <field name="actions_date"/>
-                                <field name="action_ids" nolabel="1" colspan="4" widget="one2many_list" attrs="{'readonly':[('state','=','c')]}">
+                                <separator string="Action Plan" colspan="4" />
+                                <field name="action_comments" colspan="2" nolabel="1" 
+                                       attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                                <group colspan="2" col="2">
+                                    <field name="actions_user_id"/>
+                                    <field name="actions_date"/>
+                                    <label/>
+	                                <button name="action_sign_actions" string="Approve" icon="terp-camera_test"
+	                                        type="object" states="p"/>
+                                </group>
+                                
+                                <field name="action_ids" nolabel="1" colspan="4" widget="one2many_list" attrs="{'readonly':[('state','in',['c','x'])]}">
                                     <tree string="Actions">
                                         <field name="reference"/>
                                         <field name="name" string="Subject"/>
@@ -120,23 +131,27 @@
                                         <field name="state"/>
                                     </tree>
                                 </field>
+                                
                             </group>
+
                             <group colspan="4" attrs="{'invisible':[('state','in',['d','x','p'])]}">
 			                    <separator string="Effectiveness Evaluation" colspan="4" />
-			                    <field name="evaluation_user_id"/>
-			                    <label/>
-			                    <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test"
-			                            type="object" states="o" 
-			                            groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
-			                    <field name="evaluation_date"/>
-			                    <field name="evaluation_comments" colspan="4" attrs="{'readonly':[('state','=','c')]}"/>
+                                <field name="evaluation_comments" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                                <group colspan="2" col="2">
+				                    <field name="evaluation_user_id"/>
+	                                <field name="evaluation_date"/>
+                                    <label/>
+				                    <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test"
+				                            type="object" states="o" 
+				                            groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
+                                </group>
                             </group>
                         </page>
                     </notebook>
                     <group col="8" colspan="4">
                         <field name="state" widget="statusbar" statusbar_visible="d,p,o,c"/>
                         <button name="button_cancel" string="Cancel" states="d,p,o" icon="gtk-cancel"/>
-                        <button name="button_review" string="Send for Review" states="d,o" icon="gtk-goto-top"/>
+                        <button name="button_review" string="Send for Review" states="d,o" icon="gtk-go-up"/>
                         <button name="button_open" string="Start/Open" states="p" icon="gtk-go-forward"/>
                         <button name="button_close" string="Close" states="o" icon="terp-dialog-close"
                                 groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
