@@ -32,6 +32,7 @@ system : quality (ISO9001), environment (ISO14001) or security (ISO27001).
     "depends" : [
         'mgmtsystem_action',
         'wiki_procedure',
+        'crm', 
     ],
     "init" : [],
     "data" : [

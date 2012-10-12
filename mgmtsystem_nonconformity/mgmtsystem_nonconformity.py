@@ -59,6 +59,7 @@ class mgmtsystem_nonconformity(osv.osv):
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity of the management system"
     _rec_name = "description"
+    _inherit = ['mail.thread']
     _order = "date desc"
 
     _columns = {
@@ -76,6 +77,7 @@ class mgmtsystem_nonconformity(osv.osv):
         'description': fields.text('Description', required=True),
         'state': fields.selection((('d','Draft'),('p','Pending'),('o','Open'),('c','Closed'),('x','Cancelled')), 'State', size=16, readonly=True),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
+        'message_ids': fields.one2many('mail.message', 'res_id', 'Messages', domain=[('model','=',_name)]),
         #2. Root Cause Analysis
         'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause','mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
         'analysis': fields.text('Analysis'),
@@ -89,7 +91,7 @@ class mgmtsystem_nonconformity(osv.osv):
         'actions_user_id': fields.many2one('res.users','Action Plan by', readonly=True),
         'action_comments': fields.text('Action Plan Comments',
             help="Comments on the action plan."),
-#4. Effectiveness Evaluation
+        #4. Effectiveness Evaluation
         'evaluation_date': fields.datetime('Evaluation Date', readonly=True),
         'evaluation_user_id': fields.many2one('res.users','Evaluation by', readonly=True),
         'evaluation_comments': fields.text('Evaluation Comments',
