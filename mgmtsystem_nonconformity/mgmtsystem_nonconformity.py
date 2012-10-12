@@ -79,7 +79,8 @@ class mgmtsystem_nonconformity(osv.osv):
         #2. Root Cause Analysis
         'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause','mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
         'analysis': fields.text('Analysis'),
-        'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action'),
+        'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action',
+            domain="[('nonconformity_id','=',id)]"),
         'analysis_date': fields.datetime('Analysis Date', readonly=True),
         'analysis_user_id': fields.many2one('res.users','Analysis by', readonly=True),
         #3. Action Plan
@@ -156,7 +157,14 @@ class mgmtsystem_nonconformity(osv.osv):
         """If model has a workflow, it's restarted."""
         return self._restart_workflow(cr, uid, ids, *args)
 
-
 mgmtsystem_nonconformity()
+
+
+class mgmtsystem_action(osv.osv):
+    _inherit = "mgmtsystem.action"
+    _columns = {
+        'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity', 'mgmtsystem_nonconformity_action_rel', 'action_id', 'nonconformity_id', 
+                                              'Nonconformities', readonly=True),
+    }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

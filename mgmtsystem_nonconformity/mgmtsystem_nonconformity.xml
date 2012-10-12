@@ -126,8 +126,7 @@
                                         <field name="name" string="Subject"/>
                                         <field name="type_action"/>
                                         <field name="user_id"/>
-                                        <field name="reviewer_id"/>
-                                        <field name="review_date"/>
+                                        <field name="date_deadline"/>
                                         <field name="state"/>
                                     </tree>
                                 </field>
@@ -286,6 +285,21 @@
             parent="menu_mgmtsystem_configuration_nonconformities"
             sequence="30" 
             groups="mgmtsystem.group_mgmtsystem_manager"/>
+            
+        <!-- Actions related to Nonconformities  -->
+        <record id="view_mgmtsystem_action_nc_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.action.form</field>
+            <field name="model">mgmtsystem.action</field>
+            <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_form"/>
+            <field name="arch" type="xml">
+                <field name="description" position="replace">
+                    <separator string="Description" colspan="4"/>
+                    <field name="description" colspan="4" nolabel="1"/>
+                    <separator string="Related to" colspan="4"/>
+                    <field name="nonconformity_ids" nolabel="1" colspan="4"/>
+                </field>
+            </field>
+        </record>
 
     </data>
 </openerp>
