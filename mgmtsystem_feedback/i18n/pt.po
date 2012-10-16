@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.1-20120904-232007\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-10 16:18+0000\n"
-"PO-Revision-Date: 2012-10-10 16:18+0000\n"
+"POT-Creation-Date: 2012-10-16 16:32+0000\n"
+"PO-Revision-Date: 2012-10-16 16:32+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgstr "Data da avaliação"
 #. module: mgmtsystem_feedback
 #: model:mgmtsystem.feedback.severity,name:mgmtsystem_feedback.feedback_severity_inv
 msgid "Invalid"
-msgstr "Inválida"
+msgstr "Invalidada"
 
 #. module: mgmtsystem_feedback
 #: model:ir.model,name:mgmtsystem_feedback.model_mgmtsystem_nonconformity_origin
@@ -89,9 +89,9 @@ msgid "Action Plan Date"
 msgstr "Data do plano de ação"
 
 #. module: mgmtsystem_feedback
-#: view:mgmtsystem.nonconformity:0
-msgid "Effectiveness Evaluation"
-msgstr "Avaliação de eficácia"
+#: field:mgmtsystem.nonconformity,type_id:0
+msgid "Type"
+msgstr "Tipo"
 
 #. module: mgmtsystem_feedback
 #: model:mgmtsystem.feedback.severity,name:mgmtsystem_feedback.feedback_severity_min
@@ -122,14 +122,9 @@ msgid "Description"
 msgstr "Descrição"
 
 #. module: mgmtsystem_feedback
-#: field:mgmtsystem.nonconformity,type_id:0
-msgid "Type"
-msgstr "Tipo"
-
-#. module: mgmtsystem_feedback
 #: model:mgmtsystem.feedback.type,name:mgmtsystem_feedback.feedback_type_gp
 msgid "Good Practice"
-msgstr "Boa prática"
+msgstr "Boas práticas"
 
 #. module: mgmtsystem_feedback
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_feedback.nonconformity_origin_intaudit
@@ -178,14 +173,19 @@ msgid "Audit"
 msgstr "Auditoria"
 
 #. module: mgmtsystem_feedback
+#: help:mgmtsystem.nonconformity,evaluation_comments:0
+msgid "Conclusions from the last effectiveness evaluation."
+msgstr "Conclusões da última avaliação de eficácia."
+
+#. module: mgmtsystem_feedback
 #: model:mgmtsystem.feedback.type,name:mgmtsystem_feedback.feedback_type_ob
 msgid "Observation"
 msgstr "Observação"
 
 #. module: mgmtsystem_feedback
-#: view:mgmtsystem.nonconformity:0
-msgid "Sign Evaluation"
-msgstr "Assinar Avaliação"
+#: field:mgmtsystem.nonconformity,message_ids:0
+msgid "Messages"
+msgstr "Mensagens"
 
 #. module: mgmtsystem_feedback
 #: model:mgmtsystem.feedback.type,name:mgmtsystem_feedback.feedback_type_io
@@ -200,12 +200,7 @@ msgstr "Tipo de feedback"
 #. module: mgmtsystem_feedback
 #: model:ir.model,name:mgmtsystem_feedback.model_mgmtsystem_feedback_categ
 msgid "Feedback Category"
-msgstr "Categorias de feedback"
-
-#. module: mgmtsystem_feedback
-#: view:mgmtsystem.nonconformity:0
-msgid "Approve"
-msgstr "Aprovar"
+msgstr "Categoria de feedback"
 
 #. module: mgmtsystem_feedback
 #: view:mgmtsystem.feedback.categ:0
@@ -241,9 +236,4 @@ msgstr "Não conformidade do sistema de gestão"
 #: field:mgmtsystem.nonconformity,analysis_user_id:0
 msgid "Analysis by"
 msgstr "Análise por"
-
-#. module: mgmtsystem_feedback
-#: view:mgmtsystem.nonconformity:0
-msgid "Causes"
-msgstr "Causas"
 
