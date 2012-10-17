@@ -40,10 +40,10 @@
         'wiki_quality_manual',
         'mgmtsystem_manuals',
         'mgmtsystem_review',
-        'training_hr',
+#        'training_hr',
     ],
     "init_xml" : [],
-    "update_xml" : [],
+    "update_xml" : ['quality.xml'],
     "demo_xml" : [],
     "installable" : True,
     "certificate" : ''

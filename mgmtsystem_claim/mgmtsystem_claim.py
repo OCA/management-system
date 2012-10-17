@@ -28,7 +28,7 @@ class mgmtsystem_claim(osv.osv):
     _inherit = "crm.claim"
     _columns = {
         'reference': fields.char('Reference', size=64, required=True, readonly=True),
-        'message_ids': fields.one2many('mailgate.message', 'res_id', 'Messages', domain=[('model','=',_name)]),
+        'message_ids': fields.one2many('mail.message', 'res_id', 'Messages', domain=[('model','=',_name)]),
     }
 
     _defaults = {

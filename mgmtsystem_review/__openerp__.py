@@ -32,6 +32,7 @@
     "depends" : [
         'mgmtsystem_nonconformity',
         'mgmtsystem_survey',
+        'audittrail',
     ],
     "init_xml" : [
 	'review_sequence.xml',
