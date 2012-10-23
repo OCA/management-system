@@ -12,14 +12,10 @@
             <field name="model">mgmtsystem.nonconformity</field>
             <field name="inherit_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"/>
             <field name="arch" type="xml">
+
                 <field name="reference" position="after">
                     <field name="categ_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                 </field>
-                <field name="responsible_user_id" position="before">
-                    <field name="department_id" attrs="{'readonly':[('state','in',['c','x'])]}"
-                           on_change="onchange_department_id(department_id)" />
-                </field>
-                
                 <field name="system_id" position="after">
                     <field name="type_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                 </field>

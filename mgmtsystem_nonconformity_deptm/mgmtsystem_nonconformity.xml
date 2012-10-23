@@ -1,0 +1,19 @@
+<openerp>
+    <data>
+
+        <record id="view_mgmtsystem_feedback_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.feedback.form</field>
+            <field name="model">mgmtsystem.nonconformity</field>
+            <field name="inherit_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"/>
+            <field name="arch" type="xml">
+
+                <field name="responsible_user_id" position="before">
+                    <field name="department_id" attrs="{'readonly':[('state','in',['c','x'])]}"
+                           on_change="onchange_department_id(department_id)" />
+                </field>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>

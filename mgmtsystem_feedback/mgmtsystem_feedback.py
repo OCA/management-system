@@ -72,22 +72,10 @@ class mgmtsystem_nonconformity(osv.osv):
     _description = "Feedback and Nonconformities"
     _columns = {
         'categ_id': fields.many2one('mgmtsystem.feedback.categ', 'Category'),
-        'department_id': fields.many2one('hr.department', 'Department', required=True),
         'audit_ids': fields.many2many('mgmtsystem.audit','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_action_id','Related Audits'),
         'type_id': fields.many2one('mgmtsystem.feedback.type','Type'), 
         'severity_id': fields.many2one('mgmtsystem.feedback.severity', 'Severity'),
     }
-
-    def onchange_department_id(self, cr, uid, ids, new_id, context=None):
-        result = {}
-        if new_id:
-            deptm = self.pool.get('hr.department').browse(cr, uid, new_id, context=context)
-            if deptm.manager_id and deptm.manager_id.user_id:
-                result['responsible_user_id'] = deptm.manager_id.user_id.id
-            if deptm.parent_id and deptm.parent_id.manager_id and deptm.parent_id.manager_id.user_id:
-                result['manager_user_id'] = deptm.parent_id.manager_id.user_id.id
-        return {'value': result}
-
 mgmtsystem_nonconformity()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
