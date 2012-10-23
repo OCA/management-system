@@ -68,6 +68,7 @@
                         <field name="date" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                         <field name="partner_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                         <field name="reference" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                        <field name="categ_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                     </group>
                     <group colspan="2" col="2">
                         <field name="responsible_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
@@ -98,6 +99,7 @@
                             <newline/>
 
                             <separator string="Analysis Confirmation" colspan="4"/>
+                            <field name="severity_id" colspan="4" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                             <field name="immediate_action_id" colspan="4" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                             <field name="analysis_user_id"/>
 		                    <label/>
@@ -120,16 +122,8 @@
 	                                        type="object" states="p"/>
                                 </group>
                                 
-                                <field name="action_ids" nolabel="1" colspan="4" widget="one2many_list" attrs="{'readonly':[('state','in',['c','x'])]}">
-                                    <tree string="Actions">
-                                        <field name="reference"/>
-                                        <field name="name" string="Subject"/>
-                                        <field name="type_action"/>
-                                        <field name="user_id"/>
-                                        <field name="date_deadline"/>
-                                        <field name="state"/>
-                                    </tree>
-                                </field>
+                                <field name="action_ids" nolabel="1" colspan="4" 
+                                       attrs="{'readonly':[('state','in',['c','x'])]}"/>
                                 
                             </group>
 
@@ -309,20 +303,58 @@
             sequence="30" 
             groups="mgmtsystem.group_mgmtsystem_manager"/>
             
-        <!-- Actions related to Nonconformities  -->
-        <record id="view_mgmtsystem_action_nc_form" model="ir.ui.view">
-            <field name="name">mgmtsystem.action.form</field>
-            <field name="model">mgmtsystem.action</field>
-            <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_form"/>
+        <!-- Severity -->
+        <record id="view_mgmtsystem_nonconformity_severity_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.nonconformity.severity.form</field>
+            <field name="type">form</field>
+            <field name="model">mgmtsystem.nonconformity.severity</field>
             <field name="arch" type="xml">
-                <field name="description" position="replace">
-                    <separator string="Description" colspan="4"/>
-                    <field name="description" colspan="4" nolabel="1"/>
-                    <separator string="Related to" colspan="4"/>
-                    <field name="nonconformity_ids" nolabel="1" colspan="4"/>
-                </field>
+                <form string="Severity of Complaints and Nonconformities">
+                        <field name="name"/>
+                        <field name="sequence"/>
+                        <field name="description" colspan="2"/>
+                        <field name="active"/>
+                </form>
             </field>
         </record>
+
+        <record id="open_mgmtsystem_nonconformity_severity_list" model="ir.actions.act_window">
+            <field name="name">Severity</field>
+            <field name="res_model">mgmtsystem.nonconformity.severity</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_open_nonconformity_severity" 
+            action="open_mgmtsystem_nonconformity_severity_list" 
+            parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities" 
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
+            
+        <!-- Category -->
+        <record id="view_mgmtsystem_nonconformity_categ_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.nonconformity.categ.form</field>
+            <field name="type">form</field>
+            <field name="model">mgmtsystem.nonconformity.categ</field>
+            <field name="arch" type="xml">
+                <form string="Category of Nonconformities">
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="description" colspan="2"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_nonconformity_categ_list" model="ir.actions.act_window">
+            <field name="name">Category</field>
+            <field name="res_model">mgmtsystem.nonconformity.categ</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_open_nonconformity_categ" 
+            action="open_mgmtsystem_nonconformity_categ_list" 
+            parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities" 
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
     </data>
 </openerp>
