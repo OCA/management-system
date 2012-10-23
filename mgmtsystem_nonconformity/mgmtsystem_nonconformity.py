@@ -35,8 +35,8 @@ class mgmtsystem_nonconformity_cause(osv.osv):
         'name': fields.char('Cause', size=50, required=True, translate=True),
         'description': fields.text('Description')
     }
-
 mgmtsystem_nonconformity_cause()
+
 
 class mgmtsystem_nonconformity_origin(osv.osv):
     """
@@ -49,8 +49,39 @@ class mgmtsystem_nonconformity_origin(osv.osv):
         'name': fields.char('Origin', size=50, required=True, translate=True),
         'description': fields.text('Description')
     }
-
 mgmtsystem_nonconformity_origin()
+
+
+class mgmtsystem_nonconformity_categ(osv.osv):
+    """Nonconformity Category - specific area or topic regarded""" 
+    _name = "mgmtsystem.nonconformity.categ"
+    _description = "Nonconformity Category" 
+    _columns = {
+        'name': fields.char('Title', size=50, required=True, translate=True),
+        'description': fields.text('Description', translation=True),
+        'active': fields.boolean('Active?'),
+    }
+    _defaults = {
+        'active': True,
+    }
+mgmtsystem_nonconformity_categ()
+
+
+class mgmtsystem_nonconformity_severity(osv.osv):
+    """Nonconformity Severity - Critical, Major, Minor, Invalid, ..."""
+    _name = "mgmtsystem.nonconformity.severity"
+    _description = "Severity of Complaints and Nonconformities"
+    _columns = {
+        'name': fields.char('Title', size=50, required=True, translate=True),
+        'sequence': fields.integer('Sequence',),
+        'description': fields.text('Description', translation=True),
+        'active': fields.boolean('Active?'),
+    }
+    _defaults = {
+        'active': True,
+    }
+mgmtsystem_nonconformity_severity()
+
 
 class mgmtsystem_nonconformity(osv.osv):
     """
@@ -78,8 +109,11 @@ class mgmtsystem_nonconformity(osv.osv):
         'state': fields.selection((('d','Draft'),('p','Pending'),('o','Open'),('c','Closed'),('x','Cancelled')), 'State', size=16, readonly=True),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
         'message_ids': fields.one2many('mail.message', 'res_id', 'Messages', domain=[('model','=',_name)]),
+        'categ_id': fields.many2one('mgmtsystem.nonconformity.categ', 'Category'),
+        'audit_ids': fields.many2many('mgmtsystem.audit','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_action_id','Related Audits'),
         #2. Root Cause Analysis
         'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause','mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
+        'severity_id': fields.many2one('mgmtsystem.nonconformity.severity', 'Severity'),
         'analysis': fields.text('Analysis'),
         'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action',
             domain="[('nonconformity_id','=',id)]"),
