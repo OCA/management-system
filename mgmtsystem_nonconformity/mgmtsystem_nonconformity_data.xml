@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Severity: Critical, Major, Minor, Invalid, ... -->
+        <record id="nonconformity_severity_cri" model="mgmtsystem.nonconformity.severity">
+            <field name="name">Critical</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="nonconformity_severity_maj" model="mgmtsystem.nonconformity.severity">
+            <field name="name">Major</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="nonconformity_severity_min" model="mgmtsystem.nonconformity.severity">
+            <field name="name">Minor</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="nonconformity_severity_no" model="mgmtsystem.nonconformity.severity">
+            <field name="name">Unfounded</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="nonconformity_severity_na" model="mgmtsystem.nonconformity.severity">
+            <field name="name">Not applicable</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- Origins (default data, not demo!) -->
+        <record id="nonconformity_origin_complaint" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Complaint</field>
+        </record>
+        <record id="nonconformity_origin_intaudit" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Internal Audit</field>
+        </record>
+        <record id="nonconformity_origin_extaudit" model="mgmtsystem.nonconformity.origin">
+            <field name="name">External Audit</field>
+        </record>
+        <record id="nonconformity_origin_measure" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Analysis or measurement</field>
+        </record>
+        <record id="nonconformity_origin_review" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Management review</field>
+        </record>
+        <record id="nonconformity_origin_measure" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Other feedback</field>
+        </record>
+        
+    </data>
+</openerp>
