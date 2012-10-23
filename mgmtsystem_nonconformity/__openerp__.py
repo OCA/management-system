@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name" : "Management System - Nonconformity",
-    "version" : "0.1",
+    "version" : "0.2",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "GPL-3",
@@ -34,19 +34,18 @@ system : quality (ISO9001), environment (ISO14001) or security (ISO27001).
         'wiki_procedure',
         'crm', 
     ],
-    "init" : [],
     "data" : [
         'security/ir.model.access.csv',
-	'mgmtsystem_nonconformity.xml',
-	'mgmtsystem_nonconformity_workflow.xml',
+	    'mgmtsystem_nonconformity.xml',
+	    'mgmtsystem_nonconformity_workflow.xml',
         'nonconformity_sequence.xml',
-	'board_mgmtsystem_nonconformity.xml',
+	    'board_mgmtsystem_nonconformity.xml',
+        'mgmtsystem_nonconformity_data.xml',
     ],
     "demo" : [
-	'demo_nonconformity.xml',
+	    'demo_nonconformity.xml',
     ],
     "installable" : True,
-    "certificate" : ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
