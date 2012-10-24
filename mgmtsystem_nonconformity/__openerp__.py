@@ -32,18 +32,17 @@ system : quality (ISO9001), environment (ISO14001) or security (ISO27001).
     "depends" : [
         'mgmtsystem_action',
         'wiki_procedure',
-        'crm', 
     ],
     "data" : [
         'security/ir.model.access.csv',
-	    'mgmtsystem_nonconformity.xml',
-	    'mgmtsystem_nonconformity_workflow.xml',
+        'mgmtsystem_nonconformity.xml',
+        'mgmtsystem_nonconformity_workflow.xml',
         'nonconformity_sequence.xml',
-	    'board_mgmtsystem_nonconformity.xml',
+        'board_mgmtsystem_nonconformity.xml',
         'mgmtsystem_nonconformity_data.xml',
     ],
     "demo" : [
-	    'demo_nonconformity.xml',
+        'demo_nonconformity.xml',
     ],
     "installable" : True,
 }
