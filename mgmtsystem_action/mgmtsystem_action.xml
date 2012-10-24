@@ -8,10 +8,11 @@
             <field name="arch" type="xml">
                 <tree string="Action">
                     <field name="reference"/>
-                    <field name="name"/>
-                    <field name="description"/>
-                    <field name="user_id"/>
+                    <field name="name" string="Subject"/>
                     <field name="type_action"/>
+                    <field name="user_id"/>
+                    <field name="date_deadline"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
