@@ -91,7 +91,8 @@
 
                         <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['d','x'])]}">
                             <separator string="Analysis" colspan="4"/>
-                            <field name="analysis" nolabel="1" colspan="4" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                            <field name="analysis" nolabel="1" colspan="4" 
+                                   attrs="{'readonly':[('state','in',['c','x'])], 'required':[('state','in',['p','o','c'])]}"/>
                             <newline/>
 
                             <separator string="Causes" colspan="4"/>
