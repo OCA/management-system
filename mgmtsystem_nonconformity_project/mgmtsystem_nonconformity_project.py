@@ -47,13 +47,8 @@ class mgmtsystem_action(osv.osv):
         for o in self.browse(cr, uid, ids, context=context):
             r = (o.id, o.name)
             if o.action_type == 'p' and o.project_id:
-                #name = project_model.name_get(cr, uid, [o.id], context=context)
-                #print ' - ', name, o.project_id.name
-                #if name:
-                #    r = (o.id, name[1])
                 r = (o.id, o.project_id.name)
             res.append(r)
-        print res
         return res
     
     def _init_install(self, cr, uid):
