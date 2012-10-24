@@ -20,17 +20,48 @@
 ##############################################################################
 
 from osv import fields, osv
-from project.project import project
 
-class mgmtsystem_nonconformity_project(osv.osv):
-    _inherit = "mgmtsystem.nonconformity"
+class mgmtsystem_action(osv.osv):
+    _inherit = "mgmtsystem.action"
+
+    def _complete_name(self, cr, uid, ids, name, args, context=None):
+        res = dict()
+        for t in self.name_get(cr, uid, ids, context=context):
+            res[t[0]] = t[1]
+        return res
+    
     _columns = {
-        'corrective_type': fields.selection((('task','Task'), ('project','Project')),'Corrective Action Type'),
-        'corrective_project_id': fields.many2one('project.project', 'Corrective Project'),
-        'preventive_type': fields.selection((('task','Task'), ('project','Project')),'Preventive Action Type'),
-        'preventive_project_id': fields.many2one('project.project', 'Preventive Project'),
-    }
+        'action_type': fields.selection([('a','Action'), ('p','Project')]
+            , 'Action Type', required=True),
+        'project_id': fields.many2one('project.project', 'Project'),
+        'complete_name': fields.function(_complete_name, string='Complete Name', type='char', size=250),
+        #modified
+        'name': fields.char('Claim Subject', size=128, required=False),
+}
+    
+    def name_get(self, cr, uid, ids, context=None):
+        #return self._complete_name(cr, uid, ids, 'complete_name', context=context).items()
+        if not ids:
+            return list()
+        res = list()
+        project_model = self.pool.get('project.project')
+        for o in self.browse(cr, uid, ids, context=context):
+            r = (o.id, o.name)
+            if o.action_type == 'p' and o.project_id:
+                #name = project_model.name_get(cr, uid, [o.id], context=context)
+                #print ' - ', name, o.project_id.name
+                #if name:
+                #    r = (o.id, name[1])
+                r = (o.id, o.project_id.name)
+            res.append(r)
+        print res
+        return res
+    
+    def _init_install(self, cr, uid):
+        """Initialize current data in inherited modules."""
+        cr.execute("update mgmtsystem_action set action_type='a' where action_type is null")
+        return  True
 
-mgmtsystem_nonconformity_project()
+mgmtsystem_action()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
