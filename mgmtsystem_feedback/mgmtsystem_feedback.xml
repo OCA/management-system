@@ -14,7 +14,7 @@
             <field name="arch" type="xml">
 
                 <field name="system_id" position="after">
-                    <field name="type_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                    <field name="type_id" attrs="{'readonly':[('state','in',['c','x'])], 'required':[('state','in',['p','o','c'])]}"/>
                 </field>
 
             </field>
