@@ -32,7 +32,7 @@ class mgmtsystem_action(osv.osv):
                                          ('correction','Corrective Action'),
                                          ('prevention','Preventive Action'),
                                          ('improvement','Improvement Opportunity')],
-                                        'Action Type'),
+                                        'Response Type'),
         'message_ids': fields.one2many('mail.message',
                                        'res_id',
                                        'Messages',
