@@ -30,11 +30,37 @@ class mgmtsystem_nonconformity_cause(osv.osv):
     """
     _name = "mgmtsystem.nonconformity.cause"
     _description = "Cause of the nonconformity of the management system"
+    _order   = 'parent_id, sequence' 
+
+    def name_get(self, cr, uid, ids, context=None):
+        ids = ids or []
+        reads = self.read(cr, uid, ids, ['name','parent_id'], context=context)
+        res = []
+        for record in reads:
+            name = record['name']
+            if record['parent_id']:
+                name = record['parent_id'][1]+' / '+name
+            res.append((record['id'], name))
+        return res
+        
+    def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
+        res = self.name_get(cr, uid, ids, context=context)
+        return dict(res)
+
+    def _check_recursion(self, cr, uid, ids, context=None, parent=None):
+        return super(mgmtsystem_nonconformity_cause, self)._check_recursion(cr, uid, ids, context=context, parent=parent)
+    
     _columns = {
         'id': fields.integer('ID', readonly=True),
         'name': fields.char('Cause', size=50, required=True, translate=True),
-        'description': fields.text('Description')
+        'description': fields.text('Description'),
+        'sequence': fields.integer('Sequence', help="Defines the order to present items"),
+        'parent_id': fields.many2one('mgmtsystem.nonconformity.cause', 'Group'),
+        'ref_code': fields.char('Reference Code', size=20),
     }
+    _constraints = [
+        (_check_recursion, 'Error! Cannot create recursive cycle.', ['parent_id'])
+    ]
 mgmtsystem_nonconformity_cause()
 
 
@@ -51,20 +77,20 @@ class mgmtsystem_nonconformity_origin(osv.osv):
     }
 mgmtsystem_nonconformity_origin()
 
-
-class mgmtsystem_nonconformity_categ(osv.osv):
-    """Nonconformity Category - specific area or topic regarded""" 
-    _name = "mgmtsystem.nonconformity.categ"
-    _description = "Nonconformity Category" 
-    _columns = {
-        'name': fields.char('Title', size=50, required=True, translate=True),
-        'description': fields.text('Description', translation=True),
-        'active': fields.boolean('Active?'),
-    }
-    _defaults = {
-        'active': True,
-    }
-mgmtsystem_nonconformity_categ()
+#TODO: Remove.
+#class mgmtsystem_nonconformity_categ(osv.osv):
+#    """Nonconformity Category - specific area or topic regarded""" 
+#    _name = "mgmtsystem.nonconformity.categ"
+#    _description = "Nonconformity Category" 
+#    _columns = {
+#        'name': fields.char('Title', size=50, required=True, translate=True),
+#        'description': fields.text('Description', translation=True),
+#        'active': fields.boolean('Active?'),
+#    }
+#    _defaults = {
+#        'active': True,
+#    }
+#mgmtsystem_nonconformity_categ()
 
 
 class mgmtsystem_nonconformity_severity(osv.osv):
@@ -109,7 +135,7 @@ class mgmtsystem_nonconformity(osv.osv):
         'state': fields.selection((('d','Draft'),('p','Pending'),('o','Open'),('c','Closed'),('x','Cancelled')), 'State', size=16, readonly=True),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
         'message_ids': fields.one2many('mail.message', 'res_id', 'Messages', domain=[('model','=',_name)]),
-        'categ_id': fields.many2one('mgmtsystem.nonconformity.categ', 'Category'),
+#        'categ_id': fields.many2one('mgmtsystem.nonconformity.categ', 'Category'),
         'audit_ids': fields.many2many('mgmtsystem.audit','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_action_id','Related Audits'),
         #2. Root Cause Analysis
         'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause','mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),

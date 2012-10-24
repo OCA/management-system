@@ -68,7 +68,7 @@
                         <field name="date" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                         <field name="partner_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                         <field name="reference" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                        <field name="categ_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+<!--                    <field name="categ_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>   -->
                     </group>
                     <group colspan="2" col="2">
                         <field name="responsible_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
@@ -257,11 +257,11 @@
             <field name="model">mgmtsystem.nonconformity.cause</field>
             <field name="arch" type="xml">
                 <form string="Causes of nonconformity">
-                    <group colspan="4" col="6">
-                        <field name="name"/>
-                        <newline/>
-                        <field name="description"/>
-                    </group>
+	                <field name="name"/>
+	                <field name="sequence"/>
+                    <field name="parent_id"/>
+                    <field name="ref_code"/>
+	                <field name="description" colspan="4"/>
                 </form>
             </field>
         </record>
@@ -271,9 +271,11 @@
             <field name="model">mgmtsystem.nonconformity.cause</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="Causes">
+                <tree string="Causes" colors="blue:parent_id;">
+                    <field name="parent_id"/>
                     <field name="name"/>
                     <field name="description"/>
+                    <field name="sequence"/>
                 </tree>
             </field>
         </record>
@@ -332,6 +334,7 @@
             groups="mgmtsystem.group_mgmtsystem_manager"/>
             
         <!-- Category -->
+        <!-- TO REMOVE ? 
         <record id="view_mgmtsystem_nonconformity_categ_form" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.categ.form</field>
             <field name="type">form</field>
@@ -356,6 +359,6 @@
             action="open_mgmtsystem_nonconformity_categ_list" 
             parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities" 
             groups="mgmtsystem.group_mgmtsystem_manager"/>
-
+         -->
     </data>
 </openerp>
