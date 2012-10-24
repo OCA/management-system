@@ -7,9 +7,8 @@
             <field name="inherit_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"/>
             <field name="arch" type="xml">
 
-                <field name="responsible_user_id" position="before">
-                    <field name="department_id" attrs="{'readonly':[('state','in',['c','x'])]}"
-                           on_change="onchange_department_id(department_id)" />
+                <field name="partner_id" position="after">
+                    <field name="analytic_account_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                 </field>
 
             </field>
