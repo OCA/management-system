@@ -40,7 +40,6 @@ class mgmtsystem_action(osv.osv):
 }
     
     def name_get(self, cr, uid, ids, context=None):
-        #return self._complete_name(cr, uid, ids, 'complete_name', context=context).items()
         if not ids:
             return list()
         res = list()
