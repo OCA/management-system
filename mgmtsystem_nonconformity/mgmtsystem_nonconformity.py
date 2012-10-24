@@ -30,11 +30,38 @@ class mgmtsystem_nonconformity_cause(osv.osv):
     """
     _name = "mgmtsystem.nonconformity.cause"
     _description = "Cause of the nonconformity of the management system"
+    _order   = 'parent_id, sequence' 
+
+    def name_get(self, cr, uid, ids, context=None):
+        ids = ids or []
+        reads = self.read(cr, uid, ids, ['name','parent_id'], context=context)
+        res = []
+        for record in reads:
+            name = record['name']
+            if record['parent_id']:
+                name = record['parent_id'][1]+' / '+name
+            res.append((record['id'], name))
+        return res
+        
+    def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
+        res = self.name_get(cr, uid, ids, context=context)
+        return dict(res)
+
+    def _check_recursion(self, cr, uid, ids, context=None, parent=None):
+        return super(mgmtsystem_nonconformity_cause, self)._check_recursion(cr, uid, ids, context=context, parent=parent)
+
     _columns = {
         'id': fields.integer('ID', readonly=True),
         'name': fields.char('Cause', size=50, required=True, translate=True),
-        'description': fields.text('Description')
+        'description': fields.text('Description'),
+        'sequence': fields.integer('Sequence', help="Defines the order to present items"),
+        'parent_id': fields.many2one('mgmtsystem.nonconformity.cause', 'Group'),
+        'child_ids': fields.one2many('mgmtsystem.nonconformity.cause', 'parent_id', 'Child Causes'),
+        'ref_code': fields.char('Reference Code', size=20),
     }
+    _constraints = [
+        (_check_recursion, 'Error! Cannot create recursive cycle.', ['parent_id'])
+    ]
 mgmtsystem_nonconformity_cause()
 
 
@@ -44,27 +71,36 @@ class mgmtsystem_nonconformity_origin(osv.osv):
     """
     _name = "mgmtsystem.nonconformity.origin"
     _description = "Origin of nonconformity of the management system"
+    _order   = 'parent_id, sequence' 
+
+    def name_get(self, cr, uid, ids, context=None):
+        ids = ids or []
+        reads = self.read(cr, uid, ids, ['name','parent_id'], context=context)
+        res = []
+        for record in reads:
+            name = record['name']
+            if record['parent_id']:
+                name = record['parent_id'][1]+' / '+name
+            res.append((record['id'], name))
+        return res
+        
+    def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
+        res = self.name_get(cr, uid, ids, context=context)
+        return dict(res)
+
+    def _check_recursion(self, cr, uid, ids, context=None, parent=None):
+        return super(mgmtsystem_nonconformity_origin, self)._check_recursion(cr, uid, ids, context=context, parent=parent)
+
     _columns = {
         'id': fields.integer('ID', readonly=True),
         'name': fields.char('Origin', size=50, required=True, translate=True),
-        'description': fields.text('Description')
+        'description': fields.text('Description'),
+        'sequence': fields.integer('Sequence', help="Defines the order to present items"),
+        'parent_id': fields.many2one('mgmtsystem.nonconformity.origin', 'Group'),
+        'child_ids': fields.one2many('mgmtsystem.nonconformity.origin', 'parent_id', 'Childs'),
+        'ref_code': fields.char('Reference Code', size=20),
     }
 mgmtsystem_nonconformity_origin()
-
-
-class mgmtsystem_nonconformity_categ(osv.osv):
-    """Nonconformity Category - specific area or topic regarded""" 
-    _name = "mgmtsystem.nonconformity.categ"
-    _description = "Nonconformity Category" 
-    _columns = {
-        'name': fields.char('Title', size=50, required=True, translate=True),
-        'description': fields.text('Description', translation=True),
-        'active': fields.boolean('Active?'),
-    }
-    _defaults = {
-        'active': True,
-    }
-mgmtsystem_nonconformity_categ()
 
 
 class mgmtsystem_nonconformity_severity(osv.osv):
@@ -83,6 +119,16 @@ class mgmtsystem_nonconformity_severity(osv.osv):
 mgmtsystem_nonconformity_severity()
 
 
+_STATES = [
+    ('d', _('Draft')),
+    ('a', _('Analysis')),
+    ('p', _('Pending Approval')),
+    ('o', _('In Progress')),
+    ('c', _('Closed')),
+    ('x', _('Cancelled')),
+    ]
+_STATES_DICT =  dict(_STATES)
+
 class mgmtsystem_nonconformity(osv.osv):
     """
     Management System - Nonconformity 
@@ -92,6 +138,12 @@ class mgmtsystem_nonconformity(osv.osv):
     _rec_name = "description"
     _inherit = ['mail.thread']
     _order = "date desc"
+
+    def _state_name(self, cr, uid, ids, name, args, context=None):
+        res = dict()
+        for o in self.browse(cr, uid, ids, context=context):
+            res[o.id] = _STATES_DICT.get(o.state, o.state)
+        return res
 
     _columns = {
         #1. Description
@@ -106,11 +158,10 @@ class mgmtsystem_nonconformity(osv.osv):
         'origin_ids': fields.many2many('mgmtsystem.nonconformity.origin','mgmtsystem_nonconformity_origin_rel', 'nonconformity_id', 'origin_id', 'Origin', required=True),
         'procedure_ids': fields.many2many('wiki.wiki','mgmtsystem_nonconformity_procedure_rel', 'nonconformity_id', 'procedure_id', 'Procedure'),
         'description': fields.text('Description', required=True),
-        'state': fields.selection((('d','Draft'),('p','Pending'),('o','Open'),('c','Closed'),('x','Cancelled')), 'State', size=16, readonly=True),
+        'state': fields.selection(_STATES, 'State', readonly=True),
+        'state_name': fields.function(_state_name, string='State Description', type='char', size=40),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
         'message_ids': fields.one2many('mail.message', 'res_id', 'Messages', domain=[('model','=',_name)]),
-        'categ_id': fields.many2one('mgmtsystem.nonconformity.categ', 'Category'),
-        'audit_ids': fields.many2many('mgmtsystem.audit','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_action_id','Related Audits'),
         #2. Root Cause Analysis
         'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause','mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
         'severity_id': fields.many2one('mgmtsystem.nonconformity.severity', 'Severity'),
@@ -144,63 +195,97 @@ class mgmtsystem_nonconformity(osv.osv):
         })
         return super(mgmtsystem_nonconformity, self).create(cr, uid, vals, context)
 
+    def wkf_analysis(self, cr, uid, ids, context=None):
+        """Change state from draft to analysis"""
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Analysis'))
+        return self.write(cr, uid, ids, {'state': 'a', 'analysis_date': None, 'analysis_user_id': None})
 
     def action_sign_analysis(self, cr, uid, ids, context=None):
-        if not self.browse(cr, uid, ids)[0].analysis:
+        """Sign-off the analysis"""
+        o = self.browse(cr, uid, ids)[0]
+        if o.state != 'a':
+            raise osv.except_osv(_('Error !'), _('This action can only be done in the Analysis state.'))
+        if o.analysis_date:
+            raise osv.except_osv(_('Error !'), _('Analysis is already approved.'))
+        if not o.analysis:
             raise osv.except_osv(_('Error !'), _('Please provide an analysis before approving.'))
-        vals = {'analysis_date': time.strftime('%Y-%m-%d %H:%M'), 
-                'analysis_user_id': uid }
+        vals = {'analysis_date': time.strftime('%Y-%m-%d %H:%M'), 'analysis_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Analysis Approved'))
         return True
 
+    def wkf_review(self, cr, uid, ids, context=None):
+        """Change state from analysis to pending approval"""
+        o = self.browse(cr, uid, ids)[0]
+        if not o.analysis_date:
+            raise osv.except_osv(_('Error !'), _('Analysis must be performed before submiting to approval.'))
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Pending Approval'))
+        return self.write(cr, uid, ids, {'state': 'p', 'actions_date': None, 'actions_user_id': None})
+
     def action_sign_actions(self, cr, uid, ids, context=None):
+        """Sign-off the action plan"""
+        o = self.browse(cr, uid, ids)[0]
+        if o.state != 'p':
+            raise osv.except_osv(_('Error !'), _('This action can only be done in the Pending for Approval state.'))
+        if o.actions_date:
+            raise osv.except_osv(_('Error !'), _('Action plan is already approved.'))
         if not self.browse(cr, uid, ids)[0].analysis_date:
-            raise osv.except_osv(_('Error !'), _('Analysis and causes identification must be performed before an action plan is approved.'))
-        vals = {'actions_date': time.strftime('%Y-%m-%d %H:%M'), 
-                'actions_user_id': uid }
+            raise osv.except_osv(_('Error !'), _('Analysis approved before the review confirmation.'))
+        vals = {'actions_date': time.strftime('%Y-%m-%d %H:%M'), 'actions_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Action Plan Approved'))
         return True
 
+    def wkf_open(self, cr, uid, ids, context=None):
+        """Change state from pending approval to in progress, and Open  the related actions"""
+        o = self.browse(cr, uid, ids)[0]
+        if not o.actions_date:
+            raise osv.except_osv(_('Error !'), _('Action plan must be approved before opening.'))
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('In Progress'))
+        #Open related Actions
+        if o.immediate_action_id and o.immediate_action_id.state == 'draft':
+            o.immediate_action_id.case_open(cr, uid, [o.immediate_action_id.id])
+        for a in o.action_ids:
+            if a.state == 'draft':
+                a.case_open(cr, uid, [a.id])
+        return self.write(cr, uid, ids, {'state': 'o', 'evaluation_date': None, 'evaluation_user_id': None})
+
     def action_sign_evaluation(self, cr, uid, ids, context=None):
-        vals = {'evaluation_date': time.strftime('%Y-%m-%d %H:%M'), 
-                'evaluation_user_id': uid }
+        """Sign-off the effectiveness evaluation"""
+        o = self.browse(cr, uid, ids)[0]
+        if o.state != 'o':
+            raise osv.except_osv(_('Error !'), _('This action can only be done in the In Progress state.'))
+        vals = {'evaluation_date': time.strftime('%Y-%m-%d %H:%M'), 'evaluation_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Effectiveness Evaluation Approved'))
         return True
 
     def wkf_cancel(self, cr, uid, ids, context=None):
+        """Change state to cancel"""
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Cancel'))
         return self.write(cr, uid, ids, {'state': 'x'})
 
-    def wkf_review(self, cr, uid, ids, context=None):
-        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Pending'))
-        return self.write(cr, uid, ids, {'state': 'p'})
-
-    def wkf_open(self, cr, uid, ids, context=None):
-        if not self.browse(cr, uid, ids)[0].actions_date:
-            raise osv.except_osv(_('Error !'), _('Action plan must be approved in order to be able to Open.'))
-        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Open'))
-        return self.write(cr, uid, ids, {'state': 'o'})
-
     def wkf_close(self, cr, uid, ids, context=None):
-        if not self.browse(cr, uid, ids)[0].evaluation_date:
-            raise osv.except_osv(_('Error !'), _('Effectiveness evaluation must be performed in order be able to Close.'))
+        """Change state from in progress to closed"""
+        o = self.browse(cr, uid, ids)[0]
+        if not o.evaluation_date:
+            raise osv.except_osv(_('Error !'), _('Effectiveness evaluation must be performed before closing.'))
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Close'))
         return self.write(cr, uid, ids, {'state': 'c'})
 
-    def _restart_workflow(self, cr, uid, ids, *args):
+    def case_reset(self, cr, uid, ids, *args):
+        """Reset to Draft and restart the workflows"""
         wf_service = netsvc.LocalService("workflow")
         for id in ids:
-            wf_service.trg_create(uid, self._name, id, cr)
-        return True
-
-    def case_reset(self, cr, uid, ids, *args):
-        """If model has a workflow, it's restarted."""
-        res = self._restart_workflow(cr, uid, ids, *args)
+            res = wf_service.trg_create(uid, self._name, id, cr)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Draft'))
-        return res
+        vals = {
+            'state': 'd',
+            'analysis_date': None, 'analysis_user_id': None, 
+            'actions_date': None, 'actions_user_id': None,
+            'evaluation_date': None, 'evaluation_user_id': None,
+            }
+        return self.write(cr, uid, ids, vals)
 
 mgmtsystem_nonconformity()
 
