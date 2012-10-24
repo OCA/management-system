@@ -13,15 +13,8 @@
             <field name="inherit_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"/>
             <field name="arch" type="xml">
 
-                <field name="reference" position="after">
-                    <field name="categ_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                </field>
                 <field name="system_id" position="after">
                     <field name="type_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                </field>
-
-                <field name="immediate_action_id" position="before">
-                    <field name="severity_id" colspan="4" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                 </field>
 
             </field>
@@ -57,57 +50,5 @@
             parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities" 
             groups="mgmtsystem.group_mgmtsystem_manager"/>
             
-        <!-- Feedback Severity -->
-        <record id="view_mgmtsystem_feedback_severity_form" model="ir.ui.view">
-            <field name="name">mgmtsystem.feedback.severity.form</field>
-            <field name="type">form</field>
-            <field name="model">mgmtsystem.feedback.severity</field>
-            <field name="arch" type="xml">
-                <form string="Severity of Complaints and Nonconformities">
-                        <field name="name"/>
-                        <field name="sequence"/>
-                        <field name="description" colspan="2"/>
-                        <field name="active"/>
-                </form>
-            </field>
-        </record>
-
-        <record id="open_mgmtsystem_feedback_severity_list" model="ir.actions.act_window">
-            <field name="name">Severity</field>
-            <field name="res_model">mgmtsystem.feedback.severity</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <menuitem id="menu_open_feedback_severity" 
-            action="open_mgmtsystem_feedback_severity_list" 
-            parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities" 
-            groups="mgmtsystem.group_mgmtsystem_manager"/>
-            
-        <!-- Feedback Category -->
-        <record id="view_mgmtsystem_feedback_categ_form" model="ir.ui.view">
-            <field name="name">mgmtsystem.feedback.categ.form</field>
-            <field name="type">form</field>
-            <field name="model">mgmtsystem.feedback.categ</field>
-            <field name="arch" type="xml">
-                <form string="Category of Feedback and Nonconformities">
-                        <field name="name"/>
-                        <field name="active"/>
-                        <field name="description" colspan="2"/>
-                </form>
-            </field>
-        </record>
-
-        <record id="open_mgmtsystem_feedback_categ_list" model="ir.actions.act_window">
-            <field name="name">Category</field>
-            <field name="res_model">mgmtsystem.feedback.categ</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <menuitem id="menu_open_feedback_categ" 
-            action="open_mgmtsystem_feedback_categ_list" 
-            parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities" 
-            groups="mgmtsystem.group_mgmtsystem_manager"/>
     </data>
 </openerp>

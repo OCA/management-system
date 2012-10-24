@@ -35,46 +35,12 @@ class mgmtsystem_feedback_type(osv.osv):
 mgmtsystem_feedback_type()
 
 
-class mgmtsystem_feedback_categ(osv.osv):
-    """Nonconformity/Feedback Category - specific area or topic regarded""" 
-    _name = "mgmtsystem.feedback.categ"
-    _description = "Feedback Category" 
-    _columns = {
-        'name': fields.char('Title', size=50, required=True, translate=True),
-        'description': fields.text('Description', translation=True),
-        'active': fields.boolean('Active?'),
-    }
-    _defaults = {
-        'active': True,
-    }
-mgmtsystem_feedback_categ()
-
-
-class mgmtsystem_feedback_severity(osv.osv):
-    """Nonconformity/Feedback Severity - Critical, Major, Minor, Invalid, ..."""
-    _name = "mgmtsystem.feedback.severity"
-    _description = "Severity of Complaints and Nonconformities"
-    _columns = {
-        'name': fields.char('Title', size=50, required=True, translate=True),
-        'sequence': fields.integer('Sequence',),
-        'description': fields.text('Description', translation=True),
-        'active': fields.boolean('Active?'),
-    }
-    _defaults = {
-        'active': True,
-    }
-mgmtsystem_feedback_severity()
-
-
 class mgmtsystem_nonconformity(osv.osv):
     _name = "mgmtsystem.nonconformity"
     _inherit = "mgmtsystem.nonconformity"
     _description = "Feedback and Nonconformities"
     _columns = {
-        'categ_id': fields.many2one('mgmtsystem.feedback.categ', 'Category'),
-        'audit_ids': fields.many2many('mgmtsystem.audit','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_action_id','Related Audits'),
         'type_id': fields.many2one('mgmtsystem.feedback.type','Type'), 
-        'severity_id': fields.many2one('mgmtsystem.feedback.severity', 'Severity'),
     }
 mgmtsystem_nonconformity()
 
