@@ -107,12 +107,13 @@
                             <group colspan="2" col="2">
 	                            <field name="analysis_user_id"/>
 	                            <field name="analysis_date"/>
+	                            <label/>
 	                            <button name="action_sign_analysis" string="Approve" icon="terp-camera_test"
                                         type="object" states="a"/>
                             </group>
                         </page>
 
-                        <page string="Actions" attrs="{'invisible':[('state','in',['d','x'])]}">
+                        <page string="Actions" attrs="{'invisible':[('state','in',['d','a','x'])]}">
                             <separator string="Action Plan" colspan="4" />
                             <field name="action_ids" nolabel="1" colspan="4" 
                                    attrs="{'readonly':[('state','in',['c','x'])]}"/>
