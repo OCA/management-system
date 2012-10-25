@@ -46,6 +46,7 @@ system : quality (ISO9001), environment (ISO14001) or security (ISO27001).
 	    'demo_nonconformity.xml',
     ],
     "installable" : True,
+    "application" : True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

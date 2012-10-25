@@ -32,7 +32,7 @@ such as complaints, measurements, suggestions, etc.""",
         'mgmtsystem_feedback_data.xml',
     ],
     'installable' : True,
-    'application' : True,
+    'application' : False,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
