@@ -92,7 +92,7 @@
                         <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['d','x'])]}">
                             <separator string="Analysis" colspan="4"/>
                             <field name="analysis" nolabel="1" colspan="4" 
-                                   attrs="{'readonly':[('state','in',['c','x'])], 'required':[('state','in',['p','o','c'])]}"/>
+                                   attrs="{'readonly':[('state','in',['c','x'])], 'required':[('state','not in',['d','c','x'])]}"/>
                             <newline/>
 
                             <separator string="Causes" colspan="4"/>
@@ -100,47 +100,47 @@
                             <newline/>
 
                             <separator string="Analysis Confirmation" colspan="4"/>
-                            <field name="severity_id" colspan="4" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                            <field name="immediate_action_id" colspan="4" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                            <field name="analysis_user_id"/>
-		                    <label/>
-		                    <button name="action_sign_analysis" string="Approve" icon="terp-camera_test"
-		                            type="object" states="p"/>
-		                    <field name="analysis_date"/>
-		                    <newline/>
+                            <group colspan="2" col="2">
+	                            <field name="severity_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+	                            <field name="immediate_action_id" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                            </group>
+                            <group colspan="2" col="2">
+	                            <field name="analysis_user_id"/>
+	                            <field name="analysis_date"/>
+	                            <button name="action_sign_analysis" string="Approve" icon="terp-camera_test"
+                                        type="object" states="a"/>
+                            </group>
                         </page>
 
                         <page string="Actions" attrs="{'invisible':[('state','in',['d','x'])]}">
-                            <group colspan="4">
-                                <separator string="Action Plan" colspan="4" />
-                                <field name="action_comments" colspan="2" nolabel="1" 
-                                       attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                                <group colspan="2" col="2">
-                                    <field name="actions_user_id"/>
-                                    <field name="actions_date"/>
-                                    <label/>
-	                                <button name="action_sign_actions" string="Approve" icon="terp-camera_test"
-	                                        type="object" states="p"/>
-                                </group>
-                                
-                                <field name="action_ids" nolabel="1" colspan="4" 
-                                       attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                                
+                            <separator string="Action Plan" colspan="4" />
+                            <field name="action_ids" nolabel="1" colspan="4" 
+                                   attrs="{'readonly':[('state','in',['c','x'])]}"/>
+
+                            <group colspan="2" col="2">
+                                <separator string="Plan Review" colspan="2"/>
+	                            <field name="action_comments" colspan="2" nolabel="1" 
+	                                   attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                                <field name="actions_user_id"/>
+                                <field name="actions_date"/>
+                                <label/>
+                                <button name="action_sign_actions" string="Approve" icon="terp-camera_test"
+                                        type="object" states="p"/>
                             </group>
 
-                            <group colspan="4" attrs="{'invisible':[('state','in',['d','x','p'])]}">
-			                    <separator string="Effectiveness Evaluation" colspan="4" />
-                                <field name="evaluation_comments" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                                <group colspan="2" col="2">
-				                    <field name="evaluation_user_id"/>
-	                                <field name="evaluation_date"/>
-                                    <label/>
-				                    <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test"
-				                            type="object" states="o" 
-				                            groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
-                                </group>
+                            <group colspan="2" col="2" attrs="{'invisible':[('state','not in',['o','c'])]}">
+			                    <separator string="Effectiveness Review" colspan="2"/>
+                                <field name="evaluation_comments" nolabel="1" colspan="2" 
+                                       attrs="{'readonly':[('state','in',['c','x'])]}"/>
+			                    <field name="evaluation_user_id"/>
+                                <field name="evaluation_date"/>
+                                <label/>
+			                    <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test"
+			                            type="object" states="o" 
+			                            groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
                             </group>
                         </page>
+                        
                         <!-- Communication History -->
                         <page string="Communication &amp; History" groups="base.group_extended">
                             <field name="message_ids" colspan="4" nolabel="1" mode="tree" readonly="1">
@@ -166,9 +166,10 @@
 
                     </notebook>
                     <group col="8" colspan="4">
-                        <field name="state" widget="statusbar" statusbar_visible="d,p,o,c"/>
-                        <button name="button_cancel" string="Cancel" states="d,p,o" icon="gtk-cancel"/>
-                        <button name="button_review" string="Send for Review" states="d,o" icon="gtk-go-up"/>
+                        <field name="state" widget="statusbar" statusbar_visible="d,a,p,o,c"/>
+                        <button name="button_cancel" string="Cancel" states="d,a,p,o" icon="gtk-cancel"/>
+                        <button name="button_analysis" string="Send for Analysis" states="d,p" icon="terp-idea"/>
+                        <button name="button_review" string="Send for Review" states="a,o" icon="gtk-go-up"/>
                         <button name="button_open" string="Start/Open" states="p" icon="gtk-go-forward"/>
                         <button name="button_close" string="Close" states="o" icon="terp-dialog-close"
                                 groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
@@ -286,6 +287,7 @@
             <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Causes">
+                    <field name="parent_id"/>
                     <field name="name"/>
                 </search>
              </field>
@@ -293,10 +295,10 @@
 
         <record id="open_mgmtsystem_nonconformity_cause_list" model="ir.actions.act_window">
             <field name="name">Causes</field>
+            <field name="type">ir.actions.act_window</field>
             <field name="res_model">mgmtsystem.nonconformity.cause</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" eval="False"/>
+            <field name="view_id" eval="view_mgmtsystem_nonconformity_cause_tree"/>
             <field name="search_view_id" ref="view_mgmtsystem_nonconformity_cause_filter"/>
         </record>
 
@@ -305,7 +307,7 @@
             parent="menu_mgmtsystem_configuration_nonconformities"
             sequence="30" 
             groups="mgmtsystem.group_mgmtsystem_manager"/>
-            
+       
         <!-- Severity -->
         <record id="view_mgmtsystem_nonconformity_severity_form" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.severity.form</field>

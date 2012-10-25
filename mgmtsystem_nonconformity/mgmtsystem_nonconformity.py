@@ -56,6 +56,7 @@ class mgmtsystem_nonconformity_cause(osv.osv):
         'description': fields.text('Description'),
         'sequence': fields.integer('Sequence', help="Defines the order to present items"),
         'parent_id': fields.many2one('mgmtsystem.nonconformity.cause', 'Group'),
+        'child_ids': fields.one2many('mgmtsystem.nonconformity.cause', 'parent_id', 'Child Causes'),
         'ref_code': fields.char('Reference Code', size=20),
     }
     _constraints = [
@@ -132,7 +133,8 @@ class mgmtsystem_nonconformity(osv.osv):
         'origin_ids': fields.many2many('mgmtsystem.nonconformity.origin','mgmtsystem_nonconformity_origin_rel', 'nonconformity_id', 'origin_id', 'Origin', required=True),
         'procedure_ids': fields.many2many('wiki.wiki','mgmtsystem_nonconformity_procedure_rel', 'nonconformity_id', 'procedure_id', 'Procedure'),
         'description': fields.text('Description', required=True),
-        'state': fields.selection((('d','Draft'),('p','Pending'),('o','Open'),('c','Closed'),('x','Cancelled')), 'State', size=16, readonly=True),
+        'state': fields.selection([('d','Draft'),('a','Analysis'),('p','Pending Approval'),('o','In Progress'),('c','Closed'),('x','Cancelled')], 
+                                   'State', readonly=True),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
         'message_ids': fields.one2many('mail.message', 'res_id', 'Messages', domain=[('model','=',_name)]),
 #        'categ_id': fields.many2one('mgmtsystem.nonconformity.categ', 'Category'),
@@ -174,8 +176,7 @@ class mgmtsystem_nonconformity(osv.osv):
     def action_sign_analysis(self, cr, uid, ids, context=None):
         if not self.browse(cr, uid, ids)[0].analysis:
             raise osv.except_osv(_('Error !'), _('Please provide an analysis before approving.'))
-        vals = {'analysis_date': time.strftime('%Y-%m-%d %H:%M'), 
-                'analysis_user_id': uid }
+        vals = {'analysis_date': time.strftime('%Y-%m-%d %H:%M'), 'analysis_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Analysis Approved'))
         return True
@@ -183,15 +184,13 @@ class mgmtsystem_nonconformity(osv.osv):
     def action_sign_actions(self, cr, uid, ids, context=None):
         if not self.browse(cr, uid, ids)[0].analysis_date:
             raise osv.except_osv(_('Error !'), _('Analysis and causes identification must be performed before an action plan is approved.'))
-        vals = {'actions_date': time.strftime('%Y-%m-%d %H:%M'), 
-                'actions_user_id': uid }
+        vals = {'actions_date': time.strftime('%Y-%m-%d %H:%M'), 'actions_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Action Plan Approved'))
         return True
 
     def action_sign_evaluation(self, cr, uid, ids, context=None):
-        vals = {'evaluation_date': time.strftime('%Y-%m-%d %H:%M'), 
-                'evaluation_user_id': uid }
+        vals = {'evaluation_date': time.strftime('%Y-%m-%d %H:%M'), 'evaluation_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Effectiveness Evaluation Approved'))
         return True
@@ -200,14 +199,24 @@ class mgmtsystem_nonconformity(osv.osv):
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Cancel'))
         return self.write(cr, uid, ids, {'state': 'x'})
 
+    def wkf_analysis(self, cr, uid, ids, context=None):
+        vals = {'analysis_date': None, 'analysis_user_id': None }
+        self.write(cr, uid, ids, vals, context=context)
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Analysis'))
+        return self.write(cr, uid, ids, {'state': 'a'})
+
     def wkf_review(self, cr, uid, ids, context=None):
-        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Pending'))
+        vals = {'actions_date': None, 'actions_user_id': None }
+        self.write(cr, uid, ids, vals, context=context)
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Pending Approval'))
         return self.write(cr, uid, ids, {'state': 'p'})
 
     def wkf_open(self, cr, uid, ids, context=None):
         if not self.browse(cr, uid, ids)[0].actions_date:
             raise osv.except_osv(_('Error !'), _('Action plan must be approved in order to be able to Open.'))
-        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Open'))
+        vals = {'evaluation_date': None, 'evaluation_user_id': None }
+        self.write(cr, uid, ids, vals, context=context)
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('In Progress'))
         return self.write(cr, uid, ids, {'state': 'o'})
 
     def wkf_close(self, cr, uid, ids, context=None):

@@ -18,6 +18,15 @@
             <field name="join_mode">XOR</field>
         </record>
 
+        <record model="workflow.activity" id="mgmtsystem_nonconformity_analysis">
+            <field name="name">Analysis</field>
+            <field name="wkf_id" ref="mgmtsystem_nonconformity_workflow"/>
+            <field name="kind">function</field>
+            <field name="action">wkf_analysis()</field>
+            <field name="split_mode">XOR</field>
+            <field name="join_mode">XOR</field>
+        </record>
+
         <record model="workflow.activity" id="mgmtsystem_nonconformity_pending">
             <field name="name">Pending</field>
             <field name="wkf_id" ref="mgmtsystem_nonconformity_workflow"/>
@@ -57,8 +66,15 @@
         </record>
 
         <!-- Transitions -->
-        <record model="workflow.transition" id="mgmtsystem_nonconformity_draft_pending">
+        <record model="workflow.transition" id="mgmtsystem_nonconformity_draft_analysis">
             <field name="act_from" ref="mgmtsystem_nonconformity_draft"/>
+            <field name="act_to" ref="mgmtsystem_nonconformity_analysis"/>
+            <field name="signal">button_analysis</field>
+            <field name="condition">True</field>
+        </record>
+
+        <record model="workflow.transition" id="mgmtsystem_nonconformity_analysis_pending">
+            <field name="act_from" ref="mgmtsystem_nonconformity_analysis"/>
             <field name="act_to" ref="mgmtsystem_nonconformity_pending"/>
             <field name="signal">button_review</field>
             <field name="condition">True</field>
@@ -78,6 +94,13 @@
             <field name="condition">True</field>
         </record>
 
+        <record model="workflow.transition" id="mgmtsystem_nonconformity_pending_analysis">
+            <field name="act_from" ref="mgmtsystem_nonconformity_pending"/>
+            <field name="act_to" ref="mgmtsystem_nonconformity_analysis"/>
+            <field name="signal">button_analysis</field>
+            <field name="condition">True</field>
+        </record>
+
         <record model="workflow.transition" id="mgmtsystem_nonconformity_open_close">
             <field name="act_from" ref="mgmtsystem_nonconformity_open"/>
             <field name="act_to" ref="mgmtsystem_nonconformity_close"/>
@@ -87,6 +110,13 @@
 
         <record model="workflow.transition" id="mgmtsystem_nonconformity_draft_cancel">
             <field name="act_from" ref="mgmtsystem_nonconformity_draft"/>
+            <field name="act_to" ref="mgmtsystem_nonconformity_cancel"/>
+            <field name="signal">button_cancel</field>
+            <field name="condition">True</field>
+        </record>
+
+        <record model="workflow.transition" id="mgmtsystem_nonconformity_analysis_cancel">
+            <field name="act_from" ref="mgmtsystem_nonconformity_analysis"/>
             <field name="act_to" ref="mgmtsystem_nonconformity_cancel"/>
             <field name="signal">button_cancel</field>
             <field name="condition">True</field>
