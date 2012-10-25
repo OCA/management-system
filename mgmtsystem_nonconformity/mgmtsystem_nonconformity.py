@@ -172,16 +172,36 @@ class mgmtsystem_nonconformity(osv.osv):
         })
         return super(mgmtsystem_nonconformity, self).create(cr, uid, vals, context)
 
+    def wkf_analysis(self, cr, uid, ids, context=None):
+        """Change state from draft to analysis"""
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Analysis'))
+        return self.write(cr, uid, ids, {'state': 'a'})
 
     def action_sign_analysis(self, cr, uid, ids, context=None):
-        if not self.browse(cr, uid, ids)[0].analysis:
+        """Sign-off the analysis"""
+        o = self.browse(cr, uid, ids)[0]
+        if o.state != 'a':
+            raise osv.except_osv(_('Error !'), _('Must be in state Analysis.'))
+        if not o.analysis:
             raise osv.except_osv(_('Error !'), _('Please provide an analysis before approving.'))
         vals = {'analysis_date': time.strftime('%Y-%m-%d %H:%M'), 'analysis_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Analysis Approved'))
         return True
 
+    def wkf_review(self, cr, uid, ids, context=None):
+        """Change state from analysis to pending approval"""
+        o = self.browse(cr, uid, ids)[0]
+        if not o.analysis_date:
+            raise osv.except_osv(_('Error !'), _('Analysis and causes identification must be performed before it can be approved.'))
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Pending Approval'))
+        return self.write(cr, uid, ids, {'state': 'p'})
+
     def action_sign_actions(self, cr, uid, ids, context=None):
+        """Sign-off the action plan"""
+        o = self.browse(cr, uid, ids)[0]
+        if o.state != 'p':
+            raise osv.except_osv(_('Error !'), _('Must be in state Pending for Approval.'))
         if not self.browse(cr, uid, ids)[0].analysis_date:
             raise osv.except_osv(_('Error !'), _('Analysis and causes identification must be performed before an action plan is approved.'))
         vals = {'actions_date': time.strftime('%Y-%m-%d %H:%M'), 'actions_user_id': uid }
@@ -189,38 +209,33 @@ class mgmtsystem_nonconformity(osv.osv):
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Action Plan Approved'))
         return True
 
+    def wkf_open(self, cr, uid, ids, context=None):
+        """Change state from pending approval to in progress"""
+        o = self.browse(cr, uid, ids)[0]
+        if not o.actions_date:
+            raise osv.except_osv(_('Error !'), _('Action plan must be approved in order to be able to Open.'))
+        self.message_append(cr, uid, self.browse(cr, uid, ids), _('In Progress'))
+        return self.write(cr, uid, ids, {'state': 'o'})
+
     def action_sign_evaluation(self, cr, uid, ids, context=None):
+        """Sign-off the effectiveness evaluation"""
+        o = self.browse(cr, uid, ids)[0]
+        if o.state != 'o':
+            raise osv.except_osv(_('Error !'), _('Must be in state In Progress.'))
         vals = {'evaluation_date': time.strftime('%Y-%m-%d %H:%M'), 'evaluation_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Effectiveness Evaluation Approved'))
         return True
 
     def wkf_cancel(self, cr, uid, ids, context=None):
+        """Change state to cancel"""
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Cancel'))
         return self.write(cr, uid, ids, {'state': 'x'})
 
-    def wkf_analysis(self, cr, uid, ids, context=None):
-        vals = {'analysis_date': None, 'analysis_user_id': None }
-        self.write(cr, uid, ids, vals, context=context)
-        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Analysis'))
-        return self.write(cr, uid, ids, {'state': 'a'})
-
-    def wkf_review(self, cr, uid, ids, context=None):
-        vals = {'actions_date': None, 'actions_user_id': None }
-        self.write(cr, uid, ids, vals, context=context)
-        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Pending Approval'))
-        return self.write(cr, uid, ids, {'state': 'p'})
-
-    def wkf_open(self, cr, uid, ids, context=None):
-        if not self.browse(cr, uid, ids)[0].actions_date:
-            raise osv.except_osv(_('Error !'), _('Action plan must be approved in order to be able to Open.'))
-        vals = {'evaluation_date': None, 'evaluation_user_id': None }
-        self.write(cr, uid, ids, vals, context=context)
-        self.message_append(cr, uid, self.browse(cr, uid, ids), _('In Progress'))
-        return self.write(cr, uid, ids, {'state': 'o'})
-
     def wkf_close(self, cr, uid, ids, context=None):
-        if not self.browse(cr, uid, ids)[0].evaluation_date:
+        """Change state from in progress to closed"""
+        o = self.browse(cr, uid, ids)[0]
+        if not o.evaluation_date:
             raise osv.except_osv(_('Error !'), _('Effectiveness evaluation must be performed in order be able to Close.'))
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Close'))
         return self.write(cr, uid, ids, {'state': 'c'})
@@ -232,7 +247,7 @@ class mgmtsystem_nonconformity(osv.osv):
         return True
 
     def case_reset(self, cr, uid, ids, *args):
-        """If model has a workflow, it's restarted."""
+        """Restart, as long as the model has a workflow."""
         res = self._restart_workflow(cr, uid, ids, *args)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Draft'))
         return res
