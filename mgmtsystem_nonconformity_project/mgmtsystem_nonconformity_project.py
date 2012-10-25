@@ -37,7 +37,10 @@ class mgmtsystem_action(osv.osv):
         'complete_name': fields.function(_complete_name, string='Complete Name', type='char', size=250),
         #modified
         'name': fields.char('Claim Subject', size=128, required=False),
-}
+    }
+    _defaults = {
+        'action_type': 'a',
+    }
     
     def name_get(self, cr, uid, ids, context=None):
         if not ids:
