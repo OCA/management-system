@@ -25,24 +25,23 @@
     "website" : "http://www.savoirfairelinux.com",
     "license" : "GPL-3",
     "category" : "Management System",
-    "description": """
-	This module enables you to manage audits and verifications lists of 
-        your management system.
+    "description": """\
+This module enables you to manage audits and verifications lists of your management system.
     """,
     "depends" : ['mgmtsystem_nonconformity','audittrail'],
     "init_xml" : [
-	'audit_sequence.xml',
+        'audit_sequence.xml',
     ],
     "update_xml" : [
         'security/ir.model.access.csv',
-	'mgmtsystem_audit.xml',
-	'report/audit_report.xml',
-	'report/verification_list.xml',
-	'board_mgmtsystem_audit.xml',
+        'mgmtsystem_audit.xml',
+        'report/audit_report.xml',
+        'report/verification_list.xml',
+        'board_mgmtsystem_audit.xml',
         'wizard/copy_verification_lines.xml',
     ],
     "demo_xml" : [
-	'demo_audit.xml',
+        'demo_audit.xml',
     ],
     "installable" : True,
     "certificate" : ''
