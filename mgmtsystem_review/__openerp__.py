@@ -25,9 +25,8 @@
     "website" : "http://www.savoirfairelinux.com",
     "license" : "GPL-3",
     "category" : "Management System",
-    "description": """
-	This module enables you to manage reviews of 
-        your management system.
+    "description": """\
+This module enables you to manage reviews of your management system.
     """,
     "depends" : [
         'mgmtsystem_nonconformity',
@@ -35,12 +34,12 @@
         'audittrail',
     ],
     "init_xml" : [
-	'review_sequence.xml',
+        'review_sequence.xml',
     ],
     "update_xml" : [
         'security/ir.model.access.csv',
-	'mgmtsystem_review.xml',
-	'report/review_report.xml',
+        'mgmtsystem_review.xml',
+        'report/review_report.xml',
     ],
     "demo_xml" : [],
     "installable" : True,
