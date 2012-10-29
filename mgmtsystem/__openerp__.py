@@ -26,14 +26,14 @@
     "license" : "GPL-3",
     "category" : "Management System",
     "complexity" : "normal",
-    "description": """
-	This module is the basis of any management system applications:
-         * audit reports,
-         * nonconformities,
-         * immediate actions,
-         * preventive actions,
-         * corrective actions,
-         * improvement opportunities.	
+    "description": """\
+This module is the basis of any management system applications:
+     * audit reports,
+     * nonconformities,
+     * immediate actions,
+     * preventive actions,
+     * corrective actions,
+     * improvement opportunities.
     """,
     "depends" : ['base','board','wiki'],
     "init_xml" : [],
