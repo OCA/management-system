@@ -25,15 +25,15 @@
     "website" : "http://www.savoirfairelinux.com",
     "license" : "GPL-3",
     "category" : "Management System",
-    "description": """
-	This module enables you to manage your quality management system, including :
-            * Quality Manual
-            * Reviews
-            * Audits
-            * Procedures
-            * Nonconformities
-            * Actions
-            * Employee Training
+    "description": """\
+This module enables you to manage your quality management system, including :
+    * Quality Manual
+    * Reviews
+    * Audits
+    * Procedures
+    * Nonconformities
+    * Actions
+    * Employee Training
     """,
     "depends" : [
         'mgmtsystem_audit',
@@ -46,6 +46,7 @@
     "update_xml" : ['quality.xml'],
     "demo_xml" : [],
     "installable" : True,
+    "application" : True,
     "certificate" : ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
