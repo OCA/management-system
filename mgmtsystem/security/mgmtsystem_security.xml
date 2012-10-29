@@ -2,16 +2,28 @@
 <openerp>
 <data noupdate="1">
 
-    <record id="mgmtsystem.group_mgmtsystem_manager" model="res.groups">
-        <field name="name">Management System / Manager</field>
-    </record>
-
-    <record id="mgmtsystem.group_mgmtsystem_auditor" model="res.groups">
-        <field name="name">Management System / Auditor</field>
+    <record id="mgmtsystem.group_mgmtsystem_viewer" model="res.groups">
+        <field name="name">Management System / Viewer</field>
     </record>
 
     <record id="mgmtsystem.group_mgmtsystem_user" model="res.groups">
         <field name="name">Management System / User</field>
+    </record>
+
+    <record id="mgmtsystem.group_mgmtsystem_user_manager" model="res.groups">
+        <field name="name">Management System / User Manager</field>
+        <field name="comment">User with approval authority.</field>
+        <field name="implied_ids" eval="(4,ref('mgmtsystem.group_mgmtsystem_user'))"/>
+    </record>
+
+    <record id="mgmtsystem.group_mgmtsystem_manager" model="res.groups">
+        <field name="name">Management System / Manager</field>
+        <field name="implied_ids" eval="(4,ref('mgmtsystem.group_mgmtsystem_user'))"/>
+    </record>
+
+    <record id="mgmtsystem.group_mgmtsystem_auditor" model="res.groups">
+        <field name="name">Management System / Auditor</field>
+        <field name="implied_ids" eval="(4,ref('mgmtsystem.group_mgmtsystem_user'))"/>
     </record>
 
 </data>

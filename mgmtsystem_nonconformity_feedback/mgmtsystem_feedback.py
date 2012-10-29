@@ -35,12 +35,28 @@ class mgmtsystem_feedback_type(osv.osv):
 mgmtsystem_feedback_type()
 
 
+class mgmtsystem_nonconformity_categ(osv.osv):
+    """Feedback Source (also usable as a generic Category attribute)""" 
+    _name = "mgmtsystem.nonconformity.categ"
+    _description = "Feedback Source" 
+    _columns = {
+        'name': fields.char('Title', size=50, required=True, translate=True),
+        'description': fields.text('Description', translation=True),
+        'active': fields.boolean('Active?'),
+    }
+    _defaults = {
+        'active': True,
+    }
+mgmtsystem_nonconformity_categ()
+
+
 class mgmtsystem_nonconformity(osv.osv):
     _name = "mgmtsystem.nonconformity"
     _inherit = "mgmtsystem.nonconformity"
     _description = "Feedback and Nonconformities"
     _columns = {
         'type_id': fields.many2one('mgmtsystem.feedback.type','Type'), 
+        'categ_id': fields.many2one('mgmtsystem.nonconformity.categ', 'Feedback Source'),
     }
 mgmtsystem_nonconformity()
 

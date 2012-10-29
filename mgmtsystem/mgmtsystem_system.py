@@ -27,7 +27,7 @@ class mgmtsystem_system(osv.osv):
     description = 'System'
 
     _columns = {
-        'name': fields.char('System', size=30, required=True),
+        'name': fields.char('System', size=30, required=True, translate=True),
         'manual': fields.many2one('wiki.wiki', 'Manual'),
         'company_id': fields.many2one('res.company', 'Company')
         }

@@ -24,12 +24,26 @@
     'category' : 'Management System',
     'description': """\
 Extends the nonconformity model so it can also represent other types of feedback, 
-such as complaints, measurements, suggestions, etc.""",
-    'depends' : ['mgmtsystem_audit', 'mgmtsystem_nonconformity','hr'],
+such as complaints, measurements, suggestions, etc.
+
+- "Feedback Source": the source channel originating this Feedback record - an 
+audit, complaint, measurement, etc. In case this overlaps with the use of the 
+nonconformity "Origin" field, it can be adapted to be used as a generic Category
+attribute.
+
+- "Feedback Type": identifies if the feedback corresponds to a nonconformity, or
+to other type of record, such as "best practice", "suggestion", etc. It may be 
+qualified only later in the process. 
+
+""",
+    'depends' : ['mgmtsystem_nonconformity'],
     'data' : [
         'security/ir.model.access.csv',
 	    'mgmtsystem_feedback.xml',
         'mgmtsystem_feedback_data.xml',
+    ],
+    'demo' : [
+        'mgmtsystem_feedback_demo.xml',
     ],
     'installable' : True,
     'application' : False,

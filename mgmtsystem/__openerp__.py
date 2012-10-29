@@ -26,20 +26,20 @@
     "license" : "GPL-3",
     "category" : "Management System",
     "complexity" : "normal",
-    "description": """
-	This module is the basis of any management system applications:
-         * audit reports,
-         * nonconformities,
-         * immediate actions,
-         * preventive actions,
-         * corrective actions,
-         * improvement opportunities.	
+    "description": """\
+This module is the basis of any management system applications:
+     * audit reports,
+     * nonconformities,
+     * immediate actions,
+     * preventive actions,
+     * corrective actions,
+     * improvement opportunities.
     """,
     "depends" : ['base','board','audittrail', 'wiki'],
     "init_xml" : [],
     "update_xml" : [
         'security/mgmtsystem_security.xml',
-#        'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'mgmtsystem.xml',
         'board_mgmtsystem_view.xml',
     ],
