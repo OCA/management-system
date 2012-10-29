@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name" : "Management System - Action",
-    "version" : "0.1",
+    "version" : "0.2",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "GPL-3",
