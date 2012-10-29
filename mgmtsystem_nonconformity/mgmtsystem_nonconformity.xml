@@ -14,12 +14,13 @@
             <field name="arch" type="xml">
                 <tree string="Nonconformity">
                     <field name="ref"/>
-                    <field name="date" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                    <field name="partner_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                    <field name="description" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                    <field name="responsible_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                    <field name="author_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-		            <field name="system_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                    <field name="date"/>
+                    <field name="partner_id"/>
+                    <field name="description"/>
+                    <field name="author_user_id"/>
+                    <field name="responsible_user_id"/>
+                    <field name="manager_user_id"/>
+		            <field name="system_id"/>
                     <field name="state"/>
                 </tree>
             </field>
@@ -33,25 +34,43 @@
                 <search string="Nonconformity">
                     <group>
                         <filter name="draft" icon="terp-document-new" domain="[('state','=','d')]" string="Draft" help="Draft/New nonconformities"/>
-                        <filter name="pending" icon="terp-gtk-media-pause" domain="[('state','=','p')]" string="Pending" help="Nonconformities pending review"/>
-                        <filter name="current" icon="terp-check" domain="[('state','=','o')]" string="Open" help="Open Nonconformities"/>
+                        <filter name="pending" icon="terp-gtk-media-pause" domain="[('state','in',['a','p'])]" string="Analysis" help="Nonconformities pending review"/>
+                        <filter name="current" icon="terp-check" domain="[('state','=','o')]" string="In Progress" help="Open Nonconformities"/>
                         <filter icon="terp-camera_test" domain="[('state','=','c')]" string="Closed" help="Closed Nonconformities"/>
                         <separator orientation="vertical"/>
                         <field name="ref"/>
                         <field name="date"/>
+<<<<<<< 7596689a0e61a05164cbc7f72995f67775876eb8
                         <field name="author_user_id"/>
 <<<<<<< 50119301cf1c89e7a2bf47886ee60ee6c3be771a
                         <field name="procedure_ids"/>
 			<field name="system_id"/>
 =======
+=======
+                        <field name="author_user_id" string="User" 
+                               filter_domain="['|','|',('author_user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
+>>>>>>> CHG: marking Apps, security review, translation pt, finetuning
 			            <field name="system_id"/>
 >>>>>>> ADD workflow reset option. ADD workflow transition from Open to Pending. CHG config tables are translatable. ADD pt translation.
                     </group>
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Author" icon="terp-personal" domain="[]" context="{'group_by':'author_user_id'}"/>
+                        <filter string="Author" icon="gtk-edit" context="{'group_by':'author_user_id'}"/>
+                        <filter string="Responsible" icon="terp-personal" context="{'group_by':'responsible_user_id'}"/>
+                        <filter string="Manager" icon="terp-personal+" context="{'group_by':'manager_user_id'}"/>
                         <separator orientation="vertical"/>
+                        <filter string="System" icon="gtk-execute" context="{'group_by':'system_id'}"/>
+                        <filter string="Procedure" icon="terp-stock_symbol-selection" context="{'group_by':'procedure_ids'}"/>
+                        <!-- 
+                        <separator orientation="vertical"/>
+<<<<<<< 7596689a0e61a05164cbc7f72995f67775876eb8
                         <filter string="Partner" icon="terp-personal+" domain="[]" context="{'group_by':'partner_id'}"/>
+=======
+                        <filter string="Origin" icon="terp-idea" context="{'group_by':'origin_ids'}"/>
+                        <filter string="Cause" icon="gtk-convert" context="{'group_by':'cause_ids'}"/>
+                        <filter string="Severity" icon="stock_log" context="{'group_by':'severity_id'}"/>
+                         -->
+>>>>>>> CHG: marking Apps, security review, translation pt, finetuning
                     </group>
                 </search>
             </field>
@@ -64,11 +83,10 @@
             <field name="arch" type="xml">
                 <form string="Nonconformity">
                     <group colspan="2" col="2">
-                        <field name="ref"/>
+                        <field name="ref" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                         <field name="date" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                         <field name="partner_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                         <field name="reference" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-<!--                    <field name="categ_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>   -->
                     </group>
                     <group colspan="2" col="2">
                         <field name="responsible_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
@@ -109,7 +127,8 @@
 	                            <field name="analysis_date"/>
 	                            <label/>
 	                            <button name="action_sign_analysis" string="Approve" icon="terp-camera_test"
-                                        type="object" states="a"/>
+                                        type="object" states="a"
+                                        groups="mgmtsystem.group_mgmtsystem_user_manager"/>
                             </group>
                         </page>
 
@@ -126,7 +145,8 @@
                                 <field name="actions_date"/>
                                 <label/>
                                 <button name="action_sign_actions" string="Approve" icon="terp-camera_test"
-                                        type="object" states="p"/>
+                                        type="object" states="p"
+                                        groups="mgmtsystem.group_mgmtsystem_user_manager"/>
                             </group>
 
                             <group colspan="2" col="2" attrs="{'invisible':[('state','not in',['o','c'])]}">
@@ -138,7 +158,7 @@
                                 <label/>
 			                    <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test"
 			                            type="object" states="o" 
-			                            groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
+			                            groups="mgmtsystem.group_mgmtsystem_auditor"/>
                             </group>
                         </page>
                         
@@ -163,17 +183,19 @@
                             <button string="Send New Email"
                                 name="%(mail.action_email_compose_message_wizard)d"
                                 icon="terp-mail-message-new" type="action"/>
+
                         </page>
+
 
                     </notebook>
                     <group col="8" colspan="4">
                         <field name="state" widget="statusbar" statusbar_visible="d,a,p,o,c"/>
                         <button name="button_cancel" string="Cancel" states="d,a,p,o" icon="gtk-cancel"/>
                         <button name="button_analysis" string="Send for Analysis" states="d,p" icon="terp-idea"/>
-                        <button name="button_review" string="Send for Review" states="a,o" icon="gtk-go-up"/>
-                        <button name="button_open" string="Start/Open" states="p" icon="gtk-go-forward"/>
+                        <button name="button_review" string="Send for Review" states="a,o" icon="gtk-go-up" />
+                        <button name="button_open" string="Start/Open" states="p" icon="gtk-go-forward" />
                         <button name="button_close" string="Close" states="o" icon="terp-dialog-close"
-                                groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
+                                groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor" />
                         <button name="case_reset" string="Reset to New" states="c,x" type="object" icon="gtk-undo"/>
                     </group>
                 </form>
@@ -204,11 +226,11 @@
             <field name="model">mgmtsystem.nonconformity.origin</field>
             <field name="arch" type="xml">
                 <form string="Origins of nonconformity">
-                    <group colspan="4" col="6">
-                        <field name="name"/>
-                        <newline/>
-                        <field name="description"/>
-                    </group>
+                    <field name="name"/>
+                    <field name="sequence"/>
+                    <field name="parent_id"/>
+                    <field name="ref_code"/>
+                    <field name="description" colspan="4"/>
                 </form>
             </field>
         </record>
@@ -218,9 +240,11 @@
             <field name="model">mgmtsystem.nonconformity.origin</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="Origins">
+                <tree string="Origins" colors="blue:parent_id;">
+                    <field name="parent_id"/>
                     <field name="name"/>
                     <field name="description"/>
+                    <field name="sequence"/>
                 </tree>
             </field>
         </record>
@@ -231,6 +255,7 @@
             <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Origins">
+                    <field name="parent_id"/>
                     <field name="name"/>
                 </search>
              </field>
@@ -336,32 +361,20 @@
             parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities" 
             groups="mgmtsystem.group_mgmtsystem_manager"/>
             
-        <!-- Category -->
-        <!-- TO REMOVE ? 
-        <record id="view_mgmtsystem_nonconformity_categ_form" model="ir.ui.view">
-            <field name="name">mgmtsystem.nonconformity.categ.form</field>
-            <field name="type">form</field>
-            <field name="model">mgmtsystem.nonconformity.categ</field>
+        <!-- Actions: add link to NCs -->
+        <record id="view_mgmtsystem_action_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.action.form</field>
+            <field name="model">mgmtsystem.action</field>
+            <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_form"/>
             <field name="arch" type="xml">
-                <form string="Category of Nonconformities">
-                        <field name="name"/>
-                        <field name="active"/>
-                        <field name="description" colspan="2"/>
-                </form>
+
+                <field name="description" position="after">
+                    <separator string="Related Nonconformities" colspan="4"/>
+                    <field name="nonconformity_ids" colspan="4" nolabel="1"/>
+                </field>
+                
             </field>
         </record>
-
-        <record id="open_mgmtsystem_nonconformity_categ_list" model="ir.actions.act_window">
-            <field name="name">Category</field>
-            <field name="res_model">mgmtsystem.nonconformity.categ</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <menuitem id="menu_open_nonconformity_categ" 
-            action="open_mgmtsystem_nonconformity_categ_list" 
-            parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities" 
-            groups="mgmtsystem.group_mgmtsystem_manager"/>
-         -->
+         
     </data>
 </openerp>

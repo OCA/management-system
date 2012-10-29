@@ -49,7 +49,7 @@ class mgmtsystem_nonconformity_cause(osv.osv):
 
     def _check_recursion(self, cr, uid, ids, context=None, parent=None):
         return super(mgmtsystem_nonconformity_cause, self)._check_recursion(cr, uid, ids, context=context, parent=parent)
-    
+
     _columns = {
         'id': fields.integer('ID', readonly=True),
         'name': fields.char('Cause', size=50, required=True, translate=True),
@@ -71,27 +71,36 @@ class mgmtsystem_nonconformity_origin(osv.osv):
     """
     _name = "mgmtsystem.nonconformity.origin"
     _description = "Origin of nonconformity of the management system"
+    _order   = 'parent_id, sequence' 
+
+    def name_get(self, cr, uid, ids, context=None):
+        ids = ids or []
+        reads = self.read(cr, uid, ids, ['name','parent_id'], context=context)
+        res = []
+        for record in reads:
+            name = record['name']
+            if record['parent_id']:
+                name = record['parent_id'][1]+' / '+name
+            res.append((record['id'], name))
+        return res
+        
+    def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
+        res = self.name_get(cr, uid, ids, context=context)
+        return dict(res)
+
+    def _check_recursion(self, cr, uid, ids, context=None, parent=None):
+        return super(mgmtsystem_nonconformity_origin, self)._check_recursion(cr, uid, ids, context=context, parent=parent)
+
     _columns = {
         'id': fields.integer('ID', readonly=True),
         'name': fields.char('Origin', size=50, required=True, translate=True),
-        'description': fields.text('Description')
+        'description': fields.text('Description'),
+        'sequence': fields.integer('Sequence', help="Defines the order to present items"),
+        'parent_id': fields.many2one('mgmtsystem.nonconformity.origin', 'Group'),
+        'child_ids': fields.one2many('mgmtsystem.nonconformity.origin', 'parent_id', 'Childs'),
+        'ref_code': fields.char('Reference Code', size=20),
     }
 mgmtsystem_nonconformity_origin()
-
-#TODO: Remove.
-#class mgmtsystem_nonconformity_categ(osv.osv):
-#    """Nonconformity Category - specific area or topic regarded""" 
-#    _name = "mgmtsystem.nonconformity.categ"
-#    _description = "Nonconformity Category" 
-#    _columns = {
-#        'name': fields.char('Title', size=50, required=True, translate=True),
-#        'description': fields.text('Description', translation=True),
-#        'active': fields.boolean('Active?'),
-#    }
-#    _defaults = {
-#        'active': True,
-#    }
-#mgmtsystem_nonconformity_categ()
 
 
 class mgmtsystem_nonconformity_severity(osv.osv):
@@ -110,6 +119,16 @@ class mgmtsystem_nonconformity_severity(osv.osv):
 mgmtsystem_nonconformity_severity()
 
 
+_STATES = [
+    ('d', _('Draft')),
+    ('a', _('Analysis')),
+    ('p', _('Pending Approval')),
+    ('o', _('In Progress')),
+    ('c', _('Closed')),
+    ('x', _('Cancelled')),
+    ]
+_STATES_DICT =  dict(_STATES)
+
 class mgmtsystem_nonconformity(osv.osv):
     """
     Management System - Nonconformity 
@@ -119,6 +138,12 @@ class mgmtsystem_nonconformity(osv.osv):
     _rec_name = "description"
     _inherit = ['mail.thread']
     _order = "date desc"
+
+    def _state_name(self, cr, uid, ids, name, args, context=None):
+        res = dict()
+        for o in self.browse(cr, uid, ids, context=context):
+            res[o.id] = _STATES_DICT.get(o.state, o.state)
+        return res
 
     _columns = {
         #1. Description
@@ -133,12 +158,10 @@ class mgmtsystem_nonconformity(osv.osv):
         'origin_ids': fields.many2many('mgmtsystem.nonconformity.origin','mgmtsystem_nonconformity_origin_rel', 'nonconformity_id', 'origin_id', 'Origin', required=True),
         'procedure_ids': fields.many2many('wiki.wiki','mgmtsystem_nonconformity_procedure_rel', 'nonconformity_id', 'procedure_id', 'Procedure'),
         'description': fields.text('Description', required=True),
-        'state': fields.selection([('d','Draft'),('a','Analysis'),('p','Pending Approval'),('o','In Progress'),('c','Closed'),('x','Cancelled')], 
-                                   'State', readonly=True),
+        'state': fields.selection(_STATES, 'State', readonly=True),
+        'state_name': fields.function(_state_name, string='State Description', type='char', size=40),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
         'message_ids': fields.one2many('mail.message', 'res_id', 'Messages', domain=[('model','=',_name)]),
-#        'categ_id': fields.many2one('mgmtsystem.nonconformity.categ', 'Category'),
-        'audit_ids': fields.many2many('mgmtsystem.audit','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_action_id','Related Audits'),
         #2. Root Cause Analysis
         'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause','mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
         'severity_id': fields.many2one('mgmtsystem.nonconformity.severity', 'Severity'),
@@ -182,6 +205,8 @@ class mgmtsystem_nonconformity(osv.osv):
         o = self.browse(cr, uid, ids)[0]
         if o.state != 'a':
             raise osv.except_osv(_('Error !'), _('This action can only be done in the Analysis state.'))
+        if o.analysis_date:
+            raise osv.except_osv(_('Error !'), _('Analysis is already approved.'))
         if not o.analysis:
             raise osv.except_osv(_('Error !'), _('Please provide an analysis before approving.'))
         vals = {'analysis_date': time.strftime('%Y-%m-%d %H:%M'), 'analysis_user_id': uid }
@@ -202,6 +227,8 @@ class mgmtsystem_nonconformity(osv.osv):
         o = self.browse(cr, uid, ids)[0]
         if o.state != 'p':
             raise osv.except_osv(_('Error !'), _('This action can only be done in the Pending for Approval state.'))
+        if o.actions_date:
+            raise osv.except_osv(_('Error !'), _('Action plan is already approved.'))
         if not self.browse(cr, uid, ids)[0].analysis_date:
             raise osv.except_osv(_('Error !'), _('Analysis approved before the review confirmation.'))
         vals = {'actions_date': time.strftime('%Y-%m-%d %H:%M'), 'actions_user_id': uid }
@@ -216,10 +243,11 @@ class mgmtsystem_nonconformity(osv.osv):
             raise osv.except_osv(_('Error !'), _('Action plan must be approved before opening.'))
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('In Progress'))
         #Open related Actions
-        if o.immediate_action_id:
+        if o.immediate_action_id and o.immediate_action_id.state == 'draft':
             o.immediate_action_id.case_open(cr, uid, [o.immediate_action_id.id])
         for a in o.action_ids:
-            a.case_open(cr, uid, [a.id])
+            if a.state == 'draft':
+                a.case_open(cr, uid, [a.id])
         return self.write(cr, uid, ids, {'state': 'o', 'evaluation_date': None, 'evaluation_user_id': None})
 
     def action_sign_evaluation(self, cr, uid, ids, context=None):
