@@ -76,4 +76,14 @@ class mgmtsystem_verification_line(osv.osv):
 
 mgmtsystem_verification_line()
 
+
+class mgmtsystem_nonconformity(osv.osv):
+    _name = "mgmtsystem.nonconformity"
+    _inherit = "mgmtsystem.nonconformity"
+    _columns = {
+        'audit_ids': fields.many2many('mgmtsystem.audit','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_action_id','Related Audits'),
+    }
+mgmtsystem_nonconformity()
+
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
