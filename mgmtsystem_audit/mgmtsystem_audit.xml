@@ -181,5 +181,22 @@
             <field name="state">subscribed</field>
         </record>
 
+       <!-- Nonconformities related to Audits -->
+        <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.nonconformity.form</field>
+            <field name="model">mgmtsystem.nonconformity</field>
+            <field name="inherit_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"/>
+            <field name="arch" type="xml">
+
+                 <notebook position="inside">
+                        <page string="Related Audits" groups="base.group_extended,mgmtsystem.group_mgmtsystem_auditor">
+                            <field name="audit_ids" colspan="4" nolabel="1" />
+                        </page>
+                 </notebook>
+
+            </field>
+        </record>     
+        
+          
     </data>
 </openerp>
