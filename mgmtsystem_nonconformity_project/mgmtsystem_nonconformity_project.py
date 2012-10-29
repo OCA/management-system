@@ -35,8 +35,7 @@ class mgmtsystem_action(osv.osv):
             , 'Action Type', required=True),
         'project_id': fields.many2one('project.project', 'Project'),
         'complete_name': fields.function(_complete_name, string='Complete Name', type='char', size=250),
-        #modified
-        'name': fields.char('Claim Subject', size=128, required=False),
+        'name': fields.char('Claim Subject', size=128, required=False), #modified: it's not always required
     }
     _defaults = {
         'action_type': 'a',

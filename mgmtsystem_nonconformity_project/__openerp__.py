@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name" : "Management System - Project",
-    "version" : "0.1",
+    "version" : "0.2",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "GPL-3",
@@ -30,7 +30,7 @@ This module enables you to set a project as an action in the nonconformity.
     """,
     "depends" : ['mgmtsystem_nonconformity','mgmtsystem_action','project'],
     "update_xml" : [
-	    'mgmtsystem_nonconformity_project.xml',
+        'mgmtsystem_nonconformity_project.xml',
         'mgmtsystem_nonconformity_project_data.xml',
     ],
     "demo_xml" : [],
