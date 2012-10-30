@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+      <record id="document_page_environment_manual" model="document.page">
+        <field name="name">Environment Manual</field>
+        <field name="type">content</field>
+        <field name="parent_id" ref="mgmtsystem_manuals.manuals"/>
+        <field name="content">
+=Application Domain=
+
+==General==
+
+==Application Perimeter==
+
+=Standards References=
+
+=Terms and Definitions=
+
+==Confidentiality==
+
+=Environment Management System=
+
+==General Requirements==
+
+==Environmental Policy==
+
+==Planning==
+
+===Environmental Aspects===
+
+===Legal and Other Requirements===
+
+===Objectives, Targets and Programs===
+
+==Implementation and Operation==
+
+===Resources, Roles, Responsibilities and Authority===
+
+===Training, Awareness and Competence===
+
+===Communication===
+
+===Documentation===
+
+===Documentation Control===
+
+===Operational Control===
+
+===Emergency Preparedness and Response===
+
+==Control==
+
+===Monitoring and Measurement===
+
+===Evaluation of Compliance===
+
+===Non­conformity, Corrective Action and Preventive Action===
+
+===Control of Records===
+
+===Internal Audit===
+
+==Management Review==
+        </field>
+      </record>
+
+    </data>
+</openerp>
