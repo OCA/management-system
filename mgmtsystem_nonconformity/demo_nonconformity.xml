@@ -24,7 +24,7 @@
             <field name="description">The procedure has changed with no comments on the revision.</field>
             <field name="analysis">Administrator didn't know he had to add a comment when changing the procedure.</field>
             <field name="origin_ids" eval="[(6,0,[ref('demo_origin')])]"/>
-	    <field name="procedure_ids" eval="[(6,0,[ref('wiki_procedure.wiki_procedure')])]"/>
+	    <field name="procedure_ids" eval="[(6,0,[ref('document_page_procedure.document_page_procedure')])]"/>
             <field name="cause_ids" eval="[(6,0,[ref('demo_cause')])]"/>
             <field name="immediate_action_id" ref="mgmtsystem_action.demo_immediate"/>
             <field name="corrective_action_id" ref="mgmtsystem_action.demo_corrective"/>
