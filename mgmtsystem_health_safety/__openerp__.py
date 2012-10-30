@@ -23,7 +23,7 @@
     "version" : "0.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "GPL-3",
+    "license" : "AGPL-3",
     "category" : "Management System",
     "description": """
 	This module enables you to manage your health and safety management system, including :
@@ -43,7 +43,7 @@
         'mgmtsystem_review',
         'mgmtsystem_claim',
         'letter_mgmt_v6',
-        'wiki_health_safety_manual',
+        'document_page_health_safety_manual',
         'mgmtsystem_hazard',
 #        'mgmtsystem_equipments',
 #        'training_hr'
