@@ -27,8 +27,13 @@ class mgmtsystem_system(osv.osv):
     description = 'System'
 
     _columns = {
+<<<<<<< 246504adbebf5957ae9fe262cb1b09aa7213ab41
         'name': fields.char('System', size=30, required=True, translate=True),
         'manual': fields.many2one('wiki.wiki', 'Manual'),
+=======
+        'name': fields.char('System', size=30, required=True),
+        'manual': fields.many2one('document.page', 'Manual'),
+>>>>>>> [IMP] Update hooks with addons modules from v7
         'company_id': fields.many2one('res.company', 'Company')
         }
 
