@@ -62,7 +62,7 @@ class mgmtsystem_verification_line(osv.osv):
     _columns = {
 	'name': fields.char('Question',size=300, required=True),
         'audit_id': fields.many2one('mgmtsystem.audit', 'Audit', ondelete='cascade', select=True),
-        'procedure_id': fields.many2one('wiki.wiki', 'Procedure', ondelete='cascade', select=True),
+        'procedure_id': fields.many2one('document.page', 'Procedure', ondelete='cascade', select=True),
 	'is_conformed': fields.boolean('Is conformed'),
 	'comments': fields.text('Comments'),
 	'seq': fields.integer('Sequence'),
