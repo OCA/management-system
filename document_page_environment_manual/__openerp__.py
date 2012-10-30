@@ -19,17 +19,17 @@
 #
 ##############################################################################
 {
-    "name" : "Document Management - Wiki - Environment Manual",
+    "name" : "Environment Manual",
     "version" : "0.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "GPL-3",
+    "license" : "AGPL-3",
     "category" : "Generic Modules/Others",
     "description": """Environment Manual Template
     """,
-    "depends" : ['wiki','mgmtsystem_manuals'],
+    "depends" : ['document_page','mgmtsystem_manuals'],
     "init_xml" : [],
-    "update_xml" : ['wiki_environment_manual.xml'],
+    "update_xml" : ['document_page_environment_manual.xml'],
     "demo_xml" : [],
     "installable" : True,
     "certificate" : ''

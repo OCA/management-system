@@ -19,17 +19,17 @@
 #
 ##############################################################################
 {
-    "name" : "Document Management - Wiki - Procedures",
+    "name" : "Environmental Aspects",
     "version" : "0.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "GPL-3",
+    "license" : "AGPL-3",
     "category" : "Generic Modules/Others",
-    "description": """Procedure Template
+    "description": """Environmental Aspects Template, useful for Environment Management System
     """,
-    "depends" : ['wiki_work_instructions'],
+    "depends" : ['document_page','mgmtsystem'],
     "init_xml" : [],
-    "update_xml" : ['wiki_procedure.xml'],
+    "update_xml" : ['document_page_environmental_aspect.xml'],
     "demo_xml" : [],
     "installable" : True,
     "certificate" : ''

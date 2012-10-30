@@ -19,17 +19,17 @@
 #
 ##############################################################################
 {
-    "name" : "Document Management - Wiki - Health and Safety Manual",
+    "name" : "Procedures",
     "version" : "0.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "GPL-3",
+    "license" : "AGPL-3",
     "category" : "Generic Modules/Others",
-    "description": """Health and Safety Manual Template
+    "description": """Procedure Template
     """,
-    "depends" : ['wiki','mgmtsystem_manuals'],
+    "depends" : ['document_page_work_instructions'],
     "init_xml" : [],
-    "update_xml" : ['wiki_health_safety_manual.xml'],
+    "update_xml" : ['document_page_procedure.xml'],
     "demo_xml" : [],
     "installable" : True,
     "certificate" : ''

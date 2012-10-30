@@ -19,19 +19,17 @@
 #
 ##############################################################################
 {
-    "name" : "Document Management - Wiki - Work Instructions",
+    "name" : "Health and Safety Manual",
     "version" : "0.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "GPL-3",
+    "license" : "AGPL-3",
     "category" : "Generic Modules/Others",
-    "description": """Work Instructions Template
+    "description": """Health and Safety Manual Template
     """,
-    "depends" : ['mgmtsystem','wiki'],
+    "depends" : ['document_page','mgmtsystem_manuals'],
     "init_xml" : [],
-    "update_xml" : [
-	'wiki_work_instructions.xml'
-    ],
+    "update_xml" : ['document_page_health_safety_manual.xml'],
     "demo_xml" : [],
     "installable" : True,
     "certificate" : ''

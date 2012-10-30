@@ -2,15 +2,11 @@
 <openerp>
     <data>
 
-      <record id="wiki_environment_manual" model="wiki.wiki">
+      <record id="document_page_environment_manual" model="document.page">
         <field name="name">Environment Manual</field>
-        <field name="tags">environment, faq, manual</field>
-        <field name="minor_edit">0</field>
-        <field name="toc">1</field>
-        <field name="review">1</field>
-        <field name="section">2</field>
-        <field name="summary">Base template</field>
-        <field name="text_area">
+        <field name="type">content</field>
+        <field name="parent_id" ref="mgmtsystem_manuals.manuals"/>
+        <field name="content">
 =Application Domain=
 
 ==General==
@@ -68,15 +64,6 @@
 ==Management Review==
         </field>
       </record>
-      <record id="wiki_group_environment_manual" model="wiki.groups">
-        <field name="name">Environment Manual</field>
-        <field name="section">2</field>
-        <field name="home" ref="wiki_environment_manual"/>
-      </record>
-    </data>
-    <data>
-      <record id="wiki_environment_manual" model="wiki.wiki">
-        <field name="group_id" ref="wiki_group_environment_manual"/>
-      </record>
+
     </data>
 </openerp>

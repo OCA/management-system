@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.actions.act_window" id="work_instructions_action">
+            <field name="name">Work Instructions</field>
+            <field name="res_model">document.page</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="document_page.view_wiki_tree"/>
+            <field name="search_view_id" ref="document_page.view_wiki_filter"/>
+            <field name="help">Work instructions of your management system.</field>
+        </record>
+    
+        <menuitem id="menu_mgmtsystem_manuals_work_instructions" 
+            name="Work Instructions"
+            action="work_instructions_action" 
+            parent="mgmtsystem.menu_mgmtsystem_manuals" 
+            sequence="90" 
+            groups="base.group_user"/>
+    
+        <record id="document_page_group_work_instructions" model="document.page">
+            <field name="name">Work Instructions</field>
+            <field name="type">category</field>
+        </record>
+    
+        <record id="document_page_work_instruction" model="document.page">
+            <field name="name">Work Instructions</field>
+            <field name="parent_id" ref="document_page_group_work_instructions"/>
+            <field name="type">content</field>
+            <field name="content">
+= Step 1 =
+
+= Step 2 =
+
+= Step 3 =
+            </field>
+        </record>
+    
+        <record model="ir.actions.act_window" id="work_instructions_action">
+            <field name="domain" eval="[('parent_id','=',ref('document_page_group_work_instructions'))]"/>
+        </record>
+
+    </data>
+</openerp>

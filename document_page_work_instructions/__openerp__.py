@@ -19,17 +19,19 @@
 #
 ##############################################################################
 {
-    "name" : "Document Management - Wiki - Environmental Aspects",
+    "name" : "Work Instructions",
     "version" : "0.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "GPL-3",
+    "license" : "AGPL-3",
     "category" : "Generic Modules/Others",
-    "description": """Environmental Aspects Template, useful for Environment Management System
+    "description": """Work Instructions Template
     """,
-    "depends" : ['wiki'],
+    "depends" : ['mgmtsystem','document_page'],
     "init_xml" : [],
-    "update_xml" : ['wiki_environmental_aspect.xml'],
+    "update_xml" : [
+	'document_page_work_instructions.xml'
+    ],
     "demo_xml" : [],
     "installable" : True,
     "certificate" : ''
