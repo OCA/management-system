@@ -156,7 +156,7 @@ class mgmtsystem_nonconformity(osv.osv):
         'manager_user_id': fields.many2one('res.users','Manager', required=True),
         'author_user_id': fields.many2one('res.users','Filled in by', required=True),
         'origin_ids': fields.many2many('mgmtsystem.nonconformity.origin','mgmtsystem_nonconformity_origin_rel', 'nonconformity_id', 'origin_id', 'Origin', required=True),
-        'procedure_ids': fields.many2many('wiki.wiki','mgmtsystem_nonconformity_procedure_rel', 'nonconformity_id', 'procedure_id', 'Procedure'),
+        'procedure_ids': fields.many2many('document.page','mgmtsystem_nonconformity_procedure_rel', 'nonconformity_id', 'procedure_id', 'Procedure'),
         'description': fields.text('Description', required=True),
         'state': fields.selection(_STATES, 'State', readonly=True),
         'state_name': fields.function(_state_name, string='State Description', type='char', size=40),
