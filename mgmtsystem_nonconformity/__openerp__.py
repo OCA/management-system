@@ -23,7 +23,7 @@
     "version" : "0.2",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "GPL-3",
+    "license" : "AGPL-3",
     "category" : "Management System",
     "description": """\
 This module enables you to manage the nonconformities of your management 
@@ -31,7 +31,7 @@ system : quality (ISO9001), environment (ISO14001) or security (ISO27001).
     """,
     "depends" : [
         'mgmtsystem_action',
-        'wiki_procedure',
+        'document_page_procedure',
     ],
     "data" : [
         'security/ir.model.access.csv',
