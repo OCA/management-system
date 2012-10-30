@@ -35,7 +35,7 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
         v = {}
         p = []
         for l in verification_lines:
-            proc_nm = self.pool.get('wiki.wiki').read(self.cr, self.uid, l.procedure_id.id, ['name'])
+            proc_nm = self.pool.get('document.page').read(self.cr, self.uid, l.procedure_id.id, ['name'])
             p.append({"id": l.id,
                       "procedure": proc_nm['name'],
                       "name": l.name,
