@@ -2,18 +2,13 @@
 <openerp>
     <data>
 
-        <menuitem id="base.dashboard" 
-            name="Dashboard" 
-            sequence="2" 
-            parent="base.reporting_menu"/>
-
         <!-- This board view will be completed by other mgmtsystem_* modules-->
         <record id="board_mgmtsystem_form" model="ir.ui.view">
             <field name="name">board.mgmtsystem.form</field>
             <field name="model">board.board</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="My Board">
+                <form string="Management Systems Dashboard">
                     <hpaned>
                         <child1>
                         </child1>
@@ -34,16 +29,10 @@
         </record>
 
         <menuitem
-            id="menu_mgmtsystem_dashboard"
-            name="Management System"
-            parent="base.dashboard"
-            action="open_board_mgmtsystem"/>
-
-        <menuitem 
-            id="menu_mgmtsystem_root" 
-            icon="terp-hr" 
-            name="Management System" 
-            sequence="15" 
+            id="mgmtsystem_dashboard"
+            name="Management Systems"
+            sequence="50" 
+            parent="base.menu_reporting_dashboard"
             action="open_board_mgmtsystem"/>
 
     </data>

@@ -23,7 +23,7 @@
     "version" : "0.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "GPL-3",
+    "license" : "AGPL-3",
     "category" : "Management System",
     "complexity" : "normal",
     "description": """\
@@ -35,7 +35,7 @@ This module is the basis of any management system applications:
      * corrective actions,
      * improvement opportunities.
     """,
-    "depends" : ['base','board','wiki'],
+    "depends" : ['base','board','document_page'],
     "init_xml" : [],
     "update_xml" : [
         'security/mgmtsystem_security.xml',

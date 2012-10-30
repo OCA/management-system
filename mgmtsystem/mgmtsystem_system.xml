@@ -9,7 +9,7 @@
       <field name="arch" type="xml">
 	<form string="Management System">
 	  <field name="name"/>
-	  <field name="manual" domain="[('tags','like','manual')]"/>
+	  <field name="manual"/>
 	  <field name="company_id" groups="base.group_multi_company"/>
 	</form>
       </field>
