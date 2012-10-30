@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+      <record id="document_page_health_safety_manual" model="document.page">
+        <field name="name">Health and Safety Manual</field>
+        <field name="parent_id" ref="mgmtsystem_manuals.manuals"/>
+        <field name="type">content</field>
+        <field name="content">
+TODO: Add the structure of the health and safety manual from the OHSAS 18001 standard.
+        </field>
+      </record>
+
+    </data>
+</openerp>
