@@ -23,7 +23,7 @@
     "version" : "0.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "GPL-3",
+    "license" : "AGPL-3",
     "category" : "Management System",
     "description": """\
 This module enables you to manage your quality management system, including :
@@ -37,7 +37,7 @@ This module enables you to manage your quality management system, including :
     """,
     "depends" : [
         'mgmtsystem_audit',
-        'wiki_quality_manual',
+        'document_page_quality_manual',
         'mgmtsystem_manuals',
         'mgmtsystem_review',
 #        'training_hr',
