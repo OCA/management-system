@@ -23,7 +23,7 @@
     "version" : "0.2",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "GPL-3",
+    "license" : "AGPL-3",
     "category" : "Management System",
     "description": """
 	This module enables you to manage the different actions of your management 
