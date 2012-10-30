@@ -23,7 +23,7 @@
     "version" : "0.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "GPL-3",
+    "license" : "AGPL-3",
     "category" : "Management System",
     "description": """
 	This module enables you to manage your environment management system, including :
@@ -38,8 +38,8 @@
     "depends" : [
         'mgmtsystem_audit',
         'mgmtsystem_review',
-        'wiki_environment_manual',
-        'wiki_environmental_aspect',
+        'document_page_environment_manual',
+        'document_page_environmental_aspect',
 #        'training_hr',
     ],
     "init_xml" : [],
