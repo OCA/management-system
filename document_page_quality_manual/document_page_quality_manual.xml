@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+
+      <record id="document_page_quality_manual" model="document.page">
+        <field name="name">Quality Manual</field>
+        <field name="type">content</field>
+        <field name="parent_id" ref="mgmtsystem_manuals.manuals"/>
+        <field name="content">
+=Application Domain=
+
+==General==
+
+==Application Perimeter==
+
+=Standard References=
+
+=Terms and Definitions=
+
+==Confidentiality==
+
+=Quality Management System=
+
+==General Requirements==
+
+===Quality Comittee===
+
+==Requirements related to Documentation==
+
+===General===
+
+===Quality Manual===
+
+===Document Control===
+
+===Record Control===
+
+=Management Responsibilities=
+
+==Management Involvement==
+
+==Customer Care==
+
+==Quality Policy==
+
+==Planning==
+
+===Quality Objectives===
+
+===Planning of the quality management system===
+
+==Responsibility, Authority and Communication==
+
+===Responsibility and Authority===
+
+===Management Representative===
+
+===Internal Communication===
+
+==Management Review==
+
+===General===
+
+===Input===
+
+===Output===
+
+=Resource Management=
+
+==Resources==
+
+==Human Resources==
+
+===General===
+
+===Skills, Training and Awareness===
+
+==Infrastructure==
+
+===Equipments===
+
+===Maintenance===
+
+==Work Environment==
+
+=Goods/Services Production=
+
+==Planning of the Goods/Services Production==
+
+==Processes related to the customer==
+
+==Conception and Development==
+
+===Conception and Development Planning===
+
+===Input of the Conception and Development===
+
+===Output of the Conception and Development===
+
+===Conception and Development Review===
+
+===Conception and Development Verification===
+
+===Conception and Development Validation===
+
+===Change Management of the Conception and Development===
+
+==Purchasing==
+
+==Goods/Services Preparation and Production==
+
+===Goods/Services Preparation and Production Management===
+
+===Goods/Services Preparation and Production Processes Validation===
+
+===Identification and Traceability===
+
+===Customer Properties===
+
+===Product Preservation===
+
+==Measuring and Monitoring Equipments Control==
+
+=Measurement, Analysis and Improvement=
+
+==General==
+
+==Monitoring and Measurement==
+
+===Customer Satisfaction===
+
+===Internal Audits===
+
+===Monitoring and Measurement of Process===
+
+===Monitoring and Measurement of Service===
+
+==Control of Nonconformities==
+
+==Analysis of Data==
+
+===Statistical Data===
+
+==Improvement==
+
+===Continual Improvement===
+
+===Corrective Action===
+
+===Preventive Action===
+        </field>
+      </record>
+
+    </data>
+</openerp>
