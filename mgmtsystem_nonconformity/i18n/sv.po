@@ -1,4 +1,4 @@
-# German translation for openerp-mgmtsystem
+# Swedish translation for openerp-mgmtsystem
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the openerp-mgmtsystem package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-12-02 23:49+0000\n"
-"PO-Revision-Date: 2012-09-17 11:20+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German <de@li.org>\n"
+"PO-Revision-Date: 2012-12-03 22:42+0000\n"
+"Last-Translator: Mikael Akerberg <mikael.akerberg@dermanord.se>\n"
+"Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-11-17 05:07+0000\n"
-"X-Generator: Launchpad (build 16278)\n"
+"X-Launchpad-Export-Date: 2012-12-04 06:09+0000\n"
+"X-Generator: Launchpad (build 16335)\n"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.module.module,description:mgmtsystem_nonconformity.module_meta_information
@@ -27,39 +27,37 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"\tDieses Modul ermöglich die Verwaltung der Nichteinhaltungen / Mängel Ihres "
-"Management-Systems\n"
-"* Qualitätsmanagement - QMS ISO 9001\n"
-"* Umweltmanagement - UMS ISO 14001\n"
-"* Sicherheitsmanagement - SMS 27001\t\n"
+"\tMed denna modulen kan du hantera avvikelser i ditt ledningssystem: "
+"Kvalitet (ISO9001), Miljö (ISO14001) eller Säkerhet (ISO27001) \t\n"
+".\t\n"
 "    "
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
 msgid "Author"
-msgstr "Verfasser"
+msgstr "Upphovsman"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,responsible_user_id:0
 msgid "Responsible"
-msgstr "Verantwortlich"
+msgstr "Ansvarig"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity
 msgid "Nonconformities"
-msgstr "Nichteinhaltungen"
+msgstr "Avvikelser"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_origin
 msgid "Origin of nonconformity of the management system"
-msgstr "Ursache des Mangels gemäß Management-System"
+msgstr "Ursprung bristande avvikelse i ledningssystemet"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
 msgid "Group By..."
-msgstr ""
+msgstr "Gruppera efter..."
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,state:0
@@ -69,24 +67,24 @@ msgstr "Status"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_procedure
 msgid "Procedure involved in the nonconformity of the management system"
-msgstr "Mangelhafter Ablauf gem. Management-System"
+msgstr "Rutin involverad i avvikelsen i ledningssystemet"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
 #: selection:mgmtsystem.nonconformity,state:0
 msgid "Closed"
-msgstr "Abgeschlossen"
+msgstr "Stängd"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,cause_ids:0
 #: field:mgmtsystem.nonconformity.cause,name:0
 msgid "Cause"
-msgstr "Ursache"
+msgstr "Orsak"
 
 #. module: mgmtsystem_nonconformity
 #: view:board.board:0
 msgid "Open Nonconformities"
-msgstr "Gegenwärtige Mängel/Nichteinhaltungen"
+msgstr "Öppna Avvikelser"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,description:0
@@ -94,17 +92,17 @@ msgstr "Gegenwärtige Mängel/Nichteinhaltungen"
 #: field:mgmtsystem.nonconformity.origin,description:0
 #: field:mgmtsystem.nonconformity.procedure,description:0
 msgid "Description"
-msgstr "Beschreibung"
+msgstr "Beskrivnig"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,immediate_action_id:0
 msgid "Immediate action"
-msgstr "Sofort-Maßnahmen"
+msgstr "Omedelbara åtgärder"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.module.module,shortdesc:mgmtsystem_nonconformity.module_meta_information
 msgid "Management System - Nonconformity"
-msgstr "Management-System - Mangel/Nichteinhaltung"
+msgstr "LedningsSystem - Avvikelse"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,date:0
@@ -114,12 +112,12 @@ msgstr "Datum"
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
 msgid "Nonconformity"
-msgstr "Mangel/Nichteinhaltung"
+msgstr "Avvikelse"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,corrective_action_id:0
 msgid "Corrective action"
-msgstr "Korrekturmaßnahme"
+msgstr "Korrigerande åtgärder"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_procedure_list
@@ -127,17 +125,17 @@ msgstr "Korrekturmaßnahme"
 #: view:mgmtsystem.nonconformity:0
 #: view:mgmtsystem.nonconformity.procedure:0
 msgid "Procedures"
-msgstr "Vorgänge"
+msgstr "Rutiner"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,preventive_action_id:0
 msgid "Preventive action"
-msgstr "Präventivmaßnahme"
+msgstr "Förebyggande åtgärder"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,partner_id:0
 msgid "Customer"
-msgstr "Kunde"
+msgstr "Kund"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,origin_ids:0
@@ -151,27 +149,27 @@ msgstr "Ursprung"
 #: view:mgmtsystem.nonconformity:0
 #: view:mgmtsystem.nonconformity.origin:0
 msgid "Origins"
-msgstr "Ursprünge"
+msgstr "Ursprung"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity.origin:0
 msgid "Origins of nonconformity"
-msgstr "Mangelursachen"
+msgstr "Ursprung för avvikelse"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,analysis:0
 msgid "Analysis"
-msgstr "Analyse"
+msgstr "Analys"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity.procedure:0
 msgid "Procedures of nonconformity"
-msgstr "Mangelhafte Abläufe"
+msgstr "Rutiner för avvikelse"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity.cause:0
 msgid "Causes of nonconformity"
-msgstr "Ursachen des Mangels"
+msgstr "Orsaker till avvikelse"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,id:0
@@ -179,50 +177,50 @@ msgstr "Ursachen des Mangels"
 #: field:mgmtsystem.nonconformity.origin,id:0
 #: field:mgmtsystem.nonconformity.procedure,id:0
 msgid "ID"
-msgstr "Kennung"
+msgstr "ID"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
 #: field:mgmtsystem.nonconformity,procedure_ids:0
 #: field:mgmtsystem.nonconformity.procedure,name:0
 msgid "Procedure"
-msgstr "Ablauf"
+msgstr "Rutin"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,author_user_id:0
 msgid "Filled in by"
-msgstr "Ausgefüllt durch"
+msgstr "Ifylld av"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,reference:0
 msgid "Reference"
-msgstr "Bezug"
+msgstr "Referens"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity
 msgid "Nonconformity of the management system"
-msgstr "Mangel des Management-Systems"
+msgstr "Avvikelser i ledningssystemet"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_cause
 msgid "Cause of the nonconformity of the management system"
-msgstr "Ursache des Mangels des Management-Systems"
+msgstr "Orsaken till bristande avvikelse i ledningssystemet"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,manager_user_id:0
 msgid "Manager"
-msgstr "Vorgesetzter"
+msgstr "Chef"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
 msgid "Close"
-msgstr "Abschließen"
+msgstr "Stäng"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
 #: selection:mgmtsystem.nonconformity,state:0
 msgid "Open"
-msgstr "In Bearbeitung"
+msgstr "Öppna"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_cause_list
@@ -230,4 +228,4 @@ msgstr "In Bearbeitung"
 #: view:mgmtsystem.nonconformity:0
 #: view:mgmtsystem.nonconformity.cause:0
 msgid "Causes"
-msgstr "Ursachen"
+msgstr "Orsaker"

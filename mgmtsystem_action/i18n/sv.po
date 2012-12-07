@@ -1,4 +1,4 @@
-# Spanish translation for openerp-mgmtsystem
+# Swedish translation for openerp-mgmtsystem
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the openerp-mgmtsystem package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
@@ -8,123 +8,123 @@ msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-12-02 23:47+0000\n"
-"PO-Revision-Date: 2012-09-09 07:16+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Spanish <es@li.org>\n"
+"PO-Revision-Date: 2012-12-02 23:48+0000\n"
+"Last-Translator: Mikael Akerberg <mikael.akerberg@dermanord.se>\n"
+"Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-11-17 05:07+0000\n"
-"X-Generator: Launchpad (build 16278)\n"
+"X-Launchpad-Export-Date: 2012-12-04 06:09+0000\n"
+"X-Generator: Launchpad (build 16335)\n"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,categ_id:0
 msgid "Category"
-msgstr "Categoría"
+msgstr "Kategori"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "History"
-msgstr "Histórico"
+msgstr "Historik"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "History Information"
-msgstr "Información histórica"
+msgstr "Historikinformation"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 #: field:mgmtsystem.action,user_id:0
 msgid "Responsible"
-msgstr "Responsable"
+msgstr "Ansvarig"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Date of Claim"
-msgstr "Fecha reclamación"
+msgstr "Ansökningsdatum"
 
 #. module: mgmtsystem_action
 #: model:ir.module.module,shortdesc:mgmtsystem_action.module_meta_information
 msgid "Management System - Action"
-msgstr ""
+msgstr "Ledningsystem - Åtgärd"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,priority:0
 msgid "Priority"
-msgstr "Prioridad"
+msgstr "Prioritet"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Action"
-msgstr "Acción"
+msgstr "Åtgärd"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Send New Email"
-msgstr "Enviar nuevo correo eléctronico"
+msgstr "Skicka nytt e-postmeddelande"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,state:0
 msgid "Draft"
-msgstr "Borrador"
+msgstr "Utkast"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Details"
-msgstr "Detalles"
+msgstr "Detaljer"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 #: field:mgmtsystem.action,date_closed:0
 #: selection:mgmtsystem.action,state:0
 msgid "Closed"
-msgstr "Cerrado"
+msgstr "Stängd"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Reply"
-msgstr "Responder"
+msgstr "Svara"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,cause:0
 msgid "Root Cause"
-msgstr "Causa principal"
+msgstr "Grundläggande orsak"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Type"
-msgstr "Tipo"
+msgstr "Typ"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,email_from:0
 msgid "Email"
-msgstr "Correo electrónico"
+msgstr "E-post"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,state:0
 msgid "Pending"
-msgstr "Pendiente"
+msgstr "Pågående"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Claim/Action Description"
-msgstr "Descripción de la reclamación/acción"
+msgstr "Reklamation/åtgärds-beskrivning"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
 msgid "Lowest"
-msgstr "La más baja"
+msgstr "Lägst"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,action_next:0
 msgid "Next Action"
-msgstr "Acción siguiente"
+msgstr "Nästa åtgärd"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,description:0
 msgid "Description"
-msgstr "Descripción"
+msgstr "Beskrivning"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -134,57 +134,57 @@ msgstr "Normal"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,create_date:0
 msgid "Creation Date"
-msgstr "Fecha de creación"
+msgstr "Registeringsdatum"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,name:0
 msgid "Claim Subject"
-msgstr "Objeto de la reclamación"
+msgstr "Reklamationsrubrik"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,company_id:0
 msgid "Company"
-msgstr "Compañía"
+msgstr "Bolag"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,email_cc:0
 msgid "Watchers Emails"
-msgstr "Observadores emails (CC)"
+msgstr "Övervakarens e-post"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,date_action_next:0
 msgid "Next Action Date"
-msgstr "Fecha próxima acción"
+msgstr "Nästa datum för åtgärd"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,partner_phone:0
 msgid "Phone"
-msgstr "Teléfono"
+msgstr "Telefon"
 
 #. module: mgmtsystem_action
 #: view:board.board:0
 msgid "Open Actions"
-msgstr ""
+msgstr "Öppna Åtgärder"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "User"
-msgstr "Usuario"
+msgstr "Användare"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Done"
-msgstr "Hecho"
+msgstr "Avslutad"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
 msgid "Highest"
-msgstr "El más alto"
+msgstr "Högsta"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,stage_id:0
 msgid "Stage"
-msgstr "Etapa"
+msgstr "Läge"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,state:0
@@ -197,29 +197,25 @@ msgid ""
 "       \n"
 "If the case needs to be reviewed then the state is set to 'Pending'."
 msgstr ""
-"El estado se establece a 'Borrador', cuando se crea un caso.                 "
-"                 \n"
-"Si el caso está en progreso el estado se establece a 'Abierto'.              "
-"                    \n"
-"Cuando el caso se cierra, el estado se establece a 'Realizado'.              "
-"                    \n"
-"Si el caso necesita ser revisado entonces en estado se establece a "
-"'Pendiente'."
+"Status är inställd på \"förslag\" när ett ärende skapas.\n"
+"Om ärendet startas är status  \"Öppen\".\n"
+"När ärendet är färdigställt, är status inställd på \"Klar\".\n"
+"Om ärendet behöver ses över då tillståndet är satt till \"I väntan\"."
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Add Internal Note"
-msgstr "Añadir nota interna"
+msgstr "Lägg till intern notering"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,user_fault:0
 msgid "Trouble Responsible"
-msgstr "Responsable problema"
+msgstr "Problemansvarig"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,section_id:0
 msgid "Sales Team"
-msgstr "Equipo de ventas"
+msgstr "Försäljningsteam"
 
 #. module: mgmtsystem_action
 #: model:ir.module.module,description:mgmtsystem_action.module_meta_information
@@ -233,61 +229,67 @@ msgid ""
 "            * preventive actions.\n"
 "    "
 msgstr ""
+"\n"
+"\tMed denna modul kan du hantera de olika åtgärderna i ditt ledningssystem:\n"
+"             * Omedelbara åtgärder\n"
+"             * Korrigerande åtgärder\n"
+"             * Förebyggande åtgärder.\n"
+"    "
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 msgid "Immediate Action"
-msgstr ""
+msgstr "Omedelbara Åtgärder"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_ids:0
 msgid "Messages"
-msgstr "Mensajes"
+msgstr "Meddelanden"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,date:0
 msgid "Claim Date"
-msgstr "Fecha de reclamación"
+msgstr "Reklamationsdatum"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 msgid "Improvement Opportunity"
-msgstr ""
+msgstr "Förbättringsmöjlighet"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,email_from:0
 msgid "These people will receive email."
-msgstr "Estas personas recibirán correo electronico."
+msgstr "De här personerna kommer att få e-post."
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 msgid "Preventive Action"
-msgstr "Acción preventiva"
+msgstr "Förebyggande Åtgärd"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,partner_address_id:0
 msgid "Partner Contact"
-msgstr "Contacto empresa"
+msgstr "Företagskontakt"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,state:0
 msgid "Cancelled"
-msgstr "Cancelado"
+msgstr "Avbruten"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 msgid "Corrective Action"
-msgstr "Acción correctiva"
+msgstr "Korrigeringsåtgärd"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,resolution:0
 msgid "Resolution"
-msgstr "Resolución"
+msgstr "Lösning"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,id:0
 msgid "ID"
-msgstr "ID"
+msgstr "Id"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,section_id:0
@@ -295,13 +297,13 @@ msgid ""
 "Sales team to which Case belongs to.Define Responsible user and Email "
 "account for mail gateway."
 msgstr ""
-"Equipo de ventas al cual pertenece el caso. Define el usuario responsable y "
-"la cuenta de email para la pasarela de correo."
+"Säljlag till vilken reklamationen tillhör. Definierar handläggare och e-"
+"postkonto för e-postbrygga."
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Global CC"
-msgstr "CC global"
+msgstr "Global kopia"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,email_cc:0
@@ -310,69 +312,69 @@ msgid ""
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
 msgstr ""
-"Estas direcciones de correo serán añadidas al campo CC para todos los "
-"correos entrantes y salientes de este registro antes de ser enviados. Separe "
-"las diferentes direcciones de correo con una coma."
+"Dessa e-postadresser läggs till kopie-fältet på alla inkommande och utgående "
+"meddelanden för denna post innan de skickas. Separera flera adresser med "
+"komma."
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Attachments"
-msgstr "Archivos adjuntos"
+msgstr "Bilagor"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,ref:0
 msgid "Reference"
-msgstr "Referencia"
+msgstr "Referens"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Group By..."
-msgstr "Agrupar por..."
+msgstr "Gruppera efter..."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,state:0
 msgid "State"
-msgstr "Estado"
+msgstr "Status"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.open_mgmtsystem_action_list
 #: model:ir.ui.menu,name:mgmtsystem_action.menu_open_action
 msgid "Actions"
-msgstr "Acciones"
+msgstr "Åtgärder"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
 msgid "High"
-msgstr "Alta"
+msgstr "Hög"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,type_action:0
 msgid "Action Type"
-msgstr "Tipo de acción"
+msgstr "Åtgärdstyp"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 #: field:mgmtsystem.action,date_deadline:0
 msgid "Deadline"
-msgstr "Fecha límite"
+msgstr "Slutdatum"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,write_date:0
 msgid "Update Date"
-msgstr "Actualizar fecha"
+msgstr "Uppdateringsdatum"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,partner_id:0
 msgid "Partner"
-msgstr "Empresa"
+msgstr "Partner"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 #: selection:mgmtsystem.action,state:0
 msgid "Open"
-msgstr "Abrir"
+msgstr "Öppna"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
 msgid "Low"
-msgstr "Baja"
+msgstr "Låg"
