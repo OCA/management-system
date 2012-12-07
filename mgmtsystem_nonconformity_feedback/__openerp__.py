@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name' : 'Management System - Feedback',
-    'version' : '1',
+    'version' : '0.1',
     'author' : 'Daniel Reis',
     'category' : 'Management System',
     'description': """\
@@ -39,7 +39,7 @@ qualified only later in the process.
     'depends' : ['mgmtsystem_nonconformity'],
     'data' : [
         'security/ir.model.access.csv',
-	    'mgmtsystem_feedback.xml',
+	'mgmtsystem_feedback.xml',
         'mgmtsystem_feedback_data.xml',
     ],
     'demo' : [
