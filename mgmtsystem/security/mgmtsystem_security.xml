@@ -2,6 +2,7 @@
 <openerp>
 <data noupdate="1">
 
+<<<<<<< 3d6b9db9d0fcf3868eb3388391fa59995286de57
 <<<<<<< 84a6593acd2990f95d7a5c04c1ab6677141579ca
     <record model="ir.module.category" id="module_category_mgmtsystem">
         <field name="name">Management Systems</field>
@@ -24,27 +25,40 @@
     <record id="mgmtsystem.group_mgmtsystem_user" model="res.groups">
         <field name="name">Management System / User</field>
 =======
+=======
+    <record model="ir.module.category" id="module_category_management_system">
+        <field name="name">Management System</field>
+        <field name="description">Manage management systems, manuals, KPIs, nonconformities, actions, feedbacks, audits, reviews.</field>
+        <field name="sequence">10</field>
+    </record>
+
+>>>>>>> [ADD] Module category to link user groups
     <record id="mgmtsystem.group_mgmtsystem_viewer" model="res.groups">
-        <field name="name">Management System / Viewer</field>
+        <field name="name">Viewer</field>
+        <field name="category_id" ref="module_category_management_system"/>
     </record>
 
     <record id="mgmtsystem.group_mgmtsystem_user" model="res.groups">
-        <field name="name">Management System / User</field>
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_management_system"/>
     </record>
 
     <record id="mgmtsystem.group_mgmtsystem_user_manager" model="res.groups">
-        <field name="name">Management System / User Manager</field>
+        <field name="name">Approving User</field>
         <field name="comment">User with approval authority.</field>
+        <field name="category_id" ref="module_category_management_system"/>
         <field name="implied_ids" eval="(4,ref('mgmtsystem.group_mgmtsystem_user'))"/>
     </record>
 
     <record id="mgmtsystem.group_mgmtsystem_manager" model="res.groups">
-        <field name="name">Management System / Manager</field>
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_category_management_system"/>
         <field name="implied_ids" eval="(4,ref('mgmtsystem.group_mgmtsystem_user'))"/>
     </record>
 
     <record id="mgmtsystem.group_mgmtsystem_auditor" model="res.groups">
-        <field name="name">Management System / Auditor</field>
+        <field name="name">Auditor</field>
+        <field name="category_id" ref="module_category_management_system"/>
         <field name="implied_ids" eval="(4,ref('mgmtsystem.group_mgmtsystem_user'))"/>
 >>>>>>> CHG: marking Apps, security review, translation pt, finetuning
     </record>
