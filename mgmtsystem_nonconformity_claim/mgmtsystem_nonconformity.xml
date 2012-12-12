@@ -28,13 +28,6 @@
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Nonconformity FORM -->            
-<!-- 
-        <menuitem id="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities" 
-            name="Feedback and Nonconformities"
-            parent="mgmtsystem.menu_mgmtsystem_configuration"
-            groups="mgmtsystem.group_mgmtsystem_manager" 
-            sequence="10"/>
- -->        
         <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.form</field>
             <field name="model">mgmtsystem.nonconformity</field>
@@ -51,12 +44,6 @@
 
             </field>
         </record>
-<!-- 
-        <record model="ir.actions.act_window" id="mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list">
-            <field name="name">Claims and Nonconformities</field>
-        </record>
- 
- -->
 
         <!-- Rename NC menu description -->
         <menuitem id="mgmtsystem_nonconformity.menu_open_nonconformity"
@@ -67,18 +54,6 @@
             groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
         />
         
-        <!-- 
-        <record id="view_mgmtsystem_nonconformity_claim_tree" model="ir.ui.view">
-            <field name="name">mgmtsystem.nonconformity.claim.tree</field>
-            <field name="model">mgmtsystem.nonconformity</field>
-            <field name="inherit_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_tree"/>
-            <field name="arch" type="xml">
-                 <tree position="attributes">
-                    <attribute name="string">Claims and Nonconformities</attribute>
-                </tree>
-            </field>
-        </record>
--->
         <record model="ir.actions.act_window" id="mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list">
             <field name="name">Claims and Nonconformities.</field>
             <field name="res_model">mgmtsystem.nonconformity</field>
