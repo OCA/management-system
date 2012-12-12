@@ -8,8 +8,12 @@
             <field name="arch" type="xml">
 
                 <field name="responsible_user_id" position="before">
-                    <field name="department_id" attrs="{'readonly':[('state','in',['c','x'])]}"
+                    <field name="department_id" attrs="{'readonly':[('state','not in',['d','a'])]}"
                            on_change="onchange_department_id(department_id)" />
+                </field>
+
+                <field name="manager_user_id" position="after">
+                    <field name="superior_user_id" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
                 </field>
 
             </field>
