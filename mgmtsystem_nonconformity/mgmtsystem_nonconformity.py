@@ -293,6 +293,7 @@ mgmtsystem_nonconformity()
 class mgmtsystem_action(osv.osv):
     _inherit = "mgmtsystem.action"
     _columns = {
+        'nonconformity_immediate_id': fields.one2many('mgmtsystem.nonconformity', 'immediate_action_id', readonly=True),
         'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity', 'mgmtsystem_nonconformity_action_rel', 'action_id', 'nonconformity_id', 
                                               'Nonconformities', readonly=True),
     }

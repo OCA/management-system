@@ -371,7 +371,8 @@
 
                 <field name="description" position="after">
                     <separator string="Related Nonconformities" colspan="4"/>
-                    <field name="nonconformity_ids" colspan="4" nolabel="1"/>
+                    <field name="nonconformity_ids" colspan="4" nolabel="1" 
+                           attrs="{'invisible':[('nonconformity_ids','=',False)]}"/>
                 </field>
                 
             </field>
