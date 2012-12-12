@@ -39,7 +39,7 @@
                 </form>
 
                 <field name="date" position="after">
-                    <field name="type_id" attrs="{'readonly':[('state','in',['c','x'])], 'required':[('state','in',['p','o','c'])]}"/>
+                    <field name="type_id" attrs="{'readonly':[('state','not in',['d','a'])], 'required':[('state','in',['a','p','o','c'])]}"/>
                 </field>
 
             </field>
