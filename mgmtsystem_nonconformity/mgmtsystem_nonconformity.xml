@@ -83,44 +83,45 @@
             <field name="arch" type="xml">
                 <form>
                     <group colspan="2" col="2">
-                        <field name="ref" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                        <field name="date" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                        <field name="partner_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                        <field name="reference" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                        <field name="ref" attrs="{'readonly':[('state','not in',['d'])]}"/>
+                        <field name="date" attrs="{'readonly':[('state','not in',['d'])]}"/>
+                        <field name="partner_id" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
+                        <field name="reference" attrs="{'readonly':[('state','not in',['d'])]}"/>
                     </group>
                     <group colspan="2" col="2">
-                        <field name="responsible_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                        <field name="manager_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-                        <field name="author_user_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-			            <field name="system_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                        <field name="responsible_user_id" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
+                        <field name="manager_user_id" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
+                        <field name="author_user_id" attrs="{'readonly':[('state','not in',['d'])]}"/>
+			            <field name="system_id" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
                     </group>
                     <notebook colspan="4">
                         <page string="Inputs">
                             <separator string="Description" colspan="4"/>
-                            <field name="description" nolabel="1" colspan="4" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                            <field name="description" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
                             <newline/>
                             <separator string="Origins" colspan="4"/>
-                            <field name="origin_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                            <field name="origin_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
                         </page>
                         <page string="Procedures">
-                            <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','in',['c','x'])]}" 
+                            <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','not in',['d','a'])]}" 
                                    domain="[('group_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
                         </page>
 
                         <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['d','x'])]}">
                             <separator string="Analysis" colspan="4"/>
                             <field name="analysis" nolabel="1" colspan="4" 
-                                   attrs="{'readonly':[('state','in',['c','x'])], 'required':[('state','not in',['d','c','x'])]}"/>
+                                   attrs="{'readonly':[('state','not in',['a'])], 'required':[('state','in',['a','p','o'])]}"/>
                             <newline/>
 
                             <separator string="Causes" colspan="4"/>
-                            <field name="cause_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                            <field name="cause_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['a'])]}"/>
                             <newline/>
 
                             <separator string="Analysis Confirmation" colspan="4"/>
                             <group colspan="2" col="2">
-	                            <field name="severity_id" attrs="{'readonly':[('state','in',['c','x'])]}"/>
-	                            <field name="immediate_action_id" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','in',['c','x'])]}"/>
+	                            <field name="severity_id" attrs="{'readonly':[('state','not in',['a'])]}"/>
+	                            <field name="immediate_action_id" domain="[('type_action','=','immediate')]" 
+	                                  attrs="{'readonly':[('state','not in',['a'])]}"/>
                             </group>
                             <group colspan="2" col="2">
 	                            <field name="analysis_user_id"/>
@@ -135,12 +136,12 @@
                         <page string="Actions" attrs="{'invisible':[('state','in',['d','a','x'])]}">
                             <separator string="Action Plan" colspan="4" />
                             <field name="action_ids" nolabel="1" colspan="4" 
-                                   attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                                   attrs="{'readonly':[('state','not in',['p'])]}"/>
 
                             <group colspan="2" col="2">
                                 <separator string="Plan Review" colspan="2"/>
 	                            <field name="action_comments" colspan="2" nolabel="1" 
-	                                   attrs="{'readonly':[('state','in',['c','x'])]}"/>
+	                                   attrs="{'readonly':[('state','not in',['p'])]}"/>
                                 <field name="actions_user_id"/>
                                 <field name="actions_date"/>
                                 <label/>
@@ -152,7 +153,7 @@
                             <group colspan="2" col="2" attrs="{'invisible':[('state','not in',['o','c'])]}">
 			                    <separator string="Effectiveness Review" colspan="2"/>
                                 <field name="evaluation_comments" nolabel="1" colspan="2" 
-                                       attrs="{'readonly':[('state','in',['c','x'])]}"/>
+                                       attrs="{'readonly':[('state','not in',['o'])]}"/>
 			                    <field name="evaluation_user_id"/>
                                 <field name="evaluation_date"/>
                                 <label/>
