@@ -12,7 +12,7 @@
             <field name="model">mgmtsystem.nonconformity</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="Nonconformity">
+                <tree>
                     <field name="ref"/>
                     <field name="date"/>
                     <field name="partner_id"/>
@@ -31,7 +31,7 @@
             <field name="model">mgmtsystem.nonconformity</field>
             <field name="type">search</field>
             <field name="arch" type="xml">
-                <search string="Nonconformity">
+                <search>
                     <group>
                         <filter name="draft" icon="terp-document-new" domain="[('state','=','d')]" string="Draft" help="Draft/New nonconformities"/>
                         <filter name="pending" icon="terp-gtk-media-pause" domain="[('state','in',['a','p'])]" string="Analysis" help="Nonconformities pending review"/>
@@ -81,7 +81,7 @@
             <field name="type">form</field>
             <field name="model">mgmtsystem.nonconformity</field>
             <field name="arch" type="xml">
-                <form string="Nonconformity">
+                <form>
                     <group colspan="2" col="2">
                         <field name="ref" attrs="{'readonly':[('state','in',['c','x'])]}"/>
                         <field name="date" attrs="{'readonly':[('state','in',['c','x'])]}"/>
