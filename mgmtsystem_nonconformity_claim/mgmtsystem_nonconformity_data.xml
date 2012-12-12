@@ -3,19 +3,19 @@
     <data noupdate="1">
 
         <!-- Feedback Types: Nonconformity, Good Practice, Improvement Opportunity, Observation, ... -->
-        <record id="feedback_type_nc" model="mgmtsystem.feedback.type">
+        <record id="nonconformity_type_nc" model="mgmtsystem.nonconformity.type">
             <field name="name">Nonconformity</field>
             <field name="active" eval="True"/>
         </record>
-        <record id="feedback_type_gp" model="mgmtsystem.feedback.type">
+        <record id="nonconformity_type_gp" model="mgmtsystem.nonconformity.type">
             <field name="name">Good Practice</field>
             <field name="active" eval="True"/>
         </record>
-        <record id="feedback_type_io" model="mgmtsystem.feedback.type">
+        <record id="nonconformity_type_io" model="mgmtsystem.nonconformity.type">
             <field name="name">Improvement Opportunity</field>
             <field name="active" eval="True"/>
         </record>
-        <record id="feedback_type_ob" model="mgmtsystem.feedback.type">
+        <record id="nonconformity_type_ob" model="mgmtsystem.nonconformity.type">
             <field name="name">Observation</field>
             <field name="active" eval="True"/>
         </record>

@@ -18,32 +18,25 @@
 #
 ##############################################################################
 {
-    'name' : 'Management System - Feedback',
+    'name' : 'Management System - Claims and Nonconformities',
     'version' : '0.1',
     'author' : 'Daniel Reis',
     'category' : 'Management System',
     'description': """\
-Extends the nonconformity model so it can also represent other types of feedback, 
-such as complaints, measurements, suggestions, etc.
+Extends the Nonconformity form so it can also represent NC candidates and other  types of feedback, such as complaints, measurements, suggestions, etc.
 
-- "Feedback Source": the source channel originating this Feedback record - an 
-audit, complaint, measurement, etc. In case this overlaps with the use of the 
-nonconformity "Origin" field, it can be adapted to be used as a generic Category
-attribute.
+The "type" field identifies if the feedback corresponds to a nonconformity, or to other type of record, such as "best practice", "suggestion", etc. 
 
-- "Feedback Type": identifies if the feedback corresponds to a nonconformity, or
-to other type of record, such as "best practice", "suggestion", etc. It may be 
-qualified only later in the process. 
-
+This module purpose overlaps with "mgmtsystem_claim" module, so you should use either one or the other. 
+It will fit best to your uses cases requiring:
+  * a common numbering sequence for complaints and nonconformities;
+  * a single point-of-entry for all management system related occurrences.
 """,
     'depends' : ['mgmtsystem_nonconformity'],
     'data' : [
         'security/ir.model.access.csv',
-	'mgmtsystem_feedback.xml',
-        'mgmtsystem_feedback_data.xml',
-    ],
-    'demo' : [
-        'mgmtsystem_feedback_demo.xml',
+        'mgmtsystem_nonconformity.xml',
+        'mgmtsystem_nonconformity_data.xml',
     ],
     'installable' : True,
     'application' : False,
