@@ -1,13 +1,13 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-#	* mgmtsystem_nonconformity_feedback
+#	* mgmtsystem_nonconformity_claim
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.1-20120904-232007\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-29 15:43+0000\n"
-"PO-Revision-Date: 2012-10-29 15:43+0000\n"
+"POT-Creation-Date: 2012-12-12 10:50+0000\n"
+"PO-Revision-Date: 2012-12-12 10:50+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,94 +15,60 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: mgmtsystem_nonconformity_feedback
-#: view:mgmtsystem.feedback.type:0
-msgid "Feedback Types"
-msgstr "Tipos de feedback"
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,active:0
+msgid "Active?"
+msgstr "Ativo?"
 
-#. module: mgmtsystem_nonconformity_feedback
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity_feedback.nonconformity_origin_measure
-msgid "Other feedback"
-msgstr "Outro feedback"
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,description:0
+msgid "Description"
+msgstr "Descrição"
 
-#. module: mgmtsystem_nonconformity_feedback
-#: model:mgmtsystem.nonconformity.categ,name:mgmtsystem_nonconformity_feedback.nonconformity_source_complaint
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity_feedback.nonconformity_origin_complaint
-msgid "Complaint"
-msgstr "Reclamação"
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,name:0
+msgid "Title"
+msgstr "Título"
 
-#. module: mgmtsystem_nonconformity_feedback
-#: model:mgmtsystem.feedback.type,name:mgmtsystem_nonconformity_feedback.feedback_type_ob
-msgid "Observation"
-msgstr "Observação"
-
-#. module: mgmtsystem_nonconformity_feedback
-#: model:ir.model,name:mgmtsystem_nonconformity_feedback.model_mgmtsystem_nonconformity
+#. module: mgmtsystem_nonconformity_claim
+#: model:ir.model,name:mgmtsystem_nonconformity_claim.model_mgmtsystem_nonconformity
 msgid "Nonconformity of the management system"
 msgstr "Não conformidade do sistema de gestão"
 
-#. module: mgmtsystem_nonconformity_feedback
-#: model:mgmtsystem.nonconformity.categ,name:mgmtsystem_nonconformity_feedback.nonconformity_source_measure
-msgid "Analysis or measurement"
-msgstr "Análise/medição"
-
-#. module: mgmtsystem_nonconformity_feedback
-#: model:ir.model,name:mgmtsystem_nonconformity_feedback.model_mgmtsystem_nonconformity_categ
-msgid "Nonconformity Category"
-msgstr "Categoria de feedback"
-
-#. module: mgmtsystem_nonconformity_feedback
-#: model:mgmtsystem.feedback.type,name:mgmtsystem_nonconformity_feedback.feedback_type_io
+#. module: mgmtsystem_nonconformity_claim
+#: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_io
 msgid "Improvement Opportunity"
 msgstr "Oportunidade de melhoria"
 
-#. module: mgmtsystem_nonconformity_feedback
-#: view:mgmtsystem.nonconformity.categ:0
-msgid "Source of Feedback"
-msgstr "Feedback originário de"
+#. module: mgmtsystem_nonconformity_claim
+#: model:ir.model,name:mgmtsystem_nonconformity_claim.model_mgmtsystem_nonconformity_type
+msgid "Claim Type"
+msgstr "Tipo de ocorrência"
 
-#. module: mgmtsystem_nonconformity_feedback
-#: model:mgmtsystem.nonconformity.categ,name:mgmtsystem_nonconformity_feedback.nonconformity_source_review
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity_feedback.nonconformity_origin_review
-msgid "Management review"
-msgstr "Revisão pela gestão"
-
-#. module: mgmtsystem_nonconformity_feedback
-#: model:mgmtsystem.feedback.type,name:mgmtsystem_nonconformity_feedback.feedback_type_gp
+#. module: mgmtsystem_nonconformity_claim
+#: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_gp
 msgid "Good Practice"
 msgstr "Boa prática"
 
-#. module: mgmtsystem_nonconformity_feedback
-#: model:mgmtsystem.nonconformity.categ,name:mgmtsystem_nonconformity_feedback.nonconformity_source_intaudit
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity_feedback.nonconformity_origin_intaudit
-msgid "Internal Audit"
-msgstr "Auditoria interna"
+#. module: mgmtsystem_nonconformity_claim
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity_claim.open_mgmtsystem_nonconformity_type_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity_claim.menu_open_nonconformity_type
+#: view:mgmtsystem.nonconformity.type:0
+msgid "Claim Types"
+msgstr "Tipos de ocorrência"
 
-#. module: mgmtsystem_nonconformity_feedback
-#: model:ir.model,name:mgmtsystem_nonconformity_feedback.model_mgmtsystem_feedback_type
-msgid "Feedback Type"
-msgstr "Tipo de feedback"
+#. module: mgmtsystem_nonconformity_claim
+#: view:mgmtsystem.nonconformity:0
+msgid "Claims and Nonconformities"
+msgstr "Ocorrências e não conformidades"
 
-#. module: mgmtsystem_nonconformity_feedback
-#: model:mgmtsystem.nonconformity.categ,name:mgmtsystem_nonconformity_feedback.nonconformity_source_extaudit
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity_feedback.nonconformity_origin_extaudit
-msgid "External Audit"
-msgstr "Auditoria externa"
-
-#. module: mgmtsystem_nonconformity_feedback
-#: model:ir.actions.act_window,name:mgmtsystem_nonconformity_feedback.open_mgmtsystem_nonconformity_categ_list
-#: model:ir.ui.menu,name:mgmtsystem_nonconformity_feedback.menu_open_nonconformity_categ
-msgid "Feedback Source"
-msgstr "Feedback originário de"
-
-#. module: mgmtsystem_nonconformity_feedback
-#: model:mgmtsystem.feedback.type,name:mgmtsystem_nonconformity_feedback.feedback_type_nc
+#. module: mgmtsystem_nonconformity_claim
+#: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_nc
 msgid "Nonconformity"
 msgstr "Não conformidade"
 
-#. module: mgmtsystem_nonconformity_feedback
-#: model:ir.actions.act_window,name:mgmtsystem_nonconformity_feedback.open_mgmtsystem_feedback_type_list
-#: model:ir.ui.menu,name:mgmtsystem_nonconformity_feedback.menu_open_feedback_type
-msgid "Types"
-msgstr "Tipos"
+#. module: mgmtsystem_nonconformity_claim
+#: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_ob
+msgid "Observation"
+msgstr "Observação"
 
