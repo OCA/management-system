@@ -31,6 +31,7 @@ This module enables you to manage reviews of your management system.
     "depends" : [
         'mgmtsystem_nonconformity',
         'mgmtsystem_survey',
+        'audittrail',
     ],
     "init_xml" : [
         'review_sequence.xml',

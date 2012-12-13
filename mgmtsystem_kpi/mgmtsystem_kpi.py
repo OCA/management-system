@@ -148,7 +148,7 @@ class mgmtsystem_kpi_threshold_range(osv.osv):
         'max_code': fields.text('Maximum Computation Code'),
         'max_dbsource_id': fields.many2one('base.external.dbsource','External DB Source'),
         'color': fields.char('Color', help='RGB code with #', size=7, required=True),
-        'threshold_ids': fields.many2many('mgmtsystem.kpi.threshold','mgmtsystem_kpi_threshold_range_rel', 'range_id', 'Threshold_id', 'Thresholds'),
+        'threshold_ids': fields.many2many('mgmtsystem.kpi.threshold','mgmtsystem_kpi_threshold_range_rel', 'range_id', 'threshold_id', 'Thresholds'),
     }
 
     _defaults = {
@@ -286,8 +286,9 @@ class mgmtsystem_kpi(osv.osv):
             kpi_value = 0 
             if obj.kpi_type == 'local' and is_select_query(obj.kpi_code):
                 cr.execute(obj.kpi_code)
-                if is_one_value(cr.dictfetchall()):
-                    kpi_value = cr.dictfetchone()['value']
+                dic = cr.dictfetchall()
+                if is_one_value(dic):
+                    kpi_value = dic[0]['value']
             elif obj.kpi_type == 'external' and obj.dbsource_id.id and is_select_query(obj.kpi_code):
                 dbsrc_obj = self.pool.get('base.external.dbsource').browse(cr, uid, obj.dbsource_id.id, context)
                 res = dbsrc_obj.execute(obj.kpi_code)

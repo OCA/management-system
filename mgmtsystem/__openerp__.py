@@ -35,12 +35,13 @@ This module is the basis of any management system applications:
      * corrective actions,
      * improvement opportunities.
     """,
-    "depends" : ['base','board','audittrail', 'wiki'],
+    "depends" : ['base','board','wiki'],
     "init_xml" : [],
     "update_xml" : [
         'security/mgmtsystem_security.xml',
         'security/ir.model.access.csv',
         'mgmtsystem.xml',
+        'mgmtsystem_system.xml',
         'board_mgmtsystem_view.xml',
     ],
     "demo_xml" : [],

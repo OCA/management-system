@@ -51,6 +51,7 @@
                         <filter string="Manager" icon="terp-personal+" context="{'group_by':'manager_user_id'}"/>
                         <separator orientation="vertical"/>
                         <filter string="System" icon="gtk-execute" context="{'group_by':'system_id'}"/>
+                        <filter string="Partner" icon="terp-personal+" domain="[]" context="{'group_by':'partner_id'}"/>
                         <filter string="Procedure" icon="terp-stock_symbol-selection" context="{'group_by':'procedure_ids'}"/>
                         <!-- 
                         <separator orientation="vertical"/>
@@ -272,11 +273,11 @@
             <field name="model">mgmtsystem.nonconformity.cause</field>
             <field name="arch" type="xml">
                 <form string="Causes of nonconformity">
-	                <field name="name"/>
-	                <field name="sequence"/>
+	            <field name="name"/>
+	            <field name="sequence"/>
                     <field name="parent_id"/>
                     <field name="ref_code"/>
-	                <field name="description" colspan="4"/>
+	            <field name="description" colspan="4"/>
                 </form>
             </field>
         </record>
