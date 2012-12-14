@@ -21,8 +21,11 @@
 
 from tools.translate import _
 import netsvc as netsvc
-from osv import fields, osv
+from openerp.osv import fields, osv
+
 import time
+from tools import DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT
+from tools import DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT
 
 class mgmtsystem_nonconformity_cause(osv.osv):
     """
@@ -110,7 +113,7 @@ class mgmtsystem_nonconformity_severity(osv.osv):
     _columns = {
         'name': fields.char('Title', size=50, required=True, translate=True),
         'sequence': fields.integer('Sequence',),
-        'description': fields.text('Description', translation=True),
+        'description': fields.text('Description', translate=True),
         'active': fields.boolean('Active?'),
     }
     _defaults = {
@@ -183,7 +186,7 @@ class mgmtsystem_nonconformity(osv.osv):
             help="Conclusions from the last effectiveness evaluation."),
     }
     _defaults = {
-        'date': lambda *a: time.strftime('%Y-%m-%d'),
+        'date': lambda *a: time.strftime(DATE_FORMAT),
         'state': 'd',
         'author_user_id': lambda cr, uid, id, c={}: id,
         'ref': 'NEW',
@@ -209,7 +212,7 @@ class mgmtsystem_nonconformity(osv.osv):
             raise osv.except_osv(_('Error !'), _('Analysis is already approved.'))
         if not o.analysis:
             raise osv.except_osv(_('Error !'), _('Please provide an analysis before approving.'))
-        vals = {'analysis_date': time.strftime('%Y-%m-%d %H:%M'), 'analysis_user_id': uid }
+        vals = {'analysis_date': time.strftime(DATETIME_FORMAT), 'analysis_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Analysis Approved'))
         return True
@@ -231,7 +234,7 @@ class mgmtsystem_nonconformity(osv.osv):
             raise osv.except_osv(_('Error !'), _('Action plan is already approved.'))
         if not self.browse(cr, uid, ids)[0].analysis_date:
             raise osv.except_osv(_('Error !'), _('Analysis approved before the review confirmation.'))
-        vals = {'actions_date': time.strftime('%Y-%m-%d %H:%M'), 'actions_user_id': uid }
+        vals = {'actions_date': time.strftime(DATETIME_FORMAT), 'actions_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Action Plan Approved'))
         return True
@@ -255,7 +258,7 @@ class mgmtsystem_nonconformity(osv.osv):
         o = self.browse(cr, uid, ids)[0]
         if o.state != 'o':
             raise osv.except_osv(_('Error !'), _('This action can only be done in the In Progress state.'))
-        vals = {'evaluation_date': time.strftime('%Y-%m-%d %H:%M'), 'evaluation_user_id': uid }
+        vals = {'evaluation_date': time.strftime(DATETIME_FORMAT), 'evaluation_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_append(cr, uid, self.browse(cr, uid, ids), _('Effectiveness Evaluation Approved'))
         return True
@@ -294,8 +297,8 @@ class mgmtsystem_action(osv.osv):
     _inherit = "mgmtsystem.action"
     _columns = {
         'nonconformity_immediate_id': fields.one2many('mgmtsystem.nonconformity', 'immediate_action_id', readonly=True),
-        'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity', 'mgmtsystem_nonconformity_action_rel', 'action_id', 'nonconformity_id', 
-                                              'Nonconformities', readonly=True),
+        'nonconformity_ids': fields.many2many(
+            'mgmtsystem.nonconformity', 'mgmtsystem_nonconformity_action_rel', 'action_id', 'nonconformity_id', 'Nonconformities', readonly=True),
     }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

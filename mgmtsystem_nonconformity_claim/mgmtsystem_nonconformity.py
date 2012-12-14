@@ -18,7 +18,7 @@
 #
 ##############################################################################
 
-from osv import fields, osv
+from openerp.osv import fields, osv
 
 class mgmtsystem_nonconformity_type(osv.osv):
     """Claim Type: Nonconformity, Good Practice, Improvement Opportunity, Observation, ..."""
@@ -26,7 +26,7 @@ class mgmtsystem_nonconformity_type(osv.osv):
     _description = "Claim Type" 
     _columns = {
         'name': fields.char('Title', size=50, required=True, translate=True),
-        'description': fields.text('Description', translation=True),
+        'description': fields.text('Description', translate=True),
         'active': fields.boolean('Active?'),
     }
     _defaults = {

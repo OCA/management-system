@@ -18,7 +18,7 @@
 #
 ##############################################################################
 
-from osv import fields, osv
+from openerp.osv import fields, osv
 
 class mgmtsystem_nonconformity(osv.osv):
     _inherit = "mgmtsystem.nonconformity"
