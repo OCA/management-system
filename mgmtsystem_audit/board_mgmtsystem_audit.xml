@@ -7,7 +7,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree</field>
             <field name="view_id" ref="view_mgmtsystem_audit_tree"/>
-            <field name="domain">[('state','=','o')]</field>
+            <field name="domain">[('state','=','open')]</field>
         </record>
 
         <record id="board_mgmtsystem_audit_form" model="ir.ui.view">

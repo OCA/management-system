@@ -69,8 +69,8 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Audits">
-                    <field name="name" attrs="{'readonly':[('state','=','c')]}"/>
-                    <field name="date" attrs="{'readonly':[('state','=','c')]}"/>
+                    <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
+                    <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
                     <field name="reference"/>
 		    <field name="system_id"/>
                 </tree>
@@ -84,8 +84,8 @@
             <field name="arch" type="xml">
                 <search string="Audits">
                     <group>
-                        <filter name="current" icon="terp-document-new" domain="[('state','=','o')]" string="Open" help="Open Audits"/>
-                        <filter icon="terp-camera_test" domain="[('state','=','c')]" string="Closed" help="Closed Audits"/>
+                        <filter name="current" icon="terp-document-new" domain="[('state','=','open')]" string="Open" help="Open Audits"/>
+                        <filter icon="terp-camera_test" domain="[('state','=','done')]" string="Closed" help="Closed Audits"/>
                         <separator orientation="vertical"/>
                         <field name="name"/>
                         <field name="date"/>
@@ -103,37 +103,37 @@
             <field name="arch" type="xml">
                 <form string="Audit">
                     <group col="8" colspan="6">
-                        <field name="name" attrs="{'readonly':[('state','=','c')]}"/>
+                        <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
                         <field name="reference"/>
-                        <field name="date" attrs="{'readonly':[('state','=','c')]}"/>
+                        <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
 			<field name="system_id"/>
                     </group>
                     <notebook colspan="4">
                         <page string="Auditors">
-                            <field name="auditor_user_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="auditor_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                         <page string="Auditees">
-                            <field name="auditee_user_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="auditee_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                         <page string="Verification List">
-                            <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                         <page string="Strong Points">
-                            <field name="strong_points" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="strong_points" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                         <page string="To Improve Points">
-                            <field name="to_improve_points" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="to_improve_points" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                         <page string="Improvement Opportunities">
-                            <field name="imp_opp_ids" domain="[('type_action','=','improvement')]" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="imp_opp_ids" domain="[('type_action','=','improvement')]" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                         <page string="Nonconformities">
-                            <field name="nonconformity_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="nonconformity_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                     </notebook>
                     <group colspan="4">
                         <field name="state" select="1" readonly="1"/>
-                        <button name="button_close" string="Close" states="o" type="object" icon="gtk-jump-to"/>
+                        <button name="button_close" string="Close" states="open" type="object" icon="gtk-jump-to"/>
                     </group>
                 </form>
             </field>
