@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from osv import fields, osv
+from openerp.osv import fields, osv
 from tools.translate import _
 
 class mgmtsystem_audit(osv.osv):
@@ -30,8 +30,8 @@ class mgmtsystem_audit(osv.osv):
         'reference': fields.char('Reference', size=64, required=True, readonly=True),
         'date': fields.datetime('Date'),
         'line_ids': fields.one2many('mgmtsystem.verification.line','audit_id','Verification List'),
-	'auditor_user_ids': fields.many2many('res.users','mgmtsystem_auditor_user_rel','user_id','mgmtsystem_audit_id','Auditors'),
-	'auditee_user_ids': fields.many2many('res.users','mgmtsystem_auditee_user_rel','user_id','mgmtsystem_audit_id','Auditees'),
+        'auditor_user_ids': fields.many2many('res.users','mgmtsystem_auditor_user_rel','user_id','mgmtsystem_audit_id','Auditors'),
+        'auditee_user_ids': fields.many2many('res.users','mgmtsystem_auditee_user_rel','user_id','mgmtsystem_audit_id','Auditees'),
         'strong_points': fields.text('Strong Points'),
         'to_improve_points': fields.text('Points To Improve'),
         'imp_opp_ids': fields.many2many('mgmtsystem.action','mgmtsystem_audit_imp_opp_rel','mgmtsystem_action_id','mgmtsystem_audit_id','Improvement Opportunities'),
@@ -41,7 +41,7 @@ class mgmtsystem_audit(osv.osv):
     }
 
     _defaults = {
-        'reference': 'NEW', 
+        'reference': 'NEW',
         'state': 'o'
     }
 
@@ -60,16 +60,21 @@ class mgmtsystem_verification_line(osv.osv):
     _name = "mgmtsystem.verification.line"
     _description = "Verification Line"
     _columns = {
-	'name': fields.char('Question',size=300, required=True),
+        'name': fields.char('Question',size=300, required=True),
         'audit_id': fields.many2one('mgmtsystem.audit', 'Audit', ondelete='cascade', select=True),
+<<<<<<< ad4a1d15a9393eb931e2492c91792187aaf42bd0
         'procedure_id': fields.many2one('document.page', 'Procedure', ondelete='cascade', select=True),
 	'is_conformed': fields.boolean('Is conformed'),
 	'comments': fields.text('Comments'),
 	'seq': fields.integer('Sequence'),
+=======
+        'procedure_id': fields.many2one('wiki.wiki', 'Procedure', ondelete='cascade', select=True),
+        'is_conformed': fields.boolean('Is conformed'),
+        'comments': fields.text('Comments'),
+        'seq': fields.integer('Sequence'),
+>>>>>>> [FIX] fixes from review comments
     }
-
     _order = "seq"
-
     _defaults = {
         'is_conformed': False
     }
@@ -81,6 +86,9 @@ class mgmtsystem_nonconformity(osv.osv):
     _name = "mgmtsystem.nonconformity"
     _inherit = "mgmtsystem.nonconformity"
     _columns = {
+        #Remark: the relation name and column names are no longer necessary, so you can just write: 'audit_ids': fields.many2many('mgmtsystem.audit', 'Related Audits'),
+        #        However, the mgmtsystem_audit.nonconformity_ids field definition has the IDs swapped: 
+        #        This should be fixed for v7 and the migration script should swap the values in the "rel" table columns.
         'audit_ids': fields.many2many('mgmtsystem.audit','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_action_id','Related Audits'),
     }
 mgmtsystem_nonconformity()
