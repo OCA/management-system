@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from osv import fields, osv
+from openerp.osv import fields, osv
 
 class mgmtsystem_action(osv.osv):
     _inherit = "mgmtsystem.action"
@@ -31,14 +31,16 @@ class mgmtsystem_action(osv.osv):
         return res
     
     _columns = {
-        'action_type': fields.selection([('a','Action'), ('p','Project')]
-            , 'Action Type', required=True),
+        #Remark - upgrade from v0.1 requires data conversion:
+        #  * deprecated fields: corrective_type, corrective_project_id, preventive_type,preventive_project_id
+        #  * 1 action => 1 correction action + 1 prevention action
+        'action_type': fields.selection([('action','Action'), ('project','Project')], 'Action Type', required=True),
         'project_id': fields.many2one('project.project', 'Project'),
         'complete_name': fields.function(_complete_name, string='Complete Name', type='char', size=250),
         'name': fields.char('Claim Subject', size=128, required=False), #modified: it's not always required
     }
     _defaults = {
-        'action_type': 'a',
+        'action_type': 'action',
     }
     
     def name_get(self, cr, uid, ids, context=None):
@@ -48,14 +50,14 @@ class mgmtsystem_action(osv.osv):
         project_model = self.pool.get('project.project')
         for o in self.browse(cr, uid, ids, context=context):
             r = (o.id, o.name)
-            if o.action_type == 'p' and o.project_id:
+            if o.action_type == 'project' and o.project_id:
                 r = (o.id, o.project_id.name)
             res.append(r)
         return res
     
     def _init_install(self, cr, uid):
         """Initialize current data in inherited modules."""
-        cr.execute("update mgmtsystem_action set action_type='a' where action_type is null")
+        cr.execute("update mgmtsystem_action set action_type='action' where action_type is null")
         return  True
 
 mgmtsystem_action()
