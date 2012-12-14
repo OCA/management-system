@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from osv import fields, osv
+from openerp.osv import fields, osv
 from crm import crm
 
 class mgmtsystem_action(osv.osv):
@@ -28,10 +28,10 @@ class mgmtsystem_action(osv.osv):
     _inherit = "crm.claim"
     _columns = {
         'reference': fields.char('Reference', size=64, required=True, readonly=True),
-	    'type_action': fields.selection([('immediate','Immediate Action'),
-                                         ('correction','Corrective Action'),
-                                         ('prevention','Preventive Action'),
-                                         ('improvement','Improvement Opportunity')],
+        'type_action': fields.selection([('immediate', 'Immediate Action'),
+                                         ('correction', 'Corrective Action'),
+                                         ('prevention', 'Preventive Action'),
+                                         ('improvement', 'Improvement Opportunity')],
                                         'Response Type'),
         'message_ids': fields.one2many('mail.message',
                                        'res_id',

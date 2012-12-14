@@ -20,33 +20,31 @@
 ##############################################################################
 {
     "name" : "Management System - Action",
-    "version" : "0.2",
+    "version" : "1.0",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "AGPL-3",
     "category" : "Management System",
-    "description": """
-	This module enables you to manage the different actions of your management 
-        system :
-            * immediate actions
-            * corrective actions
-            * preventive actions
-            * improvement opportunities.
+    "description": """\
+This module enables you to manage the different actions of your management system :
+  * immediate actions
+  * corrective actions
+  * preventive actions
+  * improvement opportunities.
+
+WARNING: when upgrading from v0.1, data conversion is required, since there are subtancial changes to the data structure.
     """,
     "depends" : ['mgmtsystem','audittrail','crm_claim'],
     "init_xml" : [],
     "update_xml" : [
         'security/ir.model.access.csv',
-	'mgmtsystem_action.xml',
-	'action_sequence.xml',
-	'board_mgmtsystem_action.xml',
-	'workflow_mgmtsystem_action.xml',
+        'mgmtsystem_action.xml',
+        'action_sequence.xml',
+        'board_mgmtsystem_action.xml',
+        'workflow_mgmtsystem_action.xml',
     ],
-    "demo_xml" : [
-	'demo_action.xml',
-    ],
+    "demo_xml" : ['demo_action.xml',],
     "installable" : True,
-    "certificate" : ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
