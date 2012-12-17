@@ -23,11 +23,15 @@
     "version" : "1.0",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
+<<<<<<< 3f17ee8a034d239a66d5f045cbd9a8a03a6363a9
 <<<<<<< d494b4b853d2a89f552200583478a2ebdffcb095
     "license" : "AGPL-3",
 =======
     "license" : "AGPL",
 >>>>>>> [CHG] AGPL license; set verion to 1.0
+=======
+    "license" : "AGPL-3",
+>>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
     "description": """\
 This module enables you to manage reviews of your management system.
