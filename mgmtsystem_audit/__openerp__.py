@@ -23,11 +23,15 @@
     "version" : "1.0",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
+<<<<<<< 2627b530f5f4b36bc2c41ad049a8059c969263f9
 <<<<<<< 3c33536853013978b851b9deacaa9c394c9db1b7
     "license" : "AGPL-3",
 =======
     "license" : "AGPL",
 >>>>>>> [CHG] AGPL license; set verion to 1.0
+=======
+    "license" : "AGPL-3",
+>>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
     "description": """\
 This module enables you to manage audits and verifications lists of your management system.

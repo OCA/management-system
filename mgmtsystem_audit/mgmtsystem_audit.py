@@ -36,13 +36,13 @@ class mgmtsystem_audit(osv.osv):
         'to_improve_points': fields.text('Points To Improve'),
         'imp_opp_ids': fields.many2many('mgmtsystem.action','mgmtsystem_audit_imp_opp_rel','mgmtsystem_action_id','mgmtsystem_audit_id','Improvement Opportunities'),
         'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity','mgmtsystem_audit_nonconformity_rel','mgmtsystem_action_id','mgmtsystem_audit_id','Nonconformities'),
-        'state': fields.selection([('o','Open'),('c','Closed')], 'State'),
+        'state': fields.selection([('open','Open'),('done','Closed')], 'State'),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
     }
 
     _defaults = {
         'reference': 'NEW',
-        'state': 'o'
+        'state': 'open'
     }
 
     def create(self, cr, uid, vals, context=None):
@@ -52,7 +52,7 @@ class mgmtsystem_audit(osv.osv):
         return super(mgmtsystem_audit, self).create(cr, uid, vals, context)
 
     def button_close(self, cr, uid, ids, context=None):
-        return self.write(cr, uid, ids, {'state': 'c'})
+        return self.write(cr, uid, ids, {'state': 'done'})
 
 mgmtsystem_audit()
 
