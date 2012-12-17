@@ -18,9 +18,9 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv
+from openerp.orm import fields, orm
 
-class mgmtsystem_nonconformity_type(osv.osv):
+class mgmtsystem_nonconformity_type(orm.Model):
     """Claim Type: Nonconformity, Good Practice, Improvement Opportunity, Observation, ..."""
     _name = "mgmtsystem.nonconformity.type"
     _description = "Claim Type" 
@@ -32,16 +32,15 @@ class mgmtsystem_nonconformity_type(osv.osv):
     _defaults = {
         'active': True,
     }
-mgmtsystem_nonconformity_type()
 
 
-class mgmtsystem_nonconformity(osv.osv):
+class mgmtsystem_nonconformity(orm.Model):
     _name = "mgmtsystem.nonconformity"
     _inherit = "mgmtsystem.nonconformity"
     _description = "Feedback and Nonconformities"
     _columns = {
         'type_id': fields.many2one('mgmtsystem.nonconformity.type','Type'), 
     }
-mgmtsystem_nonconformity()
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

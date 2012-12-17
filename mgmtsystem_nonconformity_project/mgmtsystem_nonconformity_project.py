@@ -19,9 +19,9 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv
+from openerp.osv import fields, orm
 
-class mgmtsystem_action(osv.osv):
+class mgmtsystem_action(orm.Model):
     _inherit = "mgmtsystem.action"
 
     def _complete_name(self, cr, uid, ids, name, args, context=None):
@@ -60,6 +60,5 @@ class mgmtsystem_action(osv.osv):
         cr.execute("update mgmtsystem_action set action_type='action' where action_type is null")
         return  True
 
-mgmtsystem_action()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

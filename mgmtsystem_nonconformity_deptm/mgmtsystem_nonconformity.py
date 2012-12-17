@@ -18,9 +18,9 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv
+from openerp.osv import fields, orm
 
-class mgmtsystem_nonconformity(osv.osv):
+class mgmtsystem_nonconformity(orm.Model):
     _inherit = "mgmtsystem.nonconformity"
     _columns = {
         'department_id': fields.many2one('hr.department', 'Department', required=True),
@@ -37,6 +37,5 @@ class mgmtsystem_nonconformity(osv.osv):
                 result['superior_user_id'] = deptm.parent_id.manager_id.user_id.id
         return {'value': result}
 
-mgmtsystem_nonconformity()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
