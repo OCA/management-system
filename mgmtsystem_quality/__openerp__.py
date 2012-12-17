@@ -23,11 +23,15 @@
     "version" : "1.0",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
+<<<<<<< d9d582b596182f5ff2408dbec985ae954a121edf
 <<<<<<< ab17a67d5cf4de853b75c589fd094a698c2c878d
     "license" : "AGPL-3",
 =======
     "license" : "AGPL",
 >>>>>>> [CHG] AGPL license; set verion to 1.0
+=======
+    "license" : "AGPL-3",
+>>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
     "description": """\
 This module enables you to manage your quality management system, including :
