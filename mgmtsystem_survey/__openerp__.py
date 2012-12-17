@@ -23,11 +23,15 @@
     "version" : "1.0",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
+<<<<<<< 94d214c43b1c1025f4471291cd2a5e0bcb297021
 <<<<<<< 5df8409ead71a04a7588d51ad33d5d46bc319c79
     "license" : "AGPL-3",
 =======
     "license" : "GPL",
 >>>>>>> [CHG] AGPL license; set verion to 1.0
+=======
+    "license" : "AGPL-3",
+>>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
     "description": """This module enables you to manage your satisfaction surveys and its answers.""",
     "depends" : ['survey'],
