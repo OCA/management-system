@@ -23,11 +23,15 @@
     "version" : "1.0",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
+<<<<<<< 8f0c518b2805edad798595942b974503d66a3e4f
 <<<<<<< ccdb4bd26de7eaa4305a9d2bdfa2170ba166363e
     "license" : "AGPL-3",
 =======
     "license" : "AGPL",
 >>>>>>> [CHG] AGPL license; set verion to 1.0
+=======
+    "license" : "AGPL-3",
+>>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
     "description": """\
 This module enables you to manage the different actions of your management system :
