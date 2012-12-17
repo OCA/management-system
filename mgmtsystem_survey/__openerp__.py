@@ -23,7 +23,7 @@
     "version" : "1.0",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "GPL",
+    "license" : "AGPL-3",
     "category" : "Management System",
     "description": """This module enables you to manage your satisfaction surveys and its answers.""",
     "depends" : ['survey'],

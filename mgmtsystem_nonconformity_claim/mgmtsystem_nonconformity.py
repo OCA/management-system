@@ -18,7 +18,7 @@
 #
 ##############################################################################
 
-from openerp.orm import fields, orm
+from openerp.osv import fields, orm
 
 class mgmtsystem_nonconformity_type(orm.Model):
     """Claim Type: Nonconformity, Good Practice, Improvement Opportunity, Observation, ..."""

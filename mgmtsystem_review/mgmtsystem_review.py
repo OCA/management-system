@@ -35,12 +35,12 @@ class mgmtsystem_review(osv.osv):
         'changes': fields.text('Changes'),
         'line_ids': fields.one2many('mgmtsystem.review.line','review_id','Lines'),
         'conclusion': fields.text('Conclusion'),
-        'state': fields.selection([('o','Open'),('c','Closed')], 'State')
+        'state': fields.selection([('open','Open'),('done','Closed')], 'State')
     }
 
     _defaults = {
         'reference': 'NEW', 
-        'state': 'o'
+        'state': 'open'
     }
 
     def create(self, cr, uid, vals, context=None):
@@ -50,7 +50,7 @@ class mgmtsystem_review(osv.osv):
         return super(mgmtsystem_review, self).create(cr, uid, vals, context)
 
     def button_close(self, cr, uid, ids, context=None):
-        return self.write(cr, uid, ids, {'state': 'c'})
+        return self.write(cr, uid, ids, {'state': 'done'})
 
 mgmtsystem_review()
 

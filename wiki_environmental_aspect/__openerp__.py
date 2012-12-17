@@ -23,7 +23,7 @@
     "version" : "1.0",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL",
+    "license" : "AGPL-3",
     "category" : "Generic Modules/Others",
     "description": """Environmental Aspects Template, useful for Environment Management System.""",
     "depends" : ['wiki'],

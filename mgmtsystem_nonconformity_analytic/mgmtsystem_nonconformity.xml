@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
 
                 <field name="partner_id" position="after">
-                    <field name="analytic_account_id" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
+                    <field name="analytic_account_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                 </field>
 
             </field>
