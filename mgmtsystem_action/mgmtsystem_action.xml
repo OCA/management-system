@@ -92,7 +92,6 @@
 							<group col="2" colspan="4">
 							  <field name="subject" widget="char" attrs="{'invisible': [('email_from', '=', False)]}" size="512"/>
 							</group>
-                                			<!-- <field name="body_text" colspan="4"/> -->
                             			</group>
 						<notebook colspan="4">						    
 						  <page string="Details">
