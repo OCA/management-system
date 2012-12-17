@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,12 +15,13 @@
 #    GNU General Public License for more details.
 #
 #    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 import time
 from report import report_sxw
+
 
 class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
@@ -35,12 +36,16 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
         v = {}
         p = []
         for l in verification_lines:
-            proc_nm = self.pool.get('wiki.wiki').read(self.cr, self.uid, l.procedure_id.id, ['name'])
+            if l.procedure_id:
+                proc_nm = self.pool.get('wiki.wiki').read(self.cr, self.uid, l.procedure_id.id, ['name'])['name']
+            else:
+                proc_nm = ''
+
             p.append({"id": l.id,
-                      "procedure": proc_nm['name'],
+                      "procedure": proc_nm,
                       "name": l.name,
                       "yes_no": "Yes / No"})
-                    
+
         p = sorted(p, key=lambda k: k["procedure"])
 
         proc_line = False
@@ -49,7 +54,7 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
         for i in range(len(p)):
             if proc_name != p[i]['procedure']:
                 proc_line = True
-                
+
             if proc_line:
                 q.append({"id": p[i]['id'],
                           "procedure": p[i]['procedure'],
@@ -63,10 +68,8 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
                       "name": p[i]['name'],
                       "yes_no": "Yes / No"})
 
-            
-
         return q
-        
+
 report_sxw.report_sxw(
     'report.mgmtsystem.audit.verificationlist',
     'mgmtsystem.audit',
