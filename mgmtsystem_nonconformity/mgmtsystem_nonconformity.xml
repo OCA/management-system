@@ -33,10 +33,10 @@
             <field name="arch" type="xml">
                 <search>
                     <group>
-                        <filter name="draft" icon="terp-document-new" domain="[('state','=','d')]" string="Draft" help="Draft/New nonconformities"/>
-                        <filter name="pending" icon="terp-gtk-media-pause" domain="[('state','in',['a','p'])]" string="Analysis" help="Nonconformities pending review"/>
-                        <filter name="current" icon="terp-check" domain="[('state','=','o')]" string="In Progress" help="Open Nonconformities"/>
-                        <filter icon="terp-camera_test" domain="[('state','=','c')]" string="Closed" help="Closed Nonconformities"/>
+                        <filter name="draft" icon="terp-document-new" domain="[('state','=','draft')]" string="Draft" help="Draft/New nonconformities"/>
+                        <filter name="pending" icon="terp-gtk-media-pause" domain="[('state','in',['analysis','pending'])]" string="Analysis" help="Nonconformities pending review"/>
+                        <filter name="current" icon="terp-check" domain="[('state','=','open')]" string="In Progress" help="Open Nonconformities"/>
+                        <filter icon="terp-camera_test" domain="[('state','=','done')]" string="Closed" help="Closed Nonconformities"/>
                         <separator orientation="vertical"/>
                         <field name="ref"/>
                         <field name="date"/>
@@ -83,82 +83,82 @@
             <field name="arch" type="xml">
                 <form>
                     <group colspan="2" col="2">
-                        <field name="ref" attrs="{'readonly':[('state','not in',['d'])]}"/>
-                        <field name="date" attrs="{'readonly':[('state','not in',['d'])]}"/>
-                        <field name="partner_id" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
-                        <field name="reference" attrs="{'readonly':[('state','not in',['d'])]}"/>
+                        <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                        <field name="date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                        <field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                        <field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                     </group>
                     <group colspan="2" col="2">
-                        <field name="responsible_user_id" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
-                        <field name="manager_user_id" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
-                        <field name="author_user_id" attrs="{'readonly':[('state','not in',['d'])]}"/>
-			            <field name="system_id" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
+                        <field name="responsible_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                        <field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                        <field name="author_user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+			            <field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                     </group>
                     <notebook colspan="4">
                         <page string="Inputs">
                             <separator string="Description" colspan="4"/>
-                            <field name="description" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
+                            <field name="description" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                             <newline/>
                             <separator string="Origins" colspan="4"/>
-                            <field name="origin_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['d','a'])]}"/>
+                            <field name="origin_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                         </page>
                         <page string="Procedures">
-                            <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','not in',['d','a'])]}" 
+                            <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" 
                                    domain="[('group_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
                         </page>
 
-                        <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['d','x'])]}">
+                        <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
                             <separator string="Analysis" colspan="4"/>
                             <field name="analysis" nolabel="1" colspan="4" 
-                                   attrs="{'readonly':[('state','not in',['a'])], 'required':[('state','in',['a','p','o'])]}"/>
+                                   attrs="{'readonly':[('state','not in',['analysis'])], 'required':[('state','in',['analysis','pending','open'])]}"/>
                             <newline/>
 
                             <separator string="Causes" colspan="4"/>
-                            <field name="cause_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['a'])]}"/>
+                            <field name="cause_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
                             <newline/>
 
                             <separator string="Analysis Confirmation" colspan="4"/>
                             <group colspan="2" col="2">
-	                            <field name="severity_id" attrs="{'readonly':[('state','not in',['a'])]}"/>
+	                            <field name="severity_id" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
 	                            <field name="immediate_action_id" domain="[('type_action','=','immediate')]" 
-	                                  attrs="{'readonly':[('state','not in',['a'])]}"/>
+	                                  attrs="{'readonly':[('state','not in',['analysis'])]}"/>
                             </group>
                             <group colspan="2" col="2">
 	                            <field name="analysis_user_id"/>
 	                            <field name="analysis_date"/>
 	                            <label/>
 	                            <button name="action_sign_analysis" string="Approve" icon="terp-camera_test"
-                                        type="object" states="a"
+                                        type="object" states="analysis"
                                         groups="mgmtsystem.group_mgmtsystem_user_manager"/>
                             </group>
                         </page>
 
-                        <page string="Actions" attrs="{'invisible':[('state','in',['d','a','x'])]}">
+                        <page string="Actions" attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}">
                             <separator string="Action Plan" colspan="4" />
                             <field name="action_ids" nolabel="1" colspan="4" 
-                                   attrs="{'readonly':[('state','not in',['p'])]}"/>
+                                   attrs="{'readonly':[('state','not in',['pending'])]}"/>
 
                             <group colspan="2" col="2">
                                 <separator string="Plan Review" colspan="2"/>
 	                            <field name="action_comments" colspan="2" nolabel="1" 
-	                                   attrs="{'readonly':[('state','not in',['p'])]}"/>
+	                                   attrs="{'readonly':[('state','not in',['pending'])]}"/>
                                 <field name="actions_user_id"/>
                                 <field name="actions_date"/>
                                 <label/>
                                 <button name="action_sign_actions" string="Approve" icon="terp-camera_test"
-                                        type="object" states="p"
+                                        type="object" states="pending"
                                         groups="mgmtsystem.group_mgmtsystem_user_manager"/>
                             </group>
 
-                            <group colspan="2" col="2" attrs="{'invisible':[('state','not in',['o','c'])]}">
+                            <group colspan="2" col="2" attrs="{'invisible':[('state','not in',['open','done'])]}">
 			                    <separator string="Effectiveness Review" colspan="2"/>
                                 <field name="evaluation_comments" nolabel="1" colspan="2" 
-                                       attrs="{'readonly':[('state','not in',['o'])]}"/>
+                                       attrs="{'readonly':[('state','not in',['open'])]}"/>
 			                    <field name="evaluation_user_id"/>
                                 <field name="evaluation_date"/>
                                 <label/>
 			                    <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test"
-			                            type="object" states="o" 
+			                            type="object" states="open" 
 			                            groups="mgmtsystem.group_mgmtsystem_auditor"/>
                             </group>
                         </page>
@@ -190,14 +190,14 @@
 
                     </notebook>
                     <group col="8" colspan="4">
-                        <field name="state" widget="statusbar" statusbar_visible="d,a,p,o,c"/>
-                        <button name="button_cancel" string="Cancel" states="d,a,p,o" icon="gtk-cancel"/>
-                        <button name="button_analysis" string="Send for Analysis" states="d,p" icon="terp-idea"/>
-                        <button name="button_review" string="Send for Review" states="a,o" icon="gtk-go-up" />
-                        <button name="button_open" string="Start/Open" states="p" icon="gtk-go-forward" />
-                        <button name="button_close" string="Close" states="o" icon="terp-dialog-close"
+                        <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done"/>
+                        <button name="button_cancel" string="Cancel" states="draft,analysis,pending,open" icon="gtk-cancel"/>
+                        <button name="button_analysis" string="Send for Analysis" states="draft,pending" icon="terp-idea"/>
+                        <button name="button_review" string="Send for Review" states="analysis,open" icon="gtk-go-up" />
+                        <button name="button_open" string="Start/Open" states="pending" icon="gtk-go-forward" />
+                        <button name="button_close" string="Close" states="open" icon="terp-dialog-close"
                                 groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor" />
-                        <button name="case_reset" string="Reset to New" states="c,x" type="object" icon="gtk-undo"/>
+                        <button name="case_reset" string="Reset to New" states="done,cancel" type="object" icon="gtk-undo"/>
                     </group>
                 </form>
             </field>

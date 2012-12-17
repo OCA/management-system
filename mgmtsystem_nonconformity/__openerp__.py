@@ -23,11 +23,15 @@
     "version" : "1.0",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
+<<<<<<< ff56ec7c15f83ab383a3b19f8db21365dddbb53f
 <<<<<<< 7ae63b3eb748c2c03907bd9e7a6ab8fb298c81df
     "license" : "AGPL-3",
 =======
     "license" : "AGPL",
 >>>>>>> [CHG] AGPL license; set verion to 1.0
+=======
+    "license" : "AGPL-3",
+>>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
     "description": """\
 This module enables you to manage the nonconformities of your management 
