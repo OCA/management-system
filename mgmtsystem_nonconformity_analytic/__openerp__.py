@@ -19,7 +19,7 @@
 ##############################################################################
 {
     "name" : "Management System Nonconformity - Analytic Account",
-    "version" : "0.1",
+    "version" : "1.0",
     "author" : "Daniel Reis",
     "category" : "Management System",
     "description": """Add Analytic Accounts / Contracts to Non Conformities""",

@@ -19,7 +19,7 @@
 ##############################################################################
 {
     "name" : "Management System Nonconformity - Department",
-    "version" : "0.1",
+    "version" : "1.0",
     "author" : "Daniel Reis",
     "category" : "Management System",
     "description": """Add Department to Non Conformities""",
