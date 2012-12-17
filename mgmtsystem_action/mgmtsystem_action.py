@@ -19,10 +19,10 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv
+from openerp.osv import fields, orm
 from crm import crm
 
-class mgmtsystem_action(osv.osv):
+class mgmtsystem_action(orm.Model):
     _name = "mgmtsystem.action"
     _description = "Action"
     _inherit = "crm.claim"
@@ -47,9 +47,7 @@ class mgmtsystem_action(osv.osv):
     def create(self, cr, uid, vals, context=None):
         vals.update({
             'reference': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.action')
-        })
-        return super(mgmtsystem_action, self).create(cr, uid, vals, context)
-
-mgmtsystem_action()
+        }, context=context)
+        return super(mgmtsystem_action, self).create(cr, uid, vals, context=context)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
