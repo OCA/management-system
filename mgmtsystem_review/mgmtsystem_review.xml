@@ -67,8 +67,8 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Reviews">
-                    <field name="name" attrs="{'readonly':[('state','=','c')]}"/>
-                    <field name="date" attrs="{'readonly':[('state','=','c')]}"/>
+                    <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
+                    <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
                     <field name="reference"/>
                 </tree>
             </field>
@@ -81,8 +81,8 @@
             <field name="arch" type="xml">
                 <search string="Reviews">
                     <group>
-                        <filter name="current" icon="terp-document-new" domain="[('state','=','o')]" string="Open" help="Open Reviews"/>
-                        <filter icon="terp-camera_test" domain="[('state','=','c')]" string="Closed" help="Closed Reviews"/>
+                        <filter name="current" icon="terp-document-new" domain="[('state','=','open')]" string="Open" help="Open Reviews"/>
+                        <filter icon="terp-camera_test" domain="[('state','=','done')]" string="Closed" help="Closed Reviews"/>
                         <separator orientation="vertical"/>
                         <field name="name"/>
                         <field name="date"/>
@@ -99,35 +99,35 @@
             <field name="arch" type="xml">
                 <form string="Review">
                     <group col="6" colspan="6">
-                        <field name="name" attrs="{'readonly':[('state','=','c')]}"/>
+                        <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
                         <field name="reference"/>
-                        <field name="date" attrs="{'readonly':[('state','=','c')]}"/>
+                        <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
                     </group>
                     <notebook colspan="4">
                         <page string="Participants">
-                            <field name="user_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                         <page string="Inputs">
                             <group colspan="4">
                                 <separator string="Policy" colspan="2"/>
                                 <separator string="Changes affecting the management systems" colspan="2"/>
-                                <field name="policy" attrs="{'readonly':[('state','=','c')]}" colspan="2" nolabel="1"/>
-                                <field name="changes" attrs="{'readonly':[('state','=','c')]}" colspan="2" nolabel="1"/>
+                                <field name="policy" attrs="{'readonly':[('state','=','done')]}" colspan="2" nolabel="1"/>
+                                <field name="changes" attrs="{'readonly':[('state','=','done')]}" colspan="2" nolabel="1"/>
                             </group>
                             <newline/>
                             <separator string="Survey Answers" colspan="4"/>
-                            <field name="response_ids" colspan="4" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="response_ids" colspan="4" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                         <page string="Lines">
-                            <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                         <page string="Conclusion">
-                            <field name="conclusion" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
+                            <field name="conclusion" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                     </notebook>
                     <group colspan="4">
                         <field name="state" select="1" readonly="1"/>
-                        <button name="button_close" string="Close" states="o" type="object" icon="gtk-jump-to"/>
+                        <button name="button_close" string="Close" states="open" type="object" icon="gtk-jump-to"/>
                     </group>
                 </form>
             </field>
