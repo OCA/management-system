@@ -273,7 +273,7 @@ class mgmtsystem_nonconformity(orm.Model):
         self.message_append(cr, uid, self.browse(cr, uid, ids, context=context), _('Close'))
         return self.write(cr, uid, ids, {'state': 'done'}, context=context)
 
-    def case_reset(self, cr, uid, ids, *args):
+    def case_reset(self, cr, uid, ids, context=None, *args):
         """Reset to Draft and restart the workflows"""
         wf_service = netsvc.LocalService("workflow")
         for id in ids:
