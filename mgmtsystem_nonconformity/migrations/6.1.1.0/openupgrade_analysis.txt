@@ -1,0 +1,78 @@
+---mgmtsystem_nonconformity---
+mgmtsystem_nonconformity / mgmtsystem.action        / nonconformity_ids (many2many) : NEW relation: mgmtsystem.nonconformity
+mgmtsystem_nonconformity / mgmtsystem.action        / nonconformity_immediate_id (one2many): NEW relation: mgmtsystem.nonconformity
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / action_comments (text)        : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / action_ids (many2many)        : NEW relation: mgmtsystem.action
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / actions_date (datetime)       : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / actions_user_id (many2one)    : NEW relation: res.users
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / analysis_date (datetime)      : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / analysis_user_id (many2one)   : NEW relation: res.users
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / corrective_action_id (many2one): DEL relation: mgmtsystem.action
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / effectiveness_corrective (text): DEL 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / effectiveness_immediate (text): DEL 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / effectiveness_preventive (text): DEL 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / evaluation_comments (text)    : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / evaluation_date (datetime)    : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / evaluation_user_id (many2one) : NEW relation: res.users
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / message_ids (one2many)        : NEW relation: mail.message
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / preventive_action_id (many2one): DEL relation: mgmtsystem.action
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / severity_id (many2one)        : NEW relation: mgmtsystem.nonconformity.severity
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / state (selection)             : selection_keys is now '['analysis', 'cancel', 'done', 'draft', 'open', 'pending']' ('['c', 'o']')
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.cause / child_ids (one2many)          : NEW relation: mgmtsystem.nonconformity.cause
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.cause / parent_id (many2one)          : NEW relation: mgmtsystem.nonconformity.cause
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.cause / ref_code (char)               : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.cause / sequence (integer)            : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.origin / child_ids (one2many)          : NEW relation: mgmtsystem.nonconformity.origin
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.origin / parent_id (many2one)          : NEW relation: mgmtsystem.nonconformity.origin
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.origin / ref_code (char)               : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.origin / sequence (integer)            : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.severity / active (boolean)              : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.severity / description (text)            : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.severity / name (char)                   : NEW required: required
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.severity / sequence (integer)            : NEW 
+new xml-id of model ir.actions.act_window: mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_severity_list
+new xml-id of model ir.model.access: mgmtsystem_nonconformity.access_mgmtsystem_nonconformity_cause_viewer
+new xml-id of model ir.model.access: mgmtsystem_nonconformity.access_mgmtsystem_nonconformity_origin_viewer
+new xml-id of model ir.model.access: mgmtsystem_nonconformity.access_mgmtsystem_nonconformity_severity_manager
+new xml-id of model ir.model.access: mgmtsystem_nonconformity.access_mgmtsystem_nonconformity_severity_user
+new xml-id of model ir.model.access: mgmtsystem_nonconformity.access_mgmtsystem_nonconformity_severity_viewer
+new xml-id of model ir.ui.menu: mgmtsystem_nonconformity.menu_open_nonconformity_severity
+new xml-id of model ir.ui.view: mgmtsystem_nonconformity.view_mgmtsystem_action_form
+new xml-id of model ir.ui.view: mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_severity_form
+new xml-id of model mgmtsystem.nonconformity.cause: mgmtsystem_nonconformity.bad_communication
+new xml-id of model mgmtsystem.nonconformity.cause: mgmtsystem_nonconformity.bad_partner_relation
+new xml-id of model mgmtsystem.nonconformity.cause: mgmtsystem_nonconformity.badly_defined_need
+new xml-id of model mgmtsystem.nonconformity.cause: mgmtsystem_nonconformity.hr_unavailable_inadequate
+new xml-id of model mgmtsystem.nonconformity.cause: mgmtsystem_nonconformity.information_not_available
+new xml-id of model mgmtsystem.nonconformity.cause: mgmtsystem_nonconformity.instruction_not_respected
+new xml-id of model mgmtsystem.nonconformity.cause: mgmtsystem_nonconformity.procedure_not_defined
+new xml-id of model mgmtsystem.nonconformity.cause: mgmtsystem_nonconformity.procedure_not_respected
+new xml-id of model mgmtsystem.nonconformity.cause: mgmtsystem_nonconformity.technical_failure
+new xml-id of model mgmtsystem.nonconformity.cause: mgmtsystem_nonconformity.work_conditions
+new xml-id of model mgmtsystem.nonconformity.origin: mgmtsystem_nonconformity.nc_origin_dr
+new xml-id of model mgmtsystem.nonconformity.origin: mgmtsystem_nonconformity.nc_origin_extenal_audit
+new xml-id of model mgmtsystem.nonconformity.origin: mgmtsystem_nonconformity.nc_origin_external_client
+new xml-id of model mgmtsystem.nonconformity.origin: mgmtsystem_nonconformity.nc_origin_internal_audit
+new xml-id of model mgmtsystem.nonconformity.origin: mgmtsystem_nonconformity.nc_origin_internal_client
+new xml-id of model mgmtsystem.nonconformity.origin: mgmtsystem_nonconformity.nc_origin_process
+new xml-id of model mgmtsystem.nonconformity.origin: mgmtsystem_nonconformity.nc_origin_qc
+new xml-id of model mgmtsystem.nonconformity.severity: mgmtsystem_nonconformity.nonconformity_severity_maj
+new xml-id of model mgmtsystem.nonconformity.severity: mgmtsystem_nonconformity.nonconformity_severity_min
+new xml-id of model mgmtsystem.nonconformity.severity: mgmtsystem_nonconformity.nonconformity_severity_no
+new xml-id of model workflow.activity: mgmtsystem_nonconformity.mgmtsystem_nonconformity_analysis
+new xml-id of model workflow.activity: mgmtsystem_nonconformity.mgmtsystem_nonconformity_cancel
+new xml-id of model workflow.activity: mgmtsystem_nonconformity.mgmtsystem_nonconformity_close
+new xml-id of model workflow.activity: mgmtsystem_nonconformity.mgmtsystem_nonconformity_draft
+new xml-id of model workflow.activity: mgmtsystem_nonconformity.mgmtsystem_nonconformity_open
+new xml-id of model workflow.activity: mgmtsystem_nonconformity.mgmtsystem_nonconformity_pending
+new xml-id of model workflow.transition: mgmtsystem_nonconformity.mgmtsystem_nonconformity_analysis_cancel
+new xml-id of model workflow.transition: mgmtsystem_nonconformity.mgmtsystem_nonconformity_analysis_pending
+new xml-id of model workflow.transition: mgmtsystem_nonconformity.mgmtsystem_nonconformity_draft_analysis
+new xml-id of model workflow.transition: mgmtsystem_nonconformity.mgmtsystem_nonconformity_draft_cancel
+new xml-id of model workflow.transition: mgmtsystem_nonconformity.mgmtsystem_nonconformity_open_cancel
+new xml-id of model workflow.transition: mgmtsystem_nonconformity.mgmtsystem_nonconformity_open_close
+new xml-id of model workflow.transition: mgmtsystem_nonconformity.mgmtsystem_nonconformity_open_pending
+new xml-id of model workflow.transition: mgmtsystem_nonconformity.mgmtsystem_nonconformity_pending_analysis
+new xml-id of model workflow.transition: mgmtsystem_nonconformity.mgmtsystem_nonconformity_pending_cancel
+new xml-id of model workflow.transition: mgmtsystem_nonconformity.mgmtsystem_nonconformity_pending_open
+new xml-id of model workflow: mgmtsystem_nonconformity.mgmtsystem_nonconformity_workflow
