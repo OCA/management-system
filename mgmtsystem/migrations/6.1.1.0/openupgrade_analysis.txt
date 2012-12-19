@@ -1,0 +1,11 @@
+---mgmtsystem---
+deleted xml-id of model ir.model.access: mgmtsystem.access_mgmtsystem_system
+deleted xml-id of model ir.module.category: mgmtsystem.module_category_mgmtsystem
+new xml-id of model ir.model.access: mgmtsystem.access_mgmtsystem_system_auditor
+new xml-id of model ir.model.access: mgmtsystem.access_mgmtsystem_system_manager
+new xml-id of model ir.model.access: mgmtsystem.access_mgmtsystem_system_user
+new xml-id of model ir.model.access: mgmtsystem.access_mgmtsystem_system_viewer
+new xml-id of model ir.module.category: mgmtsystem.module_category_management_system
+new xml-id of model res.groups: mgmtsystem.group_mgmtsystem_user
+new xml-id of model res.groups: mgmtsystem.group_mgmtsystem_user_manager
+new xml-id of model res.groups: mgmtsystem.group_mgmtsystem_viewer
