@@ -1,4 +1,35 @@
 ---mgmtsystem_nonconformity---
+mgmtsystem_nonconformity / mgmtsystem.action        / nonconformity_ids (many2many) : NEW relation: mgmtsystem.nonconformity
+mgmtsystem_nonconformity / mgmtsystem.action        / nonconformity_immediate_id (one2many): NEW relation: mgmtsystem.nonconformity
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / action_comments (text)        : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / action_ids (many2many)        : NEW relation: mgmtsystem.action
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / actions_date (datetime)       : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / actions_user_id (many2one)    : NEW relation: res.users
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / analysis_date (datetime)      : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / analysis_user_id (many2one)   : NEW relation: res.users
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / corrective_action_id (many2one): DEL relation: mgmtsystem.action
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / effectiveness_corrective (text): DEL 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / effectiveness_immediate (text): DEL 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / effectiveness_preventive (text): DEL 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / evaluation_comments (text)    : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / evaluation_date (datetime)    : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / evaluation_user_id (many2one) : NEW relation: res.users
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / message_ids (one2many)        : NEW relation: mail.message
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / preventive_action_id (many2one): DEL relation: mgmtsystem.action
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / severity_id (many2one)        : NEW relation: mgmtsystem.nonconformity.severity
+mgmtsystem_nonconformity / mgmtsystem.nonconformity / state (selection)             : selection_keys is now '['analysis', 'cancel', 'done', 'draft', 'open', 'pending']' ('['c', 'o']')
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.cause / child_ids (one2many)          : NEW relation: mgmtsystem.nonconformity.cause
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.cause / parent_id (many2one)          : NEW relation: mgmtsystem.nonconformity.cause
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.cause / ref_code (char)               : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.cause / sequence (integer)            : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.origin / child_ids (one2many)          : NEW relation: mgmtsystem.nonconformity.origin
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.origin / parent_id (many2one)          : NEW relation: mgmtsystem.nonconformity.origin
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.origin / ref_code (char)               : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.origin / sequence (integer)            : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.severity / active (boolean)              : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.severity / description (text)            : NEW 
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.severity / name (char)                   : NEW required: required
+mgmtsystem_nonconformity / mgmtsystem.nonconformity.severity / sequence (integer)            : NEW 
 new xml-id of model ir.actions.act_window: mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_severity_list
 new xml-id of model ir.model.access: mgmtsystem_nonconformity.access_mgmtsystem_nonconformity_cause_viewer
 new xml-id of model ir.model.access: mgmtsystem_nonconformity.access_mgmtsystem_nonconformity_origin_viewer
