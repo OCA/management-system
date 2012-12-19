@@ -32,8 +32,9 @@ def migrate(cr, version):
         logger.info("%s called", me)
 #       TODO
 #       move preventive_action_id to mgmtsystem_nonconformity_action_rel: (nonconformity_id, action_id)
-#       move corrective_action_id to mgmtsystem_nonconformity_action_rel: (nonconformity_id, action_id)a
+#       move corrective_action_id to mgmtsystem_nonconformity_action_rel: (nonconformity_id, action_id)
 #       concatenate effectiveness_* in evaluation_comments
+#       change states from letter to word (o -> open, c -> closed)
 #
 #       Example from account
 #        if not openupgrade.column_exists(
