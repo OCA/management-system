@@ -21,7 +21,7 @@
 
 import time
 from report import report_sxw
-
+from tools.translate import _
 
 class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
@@ -44,7 +44,7 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
             p.append({"id": l.id,
                       "procedure": proc_nm,
                       "name": l.name,
-                      "yes_no": "Yes / No"})
+                      "yes_no": _('Yes / No')})
 
         p = sorted(p, key=lambda k: k["procedure"])
 
@@ -66,7 +66,7 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
             q.append({"id": p[i]['id'],
                       "procedure": "",
                       "name": p[i]['name'],
-                      "yes_no": "Yes / No"})
+                      "yes_no": _('Yes / No')})
 
         return q
 

@@ -72,9 +72,7 @@
     </blockTable>
     </pto_header>
     <para style="terp_default_8">[[repeatIn(objects,'o')]]</para>
-    <para style="terp_default_8">
-      <font color="white"> </font>
-    </para>
+    <para style="terp_default_8">[[ setLang(user.context_lang) ]]</para>
     <para style="terp_header_Centre">Verification List</para>
     <para style="terp_header_Centre">[[ o.name ]]</para>
     <para style="terp_default_8">
