@@ -1,0 +1,7 @@
+---mgmtsystem_audit---
+mgmtsystem_audit / mgmtsystem.audit         / state (selection)             : selection_keys is now '['done', 'open']' ('['c', 'o']')
+mgmtsystem_audit / mgmtsystem.nonconformity / audit_ids (many2many)         : NEW relation: mgmtsystem.audit
+new xml-id of model ir.model.access: mgmtsystem_audit.access_mgmtsystem_audit_viewer
+new xml-id of model ir.model.access: mgmtsystem_audit.access_mgmtsystem_verification_line_manager
+new xml-id of model ir.model.access: mgmtsystem_audit.access_mgmtsystem_verification_line_viewer
+new xml-id of model ir.ui.view: mgmtsystem_audit.view_mgmtsystem_nonconformity_form
