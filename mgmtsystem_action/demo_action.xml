@@ -6,25 +6,25 @@
         <record id="demo_immediate" model="mgmtsystem.action">
             <field name="name">Add a comment to the revision</field>
             <field name="type_action">immediate</field>
-            <field name="user_id" ref="base.user_admin"/>
+            <field name="user_id" ref="base.user_root"/>
         </record>
 
         <record id="demo_corrective" model="mgmtsystem.action">
             <field name="name">Explain Administrator to add comments to the procedure when making changes.</field>
             <field name="type_action">correction</field>
-            <field name="user_id" ref="base.user_admin"/>
+            <field name="user_id" ref="base.user_root"/>
         </record>
         
          <record id="demo_preventive" model="mgmtsystem.action">
             <field name="name">Explain in the new-employee training manual that they need to add comments to the procedure when making changes</field>
             <field name="type_action">prevention</field>
-            <field name="user_id" ref="base.user_admin"/>
+            <field name="user_id" ref="base.user_root"/>
         </record>
 
         <record id="demo_improvement" model="mgmtsystem.action">
             <field name="name">Manage your quality management system with OpenERP :o)</field>
             <field name="type_action">improvement</field>
-            <field name="user_id" ref="base.user_admin"/>
+            <field name="user_id" ref="base.user_root"/>
         </record>
 
     </data>
