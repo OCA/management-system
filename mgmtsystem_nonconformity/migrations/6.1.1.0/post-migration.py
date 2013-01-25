@@ -36,7 +36,7 @@ def migrate(cr, version):
                "(nonconformity_id, action_id) "
                "(SELECT id, %s FROM "
                " mgmtsystem_nonconformity "
-               "WHERE %s IS NOT NULL )", (action_field, action_field))
+               "WHERE %s IS NOT NULL )" % (action_field, action_field))
     else:
         logger.warning("Attempt to migrate nonconformity action IDs failed: migration was already done.")
 
