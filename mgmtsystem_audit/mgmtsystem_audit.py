@@ -15,7 +15,7 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+#    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
@@ -35,7 +35,7 @@ class mgmtsystem_audit(osv.osv):
         'strong_points': fields.text('Strong Points'),
         'to_improve_points': fields.text('Points To Improve'),
         'imp_opp_ids': fields.many2many('mgmtsystem.action','mgmtsystem_audit_imp_opp_rel','mgmtsystem_action_id','mgmtsystem_audit_id','Improvement Opportunities'),
-        'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity','mgmtsystem_audit_nonconformity_rel','mgmtsystem_action_id','mgmtsystem_audit_id','Nonconformities'),
+        'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_nonconformity_id','Nonconformities'),
         'state': fields.selection([('open','Open'),('done','Closed')], 'State'),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
     }
