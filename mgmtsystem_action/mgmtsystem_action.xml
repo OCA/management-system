@@ -30,6 +30,7 @@
                         <field name="reference"/>
                         <field name="date" select='1'/>
                         <field name="user_id"/>
+                        <field name="system_id"/>
                     </group>
                     <newline />
                     <group expand="0" string="Group By...">
@@ -54,6 +55,7 @@
                         <field name="user_id" string="Responsible" required="1"/>
                         <field name="date" string="Date"/>
                         <field name="date_deadline" string="Deadline"/>
+                        <field name="system_id"/>
                     </group>
 <<<<<<< 5c38edebaa28f7d9360cb440a7dccef221185e2a
                     <notebook colspan="4">
