@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Feedback Types: Nonconformity, Good Practice, Improvement Opportunity, Observation, ... -->
+        <record id="nonconformity_type_nc" model="mgmtsystem.nonconformity.type">
+            <field name="name">Nonconformity</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="nonconformity_type_gp" model="mgmtsystem.nonconformity.type">
+            <field name="name">Good Practice</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="nonconformity_type_io" model="mgmtsystem.nonconformity.type">
+            <field name="name">Improvement Opportunity</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="nonconformity_type_ob" model="mgmtsystem.nonconformity.type">
+            <field name="name">Observation</field>
+            <field name="active" eval="True"/>
+        </record>
+        
+    </data>
+</openerp>

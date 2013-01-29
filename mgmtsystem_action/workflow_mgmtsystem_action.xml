@@ -4,7 +4,7 @@
 
         <!-- Workflow -->
         <record model="workflow" id="mgmtsystem_action_workflow">
-            <field name="name">Management System Workflow</field>
+            <field name="name">Actions</field>
             <field name="osv">mgmtsystem.action</field>
             <field name="on_create">True</field>
         </record>
@@ -38,7 +38,7 @@ OpenERP</field>
 
         <!-- Activities -->
         <record model="workflow.activity" id="mgmtsystem_action_open">
-            <field name="name">Open Management System Action</field>
+            <field name="name">Open</field>
             <field name="wkf_id" ref="mgmtsystem_action_workflow"/>
             <field name="kind">dummy</field>
             <field name="flow_start">True</field>
@@ -48,7 +48,7 @@ OpenERP</field>
         </record>
         
         <record model="workflow.activity" id="mgmtsystem_action_close">
-            <field name="name">Close Management System Action</field>
+            <field name="name">Close</field>
             <field name="wkf_id" ref="mgmtsystem_action_workflow"/>
             <field name="kind">dummy</field>
             <field name="flow_stop">True</field>

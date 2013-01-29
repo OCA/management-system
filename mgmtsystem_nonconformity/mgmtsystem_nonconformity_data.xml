@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Severity: Critical, Major, Minor, Invalid, ... -->
+        <record id="nonconformity_severity_maj" model="mgmtsystem.nonconformity.severity">
+            <field name="name">Major</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="nonconformity_severity_min" model="mgmtsystem.nonconformity.severity">
+            <field name="name">Minor</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="nonconformity_severity_no" model="mgmtsystem.nonconformity.severity">
+            <field name="name">Unfounded</field>
+            <field name="active" eval="True"/>
+        </record>
+
+	<!-- Origins -->
+
+        <record id="nc_origin_qc" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Quality Commitee</field>
+        </record>
+
+        <record id="nc_origin_dr" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Direction Review</field>
+        </record>
+
+        <record id="nc_origin_internal_client" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Internal client complaint</field>
+        </record>
+
+        <record id="nc_origin_external_client" model="mgmtsystem.nonconformity.origin">
+            <field name="name">External client complaint</field>
+        </record>
+
+        <record id="nc_origin_process" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Process Execution</field>
+        </record>
+
+        <record id="nc_origin_internal_audit" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Internal Audit</field>
+        </record>
+
+        <record id="nc_origin_extenal_audit" model="mgmtsystem.nonconformity.origin">
+            <field name="name">External Audit</field>
+        </record>
+
+	<!-- Causes -->
+
+	<record id="badly_defined_need" model="mgmtsystem.nonconformity.cause">
+            <field name="name">Badly defined need</field>
+        </record>
+
+        <record id="work_conditions" model="mgmtsystem.nonconformity.cause">
+            <field name="name">Work conditions</field>
+        </record>
+
+        <record id="information_not_available" model="mgmtsystem.nonconformity.cause">
+            <field name="name">Information not available</field>
+        </record>
+
+        <record id="bad_communication" model="mgmtsystem.nonconformity.cause">
+            <field name="name">Bad communication</field>
+        </record>
+
+        <record id="bad_partner_relation" model="mgmtsystem.nonconformity.cause">
+            <field name="name">Bad customer/supplier relation</field>
+        </record>
+
+        <record id="hr_unavailable_inadequate" model="mgmtsystem.nonconformity.cause">
+            <field name="name">Human resource not available or inadequate</field>
+        </record>
+
+        <record id="instruction_not_respected" model="mgmtsystem.nonconformity.cause">
+            <field name="name">Instruction not respected</field>
+        </record>
+
+        <record id="procedure_not_respected" model="mgmtsystem.nonconformity.cause">
+            <field name="name">Procedure not respected</field>
+        </record>
+
+        <record id="technical_failure" model="mgmtsystem.nonconformity.cause">
+            <field name="name">Technical failure</field>
+        </record>
+
+        <record id="procedure_not_defined" model="mgmtsystem.nonconformity.cause">
+            <field name="name">Procedure not defined</field>
+        </record>
+
+    </data>
+</openerp>
