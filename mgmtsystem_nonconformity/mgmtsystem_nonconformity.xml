@@ -19,7 +19,9 @@
                     <field name="description" attrs="{'readonly':[('state','=','c')]}"/>
                     <field name="responsible_user_id" attrs="{'readonly':[('state','=','c')]}"/>
                     <field name="author_user_id" attrs="{'readonly':[('state','=','c')]}"/>
-		    <field name="system_id"/>
+                    <field name="system_id"/>
+                    <!-- Invisible fields below are to allow their use in domains of this view -->
+                    <field name="state" invisible="1"/>
                 </tree>
             </field>
         </record>
