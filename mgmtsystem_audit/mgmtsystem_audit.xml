@@ -72,7 +72,9 @@
                     <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
                     <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
                     <field name="reference"/>
-		    <field name="system_id"/>
+                    <field name="system_id"/>
+                    <!-- Invisible fields below are to allow their use in domains of this view -->
+                    <field name="state" invisible="1"/>
                 </tree>
             </field>
         </record>
