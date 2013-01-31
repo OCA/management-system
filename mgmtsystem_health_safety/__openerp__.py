@@ -42,7 +42,6 @@ This module enables you to manage your health and safety management system, incl
         'mgmtsystem_audit',
         'mgmtsystem_review',
         'mgmtsystem_claim',
-        'letter_mgmt_v6',
         'document_page_health_safety_manual',
         'mgmtsystem_hazard',
     ],
