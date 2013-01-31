@@ -42,7 +42,6 @@
         'mgmtsystem_audit',
         'mgmtsystem_review',
         'mgmtsystem_claim',
-        'letter_mgmt_v6',
         'document_page_health_safety_manual',
         'mgmtsystem_hazard',
 #        'mgmtsystem_equipments',
