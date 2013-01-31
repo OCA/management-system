@@ -35,7 +35,7 @@ This module is the basis of any management system applications:
      * corrective actions,
      * improvement opportunities.
     """,
-    "depends" : ['base','board','wiki'],
+    "depends" : ['base','board','document_page'],
     "init_xml" : [],
     "update_xml" : [
         'security/mgmtsystem_security.xml',

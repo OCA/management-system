@@ -33,7 +33,7 @@ WARNING: when upgrading from v0.1, data conversion is required, since there are 
     """,
     "depends" : [
         'mgmtsystem_action',
-        'wiki_procedure',
+        'document_page_procedure',
     ],
     "data" : [
         'security/ir.model.access.csv',

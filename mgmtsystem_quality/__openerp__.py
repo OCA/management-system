@@ -37,7 +37,7 @@ This module enables you to manage your quality management system, including :
     """,
     "depends" : [
         'mgmtsystem_audit',
-        'wiki_quality_manual',
+        'document_page_quality_manual',
         'mgmtsystem_manuals',
         'mgmtsystem_review',
     ],

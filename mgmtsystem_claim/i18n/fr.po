@@ -1,21 +1,22 @@
-# Translation of OpenERP Server.
-# This file contains the translation of the following modules:
-#	* mgmtsystem_claim
+# French translation for openerp-mgmtsystem
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the openerp-mgmtsystem package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.1-dev\n"
-"Report-Msgid-Bugs-To: support@openerp.com\n"
+"Project-Id-Version: openerp-mgmtsystem\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-07-25 18:17+0000\n"
-"PO-Revision-Date: 2011-07-29 15:38+0000\n"
+"PO-Revision-Date: 2012-09-09 05:09+0000\n"
 "Last-Translator: Maxime Chambreuil (http://www.savoirfairelinux.com) "
 "<maxime.chambreuil@savoirfairelinux.com>\n"
-"Language-Team: \n"
+"Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-01-17 05:06+0000\n"
-"X-Generator: Launchpad (build 14676)\n"
+"X-Launchpad-Export-Date: 2012-09-19 05:08+0000\n"
+"X-Generator: Launchpad (build 15966)\n"
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
@@ -25,7 +26,7 @@ msgstr "Réclamations brouillon ou ouvertes"
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Group By..."
-msgstr "Regrouper par..."
+msgstr "Grouper par ..."
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
@@ -100,8 +101,9 @@ msgid ""
 "Sales team to which Case belongs to.Define Responsible user and Email "
 "account for mail gateway."
 msgstr ""
-"Équipe de ventes à laquelle appartient cette réclamation. Définit l'usager "
-"responsable et le compte de courriel pour la passerelle des messages.."
+"Équipe commerciale à laquelle le cas appartient. Sert à définir "
+"l'utilisateur responsable et le compte courriel à utiliser pour la "
+"passerelle des courriels."
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.server,name:mgmtsystem_claim.mgmtsystem_claim_server_action
@@ -148,7 +150,7 @@ msgstr "Remettre en brouillon"
 #: view:mgmtsystem.claim:0
 #: field:mgmtsystem.claim,date_deadline:0
 msgid "Deadline"
-msgstr "Date butoire"
+msgstr "Date limite"
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
@@ -205,7 +207,7 @@ msgstr "Date de création"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,name:0
 msgid "Claim Subject"
-msgstr "Sujet de la réclamation"
+msgstr "Objet de la réclamation"
 
 #. module: mgmtsystem_claim
 #: view:board.board:0
@@ -231,7 +233,7 @@ msgstr "Étape"
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "History Information"
-msgstr "Historique"
+msgstr "Information de l'historique"
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
@@ -271,7 +273,7 @@ msgstr "Catégorie"
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Responsible User"
-msgstr "Utilisateur responsable"
+msgstr "Responsable"
 
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim,email_cc:0
@@ -319,7 +321,7 @@ msgstr "Normale"
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Global CC"
-msgstr "CC global"
+msgstr "Copie globale"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,partner_phone:0
@@ -335,12 +337,12 @@ msgstr "Fermeture"
 #: view:mgmtsystem.claim:0
 #: field:mgmtsystem.claim,date:0
 msgid "Claim Date"
-msgstr "Date de réclamation"
+msgstr "Date de la réclamation"
 
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim,email_from:0
 msgid "These people will receive email."
-msgstr "Ces personnes vont recevoir un courriel."
+msgstr "Ces personnes recevront un courriel."
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.act_window,name:mgmtsystem_claim.mgmtsystem_claim_action
@@ -404,7 +406,7 @@ msgstr "Fermer"
 #: view:mgmtsystem.claim:0
 #: selection:mgmtsystem.claim,state:0
 msgid "Open"
-msgstr "Ouvrir"
+msgstr "Ouverte"
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
@@ -425,7 +427,7 @@ msgstr "Responsable"
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Current"
-msgstr "Courantes"
+msgstr "En cours"
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
@@ -440,7 +442,7 @@ msgstr "Actions"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,cause:0
 msgid "Root Cause"
-msgstr "Cause d'origine"
+msgstr "Cause première"
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
@@ -504,7 +506,7 @@ msgstr "Date de fermeture"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,id:0
 msgid "ID"
-msgstr "ID"
+msgstr "Identifiant"
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_action
@@ -515,7 +517,7 @@ msgid ""
 "using the mail gateway module."
 msgstr ""
 "Enregistrez et faites le suivi des réclamations. Vous pouvez envoyer des "
-"courriels avec des pièces jointes and garder un historique complet de la "
+"courriels avec des pièces jointes et garder un historique complet de la "
 "réclamation (courriels envoyés, type d'intervention, etc). Les réclamations "
 "peuvent être liées à une adresse courriel en utilisant le module de "
 "passerelle de message."
@@ -528,7 +530,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"\tCe module vous permet de gérer les réclamations de votre système de "
+"\tCe module vous permet de gérer les réclamations de vos systèmes de "
 "gestion.\n"
 "    "
 
@@ -540,7 +542,7 @@ msgstr "Haute"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,section_id:0
 msgid "Sales Team"
-msgstr "Équipe de ventes"
+msgstr "Équipe commerciale"
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0

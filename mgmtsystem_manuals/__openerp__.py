@@ -25,13 +25,13 @@
     "website" : "http://www.savoirfairelinux.com",
     "license" : "AGPL-3",
     "category" : "Management System",
-    "description": """\
-This module adds a menu item "Manual" and is a dependencies of:
-   * wiki_environment_manual
-   * wiki_health_safety_manual
-   * mgmtsystem_quality
+    "description": """
+          This module adds a menu item "Manual" and is a dependencies of:
+             * document_page_environment_manual
+             * document_page_health_safety_manual
+             * mgmtsystem_quality
     """,
-    "depends" : ['wiki', 'mgmtsystem'],
+    "depends" : ['document_page', 'mgmtsystem'],
     "init_xml" : [],
     "update_xml" : ['mgmtsystem_manuals.xml'],
     "demo_xml" : [],

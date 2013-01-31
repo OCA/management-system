@@ -39,6 +39,7 @@
         <field name="comment">Module administrator, able to modify configuration data.</field>
         <field name="category_id" ref="module_category_management_system"/>
         <field name="implied_ids" eval="[(4, ref('group_mgmtsystem_auditor'))]"/>
+        <field name="users" eval="[(6,0,[ref('base.user_root')])]"/>
     </record>
 
 </data>

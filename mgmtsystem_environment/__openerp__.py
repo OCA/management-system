@@ -38,8 +38,9 @@ This module enables you to manage your environment management system, including 
     "depends" : [
         'mgmtsystem_audit',
         'mgmtsystem_review',
-        'wiki_environment_manual',
-        'wiki_environmental_aspect',
+        'document_page_environment_manual',
+        'document_page_environmental_aspect',
+#        'training_hr',
     ],
     "init_xml" : [],
     "update_xml" : ['environment.xml'],
