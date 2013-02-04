@@ -100,15 +100,18 @@
 
         <record id="view_mgmtsystem_audit_form" model="ir.ui.view">
             <field name="name">mgmtsystem.audit.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.audit</field>
             <field name="arch" type="xml">
-                <form string="Audit">
+                <form string="Audit" version="7.0">
+                    <header>
+                        <button name="button_close" string="Close" states="open" type="object" icon="gtk-jump-to"/>
+                        <field name="state" widget="statusbar" select="1" readonly="1"/>
+                    </header>
                     <group col="8" colspan="6">
                         <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
                         <field name="reference"/>
                         <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
-			<field name="system_id"/>
+                        <field name="system_id"/>
                     </group>
                     <notebook colspan="4">
                         <page string="Auditors">
@@ -133,10 +136,6 @@
                             <field name="nonconformity_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                     </notebook>
-                    <group colspan="4">
-                        <field name="state" select="1" readonly="1"/>
-                        <button name="button_close" string="Close" states="open" type="object" icon="gtk-jump-to"/>
-                    </group>
                 </form>
             </field>
         </record>
