@@ -75,7 +75,7 @@
                             <field name="origin_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
                         </page>
                         <page string="Procedures">
-                            <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}" domain="[('group_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
+                            <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}" domain="[('parent_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
                         </page>
                         <page string="Description">
                             <field name="description" nolabel="1" attrs="{'readonly':[('state','=','c')]}"/>
