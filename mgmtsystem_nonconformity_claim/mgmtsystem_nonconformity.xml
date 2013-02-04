@@ -1,0 +1,68 @@
+<openerp>
+    <data>
+
+        <!-- Feedback Type -->
+        <record id="view_mgmtsystem_nonconformity_type_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.nonconformity.type.form</field>
+            <field name="type">form</field>
+            <field name="model">mgmtsystem.nonconformity.type</field>
+            <field name="arch" type="xml">
+                <form string="Claim Types">
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="description" colspan="2"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_nonconformity_type_list" model="ir.actions.act_window">
+            <field name="name">Claim Types</field>
+            <field name="res_model">mgmtsystem.nonconformity.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_open_nonconformity_type" 
+            action="open_mgmtsystem_nonconformity_type_list" 
+            parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities" 
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+        <!-- Nonconformity FORM -->            
+        <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.nonconformity.form</field>
+            <field name="model">mgmtsystem.nonconformity</field>
+            <field name="inherit_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"/>
+            <field name="arch" type="xml">
+
+                <form position="attributes">
+                    <attribute name="string">Claims and Nonconformities</attribute>
+                </form>
+
+                <field name="date" position="after">
+                    <field name="type_id" attrs="{'readonly':[('state','not in',['draft','analysis'])], 'required':[('state','in',['analysis','pending','open','done'])]}"/>
+                </field>
+
+            </field>
+        </record>
+
+        <!-- Rename NC menu description -->
+        <menuitem id="mgmtsystem_nonconformity.menu_open_nonconformity"
+            name="Claims and Nonconformities" 
+            action="mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list" 
+            parent="mgmtsystem.menu_mgmtsystem_main" 
+            sequence="20" 
+            groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
+        />
+        
+        <record model="ir.actions.act_window" id="mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list">
+            <field name="name">Claims and Nonconformities.</field>
+            <field name="res_model">mgmtsystem.nonconformity</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_tree"/>
+            <field name="search_view_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter"/>
+            <field name="context">{"search_default_pending":1,"search_default_current":1,"search_default_author_user_id":uid}</field>
+        </record>
+
+    </data>
+</openerp>

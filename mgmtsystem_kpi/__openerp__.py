@@ -5,43 +5,43 @@
 #    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as
+#    it under the terms of the GNU Affero General Public License as
 #    published by the Free Software Foundation, either version 3 of the
 #    License, or (at your option) any later version.
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
+#    GNU Affero General Public License for more details.
 #
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.  
 #
 ##############################################################################
 {
     "name" : "Key Performance Indicator",
-    "version" : "0.1",
+    "version" : "1.0",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "AGPL-3",
     "category" : "Management System",
     "complexity" : "normal",
-    "description": """
-	This module provides the basis for creating key performance indicators,
-        including static and dynamic thresholds (SQL query or Python code), 
-        on local and remote data sources.
+    "description": """\
+This module provides the basis for creating key performance indicators,
+including static and dynamic thresholds (SQL query or Python code), 
+on local and remote data sources.
 
-        The module also provides the mecanism to update KPIs automatically. 
-        A scheduler is executed every hour and updates the KPI values, based 
-        on the periodicity of each KPI. KPI computation can also be done 
-        manually.
+The module also provides the mecanism to update KPIs automatically. 
+A scheduler is executed every hour and updates the KPI values, based 
+on the periodicity of each KPI. KPI computation can also be done 
+manually.
 
-        A threshold is a list of ranges and a range is:
-         * a name (like Good, Warning, Bad)
-         * a minimum value (fixed, sql query or python code)
-         * a maximum value (fixed, sql query or python code)
-         * color (RGB code like #00FF00 for green, #FFA500 for orange, 
-           #FF0000 for red)
+A threshold is a list of ranges and a range is:
+ * a name (like Good, Warning, Bad)
+ * a minimum value (fixed, sql query or python code)
+ * a maximum value (fixed, sql query or python code)
+ * color (RGB code like #00FF00 for green, #FFA500 for orange, 
+   #FF0000 for red)
     """,
     "depends" : [
         'mgmtsystem',
