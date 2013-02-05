@@ -112,12 +112,17 @@
                             <field name="origin_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                         </page>
                         <page string="Procedures">
+<<<<<<< d836e313b21133bcef1d8d59219af09c1e7518da
 <<<<<<< f4e886e9f1d06e677682e2f3c899c3d140d5eeca
                             <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" 
                                    domain="[('group_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
 =======
                             <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','=','c')]}" domain="[('parent_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
 >>>>>>> [FIX] Broken reference to wiki's group_id.
+=======
+                            <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" 
+                                   domain="[('group_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
+>>>>>>> [FIX] Fixed wrongful merge.
                         </page>
 
                         <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
