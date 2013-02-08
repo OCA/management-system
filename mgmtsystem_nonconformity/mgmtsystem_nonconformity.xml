@@ -90,7 +90,17 @@
             <field name="name">mgmtsystem.nonconformity.form</field>
             <field name="model">mgmtsystem.nonconformity</field>
             <field name="arch" type="xml">
-                <form string="Non-Conformity">
+                <form string="Non-Conformity" version="7.0">
+                    <header>
+                        <button name="button_cancel" string="Cancel" states="draft,analysis,pending,open" icon="gtk-cancel"/>
+                        <button name="button_analysis" string="Send for Analysis" states="draft,pending" icon="terp-idea"/>
+                        <button name="button_review" string="Send for Review" states="analysis,open" icon="gtk-go-up" />
+                        <button name="button_open" string="Start/Open" states="pending" icon="gtk-go-forward" />
+                        <button name="button_close" string="Close" states="open" icon="terp-dialog-close"
+                                groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor" />
+                        <button name="case_reset" string="Reset to New" states="done,cancel" type="object" icon="gtk-undo"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done"/>
+                    </header>
                     <group colspan="2" col="2">
                         <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                         <field name="date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
@@ -200,16 +210,6 @@
 
 
                     </notebook>
-                    <group col="8" colspan="4">
-                        <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done"/>
-                        <button name="button_cancel" string="Cancel" states="draft,analysis,pending,open" icon="gtk-cancel"/>
-                        <button name="button_analysis" string="Send for Analysis" states="draft,pending" icon="terp-idea"/>
-                        <button name="button_review" string="Send for Review" states="analysis,open" icon="gtk-go-up" />
-                        <button name="button_open" string="Start/Open" states="pending" icon="gtk-go-forward" />
-                        <button name="button_close" string="Close" states="open" icon="terp-dialog-close"
-                                groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor" />
-                        <button name="case_reset" string="Reset to New" states="done,cancel" type="object" icon="gtk-undo"/>
-                    </group>
                 </form>
             </field>
         </record>
