@@ -44,10 +44,17 @@
 
         <record id="view_mgmtsystem_action_form" model="ir.ui.view">
             <field name="name">mgmtsystem.action.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.action</field>
             <field name="arch" type="xml">
-                <form string="Action">
+                <form string="Action" version="7.0">
+                    <header>
+                        <button name="case_cancel" string="Cancel" states="draft,pending" type="object" icon="gtk-cancel"/>
+                        <button name="case_open" string="Open" states="draft,pending" type="object" icon="gtk-go-forward"/>
+                        <button name="case_pending" string="Pending" states="open" type="object" icon="gtk-go-forward"/>
+                        <!-- Corrective actions can be already implemented when recording the NC, so they can be created and immediately closed -->
+                        <button name="case_close" string="Close" states="draft,open" type="object" icon="gtk-jump-to"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,pending,done"/>
+                    </header>
                     <group colspan="4" col="4">
                         <field name="name" colspan="4"/>
                         <field name="type_action" required="True"/>
@@ -66,22 +73,23 @@
                                 <group colspan="4">
                                     <field colspan="4" name="email_cc" string="Global CC" widget="char"/>
                                 </group>
-                    		<field name="message_ids" colspan="4" nolabel="1" mode="tree" readonly="1">
-                        		<tree string="History">
-                            			<field name="subject" string="History Information"/>
-                            			<field name="email_from" invisible="1"/>
-                            			<button
-                                			string="Reply" attrs="{'invisible': [('email_from', '=', False)]}"
-                                			name="%(mail.action_email_compose_message_wizard)d"
-                                			context="{'mail.compose.message.mode':'reply', 'message_id':active_id}"
-                                			icon="terp-mail-replied" type="action" />
-                        		</tree>
-                    		</field>
-                    		<button string="Send New Email"
-                        		name="%(mail.action_email_compose_message_wizard)d"
-                        		icon="terp-mail-message-new" type="action"/>
+                            <field name="message_ids" colspan="4" nolabel="1" mode="tree" readonly="1">
+                                <tree string="History">
+                                        <field name="subject" string="History Information"/>
+                                        <field name="email_from" invisible="1"/>
+                                        <button
+                                            string="Reply" attrs="{'invisible': [('email_from', '=', False)]}"
+                                            name="%(mail.action_email_compose_message_wizard)d"
+                                            context="{'mail.compose.message.mode':'reply', 'message_id':active_id}"
+                                            icon="terp-mail-replied" type="action" />
+                                </tree>
+                            </field>
+                            <button string="Send New Email"
+                                name="%(mail.action_email_compose_message_wizard)d"
+                                icon="terp-mail-message-new" type="action"/>
                             </page>
                     </notebook>
+<<<<<<< d974bb12ca3059aaa024df7594e28b8df52ec7a7
 =======
 >>>>>>> [IMP] Update hooks with addons modules from v7
                     <group col="8" colspan="4">
@@ -92,6 +100,8 @@
                         <!-- Corrective actions can be already implemented when recording the NC, so they can be created and immediately closed -->
                         <button name="case_close" string="Close" states="draft,open" type="object" icon="gtk-jump-to"/>
                     </group>
+=======
+>>>>>>> [CHG] Updated statusbar/buttons's layout to conform to OpenERP 7.0 style.
                 </form>
             </field>
         </record>
