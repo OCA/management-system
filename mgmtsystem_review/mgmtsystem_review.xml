@@ -96,10 +96,13 @@
 
         <record id="view_mgmtsystem_review_form" model="ir.ui.view">
             <field name="name">mgmtsystem.review.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.review</field>
             <field name="arch" type="xml">
-                <form string="Review">
+                <form string="Review" version="7.0">
+                    <header>
+                        <button name="button_close" string="Close" states="open" type="object" icon="gtk-jump-to"/>
+                        <field name="state" widget="statusbar" select="1" readonly="1"/>
+                    </header>
                     <group col="6" colspan="6">
                         <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
                         <field name="reference"/>
@@ -127,10 +130,6 @@
                             <field name="conclusion" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                     </notebook>
-                    <group colspan="4">
-                        <field name="state" select="1" readonly="1"/>
-                        <button name="button_close" string="Close" states="open" type="object" icon="gtk-jump-to"/>
-                    </group>
                 </form>
             </field>
         </record>
