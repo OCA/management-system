@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.0.3\n"
-"Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2011-09-29 21:30+0000\n"
-"PO-Revision-Date: 2011-09-29 21:30+0000\n"
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-27 22:18+0000\n"
+"PO-Revision-Date: 2013-02-27 22:18+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -67,6 +67,12 @@ msgid "Conformed?"
 msgstr "Conformed?"
 
 #. module: mgmtsystem_audit
+#: view:mgmtsystem.nonconformity:0
+#: field:mgmtsystem.nonconformity,audit_ids:0
+msgid "Related Audits"
+msgstr "Related Audits"
+
+#. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
 #: view:mgmtsystem.verification.line:0
 msgid "Verification Lines"
@@ -82,6 +88,11 @@ msgstr "Strong Points"
 #: field:mgmtsystem.verification.line,is_conformed:0
 msgid "Is conformed"
 msgstr "Is conformed"
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,system_id:0
+msgid "System"
+msgstr "System"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_verification_list
@@ -129,11 +140,6 @@ msgid "Date"
 msgstr "Date"
 
 #. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.verificationlist:0
-msgid ":"
-msgstr ":"
-
-#. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.report:0
 #: report:mgmtsystem.audit.verificationlist:0
 msgid "Reference:"
@@ -141,6 +147,7 @@ msgstr "Reference:"
 
 #. module: mgmtsystem_audit
 #: view:board.board:0
+#: view:mgmtsystem.audit:0
 msgid "Open Audits"
 msgstr "Open Audits"
 
@@ -150,6 +157,12 @@ msgstr "Open Audits"
 #: field:mgmtsystem.verification.line,audit_id:0
 msgid "Audit"
 msgstr "Audit"
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+#: selection:mgmtsystem.audit,state:0
+msgid "Open"
+msgstr "Open"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,name:0
@@ -179,7 +192,9 @@ msgid "Auditees:"
 msgstr "Auditees:"
 
 #. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.verificationlist:0
+#: code:addons/mgmtsystem_audit/report/verification_list.py:47
+#: code:addons/mgmtsystem_audit/report/verification_list.py:69
+#, python-format
 msgid "Yes / No"
 msgstr "Yes / No"
 
@@ -192,6 +207,11 @@ msgstr "Strong points"
 #: field:mgmtsystem.verification.line,procedure_id:0
 msgid "Procedure"
 msgstr "Procedure"
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+msgid "Closed Audits"
+msgstr "Closed Audits"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,reference:0
@@ -210,10 +230,9 @@ msgid "Sequence"
 msgstr "Sequence"
 
 #. module: mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: selection:mgmtsystem.audit,state:0
-msgid "Open"
-msgstr "Open"
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
+msgid "Nonconformity of the management system"
+msgstr "Nonconformity of the management system"
 
 #. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.report:0

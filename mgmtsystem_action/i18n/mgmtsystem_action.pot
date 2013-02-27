@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.0.0-rc1\n"
-"Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2010-12-02 23:47:57+0000\n"
-"PO-Revision-Date: 2010-12-02 23:47:57+0000\n"
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-27 23:13+0000\n"
+"PO-Revision-Date: 2013-02-27 23:13+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,14 +21,24 @@ msgid "Category"
 msgstr "Category"
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "History"
-msgstr "History"
+#: selection:mgmtsystem.action,state:0
+msgid "In Progress"
+msgstr "In Progress"
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,type_action:0
+msgid "Preventive Action"
+msgstr "Preventive Action"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "History Information"
 msgstr "History Information"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,type_action:0
+msgid "Response Type"
+msgstr "Response Type"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
@@ -37,14 +47,14 @@ msgid "Responsible"
 msgstr "Responsible"
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "Date of Claim"
-msgstr "Date of Claim"
+#: field:mgmtsystem.action,system_id:0
+msgid "System"
+msgstr "System"
 
 #. module: mgmtsystem_action
-#: model:ir.module.module,shortdesc:mgmtsystem_action.module_meta_information
-msgid "Management System - Action"
-msgstr "Management System - Action"
+#: field:mgmtsystem.action,partner_address_id:0
+msgid "Partner Contact"
+msgstr "Partner Contact"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,priority:0
@@ -61,11 +71,6 @@ msgstr "Action"
 #: view:mgmtsystem.action:0
 msgid "Send New Email"
 msgstr "Send New Email"
-
-#. module: mgmtsystem_action
-#: selection:mgmtsystem.action,state:0
-msgid "Draft"
-msgstr "Draft"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
@@ -85,6 +90,11 @@ msgid "Reply"
 msgstr "Reply"
 
 #. module: mgmtsystem_action
+#: selection:mgmtsystem.action,state:0
+msgid "New"
+msgstr "New"
+
+#. module: mgmtsystem_action
 #: field:mgmtsystem.action,cause:0
 msgid "Root Cause"
 msgstr "Root Cause"
@@ -100,14 +110,45 @@ msgid "Email"
 msgstr "Email"
 
 #. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
 #: selection:mgmtsystem.action,state:0
 msgid "Pending"
 msgstr "Pending"
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "Claim/Action Description"
-msgstr "Claim/Action Description"
+#: model:ir.actions.server,message:mgmtsystem_action.mgmtsystem_action_server_action
+msgid "Hello,\n"
+"<br />\n"
+"<br />\n"
+"A new action has been assigned to you:\n"
+"<br />\n"
+"<a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
+"<br />\n"
+"<br />\n"
+"[[object.description]]\n"
+"<br />\n"
+"<br />\n"
+"Thank you.\n"
+"<br />\n"
+"--\n"
+"<br />\n"
+"OpenERP"
+msgstr "Hello,\n"
+"<br />\n"
+"<br />\n"
+"A new action has been assigned to you:\n"
+"<br />\n"
+"<a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
+"<br />\n"
+"<br />\n"
+"[[object.description]]\n"
+"<br />\n"
+"<br />\n"
+"Thank you.\n"
+"<br />\n"
+"--\n"
+"<br />\n"
+"OpenERP"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -120,6 +161,7 @@ msgid "Next Action"
 msgstr "Next Action"
 
 #. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
 #: field:mgmtsystem.action,description:0
 msgid "Description"
 msgstr "Description"
@@ -130,9 +172,9 @@ msgid "Normal"
 msgstr "Normal"
 
 #. module: mgmtsystem_action
-#: field:mgmtsystem.action,create_date:0
-msgid "Creation Date"
-msgstr "Creation Date"
+#: view:mgmtsystem.action:0
+msgid "Global CC"
+msgstr "Global CC"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,name:0
@@ -161,6 +203,7 @@ msgstr "Phone"
 
 #. module: mgmtsystem_action
 #: view:board.board:0
+#: view:mgmtsystem.action:0
 msgid "Open Actions"
 msgstr "Open Actions"
 
@@ -171,8 +214,8 @@ msgstr "User"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
-msgid "Done"
-msgstr "Done"
+msgid "Date"
+msgstr "Date"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -211,21 +254,9 @@ msgid "Sales Team"
 msgstr "Sales Team"
 
 #. module: mgmtsystem_action
-#: model:ir.module.module,description:mgmtsystem_action.module_meta_information
-msgid "\n"
-"	This module enables you to manage the different actions of your management \n"
-"        system :\n"
-"            * immediate actions\n"
-"            * corrective actions\n"
-"            * preventive actions.\n"
-"    "
-msgstr "\n"
-"	This module enables you to manage the different actions of your management \n"
-"        system :\n"
-"            * immediate actions\n"
-"            * corrective actions\n"
-"            * preventive actions.\n"
-"    "
+#: help:mgmtsystem.action,section_id:0
+msgid "Sales team to which Case belongs to.Define Responsible user and Email account for mail gateway."
+msgstr "Sales team to which Case belongs to.Define Responsible user and Email account for mail gateway."
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
@@ -253,14 +284,19 @@ msgid "These people will receive email."
 msgstr "These people will receive email."
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-msgid "Preventive Action"
-msgstr "Preventive Action"
+#: field:mgmtsystem.action,active:0
+msgid "Active"
+msgstr "Active"
 
 #. module: mgmtsystem_action
-#: field:mgmtsystem.action,partner_address_id:0
-msgid "Partner Contact"
-msgstr "Partner Contact"
+#: model:ir.actions.server,name:mgmtsystem_action.mgmtsystem_action_server_action
+msgid "Notify the person in charge of the new action"
+msgstr "Notify the person in charge of the new action"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Closed Actions"
+msgstr "Closed Actions"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,state:0
@@ -283,14 +319,9 @@ msgid "ID"
 msgstr "ID"
 
 #. module: mgmtsystem_action
-#: help:mgmtsystem.action,section_id:0
-msgid "Sales team to which Case belongs to.Define Responsible user and Email account for mail gateway."
-msgstr "Sales team to which Case belongs to.Define Responsible user and Email account for mail gateway."
-
-#. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
-msgid "Global CC"
-msgstr "Global CC"
+msgid "History"
+msgstr "History"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,email_cc:0
@@ -304,6 +335,7 @@ msgstr "Attachments"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,ref:0
+#: field:mgmtsystem.action,reference:0
 msgid "Reference"
 msgstr "Reference"
 
@@ -329,9 +361,14 @@ msgid "High"
 msgstr "High"
 
 #. module: mgmtsystem_action
-#: field:mgmtsystem.action,type_action:0
-msgid "Action Type"
-msgstr "Action Type"
+#: field:mgmtsystem.action,create_date:0
+msgid "Creation Date"
+msgstr "Creation Date"
+
+#. module: mgmtsystem_action
+#: model:ir.actions.server,subject:mgmtsystem_action.mgmtsystem_action_server_action
+msgid "[[object.name]]"
+msgstr "[[object.name]]"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
@@ -351,7 +388,21 @@ msgstr "Partner"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
-#: selection:mgmtsystem.action,state:0
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Close"
+msgstr "Close"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Subject"
+msgstr "Subject"
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
 msgid "Open"
 msgstr "Open"
 

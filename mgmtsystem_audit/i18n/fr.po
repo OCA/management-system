@@ -1,22 +1,19 @@
-# French translation for openerp-mgmtsystem
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the openerp-mgmtsystem package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* mgmtsystem_audit
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: openerp-mgmtsystem\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-09-29 21:30+0000\n"
-"PO-Revision-Date: 2013-02-01 13:16+0000\n"
-"Last-Translator: Maxime Chambreuil (http://www.savoirfairelinux.com) "
-"<maxime.chambreuil@savoirfairelinux.com>\n"
-"Language-Team: French <fr@li.org>\n"
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-27 22:18+0000\n"
+"PO-Revision-Date: 2013-02-27 22:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-02-02 05:39+0000\n"
-"X-Generator: Launchpad (build 16462)\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:0
@@ -27,7 +24,7 @@ msgstr "Fermé"
 #. module: mgmtsystem_audit
 #: field:copy.verification.lines,audit_src:0
 msgid "Choose audit"
-msgstr "Choisir un audit"
+msgstr "Choisir l'audit"
 
 #. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.report:0
@@ -40,7 +37,7 @@ msgstr "Date :"
 #: field:mgmtsystem.audit,nonconformity_ids:0
 #: report:mgmtsystem.audit.report:0
 msgid "Nonconformities"
-msgstr "Non-conformités"
+msgstr "Nonconformités"
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:0
@@ -67,7 +64,13 @@ msgstr "Imprimer le rapport"
 #. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.verificationlist:0
 msgid "Conformed?"
-msgstr "Conforme ?"
+msgstr "Conforme?"
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.nonconformity:0
+#: field:mgmtsystem.nonconformity,audit_ids:0
+msgid "Related Audits"
+msgstr "Audits"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
@@ -84,7 +87,12 @@ msgstr "Points forts"
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.verification.line,is_conformed:0
 msgid "Is conformed"
-msgstr "Est conforme ?"
+msgstr "Est conforme"
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,system_id:0
+msgid "System"
+msgstr "Système"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_verification_list
@@ -124,7 +132,7 @@ msgstr "."
 #. module: mgmtsystem_audit
 #: view:copy.verification.lines:0
 msgid "_Copy"
-msgstr "_Copier"
+msgstr "_Copy"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,date:0
@@ -132,18 +140,14 @@ msgid "Date"
 msgstr "Date"
 
 #. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.verificationlist:0
-msgid ":"
-msgstr ":"
-
-#. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.report:0
 #: report:mgmtsystem.audit.verificationlist:0
 msgid "Reference:"
-msgstr "Référence :"
+msgstr "Référence:"
 
 #. module: mgmtsystem_audit
 #: view:board.board:0
+#: view:mgmtsystem.audit:0
 msgid "Open Audits"
 msgstr "Audits ouverts"
 
@@ -153,6 +157,12 @@ msgstr "Audits ouverts"
 #: field:mgmtsystem.verification.line,audit_id:0
 msgid "Audit"
 msgstr "Audit"
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+#: selection:mgmtsystem.audit,state:0
+msgid "Open"
+msgstr "Ouvert"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,name:0
@@ -179,10 +189,12 @@ msgstr "Points à améliorer"
 #. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.verificationlist:0
 msgid "Auditees:"
-msgstr "Audités :"
+msgstr "Audités:"
 
 #. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.verificationlist:0
+#: code:addons/mgmtsystem_audit/report/verification_list.py:47
+#: code:addons/mgmtsystem_audit/report/verification_list.py:69
+#, python-format
 msgid "Yes / No"
 msgstr "Oui / Non"
 
@@ -197,6 +209,11 @@ msgid "Procedure"
 msgstr "Procédure"
 
 #. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+msgid "Closed Audits"
+msgstr "Audits archivés"
+
+#. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,reference:0
 msgid "Reference"
 msgstr "Référence"
@@ -205,7 +222,7 @@ msgstr "Référence"
 #: report:mgmtsystem.audit.report:0
 #: report:mgmtsystem.audit.verificationlist:0
 msgid "Confidentiality: Internal"
-msgstr "Confidentialité : Interne"
+msgstr "Confidentialité: Interne"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.verification.line,seq:0
@@ -213,15 +230,14 @@ msgid "Sequence"
 msgstr "Séquence"
 
 #. module: mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: selection:mgmtsystem.audit,state:0
-msgid "Open"
-msgstr "Ouvert"
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
+msgid "Nonconformity of the management system"
+msgstr "Nonconformité du système de gestion"
 
 #. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.report:0
 msgid "Audit Report"
-msgstr "Rapport d'audit"
+msgstr "Raport d'audit"
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:0
@@ -262,4 +278,5 @@ msgstr "Audits"
 #: report:mgmtsystem.audit.report:0
 #: report:mgmtsystem.audit.verificationlist:0
 msgid "Auditors:"
-msgstr "Auditeurs :"
+msgstr "Auditeurs:"
+
