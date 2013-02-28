@@ -7,28 +7,75 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-12-02 23:46+0000\n"
+"POT-Creation-Date: 2013-02-27 21:58+0000\n"
 "PO-Revision-Date: 2013-02-04 23:06+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-02-06 05:34+0000\n"
-"X-Generator: Launchpad (build 16468)\n"
+"X-Launchpad-Export-Date: 2013-02-28 05:12+0000\n"
+"X-Generator: Launchpad (build 16506)\n"
 
 #. module: mgmtsystem
-#: model:ir.module.module,shortdesc:mgmtsystem.module_meta_information
-#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_dashboard
-#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_main
-#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
-msgid "Management System"
-msgstr "Sistema de gestão"
+#: model:res.groups,comment:mgmtsystem.group_mgmtsystem_viewer
+msgid "Module user with general read only access."
+msgstr ""
 
 #. module: mgmtsystem
-#: view:board.board:0
-msgid "My Board"
-msgstr "O meu Painel"
+#: field:mgmtsystem.system,name:0
+msgid "System"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.actions.act_window,name:mgmtsystem.action_system_form
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_configuration_system
+#: view:mgmtsystem.system:0
+msgid "Systems"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,comment:mgmtsystem.group_mgmtsystem_manager
+msgid "Module administrator, able to modify configuration data."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,comment:mgmtsystem.group_mgmtsystem_user_manager
+msgid "Module user with additional permission for approvals."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
+msgid "mgmtsystem.system"
+msgstr ""
+
+#. module: mgmtsystem
+#: field:mgmtsystem.system,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.actions.act_window,name:mgmtsystem.system_action
+#: view:mgmtsystem.system:0
+msgid "Management Systems"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.module.category,description:mgmtsystem.module_category_management_system
+msgid ""
+"Manage management systems, manuals, KPIs, nonconformities, actions, "
+"feedbacks, audits, reviews."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,name:mgmtsystem.group_mgmtsystem_user
+msgid "User"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.actions.act_window,name:mgmtsystem.open_board_mgmtsystem
+msgid "Management System Dashboard"
+msgstr "Painel do sistema de gestão"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_configuration
@@ -36,20 +83,57 @@ msgid "Configuration"
 msgstr "Configuração"
 
 #. module: mgmtsystem
-#: model:ir.module.module,description:mgmtsystem.module_meta_information
-msgid ""
-"\n"
-"\tThis module is the basis of any management system applications:\n"
-"         * audit reports,\n"
-"         * nonconformities,\n"
-"         * immediate actions,\n"
-"         * preventive actions,\n"
-"         * corrective actions,\n"
-"         * improvement opportunities.\t\n"
-"    "
+#: field:mgmtsystem.system,manual:0
+msgid "Manual"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.actions.act_window,name:mgmtsystem.open_board_mgmtsystem
-msgid "Management System Dashboard"
-msgstr "Painel do sistema de gestão"
+#: model:res.groups,name:mgmtsystem.group_mgmtsystem_auditor
+msgid "Auditor"
+msgstr ""
+
+#. module: mgmtsystem
+#: view:board.board:0
+msgid "My Board"
+msgstr "O meu Painel"
+
+#. module: mgmtsystem
+#: model:ir.module.category,name:mgmtsystem.module_category_management_system
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_dashboard
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_main
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
+#: view:mgmtsystem.system:0
+msgid "Management System"
+msgstr "Sistema de gestão"
+
+#. module: mgmtsystem
+#: model:res.groups,name:mgmtsystem.group_mgmtsystem_viewer
+msgid "Viewer"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,name:mgmtsystem.group_mgmtsystem_user_manager
+msgid "Approving User"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,name:mgmtsystem.group_mgmtsystem_manager
+msgid "Manager"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,comment:mgmtsystem.group_mgmtsystem_user
+msgid "Module user, with general read and write."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_manuals
+msgid "Manuals"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,comment:mgmtsystem.group_mgmtsystem_auditor
+msgid ""
+"Module user with additional permission specific for the auditor job, such as "
+"effectiveness reviews."
+msgstr ""
