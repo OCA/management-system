@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -35,7 +35,11 @@ class mgmtsystem_audit(osv.osv):
         'strong_points': fields.text('Strong Points'),
         'to_improve_points': fields.text('Points To Improve'),
         'imp_opp_ids': fields.many2many('mgmtsystem.action','mgmtsystem_audit_imp_opp_rel','mgmtsystem_action_id','mgmtsystem_audit_id','Improvement Opportunities'),
-        'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_nonconformity_id','Nonconformities'),
+        # Field name sequence is fixed; using new columns to prevent data loss
+        'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity',
+            'mgmtsystem_audit_nonconformity_rel',
+            'mgmtsystem_nonconformity_id7', 'mgmtsystem_audit_id7',
+            'Nonconformities'),
         'state': fields.selection([('open','Open'),('done','Closed')], 'State'),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
     }
@@ -86,10 +90,10 @@ class mgmtsystem_nonconformity(osv.osv):
     _name = "mgmtsystem.nonconformity"
     _inherit = "mgmtsystem.nonconformity"
     _columns = {
-        #Remark: the relation name and column names are no longer necessary, so you can just write: 'audit_ids': fields.many2many('mgmtsystem.audit', 'Related Audits'),
-        #        However, the mgmtsystem_audit.nonconformity_ids field definition has the IDs swapped: 
-        #        This should be fixed for v7 and the migration script should swap the values in the "rel" table columns.
-        'audit_ids': fields.many2many('mgmtsystem.audit','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_action_id','Related Audits'),
+        'audit_ids': fields.many2many('mgmtsystem.audit',
+            'mgmtsystem_audit_nonconformity_rel',
+            'mgmtsystem_audit_id7', 'mgmtsystem_nonconformity_id7',
+            'Related Audits'),
     }
 mgmtsystem_nonconformity()
 
