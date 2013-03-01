@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -39,7 +39,6 @@ This module enables you to manage reviews of your management system.
     "depends" : [
         'mgmtsystem_nonconformity',
         'mgmtsystem_survey',
-        'audittrail',
     ],
     "init_xml" : [
         'review_sequence.xml',
