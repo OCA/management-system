@@ -32,7 +32,7 @@
                         <field name="user_id"/>
                         <field name="system_id"/>
                     </group>
-                    <newline />
+                    <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="User" icon="terp-personal" domain="[]" context="{'group_by':'user_id'}"/>
                         <separator orientation="vertical"/>
@@ -122,18 +122,6 @@
             sequence="30" 
             groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
-        <!-- audittrail rule -->
-
-        <record id="mgmtsystem_action_audit_rule" model="audittrail.rule">
-            <field name="name">Audit on Management System Actions</field>
-            <field name="object_id" search="[('model','=','mgmtsystem.action')]"/>
-            <field name="log_create">1</field>
-            <field name="log_workflow">1</field>
-            <field name="log_unlink">1</field>
-            <field name="log_action">1</field>
-            <field name="log_workflow">1</field>
-            <field name="state">subscribed</field>
-        </record>
-
     </data>
 </openerp>
+
