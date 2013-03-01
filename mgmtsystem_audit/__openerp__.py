@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -36,7 +36,7 @@
     "description": """\
 This module enables you to manage audits and verifications lists of your management system.
     """,
-    "depends" : ['mgmtsystem_nonconformity','audittrail'],
+    "depends": ['mgmtsystem_nonconformity'],
     "init_xml" : [
         'audit_sequence.xml',
     ],
