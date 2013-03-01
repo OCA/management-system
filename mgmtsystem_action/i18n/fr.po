@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-02-27 23:13+0000\n"
-"PO-Revision-Date: 2013-02-01 13:19+0000\n"
+"PO-Revision-Date: 2013-02-28 14:56+0000\n"
 "Last-Translator: Maxime Chambreuil (http://www.savoirfairelinux.com) "
 "<maxime.chambreuil@savoirfairelinux.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-02-28 05:12+0000\n"
-"X-Generator: Launchpad (build 16506)\n"
+"X-Launchpad-Export-Date: 2013-03-01 05:17+0000\n"
+"X-Generator: Launchpad (build 16514)\n"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,categ_id:0
@@ -26,7 +26,7 @@ msgstr "Catégorie"
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,state:0
 msgid "In Progress"
-msgstr ""
+msgstr "En cours"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
@@ -41,7 +41,7 @@ msgstr "Information de l'historique"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,type_action:0
 msgid "Response Type"
-msgstr ""
+msgstr "Type"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
@@ -52,7 +52,7 @@ msgstr "Responsable"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,system_id:0
 msgid "System"
-msgstr ""
+msgstr "Système"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,partner_address_id:0
@@ -95,7 +95,7 @@ msgstr "Répondre"
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,state:0
 msgid "New"
-msgstr ""
+msgstr "Nouvelle"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,cause:0
@@ -138,6 +138,22 @@ msgid ""
 "<br />\n"
 "OpenERP"
 msgstr ""
+"Bonjour,\n"
+"<br />\n"
+"<br />\n"
+"Une nouvelle action vous a été assignée :\n"
+"<br />\n"
+"<a href=\"http://localhost:8069\">http://localhost:8069</a>\n"
+"<br />\n"
+"<br />\n"
+"[[object.description]]\n"
+"<br />\n"
+"<br />\n"
+"Merci.\n"
+"<br />\n"
+"--\n"
+"<br />\n"
+"OpenERP"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -204,7 +220,7 @@ msgstr "Utilisateur"
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -288,17 +304,17 @@ msgstr "Ces personnes recevront un courriel."
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,active:0
 msgid "Active"
-msgstr ""
+msgstr "Active"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.server,name:mgmtsystem_action.mgmtsystem_action_server_action
 msgid "Notify the person in charge of the new action"
-msgstr ""
+msgstr "Notifier la personne en charge de la nouvelle action"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Closed Actions"
-msgstr ""
+msgstr "Actions archivées"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,state:0
@@ -376,7 +392,7 @@ msgstr "Date de création"
 #. module: mgmtsystem_action
 #: model:ir.actions.server,subject:mgmtsystem_action.mgmtsystem_action_server_action
 msgid "[[object.name]]"
-msgstr ""
+msgstr "[[object.name]]"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
@@ -397,17 +413,17 @@ msgstr "Partenaire"
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Close"
-msgstr ""
+msgstr "Archiver"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Subject"
-msgstr ""
+msgstr "Sujet"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
