@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -28,20 +28,12 @@
     "description": """\
 This module enables you to manage the hazards and risks of your health and safety management system.
     """,
-    "depends" : [
-        'mgmtsystem',
-        'hr',
-        'audittrail',
-    ],
-    "init_xml" : [],
-    "update_xml" : [
+    "depends": ['mgmtsystem', 'hr'],
+    "data": [
         'security/ir.model.access.csv',
         'mgmtsystem_hazard.xml',
         'mgmtsystem_hazard_data.xml',
     ],
-    "demo_xml" : [],
-    "installable" : True,
-    "certificate" : ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
