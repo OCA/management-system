@@ -169,18 +169,6 @@
             sequence="10" 
             groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
 
-        <!-- audittrail rule -->
-
-        <record id="mgmtsystem_audit_audit_rule" model="audittrail.rule">
-            <field name="name">Audit on Management System Audits</field>
-            <field name="object_id" search="[('model','=','mgmtsystem.audit')]"/>
-            <field name="log_create">1</field>
-            <field name="log_workflow">1</field>
-            <field name="log_unlink">1</field>
-            <field name="log_action">1</field>
-            <field name="log_workflow">1</field>
-            <field name="state">subscribed</field>
-        </record>
 
        <!-- Nonconformities related to Audits -->
         <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
@@ -191,7 +179,7 @@
 
                  <notebook position="inside">
                         <page string="Related Audits" groups="base.group_extended,mgmtsystem.group_mgmtsystem_auditor">
-                            <field name="audit_ids" colspan="4" nolabel="1" />
+                            <field name="audit_ids" colspan="4" nolabel="1"/>
                         </page>
                  </notebook>
 
@@ -201,3 +189,4 @@
           
     </data>
 </openerp>
+
