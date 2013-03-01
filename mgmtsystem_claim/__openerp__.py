@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -26,18 +26,16 @@
     "license" : "AGPL-3",
     "category" : "Management System",
     "description": """This module enables you to manage the claims of your management system.""",
-    "depends" : ['mgmtsystem','audittrail','crm_claim','mail'],
-    "init_xml" : [],
-    "update_xml" : [
-        'security/ir.model.access.csv',
-        'mgmtsystem_claim.xml',
+    "depends": ['mgmtsystem', 'crm_claim', 'mail'],
+    "init": [
         'claim_sequence.xml',
-        'board_mgmtsystem_claim.xml',
         'workflow_mgmtsystem_claim.xml',
     ],
-    "demo_xml" : [],
-    "installable" : True,
-    "certificate" : ''
+    "data": [
+        'security/ir.model.access.csv',
+        'mgmtsystem_claim.xml',
+        'board_mgmtsystem_claim.xml',
+    ],
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

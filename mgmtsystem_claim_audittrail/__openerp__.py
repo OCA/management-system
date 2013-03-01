@@ -19,30 +19,17 @@
 #
 ##############################################################################
 {
-    "name" : "Management System - Review",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Management System",
-    "description": """\
-This module enables you to manage reviews of your management system.
-    """,
-    "depends" : [
-        'mgmtsystem_nonconformity',
-        'mgmtsystem_survey',
-    ],
-    "init_xml" : [
-        'review_sequence.xml',
-    ],
-    "update_xml" : [
-        'security/ir.model.access.csv',
-        'mgmtsystem_review.xml',
-        'report/review_report.xml',
-    ],
-    "demo_xml" : [],
-    "installable" : True,
-    "certificate" : ''
+    "name": "Management System - Claim Audittral",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+    "description": """Adds audittrail rule to Claims.""",
+    "depends": ['mgmtsystem_claim', 'audittrail'],
+    "init": ['mgmtsystem_claim.xml'],
+    "data": [],
+    "auto_install": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

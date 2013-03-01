@@ -1,0 +1,17 @@
+<openerp>
+    <data>
+
+        <record id="mgmtsystem_action_audit_rule" model="audittrail.rule">
+            <field name="name">Audit on Management System Actions</field>
+            <field name="object_id" search="[('model','=','mgmtsystem.action')]"/>
+            <field name="log_create">1</field>
+            <field name="log_workflow">1</field>
+            <field name="log_unlink">1</field>
+            <field name="log_action">1</field>
+            <field name="log_workflow">1</field>
+            <field name="state">subscribed</field>
+        </record>
+
+    </data>
+</openerp>
+
