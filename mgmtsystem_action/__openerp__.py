@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -39,17 +39,16 @@ This module enables you to manage the different actions of your management syste
   * corrective actions
   * preventive actions
   * improvement opportunities.
-
-WARNING: when upgrading from v0.1, data conversion is required, since there are subtancial changes to the data structure.
-    """,
-    "depends" : ['mgmtsystem','audittrail','crm_claim'],
-    "init_xml" : [],
-    "update_xml" : [
+""",
+    "depends": ['mgmtsystem', 'crm_claim'],
+    "init": [
+        'action_sequence.xml',
+        'workflow_mgmtsystem_action.xml',
+    ],
+    "data": [
         'security/ir.model.access.csv',
         'mgmtsystem_action.xml',
-        'action_sequence.xml',
         'board_mgmtsystem_action.xml',
-        'workflow_mgmtsystem_action.xml',
     ],
     "demo_xml" : ['demo_action.xml',],
     "installable" : True,
