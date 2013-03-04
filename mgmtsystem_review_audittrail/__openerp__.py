@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -19,7 +19,7 @@
 #
 ##############################################################################
 {
-    "name": "Management System - Review Audittral",
+    "name": "Management System - Reviews Audit Trail tracking",
     "version": "1.0",
     "author": "Savoir-faire Linux",
     "website": "http://www.savoirfairelinux.com",
