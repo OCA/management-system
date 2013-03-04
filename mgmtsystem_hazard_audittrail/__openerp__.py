@@ -25,11 +25,13 @@
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """Adds audittrail rule to Hazards.""",
+    "description": """\
+Adds rule to track changes to Management System Hazards, if Audit Trail module 
+is installed.
+""",
     "depends": ['mgmtsystem_hazard', 'audittrail'],
     "init": ['mgmtsystem_hazard.xml'],
     "data": [],
     "auto_install": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
