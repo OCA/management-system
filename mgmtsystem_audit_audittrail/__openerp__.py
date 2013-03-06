@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -19,30 +19,19 @@
 #
 ##############################################################################
 {
-    "name" : "Management System - Review",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Management System",
+    "name": "Management System - Audits Audit Trail tracking",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
     "description": """\
-This module enables you to manage reviews of your management system.
-    """,
-    "depends" : [
-        'mgmtsystem_nonconformity',
-        'mgmtsystem_survey',
-    ],
-    "init_xml" : [
-        'review_sequence.xml',
-    ],
-    "update_xml" : [
-        'security/ir.model.access.csv',
-        'mgmtsystem_review.xml',
-        'report/review_report.xml',
-    ],
-    "demo_xml" : [],
-    "installable" : True,
-    "certificate" : ''
+Adds rule to track changes to Management System Audits, if Audit Trail module 
+is installed.
+""",
+    "depends": ['mgmtsystem_audit', 'audittrail'],
+    "init": ['mgmtsystem_audit.xml'],
+    "data": [],
+    "auto_install": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
