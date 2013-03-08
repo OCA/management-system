@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name" : "Management System - Audit",
-    "version" : "1.0",
+    "version" : "1.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "AGPL-3",
@@ -47,4 +47,3 @@ This module enables you to manage audits and verifications lists of your managem
     "certificate" : ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-

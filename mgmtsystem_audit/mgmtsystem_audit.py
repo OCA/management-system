@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -19,10 +19,10 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv
-from tools.translate import _
+from openerp.osv import fields, orm
 
-class mgmtsystem_audit(osv.osv):
+
+class mgmtsystem_audit(orm.Model):
     _name = "mgmtsystem.audit"
     _description = "Audit"
     _columns = {
@@ -35,7 +35,8 @@ class mgmtsystem_audit(osv.osv):
         'strong_points': fields.text('Strong Points'),
         'to_improve_points': fields.text('Points To Improve'),
         'imp_opp_ids': fields.many2many('mgmtsystem.action','mgmtsystem_audit_imp_opp_rel','mgmtsystem_action_id','mgmtsystem_audit_id','Improvement Opportunities'),
-        'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_nonconformity_id','Nonconformities'),
+        'nonconformity_ids': fields.many2many(
+            'mgmtsystem.nonconformity', string='Nonconformities'),
         'state': fields.selection([('open','Open'),('done','Closed')], 'State'),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
     }
@@ -54,9 +55,8 @@ class mgmtsystem_audit(osv.osv):
     def button_close(self, cr, uid, ids, context=None):
         return self.write(cr, uid, ids, {'state': 'done'})
 
-mgmtsystem_audit()
 
-class mgmtsystem_verification_line(osv.osv):
+class mgmtsystem_verification_line(orm.Model):
     _name = "mgmtsystem.verification.line"
     _description = "Verification Line"
     _columns = {
@@ -72,19 +72,14 @@ class mgmtsystem_verification_line(osv.osv):
         'is_conformed': False
     }
 
-mgmtsystem_verification_line()
 
-
-class mgmtsystem_nonconformity(osv.osv):
+class mgmtsystem_nonconformity(orm.Model):
     _name = "mgmtsystem.nonconformity"
     _inherit = "mgmtsystem.nonconformity"
     _columns = {
-        #Remark: the relation name and column names are no longer necessary, so you can just write: 'audit_ids': fields.many2many('mgmtsystem.audit', 'Related Audits'),
-        #        However, the mgmtsystem_audit.nonconformity_ids field definition has the IDs swapped: 
-        #        This should be fixed for v7 and the migration script should swap the values in the "rel" table columns.
-        'audit_ids': fields.many2many('mgmtsystem.audit','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_action_id','Related Audits'),
+        'audit_ids': fields.many2many(
+            'mgmtsystem.audit', string='Related Audits'),
     }
-mgmtsystem_nonconformity()
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
