@@ -19,6 +19,7 @@
 #
 ##############################################################################
 {
+<<<<<<< a2fe05867a1faacf29508c3abc1f0c8b98285c87
     "name" : "Management System - Review",
     "version" : "1.0",
     "author" : "Savoir-faire Linux",
@@ -33,24 +34,30 @@
     "license" : "AGPL-3",
 >>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
+=======
+    "name": "Management System - Review",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+>>>>>>> [FIX] PEP8 compliance after running flake8
     "description": """\
 This module enables you to manage reviews of your management system.
     """,
-    "depends" : [
+    "depends": [
         'mgmtsystem_nonconformity',
         'mgmtsystem_survey',
     ],
-    "init_xml" : [
-        'review_sequence.xml',
-    ],
-    "update_xml" : [
+    "data": [
         'security/ir.model.access.csv',
+        'security/mgmtsystem_review_security.xml',
+        'review_sequence.xml',
         'mgmtsystem_review.xml',
         'report/review_report.xml',
     ],
-    "demo_xml" : [],
-    "installable" : True,
-    "certificate" : ''
+    "demo": [],
+    "installable": True,
+    "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
