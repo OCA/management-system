@@ -100,7 +100,7 @@
                         </page>
                         <page string="Procedures">
                             <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" 
-                                   domain="[('group_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
+                                   domain="[('parent_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
                         </page>
 
                         <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
