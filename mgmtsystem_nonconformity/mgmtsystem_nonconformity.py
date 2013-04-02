@@ -197,7 +197,7 @@ class mgmtsystem_nonconformity(orm.Model):
 
     def wkf_analysis(self, cr, uid, ids, context=None):
         """Change state from draft to analysis"""
-        self.message_append(cr, uid, self.browse(cr, uid, ids), _('Analysis'))
+        self.message_post(cr, uid, self.browse(cr, uid, ids), _('Analysis'))
         return self.write(cr, uid, ids, {'state': 'analysis', 'analysis_date': None, 'analysis_user_id': None}, context=context)
 
     def action_sign_analysis(self, cr, uid, ids, context=None):
@@ -211,7 +211,7 @@ class mgmtsystem_nonconformity(orm.Model):
             raise osv.except_osv(_('Error !'), _('Please provide an analysis before approving.'))
         vals = {'analysis_date': time.strftime(DATETIME_FORMAT), 'analysis_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
-        self.message_append(cr, uid, self.browse(cr, uid, ids, context=context), _('Analysis Approved'))
+        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Analysis Approved'))
         return True
 
     def wkf_review(self, cr, uid, ids, context=None):
@@ -219,7 +219,7 @@ class mgmtsystem_nonconformity(orm.Model):
         o = self.browse(cr, uid, ids, context=context)[0]
         if not o.analysis_date:
             raise osv.except_osv(_('Error !'), _('Analysis must be performed before submiting to approval.'))
-        self.message_append(cr, uid, self.browse(cr, uid, ids, context=context), _('Pending Approval'))
+        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Pending Approval'))
         return self.write(cr, uid, ids, {'state': 'pending', 'actions_date': None, 'actions_user_id': None}, context=context)
 
     def action_sign_actions(self, cr, uid, ids, context=None):
@@ -233,7 +233,7 @@ class mgmtsystem_nonconformity(orm.Model):
             raise osv.except_osv(_('Error !'), _('Analysis approved before the review confirmation.'))
         vals = {'actions_date': time.strftime(DATETIME_FORMAT), 'actions_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
-        self.message_append(cr, uid, self.browse(cr, uid, ids, context=context), _('Action Plan Approved'))
+        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Action Plan Approved'))
         return True
 
     def wkf_open(self, cr, uid, ids, context=None):
@@ -241,7 +241,7 @@ class mgmtsystem_nonconformity(orm.Model):
         o = self.browse(cr, uid, ids, context=context)[0]
         if not o.actions_date:
             raise osv.except_osv(_('Error !'), _('Action plan must be approved before opening.'))
-        self.message_append(cr, uid, self.browse(cr, uid, ids, context=context), _('In Progress'))
+        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('In Progress'))
         #Open related Actions
         if o.immediate_action_id and o.immediate_action_id.state == 'draft':
             o.immediate_action_id.case_open(cr, uid, [o.immediate_action_id.id])
@@ -257,12 +257,12 @@ class mgmtsystem_nonconformity(orm.Model):
             raise osv.except_osv(_('Error !'), _('This action can only be done in the In Progress state.'))
         vals = {'evaluation_date': time.strftime(DATETIME_FORMAT), 'evaluation_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
-        self.message_append(cr, uid, self.browse(cr, uid, ids, context=context), _('Effectiveness Evaluation Approved'))
+        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Effectiveness Evaluation Approved'))
         return True
 
     def wkf_cancel(self, cr, uid, ids, context=None):
         """Change state to cancel"""
-        self.message_append(cr, uid, self.browse(cr, uid, ids, context=context), _('Cancel'))
+        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Cancel'))
         return self.write(cr, uid, ids, {'state': 'cancel'}, context=context)
 
     def wkf_close(self, cr, uid, ids, context=None):
@@ -270,7 +270,7 @@ class mgmtsystem_nonconformity(orm.Model):
         o = self.browse(cr, uid, ids, context=context)[0]
         if not o.evaluation_date:
             raise osv.except_osv(_('Error !'), _('Effectiveness evaluation must be performed before closing.'))
-        self.message_append(cr, uid, self.browse(cr, uid, ids, context=context), _('Close'))
+        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Close'))
         return self.write(cr, uid, ids, {'state': 'done'}, context=context)
 
     def case_reset(self, cr, uid, ids, context=None, *args):
@@ -278,7 +278,7 @@ class mgmtsystem_nonconformity(orm.Model):
         wf_service = netsvc.LocalService("workflow")
         for id in ids:
             res = wf_service.trg_create(uid, self._name, id, cr)
-        self.message_append(cr, uid, self.browse(cr, uid, ids, context=context), _('Draft'))
+        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Draft'))
         vals = {
             'state': 'draft',
             'analysis_date': None, 'analysis_user_id': None, 
