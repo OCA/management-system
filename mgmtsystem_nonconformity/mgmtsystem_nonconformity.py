@@ -21,7 +21,7 @@
 
 from tools.translate import _
 import netsvc as netsvc
-from openerp.osv import fields, orm
+from openerp.osv import fields, orm, osv
 
 import time
 from tools import DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT
