@@ -21,7 +21,7 @@
 
 from tools.translate import _
 import netsvc as netsvc
-from openerp.osv import fields, orm, osv
+from openerp.osv import fields, orm
 
 import time
 from tools import DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT
@@ -204,11 +204,11 @@ class mgmtsystem_nonconformity(orm.Model):
         """Sign-off the analysis"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if o.state != 'analysis':
-            raise osv.except_osv(_('Error !'), _('This action can only be done in the Analysis state.'))
+            raise orm.except_orm(_('Error !'), _('This action can only be done in the Analysis state.'))
         if o.analysis_date:
-            raise osv.except_osv(_('Error !'), _('Analysis is already approved.'))
+            raise orm.except_orm(_('Error !'), _('Analysis is already approved.'))
         if not o.analysis:
-            raise osv.except_osv(_('Error !'), _('Please provide an analysis before approving.'))
+            raise orm.except_orm(_('Error !'), _('Please provide an analysis before approving.'))
         vals = {'analysis_date': time.strftime(DATETIME_FORMAT), 'analysis_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Analysis Approved'))
@@ -218,7 +218,7 @@ class mgmtsystem_nonconformity(orm.Model):
         """Change state from analysis to pending approval"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if not o.analysis_date:
-            raise osv.except_osv(_('Error !'), _('Analysis must be performed before submiting to approval.'))
+            raise orm.except_orm(_('Error !'), _('Analysis must be performed before submiting to approval.'))
         self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Pending Approval'))
         return self.write(cr, uid, ids, {'state': 'pending', 'actions_date': None, 'actions_user_id': None}, context=context)
 
@@ -226,11 +226,11 @@ class mgmtsystem_nonconformity(orm.Model):
         """Sign-off the action plan"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if o.state != 'pending':
-            raise osv.except_osv(_('Error !'), _('This action can only be done in the Pending for Approval state.'))
+            raise orm.except_orm(_('Error !'), _('This action can only be done in the Pending for Approval state.'))
         if o.actions_date:
-            raise osv.except_osv(_('Error !'), _('Action plan is already approved.'))
+            raise orm.except_orm(_('Error !'), _('Action plan is already approved.'))
         if not self.browse(cr, uid, ids, context=context)[0].analysis_date:
-            raise osv.except_osv(_('Error !'), _('Analysis approved before the review confirmation.'))
+            raise orm.except_orm(_('Error !'), _('Analysis approved before the review confirmation.'))
         vals = {'actions_date': time.strftime(DATETIME_FORMAT), 'actions_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Action Plan Approved'))
@@ -240,7 +240,7 @@ class mgmtsystem_nonconformity(orm.Model):
         """Change state from pending approval to in progress, and Open  the related actions"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if not o.actions_date:
-            raise osv.except_osv(_('Error !'), _('Action plan must be approved before opening.'))
+            raise orm.except_orm(_('Error !'), _('Action plan must be approved before opening.'))
         self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('In Progress'))
         #Open related Actions
         if o.immediate_action_id and o.immediate_action_id.state == 'draft':
@@ -254,7 +254,7 @@ class mgmtsystem_nonconformity(orm.Model):
         """Sign-off the effectiveness evaluation"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if o.state != 'open':
-            raise osv.except_osv(_('Error !'), _('This action can only be done in the In Progress state.'))
+            raise orm.except_orm(_('Error !'), _('This action can only be done in the In Progress state.'))
         vals = {'evaluation_date': time.strftime(DATETIME_FORMAT), 'evaluation_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
         self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Effectiveness Evaluation Approved'))
@@ -269,7 +269,7 @@ class mgmtsystem_nonconformity(orm.Model):
         """Change state from in progress to closed"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if not o.evaluation_date:
-            raise osv.except_osv(_('Error !'), _('Effectiveness evaluation must be performed before closing.'))
+            raise orm.except_orm(_('Error !'), _('Effectiveness evaluation must be performed before closing.'))
         self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Close'))
         return self.write(cr, uid, ids, {'state': 'done'}, context=context)
 
