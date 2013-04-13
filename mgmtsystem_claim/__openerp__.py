@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name" : "Management System - Claim",
-    "version" : "1.0",
+    "version" : "1.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
 <<<<<<< HEAD
@@ -31,14 +31,12 @@
     "category" : "Management System",
     "description": """This module enables you to manage the claims of your management system.""",
     "depends": ['mgmtsystem', 'crm_claim', 'mail'],
-    "init": [
+    "data": [
+        'mgmtsystem_claim.xml',
         'claim_sequence.xml',
         'workflow_mgmtsystem_claim.xml',
-    ],
-    "data": [
-        'security/ir.model.access.csv',
-        'mgmtsystem_claim.xml',
         'board_mgmtsystem_claim.xml',
+        'security/ir.model.access.csv',
     ],
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
