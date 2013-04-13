@@ -6,16 +6,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.1-20120904-232007\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-29 11:38+0000\n"
-"PO-Revision-Date: 2012-10-29 11:38+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2010-12-02 23:46+0000\n"
+"PO-Revision-Date: 2013-02-04 23:13+0000\n"
+"Last-Translator: Virgil Dupras <hsoft@hardcoded.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-04-24 06:29+0000\n"
+"X-Generator: Launchpad (build 16985)\n"
 
 #. module: mgmtsystem
+#: model:ir.module.module,shortdesc:mgmtsystem.module_meta_information
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_dashboard
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_main
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
@@ -23,71 +25,9 @@ msgid "Management System"
 msgstr "Sistema de gestão"
 
 #. module: mgmtsystem
-#: model:res.groups,name:mgmtsystem.group_mgmtsystem_user
-msgid "Management System / User"
-msgstr "Sistema de gestão / Utilizador"
-
-#. module: mgmtsystem
-#: model:res.groups,name:mgmtsystem.group_mgmtsystem_user_manager
-msgid "Management System / User manager"
-msgstr "Sistema de gestão / Utilizador Gestor"
-
-#. module: mgmtsystem
-#: model:res.groups,name:mgmtsystem.group_mgmtsystem_manager
-msgid "Management System / Manager"
-msgstr "Sistema de gestão / Gestor"
-
-#. module: mgmtsystem
 #: view:board.board:0
 msgid "My Board"
 msgstr "O meu Painel"
-
-#. module: mgmtsystem
-#: field:mgmtsystem.system,company_id:0
-msgid "Company"
-msgstr "Empresa"
-
-#. module: mgmtsystem
-#: field:mgmtsystem.system,manual:0
-msgid "Manual"
-msgstr "Manual"
-
-#. module: mgmtsystem
-#: model:res.groups,name:mgmtsystem.group_mgmtsystem_viewer
-msgid "Management System / Viewer"
-msgstr "Sistema de gestão / Consulta"
-
-#. module: mgmtsystem
-#: field:mgmtsystem.system,name:0
-msgid "System"
-msgstr "Sistema"
-
-#. module: mgmtsystem
-#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
-msgid "mgmtsystem.system"
-msgstr "mgmtsystem.system"
-
-#. module: mgmtsystem
-#: model:ir.actions.act_window,name:mgmtsystem.action_system_form
-#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_configuration_system
-#: view:mgmtsystem.system:0
-msgid "Systems"
-msgstr "Sistemas"
-
-#. module: mgmtsystem
-#: model:ir.actions.act_window,name:mgmtsystem.open_board_mgmtsystem
-msgid "Management System Dashboard"
-msgstr "Painel do sistema de gestão"
-
-#. module: mgmtsystem
-#: model:res.groups,comment:mgmtsystem.group_mgmtsystem_user_manager
-msgid "User with approval authority."
-msgstr "Utilizador com autoridade para aprovação."
-
-#. module: mgmtsystem
-#: model:res.groups,name:mgmtsystem.group_mgmtsystem_auditor
-msgid "Management System / Auditor"
-msgstr "Sistema de gestão / Auditor"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_configuration
@@ -95,7 +35,20 @@ msgid "Configuration"
 msgstr "Configuração"
 
 #. module: mgmtsystem
-#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_manuals
-msgid "Manuals"
-msgstr "Manuais"
+#: model:ir.module.module,description:mgmtsystem.module_meta_information
+msgid ""
+"\n"
+"\tThis module is the basis of any management system applications:\n"
+"         * audit reports,\n"
+"         * nonconformities,\n"
+"         * immediate actions,\n"
+"         * preventive actions,\n"
+"         * corrective actions,\n"
+"         * improvement opportunities.\t\n"
+"    "
+msgstr ""
 
+#. module: mgmtsystem
+#: model:ir.actions.act_window,name:mgmtsystem.open_board_mgmtsystem
+msgid "Management System Dashboard"
+msgstr "Painel do sistema de gestão"
