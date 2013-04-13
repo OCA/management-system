@@ -41,6 +41,7 @@
     <record id="mgmtsystem.group_mgmtsystem_user" model="res.groups">
         <field name="name">User</field>
         <field name="category_id" ref="module_category_management_system"/>
+        <field name="implied_ids" eval="(4,ref('mgmtsystem.group_mgmtsystem_viewer'))"/>
     </record>
 
     <record id="mgmtsystem.group_mgmtsystem_user_manager" model="res.groups">
@@ -61,6 +62,15 @@
         <field name="category_id" ref="module_category_management_system"/>
         <field name="implied_ids" eval="(4,ref('mgmtsystem.group_mgmtsystem_user'))"/>
 >>>>>>> CHG: marking Apps, security review, translation pt, finetuning
+    </record>
+
+    <!-- Rule -->
+
+    <record model="ir.rule" id="mgmtsystem_rule">
+        <field name="name">mgmtsystem multi-company</field>
+        <field name="model_id" ref="model_mgmtsystem_system"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
     </record>
 
 </data>
