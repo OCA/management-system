@@ -24,7 +24,7 @@ class mgmtsystem_nonconformity(orm.Model):
     _inherit = "mgmtsystem.nonconformity"
     _columns = {
         'department_id': fields.many2one('hr.department', 'Department', required=True),
-        'superior_user_id': fields.many2one('res.users','Superior', required=True),
+        'superior_user_id': fields.many2one('res.users','Top Manager', required=True),
     }
 
     def onchange_department_id(self, cr, uid, ids, new_id, context=None):
