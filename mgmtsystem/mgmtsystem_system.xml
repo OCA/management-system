@@ -5,7 +5,6 @@
     <record model="ir.ui.view" id="system_form">
       <field name="name">mgmtsystem_system_form</field>
       <field name="model">mgmtsystem.system</field>
-      <field name="type">form</field>
       <field name="arch" type="xml">
 	<form string="Management System">
 	  <field name="name"/>
@@ -18,7 +17,6 @@
     <record model="ir.ui.view" id="system_tree">
       <field name="name">mgmtsystem_system_tree</field>
       <field name="model">mgmtsystem.system</field>
-      <field name="type">tree</field>
       <field name="arch" type="xml">
 	<tree string="Management Systems">
 	  <field name="name"/>

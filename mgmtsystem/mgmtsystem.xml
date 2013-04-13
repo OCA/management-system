@@ -31,11 +31,11 @@
        <record model="ir.ui.view" id="mgmtsystem_system_tree">
             <field name="name">mgmtsystem.system.tree</field>
             <field name="model">mgmtsystem.system</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Systems">
                     <field name="name"/>
 		    <field name="manual"/>
+		    <field name="company_id" groups="base.group_multi_company"/>
                 </tree>
             </field>
         </record>
@@ -43,11 +43,11 @@
        <record model="ir.ui.view" id="mgmtsystem_system_form">
             <field name="name">mgmtsystem.system.form</field>
             <field name="model">mgmtsystem.system</field>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Systems">
                     <field name="name"/>
 		    <field name="manual"/>
+		    <field name="company_id" groups="base.group_multi_company"/>
                 </form>
             </field>
         </record>
