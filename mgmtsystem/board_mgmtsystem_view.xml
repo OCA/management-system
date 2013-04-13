@@ -6,7 +6,6 @@
         <record id="board_mgmtsystem_form" model="ir.ui.view">
             <field name="name">board.mgmtsystem.form</field>
             <field name="model">board.board</field>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Management Systems Dashboard">
                     <hpaned>
