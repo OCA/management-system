@@ -41,6 +41,7 @@
     <record id="mgmtsystem.group_mgmtsystem_user" model="res.groups">
         <field name="name">User</field>
         <field name="category_id" ref="module_category_management_system"/>
+        <field name="implied_ids" eval="(4,ref('mgmtsystem.group_mgmtsystem_viewer'))"/>
     </record>
 
     <record id="mgmtsystem.group_mgmtsystem_user_manager" model="res.groups">
