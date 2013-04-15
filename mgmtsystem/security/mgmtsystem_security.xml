@@ -18,6 +18,7 @@
         <field name="name">User</field>
         <field name="comment">Module user, with general read and write.</field>
         <field name="category_id" ref="module_category_management_system"/>
+        <field name="implied_ids" eval="(4,ref('mgmtsystem.group_mgmtsystem_viewer'))"/>
     </record>
 
     <record id="group_mgmtsystem_user_manager" model="res.groups">
