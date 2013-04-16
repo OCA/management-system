@@ -244,10 +244,10 @@ class mgmtsystem_nonconformity(orm.Model):
         self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('In Progress'))
         #Open related Actions
         if o.immediate_action_id and o.immediate_action_id.state == 'draft':
-            o.immediate_action_id.case_open(cr, uid, [o.immediate_action_id.id])
+            o.immediate_action_id.case_open()
         for a in o.action_ids:
             if a.state == 'draft':
-                a.case_open(cr, uid, [a.id])
+                a.case_open()
         return self.write(cr, uid, ids, {'state': 'open', 'evaluation_date': None, 'evaluation_user_id': None}, context=context)
 
     def action_sign_evaluation(self, cr, uid, ids, context=None):
