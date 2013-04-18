@@ -22,6 +22,7 @@
 from tools.translate import _
 import netsvc as netsvc
 from openerp.osv import fields, orm
+from openerp.addons.base_status.base_state import base_state
 
 import time
 from tools import DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT
@@ -129,7 +130,8 @@ _STATES = [
     ]
 _STATES_DICT =  dict(_STATES)
 
-class mgmtsystem_nonconformity(orm.Model):
+
+class mgmtsystem_nonconformity(base_state, orm.Model):
     """
     Management System - Nonconformity 
     """
@@ -161,7 +163,6 @@ class mgmtsystem_nonconformity(orm.Model):
         'state': fields.selection(_STATES, 'State', readonly=True),
         'state_name': fields.function(_state_name, string='State Description', type='char', size=40),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
-        'message_ids': fields.one2many('mail.message', 'res_id', 'Messages', domain=[('model','=',_name)]),
         #2. Root Cause Analysis
         'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause','mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
         'severity_id': fields.many2one('mgmtsystem.nonconformity.severity', 'Severity'),
@@ -194,11 +195,21 @@ class mgmtsystem_nonconformity(orm.Model):
             'ref': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.nonconformity')
         })
         return super(mgmtsystem_nonconformity, self).create(cr, uid, vals, context)
+    def case_send_note(self, cr, uid, ids, text, context=None):
+        for id in ids:
+            pre = self.case_get_note_msg_prefix(cr, uid, id, context=context)
+            msg = '%s <b>%s</b>' % (pre, text)
+            self.message_post(cr, uid, [id], body=msg, context=context)
+        return True
 
     def wkf_analysis(self, cr, uid, ids, context=None):
         """Change state from draft to analysis"""
-        self.message_post(cr, uid, self.browse(cr, uid, ids), _('Analysis'))
-        return self.write(cr, uid, ids, {'state': 'analysis', 'analysis_date': None, 'analysis_user_id': None}, context=context)
+        self.case_send_note(cr, uid, ids, _('Analysis'), context=context)
+        data = {
+            'state': 'analysis',
+            'analysis_date': None,
+            'analysis_user_id': None}
+        return self.write(cr, uid, ids, data, context=context)
 
     def action_sign_analysis(self, cr, uid, ids, context=None):
         """Sign-off the analysis"""
@@ -211,16 +222,23 @@ class mgmtsystem_nonconformity(orm.Model):
             raise orm.except_orm(_('Error !'), _('Please provide an analysis before approving.'))
         vals = {'analysis_date': time.strftime(DATETIME_FORMAT), 'analysis_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
-        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Analysis Approved'))
+        note = _('Analysis Approved')
+        self.case_send_note(cr, uid, ids, note, context=context)
         return True
 
     def wkf_review(self, cr, uid, ids, context=None):
         """Change state from analysis to pending approval"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if not o.analysis_date:
-            raise orm.except_orm(_('Error !'), _('Analysis must be performed before submiting to approval.'))
-        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Pending Approval'))
-        return self.write(cr, uid, ids, {'state': 'pending', 'actions_date': None, 'actions_user_id': None}, context=context)
+            err = _('Analysis must be performed before submiting to approval.')
+            raise orm.except_orm(_('Error !'), err)
+        self.case_send_note(cr, uid, ids, _('Pending Approval'),
+            context=context)
+        vals = {
+            'state': 'pending',
+            'actions_date': None,
+            'actions_user_id': None}
+        return self.write(cr, uid, ids, vals, context=context)
 
     def action_sign_actions(self, cr, uid, ids, context=None):
         """Sign-off the action plan"""
@@ -233,7 +251,8 @@ class mgmtsystem_nonconformity(orm.Model):
             raise orm.except_orm(_('Error !'), _('Analysis approved before the review confirmation.'))
         vals = {'actions_date': time.strftime(DATETIME_FORMAT), 'actions_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
-        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Action Plan Approved'))
+        note = _('Action Plan Approved')
+        self.case_send_note(cr, uid, ids, note, context=context)
         return True
 
     def wkf_open(self, cr, uid, ids, context=None):
@@ -241,7 +260,7 @@ class mgmtsystem_nonconformity(orm.Model):
         o = self.browse(cr, uid, ids, context=context)[0]
         if not o.actions_date:
             raise orm.except_orm(_('Error !'), _('Action plan must be approved before opening.'))
-        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('In Progress'))
+        self.case_open_send_note(cr, uid, ids, context=context)
         #Open related Actions
         if o.immediate_action_id and o.immediate_action_id.state == 'draft':
             o.immediate_action_id.case_open()
@@ -257,12 +276,13 @@ class mgmtsystem_nonconformity(orm.Model):
             raise orm.except_orm(_('Error !'), _('This action can only be done in the In Progress state.'))
         vals = {'evaluation_date': time.strftime(DATETIME_FORMAT), 'evaluation_user_id': uid }
         self.write(cr, uid, ids, vals, context=context)
-        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Effectiveness Evaluation Approved'))
+        note = _('Effectiveness Evaluation Approved')
+        self.case_send_note(cr, uid, ids, note, context=context)
         return True
 
     def wkf_cancel(self, cr, uid, ids, context=None):
         """Change state to cancel"""
-        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Cancel'))
+        self.case_cancel_send_note(cr, uid, ids, context=context)
         return self.write(cr, uid, ids, {'state': 'cancel'}, context=context)
 
     def wkf_close(self, cr, uid, ids, context=None):
@@ -270,7 +290,7 @@ class mgmtsystem_nonconformity(orm.Model):
         o = self.browse(cr, uid, ids, context=context)[0]
         if not o.evaluation_date:
             raise orm.except_orm(_('Error !'), _('Effectiveness evaluation must be performed before closing.'))
-        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Close'))
+        self.case_close_send_note(cr, uid, ids, context=context)
         return self.write(cr, uid, ids, {'state': 'done'}, context=context)
 
     def case_reset(self, cr, uid, ids, context=None, *args):
@@ -278,7 +298,7 @@ class mgmtsystem_nonconformity(orm.Model):
         wf_service = netsvc.LocalService("workflow")
         for id in ids:
             res = wf_service.trg_create(uid, self._name, id, cr)
-        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Draft'))
+        self.case_reset_send_note(cr, uid, ids, context=context)
         vals = {
             'state': 'draft',
             'analysis_date': None, 'analysis_user_id': None, 
