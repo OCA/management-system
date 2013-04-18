@@ -20,7 +20,7 @@
                     <field name="author_user_id"/>
                     <field name="responsible_user_id"/>
                     <field name="manager_user_id"/>
-		            <field name="system_id"/>
+                    <field name="system_id"/>
                     <field name="state"/>
 =======
                     <field name="date" attrs="{'readonly':[('state','=','c')]}"/>
@@ -59,9 +59,13 @@
 =======
                         <field name="author_user_id" string="User" 
                                filter_domain="['|','|',('author_user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
+<<<<<<< aa4d90b35bf96704d5e4ebf67378df91841ba284
 >>>>>>> CHG: marking Apps, security review, translation pt, finetuning
 			            <field name="system_id"/>
 >>>>>>> ADD workflow reset option. ADD workflow transition from Open to Pending. CHG config tables are translatable. ADD pt translation.
+=======
+                        <field name="system_id"/>
+>>>>>>> IMP: migrating NC form to v7 sheet style
                     </group>
                     <newline />
                     <group expand="0" string="Group By...">
@@ -92,36 +96,40 @@
             <field name="arch" type="xml">
                 <form string="Non-Conformity" version="7.0">
                     <header>
-                        <button name="button_cancel" string="Cancel" states="draft,analysis,pending,open" icon="gtk-cancel"/>
-                        <button name="button_analysis" string="Send for Analysis" states="draft,pending" icon="terp-idea"/>
-                        <button name="button_review" string="Send for Review" states="analysis,open" icon="gtk-go-up" />
-                        <button name="button_open" string="Start/Open" states="pending" icon="gtk-go-forward" />
-                        <button name="button_close" string="Close" states="open" icon="terp-dialog-close"
-                                groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor" />
-                        <button name="case_reset" string="Reset to New" states="done,cancel" type="object" icon="gtk-undo"/>
+                        <button name="button_cancel" string="Cancel" states="draft,analysis,pending,open"/>
+                        <button name="button_analysis" string="Send for Analysis" states="draft,pending" class="oe_highlight"/>
+                        <button name="button_review" string="Send for Review" states="analysis,open" class="oe_highlight"/>
+                        <button name="button_open" string="Start/Open" states="pending" class="oe_highlight"/>
+                        <button name="button_close" string="Close" class="oe_highlight"
+                            states="open" groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
+                        <button name="case_reset" string="Reset to New" states="done,cancel" type="object"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done"/>
                     </header>
-                    <group colspan="2" col="2">
+                <sheet string="Non-Conformity">
+                    <group>
+                        <group>
                         <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                         <field name="date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                         <field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                         <field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                            <field name="origin_ids" widget="many2many_tags" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                     </group>
-                    <group colspan="2" col="2">
+                        <group>
                         <field name="responsible_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                         <field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                         <field name="author_user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-			            <field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                        <field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                     </group>
-                    <notebook colspan="4">
-                        <page string="Inputs">
-                            <separator string="Description" colspan="4"/>
-                            <field name="description" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                            <newline/>
-                            <separator string="Origins" colspan="4"/>
-                            <field name="origin_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                    </group>
+                    
+                    <notebook>
+                    
+                        <page string="Description">
+                            <field name="description" placeholder="Add a description ..." attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                         </page>
+                        
                         <page string="Procedures">
+<<<<<<< aa4d90b35bf96704d5e4ebf67378df91841ba284
 <<<<<<< d836e313b21133bcef1d8d59219af09c1e7518da
 <<<<<<< f4e886e9f1d06e677682e2f3c899c3d140d5eeca
                             <field name="procedure_ids" nolabel="1" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" 
@@ -137,62 +145,63 @@
 =======
                                    domain="[('parent_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
 >>>>>>> Fix #1162942
+=======
+                            <field name="procedure_ids" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" domain="[('group_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
+>>>>>>> IMP: migrating NC form to v7 sheet style
                         </page>
 
                         <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
-                            <separator string="Analysis" colspan="4"/>
-                            <field name="analysis" nolabel="1" colspan="4" 
-                                   attrs="{'readonly':[('state','not in',['analysis'])], 'required':[('state','in',['analysis','pending','open'])]}"/>
-                            <newline/>
+                            <separator string="Analysis"/>
+                            <field name="analysis" attrs="{'readonly':[('state','not in',['analysis'])], 'required':[('state','in',['analysis','pending','open'])]}"/>
 
-                            <separator string="Causes" colspan="4"/>
-                            <field name="cause_ids" nolabel="1" colspan="4" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
-                            <newline/>
+                            <separator string="Causes"/>
+                            <field name="cause_ids" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
 
-                            <separator string="Analysis Confirmation" colspan="4"/>
-                            <group colspan="2" col="2">
-	                            <field name="severity_id" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
-	                            <field name="immediate_action_id" domain="[('type_action','=','immediate')]" 
-	                                  attrs="{'readonly':[('state','not in',['analysis'])]}"/>
+                            <separator string="Analysis Confirmation"/>
+                            <group>
+                                <group>
+                                <field name="severity_id" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
+                                <field name="immediate_action_id" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
                             </group>
-                            <group colspan="2" col="2">
-	                            <field name="analysis_user_id"/>
-	                            <field name="analysis_date"/>
-	                            <button name="action_sign_analysis" string="Approve" icon="terp-camera_test"
-                                        type="object" states="analysis"
-                                        groups="mgmtsystem.group_mgmtsystem_user_manager"/>
+                                <group>
+                                <field name="analysis_user_id"/>
+                                <field name="analysis_date"/>
+                                <button name="action_sign_analysis" string="Approve" icon="terp-camera_test" type="object" states="analysis" groups="mgmtsystem.group_mgmtsystem_user_manager"/>
+                                </group>
                             </group>
                         </page>
 
                         <page string="Actions" attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}">
-                            <separator string="Action Plan" colspan="4" />
-                            <field name="action_ids" nolabel="1" colspan="4" 
-                                   attrs="{'readonly':[('state','not in',['pending'])]}"/>
+                            <separator string="Action Plan"/>
+                            <field name="action_ids" attrs="{'readonly':[('state','not in',['pending'])]}"/>
 
-                            <group colspan="2" col="2">
-                                <separator string="Plan Review" colspan="2"/>
-	                            <field name="action_comments" colspan="2" nolabel="1" 
-	                                   attrs="{'readonly':[('state','not in',['pending'])]}"/>
+                            <separator string="Plan Review"/>
+                            <group>
+                              <group>
+                                <field name="action_comments" attrs="{'readonly':[('state','not in',['pending'])]}"/>
+                              </group>
+                              <group>
                                 <field name="actions_user_id"/>
                                 <field name="actions_date"/>
-                                <button name="action_sign_actions" string="Approve" icon="terp-camera_test"
-                                        type="object" states="pending"
-                                        groups="mgmtsystem.group_mgmtsystem_user_manager"/>
+                                <button name="action_sign_actions" string="Approve" icon="terp-camera_test" type="object" states="pending" groups="mgmtsystem.group_mgmtsystem_user_manager"/>
+                              </group>
                             </group>
 
-                            <group colspan="2" col="2" attrs="{'invisible':[('state','not in',['open','done'])]}">
-			                    <separator string="Effectiveness Review" colspan="2"/>
-                                <field name="evaluation_comments" nolabel="1" colspan="2" 
-                                       attrs="{'readonly':[('state','not in',['open'])]}"/>
-			                    <field name="evaluation_user_id"/>
+                            <group attrs="{'invisible':[('state','not in',['open','done'])]}">
+                                <separator string="Effectiveness Review"/>
+                                <group>
+                                  <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['open'])]}"/>
+                                </group>
+                                <group>
+                                <field name="evaluation_user_id"/>
                                 <field name="evaluation_date"/>
-			                    <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test"
-			                            type="object" states="open" 
-			                            groups="mgmtsystem.group_mgmtsystem_auditor"/>
+                                  <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test" type="object" states="open" groups="mgmtsystem.group_mgmtsystem_auditor"/>
+                                </group>
                             </group>
                         </page>
                         
                         <!-- Communication History -->
+                        <!-- TODO: REMOVE and migrate to Chatter -->
                         <page string="Communication &amp; History">
                             <field name="message_ids" colspan="4" nolabel="1" mode="tree" readonly="1">
                                 <tree string="History">
@@ -209,11 +218,18 @@
                             <button string="Send New Email"
                                 name="%(mail.action_email_compose_message_wizard)d"
                                 icon="terp-mail-message-new" type="action"/>
-
                         </page>
 
-
                     </notebook>
+                </sheet>
+
+                <!-- TODO: migrate to Chatter
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                -->
+
                 </form>
             </field>
         </record>
@@ -300,11 +316,19 @@
             <field name="model">mgmtsystem.nonconformity.cause</field>
             <field name="arch" type="xml">
                 <form string="Causes of nonconformity">
+<<<<<<< aa4d90b35bf96704d5e4ebf67378df91841ba284
 	                <field name="name"/>
 	                <field name="sequence"/>
                     <field name="parent_id"/>
                     <field name="ref_code"/>
 	                <field name="description" colspan="4"/>
+=======
+                <field name="name"/>
+                <field name="sequence"/>
+                    <field name="parent_id"/>
+                    <field name="ref_code"/>
+                <field name="description" colspan="4"/>
+>>>>>>> IMP: migrating NC form to v7 sheet style
                 </form>
             </field>
         </record>
