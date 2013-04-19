@@ -121,9 +121,9 @@
                         <field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                     </group>
                     </group>
-                    
+
                     <notebook>
-                    
+
                         <page string="Description">
                             <field name="description" placeholder="Add a description ..." attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                         </page>
@@ -199,36 +199,14 @@
                                 </group>
                             </group>
                         </page>
-                        
-                        <!-- Communication History -->
-                        <!-- TODO: REMOVE and migrate to Chatter -->
-                        <page string="Communication &amp; History">
-                            <field name="message_ids" colspan="4" nolabel="1" mode="tree" readonly="1">
-                                <tree string="History">
-                                    <field name="subject" string="History Information"/>
-                                    <field name="email_from" invisible="1"/>
-                                    <button
-                                        string="Reply" attrs="{'invisible': [('email_from', '=', False)]}"
-                                        name="%(mail.action_email_compose_message_wizard)d"
-                                        context="{'mail.compose.message.mode':'reply', 'message_id':active_id}"
-                                        icon="terp-mail-replied" type="action" />
-                                </tree>
-                            </field>
-                           <separator colspan="4"/>
-                            <button string="Send New Email"
-                                name="%(mail.action_email_compose_message_wizard)d"
-                                icon="terp-mail-message-new" type="action"/>
-                        </page>
 
                     </notebook>
                 </sheet>
 
-                <!-- TODO: migrate to Chatter
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
                     <field name="message_ids" widget="mail_thread"/>
                 </div>
-                -->
 
                 </form>
             </field>
@@ -309,7 +287,7 @@
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Cause -->
-        
+
         <record id="view_mgmtsystem_nonconformity_cause_form" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.cause.form</field>
             <field name="type">form</field>
@@ -373,7 +351,7 @@
             parent="menu_mgmtsystem_configuration_nonconformities"
             sequence="30" 
             groups="mgmtsystem.group_mgmtsystem_manager"/>
-       
+
         <!-- Severity -->
         <record id="view_mgmtsystem_nonconformity_severity_form" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.severity.form</field>
