@@ -115,8 +115,8 @@
                         <page string="Inputs">
                             <group colspan="4">
                                 <separator string="Policy" colspan="2"/>
-                                <separator string="Changes affecting the management systems" colspan="2"/>
                                 <field name="policy" attrs="{'readonly':[('state','=','done')]}" colspan="2" nolabel="1"/>
+                                <separator string="Changes affecting the management systems" colspan="2"/>
                                 <field name="changes" attrs="{'readonly':[('state','=','done')]}" colspan="2" nolabel="1"/>
                             </group>
                             <newline/>
