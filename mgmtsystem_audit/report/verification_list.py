@@ -25,9 +25,11 @@ from report import report_sxw
 class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
         super(mgmtsystem_audit_verification_list, self).__init__(cr, uid, name, context)
+        logged_user = self.pool.get('res.users').browse(cr, uid, uid, context)
         self.localcontext.update({
             'time': time,
             'get_lines_by_procedure': self.get_lines_by_procedure,
+            'logged_user': logged_user,
         })
         self.context = context
 
