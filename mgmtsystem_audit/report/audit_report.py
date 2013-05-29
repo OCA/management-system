@@ -25,8 +25,10 @@ from report import report_sxw
 class mgmtsystem_audit_report(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
         super(mgmtsystem_audit_report, self).__init__(cr, uid, name, context)
+        logged_user = self.pool.get('res.users').browse(cr, uid, uid, context)
         self.localcontext.update({
             'time': time,
+            'logged_user': logged_user,
         })
 
 report_sxw.report_sxw(
