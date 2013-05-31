@@ -82,7 +82,7 @@ class mgmtsystem_nonconformity(osv.osv):
         #Remark: the relation name and column names are no longer necessary, so you can just write: 'audit_ids': fields.many2many('mgmtsystem.audit', 'Related Audits'),
         #        However, the mgmtsystem_audit.nonconformity_ids field definition has the IDs swapped: 
         #        This should be fixed for v7 and the migration script should swap the values in the "rel" table columns.
-        'audit_ids': fields.many2many('mgmtsystem.audit','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_action_id','Related Audits'),
+        'audit_ids': fields.many2many('mgmtsystem.audit','mgmtsystem_audit_nonconformity_rel','mgmtsystem_audit_id','mgmtsystem_nonconformity_id','Related Audits'),
     }
 mgmtsystem_nonconformity()
 
