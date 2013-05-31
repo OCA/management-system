@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name" : "Management System - Hazard",
-    "version" : "1.0",
+    "version" : "1.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "AGPL-3",
