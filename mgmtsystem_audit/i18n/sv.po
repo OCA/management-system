@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-01 05:17+0000\n"
-"X-Generator: Launchpad (build 16514)\n"
+"X-Launchpad-Export-Date: 2013-06-06 05:48+0000\n"
+"X-Generator: Launchpad (build 16667)\n"
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:0
@@ -149,7 +149,6 @@ msgstr "Referens:"
 
 #. module: mgmtsystem_audit
 #: view:board.board:0
-#: view:mgmtsystem.audit:0
 msgid "Open Audits"
 msgstr "Öppna Revisioner"
 
@@ -194,9 +193,7 @@ msgid "Auditees:"
 msgstr "Revisionsobjekten:"
 
 #. module: mgmtsystem_audit
-#: code:addons/mgmtsystem_audit/report/verification_list.py:47
-#: code:addons/mgmtsystem_audit/report/verification_list.py:69
-#, python-format
+#: report:mgmtsystem.audit.verificationlist:0
 msgid "Yes / No"
 msgstr "Ja / Nej"
 

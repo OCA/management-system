@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-01 05:17+0000\n"
-"X-Generator: Launchpad (build 16514)\n"
+"X-Launchpad-Export-Date: 2013-06-06 05:48+0000\n"
+"X-Generator: Launchpad (build 16667)\n"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,categ_id:0
@@ -112,7 +112,6 @@ msgid "Email"
 msgstr "EMail"
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
 #: selection:mgmtsystem.action,state:0
 msgid "Pending"
 msgstr "In Wartestellung"
@@ -149,7 +148,6 @@ msgid "Next Action"
 msgstr "Nächste Aktion"
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
 #: field:mgmtsystem.action,description:0
 msgid "Description"
 msgstr "Beschreibung"
@@ -191,7 +189,6 @@ msgstr "Telefon"
 
 #. module: mgmtsystem_action
 #: view:board.board:0
-#: view:mgmtsystem.action:0
 msgid "Open Actions"
 msgstr "Ausstehende Maßnahmen"
 
@@ -343,7 +340,6 @@ msgstr "Dateianhänge"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,ref:0
-#: field:mgmtsystem.action,reference:0
 msgid "Reference"
 msgstr "Bezug"
 
@@ -411,6 +407,7 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
+#: selection:mgmtsystem.action,state:0
 msgid "Open"
 msgstr "In Bearbeitung"
 
