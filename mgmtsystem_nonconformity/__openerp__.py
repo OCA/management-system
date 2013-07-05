@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -19,8 +19,9 @@
 #
 ##############################################################################
 {
+<<<<<<< df913a09410052efe02604e09f25e52d3005cf5f
     "name" : "Management System - Nonconformity",
-    "version" : "1.0",
+    "version" : "1.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
 <<<<<<< ff56ec7c15f83ab383a3b19f8db21365dddbb53f
@@ -33,28 +34,36 @@
     "license" : "AGPL-3",
 >>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
+=======
+    "name": "Management System - Nonconformity",
+    "version": "1.1",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+>>>>>>> [FIX] PEP8 compliance after running flake8
     "description": """\
-This module enables you to manage the nonconformities of your management 
-system : quality (ISO9001), environment (ISO14001) or security (ISO27001).	
+This module enables you to manage the nonconformities of your management
+system : quality (ISO9001), environment (ISO14001) or security (ISO27001).
 
 WARNING: when upgrading from v0.1, data conversion is required, since there are subtancial changes to the data structure.
     """,
-    "depends" : [
+    "depends": [
         'mgmtsystem_action',
         'document_page_procedure',
     ],
-    "data" : [
+    "data": [
         'security/ir.model.access.csv',
+        'security/mgmtsystem_nonconformity_security.xml',
         'mgmtsystem_nonconformity.xml',
         'mgmtsystem_nonconformity_workflow.xml',
         'nonconformity_sequence.xml',
         'board_mgmtsystem_nonconformity.xml',
         'mgmtsystem_nonconformity_data.xml',
     ],
-    "demo" : [
+    "demo": [
         'demo_nonconformity.xml',
     ],
-    "installable" : True,
+    "installable": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
