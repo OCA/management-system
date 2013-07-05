@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name" : "Management System - Nonconformity",
-    "version" : "1.0",
+    "version" : "1.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
 <<<<<<< ff56ec7c15f83ab383a3b19f8db21365dddbb53f
