@@ -19,11 +19,10 @@
 #
 ##############################################################################
 
-import os
-from osv import osv
 import logging
 
 logger = logging.getLogger('upgrade')
+
 
 def migrate(cr, version):
     logger.info("Migrating mgmtsystem_nonconformity from version %s", version)
@@ -33,17 +32,17 @@ def migrate(cr, version):
         logger.info("Moving nonconformity/action relations to mgmtsystem_nonconformity_action_rel")
         for action_field in ('preventive_action_id', 'immediate_action_id', 'corrective_action_id'):
             cr.execute("insert into mgmtsystem_nonconformity_action_rel"
-               "(nonconformity_id, action_id) "
-               "(SELECT id, %s FROM "
-               " mgmtsystem_nonconformity "
-               "WHERE %s IS NOT NULL )" % (action_field, action_field))
+                       "(nonconformity_id, action_id) "
+                       "(SELECT id, %s FROM "
+                       "mgmtsystem_nonconformity "
+                       "WHERE %s IS NOT NULL )" % (action_field, action_field))
     else:
         logger.warning("Attempt to migrate nonconformity action IDs failed: migration was already done.")
 
     logger.info("Concatening action comments into evaluation_comments")
     cr.execute("update mgmtsystem_nonconformity set evaluation_comments = "
-           "effectiveness_preventive || ' ' || effectiveness_immediate || ' ' || effectiveness_corrective "
-           "where evaluation_comments is null")
+               "effectiveness_preventive || ' ' || effectiveness_immediate || ' ' || effectiveness_corrective "
+               "where evaluation_comments is null")
 
     logger.info("Updating state flags")
     cr.execute("update mgmtsystem_nonconformity set state = 'open' where state = 'o'")
