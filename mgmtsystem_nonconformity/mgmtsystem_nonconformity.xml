@@ -129,6 +129,7 @@
                         </page>
                         
                         <page string="Procedures">
+<<<<<<< 003dc4cd2c2b20858ec60b69452738bb8a5b6476
 <<<<<<< 7b2921f8115aae5b6cb0556ca0e020d1d3c1ff74
 <<<<<<< aa4d90b35bf96704d5e4ebf67378df91841ba284
 <<<<<<< d836e313b21133bcef1d8d59219af09c1e7518da
@@ -152,6 +153,9 @@
 =======
                             <field name="procedure_ids" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" domain="[('parent_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
 >>>>>>> [FIX] Remaining group_id
+=======
+                            <field name="procedure_ids" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]"/>
+>>>>>>> [FIX] Update domain
                         </page>
 
                         <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
