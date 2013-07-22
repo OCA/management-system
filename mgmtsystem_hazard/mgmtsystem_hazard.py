@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from osv import fields, osv
+from openerp.osv import fields, orm
 import time
 
 def _parse_risk_formula(formula, a, b, c):
@@ -27,7 +27,7 @@ def _parse_risk_formula(formula, a, b, c):
     f = formula.replace('A', str(a)).replace('B', str(b)).replace('C', str(c))
     return eval(f)
 
-class mgmtsystem_hazard_type(osv.osv):
+class mgmtsystem_hazard_type(orm.Model):
 
     _name = "mgmtsystem.hazard.type"
     _description = "Type of hazard"
@@ -36,9 +36,8 @@ class mgmtsystem_hazard_type(osv.osv):
         'description': fields.text('Description'),
     }
 
-mgmtsystem_hazard_type()
 
-class mgmtsystem_hazard_risk_computation(osv.osv):
+class mgmtsystem_hazard_risk_computation(orm.Model):
 
     _name = "mgmtsystem.hazard.risk.computation"
     _description = "Computation Risk"
@@ -47,17 +46,22 @@ class mgmtsystem_hazard_risk_computation(osv.osv):
         'description': fields.text('Description'),
     }
 
-mgmtsystem_hazard_risk_computation()
 
-class res_company(osv.osv):
+class res_company(orm.Model):
     _inherit = "res.company"
     _columns = {
-        'risk_computation_id': fields.many2one('mgmtsystem.hazard.risk.computation', 'Risk Computation'),
+        'risk_computation_id': fields.many2one('mgmtsystem.hazard.risk.computation', 'Risk Computation', required=True),
     }
 
-res_company()
+    def _get_formula(self, cr, uid, context=None):
+        ids = self.pool.get('mgmtsystem.hazard.risk.computation').search(cr,uid,[('name','=','A * B * C')], context=context)
+        return ids and ids[0] or False
 
-class mgmtsystem_hazard_risk_type(osv.osv):
+    _defaults = {
+        'risk_computation_id': _get_formula
+    }
+
+class mgmtsystem_hazard_risk_type(orm.Model):
 
     _name = "mgmtsystem.hazard.risk.type"
     _description = "Risk type of the hazard"
@@ -66,9 +70,7 @@ class mgmtsystem_hazard_risk_type(osv.osv):
         'description': fields.text('Description'),
     }
 
-mgmtsystem_hazard_risk_type()
-
-class mgmtsystem_hazard_origin(osv.osv):
+class mgmtsystem_hazard_origin(orm.Model):
 
     _name = "mgmtsystem.hazard.origin"
     _description = "Origin of hazard"
@@ -77,9 +79,7 @@ class mgmtsystem_hazard_origin(osv.osv):
         'description': fields.text('Description')
     }
 
-mgmtsystem_hazard_origin()
-
-class mgmtsystem_hazard_hazard(osv.osv):
+class mgmtsystem_hazard_hazard(orm.Model):
 
     _name = "mgmtsystem.hazard.hazard"
     _description = "Hazard"
@@ -87,10 +87,8 @@ class mgmtsystem_hazard_hazard(osv.osv):
         'name': fields.char('Hazard', size=50, required=True),
         'description': fields.text('Description'),
     }
- 
-mgmtsystem_hazard_hazard()
 
-class mgmtsystem_hazard_probability(osv.osv):
+class mgmtsystem_hazard_probability(orm.Model):
 
     _name = "mgmtsystem.hazard.probability"
     _description = "Probability of hazard"
@@ -100,9 +98,7 @@ class mgmtsystem_hazard_probability(osv.osv):
         'description': fields.text('Description')
     }
 
-mgmtsystem_hazard_probability()
-
-class mgmtsystem_hazard_severity(osv.osv):
+class mgmtsystem_hazard_severity(orm.Model):
 
     _name = "mgmtsystem.hazard.severity"
     _description = "Severity of hazard"
@@ -112,9 +108,7 @@ class mgmtsystem_hazard_severity(osv.osv):
         'description': fields.text('Description')
     }
 
-mgmtsystem_hazard_severity()
-
-class mgmtsystem_hazard_usage(osv.osv):
+class mgmtsystem_hazard_usage(orm.Model):
 
     _name = "mgmtsystem.hazard.usage"
     _description = "Usage of hazard"
@@ -124,9 +118,7 @@ class mgmtsystem_hazard_usage(osv.osv):
         'description': fields.text('Description')
     }
 
-mgmtsystem_hazard_usage()
-
-class mgmtsystem_hazard_control_measure(osv.osv):
+class mgmtsystem_hazard_control_measure(orm.Model):
 
     _name = "mgmtsystem.hazard.control_measure"
     _description = "Control Measure of hazard"
@@ -137,9 +129,7 @@ class mgmtsystem_hazard_control_measure(osv.osv):
 	'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard', ondelete='cascade', select=True),
     }
 
-mgmtsystem_hazard_control_measure()
-
-class mgmtsystem_hazard_test(osv.osv):
+class mgmtsystem_hazard_test(orm.Model):
 
     _name = "mgmtsystem.hazard.test"
     _description = "Implementation Tests of hazard"
@@ -151,9 +141,7 @@ class mgmtsystem_hazard_test(osv.osv):
 	'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard', ondelete='cascade', select=True),
     }
 
-mgmtsystem_hazard_test()
-
-class mgmtsystem_hazard_residual_risk(osv.osv):
+class mgmtsystem_hazard_residual_risk(orm.Model):
 
     _name = "mgmtsystem.hazard.residual_risk"
     _description = "Residual Risks of hazard"
@@ -179,15 +167,13 @@ class mgmtsystem_hazard_residual_risk(osv.osv):
         'probability_id': fields.many2one('mgmtsystem.hazard.probability','Probability', required=True),
         'severity_id': fields.many2one('mgmtsystem.hazard.severity','Severity', required=True),
         'usage_id': fields.many2one('mgmtsystem.hazard.usage','Occupation / Usage'),
-	'risk': fields.function(_compute_risk,string='Risk',type='integer'),
+	    'risk': fields.function(_compute_risk,string='Risk',type='integer'),
         'acceptability': fields.boolean('Acceptability'),
         'justification': fields.text('Justification'),
-	'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard', ondelete='cascade', select=True),
+	    'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard', ondelete='cascade', select=True),
     }
 
-mgmtsystem_hazard_residual_risk()
-
-class mgmtsystem_hazard(osv.osv):
+class mgmtsystem_hazard(orm.Model):
 
     _name = "mgmtsystem.hazard"
     _description = "Hazards of the health and safety management system"
@@ -196,9 +182,7 @@ class mgmtsystem_hazard(osv.osv):
         result = {}
         user = self.pool.get('res.users').browse(cr, uid, uid)
         for obj in self.browse(cr, uid, ids):
-            # TODO: Use res.company.risk_computation_id to determine the risk computation
             if obj.probability_id and obj.severity_id and obj.usage_id:
-                #result[obj.id] = obj.probability_id.value * obj.severity_id.value * obj.usage_id.value
                 mycompany = self.pool.get('res.company').browse(cr, uid, user.company_id.id, context)
                 result[obj.id] = _parse_risk_formula(mycompany.risk_computation_id.name,
                                                      obj.probability_id.value,
@@ -211,24 +195,22 @@ class mgmtsystem_hazard(osv.osv):
 
     _columns = {
         'name': fields.char('Name', size=50, required=True),
-	'type_id': fields.many2one('mgmtsystem.hazard.type', 'Type', required=True),	
+	    'type_id': fields.many2one('mgmtsystem.hazard.type', 'Type', required=True),	
         'hazard_id': fields.many2one('mgmtsystem.hazard.hazard','Hazard', required=True),
-	'risk_type_id': fields.many2one('mgmtsystem.hazard.risk.type', 'Risk Type', required=True),	
-	'origin_id': fields.many2one('mgmtsystem.hazard.origin', 'Origin', required=True),	
-	'department_id': fields.many2one('hr.department', 'Department', required=True),	
+	    'risk_type_id': fields.many2one('mgmtsystem.hazard.risk.type', 'Risk Type', required=True),	
+	    'origin_id': fields.many2one('mgmtsystem.hazard.origin', 'Origin', required=True),	
+	    'department_id': fields.many2one('hr.department', 'Department', required=True),	
         'responsible_user_id': fields.many2one('res.users','Responsible', required=True),
         'analysis_date': fields.date('Date', required=True),
         'probability_id': fields.many2one('mgmtsystem.hazard.probability','Probability'),
         'severity_id': fields.many2one('mgmtsystem.hazard.severity','Severity'),
         'usage_id': fields.many2one('mgmtsystem.hazard.usage','Occupation / Usage'),
-	'risk': fields.function(_compute_risk,string='Risk',type='integer'),
+	    'risk': fields.function(_compute_risk,string='Risk',type='integer'),
         'acceptability': fields.boolean('Acceptability'),
         'justification': fields.text('Justification'),
-	'control_measure_ids': fields.one2many('mgmtsystem.hazard.control_measure','hazard_id','Control Measures'),
-	'test_ids': fields.one2many('mgmtsystem.hazard.test','hazard_id','Implementation Tests'),
-	'residual_risk_ids': fields.one2many('mgmtsystem.hazard.residual_risk','hazard_id','Residual Risk Evaluations'),
+	    'control_measure_ids': fields.one2many('mgmtsystem.hazard.control_measure','hazard_id','Control Measures'),
+	    'test_ids': fields.one2many('mgmtsystem.hazard.test','hazard_id','Implementation Tests'),
+	    'residual_risk_ids': fields.one2many('mgmtsystem.hazard.residual_risk','hazard_id','Residual Risk Evaluations'),
     }
-
-mgmtsystem_hazard()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

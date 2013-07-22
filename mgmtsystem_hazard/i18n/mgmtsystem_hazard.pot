@@ -1,0 +1,350 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* mgmtsystem_hazard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-31 21:08+0000\n"
+"PO-Revision-Date: 2013-05-31 21:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard.test,name:0
+msgid "Test"
+msgstr "Test"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,severity_id:0
+#: field:mgmtsystem.hazard.residual_risk,severity_id:0
+#: view:mgmtsystem.hazard.severity:0
+#: field:mgmtsystem.hazard.severity,name:0
+msgid "Severity"
+msgstr "Severity"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_usage
+msgid "Usage of hazard"
+msgstr "Usage of hazard"
+
+#. module: mgmtsystem_hazard
+#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_probability_list
+#: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_probability
+#: view:mgmtsystem.hazard.probability:0
+msgid "Probabilities"
+msgstr "Probabilities"
+
+#. module: mgmtsystem_hazard
+#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_test_list
+#: view:mgmtsystem.hazard:0
+#: field:mgmtsystem.hazard,test_ids:0
+#: view:mgmtsystem.hazard.test:0
+msgid "Implementation Tests"
+msgstr "Implementation Tests"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,responsible_user_id:0
+#: field:mgmtsystem.hazard.control_measure,responsible_user_id:0
+#: field:mgmtsystem.hazard.test,responsible_user_id:0
+msgid "Responsible"
+msgstr "Responsible"
+
+#. module: mgmtsystem_hazard
+#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_hazard_list
+#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_list
+#: model:ir.ui.menu,name:mgmtsystem_hazard.menu_mgmtsystem_configuration_hazards
+#: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard
+#: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_hazard
+#: view:mgmtsystem.hazard.hazard:0
+msgid "Hazards"
+msgstr "Hazards"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard.control_measure,comments:0
+msgid "Comments"
+msgstr "Comments"
+
+#. module: mgmtsystem_hazard
+#: view:mgmtsystem.hazard:0
+msgid "Group By..."
+msgstr "Group By..."
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,department_id:0
+msgid "Department"
+msgstr "Department"
+
+#. module: mgmtsystem_hazard
+#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_severity_list
+#: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_severity
+#: view:mgmtsystem.hazard.severity:0
+msgid "Severities"
+msgstr "Severities"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard
+msgid "Hazards of the health and safety management system"
+msgstr "Hazards of the health and safety management system"
+
+#. module: mgmtsystem_hazard
+#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_control_measure_list
+#: view:mgmtsystem.hazard:0
+#: field:mgmtsystem.hazard,control_measure_ids:0
+#: view:mgmtsystem.hazard.control_measure:0
+msgid "Control Measures"
+msgstr "Control Measures"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,justification:0
+#: field:mgmtsystem.hazard.residual_risk,justification:0
+msgid "Justification"
+msgstr "Justification"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard.hazard,description:0
+#: field:mgmtsystem.hazard.origin,description:0
+#: field:mgmtsystem.hazard.probability,description:0
+#: field:mgmtsystem.hazard.risk.computation,description:0
+#: field:mgmtsystem.hazard.risk.type,description:0
+#: field:mgmtsystem.hazard.severity,description:0
+#: field:mgmtsystem.hazard.type,description:0
+#: field:mgmtsystem.hazard.usage,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_risk_type
+msgid "Risk type of the hazard"
+msgstr "Risk type of the hazard"
+
+#. module: mgmtsystem_hazard
+#: view:mgmtsystem.hazard:0
+#: field:mgmtsystem.hazard,type_id:0
+#: view:mgmtsystem.hazard.type:0
+#: field:mgmtsystem.hazard.type,name:0
+msgid "Type"
+msgstr "Type"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_hazard
+#: view:mgmtsystem.hazard:0
+#: field:mgmtsystem.hazard,hazard_id:0
+#: field:mgmtsystem.hazard.control_measure,hazard_id:0
+#: view:mgmtsystem.hazard.hazard:0
+#: field:mgmtsystem.hazard.hazard,name:0
+#: field:mgmtsystem.hazard.residual_risk,hazard_id:0
+#: field:mgmtsystem.hazard.test,hazard_id:0
+msgid "Hazard"
+msgstr "Hazard"
+
+#. module: mgmtsystem_hazard
+#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_residual_risk_list
+#: view:mgmtsystem.hazard.residual_risk:0
+msgid "Residual Risks"
+msgstr "Residual Risks"
+
+#. module: mgmtsystem_hazard
+#: view:mgmtsystem.hazard.control_measure:0
+#: field:mgmtsystem.hazard.control_measure,name:0
+msgid "Control Measure"
+msgstr "Control Measure"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_control_measure
+msgid "Control Measure of hazard"
+msgstr "Control Measure of hazard"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_probability
+msgid "Probability of hazard"
+msgstr "Probability of hazard"
+
+#. module: mgmtsystem_hazard
+#: view:mgmtsystem.hazard:0
+#: field:mgmtsystem.hazard,residual_risk_ids:0
+msgid "Residual Risk Evaluations"
+msgstr "Residual Risk Evaluations"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,analysis_date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard.probability,value:0
+#: field:mgmtsystem.hazard.severity,value:0
+#: field:mgmtsystem.hazard.usage,value:0
+msgid "Value"
+msgstr "Value"
+
+#. module: mgmtsystem_hazard
+#: view:mgmtsystem.hazard:0
+msgid "Accepted"
+msgstr "Accepted"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,usage_id:0
+#: field:mgmtsystem.hazard.residual_risk,usage_id:0
+#: view:mgmtsystem.hazard.usage:0
+#: field:mgmtsystem.hazard.usage,name:0
+msgid "Occupation / Usage"
+msgstr "Occupation / Usage"
+
+#. module: mgmtsystem_hazard
+#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_type_list
+#: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_type
+#: view:mgmtsystem.hazard.type:0
+msgid "Types"
+msgstr "Types"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,risk_type_id:0
+#: view:mgmtsystem.hazard.risk.type:0
+#: field:mgmtsystem.hazard.risk.type,name:0
+msgid "Risk Type"
+msgstr "Risk Type"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,name:0
+#: field:mgmtsystem.hazard.residual_risk,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: mgmtsystem_hazard
+#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_origin_list
+#: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_origin
+#: view:mgmtsystem.hazard.origin:0
+msgid "Origins"
+msgstr "Origins"
+
+#. module: mgmtsystem_hazard
+#: view:mgmtsystem.hazard.risk.computation:0
+#: field:res.company,risk_computation_id:0
+msgid "Risk Computation"
+msgstr "Risk Computation"
+
+#. module: mgmtsystem_hazard
+#: view:mgmtsystem.hazard.residual_risk:0
+msgid "Residual Risk"
+msgstr "Residual Risk"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_res_company
+msgid "Companies"
+msgstr "Companies"
+
+#. module: mgmtsystem_hazard
+#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_usage_list
+#: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_usage
+#: view:mgmtsystem.hazard.usage:0
+msgid "Occupations / Usages"
+msgstr "Occupations / Usages"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_test
+msgid "Implementation Tests of hazard"
+msgstr "Implementation Tests of hazard"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_type
+msgid "Type of hazard"
+msgstr "Type of hazard"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_severity
+msgid "Severity of hazard"
+msgstr "Severity of hazard"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_residual_risk
+msgid "Residual Risks of hazard"
+msgstr "Residual Risks of hazard"
+
+#. module: mgmtsystem_hazard
+#: view:mgmtsystem.hazard:0
+msgid "Analysis"
+msgstr "Analysis"
+
+#. module: mgmtsystem_hazard
+#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_risk_type_list
+#: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_risk_type
+#: view:mgmtsystem.hazard.risk.type:0
+msgid "Risk Types"
+msgstr "Risk Types"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_risk_computation
+#: field:mgmtsystem.hazard.risk.computation,name:0
+msgid "Computation Risk"
+msgstr "Computation Risk"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,risk:0
+#: field:mgmtsystem.hazard.residual_risk,risk:0
+msgid "Risk"
+msgstr "Risk"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,origin_id:0
+#: view:mgmtsystem.hazard.origin:0
+#: field:mgmtsystem.hazard.origin,name:0
+msgid "Origin"
+msgstr "Origin"
+
+#. module: mgmtsystem_hazard
+#: view:res.company:0
+msgid "Management System"
+msgstr "Management System"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard.test,executed:0
+msgid "Executed"
+msgstr "Executed"
+
+#. module: mgmtsystem_hazard
+#: view:mgmtsystem.hazard:0
+msgid "Risk Evaluation"
+msgstr "Risk Evaluation"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,probability_id:0
+#: view:mgmtsystem.hazard.probability:0
+#: field:mgmtsystem.hazard.probability,name:0
+#: field:mgmtsystem.hazard.residual_risk,probability_id:0
+msgid "Probability"
+msgstr "Probability"
+
+#. module: mgmtsystem_hazard
+#: view:mgmtsystem.hazard.test:0
+msgid "Implementation Test"
+msgstr "Implementation Test"
+
+#. module: mgmtsystem_hazard
+#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_origin
+msgid "Origin of hazard"
+msgstr "Origin of hazard"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard.test,review_date:0
+msgid "Review Date"
+msgstr "Review Date"
+
+#. module: mgmtsystem_hazard
+#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_risk_computation_list
+#: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_risk_computation
+#: view:mgmtsystem.hazard.risk.computation:0
+msgid "Risk Computations"
+msgstr "Risk Computations"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,acceptability:0
+#: field:mgmtsystem.hazard.residual_risk,acceptability:0
+msgid "Acceptability"
+msgstr "Acceptability"
+
