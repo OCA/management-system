@@ -1,16 +1,16 @@
-# Translation of OpenERP Server.
-# This file contains the translation of the following modules:
-#	* mgmtsystem_hazard
+# Brazilian Portuguese translation for openerp-mgmtsystem
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the openerp-mgmtsystem package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: openerp-mgmtsystem\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-05-31 21:08+0000\n"
-"PO-Revision-Date: 2013-07-22 10:31+0000\n"
-"Last-Translator: Maxime Chambreuil (http://www.savoirfairelinux.com) "
-"<maxime.chambreuil@savoirfairelinux.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2013-07-22 09:21+0000\n"
+"Last-Translator: Claudio de Araujo Santos <claudioaraujosantos@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard.test,name:0
 msgid "Test"
-msgstr "Test"
+msgstr "Teste"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,severity_id:0
@@ -28,19 +28,19 @@ msgstr "Test"
 #: view:mgmtsystem.hazard.severity:0
 #: field:mgmtsystem.hazard.severity,name:0
 msgid "Severity"
-msgstr "Sévérité"
+msgstr "Severidade"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_usage
 msgid "Usage of hazard"
-msgstr "Usage du danger"
+msgstr "Uso de Riscos"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_probability_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_probability
 #: view:mgmtsystem.hazard.probability:0
 msgid "Probabilities"
-msgstr "Probabilités"
+msgstr "Probabilidades"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_test_list
@@ -48,14 +48,14 @@ msgstr "Probabilités"
 #: field:mgmtsystem.hazard,test_ids:0
 #: view:mgmtsystem.hazard.test:0
 msgid "Implementation Tests"
-msgstr "Tests d'implémentation"
+msgstr "Testes de implementation"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,responsible_user_id:0
 #: field:mgmtsystem.hazard.control_measure,responsible_user_id:0
 #: field:mgmtsystem.hazard.test,responsible_user_id:0
 msgid "Responsible"
-msgstr "Responsable"
+msgstr "Responsável"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_hazard_list
@@ -65,34 +65,34 @@ msgstr "Responsable"
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_hazard
 #: view:mgmtsystem.hazard.hazard:0
 msgid "Hazards"
-msgstr "Dangers"
+msgstr "Riscos"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard.control_measure,comments:0
 msgid "Comments"
-msgstr "Commentaires"
+msgstr "Comentarios"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard:0
 msgid "Group By..."
-msgstr "Regrouper par..."
+msgstr "Agrupar Por..."
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,department_id:0
 msgid "Department"
-msgstr "Département"
+msgstr "Departamento"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_severity_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_severity
 #: view:mgmtsystem.hazard.severity:0
 msgid "Severities"
-msgstr "Sévérités"
+msgstr "Severidades"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard
 msgid "Hazards of the health and safety management system"
-msgstr "Dangers du système de santé et de sécurité"
+msgstr "Riscos do Sistema de Gestão de Saúde e Segurança"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_control_measure_list
@@ -100,13 +100,13 @@ msgstr "Dangers du système de santé et de sécurité"
 #: field:mgmtsystem.hazard,control_measure_ids:0
 #: view:mgmtsystem.hazard.control_measure:0
 msgid "Control Measures"
-msgstr "Mesures de contrôle"
+msgstr "Medidas de Controle"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,justification:0
 #: field:mgmtsystem.hazard.residual_risk,justification:0
 msgid "Justification"
-msgstr "Justification"
+msgstr "Justificação"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard.hazard,description:0
@@ -118,12 +118,12 @@ msgstr "Justification"
 #: field:mgmtsystem.hazard.type,description:0
 #: field:mgmtsystem.hazard.usage,description:0
 msgid "Description"
-msgstr "Description"
+msgstr "Descrição"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_risk_type
 msgid "Risk type of the hazard"
-msgstr "Type de risque du danger"
+msgstr "Tipo de Risco fazer Perigo"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard:0
@@ -131,7 +131,7 @@ msgstr "Type de risque du danger"
 #: view:mgmtsystem.hazard.type:0
 #: field:mgmtsystem.hazard.type,name:0
 msgid "Type"
-msgstr "Type"
+msgstr "Tipo"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_hazard
@@ -143,52 +143,52 @@ msgstr "Type"
 #: field:mgmtsystem.hazard.residual_risk,hazard_id:0
 #: field:mgmtsystem.hazard.test,hazard_id:0
 msgid "Hazard"
-msgstr "Danger"
+msgstr "Hazard"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_residual_risk_list
 #: view:mgmtsystem.hazard.residual_risk:0
 msgid "Residual Risks"
-msgstr "Risques résiduels"
+msgstr "Riscos residuais"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard.control_measure:0
 #: field:mgmtsystem.hazard.control_measure,name:0
 msgid "Control Measure"
-msgstr "Mesure de contrôle"
+msgstr "Medidas de Controle"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_control_measure
 msgid "Control Measure of hazard"
-msgstr "Mesure de contrôle du danger"
+msgstr "Medida de controle de risco"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_probability
 msgid "Probability of hazard"
-msgstr "Probabilité du danger"
+msgstr "Probabilidade de risco"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard:0
 #: field:mgmtsystem.hazard,residual_risk_ids:0
 msgid "Residual Risk Evaluations"
-msgstr "Évaluations du risque résiduel"
+msgstr "Avaliação risco residual"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,analysis_date:0
 msgid "Date"
-msgstr "Date"
+msgstr "Data"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard.probability,value:0
 #: field:mgmtsystem.hazard.severity,value:0
 #: field:mgmtsystem.hazard.usage,value:0
 msgid "Value"
-msgstr "Valeur"
+msgstr "Valor"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard:0
 msgid "Accepted"
-msgstr "Accepté"
+msgstr "Aceito"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,usage_id:0
@@ -196,123 +196,123 @@ msgstr "Accepté"
 #: view:mgmtsystem.hazard.usage:0
 #: field:mgmtsystem.hazard.usage,name:0
 msgid "Occupation / Usage"
-msgstr "Occupation / Usage"
+msgstr "Ocupação / Uso"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_type_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_type
 #: view:mgmtsystem.hazard.type:0
 msgid "Types"
-msgstr "Types"
+msgstr "Tipos"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,risk_type_id:0
 #: view:mgmtsystem.hazard.risk.type:0
 #: field:mgmtsystem.hazard.risk.type,name:0
 msgid "Risk Type"
-msgstr "Type de risque"
+msgstr "Tipo de Risco"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,name:0
 #: field:mgmtsystem.hazard.residual_risk,name:0
 msgid "Name"
-msgstr "Nom"
+msgstr "Nome"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_origin_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_origin
 #: view:mgmtsystem.hazard.origin:0
 msgid "Origins"
-msgstr "Origines"
+msgstr "Origens"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard.risk.computation:0
 #: field:res.company,risk_computation_id:0
 msgid "Risk Computation"
-msgstr "Calcul du risque"
+msgstr "Cálculo de Risco"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard.residual_risk:0
 msgid "Residual Risk"
-msgstr "Risque résiduel"
+msgstr "Risco Residual"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_res_company
 msgid "Companies"
-msgstr "Sociétés"
+msgstr "Companies"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_usage_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_usage
 #: view:mgmtsystem.hazard.usage:0
 msgid "Occupations / Usages"
-msgstr "Occupations / Usages"
+msgstr "Ocupações / Usos"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_test
 msgid "Implementation Tests of hazard"
-msgstr "Tests d'implémentation du danger"
+msgstr "Testes de perigo de implementação"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_type
 msgid "Type of hazard"
-msgstr "Type de danger"
+msgstr "Tipo de perigo"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_severity
 msgid "Severity of hazard"
-msgstr "Sévérité du danger"
+msgstr "Gravidade do risco"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_residual_risk
 msgid "Residual Risks of hazard"
-msgstr "Risques résiduels du danger"
+msgstr "Riscos residuais de perigo"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard:0
 msgid "Analysis"
-msgstr "Analyse"
+msgstr "Análise"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_risk_type_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_risk_type
 #: view:mgmtsystem.hazard.risk.type:0
 msgid "Risk Types"
-msgstr "Types de risque"
+msgstr "Tipos de risco"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_risk_computation
 #: field:mgmtsystem.hazard.risk.computation,name:0
 msgid "Computation Risk"
-msgstr "Calcul du risque"
+msgstr "Calculo Risco"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,risk:0
 #: field:mgmtsystem.hazard.residual_risk,risk:0
 msgid "Risk"
-msgstr "Risque"
+msgstr "Risco"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,origin_id:0
 #: view:mgmtsystem.hazard.origin:0
 #: field:mgmtsystem.hazard.origin,name:0
 msgid "Origin"
-msgstr "Origine"
+msgstr "Origem"
 
 #. module: mgmtsystem_hazard
 #: view:res.company:0
 msgid "Management System"
-msgstr "Système de gestion"
+msgstr "Sistema de Gestão"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard.test,executed:0
 msgid "Executed"
-msgstr "Exécuté"
+msgstr "Executado"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard:0
 msgid "Risk Evaluation"
-msgstr "Évaluation du risque"
+msgstr "Avaliação de Risco"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,probability_id:0
@@ -320,32 +320,32 @@ msgstr "Évaluation du risque"
 #: field:mgmtsystem.hazard.probability,name:0
 #: field:mgmtsystem.hazard.residual_risk,probability_id:0
 msgid "Probability"
-msgstr "Probabilité"
+msgstr "Probabilidade"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard.test:0
 msgid "Implementation Test"
-msgstr "Test d'implémentation"
+msgstr "Teste de implementação"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_origin
 msgid "Origin of hazard"
-msgstr "Origine du danger"
+msgstr "Origem dos perigos"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard.test,review_date:0
 msgid "Review Date"
-msgstr "Date de revue"
+msgstr "Reveja Data"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_risk_computation_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_risk_computation
 #: view:mgmtsystem.hazard.risk.computation:0
 msgid "Risk Computations"
-msgstr "Calculs du risque"
+msgstr "Os cálculos de risco"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,acceptability:0
 #: field:mgmtsystem.hazard.residual_risk,acceptability:0
 msgid "Acceptability"
-msgstr "Acceptabilité"
+msgstr "Aceitabilidade"
