@@ -32,7 +32,7 @@ class mgmtsystem_hazard_type(orm.Model):
     _name = "mgmtsystem.hazard.type"
     _description = "Type of hazard"
     _columns = {
-        'name': fields.char('Type', size=50, required=True),
+        'name': fields.char('Type', size=50, required=True, translate=True),
         'description': fields.text('Description'),
     }
 
@@ -66,7 +66,7 @@ class mgmtsystem_hazard_risk_type(orm.Model):
     _name = "mgmtsystem.hazard.risk.type"
     _description = "Risk type of the hazard"
     _columns = {
-        'name': fields.char('Risk Type', size=50, required=True),
+        'name': fields.char('Risk Type', size=50, required=True, translate=True),
         'description': fields.text('Description'),
     }
 
@@ -75,7 +75,7 @@ class mgmtsystem_hazard_origin(orm.Model):
     _name = "mgmtsystem.hazard.origin"
     _description = "Origin of hazard"
     _columns = {
-        'name': fields.char('Origin', size=50, required=True),
+        'name': fields.char('Origin', size=50, required=True, translate=True),
         'description': fields.text('Description')
     }
 
@@ -84,7 +84,7 @@ class mgmtsystem_hazard_hazard(orm.Model):
     _name = "mgmtsystem.hazard.hazard"
     _description = "Hazard"
     _columns = {
-        'name': fields.char('Hazard', size=50, required=True),
+        'name': fields.char('Hazard', size=50, required=True, translate=True),
         'description': fields.text('Description'),
     }
 
@@ -93,7 +93,7 @@ class mgmtsystem_hazard_probability(orm.Model):
     _name = "mgmtsystem.hazard.probability"
     _description = "Probability of hazard"
     _columns = {
-        'name': fields.char('Probability', size=50, required=True),
+        'name': fields.char('Probability', size=50, required=True, translate=True),
         'value': fields.integer('Value', required=True),
         'description': fields.text('Description')
     }
@@ -103,7 +103,7 @@ class mgmtsystem_hazard_severity(orm.Model):
     _name = "mgmtsystem.hazard.severity"
     _description = "Severity of hazard"
     _columns = {
-        'name': fields.char('Severity', size=50, required=True),
+        'name': fields.char('Severity', size=50, required=True, translate=True),
         'value': fields.integer('Value', required=True),
         'description': fields.text('Description')
     }
@@ -113,7 +113,7 @@ class mgmtsystem_hazard_usage(orm.Model):
     _name = "mgmtsystem.hazard.usage"
     _description = "Usage of hazard"
     _columns = {
-        'name': fields.char('Occupation / Usage', size=50, required=True),
+        'name': fields.char('Occupation / Usage', size=50, required=True, translate=True),
         'value': fields.integer('Value', required=True),
         'description': fields.text('Description')
     }
@@ -123,7 +123,7 @@ class mgmtsystem_hazard_control_measure(orm.Model):
     _name = "mgmtsystem.hazard.control_measure"
     _description = "Control Measure of hazard"
     _columns = {
-        'name': fields.char('Control Measure', size=50, required=True),
+        'name': fields.char('Control Measure', size=50, required=True, translate=True),
         'responsible_user_id': fields.many2one('res.users','Responsible', required=True),
         'comments': fields.text('Comments'),
 	'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard', ondelete='cascade', select=True),
@@ -134,7 +134,7 @@ class mgmtsystem_hazard_test(orm.Model):
     _name = "mgmtsystem.hazard.test"
     _description = "Implementation Tests of hazard"
     _columns = {
-        'name': fields.char('Test', size=50, required=True),
+        'name': fields.char('Test', size=50, required=True, translate=True),
         'responsible_user_id': fields.many2one('res.users','Responsible', required=True),
         'review_date': fields.date('Review Date', required=True),
         'executed': fields.boolean('Executed'),
@@ -163,7 +163,7 @@ class mgmtsystem_hazard_residual_risk(orm.Model):
         return result
     
     _columns = {
-        'name': fields.char('Name', size=50, required=True),
+        'name': fields.char('Name', size=50, required=True, translate=True),
         'probability_id': fields.many2one('mgmtsystem.hazard.probability','Probability', required=True),
         'severity_id': fields.many2one('mgmtsystem.hazard.severity','Severity', required=True),
         'usage_id': fields.many2one('mgmtsystem.hazard.usage','Occupation / Usage'),
@@ -194,23 +194,23 @@ class mgmtsystem_hazard(orm.Model):
         return result
 
     _columns = {
-        'name': fields.char('Name', size=50, required=True),
-	    'type_id': fields.many2one('mgmtsystem.hazard.type', 'Type', required=True),	
+        'name': fields.char('Name', size=50, required=True, translate=True),
+	'type_id': fields.many2one('mgmtsystem.hazard.type', 'Type', required=True),	
         'hazard_id': fields.many2one('mgmtsystem.hazard.hazard','Hazard', required=True),
-	    'risk_type_id': fields.many2one('mgmtsystem.hazard.risk.type', 'Risk Type', required=True),	
-	    'origin_id': fields.many2one('mgmtsystem.hazard.origin', 'Origin', required=True),	
-	    'department_id': fields.many2one('hr.department', 'Department', required=True),	
+	'risk_type_id': fields.many2one('mgmtsystem.hazard.risk.type', 'Risk Type', required=True),	
+	'origin_id': fields.many2one('mgmtsystem.hazard.origin', 'Origin', required=True),	
+	'department_id': fields.many2one('hr.department', 'Department', required=True),	
         'responsible_user_id': fields.many2one('res.users','Responsible', required=True),
         'analysis_date': fields.date('Date', required=True),
         'probability_id': fields.many2one('mgmtsystem.hazard.probability','Probability'),
         'severity_id': fields.many2one('mgmtsystem.hazard.severity','Severity'),
         'usage_id': fields.many2one('mgmtsystem.hazard.usage','Occupation / Usage'),
-	    'risk': fields.function(_compute_risk,string='Risk',type='integer'),
+	'risk': fields.function(_compute_risk,string='Risk',type='integer'),
         'acceptability': fields.boolean('Acceptability'),
         'justification': fields.text('Justification'),
-	    'control_measure_ids': fields.one2many('mgmtsystem.hazard.control_measure','hazard_id','Control Measures'),
-	    'test_ids': fields.one2many('mgmtsystem.hazard.test','hazard_id','Implementation Tests'),
-	    'residual_risk_ids': fields.one2many('mgmtsystem.hazard.residual_risk','hazard_id','Residual Risk Evaluations'),
+	'control_measure_ids': fields.one2many('mgmtsystem.hazard.control_measure','hazard_id','Control Measures'),
+	'test_ids': fields.one2many('mgmtsystem.hazard.test','hazard_id','Implementation Tests'),
+	'residual_risk_ids': fields.one2many('mgmtsystem.hazard.residual_risk','hazard_id','Residual Risk Evaluations'),
     }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
