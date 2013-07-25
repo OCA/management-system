@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-12-02 23:47+0000\n"
+"POT-Creation-Date: 2013-07-24 21:21+0000\n"
 "PO-Revision-Date: 2012-09-09 07:27+0000\n"
 "Last-Translator: Maxime Chambreuil (http://www.savoirfairelinux.com) "
 "<maxime.chambreuil@savoirfairelinux.com>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-06-06 05:49+0000\n"
-"X-Generator: Launchpad (build 16667)\n"
+"X-Launchpad-Export-Date: 2013-07-25 05:42+0000\n"
+"X-Generator: Launchpad (build 16700)\n"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,categ_id:0
@@ -24,14 +24,19 @@ msgid "Category"
 msgstr "Categoría"
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "History"
-msgstr "Histórico"
+#: selection:mgmtsystem.action,state:0
+msgid "In Progress"
+msgstr ""
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "History Information"
-msgstr "Información histórica"
+#: selection:mgmtsystem.action,type_action:0
+msgid "Preventive Action"
+msgstr "Acción preventiva"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,type_action:0
+msgid "Response Type"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
@@ -40,13 +45,13 @@ msgid "Responsible"
 msgstr "Responsable"
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "Date of Claim"
-msgstr "Fecha reclamación"
+#: field:mgmtsystem.action,system_id:0
+msgid "System"
+msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.module.module,shortdesc:mgmtsystem_action.module_meta_information
-msgid "Management System - Action"
+#: field:mgmtsystem.action,state:0
+msgid "Status"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -55,10 +60,9 @@ msgid "Priority"
 msgstr "Prioridad"
 
 #. module: mgmtsystem_action
-#: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
 #: view:mgmtsystem.action:0
-msgid "Action"
-msgstr "Acción"
+msgid "Group By..."
+msgstr "Agrupar por..."
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
@@ -66,14 +70,14 @@ msgid "Send New Email"
 msgstr "Enviar nuevo correo eléctronico"
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,state:0
-msgid "Draft"
-msgstr "Borrador"
+#: field:mgmtsystem.action,message_follower_ids:0
+msgid "Followers"
+msgstr ""
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "Details"
-msgstr "Detalles"
+#: selection:mgmtsystem.action,priority:0
+msgid "Low"
+msgstr "Baja"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
@@ -86,6 +90,11 @@ msgstr "Cerrado"
 #: view:mgmtsystem.action:0
 msgid "Reply"
 msgstr "Responder"
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,state:0
+msgid "New"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,cause:0
@@ -103,14 +112,31 @@ msgid "Email"
 msgstr "Correo electrónico"
 
 #. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
 #: selection:mgmtsystem.action,state:0
 msgid "Pending"
 msgstr "Pendiente"
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "Claim/Action Description"
-msgstr "Descripción de la reclamación/acción"
+#: model:ir.actions.server,message:mgmtsystem_action.mgmtsystem_action_server_action
+msgid ""
+"Hello,\n"
+"<br />\n"
+"<br />\n"
+"A new action has been assigned to you:\n"
+"<br />\n"
+"<a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
+"<br />\n"
+"<br />\n"
+"[[object.description]]\n"
+"<br />\n"
+"<br />\n"
+"Thank you.\n"
+"<br />\n"
+"--\n"
+"<br />\n"
+"OpenERP"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -123,14 +149,15 @@ msgid "Next Action"
 msgstr "Acción siguiente"
 
 #. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
 #: field:mgmtsystem.action,description:0
 msgid "Description"
 msgstr "Descripción"
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,priority:0
-msgid "Normal"
-msgstr "Normal"
+#: field:mgmtsystem.action,date_action_next:0
+msgid "Next Action Date"
+msgstr "Fecha próxima acción"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,create_date:0
@@ -148,14 +175,24 @@ msgid "Company"
 msgstr "Compañía"
 
 #. module: mgmtsystem_action
+#: field:mgmtsystem.action,section_id:0
+msgid "Sales Team"
+msgstr "Equipo de ventas"
+
+#. module: mgmtsystem_action
 #: field:mgmtsystem.action,email_cc:0
 msgid "Watchers Emails"
 msgstr "Observadores emails (CC)"
 
 #. module: mgmtsystem_action
-#: field:mgmtsystem.action,date_action_next:0
-msgid "Next Action Date"
-msgstr "Fecha próxima acción"
+#: help:mgmtsystem.action,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,user_fault:0
+msgid "Trouble Responsible"
+msgstr "Responsable problema"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,partner_phone:0
@@ -163,8 +200,8 @@ msgid "Phone"
 msgstr "Teléfono"
 
 #. module: mgmtsystem_action
-#: view:board.board:0
-msgid "Open Actions"
+#: field:mgmtsystem.action,message_is_follower:0
+msgid "Is a Follower"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -173,9 +210,19 @@ msgid "User"
 msgstr "Usuario"
 
 #. module: mgmtsystem_action
+#: help:mgmtsystem.action,state:0
+msgid ""
+"The status is set to 'Draft', when a case is created.                      "
+"If the case is in progress the status is set to 'Open'.                      "
+"When the case is over, the status is set to 'Done'.                      If "
+"the case needs to be reviewed then the status is                       set "
+"to 'Pending'."
+msgstr ""
+
+#. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
-msgid "Done"
-msgstr "Hecho"
+msgid "Date"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -188,51 +235,37 @@ msgid "Stage"
 msgstr "Etapa"
 
 #. module: mgmtsystem_action
-#: help:mgmtsystem.action,state:0
-msgid ""
-"The state is set to 'Draft', when a case is created.                         "
-"         \n"
-"If the case is in progress the state is set to 'Open'.                       "
-"           \n"
-"When the case is over, the state is set to 'Done'.                           "
-"       \n"
-"If the case needs to be reviewed then the state is set to 'Pending'."
-msgstr ""
-"El estado se establece a 'Borrador', cuando se crea un caso.                 "
-"                 \n"
-"Si el caso está en progreso el estado se establece a 'Abierto'.              "
-"                    \n"
-"Cuando el caso se cierra, el estado se establece a 'Realizado'.              "
-"                    \n"
-"Si el caso necesita ser revisado entonces en estado se establece a "
-"'Pendiente'."
+#: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Action"
+msgstr "Acción"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
-msgid "Add Internal Note"
-msgstr "Añadir nota interna"
+msgid "History Information"
+msgstr "Información histórica"
 
 #. module: mgmtsystem_action
-#: field:mgmtsystem.action,user_fault:0
-msgid "Trouble Responsible"
-msgstr "Responsable problema"
-
-#. module: mgmtsystem_action
-#: field:mgmtsystem.action,section_id:0
-msgid "Sales Team"
-msgstr "Equipo de ventas"
-
-#. module: mgmtsystem_action
-#: model:ir.module.module,description:mgmtsystem_action.module_meta_information
+#: help:mgmtsystem.action,section_id:0
 msgid ""
-"\n"
-"\tThis module enables you to manage the different actions of your management "
-"\n"
-"        system :\n"
-"            * immediate actions\n"
-"            * corrective actions\n"
-"            * preventive actions.\n"
-"    "
+"Responsible sales team. Define Responsible user and Email account for mail "
+"gateway."
+msgstr ""
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,email_from:0
+msgid "Destination email for email gateway."
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.actions.server,subject:mgmtsystem_action.mgmtsystem_action_server_action
+msgid "[[object.name]]"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:board.board:0
+#: view:mgmtsystem.action:0
+msgid "Open Actions"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -256,19 +289,29 @@ msgid "Improvement Opportunity"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: help:mgmtsystem.action,email_from:0
-msgid "These people will receive email."
-msgstr "Estas personas recibirán correo electronico."
+#: field:mgmtsystem.action,message_summary:0
+msgid "Summary"
+msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-msgid "Preventive Action"
-msgstr "Acción preventiva"
+#: field:mgmtsystem.action,active:0
+msgid "Active"
+msgstr ""
 
 #. module: mgmtsystem_action
-#: field:mgmtsystem.action,partner_address_id:0
-msgid "Partner Contact"
-msgstr "Contacto empresa"
+#: field:mgmtsystem.action,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.actions.server,name:mgmtsystem_action.mgmtsystem_action_server_action
+msgid "Notify the person in charge of the new action"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Closed Actions"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,state:0
@@ -291,18 +334,9 @@ msgid "ID"
 msgstr "ID"
 
 #. module: mgmtsystem_action
-#: help:mgmtsystem.action,section_id:0
-msgid ""
-"Sales team to which Case belongs to.Define Responsible user and Email "
-"account for mail gateway."
-msgstr ""
-"Equipo de ventas al cual pertenece el caso. Define el usuario responsable y "
-"la cuenta de email para la pasarela de correo."
-
-#. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
-msgid "Global CC"
-msgstr "CC global"
+msgid "History"
+msgstr "Histórico"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,email_cc:0
@@ -316,24 +350,15 @@ msgstr ""
 "las diferentes direcciones de correo con una coma."
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "Attachments"
-msgstr "Archivos adjuntos"
-
-#. module: mgmtsystem_action
 #: field:mgmtsystem.action,ref:0
+#: field:mgmtsystem.action,reference:0
 msgid "Reference"
 msgstr "Referencia"
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "Group By..."
-msgstr "Agrupar por..."
-
-#. module: mgmtsystem_action
-#: field:mgmtsystem.action,state:0
-msgid "State"
-msgstr "Estado"
+#: selection:mgmtsystem.action,priority:0
+msgid "Normal"
+msgstr "Normal"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.open_mgmtsystem_action_list
@@ -347,9 +372,16 @@ msgid "High"
 msgstr "Alta"
 
 #. module: mgmtsystem_action
-#: field:mgmtsystem.action,type_action:0
-msgid "Action Type"
-msgstr "Tipo de acción"
+#: view:mgmtsystem.action:0
+msgid "Global CC"
+msgstr "CC global"
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,message_summary:0
+msgid ""
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
+msgstr ""
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
@@ -369,11 +401,63 @@ msgstr "Empresa"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
-#: selection:mgmtsystem.action,state:0
+msgid "Cancel"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
+msgid "Close"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:0
 msgid "Open"
 msgstr "Abrir"
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,priority:0
-msgid "Low"
-msgstr "Baja"
+#: view:mgmtsystem.action:0
+msgid "Subject"
+msgstr ""
+
+#~ msgid "Details"
+#~ msgstr "Detalles"
+
+#~ msgid ""
+#~ "The state is set to 'Draft', when a case is created.                         "
+#~ "         \n"
+#~ "If the case is in progress the state is set to 'Open'.                       "
+#~ "           \n"
+#~ "When the case is over, the state is set to 'Done'.                           "
+#~ "       \n"
+#~ "If the case needs to be reviewed then the state is set to 'Pending'."
+#~ msgstr ""
+#~ "El estado se establece a 'Borrador', cuando se crea un caso.                 "
+#~ "                 \n"
+#~ "Si el caso está en progreso el estado se establece a 'Abierto'.              "
+#~ "                    \n"
+#~ "Cuando el caso se cierra, el estado se establece a 'Realizado'.              "
+#~ "                    \n"
+#~ "Si el caso necesita ser revisado entonces en estado se establece a "
+#~ "'Pendiente'."
+
+#~ msgid "Add Internal Note"
+#~ msgstr "Añadir nota interna"
+
+#~ msgid "These people will receive email."
+#~ msgstr "Estas personas recibirán correo electronico."
+
+#~ msgid "Partner Contact"
+#~ msgstr "Contacto empresa"
+
+#~ msgid ""
+#~ "Sales team to which Case belongs to.Define Responsible user and Email "
+#~ "account for mail gateway."
+#~ msgstr ""
+#~ "Equipo de ventas al cual pertenece el caso. Define el usuario responsable y "
+#~ "la cuenta de email para la pasarela de correo."
+
+#~ msgid "Attachments"
+#~ msgstr "Archivos adjuntos"
+
+#~ msgid "State"
+#~ msgstr "Estado"
