@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-07-24 21:21+0000\n"
-"PO-Revision-Date: 2013-07-18 14:18+0000\n"
+"PO-Revision-Date: 2013-07-25 11:28+0000\n"
 "Last-Translator: Claudio de Araujo Santos <claudioaraujosantos@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-07-25 05:42+0000\n"
+"X-Launchpad-Export-Date: 2013-07-26 05:45+0000\n"
 "X-Generator: Launchpad (build 16700)\n"
 
 #. module: mgmtsystem_action
@@ -51,7 +51,7 @@ msgstr "Sistema"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,state:0
 msgid "Status"
-msgstr ""
+msgstr "Situação"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,priority:0
@@ -71,7 +71,7 @@ msgstr "Enviar Novo Email"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -202,7 +202,7 @@ msgstr "Emails dos Observadores"
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Se Marcada Novas Point Of Sale requerem SUA Atenção."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,user_fault:0
@@ -217,7 +217,7 @@ msgstr "Telefone"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_is_follower:0
 msgid "Is a Follower"
-msgstr ""
+msgstr "E hum Seguidor"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
@@ -233,6 +233,10 @@ msgid ""
 "the case needs to be reviewed then the status is                       set "
 "to 'Pending'."
 msgstr ""
+"O status é definido como 'Rascunho', quando um caso é criado. Se o caso está "
+"em andamento o status é definido como 'Abrir'. Quando o caso é longo, o "
+"status é definido como 'Done'. Se o caso precisa ser revisto, em seguida, o "
+"status é definido como 'pendente'."
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
@@ -266,11 +270,13 @@ msgid ""
 "Responsible sales team. Define Responsible user and Email account for mail "
 "gateway."
 msgstr ""
+"Equipe de vendas responsável. Definir usuário responsável e conta E-mail "
+"para gateway de correio."
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,email_from:0
 msgid "Destination email for email gateway."
-msgstr ""
+msgstr "Destino e-mail par portal de Correio Eletrônico."
 
 #. module: mgmtsystem_action
 #: model:ir.actions.server,subject:mgmtsystem_action.mgmtsystem_action_server_action
@@ -306,7 +312,7 @@ msgstr "Oportunidade de Melhoria"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_summary:0
 msgid "Summary"
-msgstr ""
+msgstr "Resumo"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,active:0
@@ -316,7 +322,7 @@ msgstr "Ativa"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensagens não lidas"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.server,name:mgmtsystem_action.mgmtsystem_action_server_action
@@ -397,6 +403,8 @@ msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
 msgstr ""
+"Contém o resumo Chatter (número de mensagens, ...). Este resumo é "
+"diretamente em formato html para ser inserido nas vistas kanban."
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
