@@ -8,29 +8,29 @@ msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-07-25 18:15+0000\n"
-"PO-Revision-Date: 2013-07-18 14:01+0000\n"
-"Last-Translator: Leonardo Pessoa <Unknown>\n"
+"PO-Revision-Date: 2013-07-27 14:07+0000\n"
+"Last-Translator: Claudio de Araujo Santos <claudioaraujosantos@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-07-19 06:34+0000\n"
-"X-Generator: Launchpad (build 16696)\n"
+"X-Launchpad-Export-Date: 2013-07-28 06:32+0000\n"
+"X-Generator: Launchpad (build 16700)\n"
 
 #. module: mgmtsystem_review
 #: model:ir.module.module,shortdesc:mgmtsystem_review.module_meta_information
 msgid "Management System - Review"
-msgstr "Sistema de Gestão - Revisão"
+msgstr "Sistema de Gestão - Reuniões"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Review Report"
-msgstr "Relatório de Revisão"
+msgstr "Relatório de Reunião"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 msgid "Closed Reviews"
-msgstr "Revisões Fechadas"
+msgstr "Reuniões Fechadas"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
@@ -46,7 +46,7 @@ msgstr "Data:"
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Confidentiality: Direction Review"
-msgstr "Confidencialidade: Direção da Revisão"
+msgstr "Confidencialidade: Direção da Reunião"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
@@ -158,7 +158,7 @@ msgstr "Não Conformidade"
 #: view:mgmtsystem.review:0
 #: field:mgmtsystem.review.line,review_id:0
 msgid "Review"
-msgstr "Revisão"
+msgstr "Reunião"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review,name:0
@@ -182,13 +182,13 @@ msgstr "Linhas"
 #: model:ir.ui.menu,name:mgmtsystem_review.menu_open_review
 #: view:mgmtsystem.review:0
 msgid "Reviews"
-msgstr "Revisões"
+msgstr "Reuniões"
 
 #. module: mgmtsystem_review
 #: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review_line
 #: view:mgmtsystem.review.line:0
 msgid "Review Line"
-msgstr "Linha de Revisão"
+msgstr "Linha da reunião"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review,state:0
@@ -221,7 +221,8 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"\tEste módulo permite administrar as revisões do Sistema de Gestão\n"
+"\t[Tab] Este módulo permite gerenciar reuniões de \n"
+"        seu sistema de gestão.\n"
 "    "
 
 #. module: mgmtsystem_review
@@ -248,12 +249,12 @@ msgstr "Referência:"
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_line_list
 #: view:mgmtsystem.review.line:0
 msgid "Review Lines"
-msgstr "Linhas de Revisao"
+msgstr "linhas da reunião"
 
 #. module: mgmtsystem_review
 #: view:mgmtsystem.review:0
 msgid "Open Reviews"
-msgstr "Revisões Abertas"
+msgstr "Reuniões Abertas"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
