@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Rule -->
+
+        <record model="ir.rule" id="mgmtsystem_audit_rule">
+            <field name="name">mgmtsystem_audit multi-company</field>
+            <field name="model_id" ref="model_mgmtsystem_audit"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+
+        <record model="ir.rule" id="mgmtsystem_verification_line_rule">
+            <field name="name">mgmtsystem_verification_line multi-company</field>
+            <field name="model_id" ref="model_mgmtsystem_verification_line"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+
+    </data>
+</openerp>
