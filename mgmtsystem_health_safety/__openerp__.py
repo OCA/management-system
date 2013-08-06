@@ -45,9 +45,8 @@ This module enables you to manage your health and safety management system, incl
         'document_page_health_safety_manual',
         'mgmtsystem_hazard',
     ],
-    "init_xml" : [],
-    "update_xml" : ['health_safety.xml'],
-    "demo_xml" : [],
+    "data" : ['health_safety.xml'],
+    "demo" : [],
     "installable" : True,
     "application" : True,
     "certificate" : ''
