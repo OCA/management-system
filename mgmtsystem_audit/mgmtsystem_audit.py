@@ -29,18 +29,20 @@ class mgmtsystem_audit(orm.Model):
         'name': fields.char('Name', size=50),
         'reference': fields.char('Reference', size=64, required=True, readonly=True),
         'date': fields.datetime('Date'),
-        'line_ids': fields.one2many('mgmtsystem.verification.line','audit_id','Verification List'),
-        'auditor_user_ids': fields.many2many('res.users','mgmtsystem_auditor_user_rel','user_id','mgmtsystem_audit_id','Auditors'),
-        'auditee_user_ids': fields.many2many('res.users','mgmtsystem_auditee_user_rel','user_id','mgmtsystem_audit_id','Auditees'),
+        'line_ids': fields.one2many('mgmtsystem.verification.line', 'audit_id', 'Verification List'),
+        'auditor_user_ids': fields.many2many('res.users', 'mgmtsystem_auditor_user_rel', 'user_id', 'mgmtsystem_audit_id', 'Auditors'),
+        'auditee_user_ids': fields.many2many('res.users', 'mgmtsystem_auditee_user_rel', 'user_id', 'mgmtsystem_audit_id', 'Auditees'),
         'strong_points': fields.text('Strong Points'),
         'to_improve_points': fields.text('Points To Improve'),
-        'imp_opp_ids': fields.many2many('mgmtsystem.action','mgmtsystem_audit_imp_opp_rel','mgmtsystem_action_id','mgmtsystem_audit_id','Improvement Opportunities'),
+        'imp_opp_ids': fields.many2many('mgmtsystem.action', 'mgmtsystem_audit_imp_opp_rel', 'mgmtsystem_action_id', 'mgmtsystem_audit_id', 'Improvement Opportunities'),
         'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity', string='Nonconformities'),
-        'state': fields.selection([('open','Open'),('done','Closed')], 'State'),
+        'state': fields.selection([('open', 'Open'), ('done', 'Closed')], 'State'),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
-    }
+        'company_id': fields.many2one('res.company', 'Company')
+        }
 
     _defaults = {
+        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
         'reference': 'NEW',
         'state': 'open'
     }
@@ -59,15 +61,18 @@ class mgmtsystem_verification_line(orm.Model):
     _name = "mgmtsystem.verification.line"
     _description = "Verification Line"
     _columns = {
-        'name': fields.char('Question',size=300, required=True),
+        'name': fields.char('Question', size=300, required=True),
         'audit_id': fields.many2one('mgmtsystem.audit', 'Audit', ondelete='cascade', select=True),
         'procedure_id': fields.many2one('document.page', 'Procedure', ondelete='cascade', select=True),
         'is_conformed': fields.boolean('Is conformed'),
         'comments': fields.text('Comments'),
         'seq': fields.integer('Sequence'),
-    }
+        'company_id': fields.many2one('res.company', 'Company')
+        }
+
     _order = "seq"
     _defaults = {
+        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
         'is_conformed': False
     }
 
