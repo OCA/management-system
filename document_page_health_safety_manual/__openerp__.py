@@ -27,10 +27,9 @@
     "category" : "Generic Modules/Others",
     "description": """Health and Safety Manual Template
     """,
-    "depends" : ['document_page','mgmtsystem_manuals'],
-    "init_xml" : [],
-    "update_xml" : ['document_page_health_safety_manual.xml'],
-    "demo_xml" : [],
+    "depends" : ['mgmtsystem_manuals'],
+    "data" : ['document_page_health_safety_manual.xml'],
+    "demo" : [],
     "installable" : True,
     "certificate" : ''
 }
