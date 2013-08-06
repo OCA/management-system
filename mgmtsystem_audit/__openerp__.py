@@ -19,31 +19,30 @@
 #
 ##############################################################################
 {
-    "name" : "Management System - Audit",
-    "version" : "1.1",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Management System",
+    "name": "Management System - Audit",
+    "version": "1.1",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
     "description": """\
 This module enables you to manage audits and verifications lists of your management system.
     """,
     "depends": ['mgmtsystem_nonconformity'],
-    "init_xml" : [
-        'audit_sequence.xml',
-    ],
-    "update_xml" : [
+    "data": [
         'security/ir.model.access.csv',
+        'security/mgmtsystem_audit_security.xml',
+        'audit_sequence.xml',
         'mgmtsystem_audit.xml',
         'report/audit_report.xml',
         'report/verification_list.xml',
         'board_mgmtsystem_audit.xml',
         'wizard/copy_verification_lines.xml',
     ],
-    "demo_xml" : [
+    "demo": [
         'demo_audit.xml',
     ],
-    "installable" : True,
-    "certificate" : ''
+    "installable": True,
+    "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
