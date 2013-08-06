@@ -28,12 +28,16 @@
     "description": """\
 This module enables you to set a project as an action in the nonconformity.
     """,
-    "depends" : ['mgmtsystem_nonconformity','mgmtsystem_action','project'],
-    "update_xml" : [
+    "depends" : [
+        'mgmtsystem_nonconformity',
+        'mgmtsystem_action',
+        'project'
+    ],
+    "data" : [
         'mgmtsystem_nonconformity_project.xml',
         'mgmtsystem_nonconformity_project_data.xml',
     ],
-    "demo_xml" : [],
+    "demo" : [],
     "installable" : True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -32,15 +32,13 @@ This module enables you to manage reviews of your management system.
         'mgmtsystem_nonconformity',
         'mgmtsystem_survey',
     ],
-    "init_xml" : [
+    "data" : [
         'review_sequence.xml',
-    ],
-    "update_xml" : [
         'security/ir.model.access.csv',
         'mgmtsystem_review.xml',
         'report/review_report.xml',
     ],
-    "demo_xml" : [],
+    "demo" : [],
     "installable" : True,
     "certificate" : ''
 }

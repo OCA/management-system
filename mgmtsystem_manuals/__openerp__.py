@@ -35,9 +35,8 @@ This module requires the document_page_approval module from
 Knowledge addons project (lp:knowledge-addons).
     """,
     "depends" : ['document_page_approval', 'mgmtsystem'],
-    "init_xml" : [],
-    "update_xml" : ['mgmtsystem_manuals.xml'],
-    "demo_xml" : [],
+    "data" : ['mgmtsystem_manuals.xml'],
+    "demo" : [],
     "installable" : True,
     "certificate" : ''
 }

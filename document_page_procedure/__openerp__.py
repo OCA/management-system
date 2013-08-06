@@ -28,9 +28,8 @@
     "description": """Procedure Template
     """,
     "depends" : ['document_page_work_instructions'],
-    "init_xml" : [],
-    "update_xml" : ['document_page_procedure.xml'],
-    "demo_xml" : [],
+    "data" : ['document_page_procedure.xml'],
+    "demo" : [],
     "installable" : True,
     "certificate" : ''
 }
