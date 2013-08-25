@@ -14,6 +14,7 @@
                     <field name="action_id" attrs="{'invisible' : [('type', '!=', 'action')]}"/>
                     <field name="nonconformity_id" attrs="{'invisible' : [('type', '!=', 'nonconformity')]}"/>
                     <field name="decision"/>
+	            <field name="company_id" group="base.group_multi_company"/>
                 </tree>
             </field>
         </record>
@@ -29,6 +30,7 @@
                     <field name="action_id"/>
                     <field name="nonconformity_id"/>
                     <field name="decision"/>
+	            <field name="company_id" group="base.group_multi_company"/>
                 </search>
             </field>
         </record>        
@@ -47,6 +49,7 @@
                         <field name="nonconformity_id" attrs="{'invisible' : [('type', '!=', 'nonconformity')]}"/>
                         <newline/>
                         <field name="decision"/>
+	            	<field name="company_id" group="base.group_multi_company"/>
                     </group>
                 </form>
             </field>
@@ -70,6 +73,7 @@
                     <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
                     <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
                     <field name="reference"/>
+	            <field name="company_id" group="base.group_multi_company"/>
                     <!-- Invisible fields below are to allow their use in domains of this view -->
                     <field name="state" invisible="1"/>
                 </tree>
@@ -89,6 +93,7 @@
                         <field name="name"/>
                         <field name="date"/>
                         <field name="reference"/>
+	            	<field name="company_id" group="base.group_multi_company"/>
                     </group>
                 </search>
             </field>
@@ -107,6 +112,7 @@
                         <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
                         <field name="reference"/>
                         <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
+	            	<field name="company_id" group="base.group_multi_company"/>
                     </group>
                     <notebook colspan="4">
                         <page string="Participants">
