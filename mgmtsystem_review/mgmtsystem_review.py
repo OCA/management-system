@@ -35,10 +35,12 @@ class mgmtsystem_review(osv.osv):
         'changes': fields.text('Changes'),
         'line_ids': fields.one2many('mgmtsystem.review.line','review_id','Lines'),
         'conclusion': fields.text('Conclusion'),
-        'state': fields.selection([('open','Open'),('done','Closed')], 'State')
+        'state': fields.selection([('open','Open'),('done','Closed')], 'State'),
+        'company_id': fields.many2one('res.company', 'Company'),
     }
 
     _defaults = {
+        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
         'reference': 'NEW', 
         'state': 'open'
     }
