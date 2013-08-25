@@ -21,6 +21,7 @@
                     <field name="responsible_user_id"/>
                     <field name="manager_user_id"/>
                     <field name="system_id"/>
+	            <field name="company_id" group="base.group_multi_company"/>
                     <field name="state"/>
 =======
                     <field name="date" attrs="{'readonly':[('state','=','c')]}"/>
@@ -65,7 +66,11 @@
 >>>>>>> ADD workflow reset option. ADD workflow transition from Open to Pending. CHG config tables are translatable. ADD pt translation.
 =======
                         <field name="system_id"/>
+<<<<<<< 65fd7a411b05be5519b0653011e794a1811e6291
 >>>>>>> IMP: migrating NC form to v7 sheet style
+=======
+	            	<field name="company_id" group="base.group_multi_company"/>
+>>>>>>> [IMP] Add company_id in views
                     </group>
                     <newline />
                     <group expand="0" string="Group By...">
@@ -108,18 +113,19 @@
                 <sheet string="Non-Conformity">
                     <group>
                         <group>
-                        <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                        <field name="date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                        <field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                        <field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                            <field name="origin_ids" widget="many2many_tags" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                    </group>
+                        	<field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                        	<field name="date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                        	<field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                        	<field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                        	<field name="origin_ids" widget="many2many_tags" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                    	</group>
                         <group>
-                        <field name="responsible_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                        <field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                        <field name="author_user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                        <field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                    </group>
+                        	<field name="responsible_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                        	<field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                        	<field name="author_user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                        	<field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+	            		<field name="company_id" group="base.group_multi_company"/>
+                    	</group>
                     </group>
 
                     <notebook>
