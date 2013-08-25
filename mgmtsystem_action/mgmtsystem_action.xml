@@ -13,6 +13,7 @@
                     <field name="user_id"/>
                     <field name="date_deadline"/>
                     <field name="state"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
                 </tree>
             </field>
         </record>
@@ -31,6 +32,7 @@
                         <field name="date" select='1'/>
                         <field name="user_id"/>
                         <field name="system_id"/>
+                    	<field name="company_id" groups="base.group_multi_company"/>
                     </group>
                     <newline/>
                     <group expand="0" string="Group By...">
@@ -63,6 +65,7 @@
                         <field name="date" string="Date"/>
                         <field name="date_deadline" string="Deadline"/>
                         <field name="system_id"/>
+                    	<field name="company_id" groups="base.group_multi_company"/>
                     </group>
 <<<<<<< 5c38edebaa28f7d9360cb440a7dccef221185e2a
                     <notebook colspan="4">
@@ -124,4 +127,3 @@
 
     </data>
 </openerp>
-
