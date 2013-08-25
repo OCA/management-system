@@ -182,8 +182,12 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         'evaluation_user_id': fields.many2one('res.users','Evaluation by', readonly=True),
         'evaluation_comments': fields.text('Evaluation Comments',
             help="Conclusions from the last effectiveness evaluation."),
+        # Multi-company
+        'company_id': fields.many2one('res.company', 'Company'),
     }
+
     _defaults = {
+        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
         'date': lambda *a: time.strftime(DATE_FORMAT),
         'state': 'draft',
         'author_user_id': lambda cr, uid, id, c={}: id,
