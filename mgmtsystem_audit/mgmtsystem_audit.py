@@ -73,10 +73,17 @@ class mgmtsystem_verification_line(orm.Model):
         'is_conformed': fields.boolean('Is conformed'),
         'comments': fields.text('Comments'),
         'seq': fields.integer('Sequence'),
+<<<<<<< 3c429ddfc9b244c4efbb2c0ec723d8e20dd12278
 >>>>>>> [FIX] fixes from review comments
     }
+=======
+        'company_id': fields.many2one('res.company', 'Company')
+        }
+
+>>>>>>> [IMP] Add company_id in views
     _order = "seq"
     _defaults = {
+        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
         'is_conformed': False
     }
 
