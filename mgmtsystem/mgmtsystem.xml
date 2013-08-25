@@ -35,6 +35,7 @@
                 <tree string="Systems">
                     <field name="name"/>
 		    <field name="manual"/>
+		    <field name="company_id" groups="base.group_multi_company"/>
                 </tree>
             </field>
         </record>
@@ -46,6 +47,7 @@
                 <form string="Systems">
                     <field name="name"/>
 		    <field name="manual"/>
+		    <field name="company_id" groups="base.group_multi_company"/>
                 </form>
             </field>
         </record>
