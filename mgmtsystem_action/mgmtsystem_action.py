@@ -38,9 +38,11 @@ class mgmtsystem_action(orm.Model):
                                        'Messages',
                                        domain=[('model','=',_name)]),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
-    }
+        'company_id': fields.many2one('res.company', 'Company')
+        }
 
     _defaults = {
+        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
         'reference': 'NEW',
     }
 
