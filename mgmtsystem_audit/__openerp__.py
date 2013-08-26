@@ -38,8 +38,9 @@ This module enables you to manage audits and verifications lists of your managem
     """,
     "depends": ['mgmtsystem_nonconformity'],
     "data" : [
-        'audit_sequence.xml',
         'security/ir.model.access.csv',
+        'security/mgmtsystem_audit_security.xml',
+        'audit_sequence.xml',
         'mgmtsystem_audit.xml',
         'report/audit_report.xml',
         'report/verification_list.xml',
