@@ -33,8 +33,9 @@ This module enables you to manage reviews of your management system.
         'mgmtsystem_survey',
     ],
     "data" : [
-        'review_sequence.xml',
         'security/ir.model.access.csv',
+        'security/mgmtsystem_review_security.xml',
+        'review_sequence.xml',
         'mgmtsystem_review.xml',
         'report/review_report.xml',
     ],
