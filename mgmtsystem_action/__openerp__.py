@@ -42,9 +42,10 @@ This module enables you to manage the different actions of your management syste
 """,
     "depends": ['mgmtsystem', 'crm_claim'],
     "data": [
+        'security/ir.model.access.csv',
+        'security/mgmtsystem_action_security.xml',
         'action_sequence.xml',
         'workflow_mgmtsystem_action.xml',
-        'security/ir.model.access.csv',
         'mgmtsystem_action.xml',
         'board_mgmtsystem_action.xml',
     ],
