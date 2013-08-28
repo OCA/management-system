@@ -27,7 +27,7 @@
     "category" : "Generic Modules/Others",
     "description": """Environmental Aspects Template, useful for Environment Management System
     """,
-    "depends" : ['document_page_approval','mgmtsystem'],
+    "depends" : ['document_page','mgmtsystem'],
     "data" : ['document_page_environmental_aspect.xml'],
     "demo" : [],
     "installable" : True,
