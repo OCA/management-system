@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -19,6 +19,7 @@
 #
 ##############################################################################
 {
+<<<<<<< 1079161f42ff13d72cc09e135702bf9974ec0d26
     "name" : "Management System - Survey",
     "version" : "1.0",
     "author" : "Savoir-faire Linux",
@@ -33,12 +34,19 @@
     "license" : "AGPL-3",
 >>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
+=======
+    "name": "Management System - Survey",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+>>>>>>> [FIX] PEP8 compliance after running flake8
     "description": """This module enables you to manage your satisfaction surveys and its answers.""",
-    "depends" : ['survey'],
-    "data" : ['mgmtsystem_survey.xml',],
-    "demo" : [],
-    "installable" : True,
-    "certificate" : ''
+    "depends": ['survey'],
+    "data": ['mgmtsystem_survey.xml'],
+    "demo": [],
+    "installable": True,
+    "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
