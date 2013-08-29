@@ -27,7 +27,7 @@
     "category" : "Generic Modules/Others",
     "description": """Work Instructions Template
     """,
-    "depends" : ['mgmtsystem','document_page_approval'],
+    "depends" : ['mgmtsystem','document_page'],
     "data" : ['document_page_work_instructions.xml'],
     "demo" : [],
     "installable" : True,
