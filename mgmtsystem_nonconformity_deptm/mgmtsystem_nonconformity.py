@@ -37,5 +37,11 @@ class mgmtsystem_nonconformity(orm.Model):
                 result['superior_user_id'] = deptm.parent_id.manager_id.user_id.id
         return {'value': result}
 
+    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None):
+        """Add the Top Manager to OpenChatter follow list."""
+        o = self.browse(cr, uid, ids, context=context)[0]
+        user_ids = [o.superior_user_id.id]
+        self.message_subscribe_users(cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context)
+        return super(mgmtsystem_nonconformity, self).message_auto_subscribe(cr, uid, ids, updated_fields=updated_fields, context=context)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
