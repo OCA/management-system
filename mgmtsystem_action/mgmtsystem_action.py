@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,12 +15,12 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 from openerp.osv import fields, orm
-from crm import crm
+
 
 class mgmtsystem_action(orm.Model):
     _name = "mgmtsystem.action"
@@ -36,7 +36,7 @@ class mgmtsystem_action(orm.Model):
         'message_ids': fields.one2many('mail.message',
                                        'res_id',
                                        'Messages',
-                                       domain=[('model','=',_name)]),
+                                       domain=[('model', '=', _name)]),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
         'company_id': fields.many2one('res.company', 'Company')
         }

@@ -19,6 +19,7 @@
 #
 ##############################################################################
 {
+<<<<<<< 8c635f233cfc8f312d5a86ef4faca6fd8d2bf583
     "name" : "Management System - Action",
     "version" : "1.1",
     "author" : "Savoir-faire Linux",
@@ -33,6 +34,14 @@
     "license" : "AGPL-3",
 >>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
+=======
+    "name": "Management System - Action",
+    "version": "1.1",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+>>>>>>> [FIX] PEP8 compliance after running flake8
     "description": """\
 This module enables you to manage the different actions of your management system:
   * immediate actions
@@ -49,8 +58,7 @@ This module enables you to manage the different actions of your management syste
         'mgmtsystem_action.xml',
         'board_mgmtsystem_action.xml',
     ],
-    "demo" : ['demo_action.xml',],
-    "installable" : True,
+    "demo": ['demo_action.xml'],
+    "installable": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
