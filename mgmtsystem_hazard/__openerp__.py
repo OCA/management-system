@@ -19,14 +19,15 @@
 #
 ##############################################################################
 {
-    "name" : "Management System - Hazard",
-    "version" : "1.1",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Management System",
+    "name": "Management System - Hazard",
+    "version": "1.1",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
     "description": """\
-This module enables you to manage the hazards and risks of your health and safety management system.
+This module enables you to manage the hazards and risks of your health
+and safety management system.
     """,
     "depends": ['mgmtsystem', 'hr'],
     "data": [
@@ -37,4 +38,3 @@ This module enables you to manage the hazards and risks of your health and safet
     ],
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
