@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,17 +15,17 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 {
-    "name" : "Management System",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Management System",
-    "complexity" : "normal",
+    "name": "Management System",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+    "complexity": "normal",
     "description": """\
 This module is the basis of any management system applications:
      * audit reports,
@@ -35,21 +35,20 @@ This module is the basis of any management system applications:
      * corrective actions,
      * improvement opportunities.
     """,
-    "depends" : [
+    "depends": [
         'base',
         'board',
         'document_page',
     ],
-    "data" : [
+    "data": [
         'security/mgmtsystem_security.xml',
         'security/ir.model.access.csv',
         'mgmtsystem.xml',
         'mgmtsystem_system.xml',
         'board_mgmtsystem_view.xml',
     ],
-    "demo" : [],
-    "installable" : True,
-    "certificate" : ''
+    "demo": [],
+    "installable": True,
+    "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-

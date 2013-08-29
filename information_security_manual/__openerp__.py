@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -19,20 +19,19 @@
 #
 ##############################################################################
 {
-    "name" : "Information Security Management System Manual",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Generic Modules/Others",
+    "name": "Information Security Management System Manual",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Generic Modules/Others",
     "description": """Information Security Manual Template
     """,
-    "depends" : ['mgmtsystem_manuals'],
-    "init" : [],
-    "data" : ['information_security_manual.xml'],
-    "demo" : [],
-    "installable" : True,
-    "certificate" : ''
+    "depends": ['mgmtsystem_manuals'],
+    "init": [],
+    "data": ['information_security_manual.xml'],
+    "demo": [],
+    "installable": True,
+    "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-

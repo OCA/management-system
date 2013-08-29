@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -19,19 +19,18 @@
 #
 ##############################################################################
 {
-    "name" : "Document Management - Wiki - Environmental Aspects",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Generic Modules/Others",
+    "name": "Document Management - Wiki - Environmental Aspects",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Generic Modules/Others",
     "description": """Environmental Aspects Template, useful for Environment Management System
     """,
-    "depends" : ['document_page_approval','mgmtsystem'],
-    "data" : ['document_page_environmental_aspect.xml'],
-    "demo" : [],
-    "installable" : True,
-    "certificate" : ''
+    "depends": ['document_page_approval', 'mgmtsystem'],
+    "data": ['document_page_environmental_aspect.xml'],
+    "demo": [],
+    "installable": True,
+    "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-

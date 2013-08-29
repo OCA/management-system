@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -19,12 +19,12 @@
 #
 ##############################################################################
 {
-    "name" : "Health and Safety Management System",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Management System",
+    "name": "Health and Safety Management System",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
     "description": """\
 This module enables you to manage your health and safety management system, including :
             * Hazards
@@ -38,18 +38,17 @@ This module enables you to manage your health and safety management system, incl
             * Claims
             * Letters
     """,
-    "depends" : [
+    "depends": [
         'mgmtsystem_audit',
         'mgmtsystem_review',
         'mgmtsystem_claim',
         'document_page_health_safety_manual',
         'mgmtsystem_hazard',
     ],
-    "data" : ['health_safety.xml'],
-    "demo" : [],
-    "installable" : True,
-    "application" : True,
-    "certificate" : ''
+    "data": ['health_safety.xml'],
+    "demo": [],
+    "installable": True,
+    "application": True,
+    "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-

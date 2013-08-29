@@ -19,12 +19,12 @@
 #
 ##############################################################################
 {
-    "name" : "Management System - Claim",
-    "version" : "1.1",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Management System",
+    "name": "Management System - Claim",
+    "version": "1.1",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
     "description": """This module enables you to manage the claims of your management system.""",
     "depends": ['mgmtsystem', 'crm_claim', 'mail'],
     "data": [
@@ -37,4 +37,3 @@
     ],
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-

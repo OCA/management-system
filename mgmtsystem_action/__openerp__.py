@@ -19,12 +19,12 @@
 #
 ##############################################################################
 {
-    "name" : "Management System - Action",
-    "version" : "1.1",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Management System",
+    "name": "Management System - Action",
+    "version": "1.1",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
     "description": """\
 This module enables you to manage the different actions of your management system:
   * immediate actions
@@ -41,8 +41,7 @@ This module enables you to manage the different actions of your management syste
         'mgmtsystem_action.xml',
         'board_mgmtsystem_action.xml',
     ],
-    "demo" : ['demo_action.xml',],
-    "installable" : True,
+    "demo": ['demo_action.xml'],
+    "installable": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
