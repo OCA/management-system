@@ -38,7 +38,7 @@ for the Quality Manual.
     'demo': [],
     'installable': True,
     'auto_install': False,
-    'certificate' : '',
+    'certificate': '',
     'images': ['images/wiki_pages_quality_manual.jpeg'],
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
