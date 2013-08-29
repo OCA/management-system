@@ -202,6 +202,14 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             'ref': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.nonconformity')
         })
         return super(mgmtsystem_nonconformity, self).create(cr, uid, vals, context)
+
+    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None):
+        """Add the reponsible, manager and OpenChatter follow list."""
+        o = self.browse(cr, uid, ids, context=context)[0]
+        user_ids = [o.responsible_user_id.id, o.manager_user_id.id, o.author_user_id.id]
+        self.message_subscribe_users(cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context)
+        return super(mgmtsystem_nonconformity, self).message_auto_subscribe(cr, uid, ids, updated_fields=updated_fields, context=context)
+
     def case_send_note(self, cr, uid, ids, text, context=None):
         for id in ids:
             pre = self.case_get_note_msg_prefix(cr, uid, id, context=context)
@@ -295,6 +303,11 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
     def wkf_close(self, cr, uid, ids, context=None):
         """Change state from in progress to closed"""
         o = self.browse(cr, uid, ids, context=context)[0]
+        done_states = ['done', 'cancelled']
+        if (o.immediate_action_id and o.immediate_action_id.state not in done_states):
+            raise orm.except_orm(_('Error !'), _('Immediate action from analysis has not been closed.'))
+        if ([i for i in o.action_ids if i.state not in done_states]):
+            raise orm.except_orm(_('Error !'), _('Not all actions have been closed.'))
         if not o.evaluation_date:
             raise orm.except_orm(_('Error !'), _('Effectiveness evaluation must be performed before closing.'))
         self.case_close_send_note(cr, uid, ids, context=context)
