@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,7 +15,7 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
@@ -28,17 +28,18 @@ import time
 from tools import DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT
 from tools import DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT
 
+
 class mgmtsystem_nonconformity_cause(orm.Model):
     """
     Cause of the nonconformity of the management system
     """
     _name = "mgmtsystem.nonconformity.cause"
     _description = "Cause of the nonconformity of the management system"
-    _order   = 'parent_id, sequence' 
+    _order = 'parent_id, sequence'
 
     def name_get(self, cr, uid, ids, context=None):
         ids = ids or []
-        reads = self.read(cr, uid, ids, ['name','parent_id'], context=context)
+        reads = self.read(cr, uid, ids, ['name', 'parent_id'], context=context)
         res = []
         for record in reads:
             name = record['name']
@@ -46,7 +47,7 @@ class mgmtsystem_nonconformity_cause(orm.Model):
                 name = record['parent_id'][1]+' / '+name
             res.append((record['id'], name))
         return res
-        
+
     def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
         res = self.name_get(cr, uid, ids, context=context)
         return dict(res)
@@ -74,11 +75,11 @@ class mgmtsystem_nonconformity_origin(orm.Model):
     """
     _name = "mgmtsystem.nonconformity.origin"
     _description = "Origin of nonconformity of the management system"
-    _order   = 'parent_id, sequence' 
+    _order = 'parent_id, sequence'
 
     def name_get(self, cr, uid, ids, context=None):
         ids = ids or []
-        reads = self.read(cr, uid, ids, ['name','parent_id'], context=context)
+        reads = self.read(cr, uid, ids, ['name', 'parent_id'], context=context)
         res = []
         for record in reads:
             name = record['name']
@@ -86,7 +87,7 @@ class mgmtsystem_nonconformity_origin(orm.Model):
                 name = record['parent_id'][1]+' / '+name
             res.append((record['id'], name))
         return res
-        
+
     def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
         res = self.name_get(cr, uid, ids, context=context)
         return dict(res)
@@ -128,12 +129,13 @@ _STATES = [
     ('done', _('Closed')),
     ('cancel', _('Cancelled')),
     ]
-_STATES_DICT =  dict(_STATES)
+_STATES_DICT = dict(_STATES)
+
 
 
 class mgmtsystem_nonconformity(base_state, orm.Model):
     """
-    Management System - Nonconformity 
+    Management System - Nonconformity
     """
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity of the management system"
@@ -154,34 +156,35 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         'date': fields.date('Date', required=True),
         'partner_id': fields.many2one('res.partner', 'Partner', required=True),
         'reference': fields.char('Related to', size=50),
-        'responsible_user_id': fields.many2one('res.users','Responsible', required=True),
-        'manager_user_id': fields.many2one('res.users','Manager', required=True),
-        'author_user_id': fields.many2one('res.users','Filled in by', required=True),
-        'origin_ids': fields.many2many('mgmtsystem.nonconformity.origin','mgmtsystem_nonconformity_origin_rel', 'nonconformity_id', 'origin_id', 'Origin', required=True),
-        'procedure_ids': fields.many2many('document.page','mgmtsystem_nonconformity_procedure_rel', 'nonconformity_id', 'procedure_id', 'Procedure'),
+        'responsible_user_id': fields.many2one('res.users', 'Responsible', required=True),
+        'manager_user_id': fields.many2one('res.users', 'Manager', required=True),
+        'author_user_id': fields.many2one('res.users', 'Filled in by', required=True),
+        'origin_ids': fields.many2many('mgmtsystem.nonconformity.origin', 'mgmtsystem_nonconformity_origin_rel', 'nonconformity_id', 'origin_id', 'Origin', required=True),
+        'procedure_ids': fields.many2many('document.page', 'mgmtsystem_nonconformity_procedure_rel', 'nonconformity_id', 'procedure_id', 'Procedure'),
         'description': fields.text('Description', required=True),
         'state': fields.selection(_STATES, 'State', readonly=True),
         'state_name': fields.function(_state_name, string='State Description', type='char', size=40),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
+<<<<<<< df913a09410052efe02604e09f25e52d3005cf5f
+=======
+        'message_ids': fields.one2many('mail.message', 'res_id', 'Messages', domain=[('model', '=', _name)]),
+>>>>>>> [FIX] PEP8 compliance after running flake8
         #2. Root Cause Analysis
-        'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause','mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
+        'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause', 'mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
         'severity_id': fields.many2one('mgmtsystem.nonconformity.severity', 'Severity'),
         'analysis': fields.text('Analysis'),
-        'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action',
-            domain="[('nonconformity_id','=',id)]"),
+        'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action', domain="[('nonconformity_id', '=', id)]"),
         'analysis_date': fields.datetime('Analysis Date', readonly=True),
-        'analysis_user_id': fields.many2one('res.users','Analysis by', readonly=True),
+        'analysis_user_id': fields.many2one('res.users', 'Analysis by', readonly=True),
         #3. Action Plan
         'action_ids': fields.many2many('mgmtsystem.action', 'mgmtsystem_nonconformity_action_rel', 'nonconformity_id', 'action_id', 'Actions'),
         'actions_date': fields.datetime('Action Plan Date', readonly=True),
-        'actions_user_id': fields.many2one('res.users','Action Plan by', readonly=True),
-        'action_comments': fields.text('Action Plan Comments',
-            help="Comments on the action plan."),
+        'actions_user_id': fields.many2one('res.users', 'Action Plan by', readonly=True),
+        'action_comments': fields.text('Action Plan Comments', help="Comments on the action plan."),
         #4. Effectiveness Evaluation
         'evaluation_date': fields.datetime('Evaluation Date', readonly=True),
-        'evaluation_user_id': fields.many2one('res.users','Evaluation by', readonly=True),
-        'evaluation_comments': fields.text('Evaluation Comments',
-            help="Conclusions from the last effectiveness evaluation."),
+        'evaluation_user_id': fields.many2one('res.users', 'Evaluation by', readonly=True),
+        'evaluation_comments': fields.text('Evaluation Comments', help="Conclusions from the last effectiveness evaluation."),
         # Multi-company
         'company_id': fields.many2one('res.company', 'Company'),
     }
@@ -224,7 +227,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             raise orm.except_orm(_('Error !'), _('Analysis is already approved.'))
         if not o.analysis:
             raise orm.except_orm(_('Error !'), _('Please provide an analysis before approving.'))
-        vals = {'analysis_date': time.strftime(DATETIME_FORMAT), 'analysis_user_id': uid }
+        vals = {'analysis_date': time.strftime(DATETIME_FORMAT), 'analysis_user_id': uid}
         self.write(cr, uid, ids, vals, context=context)
         note = _('Analysis Approved')
         self.case_send_note(cr, uid, ids, note, context=context)
@@ -253,7 +256,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             raise orm.except_orm(_('Error !'), _('Action plan is already approved.'))
         if not self.browse(cr, uid, ids, context=context)[0].analysis_date:
             raise orm.except_orm(_('Error !'), _('Analysis approved before the review confirmation.'))
-        vals = {'actions_date': time.strftime(DATETIME_FORMAT), 'actions_user_id': uid }
+        vals = {'actions_date': time.strftime(DATETIME_FORMAT), 'actions_user_id': uid}
         self.write(cr, uid, ids, vals, context=context)
         note = _('Action Plan Approved')
         self.case_send_note(cr, uid, ids, note, context=context)
@@ -278,7 +281,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         o = self.browse(cr, uid, ids, context=context)[0]
         if o.state != 'open':
             raise orm.except_orm(_('Error !'), _('This action can only be done in the In Progress state.'))
-        vals = {'evaluation_date': time.strftime(DATETIME_FORMAT), 'evaluation_user_id': uid }
+        vals = {'evaluation_date': time.strftime(DATETIME_FORMAT), 'evaluation_user_id': uid}
         self.write(cr, uid, ids, vals, context=context)
         note = _('Effectiveness Evaluation Approved')
         self.case_send_note(cr, uid, ids, note, context=context)
@@ -301,11 +304,16 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         """Reset to Draft and restart the workflows"""
         wf_service = netsvc.LocalService("workflow")
         for id in ids:
+<<<<<<< df913a09410052efe02604e09f25e52d3005cf5f
             res = wf_service.trg_create(uid, self._name, id, cr)
         self.case_reset_send_note(cr, uid, ids, context=context)
+=======
+            wf_service.trg_create(uid, self._name, id, cr)
+        self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Draft'))
+>>>>>>> [FIX] PEP8 compliance after running flake8
         vals = {
             'state': 'draft',
-            'analysis_date': None, 'analysis_user_id': None, 
+            'analysis_date': None, 'analysis_user_id': None,
             'actions_date': None, 'actions_user_id': None,
             'evaluation_date': None, 'evaluation_user_id': None,
             }
