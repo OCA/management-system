@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -19,6 +19,7 @@
 #
 ##############################################################################
 {
+<<<<<<< 1f65871678dc62e50eb086ae107502490474b8ec
     "name" : " Quality Management System",
     "version" : "1.0",
     "author" : "Savoir-faire Linux",
@@ -33,6 +34,14 @@
     "license" : "AGPL-3",
 >>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
+=======
+    "name": " Quality Management System",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+>>>>>>> [FIX] PEP8 compliance after running flake8
     "description": """\
 This module enables you to manage your quality management system, including :
     * Quality Manual
@@ -43,16 +52,15 @@ This module enables you to manage your quality management system, including :
     * Actions
     * Employee Training
     """,
-    "depends" : [
+    "depends": [
         'mgmtsystem_audit',
         'document_page_quality_manual',
         'mgmtsystem_review',
     ],
-    "data" : ['quality.xml'],
-    "demo" : [],
-    "installable" : True,
-    "application" : True,
-    "certificate" : ''
+    "data": ['quality.xml'],
+    "demo": [],
+    "installable": True,
+    "application": True,
+    "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
