@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,11 +15,12 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 from openerp.osv import fields, orm
+
 
 class mgmtsystem_action(orm.Model):
     _inherit = "mgmtsystem.action"
@@ -29,36 +30,34 @@ class mgmtsystem_action(orm.Model):
         for t in self.name_get(cr, uid, ids, context=context):
             res[t[0]] = t[1]
         return res
-    
+
     _columns = {
         #Remark - upgrade from v0.1 requires data conversion:
-        #  * deprecated fields: corrective_type, corrective_project_id, preventive_type,preventive_project_id
+        #  * deprecated fields: corrective_type, corrective_project_id, preventive_type, preventive_project_id
         #  * 1 action => 1 correction action + 1 prevention action
-        'action_type': fields.selection([('action','Action'), ('project','Project')], 'Action Type', required=True),
+        'action_type': fields.selection([('action', 'Action'), ('project', 'Project')], 'Action Type', required=True),
         'project_id': fields.many2one('project.project', 'Project'),
         'complete_name': fields.function(_complete_name, string='Complete Name', type='char', size=250),
-        'name': fields.char('Claim Subject', size=128, required=False), #modified: it's not always required
+        'name': fields.char('Claim Subject', size=128),
     }
     _defaults = {
         'action_type': 'action',
     }
-    
+
     def name_get(self, cr, uid, ids, context=None):
         if not ids:
             return list()
         res = list()
-        project_model = self.pool.get('project.project')
         for o in self.browse(cr, uid, ids, context=context):
             r = (o.id, o.name)
             if o.action_type == 'project' and o.project_id:
                 r = (o.id, o.project_id.name)
             res.append(r)
         return res
-    
+
     def _init_install(self, cr, uid):
         """Initialize current data in inherited modules."""
         cr.execute("update mgmtsystem_action set action_type='action' where action_type is null")
-        return  True
-
+        return True
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
