@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -19,26 +19,25 @@
 #
 ##############################################################################
 {
-    "name" : "Management System - Project",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Management System",
+    "name": "Management System - Project",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
     "description": """\
 This module enables you to set a project as an action in the nonconformity.
     """,
-    "depends" : [
+    "depends": [
         'mgmtsystem_nonconformity',
         'mgmtsystem_action',
         'project'
     ],
-    "data" : [
+    "data": [
         'mgmtsystem_nonconformity_project.xml',
         'mgmtsystem_nonconformity_project_data.xml',
     ],
-    "demo" : [],
-    "installable" : True,
+    "demo": [],
+    "installable": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
