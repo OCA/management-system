@@ -206,7 +206,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
     def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None):
         """Add the reponsible, manager and OpenChatter follow list."""
         o = self.browse(cr, uid, ids, context=context)[0]
-        user_ids = [o.responsible_user_id.id, o.manager_user_id.id]
+        user_ids = [o.responsible_user_id.id, o.manager_user_id.id, o.author_user_id.id]
         self.message_subscribe_users(cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context)
         return super(mgmtsystem_nonconformity, self).message_auto_subscribe(cr, uid, ids, updated_fields=updated_fields, context=context)
 
