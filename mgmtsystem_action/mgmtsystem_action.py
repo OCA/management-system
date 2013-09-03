@@ -19,7 +19,9 @@
 #
 ##############################################################################
 
+from tools.translate import _
 from openerp.osv import fields, orm
+
 
 
 class mgmtsystem_action(orm.Model):
@@ -33,10 +35,13 @@ class mgmtsystem_action(orm.Model):
                                          ('prevention', 'Preventive Action'),
                                          ('improvement', 'Improvement Opportunity')],
                                         'Response Type'),
+<<<<<<< d983079c898ad179110ee539b2abb8fbf5517b48
         'message_ids': fields.one2many('mail.message',
                                        'res_id',
                                        'Messages',
                                        domain=[('model', '=', _name)]),
+=======
+>>>>>>> Adapted actions to openchatter, added autosubscribing and action closing posts
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
         'company_id': fields.many2one('res.company', 'Company')
         }
@@ -51,5 +56,18 @@ class mgmtsystem_action(orm.Model):
             'reference': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.action')
         }, context=context)
         return super(mgmtsystem_action, self).create(cr, uid, vals, context=context)
+
+    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None):
+        """Automatically add the responsible user to the follow list."""
+        for o in self.browse(cr, uid, ids, context=context):
+            self.message_subscribe_users(cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None, context=context)
+        return super(mgmtsystem_action, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context)
+
+    def case_close(self, cr, uid, ids, context=None):
+        """When Action is closed, post a message on the related NC's chatter"""
+        for o in self.browse(cr, uid, ids, context=context):
+            for nc in o.nonconformity_ids:
+                nc.case_send_note(_('Action "%s" was closed.' % o.name))
+        return super(mgmtsystem_action, self).case_close(cr, uid, ids, context=context)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
