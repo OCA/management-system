@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,12 +15,14 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
+from tools.translate import _
 from openerp.osv import fields, orm
 from crm import crm
+
 
 class mgmtsystem_action(orm.Model):
     _name = "mgmtsystem.action"
@@ -33,10 +35,6 @@ class mgmtsystem_action(orm.Model):
                                          ('prevention', 'Preventive Action'),
                                          ('improvement', 'Improvement Opportunity')],
                                         'Response Type'),
-        'message_ids': fields.one2many('mail.message',
-                                       'res_id',
-                                       'Messages',
-                                       domain=[('model','=',_name)]),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
     }
 
@@ -49,5 +47,18 @@ class mgmtsystem_action(orm.Model):
             'reference': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.action')
         }, context=context)
         return super(mgmtsystem_action, self).create(cr, uid, vals, context=context)
+
+    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None):
+        """Automatically add the responsible user to the follow list."""
+        for o in self.browse(cr, uid, ids, context=context):
+            self.message_subscribe_users(cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None, context=context)
+        return super(mgmtsystem_action, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context)
+
+    def case_close(self, cr, uid, ids, context=None):
+        """When Action is closed, post a message on the related NC's chatter"""
+        for o in self.browse(cr, uid, ids, context=context):
+            for nc in o.nonconformity_ids:
+                nc.case_send_note(_('Action "%s" was closed.' % o.name))
+        return super(mgmtsystem_action, self).case_close(cr, uid, ids, context=context)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
