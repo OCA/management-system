@@ -112,6 +112,7 @@
                         <button name="button_close" string="Close" states="open" type="object" icon="gtk-jump-to"/>
                         <field name="state" widget="statusbar" select="1" readonly="1"/>
                     </header>
+<<<<<<< 1290b8bcf482ceea2c5882df0aac7a856e2b4bd8
                     <group col="8" colspan="6">
                         <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
                         <field name="reference"/>
@@ -142,6 +143,43 @@
                             <field name="nonconformity_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                         </page>
                     </notebook>
+=======
+                    <sheet string="Audit">
+                        <group col="4" colspan="2">
+                            <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
+                            <field name="reference"/>
+                            <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
+                            <field name="system_id"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Auditors">
+                                <field name="auditor_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </page>
+                            <page string="Auditees">
+                                <field name="auditee_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </page>
+                            <page string="Verification List">
+                                <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </page>
+                            <page string="Strong Points">
+                                <field name="strong_points" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </page>
+                            <page string="To Improve Points">
+                                <field name="to_improve_points" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </page>
+                            <page string="Improvement Opportunities">
+                                <field name="imp_opp_ids" domain="[('type_action','=','improvement')]" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </page>
+                            <page string="Nonconformities">
+                                <field name="nonconformity_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+>>>>>>> Addapted audit to use openchatter
                 </form>
             </field>
         </record>

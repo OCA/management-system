@@ -25,6 +25,7 @@ from openerp.osv import fields, orm
 class mgmtsystem_audit(orm.Model):
     _name = "mgmtsystem.audit"
     _description = "Audit"
+    _inherit = "crm.claim"
     _columns = {
         'name': fields.char('Name', size=50),
         'reference': fields.char('Reference', size=64, required=True, readonly=True),
