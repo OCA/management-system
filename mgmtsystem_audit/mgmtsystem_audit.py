@@ -57,6 +57,15 @@ class mgmtsystem_audit(orm.Model):
     def button_close(self, cr, uid, ids, context=None):
         return self.write(cr, uid, ids, {'state': 'done'})
 
+    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None):
+        """Automatically add the Auditors, Auditees and Audit Manager to the follow list"""
+        for o in self.browse(cr, uid, ids, context=context):
+            user_ids = [o.user_id.id]
+            user_ids += [a.id for a in o.auditor_user_ids]
+            user_ids += [a.id for a in o.auditee_user_ids]
+            self.message_subscribe_users(cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context)
+        super(mgmtsystem_audit, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context)
+
 
 class mgmtsystem_verification_line(orm.Model):
     _name = "mgmtsystem.verification.line"
