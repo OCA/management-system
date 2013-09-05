@@ -303,6 +303,8 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
     def wkf_close(self, cr, uid, ids, context=None):
         """Change state from in progress to closed"""
         o = self.browse(cr, uid, ids, context=context)[0]
+        if [i for i in o.action_ids if i.state != 'done']:
+            raise orm.except_orm(_('Error !'), _('Not all actions have been closed.'))
         if not o.evaluation_date:
             raise orm.except_orm(_('Error !'), _('Effectiveness evaluation must be performed before closing.'))
         self.case_close_send_note(cr, uid, ids, context=context)
