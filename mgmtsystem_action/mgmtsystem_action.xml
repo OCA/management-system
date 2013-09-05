@@ -149,4 +149,44 @@
             groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
     </data>
+
+    <data noupdate="1">
+        <!-- Email template for Action Reminders -->
+        <record id="action_email_reminder_action" model="ir.actions.server">
+            <field name="name">Reminder to Responsible</field>
+            <field name="model_id" ref="model_mgmtsystem_action"/>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">email</field>
+            <field name="email">object.user_id.email</field>
+            <field name="subject">Reminder on Action: "[[object.name]]"</field>
+            <field name="message">
+Hello,
+
+This is an automated message to remind you that the following action is due to be completed in 10 days ([[object.date_deadline]]):
+
+    [[object.name]]
+
+    [[object.description]]
+
+
+
+Thank you and have a nice day.
+--
+OpenERP
+            </field>
+        </record>
+
+        <!-- Automated Action: Email reponsible user 10 days before deadline. -->
+        <record id="rule_set_reminder_action" model="base.action.rule">
+            <field name="name">Email Action Reminders 10 days before due date.</field>
+            <field name="model_id" ref="model_mgmtsystem_action"/>
+            <field name="trg_date_id" ref="field_mgmtsystem_action_date_deadline"/>
+            <field name="trg_date_range">-10</field>
+            <field name="trg_date_range_type">day</field>
+            <field name="server_action_ids" eval="[(6, 0, [ref('action_email_reminder_action')])]"/>
+        </record>
+
+    </data>
+
 </openerp>
