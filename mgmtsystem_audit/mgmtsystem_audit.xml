@@ -249,7 +249,9 @@
 Hello,
 
 The audit "[[object.name]]" is scheduled in 2 weeks.
-Please prepare the verification list.
+Please prepare the verification list:
+
+[[object.get_audit_url()]]
 
 
 Thank you.
@@ -283,7 +285,9 @@ OpenERP
 Hello,
 
 The audit "[[object.name]]" is scheduled in 1 week.
-Please finish the verification list and send it to the auditees.
+Please finish the verification list and send it to the auditees:
+
+[[object.get_audit_url()]]
 
 
 Thank you.

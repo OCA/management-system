@@ -21,6 +21,8 @@
 
 from tools.translate import _
 from openerp.osv import fields, orm
+from urllib import urlencode
+from urlparse import urljoin
 
 
 class mgmtsystem_audit(orm.Model):
@@ -68,6 +70,18 @@ class mgmtsystem_audit(orm.Model):
             user_ids += [a.id for a in o.auditee_user_ids]
             self.message_subscribe_users(cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context)
         return super(mgmtsystem_audit, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context)
+
+    def get_audit_url(self, cr, uid, ids, context=None):
+        """
+        Return a short link to the audit form view
+        eg. http://localhost:8069/?db=prod#id=1&model=mgmtsystem.audit
+        """
+        assert len(ids) == 1
+        audit = self.browse(cr, uid, ids[0], context=context)
+        base_url = self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url', default='http://localhost:8069', context=context)
+        query = {'db': cr.dbname}
+        fragment = {'id': audit.id, 'model': self._name}
+        return urljoin(base_url, "?%s#%s" % (urlencode(query), urlencode(fragment)))
 
 
 class mgmtsystem_verification_line(orm.Model):
