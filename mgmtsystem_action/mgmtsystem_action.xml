@@ -165,10 +165,7 @@ Hello,
 
 This is an automated message to remind you that the following action is due to be completed in 10 days ([[object.date_deadline]]):
 
-    [[object.name]]
-
-    [[object.description]]
-
+[[object.get_action_url()]]
 
 
 Thank you and have a nice day.
