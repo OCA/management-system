@@ -19,6 +19,7 @@
 #
 ##############################################################################
 {
+<<<<<<< b9a32de449f11b9294519ef63ed8a1b78e6eb0f8
 <<<<<<< df913a09410052efe02604e09f25e52d3005cf5f
     "name" : "Management System - Nonconformity",
     "version" : "1.1",
@@ -35,16 +36,24 @@
 >>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
 =======
+=======
+>>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
     "name": "Management System - Nonconformity",
     "version": "1.1",
     "author": "Savoir-faire Linux",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
+<<<<<<< b9a32de449f11b9294519ef63ed8a1b78e6eb0f8
 >>>>>>> [FIX] PEP8 compliance after running flake8
     "description": """\
 This module enables you to manage the nonconformities of your management
 system : quality (ISO9001), environment (ISO14001) or security (ISO27001).
+=======
+    "description": """\
+This module enables you to manage the nonconformities of your management
+system: quality (ISO9001), environment (ISO14001) or security (ISO27001).
+>>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
 
 WARNING: when upgrading from v0.1, data conversion is required, since there are subtancial changes to the data structure.
     """,
