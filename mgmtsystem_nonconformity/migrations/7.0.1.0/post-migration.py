@@ -34,7 +34,11 @@ def migrate(cr, version):
             cr.execute("insert into mgmtsystem_nonconformity_action_rel"
                        "(nonconformity_id, action_id) "
                        "(SELECT id, %s FROM "
+<<<<<<< b9a32de449f11b9294519ef63ed8a1b78e6eb0f8
                        "mgmtsystem_nonconformity "
+=======
+                       " mgmtsystem_nonconformity "
+>>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
                        "WHERE %s IS NOT NULL )" % (action_field, action_field))
     else:
         logger.warning("Attempt to migrate nonconformity action IDs failed: migration was already done.")
