@@ -20,6 +20,8 @@
 ##############################################################################
 
 from tools.translate import _
+from urllib import urlencode
+from urlparse import urljoin
 from openerp.osv import fields, orm
 
 
@@ -69,5 +71,13 @@ class mgmtsystem_action(orm.Model):
             for nc in o.nonconformity_ids:
                 nc.case_send_note(_('Action "%s" was closed.' % o.name))
         return super(mgmtsystem_action, self).case_close(cr, uid, ids, context=context)
+
+    def get_action_url(self, cr, uid, ids, context=None):
+        assert len(ids) == 1
+        action = self.browse(cr, uid, ids[0], context=context)
+        base_url = self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url', default='http://localhost:8069', context=context)
+        query = {'db': cr.dbname}
+        fragment = {'id': action.id, 'model': self._name}
+        return urljoin(base_url, "?%s#%s" % (urlencode(query), urlencode(fragment)))
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
