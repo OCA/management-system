@@ -25,6 +25,7 @@ import logging
 
 logger = logging.getLogger('upgrade')
 
+
 def migrate(cr, version):
     logger.info("Migrating mgmtsystem_audit from version %s", version)
 
