@@ -130,7 +130,10 @@ _STATES = [
     ('cancel', _('Cancelled')),
     ]
 _STATES_DICT = dict(_STATES)
+<<<<<<< b9a32de449f11b9294519ef63ed8a1b78e6eb0f8
 
+=======
+>>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
 
 
 class mgmtsystem_nonconformity(base_state, orm.Model):
@@ -173,7 +176,11 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause', 'mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
         'severity_id': fields.many2one('mgmtsystem.nonconformity.severity', 'Severity'),
         'analysis': fields.text('Analysis'),
+<<<<<<< b9a32de449f11b9294519ef63ed8a1b78e6eb0f8
         'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action', domain="[('nonconformity_id', '=', id)]"),
+=======
+        'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action', domain="[('nonconformity_id','=',id)]"),
+>>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
         'analysis_date': fields.datetime('Analysis Date', readonly=True),
         'analysis_user_id': fields.many2one('res.users', 'Analysis by', readonly=True),
         #3. Action Plan
@@ -247,8 +254,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         if not o.analysis_date:
             err = _('Analysis must be performed before submiting to approval.')
             raise orm.except_orm(_('Error !'), err)
-        self.case_send_note(cr, uid, ids, _('Pending Approval'),
-            context=context)
+        self.case_send_note(cr, uid, ids, _('Pending Approval'), context=context)
         vals = {
             'state': 'pending',
             'actions_date': None,
@@ -317,8 +323,12 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         """Reset to Draft and restart the workflows"""
         wf_service = netsvc.LocalService("workflow")
         for id in ids:
+<<<<<<< b9a32de449f11b9294519ef63ed8a1b78e6eb0f8
 <<<<<<< df913a09410052efe02604e09f25e52d3005cf5f
             res = wf_service.trg_create(uid, self._name, id, cr)
+=======
+            wf_service.trg_create(uid, self._name, id, cr)
+>>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
         self.case_reset_send_note(cr, uid, ids, context=context)
 =======
             wf_service.trg_create(uid, self._name, id, cr)
@@ -329,7 +339,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             'analysis_date': None, 'analysis_user_id': None,
             'actions_date': None, 'actions_user_id': None,
             'evaluation_date': None, 'evaluation_user_id': None,
-            }
+        }
         return self.write(cr, uid, ids, vals, context=context)
 
 
@@ -337,8 +347,7 @@ class mgmtsystem_action(orm.Model):
     _inherit = "mgmtsystem.action"
     _columns = {
         'nonconformity_immediate_id': fields.one2many('mgmtsystem.nonconformity', 'immediate_action_id', readonly=True),
-        'nonconformity_ids': fields.many2many(
-            'mgmtsystem.nonconformity', 'mgmtsystem_nonconformity_action_rel', 'action_id', 'nonconformity_id', 'Nonconformities', readonly=True),
+        'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity', 'mgmtsystem_nonconformity_action_rel', 'action_id', 'nonconformity_id', 'Nonconformities', readonly=True),
     }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
