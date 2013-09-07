@@ -35,10 +35,12 @@ class mgmtsystem_review(osv.osv):
         'changes': fields.text('Changes'),
         'line_ids': fields.one2many('mgmtsystem.review.line','review_id','Lines'),
         'conclusion': fields.text('Conclusion'),
-        'state': fields.selection([('open','Open'),('done','Closed')], 'State')
+        'state': fields.selection([('open','Open'),('done','Closed')], 'State'),
+        'company_id': fields.many2one('res.company', 'Company'),
     }
 
     _defaults = {
+        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
         'reference': 'NEW', 
         'state': 'open'
     }
@@ -64,6 +66,11 @@ class mgmtsystem_review_line(osv.osv):
         'nonconformity_id': fields.many2one('mgmtsystem.nonconformity', 'Nonconformity', select=True),
         'decision': fields.text('Decision'),
         'review_id': fields.many2one('mgmtsystem.review', 'Review', ondelete='cascade', select=True),
+        'company_id': fields.many2one('res.company', 'Company'),
+    }
+
+    _defaults = {
+        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
     }
 
 mgmtsystem_review_line()

@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name" : "Management System - Hazard",
-    "version" : "1.0",
+    "version" : "1.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "AGPL-3",
@@ -31,6 +31,7 @@ This module enables you to manage the hazards and risks of your health and safet
     "depends": ['mgmtsystem', 'hr'],
     "data": [
         'security/ir.model.access.csv',
+        'security/mgmtsystem_hazard_security.xml',
         'mgmtsystem_hazard.xml',
         'mgmtsystem_hazard_data.xml',
     ],

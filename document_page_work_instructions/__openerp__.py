@@ -28,11 +28,8 @@
     "description": """Work Instructions Template
     """,
     "depends" : ['mgmtsystem','document_page'],
-    "init_xml" : [],
-    "update_xml" : [
-	'document_page_work_instructions.xml'
-    ],
-    "demo_xml" : [],
+    "data" : ['document_page_work_instructions.xml'],
+    "demo" : [],
     "installable" : True,
     "certificate" : ''
 }

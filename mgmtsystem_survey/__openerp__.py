@@ -27,9 +27,8 @@
     "category" : "Management System",
     "description": """This module enables you to manage your satisfaction surveys and its answers.""",
     "depends" : ['survey'],
-    "init_xml" : [],
-    "update_xml" : ['mgmtsystem_survey.xml',],
-    "demo_xml" : [],
+    "data" : ['mgmtsystem_survey.xml',],
+    "demo" : [],
     "installable" : True,
     "certificate" : ''
 }

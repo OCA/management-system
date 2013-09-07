@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name" : "Management System - Nonconformity",
-    "version" : "1.0",
+    "version" : "1.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "AGPL-3",
@@ -37,6 +37,7 @@ WARNING: when upgrading from v0.1, data conversion is required, since there are 
     ],
     "data" : [
         'security/ir.model.access.csv',
+        'security/mgmtsystem_nonconformity_security.xml',
         'mgmtsystem_nonconformity.xml',
         'mgmtsystem_nonconformity_workflow.xml',
         'nonconformity_sequence.xml',

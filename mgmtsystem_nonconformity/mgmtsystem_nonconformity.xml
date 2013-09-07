@@ -20,6 +20,7 @@
                     <field name="responsible_user_id"/>
                     <field name="manager_user_id"/>
                     <field name="system_id"/>
+	            <field name="company_id" group="base.group_multi_company"/>
                     <field name="state"/>
                 </tree>
             </field>
@@ -42,6 +43,7 @@
                         <field name="author_user_id" string="User" 
                                filter_domain="['|','|',('author_user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
                         <field name="system_id"/>
+	            	<field name="company_id" group="base.group_multi_company"/>
                     </group>
                     <newline />
                     <group expand="0" string="Group By...">
@@ -81,18 +83,19 @@
                 <sheet string="Non-Conformity">
                     <group>
                         <group>
-                        <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                        <field name="date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                        <field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                        <field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                            <field name="origin_ids" widget="many2many_tags" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                    </group>
+                        	<field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                        	<field name="date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                        	<field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                        	<field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                        	<field name="origin_ids" widget="many2many_tags" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                    	</group>
                         <group>
-                        <field name="responsible_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                        <field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                        <field name="author_user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                        <field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                    </group>
+                        	<field name="responsible_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                        	<field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                        	<field name="author_user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                        	<field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+	            		<field name="company_id" group="base.group_multi_company"/>
+                    	</group>
                     </group>
 
                     <notebook>
@@ -102,7 +105,7 @@
                         </page>
                         
                         <page string="Procedures">
-                            <field name="procedure_ids" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" domain="[('group_id','in',('Procedure','Environmental Aspect','Quality Manual','Environment Manual'))]"/>
+                            <field name="procedure_ids" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]"/>
                         </page>
 
                         <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">

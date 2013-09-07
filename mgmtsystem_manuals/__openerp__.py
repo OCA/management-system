@@ -20,21 +20,20 @@
 ##############################################################################
 {
     "name" : "Management System - Manual",
-    "version" : "1.0",
+    "version" : "1.1",
     "author" : "Savoir-faire Linux",
     "website" : "http://www.savoirfairelinux.com",
     "license" : "AGPL-3",
     "category" : "Management System",
     "description": """
-          This module adds a menu item "Manual" and is a dependencies of:
-             * document_page_environment_manual
-             * document_page_health_safety_manual
-             * mgmtsystem_quality
+This module adds a menu item "Manual" and is a dependency of:
+ * document_page_environment_manual
+ * document_page_health_safety_manual
+ * mgmtsystem_quality
     """,
     "depends" : ['document_page', 'mgmtsystem'],
-    "init_xml" : [],
-    "update_xml" : ['mgmtsystem_manuals.xml'],
-    "demo_xml" : [],
+    "data" : ['mgmtsystem_manuals.xml'],
+    "demo" : [],
     "installable" : True,
     "certificate" : ''
 }

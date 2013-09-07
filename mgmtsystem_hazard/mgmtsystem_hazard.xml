@@ -20,6 +20,7 @@
                     <field name="origin_id"/>
                     <field name="risk"/>
                     <field name="acceptability"/>
+	            <field name="company_id" group="base.group_multi_company"/>
                 </tree>
             </field>
         </record>
@@ -38,6 +39,7 @@
                         <field name="origin_id"/>
                         <field name="risk"/>
                         <field name="acceptability"/>
+	            	<field name="company_id" group="base.group_multi_company"/>
                     </group>
                     <newline/>
                     <group expand="0" string="Group By...">
@@ -58,6 +60,7 @@
                     <group colspan="4" col="4">
                         <field name="name"/>
                         <field name="type_id"/>
+	            	<field name="company_id" group="base.group_multi_company"/>
                         <newline/>
                         <field name="hazard_id"/>
                         <field name="risk_type_id"/>
@@ -342,8 +345,9 @@
             <field name="inherit_id" ref="base.view_company_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//page[@string='Configuration']" position="inside">
-                    <separator string="Management System"/>
-                    <field name="risk_computation_id"/>
+                    <group name="mgmtsystem_group" string="Management System">
+                        <field name="risk_computation_id"/>
+                    </group>
                 </xpath>
             </field>
         </record>

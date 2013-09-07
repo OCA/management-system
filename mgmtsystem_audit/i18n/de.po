@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-09-29 21:30+0000\n"
+"POT-Creation-Date: 2013-07-27 19:08+0000\n"
 "PO-Revision-Date: 2012-09-17 10:31+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-04-11 05:29+0000\n"
-"X-Generator: Launchpad (build 16550)\n"
+"X-Launchpad-Export-Date: 2013-07-28 06:32+0000\n"
+"X-Generator: Launchpad (build 16700)\n"
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:0
@@ -69,21 +69,26 @@ msgid "Conformed?"
 msgstr "Eingehalten?"
 
 #. module: mgmtsystem_audit
+#: view:mgmtsystem.nonconformity:0
+#: field:mgmtsystem.nonconformity,audit_ids:0
+msgid "Related Audits"
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
 #: view:mgmtsystem.verification.line:0
 msgid "Verification Lines"
 msgstr "Kontrollpositionen"
 
 #. module: mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: field:mgmtsystem.audit,strong_points:0
-msgid "Strong Points"
-msgstr "Bedeutende Aspekte"
-
-#. module: mgmtsystem_audit
 #: field:mgmtsystem.verification.line,is_conformed:0
 msgid "Is conformed"
 msgstr "Ist Eingehalten"
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,system_id:0
+msgid "System"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_verification_list
@@ -103,12 +108,6 @@ msgid "Auditees"
 msgstr "Geprüfte"
 
 #. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.report:0
-#: report:mgmtsystem.audit.verificationlist:0
-msgid "-"
-msgstr "-"
-
-#. module: mgmtsystem_audit
 #: view:copy.verification.lines:0
 #: model:ir.actions.act_window,name:mgmtsystem_audit.copy_verification_lines_act_window
 #: model:ir.model,name:mgmtsystem_audit.model_copy_verification_lines
@@ -116,9 +115,10 @@ msgid "Copy Verification Lines"
 msgstr "Kopiere Kontrollpositionen"
 
 #. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.report:0
-msgid "."
-msgstr "."
+#: view:mgmtsystem.audit:0
+#: field:mgmtsystem.audit,strong_points:0
+msgid "Strong Points"
+msgstr "Bedeutende Aspekte"
 
 #. module: mgmtsystem_audit
 #: view:copy.verification.lines:0
@@ -131,11 +131,6 @@ msgid "Date"
 msgstr "Datum"
 
 #. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.verificationlist:0
-msgid ":"
-msgstr ":"
-
-#. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.report:0
 #: report:mgmtsystem.audit.verificationlist:0
 msgid "Reference:"
@@ -143,6 +138,7 @@ msgstr "Verweis:"
 
 #. module: mgmtsystem_audit
 #: view:board.board:0
+#: view:mgmtsystem.audit:0
 msgid "Open Audits"
 msgstr "Laufende Prüfungen"
 
@@ -152,6 +148,12 @@ msgstr "Laufende Prüfungen"
 #: field:mgmtsystem.verification.line,audit_id:0
 msgid "Audit"
 msgstr "Prüfung"
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+#: selection:mgmtsystem.audit,state:0
+msgid "Open"
+msgstr "In Bearbeitung"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,name:0
@@ -181,11 +183,6 @@ msgid "Auditees:"
 msgstr "Geprüfte"
 
 #. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.verificationlist:0
-msgid "Yes / No"
-msgstr "Ja / Nein"
-
-#. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.report:0
 msgid "Strong points"
 msgstr "Bedeutende Punkte"
@@ -194,6 +191,11 @@ msgstr "Bedeutende Punkte"
 #: field:mgmtsystem.verification.line,procedure_id:0
 msgid "Procedure"
 msgstr "Ablauf"
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+msgid "Closed Audits"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,reference:0
@@ -212,10 +214,9 @@ msgid "Sequence"
 msgstr "Reihenfolge"
 
 #. module: mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: selection:mgmtsystem.audit,state:0
-msgid "Open"
-msgstr "In Bearbeitung"
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
+msgid "Nonconformity of the management system"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.report:0
@@ -262,3 +263,12 @@ msgstr "Prüfungen"
 #: report:mgmtsystem.audit.verificationlist:0
 msgid "Auditors:"
 msgstr "Prüfer"
+
+#~ msgid "-"
+#~ msgstr "-"
+
+#~ msgid "."
+#~ msgstr "."
+
+#~ msgid "Yes / No"
+#~ msgstr "Ja / Nein"

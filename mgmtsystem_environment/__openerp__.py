@@ -42,9 +42,8 @@ This module enables you to manage your environment management system, including 
         'document_page_environmental_aspect',
 #        'training_hr',
     ],
-    "init_xml" : [],
-    "update_xml" : ['environment.xml'],
-    "demo_xml" : [],
+    "data" : ['environment.xml'],
+    "demo" : [],
     "installable" : True,
     "application" : True,
     "certificate" : ''

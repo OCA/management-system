@@ -38,12 +38,10 @@ This module enables you to manage your quality management system, including :
     "depends" : [
         'mgmtsystem_audit',
         'document_page_quality_manual',
-        'mgmtsystem_manuals',
         'mgmtsystem_review',
     ],
-    "init_xml" : [],
-    "update_xml" : ['quality.xml'],
-    "demo_xml" : [],
+    "data" : ['quality.xml'],
+    "demo" : [],
     "installable" : True,
     "application" : True,
     "certificate" : ''

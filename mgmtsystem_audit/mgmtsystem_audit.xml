@@ -14,6 +14,7 @@
                     <field name="is_conformed"/>
                     <field name="procedure_id"/>
                     <field name="comments"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
                 </tree>
             </field>
         </record>
@@ -30,6 +31,7 @@
                         <field name="procedure_id" domain="[('parent_id','in',['Procedure', 'Environmental Aspect', 'Quality Manual', 'Environment Manual'])]"/>
                         <field name="is_conformed"/>
                         <field name="comments"/>
+                    	<field name="company_id" groups="base.group_multi_company"/>
                     </group>
                 </search>
             </field>
@@ -49,6 +51,7 @@
                         <field name="seq"/>
                         <newline/>
                         <field name="comments"/>
+                    	<field name="company_id" groups="base.group_multi_company"/>
                     </group>
                 </form>
             </field>
@@ -73,6 +76,7 @@
                     <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
                     <field name="reference"/>
                     <field name="system_id"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
                     <!-- Invisible fields below are to allow their use in domains of this view -->
                     <field name="state" invisible="1"/>
                 </tree>
@@ -93,6 +97,7 @@
                         <field name="date"/>
                         <field name="reference"/>
 			<field name="system_id"/>
+                    	<field name="company_id" groups="base.group_multi_company"/>
                     </group>
                 </search>
             </field>
@@ -113,6 +118,7 @@
                             <field name="reference"/>
                             <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
                             <field name="user_id" string="Audit Manager" required="1"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
                             <field name="system_id"/>
                         </group>
                         <notebook colspan="4">
@@ -266,4 +272,3 @@ OpenERP
     </data>
 
 </openerp>
-
