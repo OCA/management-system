@@ -19,6 +19,7 @@
 #
 ##############################################################################
 {
+<<<<<<< b2fef5464e02e345d90a60666de68bf7b7affe15
 <<<<<<< 0fd5d26265e2f6e7d4bd9dfb4a249f5d66986cfb
     "name" : "Management System - Audit",
     "version" : "1.1",
@@ -35,13 +36,18 @@
 >>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
     "category" : "Management System",
 =======
+=======
+>>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
     "name": "Management System - Audit",
     "version": "1.1",
     "author": "Savoir-faire Linux",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
+<<<<<<< b2fef5464e02e345d90a60666de68bf7b7affe15
 >>>>>>> [FIX] PEP8 compliance after running flake8
+=======
+>>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
     "description": """\
 This module enables you to manage audits and verifications lists of your management system.
     """,
