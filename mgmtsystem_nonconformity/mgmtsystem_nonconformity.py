@@ -143,7 +143,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity of the management system"
     _rec_name = "description"
-    _inherit = ['mail.thread']
+    _inherit = ['crm.claim']
     _order = "date desc"
 
     def _state_name(self, cr, uid, ids, name, args, context=None):
@@ -217,20 +217,24 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         self.message_subscribe_users(cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context)
         return super(mgmtsystem_nonconformity, self).message_auto_subscribe(cr, uid, ids, updated_fields=updated_fields, context=context)
 
-    def case_send_note(self, cr, uid, ids, text, context=None):
+    def case_send_note(self, cr, uid, ids, text, data=None, context=None):
         for id in ids:
             pre = self.case_get_note_msg_prefix(cr, uid, id, context=context)
             msg = '%s <b>%s</b>' % (pre, text)
+            if data:
+                o = self.browse(cr, uid, ids, context=context)[0]
+                post = _('\n<br />\n<ul><li> <b>Stage:</b> %s \xe2\x86\x92 %s</li></ul>') % (o.state, data['state'])
+                msg += post
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 
     def wkf_analysis(self, cr, uid, ids, context=None):
         """Change state from draft to analysis"""
-        self.case_send_note(cr, uid, ids, _('Analysis'), context=context)
         data = {
             'state': 'analysis',
             'analysis_date': None,
             'analysis_user_id': None}
+        self.case_send_note(cr, uid, ids, _('Analysis'), data=data, context=context)
         return self.write(cr, uid, ids, data, context=context)
 
     def action_sign_analysis(self, cr, uid, ids, context=None):
@@ -254,11 +258,11 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         if not o.analysis_date:
             err = _('Analysis must be performed before submiting to approval.')
             raise orm.except_orm(_('Error !'), err)
-        self.case_send_note(cr, uid, ids, _('Pending Approval'), context=context)
         vals = {
             'state': 'pending',
             'actions_date': None,
             'actions_user_id': None}
+        self.case_send_note(cr, uid, ids, _('Pending Approval'), data=vals, context=context)
         return self.write(cr, uid, ids, vals, context=context)
 
     def action_sign_actions(self, cr, uid, ids, context=None):
