@@ -102,8 +102,10 @@
                 <form string="Non-Conformity" version="7.0">
                     <header>
                         <button name="button_cancel" string="Cancel" states="draft,analysis,pending,open"/>
-                        <button name="button_analysis" string="Send for Analysis" states="draft,pending" class="oe_highlight"/>
-                        <button name="button_review" string="Send for Review" states="analysis,open" class="oe_highlight"/>
+                        <button name="button_analysis_n" string="Send for Analysis" states="draft" class="oe_highlight"/>
+                        <button name="button_analysis_p" string="Send for Analysis" states="pending"/>
+                        <button name="button_review_n" string="Send for Review" states="analysis" class="oe_highlight"/>
+                        <button name="button_review_p" string="Send for Review" states="open"/>
                         <button name="button_open" string="Start/Open" states="pending" class="oe_highlight"/>
                         <button name="button_close" string="Close" class="oe_highlight"
                             states="open" groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
