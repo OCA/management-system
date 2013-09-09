@@ -44,7 +44,7 @@ class mgmtsystem_nonconformity_cause(orm.Model):
         for record in reads:
             name = record['name']
             if record['parent_id']:
-                name = record['parent_id'][1]+' / '+name
+                name = record['parent_id'][1] + ' / ' + name
             res.append((record['id'], name))
         return res
 
@@ -84,7 +84,7 @@ class mgmtsystem_nonconformity_origin(orm.Model):
         for record in reads:
             name = record['name']
             if record['parent_id']:
-                name = record['parent_id'][1]+' / '+name
+                name = record['parent_id'][1] + ' / ' + name
             res.append((record['id'], name))
         return res
 
@@ -128,7 +128,7 @@ _STATES = [
     ('open', _('In Progress')),
     ('done', _('Closed')),
     ('cancel', _('Cancelled')),
-    ]
+]
 _STATES_DICT = dict(_STATES)
 <<<<<<< b9a32de449f11b9294519ef63ed8a1b78e6eb0f8
 
@@ -210,27 +210,34 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         })
         return super(mgmtsystem_nonconformity, self).create(cr, uid, vals, context)
 
-    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None):
+    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None, values=None):
         """Add the reponsible, manager and OpenChatter follow list."""
         o = self.browse(cr, uid, ids, context=context)[0]
         user_ids = [o.responsible_user_id.id, o.manager_user_id.id, o.author_user_id.id]
         self.message_subscribe_users(cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context)
-        return super(mgmtsystem_nonconformity, self).message_auto_subscribe(cr, uid, ids, updated_fields=updated_fields, context=context)
+        return super(mgmtsystem_nonconformity, self).message_auto_subscribe(cr, uid, ids, updated_fields=updated_fields, context=context, values=values)
 
-    def case_send_note(self, cr, uid, ids, text, context=None):
+    def case_send_note(self, cr, uid, ids, text, data=None, context=None):
         for id in ids:
             pre = self.case_get_note_msg_prefix(cr, uid, id, context=context)
             msg = '%s <b>%s</b>' % (pre, text)
+            if data:
+                o = self.browse(cr, uid, ids, context=context)[0]
+                post = _('\n<br />\n<ul><li> <b>Stage:</b> %s \xe2\x86\x92 %s</li></ul>') % (o.state, data['state'])
+                msg += post
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 
+    def case_get_note_msg_prefix(self, cr, uid, id, context=None):
+        return _('Nonconformity')
+
     def wkf_analysis(self, cr, uid, ids, context=None):
         """Change state from draft to analysis"""
-        self.case_send_note(cr, uid, ids, _('Analysis'), context=context)
         data = {
             'state': 'analysis',
             'analysis_date': None,
             'analysis_user_id': None}
+        self.case_send_note(cr, uid, ids, _('Analysis'), data=data, context=context)
         return self.write(cr, uid, ids, data, context=context)
 
     def action_sign_analysis(self, cr, uid, ids, context=None):
@@ -254,11 +261,11 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         if not o.analysis_date:
             err = _('Analysis must be performed before submiting to approval.')
             raise orm.except_orm(_('Error !'), err)
-        self.case_send_note(cr, uid, ids, _('Pending Approval'), context=context)
         vals = {
             'state': 'pending',
             'actions_date': None,
             'actions_user_id': None}
+        self.case_send_note(cr, uid, ids, _('Pending Approval'), data=vals, context=context)
         return self.write(cr, uid, ids, vals, context=context)
 
     def action_sign_actions(self, cr, uid, ids, context=None):
