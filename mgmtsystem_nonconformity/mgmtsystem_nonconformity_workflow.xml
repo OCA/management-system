@@ -69,14 +69,14 @@
         <record model="workflow.transition" id="mgmtsystem_nonconformity_draft_analysis">
             <field name="act_from" ref="mgmtsystem_nonconformity_draft"/>
             <field name="act_to" ref="mgmtsystem_nonconformity_analysis"/>
-            <field name="signal">button_analysis</field>
+            <field name="signal">button_analysis_n</field>
             <field name="condition">True</field>
         </record>
 
         <record model="workflow.transition" id="mgmtsystem_nonconformity_analysis_pending">
             <field name="act_from" ref="mgmtsystem_nonconformity_analysis"/>
             <field name="act_to" ref="mgmtsystem_nonconformity_pending"/>
-            <field name="signal">button_review</field>
+            <field name="signal">button_review_n</field>
             <field name="condition">True</field>
         </record>
 
@@ -90,14 +90,14 @@
         <record model="workflow.transition" id="mgmtsystem_nonconformity_open_pending">
             <field name="act_from" ref="mgmtsystem_nonconformity_open"/>
             <field name="act_to" ref="mgmtsystem_nonconformity_pending"/>
-            <field name="signal">button_review</field>
+            <field name="signal">button_review_p</field>
             <field name="condition">True</field>
         </record>
 
         <record model="workflow.transition" id="mgmtsystem_nonconformity_pending_analysis">
             <field name="act_from" ref="mgmtsystem_nonconformity_pending"/>
             <field name="act_to" ref="mgmtsystem_nonconformity_analysis"/>
-            <field name="signal">button_analysis</field>
+            <field name="signal">button_analysis_p</field>
             <field name="condition">True</field>
         </record>
 
