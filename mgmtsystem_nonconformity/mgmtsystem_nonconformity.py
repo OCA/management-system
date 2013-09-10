@@ -228,6 +228,10 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 
+    def case_get_note_msg_prefix(self, cr, uid, id, context=None):
+        return _('Nonconformity')
+
+
     def wkf_analysis(self, cr, uid, ids, context=None):
         """Change state from draft to analysis"""
         data = {
