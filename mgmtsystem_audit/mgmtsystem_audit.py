@@ -28,12 +28,13 @@ from urlparse import urljoin
 class mgmtsystem_audit(orm.Model):
     _name = "mgmtsystem.audit"
     _description = "Audit"
-    _inherit = "crm.claim"
+    _inherit = ['mail.thread']
     _columns = {
         'name': fields.char('Name', size=50),
         'reference': fields.char('Reference', size=64, required=True, readonly=True),
         'date': fields.datetime('Date'),
         'line_ids': fields.one2many('mgmtsystem.verification.line', 'audit_id', 'Verification List'),
+        'user_id': fields.many2one('res.users', 'Audit Manager'),
         'auditor_user_ids': fields.many2many('res.users', 'mgmtsystem_auditor_user_rel', 'user_id', 'mgmtsystem_audit_id', 'Auditors'),
         'auditee_user_ids': fields.many2many('res.users', 'mgmtsystem_auditee_user_rel', 'user_id', 'mgmtsystem_audit_id', 'Auditees'),
         'strong_points': fields.text('Strong Points'),
