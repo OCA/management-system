@@ -7,6 +7,7 @@
             <field name="date">2010-12-03</field>
             <field name="strong_points">* Good documentation</field>
             <field name="to_improve_points">* Procedure respect</field>
+            <field name="user_id" ref="base.user_demo"/>
             <field name="auditor_user_ids" eval="[(6,0,[ref('base.user_demo')])]"/>
             <field name="auditee_user_ids" eval="[(6,0,[ref('base.user_root')])]"/>
             <field name="imp_opp_ids" eval="[(6,0,[ref('mgmtsystem_action.demo_improvement')])]"/>
