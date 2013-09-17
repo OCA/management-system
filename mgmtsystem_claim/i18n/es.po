@@ -1,16 +1,16 @@
-# German translation for openerp-mgmtsystem
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# Spanish translation for openerp-mgmtsystem
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the openerp-mgmtsystem package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-07-25 18:17+0000\n"
-"PO-Revision-Date: 2012-09-17 10:44+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German <de@li.org>\n"
+"PO-Revision-Date: 2013-09-01 18:23+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,22 +20,22 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Draft and Open Claims"
-msgstr "Laufende Forderungen und Entwürfe"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Group By..."
-msgstr "Gruppiert nach..."
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Responsibilities"
-msgstr "Zuständigkeiten"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,date_action_next:0
 msgid "Next Action Date"
-msgstr "Datum der nächsten Maßnahme"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.server,message:mgmtsystem_claim.mgmtsystem_claim_server_action
@@ -57,42 +57,26 @@ msgid ""
 "<br />\n"
 "OpenERP"
 msgstr ""
-"Hallo,\n"
-"<br />\n"
-"<br />\n"
-"Eine neue Forderung wurde Ihnen zugewiesen:\n"
-"<br />\n"
-"<a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
-"<br />\n"
-"<br />\n"
-"[[object.description]]\n"
-"<br />\n"
-"<br />\n"
-"Danke für die Beachtung.\n"
-"<br />\n"
-"--\n"
-"<br />\n"
-"Die Verwaltung"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,company_id:0
 msgid "Company"
-msgstr "Unternehmen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,email_cc:0
 msgid "Watchers Emails"
-msgstr "Emails der Beobachter"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
 msgid "Highest"
-msgstr "Höchste"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Add Internal Note"
-msgstr "Interne Notiz hinzufügen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim,section_id:0
@@ -100,72 +84,69 @@ msgid ""
 "Sales team to which Case belongs to.Define Responsible user and Email "
 "account for mail gateway."
 msgstr ""
-"Verantworliches Team im Vertrieb zuständig für den Vorgang. Legen Sie den "
-"verantwortlichen Benutzer sowie die EMail Adresse des EMail Gateways fest, "
-"über das EMails gesendet werden."
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.server,name:mgmtsystem_claim.mgmtsystem_claim_server_action
 msgid "Notify the person in charge of the new claim"
-msgstr "Die zuständige Person über die neue Forderung benachrichtigen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Claim Description"
-msgstr "Forderungsbeschreibung"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,message_ids:0
 msgid "Messages"
-msgstr "Meldungen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,state:0
 msgid "Cancelled"
-msgstr "Abgebrochen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Attachments"
-msgstr "Dateianhänge"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,ref:0
 #: field:mgmtsystem.claim,reference:0
 msgid "Reference"
-msgstr "Bezug"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,action_next:0
 msgid "Next Action"
-msgstr "Nächste Maßnahme"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Reset to Draft"
-msgstr "Zurücksetzen auf Entwurf"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 #: field:mgmtsystem.claim,date_deadline:0
 msgid "Deadline"
-msgstr "Frist"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 #: field:mgmtsystem.claim,partner_id:0
 msgid "Partner"
-msgstr "Partner"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,type_action:0
 msgid "Preventive Action"
-msgstr "Präventivmaßnahme"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Root Causes"
-msgstr "Hauptursachen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,priority:0
@@ -176,103 +157,103 @@ msgstr ""
 #: view:mgmtsystem.claim:0
 #: field:mgmtsystem.claim,state:0
 msgid "State"
-msgstr "Status"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Reply"
-msgstr "Antwort"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Type"
-msgstr "Art"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,email_from:0
 msgid "Email"
-msgstr "EMail"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
 msgid "Lowest"
-msgstr "Niedrigste"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,create_date:0
 msgid "Creation Date"
-msgstr "Erstellungsdatum"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,name:0
 msgid "Claim Subject"
-msgstr "Forderungsinhalt"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:board.board:0
 msgid "Open Claims"
-msgstr "Gegenwärtige Forderungen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "All pending Claims"
-msgstr "Alle laufenden Forderungen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_crm_case_claim-act
 msgid "Categories"
-msgstr "Kategorien"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 #: field:mgmtsystem.claim,stage_id:0
 msgid "Stage"
-msgstr "Stufe"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "History Information"
-msgstr "Verlaufsinformation"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Dates"
-msgstr "Daten"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Contact"
-msgstr "Kontakt"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_crm_claim_stage_act
 msgid "Stages"
-msgstr "Stufen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.module.module,shortdesc:mgmtsystem_claim.module_meta_information
 msgid "Management System - Claim"
-msgstr "Management-System - Forderung"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,type_action:0
 msgid "Action Type"
-msgstr "Maßnahmenart"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,write_date:0
 msgid "Update Date"
-msgstr "Aktualisierungsdatum"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,categ_id:0
 msgid "Category"
-msgstr "Kategorie"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Responsible User"
-msgstr "Verantwortlicher Benutzer"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim,email_cc:0
@@ -281,31 +262,28 @@ msgid ""
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
 msgstr ""
-"Diese Email Anschriften erhalten eine Kopie (CC) aller ein- und ausgehenden "
-"Emails zu diesem Vorgang. Trenne mehrere Email Kopie Empfänger durch eine "
-"Komma separierte Auflistung in diesem Feld."
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,state:0
 msgid "Draft"
-msgstr "Entwurf"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
 msgid "Low"
-msgstr "Niedrig"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,date_closed:0
 #: selection:mgmtsystem.claim,state:0
 msgid "Closed"
-msgstr "Abgeschlossen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 #: selection:mgmtsystem.claim,state:0
 msgid "Pending"
-msgstr "In Bearbeitung"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
@@ -315,12 +293,12 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
 msgid "Normal"
-msgstr "Normal"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Global CC"
-msgstr "Generelle EMail Kopie CC"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,partner_phone:0
@@ -330,18 +308,18 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Closure"
-msgstr "Abschluss"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 #: field:mgmtsystem.claim,date:0
 msgid "Claim Date"
-msgstr "Forderungsdatum"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim,email_from:0
 msgid "These people will receive email."
-msgstr "Diese Personen werden eine E-Mail erhalten."
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.act_window,name:mgmtsystem_claim.mgmtsystem_claim_action
@@ -349,89 +327,89 @@ msgstr "Diese Personen werden eine E-Mail erhalten."
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_mgmtsystem_claims
 #: view:mgmtsystem.claim:0
 msgid "Claims"
-msgstr "Forderungen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,type_action:0
 msgid "Corrective Action"
-msgstr "Korrektivmaßnahme"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,resolution:0
 msgid "Resolution"
-msgstr "Behebung"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "History"
-msgstr "Verlauf"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.model,name:mgmtsystem_claim.model_mgmtsystem_claim
 msgid "Claim"
-msgstr "Forderung"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,partner_address_id:0
 msgid "Partner Contact"
-msgstr "Partnerkontakt"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Send New Email"
-msgstr "Sende neue E-Mail"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Done"
-msgstr "Abgeschlossen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Claim Reporter"
-msgstr "Forderungssteller"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Close"
-msgstr "Abschließen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 #: selection:mgmtsystem.claim,state:0
 msgid "Open"
-msgstr "In Bearbeitung"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Details"
-msgstr "Details"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "In Progress"
-msgstr "In Bearbeitung"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 #: field:mgmtsystem.claim,user_id:0
 msgid "Responsible"
-msgstr "Verantwortlich"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Current"
-msgstr "Aktuell"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Unassigned Claims"
-msgstr "Nicht zugeordnete Forderungen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
@@ -441,27 +419,27 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,cause:0
 msgid "Root Cause"
-msgstr "Hauptursache"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Claim/Action Description"
-msgstr "Beschreibung des Vorgang"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,description:0
 msgid "Description"
-msgstr "Beschreibung"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Search Claims"
-msgstr "Forderungen durchsuchen"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Resolution Actions"
-msgstr "Maßnahmen zur Behebung"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.server,subject:mgmtsystem_claim.mgmtsystem_claim_server_action
@@ -471,7 +449,7 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Follow Up"
-msgstr "Nachverfolgung"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim,state:0
@@ -484,24 +462,16 @@ msgid ""
 "       \n"
 "If the case needs to be reviewed then the state is set to 'Pending'."
 msgstr ""
-"Durch die Erstellung eines neues Vorgangs ist der Status 'Entwurf'           "
-"           \n"
-"Wenn der Fall in Bearbeitung ist, wechselt der Status zu 'In Bearbeitung'.   "
-"                       \n"
-"Wenn der Fall abgeschlossen ist, wechselt der Status auf 'Abgeschlossen'.    "
-"                \n"
-"Wenn der Vorgang in Bearbeitung ist und geprüft werden soll, ist der Status "
-"'Ausstehend' ."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,user_fault:0
 msgid "Trouble Responsible"
-msgstr "Problemzuständigkeit"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "Date Closed"
-msgstr "Abschlußdatum"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,id:0
@@ -516,10 +486,6 @@ msgid ""
 "type and so on). Claims may automatically be linked to an email address "
 "using the mail gateway module."
 msgstr ""
-"Forderungen Ihre externen Teilnehmer aufzeichnen und verfolgen. Sie können "
-"EMails mit Anhängen versenden und den Verlauf einzelner Forderungen belegen "
-"(Versandte EMails, Eingriffe usw.) Forderungen können automatisch, mittels "
-"Mail-Gateway, an eine EMail geknüpft werden."
 
 #. module: mgmtsystem_claim
 #: model:ir.module.module,description:mgmtsystem_claim.module_meta_information
@@ -528,23 +494,18 @@ msgid ""
 "\tThis module enables you to manage the claims of your management system.\n"
 "    "
 msgstr ""
-"\n"
-"\tDieses Modul ermöglicht die Verwaltung von Forderungen Ihres Management-"
-"Systems.\n"
-"========================================================================\n"
-"    "
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
 msgid "High"
-msgstr "Hoch"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,section_id:0
 msgid "Sales Team"
-msgstr "Verkaufsteam"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:0
 msgid "In Progress Claims"
-msgstr "Laufende Forderungen"
+msgstr ""

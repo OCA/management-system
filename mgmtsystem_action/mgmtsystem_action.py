@@ -19,7 +19,11 @@
 #
 ##############################################################################
 
+from tools.translate import _
+from urllib import urlencode
+from urlparse import urljoin
 from openerp.osv import fields, orm
+
 
 
 class mgmtsystem_action(orm.Model):
@@ -33,10 +37,6 @@ class mgmtsystem_action(orm.Model):
                                          ('prevention', 'Preventive Action'),
                                          ('improvement', 'Improvement Opportunity')],
                                         'Response Type'),
-        'message_ids': fields.one2many('mail.message',
-                                       'res_id',
-                                       'Messages',
-                                       domain=[('model', '=', _name)]),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
         'company_id': fields.many2one('res.company', 'Company')
         }
@@ -51,5 +51,26 @@ class mgmtsystem_action(orm.Model):
             'reference': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.action')
         }, context=context)
         return super(mgmtsystem_action, self).create(cr, uid, vals, context=context)
+
+    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None):
+        """Automatically add the responsible user to the follow list."""
+        for o in self.browse(cr, uid, ids, context=context):
+            self.message_subscribe_users(cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None, context=context)
+        return super(mgmtsystem_action, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context)
+
+    def case_close(self, cr, uid, ids, context=None):
+        """When Action is closed, post a message on the related NC's chatter"""
+        for o in self.browse(cr, uid, ids, context=context):
+            for nc in o.nonconformity_ids:
+                nc.case_send_note(_('Action "%s" was closed.' % o.name))
+        return super(mgmtsystem_action, self).case_close(cr, uid, ids, context=context)
+
+    def get_action_url(self, cr, uid, ids, context=None):
+        assert len(ids) == 1
+        action = self.browse(cr, uid, ids[0], context=context)
+        base_url = self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url', default='http://localhost:8069', context=context)
+        query = {'db': cr.dbname}
+        fragment = {'id': action.id, 'model': self._name}
+        return urljoin(base_url, "?%s#%s" % (urlencode(query), urlencode(fragment)))
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -30,9 +30,6 @@ This module adds a menu item "Manual" and is a dependency of:
  * document_page_environment_manual
  * document_page_health_safety_manual
  * mgmtsystem_quality
-
-This module requires the document_page_approval module from
-Knowledge addons project (lp:knowledge-addons).
     """,
     "depends": ['document_page_approval', 'mgmtsystem'],
     "data": ['mgmtsystem_manuals.xml'],
