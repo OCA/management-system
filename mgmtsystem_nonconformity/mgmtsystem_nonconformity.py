@@ -143,7 +143,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity of the management system"
     _rec_name = "description"
-    _inherit = ['crm.claim']
+    _inherit = ['mail.thread']
     _order = "date desc"
 
     def _state_name(self, cr, uid, ids, name, args, context=None):
