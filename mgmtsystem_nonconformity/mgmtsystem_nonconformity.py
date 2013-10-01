@@ -44,7 +44,7 @@ class mgmtsystem_nonconformity_cause(orm.Model):
         for record in reads:
             name = record['name']
             if record['parent_id']:
-                name = record['parent_id'][1]+' / '+name
+                name = record['parent_id'][1] + ' / ' + name
             res.append((record['id'], name))
         return res
 
@@ -84,7 +84,7 @@ class mgmtsystem_nonconformity_origin(orm.Model):
         for record in reads:
             name = record['name']
             if record['parent_id']:
-                name = record['parent_id'][1]+' / '+name
+                name = record['parent_id'][1] + ' / ' + name
             res.append((record['id'], name))
         return res
 
@@ -128,7 +128,7 @@ _STATES = [
     ('open', _('In Progress')),
     ('done', _('Closed')),
     ('cancel', _('Cancelled')),
-    ]
+]
 _STATES_DICT = dict(_STATES)
 <<<<<<< b9a32de449f11b9294519ef63ed8a1b78e6eb0f8
 
@@ -230,7 +230,6 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
 
     def case_get_note_msg_prefix(self, cr, uid, id, context=None):
         return _('Nonconformity')
-
 
     def wkf_analysis(self, cr, uid, ids, context=None):
         """Change state from draft to analysis"""
