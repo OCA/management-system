@@ -25,7 +25,6 @@ from urlparse import urljoin
 from openerp.osv import fields, orm
 
 
-
 class mgmtsystem_action(orm.Model):
     _name = "mgmtsystem.action"
     _description = "Action"
@@ -46,7 +45,7 @@ class mgmtsystem_action(orm.Model):
 >>>>>>> Adapted actions to openchatter, added autosubscribing and action closing posts
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
         'company_id': fields.many2one('res.company', 'Company')
-        }
+    }
 
     _defaults = {
         'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
