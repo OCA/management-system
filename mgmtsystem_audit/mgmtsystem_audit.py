@@ -44,7 +44,7 @@ class mgmtsystem_audit(orm.Model):
         'state': fields.selection([('open', 'Open'), ('done', 'Closed')], 'State'),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
         'company_id': fields.many2one('res.company', 'Company')
-        }
+    }
 
     _defaults = {
         'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
@@ -106,7 +106,7 @@ class mgmtsystem_verification_line(orm.Model):
     }
 =======
         'company_id': fields.many2one('res.company', 'Company')
-        }
+    }
 
 >>>>>>> [IMP] Add company_id in views
     _order = "seq"
