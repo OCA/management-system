@@ -31,7 +31,7 @@ class mgmtsystem_system(orm.Model):
         'name': fields.char('System', size=30, required=True, translate=True),
         'manual': fields.many2one('document.page', 'Manual'),
         'company_id': fields.many2one('res.company', 'Company')
-        }
+    }
 
     _defaults = {
         'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,

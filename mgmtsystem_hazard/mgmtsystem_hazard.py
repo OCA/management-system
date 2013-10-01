@@ -68,7 +68,7 @@ class mgmtsystem_hazard_risk_type(orm.Model):
     _name = "mgmtsystem.hazard.risk.type"
     _description = "Risk type of the hazard"
     _columns = {
-        'name': fields.char('Risk Type', size=50, required=True, 
+        'name': fields.char('Risk Type', size=50, required=True,
                             translate=True),
         'description': fields.text('Description'),
     }
@@ -140,7 +140,7 @@ class mgmtsystem_hazard_control_measure(orm.Model):
         'responsible_user_id': fields.many2one('res.users', 'Responsible',
                                                required=True),
         'comments': fields.text('Comments'),
-        'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard', 
+        'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard',
                                      ondelete='cascade', select=True),
     }
 
@@ -151,7 +151,7 @@ class mgmtsystem_hazard_test(orm.Model):
     _description = "Implementation Tests of hazard"
     _columns = {
         'name': fields.char('Test', size=50, required=True, translate=True),
-        'responsible_user_id': fields.many2one('res.users', 'Responsible', 
+        'responsible_user_id': fields.many2one('res.users', 'Responsible',
                                                required=True),
         'review_date': fields.date('Review Date', required=True),
         'executed': fields.boolean('Executed'),
@@ -171,8 +171,7 @@ class mgmtsystem_hazard_residual_risk(orm.Model):
 
         for obj in self.browse(cr, uid, ids):
             if obj.probability_id and obj.severity_id and obj.usage_id:
-                mycompany = self.pool.get('res.company').
-                    browse(cr, uid, user.company_id.id, context)[0]
+                mycompany = self.pool.get('res.company').browse(cr, uid, user.company_id.id, context)[0]
                 result[obj.id] = _parse_risk_formula(mycompany.risk_computation_id.name,
                                                      obj.probability_id.value,
                                                      obj.severity_id.value,
@@ -233,7 +232,7 @@ class mgmtsystem_hazard(orm.Model):
         'test_ids': fields.one2many('mgmtsystem.hazard.test', 'hazard_id', 'Implementation Tests'),
         'residual_risk_ids': fields.one2many('mgmtsystem.hazard.residual_risk', 'hazard_id', 'Residual Risk Evaluations'),
         'company_id': fields.many2one('res.company', 'Company')
-        }
+    }
 
     _defaults = {
         'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
