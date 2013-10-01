@@ -168,7 +168,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause', 'mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
         'severity_id': fields.many2one('mgmtsystem.nonconformity.severity', 'Severity'),
         'analysis': fields.text('Analysis'),
-        'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action', domain="[('nonconformity_id','=',id)]"),
+        'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action', domain="[('nonconformity_id', '=', id)]"),
         'analysis_date': fields.datetime('Analysis Date', readonly=True),
         'analysis_user_id': fields.many2one('res.users', 'Analysis by', readonly=True),
         #3. Action Plan

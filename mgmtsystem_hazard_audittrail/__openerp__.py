@@ -26,7 +26,7 @@
     "license": "AGPL-3",
     "category": "Management System",
     "description": """\
-Adds rule to track changes to Management System Hazards, if Audit Trail module 
+Adds rule to track changes to Management System Hazards, if Audit Trail module
 is installed.
 """,
     "depends": ['mgmtsystem_hazard', 'audittrail'],

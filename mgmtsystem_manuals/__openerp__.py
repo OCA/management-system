@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -19,23 +19,22 @@
 #
 ##############################################################################
 {
-    "name" : "Management System - Manual",
-    "version" : "1.1",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Management System",
+    "name": "Management System - Manual",
+    "version": "1.1",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
     "description": """
 This module adds a menu item "Manual" and is a dependency of:
  * document_page_environment_manual
  * document_page_health_safety_manual
  * mgmtsystem_quality
     """,
-    "depends" : ['document_page', 'mgmtsystem'],
-    "data" : ['mgmtsystem_manuals.xml'],
-    "demo" : [],
-    "installable" : True,
-    "certificate" : ''
+    "depends": ['document_page_approval', 'mgmtsystem'],
+    "data": ['mgmtsystem_manuals.xml'],
+    "demo": [],
+    "installable": True,
+    "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-

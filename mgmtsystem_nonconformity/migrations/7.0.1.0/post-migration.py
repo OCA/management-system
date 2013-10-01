@@ -19,8 +19,6 @@
 #
 ##############################################################################
 
-import os
-from osv import osv
 import logging
 
 logger = logging.getLogger('upgrade')
@@ -36,7 +34,7 @@ def migrate(cr, version):
             cr.execute("insert into mgmtsystem_nonconformity_action_rel"
                        "(nonconformity_id, action_id) "
                        "(SELECT id, %s FROM "
-                       " mgmtsystem_nonconformity "
+                       "mgmtsystem_nonconformity "
                        "WHERE %s IS NOT NULL )" % (action_field, action_field))
     else:
         logger.warning("Attempt to migrate nonconformity action IDs failed: migration was already done.")

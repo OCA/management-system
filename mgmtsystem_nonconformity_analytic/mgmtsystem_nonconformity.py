@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    Copyright (C) 2012 Daniel Reis
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,7 @@
 ##############################################################################
 
 from openerp.osv import fields, orm
+
 
 class mgmtsystem_nonconformity(orm.Model):
     _inherit = "mgmtsystem.nonconformity"

@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,17 +15,18 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 from openerp.osv import fields, orm
-import time
+
 
 def _parse_risk_formula(formula, a, b, c):
     """Calculate the risk replacing the variables A, B, C into the formula."""
     f = formula.replace('A', str(a)).replace('B', str(b)).replace('C', str(c))
     return eval(f)
+
 
 class mgmtsystem_hazard_type(orm.Model):
 
@@ -54,21 +55,25 @@ class res_company(orm.Model):
     }
 
     def _get_formula(self, cr, uid, context=None):
-        ids = self.pool.get('mgmtsystem.hazard.risk.computation').search(cr,uid,[('name','=','A * B * C')], context=context)
+        ids = self.pool.get('mgmtsystem.hazard.risk.computation').
+        search(cr, uid, [('name', '=', 'A * B * C')], context=context)
         return ids and ids[0] or False
 
     _defaults = {
         'risk_computation_id': _get_formula
     }
 
+
 class mgmtsystem_hazard_risk_type(orm.Model):
 
     _name = "mgmtsystem.hazard.risk.type"
     _description = "Risk type of the hazard"
     _columns = {
-        'name': fields.char('Risk Type', size=50, required=True, translate=True),
+        'name': fields.char('Risk Type', size=50, required=True, 
+                            translate=True),
         'description': fields.text('Description'),
     }
+
 
 class mgmtsystem_hazard_origin(orm.Model):
 
@@ -79,6 +84,7 @@ class mgmtsystem_hazard_origin(orm.Model):
         'description': fields.text('Description')
     }
 
+
 class mgmtsystem_hazard_hazard(orm.Model):
 
     _name = "mgmtsystem.hazard.hazard"
@@ -88,46 +94,57 @@ class mgmtsystem_hazard_hazard(orm.Model):
         'description': fields.text('Description'),
     }
 
+
 class mgmtsystem_hazard_probability(orm.Model):
 
     _name = "mgmtsystem.hazard.probability"
     _description = "Probability of hazard"
     _columns = {
-        'name': fields.char('Probability', size=50, required=True, translate=True),
+        'name': fields.char('Probability', size=50, required=True,
+                            translate=True),
         'value': fields.integer('Value', required=True),
         'description': fields.text('Description')
     }
+
 
 class mgmtsystem_hazard_severity(orm.Model):
 
     _name = "mgmtsystem.hazard.severity"
     _description = "Severity of hazard"
     _columns = {
-        'name': fields.char('Severity', size=50, required=True, translate=True),
+        'name': fields.char('Severity', size=50, required=True,
+                            translate=True),
         'value': fields.integer('Value', required=True),
         'description': fields.text('Description')
     }
+
 
 class mgmtsystem_hazard_usage(orm.Model):
 
     _name = "mgmtsystem.hazard.usage"
     _description = "Usage of hazard"
     _columns = {
-        'name': fields.char('Occupation / Usage', size=50, required=True, translate=True),
+        'name': fields.char('Occupation / Usage', size=50, required=True,
+                            translate=True),
         'value': fields.integer('Value', required=True),
         'description': fields.text('Description')
     }
+
 
 class mgmtsystem_hazard_control_measure(orm.Model):
 
     _name = "mgmtsystem.hazard.control_measure"
     _description = "Control Measure of hazard"
     _columns = {
-        'name': fields.char('Control Measure', size=50, required=True, translate=True),
-        'responsible_user_id': fields.many2one('res.users','Responsible', required=True),
+        'name': fields.char('Control Measure', size=50, required=True,
+                            translate=True),
+        'responsible_user_id': fields.many2one('res.users', 'Responsible',
+                                               required=True),
         'comments': fields.text('Comments'),
-	'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard', ondelete='cascade', select=True),
+        'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard', 
+                                     ondelete='cascade', select=True),
     }
+
 
 class mgmtsystem_hazard_test(orm.Model):
 
@@ -135,11 +152,14 @@ class mgmtsystem_hazard_test(orm.Model):
     _description = "Implementation Tests of hazard"
     _columns = {
         'name': fields.char('Test', size=50, required=True, translate=True),
-        'responsible_user_id': fields.many2one('res.users','Responsible', required=True),
+        'responsible_user_id': fields.many2one('res.users', 'Responsible', 
+                                               required=True),
         'review_date': fields.date('Review Date', required=True),
         'executed': fields.boolean('Executed'),
-	'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard', ondelete='cascade', select=True),
+        'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard',
+                                     ondelete='cascade', select=True),
     }
+
 
 class mgmtsystem_hazard_residual_risk(orm.Model):
 
@@ -152,7 +172,8 @@ class mgmtsystem_hazard_residual_risk(orm.Model):
 
         for obj in self.browse(cr, uid, ids):
             if obj.probability_id and obj.severity_id and obj.usage_id:
-                mycompany = self.pool.get('res.company').browse(cr, uid, user.company_id.id, context)[0]
+                mycompany = self.pool.get('res.company').
+                    browse(cr, uid, user.company_id.id, context)[0]
                 result[obj.id] = _parse_risk_formula(mycompany.risk_computation_id.name,
                                                      obj.probability_id.value,
                                                      obj.severity_id.value,
@@ -161,17 +182,18 @@ class mgmtsystem_hazard_residual_risk(orm.Model):
                 result[obj.id] = False
 
         return result
-    
+
     _columns = {
         'name': fields.char('Name', size=50, required=True, translate=True),
-        'probability_id': fields.many2one('mgmtsystem.hazard.probability','Probability', required=True),
-        'severity_id': fields.many2one('mgmtsystem.hazard.severity','Severity', required=True),
-        'usage_id': fields.many2one('mgmtsystem.hazard.usage','Occupation / Usage'),
-	    'risk': fields.function(_compute_risk,string='Risk',type='integer'),
+        'probability_id': fields.many2one('mgmtsystem.hazard.probability', 'Probability', required=True),
+        'severity_id': fields.many2one('mgmtsystem.hazard.severity', 'Severity', required=True),
+        'usage_id': fields.many2one('mgmtsystem.hazard.usage', 'Occupation / Usage'),
+        'risk': fields.function(_compute_risk, string='Risk', type='integer'),
         'acceptability': fields.boolean('Acceptability'),
         'justification': fields.text('Justification'),
-	    'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard', ondelete='cascade', select=True),
+        'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard', ondelete='cascade', select=True),
     }
+
 
 class mgmtsystem_hazard(orm.Model):
 
@@ -195,22 +217,22 @@ class mgmtsystem_hazard(orm.Model):
 
     _columns = {
         'name': fields.char('Name', size=50, required=True, translate=True),
-	'type_id': fields.many2one('mgmtsystem.hazard.type', 'Type', required=True),	
-        'hazard_id': fields.many2one('mgmtsystem.hazard.hazard','Hazard', required=True),
-	'risk_type_id': fields.many2one('mgmtsystem.hazard.risk.type', 'Risk Type', required=True),	
-	'origin_id': fields.many2one('mgmtsystem.hazard.origin', 'Origin', required=True),	
-	'department_id': fields.many2one('hr.department', 'Department', required=True),	
-        'responsible_user_id': fields.many2one('res.users','Responsible', required=True),
+        'type_id': fields.many2one('mgmtsystem.hazard.type', 'Type', required=True),
+        'hazard_id': fields.many2one('mgmtsystem.hazard.hazard', 'Hazard', required=True),
+        'risk_type_id': fields.many2one('mgmtsystem.hazard.risk.type', 'Risk Type', required=True),
+        'origin_id': fields.many2one('mgmtsystem.hazard.origin', 'Origin', required=True),
+        'department_id': fields.many2one('hr.department', 'Department', required=True),
+        'responsible_user_id': fields.many2one('res.users', 'Responsible', required=True),
         'analysis_date': fields.date('Date', required=True),
-        'probability_id': fields.many2one('mgmtsystem.hazard.probability','Probability'),
-        'severity_id': fields.many2one('mgmtsystem.hazard.severity','Severity'),
-        'usage_id': fields.many2one('mgmtsystem.hazard.usage','Occupation / Usage'),
-	'risk': fields.function(_compute_risk,string='Risk',type='integer'),
+        'probability_id': fields.many2one('mgmtsystem.hazard.probability', 'Probability'),
+        'severity_id': fields.many2one('mgmtsystem.hazard.severity', 'Severity'),
+        'usage_id': fields.many2one('mgmtsystem.hazard.usage', 'Occupation / Usage'),
+        'risk': fields.function(_compute_risk, string='Risk', type='integer'),
         'acceptability': fields.boolean('Acceptability'),
         'justification': fields.text('Justification'),
-	'control_measure_ids': fields.one2many('mgmtsystem.hazard.control_measure','hazard_id','Control Measures'),
-	'test_ids': fields.one2many('mgmtsystem.hazard.test','hazard_id','Implementation Tests'),
-	'residual_risk_ids': fields.one2many('mgmtsystem.hazard.residual_risk','hazard_id','Residual Risk Evaluations'),
+        'control_measure_ids': fields.one2many('mgmtsystem.hazard.control_measure', 'hazard_id', 'Control Measures'),
+        'test_ids': fields.one2many('mgmtsystem.hazard.test', 'hazard_id', 'Implementation Tests'),
+        'residual_risk_ids': fields.one2many('mgmtsystem.hazard.residual_risk', 'hazard_id', 'Residual Risk Evaluations'),
         'company_id': fields.many2one('res.company', 'Company')
         }
 

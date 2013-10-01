@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -19,12 +19,12 @@
 #
 ##############################################################################
 {
-    "name" : "Environment Management System",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Management System",
+    "name": "Environment Management System",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
     "description": """\
 This module enables you to manage your environment management system, including :
             * Environment Manual
@@ -35,18 +35,17 @@ This module enables you to manage your environment management system, including 
             * Actions
             * Employee Training
     """,
-    "depends" : [
+    "depends": [
         'mgmtsystem_audit',
         'mgmtsystem_review',
         'document_page_environment_manual',
         'document_page_environmental_aspect',
-#        'training_hr',
+        # 'training_hr',
     ],
-    "data" : ['environment.xml'],
-    "demo" : [],
-    "installable" : True,
-    "application" : True,
-    "certificate" : ''
+    "data": ['environment.xml'],
+    "demo": [],
+    "installable": True,
+    "application": True,
+    "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-

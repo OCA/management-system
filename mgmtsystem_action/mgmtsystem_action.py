@@ -23,7 +23,7 @@ from tools.translate import _
 from urllib import urlencode
 from urlparse import urljoin
 from openerp.osv import fields, orm
-from crm import crm
+
 
 
 class mgmtsystem_action(orm.Model):

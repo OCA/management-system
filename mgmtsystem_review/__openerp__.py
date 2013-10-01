@@ -19,29 +19,28 @@
 #
 ##############################################################################
 {
-    "name" : "Management System - Review",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
-    "category" : "Management System",
+    "name": "Management System - Review",
+    "version": "1.0",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
     "description": """\
 This module enables you to manage reviews of your management system.
     """,
-    "depends" : [
+    "depends": [
         'mgmtsystem_nonconformity',
         'mgmtsystem_survey',
     ],
-    "data" : [
+    "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_review_security.xml',
         'review_sequence.xml',
         'mgmtsystem_review.xml',
         'report/review_report.xml',
     ],
-    "demo" : [],
-    "installable" : True,
-    "certificate" : ''
+    "demo": [],
+    "installable": True,
+    "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-

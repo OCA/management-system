@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    Copyright (C) 2012 Daniel Reis
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -20,11 +20,12 @@
 
 from openerp.osv import fields, orm
 
+
 class mgmtsystem_nonconformity(orm.Model):
     _inherit = "mgmtsystem.nonconformity"
     _columns = {
         'department_id': fields.many2one('hr.department', 'Department', required=True),
-        'superior_user_id': fields.many2one('res.users','Top Manager', required=True),
+        'superior_user_id': fields.many2one('res.users', 'Top Manager', required=True),
     }
 
     def onchange_department_id(self, cr, uid, ids, new_id, context=None):

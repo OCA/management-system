@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    Copyright (C) 2012 Daniel Reis
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -18,15 +18,14 @@
 #
 ##############################################################################
 {
-    "name" : "Management System Nonconformity - Department",
-    "version" : "1.0",
-    "author" : "Daniel Reis",
-    "category" : "Management System",
+    "name": "Management System Nonconformity - Department",
+    "version": "1.0",
+    "author": "Daniel Reis",
+    "category": "Management System",
     "description": """Add Department to Non Conformities""",
-    "depends" : ['mgmtsystem_nonconformity', 'hr'],
-    "init" : [],
-    "data" : ['mgmtsystem_nonconformity.xml'],
-    "installable" : True,
+    "depends": ['mgmtsystem_nonconformity', 'hr'],
+    "init": [],
+    "data": ['mgmtsystem_nonconformity.xml'],
+    "installable": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-

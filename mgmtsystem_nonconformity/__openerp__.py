@@ -29,7 +29,8 @@
 This module enables you to manage the nonconformities of your management
 system: quality (ISO9001), environment (ISO14001) or security (ISO27001).
 
-WARNING: when upgrading from v0.1, data conversion is required, since there are subtancial changes to the data structure.
+WARNING: when upgrading from v0.1, data conversion is required, since there are subtantial
+changes to the data structure.
     """,
     "depends": [
         'mgmtsystem_action',
