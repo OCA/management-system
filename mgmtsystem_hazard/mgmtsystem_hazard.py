@@ -55,8 +55,7 @@ class res_company(orm.Model):
     }
 
     def _get_formula(self, cr, uid, context=None):
-        ids = self.pool.get('mgmtsystem.hazard.risk.computation').
-        search(cr, uid, [('name', '=', 'A * B * C')], context=context)
+        ids = self.pool.get('mgmtsystem.hazard.risk.computation').search(cr, uid, [('name', '=', 'A * B * C')], context=context)
         return ids and ids[0] or False
 
     _defaults = {
