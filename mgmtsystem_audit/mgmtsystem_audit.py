@@ -44,7 +44,7 @@ class mgmtsystem_audit(orm.Model):
         'state': fields.selection([('open', 'Open'), ('done', 'Closed')], 'State'),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
         'company_id': fields.many2one('res.company', 'Company')
-        }
+    }
 
     _defaults = {
         'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
@@ -96,7 +96,7 @@ class mgmtsystem_verification_line(orm.Model):
         'comments': fields.text('Comments'),
         'seq': fields.integer('Sequence'),
         'company_id': fields.many2one('res.company', 'Company')
-        }
+    }
 
     _order = "seq"
     _defaults = {
