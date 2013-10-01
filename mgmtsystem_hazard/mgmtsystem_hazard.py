@@ -233,7 +233,7 @@ class mgmtsystem_hazard(orm.Model):
         'test_ids': fields.one2many('mgmtsystem.hazard.test', 'hazard_id', 'Implementation Tests'),
         'residual_risk_ids': fields.one2many('mgmtsystem.hazard.residual_risk', 'hazard_id', 'Residual Risk Evaluations'),
         'company_id': fields.many2one('res.company', 'Company')
-        }
+    }
 
     _defaults = {
         'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
