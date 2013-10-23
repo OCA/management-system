@@ -22,7 +22,7 @@ from openupgrade import openupgrade
 from openupgrade.openupgrade import logged_query
 
 
-def post_migrate_quality_manual_category(cr, version):
+def pre_migrate_quality_manual_category(cr, version):
     logged_query(cr, """\
 UPDATE document_page
 SET parent_id = (SELECT id FROM document_page WHERE name = 'Manuals' LIMIT 1),
@@ -37,6 +37,6 @@ WHERE name = 'Quality Manual' AND type = 'category';""", [version])
 
 @openupgrade.migrate()
 def migrate(cr, version):
-    post_migrate_quality_manual_category(cr, version)
+    pre_migrate_quality_manual_category(cr, version)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
