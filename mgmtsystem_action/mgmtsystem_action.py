@@ -58,11 +58,11 @@ class mgmtsystem_action(orm.Model):
         }, context=context)
         return super(mgmtsystem_action, self).create(cr, uid, vals, context=context)
 
-    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None):
+    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None, values=None):
         """Automatically add the responsible user to the follow list."""
         for o in self.browse(cr, uid, ids, context=context):
             self.message_subscribe_users(cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None, context=context)
-        return super(mgmtsystem_action, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context)
+        return super(mgmtsystem_action, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context, values=values)
 
     def case_close(self, cr, uid, ids, context=None):
         """When Action is closed, post a message on the related NC's chatter"""
