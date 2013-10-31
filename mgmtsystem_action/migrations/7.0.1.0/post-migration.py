@@ -22,19 +22,34 @@ from openerp.openupgrade import openupgrade
 
 
 def migrate_stage_id(cr):
-    openupgrade.logged_query(cr, """UPDATE mgmtsystem_action SET stage_id = NULL""")
-    for i in [('draft', 'New', 'lead'), ('open', 'Accepted as Claim', 'claim'), ]:
-        openupgrade.logged_query(cr, """
-            UPDATE mgmtsystem_action AS a
-            SET stage_id = (SELECT id
-                            FROM crm_claim_stage
-                            WHERE state = %s
-                            LIMIT 1)
-            WHERE a.openupgrade_legacy_7_0_stage_id = (SELECT id
-                                                       FROM crm_case_stage
-                                                       WHERE name = %s
-                                                         AND type = %s
-                                                       LIMIT 1)""", i)
+    stage_states = [
+        ('draft', 'New'),
+        ("open", "Accepted as Claim"),
+        ("open", "Actions Defined"),
+        ("open", "Qualification"),
+        ("open", "Proposition"),
+        ("open", "Negotiation"),
+        ("done", "Actions Done"),
+        ("done", "Won"),
+        ("done", "Dead"),
+        ("cancel", "Won't fix"),
+        ("cancel", "Lost"),
+    ]
+    openupgrade.logged_query(cr, """
+        UPDATE mgmtsystem_action
+        SET stage_id = NULL""")
+    legacy_stage_name = openupgrade.get_legacy_name("stage_id")
+    query = """
+        UPDATE mgmtsystem_action
+        SET stage_id = (SELECT id
+                        FROM crm_claim_stage
+                        WHERE state = %%s
+                        LIMIT 1)
+        WHERE %s IN (SELECT id
+                     FROM crm_case_stage
+                     WHERE name = %%s)""" % legacy_stage_name
+    for i in stage_states:
+        openupgrade.logged_query(cr, query, i)
 
 
 @openupgrade.migrate()
