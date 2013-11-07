@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+##############################################################################
 #
 #    OpenERP, Open Source Management Solution
 #    This module copyright (C) 2013 Savoir-faire Linux
@@ -17,8 +18,27 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+##############################################################################
 
-from openerp.openupgrade import openupgrade
+try:
+    from openupgrade.openupgrade import get_legacy_name
+    from openupgrade.openupgrade import logged_query
+except ImportError:
+    from openerp import release
+    import logging
+    logger = logging.getLogger('upgrade')
+
+    def get_legacy_name(original_name):
+        return 'legacy_' + ('_').join(
+            map(str, release.version_info[0:2])) + '_' + original_name
+
+    def logged_query(cr, query, args=None):
+        if args is None:
+            args = []
+        res = cr.execute(query, args)
+        logger.debug('Running %s', query % tuple(args))
+        logger.debug('%s rows affected', cr.rowcount)
+        return cr.rowcount
 
 
 def migrate_stage_id(cr):
@@ -35,10 +55,10 @@ def migrate_stage_id(cr):
         ("cancel", "Won't fix"),
         ("cancel", "Lost"),
     ]
-    openupgrade.logged_query(cr, """
+    logged_query(cr, """
         UPDATE mgmtsystem_action
         SET stage_id = NULL""")
-    legacy_stage_name = openupgrade.get_legacy_name("stage_id")
+    legacy_stage_name = get_legacy_name("stage_id")
     query = """
         UPDATE mgmtsystem_action
         SET stage_id = (SELECT id
@@ -49,10 +69,9 @@ def migrate_stage_id(cr):
                      FROM crm_case_stage
                      WHERE name = %%s)""" % legacy_stage_name
     for i in stage_states:
-        openupgrade.logged_query(cr, query, i)
+        logged_query(cr, query, i)
 
 
-@openupgrade.migrate()
 def migrate(cr, version):
     migrate_stage_id(cr)
 
