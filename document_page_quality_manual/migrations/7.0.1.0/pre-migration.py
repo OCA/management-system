@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+##############################################################################
 #
 #    OpenERP, Open Source Management Solution
 #    This module copyright (C) 2013 Savoir-faire Linux
@@ -17,9 +18,21 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+##############################################################################
 
-from openupgrade import openupgrade
-from openupgrade.openupgrade import logged_query
+try:
+    from openupgrade.openupgrade import logged_query
+except ImportError:
+    import logging
+    logger = logging.getLogger('upgrade')
+
+    def logged_query(cr, query, args=None):
+        if args is None:
+            args = []
+        res = cr.execute(query, args)
+        logger.debug('Running %s', query % tuple(args))
+        logger.debug('%s rows affected', cr.rowcount)
+        return cr.rowcount
 
 
 def pre_migrate_quality_manual_category(cr, version):
@@ -35,7 +48,6 @@ SET name = name || ' (' || %s || ')'
 WHERE name = 'Quality Manual' AND type = 'category';""", [version])
 
 
-@openupgrade.migrate()
 def migrate(cr, version):
     pre_migrate_quality_manual_category(cr, version)
 
