@@ -56,21 +56,21 @@ class mgmtsystem_audit(orm.Model):
         vals.update({
             'reference': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.audit')
         })
-        return super(mgmtsystem_audit, self).create(cr, uid, vals, context)
+        return super(mgmtsystem_audit, self).create(cr, uid, vals, context=context)
 
     def button_close(self, cr, uid, ids, context=None):
         """When Audit is closed, post a message to followers' chatter."""
         self.message_post(cr, uid, ids, _("Audit closed"), context=context)
         return self.write(cr, uid, ids, {'state': 'done'})
 
-    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None):
+    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None, values=None):
         """Automatically add the Auditors, Auditees and Audit Manager to the follow list"""
         for o in self.browse(cr, uid, ids, context=context):
             user_ids = [o.user_id.id]
             user_ids += [a.id for a in o.auditor_user_ids]
             user_ids += [a.id for a in o.auditee_user_ids]
             self.message_subscribe_users(cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context)
-        return super(mgmtsystem_audit, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context)
+        return super(mgmtsystem_audit, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context, values=values)
 
     def get_audit_url(self, cr, uid, ids, context=None):
         """
