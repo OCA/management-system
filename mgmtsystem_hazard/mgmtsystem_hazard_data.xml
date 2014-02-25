@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-    <data>
+    <data noupdate="1">
 
         <!-- hazard hazard -->
 
-        <record id="hazard_spilling" model="mgmtsystem.hazard.hazard">
+        <record id="hazard_spilling" model="mgmtsystem.hazard.hazard" forcecreate="0">
             <field name="name">Spilling</field>
         </record>
 
-        <record id="hazard_fire_explosion" model="mgmtsystem.hazard.hazard">
+        <record id="hazard_fire_explosion" model="mgmtsystem.hazard.hazard" forcecreate="0">
             <field name="name">Fire / Explosion</field>
         </record>
 
-        <record id="hazard_intoxication" model="mgmtsystem.hazard.hazard">
+        <record id="hazard_intoxication" model="mgmtsystem.hazard.hazard" forcecreate="0">
             <field name="name">Intoxication</field>
         </record>
 
-        <record id="hazard_breakage" model="mgmtsystem.hazard.hazard">
+        <record id="hazard_breakage" model="mgmtsystem.hazard.hazard" forcecreate="0">
             <field name="name">Breakage</field>
         </record>
 
-        <record id="hazard_electric_bilge" model="mgmtsystem.hazard.hazard">
+        <record id="hazard_electric_bilge" model="mgmtsystem.hazard.hazard" forcecreate="0">
             <field name="name">Electric Bilge</field>
         </record>
 
         <!-- origin -->
 
-        <record id="origin_ignition_gas" model="mgmtsystem.hazard.origin">
+        <record id="origin_ignition_gas" model="mgmtsystem.hazard.origin" forcecreate="0">
             <field name="name">Ignition of Flammable Gas</field>
         </record>
 
-        <record id="origin_panic" model="mgmtsystem.hazard.origin">
+        <record id="origin_panic" model="mgmtsystem.hazard.origin" forcecreate="0">
             <field name="name">Panic</field>
         </record>
 
-        <record id="origin_exposure" model="mgmtsystem.hazard.origin">
+        <record id="origin_exposure" model="mgmtsystem.hazard.origin" forcecreate="0">
             <field name="name">Exposure to Hazardous Materials</field>
         </record>
 
-        <record id="origin_containment" model="mgmtsystem.hazard.origin">
+        <record id="origin_containment" model="mgmtsystem.hazard.origin" forcecreate="0">
             <field name="name">Containment Failure</field>
         </record>
 
-        <record id="origin_leak" model="mgmtsystem.hazard.origin">
+        <record id="origin_leak" model="mgmtsystem.hazard.origin" forcecreate="0">
             <field name="name">Gas Leak</field>
         </record>
 
-        <record id="origin_aging" model="mgmtsystem.hazard.origin">
+        <record id="origin_aging" model="mgmtsystem.hazard.origin" forcecreate="0">
             <field name="name">Materials Aging</field>
         </record>
 
@@ -102,19 +102,19 @@
 
         <!-- risk_type -->
 
-        <record id="risk_type_physical" model="mgmtsystem.hazard.risk.type">
+        <record id="risk_type_physical" model="mgmtsystem.hazard.risk.type" forcecreate="0">
             <field name="name">Physical</field>
         </record>
 
-        <record id="risk_type_chemical" model="mgmtsystem.hazard.risk.type">
+        <record id="risk_type_chemical" model="mgmtsystem.hazard.risk.type" forcecreate="0">
             <field name="name">Chemical</field>
         </record>
 
-        <record id="risk_type_fire" model="mgmtsystem.hazard.risk.type">
+        <record id="risk_type_fire" model="mgmtsystem.hazard.risk.type" forcecreate="0">
             <field name="name">Fire</field>
         </record>
 
-        <record id="risk_type_environment" model="mgmtsystem.hazard.risk.type">
+        <record id="risk_type_environment" model="mgmtsystem.hazard.risk.type" forcecreate="0">
             <field name="name">Environment</field>
         </record>
 
