@@ -59,6 +59,14 @@ def migrate_stage_id(cr):
         UPDATE mgmtsystem_action
         SET stage_id = NULL""")
     legacy_stage_name = get_legacy_name("stage_id")
+    # Check if the column exists
+    logged_query(cr, """
+        SELECT column_name
+        FROM information_schema.columns
+        WHERE table_name = 'mgmtsystem_action'
+          AND column_name = %s""", legacy_stage_name)
+    if not cr.fetchall():
+        return
     query = """
         UPDATE mgmtsystem_action
         SET stage_id = (SELECT id
