@@ -20,25 +20,21 @@
 #
 ##############################################################################
 
-try:
-    from openupgrade.openupgrade import get_legacy_name
-    from openupgrade.openupgrade import logged_query
-except ImportError:
-    from openerp import release
-    import logging
-    logger = logging.getLogger('upgrade')
+from openerp import release
+import logging
+logger = logging.getLogger('upgrade')
 
-    def get_legacy_name(original_name):
-        return 'legacy_' + ('_').join(
-            map(str, release.version_info[0:2])) + '_' + original_name
+def get_legacy_name(original_name):
+    return 'legacy_' + ('_').join(
+        map(str, release.version_info[0:2])) + '_' + original_name
 
-    def logged_query(cr, query, args=None):
-        if args is None:
-            args = []
-        res = cr.execute(query, args)
-        logger.debug('Running %s', query % tuple(args))
-        logger.debug('%s rows affected', cr.rowcount)
-        return cr.rowcount
+def logged_query(cr, query, args=None):
+    if args is None:
+        args = []
+    cr.execute(query, args)
+    logger.debug('Running %s', query % tuple(args))
+    logger.debug('%s rows affected', cr.rowcount)
+    return cr.rowcount
 
 
 def migrate_stage_id(cr):

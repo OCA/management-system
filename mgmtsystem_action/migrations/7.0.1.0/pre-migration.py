@@ -20,26 +20,23 @@
 #
 ##############################################################################
 
-try:
-    from openupgrade.openupgrade import rename_columns
-except ImportError:
-    from openerp import release
-    import logging
-    logger = logging.getLogger('upgrade')
+from openerp import release
+import logging
+logger = logging.getLogger('upgrade')
 
-    def get_legacy_name(original_name):
-        return 'legacy_' + ('_').join(
-            map(str, release.version_info[0:2])) + '_' + original_name
+def get_legacy_name(original_name):
+    return 'legacy_' + ('_').join(
+        map(str, release.version_info[0:2])) + '_' + original_name
 
-    def rename_columns(cr, column_spec):
-        for table in column_spec.keys():
-            for (old, new) in column_spec[table]:
-                if new is None:
-                    new = get_legacy_name(old)
-                logger.info("table %s, column %s: renaming to %s",
-                            table, old, new)
-                cr.execute('ALTER TABLE "%s" RENAME "%s" TO "%s"' % (table, old, new,))
-                cr.execute('DROP INDEX IF EXISTS "%s_%s_index"' % (table, old))
+def rename_columns(cr, column_spec):
+    for table in column_spec.keys():
+        for (old, new) in column_spec[table]:
+            if new is None:
+                new = get_legacy_name(old)
+            logger.info("table %s, column %s: renaming to %s",
+                        table, old, new)
+            cr.execute('ALTER TABLE "%s" RENAME "%s" TO "%s"' % (table, old, new,))
+            cr.execute('DROP INDEX IF EXISTS "%s_%s_index"' % (table, old))
 
 
 column_renames = {
