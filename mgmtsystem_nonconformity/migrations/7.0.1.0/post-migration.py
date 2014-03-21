@@ -20,32 +20,66 @@
 ##############################################################################
 
 import logging
-
 logger = logging.getLogger('upgrade')
+
+def logged_query(cr, query, args=None):
+    if args is None:
+        args = []
+    res = cr.execute(query, args)
+    logger.debug('Running %s', query % tuple(args))
+    logger.debug('%s rows affected', cr.rowcount)
+    return cr.rowcount
+
+
+def migrate_nonconformity_action_ids(cr, column_names):
+    logged_query(cr,  """
+        SELECT COUNT(*)
+        FROM mgmtsystem_nonconformity_action_rel""")
+    if cr.fetchone()[0] > 0:
+        logger.warning(
+            "Attempt to migrate nonconformity action IDs failed: migration was already done.")
+        return
+    logger.info(
+        "Moving nonconformity/action relations to mgmtsystem_nonconformity_action_rel")
+    logged_query(cr, """
+        SELECT column_name
+        FROM information_schema.columns
+        WHERE table_name = 'mgmtsystem_nonconformity'""")
+    action_fields = ['preventive_action_id', 'immediate_action_id', 'corrective_action_id']
+    available_fields = [i for i in action_fields if i in column_names]
+    for action_field in available_fields:
+        logged_query(cr,  """
+            INSERT INTO mgmtsystem_nonconformity_action_rel (nonconformity_id, action_id)
+            (SELECT id, %s action_id FROM mgmtsystem_nonconformity
+             WHERE %s IS NOT NULL);""" % (action_field, action_field))
+
+
+def concatenate_action_comments(cr, column_names):
+    logger.info("Concatenating action comments into evaluation_comments")
+    action_fields = ['effectiveness_preventive', 'effectiveness_immediate', 'effectiveness_corrective']
+    concatenation = " || ' ' || ".join([i for i in action_fields if i in column_names])
+    if concatenation:
+        logged_query(cr,  """
+            UPDATE mgmtsystem_nonconformity
+            SET evaluation_comments = %s
+            WHERE evaluation_comments IS NULL;""" % concatenation)
+
+
+def update_state_flags(cr):
+    logger.info("Updating state flags")
+    for i in [('open', 'o'), ('done', 'c')]:
+        logged_query(cr,  """
+            UPDATE mgmtsystem_nonconformity
+            SET state = %s
+            WHERE state = %s;""", i)
 
 
 def migrate(cr, version):
-    logger.info("Migrating mgmtsystem_nonconformity from version %s", version)
-    cr.execute("select count(*) from mgmtsystem_nonconformity_action_rel")
-    rowcount = cr.fetchone()[0]
-    if rowcount == 0:
-        logger.info("Moving nonconformity/action relations to mgmtsystem_nonconformity_action_rel")
-        for action_field in ('preventive_action_id', 'immediate_action_id', 'corrective_action_id'):
-            cr.execute("insert into mgmtsystem_nonconformity_action_rel"
-                       "(nonconformity_id, action_id) "
-                       "(SELECT id, %s FROM "
-                       "mgmtsystem_nonconformity "
-                       "WHERE %s IS NOT NULL )" % (action_field, action_field))
-    else:
-        logger.warning("Attempt to migrate nonconformity action IDs failed: migration was already done.")
-
-    logger.info("Concatening action comments into evaluation_comments")
-    cr.execute("update mgmtsystem_nonconformity set evaluation_comments = "
-               "effectiveness_preventive || ' ' || effectiveness_immediate || ' ' || effectiveness_corrective "
-               "where evaluation_comments is null")
-
-    logger.info("Updating state flags")
-    cr.execute("update mgmtsystem_nonconformity set state = 'open' where state = 'o'")
-    cr.execute("update mgmtsystem_nonconformity set state = 'done' where state = 'c'")
-
-    logger.info("mgmtsystem_nonconformity update... done!")
+    logged_query(cr, """
+        SELECT column_name
+        FROM information_schema.columns
+        WHERE table_name = 'mgmtsystem_nonconformity'""")
+    column_names = (i[0] for i in cr.fetchall())
+    migrate_nonconformity_action_ids(cr, column_names)
+    concatenate_action_comments(cr, column_names)
+    update_state_flags(cr)
