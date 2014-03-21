@@ -24,9 +24,11 @@ from openerp import release
 import logging
 logger = logging.getLogger('upgrade')
 
+
 def get_legacy_name(original_name):
     return 'legacy_' + ('_').join(
         map(str, release.version_info[0:2])) + '_' + original_name
+
 
 def logged_query(cr, query, args=None):
     if args is None:
@@ -60,7 +62,7 @@ def migrate_stage_id(cr):
         SELECT column_name
         FROM information_schema.columns
         WHERE table_name = 'mgmtsystem_action'
-          AND column_name = %s""", legacy_stage_name)
+          AND column_name = %s""", [legacy_stage_name])
     if not cr.fetchall():
         return
     query = """
