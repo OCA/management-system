@@ -43,6 +43,6 @@ class mgmtsystem_nonconformity(orm.Model):
         o = self.browse(cr, uid, ids, context=context)[0]
         user_ids = [o.superior_user_id.id]
         self.message_subscribe_users(cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context)
-        return super(mgmtsystem_nonconformity, self).message_auto_subscribe(cr, uid, ids, updated_fields=updated_fields, context=context, values=values)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+        return super(mgmtsystem_nonconformity, self).message_auto_subscribe(
+            cr, uid, ids, updated_fields=updated_fields, context=context, values=values
+        )

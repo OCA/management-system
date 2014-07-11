@@ -55,7 +55,9 @@ class mgmtsystem_action(orm.Model):
         """Automatically add the responsible user to the follow list."""
         for o in self.browse(cr, uid, ids, context=context):
             self.message_subscribe_users(cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None, context=context)
-        return super(mgmtsystem_action, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context, values=values)
+        return super(mgmtsystem_action, self).message_auto_subscribe(
+            cr, uid, ids, updated_fields, context=context, values=values
+        )
 
     def case_close(self, cr, uid, ids, context=None):
         """When Action is closed, post a message on the related NC's chatter"""
@@ -67,9 +69,9 @@ class mgmtsystem_action(orm.Model):
     def get_action_url(self, cr, uid, ids, context=None):
         assert len(ids) == 1
         action = self.browse(cr, uid, ids[0], context=context)
-        base_url = self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url', default='http://localhost:8069', context=context)
+        base_url = self.pool.get('ir.config_parameter').get_param(
+            cr, uid, 'web.base.url', default='http://localhost:8069', context=context,
+        )
         query = {'db': cr.dbname}
         fragment = {'id': action.id, 'model': self._name}
         return urljoin(base_url, "?%s#%s" % (urlencode(query), urlencode(fragment)))
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

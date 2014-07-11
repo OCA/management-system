@@ -57,7 +57,7 @@ As an approving user, go to the newly created NC and fill in the following infor
 in the tab named Causes and Analysis:
 
 * Causes: Add root causes
-* Analysis: Describe the result of the investigation 
+* Analysis: Describe the result of the investigation
 * Severity: Select the severity among unfounded, minor and major
 * Immediate action: Create or select an immediate action if appropriate
 
@@ -71,7 +71,7 @@ In the Actions tab, select or create new actions by entering the following items
 * Type: Immediate, corrective or preventive actions or improvement opportunity
 * Description: Details of the action
 
-When the action is created, a notification is sent to the person responsible for the action. 
+When the action is created, a notification is sent to the person responsible for the action.
 
 When the action plan is reviewed (comments) and approved, each action of the plan is opened.
 

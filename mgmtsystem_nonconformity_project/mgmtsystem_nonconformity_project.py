@@ -32,7 +32,7 @@ class mgmtsystem_action(orm.Model):
         return res
 
     _columns = {
-        #Remark - upgrade from v0.1 requires data conversion:
+        # Remark - upgrade from v0.1 requires data conversion:
         #  * deprecated fields: corrective_type, corrective_project_id, preventive_type, preventive_project_id
         #  * 1 action => 1 correction action + 1 prevention action
         'action_type': fields.selection([('action', 'Action'), ('project', 'Project')], 'Action Type', required=True),

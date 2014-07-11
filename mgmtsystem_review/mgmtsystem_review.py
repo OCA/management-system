@@ -29,8 +29,14 @@ class mgmtsystem_review(orm.Model):
         'name': fields.char('Name', size=50, required=True),
         'reference': fields.char('Reference', size=64, required=True, readonly=True),
         'date': fields.datetime('Date', required=True),
-        'user_ids': fields.many2many('res.users', 'mgmtsystem_review_user_rel', 'user_id', 'mgmtsystem_review_id', 'Participants'),
-        'response_ids': fields.many2many('survey.response', 'mgmtsystem_review_response_rel', 'response_id', 'mgmtsystem_review_id', 'Survey Answers'),
+        'user_ids': fields.many2many(
+            'res.users', 'mgmtsystem_review_user_rel',
+            'user_id', 'mgmtsystem_review_id', 'Participants',
+        ),
+        'response_ids': fields.many2many(
+            'survey.response', 'mgmtsystem_review_response_rel',
+            'response_id', 'mgmtsystem_review_id', 'Survey Answers',
+        ),
         'policy': fields.text('Policy'),
         'changes': fields.text('Changes'),
         'line_ids': fields.one2many('mgmtsystem.review.line', 'review_id', 'Lines'),

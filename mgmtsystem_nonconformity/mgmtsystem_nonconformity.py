@@ -53,7 +53,9 @@ class mgmtsystem_nonconformity_cause(orm.Model):
         return dict(res)
 
     def _check_recursion(self, cr, uid, ids, context=None, parent=None):
-        return super(mgmtsystem_nonconformity_cause, self)._check_recursion(cr, uid, ids, context=context, parent=parent)
+        return super(mgmtsystem_nonconformity_cause, self)._check_recursion(
+            cr, uid, ids, context=context, parent=parent
+        )
 
     _columns = {
         'id': fields.integer('ID', readonly=True),
@@ -93,7 +95,9 @@ class mgmtsystem_nonconformity_origin(orm.Model):
         return dict(res)
 
     def _check_recursion(self, cr, uid, ids, context=None, parent=None):
-        return super(mgmtsystem_nonconformity_origin, self)._check_recursion(cr, uid, ids, context=context, parent=parent)
+        return super(mgmtsystem_nonconformity_origin, self)._check_recursion(
+            cr, uid, ids, context=context, parent=parent
+        )
 
     _columns = {
         'id': fields.integer('ID', readonly=True),
@@ -149,7 +153,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         return res
 
     _columns = {
-        #1. Description
+        # 1. Description
         'id': fields.integer('ID', readonly=True),
         'ref': fields.char('Reference', size=64, required=True, readonly=True),
         'date': fields.date('Date', required=True),
@@ -158,28 +162,44 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         'responsible_user_id': fields.many2one('res.users', 'Responsible', required=True),
         'manager_user_id': fields.many2one('res.users', 'Manager', required=True),
         'author_user_id': fields.many2one('res.users', 'Filled in by', required=True),
-        'origin_ids': fields.many2many('mgmtsystem.nonconformity.origin', 'mgmtsystem_nonconformity_origin_rel', 'nonconformity_id', 'origin_id', 'Origin', required=True),
-        'procedure_ids': fields.many2many('document.page', 'mgmtsystem_nonconformity_procedure_rel', 'nonconformity_id', 'procedure_id', 'Procedure'),
+        'origin_ids': fields.many2many(
+            'mgmtsystem.nonconformity.origin',
+            'mgmtsystem_nonconformity_origin_rel',
+            'nonconformity_id',
+            'origin_id', 'Origin', required=True,
+        ),
+        'procedure_ids': fields.many2many(
+            'document.page', 'mgmtsystem_nonconformity_procedure_rel',
+            'nonconformity_id', 'procedure_id', 'Procedure'
+        ),
         'description': fields.text('Description', required=True),
         'state': fields.selection(_STATES, 'State', readonly=True),
         'state_name': fields.function(_state_name, string='State Description', type='char', size=40),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
-        #2. Root Cause Analysis
-        'cause_ids': fields.many2many('mgmtsystem.nonconformity.cause', 'mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
+        # 2. Root Cause Analysis
+        'cause_ids': fields.many2many(
+            'mgmtsystem.nonconformity.cause',
+            'mgmtsystem_nonconformity_cause_rel', 'nonconformity_id', 'cause_id', 'Cause'),
         'severity_id': fields.many2one('mgmtsystem.nonconformity.severity', 'Severity'),
         'analysis': fields.text('Analysis'),
-        'immediate_action_id': fields.many2one('mgmtsystem.action', 'Immediate action', domain="[('nonconformity_id', '=', id)]"),
+        'immediate_action_id': fields.many2one(
+            'mgmtsystem.action', 'Immediate action', domain="[('nonconformity_id', '=', id)]",
+        ),
         'analysis_date': fields.datetime('Analysis Date', readonly=True),
         'analysis_user_id': fields.many2one('res.users', 'Analysis by', readonly=True),
-        #3. Action Plan
-        'action_ids': fields.many2many('mgmtsystem.action', 'mgmtsystem_nonconformity_action_rel', 'nonconformity_id', 'action_id', 'Actions'),
+        # 3. Action Plan
+        'action_ids': fields.many2many(
+            'mgmtsystem.action', 'mgmtsystem_nonconformity_action_rel', 'nonconformity_id', 'action_id', 'Actions'
+        ),
         'actions_date': fields.datetime('Action Plan Date', readonly=True),
         'actions_user_id': fields.many2one('res.users', 'Action Plan by', readonly=True),
         'action_comments': fields.text('Action Plan Comments', help="Comments on the action plan."),
-        #4. Effectiveness Evaluation
+        # 4. Effectiveness Evaluation
         'evaluation_date': fields.datetime('Evaluation Date', readonly=True),
         'evaluation_user_id': fields.many2one('res.users', 'Evaluation by', readonly=True),
-        'evaluation_comments': fields.text('Evaluation Comments', help="Conclusions from the last effectiveness evaluation."),
+        'evaluation_comments': fields.text(
+            'Evaluation Comments', help="Conclusions from the last effectiveness evaluation."
+        ),
         # Multi-company
         'company_id': fields.many2one('res.company', 'Company'),
     }
@@ -203,7 +223,9 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         o = self.browse(cr, uid, ids, context=context)[0]
         user_ids = [o.responsible_user_id.id, o.manager_user_id.id, o.author_user_id.id]
         self.message_subscribe_users(cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context)
-        return super(mgmtsystem_nonconformity, self).message_auto_subscribe(cr, uid, ids, updated_fields=updated_fields, context=context, values=values)
+        return super(mgmtsystem_nonconformity, self).message_auto_subscribe(
+            cr, uid, ids, updated_fields=updated_fields, context=context, values=values
+        )
 
     def case_send_note(self, cr, uid, ids, text, data=None, context=None):
         for id in ids:
@@ -277,13 +299,17 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         if not o.actions_date:
             raise orm.except_orm(_('Error !'), _('Action plan must be approved before opening.'))
         self.case_open_send_note(cr, uid, ids, context=context)
-        #Open related Actions
+        # Open related Actions
         if o.immediate_action_id and o.immediate_action_id.state == 'draft':
             o.immediate_action_id.case_open()
         for a in o.action_ids:
             if a.state == 'draft':
                 a.case_open()
-        return self.write(cr, uid, ids, {'state': 'open', 'evaluation_date': None, 'evaluation_user_id': None}, context=context)
+        return self.write(cr, uid, ids, {
+            'state': 'open',
+            'evaluation_date': None,
+            'evaluation_user_id': None,
+        }, context=context)
 
     def action_sign_evaluation(self, cr, uid, ids, context=None):
         """Sign-off the effectiveness evaluation"""
@@ -333,7 +359,10 @@ class mgmtsystem_action(orm.Model):
     _inherit = "mgmtsystem.action"
     _columns = {
         'nonconformity_immediate_id': fields.one2many('mgmtsystem.nonconformity', 'immediate_action_id', readonly=True),
-        'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity', 'mgmtsystem_nonconformity_action_rel', 'action_id', 'nonconformity_id', 'Nonconformities', readonly=True),
+        'nonconformity_ids': fields.many2many(
+            'mgmtsystem.nonconformity', 'mgmtsystem_nonconformity_action_rel',
+            'action_id', 'nonconformity_id', 'Nonconformities', readonly=True,
+        ),
     }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
