@@ -23,10 +23,11 @@
 import logging
 logger = logging.getLogger('upgrade')
 
+
 def logged_query(cr, query, args=None):
     if args is None:
         args = []
-    res = cr.execute(query, args)
+    cr.execute(query, args)
     logger.debug('Running %s', query % tuple(args))
     logger.debug('%s rows affected', cr.rowcount)
     return cr.rowcount
@@ -56,7 +57,7 @@ WHERE id = (SELECT id FROM document_page
 
 
 def migrate(cr, version):
+    if version is None:
+        return
     post_migrate_category(cr, version, 'Procedure')
     post_migrate_category(cr, version, 'Work Instructions')
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

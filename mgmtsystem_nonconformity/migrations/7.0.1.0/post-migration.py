@@ -22,10 +22,11 @@
 import logging
 logger = logging.getLogger('upgrade')
 
+
 def logged_query(cr, query, args=None):
     if args is None:
         args = []
-    res = cr.execute(query, args)
+    cr.execute(query, args)
     logger.debug('Running %s', query % tuple(args))
     logger.debug('%s rows affected', cr.rowcount)
     return cr.rowcount
@@ -75,6 +76,8 @@ def update_state_flags(cr):
 
 
 def migrate(cr, version):
+    if version is None:
+        return
     logged_query(cr, """
         SELECT column_name
         FROM information_schema.columns
