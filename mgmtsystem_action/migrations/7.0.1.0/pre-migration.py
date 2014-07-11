@@ -24,9 +24,11 @@ from openerp import release
 import logging
 logger = logging.getLogger('upgrade')
 
+
 def get_legacy_name(original_name):
     return 'legacy_' + ('_').join(
         map(str, release.version_info[0:2])) + '_' + original_name
+
 
 def rename_columns(cr, column_spec):
     for table in column_spec.keys():
@@ -47,6 +49,6 @@ column_renames = {
 
 
 def migrate(cr, version):
+    if version is None:
+        return
     rename_columns(cr, column_renames)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
