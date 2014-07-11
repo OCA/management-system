@@ -79,6 +79,6 @@ def migrate_stage_id(cr):
 
 
 def migrate(cr, version):
+    if version is None:
+        return
     migrate_stage_id(cr)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

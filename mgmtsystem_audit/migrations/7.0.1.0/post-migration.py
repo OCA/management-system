@@ -25,6 +25,8 @@ logger = logging.getLogger('upgrade')
 
 
 def migrate(cr, version):
+    if version is None:
+        return
     logger.info("Migrating mgmtsystem_audit from version %s", version)
     logger.info("Updating state flags")
     cr.execute("update mgmtsystem_audit set state = 'open' where state = 'o'")

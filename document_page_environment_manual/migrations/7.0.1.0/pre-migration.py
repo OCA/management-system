@@ -23,10 +23,11 @@
 import logging
 logger = logging.getLogger('upgrade')
 
+
 def logged_query(cr, query, args=None):
     if args is None:
         args = []
-    res = cr.execute(query, args)
+    cr.execute(query, args)
     logger.debug('Running %s', query % tuple(args))
     logger.debug('%s rows affected', cr.rowcount)
     return cr.rowcount
@@ -46,6 +47,6 @@ WHERE name = 'Environment Manual' AND type = 'category';""", [version])
 
 
 def migrate(cr, version):
+    if version is None:
+        return
     pre_migrate_environment_manual_category(cr, version)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
