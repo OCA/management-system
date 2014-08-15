@@ -55,7 +55,9 @@ class res_company(orm.Model):
     }
 
     def _get_formula(self, cr, uid, context=None):
-        ids = self.pool.get('mgmtsystem.hazard.risk.computation').search(cr, uid, [('name', '=', 'A * B * C')], context=context)
+        ids = self.pool.get('mgmtsystem.hazard.risk.computation').search(
+            cr, uid, [('name', '=', 'A * B * C')], context=context
+        )
         return ids and ids[0] or False
 
     _defaults = {
@@ -230,12 +232,12 @@ class mgmtsystem_hazard(orm.Model):
         'justification': fields.text('Justification'),
         'control_measure_ids': fields.one2many('mgmtsystem.hazard.control_measure', 'hazard_id', 'Control Measures'),
         'test_ids': fields.one2many('mgmtsystem.hazard.test', 'hazard_id', 'Implementation Tests'),
-        'residual_risk_ids': fields.one2many('mgmtsystem.hazard.residual_risk', 'hazard_id', 'Residual Risk Evaluations'),
+        'residual_risk_ids': fields.one2many(
+            'mgmtsystem.hazard.residual_risk', 'hazard_id', 'Residual Risk Evaluations',
+        ),
         'company_id': fields.many2one('res.company', 'Company')
     }
 
     _defaults = {
         'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
     }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

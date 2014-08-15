@@ -138,18 +138,31 @@ class mgmtsystem_kpi_threshold_range(orm.Model):
         'name': fields.char('Name', size=50, required=True),
         'valid': fields.function(_is_valid_range, string='Valid', type='boolean', required=True),
         'invalid_message': fields.function(_generate_invalid_message, string='Message', type='char', size=100),
-        'min_type': fields.selection((('static', 'Fixed value'), ('python', 'Python Code'), ('local', 'SQL - Local DB'), ('external', 'SQL - Externa DB')), 'Min Type', required=True),
+        'min_type': fields.selection((
+            ('static', 'Fixed value'),
+            ('python', 'Python Code'),
+            ('local', 'SQL - Local DB'),
+            ('external', 'SQL - Externa DB'),
+        ), 'Min Type', required=True),
         'min_value': fields.function(compute_min_value, string='Minimum', type='float'),
         'min_fixed_value': fields.float('Minimum'),
         'min_code': fields.text('Minimum Computation Code'),
         'min_dbsource_id': fields.many2one('base.external.dbsource', 'External DB Source'),
-        'max_type': fields.selection((('static', 'Fixed value'), ('python', 'Python Code'), ('local', 'SQL - Local DB'), ('external', 'SQL - External DB')), 'Max Type', required=True),
+        'max_type': fields.selection((
+            ('static', 'Fixed value'),
+            ('python', 'Python Code'),
+            ('local', 'SQL - Local DB'),
+            ('external', 'SQL - External DB'),
+        ), 'Max Type', required=True),
         'max_value': fields.function(compute_max_value, string='Maximum', type='float'),
         'max_fixed_value': fields.float('Maximum'),
         'max_code': fields.text('Maximum Computation Code'),
         'max_dbsource_id': fields.many2one('base.external.dbsource', 'External DB Source'),
         'color': fields.char('Color', help='RGB code with #', size=7, required=True),
-        'threshold_ids': fields.many2many('mgmtsystem.kpi.threshold', 'mgmtsystem_kpi_threshold_range_rel', 'range_id', 'threshold_id', 'Thresholds'),
+        'threshold_ids': fields.many2many(
+            'mgmtsystem.kpi.threshold', 'mgmtsystem_kpi_threshold_range_rel',
+            'range_id', 'threshold_id', 'Thresholds',
+        ),
         'company_id': fields.many2one('res.company', 'Company')
     }
 
@@ -194,7 +207,13 @@ class mgmtsystem_kpi_threshold(orm.Model):
 
     _columns = {
         'name': fields.char('Name', size=50, required=True),
-        'range_ids': fields.many2many('mgmtsystem.kpi.threshold.range', 'mgmtsystem_kpi_threshold_range_rel', 'threshold_id', 'range_id', 'Ranges'),
+        'range_ids': fields.many2many(
+            'mgmtsystem.kpi.threshold.range',
+            'mgmtsystem_kpi_threshold_range_rel',
+            'threshold_id',
+            'range_id',
+            'Ranges'
+        ),
         'valid': fields.function(_is_valid_threshold, string='Valid', type='boolean', required=True),
         'invalid_message': fields.function(_generate_invalid_message, string='Message', type='char', size=100),
         'kpi_ids': fields.one2many('mgmtsystem.kpi', 'threshold_id', 'KPIs'),
@@ -219,7 +238,10 @@ class mgmtsystem_kpi_threshold(orm.Model):
                 range_obj2 = range_obj2.browse(cr, uid, range2, context)
                 if range_obj1.valid and range_obj2.valid and range_obj1.min_value < range_obj2.min_value:
                     if range_obj1.max_value > range_obj2.min_value:
-                        raise osv.except_osv(_("2 of your ranges are overlapping!"), _("Please make sure your ranges do not overlap!"))
+                        raise osv.except_osv(
+                            _("2 of your ranges are overlapping!"),
+                            _("Please make sure your ranges do not overlap!")
+                        )
                 range_obj2 = self.pool.get('mgmtsystem.kpi.threshold.range')
             range_obj1 = self.pool.get('mgmtsystem.kpi.threshold.range')
         return super(mgmtsystem_kpi_threshold, self).create(cr, uid, data, context)
@@ -341,7 +363,13 @@ class mgmtsystem_kpi(orm.Model):
         if context is None:
             context = {}
         if not ids:
-            filters = ['&', '|', ('active', '=', True), ('next_execution_date', '<=', datetime.now().strftime('%Y-%m-%d %H:%M:%S')), ('next_execution_date', '=', False)]
+            filters = [
+                '&',
+                '|',
+                ('active', '=', True),
+                ('next_execution_date', '<=', datetime.now().strftime('%Y-%m-%d %H:%M:%S')),
+                ('next_execution_date', '=', False),
+            ]
             if 'filters' in context:
                 filters.extend(context['filters'])
             ids = self.search(cr, uid, filters, context=context)
@@ -361,14 +389,29 @@ class mgmtsystem_kpi(orm.Model):
         'category_id': fields.many2one('mgmtsystem.kpi.category', 'Category', required=True),
         'threshold_id': fields.many2one('mgmtsystem.kpi.threshold', 'Threshold', required=True),
         'periodicity': fields.integer('Periodicity'),
-        'periodicity_uom': fields.selection((('hour', 'Hour'), ('day', 'Day'), ('week', 'Week'), ('month', 'Month')), 'Periodicity UoM', required=True),
+        'periodicity_uom': fields.selection((
+            ('hour', 'Hour'),
+            ('day', 'Day'),
+            ('week', 'Week'),
+            ('month', 'Month')
+        ), 'Periodicity UoM', required=True),
         'next_execution_date': fields.datetime('Next execution date', readonly=True),
         'value': fields.function(_display_last_kpi_value, string='Value', type='float'),
-        'kpi_type': fields.selection((('python', 'Python'), ('local', 'SQL - Local DB'), ('external', 'SQL - External DB')), 'KPI Computation Type'),
+        'kpi_type': fields.selection((
+            ('python', 'Python'),
+            ('local', 'SQL - Local DB'),
+            ('external', 'SQL - External DB')
+        ), 'KPI Computation Type'),
         'dbsource_id': fields.many2one('base.external.dbsource', 'External DB Source'),
-        'kpi_code': fields.text('KPI Code', help='SQL code must return the result as \'value\' (i.e. \'SELECT 5 AS value\').'),
+        'kpi_code': fields.text(
+            'KPI Code',
+            help='SQL code must return the result as \'value\' (i.e. \'SELECT 5 AS value\').'
+        ),
         'history_ids': fields.one2many('mgmtsystem.kpi.history', 'kpi_id', 'History'),
-        'active': fields.boolean('Active', help="Only active KPIs will be updated by the scheduler based on the periodicity configuration."),
+        'active': fields.boolean(
+            'Active',
+            help="Only active KPIs will be updated by the scheduler based on the periodicity configuration."
+        ),
         'company_id': fields.many2one('res.company', 'Company')
     }
 
@@ -378,5 +421,3 @@ class mgmtsystem_kpi(orm.Model):
         'periodicity': 1,
         'periodicity_uom': 'day',
     }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
