@@ -26,7 +26,8 @@
     "license": "AGPL-3",
     "category": "Management System",
     "description": """\
-This module enables you to manage your health and safety management system, including :
+This module enables you to manage your health and safety management system,
+including :
             * Hazards
             * Equipments
             * Employee Training

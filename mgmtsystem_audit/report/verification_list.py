@@ -25,7 +25,9 @@ from report import report_sxw
 
 class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
-        super(mgmtsystem_audit_verification_list, self).__init__(cr, uid, name, context)
+        super(mgmtsystem_audit_verification_list, self).__init__(
+            cr, uid, name, context
+        )
         self.localcontext.update({
             'time': time,
             'get_lines_by_procedure': self.get_lines_by_procedure,
@@ -35,7 +37,9 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
     def get_lines_by_procedure(self, verification_lines):
         p = []
         for l in verification_lines:
-            proc_nm = self.pool.get('document.page').read(self.cr, self.uid, l.procedure_id.id, ['name'])
+            proc_nm = self.pool.get('document.page').read(
+                self.cr, self.uid, l.procedure_id.id, ['name']
+            )
             p.append({"id": l.id,
                       "procedure": proc_nm['name'],
                       "name": l.name,

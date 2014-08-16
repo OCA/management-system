@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#    Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -38,27 +38,39 @@ def migrate_nonconformity_action_ids(cr, column_names):
         FROM mgmtsystem_nonconformity_action_rel""")
     if cr.fetchone()[0] > 0:
         logger.warning(
-            "Attempt to migrate nonconformity action IDs failed: migration was already done.")
+            "Attempt to migrate nonconformity action IDs failed: migration "
+            "was already done.")
         return
     logger.info(
-        "Moving nonconformity/action relations to mgmtsystem_nonconformity_action_rel")
+        "Moving nonconformity/action relations to "
+        "mgmtsystem_nonconformity_action_rel")
     logged_query(cr, """
         SELECT column_name
         FROM information_schema.columns
         WHERE table_name = 'mgmtsystem_nonconformity'""")
-    action_fields = ['preventive_action_id', 'immediate_action_id', 'corrective_action_id']
+    action_fields = [
+        'preventive_action_id',
+        'immediate_action_id',
+        'corrective_action_id',
+    ]
     available_fields = [i for i in action_fields if i in column_names]
     for action_field in available_fields:
         logged_query(cr,  """
-            INSERT INTO mgmtsystem_nonconformity_action_rel (nonconformity_id, action_id)
-            (SELECT id, %s action_id FROM mgmtsystem_nonconformity
-             WHERE %s IS NOT NULL);""" % (action_field, action_field))
+INSERT INTO mgmtsystem_nonconformity_action_rel (nonconformity_id, action_id)
+(SELECT id, %s action_id FROM mgmtsystem_nonconformity
+WHERE %s IS NOT NULL);""" % (action_field, action_field))
 
 
 def concatenate_action_comments(cr, column_names):
     logger.info("Concatenating action comments into evaluation_comments")
-    action_fields = ['effectiveness_preventive', 'effectiveness_immediate', 'effectiveness_corrective']
-    concatenation = " || ' ' || ".join([i for i in action_fields if i in column_names])
+    action_fields = [
+        'effectiveness_preventive',
+        'effectiveness_immediate',
+        'effectiveness_corrective',
+    ]
+    concatenation = " || ' ' || ".join([
+        i for i in action_fields if i in column_names]
+    )
     if concatenation:
         logged_query(cr,  """
             UPDATE mgmtsystem_nonconformity

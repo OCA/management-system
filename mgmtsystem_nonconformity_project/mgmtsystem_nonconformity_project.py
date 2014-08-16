@@ -33,11 +33,24 @@ class mgmtsystem_action(orm.Model):
 
     _columns = {
         # Remark - upgrade from v0.1 requires data conversion:
-        #  * deprecated fields: corrective_type, corrective_project_id, preventive_type, preventive_project_id
+        #  * deprecated fields: corrective_type, corrective_project_id,
+        #                       preventive_type, preventive_project_id
         #  * 1 action => 1 correction action + 1 prevention action
-        'action_type': fields.selection([('action', 'Action'), ('project', 'Project')], 'Action Type', required=True),
+        'action_type': fields.selection(
+            [
+                ('action', 'Action'),
+                ('project', 'Project'),
+            ],
+            'Action Type',
+            required=True,
+        ),
         'project_id': fields.many2one('project.project', 'Project'),
-        'complete_name': fields.function(_complete_name, string='Complete Name', type='char', size=250),
+        'complete_name': fields.function(
+            _complete_name,
+            string='Complete Name',
+            type='char',
+            size=250,
+        ),
         'name': fields.char('Claim Subject', size=128),
     }
     _defaults = {
@@ -57,7 +70,8 @@ class mgmtsystem_action(orm.Model):
 
     def _init_install(self, cr, uid):
         """Initialize current data in inherited modules."""
-        cr.execute("update mgmtsystem_action set action_type='action' where action_type is null")
+        cr.execute("""\
+UPDATE mgmtsystem_action SET action_type='action'
+WHERE action_type IS null
+""")
         return True
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

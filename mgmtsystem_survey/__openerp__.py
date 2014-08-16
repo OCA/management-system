@@ -25,11 +25,12 @@
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """This module enables you to manage your satisfaction surveys and its answers.""",
+    "description": """\
+This module enables you to manage your satisfaction surveys and its answers.
+""",
     "depends": ['survey'],
     "data": ['mgmtsystem_survey.xml'],
     "demo": [],
     "installable": True,
     "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

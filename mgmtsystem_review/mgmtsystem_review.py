@@ -27,33 +27,57 @@ class mgmtsystem_review(orm.Model):
     _description = "Review"
     _columns = {
         'name': fields.char('Name', size=50, required=True),
-        'reference': fields.char('Reference', size=64, required=True, readonly=True),
+        'reference': fields.char(
+            'Reference',
+            size=64,
+            required=True,
+            readonly=True,
+        ),
         'date': fields.datetime('Date', required=True),
         'user_ids': fields.many2many(
-            'res.users', 'mgmtsystem_review_user_rel',
-            'user_id', 'mgmtsystem_review_id', 'Participants',
+            'res.users',
+            'mgmtsystem_review_user_rel',
+            'user_id',
+            'mgmtsystem_review_id',
+            'Participants',
         ),
         'response_ids': fields.many2many(
-            'survey.response', 'mgmtsystem_review_response_rel',
-            'response_id', 'mgmtsystem_review_id', 'Survey Answers',
+            'survey.response',
+            'mgmtsystem_review_response_rel',
+            'response_id',
+            'mgmtsystem_review_id',
+            'Survey Answers',
         ),
         'policy': fields.text('Policy'),
         'changes': fields.text('Changes'),
-        'line_ids': fields.one2many('mgmtsystem.review.line', 'review_id', 'Lines'),
+        'line_ids': fields.one2many(
+            'mgmtsystem.review.line',
+            'review_id',
+            'Lines',
+        ),
         'conclusion': fields.text('Conclusion'),
-        'state': fields.selection([('open', 'Open'), ('done', 'Closed')], 'State'),
+        'state': fields.selection(
+            [
+                ('open', 'Open'),
+                ('done', 'Closed'),
+            ],
+            'State',
+        ),
         'company_id': fields.many2one('res.company', 'Company'),
     }
 
     _defaults = {
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
+        'company_id': (
+            lambda self, cr, uid, c:
+            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
         'reference': 'NEW',
         'state': 'open'
     }
 
     def create(self, cr, uid, vals, context=None):
         vals.update({
-            'reference': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.review')
+            'reference': self.pool.get('ir.sequence').get(
+                cr, uid, 'mgmtsystem.review')
         })
         return super(mgmtsystem_review, self).create(cr, uid, vals, context)
 
@@ -66,16 +90,35 @@ class mgmtsystem_review_line(orm.Model):
     _description = "Review Line"
     _columns = {
         'name': fields.char('Title', size=300, required=True),
-        'type': fields.selection((('action', 'Action'), ('nonconformity', 'Noncomformity')), 'Type'),
-        'action_id': fields.many2one('mgmtsystem.action', 'Action', select=True),
-        'nonconformity_id': fields.many2one('mgmtsystem.nonconformity', 'Nonconformity', select=True),
+        'type': fields.selection(
+            (
+                ('action', 'Action'),
+                ('nonconformity', 'Noncomformity'),
+            ),
+            'Type',
+        ),
+        'action_id': fields.many2one(
+            'mgmtsystem.action',
+            'Action',
+            select=True,
+        ),
+        'nonconformity_id': fields.many2one(
+            'mgmtsystem.nonconformity',
+            'Nonconformity',
+            select=True,
+        ),
         'decision': fields.text('Decision'),
-        'review_id': fields.many2one('mgmtsystem.review', 'Review', ondelete='cascade', select=True),
+        'review_id': fields.many2one(
+            'mgmtsystem.review',
+            'Review',
+            ondelete='cascade',
+            select=True,
+        ),
         'company_id': fields.many2one('res.company', 'Company'),
     }
 
     _defaults = {
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
+        'company_id': (
+            lambda self, cr, uid, c:
+            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
     }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

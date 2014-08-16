@@ -30,31 +30,49 @@ class mgmtsystem_action(orm.Model):
     _description = "Action"
     _inherit = "crm.claim"
     _columns = {
-        'reference': fields.char('Reference', size=64, required=True, readonly=True),
-        'type_action': fields.selection([('immediate', 'Immediate Action'),
-                                         ('correction', 'Corrective Action'),
-                                         ('prevention', 'Preventive Action'),
-                                         ('improvement', 'Improvement Opportunity')],
-                                        'Response Type'),
+        'reference': fields.char(
+            'Reference',
+            size=64,
+            required=True,
+            readonly=True,
+        ),
+        'type_action': fields.selection(
+            [
+                ('immediate', 'Immediate Action'),
+                ('correction', 'Corrective Action'),
+                ('prevention', 'Preventive Action'),
+                ('improvement', 'Improvement Opportunity')
+            ],
+            'Response Type',
+        ),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
         'company_id': fields.many2one('res.company', 'Company')
     }
 
     _defaults = {
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
+        'company_id': (
+            lambda self, cr, uid, c:
+            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
         'reference': 'NEW',
     }
 
     def create(self, cr, uid, vals, context=None):
         vals.update({
-            'reference': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.action')
+            'reference': (
+                self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.action'))
         }, context=context)
-        return super(mgmtsystem_action, self).create(cr, uid, vals, context=context)
+        return super(mgmtsystem_action, self).create(
+            cr, uid, vals, context=context
+        )
 
-    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None, values=None):
+    def message_auto_subscribe(
+            self, cr, uid, ids, updated_fields, context=None, values=None):
         """Automatically add the responsible user to the follow list."""
         for o in self.browse(cr, uid, ids, context=context):
-            self.message_subscribe_users(cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None, context=context)
+            self.message_subscribe_users(
+                cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None,
+                context=context
+            )
         return super(mgmtsystem_action, self).message_auto_subscribe(
             cr, uid, ids, updated_fields, context=context, values=values
         )
@@ -64,14 +82,19 @@ class mgmtsystem_action(orm.Model):
         for o in self.browse(cr, uid, ids, context=context):
             for nc in o.nonconformity_ids:
                 nc.case_send_note(_('Action "%s" was closed.' % o.name))
-        return super(mgmtsystem_action, self).case_close(cr, uid, ids, context=context)
+        return super(mgmtsystem_action, self).case_close(
+            cr, uid, ids, context=context
+        )
 
     def get_action_url(self, cr, uid, ids, context=None):
         assert len(ids) == 1
         action = self.browse(cr, uid, ids[0], context=context)
         base_url = self.pool.get('ir.config_parameter').get_param(
-            cr, uid, 'web.base.url', default='http://localhost:8069', context=context,
+            cr, uid, 'web.base.url', default='http://localhost:8069',
+            context=context,
         )
         query = {'db': cr.dbname}
         fragment = {'id': action.id, 'model': self._name}
-        return urljoin(base_url, "?%s#%s" % (urlencode(query), urlencode(fragment)))
+        return urljoin(base_url, "?%s#%s" % (
+            urlencode(query), urlencode(fragment)
+        ))
