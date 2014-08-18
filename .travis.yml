@@ -6,17 +6,21 @@ python:
 virtualenv:
   system_site_packages: true
 
-before_install:
-  - git clone https://github.com/OCA/maintainer-quality-tools.git /tmp/maintainer-quality-tools
-  - export PATH=/tmp/maintainer-quality-tools/travis:$PATH
-  - travis_install_nightly 7.0
- 
+env:
+  - VERSION="7.0" ODOO_REPO="odoo/odoo"
+  - VERSION="7.0" ODOO_REPO="OCA/OCB"
+
 install:
-  - pip install coveralls flake8
+  - git clone https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+  - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
+  - travis_install_nightly
+  - git clone https://github.com/OCA/knowledge ${HOME}/knowledge --depth=1 -b ${VERSION}
+  - git clone https://github.com/OCA/server-tools ${HOME}/server-tools --depth=1 -b ${VERSION}
+  - git clone https://github.com/OCA/web ${HOME}/web --depth=1 -b ${VERSION}
 
 script:
-    - travis_run_flake8
-    - travis_run_tests 7.0
+  - travis_run_flake8
+  - travis_run_tests
 
 after_success:
   coveralls
