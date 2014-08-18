@@ -78,7 +78,7 @@ class mgmtsystem_nonconformity_cause(orm.Model):
         return _('Error! Cannot create recursive cycle.')
 
     _constraints = [
-        (orm._check_recursion, _rec_message, ['parent_id'])
+        (orm.BaseModel._check_recursion, _rec_message, ['parent_id'])
     ]
 
 
