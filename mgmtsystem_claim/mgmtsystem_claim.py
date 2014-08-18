@@ -27,20 +27,32 @@ class mgmtsystem_claim(orm.Model):
     _description = "Claim"
     _inherit = "crm.claim"
     _columns = {
-        'reference': fields.char('Reference', size=64, required=True, readonly=True),
-        'message_ids': fields.one2many('mail.message', 'res_id', 'Messages', domain=[('model', '=', _name)]),
+        'reference': fields.char(
+            'Reference',
+            size=64,
+            required=True,
+            readonly=True,
+        ),
+        'message_ids': fields.one2many(
+            'mail.message',
+            'res_id',
+            'Messages',
+            domain=[('model', '=', _name)],
+        ),
         'company_id': fields.many2one('res.company', 'Company')
     }
 
     _defaults = {
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
+        'company_id': (
+            lambda self, cr, uid, c:
+            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
         'reference': 'NEW',
     }
 
     def create(self, cr, uid, vals, context=None):
         vals.update({
-            'reference': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.claim')
+            'reference': self.pool.get('ir.sequence').get(
+                cr, uid, 'mgmtsystem.claim'
+            )
         })
         return super(mgmtsystem_claim, self).create(cr, uid, vals, context)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

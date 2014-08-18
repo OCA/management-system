@@ -25,7 +25,9 @@
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """This module enables you to manage the claims of your management system.""",
+    "description": """
+This module enables you to manage the claims of your management system.
+""",
     "depends": ['mgmtsystem', 'crm_claim', 'mail'],
     "data": [
         'security/ir.model.access.csv',
@@ -36,4 +38,3 @@
         'board_mgmtsystem_claim.xml',
     ],
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

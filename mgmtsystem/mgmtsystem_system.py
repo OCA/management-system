@@ -34,7 +34,7 @@ class mgmtsystem_system(orm.Model):
     }
 
     _defaults = {
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
+        'company_id': (
+            lambda self, cr, uid, c:
+            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
     }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

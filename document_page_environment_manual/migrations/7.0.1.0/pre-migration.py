@@ -38,7 +38,8 @@ def pre_migrate_environment_manual_category(cr, version):
 UPDATE document_page
 SET parent_id = (SELECT id FROM document_page WHERE name = 'Manuals' LIMIT 1),
     name = name || ' (' || %s || ')'
-WHERE parent_id = (SELECT id FROM document_page WHERE name = 'Environment Manual' AND type = 'category')
+WHERE parent_id = (SELECT id FROM document_page
+                   WHERE name = 'Environment Manual' AND type = 'category')
      AND type = 'content';""", [version])
     logged_query(cr, """\
 UPDATE document_page

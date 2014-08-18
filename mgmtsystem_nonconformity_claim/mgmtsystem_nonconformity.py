@@ -22,7 +22,9 @@ from openerp.osv import fields, orm
 
 
 class mgmtsystem_nonconformity_type(orm.Model):
-    """Claim Type: Nonconformity, Good Practice, Improvement Opportunity, Observation, ..."""
+    """Claim Type: Nonconformity, Good Practice, Improvement Opportunity,
+    Observation, ...
+    """
     _name = "mgmtsystem.nonconformity.type"
     _description = "Claim Type"
     _columns = {
@@ -42,6 +44,3 @@ class mgmtsystem_nonconformity(orm.Model):
     _columns = {
         'type_id': fields.many2one('mgmtsystem.nonconformity.type', 'Type'),
     }
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
