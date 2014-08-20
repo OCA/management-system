@@ -22,9 +22,20 @@
 
 import logging
 logger = logging.getLogger('upgrade')
+logger.setLevel(logging.DEBUG)
+
+xmlid_renames = [
+    ('document_page_procedure.wiki_procedure',
+     'document_page_procedure.document_page_procedure'),
+    ('document_page_procedure.wiki_group_procedure',
+     'document_page_procedure.document_page_group_procedure'),
+]
 
 
 def logged_query(cr, query, args=None):
+    """
+    Logs query and affected rows at level DEBUG
+    """
     if args is None:
         args = []
     cr.execute(query, args)
@@ -33,30 +44,25 @@ def logged_query(cr, query, args=None):
     return cr.rowcount
 
 
-def post_migrate_category(cr, version, category):
-    logged_query(cr, """\
-UPDATE document_page
-SET parent_id = (SELECT id FROM document_page
-                 WHERE name = %s AND type = 'category'
-                 ORDER BY id DESC
-                 LIMIT 1),
-    name = name || ' (' || %s || ')'
-WHERE parent_id = (SELECT id FROM document_page
-                   WHERE name = %s AND type = 'category'
-                   ORDER BY id ASC
-                   LIMIT 1)
-     AND type = 'content';""", (category, version, category))
-    logged_query(cr, """\
-UPDATE document_page
-SET name = name || ' (' || %s || ')'
-WHERE id = (SELECT id FROM document_page
-            WHERE name = %s AND type = 'category'
-            ORDER BY id ASC
-            LIMIT 1)
-     AND type = 'category';""", (version, category))
+def rename_xmlids(cr, xmlids_spec):
+    """
+    Rename XML IDs. Typically called in the pre script.
+    One usage example is when an ID changes module. In OpenERP 6 for example,
+    a number of res_groups IDs moved to module base from other modules (
+    although they were still being defined in their respective module).
+    """
+    for (old, new) in xmlids_spec:
+        if not old.split('.') or not new.split('.'):
+            logger.error(
+                'Cannot rename XMLID %s to %s: need the module '
+                'reference to be specified in the IDs' % (old, new))
+        else:
+            query = ("UPDATE ir_model_data SET module = %s, name = %s "
+                     "WHERE module = %s and name = %s")
+            logged_query(cr, query, tuple(new.split('.') + old.split('.')))
 
 
 def migrate(cr, version):
     if version is None:
         return
-    post_migrate_category(cr, version, 'Work Instructions')
+    rename_xmlids(cr, xmlid_renames)
