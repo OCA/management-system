@@ -25,8 +25,8 @@ logger = logging.getLogger('upgrade')
 logger.setLevel(logging.DEBUG)
 
 xmlid_renames = [
-    ('document_page_quality_manual.system_quality',
-     'document_page_quality_manual.document_page_quality_manual'),
+    ('document_page_quality_manual.wiki_group_quality_manual',
+     'mgmtsystem_manuals.manuals'),
 ]
 
 

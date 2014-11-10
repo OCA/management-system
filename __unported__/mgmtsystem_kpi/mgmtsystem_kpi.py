@@ -19,11 +19,14 @@
 #
 ##############################################################################
 
-from dateutil.relativedelta import relativedelta
-from datetime import datetime
-from osv import fields, orm, osv
+from datetime import datetime, timedelta
+from openerp.osv import fields, orm
 from openerp.tools.translate import _
+from openerp.tools import (
+    DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
+)
 import time
+import re
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -38,13 +41,22 @@ def is_one_value(result):
         return False
 
 
-def is_select_query(query):
-    # check if sql query is a SELECT statement
+RE_SELECT_QUERY = re.compile('.*(' + '|'.join((
+    'INSERT',
+    'UPDATE',
+    'DELETE',
+    'CREATE',
+    'ALTER',
+    'DROP',
+    'GRANT',
+    'REVOKE',
+    'INDEX',
+)) + ')')
 
-    for statement in ('INSERT', 'UPDATE', 'DELETE', 'CREATE', 'ALTER', 'DROP', 'GRANT', 'REVOKE', 'INDEX'):
-        if statement in query:
-            return False
-    return True
+
+def is_select_query(query):
+    """Check if sql query is a SELECT statement"""
+    return not RE_SELECT_QUERY.match(query.upper())
 
 
 class mgmtsystem_kpi_category(orm.Model):
@@ -77,8 +89,10 @@ class mgmtsystem_kpi_threshold_range(orm.Model):
                 dic = cr.dictfetchall()
                 if is_one_value(dic):
                     value = dic[0]['value']
-            elif obj.min_type == 'external' and obj.min_dbsource_id.id and is_select_query(obj.min_code):
-                dbsrc_obj = self.pool.get('base.external.dbsource').browse(cr, uid, obj.min_dbsource_id.id, context)
+            elif (obj.min_type == 'external'
+                  and obj.min_dbsource_id.id
+                  and is_select_query(obj.min_code)):
+                dbsrc_obj = obj.min_dbsource_id
                 res = dbsrc_obj.execute(obj.min_code)
                 if is_one_value(res):
                     value = res[0]['value']
@@ -102,8 +116,10 @@ class mgmtsystem_kpi_threshold_range(orm.Model):
                     value = dic[0]['value']
             elif obj.max_type == 'python':
                 value = eval(obj.max_code)
-            elif obj.max_type == 'external' and obj.max_dbsource_id.id and is_select_query(obj.max_code):
-                dbsrc_obj = self.pool.get('base.external.dbsource').browse(cr, uid, obj.max_dbsource_id.id, context)
+            elif (obj.max_type == 'external'
+                  and obj.max_dbsource_id.id
+                  and is_select_query(obj.max_code)):
+                dbsrc_obj = obj.max_dbsource_id
                 res = dbsrc_obj.execute(obj.max_code)
                 if is_one_value(res):
                     value = res[0]['value']
@@ -123,7 +139,8 @@ class mgmtsystem_kpi_threshold_range(orm.Model):
                 result[obj.id] = True
         return result
 
-    def _generate_invalid_message(self, cr, uid, ids, field_name, arg, context=None):
+    def _generate_invalid_message(
+            self, cr, uid, ids, field_name, arg, context=None):
         if context is None:
             context = {}
         result = {}
@@ -131,30 +148,78 @@ class mgmtsystem_kpi_threshold_range(orm.Model):
             if obj.valid:
                 result[obj.id] = ""
             else:
-                result[obj.id] = "Minimum value is greater than the maximum value! Please adjust them."
+                result[obj.id] = ("Minimum value is greater than the maximum "
+                                  "value! Please adjust them.")
         return result
 
     _columns = {
         'name': fields.char('Name', size=50, required=True),
-        'valid': fields.function(_is_valid_range, string='Valid', type='boolean', required=True),
-        'invalid_message': fields.function(_generate_invalid_message, string='Message', type='char', size=100),
-        'min_type': fields.selection((('static', 'Fixed value'), ('python', 'Python Code'), ('local', 'SQL - Local DB'), ('external', 'SQL - Externa DB')), 'Min Type', required=True),
-        'min_value': fields.function(compute_min_value, string='Minimum', type='float'),
+        'valid': fields.function(
+            _is_valid_range,
+            string='Valid',
+            type='boolean',
+            required=True,
+        ),
+        'invalid_message': fields.function(
+            _generate_invalid_message,
+            string='Message',
+            type='char',
+            size=100,
+        ),
+        'min_type': fields.selection((
+            ('static', 'Fixed value'),
+            ('python', 'Python Code'),
+            ('local', 'SQL - Local DB'),
+            ('external', 'SQL - Externa DB'),
+        ), 'Min Type', required=True),
+        'min_value': fields.function(
+            compute_min_value,
+            string='Minimum',
+            type='float',
+        ),
         'min_fixed_value': fields.float('Minimum'),
         'min_code': fields.text('Minimum Computation Code'),
-        'min_dbsource_id': fields.many2one('base.external.dbsource', 'External DB Source'),
-        'max_type': fields.selection((('static', 'Fixed value'), ('python', 'Python Code'), ('local', 'SQL - Local DB'), ('external', 'SQL - External DB')), 'Max Type', required=True),
-        'max_value': fields.function(compute_max_value, string='Maximum', type='float'),
+        'min_dbsource_id': fields.many2one(
+            'base.external.dbsource',
+            'External DB Source',
+        ),
+        'max_type': fields.selection((
+            ('static', 'Fixed value'),
+            ('python', 'Python Code'),
+            ('local', 'SQL - Local DB'),
+            ('external', 'SQL - External DB'),
+        ), 'Max Type', required=True),
+        'max_value': fields.function(
+            compute_max_value,
+            string='Maximum',
+            type='float',
+        ),
         'max_fixed_value': fields.float('Maximum'),
         'max_code': fields.text('Maximum Computation Code'),
-        'max_dbsource_id': fields.many2one('base.external.dbsource', 'External DB Source'),
-        'color': fields.char('Color', help='RGB code with #', size=7, required=True),
-        'threshold_ids': fields.many2many('mgmtsystem.kpi.threshold', 'mgmtsystem_kpi_threshold_range_rel', 'range_id', 'threshold_id', 'Thresholds'),
+        'max_dbsource_id': fields.many2one(
+            'base.external.dbsource',
+            'External DB Source',
+        ),
+        'color': fields.char(
+            'Color',
+            help='RGB code with #',
+            size=7,
+            required=True,
+        ),
+        'threshold_ids': fields.many2many(
+            'mgmtsystem.kpi.threshold',
+            'mgmtsystem_kpi_threshold_range_rel',
+            'range_id',
+            'threshold_id',
+            'Thresholds',
+        ),
         'company_id': fields.many2one('res.company', 'Company')
     }
 
     _defaults = {
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
+        'company_id': (
+            lambda self, cr, uid, c:
+            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
         'valid': True,
     }
 
@@ -172,16 +237,16 @@ class mgmtsystem_kpi_threshold(orm.Model):
         result = {}
         for obj in self.browse(cr, uid, ids, context):
             # check if ranges overlap
-            for range_obj1 in obj.range_ids:
-                for range_obj2 in obj.range_ids:
-                    if range_obj1.valid and range_obj2.valid and range_obj1.min_value < range_obj2.min_value:
-                        if range_obj1.max_value <= range_obj2.min_value:
-                            result[obj.id] = True
-                        else:
-                            result[obj.id] = False
+            # TODO: This code can be done better
+            for range1 in obj.range_ids:
+                for range2 in obj.range_ids:
+                    if (range1.valid and range2.valid
+                            and range1.min_value < range2.min_value):
+                        result[obj.id] = range1.max_value <= range2.min_value
         return result
 
-    def _generate_invalid_message(self, cr, uid, ids, field_name, arg, context=None):
+    def _generate_invalid_message(
+            self, cr, uid, ids, field_name, arg, context=None):
         if context is None:
             context = {}
         result = {}
@@ -189,20 +254,39 @@ class mgmtsystem_kpi_threshold(orm.Model):
             if obj.valid:
                 result[obj.id] = ""
             else:
-                result[obj.id] = "2 of your ranges are overlapping! Please make sure your ranges do not overlap."
+                result[obj.id] = ("2 of your ranges are overlapping! Please "
+                                  "make sure your ranges do not overlap.")
         return result
 
     _columns = {
         'name': fields.char('Name', size=50, required=True),
-        'range_ids': fields.many2many('mgmtsystem.kpi.threshold.range', 'mgmtsystem_kpi_threshold_range_rel', 'threshold_id', 'range_id', 'Ranges'),
-        'valid': fields.function(_is_valid_threshold, string='Valid', type='boolean', required=True),
-        'invalid_message': fields.function(_generate_invalid_message, string='Message', type='char', size=100),
+        'range_ids': fields.many2many(
+            'mgmtsystem.kpi.threshold.range',
+            'mgmtsystem_kpi_threshold_range_rel',
+            'threshold_id',
+            'range_id',
+            'Ranges'
+        ),
+        'valid': fields.function(
+            _is_valid_threshold,
+            string='Valid',
+            type='boolean',
+            required=True,
+        ),
+        'invalid_message': fields.function(
+            _generate_invalid_message,
+            string='Message',
+            type='char',
+            size=100,
+        ),
         'kpi_ids': fields.one2many('mgmtsystem.kpi', 'threshold_id', 'KPIs'),
         'company_id': fields.many2one('res.company', 'Company')
     }
 
     _defaults = {
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
+        'company_id': (
+            lambda self, cr, uid, c:
+            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
         'valid': True,
     }
 
@@ -211,18 +295,25 @@ class mgmtsystem_kpi_threshold(orm.Model):
             context = {}
 
         # check if ranges overlap
+        # TODO: This code can be done better
         range_obj1 = self.pool.get('mgmtsystem.kpi.threshold.range')
         range_obj2 = self.pool.get('mgmtsystem.kpi.threshold.range')
         for range1 in data['range_ids'][0][2]:
             range_obj1 = range_obj1.browse(cr, uid, range1, context)
             for range2 in data['range_ids'][0][2]:
                 range_obj2 = range_obj2.browse(cr, uid, range2, context)
-                if range_obj1.valid and range_obj2.valid and range_obj1.min_value < range_obj2.min_value:
+                if (range_obj1.valid and range_obj2.valid
+                        and range_obj1.min_value < range_obj2.min_value):
                     if range_obj1.max_value > range_obj2.min_value:
-                        raise osv.except_osv(_("2 of your ranges are overlapping!"), _("Please make sure your ranges do not overlap!"))
+                        raise orm.except_orm(
+                            _("2 of your ranges are overlapping!"),
+                            _("Please make sure your ranges do not overlap!")
+                        )
                 range_obj2 = self.pool.get('mgmtsystem.kpi.threshold.range')
             range_obj1 = self.pool.get('mgmtsystem.kpi.threshold.range')
-        return super(mgmtsystem_kpi_threshold, self).create(cr, uid, data, context)
+        return super(mgmtsystem_kpi_threshold, self).create(
+            cr, uid, data, context
+        )
 
     def get_color(self, cr, uid, ids, kpi_value, context=None):
         if context is None:
@@ -230,9 +321,9 @@ class mgmtsystem_kpi_threshold(orm.Model):
 
         color = '#FFFFFF'
         for obj in self.browse(cr, uid, ids, context):
-            for range_id in obj.range_ids:
-                range_obj = self.pool.get('mgmtsystem.kpi.threshold.range').browse(cr, uid, range_id.id, context)
-                if range_obj.min_value <= kpi_value <= range_obj.max_value and range_obj.valid:
+            for range_obj in obj.range_ids:
+                if (range_obj.min_value <= kpi_value <= range_obj.max_value
+                        and range_obj.valid):
                     color = range_obj.color
         return color
 
@@ -247,16 +338,22 @@ class mgmtsystem_kpi_history(orm.Model):
     _columns = {
         'name': fields.char('Name', size=150, required=True),
         'kpi_id': fields.many2one('mgmtsystem.kpi', 'KPI', required=True),
-        'date': fields.datetime('Execution Date', required=True, readonly=True),
+        'date': fields.datetime(
+            'Execution Date',
+            required=True,
+            readonly=True,
+        ),
         'value': fields.float('Value', required=True, readonly=True),
         'color': fields.text('Color', required=True, readonly=True),
         'company_id': fields.many2one('res.company', 'Company')
     }
 
     _defaults = {
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
+        'company_id': (
+            lambda self, cr, uid, c:
+            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
         'name': lambda *a: time.strftime('%d %B %Y'),
-        'date': lambda *a: time.strftime('%Y-%m-%d %H:%M:%S'),
+        'date': lambda *a: time.strftime(DATETIME_FORMAT),
         'color': '#FFFFFF',
     }
 
@@ -270,7 +367,8 @@ class mgmtsystem_kpi(orm.Model):
     _name = "mgmtsystem.kpi"
     _description = "Key Performance Indicator"
 
-    def _display_last_kpi_value(self, cr, uid, ids, field_name, arg, context=None):
+    def _display_last_kpi_value(
+            self, cr, uid, ids, field_name, arg, context=None):
         if context is None:
             context = {}
 
@@ -293,15 +391,17 @@ class mgmtsystem_kpi(orm.Model):
                 dic = cr.dictfetchall()
                 if is_one_value(dic):
                     kpi_value = dic[0]['value']
-            elif obj.kpi_type == 'external' and obj.dbsource_id.id and is_select_query(obj.kpi_code):
-                dbsrc_obj = self.pool.get('base.external.dbsource').browse(cr, uid, obj.dbsource_id.id, context)
+            elif (obj.kpi_type == 'external'
+                    and obj.dbsource_id.id
+                    and is_select_query(obj.kpi_code)):
+                dbsrc_obj = obj.dbsource_id
                 res = dbsrc_obj.execute(obj.kpi_code)
                 if is_one_value(res):
                     kpi_value = res[0]['value']
             elif obj.kpi_type == 'python':
                 kpi_value = eval(obj.kpi_code)
 
-            threshold_obj = self.pool.get('mgmtsystem.kpi.threshold').browse(cr, uid, obj.threshold_id.id, context)
+            threshold_obj = obj.threshold_id
             values = {
                 'kpi_id': obj.id,
                 'value': kpi_value,
@@ -320,16 +420,19 @@ class mgmtsystem_kpi(orm.Model):
 
         for obj in self.browse(cr, uid, ids):
             if obj.periodicity_uom == 'hour':
-                new_date = datetime.now() + relativedelta(hours=+obj.periodicity)
+                delta = timedelta(hours=obj.periodicity)
             elif obj.periodicity_uom == 'day':
-                new_date = datetime.now() + relativedelta(days=+obj.periodicity)
+                delta = timedelta(days=obj.periodicity)
             elif obj.periodicity_uom == 'week':
-                new_date = datetime.now() + relativedelta(weeks=+obj.periodicity)
+                delta = timedelta(weeks=obj.periodicity)
             elif obj.periodicity_uom == 'month':
-                new_date = datetime.now() + relativedelta(months=+obj.periodicity)
+                delta = timedelta(months=obj.periodicity)
+            else:
+                delta = timedelta()
+            new_date = datetime.now() + delta
 
             values = {
-                'next_execution_date': new_date.strftime('%Y-%m-%d %H:%M:%S'),
+                'next_execution_date': new_date.strftime(DATETIME_FORMAT),
             }
 
             obj.write(values)
@@ -341,7 +444,14 @@ class mgmtsystem_kpi(orm.Model):
         if context is None:
             context = {}
         if not ids:
-            filters = ['&', '|', ('active', '=', True), ('next_execution_date', '<=', datetime.now().strftime('%Y-%m-%d %H:%M:%S')), ('next_execution_date', '=', False)]
+            filters = [
+                '&',
+                '|',
+                ('active', '=', True),
+                ('next_execution_date', '<=',
+                    datetime.now().strftime(DATETIME_FORMAT)),
+                ('next_execution_date', '=', False),
+            ]
             if 'filters' in context:
                 filters.extend(context['filters'])
             ids = self.search(cr, uid, filters, context=context)
@@ -358,25 +468,64 @@ class mgmtsystem_kpi(orm.Model):
     _columns = {
         'name': fields.char('Name', size=50, required=True),
         'description': fields.text('Description'),
-        'category_id': fields.many2one('mgmtsystem.kpi.category', 'Category', required=True),
-        'threshold_id': fields.many2one('mgmtsystem.kpi.threshold', 'Threshold', required=True),
+        'category_id': fields.many2one(
+            'mgmtsystem.kpi.category',
+            'Category',
+            required=True,
+        ),
+        'threshold_id': fields.many2one(
+            'mgmtsystem.kpi.threshold',
+            'Threshold',
+            required=True,
+        ),
         'periodicity': fields.integer('Periodicity'),
-        'periodicity_uom': fields.selection((('hour', 'Hour'), ('day', 'Day'), ('week', 'Week'), ('month', 'Month')), 'Periodicity UoM', required=True),
-        'next_execution_date': fields.datetime('Next execution date', readonly=True),
-        'value': fields.function(_display_last_kpi_value, string='Value', type='float'),
-        'kpi_type': fields.selection((('python', 'Python'), ('local', 'SQL - Local DB'), ('external', 'SQL - External DB')), 'KPI Computation Type'),
-        'dbsource_id': fields.many2one('base.external.dbsource', 'External DB Source'),
-        'kpi_code': fields.text('KPI Code', help='SQL code must return the result as \'value\' (i.e. \'SELECT 5 AS value\').'),
-        'history_ids': fields.one2many('mgmtsystem.kpi.history', 'kpi_id', 'History'),
-        'active': fields.boolean('Active', help="Only active KPIs will be updated by the scheduler based on the periodicity configuration."),
+        'periodicity_uom': fields.selection((
+            ('hour', 'Hour'),
+            ('day', 'Day'),
+            ('week', 'Week'),
+            ('month', 'Month')
+        ), 'Periodicity UoM', required=True),
+        'next_execution_date': fields.datetime(
+            'Next execution date',
+            readonly=True,
+        ),
+        'value': fields.function(
+            _display_last_kpi_value,
+            string='Value',
+            type='float',
+        ),
+        'kpi_type': fields.selection((
+            ('python', 'Python'),
+            ('local', 'SQL - Local DB'),
+            ('external', 'SQL - External DB')
+        ), 'KPI Computation Type'),
+        'dbsource_id': fields.many2one(
+            'base.external.dbsource',
+            'External DB Source',
+        ),
+        'kpi_code': fields.text(
+            'KPI Code',
+            help=("SQL code must return the result as 'value' "
+                  "(i.e. 'SELECT 5 AS value')."),
+        ),
+        'history_ids': fields.one2many(
+            'mgmtsystem.kpi.history',
+            'kpi_id',
+            'History',
+        ),
+        'active': fields.boolean(
+            'Active',
+            help=("Only active KPIs will be updated by the scheduler based on"
+                  " the periodicity configuration."),
+        ),
         'company_id': fields.many2one('res.company', 'Company')
     }
 
     _defaults = {
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
+        'company_id': (
+            lambda self, cr, uid, c:
+            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
         'active': True,
         'periodicity': 1,
         'periodicity_uom': 'day',
     }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

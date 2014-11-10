@@ -26,7 +26,8 @@
     "license": "AGPL-3",
     "category": "Management System",
     "description": """\
-This module enables you to manage your environment management system, including :
+This module enables you to manage your environment management system,
+including:
             * Environment Manual
             * Reviews
             * Audits

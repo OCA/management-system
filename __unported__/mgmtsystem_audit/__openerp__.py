@@ -26,7 +26,8 @@
     "license": "AGPL-3",
     "category": "Management System",
     "description": """\
-This module enables you to manage audits and verifications lists of your management system.
+This module enables you to manage audits and verifications lists of your
+management system.
     """,
     "depends": ['mgmtsystem_nonconformity'],
     "data": [

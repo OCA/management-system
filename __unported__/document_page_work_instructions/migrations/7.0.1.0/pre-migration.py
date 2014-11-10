@@ -22,40 +22,47 @@
 
 import logging
 logger = logging.getLogger('upgrade')
+logger.setLevel(logging.DEBUG)
+
+xmlid_renames = [
+    ('document_page_work_instructions.wiki_work_instruction',
+     'document_page_work_instructions.document_page_work_instruction'),
+    ('document_page_work_instructions.wiki_group_work_instructions',
+     'document_page_work_instructions.document_page_group_work_instructions'),
+]
+
 
 def logged_query(cr, query, args=None):
+    """
+    Logs query and affected rows at level DEBUG
+    """
     if args is None:
         args = []
-    res = cr.execute(query, args)
+    cr.execute(query, args)
     logger.debug('Running %s', query % tuple(args))
     logger.debug('%s rows affected', cr.rowcount)
     return cr.rowcount
 
 
-def post_migrate_environmental_aspect_category(cr, version):
-    logged_query(cr, """\
-UPDATE document_page
-SET parent_id = (SELECT id FROM document_page
-                 WHERE name = 'Environmental Aspect' AND type = 'category'
-                 ORDER BY id DESC
-                 LIMIT 1),
-    name = name || ' (' || %s || ')'
-WHERE parent_id = (SELECT id FROM document_page
-                   WHERE name = 'Environmental Aspect' AND type = 'category'
-                   ORDER BY id ASC
-                   LIMIT 1)
-     AND type = 'content';""", [version])
-    logged_query(cr, """\
-UPDATE document_page
-SET name = name || ' (' || %s || ')'
-WHERE id = (SELECT id FROM document_page
-            WHERE name = 'Environmental Aspect' AND type = 'category'
-            ORDER BY id ASC
-            LIMIT 1)
-     AND type = 'category';""", [version])
+def rename_xmlids(cr, xmlids_spec):
+    """
+    Rename XML IDs. Typically called in the pre script.
+    One usage example is when an ID changes module. In OpenERP 6 for example,
+    a number of res_groups IDs moved to module base from other modules (
+    although they were still being defined in their respective module).
+    """
+    for (old, new) in xmlids_spec:
+        if not old.split('.') or not new.split('.'):
+            logger.error(
+                'Cannot rename XMLID %s to %s: need the module '
+                'reference to be specified in the IDs' % (old, new))
+        else:
+            query = ("UPDATE ir_model_data SET module = %s, name = %s "
+                     "WHERE module = %s and name = %s")
+            logged_query(cr, query, tuple(new.split('.') + old.split('.')))
 
 
 def migrate(cr, version):
-    post_migrate_environmental_aspect_category(cr, version)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+    if version is None:
+        return
+    rename_xmlids(cr, xmlid_renames)

@@ -23,11 +23,14 @@
     'author': 'Daniel Reis',
     'category': 'Management System',
     'description': """\
-Extends the Nonconformity form so it can also represent NC candidates and other  types of feedback, such as complaints, measurements, suggestions, etc.
+Extends the Nonconformity form so it can also represent NC candidates and other
+types of feedback, such as complaints, measurements, suggestions, etc.
 
-The "type" field identifies if the feedback corresponds to a nonconformity, or to other type of record, such as "best practice", "suggestion", etc.
+The "type" field identifies if the feedback corresponds to a nonconformity, or
+to other type of record, such as "best practice", "suggestion", etc.
 
-This module purpose overlaps with "mgmtsystem_claim" module, so you should use either one or the other.
+This module purpose overlaps with "mgmtsystem_claim" module, so you should use
+either one or the other.
 It will fit best to your uses cases requiring:
   * a common numbering sequence for complaints and nonconformities;
   * a single point-of-entry for all management system related occurrences.
@@ -41,4 +44,3 @@ It will fit best to your uses cases requiring:
     'installable': False,
     'application': False,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

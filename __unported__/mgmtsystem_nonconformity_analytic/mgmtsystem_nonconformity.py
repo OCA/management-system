@@ -24,7 +24,8 @@ from openerp.osv import fields, orm
 class mgmtsystem_nonconformity(orm.Model):
     _inherit = "mgmtsystem.nonconformity"
     _columns = {
-        'analytic_account_id': fields.many2one('account.analytic.account', 'Contract'),
+        'analytic_account_id': fields.many2one(
+            'account.analytic.account',
+            'Contract',
+        ),
     }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

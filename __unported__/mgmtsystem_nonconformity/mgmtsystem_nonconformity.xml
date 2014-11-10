@@ -20,7 +20,7 @@
                     <field name="responsible_user_id"/>
                     <field name="manager_user_id"/>
                     <field name="system_id"/>
-	            <field name="company_id" group="base.group_multi_company"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
                     <field name="state"/>
                 </tree>
             </field>
@@ -43,7 +43,7 @@
                         <field name="author_user_id" string="User" 
                                filter_domain="['|','|',('author_user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
                         <field name="system_id"/>
-	            	<field name="company_id" group="base.group_multi_company"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
                     </group>
                     <newline />
                     <group expand="0" string="Group By...">
@@ -96,7 +96,7 @@
                         	<field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                         	<field name="author_user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                         	<field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-	            		<field name="company_id" group="base.group_multi_company"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
                     	</group>
                     </group>
 

@@ -15,7 +15,7 @@
             <field name="model_id" ref="model_mgmtsystem_action" />
             <field name="state">email</field>
             <field name="sequence">5</field>
-            <field name="condition">True</field>
+	    <field name="condition">user.email not in [False, "admin@example.com", "demo@example.com"]</field>
             <field name="email">object.user_id.user_email</field>
             <field name="subject">[[object.name]]</field>
             <field name="message">Hello,
