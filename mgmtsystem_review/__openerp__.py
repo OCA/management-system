@@ -19,6 +19,7 @@
 #
 ##############################################################################
 {
+<<<<<<< 175f2f66ce72543a357e8fd8e89b4ba0f9e8a52c
 <<<<<<< a2fe05867a1faacf29508c3abc1f0c8b98285c87
     "name" : "Management System - Review",
     "version" : "1.0",
@@ -45,6 +46,14 @@
     "description": """\
 This module enables you to manage reviews of your management system.
     """,
+=======
+    "name": "Management System - Review",
+    "version": "8.0.1.0.0",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+>>>>>>> Moved mgmtsystem_review to root folder
     "depends": [
         'mgmtsystem_nonconformity',
         'mgmtsystem_survey',
@@ -52,6 +61,7 @@ This module enables you to manage reviews of your management system.
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_review_security.xml',
+<<<<<<< 175f2f66ce72543a357e8fd8e89b4ba0f9e8a52c
         'review_sequence.xml',
         'mgmtsystem_review.xml',
         'report/review_report.xml',
@@ -61,3 +71,11 @@ This module enables you to manage reviews of your management system.
     "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+=======
+        'data/ir_sequence.xml',
+        'views/mgmtsystem_review.xml',
+        'report/review_report.xml',
+    ],
+    "installable": True,
+}
+>>>>>>> Moved mgmtsystem_review to root folder
