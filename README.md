@@ -10,3 +10,8 @@ Odoo modules to support management systems:
 * Security (ISO 27001, PCI-DSS)
 * IT services (ISO 20001, ITIL)
 * Health & Safety (OHSAS 18001)
+
+These presentation may help with an overviews of the modules:
+
+* [OpenDays 2013 presentation](http://www.slideshare.net/max3903/iso-anmanagement-systemswithopenerpena) of the Management System project
+* [Overview presentation](http://www.slideshare.net/max3903/openerp-management-system-modules) (2012) by Savoir-Faire Linux
