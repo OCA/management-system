@@ -3,11 +3,13 @@
     <data>
 
         <record model="ir.actions.act_window" id="action_mgmtsystem_claim">
+	    <field name="name">board.mgmtsystem.claim.act_window</field>
             <field name="res_model">mgmtsystem.claim</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree</field>
             <field name="view_id" ref="mgmtsystem_claims_tree_view"/>
-            <field name="domain">[('state', 'in', ('draft','open','pending'))]</field>
+	    <!-- TODO static list might not match stages -->
+            <field name="domain">[('stage_id.name', 'in', ('draft','open','pending'))]</field>
         </record>
 
         <record id="board_mgmtsystem_claim_form" model="ir.ui.view">

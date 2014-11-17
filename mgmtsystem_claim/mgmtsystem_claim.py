@@ -19,35 +19,21 @@
 #
 ##############################################################################
 
-from osv import fields, orm
+from openerp import fields, models
 
 
-class mgmtsystem_claim(orm.Model):
+class mgmtsystem_claim(models.Model):
     _name = "mgmtsystem.claim"
     _description = "Claim"
     _inherit = "crm.claim"
-    _columns = {
-        'reference': fields.char(
-            'Reference',
-            size=64,
-            required=True,
-            readonly=True,
-        ),
-        'message_ids': fields.one2many(
-            'mail.message',
-            'res_id',
-            'Messages',
-            domain=[('model', '=', _name)],
-        ),
-        'company_id': fields.many2one('res.company', 'Company')
-    }
 
-    _defaults = {
-        'company_id': (
-            lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
-        'reference': 'NEW',
-    }
+    reference = fields.Char('Reference', size=64, require=True, readonly=True,
+                            default='NEW')
+    message_ids = fields.One2many('mail.message', 'res_id', 'Messages',
+                            domain=[('model', '=', _name)])
+    company_id = fields.Many2one('res.company', 'Company',
+                            default=lambda self: self.env.user.company_id.id)
+
 
     def create(self, cr, uid, vals, context=None):
         vals.update({

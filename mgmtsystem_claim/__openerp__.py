@@ -37,5 +37,5 @@ This module enables you to manage the claims of your management system.
         'workflow_mgmtsystem_claim.xml',
         'board_mgmtsystem_claim.xml',
     ],
-    "installable": False,
+    "installable": True,
 }
