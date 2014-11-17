@@ -19,6 +19,7 @@
 #
 ##############################################################################
 {
+<<<<<<< 3ef0d6681c9f2b5d1e2d5250a3a97b2ed9d9b6eb
 <<<<<<< 1079161f42ff13d72cc09e135702bf9974ec0d26
     "name" : "Management System - Survey",
     "version" : "1.0",
@@ -50,3 +51,26 @@
     "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+=======
+    "name": "Management System - Survey",
+    "version": "1.0",
+    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+    "description": """\
+This module enables you to manage your satisfaction surveys and its answers.
+""",
+    "depends": [
+        'mgmtsystem',
+        'survey'
+    ],
+    "data": [
+        'data/survey_stage.xml',
+        'views/survey_survey.xml',
+    ],
+    "demo": [
+    ],
+    'installable': True,
+}
+>>>>>>> Added mgmtsystem_survey to ported code
