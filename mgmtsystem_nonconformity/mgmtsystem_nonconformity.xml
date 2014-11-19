@@ -13,7 +13,10 @@
             <field name="arch" type="xml">
                 <tree string="Non-Conformities">
                     <field name="ref"/>
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 <<<<<<< 0052ebff2bf9f64fdd43ab0db01f542bb3e20e2c
+=======
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
                     <field name="date"/>
                     <field name="partner_id"/>
                     <field name="description"/>
@@ -21,6 +24,7 @@
                     <field name="responsible_user_id"/>
                     <field name="manager_user_id"/>
                     <field name="system_id"/>
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 	            <field name="company_id" group="base.group_multi_company"/>
                     <field name="state"/>
 =======
@@ -33,6 +37,10 @@
                     <!-- Invisible fields below are to allow their use in domains of this view -->
                     <field name="state" invisible="1"/>
 >>>>>>> [FIX] Fixed "Unknown field state for domain" errors.
+=======
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="state"/>
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
                 </tree>
             </field>
         </record>
@@ -51,6 +59,7 @@
                         <separator orientation="vertical"/>
                         <field name="ref"/>
                         <field name="date"/>
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 <<<<<<< 7596689a0e61a05164cbc7f72995f67775876eb8
                         <field name="author_user_id"/>
 <<<<<<< 50119301cf1c89e7a2bf47886ee60ee6c3be771a
@@ -71,6 +80,12 @@
 =======
 	            	<field name="company_id" group="base.group_multi_company"/>
 >>>>>>> [IMP] Add company_id in views
+=======
+                        <field name="author_user_id" string="User" 
+                               filter_domain="['|','|',('author_user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
+                        <field name="system_id"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
                     </group>
                     <newline />
                     <group expand="0" string="Group By...">
@@ -79,17 +94,27 @@
                         <filter string="Manager" icon="terp-personal+" context="{'group_by':'manager_user_id'}"/>
                         <separator orientation="vertical"/>
                         <filter string="System" icon="gtk-execute" context="{'group_by':'system_id'}"/>
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
                         <filter string="Procedure" icon="terp-stock_symbol-selection" context="{'group_by':'procedure_ids'}"/>
                         <!-- 
                         <separator orientation="vertical"/>
 <<<<<<< 7596689a0e61a05164cbc7f72995f67775876eb8
                         <filter string="Partner" icon="terp-personal+" domain="[]" context="{'group_by':'partner_id'}"/>
 =======
+=======
+                        <filter string="Partner" icon="terp-personal+" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter string="Procedure" icon="terp-stock_symbol-selection" context="{'group_by':'procedure_ids'}"/>
+                        <!-- 
+                        <separator orientation="vertical"/>
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
                         <filter string="Origin" icon="terp-idea" context="{'group_by':'origin_ids'}"/>
                         <filter string="Cause" icon="gtk-convert" context="{'group_by':'cause_ids'}"/>
                         <filter string="Severity" icon="stock_log" context="{'group_by':'severity_id'}"/>
                          -->
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 >>>>>>> CHG: marking Apps, security review, translation pt, finetuning
+=======
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
                     </group>
                 </search>
             </field>
@@ -126,7 +151,11 @@
                         	<field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                         	<field name="author_user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                         	<field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 	            		<field name="company_id" group="base.group_multi_company"/>
+=======
+                                <field name="company_id" groups="base.group_multi_company"/>
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
                     	</group>
                     </group>
 
@@ -137,6 +166,7 @@
                         </page>
                         
                         <page string="Procedures">
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 <<<<<<< 003dc4cd2c2b20858ec60b69452738bb8a5b6476
 <<<<<<< 7b2921f8115aae5b6cb0556ca0e020d1d3c1ff74
 <<<<<<< aa4d90b35bf96704d5e4ebf67378df91841ba284
@@ -164,6 +194,9 @@
 =======
                             <field name="procedure_ids" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]"/>
 >>>>>>> [FIX] Update domain
+=======
+                            <field name="procedure_ids" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]"/>
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
                         </page>
 
                         <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
@@ -310,6 +343,7 @@
             <field name="model">mgmtsystem.nonconformity.cause</field>
             <field name="arch" type="xml">
                 <form string="Causes of nonconformity">
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 <<<<<<< aa4d90b35bf96704d5e4ebf67378df91841ba284
 	                <field name="name"/>
 	                <field name="sequence"/>
@@ -317,12 +351,17 @@
                     <field name="ref_code"/>
 	                <field name="description" colspan="4"/>
 =======
+=======
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
                 <field name="name"/>
                 <field name="sequence"/>
                     <field name="parent_id"/>
                     <field name="ref_code"/>
                 <field name="description" colspan="4"/>
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 >>>>>>> IMP: migrating NC form to v7 sheet style
+=======
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
                 </form>
             </field>
         </record>

@@ -19,6 +19,7 @@
 #
 ##############################################################################
 
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 from tools.translate import _
 import netsvc as netsvc
 from openerp.osv import fields, orm
@@ -27,6 +28,18 @@ from openerp.addons.base_status.base_state import base_state
 import time
 from tools import DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT
 from tools import DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT
+=======
+from openerp.tools.translate import _
+from openerp import netsvc
+from openerp.osv import fields, orm
+from openerp.addons.base_status.base_state import base_state
+from openerp.tools import (
+    DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
+    DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT,
+)
+
+import time
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
 
 
 class mgmtsystem_nonconformity_cause(orm.Model):
@@ -52,13 +65,17 @@ class mgmtsystem_nonconformity_cause(orm.Model):
         res = self.name_get(cr, uid, ids, context=context)
         return dict(res)
 
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
     def _check_recursion(self, cr, uid, ids, context=None, parent=None):
         return super(mgmtsystem_nonconformity_cause, self)._check_recursion(cr, uid, ids, context=context, parent=parent)
 
+=======
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
     _columns = {
         'id': fields.integer('ID', readonly=True),
         'name': fields.char('Cause', size=50, required=True, translate=True),
         'description': fields.text('Description'),
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         'sequence': fields.integer('Sequence', help="Defines the order to present items"),
         'parent_id': fields.many2one('mgmtsystem.nonconformity.cause', 'Group'),
         'child_ids': fields.one2many('mgmtsystem.nonconformity.cause', 'parent_id', 'Child Causes'),
@@ -66,6 +83,29 @@ class mgmtsystem_nonconformity_cause(orm.Model):
     }
     _constraints = [
         (_check_recursion, 'Error! Cannot create recursive cycle.', ['parent_id'])
+=======
+        'sequence': fields.integer(
+            'Sequence',
+            help="Defines the order to present items",
+        ),
+        'parent_id': fields.many2one(
+            'mgmtsystem.nonconformity.cause',
+            'Group',
+        ),
+        'child_ids': fields.one2many(
+            'mgmtsystem.nonconformity.cause',
+            'parent_id',
+            'Child Causes',
+        ),
+        'ref_code': fields.char('Reference Code', size=20),
+    }
+
+    def _rec_message(self, cr, uid, ids, context=None):
+        return _('Error! Cannot create recursive cycle.')
+
+    _constraints = [
+        (orm.BaseModel._check_recursion, _rec_message, ['parent_id'])
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
     ]
 
 
@@ -92,16 +132,35 @@ class mgmtsystem_nonconformity_origin(orm.Model):
         res = self.name_get(cr, uid, ids, context=context)
         return dict(res)
 
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
     def _check_recursion(self, cr, uid, ids, context=None, parent=None):
         return super(mgmtsystem_nonconformity_origin, self)._check_recursion(cr, uid, ids, context=context, parent=parent)
 
+=======
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
     _columns = {
         'id': fields.integer('ID', readonly=True),
         'name': fields.char('Origin', size=50, required=True, translate=True),
         'description': fields.text('Description'),
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         'sequence': fields.integer('Sequence', help="Defines the order to present items"),
         'parent_id': fields.many2one('mgmtsystem.nonconformity.origin', 'Group'),
         'child_ids': fields.one2many('mgmtsystem.nonconformity.origin', 'parent_id', 'Childs'),
+=======
+        'sequence': fields.integer(
+            'Sequence',
+            help="Defines the order to present items",
+        ),
+        'parent_id': fields.many2one(
+            'mgmtsystem.nonconformity.origin',
+            'Group',
+        ),
+        'child_ids': fields.one2many(
+            'mgmtsystem.nonconformity.origin',
+            'parent_id',
+            'Childs',
+        ),
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
         'ref_code': fields.char('Reference Code', size=20),
     }
 
@@ -130,10 +189,13 @@ _STATES = [
     ('cancel', _('Cancelled')),
 ]
 _STATES_DICT = dict(_STATES)
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 <<<<<<< b9a32de449f11b9294519ef63ed8a1b78e6eb0f8
 
 =======
 >>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
+=======
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
 
 
 class mgmtsystem_nonconformity(base_state, orm.Model):
@@ -153,12 +215,17 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         return res
 
     _columns = {
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         #1. Description
+=======
+        # 1. Description
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
         'id': fields.integer('ID', readonly=True),
         'ref': fields.char('Reference', size=64, required=True, readonly=True),
         'date': fields.date('Date', required=True),
         'partner_id': fields.many2one('res.partner', 'Partner', required=True),
         'reference': fields.char('Related to', size=50),
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         'responsible_user_id': fields.many2one('res.users', 'Responsible', required=True),
         'manager_user_id': fields.many2one('res.users', 'Manager', required=True),
         'author_user_id': fields.many2one('res.users', 'Filled in by', required=True),
@@ -192,12 +259,107 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         'evaluation_date': fields.datetime('Evaluation Date', readonly=True),
         'evaluation_user_id': fields.many2one('res.users', 'Evaluation by', readonly=True),
         'evaluation_comments': fields.text('Evaluation Comments', help="Conclusions from the last effectiveness evaluation."),
+=======
+        'responsible_user_id': fields.many2one(
+            'res.users',
+            'Responsible',
+            required=True,
+        ),
+        'manager_user_id': fields.many2one(
+            'res.users',
+            'Manager',
+            required=True,
+        ),
+        'author_user_id': fields.many2one(
+            'res.users',
+            'Filled in by',
+            required=True,
+        ),
+        'origin_ids': fields.many2many(
+            'mgmtsystem.nonconformity.origin',
+            'mgmtsystem_nonconformity_origin_rel',
+            'nonconformity_id',
+            'origin_id', 'Origin', required=True,
+        ),
+        'procedure_ids': fields.many2many(
+            'document.page', 'mgmtsystem_nonconformity_procedure_rel',
+            'nonconformity_id', 'procedure_id', 'Procedure'
+        ),
+        'description': fields.text('Description', required=True),
+        'state': fields.selection(_STATES, 'State', readonly=True),
+        'state_name': fields.function(
+            _state_name,
+            string='State Description',
+            type='char',
+            size=40,
+        ),
+        'system_id': fields.many2one('mgmtsystem.system', 'System'),
+        # 2. Root Cause Analysis
+        'cause_ids': fields.many2many(
+            'mgmtsystem.nonconformity.cause',
+            'mgmtsystem_nonconformity_cause_rel',
+            'nonconformity_id',
+            'cause_id',
+            'Cause',
+        ),
+        'severity_id': fields.many2one(
+            'mgmtsystem.nonconformity.severity',
+            'Severity',
+        ),
+        'analysis': fields.text('Analysis'),
+        'immediate_action_id': fields.many2one(
+            'mgmtsystem.action',
+            'Immediate action',
+            domain="[('nonconformity_id', '=', id)]",
+        ),
+        'analysis_date': fields.datetime('Analysis Date', readonly=True),
+        'analysis_user_id': fields.many2one(
+            'res.users',
+            'Analysis by',
+            readonly=True,
+        ),
+        # 3. Action Plan
+        'action_ids': fields.many2many(
+            'mgmtsystem.action',
+            'mgmtsystem_nonconformity_action_rel',
+            'nonconformity_id',
+            'action_id',
+            'Actions',
+        ),
+        'actions_date': fields.datetime('Action Plan Date', readonly=True),
+        'actions_user_id': fields.many2one(
+            'res.users',
+            'Action Plan by',
+            readonly=True,
+        ),
+        'action_comments': fields.text(
+            'Action Plan Comments',
+            help="Comments on the action plan.",
+        ),
+        # 4. Effectiveness Evaluation
+        'evaluation_date': fields.datetime('Evaluation Date', readonly=True),
+        'evaluation_user_id': fields.many2one(
+            'res.users',
+            'Evaluation by',
+            readonly=True,
+        ),
+        'evaluation_comments': fields.text(
+            'Evaluation Comments',
+            help="Conclusions from the last effectiveness evaluation.",
+        ),
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
         # Multi-company
         'company_id': fields.many2one('res.company', 'Company'),
     }
 
     _defaults = {
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
+=======
+        'company_id': (
+            lambda self, cr, uid, c:
+            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
         'date': lambda *a: time.strftime(DATE_FORMAT),
         'state': 'draft',
         'author_user_id': lambda cr, uid, id, c={}: id,
@@ -206,6 +368,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
 
     def create(self, cr, uid, vals, context=None):
         vals.update({
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
             'ref': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.nonconformity')
         })
         return super(mgmtsystem_nonconformity, self).create(cr, uid, vals, context)
@@ -216,6 +379,30 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         user_ids = [o.responsible_user_id.id, o.manager_user_id.id, o.author_user_id.id]
         self.message_subscribe_users(cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context)
         return super(mgmtsystem_nonconformity, self).message_auto_subscribe(cr, uid, ids, updated_fields=updated_fields, context=context, values=values)
+=======
+            'ref': self.pool.get('ir.sequence').get(
+                cr, uid, 'mgmtsystem.nonconformity')
+        })
+        return super(mgmtsystem_nonconformity, self).create(
+            cr, uid, vals, context)
+
+    def message_auto_subscribe(
+            self, cr, uid, ids, updated_fields, context=None, values=None):
+        """Add the reponsible, manager and OpenChatter follow list."""
+        o = self.browse(cr, uid, ids, context=context)[0]
+        user_ids = [
+            o.responsible_user_id.id,
+            o.manager_user_id.id,
+            o.author_user_id.id,
+        ]
+        self.message_subscribe_users(
+            cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context
+        )
+        return super(mgmtsystem_nonconformity, self).message_auto_subscribe(
+            cr, uid, ids, updated_fields=updated_fields, context=context,
+            values=values
+        )
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
 
     def case_send_note(self, cr, uid, ids, text, data=None, context=None):
         for id in ids:
@@ -223,7 +410,14 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             msg = '%s <b>%s</b>' % (pre, text)
             if data:
                 o = self.browse(cr, uid, ids, context=context)[0]
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
                 post = _('\n<br />\n<ul><li> <b>Stage:</b> %s \xe2\x86\x92 %s</li></ul>') % (o.state, data['state'])
+=======
+                post = _('''
+<br />
+<ul><li> <b>Stage:</b> %s \xe2\x86\x92 %s</li></ul>\
+''') % (o.state, data['state'])
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
                 msg += post
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
@@ -237,19 +431,46 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             'state': 'analysis',
             'analysis_date': None,
             'analysis_user_id': None}
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         self.case_send_note(cr, uid, ids, _('Analysis'), data=data, context=context)
+=======
+        self.case_send_note(
+            cr, uid, ids, _('Analysis'), data=data, context=context
+        )
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
         return self.write(cr, uid, ids, data, context=context)
 
     def action_sign_analysis(self, cr, uid, ids, context=None):
         """Sign-off the analysis"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if o.state != 'analysis':
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
             raise orm.except_orm(_('Error !'), _('This action can only be done in the Analysis state.'))
         if o.analysis_date:
             raise orm.except_orm(_('Error !'), _('Analysis is already approved.'))
         if not o.analysis:
             raise orm.except_orm(_('Error !'), _('Please provide an analysis before approving.'))
         vals = {'analysis_date': time.strftime(DATETIME_FORMAT), 'analysis_user_id': uid}
+=======
+            raise orm.except_orm(
+                _('Error !'),
+                _('This action can only be done in the Analysis state.')
+            )
+        if o.analysis_date:
+            raise orm.except_orm(
+                _('Error !'),
+                _('Analysis is already approved.')
+            )
+        if not o.analysis:
+            raise orm.except_orm(
+                _('Error !'),
+                _('Please provide an analysis before approving.')
+            )
+        vals = {
+            'analysis_date': time.strftime(DATETIME_FORMAT),
+            'analysis_user_id': uid,
+        }
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
         self.write(cr, uid, ids, vals, context=context)
         note = _('Analysis Approved')
         self.case_send_note(cr, uid, ids, note, context=context)
@@ -265,44 +486,105 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             'state': 'pending',
             'actions_date': None,
             'actions_user_id': None}
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         self.case_send_note(cr, uid, ids, _('Pending Approval'), data=vals, context=context)
+=======
+        self.case_send_note(
+            cr, uid, ids, _('Pending Approval'), data=vals, context=context
+        )
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
         return self.write(cr, uid, ids, vals, context=context)
 
     def action_sign_actions(self, cr, uid, ids, context=None):
         """Sign-off the action plan"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if o.state != 'pending':
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
             raise orm.except_orm(_('Error !'), _('This action can only be done in the Pending for Approval state.'))
         if o.actions_date:
             raise orm.except_orm(_('Error !'), _('Action plan is already approved.'))
         if not self.browse(cr, uid, ids, context=context)[0].analysis_date:
             raise orm.except_orm(_('Error !'), _('Analysis approved before the review confirmation.'))
         vals = {'actions_date': time.strftime(DATETIME_FORMAT), 'actions_user_id': uid}
+=======
+            raise orm.except_orm(
+                _('Error !'),
+                _('This action can only be done in the Pending for Approval '
+                  'state.')
+            )
+        if o.actions_date:
+            raise orm.except_orm(
+                _('Error !'),
+                _('Action plan is already approved.')
+            )
+        if not self.browse(cr, uid, ids, context=context)[0].analysis_date:
+            raise orm.except_orm(
+                _('Error !'),
+                _('Analysis approved before the review confirmation.')
+            )
+        vals = {
+            'actions_date': time.strftime(DATETIME_FORMAT),
+            'actions_user_id': uid,
+        }
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
         self.write(cr, uid, ids, vals, context=context)
         note = _('Action Plan Approved')
         self.case_send_note(cr, uid, ids, note, context=context)
         return True
 
     def wkf_open(self, cr, uid, ids, context=None):
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         """Change state from pending approval to in progress, and Open  the related actions"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if not o.actions_date:
             raise orm.except_orm(_('Error !'), _('Action plan must be approved before opening.'))
         self.case_open_send_note(cr, uid, ids, context=context)
         #Open related Actions
+=======
+        """Change state from pending approval to in progress, and Open
+        the related actions
+        """
+        o = self.browse(cr, uid, ids, context=context)[0]
+        if not o.actions_date:
+            raise orm.except_orm(
+                _('Error !'),
+                _('Action plan must be approved before opening.')
+            )
+        self.case_open_send_note(cr, uid, ids, context=context)
+        # Open related Actions
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
         if o.immediate_action_id and o.immediate_action_id.state == 'draft':
             o.immediate_action_id.case_open()
         for a in o.action_ids:
             if a.state == 'draft':
                 a.case_open()
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         return self.write(cr, uid, ids, {'state': 'open', 'evaluation_date': None, 'evaluation_user_id': None}, context=context)
+=======
+        return self.write(cr, uid, ids, {
+            'state': 'open',
+            'evaluation_date': None,
+            'evaluation_user_id': None,
+        }, context=context)
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
 
     def action_sign_evaluation(self, cr, uid, ids, context=None):
         """Sign-off the effectiveness evaluation"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if o.state != 'open':
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
             raise orm.except_orm(_('Error !'), _('This action can only be done in the In Progress state.'))
         vals = {'evaluation_date': time.strftime(DATETIME_FORMAT), 'evaluation_user_id': uid}
+=======
+            raise orm.except_orm(
+                _('Error !'),
+                _('This action can only be done in the In Progress state.')
+            )
+        vals = {
+            'evaluation_date': time.strftime(DATETIME_FORMAT),
+            'evaluation_user_id': uid,
+        }
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
         self.write(cr, uid, ids, vals, context=context)
         note = _('Effectiveness Evaluation Approved')
         self.case_send_note(cr, uid, ids, note, context=context)
@@ -317,12 +599,31 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         """Change state from in progress to closed"""
         o = self.browse(cr, uid, ids, context=context)[0]
         done_states = ['done', 'cancelled']
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         if (o.immediate_action_id and o.immediate_action_id.state not in done_states):
             raise orm.except_orm(_('Error !'), _('Immediate action from analysis has not been closed.'))
         if ([i for i in o.action_ids if i.state not in done_states]):
             raise orm.except_orm(_('Error !'), _('Not all actions have been closed.'))
         if not o.evaluation_date:
             raise orm.except_orm(_('Error !'), _('Effectiveness evaluation must be performed before closing.'))
+=======
+        if (o.immediate_action_id
+                and o.immediate_action_id.state not in done_states):
+            raise orm.except_orm(
+                _('Error !'),
+                _('Immediate action from analysis has not been closed.')
+            )
+        if ([i for i in o.action_ids if i.state not in done_states]):
+            raise orm.except_orm(
+                _('Error !'),
+                _('Not all actions have been closed.')
+            )
+        if not o.evaluation_date:
+            raise orm.except_orm(
+                _('Error !'),
+                _('Effectiveness evaluation must be performed before closing.')
+            )
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
         self.case_close_send_note(cr, uid, ids, context=context)
         return self.write(cr, uid, ids, {'state': 'done'}, context=context)
 
@@ -330,6 +631,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         """Reset to Draft and restart the workflows"""
         wf_service = netsvc.LocalService("workflow")
         for id in ids:
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 <<<<<<< b9a32de449f11b9294519ef63ed8a1b78e6eb0f8
 <<<<<<< df913a09410052efe02604e09f25e52d3005cf5f
             res = wf_service.trg_create(uid, self._name, id, cr)
@@ -341,6 +643,10 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             wf_service.trg_create(uid, self._name, id, cr)
         self.message_post(cr, uid, self.browse(cr, uid, ids, context=context), _('Draft'))
 >>>>>>> [FIX] PEP8 compliance after running flake8
+=======
+            wf_service.trg_create(uid, self._name, id, cr)
+        self.case_reset_send_note(cr, uid, ids, context=context)
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
         vals = {
             'state': 'draft',
             'analysis_date': None, 'analysis_user_id': None,
@@ -353,8 +659,25 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
 class mgmtsystem_action(orm.Model):
     _inherit = "mgmtsystem.action"
     _columns = {
+<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         'nonconformity_immediate_id': fields.one2many('mgmtsystem.nonconformity', 'immediate_action_id', readonly=True),
         'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity', 'mgmtsystem_nonconformity_action_rel', 'action_id', 'nonconformity_id', 'Nonconformities', readonly=True),
     }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+=======
+        'nonconformity_immediate_id': fields.one2many(
+            'mgmtsystem.nonconformity',
+            'immediate_action_id',
+            readonly=True,
+        ),
+        'nonconformity_ids': fields.many2many(
+            'mgmtsystem.nonconformity',
+            'mgmtsystem_nonconformity_action_rel',
+            'action_id',
+            'nonconformity_id',
+            'Nonconformities',
+            readonly=True,
+        ),
+    }
+>>>>>>> Moved mgmtsystem_nonconformity to root for port
