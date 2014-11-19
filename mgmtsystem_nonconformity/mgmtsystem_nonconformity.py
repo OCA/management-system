@@ -613,6 +613,7 @@ class mgmtsystem_nonconformity(orm.Model):
     def wkf_close(self, cr, uid, ids, context=None):
         """Change state from in progress to closed"""
         o = self.browse(cr, uid, ids, context=context)[0]
+<<<<<<< 2ec8386018ef68321e61e374bab7e40164f20988
         done_states = ['done', 'cancelled']
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         if (o.immediate_action_id and o.immediate_action_id.state not in done_states):
@@ -622,6 +623,10 @@ class mgmtsystem_nonconformity(orm.Model):
         if not o.evaluation_date:
             raise orm.except_orm(_('Error !'), _('Effectiveness evaluation must be performed before closing.'))
 =======
+=======
+        # TODO make it more friendly
+        done_states = ['done', 'cancelled', 'settled', 'rejected']
+>>>>>>> Add support for settled, rejected instead of done/canceled... quite ugly
         if (o.immediate_action_id
                 and o.immediate_action_id.stage_id.name.lower() not in done_states):
             raise orm.except_orm(
