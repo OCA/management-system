@@ -30,7 +30,7 @@
     "depends": ['mgmtsystem_manuals'],
     "data": ['document_page_health_safety_manual.xml'],
     "demo": [],
-    'installable': False,
+    'installable': True,
     "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
