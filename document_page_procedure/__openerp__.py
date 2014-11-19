@@ -5,13 +5,18 @@
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
+<<<<<<< 527c6fad67cafc24c1059a64d5dc6ef1d1bd3083
 #    it under the terms of the GNU General Public License as
+=======
+#    it under the terms of the GNU Affero General Public License as
+>>>>>>> Moved document_page_procedure to root folder for port
 #    published by the Free Software Foundation, either version 3 of the
 #    License, or (at your option) any later version.
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<<<<<<< 527c6fad67cafc24c1059a64d5dc6ef1d1bd3083
 #    GNU General Public License for more details.
 #
 #    You should have received a copy of the GNU General Public License
@@ -34,12 +39,31 @@
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
 >>>>>>> [FIX] PEP8 compliance after running flake8
+=======
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
+{
+    "name": "Document Management - Wiki - Procedures",
+    "version": "1.0",
+    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Generic Modules/Others",
+>>>>>>> Moved document_page_procedure to root folder for port
     "description": """Procedure Template
     """,
     "depends": ['document_page_work_instructions'],
     "data": ['document_page_procedure.xml'],
     "demo": [],
+<<<<<<< 527c6fad67cafc24c1059a64d5dc6ef1d1bd3083
     "installable": True,
+=======
+    'installable': False,
+>>>>>>> Moved document_page_procedure to root folder for port
     "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

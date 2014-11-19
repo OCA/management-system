@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+      <record model="ir.actions.act_window" id="action_procedures">
+            <field name="name">Procedures</field>
+            <field name="res_model">document.page</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="document_page.view_wiki_tree"/>
+            <field name="search_view_id" ref="document_page.view_wiki_filter"/>
+            <field name="help">Procedures of your management system.</field>
+        </record>
+
+      <menuitem id="menu_mgmtsystem_manuals_procedures" 
+          name="Procedures"
+          action="action_procedures"
+          parent="mgmtsystem.menu_mgmtsystem_manuals" 
+          sequence="10" 
+          groups="base.group_user"/>
+
+      <record id="document_page_group_procedure" model="document.page">
+        <field name="name">Procedure</field>
+        <field name="type">category</field>
+      </record>
+
+      <record id="document_page_procedure" model="document.page">
+        <field name="name">Procedure</field>
+        <field name="parent_id" ref="document_page_group_procedure"/>
+        <field name="type">content</field>
+        <field name="content">
+<![CDATA[
+<h1>Objective</h1>
+
+<h1>Application Domain</h1>
+
+<h1>Terms and Definitions</h1>
+
+<h1>Responsibilities</h1>
+
+<h1>Process</h1>
+]]>
+        </field>
+      </record>
+
+      <record model="ir.actions.act_window" id="action_procedures">
+            <field name="domain" eval="[('parent_id','=',ref('document_page_group_procedure'))]" />
+      </record>
+
+    </data>
+</openerp>
