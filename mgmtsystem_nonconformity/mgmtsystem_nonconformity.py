@@ -558,8 +558,13 @@ class mgmtsystem_nonconformity(orm.Model):
             )
         self.case_open_send_note(cr, uid, ids, context=context)
         # Open related Actions
+<<<<<<< b7b2c1a83a414b319605200700d3b02067ba784d
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
         if o.immediate_action_id and o.immediate_action_id.state == 'draft':
+=======
+        # TODO static variables... hmm
+        if o.immediate_action_id and o.immediate_action_id.stage_id.name.lower() == 'draft':
+>>>>>>> Small fix to use stage_id.name instead of state
             o.immediate_action_id.case_open()
         for a in o.action_ids:
             if a.state == 'draft':
@@ -671,6 +676,12 @@ class mgmtsystem_nonconformity(orm.Model):
         for id in ids:
             msg = _('%s has been <b>renewed</b>.') % (self.case_get_note_msg_prefix(cr, uid, id, context=context))
             self.message_post(cr, uid, [id], body=msg, context=context)
+        return True
+
+    def case_open_send_note(self, cr, uid, ids, context=None):
+        for id in ids:
+             msg = _('%s has been <b>opened</b>.') % (self.case_get_note_msg_prefix(cr, uid, id, context=context))
+             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 
 
