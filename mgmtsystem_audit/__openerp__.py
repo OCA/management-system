@@ -43,7 +43,7 @@ management system.
     "demo": [
         'demo_audit.xml',
     ],
-    'installable': False,
+    'installable': True,
     "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

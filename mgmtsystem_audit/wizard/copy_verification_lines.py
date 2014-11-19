@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from osv import fields, orm
+from openerp.osv import fields, orm
 
 
 class copy_verification_lines(orm.TransientModel):
