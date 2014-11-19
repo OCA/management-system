@@ -37,7 +37,7 @@ for the Quality Manual.
     'depends': ['mgmtsystem_manuals'],
     'data': ['document_page_quality_manual.xml'],
     'demo': [],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'certificate': '',
     'images': ['images/wiki_pages_quality_manual.jpeg'],
