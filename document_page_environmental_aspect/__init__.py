@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
+<<<<<<< HEAD
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,7 +16,7 @@
 #    GNU General Public License for more details.
 #
 #    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
