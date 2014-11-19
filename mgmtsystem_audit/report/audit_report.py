@@ -20,10 +20,11 @@
 ##############################################################################
 
 import time
-from report import report_sxw
+from openerp.report import report_sxw
 
 
 class mgmtsystem_audit_report(report_sxw.rml_parse):
+
     def __init__(self, cr, uid, name, context):
         super(mgmtsystem_audit_report, self).__init__(cr, uid, name, context)
         self.localcontext.update({
@@ -37,4 +38,3 @@ report_sxw.report_sxw(
     parser=mgmtsystem_audit_report
 )
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
