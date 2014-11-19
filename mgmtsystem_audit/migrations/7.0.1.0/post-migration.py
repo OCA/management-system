@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#    Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -25,6 +25,8 @@ logger = logging.getLogger('upgrade')
 
 
 def migrate(cr, version):
+    if version is None:
+        return
     logger.info("Migrating mgmtsystem_audit from version %s", version)
     logger.info("Updating state flags")
     cr.execute("update mgmtsystem_audit set state = 'open' where state = 'o'")
