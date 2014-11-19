@@ -1,15 +1,3 @@
-<<<<<<< 06aa4f2b70a00af752d29b3a543ef5ebd33e203c
-# -*- encoding: utf-8 -*-
-<<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
-import mgmtsystem_nonconformity
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-=======
-
-<<<<<<< 75bff4df4701f5ed835e70fe7acf4ab910086576
-from . import mgmtsystem_nonconformity
->>>>>>> Moved mgmtsystem_nonconformity to root for port
-=======
-=======
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -30,6 +18,10 @@ from . import mgmtsystem_nonconformity
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
->>>>>>> Added missing copyrights
-from . import models
->>>>>>> Separated python in each model file
+from . import (
+    mgmtsystem_nonconformity_cause,
+    mgmtsystem_nonconformity_origin,
+    mgmtsystem_nonconformity_severity,
+    mgmtsystem_nonconformity,
+    mgmtsystem_action,
+)
