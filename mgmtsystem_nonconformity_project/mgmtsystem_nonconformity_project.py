@@ -54,7 +54,7 @@ class mgmtsystem_action(orm.Model):
         'name': fields.char('Claim Subject', size=128),
     }
     _defaults = {
-        'action_type': 'action',
+        'action_type': 'action'
     }
 
     def name_get(self, cr, uid, ids, context=None):
