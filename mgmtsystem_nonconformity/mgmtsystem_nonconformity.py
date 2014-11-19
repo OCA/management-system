@@ -413,11 +413,11 @@ class mgmtsystem_nonconformity(orm.Model):
             )
         self.case_open_send_note(cr, uid, ids, context=context)
         # Open related Actions
-        # TODO static variables... hmm
+        # TODO static variables... hmm update state isn't going to work
         if o.immediate_action_id and o.immediate_action_id.stage_id.name.lower() == 'draft':
             o.immediate_action_id.case_open()
         for a in o.action_ids:
-            if a.state == 'draft':
+            if a.stage_id.name.lower() == 'draft':
                 a.case_open()
         return self.write(cr, uid, ids, {
             'state': 'open',
@@ -452,12 +452,12 @@ class mgmtsystem_nonconformity(orm.Model):
         o = self.browse(cr, uid, ids, context=context)[0]
         done_states = ['done', 'cancelled']
         if (o.immediate_action_id
-                and o.immediate_action_id.state not in done_states):
+                and o.immediate_action_id.stage_id.name.lower() not in done_states):
             raise orm.except_orm(
                 _('Error !'),
                 _('Immediate action from analysis has not been closed.')
             )
-        if ([i for i in o.action_ids if i.state not in done_states]):
+        if ([i for i in o.action_ids if i.stage_id.name.lower() not in done_states]):
             raise orm.except_orm(
                 _('Error !'),
                 _('Not all actions have been closed.')
