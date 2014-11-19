@@ -118,8 +118,8 @@
                             <field name="reference"/>
                             <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
                             <field name="user_id" string="Audit Manager" required="1"/>
-                            <field name="system_id"/>
                             <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="system_id"/>
                         </group>
                         <notebook colspan="4">
                             <page string="Auditors">
