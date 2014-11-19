@@ -450,7 +450,8 @@ class mgmtsystem_nonconformity(orm.Model):
     def wkf_close(self, cr, uid, ids, context=None):
         """Change state from in progress to closed"""
         o = self.browse(cr, uid, ids, context=context)[0]
-        done_states = ['done', 'cancelled']
+        # TODO make it more friendly
+        done_states = ['done', 'cancelled', 'settled', 'rejected']
         if (o.immediate_action_id
                 and o.immediate_action_id.stage_id.name.lower() not in done_states):
             raise orm.except_orm(
