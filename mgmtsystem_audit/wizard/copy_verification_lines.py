@@ -19,10 +19,10 @@
 #
 ##############################################################################
 
-from osv import fields, osv
+from openerp.osv import fields, orm
 
 
-class copy_verification_lines(osv.osv_memory):
+class copy_verification_lines(orm.TransientModel):
     """
     Copy Verification Lines
     """
@@ -33,15 +33,17 @@ class copy_verification_lines(osv.osv_memory):
     }
 
     def copy(self, cr, uid, ids, context=None):
-        # Code to copy verification lines from the chosen audit to the current one
+        # Copy verification lines from the chosen audit to the current one
         if context is None:
             context = {}
 
         audit_proxy = self.pool.get(context.get('active_model'))
         verification_line_proxy = self.pool.get('mgmtsystem.verification.line')
-        src_id = self.read(cr, uid, ids, [], context=context)[0]['audit_src'][0]
+        src_id = self.read(
+            cr, uid, ids, ['audit_src'], context=context)[0]['audit_src'][0]
 
-        for line in audit_proxy.browse(cr, uid, src_id, context=context).line_ids:
+        for line in audit_proxy.browse(
+                cr, uid, src_id, context=context).line_ids:
             verification_line_proxy.create(cr, uid, {
                 'seq': line.seq,
                 'name': line.name,
@@ -50,7 +52,3 @@ class copy_verification_lines(osv.osv_memory):
                 'is_conformed': False,
             }, context=context)
         return {'type': 'ir.actions.act_window_close'}
-
-copy_verification_lines()
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
