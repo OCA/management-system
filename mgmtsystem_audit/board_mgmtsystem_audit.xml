@@ -3,6 +3,7 @@
     <data>
 
         <record id="action_mgmtsystem_audit" model="ir.actions.act_window">
+            <field name="name">board.mgmtsystem.audit.act_window</field>
             <field name="res_model">mgmtsystem.audit</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree</field>
