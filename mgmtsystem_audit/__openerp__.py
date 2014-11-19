@@ -20,8 +20,8 @@
 ##############################################################################
 {
     "name": "Management System - Audit",
-    "version": "1.2",
-    "author": "Savoir-faire Linux",
+    "version": "8.0.1.2.0",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
