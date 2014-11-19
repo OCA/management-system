@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+<<<<<<< HEAD
 ##############################################################################
 #    
 #    OpenERP, Open Source Management Solution
@@ -18,4 +19,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
 #
 ##############################################################################
+=======
+
+>>>>>>> Moved document_page_environment_manual to root folder for port
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
