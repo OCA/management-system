@@ -19,6 +19,7 @@
 #
 ##############################################################################
 {
+<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
 <<<<<<< b2fef5464e02e345d90a60666de68bf7b7affe15
 <<<<<<< 0fd5d26265e2f6e7d4bd9dfb4a249f5d66986cfb
     "name" : "Management System - Audit",
@@ -50,6 +51,17 @@
 >>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
     "description": """\
 This module enables you to manage audits and verifications lists of your management system.
+=======
+    "name": "Management System - Audit",
+    "version": "1.2",
+    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+    "description": """\
+This module enables you to manage audits and verifications lists of your
+management system.
+>>>>>>> Moved mgmtsystem_audit to root and fixed imports
     """,
     "depends": ['mgmtsystem_nonconformity'],
     "data": [
@@ -65,7 +77,11 @@ This module enables you to manage audits and verifications lists of your managem
     "demo": [
         'demo_audit.xml',
     ],
+<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
     "installable": True,
+=======
+    'installable': True,
+>>>>>>> Moved mgmtsystem_audit to root and fixed imports
     "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

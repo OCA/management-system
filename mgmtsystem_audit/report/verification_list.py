@@ -20,12 +20,24 @@
 ##############################################################################
 
 import time
+<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
 from report import report_sxw
 
 
 class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
         super(mgmtsystem_audit_verification_list, self).__init__(cr, uid, name, context)
+=======
+from openerp.report import report_sxw
+
+
+class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
+
+    def __init__(self, cr, uid, name, context):
+        super(mgmtsystem_audit_verification_list, self).__init__(
+            cr, uid, name, context
+        )
+>>>>>>> Moved mgmtsystem_audit to root and fixed imports
         self.localcontext.update({
             'time': time,
             'get_lines_by_procedure': self.get_lines_by_procedure,
@@ -35,7 +47,13 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
     def get_lines_by_procedure(self, verification_lines):
         p = []
         for l in verification_lines:
+<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
             proc_nm = self.pool.get('document.page').read(self.cr, self.uid, l.procedure_id.id, ['name'])
+=======
+            proc_nm = self.pool.get('document.page').read(
+                self.cr, self.uid, l.procedure_id.id, ['name']
+            )
+>>>>>>> Moved mgmtsystem_audit to root and fixed imports
             p.append({"id": l.id,
                       "procedure": proc_nm['name'],
                       "name": l.name,

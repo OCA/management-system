@@ -3,6 +3,10 @@
     <data>
 
         <record id="action_mgmtsystem_audit" model="ir.actions.act_window">
+<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
+=======
+            <field name="name">board.mgmtsystem.audit.act_window</field>
+>>>>>>> Moved mgmtsystem_audit to root and fixed imports
             <field name="res_model">mgmtsystem.audit</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree</field>

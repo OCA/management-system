@@ -20,10 +20,18 @@
 ##############################################################################
 
 import time
+<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
 from report import report_sxw
 
 
 class mgmtsystem_audit_report(report_sxw.rml_parse):
+=======
+from openerp.report import report_sxw
+
+
+class mgmtsystem_audit_report(report_sxw.rml_parse):
+
+>>>>>>> Moved mgmtsystem_audit to root and fixed imports
     def __init__(self, cr, uid, name, context):
         super(mgmtsystem_audit_report, self).__init__(cr, uid, name, context)
         self.localcontext.update({
