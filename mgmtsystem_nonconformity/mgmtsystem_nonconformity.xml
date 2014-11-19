@@ -80,7 +80,7 @@
                         <button name="button_close" string="Close" class="oe_highlight"
                             states="open" groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
                         <button name="case_reset" string="Reset to New" states="done,cancel" type="object"/>
-                        <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done" clickable="True"/>
                     </header>
                 <sheet string="Non-Conformity">
                     <group>

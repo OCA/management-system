@@ -106,5 +106,5 @@ Contributors
     "demo": [
         'demo_nonconformity.xml',
     ],
-    'installable': False,
+    'installable': True,
 }

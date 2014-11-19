@@ -22,7 +22,9 @@
 from openerp.tools.translate import _
 from openerp import netsvc
 from openerp.osv import fields, orm
-from openerp.addons.base_status.base_state import base_state
+
+#from openerp.addons.base_status.base_state import base_state
+
 from openerp.tools import (
     DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
     DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT,
@@ -152,7 +154,7 @@ _STATES = [
 _STATES_DICT = dict(_STATES)
 
 
-class mgmtsystem_nonconformity(base_state, orm.Model):
+class mgmtsystem_nonconformity(orm.Model):
     """
     Management System - Nonconformity
     """
@@ -307,9 +309,9 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             msg = '%s <b>%s</b>' % (pre, text)
             if data:
                 o = self.browse(cr, uid, ids, context=context)[0]
-                post = _('''
+                post = _(u'''
 <br />
-<ul><li> <b>Stage:</b> %s \xe2\x86\x92 %s</li></ul>\
+<ul><li> <b>Stage:</b> %s → %s</li></ul>\
 ''') % (o.state, data['state'])
                 msg += post
             self.message_post(cr, uid, [id], body=msg, context=context)
@@ -480,6 +482,18 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             'evaluation_date': None, 'evaluation_user_id': None,
         }
         return self.write(cr, uid, ids, vals, context=context)
+
+    def case_cancel_send_note(self, cr, uid, ids, context=None):
+        for id in ids:
+            msg = _('%s has been <b>canceled</b>.') % (self.case_get_note_msg_prefix(cr, uid, id, context=context))
+            self.message_post(cr, uid, [id], body=msg, context=context)
+        return True
+
+    def case_reset_send_note(self, cr, uid, ids, context=None):
+        for id in ids:
+            msg = _('%s has been <b>renewed</b>.') % (self.case_get_note_msg_prefix(cr, uid, id, context=context))
+            self.message_post(cr, uid, [id], body=msg, context=context)
+        return True
 
 
 class mgmtsystem_action(orm.Model):
