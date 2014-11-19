@@ -187,11 +187,15 @@ Contributors
     "demo": [
         'demo_nonconformity.xml',
     ],
+<<<<<<< 71aa0a8a6f4f4f006d1786851185cfac782618dd
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
     "installable": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 =======
     'installable': False,
+=======
+    'installable': True,
+>>>>>>> Updated module as installable and removed depdencie on base_status
 }
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
