@@ -30,7 +30,7 @@
     "depends": ['document_page_approval', 'mgmtsystem'],
     "data": ['document_page_environmental_aspect.xml'],
     "demo": [],
-    'installable': False,
+    'installable': True,
     "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
