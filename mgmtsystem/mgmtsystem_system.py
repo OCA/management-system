@@ -21,13 +21,14 @@
 
 from openerp import models, fields
 
+own_company = lambda self: self.env.user.company_id.id
+
 
 class mgmtsystem_system(models.Model):
 
     _name = 'mgmtsystem.system'
     description = 'System'
 
-    name = fields.Char('System', size=30, require=True, translate=True)
+    name = fields.Char('System', size=30, required=True, translate=True)
     manual = fields.Many2one('document.page', 'Manual')
-    company_id = fields.Many2one('res.company', 'Company',
-                     	  default=lambda self: self.env.user.company_id.id)
+    company_id = fields.Many2one('res.company', 'Company', default=own_company)

@@ -49,6 +49,5 @@ This module is the basis of any management system applications:
     ],
     "demo": [],
     'installable': True,
-    "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
