@@ -48,7 +48,5 @@ This module is the basis of any management system applications:
         'board_mgmtsystem_view.xml',
     ],
     "demo": [],
-    'installable': False,
-    "certificate": ''
+    'installable': True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
