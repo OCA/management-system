@@ -1,0 +1,203 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_hazard_risk
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: management-system (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-05 19:53+0000\n"
+"PO-Revision-Date: 2015-11-03 19:11+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Norwegian Bokmål (http://www.transifex.com/oca/OCA-management-system-8-0/language/nb/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,acceptability:0
+msgid "Acceptability"
+msgstr "Akseptanse"
+
+#. module: mgmtsystem_hazard_risk
+#: view:mgmtsystem.hazard:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_form
+msgid "Analysis"
+msgstr "Analyse"
+
+#. module: mgmtsystem_hazard_risk
+#: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_chemical
+msgid "Chemical"
+msgstr "Kjemisk"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model,name:mgmtsystem_hazard_risk.model_res_company
+msgid "Companies"
+msgstr "Firmaer"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_risk_computation
+#: field:mgmtsystem.hazard.risk.computation,name:0
+msgid "Computation Risk"
+msgstr "Beregning av risiko"
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,create_uid:0
+#: field:mgmtsystem.hazard.risk.computation,create_uid:0
+#: field:mgmtsystem.hazard.risk.type,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,create_date:0
+#: field:mgmtsystem.hazard.risk.computation,create_date:0
+#: field:mgmtsystem.hazard.risk.type,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.risk.computation,description:0
+#: field:mgmtsystem.hazard.risk.type,description:0
+msgid "Description"
+msgstr "Beskrivelse"
+
+#. module: mgmtsystem_hazard_risk
+#: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_environment
+msgid "Environment"
+msgstr "Miljø"
+
+#. module: mgmtsystem_hazard_risk
+#: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_fire
+msgid "Fire"
+msgstr "Brann"
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,hazard_id:0
+msgid "Hazard"
+msgstr "Fare"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard
+msgid "Hazards of the health and safety management system"
+msgstr "Farer i helse og sikkerhets-systemet"
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,id:0
+#: field:mgmtsystem.hazard.risk.computation,id:0
+#: field:mgmtsystem.hazard.risk.type,id:0
+msgid "ID"
+msgstr ""
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,justification:0
+msgid "Justification"
+msgstr "Rettferdiggjøring"
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,write_uid:0
+#: field:mgmtsystem.hazard.risk.computation,write_uid:0
+#: field:mgmtsystem.hazard.risk.type,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,write_date:0
+#: field:mgmtsystem.hazard.risk.computation,write_date:0
+#: field:mgmtsystem.hazard.risk.type,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mgmtsystem_hazard_risk
+#: view:res.company:mgmtsystem_hazard_risk.company_form_view
+msgid "Management System"
+msgstr "Styringssystem"
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,name:0
+msgid "Name"
+msgstr "Navn"
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,usage_id:0
+msgid "Occupation / Usage"
+msgstr "Opptatt / Bruk"
+
+#. module: mgmtsystem_hazard_risk
+#: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_physical
+msgid "Physical"
+msgstr "Fysisk"
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,probability_id:0
+msgid "Probability"
+msgstr "Sannsynlighet"
+
+#. module: mgmtsystem_hazard_risk
+#: view:mgmtsystem.hazard.residual_risk:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_residual_risk_form
+msgid "Residual Risk"
+msgstr "Restparti Risiko"
+
+#. module: mgmtsystem_hazard_risk
+#: view:mgmtsystem.hazard:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_form
+#: field:mgmtsystem.hazard,residual_risk_ids:0
+msgid "Residual Risk Evaluations"
+msgstr "Restparti Risikovurdering"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.actions.act_window,name:mgmtsystem_hazard_risk.open_mgmtsystem_hazard_residual_risk_list
+#: view:mgmtsystem.hazard.residual_risk:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_residual_risk_filter
+#: view:mgmtsystem.hazard.residual_risk:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_residual_risk_tree
+msgid "Residual Risks"
+msgstr "Restmateriale Risiko"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_residual_risk
+msgid "Residual Risks of hazard"
+msgstr "Restparti risiko av faren"
+
+#. module: mgmtsystem_hazard_risk
+#: view:mgmtsystem.hazard.risk.computation:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_form
+#: field:res.company,risk_computation_id:0
+msgid "Risk Computation"
+msgstr "Risikoberegning"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.actions.act_window,name:mgmtsystem_hazard_risk.open_mgmtsystem_hazard_risk_computation_list
+#: model:ir.ui.menu,name:mgmtsystem_hazard_risk.menu_open_hazard_risk_computation
+#: view:mgmtsystem.hazard.risk.computation:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_filter
+#: view:mgmtsystem.hazard.risk.computation:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_tree
+msgid "Risk Computations"
+msgstr "Risikoberegninger"
+
+#. module: mgmtsystem_hazard_risk
+#: view:mgmtsystem.hazard:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_form
+msgid "Risk Evaluation"
+msgstr "Risikoevaluering"
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard,risk_type_id:0
+#: view:mgmtsystem.hazard.risk.type:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_type_form
+#: field:mgmtsystem.hazard.risk.type,name:0
+msgid "Risk Type"
+msgstr "Risiko Type"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.actions.act_window,name:mgmtsystem_hazard_risk.open_mgmtsystem_hazard_risk_type_list
+#: model:ir.ui.menu,name:mgmtsystem_hazard_risk.menu_open_hazard_risk_type
+#: view:mgmtsystem.hazard.risk.type:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_type_filter
+#: view:mgmtsystem.hazard.risk.type:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_type_tree
+msgid "Risk Types"
+msgstr "Risikotyper"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_risk_type
+msgid "Risk type of the hazard"
+msgstr "Risikotyper av denne faren"
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,severity_id:0
+msgid "Severity"
+msgstr "Alvorlighetsgrad"
