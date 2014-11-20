@@ -29,6 +29,6 @@ class mgmtsystem_system(models.Model):
     _name = 'mgmtsystem.system'
     description = 'System'
 
-    name = fields.Char('System', size=30, required=True, translate=True)
+    name = fields.Char('System', required=True, translate=True)
     manual = fields.Many2one('document.page', 'Manual')
     company_id = fields.Many2one('res.company', 'Company', default=own_company)
