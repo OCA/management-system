@@ -46,10 +46,10 @@ including :
         'document_page_health_safety_manual',
         'mgmtsystem_hazard',
     ],
-    "data": ['health_safety.xml'],
+    "data": [
+        'data/mgmtsystem_system.xml'
+    ],
     "demo": [],
-    'installable': False,
+    'installable': True,
     "application": True,
-    "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
