@@ -71,7 +71,7 @@ from openerp.tools.translate import _
 >>>>>>> Fix typo and pep8
 from urllib import urlencode
 from urlparse import urljoin
-from openerp import fields, models
+from openerp import fields, models, api
 from openerp.tools.translate import _
 
 own_company = lambda self: self.env.user.company_id.id
@@ -94,29 +94,27 @@ class mgmtsystem_action(models.Model):
     system_id = fields.Many2one('mgmtsystem.system', 'System')
     company_id = fields.Many2one('res.company', 'System', default=own_company)
 
-    def create(self, cr, uid, vals, context=None):
+    
+    @api.model
+    def create(self, vals):
         vals.update({
-            'reference': (
-                self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.action'))
-        }, context=context)
-        return super(mgmtsystem_action, self).create(
-            cr, uid, vals, context=context
-        )
+            'reference': self.env['ir.sequence'].get('mgmtsystem.action')
+        })
+        return super(mgmtsystem_action, self).create(vals)
 
-    def message_auto_subscribe(
-            self, cr, uid, ids, updated_fields, context=None, values=None):
+    @api.multi
+    def message_auto_subscribe(self, updated_fields, values=None):
         """Automatically add the responsible user to the follow list."""
-        for o in self.browse(cr, uid, ids, context=context):
-            self.message_subscribe_users(
-                cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None,
-                context=context
-            )
-        return super(mgmtsystem_action, self).message_auto_subscribe(
-            cr, uid, ids, updated_fields, context=context, values=values
-        )
+        for o in self:
+            self.message_subscribe_users(user_ids=[o.user_id.id],
+                                         subtype_ids=None)
+
+        return super(mgmtsystem_action, self).\
+                     message_auto_subscribe(updated_fields, values=values)
 
     def case_open(self, cr, uid, ids, context=None):
         """ Opens case """
+        import pdb; pdb.set_trace()
         cases = self.browse(cr, uid, ids, context=context)
         for case in cases:
             values = {'active': True}
@@ -130,6 +128,7 @@ class mgmtsystem_action(models.Model):
 
     def case_close(self, cr, uid, ids, context=None):
         """When Action is closed, post a message on the related NC's chatter"""
+        import pdb; pdb.set_trace()
         for o in self.browse(cr, uid, ids, context=context):
             for nc in o.nonconformity_ids:
                 nc.case_send_note(_('Action "%s" was closed.' % o.name))
@@ -151,6 +150,7 @@ class mgmtsystem_action(models.Model):
         )
 
     def get_action_url(self, cr, uid, ids, context=None):
+        import pdb; pdb.set_trace()
         assert len(ids) == 1
 
         action = self.browse(cr, uid, ids[0], context=context)
