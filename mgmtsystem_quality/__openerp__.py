@@ -1,4 +1,8 @@
+<<<<<<< 30d639046d4a0862cd4144a32f76826bb489b0b0
 # -*- encoding: utf-8 -*-
+=======
+# -*- coding: utf-8 -*-
+>>>>>>> Migrate mgmtsystem_quality
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -19,6 +23,7 @@
 #
 ##############################################################################
 {
+<<<<<<< 30d639046d4a0862cd4144a32f76826bb489b0b0
 <<<<<<< 1f65871678dc62e50eb086ae107502490474b8ec
     "name" : " Quality Management System",
     "version" : "1.0",
@@ -52,11 +57,20 @@ This module enables you to manage your quality management system, including :
     * Actions
     * Employee Training
     """,
+=======
+    "name": "Quality Management System",
+    "version": "8.0.1.0.0",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+>>>>>>> Migrate mgmtsystem_quality
     "depends": [
         'mgmtsystem_audit',
         'document_page_quality_manual',
         'mgmtsystem_review',
     ],
+<<<<<<< 30d639046d4a0862cd4144a32f76826bb489b0b0
     "data": ['quality.xml'],
     "demo": [],
     "installable": True,
@@ -64,3 +78,11 @@ This module enables you to manage your quality management system, including :
     "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+=======
+    "data": [
+        'data/mgmtsystem_system.xml',
+    ],
+    'installable': True,
+    "application": True,
+}
+>>>>>>> Migrate mgmtsystem_quality
