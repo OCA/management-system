@@ -36,6 +36,7 @@ class mgmtsystem_system(models.Model):
     _name = 'mgmtsystem.system'
     description = 'System'
 
+<<<<<<< 5e60e0b3b06575444d36910bf02a9da94dde574c
 <<<<<<< 0432e9c08747eb002779bcbf4a681c45f4c9ae47
 <<<<<<< c9a3eba175d74c79a93a10ed28643b85214dc452
     _columns = {
@@ -62,6 +63,9 @@ class mgmtsystem_system(models.Model):
 >>>>>>> Ported mgmtsystem
 =======
     name = fields.Char('System', size=30, required=True, translate=True)
+=======
+    name = fields.Char('System', required=True, translate=True)
+>>>>>>> Removed vim lines and size=30 on attribute name
     manual = fields.Many2one('document.page', 'Manual')
     company_id = fields.Many2one('res.company', 'Company', default=own_company)
 >>>>>>> Fix some issues with pep8 and typo for attribute required
