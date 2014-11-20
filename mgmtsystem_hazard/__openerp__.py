@@ -36,6 +36,6 @@ and safety management system.
         'mgmtsystem_hazard.xml',
         'mgmtsystem_hazard_data.xml',
     ],
-    "installable": False,
+    "installable": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
