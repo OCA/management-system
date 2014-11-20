@@ -43,6 +43,6 @@ system:
         'board_mgmtsystem_action.xml',
     ],
     "demo": ['demo_action.xml'],
-    'installable': False,
+    'installable': True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

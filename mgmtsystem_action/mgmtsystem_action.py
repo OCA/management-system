@@ -19,42 +19,29 @@
 #
 ##############################################################################
 
-from tools.translate import _
+from openerp.tools.translate import _
 from urllib import urlencode
 from urlparse import urljoin
-from openerp.osv import fields, orm
+from openerp import fields, models
 
 
-class mgmtsystem_action(orm.Model):
+class mgmtsystem_action(models.Model):
     _name = "mgmtsystem.action"
     _description = "Action"
     _inherit = "crm.claim"
-    _columns = {
-        'reference': fields.char(
-            'Reference',
-            size=64,
-            required=True,
-            readonly=True,
-        ),
-        'type_action': fields.selection(
-            [
-                ('immediate', 'Immediate Action'),
-                ('correction', 'Corrective Action'),
-                ('prevention', 'Preventive Action'),
-                ('improvement', 'Improvement Opportunity')
-            ],
-            'Response Type',
-        ),
-        'system_id': fields.many2one('mgmtsystem.system', 'System'),
-        'company_id': fields.many2one('res.company', 'Company')
-    }
 
-    _defaults = {
-        'company_id': (
-            lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
-        'reference': 'NEW',
-    }
+    reference = fields.Char('Reference', size=64, require=True,
+                            readonly=True, default="NEW")
+    type_action = fields.Selection([
+                                    ('immediate', 'Immediate Action'),
+                                    ('correction', 'Corrective Action'),
+                                    ('prevention', 'Preventive Action'),
+                                    ('improvement', 'Improvement Opportunity')
+                                   ], 'Response Type')
+
+    system_id = fields.Many2one('mgmtsystem.system', 'System')
+    company_id = fields.Many2one('res.company', 'System',
+                            default=lambda self: self.env.user.company_id.id)
 
     def create(self, cr, uid, vals, context=None):
         vals.update({
@@ -77,6 +64,18 @@ class mgmtsystem_action(orm.Model):
             cr, uid, ids, updated_fields, context=context, values=values
         )
 
+    def case_open(self, cr, uid, ids, context=None):
+        """ Opens case """
+        cases = self.browse(cr, uid, ids, context=context)
+        for case in cases:
+            values = {'active': True}
+            if case.state == 'draft':
+                values['date_open'] = fields.datetime.now()
+            if not case.user_id:
+                values['user_id'] = uid
+            self.case_set(cr, uid, [case.id], 'open', values, context=context)
+        return True
+
     def case_close(self, cr, uid, ids, context=None):
         """When Action is closed, post a message on the related NC's chatter"""
         for o in self.browse(cr, uid, ids, context=context):
@@ -88,6 +87,7 @@ class mgmtsystem_action(orm.Model):
 
     def get_action_url(self, cr, uid, ids, context=None):
         assert len(ids) == 1
+
         action = self.browse(cr, uid, ids[0], context=context)
         base_url = self.pool.get('ir.config_parameter').get_param(
             cr, uid, 'web.base.url', default='http://localhost:8069',
@@ -95,6 +95,7 @@ class mgmtsystem_action(orm.Model):
         )
         query = {'db': cr.dbname}
         fragment = {'id': action.id, 'model': self._name}
+
         return urljoin(base_url, "?%s#%s" % (
             urlencode(query), urlencode(fragment)
         ))
