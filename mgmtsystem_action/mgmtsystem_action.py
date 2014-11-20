@@ -19,6 +19,7 @@
 #
 ##############################################################################
 
+<<<<<<< fdc5aa91e5e5e37a018d952a2dd7355266e54a36
 <<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
 from tools.translate import _
 from urllib import urlencode
@@ -66,9 +67,14 @@ class mgmtsystem_action(orm.Model):
         return super(mgmtsystem_action, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context, values=values)
 =======
 from openerp.tools.translate import _
+=======
+>>>>>>> Fix typo and pep8
 from urllib import urlencode
 from urlparse import urljoin
 from openerp import fields, models
+from openerp.tools.translate import _
+
+own_company = lambda self: self.env.user.company_id.id
 
 
 class mgmtsystem_action(models.Model):
@@ -76,18 +82,17 @@ class mgmtsystem_action(models.Model):
     _description = "Action"
     _inherit = "crm.claim"
 
-    reference = fields.Char('Reference', size=64, require=True,
+    reference = fields.Char('Reference', size=64, required=True,
                             readonly=True, default="NEW")
     type_action = fields.Selection([
-                                    ('immediate', 'Immediate Action'),
-                                    ('correction', 'Corrective Action'),
-                                    ('prevention', 'Preventive Action'),
-                                    ('improvement', 'Improvement Opportunity')
+                                   ('immediate', 'Immediate Action'),
+                                   ('correction', 'Corrective Action'),
+                                   ('prevention', 'Preventive Action'),
+                                   ('improvement', 'Improvement Opportunity')
                                    ], 'Response Type')
 
     system_id = fields.Many2one('mgmtsystem.system', 'System')
-    company_id = fields.Many2one('res.company', 'System',
-                            default=lambda self: self.env.user.company_id.id)
+    company_id = fields.Many2one('res.company', 'System', default=own_company)
 
     def create(self, cr, uid, vals, context=None):
         vals.update({
