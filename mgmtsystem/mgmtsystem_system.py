@@ -19,22 +19,15 @@
 #
 ##############################################################################
 
-from osv import fields, orm
+from openerp import models, fields
 
 
-class mgmtsystem_system(orm.Model):
+class mgmtsystem_system(models.Model):
 
     _name = 'mgmtsystem.system'
     description = 'System'
 
-    _columns = {
-        'name': fields.char('System', size=30, required=True, translate=True),
-        'manual': fields.many2one('document.page', 'Manual'),
-        'company_id': fields.many2one('res.company', 'Company')
-    }
-
-    _defaults = {
-        'company_id': (
-            lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
-    }
+    name = fields.Char('System', size=30, require=True, translate=True)
+    manual = fields.Many2one('document.page', 'Manual')
+    company_id = fields.Many2one('res.company', 'Company',
+                     	  default=lambda self: self.env.user.company_id.id)
