@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    
+    <record id="system_quality" model="mgmtsystem.system">
+      <field name="name">Quality</field>
+      <field name="manual" ref="document_page_quality_manual.document_page_quality_manual"/>
+    </record>
+
+  </data>
+</openerp>
