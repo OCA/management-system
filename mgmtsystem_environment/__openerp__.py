@@ -45,8 +45,6 @@ including:
     ],
     "data": ['environment.xml'],
     "demo": [],
-    'installable': False,
+    'installable': True,
     "application": True,
-    "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
