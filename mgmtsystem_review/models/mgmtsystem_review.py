@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from osv import fields, orm
+from openerp.osv import fields, orm
 
 
 class mgmtsystem_review(orm.Model):
@@ -42,7 +42,7 @@ class mgmtsystem_review(orm.Model):
             'Participants',
         ),
         'response_ids': fields.many2many(
-            'survey.response',
+            'survey.user_input',
             'mgmtsystem_review_response_rel',
             'response_id',
             'mgmtsystem_review_id',
@@ -93,7 +93,7 @@ class mgmtsystem_review_line(orm.Model):
         'type': fields.selection(
             (
                 ('action', 'Action'),
-                ('nonconformity', 'Noncomformity'),
+                ('nonconformity', 'Nonconformity'),
             ),
             'Type',
         ),

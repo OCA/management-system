@@ -35,12 +35,10 @@ This module enables you to manage reviews of your management system.
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_review_security.xml',
-        'review_sequence.xml',
-        'mgmtsystem_review.xml',
+        'data/ir_sequence.xml',
+        'views/mgmtsystem_review.xml',
         'report/review_report.xml',
     ],
     "demo": [],
-    'installable': False,
-    "certificate": ''
+    'installable': True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
