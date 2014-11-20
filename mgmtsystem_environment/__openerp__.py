@@ -20,22 +20,11 @@
 ##############################################################################
 {
     "name": "Environment Management System",
-    "version": "1.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "version": "8.0.1.0.0",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """\
-This module enables you to manage your environment management system,
-including:
-            * Environment Manual
-            * Reviews
-            * Audits
-            * Environmental Aspects
-            * Nonconformities
-            * Actions
-            * Employee Training
-    """,
     "depends": [
         'mgmtsystem_audit',
         'mgmtsystem_review',
@@ -45,8 +34,6 @@ including:
     ],
     "data": ['environment.xml'],
     "demo": [],
-    'installable': False,
+    'installable': True,
     "application": True,
-    "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
