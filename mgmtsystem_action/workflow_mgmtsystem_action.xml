@@ -15,7 +15,11 @@
             <field name="model_id" ref="model_mgmtsystem_action" />
             <field name="state">email</field>
             <field name="sequence">5</field>
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
             <field name="condition">True</field>
+=======
+	    <field name="condition">user.email not in [False, "admin@example.com", "demo@example.com"]</field>
+>>>>>>> Ported mgmtsystem_action
             <field name="email">object.user_id.user_email</field>
             <field name="subject">[[object.name]]</field>
             <field name="message">Hello,
@@ -45,23 +49,6 @@ OpenERP</field>
             <field name="split_mode">XOR</field>
             <field name="join_mode">XOR</field>
             <field name="action_id" ref="mgmtsystem_action_server_action"/>
-        </record>
-        
-        <record model="workflow.activity" id="mgmtsystem_action_close">
-            <field name="name">Close</field>
-            <field name="wkf_id" ref="mgmtsystem_action_workflow"/>
-            <field name="kind">dummy</field>
-            <field name="flow_stop">True</field>
-            <field name="split_mode">XOR</field>
-            <field name="join_mode">XOR</field>
-        </record>
-
-        <!-- Transitions -->
-        <record model="workflow.transition" id="mgmtsystem_action_transition_close">
-            <field name="act_from" ref="mgmtsystem_action_open"/>
-            <field name="act_to" ref="mgmtsystem_action_close"/>
-            <field name="signal">case_close</field>
-            <field name="condition">True</field>
         </record>
 
     </data>
