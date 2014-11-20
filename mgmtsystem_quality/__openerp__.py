@@ -42,8 +42,6 @@ This module enables you to manage your quality management system, including :
     ],
     "data": ['quality.xml'],
     "demo": [],
-    'installable': False,
+    'installable': True,
     "application": True,
-    "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
