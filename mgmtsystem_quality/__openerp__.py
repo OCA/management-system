@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -19,31 +19,20 @@
 #
 ##############################################################################
 {
-    "name": " Quality Management System",
-    "version": "1.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "name": "Quality Management System",
+    "version": "8.0.1.0.0",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """\
-This module enables you to manage your quality management system, including :
-    * Quality Manual
-    * Reviews
-    * Audits
-    * Procedures
-    * Nonconformities
-    * Actions
-    * Employee Training
-    """,
     "depends": [
         'mgmtsystem_audit',
         'document_page_quality_manual',
         'mgmtsystem_review',
     ],
-    "data": ['quality.xml'],
-    "demo": [],
-    'installable': False,
+    "data": [
+        'data/mgmtsystem_system.xml',
+    ],
+    'installable': True,
     "application": True,
-    "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
