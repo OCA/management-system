@@ -19,14 +19,22 @@
 #
 ##############################################################################
 
+<<<<<<< c9a3eba175d74c79a93a10ed28643b85214dc452
 from osv import fields, orm
 
 
 class mgmtsystem_system(orm.Model):
+=======
+from openerp import models, fields
+
+
+class mgmtsystem_system(models.Model):
+>>>>>>> Ported mgmtsystem
 
     _name = 'mgmtsystem.system'
     description = 'System'
 
+<<<<<<< c9a3eba175d74c79a93a10ed28643b85214dc452
     _columns = {
 <<<<<<< 246504adbebf5957ae9fe262cb1b09aa7213ab41
         'name': fields.char('System', size=30, required=True, translate=True),
@@ -43,3 +51,9 @@ class mgmtsystem_system(orm.Model):
     }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+=======
+    name = fields.Char('System', size=30, require=True, translate=True)
+    manual = fields.Many2one('document.page', 'Manual')
+    company_id = fields.Many2one('res.company', 'Company',
+                     	  default=lambda self: self.env.user.company_id.id)
+>>>>>>> Ported mgmtsystem

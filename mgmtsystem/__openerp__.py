@@ -19,6 +19,7 @@
 #
 ##############################################################################
 {
+<<<<<<< c9a3eba175d74c79a93a10ed28643b85214dc452
 <<<<<<< 240068ec92e65feaead5d60c9ce38b82bb1dbb69
     "name" : "Management System",
     "version" : "1.0",
@@ -36,6 +37,8 @@
     "category" : "Management System",
     "complexity" : "normal",
 =======
+=======
+>>>>>>> Ported mgmtsystem
     "name": "Management System",
     "version": "1.0",
     "author": "Savoir-faire Linux",
@@ -43,7 +46,10 @@
     "license": "AGPL-3",
     "category": "Management System",
     "complexity": "normal",
+<<<<<<< c9a3eba175d74c79a93a10ed28643b85214dc452
 >>>>>>> [FIX] PEP8 compliance after running flake8
+=======
+>>>>>>> Ported mgmtsystem
     "description": """\
 This module is the basis of any management system applications:
      * audit reports,
@@ -66,7 +72,11 @@ This module is the basis of any management system applications:
         'board_mgmtsystem_view.xml',
     ],
     "demo": [],
+<<<<<<< c9a3eba175d74c79a93a10ed28643b85214dc452
     "installable": True,
+=======
+    'installable': True,
+>>>>>>> Ported mgmtsystem
     "certificate": ''
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
