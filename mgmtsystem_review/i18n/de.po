@@ -1,0 +1,273 @@
+# German translation for openerp-mgmtsystem
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the openerp-mgmtsystem package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openerp-mgmtsystem\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-07-25 18:15+0000\n"
+"PO-Revision-Date: 2012-09-17 11:27+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"Language-Team: German <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-04-24 06:29+0000\n"
+"X-Generator: Launchpad (build 16985)\n"
+
+#. module: mgmtsystem_review
+#: model:ir.module.module,shortdesc:mgmtsystem_review.module_meta_information
+msgid "Management System - Review"
+msgstr "Management-System - Bewertung"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "Review Report"
+msgstr "Bewertungsbericht"
+
+#. module: mgmtsystem_review
+#: view:mgmtsystem.review:0
+msgid "Closed Reviews"
+msgstr "Abgeschlossene Bewertngen"
+
+#. module: mgmtsystem_review
+#: view:mgmtsystem.review:0
+#: report:mgmtsystem.review.report:0
+msgid "Changes affecting the management systems"
+msgstr "Herausforderungen, die das Management-System betreffen"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "Date:"
+msgstr "Jahr:"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "Confidentiality: Direction Review"
+msgstr "Vertraulichkeit: Führungs-Bewertung"
+
+#. module: mgmtsystem_review
+#: view:mgmtsystem.review:0
+#: field:mgmtsystem.review,user_ids:0
+msgid "Participants"
+msgstr "Beteiligte"
+
+#. module: mgmtsystem_review
+#: model:ir.actions.report.xml,name:mgmtsystem_review.mgmtsystem_review_report
+msgid "Print Report"
+msgstr "Drucke Bericht"
+
+#. module: mgmtsystem_review
+#: view:mgmtsystem.review:0
+#: selection:mgmtsystem.review,state:0
+msgid "Closed"
+msgstr "Abgeschlossen"
+
+#. module: mgmtsystem_review
+#: view:mgmtsystem.review:0
+#: field:mgmtsystem.review,policy:0
+msgid "Policy"
+msgstr "Richtlinie"
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review.line,decision:0
+msgid "Decision"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review.line,type:0
+msgid "Type"
+msgstr "Aktion"
+
+#. module: mgmtsystem_review
+#: view:mgmtsystem.review:0
+#: field:mgmtsystem.review,conclusion:0
+#: report:mgmtsystem.review.report:0
+msgid "Conclusion"
+msgstr "Fazit"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "Satisfaction Survey Answers"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "Comments:"
+msgstr "Bemerkungen:"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "Action:"
+msgstr "Maßnahme:"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid ")"
+msgstr ")"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "("
+msgstr "("
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review.line,name:0
+msgid "Title"
+msgstr "Titel"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "-"
+msgstr "-"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "Decision:"
+msgstr "Entscheidung:"
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review,date:0
+msgid "Date"
+msgstr "Datum"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "State:"
+msgstr "Status:"
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review.line,nonconformity_id:0
+msgid "Nonconformity"
+msgstr "Mangel/Nichteinhaltung"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "Improvements:"
+msgstr "Verbesserungen:"
+
+#. module: mgmtsystem_review
+#: selection:mgmtsystem.review.line,type:0
+msgid "Noncomformity"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review
+#: view:mgmtsystem.review:0
+#: field:mgmtsystem.review.line,review_id:0
+msgid "Review"
+msgstr "Bewertung"
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: mgmtsystem_review
+#: view:mgmtsystem.review:0
+#: report:mgmtsystem.review.report:0
+msgid "Inputs"
+msgstr "Eingaben"
+
+#. module: mgmtsystem_review
+#: view:mgmtsystem.review:0
+#: field:mgmtsystem.review,line_ids:0
+msgid "Lines"
+msgstr "Positionen"
+
+#. module: mgmtsystem_review
+#: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_list
+#: model:ir.ui.menu,name:mgmtsystem_review.menu_open_review
+#: view:mgmtsystem.review:0
+msgid "Reviews"
+msgstr "Bewertungen"
+
+#. module: mgmtsystem_review
+#: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review_line
+#: view:mgmtsystem.review.line:0
+msgid "Review Line"
+msgstr "Bewertungspositionen"
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review,state:0
+msgid "State"
+msgstr "Status"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "Policies"
+msgstr "Richtlinien"
+
+#. module: mgmtsystem_review
+#: view:mgmtsystem.review:0
+#: field:mgmtsystem.review,response_ids:0
+msgid "Survey Answers"
+msgstr "Umfrage Antworten"
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review.line,action_id:0
+#: selection:mgmtsystem.review.line,type:0
+msgid "Action"
+msgstr "Maßnahme"
+
+#. module: mgmtsystem_review
+#: model:ir.module.module,description:mgmtsystem_review.module_meta_information
+msgid ""
+"\n"
+"\tThis module enables you to manage reviews of \n"
+"        your management system.\n"
+"    "
+msgstr ""
+"\n"
+"\tDieses Modul ermöglich Ihnen die Verwaltung von Bewertung Ihres Management-"
+"Systems.\n"
+"    "
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review,changes:0
+msgid "Changes"
+msgstr "Änderungen"
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review,reference:0
+msgid "Reference"
+msgstr "Bezug"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "Participants:"
+msgstr "Teilnehmer:"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "Reference:"
+msgstr "Verweis:"
+
+#. module: mgmtsystem_review
+#: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_line_list
+#: view:mgmtsystem.review.line:0
+msgid "Review Lines"
+msgstr "Bewertungspositionen"
+
+#. module: mgmtsystem_review
+#: view:mgmtsystem.review:0
+msgid "Open Reviews"
+msgstr "Anstehende Bewertungen"
+
+#. module: mgmtsystem_review
+#: report:mgmtsystem.review.report:0
+msgid "Expectations:"
+msgstr "Erwartungen:"
+
+#. module: mgmtsystem_review
+#: view:mgmtsystem.review:0
+msgid "Close"
+msgstr "Abschließen"
+
+#. module: mgmtsystem_review
+#: view:mgmtsystem.review:0
+#: selection:mgmtsystem.review,state:0
+msgid "Open"
+msgstr "In Bearbeitung"
