@@ -76,7 +76,10 @@ This module is the basis of any management system applications:
     "installable": True,
 =======
     'installable': True,
+<<<<<<< 0432e9c08747eb002779bcbf4a681c45f4c9ae47
 >>>>>>> Ported mgmtsystem
     "certificate": ''
+=======
+>>>>>>> Fix some issues with pep8 and typo for attribute required
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

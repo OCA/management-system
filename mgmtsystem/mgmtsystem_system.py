@@ -27,6 +27,8 @@ class mgmtsystem_system(orm.Model):
 =======
 from openerp import models, fields
 
+own_company = lambda self: self.env.user.company_id.id
+
 
 class mgmtsystem_system(models.Model):
 >>>>>>> Ported mgmtsystem
@@ -34,6 +36,7 @@ class mgmtsystem_system(models.Model):
     _name = 'mgmtsystem.system'
     description = 'System'
 
+<<<<<<< 0432e9c08747eb002779bcbf4a681c45f4c9ae47
 <<<<<<< c9a3eba175d74c79a93a10ed28643b85214dc452
     _columns = {
 <<<<<<< 246504adbebf5957ae9fe262cb1b09aa7213ab41
@@ -57,3 +60,8 @@ class mgmtsystem_system(models.Model):
     company_id = fields.Many2one('res.company', 'Company',
                      	  default=lambda self: self.env.user.company_id.id)
 >>>>>>> Ported mgmtsystem
+=======
+    name = fields.Char('System', size=30, required=True, translate=True)
+    manual = fields.Many2one('document.page', 'Manual')
+    company_id = fields.Many2one('res.company', 'Company', default=own_company)
+>>>>>>> Fix some issues with pep8 and typo for attribute required
