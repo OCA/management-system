@@ -19,6 +19,7 @@
 #
 ##############################################################################
 {
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
 <<<<<<< 19a28d85a2132bf3e180ba87be85af98327c8555
 <<<<<<< 8c635f233cfc8f312d5a86ef4faca6fd8d2bf583
     "name" : "Management System - Action",
@@ -38,18 +39,26 @@
 =======
 =======
 >>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
+=======
+>>>>>>> Ported mgmtsystem_action
     "name": "Management System - Action",
     "version": "1.2",
     "author": "Savoir-faire Linux",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
 <<<<<<< 19a28d85a2132bf3e180ba87be85af98327c8555
 >>>>>>> [FIX] PEP8 compliance after running flake8
 =======
 >>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
     "description": """\
 This module enables you to manage the different actions of your management system:
+=======
+    "description": """\
+This module enables you to manage the different actions of your management
+system:
+>>>>>>> Ported mgmtsystem_action
   * immediate actions
   * corrective actions
   * preventive actions
@@ -65,6 +74,10 @@ This module enables you to manage the different actions of your management syste
         'board_mgmtsystem_action.xml',
     ],
     "demo": ['demo_action.xml'],
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
     "installable": True,
+=======
+    'installable': True,
+>>>>>>> Ported mgmtsystem_action
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -19,6 +19,7 @@
 #
 ##############################################################################
 
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
 from tools.translate import _
 from urllib import urlencode
 from urlparse import urljoin
@@ -63,12 +64,71 @@ class mgmtsystem_action(orm.Model):
         for o in self.browse(cr, uid, ids, context=context):
             self.message_subscribe_users(cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None, context=context)
         return super(mgmtsystem_action, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context, values=values)
+=======
+from openerp.tools.translate import _
+from urllib import urlencode
+from urlparse import urljoin
+from openerp import fields, models
+
+
+class mgmtsystem_action(models.Model):
+    _name = "mgmtsystem.action"
+    _description = "Action"
+    _inherit = "crm.claim"
+
+    reference = fields.Char('Reference', size=64, require=True,
+                            readonly=True, default="NEW")
+    type_action = fields.Selection([
+                                    ('immediate', 'Immediate Action'),
+                                    ('correction', 'Corrective Action'),
+                                    ('prevention', 'Preventive Action'),
+                                    ('improvement', 'Improvement Opportunity')
+                                   ], 'Response Type')
+
+    system_id = fields.Many2one('mgmtsystem.system', 'System')
+    company_id = fields.Many2one('res.company', 'System',
+                            default=lambda self: self.env.user.company_id.id)
+
+    def create(self, cr, uid, vals, context=None):
+        vals.update({
+            'reference': (
+                self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.action'))
+        }, context=context)
+        return super(mgmtsystem_action, self).create(
+            cr, uid, vals, context=context
+        )
+
+    def message_auto_subscribe(
+            self, cr, uid, ids, updated_fields, context=None, values=None):
+        """Automatically add the responsible user to the follow list."""
+        for o in self.browse(cr, uid, ids, context=context):
+            self.message_subscribe_users(
+                cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None,
+                context=context
+            )
+        return super(mgmtsystem_action, self).message_auto_subscribe(
+            cr, uid, ids, updated_fields, context=context, values=values
+        )
+
+    def case_open(self, cr, uid, ids, context=None):
+        """ Opens case """
+        cases = self.browse(cr, uid, ids, context=context)
+        for case in cases:
+            values = {'active': True}
+            if case.state == 'draft':
+                values['date_open'] = fields.datetime.now()
+            if not case.user_id:
+                values['user_id'] = uid
+            self.case_set(cr, uid, [case.id], 'open', values, context=context)
+        return True
+>>>>>>> Ported mgmtsystem_action
 
     def case_close(self, cr, uid, ids, context=None):
         """When Action is closed, post a message on the related NC's chatter"""
         for o in self.browse(cr, uid, ids, context=context):
             for nc in o.nonconformity_ids:
                 nc.case_send_note(_('Action "%s" was closed.' % o.name))
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
         return super(mgmtsystem_action, self).case_close(cr, uid, ids, context=context)
 
     def get_action_url(self, cr, uid, ids, context=None):
@@ -80,3 +140,23 @@ class mgmtsystem_action(orm.Model):
         return urljoin(base_url, "?%s#%s" % (urlencode(query), urlencode(fragment)))
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+=======
+        return super(mgmtsystem_action, self).case_close(
+            cr, uid, ids, context=context
+        )
+
+    def get_action_url(self, cr, uid, ids, context=None):
+        assert len(ids) == 1
+
+        action = self.browse(cr, uid, ids[0], context=context)
+        base_url = self.pool.get('ir.config_parameter').get_param(
+            cr, uid, 'web.base.url', default='http://localhost:8069',
+            context=context,
+        )
+        query = {'db': cr.dbname}
+        fragment = {'id': action.id, 'model': self._name}
+
+        return urljoin(base_url, "?%s#%s" % (
+            urlencode(query), urlencode(fragment)
+        ))
+>>>>>>> Ported mgmtsystem_action

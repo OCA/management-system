@@ -15,7 +15,11 @@
             <field name="model_id" ref="model_mgmtsystem_action" />
             <field name="state">email</field>
             <field name="sequence">5</field>
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
             <field name="condition">True</field>
+=======
+	    <field name="condition">user.email not in [False, "admin@example.com", "demo@example.com"]</field>
+>>>>>>> Ported mgmtsystem_action
             <field name="email">object.user_id.user_email</field>
             <field name="subject">[[object.name]]</field>
             <field name="message">Hello,

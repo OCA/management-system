@@ -12,7 +12,11 @@
                     <field name="type_action"/>
                     <field name="user_id"/>
                     <field name="date_deadline"/>
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
                     <field name="state"/>
+=======
+                    <field name="stage_id"/>
+>>>>>>> Ported mgmtsystem_action
                     <field name="company_id" groups="base.group_multi_company"/>
                 </tree>
             </field>
@@ -25,8 +29,13 @@
             <field name="arch" type="xml">
                 <search string="Action">
                     <group>
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
                         <filter name="current" icon="terp-document-new" domain="[('state','in',('draft','open','pending'))]" string="Open" help="Open Actions"/>
                         <filter icon="terp-camera_test" domain="[('state','in',('cancelled','done'))]" string="Closed" help="Closed Actions"/>
+=======
+                        <!--<filter name="current" icon="terp-document-new" domain="[('stage_id.name','in',('draft','open','pending'))]" string="Open" help="Open Actions"/> -->
+                        <!-- <filter icon="terp-camera_test" domain="[('stage_id.name','in',('cancelled','done'))]" string="Closed" help="Closed Actions"/> -->
+>>>>>>> Ported mgmtsystem_action
                         <separator orientation="vertical"/>
                         <field name="reference"/>
                         <field name="date" select='1'/>
@@ -50,6 +59,7 @@
             <field name="arch" type="xml">
                 <form string="Action" version="7.0">
                     <header>
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
                         <button name="case_cancel" string="Cancel" states="draft,pending" type="object" icon="gtk-cancel"/>
                         <button name="case_open" string="Open" states="draft,pending" type="object" icon="gtk-go-forward"/>
                         <button name="case_pending" string="Pending" states="open" type="object" icon="gtk-go-forward"/>
@@ -107,6 +117,15 @@
 =======
 >>>>>>> [CHG] Updated statusbar/buttons's layout to conform to OpenERP 7.0 style.
 =======
+=======
+		        <!-- <button name="case_cancel" string="Cancel" states="draft,pending" type="object" icon="gtk-cancel"/>-->
+		        <!-- <button name="case_open" string="Open" states="draft,pending" type="object" icon="gtk-go-forward"/>-->
+		        <!-- <button name="case_pending" string="Pending" states="open" type="object" icon="gtk-go-forward"/>-->
+                        <!-- Corrective actions can be already implemented when recording the NC, so they can be created and immediately closed -->
+			<!-- <button name="case_close" string="Close" states="draft,open" type="object" icon="gtk-jump-to"/>-->
+			<field name="stage_id" widget="statusbar" clickable="True" />
+                    </header>
+>>>>>>> Ported mgmtsystem_action
                     <sheet string="Action">
                         <group colspan="4" col="4">
                             <field name="name" colspan="4"/>
@@ -116,6 +135,11 @@
                             <field name="date" string="Date"/>
                             <field name="date_deadline" string="Deadline"/>
                             <field name="system_id"/>
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
+=======
+		    	    <field name="section_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+>>>>>>> Ported mgmtsystem_action
                         </group>
                         <notebook colspan="4">
                             <page string="Description">
@@ -127,7 +151,10 @@
                         <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
                         <field name="message_ids" widget="mail_thread"/>
                     </div>
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
 >>>>>>> Adapted actions to openchatter, added autosubscribing and action closing posts
+=======
+>>>>>>> Ported mgmtsystem_action
                 </form>
             </field>
         </record>
@@ -157,7 +184,11 @@
             <field name="model_id" ref="model_mgmtsystem_action"/>
             <field name="condition">True</field>
             <field name="type">ir.actions.server</field>
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
             <field name="state">email</field>
+=======
+            <field name="stage_id">email</field>
+>>>>>>> Ported mgmtsystem_action
             <field name="email">object.user_id.email</field>
             <field name="subject">Reminder on Action: "[[object.name]]"</field>
             <field name="message">
