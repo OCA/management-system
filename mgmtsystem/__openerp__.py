@@ -82,4 +82,3 @@ This module is the basis of any management system applications:
 =======
 >>>>>>> Fix some issues with pep8 and typo for attribute required
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
