@@ -19,6 +19,8 @@
 #
 ##############################################################################
 
+<<<<<<< fdc5aa91e5e5e37a018d952a2dd7355266e54a36
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
 from tools.translate import _
 from urllib import urlencode
 from urlparse import urljoin
@@ -63,12 +65,79 @@ class mgmtsystem_action(orm.Model):
         for o in self.browse(cr, uid, ids, context=context):
             self.message_subscribe_users(cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None, context=context)
         return super(mgmtsystem_action, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context, values=values)
+=======
+from openerp.tools.translate import _
+=======
+>>>>>>> Fix typo and pep8
+from urllib import urlencode
+from urlparse import urljoin
+from openerp import fields, models, api
 
-    def case_close(self, cr, uid, ids, context=None):
+own_company = lambda self: self.env.user.company_id.id
+
+
+class mgmtsystem_action(models.Model):
+    _name = "mgmtsystem.action"
+    _description = "Action"
+    _inherit = "crm.claim"
+
+    reference = fields.Char('Reference', required=True,
+                            readonly=True, default="NEW")
+    type_action = fields.Selection([
+                                   ('immediate', 'Immediate Action'),
+                                   ('correction', 'Corrective Action'),
+                                   ('prevention', 'Preventive Action'),
+                                   ('improvement', 'Improvement Opportunity')
+                                   ], 'Response Type')
+
+    system_id = fields.Many2one('mgmtsystem.system', 'System')
+    company_id = fields.Many2one('res.company', 'System', default=own_company)
+
+    @api.model
+    def create(self, vals):
+        vals.update({
+            'reference': self.env['ir.sequence'].get('mgmtsystem.action')
+        })
+        return super(mgmtsystem_action, self).create(vals)
+
+    @api.multi
+    def message_auto_subscribe(self, updated_fields, values=None):
+        """Automatically add the responsible user to the follow list."""
+        for o in self:
+            self.message_subscribe_users(user_ids=[o.user_id.id],
+                                         subtype_ids=None)
+
+        base = super(mgmtsystem_action, self)
+        return base.message_auto_subscribe(updated_fields, values=values)
+
+    @api.multi
+    def case_open(self):
+        """ Opens case """
+
+        for case in self:
+            values = {'active': True}
+
+            values['stage_id'] = self.stage_find(
+                self, None, [('name', '=', 'In Progress')]
+            )
+
+            case.write(values)
+
+        return True
+>>>>>>> Ported mgmtsystem_action
+
+<<<<<<< 497a035d8bcf20f089a8271b22b220bd0a5fb7d4
+    @api.multi
+    def case_close(self):
         """When Action is closed, post a message on the related NC's chatter"""
+<<<<<<< b276dff2f5e1c5caacf2291cbcd863d2a2e2fd84
+
+<<<<<<< 22ac775a1ed32d9a73fa3338a4b6c15d7e7b3d41
         for o in self.browse(cr, uid, ids, context=context):
             for nc in o.nonconformity_ids:
                 nc.case_send_note(_('Action "%s" was closed.' % o.name))
+<<<<<<< e9712c2728b304ca591e2db163b1c6710aa9a773
+<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
         return super(mgmtsystem_action, self).case_close(cr, uid, ids, context=context)
 
     def get_action_url(self, cr, uid, ids, context=None):
@@ -80,3 +149,40 @@ class mgmtsystem_action(orm.Model):
         return urljoin(base_url, "?%s#%s" % (urlencode(query), urlencode(fragment)))
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+=======
+=======
+
+>>>>>>> Removed comments and commented code
+        return super(mgmtsystem_action, self).case_close(
+            cr, uid, ids, context=context
+        )
+=======
+        for o in self:
+            if hasattr(o, 'nonconformity_ids'):
+                for nc in o.nonconformity_ids:
+                    nc.case_send_note(_('Action "%s" was closed.' % o.name))
+>>>>>>> Added tests and updated code to v8
+
+=======
+        # for o in self:
+        #     if hasattr(o, 'nonconformity_ids'):
+        #         for nc in o.nonconformity_ids:
+        #             nc.case_send_note(_('Action "%s" was closed.' % o.name))
+>>>>>>> Updated according to reviews
+        return True
+
+=======
+>>>>>>> Removed case_close
+    @api.one
+    def get_action_url(self):
+        config_parameter = self.env['ir.config_parameter']
+        base_url = config_parameter.get_param('web.base_url',
+                                              default='http://localhost:8069')
+
+        query = {'db': self.env.cr.dbname}
+        fragment = {'id': self.id, 'model': self._name}
+
+        return urljoin(base_url, "?%s#%s" % (
+            urlencode(query), urlencode(fragment)
+        ))
+>>>>>>> Ported mgmtsystem_action
