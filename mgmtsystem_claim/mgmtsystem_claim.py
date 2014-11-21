@@ -19,7 +19,9 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
+
+own_company = lambda self: self.env.user.company_id.id
 
 
 class mgmtsystem_claim(models.Model):
@@ -30,15 +32,12 @@ class mgmtsystem_claim(models.Model):
     reference = fields.Char('Reference', size=64, require=True, readonly=True,
                             default='NEW')
     message_ids = fields.One2many('mail.message', 'res_id', 'Messages',
-                            domain=[('model', '=', _name)])
-    company_id = fields.Many2one('res.company', 'Company',
-                            default=lambda self: self.env.user.company_id.id)
+                                  domain=[('model', '=', _name)])
+    company_id = fields.Many2one('res.company', 'Company', default=own_company)
 
-
-    def create(self, cr, uid, vals, context=None):
+    @api.model
+    def create(self, vals):
         vals.update({
-            'reference': self.pool.get('ir.sequence').get(
-                cr, uid, 'mgmtsystem.claim'
-            )
+            'reference': self.env['ir.sequence'].get('mgmtsystem.claim')
         })
-        return super(mgmtsystem_claim, self).create(cr, uid, vals, context)
+        return super(mgmtsystem_claim, self).create(vals)
