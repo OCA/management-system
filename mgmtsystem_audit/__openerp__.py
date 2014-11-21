@@ -81,7 +81,9 @@ management system.
     "installable": True,
 =======
     'installable': True,
+<<<<<<< 4f3f22d0380be9de7d49aa2a47077871c2b4c703
 >>>>>>> Moved mgmtsystem_audit to root and fixed imports
     "certificate": ''
+=======
+>>>>>>> Removed vim lines
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
