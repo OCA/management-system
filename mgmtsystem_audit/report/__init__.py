@@ -7,6 +7,7 @@ import verification_list
 =======
 from . import audit_report
 from . import verification_list
+<<<<<<< 4f3f22d0380be9de7d49aa2a47077871c2b4c703
 >>>>>>> [FIX] PEP8 compliance in audit, action and nonconformity
 =======
 import audit_report
@@ -17,3 +18,5 @@ from . import audit_report
 from . import verification_list
 >>>>>>> Converted imports to relative import to prevent namespace conflict
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+=======
+>>>>>>> Removed vim lines

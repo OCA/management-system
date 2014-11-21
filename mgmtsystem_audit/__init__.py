@@ -4,6 +4,7 @@
 from . import mgmtsystem_audit
 from . import report
 from . import wizard
+<<<<<<< 4f3f22d0380be9de7d49aa2a47077871c2b4c703
 =======
 import mgmtsystem_audit
 import report
@@ -15,3 +16,5 @@ from . import report
 from . import wizard
 >>>>>>> Converted imports to relative import to prevent namespace conflict
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+=======
+>>>>>>> Removed vim lines
