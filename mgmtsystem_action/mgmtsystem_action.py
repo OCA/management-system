@@ -114,7 +114,6 @@ class mgmtsystem_action(models.Model):
 
     def case_open(self, cr, uid, ids, context=None):
         """ Opens case """
-        import pdb; pdb.set_trace()
         cases = self.browse(cr, uid, ids, context=context)
         for case in cases:
             values = {'active': True}
@@ -128,7 +127,6 @@ class mgmtsystem_action(models.Model):
 
     def case_close(self, cr, uid, ids, context=None):
         """When Action is closed, post a message on the related NC's chatter"""
-        import pdb; pdb.set_trace()
         for o in self.browse(cr, uid, ids, context=context):
             for nc in o.nonconformity_ids:
                 nc.case_send_note(_('Action "%s" was closed.' % o.name))
@@ -150,7 +148,6 @@ class mgmtsystem_action(models.Model):
         )
 
     def get_action_url(self, cr, uid, ids, context=None):
-        import pdb; pdb.set_trace()
         assert len(ids) == 1
 
         action = self.browse(cr, uid, ids[0], context=context)
