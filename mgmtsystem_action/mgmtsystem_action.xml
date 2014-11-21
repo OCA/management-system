@@ -25,8 +25,6 @@
             <field name="arch" type="xml">
                 <search string="Action">
                     <group>
-                        <!--<filter name="current" icon="terp-document-new" domain="[('stage_id.name','in',('draft','open','pending'))]" string="Open" help="Open Actions"/> -->
-                        <!-- <filter icon="terp-camera_test" domain="[('stage_id.name','in',('cancelled','done'))]" string="Closed" help="Closed Actions"/> -->
                         <separator orientation="vertical"/>
                         <field name="reference"/>
                         <field name="date" select='1'/>
@@ -50,11 +48,6 @@
             <field name="arch" type="xml">
                 <form string="Action" version="7.0">
                     <header>
-		        <!-- <button name="case_cancel" string="Cancel" states="draft,pending" type="object" icon="gtk-cancel"/>-->
-		        <!-- <button name="case_open" string="Open" states="draft,pending" type="object" icon="gtk-go-forward"/>-->
-		        <!-- <button name="case_pending" string="Pending" states="open" type="object" icon="gtk-go-forward"/>-->
-                        <!-- Corrective actions can be already implemented when recording the NC, so they can be created and immediately closed -->
-			<!-- <button name="case_close" string="Close" states="draft,open" type="object" icon="gtk-jump-to"/>-->
 			<field name="stage_id" widget="statusbar" clickable="True" />
                     </header>
                     <sheet string="Action">
