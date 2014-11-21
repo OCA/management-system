@@ -94,7 +94,6 @@ class mgmtsystem_action(models.Model):
     system_id = fields.Many2one('mgmtsystem.system', 'System')
     company_id = fields.Many2one('res.company', 'System', default=own_company)
 
-    
     @api.model
     def create(self, vals):
         vals.update({
@@ -109,8 +108,8 @@ class mgmtsystem_action(models.Model):
             self.message_subscribe_users(user_ids=[o.user_id.id],
                                          subtype_ids=None)
 
-        return super(mgmtsystem_action, self).\
-                     message_auto_subscribe(updated_fields, values=values)
+        base = super(mgmtsystem_action, self)
+        return base.message_auto_subscribe(updated_fields, values=values)
 
     def case_open(self, cr, uid, ids, context=None):
         """ Opens case """
@@ -127,9 +126,11 @@ class mgmtsystem_action(models.Model):
 
     def case_close(self, cr, uid, ids, context=None):
         """When Action is closed, post a message on the related NC's chatter"""
+
         for o in self.browse(cr, uid, ids, context=context):
             for nc in o.nonconformity_ids:
                 nc.case_send_note(_('Action "%s" was closed.' % o.name))
+<<<<<<< e9712c2728b304ca591e2db163b1c6710aa9a773
 <<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
         return super(mgmtsystem_action, self).case_close(cr, uid, ids, context=context)
 
@@ -143,6 +144,9 @@ class mgmtsystem_action(models.Model):
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 =======
+=======
+
+>>>>>>> Removed comments and commented code
         return super(mgmtsystem_action, self).case_close(
             cr, uid, ids, context=context
         )
@@ -155,6 +159,7 @@ class mgmtsystem_action(models.Model):
             cr, uid, 'web.base.url', default='http://localhost:8069',
             context=context,
         )
+
         query = {'db': cr.dbname}
         fragment = {'id': action.id, 'model': self._name}
 

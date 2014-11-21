@@ -29,6 +29,7 @@
             <field name="arch" type="xml">
                 <search string="Action">
                     <group>
+<<<<<<< e9712c2728b304ca591e2db163b1c6710aa9a773
 <<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
                         <filter name="current" icon="terp-document-new" domain="[('state','in',('draft','open','pending'))]" string="Open" help="Open Actions"/>
                         <filter icon="terp-camera_test" domain="[('state','in',('cancelled','done'))]" string="Closed" help="Closed Actions"/>
@@ -36,6 +37,8 @@
                         <!--<filter name="current" icon="terp-document-new" domain="[('stage_id.name','in',('draft','open','pending'))]" string="Open" help="Open Actions"/> -->
                         <!-- <filter icon="terp-camera_test" domain="[('stage_id.name','in',('cancelled','done'))]" string="Closed" help="Closed Actions"/> -->
 >>>>>>> Ported mgmtsystem_action
+=======
+>>>>>>> Removed comments and commented code
                         <separator orientation="vertical"/>
                         <field name="reference"/>
                         <field name="date" select='1'/>
@@ -59,6 +62,7 @@
             <field name="arch" type="xml">
                 <form string="Action" version="7.0">
                     <header>
+<<<<<<< e9712c2728b304ca591e2db163b1c6710aa9a773
 <<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
                         <button name="case_cancel" string="Cancel" states="draft,pending" type="object" icon="gtk-cancel"/>
                         <button name="case_open" string="Open" states="draft,pending" type="object" icon="gtk-go-forward"/>
@@ -123,6 +127,8 @@
 		        <!-- <button name="case_pending" string="Pending" states="open" type="object" icon="gtk-go-forward"/>-->
                         <!-- Corrective actions can be already implemented when recording the NC, so they can be created and immediately closed -->
 			<!-- <button name="case_close" string="Close" states="draft,open" type="object" icon="gtk-jump-to"/>-->
+=======
+>>>>>>> Removed comments and commented code
 			<field name="stage_id" widget="statusbar" clickable="True" />
                     </header>
 >>>>>>> Ported mgmtsystem_action
