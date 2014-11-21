@@ -9,7 +9,7 @@
             <field name="view_mode">tree</field>
             <field name="view_id" ref="view_mgmtsystem_action_tree"/>
 	    <!-- TODO check that names match what's present -->
-            <field name="domain">[('stage_id.name', 'in', ('draft','open','pending'))]</field>
+            <field name="domain">[('stage_id.fold', '=', False)]</field>
         </record>
 
         <record id="board_mgmtsystem_action_form" model="ir.ui.view">
