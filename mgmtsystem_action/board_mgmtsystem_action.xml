@@ -15,8 +15,12 @@
             <field name="domain">[('state', 'in', ('draft','open','pending'))]</field>
 =======
 	    <!-- TODO check that names match what's present -->
+<<<<<<< 434aadf316358c3d2f343f3a7538d34e5dfa5cb7
             <field name="domain">[('stage_id.name', 'in', ('draft','open','pending'))]</field>
 >>>>>>> Ported mgmtsystem_action
+=======
+            <field name="domain">[('stage_id.fold', '=', False)]</field>
+>>>>>>> Removed vim lines and fixed domain
         </record>
 
         <record id="board_mgmtsystem_action_form" model="ir.ui.view">
