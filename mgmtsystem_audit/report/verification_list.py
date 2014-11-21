@@ -72,4 +72,3 @@ report_sxw.report_sxw(
     parser=mgmtsystem_audit_verification_list
 )
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
