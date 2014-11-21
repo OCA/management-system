@@ -65,6 +65,5 @@ This module enables you to manage your satisfaction surveys and its answers.
     "data": ['mgmtsystem_survey.xml'],
     "demo": [],
     'installable': True,
-    "certificate": ''
 }
 >>>>>>> Added mgmtsystem_survey to ported code
