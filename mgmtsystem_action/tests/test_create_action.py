@@ -1,5 +1,6 @@
 from openerp.tests import common
 
+
 class TestModelAction(common.TransactionCase):
     def test_create_action(self):
         record = self.env['mgmtsystem.action'].create({
@@ -11,7 +12,6 @@ class TestModelAction(common.TransactionCase):
         self.assertNotEqual(record.reference, "NEW")
         self.assertEqual(record.type_action, "immediate")
 
-
     def test_case_open(self):
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
@@ -22,6 +22,7 @@ class TestModelAction(common.TransactionCase):
 
         ret = record.case_open()
 
+        self.assertEqual(ret, True)
         self.assertEqual(record.active, True)
         self.assertEqual(record.stage_id.name, 'In Progress')
 
