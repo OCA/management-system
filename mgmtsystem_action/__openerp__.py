@@ -74,9 +74,13 @@ system:
         'board_mgmtsystem_action.xml',
     ],
     "demo": ['demo_action.xml'],
+<<<<<<< 22ac775a1ed32d9a73fa3338a4b6c15d7e7b3d41
 <<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
     "installable": True,
 =======
     'installable': True,
 >>>>>>> Ported mgmtsystem_action
+=======
+    "installable": True,
+>>>>>>> Added tests and updated code to v8
 }
