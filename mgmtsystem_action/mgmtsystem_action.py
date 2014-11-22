@@ -111,22 +111,33 @@ class mgmtsystem_action(models.Model):
         base = super(mgmtsystem_action, self)
         return base.message_auto_subscribe(updated_fields, values=values)
 
-    def case_open(self, cr, uid, ids, context=None):
+    @api.multi
+    def case_open(self):
         """ Opens case """
-        cases = self.browse(cr, uid, ids, context=context)
-        for case in cases:
+
+        for case in self:
             values = {'active': True}
-            if case.state == 'draft':
+            if case.stage_id and case.stage_id.name.lower() == 'New':
                 values['date_open'] = fields.datetime.now()
+
             if not case.user_id:
-                values['user_id'] = uid
-            self.case_set(cr, uid, [case.id], 'open', values, context=context)
+                values['user_id'] = self.env.uid
+
+            values['stage_id'] = self.stage_find(self, None,
+                                                 [('name',
+                                                   '=',
+                                                   'In Progress')])
+
+            case.write(values)
+
         return True
 >>>>>>> Ported mgmtsystem_action
 
-    def case_close(self, cr, uid, ids, context=None):
+    @api.multi
+    def case_close(self):
         """When Action is closed, post a message on the related NC's chatter"""
 
+<<<<<<< 22ac775a1ed32d9a73fa3338a4b6c15d7e7b3d41
         for o in self.browse(cr, uid, ids, context=context):
             for nc in o.nonconformity_ids:
                 nc.case_send_note(_('Action "%s" was closed.' % o.name))
@@ -150,18 +161,23 @@ class mgmtsystem_action(models.Model):
         return super(mgmtsystem_action, self).case_close(
             cr, uid, ids, context=context
         )
+=======
+        for o in self:
+            if hasattr(o, 'nonconformity_ids'):
+                for nc in o.nonconformity_ids:
+                    nc.case_send_note(_('Action "%s" was closed.' % o.name))
+>>>>>>> Added tests and updated code to v8
 
-    def get_action_url(self, cr, uid, ids, context=None):
-        assert len(ids) == 1
+        return True
 
-        action = self.browse(cr, uid, ids[0], context=context)
-        base_url = self.pool.get('ir.config_parameter').get_param(
-            cr, uid, 'web.base.url', default='http://localhost:8069',
-            context=context,
-        )
+    @api.one
+    def get_action_url(self):
+        config_parameter = self.env['ir.config_parameter']
+        base_url = config_parameter.get_param('web.base_url',
+                                              default='http://localhost:8069')
 
-        query = {'db': cr.dbname}
-        fragment = {'id': action.id, 'model': self._name}
+        query = {'db': self.env.cr.dbname}
+        fragment = {'id': self.id, 'model': self._name}
 
         return urljoin(base_url, "?%s#%s" % (
             urlencode(query), urlencode(fragment)
