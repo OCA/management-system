@@ -43,5 +43,5 @@ system:
         'board_mgmtsystem_action.xml',
     ],
     "demo": ['demo_action.xml'],
-    'installable': True,
+    "installable": True,
 }
