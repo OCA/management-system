@@ -29,7 +29,7 @@ class mgmtsystem_claim(models.Model):
     _description = "Claim"
     _inherit = "crm.claim"
 
-    reference = fields.Char('Reference', size=64, require=True, readonly=True,
+    reference = fields.Char('Reference', required=True, readonly=True,
                             default='NEW')
     message_ids = fields.One2many('mail.message', 'res_id', 'Messages',
                                   domain=[('model', '=', _name)])
