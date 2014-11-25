@@ -33,8 +33,6 @@ from openerp.tools.translate import _
 from openerp import netsvc
 from openerp.osv import fields, orm
 
-#from openerp.addons.base_status.base_state import base_state
-
 from openerp.tools import (
     DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
     DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT,
@@ -44,6 +42,7 @@ import time
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
 
 
+<<<<<<< 75bff4df4701f5ed835e70fe7acf4ab910086576:mgmtsystem_nonconformity/mgmtsystem_nonconformity.py
 class mgmtsystem_nonconformity_cause(orm.Model):
     """
     Cause of the nonconformity of the management system
@@ -167,6 +166,8 @@ class mgmtsystem_nonconformity_origin(orm.Model):
     }
 
 
+=======
+>>>>>>> Separated python in each model file:mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py
 class mgmtsystem_nonconformity_severity(orm.Model):
     """Nonconformity Severity - Critical, Major, Minor, Invalid, ..."""
     _name = "mgmtsystem.nonconformity.severity"
@@ -566,9 +567,14 @@ class mgmtsystem_nonconformity(orm.Model):
         # TODO static variables... hmm
 =======
         # TODO static variables... hmm update state isn't going to work
+<<<<<<< 75bff4df4701f5ed835e70fe7acf4ab910086576:mgmtsystem_nonconformity/mgmtsystem_nonconformity.py
 >>>>>>> Use stage_id for actions
         if o.immediate_action_id and o.immediate_action_id.stage_id.name.lower() == 'draft':
 >>>>>>> Small fix to use stage_id.name instead of state
+=======
+        if (o.immediate_action_id
+                and o.immediate_action_id.stage_id.name.lower() == 'draft'):
+>>>>>>> Separated python in each model file:mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py
             o.immediate_action_id.case_open()
         for a in o.action_ids:
             if a.stage_id.name.lower() == 'draft':
@@ -628,12 +634,14 @@ class mgmtsystem_nonconformity(orm.Model):
         done_states = ['done', 'cancelled', 'settled', 'rejected']
 >>>>>>> Add support for settled, rejected instead of done/canceled... quite ugly
         if (o.immediate_action_id
-                and o.immediate_action_id.stage_id.name.lower() not in done_states):
+                and o.immediate_action_id.stage_id.name.lower()
+                not in done_states):
             raise orm.except_orm(
                 _('Error !'),
                 _('Immediate action from analysis has not been closed.')
             )
-        if ([i for i in o.action_ids if i.stage_id.name.lower() not in done_states]):
+        if ([i for i in o.action_ids
+                if i.stage_id.name.lower() not in done_states]):
             raise orm.except_orm(
                 _('Error !'),
                 _('Not all actions have been closed.')
@@ -677,21 +685,28 @@ class mgmtsystem_nonconformity(orm.Model):
 
     def case_cancel_send_note(self, cr, uid, ids, context=None):
         for id in ids:
-            msg = _('%s has been <b>canceled</b>.') % (self.case_get_note_msg_prefix(cr, uid, id, context=context))
+            msg = _('%s has been <b>canceled</b>.') % (
+                self.case_get_note_msg_prefix(cr, uid, id, context=context)
+            )
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 
     def case_reset_send_note(self, cr, uid, ids, context=None):
         for id in ids:
-            msg = _('%s has been <b>renewed</b>.') % (self.case_get_note_msg_prefix(cr, uid, id, context=context))
+            msg = _('%s has been <b>renewed</b>.') % (
+                self.case_get_note_msg_prefix(cr, uid, id, context=context)
+            )
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 
     def case_open_send_note(self, cr, uid, ids, context=None):
         for id in ids:
-             msg = _('%s has been <b>opened</b>.') % (self.case_get_note_msg_prefix(cr, uid, id, context=context))
-             self.message_post(cr, uid, [id], body=msg, context=context)
+            msg = _('%s has been <b>opened</b>.') % (
+                self.case_get_note_msg_prefix(cr, uid, id, context=context)
+            )
+            self.message_post(cr, uid, [id], body=msg, context=context)
         return True
+<<<<<<< 75bff4df4701f5ed835e70fe7acf4ab910086576:mgmtsystem_nonconformity/mgmtsystem_nonconformity.py
 
 
 class mgmtsystem_action(orm.Model):
@@ -719,3 +734,5 @@ class mgmtsystem_action(orm.Model):
         ),
     }
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
+=======
+>>>>>>> Separated python in each model file:mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py
