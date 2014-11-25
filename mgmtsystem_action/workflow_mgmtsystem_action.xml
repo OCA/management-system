@@ -50,23 +50,6 @@ OpenERP</field>
             <field name="join_mode">XOR</field>
             <field name="action_id" ref="mgmtsystem_action_server_action"/>
         </record>
-        
-        <record model="workflow.activity" id="mgmtsystem_action_close">
-            <field name="name">Close</field>
-            <field name="wkf_id" ref="mgmtsystem_action_workflow"/>
-            <field name="kind">dummy</field>
-            <field name="flow_stop">True</field>
-            <field name="split_mode">XOR</field>
-            <field name="join_mode">XOR</field>
-        </record>
-
-        <!-- Transitions -->
-        <record model="workflow.transition" id="mgmtsystem_action_transition_close">
-            <field name="act_from" ref="mgmtsystem_action_open"/>
-            <field name="act_to" ref="mgmtsystem_action_close"/>
-            <field name="signal">case_close</field>
-            <field name="condition">True</field>
-        </record>
 
     </data>
 </openerp>
