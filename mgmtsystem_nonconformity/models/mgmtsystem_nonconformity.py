@@ -739,7 +739,6 @@ class mgmtsystem_action(orm.Model):
 >>>>>>> Separated python in each model file:mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py
 =======
 
-
     def case_close_send_note(self, cr, uid, ids, context=None):
         for id in ids:
             msg = _('%s has been <b>closed</b>.') % (
