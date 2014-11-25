@@ -27,7 +27,6 @@ class TestModelAction(common.TransactionCase):
         self.assertEqual(record.active, True)
         self.assertEqual(record.stage_id.name, 'In Progress')
 
-
     def test_get_action_url(self):
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
