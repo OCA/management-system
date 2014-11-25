@@ -19,19 +19,15 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class mgmtsystem_nonconformity_severity(orm.Model):
+class mgmtsystem_nonconformity_severity(models.Model):
     """Nonconformity Severity - Critical, Major, Minor, Invalid, ..."""
     _name = "mgmtsystem.nonconformity.severity"
     _description = "Severity of Complaints and Nonconformities"
-    _columns = {
-        'name': fields.char('Title', size=50, required=True, translate=True),
-        'sequence': fields.integer('Sequence',),
-        'description': fields.text('Description', translate=True),
-        'active': fields.boolean('Active?'),
-    }
-    _defaults = {
-        'active': True,
-    }
+
+    name = fields.Char("Title", required=True, translate=True)
+    sequence = fields.Integer('Sequence')
+    description = fields.Text('Description', translate=True)
+    active = fields.Boolean('Active?', default=True)
