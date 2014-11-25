@@ -706,6 +706,7 @@ class mgmtsystem_nonconformity(orm.Model):
             )
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
+<<<<<<< bbf6fed93779d713aeaa0215af3019389b5a738b
 <<<<<<< 75bff4df4701f5ed835e70fe7acf4ab910086576:mgmtsystem_nonconformity/mgmtsystem_nonconformity.py
 
 
@@ -736,3 +737,14 @@ class mgmtsystem_action(orm.Model):
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
 =======
 >>>>>>> Separated python in each model file:mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py
+=======
+
+
+    def case_close_send_note(self, cr, uid, ids, context=None):
+        for id in ids:
+            msg = _('%s has been <b>closed</b>.') % (
+                self.case_get_note_msg_prefix(cr, uid, id, context=context)
+            )
+            self.message_post(cr, uid, [id], body=msg, context=context)
+        return True
+>>>>>>> Added missing methodcase_close_send_note for workflows
