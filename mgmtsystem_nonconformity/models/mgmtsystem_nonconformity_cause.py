@@ -19,17 +19,32 @@
 #
 ##############################################################################
 
-from openerp.tools.translate import _
-from openerp.osv import fields, orm
+from openerp import models, fields
+from openerp.osv import osv
 
 
-class mgmtsystem_nonconformity_cause(orm.Model):
+class mgmtsystem_nonconformity_cause(models.Model):
     """
     Cause of the nonconformity of the management system
     """
     _name = "mgmtsystem.nonconformity.cause"
     _description = "Cause of the nonconformity of the management system"
     _order = 'parent_id, sequence'
+
+    id = fields.Integer('ID', readonly=True)
+    name = fields.Char('Cause', required=True, translate=True)
+    description = fields.Text('Description')
+    sequence = fields.Integer(
+        'Sequence',
+        help="Defines the order to present items",
+    )
+    parent_id = fields.Many2one('mgmtsystem.nonconformity.cause', 'Group')
+    child_ids = fields.One2many(
+        'mgmtsystem.nonconformity.cause',
+        'parent_id',
+        'Child Causes',
+    )
+    ref_code = fields.Char('Reference Code'),
 
     def name_get(self, cr, uid, ids, context=None):
         ids = ids or []
@@ -46,29 +61,10 @@ class mgmtsystem_nonconformity_cause(orm.Model):
         res = self.name_get(cr, uid, ids, context=context)
         return dict(res)
 
-    _columns = {
-        'id': fields.integer('ID', readonly=True),
-        'name': fields.char('Cause', size=50, required=True, translate=True),
-        'description': fields.text('Description'),
-        'sequence': fields.integer(
-            'Sequence',
-            help="Defines the order to present items",
-        ),
-        'parent_id': fields.many2one(
-            'mgmtsystem.nonconformity.cause',
-            'Group',
-        ),
-        'child_ids': fields.one2many(
-            'mgmtsystem.nonconformity.cause',
-            'parent_id',
-            'Child Causes',
-        ),
-        'ref_code': fields.char('Reference Code', size=20),
-    }
-
-    def _rec_message(self, cr, uid, ids, context=None):
-        return _('Error! Cannot create recursive cycle.')
-
     _constraints = [
-        (orm.BaseModel._check_recursion, _rec_message, ['parent_id'])
+        (
+            osv.osv._check_recursion,
+            "Error! Cannot create recursive cycle.",
+            ['parent_id']
+        )
     ]
