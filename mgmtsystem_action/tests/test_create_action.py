@@ -11,6 +11,7 @@ class TestModelAction(common.TransactionCase):
         self.assertEqual(record.name, "SampleAction")
         self.assertNotEqual(record.reference, "NEW")
         self.assertEqual(record.type_action, "immediate")
+        self.assertEqual(record.stage_id.name, "New")
 
     def test_case_open(self):
         record = self.env['mgmtsystem.action'].create({

@@ -22,7 +22,6 @@
 from urllib import urlencode
 from urlparse import urljoin
 from openerp import fields, models, api
-from openerp.tools.translate import _
 
 own_company = lambda self: self.env.user.company_id.id
 
@@ -32,7 +31,7 @@ class mgmtsystem_action(models.Model):
     _description = "Action"
     _inherit = "crm.claim"
 
-    reference = fields.Char('Reference', size=64, required=True,
+    reference = fields.Char('Reference', required=True,
                             readonly=True, default="NEW")
     type_action = fields.Selection([
                                    ('immediate', 'Immediate Action'),
@@ -67,16 +66,13 @@ class mgmtsystem_action(models.Model):
 
         for case in self:
             values = {'active': True}
-            if case.stage_id and case.stage_id.name.lower() == 'New':
-                values['date_open'] = fields.datetime.now()
 
             if not case.user_id:
                 values['user_id'] = self.env.uid
 
-            values['stage_id'] = self.stage_find(self, None,
-                                                 [('name',
-                                                   '=',
-                                                   'In Progress')])
+            values['stage_id'] = self.stage_find(
+                self, None, [('name', '=', 'In Progress')]
+            )
 
             case.write(values)
 
@@ -85,12 +81,10 @@ class mgmtsystem_action(models.Model):
     @api.multi
     def case_close(self):
         """When Action is closed, post a message on the related NC's chatter"""
-
-        for o in self:
-            if hasattr(o, 'nonconformity_ids'):
-                for nc in o.nonconformity_ids:
-                    nc.case_send_note(_('Action "%s" was closed.' % o.name))
-
+        # for o in self:
+        #     if hasattr(o, 'nonconformity_ids'):
+        #         for nc in o.nonconformity_ids:
+        #             nc.case_send_note(_('Action "%s" was closed.' % o.name))
         return True
 
     @api.one
