@@ -78,15 +78,6 @@ class mgmtsystem_action(models.Model):
 
         return True
 
-    @api.multi
-    def case_close(self):
-        """When Action is closed, post a message on the related NC's chatter"""
-        # for o in self:
-        #     if hasattr(o, 'nonconformity_ids'):
-        #         for nc in o.nonconformity_ids:
-        #             nc.case_send_note(_('Action "%s" was closed.' % o.name))
-        return True
-
     @api.one
     def get_action_url(self):
         config_parameter = self.env['ir.config_parameter']
