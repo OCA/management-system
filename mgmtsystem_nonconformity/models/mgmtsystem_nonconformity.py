@@ -23,109 +23,12 @@ from openerp.tools.translate import _
 from openerp import netsvc
 from openerp.osv import fields, orm
 
-#from openerp.addons.base_status.base_state import base_state
-
 from openerp.tools import (
     DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
     DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT,
 )
 
 import time
-
-
-class mgmtsystem_nonconformity_cause(orm.Model):
-    """
-    Cause of the nonconformity of the management system
-    """
-    _name = "mgmtsystem.nonconformity.cause"
-    _description = "Cause of the nonconformity of the management system"
-    _order = 'parent_id, sequence'
-
-    def name_get(self, cr, uid, ids, context=None):
-        ids = ids or []
-        reads = self.read(cr, uid, ids, ['name', 'parent_id'], context=context)
-        res = []
-        for record in reads:
-            name = record['name']
-            if record['parent_id']:
-                name = record['parent_id'][1] + ' / ' + name
-            res.append((record['id'], name))
-        return res
-
-    def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
-        res = self.name_get(cr, uid, ids, context=context)
-        return dict(res)
-
-    _columns = {
-        'id': fields.integer('ID', readonly=True),
-        'name': fields.char('Cause', size=50, required=True, translate=True),
-        'description': fields.text('Description'),
-        'sequence': fields.integer(
-            'Sequence',
-            help="Defines the order to present items",
-        ),
-        'parent_id': fields.many2one(
-            'mgmtsystem.nonconformity.cause',
-            'Group',
-        ),
-        'child_ids': fields.one2many(
-            'mgmtsystem.nonconformity.cause',
-            'parent_id',
-            'Child Causes',
-        ),
-        'ref_code': fields.char('Reference Code', size=20),
-    }
-
-    def _rec_message(self, cr, uid, ids, context=None):
-        return _('Error! Cannot create recursive cycle.')
-
-    _constraints = [
-        (orm.BaseModel._check_recursion, _rec_message, ['parent_id'])
-    ]
-
-
-class mgmtsystem_nonconformity_origin(orm.Model):
-    """
-    Origin of nonconformity of the management system
-    """
-    _name = "mgmtsystem.nonconformity.origin"
-    _description = "Origin of nonconformity of the management system"
-    _order = 'parent_id, sequence'
-
-    def name_get(self, cr, uid, ids, context=None):
-        ids = ids or []
-        reads = self.read(cr, uid, ids, ['name', 'parent_id'], context=context)
-        res = []
-        for record in reads:
-            name = record['name']
-            if record['parent_id']:
-                name = record['parent_id'][1] + ' / ' + name
-            res.append((record['id'], name))
-        return res
-
-    def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
-        res = self.name_get(cr, uid, ids, context=context)
-        return dict(res)
-
-    _columns = {
-        'id': fields.integer('ID', readonly=True),
-        'name': fields.char('Origin', size=50, required=True, translate=True),
-        'description': fields.text('Description'),
-        'sequence': fields.integer(
-            'Sequence',
-            help="Defines the order to present items",
-        ),
-        'parent_id': fields.many2one(
-            'mgmtsystem.nonconformity.origin',
-            'Group',
-        ),
-        'child_ids': fields.one2many(
-            'mgmtsystem.nonconformity.origin',
-            'parent_id',
-            'Childs',
-        ),
-        'ref_code': fields.char('Reference Code', size=20),
-    }
 
 
 class mgmtsystem_nonconformity_severity(orm.Model):
@@ -414,7 +317,8 @@ class mgmtsystem_nonconformity(orm.Model):
         self.case_open_send_note(cr, uid, ids, context=context)
         # Open related Actions
         # TODO static variables... hmm update state isn't going to work
-        if o.immediate_action_id and o.immediate_action_id.stage_id.name.lower() == 'draft':
+        if (o.immediate_action_id
+                and o.immediate_action_id.stage_id.name.lower() == 'draft'):
             o.immediate_action_id.case_open()
         for a in o.action_ids:
             if a.stage_id.name.lower() == 'draft':
@@ -453,12 +357,14 @@ class mgmtsystem_nonconformity(orm.Model):
         # TODO make it more friendly
         done_states = ['done', 'cancelled', 'settled', 'rejected']
         if (o.immediate_action_id
-                and o.immediate_action_id.stage_id.name.lower() not in done_states):
+                and o.immediate_action_id.stage_id.name.lower()
+                not in done_states):
             raise orm.except_orm(
                 _('Error !'),
                 _('Immediate action from analysis has not been closed.')
             )
-        if ([i for i in o.action_ids if i.stage_id.name.lower() not in done_states]):
+        if ([i for i in o.action_ids
+                if i.stage_id.name.lower() not in done_states]):
             raise orm.except_orm(
                 _('Error !'),
                 _('Not all actions have been closed.')
@@ -487,37 +393,24 @@ class mgmtsystem_nonconformity(orm.Model):
 
     def case_cancel_send_note(self, cr, uid, ids, context=None):
         for id in ids:
-            msg = _('%s has been <b>canceled</b>.') % (self.case_get_note_msg_prefix(cr, uid, id, context=context))
+            msg = _('%s has been <b>canceled</b>.') % (
+                self.case_get_note_msg_prefix(cr, uid, id, context=context)
+            )
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 
     def case_reset_send_note(self, cr, uid, ids, context=None):
         for id in ids:
-            msg = _('%s has been <b>renewed</b>.') % (self.case_get_note_msg_prefix(cr, uid, id, context=context))
+            msg = _('%s has been <b>renewed</b>.') % (
+                self.case_get_note_msg_prefix(cr, uid, id, context=context)
+            )
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 
     def case_open_send_note(self, cr, uid, ids, context=None):
         for id in ids:
-             msg = _('%s has been <b>opened</b>.') % (self.case_get_note_msg_prefix(cr, uid, id, context=context))
-             self.message_post(cr, uid, [id], body=msg, context=context)
+            msg = _('%s has been <b>opened</b>.') % (
+                self.case_get_note_msg_prefix(cr, uid, id, context=context)
+            )
+            self.message_post(cr, uid, [id], body=msg, context=context)
         return True
-
-
-class mgmtsystem_action(orm.Model):
-    _inherit = "mgmtsystem.action"
-    _columns = {
-        'nonconformity_immediate_id': fields.one2many(
-            'mgmtsystem.nonconformity',
-            'immediate_action_id',
-            readonly=True,
-        ),
-        'nonconformity_ids': fields.many2many(
-            'mgmtsystem.nonconformity',
-            'mgmtsystem_nonconformity_action_rel',
-            'action_id',
-            'nonconformity_id',
-            'Nonconformities',
-            readonly=True,
-        ),
-    }
