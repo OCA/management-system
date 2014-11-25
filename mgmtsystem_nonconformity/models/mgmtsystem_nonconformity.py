@@ -414,3 +414,12 @@ class mgmtsystem_nonconformity(orm.Model):
             )
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
+
+
+    def case_close_send_note(self, cr, uid, ids, context=None):
+        for id in ids:
+            msg = _('%s has been <b>closed</b>.') % (
+                self.case_get_note_msg_prefix(cr, uid, id, context=context)
+            )
+            self.message_post(cr, uid, [id], body=msg, context=context)
+        return True
