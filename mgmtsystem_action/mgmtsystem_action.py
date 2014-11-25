@@ -67,9 +67,6 @@ class mgmtsystem_action(models.Model):
         for case in self:
             values = {'active': True}
 
-            if not case.user_id:
-                values['user_id'] = self.env.uid
-
             values['stage_id'] = self.stage_find(
                 self, None, [('name', '=', 'In Progress')]
             )
