@@ -129,6 +129,7 @@ class mgmtsystem_action(models.Model):
         return True
 >>>>>>> Ported mgmtsystem_action
 
+<<<<<<< 497a035d8bcf20f089a8271b22b220bd0a5fb7d4
     @api.multi
     def case_close(self):
         """When Action is closed, post a message on the related NC's chatter"""
@@ -173,6 +174,8 @@ class mgmtsystem_action(models.Model):
 >>>>>>> Updated according to reviews
         return True
 
+=======
+>>>>>>> Removed case_close
     @api.one
     def get_action_url(self):
         config_parameter = self.env['ir.config_parameter']
