@@ -31,8 +31,8 @@ from tools import DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT
 =======
 from openerp.tools.translate import _
 from openerp import netsvc
-from openerp.osv import fields, orm
-from openerp import models, api
+from openerp.osv import orm
+from openerp import models, api, fields
 
 from openerp.tools import (
     DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
@@ -204,6 +204,10 @@ _STATES_DICT = dict(_STATES)
 =======
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
 
+own_company = lambda self: self.env.user.company_id.id
+default_date = lambda *a: time.strftime(DATE_FORMAT)
+default_user_id = lambda self: self.env.user.id
+
 
 class mgmtsystem_nonconformity(models.Model):
     """
@@ -215,12 +219,13 @@ class mgmtsystem_nonconformity(models.Model):
     _inherit = ['mail.thread']
     _order = "date desc"
 
-    def _state_name(self, cr, uid, ids, name, args, context=None):
+    def _state_name(self):
         res = dict()
-        for o in self.browse(cr, uid, ids, context=context):
+        for o in self:
             res[o.id] = _STATES_DICT.get(o.state, o.state)
         return res
 
+<<<<<<< 4590be07d52726216d516d3763733db0e6d138c7
     _columns = {
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         #1. Description
@@ -372,6 +377,118 @@ class mgmtsystem_nonconformity(models.Model):
         'author_user_id': lambda cr, uid, id, c={}: id,
         'ref': 'NEW',
     }
+=======
+    # 1. Description
+    id = fields.Integer('ID', readonly=True)
+    ref = fields.Char(
+        'Reference',
+        size=64,
+        required=True,
+        readonly=True,
+        default="NEW"
+    )
+    date = fields.Date('Date', required=True, default=default_date)
+    partner_id = fields.Many2one('res.partner', 'Partner', required=True)
+    reference = fields.Char('Related to', size=50)
+    responsible_user_id = fields.Many2one(
+       'res.users',
+       'Responsible',
+       required=True,
+    )
+    manager_user_id = fields.Many2one(
+        'res.users',
+        'Manager',
+        required=True,
+    )
+    author_user_id = fields.Many2one(
+        'res.users',
+        'Filled in by',
+        required=True,
+        default=default_user_id,
+    )
+    origin_ids = fields.Many2many(
+        'mgmtsystem.nonconformity.origin',
+        'mgmtsystem_nonconformity_origin_rel',
+        'nonconformity_id',
+        'origin_id',
+        'Origin',
+        required=True,
+    )
+    procedure_ids = fields.Many2many(
+        'document.page',
+        'mgmtsystem_nonconformity_procedure_rel',
+        'nonconformity_id',
+        'procedure_id',
+        'Procedure',
+    )
+    description = fields.Text('Description', required=True)
+    state = fields.Selection(_STATES, 'State', readonly=True, default="draft")
+    state_name = fields.Char(
+        compute='_state_name',
+        string='State Description',
+        size=40,
+    )
+    system_id = fields.Many2one('mgmtsystem.system', 'System')
+
+    # 2. Root Cause Analysis
+    cause_ids = fields.Many2many(
+        'mgmtsystem.nonconformity.cause',
+        'mgmtsystem_nonconformity_cause_rel',
+        'nonconformity_id',
+        'cause_id',
+        'Cause',
+    )
+    severity_id = fields.Many2one(
+        'mgmtsystem.nonconformity.severity',
+        'Severity',
+    )
+    analysis = fields.Text('Analysis')
+    immediate_action_id = fields.Many2one(
+        'mgmtsystem.action',
+        'Immediate action',
+        domain="[('nonconformity_id', '=', id)]",
+    )
+    analysis_date = fields.Datetime('Analysis Date', readonly=True)
+    analysis_user_id = fields.Many2one(
+        'res.users',
+        'Analysis by',
+        readonly=True,
+    )
+
+    # 3. Action Plan
+    action_ids = fields.Many2many(
+        'mgmtsystem.action',
+        'mgmtsystem_nonconformity_action_rel',
+        'nonconformity_id',
+        'action_id',
+        'Actions',
+    )
+    actions_date = fields.Datetime('Action Plan Date', readonly=True)
+    actions_user_id = fields.Many2one(
+        'res.users',
+        'Action Plan by',
+        readonly=True,
+    )
+    action_comments = fields.Text(
+        'Action Plan Comments',
+        help="Comments on the action plan.",
+    )
+
+    # 4. Effectiveness Evaluation
+    evaluation_date = fields.Datetime('Evaluation Date', readonly=True)
+    evaluation_user_id = fields.Many2one(
+        'res.users',
+        'Evaluation by',
+        readonly=True,
+    )
+    evaluation_comments = fields.Text(
+        'Evaluation Comments',
+        help="Conclusions from the last effectiveness evaluation.",
+    )
+
+    # Multi-company
+    company_id = fields.Many2one('res.company', 'Company', default=own_company)
+>>>>>>> Ported fields to v8
 
     @api.model
     def create(self, vals):
