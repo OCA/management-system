@@ -44,7 +44,7 @@ class mgmtsystem_nonconformity_cause(models.Model):
         'parent_id',
         'Child Causes',
     )
-    ref_code = fields.Char('Reference Code'),
+    ref_code = fields.Char('Reference Code')
 
     def name_get(self, cr, uid, ids, context=None):
         ids = ids or []
