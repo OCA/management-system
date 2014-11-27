@@ -19,10 +19,10 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import fields, models
 
 
-class mgmtsystem_nonconformity_origin(orm.Model):
+class mgmtsystem_nonconformity_origin(models.Model):
     """
     Origin of nonconformity of the management system
     """
@@ -30,25 +30,23 @@ class mgmtsystem_nonconformity_origin(orm.Model):
     _description = "Origin of nonconformity of the management system"
     _order = 'parent_id, sequence'
 
-    _columns = {
-        'id': fields.integer('ID', readonly=True),
-        'name': fields.char('Origin', size=50, required=True, translate=True),
-        'description': fields.text('Description'),
-        'sequence': fields.integer(
-            'Sequence',
-            help="Defines the order to present items",
-        ),
-        'parent_id': fields.many2one(
-            'mgmtsystem.nonconformity.origin',
-            'Group',
-        ),
-        'child_ids': fields.one2many(
-            'mgmtsystem.nonconformity.origin',
-            'parent_id',
-            'Childs',
-        ),
-        'ref_code': fields.char('Reference Code', size=20),
-    }
+    id = fields.Integer('ID', readonly=True)
+    name = fields.Char('Origin', required=True, translate=True)
+    description = fields.Text('Description')
+    sequence = fields.Integer(
+        'Sequence',
+        help="Defines the order to present items",
+    )
+    parent_id = fields.Many2one(
+        'mgmtsystem.nonconformity.origin',
+        'Group',
+    )
+    child_ids = fields.One2many(
+        'mgmtsystem.nonconformity.origin',
+        'parent_id',
+        'Childs',
+    )
+    ref_code = fields.Char('Reference Code')
 
     def name_get(self, cr, uid, ids, context=None):
         ids = ids or []
