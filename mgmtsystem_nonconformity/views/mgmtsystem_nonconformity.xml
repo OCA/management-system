@@ -277,6 +277,7 @@
             sequence="20" 
             groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
+<<<<<<< 05817ce5130d23268c8d0f3ebb798befdb02f78c:mgmtsystem_nonconformity/mgmtsystem_nonconformity.xml
         <!-- Origin -->
         
         <record id="view_mgmtsystem_nonconformity_origin_form" model="ir.ui.view">
@@ -450,5 +451,7 @@
             </field>
         </record>
          
+=======
+>>>>>>> Splitted xml views into 5 different xml files:mgmtsystem_nonconformity/views/mgmtsystem_nonconformity.xml
     </data>
 </openerp>
