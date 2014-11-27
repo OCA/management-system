@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
 
 
 class mgmtsystem_nonconformity_origin(models.Model):
@@ -48,9 +48,9 @@ class mgmtsystem_nonconformity_origin(models.Model):
     )
     ref_code = fields.Char('Reference Code')
 
-    def name_get(self, cr, uid, ids, context=None):
-        ids = ids or []
-        reads = self.read(cr, uid, ids, ['name', 'parent_id'], context=context)
+    @api.multi
+    def name_get(self):
+        reads = self.read(['name', 'parent_id'])
         res = []
         for record in reads:
             name = record['name']
@@ -59,6 +59,7 @@ class mgmtsystem_nonconformity_origin(models.Model):
             res.append((record['id'], name))
         return res
 
-    def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
-        res = self.name_get(cr, uid, ids, context=context)
+    @api.multi
+    def _name_get_fnc(self, prop, unknow_none):
+        res = self.name_get()
         return dict(res)
