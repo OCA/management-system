@@ -97,7 +97,11 @@ Contributors
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_nonconformity_security.xml',
-        'mgmtsystem_nonconformity.xml',
+        'views/mgmtsystem_nonconformity.xml',
+        'views/mgmtsystem_origin.xml',
+        'views/mgmtsystem_cause.xml',
+        'views/mgmtsystem_severity.xml',
+        'views/mgmtsystem_action.xml',
         'mgmtsystem_nonconformity_workflow.xml',
         'nonconformity_sequence.xml',
         'board_mgmtsystem_nonconformity.xml',
