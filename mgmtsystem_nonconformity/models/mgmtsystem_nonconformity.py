@@ -166,6 +166,7 @@ class mgmtsystem_nonconformity_origin(orm.Model):
     }
 
 
+<<<<<<< f843bb604319064d273a798a76021b9fa80fb3ab
 =======
 >>>>>>> Separated python in each model file:mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py
 class mgmtsystem_nonconformity_severity(orm.Model):
@@ -183,6 +184,8 @@ class mgmtsystem_nonconformity_severity(orm.Model):
     }
 
 
+=======
+>>>>>>> Removed severity redefined here
 _STATES = [
     ('draft', _('Draft')),
     ('analysis', _('Analysis')),
