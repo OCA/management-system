@@ -22,6 +22,7 @@
 from openerp.tools.translate import _
 from openerp import netsvc
 from openerp.osv import fields, orm
+from openerp import models, api
 
 from openerp.tools import (
     DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
@@ -42,7 +43,7 @@ _STATES = [
 _STATES_DICT = dict(_STATES)
 
 
-class mgmtsystem_nonconformity(orm.Model):
+class mgmtsystem_nonconformity(models.Model):
     """
     Management System - Nonconformity
     """
@@ -166,13 +167,12 @@ class mgmtsystem_nonconformity(orm.Model):
         'ref': 'NEW',
     }
 
-    def create(self, cr, uid, vals, context=None):
+    @api.model
+    def create(self, vals):
         vals.update({
-            'ref': self.pool.get('ir.sequence').get(
-                cr, uid, 'mgmtsystem.nonconformity')
+            'ref': self.env['ir.sequence'].get('mgmtsystem.nonconformity')
         })
-        return super(mgmtsystem_nonconformity, self).create(
-            cr, uid, vals, context)
+        return super(mgmtsystem_nonconformity, self).create(vals)
 
     def message_auto_subscribe(
             self, cr, uid, ids, updated_fields, context=None, values=None):

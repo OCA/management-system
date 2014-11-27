@@ -11,7 +11,6 @@ class TestModelCause(common.TransactionCase):
             self.assertEqual(True, False)
         except IntegrityError as exc:
             # Integrity error
-            #import pdb; pdb.set_trace()
             self.assertEqual(exc.pgcode, '23502')
             exc.cursor.connection.rollback()
 
