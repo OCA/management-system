@@ -76,9 +76,9 @@ class mgmtsystem_nonconformity(models.Model):
     partner_id = fields.Many2one('res.partner', 'Partner', required=True)
     reference = fields.Char('Related to', size=50)
     responsible_user_id = fields.Many2one(
-       'res.users',
-       'Responsible',
-       required=True,
+        'res.users',
+        'Responsible',
+        required=True,
     )
     manager_user_id = fields.Many2one(
         'res.users',
