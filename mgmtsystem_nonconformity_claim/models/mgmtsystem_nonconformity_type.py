@@ -35,12 +35,3 @@ class mgmtsystem_nonconformity_type(orm.Model):
     _defaults = {
         'active': True,
     }
-
-
-class mgmtsystem_nonconformity(orm.Model):
-    _name = "mgmtsystem.nonconformity"
-    _inherit = "mgmtsystem.nonconformity"
-    _description = "Feedback and Nonconformities"
-    _columns = {
-        'type_id': fields.many2one('mgmtsystem.nonconformity.type', 'Type'),
-    }

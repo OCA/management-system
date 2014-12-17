@@ -21,22 +21,6 @@
 from openerp.osv import fields, orm
 
 
-class mgmtsystem_nonconformity_type(orm.Model):
-    """Claim Type: Nonconformity, Good Practice, Improvement Opportunity,
-    Observation, ...
-    """
-    _name = "mgmtsystem.nonconformity.type"
-    _description = "Claim Type"
-    _columns = {
-        'name': fields.char('Title', size=50, required=True, translate=True),
-        'description': fields.text('Description', translate=True),
-        'active': fields.boolean('Active?'),
-    }
-    _defaults = {
-        'active': True,
-    }
-
-
 class mgmtsystem_nonconformity(orm.Model):
     _name = "mgmtsystem.nonconformity"
     _inherit = "mgmtsystem.nonconformity"
