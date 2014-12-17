@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+<<<<<<< 243a091cc9995d95653653e53c78a02b50b86843
 <<<<<<< 527c6fad67cafc24c1059a64d5dc6ef1d1bd3083
 ##############################################################################
 #    
@@ -23,3 +24,5 @@
 
 >>>>>>> Moved document_page_procedure to root folder for port
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+=======
+>>>>>>> Refactor move icon and splitted xml file in data/views

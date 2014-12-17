@@ -57,7 +57,10 @@
     "description": """Procedure Template
     """,
     "depends": ['document_page_work_instructions'],
-    "data": ['document_page_procedure.xml'],
+    "data": [
+        'views/document_page.xml',
+        'data/document_page.xml',
+    ],
     "demo": [],
 <<<<<<< fa0d893058a192bc1d2169abaa9c491bc70939b1
 <<<<<<< 527c6fad67cafc24c1059a64d5dc6ef1d1bd3083
@@ -70,4 +73,3 @@
 >>>>>>> Simple fix nothing to change
     "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
