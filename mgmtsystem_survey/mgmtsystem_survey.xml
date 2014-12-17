@@ -103,25 +103,12 @@
 
         <!-- window actions and menus -->
 
-	<!-- survey.action_browse_survey_response non existent 
-	     wizards got removed
-        <menuitem id="menu_open_answers" 
-            name="Survey Answers" 
-            action="survey.action_browse_survey_response" 
-            parent="mgmtsystem.menu_mgmtsystem_main"
-            sequence="90" 
-            groups="base.group_user"/>
-	-->
-
         <record id="action_survey_form" model="ir.actions.act_window">
             <field name="name">Surveys</field>
             <field name="res_model">survey.survey</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-	    <!-- It should be it in theory but the list doesn't show anything after that -->
-	    <!-- <field name="domain" eval="[('stage_id','=',ref('mgmtsystem_survey_type'))]"/> -->
             <field name="view_id" ref="survey.survey_tree"></field>
-	    <!-- <field name="search_view_id" ref="survey.survey_search"/> -->
         </record>
 
         <menuitem id="menu_open_survey" 
