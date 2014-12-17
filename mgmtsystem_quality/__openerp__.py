@@ -40,7 +40,9 @@ This module enables you to manage your quality management system, including :
         'document_page_quality_manual',
         'mgmtsystem_review',
     ],
-    "data": ['quality.xml'],
+    "data": [
+        'data/mgmtsystem_system.xml',
+    ],
     "demo": [],
     'installable': True,
     "application": True,
