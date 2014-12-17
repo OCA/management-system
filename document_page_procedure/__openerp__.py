@@ -28,9 +28,11 @@
     "description": """Procedure Template
     """,
     "depends": ['document_page_work_instructions'],
-    "data": ['document_page_procedure.xml'],
+    "data": [
+        'views/document_page.xml',
+        'data/document_page.xml',
+    ],
     "demo": [],
     'installable': True,
     "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
