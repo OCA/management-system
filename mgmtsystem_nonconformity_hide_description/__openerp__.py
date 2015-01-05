@@ -29,21 +29,25 @@
     "description": """
 Management System - Nonconformity - Hide Description
 ====================================================
-The description are multi-lines and might break the tree structure.
+The descriptions are multi-lines and might break the tree structure.
 To ease the usage and the readability of the nonconformities in the list view,
 the description column is removed.
 
+Also the description is used as the name of the nonconformity in the header
+of the form view.
+As the descriptions are multi-lines, that might take too much places on the
+screen. It is then replace by the ref of the nonconformity
+
 Contributors
 ------------
-*Fonctionels:*
+
     * Maxime Chambreuil (maxime.chambreuil@savoirfairelinux.com)
     * Julien Roux (julien.roux@savoirfairelinux.com)
-
-*Developpers:*
     * Jordi Riera (jordi.riera@savoirfairelinux.com)
 
 More information
 ----------------
+
 Module developed and tested with OpenERP version 7.0
 For questions, please contact our support services
 (support@savoirfairelinux.com)
