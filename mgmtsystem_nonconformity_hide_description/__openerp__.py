@@ -50,7 +50,7 @@ For questions, please contact our support services
 
     """,
     "depends": [
-        'mgmtsystem_action',
+        'mgmtsystem_nonconformity',
     ],
     "data": [
         'mgmtsystem_nonconformity.xml',
