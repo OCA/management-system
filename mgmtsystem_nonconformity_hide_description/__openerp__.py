@@ -19,7 +19,7 @@
 #
 ##############################################################################
 {
-    "name": "Management System - Nonconformity - Hide Description",
+    "name": "Nonconformity - Hide Description",
     "version": "0.1",
     "author": "Savoir-faire Linux",
     "website": "http://www.savoirfairelinux.com",
