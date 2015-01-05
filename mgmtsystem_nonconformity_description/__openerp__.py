@@ -19,7 +19,7 @@
 #
 ##############################################################################
 {
-    "name": "Nonconformity - Hide Description",
+    "name": "Nonconformity - Description",
     "version": "0.1",
     "author": "Savoir-faire Linux",
     "website": "http://www.savoirfairelinux.com",
@@ -27,8 +27,8 @@
     "category": "Management System",
     "summary": "Hide the description in the tree view of nonconformities",
     "description": """
-Management System - Nonconformity - Hide Description
-====================================================
+Nonconformity - Description
+===========================
 The descriptions are multi-lines and might break the tree structure.
 To ease the usage and the readability of the nonconformities in the list view,
 the description column is removed.
