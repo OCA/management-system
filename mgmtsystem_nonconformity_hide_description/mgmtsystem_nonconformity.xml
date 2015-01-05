@@ -1,0 +1,18 @@
+<openerp>
+    <data>
+
+        <record id="view_mgmtsystem_nonconformity_tree_no_description"
+                model="ir.ui.view">
+            <field name="name">mgmtsystem.nonconformity.tree: no description</field>
+            <field name="inherit_id"
+                   ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_tree"/>
+            <field name="model">mgmtsystem.nonconformity</field>
+            <field name="arch" type="xml">
+                <field name="description" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
