@@ -19,7 +19,7 @@
 #
 ##############################################################################
 {
-    "name": "Management System - Nonconformity - field name",
+    "name": "Nonconformity - field name",
     "version": "0.1",
     "author": "Savoir-faire Linux",
     "website": "http://www.savoirfairelinux.com",
