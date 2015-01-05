@@ -9,7 +9,7 @@
                    ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_tree"/>
             <field name="model">mgmtsystem.nonconformity</field>
             <field name="arch" type="xml">
-                <field name="partner_id" position="after">
+                <field name="ref" position="after">
                     <field name="name"/>
                 </field>
             </field>
@@ -22,7 +22,7 @@
             <field name="name">mgmtsystem.nonconformity.form: field name</field>
             <field name="model">mgmtsystem.nonconformity</field>
             <field name="arch" type="xml">
-                <field name="partner_id" position="after">
+                <field name="ref" position="after">
                     <field name="name"/>
                 </field>
             </field>

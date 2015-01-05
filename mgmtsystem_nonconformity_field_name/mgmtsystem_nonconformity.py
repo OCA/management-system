@@ -26,8 +26,9 @@ from openerp.osv import fields, orm
 class mgmtsystem_nonconformity(orm.Model):
     """ Add a field name to the nonconformity. """
     _inherit = "mgmtsystem.nonconformity"
+    _rec_name = "name"
 
     _columns = {
-        'name': fields.char(string=_('Name'))
+        'name': fields.char(string=_('Name'), required=True)
     }
 

@@ -29,16 +29,14 @@
     "description": """
 Management System - Nonconformity - field name
 ==============================================
-Add a field to name nonconformities by a string.
+Add a mandatory field to name nonconformities by a string.
+The field is also used as the reference in header of the form view.
 
 Contributors
 ------------
 
-*Fonctionels:*
     * Maxime Chambreuil (maxime.chambreuil@savoirfairelinux.com)
     * Julien Roux (julien.roux@savoirfairelinux.com)
-
-*Developers:*
     * Jordi Riera (jordi.riera@savoirfairelinux.com)
 
 More information
