@@ -158,7 +158,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
     """
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity of the management system"
-    _rec_name = "description"
+    _rec_name = "name"
     _inherit = ['mail.thread']
     _order = "date desc"
 
@@ -172,6 +172,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         # 1. Description
         'id': fields.integer('ID', readonly=True),
         'ref': fields.char('Reference', size=64, required=True, readonly=True),
+        'name': fields.char('Name', required=True),
         'date': fields.date('Date', required=True),
         'partner_id': fields.many2one('res.partner', 'Partner', required=True),
         'reference': fields.char('Related to', size=50),
