@@ -21,6 +21,7 @@
     'name': 'Management System - Claims and Nonconformities',
     'version': '1.0',
     'author': 'Daniel Reis',
+    'license': 'AGPL-3',
     'category': 'Management System',
     'description': """\
 Extends the Nonconformity form so it can also represent NC candidates and other
