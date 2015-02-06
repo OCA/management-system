@@ -33,6 +33,7 @@ for the Quality Manual.
     """,
     'author': 'OpenERP SA',
     'website': 'http://openerp.com',
+    'license': 'AGPL-3',
     'depends': ['mgmtsystem_manuals'],
     'data': ['document_page_quality_manual.xml'],
     'demo': [],
