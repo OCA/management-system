@@ -36,7 +36,8 @@
     ],
     "data": [
         "views/mgmtsystem_probability.xml",
-        'security/ir.model.access.csv',
+        "security/ir.model.access.csv",
+        "data/mgmtsystem_probability.xml",
     ],
     "demo": [],
     "installable": True,
