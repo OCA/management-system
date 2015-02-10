@@ -3,7 +3,6 @@
 
         <record id="view_mgmtsystem_severity_form" model="ir.ui.view">
             <field name="name">mgmtsystem.severity.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.severity</field>
             <field name="arch" type="xml">
                 <form string="Severity">
@@ -20,7 +19,6 @@
         <record id="view_mgmtsystem_severity_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.severity.tree</field>
             <field name="model">mgmtsystem.severity</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Severities">
                     <field name="name"/>
