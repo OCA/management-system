@@ -12,7 +12,6 @@ class TestCreateProbability(TransactionCase):
     a valid value creates an entry.
     """
 
-
     def setUp(self):
         super(TestCreateProbability, self).setUp()
 
