@@ -36,6 +36,7 @@
         "mgmtsystem_probability",
     ],
     "data": [
+        "views/menus.xml",
     ],
     "demo": [],
     "installable": True,
