@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2015 - Present 
+#    Copyright (C) 2015 - Present
 #    Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,23 +19,29 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System Severity",
-    "version": "1.0",
-    "author": "Savoir-faire Linux",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "complexity": "normal",
-    "description": """\
-This module allow you to manage scale of severity used across
-different modules (health and safety, information security).
-    """,
-    "depends": [
-    ],
-    "data": [
-        "views/mgmtsystem_severity.xml",
-    ],
-    "demo": [],
-    "installable": True,
-}
+from openerp.tools.translate import _
+from osv import fields, orm
+
+_CATEGORIES = [
+    ("hazard", _("hazard")),
+    ("security", _("security")),
+]
+
+
+class MgmtSystemSeverity(orm.Model):
+
+    """
+    Define the Severity for management system.
+
+    Allow you to manage scale of severity used across
+    different modules (health and safety, information security).
+    """
+
+    _name = "mgmtsystem.severity"
+    description = "Management System Severity"
+
+    _columns = {
+        "name": fields.char("Name", required=True),
+        "value": fields.integer("Value", required=True),
+        "category": fields.selection(_CATEGORIES, "Category"),
+    }

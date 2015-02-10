@@ -19,23 +19,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System Severity",
-    "version": "1.0",
-    "author": "Savoir-faire Linux",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "complexity": "normal",
-    "description": """\
-This module allow you to manage scale of severity used across
-different modules (health and safety, information security).
-    """,
-    "depends": [
-    ],
-    "data": [
-        "views/mgmtsystem_severity.xml",
-    ],
-    "demo": [],
-    "installable": True,
-}
+from . import mgmtsystem_severity
