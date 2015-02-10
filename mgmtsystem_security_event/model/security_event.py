@@ -31,7 +31,7 @@ class SecurityEvents(orm.Model):
     _columns = {
         'name': fields.char("Name"),
         'description': fields.many2one(
-            "document_page", "Description",
+            "document.page", "Description",
             help="Document pages will also contain the information of "
                  "the impact of the event"
         ),

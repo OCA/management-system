@@ -31,5 +31,5 @@ class EssentialAssets(orm.Model):
     _columns = {
         'name': fields.char("Name"),
         'description': fields.text("Description"),
-        'responsible': fields.many2one("res.user", "Responsible")
+        'responsible': fields.many2one("res.users", "Responsible")
     }
