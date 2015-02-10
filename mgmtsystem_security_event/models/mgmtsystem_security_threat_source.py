@@ -2,7 +2,8 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#    Copyright (C) 2015 - Present
+#    Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,22 +21,33 @@
 ##############################################################################
 
 from openerp.osv import fields, orm
+from .mgmtsystem_security_event import _default_system_id
 
 
-class MgmtsystemAction(orm.Model):
-    _inherit = "mgmtsystem.action"
+class ThreatSource(orm.Model):
+
+    """Threat Source."""
+
+    _name = "mgmtsystem.security.threat.source"
+    _description = "Threat Source"
+
     _columns = {
-        'nonconformity_immediate_id': fields.one2many(
-            'mgmtsystem.nonconformity',
-            'immediate_action_id',
-            readonly=True,
+        'name': fields.char("Name"),
+        'system_id': fields.many2one(
+            'mgmtsystem.system', 'System',
+            required=True,
         ),
-        'nonconformity_ids': fields.many2many(
-            'mgmtsystem.nonconformity',
-            'mgmtsystem_nonconformity_action_rel',
-            'action_id',
-            'nonconformity_id',
-            'Nonconformities',
+        'company_id': fields.related(
+            'system_id',
+            'company_id',
+            string='Company',
             readonly=True,
+            type='many2one',
+            relation='res.company',
+            store=True,
         ),
+    }
+
+    _defaults = {
+        'system_id': _default_system_id,
     }

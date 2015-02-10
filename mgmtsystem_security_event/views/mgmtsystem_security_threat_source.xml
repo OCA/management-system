@@ -1,0 +1,43 @@
+<openerp>
+    <data>
+
+        <record id="view_mgmtsystem_threat_source_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.threat.source.form</field>
+            <field name="model">mgmtsystem.security.threat.source</field>
+            <field name="arch" type="xml">
+                <form string="Threat Source">
+                    <field name="name"/>
+                    <field name="system_id" domain="[('type', '=', 'information_security')]"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_threat_source_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.threat.source.tree</field>
+            <field name="model">mgmtsystem.security.threat.source</field>
+            <field name="arch" type="xml">
+                <tree string="Threats Sources">
+                    <field name="name"/>
+                    <field name="system_id"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_threat_source_list" model="ir.actions.act_window">
+            <field name="name">Threat Sources</field>
+            <field name="res_model">mgmtsystem.security.threat.source</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <menuitem id="menu_open_mgmtsystem_threat_source" 
+            action="open_mgmtsystem_threat_source_list" 
+            parent="menu_mgmtsystem_security" 
+            sequence="20" 
+            />
+
+    </data>
+</openerp>

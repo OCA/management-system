@@ -2,7 +2,8 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#    Copyright (C) 2015 - Present
+#    Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,23 +20,23 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp.addons.report_webkit.webkit_report import WebKitParser
+from openerp import pooler
+from openerp.report import report_sxw
 
 
-class MgmtsystemAction(orm.Model):
-    _inherit = "mgmtsystem.action"
-    _columns = {
-        'nonconformity_immediate_id': fields.one2many(
-            'mgmtsystem.nonconformity',
-            'immediate_action_id',
-            readonly=True,
-        ),
-        'nonconformity_ids': fields.many2many(
-            'mgmtsystem.nonconformity',
-            'mgmtsystem_nonconformity_action_rel',
-            'action_id',
-            'nonconformity_id',
-            'Nonconformities',
-            readonly=True,
-        ),
-    }
+class RiskMatrixParser(report_sxw.rml_parse):
+
+    def __init__(self, cursor, uid, name, context):
+        super(RiskMatrixParser, self).__init__(
+            cursor, uid, name, context=context)
+        self.pool = pooler.get_pool(self.cr.dbname)
+        self.cursor = self.cr
+
+        self.localcontext.update({})
+
+WebKitParser(
+    'report.mgmtsystem_security_event.risk_matrix_webkit',
+    'mgmtsystem.risk.matrix',
+    'addons/mgmtsystem_security_event/report/risk_matrix_webkit.mako',
+    parser=RiskMatrixParser)

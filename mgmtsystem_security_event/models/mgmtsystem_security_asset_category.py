@@ -2,7 +2,8 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#    Copyright (C) 2015 - Present
+#    Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -22,20 +23,13 @@
 from openerp.osv import fields, orm
 
 
-class MgmtsystemAction(orm.Model):
-    _inherit = "mgmtsystem.action"
+class CategoryAsset(orm.Model):
+
+    """Category of Assets."""
+
+    _name = "mgmtsystem.security.asset.category"
+    _description = "Asset Categories"
+
     _columns = {
-        'nonconformity_immediate_id': fields.one2many(
-            'mgmtsystem.nonconformity',
-            'immediate_action_id',
-            readonly=True,
-        ),
-        'nonconformity_ids': fields.many2many(
-            'mgmtsystem.nonconformity',
-            'mgmtsystem_nonconformity_action_rel',
-            'action_id',
-            'nonconformity_id',
-            'Nonconformities',
-            readonly=True,
-        ),
+        'name': fields.char("Name"),
     }

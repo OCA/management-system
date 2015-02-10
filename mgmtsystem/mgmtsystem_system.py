@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -30,6 +30,15 @@ class mgmtsystem_system(orm.Model):
     _columns = {
         'name': fields.char('System', size=30, required=True, translate=True),
         'manual': fields.many2one('document.page', 'Manual'),
+        'type': fields.selection(
+            [
+                ('environment', 'Environment'),
+                ('information_security', 'Information Security'),
+                ('health_safety', 'Health & Safety'),
+                ('quality', 'Quality'),
+            ],
+            'Type',
+        ),
         'company_id': fields.many2one('res.company', 'Company')
     }
 
