@@ -37,6 +37,7 @@ different modules (health and safety, information security).
     "data": [
         "views/mgmtsystem_severity.xml",
         "security/ir.model.access.csv",
+        "data/mgmtsystem_severity.xml",
     ],
     "demo": [],
     "installable": True,
