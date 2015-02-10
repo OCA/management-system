@@ -1,0 +1,44 @@
+<openerp>
+    <data>
+
+        <record id="view_mgmtsystem_security_event_scenario_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.event.scenario.form</field>
+            <field name="model">mgmtsystem.security.event.scenario</field>
+            <field name="arch" type="xml">
+                <form string="Scenario Line">
+                    <field name="scenario" />
+                    <field name="origin" />
+                    <field
+                        name="severity"
+                        domain="[('category', '=', 'security')]"
+                        />
+                    <field name="security_event_id" />
+                    <field name="description" colspan="4" />
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_security_event_scenario_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.event.scenario.tree</field>
+            <field name="model">mgmtsystem.security.event.scenario</field>
+            <field name="arch" type="xml">
+                <tree string="Scenario Lines">
+                    <field name="description" />
+                    <field name="scenario" />
+                    <field name="origin" />
+                    <field name="severity" />
+                    <field name="security_event_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_security_event_scenario_list" model="ir.actions.act_window">
+            <field name="name">Scenario Line</field>
+            <field name="res_model">mgmtsystem.security.event.scenario</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+    </data>
+</openerp>

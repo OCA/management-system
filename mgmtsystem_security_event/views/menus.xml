@@ -1,0 +1,26 @@
+<openerp>
+    <data>
+
+        <menuitem
+            id="menu_mgmtsystem_security"
+            name="Security"
+            parent="mgmtsystem.menu_mgmtsystem_configuration"
+            sequence="10"
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+        <menuitem
+            id="menu_mgmtsystem_assets"
+            name="Assets"
+            parent="menu_mgmtsystem_security"
+            sequence="10"
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+        <menuitem
+            id="menu_mgmtsystem_threats"
+            name="Threats"
+            parent="menu_mgmtsystem_security"
+            sequence="30"
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+    </data>
+</openerp>

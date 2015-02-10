@@ -1,0 +1,53 @@
+<openerp>
+    <data>
+
+        <record id="view_mgmtsystem_underlying_assets_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.assets.underlying.form</field>
+            <field name="model">mgmtsystem.security.assets.underlying</field>
+            <field name="arch" type="xml">
+                <form string="Underlying Asset">
+                    <field name="name"/>
+                    <field name="category"/>
+
+                    <notebook colspan="4">
+                        <page string="Essential Assets">
+                            <field
+                                name="essential_assets"
+                                widget="many2many"
+                                colspan="4"
+                                nolabel="1"
+                                ref="view_mgmtsystem_essential_assets_tree"
+                                />
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_underlying_assets_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.assets.underlying.tree</field>
+            <field name="model">mgmtsystem.security.assets.underlying</field>
+            <field name="arch" type="xml">
+                <tree string="Underlying Assets">
+                    <field name="name"/>
+                    <field name="category"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_underlying_assets_list" model="ir.actions.act_window">
+            <field name="name">Underlying</field>
+            <field name="res_model">mgmtsystem.security.assets.underlying</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <menuitem id="menu_open_mgmtsystem_underlying_assets" 
+            action="open_mgmtsystem_underlying_assets_list" 
+            parent="menu_mgmtsystem_assets" 
+            sequence="20" 
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+    </data>
+</openerp>
