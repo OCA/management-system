@@ -3,7 +3,6 @@
 
         <record id="view_mgmtsystem_probability_form" model="ir.ui.view">
             <field name="name">mgmtsystem.probability.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.probability</field>
             <field name="arch" type="xml">
                 <form string="Probability">
@@ -20,7 +19,6 @@
         <record id="view_mgmtsystem_probability_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.probability.tree</field>
             <field name="model">mgmtsystem.probability</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Probabilities">
                     <field name="name"/>
