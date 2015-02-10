@@ -12,7 +12,6 @@ class TestCreateSeverity(TransactionCase):
     a valid value creates an entry.
     """
 
-
     def setUp(self):
         super(TestCreateSeverity, self).setUp()
 
