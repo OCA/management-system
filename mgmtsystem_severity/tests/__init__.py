@@ -19,29 +19,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.tools.translate import _
-from osv import fields, orm
+from . import test_create_severity
 
-_CATEGORIES = [
-    ("hazard", _("hazard")),
-    ("security", _("security")),
+checks = [
+    test_create_severity
 ]
-
-
-class MgmtSystemSeverity(orm.Model):
-
-    """
-    Define the Severity for management system.
-
-    Allow you to manage scale of severity used across
-    different modules (health and safety, information security).
-    """
-
-    _name = "mgmtsystem.severity"
-    description = "Management System Severity"
-
-    _columns = {
-        "name": fields.char("Name", required=True),
-        "value": fields.integer("Value", required=True),
-        "category": fields.selection(_CATEGORIES, "Category", required=True),
-    }

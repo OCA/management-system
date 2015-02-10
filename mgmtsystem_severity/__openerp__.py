@@ -32,6 +32,7 @@ This module allow you to manage scale of severity used across
 different modules (health and safety, information security).
     """,
     "depends": [
+        "mgmtsystem",
     ],
     "data": [
         "views/mgmtsystem_severity.xml",
