@@ -44,6 +44,8 @@
         "views/underlying_assets.xml",
         "views/threat_scenario.xml",
         "views/security_events.xml",
+        "views/security_event_scenario.xml",
+        "views/security_event_measure.xml",
     ],
     "demo": [],
     "installable": True,

@@ -18,8 +18,8 @@
                                 widget="one2many"
                                 colspan="4"
                                 nolabel="1"
+                                ref="open_mgmtsystem_security_event_scenario_tree"
                                 >
-                                <field name="name" />
                             </field>
                         </page>
                         <page string="Measures">
@@ -28,8 +28,8 @@
                                 widget="one2many"
                                 colspan="4"
                                 nolabel="1"
+                                ref="open_mgmtsystem_security_event_measure_tree"
                                 >
-                                <field name="name" />
                             </field>
                         </page>
                     </notebook>
@@ -51,7 +51,7 @@
         </record>
 
         <record id="open_mgmtsystem_security_event_list" model="ir.actions.act_window">
-            <field name="name">Security Event</field>
+            <field name="name">Security Events</field>
             <field name="res_model">mgmtsystem.security.event</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -60,7 +60,7 @@
 
         <menuitem id="menu_open_mgmtsystem_security_event" 
             action="open_mgmtsystem_security_event_list" 
-            parent="menu_mgmtsystem_security_events" 
+            parent="mgmtsystem.menu_mgmtsystem_manuals"
             sequence="20" 
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
