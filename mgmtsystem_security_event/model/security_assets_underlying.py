@@ -33,7 +33,11 @@ class UnderlyingAssets(orm.Model):
         'category': fields.many2one(
             "mgmtsystem.security.assets.category", "Category"
         ),
-        'work_instructions': fields.many2one(
-            "mgmtsystem.security.assets.essential", "Essential Assets"
+        'essential_assets': fields.many2many(
+            "mgmtsystem.security.assets.essential",
+            "mgmtsystem_security_assets_essential_rel",
+            "underlying_asset_id",
+            "essential_asset_id",
+            "Essential Assets"
         ),
     }
