@@ -38,10 +38,14 @@ class SecurityEvents(orm.Model):
         'severity': fields.many2one(
             "mgmtsystem.severity", "Severity"
         ),
-        'scenarios': fields.many2one(
-            "mgmtsystem.security.event.scenario", "Scenarios"
+        'scenarios': fields.one2many(
+            "mgmtsystem.security.event.scenario",
+            "security_event_id",
+            "Scenarios",
         ),
-        'measures': fields.many2one(
-            "mgmtsystem.security.event.measure", "Measures"
+        'measures': fields.one2many(
+            "mgmtsystem.security.event.measure",
+            "security_event_id",
+            "Measures"
         ),
     }

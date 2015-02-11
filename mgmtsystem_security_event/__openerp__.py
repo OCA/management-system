@@ -43,6 +43,7 @@
         "views/essential_assets.xml",
         "views/underlying_assets.xml",
         "views/threat_scenario.xml",
+        "views/security_events.xml",
     ],
     "demo": [],
     "installable": True,

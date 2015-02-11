@@ -35,6 +35,9 @@ class EventMeasureLines(orm.Model):
         'underlying_assets': fields.many2one(
             "mgmtsystem.security.assets.underlying", "Underlying Assets"
         ),
+        'security_event_id': fields.many2one(
+            "mgmtsystem.security.event", "Security Event"
+        ),
         "prevention": fields.boolean("Prevention"),
         "protection": fields.boolean("Protection"),
         "recovery": fields.boolean("Recovery"),

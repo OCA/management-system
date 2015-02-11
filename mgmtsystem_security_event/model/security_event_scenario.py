@@ -29,6 +29,7 @@ class EventScenarioLines(orm.Model):
     description = "Security Events - Scenario Lines"
 
     _columns = {
+        'description': fields.text('Description'),
         'scenario': fields.many2one(
             "mgmtsystem.security.threat.scenario", "Scenario"
         ),
@@ -38,5 +39,7 @@ class EventScenarioLines(orm.Model):
         'severity': fields.many2one(
             "mgmtsystem.severity", "Severity"
         ),
-        'description': fields.text('Description'),
+        'security_event_id': fields.many2one(
+            "mgmtsystem.security.event", "Security Event"
+        ),
     }
