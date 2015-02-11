@@ -22,11 +22,6 @@
 from openerp.tools.translate import _
 from osv import fields, orm
 
-_CATEGORIES = [
-    ("hazard", _("hazard")),
-    ("security", _("security")),
-]
-
 
 class MgmtSystemProbability(orm.Model):
 
@@ -40,8 +35,34 @@ class MgmtSystemProbability(orm.Model):
     _name = "mgmtsystem.probability"
     description = "Management System Probability"
 
+    def __category_selection(self, cr, uid, context=None):
+        """
+        Return the category selection.
+
+        This method act as a proxy between the model method
+        _category_selection and odoo. Subclassing the method
+        used in the field.selection has no effect. Subclass
+        the _category_selection method instead.
+        """
+        return self._category_selection(cr, uid, context)
+
     _columns = {
         "name": fields.char("Name", required=True),
         "value": fields.integer("Value", required=True),
-        "category": fields.selection(_CATEGORIES, "Category", required=True),
+        "category": fields.selection(
+            __category_selection,
+            "Category",
+            required=True
+        ),
     }
+
+    def _category_selection(self, cr, uid, context=None):
+        """
+        Return the category selection.
+
+        This method can be subclassed by other classes.
+        """
+        return [
+            ("hazard", _("hazard")),
+            ("security", _("security")),
+        ]
