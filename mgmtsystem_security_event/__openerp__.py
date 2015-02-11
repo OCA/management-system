@@ -37,6 +37,8 @@
     ],
     "data": [
         "views/menus.xml",
+        "views/security_measure.xml",
+        "views/threat_origin.xml",
     ],
     "demo": [],
     "installable": True,
