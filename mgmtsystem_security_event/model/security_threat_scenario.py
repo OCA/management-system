@@ -34,8 +34,12 @@ class ThreatScenario(orm.Model):
         'origin': fields.many2one(
             "mgmtsystem.security.threat.origin", "Origin"
         ),
-        'underlying_assets': fields.many2one(
-            "mgmtsystem.security.assets.underlying", "Underlying Assets"
+        'underlying_assets': fields.many2many(
+            "mgmtsystem.security.assets.underlying",
+            "mgmtststem_security_assets_underlying_rel",
+            "threat_scenario_id",
+            "underlying_asset_id",
+            "Underlying Assets"
         ),
         'original_probability': fields.many2one(
             "mgmtsystem.probability", "Original Probability",
