@@ -25,6 +25,8 @@ from osv import fields, orm
 
 class ThreatScenario(orm.Model):
 
+    """Threat Scenario."""
+
     _name = "mgmtsystem.security.threat.scenario"
     description = "Threat Scenario"
 

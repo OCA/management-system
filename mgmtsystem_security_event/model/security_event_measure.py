@@ -26,10 +26,23 @@ from openerp.tools.translate import _
 
 class EventMeasureLines(orm.Model):
 
+    """
+    Event measure lines.
+
+    Event measure lines are used inside the security
+    event model
+    """
+
     _name = "mgmtsystem.security.event.measure"
     description = "Security Events - Measure Lines"
 
     def __get_name(self, cr, uid, ids, field_name, arg, context):
+        """
+        Proxy method to get the object name.
+
+        This method is passed to the function field and cannot be
+        subclassed. Instead subclass the method _get_name.
+        """
         return self._get_name(cr, uid, ids, field_name, arg, context)
 
     _columns = {
@@ -54,6 +67,13 @@ class EventMeasureLines(orm.Model):
     }
 
     def _get_name(self, cr, uid, ids, field_name, arg, context):
+        """
+        The method gets the name of the objects referenced by ids.
+
+        This method computes the name based on the measures and
+        underlying_assets fields. It computes the name for each ids
+        and can be extended by subclass.
+        """
         res = {}
         model = self.pool["mgmtsystem.security.event.measure"]
 

@@ -25,6 +25,8 @@ from osv import fields, orm
 
 class UnderlyingAssets(orm.Model):
 
+    """Underlying Assets."""
+
     _name = "mgmtsystem.security.assets.underlying"
     description = "Underlying Assets"
 

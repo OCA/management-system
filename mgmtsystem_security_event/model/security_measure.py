@@ -25,6 +25,8 @@ from osv import fields, orm
 
 class SecurityMeasure(orm.Model):
 
+    """Security Measure."""
+
     _name = "mgmtsystem.security.measure"
     description = "Security Measure"
 

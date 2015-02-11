@@ -25,6 +25,8 @@ from osv import fields, orm
 
 class EssentialAssets(orm.Model):
 
+    """Essential assets."""
+
     _name = "mgmtsystem.security.assets.essential"
     description = "Essential Assets"
 

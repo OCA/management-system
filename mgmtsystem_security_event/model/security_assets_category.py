@@ -25,6 +25,8 @@ from osv import fields, orm
 
 class CategoryAssets(orm.Model):
 
+    """Category of Assets."""
+
     _name = "mgmtsystem.security.assets.category"
     description = "Category Assets"
 

@@ -25,6 +25,8 @@ from osv import fields, orm
 
 class ThreatOrigin(orm.Model):
 
+    """Threat origin."""
+
     _name = "mgmtsystem.security.threat.origin"
     description = "Threat origin"
 

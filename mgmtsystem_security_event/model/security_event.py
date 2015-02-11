@@ -25,6 +25,8 @@ from osv import fields, orm
 
 class SecurityEvents(orm.Model):
 
+    """Security Events."""
+
     _name = "mgmtsystem.security.event"
     description = "Security Events"
 
