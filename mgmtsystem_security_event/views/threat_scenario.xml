@@ -9,14 +9,32 @@
                     <field name="name"/>
                     <field name="origin"/>
 
-                    <field name="original_probability"/>
-                    <field name="original_severity"/>
+                    <field
+                        name="original_probability"
+                        domain="[('category','=','security')]"
+                        />
+                    <field
+                        name="original_severity"
+                        domain="[('category','=','security')]"
+                        />
 
-                    <field name="current_probability"/>
-                    <field name="current_severity"/>
+                    <field
+                        name="current_probability"
+                        domain="[('category','=','security')]"
+                        />
+                    <field
+                        name="current_severity"
+                        domain="[('category','=','security')]"
+                        />
 
-                    <field name="residual_probability"/>
-                    <field name="residual_severity"/>
+                    <field
+                        name="residual_probability"
+                        domain="[('category','=','security')]"
+                        />
+                    <field
+                        name="residual_severity"
+                        domain="[('category','=','security')]"
+                        />
 
                     <field name="description" colspan="4"/>
 

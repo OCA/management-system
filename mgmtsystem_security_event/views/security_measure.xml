@@ -7,8 +7,10 @@
             <field name="arch" type="xml">
                 <form string="Security Measure">
                     <field name="name"/>
-                    <field name="work_instructions"/>
-
+                    <field
+                        name="work_instructions"
+                        domain="[('parent_id', '=', %(document_page_work_instructions.document_page_group_work_instructions)d)]"
+                        />
                     <field name="description" colspan="4"/>
                 </form>
             </field>

@@ -7,9 +7,15 @@
             <field name="arch" type="xml">
                 <form string="Security Event">
                     <field name="name"/>
-                    <field name="description"/>
+                    <field
+                        name="description"
+                        />
+                        <!-- domain="[('parent_id', '=', %()d)]" -->
 
-                    <field name="severity"/>
+                    <field
+                        name="severity"
+                        domain="[('category', '=', 'security')]"
+                        />
 
                     <notebook colspan="4">
                         <page string="Scenarios">
