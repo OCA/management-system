@@ -5,7 +5,10 @@
             <field name="name">mgmtsystem.security.event.measure.form</field>
             <field name="model">mgmtsystem.security.event.measure</field>
             <field name="arch" type="xml">
+
                 <form string="Measure Line">
+                    <field name="name" colspan="4"/>
+
                     <field name="measures" />
                     <field name="prevention" />
 

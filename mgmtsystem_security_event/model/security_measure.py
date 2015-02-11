@@ -32,6 +32,6 @@ class SecurityMeasure(orm.Model):
         'name': fields.char("Name"),
         'description': fields.text("Description"),
         'work_instructions': fields.many2one(
-            "document.page","Work Instruction"
+            "document.page", "Work Instruction"
         ),
     }

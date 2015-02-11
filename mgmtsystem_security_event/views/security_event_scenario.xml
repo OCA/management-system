@@ -6,6 +6,7 @@
             <field name="model">mgmtsystem.security.event.scenario</field>
             <field name="arch" type="xml">
                 <form string="Scenario Line">
+                    <field name="name" colspan="4"/>
                     <field name="scenario" />
                     <field name="origin" />
                     <field name="severity" />

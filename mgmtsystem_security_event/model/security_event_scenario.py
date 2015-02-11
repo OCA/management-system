@@ -21,6 +21,7 @@
 ##############################################################################
 
 from osv import fields, orm
+from openerp.tools.translate import _
 
 
 class EventScenarioLines(orm.Model):
@@ -28,7 +29,16 @@ class EventScenarioLines(orm.Model):
     _name = "mgmtsystem.security.event.scenario"
     description = "Security Events - Scenario Lines"
 
+    def __get_name(self, cr, uid, ids, field_name, arg, context):
+        return self._get_name(cr, uid, ids, field_name, arg, context)
+
     _columns = {
+        'name': fields.function(
+            __get_name,
+            type="char",
+            method=True,
+            string="Name"
+        ),
         'description': fields.text('Description'),
         'scenario': fields.many2one(
             "mgmtsystem.security.threat.scenario", "Scenario"
@@ -43,3 +53,13 @@ class EventScenarioLines(orm.Model):
             "mgmtsystem.security.event", "Security Event"
         ),
     }
+
+    def _get_name(self, cr, uid, ids, field_name, arg, context):
+        res = {}
+        model = self.pool["mgmtsystem.security.event.scenario"]
+
+        for obj in model.browse(cr, uid, ids):
+            parts = [_("Events"), obj.scenario.name, obj.origin.name]
+            res[obj.id] = " - ".join(parts)
+
+        return res

@@ -21,6 +21,7 @@
 ##############################################################################
 
 from osv import fields, orm
+from openerp.tools.translate import _
 
 
 class EventMeasureLines(orm.Model):
@@ -28,9 +29,18 @@ class EventMeasureLines(orm.Model):
     _name = "mgmtsystem.security.event.measure"
     description = "Security Events - Measure Lines"
 
+    def __get_name(self, cr, uid, ids, field_name, arg, context):
+        return self._get_name(cr, uid, ids, field_name, arg, context)
+
     _columns = {
+        'name': fields.function(
+            __get_name,
+            type="char",
+            method=True,
+            string="Name"
+        ),
         'measures': fields.many2one(
-            "mgmtsystem.security.event.measure", "Measures"
+            "mgmtsystem.security.measure", "Measures"
         ),
         'underlying_assets': fields.many2one(
             "mgmtsystem.security.assets.underlying", "Underlying Assets"
@@ -42,3 +52,15 @@ class EventMeasureLines(orm.Model):
         "protection": fields.boolean("Protection"),
         "recovery": fields.boolean("Recovery"),
     }
+
+    def _get_name(self, cr, uid, ids, field_name, arg, context):
+        res = {}
+        model = self.pool["mgmtsystem.security.event.measure"]
+
+        for obj in model.browse(cr, uid, ids):
+            parts = [_("Events"),
+                     obj.measures.name,
+                     obj.underlying_assets.name]
+            res[obj.id] = " - ".join(parts)
+
+        return res
