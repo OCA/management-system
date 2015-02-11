@@ -2,10 +2,24 @@
     <data>
 
         <menuitem
-            id="menu_open_mgmtsystem_probability"
+            id="menu_mgmtsystem_security"
             name="Security"
             parent="mgmtsystem.menu_mgmtsystem_configuration"
-            sequence="20"
+            sequence="10"
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+        <menuitem
+            id="menu_mgmtsystem_assets"
+            name="Assets"
+            parent="menu_mgmtsystem_security"
+            sequence="10"
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+        <menuitem
+            id="menu_mgmtsystem_threats"
+            name="Threats"
+            parent="menu_mgmtsystem_security"
+            sequence="30"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
     </data>
