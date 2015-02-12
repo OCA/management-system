@@ -26,6 +26,7 @@ from . import test_security_threat_origin
 from . import test_security_event_measure
 from . import test_security_assets_underlying
 from . import test_security_event_scenario
+from . import test_security_threat_scenario
 
 checks = [
     test_security_measure,
@@ -35,4 +36,5 @@ checks = [
     test_security_event_measure,
     test_security_assets_underlying,
     test_security_event_scenario,
+    test_security_threat_scenario,
 ]
