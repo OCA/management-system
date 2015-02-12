@@ -1,0 +1,10 @@
+def init_pools(ctx):
+    ctx.asset_category = ctx.registry("mgmtsystem.security.assets.category")
+    ctx.asset_essential = ctx.registry("mgmtsystem.security.assets.essential")
+    ctx.asset_underlying = ctx.registry("mgmtsystem.security.assets.underlying")
+    ctx.event_measure = ctx.registry("mgmtsystem.security.event.measure")
+    ctx.event = ctx.registry("mgmtsystem.security.event")
+    ctx.event_scenario = ctx.registry("mgmtsystem.security.event.scenario")
+    ctx.security_measure = ctx.registry("mgmtsystem.security.measure")
+    ctx.threat_origin = ctx.registry("mgmtsystem.security.threat.origin")
+    ctx.threat_scenario = ctx.registry("mgmtsystem.security.threat.scenario")

@@ -24,6 +24,7 @@ from . import test_security_assets_category
 from . import test_security_assets_essential
 from . import test_security_threat_origin
 from . import test_security_event_measure
+from . import test_security_assets_underlying
 
 checks = [
     test_security_measure,
@@ -31,4 +32,5 @@ checks = [
     test_security_assets_essential,
     test_security_threat_origin,
     test_security_event_measure,
+    test_security_assets_underlying,
 ]
