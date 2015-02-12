@@ -9,8 +9,8 @@
                     <field name="name"/>
                     <field
                         name="description"
+                        domain="[('parent_id', '=', %(document_page_group_security_events)d)]"
                         />
-                        <!-- domain="[('parent_id', '=', %()d)]" -->
 
                     <field
                         name="severity"

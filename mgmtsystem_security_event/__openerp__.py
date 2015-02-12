@@ -36,6 +36,7 @@
         "mgmtsystem_probability",
     ],
     "data": [
+        "data/document_page.xml",
         "views/menus.xml",
         "views/security_measure.xml",
         "views/threat_origin.xml",
