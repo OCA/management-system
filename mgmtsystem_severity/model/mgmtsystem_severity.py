@@ -33,7 +33,7 @@ class MgmtSystemSeverity(orm.Model):
     """
 
     _name = "mgmtsystem.severity"
-    description = "Management System Severity"
+    _description = "Management System Severity"
 
     def __category_selection(self, cr, uid, context=None):
         """
