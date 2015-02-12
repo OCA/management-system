@@ -28,7 +28,7 @@ class SecurityMeasure(orm.Model):
     """Security Measure."""
 
     _name = "mgmtsystem.security.measure"
-    description = "Security Measure"
+    _description = "Security Measure"
 
     _columns = {
         'name': fields.char("Name"),

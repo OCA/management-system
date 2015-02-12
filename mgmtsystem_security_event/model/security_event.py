@@ -28,7 +28,7 @@ class SecurityEvents(orm.Model):
     """Security Events."""
 
     _name = "mgmtsystem.security.event"
-    description = "Security Events"
+    _description = "Security Events"
 
     _columns = {
         'name': fields.char("Name"),

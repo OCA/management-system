@@ -34,7 +34,7 @@ class EventScenarioLines(orm.Model):
     """
 
     _name = "mgmtsystem.security.event.scenario"
-    description = "Security Events - Scenario Lines"
+    _description = "Security Events - Scenario Lines"
 
     def __get_name(self, cr, uid, ids, field_name, arg, context):
         """

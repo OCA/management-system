@@ -34,7 +34,7 @@ class EventMeasureLines(orm.Model):
     """
 
     _name = "mgmtsystem.security.event.measure"
-    description = "Security Events - Measure Lines"
+    _description = "Security Events - Measure Lines"
 
     def __get_name(self, cr, uid, ids, field_name, arg, context):
         """

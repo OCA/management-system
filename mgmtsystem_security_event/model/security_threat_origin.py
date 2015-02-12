@@ -28,7 +28,7 @@ class ThreatOrigin(orm.Model):
     """Threat origin."""
 
     _name = "mgmtsystem.security.threat.origin"
-    description = "Threat origin"
+    _description = "Threat origin"
 
     _columns = {
         'name': fields.char("Name"),

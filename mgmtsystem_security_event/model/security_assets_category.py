@@ -28,7 +28,7 @@ class CategoryAssets(orm.Model):
     """Category of Assets."""
 
     _name = "mgmtsystem.security.assets.category"
-    description = "Category Assets"
+    _description = "Category Assets"
 
     _columns = {
         'name': fields.char("Name"),

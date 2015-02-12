@@ -28,7 +28,7 @@ class EssentialAssets(orm.Model):
     """Essential assets."""
 
     _name = "mgmtsystem.security.assets.essential"
-    description = "Essential Assets"
+    _description = "Essential Assets"
 
     _columns = {
         'name': fields.char("Name"),

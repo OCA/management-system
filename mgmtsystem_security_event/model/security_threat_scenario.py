@@ -28,7 +28,7 @@ class ThreatScenario(orm.Model):
     """Threat Scenario."""
 
     _name = "mgmtsystem.security.threat.scenario"
-    description = "Threat Scenario"
+    _description = "Threat Scenario"
 
     _columns = {
         'name': fields.char("Name"),

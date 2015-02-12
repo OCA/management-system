@@ -28,7 +28,7 @@ class UnderlyingAssets(orm.Model):
     """Underlying Assets."""
 
     _name = "mgmtsystem.security.assets.underlying"
-    description = "Underlying Assets"
+    _description = "Underlying Assets"
 
     _columns = {
         'name': fields.char("Name"),
