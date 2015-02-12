@@ -8,3 +8,4 @@ def init_pools(ctx):
     ctx.security_measure = ctx.registry("mgmtsystem.security.measure")
     ctx.threat_origin = ctx.registry("mgmtsystem.security.threat.origin")
     ctx.threat_scenario = ctx.registry("mgmtsystem.security.threat.scenario")
+    ctx.severity = ctx.registry('mgmtsystem.severity')
