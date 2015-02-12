@@ -56,4 +56,3 @@ class TestCreateSecurityMeasure(TransactionCase):
         obj = self.model.browse(self.cr, self.uid, id)
         self.assertEqual(obj.work_instructions.id, self.page)
         self.assertEqual(obj.work_instructions.name, "Testdoc")
-

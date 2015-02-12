@@ -26,13 +26,7 @@ from . import pool
 
 class TestCreateEventMeasure(TransactionCase):
 
-    """
-    Test management severity object.
-
-    Test the management severity object creation.
-    It checks that each fields are required and that
-    a valid value creates an entry.
-    """
+    """Test management event measure object."""
 
     def setUp(self):
         super(TestCreateEventMeasure, self).setUp()
@@ -43,7 +37,7 @@ class TestCreateEventMeasure(TransactionCase):
         self.measure_id = measure.create(
             self.cr, self.uid, {
                 "name": "measure",
-                "description":"hmm",
+                "description": "hmm",
             }
         )
 
@@ -57,7 +51,6 @@ class TestCreateEventMeasure(TransactionCase):
             self.cr, self.uid, {
             }
         )
-
 
     def test_create_event_measure(self):
         id = self.event_measure.create(self.cr, self.uid, {

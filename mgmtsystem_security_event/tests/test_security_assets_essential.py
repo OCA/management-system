@@ -25,7 +25,7 @@ from psycopg2 import IntegrityError
 
 class TestCreateEssentialAssets(TransactionCase):
 
-    """Test management security measure object."""
+    """Test management essential assets object."""
 
     def setUp(self):
         super(TestCreateEssentialAssets, self).setUp()
@@ -46,4 +46,3 @@ class TestCreateEssentialAssets(TransactionCase):
         self.assertEqual(obj.name, "test")
         self.assertEqual(obj.description, "description")
         self.assertEqual(obj.responsible.id, self.uid)
-

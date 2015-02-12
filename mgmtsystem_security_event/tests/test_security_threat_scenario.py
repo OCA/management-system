@@ -24,16 +24,9 @@ from psycopg2 import IntegrityError
 from . import pool
 
 
-
 class TestCreateThreatScenario(TransactionCase):
 
-    """
-    Test management severity object.
-
-    Test the management severity object creation.
-    It checks that each fields are required and that
-    a valid value creates an entry.
-    """
+    """Test management threat scenario object."""
 
     def setUp(self):
         super(TestCreateThreatScenario, self).setUp()
@@ -45,7 +38,7 @@ class TestCreateThreatScenario(TransactionCase):
                 "name": "origin",
             }
         )
-        
+
         # severity
         severity = self.registry("mgmtsystem.severity")
         self.severity_id = severity.create(
@@ -70,14 +63,13 @@ class TestCreateThreatScenario(TransactionCase):
         self.underlying_ids = [
             self.asset_underlying.create(
                 self.cr, self.uid, {
-                    "name": "underlying%s" % i 
+                    "name": "underlying%s" % i
                 }
             )
             for i in range(10)
         ]
 
     def test_create_threat_scenario(self):
-
         # (6, 0, ids) means replacing the list of possible ids
         # with those ids and creating relationships.
         id = self.threat_scenario.create(

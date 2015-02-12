@@ -26,19 +26,13 @@ from . import pool
 
 class TestCreateSecurityEvent(TransactionCase):
 
-    """
-    Test management severity object.
-
-    Test the management severity object creation.
-    It checks that each fields are required and that
-    a valid value creates an entry.
-    """
+    """Test management security event object."""
 
     def setUp(self):
         super(TestCreateSecurityEvent, self).setUp()
         pool.init_pools(self)
 
-        # document_page 
+        # document_page
         document_page = self.registry('document.page')
         self.document_id = document_page.create(
             self.cr, self.uid, {
@@ -46,7 +40,7 @@ class TestCreateSecurityEvent(TransactionCase):
                 "content": "content"
             }
         )
-        
+
         # severity
         severity = self.registry("mgmtsystem.severity")
         self.severity_id = severity.create(
@@ -58,7 +52,6 @@ class TestCreateSecurityEvent(TransactionCase):
         )
 
     def test_create_security_event(self):
-
         id = self.event.create(
             self.cr, self.uid, {
                 "name": "security event",

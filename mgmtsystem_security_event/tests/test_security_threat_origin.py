@@ -25,7 +25,7 @@ from psycopg2 import IntegrityError
 
 class TestCreateThreatOrigin(TransactionCase):
 
-    """Test management security measure object."""
+    """Test management threat origin object."""
 
     def setUp(self):
         super(TestCreateThreatOrigin, self).setUp()

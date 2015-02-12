@@ -26,13 +26,7 @@ from . import pool
 
 class TestCreateEventScenario(TransactionCase):
 
-    """
-    Test management severity object.
-
-    Test the management severity object creation.
-    It checks that each fields are required and that
-    a valid value creates an entry.
-    """
+    """Test management event scenario object."""
 
     def setUp(self):
         super(TestCreateEventScenario, self).setUp()
@@ -51,7 +45,7 @@ class TestCreateEventScenario(TransactionCase):
                 "name": "scenario",
             }
         )
-        
+
         # severity
         severity = self.registry("mgmtsystem.severity")
         self.severity_id = severity.create(
@@ -70,7 +64,6 @@ class TestCreateEventScenario(TransactionCase):
         )
 
     def test_create_event_scenario(self):
-
         # (6, 0, ids) means replacing the list of possible ids
         # with those ids and creating relationships.
         id = self.event_scenario.create(

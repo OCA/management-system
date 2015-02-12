@@ -26,13 +26,7 @@ from . import pool
 
 class TestCreateUnderlyingAssets(TransactionCase):
 
-    """
-    Test management severity object.
-
-    Test the management severity object creation.
-    It checks that each fields are required and that
-    a valid value creates an entry.
-    """
+    """Test management underlying assets object."""
 
     def setUp(self):
         super(TestCreateUnderlyingAssets, self).setUp()
@@ -55,7 +49,6 @@ class TestCreateUnderlyingAssets(TransactionCase):
         ]
 
     def test_create_underlying_asset(self):
-
         # (6, 0, ids) means replacing the list of possible ids
         # with those ids and creating relationships.
         id = self.asset_underlying.create(

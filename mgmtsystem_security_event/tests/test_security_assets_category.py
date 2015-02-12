@@ -25,7 +25,7 @@ from psycopg2 import IntegrityError
 
 class TestCreateCategoryAssets(TransactionCase):
 
-    """Test management security measure object."""
+    """Test management category assets object."""
 
     def setUp(self):
         super(TestCreateCategoryAssets, self).setUp()
