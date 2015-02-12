@@ -24,7 +24,7 @@ from psycopg2 import IntegrityError
 from . import pool
 
 
-class TestCreateUnderlyingAssets(TransactionCase):
+class TestCreateEventScenario(TransactionCase):
 
     """
     Test management severity object.
@@ -35,45 +35,57 @@ class TestCreateUnderlyingAssets(TransactionCase):
     """
 
     def setUp(self):
-        super(TestCreateUnderlyingAssets, self).setUp()
+        super(TestCreateEventScenario, self).setUp()
         pool.init_pools(self)
 
-        self.category_id = self.asset_category.create(
+        # origin
+        self.threat_origin_id = self.threat_origin.create(
             self.cr, self.uid, {
-                "name": "category",
+                "name": "origin",
             }
         )
 
-        self.essential_ids = [
-            self.asset_essential.create(
-                self.cr, self.uid, {
-                    "name": "essential%d" % i,
-                }
-            )
+        # scenario
+        self.threat_scenario_id = self.threat_scenario.create(
+            self.cr, self.uid, {
+                "name": "scenario",
+            }
+        )
+        
+        # severity
+        severity = self.registry("mgmtsystem.severity")
+        self.severity_id = severity.create(
+            self.cr, self.uid, {
+                "name": "scenario",
+                "category": "security",
+                "value": 10,
+            }
+        )
 
-            for i in range(10)
-        ]
+        # security_event_id
+        self.event_id = self.event.create(
+            self.cr, self.uid, {
+                "name": "event"
+            }
+        )
 
-    def test_create_underlying_asset(self):
+    def test_create_event_scenario(self):
 
         # (6, 0, ids) means replacing the list of possible ids
         # with those ids and creating relationships.
-        id = self.asset_underlying.create(
+        id = self.event_scenario.create(
             self.cr, self.uid, {
-                "name": "underlying",
-                "category": self.category_id,
-                "essential_assets": [(6, 0, self.essential_ids)]
+                "description": "description",
+                "severity": self.severity_id,
+                "security_event_id": self.event_id,
+                "origin": self.threat_origin_id,
+                "scenario": self.threat_scenario_id,
             }
         )
 
         self.assertNotEqual(id, 0)
 
-        obj = self.asset_underlying.browse(self.cr, self.uid, id)
+        obj = self.event_scenario.browse(self.cr, self.uid, id)
 
-        self.assertEqual(obj.name, "underlying")
-        self.assertEqual(obj.category.name, "category")
-
-        for id in self.essential_ids:
-            self.assertNotEqual(id, 0)
-
-        self.assertEqual(len(obj.essential_assets), len(self.essential_ids))
+        self.assertEqual(obj.name, "Events - scenario - origin")
+        self.assertEqual(obj.description, "description")
