@@ -19,16 +19,26 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import test_security_measure
-from . import test_security_assets_category
-from . import test_security_assets_essential
-from . import test_security_threat_origin
-from . import test_security_event_measure
+from openerp.tests.common import TransactionCase
+from psycopg2 import IntegrityError
 
-checks = [
-    test_security_measure,
-    test_security_assets_category,
-    test_security_assets_essential,
-    test_security_threat_origin,
-    test_security_event_measure,
-]
+
+class TestCreateCategoryAssets(TransactionCase):
+
+    """Test management security measure object."""
+
+    def setUp(self):
+        super(TestCreateCategoryAssets, self).setUp()
+
+        self.model = self.registry('mgmtsystem.security.assets.category')
+
+    def test_create_category_asset(self):
+        id = self.model.create(self.cr, self.uid, {
+            "name": "test",
+        })
+
+        self.assertNotEqual(id, 0)
+
+        obj = self.model.browse(self.cr, self.uid, id)
+
+        self.assertEqual(obj.name, "test")
