@@ -33,7 +33,7 @@ class MgmtSystemProbability(orm.Model):
     """
 
     _name = "mgmtsystem.probability"
-    description = "Management System Probability"
+    _description = "Management System Probability"
 
     def __category_selection(self, cr, uid, context=None):
         """
