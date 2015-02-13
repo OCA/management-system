@@ -27,7 +27,7 @@
     "license": "AGPL-3",
     "category": "Management System",
     "complexity": "normal",
-    "description": """\
+    "description": """
     This module allow you to manage scale of probability (or likelihood)
     used across different modules (health and safety, information security).
     """,
