@@ -58,8 +58,8 @@
     """,
     "depends": ['document_page_work_instructions'],
     "data": [
-        'views/document_page.xml',
         'data/document_page.xml',
+        'views/document_page.xml',
     ],
     "demo": [],
 <<<<<<< fa0d893058a192bc1d2169abaa9c491bc70939b1
