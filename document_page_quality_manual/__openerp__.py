@@ -25,21 +25,26 @@
     'category': 'Management System',
     'complexity': "easy",
     'description': """
-Quality Manual Template.
-========================
+Quality Manual
+==============
 
-It provides the Wiki Category and a Wiki Page
-for the Quality Manual.
+This module provides a quality manual template with the same structure
+as the ISO 9001 standard.
+
+Contributors
+------------
+
+ * Odoo SA <info@odoo.com>
+ * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
     """,
     'author': "OpenERP SA,Odoo Community Association (OCA)",
     'website': 'http://openerp.com',
     'license': 'AGPL-3',
     'depends': ['mgmtsystem_manuals'],
-    'data': ['document_page_quality_manual.xml'],
+    'data': ['data/document_page_data.xml'],
     'demo': [],
     'installable': True,
     'auto_install': False,
     'certificate': '',
     'images': ['images/wiki_pages_quality_manual.jpeg'],
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
