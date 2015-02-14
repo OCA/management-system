@@ -29,8 +29,8 @@
     """,
     "depends": ['document_page_work_instructions'],
     "data": [
-        'views/document_page.xml',
         'data/document_page.xml',
+        'views/document_page.xml',
     ],
     "demo": [],
     'installable': True,
