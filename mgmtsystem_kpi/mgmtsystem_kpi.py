@@ -89,9 +89,8 @@ class mgmtsystem_kpi_threshold_range(orm.Model):
                 dic = cr.dictfetchall()
                 if is_one_value(dic):
                     value = dic[0]['value']
-            elif (obj.min_type == 'external'
-                  and obj.min_dbsource_id.id
-                  and is_select_query(obj.min_code)):
+            elif (obj.min_type == 'external' and
+                  obj.min_dbsource_id.id and is_select_query(obj.min_code)):
                 dbsrc_obj = obj.min_dbsource_id
                 res = dbsrc_obj.execute(obj.min_code)
                 if is_one_value(res):
@@ -116,9 +115,8 @@ class mgmtsystem_kpi_threshold_range(orm.Model):
                     value = dic[0]['value']
             elif obj.max_type == 'python':
                 value = eval(obj.max_code)
-            elif (obj.max_type == 'external'
-                  and obj.max_dbsource_id.id
-                  and is_select_query(obj.max_code)):
+            elif (obj.max_type == 'external' and
+                  obj.max_dbsource_id.id and is_select_query(obj.max_code)):
                 dbsrc_obj = obj.max_dbsource_id
                 res = dbsrc_obj.execute(obj.max_code)
                 if is_one_value(res):
@@ -240,8 +238,9 @@ class mgmtsystem_kpi_threshold(orm.Model):
             # TODO: This code can be done better
             for range1 in obj.range_ids:
                 for range2 in obj.range_ids:
-                    if (range1.valid and range2.valid
-                            and range1.min_value < range2.min_value):
+                    if (range1.valid and
+                            range2.valid and
+                            range1.min_value < range2.min_value):
                         result[obj.id] = range1.max_value <= range2.min_value
         return result
 
@@ -302,8 +301,9 @@ class mgmtsystem_kpi_threshold(orm.Model):
             range_obj1 = range_obj1.browse(cr, uid, range1, context)
             for range2 in data['range_ids'][0][2]:
                 range_obj2 = range_obj2.browse(cr, uid, range2, context)
-                if (range_obj1.valid and range_obj2.valid
-                        and range_obj1.min_value < range_obj2.min_value):
+                if (range_obj1.valid and
+                        range_obj2.valid and
+                        range_obj1.min_value < range_obj2.min_value):
                     if range_obj1.max_value > range_obj2.min_value:
                         raise orm.except_orm(
                             _("2 of your ranges are overlapping!"),
@@ -322,8 +322,8 @@ class mgmtsystem_kpi_threshold(orm.Model):
         color = '#FFFFFF'
         for obj in self.browse(cr, uid, ids, context):
             for range_obj in obj.range_ids:
-                if (range_obj.min_value <= kpi_value <= range_obj.max_value
-                        and range_obj.valid):
+                if (range_obj.min_value <= kpi_value <= range_obj.max_value and
+                        range_obj.valid):
                     color = range_obj.color
         return color
 
@@ -391,9 +391,8 @@ class mgmtsystem_kpi(orm.Model):
                 dic = cr.dictfetchall()
                 if is_one_value(dic):
                     kpi_value = dic[0]['value']
-            elif (obj.kpi_type == 'external'
-                    and obj.dbsource_id.id
-                    and is_select_query(obj.kpi_code)):
+            elif (obj.kpi_type == 'external' and
+                  obj.dbsource_id.id and is_select_query(obj.kpi_code)):
                 dbsrc_obj = obj.dbsource_id
                 res = dbsrc_obj.execute(obj.kpi_code)
                 if is_one_value(res):
