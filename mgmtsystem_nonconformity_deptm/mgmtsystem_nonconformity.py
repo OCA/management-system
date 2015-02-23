@@ -45,9 +45,9 @@ class mgmtsystem_nonconformity(orm.Model):
             if deptm.manager_id and deptm.manager_id.user_id:
                 result['manager_user_id'] = deptm.manager_id.user_id.id
             parent_deptm = deptm.parent_id
-            if (parent_deptm
-                    and parent_deptm.manager_id
-                    and parent_deptm.manager_id.user_id):
+            if (parent_deptm and
+                    parent_deptm.manager_id and
+                    parent_deptm.manager_id.user_id):
                 result['superior_user_id'] = parent_deptm.manager_id.user_id.id
         return {'value': result}
 

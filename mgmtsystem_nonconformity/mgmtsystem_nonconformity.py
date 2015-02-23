@@ -449,8 +449,8 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         """Change state from in progress to closed"""
         o = self.browse(cr, uid, ids, context=context)[0]
         done_states = ['done', 'cancelled']
-        if (o.immediate_action_id
-                and o.immediate_action_id.state not in done_states):
+        if (o.immediate_action_id and
+                o.immediate_action_id.state not in done_states):
             raise orm.except_orm(
                 _('Error !'),
                 _('Immediate action from analysis has not been closed.')
