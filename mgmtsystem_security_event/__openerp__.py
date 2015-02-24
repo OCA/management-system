@@ -53,7 +53,7 @@ Usage
 To use this module, you need to:
 
  * go to Management System > Configuration > Manuals > Security Events
- * go to Management System > Configuration > Security 
+ * go to Management System > Configuration > Security
 
 For further information, please visit:
 
