@@ -29,7 +29,7 @@
     "complexity": "normal",
     "description": """\
 Management System Probability
-===========
+=============================
 
 This module allow you to manage scale of probability (or likelihood)
 used across different modules (health and safety, information security).
