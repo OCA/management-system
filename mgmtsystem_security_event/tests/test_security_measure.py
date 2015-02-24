@@ -37,14 +37,14 @@ class TestCreateSecurityMeasure(TransactionCase):
         )
 
     def test_create_security_measure(self):
-        id = self.model.create(self.cr, self.uid, {
+        measure_id = self.model.create(self.cr, self.uid, {
             "name": "test",
             "description": "description",
         })
 
-        self.assertNotEqual(id, 0)
+        self.assertNotEqual(measure_id, 0)
 
-        obj = self.model.browse(self.cr, self.uid, id)
+        obj = self.model.browse(self.cr, self.uid, measure_id)
 
         self.assertEqual(obj.name, "test")
         self.assertEqual(obj.description, "description")
@@ -52,6 +52,6 @@ class TestCreateSecurityMeasure(TransactionCase):
 
         obj.write({"work_instructions": self.page})
 
-        obj = self.model.browse(self.cr, self.uid, id)
+        obj = self.model.browse(self.cr, self.uid, measure_id)
         self.assertEqual(obj.work_instructions.id, self.page)
         self.assertEqual(obj.work_instructions.name, "Testdoc")

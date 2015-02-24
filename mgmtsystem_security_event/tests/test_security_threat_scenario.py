@@ -71,7 +71,7 @@ class TestCreateThreatScenario(TransactionCase):
     def test_create_threat_scenario(self):
         # (6, 0, ids) means replacing the list of possible ids
         # with those ids and creating relationships.
-        id = self.threat_scenario.create(
+        scenario_id = self.threat_scenario.create(
             self.cr, self.uid, {
                 "name": "threat scenario",
                 "description": "description",
@@ -88,10 +88,10 @@ class TestCreateThreatScenario(TransactionCase):
             }
         )
 
-        self.assertNotEqual(id, 0)
+        self.assertNotEqual(scenario_id, 0)
         self.assertEqual(len(self.underlying_ids), 10)
 
-        obj = self.threat_scenario.browse(self.cr, self.uid, id)
+        obj = self.threat_scenario.browse(self.cr, self.uid, scenario_id)
 
         self.assertEqual(obj.name, "threat scenario")
         self.assertEqual(obj.description, "description")

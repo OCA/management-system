@@ -65,7 +65,7 @@ class TestCreateEventScenario(TransactionCase):
     def test_create_event_scenario(self):
         # (6, 0, ids) means replacing the list of possible ids
         # with those ids and creating relationships.
-        id = self.event_scenario.create(
+        scenario_id = self.event_scenario.create(
             self.cr, self.uid, {
                 "description": "description",
                 "severity": self.severity_id,
@@ -75,9 +75,9 @@ class TestCreateEventScenario(TransactionCase):
             }
         )
 
-        self.assertNotEqual(id, 0)
+        self.assertNotEqual(scenario_id, 0)
 
-        obj = self.event_scenario.browse(self.cr, self.uid, id)
+        obj = self.event_scenario.browse(self.cr, self.uid, scenario_id)
 
         self.assertEqual(obj.name, "Events - scenario - origin")
         self.assertEqual(obj.description, "description")

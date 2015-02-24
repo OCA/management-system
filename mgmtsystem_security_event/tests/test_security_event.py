@@ -51,7 +51,7 @@ class TestCreateSecurityEvent(TransactionCase):
         )
 
     def test_create_security_event(self):
-        id = self.event.create(
+        event_id = self.event.create(
             self.cr, self.uid, {
                 "name": "security event",
                 "description": self.document_id,
@@ -59,9 +59,9 @@ class TestCreateSecurityEvent(TransactionCase):
             }
         )
 
-        self.assertNotEqual(id, 0)
+        self.assertNotEqual(event_id, 0)
 
-        obj = self.event.browse(self.cr, self.uid, id)
+        obj = self.event.browse(self.cr, self.uid, event_id)
 
         self.assertEqual(obj.name, "security event")
         self.assertEqual(obj.description.id, self.document_id)

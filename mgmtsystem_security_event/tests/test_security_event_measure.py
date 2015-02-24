@@ -52,7 +52,7 @@ class TestCreateEventMeasure(TransactionCase):
         )
 
     def test_create_event_measure(self):
-        id = self.event_measure.create(self.cr, self.uid, {
+        measure_id = self.event_measure.create(self.cr, self.uid, {
             "measures": self.measure_id,
             "underlying_assets": self.underlying_asset_id,
             "security_event_id": self.event_id,
@@ -61,9 +61,9 @@ class TestCreateEventMeasure(TransactionCase):
             "recovery": True,
         })
 
-        self.assertNotEqual(id, 0)
+        self.assertNotEqual(measure_id, 0)
 
-        obj = self.event_measure.browse(self.cr, self.uid, id)
+        obj = self.event_measure.browse(self.cr, self.uid, measure_id)
 
         self.assertEqual(obj.name, "Events - measure - underlying")
         self.assertEqual(obj.security_event_id.id, self.event_id)

@@ -32,12 +32,12 @@ class TestCreateCategoryAssets(TransactionCase):
         self.model = self.registry('mgmtsystem.security.assets.category')
 
     def test_create_category_asset(self):
-        id = self.model.create(self.cr, self.uid, {
+        category_id = self.model.create(self.cr, self.uid, {
             "name": "test",
         })
 
-        self.assertNotEqual(id, 0)
+        self.assertNotEqual(category_id, 0)
 
-        obj = self.model.browse(self.cr, self.uid, id)
+        obj = self.model.browse(self.cr, self.uid, category_id)
 
         self.assertEqual(obj.name, "test")

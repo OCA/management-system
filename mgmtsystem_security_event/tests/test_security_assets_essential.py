@@ -32,15 +32,15 @@ class TestCreateEssentialAssets(TransactionCase):
         self.model = self.registry('mgmtsystem.security.assets.essential')
 
     def test_create_essential_asset(self):
-        id = self.model.create(self.cr, self.uid, {
+        essential_id = self.model.create(self.cr, self.uid, {
             "name": "test",
             "description": "description",
             "responsible": self.uid
         })
 
-        self.assertNotEqual(id, 0)
+        self.assertNotEqual(essential_id, 0)
 
-        obj = self.model.browse(self.cr, self.uid, id)
+        obj = self.model.browse(self.cr, self.uid, essential_id)
 
         self.assertEqual(obj.name, "test")
         self.assertEqual(obj.description, "description")

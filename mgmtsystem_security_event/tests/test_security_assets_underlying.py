@@ -50,7 +50,7 @@ class TestCreateUnderlyingAssets(TransactionCase):
     def test_create_underlying_asset(self):
         # (6, 0, ids) means replacing the list of possible ids
         # with those ids and creating relationships.
-        id = self.asset_underlying.create(
+        underlying_id = self.asset_underlying.create(
             self.cr, self.uid, {
                 "name": "underlying",
                 "category": self.category_id,
@@ -58,14 +58,14 @@ class TestCreateUnderlyingAssets(TransactionCase):
             }
         )
 
-        self.assertNotEqual(id, 0)
+        self.assertNotEqual(underlying_id, 0)
 
-        obj = self.asset_underlying.browse(self.cr, self.uid, id)
+        obj = self.asset_underlying.browse(self.cr, self.uid, underlying_id)
 
         self.assertEqual(obj.name, "underlying")
         self.assertEqual(obj.category.name, "category")
 
-        for id in self.essential_ids:
-            self.assertNotEqual(id, 0)
+        for rec_id in self.essential_ids:
+            self.assertNotEqual(rec_id, 0)
 
         self.assertEqual(len(obj.essential_assets), len(self.essential_ids))

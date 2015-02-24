@@ -32,12 +32,12 @@ class TestCreateThreatOrigin(TransactionCase):
         self.model = self.registry('mgmtsystem.security.threat.origin')
 
     def test_create_threat_origin(self):
-        id = self.model.create(self.cr, self.uid, {
+        origin_id = self.model.create(self.cr, self.uid, {
             "name": "test",
         })
 
-        self.assertNotEqual(id, 0)
+        self.assertNotEqual(origin_id, 0)
 
-        obj = self.model.browse(self.cr, self.uid, id)
+        obj = self.model.browse(self.cr, self.uid, origin_id)
 
         self.assertEqual(obj.name, "test")
