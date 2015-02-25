@@ -19,15 +19,15 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import security_assets_category
-from . import security_assets_essential
-from . import security_assets_underlying
+from . import mgmtsystem_security_assets_category
+from . import mgmtsystem_security_assets_essential
+from . import mgmtsystem_security_assets_underlying
 
-from . import security_event
-from . import security_measure
+from . import mgmtsystem_security_event
+from . import mgmtsystem_security_measure
 
-from . import security_threat_origin
-from . import security_threat_scenario
+from . import mgmtsystem_security_threat_origin
+from . import mgmtsystem_security_threat_scenario
 
-from . import security_event_scenario
-from . import security_event_measure
+from . import mgmtsystem_security_event_scenario
+from . import mgmtsystem_security_event_measure
