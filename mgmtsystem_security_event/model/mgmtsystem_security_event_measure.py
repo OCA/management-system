@@ -36,22 +36,7 @@ class EventMeasureLines(orm.Model):
     _name = "mgmtsystem.security.event.measure"
     _description = "Security Events - Measure Lines"
 
-    def __get_name(self, cr, uid, ids, field_name, arg, context):
-        """
-        Proxy method to get the object name.
-
-        This method is passed to the function field and cannot be
-        subclassed. Instead subclass the method _get_name.
-        """
-        return self._get_name(cr, uid, ids, field_name, arg, context)
-
     _columns = {
-        'name': fields.function(
-            __get_name,
-            type="char",
-            method=True,
-            string="Name"
-        ),
         'measures': fields.many2one(
             "mgmtsystem.security.measure", "Measures"
         ),
@@ -66,7 +51,7 @@ class EventMeasureLines(orm.Model):
         "recovery": fields.boolean("Recovery"),
     }
 
-    def _get_name(self, cr, uid, ids, field_name, arg, context):
+    def name_get(self, cr, uid, ids, context=None):
         """
         The method gets the name of the objects referenced by ids.
 
@@ -74,10 +59,12 @@ class EventMeasureLines(orm.Model):
         underlying_assets fields. It computes the name for each ids
         and can be extended by subclass.
         """
-        res = {}
-        model = self.pool["mgmtsystem.security.event.measure"]
+        if context is None:
+            context = {}
 
-        for obj in model.browse(cr, uid, ids):
+        res = {}
+
+        for obj in self.browse(cr, uid, ids, context=context):
             parts = [_("Events"),
                      obj.measures.name,
                      obj.underlying_assets.name]

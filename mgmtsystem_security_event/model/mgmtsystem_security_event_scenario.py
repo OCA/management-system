@@ -36,22 +36,7 @@ class EventScenarioLines(orm.Model):
     _name = "mgmtsystem.security.event.scenario"
     _description = "Security Events - Scenario Lines"
 
-    def __get_name(self, cr, uid, ids, field_name, arg, context):
-        """
-        Proxy method to get the object name.
-
-        This method is passed to the function field and cannot be
-        subclassed. Instead subclass the method _get_name.
-        """
-        return self._get_name(cr, uid, ids, field_name, arg, context)
-
     _columns = {
-        'name': fields.function(
-            __get_name,
-            type="char",
-            method=True,
-            string="Name"
-        ),
         'description': fields.text('Description'),
         'scenario': fields.many2one(
             "mgmtsystem.security.threat.scenario", "Scenario"
@@ -67,7 +52,7 @@ class EventScenarioLines(orm.Model):
         ),
     }
 
-    def _get_name(self, cr, uid, ids, field_name, arg, context):
+    def name_get(self, cr, uid, ids, context=None):
         """
         The method gets the name of the objects referenced by ids.
 
@@ -76,10 +61,11 @@ class EventScenarioLines(orm.Model):
         and can be extended by subclass.
         """
         res = {}
-        model = self.pool["mgmtsystem.security.event.scenario"]
 
-        for obj in model.browse(cr, uid, ids):
-            parts = [_("Events"), obj.scenario.name, obj.origin.name]
+        for obj in self.browse(cr, uid, ids, context=context):
+            parts = [_("Events"),
+                     obj.scenario.name,
+                     obj.origin.name]
             res[obj.id] = " - ".join(parts)
 
         return res
