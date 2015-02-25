@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from osv import fields, orm
+from openerp.osv import fields, orm
 
 
 class ThreatOrigin(orm.Model):
