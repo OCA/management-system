@@ -65,7 +65,7 @@ class TestCreateEventMeasure(TransactionCase):
 
         obj = self.event_measure.browse(self.cr, self.uid, measure_id)
 
-        self.assertEqual(obj.name, "Events - measure - underlying")
+        self.assertEqual(obj.name_get(), "Events - measure - underlying")
         self.assertEqual(obj.security_event_id.id, self.event_id)
         self.assertEqual(obj.underlying_assets.id, self.underlying_asset_id)
         self.assertEqual(obj.measures.id, self.measure_id)
