@@ -79,5 +79,6 @@ class TestCreateEventScenario(TransactionCase):
 
         obj = self.event_scenario.browse(self.cr, self.uid, scenario_id)
 
-        self.assertEqual(obj.name_get()[scenario_id], "Events - scenario - origin")
+        self.assertEqual(obj.name_get()[scenario_id],
+                         "Events - scenario - origin")
         self.assertEqual(obj.description, "description")
