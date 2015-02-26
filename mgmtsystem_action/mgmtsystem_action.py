@@ -25,6 +25,11 @@ from urlparse import urljoin
 from openerp.osv import fields, orm
 
 
+def get_company(self, cr, uid, c):
+    """Call the class method _get_company"""
+    return self._get_company(cr, uid, c)
+
+
 class mgmtsystem_action(orm.Model):
     _name = "mgmtsystem.action"
     _description = "Action"
@@ -50,11 +55,18 @@ class mgmtsystem_action(orm.Model):
     }
 
     _defaults = {
-        'company_id': (
-            lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
+        'company_id': get_company,
         'reference': 'NEW',
     }
+
+    def _get_company(self, cr, uid, context):
+        """
+        Get the company for the current user.
+
+        Can be overriden by subclasses.
+        """
+        user_model = self.pool.get('res.users')
+        return user_model.browse(cr, uid, uid, context).company_id.id
 
     def create(self, cr, uid, vals, context=None):
         vals.update({
