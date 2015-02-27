@@ -31,116 +31,6 @@ from openerp.tools import (
 import time
 
 
-class mgmtsystem_nonconformity_cause(orm.Model):
-    """
-    Cause of the nonconformity of the management system
-    """
-    _name = "mgmtsystem.nonconformity.cause"
-    _description = "Cause of the nonconformity of the management system"
-    _order = 'parent_id, sequence'
-
-    def name_get(self, cr, uid, ids, context=None):
-        ids = ids or []
-        reads = self.read(cr, uid, ids, ['name', 'parent_id'], context=context)
-        res = []
-        for record in reads:
-            name = record['name']
-            if record['parent_id']:
-                name = record['parent_id'][1] + ' / ' + name
-            res.append((record['id'], name))
-        return res
-
-    def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
-        res = self.name_get(cr, uid, ids, context=context)
-        return dict(res)
-
-    _columns = {
-        'id': fields.integer('ID', readonly=True),
-        'name': fields.char('Cause', size=50, required=True, translate=True),
-        'description': fields.text('Description'),
-        'sequence': fields.integer(
-            'Sequence',
-            help="Defines the order to present items",
-        ),
-        'parent_id': fields.many2one(
-            'mgmtsystem.nonconformity.cause',
-            'Group',
-        ),
-        'child_ids': fields.one2many(
-            'mgmtsystem.nonconformity.cause',
-            'parent_id',
-            'Child Causes',
-        ),
-        'ref_code': fields.char('Reference Code', size=20),
-    }
-
-    def _rec_message(self, cr, uid, ids, context=None):
-        return _('Error! Cannot create recursive cycle.')
-
-    _constraints = [
-        (orm.BaseModel._check_recursion, _rec_message, ['parent_id'])
-    ]
-
-
-class mgmtsystem_nonconformity_origin(orm.Model):
-    """
-    Origin of nonconformity of the management system
-    """
-    _name = "mgmtsystem.nonconformity.origin"
-    _description = "Origin of nonconformity of the management system"
-    _order = 'parent_id, sequence'
-
-    def name_get(self, cr, uid, ids, context=None):
-        ids = ids or []
-        reads = self.read(cr, uid, ids, ['name', 'parent_id'], context=context)
-        res = []
-        for record in reads:
-            name = record['name']
-            if record['parent_id']:
-                name = record['parent_id'][1] + ' / ' + name
-            res.append((record['id'], name))
-        return res
-
-    def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
-        res = self.name_get(cr, uid, ids, context=context)
-        return dict(res)
-
-    _columns = {
-        'id': fields.integer('ID', readonly=True),
-        'name': fields.char('Origin', size=50, required=True, translate=True),
-        'description': fields.text('Description'),
-        'sequence': fields.integer(
-            'Sequence',
-            help="Defines the order to present items",
-        ),
-        'parent_id': fields.many2one(
-            'mgmtsystem.nonconformity.origin',
-            'Group',
-        ),
-        'child_ids': fields.one2many(
-            'mgmtsystem.nonconformity.origin',
-            'parent_id',
-            'Childs',
-        ),
-        'ref_code': fields.char('Reference Code', size=20),
-    }
-
-
-class mgmtsystem_nonconformity_severity(orm.Model):
-    """Nonconformity Severity - Critical, Major, Minor, Invalid, ..."""
-    _name = "mgmtsystem.nonconformity.severity"
-    _description = "Severity of Complaints and Nonconformities"
-    _columns = {
-        'name': fields.char('Title', size=50, required=True, translate=True),
-        'sequence': fields.integer('Sequence',),
-        'description': fields.text('Description', translate=True),
-        'active': fields.boolean('Active?'),
-    }
-    _defaults = {
-        'active': True,
-    }
-
-
 _STATES = [
     ('draft', _('Draft')),
     ('analysis', _('Analysis')),
@@ -152,7 +42,7 @@ _STATES = [
 _STATES_DICT = dict(_STATES)
 
 
-class mgmtsystem_nonconformity(base_state, orm.Model):
+class MgmtsystemNonconformity(base_state, orm.Model):
     """
     Management System - Nonconformity
     """
@@ -282,7 +172,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             'ref': self.pool.get('ir.sequence').get(
                 cr, uid, 'mgmtsystem.nonconformity')
         })
-        return super(mgmtsystem_nonconformity, self).create(
+        return super(MgmtsystemNonconformity, self).create(
             cr, uid, vals, context)
 
     def message_auto_subscribe(
@@ -297,7 +187,7 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
         self.message_subscribe_users(
             cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context
         )
-        return super(mgmtsystem_nonconformity, self).message_auto_subscribe(
+        return super(MgmtsystemNonconformity, self).message_auto_subscribe(
             cr, uid, ids, updated_fields=updated_fields, context=context,
             values=values
         )
@@ -481,22 +371,3 @@ class mgmtsystem_nonconformity(base_state, orm.Model):
             'evaluation_date': None, 'evaluation_user_id': None,
         }
         return self.write(cr, uid, ids, vals, context=context)
-
-
-class mgmtsystem_action(orm.Model):
-    _inherit = "mgmtsystem.action"
-    _columns = {
-        'nonconformity_immediate_id': fields.one2many(
-            'mgmtsystem.nonconformity',
-            'immediate_action_id',
-            readonly=True,
-        ),
-        'nonconformity_ids': fields.many2many(
-            'mgmtsystem.nonconformity',
-            'mgmtsystem_nonconformity_action_rel',
-            'action_id',
-            'nonconformity_id',
-            'Nonconformities',
-            readonly=True,
-        ),
-    }

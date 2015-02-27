@@ -97,14 +97,17 @@ Contributors
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_nonconformity_security.xml',
-        'mgmtsystem_nonconformity.xml',
+        'view/mgmtsystem_nonconformity.xml',
+        'data/mgmtsystem_nonconformity_severity.xml',
+        'data/mgmtsystem_nonconformity_origin.xml',
+        'data/mgmtsystem_nonconformity_cause.xml',
         'mgmtsystem_nonconformity_workflow.xml',
-        'nonconformity_sequence.xml',
-        'board_mgmtsystem_nonconformity.xml',
-        'mgmtsystem_nonconformity_data.xml',
+        'mgmtsystem_nonconformity_sequence.xml',
     ],
     "demo": [
-        'demo_nonconformity.xml',
+        'demo/mgmtsystem_nonconformity_origin.xml',
+        'demo/mgmtsystem_nonconformity_cause.xml',
+        'demo/mgmtsystem_nonconformity.xml',
     ],
     "installable": True,
 }
