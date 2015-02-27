@@ -18,6 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+
 {
     "name": "Management System - Audit",
     "version": "1.2",
@@ -33,17 +34,20 @@ management system.
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_audit_security.xml',
-        'audit_sequence.xml',
-        'mgmtsystem_audit.xml',
+        'data/ir_sequence_type.xml',
+        'data/ir_sequence.xml',
+        'data/ir_actions_server.xml',
+        'data/base_action_rule.xml',
+        'views/mgmtsystem_verification_line.xml',
+        'views/mgmtsystem_audit.xml',
+        'views/mgmtsystem_nonconformity.xml',
+        'views/board_board.xml',
         'report/audit_report.xml',
         'report/verification_list.xml',
-        'board_mgmtsystem_audit.xml',
         'wizard/copy_verification_lines.xml',
     ],
     "demo": [
-        'demo_audit.xml',
+        'demo/mgmtsystem_audit.xml',
     ],
     "installable": True,
-    "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
