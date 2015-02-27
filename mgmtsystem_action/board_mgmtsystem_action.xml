@@ -14,7 +14,6 @@
             <field name="name">board.mgmtsystem.action.form</field>
             <field name="model">board.board</field>
             <field name="inherit_id" ref="mgmtsystem.board_mgmtsystem_form"/>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <xpath expr="/form/hpaned/child1" position="inside">
 		    <action name="%(action_mgmtsystem_action)d" string="Open Actions"/>

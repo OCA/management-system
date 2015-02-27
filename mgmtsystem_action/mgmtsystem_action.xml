@@ -4,7 +4,6 @@
         <record id="view_mgmtsystem_action_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.action.tree</field>
             <field name="model">mgmtsystem.action</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Action">
                     <field name="reference"/>
@@ -21,7 +20,6 @@
         <record id="view_mgmtsystem_action_filter" model="ir.ui.view">
             <field name="name">mgmtsystem.action.filter</field>
             <field name="model">mgmtsystem.action</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Action">
                     <group>
