@@ -18,6 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+
 {
     "name": "Management System - Action",
     "version": "1.2",
@@ -37,12 +38,13 @@ system:
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_action_security.xml',
-        'action_sequence.xml',
-        'workflow_mgmtsystem_action.xml',
-        'mgmtsystem_action.xml',
-        'board_mgmtsystem_action.xml',
+        'data/ir_sequence_type.xml',
+        'data/ir_sequence.xml',
+        'views/mgmtsystem_action.xml',
+        'mgmtsystem_action_workflow.xml',
     ],
-    "demo": ['demo_action.xml'],
+    "demo": [
+        'demo/mgmtsystem_action.xml',
+    ],
     "installable": True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

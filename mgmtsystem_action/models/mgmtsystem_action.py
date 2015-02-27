@@ -19,9 +19,10 @@
 #
 ##############################################################################
 
-from tools.translate import _
 from urllib import urlencode
 from urlparse import urljoin
+
+from openerp.tools.translate import _
 from openerp.osv import fields, orm
 
 
