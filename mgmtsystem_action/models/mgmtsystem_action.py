@@ -26,7 +26,7 @@ from openerp.tools.translate import _
 from openerp.osv import fields, orm
 
 
-class mgmtsystem_action(orm.Model):
+class MgmtsystemAction(orm.Model):
     _name = "mgmtsystem.action"
     _description = "Action"
     _inherit = "crm.claim"
@@ -60,7 +60,7 @@ class mgmtsystem_action(orm.Model):
     def create(self, cr, uid, vals, context=None):
         sequence_pool = self.pool['ir.sequence']
         vals.update(reference=sequence_pool .get(cr, uid, 'mgmtsystem.action'))
-        return super(mgmtsystem_action, self).create(
+        return super(MgmtsystemAction, self).create(
             cr, uid, vals, context=context
         )
 
@@ -72,7 +72,7 @@ class mgmtsystem_action(orm.Model):
                 cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None,
                 context=context
             )
-        return super(mgmtsystem_action, self).message_auto_subscribe(
+        return super(MgmtsystemAction, self).message_auto_subscribe(
             cr, uid, ids, updated_fields, context=context, values=values
         )
 
@@ -81,7 +81,7 @@ class mgmtsystem_action(orm.Model):
         for o in self.browse(cr, uid, ids, context=context):
             for nc in o.nonconformity_ids:
                 nc.case_send_note(_('Action "%s" was closed.' % o.name))
-        return super(mgmtsystem_action, self).case_close(
+        return super(MgmtsystemAction, self).case_close(
             cr, uid, ids, context=context
         )
 
