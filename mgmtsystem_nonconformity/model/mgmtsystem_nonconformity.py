@@ -31,32 +31,14 @@ from openerp.tools import (
 import time
 
 
-_STATES = [
-    ('draft', _('Draft')),
-    ('analysis', _('Analysis')),
-    ('pending', _('Pending Approval')),
-    ('open', _('In Progress')),
-    ('done', _('Closed')),
-    ('cancel', _('Cancelled')),
-]
-_STATES_DICT = dict(_STATES)
-
-
 class MgmtsystemNonconformity(base_state, orm.Model):
     """
     Management System - Nonconformity
     """
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity of the management system"
-    _rec_name = "name"
     _inherit = ['mail.thread']
     _order = "date desc"
-
-    def _state_name(self, cr, uid, ids, name, args, context=None):
-        res = dict()
-        for o in self.browse(cr, uid, ids, context=context):
-            res[o.id] = _STATES_DICT.get(o.state, o.state)
-        return res
 
     _columns = {
         # 1. Description
@@ -92,9 +74,13 @@ class MgmtsystemNonconformity(base_state, orm.Model):
             'nonconformity_id', 'procedure_id', 'Procedure'
         ),
         'description': fields.text('Description', required=True),
-        'state': fields.selection(_STATES, 'State', readonly=True),
+        'state': fields.selection(
+            lambda self, *a, **kw: self._get_states(*a, **kw),
+            'State',
+            readonly=True,
+        ),
         'state_name': fields.function(
-            _state_name,
+            lambda self, *a, **kw: self._state_name(*a, **kw),
             string='State Description',
             type='char',
             size=40,
@@ -166,6 +152,23 @@ class MgmtsystemNonconformity(base_state, orm.Model):
         'author_user_id': lambda cr, uid, id, c={}: id,
         'ref': 'NEW',
     }
+
+    def _state_name(self, cr, uid, ids, name, args, context=None):
+        res = dict()
+        for o in self.browse(cr, uid, ids, context=context):
+            state_selection = self._columns['state'].selection
+            res[o.id] = dict(state_selection).get(o.state, o.state)
+        return res
+
+    def _get_states(self, cr, uid, context=None):
+        return [
+            ('draft', _('Draft')),
+            ('analysis', _('Analysis')),
+            ('pending', _('Pending Approval')),
+            ('open', _('In Progress')),
+            ('done', _('Closed')),
+            ('cancel', _('Cancelled')),
+        ]
 
     def create(self, cr, uid, vals, context=None):
         vals.update({
