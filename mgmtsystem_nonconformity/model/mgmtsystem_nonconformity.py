@@ -201,10 +201,10 @@ class MgmtsystemNonconformity(base_state, orm.Model):
             msg = '%s <b>%s</b>' % (pre, text)
             if data:
                 o = self.browse(cr, uid, ids, context=context)[0]
-                post = _('''
+                post = '''
 <br />
-<ul><li> <b>Stage:</b> %s \xe2\x86\x92 %s</li></ul>\
-''') % (o.state, data['state'])
+<ul><li> <b>''' + _('Stage:') + '''</b> %s \xe2\x86\x92 %s</li></ul>\
+''' % (o.state, data['state'])
                 msg += post
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
