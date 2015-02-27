@@ -58,10 +58,8 @@ class mgmtsystem_action(orm.Model):
     }
 
     def create(self, cr, uid, vals, context=None):
-        vals.update({
-            'reference': (
-                self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.action'))
-        }, context=context)
+        sequence_pool = self.pool['ir.sequence']
+        vals.update(reference=sequence_pool .get(cr, uid, 'mgmtsystem.action'))
         return super(mgmtsystem_action, self).create(
             cr, uid, vals, context=context
         )
