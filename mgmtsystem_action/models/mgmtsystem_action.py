@@ -53,13 +53,13 @@ class MgmtsystemAction(orm.Model):
     _defaults = {
         'company_id': (
             lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
+            self.pool['res.users'].browse(cr, uid, uid, c).company_id.id),
         'reference': 'NEW',
     }
 
     def create(self, cr, uid, vals, context=None):
         sequence_pool = self.pool['ir.sequence']
-        vals.update(reference=sequence_pool .get(cr, uid, 'mgmtsystem.action'))
+        vals.update(reference=sequence_pool.get(cr, uid, 'mgmtsystem.action'))
         return super(MgmtsystemAction, self).create(
             cr, uid, vals, context=context
         )
@@ -88,7 +88,7 @@ class MgmtsystemAction(orm.Model):
     def get_action_url(self, cr, uid, ids, context=None):
         assert len(ids) == 1
         action = self.browse(cr, uid, ids[0], context=context)
-        base_url = self.pool.get('ir.config_parameter').get_param(
+        base_url = self.pool['ir.config_parameter'].get_param(
             cr, uid, 'web.base.url', default='http://localhost:8069',
             context=context,
         )
