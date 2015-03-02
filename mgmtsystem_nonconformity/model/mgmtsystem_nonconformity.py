@@ -146,7 +146,7 @@ class MgmtsystemNonconformity(base_state, orm.Model):
     _defaults = {
         'company_id': (
             lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
+            self.pool['res.users'].browse(cr, uid, uid, c).company_id.id),
         'date': lambda *a: time.strftime(DATE_FORMAT),
         'state': 'draft',
         'author_user_id': lambda cr, uid, id, c={}: id,
@@ -172,7 +172,7 @@ class MgmtsystemNonconformity(base_state, orm.Model):
 
     def create(self, cr, uid, vals, context=None):
         vals.update({
-            'ref': self.pool.get('ir.sequence').get(
+            'ref': self.pool['ir.sequence'].get(
                 cr, uid, 'mgmtsystem.nonconformity')
         })
         return super(MgmtsystemNonconformity, self).create(
