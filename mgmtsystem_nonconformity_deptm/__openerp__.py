@@ -20,7 +20,7 @@
 {
     "name" : "Management System Nonconformity - Department",
     "version" : "1.0",
-    "author" : "Daniel Reis",
+    "author" : "Daniel Reis,Odoo Community Association (OCA)",
     "category" : "Management System",
     "description": """Add Department to Non Conformities""",
     "depends" : ['mgmtsystem_nonconformity', 'hr'],
