@@ -27,7 +27,9 @@ class mgmtsystem_system(orm.Model):
 =======
 from openerp import models, fields
 
-own_company = lambda self: self.env.user.company_id.id
+
+def own_company(self):
+    return self.env.user.company_id.id
 
 
 class mgmtsystem_system(models.Model):
