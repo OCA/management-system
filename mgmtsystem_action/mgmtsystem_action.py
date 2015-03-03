@@ -73,7 +73,9 @@ from urllib import urlencode
 from urlparse import urljoin
 from openerp import fields, models, api
 
-own_company = lambda self: self.env.user.company_id.id
+
+def own_company(self):
+    return self.env.user.company_id.id
 
 
 class mgmtsystem_action(models.Model):
