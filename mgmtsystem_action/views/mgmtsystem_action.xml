@@ -4,7 +4,6 @@
         <record id="view_mgmtsystem_action_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.action.tree</field>
             <field name="model">mgmtsystem.action</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Action">
                     <field name="reference"/>
@@ -21,7 +20,6 @@
         <record id="view_mgmtsystem_action_filter" model="ir.ui.view">
             <field name="name">mgmtsystem.action.filter</field>
             <field name="model">mgmtsystem.action</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Action">
                     <group>
@@ -42,7 +40,7 @@
                     </group>
                 </search>
             </field>
-        </record>        
+        </record>
 
         <record id="view_mgmtsystem_action_form" model="ir.ui.view">
             <field name="name">mgmtsystem.action.form</field>
@@ -92,10 +90,10 @@
             <field name="context">{"search_default_current":1,"search_default_user_id":uid}</field>
         </record>
 
-        <menuitem id="menu_open_action" 
-            action="open_mgmtsystem_action_list" 
-            parent="mgmtsystem.menu_mgmtsystem_main" 
-            sequence="30" 
+        <menuitem id="menu_open_action"
+            action="open_mgmtsystem_action_list"
+            parent="mgmtsystem.menu_mgmtsystem_main"
+            sequence="30"
             groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
     </data>
@@ -132,6 +130,27 @@ OpenERP
             <field name="trg_date_range">-10</field>
             <field name="trg_date_range_type">day</field>
             <field name="server_action_ids" eval="[(6, 0, [ref('action_email_reminder_action')])]"/>
+        </record>
+
+        <!-- Board -->
+
+        <record model="ir.actions.act_window" id="action_mgmtsystem_action">
+            <field name="res_model">mgmtsystem.action</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_mgmtsystem_action_tree"/>
+            <field name="domain">[('state', 'in', ('draft','open','pending'))]</field>
+        </record>
+
+        <record id="board_mgmtsystem_action_form" model="ir.ui.view">
+            <field name="name">board.mgmtsystem.action.form</field>
+            <field name="model">board.board</field>
+            <field name="inherit_id" ref="mgmtsystem.board_mgmtsystem_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/hpaned/child1" position="inside">
+                    <action name="%(action_mgmtsystem_action)d" string="Open Actions"/>
+                </xpath>
+            </field>
         </record>
 
     </data>

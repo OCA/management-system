@@ -19,13 +19,14 @@
 #
 ##############################################################################
 
-from tools.translate import _
 from urllib import urlencode
 from urlparse import urljoin
+
+from openerp.tools.translate import _
 from openerp.osv import fields, orm
 
 
-class mgmtsystem_action(orm.Model):
+class MgmtsystemAction(orm.Model):
     _name = "mgmtsystem.action"
     _description = "Action"
     _inherit = "crm.claim"
@@ -52,16 +53,14 @@ class mgmtsystem_action(orm.Model):
     _defaults = {
         'company_id': (
             lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
+            self.pool['res.users'].browse(cr, uid, uid, c).company_id.id),
         'reference': 'NEW',
     }
 
     def create(self, cr, uid, vals, context=None):
-        vals.update({
-            'reference': (
-                self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.action'))
-        }, context=context)
-        return super(mgmtsystem_action, self).create(
+        sequence_pool = self.pool['ir.sequence']
+        vals.update(reference=sequence_pool.get(cr, uid, 'mgmtsystem.action'))
+        return super(MgmtsystemAction, self).create(
             cr, uid, vals, context=context
         )
 
@@ -73,7 +72,7 @@ class mgmtsystem_action(orm.Model):
                 cr, uid, ids, user_ids=[o.user_id.id], subtype_ids=None,
                 context=context
             )
-        return super(mgmtsystem_action, self).message_auto_subscribe(
+        return super(MgmtsystemAction, self).message_auto_subscribe(
             cr, uid, ids, updated_fields, context=context, values=values
         )
 
@@ -82,14 +81,14 @@ class mgmtsystem_action(orm.Model):
         for o in self.browse(cr, uid, ids, context=context):
             for nc in o.nonconformity_ids:
                 nc.case_send_note(_('Action "%s" was closed.' % o.name))
-        return super(mgmtsystem_action, self).case_close(
+        return super(MgmtsystemAction, self).case_close(
             cr, uid, ids, context=context
         )
 
     def get_action_url(self, cr, uid, ids, context=None):
         assert len(ids) == 1
         action = self.browse(cr, uid, ids[0], context=context)
-        base_url = self.pool.get('ir.config_parameter').get_param(
+        base_url = self.pool['ir.config_parameter'].get_param(
             cr, uid, 'web.base.url', default='http://localhost:8069',
             context=context,
         )
