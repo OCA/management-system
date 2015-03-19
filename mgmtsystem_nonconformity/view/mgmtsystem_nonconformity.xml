@@ -1,10 +1,10 @@
 <openerp>
     <data>
 
-        <menuitem id="menu_mgmtsystem_configuration_nonconformities" 
+        <menuitem id="menu_mgmtsystem_configuration_nonconformities"
             name="Nonconformities"
             parent="mgmtsystem.menu_mgmtsystem_configuration"
-            groups="mgmtsystem.group_mgmtsystem_manager" 
+            groups="mgmtsystem.group_mgmtsystem_manager"
             sequence="10"/>
 
         <record id="view_mgmtsystem_nonconformity_tree" model="ir.ui.view">
@@ -30,7 +30,6 @@
         <record id="view_mgmtsystem_nonconformity_filter" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.filter</field>
             <field name="model">mgmtsystem.nonconformity</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search>
                     <group>
@@ -41,7 +40,7 @@
                         <separator orientation="vertical"/>
                         <field name="ref"/>
                         <field name="date"/>
-                        <field name="author_user_id" string="User" 
+                        <field name="author_user_id" string="User"
                                filter_domain="['|','|',('author_user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
                         <field name="system_id"/>
                         <field name="company_id" groups="base.group_multi_company"/>
@@ -55,7 +54,7 @@
                         <filter string="System" icon="gtk-execute" context="{'group_by':'system_id'}"/>
                         <filter string="Partner" icon="terp-personal+" domain="[]" context="{'group_by':'partner_id'}"/>
                         <filter string="Procedure" icon="terp-stock_symbol-selection" context="{'group_by':'procedure_ids'}"/>
-                        <!-- 
+                        <!--
                         <separator orientation="vertical"/>
                         <filter string="Origin" icon="terp-idea" context="{'group_by':'origin_ids'}"/>
                         <filter string="Cause" icon="gtk-convert" context="{'group_by':'cause_ids'}"/>
@@ -64,7 +63,7 @@
                     </group>
                 </search>
             </field>
-        </record>        
+        </record>
 
         <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.form</field>
@@ -86,20 +85,20 @@
                 <sheet string="Non-Conformity">
                     <group>
                         <group>
-                        	<field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                            <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                             <field name="name" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                        	<field name="date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                        	<field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                        	<field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                        	<field name="origin_ids" widget="many2many_tags" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                    	</group>
+                            <field name="date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                            <field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                            <field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                            <field name="origin_ids" widget="many2many_tags" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                        </group>
                         <group>
-                        	<field name="responsible_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                        	<field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                        	<field name="author_user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                        	<field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                            <field name="responsible_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                            <field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                            <field name="author_user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                            <field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                                 <field name="company_id" groups="base.group_multi_company"/>
-                    	</group>
+                        </group>
                     </group>
 
                     <notebook>
@@ -107,7 +106,7 @@
                         <page string="Description">
                             <field name="description" placeholder="Add a description ..." attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                         </page>
-                        
+
                         <page string="Procedures">
                             <field name="procedure_ids" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]"/>
                         </page>
@@ -184,17 +183,16 @@
             <field name="context">{"search_default_pending":1,"search_default_current":1,"search_default_author_user_id":uid}</field>
         </record>
 
-        <menuitem id="menu_open_nonconformity" 
-            action="open_mgmtsystem_nonconformity_list" 
-            parent="mgmtsystem.menu_mgmtsystem_main" 
-            sequence="20" 
+        <menuitem id="menu_open_nonconformity"
+            action="open_mgmtsystem_nonconformity_list"
+            parent="mgmtsystem.menu_mgmtsystem_main"
+            sequence="20"
             groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
         <!-- Origin -->
-        
+
         <record id="view_mgmtsystem_nonconformity_origin_form" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.origin.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.nonconformity.origin</field>
             <field name="arch" type="xml">
                 <form string="Origins of nonconformity">
@@ -210,7 +208,6 @@
         <record id="view_mgmtsystem_nonconformity_origin_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.origin.tree</field>
             <field name="model">mgmtsystem.nonconformity.origin</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Origins" colors="blue:parent_id;">
                     <field name="parent_id"/>
@@ -224,7 +221,6 @@
         <record id="view_mgmtsystem_nonconformity_origin_filter" model="ir.ui.view">
             <field name="name">Origins</field>
             <field name="model">mgmtsystem.nonconformity.origin</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Origins">
                     <field name="parent_id"/>
@@ -242,17 +238,16 @@
             <field name="search_view_id" ref="view_mgmtsystem_nonconformity_origin_filter"/>
         </record>
 
-        <menuitem id="menu_open_nonconformity_origin" 
-            action="open_mgmtsystem_nonconformity_origin_list" 
-            parent="menu_mgmtsystem_configuration_nonconformities" 
-            sequence="20" 
+        <menuitem id="menu_open_nonconformity_origin"
+            action="open_mgmtsystem_nonconformity_origin_list"
+            parent="menu_mgmtsystem_configuration_nonconformities"
+            sequence="20"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Cause -->
 
         <record id="view_mgmtsystem_nonconformity_cause_form" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.cause.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.nonconformity.cause</field>
             <field name="arch" type="xml">
                 <form string="Causes of nonconformity">
@@ -268,7 +263,6 @@
         <record id="view_mgmtsystem_nonconformity_cause_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.cause.tree</field>
             <field name="model">mgmtsystem.nonconformity.cause</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Causes" colors="blue:parent_id;">
                     <field name="parent_id"/>
@@ -282,7 +276,6 @@
         <record id="view_mgmtsystem_nonconformity_cause_filter" model="ir.ui.view">
             <field name="name">Causes</field>
             <field name="model">mgmtsystem.nonconformity.cause</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Causes">
                     <field name="parent_id"/>
@@ -300,16 +293,15 @@
             <field name="search_view_id" ref="view_mgmtsystem_nonconformity_cause_filter"/>
         </record>
 
-        <menuitem id="menu_open_nonconformity_cause" 
-            action="open_mgmtsystem_nonconformity_cause_list" 
+        <menuitem id="menu_open_nonconformity_cause"
+            action="open_mgmtsystem_nonconformity_cause_list"
             parent="menu_mgmtsystem_configuration_nonconformities"
-            sequence="30" 
+            sequence="30"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Severity -->
         <record id="view_mgmtsystem_nonconformity_severity_form" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.severity.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.nonconformity.severity</field>
             <field name="arch" type="xml">
                 <form string="Severity of Complaints and Nonconformities">
@@ -328,11 +320,11 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="menu_open_nonconformity_severity" 
-            action="open_mgmtsystem_nonconformity_severity_list" 
-            parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities" 
+        <menuitem id="menu_open_nonconformity_severity"
+            action="open_mgmtsystem_nonconformity_severity_list"
+            parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
-            
+
         <!-- Actions: add link to NCs -->
         <record id="view_mgmtsystem_action_form" model="ir.ui.view">
             <field name="name">mgmtsystem.action.form</field>
@@ -342,12 +334,32 @@
 
                 <field name="description" position="after">
                     <separator string="Related Nonconformities" colspan="4"/>
-                    <field name="nonconformity_ids" colspan="4" nolabel="1" 
+                    <field name="nonconformity_ids" colspan="4" nolabel="1"
                            attrs="{'invisible':[('nonconformity_ids','=',False)]}"/>
                 </field>
-                
+
             </field>
         </record>
-         
+
+        <!-- Board -->
+        <record id="action_mgmtsystem_nonconformity" model="ir.actions.act_window">
+            <field name="res_model">mgmtsystem.nonconformity</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_mgmtsystem_nonconformity_tree"/>
+            <field name="domain">[('state','=','open')]</field>
+        </record>
+
+        <record id="board_mgmtsystem_nonconformity_form" model="ir.ui.view">
+            <field name="name">board.mgmtsystem.nonconformity.form</field>
+            <field name="model">board.board</field>
+            <field name="inherit_id" ref="mgmtsystem.board_mgmtsystem_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/hpaned/child1" position="inside">
+                    <action name="%(action_mgmtsystem_nonconformity)d" string="Open Nonconformities"/>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </openerp>
