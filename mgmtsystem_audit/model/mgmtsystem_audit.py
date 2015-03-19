@@ -19,13 +19,14 @@
 #
 ##############################################################################
 
-from tools.translate import _
-from openerp.osv import fields, orm
 from urllib import urlencode
 from urlparse import urljoin
 
+from openerp.tools.translate import _
+from openerp.osv import fields, orm
 
-class mgmtsystem_audit(orm.Model):
+
+class MgmtsystemAudit(orm.Model):
     _name = "mgmtsystem.audit"
     _description = "Audit"
     _inherit = ['mail.thread']
@@ -96,7 +97,7 @@ class mgmtsystem_audit(orm.Model):
                 cr, uid, 'mgmtsystem.audit'
             )
         })
-        return super(mgmtsystem_audit, self).create(
+        return super(MgmtsystemAudit, self).create(
             cr, uid, vals, context=context)
 
     def button_close(self, cr, uid, ids, context=None):
@@ -117,7 +118,7 @@ class mgmtsystem_audit(orm.Model):
                 cr, uid, ids, user_ids=user_ids, subtype_ids=None,
                 context=context
             )
-        return super(mgmtsystem_audit, self).message_auto_subscribe(
+        return super(MgmtsystemAudit, self).message_auto_subscribe(
             cr, uid, ids, updated_fields, context=context, values=values
         )
 
@@ -138,45 +139,3 @@ class mgmtsystem_audit(orm.Model):
             base_url, "?%s#%s" %
             (urlencode(query), urlencode(fragment))
         )
-
-
-class mgmtsystem_verification_line(orm.Model):
-    _name = "mgmtsystem.verification.line"
-    _description = "Verification Line"
-    _columns = {
-        'name': fields.char('Question', size=300, required=True),
-        'audit_id': fields.many2one(
-            'mgmtsystem.audit',
-            'Audit',
-            ondelete='cascade',
-            select=True,
-        ),
-        'procedure_id': fields.many2one(
-            'document.page',
-            'Procedure',
-            ondelete='cascade',
-            select=True,
-        ),
-        'is_conformed': fields.boolean('Is conformed'),
-        'comments': fields.text('Comments'),
-        'seq': fields.integer('Sequence'),
-        'company_id': fields.many2one('res.company', 'Company')
-    }
-
-    _order = "seq"
-    _defaults = {
-        'company_id': (
-            lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id
-        ),
-        'is_conformed': False
-    }
-
-
-class mgmtsystem_nonconformity(orm.Model):
-    _name = "mgmtsystem.nonconformity"
-    _inherit = "mgmtsystem.nonconformity"
-    _columns = {
-        'audit_ids': fields.many2many(
-            'mgmtsystem.audit', string='Related Audits'),
-    }
