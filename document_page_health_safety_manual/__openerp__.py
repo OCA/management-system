@@ -25,12 +25,8 @@
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
-    "description": """Health and Safety Manual Template
-    """,
     "depends": ['mgmtsystem_manuals'],
     "data": ['document_page_health_safety_manual.xml'],
     "demo": [],
     'installable': True,
-    "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
