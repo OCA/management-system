@@ -19,18 +19,15 @@
 #
 ##############################################################################
 
-from openerp import models, fields
+from openerp.tests import common
 
 
-def own_company(self):
-    return self.env.user.company_id.id
+class TestModelAction(common.TransactionCase):
 
+    def test_create_system(self):
+        record = self.env['mgmtsystem.system'].create({
+            "name": "SampleSystem",
+        })
 
-class mgmtsystem_system(models.Model):
-
-    _name = 'mgmtsystem.system'
-    _description = 'System'
-
-    name = fields.Char('System', required=True, translate=True)
-    manual = fields.Many2one('document.page', 'Manual')
-    company_id = fields.Many2one('res.company', 'Company', default=own_company)
+        self.assertEqual(record.name, "SampleSystem")
+        self.assertEqual(record.company_id.id, self.env.user.company_id.id)

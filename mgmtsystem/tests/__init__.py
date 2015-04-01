@@ -19,18 +19,5 @@
 #
 ##############################################################################
 
-from openerp import models, fields
 
-
-def own_company(self):
-    return self.env.user.company_id.id
-
-
-class mgmtsystem_system(models.Model):
-
-    _name = 'mgmtsystem.system'
-    _description = 'System'
-
-    name = fields.Char('System', required=True, translate=True)
-    manual = fields.Many2one('document.page', 'Manual')
-    company_id = fields.Many2one('res.company', 'Company', default=own_company)
+from . import test_create_mgmtsystem
