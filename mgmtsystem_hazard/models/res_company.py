@@ -18,26 +18,26 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System - Hazard",
-    "version": "1.1",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "description": """\
-This module enables you to manage the hazards and risks of your health
-and safety management system.
-    """,
-    "depends": [
-        'mgmtsystem',
-        'hr'
-    ],
-    "data": [
-        'security/ir.model.access.csv',
-        'security/mgmtsystem_hazard_security.xml',
-        'mgmtsystem_hazard.xml',
-        'mgmtsystem_hazard_data.xml',
-    ],
-    "installable": True,
-}
+
+from openerp.osv import fields, orm
+
+
+class res_company(orm.Model):
+    _inherit = "res.company"
+    _columns = {
+        'risk_computation_id': fields.many2one(
+            'mgmtsystem.hazard.risk.computation',
+            'Risk Computation',
+            required=True,
+        ),
+    }
+
+    def _get_formula(self, cr, uid, context=None):
+        ids = self.pool.get('mgmtsystem.hazard.risk.computation').search(
+            cr, uid, [('name', '=', 'A * B * C')], context=context
+        )
+        return ids and ids[0] or False
+
+    _defaults = {
+        'risk_computation_id': _get_formula
+    }

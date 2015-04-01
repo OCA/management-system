@@ -18,26 +18,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System - Hazard",
-    "version": "1.1",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "description": """\
-This module enables you to manage the hazards and risks of your health
-and safety management system.
-    """,
-    "depends": [
-        'mgmtsystem',
-        'hr'
-    ],
-    "data": [
-        'security/ir.model.access.csv',
-        'security/mgmtsystem_hazard_security.xml',
-        'mgmtsystem_hazard.xml',
-        'mgmtsystem_hazard_data.xml',
-    ],
-    "installable": True,
-}
+
+
+def _parse_risk_formula(formula, a, b, c):
+    """Calculate the risk replacing the variables A, B, C into the formula."""
+    f = formula.replace('A', str(a)).replace('B', str(b)).replace('C', str(c))
+    return eval(f)

@@ -18,26 +18,15 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System - Hazard",
-    "version": "1.1",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "description": """\
-This module enables you to manage the hazards and risks of your health
-and safety management system.
-    """,
-    "depends": [
-        'mgmtsystem',
-        'hr'
-    ],
-    "data": [
-        'security/ir.model.access.csv',
-        'security/mgmtsystem_hazard_security.xml',
-        'mgmtsystem_hazard.xml',
-        'mgmtsystem_hazard_data.xml',
-    ],
-    "installable": True,
-}
+
+from openerp.osv import fields, orm
+
+
+class mgmtsystem_hazard_risk_computation(orm.Model):
+
+    _name = "mgmtsystem.hazard.risk.computation"
+    _description = "Computation Risk"
+    _columns = {
+        'name': fields.char('Computation Risk', size=50, required=True),
+        'description': fields.text('Description'),
+    }
