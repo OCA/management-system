@@ -1,0 +1,19 @@
+<openerp>
+    <data>
+
+        <!-- Survey -->
+
+        <record model="survey.survey" id="mgmtsystem_survey_satisfaction">
+            <field name="title">Customer Satisfaction Survey</field>
+            <field name="responsible_id" ref="base.user_root"/>
+            <field name="type" ref="mgmtsystem_survey_type"/>
+            <field name="state">open</field>
+            <field name="tot_comp_survey">0</field>
+            <field name="tot_start_survey">0</field>
+            <field name="max_response_limit">0</field>
+            <field name="response_user">0</field>
+            <field name="date_open" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>
+        </record>
+
+    </data>
+</openerp>
