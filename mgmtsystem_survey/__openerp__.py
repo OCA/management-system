@@ -28,8 +28,17 @@
     "description": """\
 This module enables you to manage your satisfaction surveys and its answers.
 """,
-    "depends": ['mgmtsystem', 'survey'],
-    "data": ['data/mgmtsystem_survey.xml'],
+    "depends": [
+        'mgmtsystem',
+        'survey'
+    ],
+    "data": [
+        'data/survey_page_data.xml',
+        'data/survey_stage_data.xml',
+        'data/survey_survey_data.xml',
+        'data/survey_question_data.xml',
+        'views/survey_survey_view.xml',
+    ],
     "demo": [],
     'installable': True,
 }
