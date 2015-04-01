@@ -36,7 +36,9 @@ It will fit best to your uses cases requiring:
   * a common numbering sequence for complaints and nonconformities;
   * a single point-of-entry for all management system related occurrences.
 """,
-    'depends': ['mgmtsystem_nonconformity'],
+    'depends': [
+        'mgmtsystem_nonconformity'
+    ],
     'data': [
         'security/ir.model.access.csv',
         'mgmtsystem_nonconformity.xml',

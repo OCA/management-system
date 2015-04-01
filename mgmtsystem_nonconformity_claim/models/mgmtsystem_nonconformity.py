@@ -22,7 +22,6 @@ from openerp.osv import fields, orm
 
 
 class mgmtsystem_nonconformity(orm.Model):
-    _name = "mgmtsystem.nonconformity"
     _inherit = "mgmtsystem.nonconformity"
     _description = "Feedback and Nonconformities"
     _columns = {
