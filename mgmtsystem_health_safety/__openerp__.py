@@ -46,7 +46,7 @@ including :
         'document_page_health_safety_manual',
         'mgmtsystem_hazard',
     ],
-    "data": ['health_safety.xml'],
+    "data": ['data/mgmtsystem_system.xml'],
     "demo": [],
     'installable': True,
     "application": True,
