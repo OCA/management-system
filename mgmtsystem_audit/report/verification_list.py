@@ -29,6 +29,7 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
         super(mgmtsystem_audit_verification_list, self).__init__(cr, uid, name, context)
 =======
 from openerp.report import report_sxw
+from openerp.tools.translate import _
 
 
 class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
@@ -47,6 +48,7 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
     def get_lines_by_procedure(self, verification_lines):
         p = []
         for l in verification_lines:
+<<<<<<< e3abf132a9e82976ded29e1f1962ba6afb6ba16e
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
             proc_nm = self.pool.get('document.page').read(self.cr, self.uid, l.procedure_id.id, ['name'])
 =======
@@ -54,8 +56,18 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
                 self.cr, self.uid, l.procedure_id.id, ['name']
             )
 >>>>>>> Moved mgmtsystem_audit to root and fixed imports
+=======
+            if l.procedure_id.id:
+                proc_nm = self.pool.get('document.page').read(
+                    self.cr, self.uid, l.procedure_id.id, ['name']
+                )
+                procedure_name = proc_nm['name']
+            else:
+                procedure_name = _('Undefined')
+
+>>>>>>> Return undefined for procedures without document_page defined
             p.append({"id": l.id,
-                      "procedure": proc_nm['name'],
+                      "procedure": procedure_name,
                       "name": l.name,
                       "yes_no": "Yes / No"})
         p = sorted(p, key=lambda k: k["procedure"])
