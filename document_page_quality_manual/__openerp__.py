@@ -40,11 +40,16 @@ Contributors
     'author': "OpenERP SA,Odoo Community Association (OCA)",
     'website': 'http://openerp.com',
     'license': 'AGPL-3',
-    'depends': ['mgmtsystem_manuals'],
-    'data': ['data/document_page_data.xml'],
+    'depends': [
+        'mgmtsystem_manuals'
+    ],
+    'data': [
+        'data/document_page_data.xml'
+    ],
     'demo': [],
     'installable': True,
     'auto_install': False,
-    'certificate': '',
-    'images': ['images/wiki_pages_quality_manual.jpeg'],
+    'images': [
+        'images/wiki_pages_quality_manual.jpeg'
+    ],
 }
