@@ -24,8 +24,12 @@
     "license": "AGPL-3",
     "category": "Management System",
     "description": """Add Analytic Accounts / Contracts to Non Conformities""",
-    "depends": ['mgmtsystem_nonconformity', 'analytic'],
-    "data": ['mgmtsystem_nonconformity.xml'],
+    "depends": [
+        'mgmtsystem_nonconformity',
+        'analytic'
+    ],
+    "data": [
+        'mgmtsystem_nonconformity.xml'
+    ],
     'installable': True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
