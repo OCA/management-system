@@ -1,35 +1,6 @@
 <openerp>
     <data>
 
-        <!-- Survey Type -->
-
-        <record model="survey.stage" id="mgmtsystem_survey_type">
-            <field name="name">Management System</field>
-            <field name="code">Management System</field>
-        </record>
-
-        <!-- Survey -->
-
-        <record model="survey.survey" id="mgmtsystem_survey_satisfaction">
-            <field name="title">Customer Satisfaction Survey</field>
-            <field name="responsible_id" ref="base.user_root"/>
-            <field name="type" ref="mgmtsystem_survey_type"/>
-            <field name="state">open</field>
-            <field name="tot_comp_survey">0</field>
-            <field name="tot_start_survey">0</field>
-            <field name="max_response_limit">0</field>
-            <field name="response_user">0</field>
-            <field name="date_open" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>
-        </record>
-
-        <!-- Survey Page -->
-
-        <record id="mgmtsystem_survey_page" model="survey.page">
-            <field name="title">Customer Satisfaction Survey</field>
-            <field name="survey_id" ref="mgmtsystem_survey_satisfaction" />
-            <field eval="1" name="sequence"/>
-        </record>
-
         <!-- Survey Questions -->
 
         <record id="mgmtsystem_survey_question_name" model="survey.question">
@@ -100,22 +71,6 @@
             <field eval="7" name="sequence"/>
             <field name="in_visible_answer_type">1</field>
         </record>
-
-        <!-- window actions and menus -->
-
-        <record id="action_survey_form" model="ir.actions.act_window">
-            <field name="name">Surveys</field>
-            <field name="res_model">survey.survey</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="survey.survey_tree"></field>
-        </record>
-
-        <menuitem id="menu_open_survey" 
-            action="action_survey_form" 
-            parent="mgmtsystem.menu_mgmtsystem_configuration" 
-            sequence="50" 
-            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
     </data>
 </openerp>
