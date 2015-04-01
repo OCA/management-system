@@ -27,12 +27,13 @@
     "category": "Generic Modules/Others",
     "description": """Procedure Template
     """,
-    "depends": ['document_page_work_instructions'],
+    "depends": [
+        'document_page_work_instructions'
+    ],
     "data": [
         'data/document_page.xml',
         'views/document_page.xml',
     ],
     "demo": [],
     'installable': True,
-    "certificate": ''
 }
