@@ -36,7 +36,7 @@ class mgmtsystem_system(models.Model):
 >>>>>>> Ported mgmtsystem
 
     _name = 'mgmtsystem.system'
-    description = 'System'
+    _description = 'System'
 
 <<<<<<< 5e60e0b3b06575444d36910bf02a9da94dde574c
 <<<<<<< 0432e9c08747eb002779bcbf4a681c45f4c9ae47
