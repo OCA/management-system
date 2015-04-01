@@ -27,8 +27,12 @@
     "category": "Generic Modules/Others",
     "description": """Environment Manual Template
     """,
-    "depends": ['mgmtsystem_manuals'],
-    "data": ['data/document_page.xml'],
+    "depends": [
+        'mgmtsystem_manuals'
+    ],
+    "data": [
+        'data/document_page.xml'
+    ],
     "demo": [],
     'installable': True,
 }
