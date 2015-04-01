@@ -25,12 +25,16 @@
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
-    "description": """Environmental Aspects Template, useful for Environment Management System
+    "description": """Environmental Aspects Template
+Useful for Environment Management System
     """,
-    "depends": ['document_page_approval', 'mgmtsystem'],
-    "data": ['document_page_environmental_aspect.xml'],
+    "depends": [
+        'document_page_approval',
+        'mgmtsystem'
+    ],
+    "data": [
+        'document_page_environmental_aspect.xml'
+    ],
     "demo": [],
     'installable': True,
-    "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
