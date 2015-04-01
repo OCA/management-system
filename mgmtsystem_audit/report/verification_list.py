@@ -21,6 +21,7 @@
 
 import time
 from openerp.report import report_sxw
+from openerp.tools.translate import _
 
 
 class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
@@ -38,11 +39,16 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
     def get_lines_by_procedure(self, verification_lines):
         p = []
         for l in verification_lines:
-            proc_nm = self.pool.get('document.page').read(
-                self.cr, self.uid, l.procedure_id.id, ['name']
-            )
+            if l.procedure_id.id:
+                proc_nm = self.pool.get('document.page').read(
+                    self.cr, self.uid, l.procedure_id.id, ['name']
+                )
+                procedure_name = proc_nm['name']
+            else:
+                procedure_name = _('Undefined')
+
             p.append({"id": l.id,
-                      "procedure": proc_nm['name'],
+                      "procedure": procedure_name,
                       "name": l.name,
                       "yes_no": "Yes / No"})
         p = sorted(p, key=lambda k: k["procedure"])
