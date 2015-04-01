@@ -31,8 +31,13 @@ This module adds a menu item "Manual" and is a dependency of:
  * document_page_health_safety_manual
  * mgmtsystem_quality
     """,
-    "depends": ['document_page_approval', 'mgmtsystem'],
-    "data": ['mgmtsystem_manuals.xml'],
+    "depends": [
+        'document_page_approval',
+        'mgmtsystem'
+    ],
+    "data": [
+        'data/mgmtsystem_manuals.xml'
+    ],
     "demo": [],
     'installable': True,
 }
