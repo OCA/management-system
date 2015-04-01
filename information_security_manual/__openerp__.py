@@ -27,10 +27,13 @@
     "category": "Generic Modules/Others",
     "description": """Information Security Manual Template
     """,
-    "depends": ['mgmtsystem_manuals'],
+    "depends": [
+        'mgmtsystem_manuals'
+    ],
     "init": [],
-    "data": ['information_security_manual.xml'],
+    "data": [
+        'information_security_manual.xml'
+    ],
     "demo": [],
     'installable': True,
-    "certificate": ''
 }
