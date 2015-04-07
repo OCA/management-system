@@ -184,9 +184,12 @@
     </data>
 
     <data noupdate="1">
+
         <!-- Email template for Action Reminders -->
-        <record id="action_email_reminder_action" model="ir.actions.server">
+        <record id="action_email_template_reminder_action"
+                model="email.template">
             <field name="name">Reminder to Responsible</field>
+<<<<<<< 1776f6516792018df39f3696a9bddd512b7a67c8
             <field name="model_id" ref="model_mgmtsystem_action"/>
             <field name="condition">True</field>
             <field name="type">ir.actions.server</field>
@@ -196,19 +199,40 @@
             <field name="stage_id">email</field>
 >>>>>>> Ported mgmtsystem_action
             <field name="email">object.user_id.email</field>
+=======
+            <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost.com'}</field>
+>>>>>>> Use email_template in ir_action_server
             <field name="subject">Reminder on Action: "[[object.name]]"</field>
-            <field name="message">
-Hello,
+            <field name="email_to">${object.user_id.email}</field>
+            <field name="model_id" ref="model_mgmtsystem_action"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.create_uid.partner_id.lang}</field>
+            <field name="body_html"><![CDATA[
+<p>Hello,<p>
 
-This is an automated message to remind you that the following action is due to be completed in 10 days ([[object.date_deadline]]):
+<p>
+This is an automated message to remind you that the
+following action is due to be completed in 10 days (${object.date_deadline}):
 
-[[object.get_action_url()]]
+<a href="${object.get_action_url()}">${object.get_action_url()}</a>
+</p>
 
-
-Thank you and have a nice day.
---
+<p>
+Thank you and have a nice day.<br />
+--<br />
 OpenERP
+</p>
+]]>
             </field>
+        </record>
+
+        <record id="action_email_reminder_action" model="ir.actions.server">
+            <field name="name">Reminder to Responsible</field>
+            <field name="model_id" ref="model_mgmtsystem_action"/>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">email</field>
+            <field name="template_id" ref="action_email_template_reminder_action" />
         </record>
 
         <!-- Automated Action: Email reponsible user 10 days before deadline. -->
