@@ -30,10 +30,12 @@ Useful for Environment Management System
     """,
     "depends": [
         'document_page_approval',
-        'mgmtsystem'
+        'mgmtsystem',
     ],
     "data": [
-        'document_page_environmental_aspect.xml'
+        'data/document_page.xml',
+
+        'views/document_page.xml',
     ],
     "demo": [],
     'installable': True,
