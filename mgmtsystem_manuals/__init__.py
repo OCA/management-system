@@ -18,23 +18,3 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System - Manual",
-    "version": "1.1",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "description": """
-This module adds a menu item "Manual" and is a dependency of:
- * document_page_environment_manual
- * document_page_health_safety_manual
- * mgmtsystem_quality
-    """,
-    "depends": ['document_page_approval', 'mgmtsystem'],
-    "data": ['mgmtsystem_manuals.xml'],
-    "demo": [],
-    'installable': False,
-    "certificate": ''
-}
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
