@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+
+    <record id="document_page_group_work_instructions" model="document.page">
+      <field name="name">Work Instructions</field>
+      <field name="type">category</field>
+    </record>
+
+    <record id="document_page_work_instruction" model="document.page">
+      <field name="name">Work Instructions</field>
+      <field name="parent_id" ref="document_page_group_work_instructions"/>
+      <field name="type">content</field>
+      <field name="content">
+        <![CDATA[
+<h1>Step 1</h1>
+
+<h1>Step 2</h1>
+
+<h1>Step 3</h1>
+        ]]>
+      </field>
+    </record>
+
+  </data>
+</openerp>

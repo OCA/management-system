@@ -32,7 +32,9 @@
         'document_page_approval',
     ],
     "data": [
-        'data/document_page_work_instructions.xml',
+        'data/document_page.xml',
+
+        'views/document_page.xml',
     ],
     "demo": [],
     'installable': True,
