@@ -201,8 +201,12 @@
             <field name="email">object.user_id.email</field>
 =======
             <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost.com'}</field>
+<<<<<<< 01f37ff245e54f35d71950bf3680ced87f1ff803
 >>>>>>> Use email_template in ir_action_server
             <field name="subject">Reminder on Action: "[[object.name]]"</field>
+=======
+            <field name="subject">Reminder on Action: "${object.name}"</field>
+>>>>>>> Added template to workflow actions
             <field name="email_to">${object.user_id.email}</field>
             <field name="model_id" ref="model_mgmtsystem_action"/>
             <field name="auto_delete" eval="True"/>
