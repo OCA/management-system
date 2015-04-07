@@ -33,10 +33,12 @@ This module adds a menu item "Manual" and is a dependency of:
     """,
     "depends": [
         'document_page_approval',
-        'mgmtsystem'
+        'mgmtsystem',
     ],
     "data": [
-        'data/mgmtsystem_manuals.xml'
+        'data/document_page.xml',
+
+        'views/document_page.xml',
     ],
     "demo": [],
     'installable': True,
