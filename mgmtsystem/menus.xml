@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <menuitem
+      id="menu_mgmtsystem_root"
+      name="Management System"
+      sequence="150"
+      groups="mgmtsystem.group_mgmtsystem_manager,base.group_user"
+      web_icon="images/mgmtsystem.png"
+      web_icon_hover="images/mgmtsystem-hover.png"
+      />
+
+    <menuitem
+      id="menu_mgmtsystem_main"
+      name="Management System"
+      parent="menu_mgmtsystem_root"
+      sequence="0"
+      groups="base.group_user"/>
+
+    <menuitem
+      id="menu_mgmtsystem_manuals"
+      name="Manuals"
+      parent="menu_mgmtsystem_root"
+      sequence="10"
+      groups="base.group_user"/>
+
+    <menuitem
+      id="menu_mgmtsystem_configuration"
+      name="Configuration"
+      parent="mgmtsystem.menu_mgmtsystem_root"
+      groups="mgmtsystem.group_mgmtsystem_manager"
+      sequence="50"/>
+
+  </data>
+</openerp>
