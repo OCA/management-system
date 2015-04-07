@@ -43,7 +43,7 @@ This module is the basis of any management system applications:
     "data": [
         'security/mgmtsystem_security.xml',
         'security/ir.model.access.csv',
-        'mgmtsystem.xml',
+        'menus.xml',
         'mgmtsystem_system.xml',
         'board_mgmtsystem_view.xml',
     ],
