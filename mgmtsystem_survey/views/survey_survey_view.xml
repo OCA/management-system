@@ -8,10 +8,10 @@
             <field name="res_model">survey.survey</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="survey.survey_tree"></field>
         </record>
 
-        <menuitem id="menu_open_survey"
+        <menuitem
+            id="menu_open_survey"
             action="action_survey_form"
             parent="mgmtsystem.menu_mgmtsystem_configuration"
             sequence="50"
