@@ -32,7 +32,7 @@
     ],
     "init": [],
     "data": [
-        'information_security_manual.xml'
+        'data/information_security_manual.xml',
     ],
     "demo": [],
     'installable': True,
