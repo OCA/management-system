@@ -18,19 +18,3 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Document Management - Wiki - Health and Safety Manual",
-    "version": "1.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Generic Modules/Others",
-    "description": """Health and Safety Manual Template
-    """,
-    "depends": ['mgmtsystem_manuals'],
-    "data": ['document_page_health_safety_manual.xml'],
-    "demo": [],
-    'installable': False,
-    "certificate": ''
-}
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
