@@ -34,6 +34,8 @@
         'data/document_page.xml',
         'views/document_page.xml',
     ],
-    "demo": [],
+    "demo": [
+        'demo/document_page.xml',
+    ],
     'installable': True,
 }
