@@ -33,12 +33,13 @@ This module enables you to manage your satisfaction surveys and its answers.
         'survey'
     ],
     "data": [
-        'data/survey_stage_data.xml',
-        'data/survey_survey_data.xml',
-        'data/survey_page_data.xml',
-        'data/survey_question_data.xml',
-        'views/survey_survey_view.xml',
+        'data/survey_stage.xml',
+        'views/survey_survey.xml',
     ],
-    "demo": [],
+    "demo": [
+        'demo/survey_survey.xml',
+        'demo/survey_page.xml',
+        'demo/survey_question.xml',
+    ],
     'installable': True,
 }
