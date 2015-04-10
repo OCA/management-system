@@ -56,11 +56,14 @@
 >>>>>>> Moved document_page_procedure to root folder for port
     "description": """Procedure Template
     """,
-    "depends": ['document_page_work_instructions'],
+    "depends": [
+        'document_page_work_instructions'
+    ],
     "data": [
         'data/document_page.xml',
         'views/document_page.xml',
     ],
+<<<<<<< b8b2c5c5a717bf426e543efe6428d2961b847aad
     "demo": [],
 <<<<<<< fa0d893058a192bc1d2169abaa9c491bc70939b1
 <<<<<<< 527c6fad67cafc24c1059a64d5dc6ef1d1bd3083
@@ -69,7 +72,15 @@
     'installable': False,
 >>>>>>> Moved document_page_procedure to root folder for port
 =======
+=======
+    "demo": [
+        'demo/document_page.xml',
+    ],
+>>>>>>> Review changes from PR#35
     'installable': True,
+<<<<<<< c82318b1532b7dad2f426a18e47d3a5a7e02bfd9
 >>>>>>> Simple fix nothing to change
     "certificate": ''
+=======
+>>>>>>> Removed certificate from __openerp__
 }
