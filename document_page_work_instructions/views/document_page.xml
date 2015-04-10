@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+
+    <record model="ir.actions.act_window" id="work_instructions_action">
+      <field name="name">Work Instructions</field>
+      <field name="res_model">document.page</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help">Work instructions of your management system.</field>
+      <field name="domain" eval="[('parent_id','=',ref('document_page_group_work_instructions'))]"/>
+    </record>
+
+    <menuitem id="menu_mgmtsystem_manuals_work_instructions" 
+      name="Work Instructions"
+      action="work_instructions_action" 
+      parent="mgmtsystem.menu_mgmtsystem_manuals" 
+      sequence="90" 
+      groups="base.group_user"/>
+
+  </data>
+</openerp>
