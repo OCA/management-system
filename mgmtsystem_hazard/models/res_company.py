@@ -19,25 +19,20 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
-
-class res_company(orm.Model):
+class res_company(models.Model):
     _inherit = "res.company"
-    _columns = {
-        'risk_computation_id': fields.many2one(
-            'mgmtsystem.hazard.risk.computation',
-            'Risk Computation',
-            required=True,
-        ),
-    }
 
-    def _get_formula(self, cr, uid, context=None):
-        ids = self.pool.get('mgmtsystem.hazard.risk.computation').search(
-            cr, uid, [('name', '=', 'A * B * C')], context=context
+    risk_computation_id = fields.Many2one(
+        'mgmtsystem.hazard.risk.computation',
+        'Risk Computation',
+        required=True,
+        default=_get_formula
+    )
+
+    def _get_formula(self):
+        ids = self.env['mgmtsystem.hazard.risk.computation'].search(
+            [('name', '=', 'A * B * C')]
         )
         return ids and ids[0] or False
-
-    _defaults = {
-        'risk_computation_id': _get_formula
-    }
