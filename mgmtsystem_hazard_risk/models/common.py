@@ -19,16 +19,8 @@
 #
 ##############################################################################
 
-from . import (
-    mgmtsystem_hazard_type,
-    res_company,
-    mgmtsystem_hazard_origin,
-    mgmtsystem_hazard_hazard,
-    mgmtsystem_hazard_probability,
-    mgmtsystem_hazard_severity,
-    mgmtsystem_hazard_usage,
-    mgmtsystem_hazard_control_measure,
-    mgmtsystem_hazard_test,
-    mgmtsystem_hazard_residual_risk,
-    mgmtsystem_hazard,
-)
+
+def _parse_risk_formula(formula, a, b, c):
+    """Calculate the risk replacing the variables A, B, C into the formula."""
+    f = formula.replace('A', str(a)).replace('B', str(b)).replace('C', str(c))
+    return eval(f)

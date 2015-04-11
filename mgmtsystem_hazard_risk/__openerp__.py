@@ -18,17 +18,25 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-from . import (
-    mgmtsystem_hazard_type,
-    res_company,
-    mgmtsystem_hazard_origin,
-    mgmtsystem_hazard_hazard,
-    mgmtsystem_hazard_probability,
-    mgmtsystem_hazard_severity,
-    mgmtsystem_hazard_usage,
-    mgmtsystem_hazard_control_measure,
-    mgmtsystem_hazard_test,
-    mgmtsystem_hazard_residual_risk,
-    mgmtsystem_hazard,
-)
+{
+    "name": "Management System - Hazard-Risk",
+    "version": "1.1",
+    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+    "description": """\
+This module enables you to manage the risks of your health
+and safety management system. This is a sub module of management system
+hazard.
+    """,
+    "depends": [
+        'mgmtsystem',
+        'hr'
+    ],
+    "data": [
+        'data/mgmtsystem_hazard_risk_computation.xml',
+        'data/mgmtsystem_hazard_risk_type.xml',
+    ],
+    "installable": True,
+}

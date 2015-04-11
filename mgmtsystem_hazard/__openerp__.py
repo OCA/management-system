@@ -31,13 +31,20 @@ and safety management system.
     """,
     "depends": [
         'mgmtsystem',
+        'mgmtsystem_hazard_risk',
         'hr'
     ],
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_hazard_security.xml',
         'mgmtsystem_hazard.xml',
-        'mgmtsystem_hazard_data.xml',
+
+        'data/mgmtsystem_hazard_hazard.xml',
+        'data/mgmtsystem_hazard_origin.xml',
+        'data/mgmtsystem_hazard_probability.xml',
+        'data/mgmtsystem_hazard_severity.xml',
+        'data/mgmtsystem_hazard_type.xml',
+        'data/mgmtsystem_hazard_usage.xml',
     ],
     "installable": True,
 }

@@ -22,7 +22,14 @@
 from openerp import models, fields
 
 class res_company(models.Model):
+
     _inherit = "res.company"
+
+    def _get_formula(self):
+        ids = self.env['mgmtsystem.hazard.risk.computation'].search(
+            [('name', '=', 'A * B * C')]
+        )
+        return ids and ids[0] or False
 
     risk_computation_id = fields.Many2one(
         'mgmtsystem.hazard.risk.computation',
@@ -30,9 +37,3 @@ class res_company(models.Model):
         required=True,
         default=_get_formula
     )
-
-    def _get_formula(self):
-        ids = self.env['mgmtsystem.hazard.risk.computation'].search(
-            [('name', '=', 'A * B * C')]
-        )
-        return ids and ids[0] or False

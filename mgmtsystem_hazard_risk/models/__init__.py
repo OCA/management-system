@@ -20,15 +20,6 @@
 ##############################################################################
 
 from . import (
-    mgmtsystem_hazard_type,
-    res_company,
-    mgmtsystem_hazard_origin,
-    mgmtsystem_hazard_hazard,
-    mgmtsystem_hazard_probability,
-    mgmtsystem_hazard_severity,
-    mgmtsystem_hazard_usage,
-    mgmtsystem_hazard_control_measure,
-    mgmtsystem_hazard_test,
-    mgmtsystem_hazard_residual_risk,
-    mgmtsystem_hazard,
+    mgmtsystem_hazard_risk_computation,
+    mgmtsystem_hazard_risk_type,
 )
