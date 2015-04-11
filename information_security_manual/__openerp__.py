@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -32,7 +32,7 @@
     ],
     "init": [],
     "data": [
-        'data/information_security_manual.xml',
+        'data/document_page.xml',
     ],
     "demo": [],
     'installable': True,
