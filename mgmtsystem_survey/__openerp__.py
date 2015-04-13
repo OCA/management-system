@@ -37,9 +37,6 @@ This module enables you to manage your satisfaction surveys and its answers.
         'views/survey_survey.xml',
     ],
     "demo": [
-        'demo/survey_survey.xml',
-        'demo/survey_page.xml',
-        'demo/survey_question.xml',
     ],
     'installable': True,
 }
