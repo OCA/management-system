@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -18,20 +18,3 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Information Security Management System Manual",
-    "version": "1.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Generic Modules/Others",
-    "description": """Information Security Manual Template
-    """,
-    "depends": ['mgmtsystem_manuals'],
-    "init": [],
-    "data": ['information_security_manual.xml'],
-    "demo": [],
-    'installable': False,
-    "certificate": ''
-}
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
