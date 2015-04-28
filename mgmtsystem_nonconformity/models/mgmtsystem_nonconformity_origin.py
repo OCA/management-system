@@ -30,7 +30,6 @@ class mgmtsystem_nonconformity_origin(models.Model):
     _description = "Origin of nonconformity of the management system"
     _order = 'parent_id, sequence'
 
-    id = fields.Integer('ID', readonly=True)
     name = fields.Char('Origin', required=True, translate=True)
     description = fields.Text('Description')
     sequence = fields.Integer(
@@ -50,16 +49,10 @@ class mgmtsystem_nonconformity_origin(models.Model):
 
     @api.multi
     def name_get(self):
-        reads = self.read(['name', 'parent_id'])
         res = []
-        for record in reads:
-            name = record['name']
-            if record['parent_id']:
-                name = record['parent_id'][1] + ' / ' + name
-            res.append((record['id'], name))
+        for obj in self:
+            name = obj.name
+            if obj.parent_id:
+                name = obj.parent_id.name + ' / ' + name
+            res.append((obj.id, name))
         return res
-
-    @api.multi
-    def _name_get_fnc(self, prop, unknow_none):
-        res = self.name_get()
-        return dict(res)
