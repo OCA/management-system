@@ -36,6 +36,11 @@ class mgmtsystem_nonconformity_origin(models.Model):
         'Sequence',
         help="Defines the order to present items",
     )
+
+    _parent_store = True
+    parent_left = fields.Integer('Parent Left', index=True)
+    parent_right = fields.Integer('Parent Right', index=True)
+
     parent_id = fields.Many2one(
         'mgmtsystem.nonconformity.origin',
         'Group',
