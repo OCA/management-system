@@ -31,7 +31,7 @@ from tools import DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT
 =======
 from openerp.tools.translate import _
 from openerp import netsvc
-from openerp.osv import orm
+from openerp.exceptions import except_orm
 from openerp import models, api, fields
 
 from openerp.tools import (
@@ -582,6 +582,7 @@ class mgmtsystem_nonconformity(models.Model):
         """Sign-off the analysis"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if o.state != 'analysis':
+<<<<<<< c78ad3ce9f0ea5ee98baa923b2662899cec0c8cc
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
             raise orm.except_orm(_('Error !'), _('This action can only be done in the Analysis state.'))
         if o.analysis_date:
@@ -591,16 +592,19 @@ class mgmtsystem_nonconformity(models.Model):
         vals = {'analysis_date': time.strftime(DATETIME_FORMAT), 'analysis_user_id': uid}
 =======
             raise orm.except_orm(
+=======
+            raise except_orm(
+>>>>>>> Get exceptions without importing orm
                 _('Error !'),
                 _('This action can only be done in the Analysis state.')
             )
         if o.analysis_date:
-            raise orm.except_orm(
+            raise except_orm(
                 _('Error !'),
                 _('Analysis is already approved.')
             )
         if not o.analysis:
-            raise orm.except_orm(
+            raise except_orm(
                 _('Error !'),
                 _('Please provide an analysis before approving.')
             )
@@ -619,7 +623,7 @@ class mgmtsystem_nonconformity(models.Model):
         o = self.browse(cr, uid, ids, context=context)[0]
         if not o.analysis_date:
             err = _('Analysis must be performed before submiting to approval.')
-            raise orm.except_orm(_('Error !'), err)
+            raise except_orm(_('Error !'), err)
         vals = {
             'state': 'pending',
             'actions_date': None,
@@ -637,6 +641,7 @@ class mgmtsystem_nonconformity(models.Model):
         """Sign-off the action plan"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if o.state != 'pending':
+<<<<<<< c78ad3ce9f0ea5ee98baa923b2662899cec0c8cc
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
             raise orm.except_orm(_('Error !'), _('This action can only be done in the Pending for Approval state.'))
         if o.actions_date:
@@ -646,17 +651,20 @@ class mgmtsystem_nonconformity(models.Model):
         vals = {'actions_date': time.strftime(DATETIME_FORMAT), 'actions_user_id': uid}
 =======
             raise orm.except_orm(
+=======
+            raise except_orm(
+>>>>>>> Get exceptions without importing orm
                 _('Error !'),
                 _('This action can only be done in the Pending for Approval '
                   'state.')
             )
         if o.actions_date:
-            raise orm.except_orm(
+            raise except_orm(
                 _('Error !'),
                 _('Action plan is already approved.')
             )
         if not self.browse(cr, uid, ids, context=context)[0].analysis_date:
-            raise orm.except_orm(
+            raise except_orm(
                 _('Error !'),
                 _('Analysis approved before the review confirmation.')
             )
@@ -684,7 +692,7 @@ class mgmtsystem_nonconformity(models.Model):
         """
         o = self.browse(cr, uid, ids, context=context)[0]
         if not o.actions_date:
-            raise orm.except_orm(
+            raise except_orm(
                 _('Error !'),
                 _('Action plan must be approved before opening.')
             )
@@ -724,11 +732,15 @@ class mgmtsystem_nonconformity(models.Model):
         """Sign-off the effectiveness evaluation"""
         o = self.browse(cr, uid, ids, context=context)[0]
         if o.state != 'open':
+<<<<<<< c78ad3ce9f0ea5ee98baa923b2662899cec0c8cc
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
             raise orm.except_orm(_('Error !'), _('This action can only be done in the In Progress state.'))
         vals = {'evaluation_date': time.strftime(DATETIME_FORMAT), 'evaluation_user_id': uid}
 =======
             raise orm.except_orm(
+=======
+            raise except_orm(
+>>>>>>> Get exceptions without importing orm
                 _('Error !'),
                 _('This action can only be done in the In Progress state.')
             )
@@ -767,18 +779,18 @@ class mgmtsystem_nonconformity(models.Model):
         if (o.immediate_action_id
                 and o.immediate_action_id.stage_id.name.lower()
                 not in done_states):
-            raise orm.except_orm(
+            raise except_orm(
                 _('Error !'),
                 _('Immediate action from analysis has not been closed.')
             )
         if ([i for i in o.action_ids
                 if i.stage_id.name.lower() not in done_states]):
-            raise orm.except_orm(
+            raise except_orm(
                 _('Error !'),
                 _('Not all actions have been closed.')
             )
         if not o.evaluation_date:
-            raise orm.except_orm(
+            raise except_orm(
                 _('Error !'),
                 _('Effectiveness evaluation must be performed before closing.')
             )
