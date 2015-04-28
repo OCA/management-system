@@ -4,15 +4,9 @@ from psycopg2 import IntegrityError
 
 class TestModelOrigin(common.TransactionCase):
     def test_create_origin(self):
-        try:
-            # Will generate an error in the logs but we handle it
+
+        with self.assertRaise(IntegrityError):
             self.env['mgmtsystem.nonconformity.origin'].create({})
-            # Should not be possible to create without name
-            self.assertEqual(True, False)
-        except IntegrityError as exc:
-            # Integrity error
-            self.assertEqual(exc.pgcode, '23502')
-            exc.cursor.connection.rollback()
 
         record = self.env['mgmtsystem.nonconformity.origin'].create({
             "name": "TestOrigin",
