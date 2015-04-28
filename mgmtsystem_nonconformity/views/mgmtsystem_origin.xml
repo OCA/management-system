@@ -9,11 +9,13 @@
             <field name="model">mgmtsystem.nonconformity.origin</field>
             <field name="arch" type="xml">
                 <form string="Origins of nonconformity">
+                  <group>
                     <field name="name"/>
                     <field name="sequence"/>
                     <field name="parent_id"/>
                     <field name="ref_code"/>
                     <field name="description" colspan="4"/>
+                  </group>
                 </form>
             </field>
         </record>
