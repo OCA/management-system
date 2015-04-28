@@ -8,10 +8,12 @@
             <field name="model">mgmtsystem.nonconformity.severity</field>
             <field name="arch" type="xml">
                 <form string="Severity of Complaints and Nonconformities">
+                  <group>
                         <field name="name"/>
                         <field name="sequence"/>
                         <field name="description" colspan="2"/>
                         <field name="active"/>
+                      </group>
                 </form>
             </field>
         </record>

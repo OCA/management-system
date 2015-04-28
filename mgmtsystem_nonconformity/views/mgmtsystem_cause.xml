@@ -8,11 +8,13 @@
             <field name="model">mgmtsystem.nonconformity.cause</field>
             <field name="arch" type="xml">
                 <form string="Causes of nonconformity">
-                <field name="name"/>
-                <field name="sequence"/>
+                  <group>
+                    <field name="name"/>
+                    <field name="sequence"/>
                     <field name="parent_id"/>
                     <field name="ref_code"/>
-                <field name="description" colspan="4"/>
+                    <field name="description" colspan="4"/>
+                  </group>
                 </form>
             </field>
         </record>
@@ -52,7 +54,8 @@
             <field name="search_view_id" ref="view_mgmtsystem_nonconformity_cause_filter"/>
         </record>
 
-        <menuitem id="menu_open_nonconformity_cause" 
+        <menuitem
+            id="menu_open_nonconformity_cause" 
             action="open_mgmtsystem_nonconformity_cause_list" 
             parent="menu_mgmtsystem_configuration_nonconformities"
             sequence="30" 
