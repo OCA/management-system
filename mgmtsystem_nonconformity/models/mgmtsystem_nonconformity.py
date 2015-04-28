@@ -204,10 +204,6 @@ _STATES_DICT = dict(_STATES)
 =======
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
 
-own_company = lambda self: self.env.user.company_id.id
-default_date = lambda *a: time.strftime(DATE_FORMAT)
-default_user_id = lambda self: self.env.user.id
-
 
 class mgmtsystem_nonconformity(models.Model):
     """
@@ -379,7 +375,6 @@ class mgmtsystem_nonconformity(models.Model):
     }
 =======
     # 1. Description
-    id = fields.Integer('ID', readonly=True)
     ref = fields.Char(
         'Reference',
         size=64,
@@ -387,7 +382,11 @@ class mgmtsystem_nonconformity(models.Model):
         readonly=True,
         default="NEW"
     )
-    date = fields.Date('Date', required=True, default=default_date)
+    date = fields.Date(
+        'Date',
+        required=True,
+        default=lambda *a: time.strftime(DATE_FORMAT)
+    )
     partner_id = fields.Many2one('res.partner', 'Partner', required=True)
     reference = fields.Char('Related to', size=50)
     responsible_user_id = fields.Many2one(
@@ -404,7 +403,7 @@ class mgmtsystem_nonconformity(models.Model):
         'res.users',
         'Filled in by',
         required=True,
-        default=default_user_id,
+        default=lambda self: self.env.user.id
     )
     origin_ids = fields.Many2many(
         'mgmtsystem.nonconformity.origin',
@@ -487,8 +486,15 @@ class mgmtsystem_nonconformity(models.Model):
     )
 
     # Multi-company
+<<<<<<< be1ad52fa3ab11b8bd762f60fde4735b13bd6441
     company_id = fields.Many2one('res.company', 'Company', default=own_company)
 >>>>>>> Ported fields to v8
+=======
+    company_id = fields.Many2one(
+        'res.company',
+        'Company',
+        default=lambda self: self.env.user.company_id.id)
+>>>>>>> Removed ID and removed named lambdas
 
     @api.model
     def create(self, vals):
@@ -547,7 +553,7 @@ class mgmtsystem_nonconformity(models.Model):
                 post = _(u'''
 >>>>>>> Updated module as installable and removed depdencie on base_status
 <br />
-<ul><li> <b>Stage:</b> %s → %s</li></ul>\
+<ul><li> <b>State:</b> %s → %s</li></ul>\
 ''') % (o.state, data['state'])
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
                 msg += post
