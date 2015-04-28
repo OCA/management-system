@@ -7,6 +7,7 @@ class TestModelOrigin(common.TransactionCase):
 
         with self.assertRaises(IntegrityError):
             self.env['mgmtsystem.nonconformity.origin'].create({})
+        self.cr.rollback()
 
         record = self.env['mgmtsystem.nonconformity.origin'].create({
             "name": "TestOrigin",
@@ -22,8 +23,6 @@ class TestModelOrigin(common.TransactionCase):
         })
 
         name_assoc = record.name_get()
-        name_dict = record._name_get_fnc(None, None)
 
-        self.assertEqual(name_dict[record.id], "TestOrigin")
         self.assertEqual(name_assoc[0][1], "TestOrigin")
         self.assertEqual(name_assoc[0][0], record.id)

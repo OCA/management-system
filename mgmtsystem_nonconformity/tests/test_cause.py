@@ -8,6 +8,7 @@ class TestModelCause(common.TransactionCase):
             # Will generate an error in the logs but we handle it
             self.env['mgmtsystem.nonconformity.cause'].create({})
             # Should not be possible to create without name
+        self.cr.rollback()
 
         record = self.env['mgmtsystem.nonconformity.cause'].create({
             "name": "TestCause",
@@ -23,8 +24,6 @@ class TestModelCause(common.TransactionCase):
         })
 
         name_assoc = record.name_get()
-        name_dict = record._name_get_fnc(None, None)
 
-        self.assertEqual(name_dict[record.id], "TestCause")
         self.assertEqual(name_assoc[0][1], "TestCause")
         self.assertEqual(name_assoc[0][0], record.id)
