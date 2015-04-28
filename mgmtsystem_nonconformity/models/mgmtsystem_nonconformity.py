@@ -377,7 +377,6 @@ class mgmtsystem_nonconformity(models.Model):
     # 1. Description
     ref = fields.Char(
         'Reference',
-        size=64,
         required=True,
         readonly=True,
         default="NEW"
@@ -388,7 +387,7 @@ class mgmtsystem_nonconformity(models.Model):
         default=lambda *a: time.strftime(DATE_FORMAT)
     )
     partner_id = fields.Many2one('res.partner', 'Partner', required=True)
-    reference = fields.Char('Related to', size=50)
+    reference = fields.Char('Related to')
     responsible_user_id = fields.Many2one(
         'res.users',
         'Responsible',
@@ -425,7 +424,6 @@ class mgmtsystem_nonconformity(models.Model):
     state_name = fields.Char(
         compute='_state_name',
         string='State Description',
-        size=40,
     )
     system_id = fields.Many2one('mgmtsystem.system', 'System')
 
