@@ -5,7 +5,7 @@ from psycopg2 import IntegrityError
 class TestModelOrigin(common.TransactionCase):
     def test_create_origin(self):
 
-        with self.assertRaise(IntegrityError):
+        with self.assertRaises(IntegrityError):
             self.env['mgmtsystem.nonconformity.origin'].create({})
 
         record = self.env['mgmtsystem.nonconformity.origin'].create({
