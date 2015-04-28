@@ -44,6 +44,7 @@ class mgmtsystem_nonconformity_origin(models.Model):
     parent_id = fields.Many2one(
         'mgmtsystem.nonconformity.origin',
         'Group',
+        ondelete='restrict'
     )
     child_ids = fields.One2many(
         'mgmtsystem.nonconformity.origin',

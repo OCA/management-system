@@ -42,7 +42,11 @@ class mgmtsystem_nonconformity_cause(models.Model):
     parent_left = fields.Integer('Parent Left', index=True)
     parent_right = fields.Integer('Parent Right', index=True)
 
-    parent_id = fields.Many2one('mgmtsystem.nonconformity.cause', 'Group')
+    parent_id = fields.Many2one(
+        'mgmtsystem.nonconformity.cause',
+        'Group',
+        ondelete='restrict'
+    )
     child_ids = fields.One2many(
         'mgmtsystem.nonconformity.cause',
         'parent_id',
