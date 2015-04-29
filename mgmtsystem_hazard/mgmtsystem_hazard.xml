@@ -1,7 +1,8 @@
 <openerp>
   <data>
 
-    <menuitem id="menu_mgmtsystem_configuration_hazards" 
+    <menuitem
+      id="menu_mgmtsystem_configuration_hazards" 
       name="Hazards"
       parent="mgmtsystem.menu_mgmtsystem_configuration"
       groups="mgmtsystem.group_mgmtsystem_manager" 
@@ -68,20 +69,24 @@
           </group>
           <notebook colspan="4">
             <page string="Analysis">
-              <field name="department_id"/>
-              <field name="responsible_user_id"/>
-              <field name="analysis_date"/>
+              <group>
+                <field name="department_id"/>
+                <field name="responsible_user_id"/>
+                <field name="analysis_date"/>
+              </group>
             </page>
             <page string="Risk Evaluation">
-              <field name="probability_id"/>
-              <field name="severity_id"/>
-              <newline/>
-              <field name="usage_id"/>
-              <field name="risk"/>
-              <newline/>
-              <field name="acceptability"/>
-              <newline/>
-              <field name="justification"/>
+              <group>
+                <field name="probability_id"/>
+                <field name="severity_id"/>
+                <newline/>
+                <field name="usage_id"/>
+                <field name="risk"/>
+                <newline/>
+                <field name="acceptability"/>
+                <newline/>
+                <field name="justification"/>
+              </group>
             </page>
             <page string="Control Measures">
               <field name="control_measure_ids" nolabel="1"/>
@@ -106,7 +111,8 @@
       <field name="search_view_id" ref="view_mgmtsystem_hazard_filter"/>
     </record>
 
-    <menuitem id="menu_open_hazard" 
+    <menuitem
+      id="menu_open_hazard" 
       action="open_mgmtsystem_hazard_list" 
       parent="mgmtsystem.menu_mgmtsystem_manuals" 
       sequence="20" 
