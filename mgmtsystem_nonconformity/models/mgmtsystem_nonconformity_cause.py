@@ -60,7 +60,7 @@ class mgmtsystem_nonconformity_cause(models.Model):
         for obj in self:
             name = obj.name
             if obj.parent_id:
-                name = obj.parent_id.name + ' / ' + name
+                name = obj.parent_id.name_get()[0][1] + ' / ' + name
             res.append((obj.id, name))
         return res
 
