@@ -26,3 +26,23 @@ class TestModelOrigin(common.TransactionCase):
 
         self.assertEqual(name_assoc[0][1], "TestOrigin")
         self.assertEqual(name_assoc[0][0], record.id)
+
+        record2 = self.env['mgmtsystem.nonconformity.origin'].create({
+            "name": "test2",
+            "parent_id": record.id
+        })
+
+        name_assoc = record2.name_get()
+
+        self.assertEqual(name_assoc[0][1], "TestOrigin / test2")
+        self.assertEqual(name_assoc[0][0], record2.id)
+
+        record3 = self.env['mgmtsystem.nonconformity.origin'].create({
+            "name": "test3",
+            "parent_id": record2.id
+        })
+
+        name_assoc = record3.name_get()
+
+        self.assertEqual(name_assoc[0][1], "TestOrigin / test2 / test3")
+        self.assertEqual(name_assoc[0][0], record3.id)
