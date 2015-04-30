@@ -173,6 +173,14 @@
       <field name="help">Record and track your customers' claims. Claims may be linked to a sales order or a lot. You can send emails with attachments and keep the full history for a claim (emails sent, intervention type and so on). Claims may automatically be linked to an email address using the mail gateway module.</field>
     </record>
 
+    <record model="ir.actions.act_window" id="mgmtsystem_claim_stage_action">
+      <field name="name">Stages</field>
+      <field name="res_model">mgmtsystem.claim.stage</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,calendar,form</field>
+      <field name="context">{}</field>
+    </record>
+
     <menuitem 
       id="menu_mgmtsystem_claims"
       name="Claims" 
@@ -186,6 +194,14 @@
       name="Claims"
       parent="mgmtsystem.menu_mgmtsystem_configuration" 
       sequence="20" />
+
+    <menuitem 
+      id="menu_mgmtsystem_claim_stages"
+      name="Stages" 
+      parent="menu_config_claim"
+      action="mgmtsystem_claim_stage_action" 
+      sequence="90"
+      groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
   </data>
 </openerp>

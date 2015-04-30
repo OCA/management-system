@@ -36,6 +36,7 @@ This module enables you to manage the claims of your management system.
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_claim_security.xml',
+        'mgmtsystem_claim_stage.xml',
         'mgmtsystem_claim.xml',
         'claim_sequence.xml',
         'workflow_mgmtsystem_claim.xml',

@@ -29,11 +29,35 @@ class mgmtsystem_claim(models.Model):
     _description = "Claim"
     _inherit = "crm.claim"
 
-    reference = fields.Char('Reference', required=True, readonly=True,
-                            default='NEW')
-    message_ids = fields.One2many('mail.message', 'res_id', 'Messages',
-                                  domain=[('model', '=', _name)])
-    company_id = fields.Many2one('res.company', 'Company', default=own_company)
+    reference = fields.Char(
+        'Reference',
+        required=True,
+        readonly=True,
+        default='NEW'
+    )
+
+    message_ids = fields.One2many(
+        'mail.message',
+        'res_id',
+        'Messages',
+        domain=[('model', '=', _name)]
+    )
+
+    company_id = fields.Many2one(
+        'res.company',
+        'Company',
+        default=lambda self: self.env.user.company_id.id
+    )
+
+    stage_id = fields.Many2one(
+        'mgmtsystem.claim.stage',
+        'Stage',
+        default=lambda self: self.get_default_stage()
+    )
+
+    @api.model
+    def get_default_stage(self):
+        return self.env['mgmtsystem.claim.stage'].search([])[0].id
 
     @api.model
     def create(self, vals):

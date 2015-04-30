@@ -8,8 +8,7 @@
       <field name="view_type">form</field>
       <field name="view_mode">tree</field>
       <field name="view_id" ref="mgmtsystem_claims_tree_view"/>
-      <!-- TODO static list might not match stages -->
-      <field name="domain">[('stage_id.name', 'in', ('draft','open','pending'))]</field>
+      <field name="domain">[('stage_id.id', 'in', (%(stage_draft)d, %(stage_pending)d))]</field>
     </record>
 
     <record id="board_mgmtsystem_claim_form" model="ir.ui.view">
