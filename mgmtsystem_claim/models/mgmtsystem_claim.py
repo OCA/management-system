@@ -18,10 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
 from openerp import fields, models, api
-
-own_company = lambda self: self.env.user.company_id.id
 
 
 class mgmtsystem_claim(models.Model):

@@ -19,4 +19,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import models
+from openerp import models, fields
+
+
+class MgmtsystemClaimStage(models.Model):
+
+    _name = 'mgmtsystem.claim.stage'
+    _inherit = 'crm.claim.stage'
+    _order = 'sequence'

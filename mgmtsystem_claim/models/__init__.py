@@ -19,4 +19,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import models
+from . import (
+    mgmtsystem_claim_stage,
+    mgmtsystem_claim
+)

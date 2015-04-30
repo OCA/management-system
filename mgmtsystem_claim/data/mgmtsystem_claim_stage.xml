@@ -1,0 +1,25 @@
+<openerp>
+  <data>
+
+    <record id="stage_draft" model="mgmtsystem.claim.stage">
+      <field name="name">draft</field>
+      <field name="sequence">0</field>
+    </record>
+
+    <record id="stage_pending" model="mgmtsystem.claim.stage">
+      <field name="name">pending</field>
+      <field name="sequence">250</field>
+    </record>
+
+    <record id="stage_open" model="mgmtsystem.claim.stage">
+      <field name="name">open</field>
+      <field name="sequence">500</field>
+    </record>
+
+    <record id="stage_done" model="mgmtsystem.claim.stage">
+      <field name="name">done</field>
+      <field name="sequence">750</field>
+    </record>
+
+  </data>
+</openerp>
