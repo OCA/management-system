@@ -9,6 +9,7 @@
       <field name="arch" type="xml">
         <tree string="Claims" 
               colors="red:date_deadline and (date_deadline &lt; current_date)">
+              colors="blue:stage_id.id==%(stage_pending) and not(date_deadline and (date_deadline &lt; current_date));gray:stage_id.id in (%(stage_close)d, %(stage_cancel)d);red:date_deadline and (date_deadline &lt; current_date)">
           <field name="reference"/>
           <field name="name"/>
           <field name="partner_id"/>

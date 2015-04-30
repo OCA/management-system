@@ -16,8 +16,13 @@
       <field name="sequence">500</field>
     </record>
 
-    <record id="stage_done" model="mgmtsystem.claim.stage">
-      <field name="name">done</field>
+    <record id="stage_close" model="mgmtsystem.claim.stage">
+      <field name="name">close</field>
+      <field name="sequence">750</field>
+    </record>
+
+    <record id="stage_close" model="mgmtsystem.claim.stage">
+      <field name="name">cancel</field>
       <field name="sequence">750</field>
     </record>
 
