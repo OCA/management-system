@@ -780,6 +780,7 @@ class mgmtsystem_nonconformity(models.Model):
     def wkf_close(self, cr, uid, ids, context=None):
         """Change state from in progress to closed"""
         o = self.browse(cr, uid, ids, context=context)[0]
+<<<<<<< 5836488589af7e4b33185380a39618e98d33991e
 <<<<<<< 2ec8386018ef68321e61e374bab7e40164f20988
         done_states = ['done', 'cancelled']
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
@@ -794,15 +795,19 @@ class mgmtsystem_nonconformity(models.Model):
         # TODO make it more friendly
         done_states = ['done', 'cancelled', 'settled', 'rejected']
 >>>>>>> Add support for settled, rejected instead of done/canceled... quite ugly
+=======
+        done_stages = ['settled', 'rejected']
+
+>>>>>>> Remove states as we are using stages on actions...
         if (o.immediate_action_id
                 and o.immediate_action_id.stage_id.name.lower()
-                not in done_states):
+                not in done_stages):
             raise except_orm(
                 _('Error !'),
                 _('Immediate action from analysis has not been closed.')
             )
         if ([i for i in o.action_ids
-                if i.stage_id.name.lower() not in done_states]):
+                if i.stage_id.name.lower() not in done_stages]):
             raise except_orm(
                 _('Error !'),
                 _('Not all actions have been closed.')
