@@ -129,9 +129,11 @@ class mgmtsystem_action(models.Model):
         for case in self:
             values = {'active': True}
 
-            values['stage_id'] = self.stage_find(
-                self, None, [('name', '=', 'In Progress')]
-            )
+            stages = self.env['mgmtsystem.action.stage']
+            values['stage_id'] = stages.search([
+                ['is_ending', '=', False],
+                ['is_starting', '=', False]
+            ]).id
 
             case.write(values)
 
