@@ -20,7 +20,6 @@
 #
 ##############################################################################
 from openerp.tests import common
-from psycopg2 import IntegrityError
 
 
 class BreakSavePoint(Exception):
@@ -48,7 +47,7 @@ class TestModelNonConformity(common.TransactionCase):
     def try_signal(self, obj, signal_name, state, rollback=False):
         """
         Try to trigger a signal.
-        
+
         Then rollback to keep working on the same object. As
         if nothing happened.
 
@@ -111,7 +110,7 @@ class TestModelNonConformity(common.TransactionCase):
         # open -> done
         self.try_invalid_signal(conf_obj, 'button_close', 'done')
         # draft-> analysis
-        #self.try_invalid_signal(conf_obj, 'button_analysis_n', 'analysis')
+        # self.try_invalid_signal(conf_obj, 'button_analysis_n', 'analysis')
         self.try_signal(conf_obj, 'button_analysis_n', 'analysis')
         self.try_cancel(conf_obj)
 
@@ -121,7 +120,7 @@ class TestModelNonConformity(common.TransactionCase):
         # draft-> analysis (already on analysis)
         self.try_signal(conf_obj, 'button_analysis_n', 'analysis')
         # analysis -> pending
-        #self.try_invalid_signal(conf_obj, 'button_review_n', 'pending')
+        # self.try_invalid_signal(conf_obj, 'button_review_n', 'pending')
         # open -> pending
         self.try_invalid_signal(conf_obj, 'button_review_p', 'pending')
         # pending-> open
@@ -150,7 +149,7 @@ class TestModelNonConformity(common.TransactionCase):
 
         # Test Pending to Open
         # pending -> analysis
-        #self.try_invalid_signal(conf_obj, 'button_analysis_p', 'analysis')
+        # self.try_invalid_signal(conf_obj, 'button_analysis_p', 'analysis')
         # draft-> analysis
         self.try_invalid_signal(conf_obj, 'button_analysis_n', 'analysis')
         # analysis -> pending
@@ -162,14 +161,15 @@ class TestModelNonConformity(common.TransactionCase):
         # open -> done
         self.try_invalid_signal(conf_obj, 'button_close', 'done')
 
-
         self.try_invalid_signal(conf_obj, 'button_open', 'open')
+
         with self.cr.savepoint():
             with self.assertRaises(Exception):
                 conf_obj.action_sign_analysis()
         with self.cr.savepoint():
             with self.assertRaises(Exception):
                 conf_obj.action_sign_evaluation()
+
         conf_obj.action_sign_actions()
         self.try_signal(conf_obj, 'button_open', 'open')
 
@@ -186,11 +186,13 @@ class TestModelNonConformity(common.TransactionCase):
         self.try_signal(conf_obj, 'button_review_p', 'pending', True)
         # open -> done
         self.try_invalid_signal(conf_obj, 'button_close', 'done')
+
         with self.cr.savepoint():
             with self.assertRaises(Exception):
                 conf_obj.action_sign_analysis()
         with self.cr.savepoint():
             with self.assertRaises(Exception):
                 conf_obj.action_sign_actions()
+
         conf_obj.action_sign_evaluation()
         self.try_signal(conf_obj, 'button_close', 'done')
