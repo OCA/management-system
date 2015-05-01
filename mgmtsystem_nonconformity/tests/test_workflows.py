@@ -22,10 +22,10 @@
 from openerp.tests import common
 from psycopg2 import IntegrityError
 
-model_name = "mgmtsystem.nonconformity"
 
 class BreakSavePoint(Exception):
     pass
+
 
 class TestModelNonConformity(common.TransactionCase):
     def setUp(self):
