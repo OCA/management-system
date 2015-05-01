@@ -143,6 +143,9 @@ class TestModelNonConformity(common.TransactionCase):
 
         conf_obj.analysis = 'analysed'
         conf_obj.action_sign_analysis()
+        with self.cr.savepoint():
+            with self.assertRaises(Exception):
+                conf_obj.action_sign_evaluation()
 
         self.try_signal(conf_obj, 'button_review_n', 'pending') 
         self.try_cancel(conf_obj)
@@ -171,6 +174,9 @@ class TestModelNonConformity(common.TransactionCase):
                 conf_obj.action_sign_evaluation()
 
         conf_obj.action_sign_actions()
+        with self.cr.savepoint():
+            with self.assertRaises(Exception):
+                conf_obj.action_sign_actions()
         self.try_signal(conf_obj, 'button_open', 'open')
 
         # Test Open to Done
