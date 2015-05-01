@@ -43,9 +43,9 @@ _STATES_DICT = dict(_STATES)
 
 
 class mgmtsystem_nonconformity(models.Model):
-    """
-    Management System - Nonconformity
-    """
+
+    """Management System - Nonconformity."""
+
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity of the management system"
     _rec_name = "description"
@@ -321,7 +321,8 @@ class mgmtsystem_nonconformity(models.Model):
             )
         self.case_open_send_note(cr, uid, ids, context=context)
 
-        if o.immediate_action_id and o.immediate_action_id.stage_id.is_starting:
+        if (o.immediate_action_id and
+                o.immediate_action_id.stage_id.is_starting):
             o.immediate_action_id.case_open()
         for a in o.action_ids:
             if a.stage_id.is_starting:
@@ -357,7 +358,6 @@ class mgmtsystem_nonconformity(models.Model):
     def wkf_close(self, cr, uid, ids, context=None):
         """Change state from in progress to closed"""
         o = self.browse(cr, uid, ids, context=context)[0]
-        done_stages = ['settled', 'rejected']
 
         if (o.immediate_action_id
                 and not o.immediate_action_id.stage_id.is_ending):
