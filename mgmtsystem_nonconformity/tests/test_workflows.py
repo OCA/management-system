@@ -43,7 +43,7 @@ class TestModelNonConformity(common.TransactionCase):
             for method in methods:
                 with self.assertRaises(Exception):
                     getattr(obj, method)()
-    
+
     def try_signal(self, obj, signal_name, state, rollback=False):
         """
         Try to trigger a signal.
@@ -75,7 +75,7 @@ class TestModelNonConformity(common.TransactionCase):
     def try_invalid_signal(self, obj, signal_name, state):
         with self.assertRaises(Exception):
             self.try_signal(obj, signal_name, state, True)
-    
+
     def test_workflow(self):
 
         conf_obj = self.conf_m.create({
@@ -129,7 +129,7 @@ class TestModelNonConformity(common.TransactionCase):
         self.try_invalid_signal(conf_obj, 'button_close', 'done')
 
         # Cannot go to pending as we didn't review
-        self.try_invalid_signal(conf_obj, 'button_review_n', 'pending') 
+        self.try_invalid_signal(conf_obj, 'button_review_n', 'pending')
 
         with self.cr.savepoint():
             with self.assertRaises(Exception):
@@ -147,7 +147,7 @@ class TestModelNonConformity(common.TransactionCase):
             with self.assertRaises(Exception):
                 conf_obj.action_sign_evaluation()
 
-        self.try_signal(conf_obj, 'button_review_n', 'pending') 
+        self.try_signal(conf_obj, 'button_review_n', 'pending')
         self.try_cancel(conf_obj)
 
         # Test Pending to Open
@@ -160,7 +160,7 @@ class TestModelNonConformity(common.TransactionCase):
         # open -> pending
         self.try_signal(conf_obj, 'button_review_p', 'pending')
         # pending-> open
-        #self.try_invalid_signal(conf_obj, 'button_open', 'open')
+        # self.try_invalid_signal(conf_obj, 'button_open', 'open')
         # open -> done
         self.try_invalid_signal(conf_obj, 'button_close', 'done')
 
