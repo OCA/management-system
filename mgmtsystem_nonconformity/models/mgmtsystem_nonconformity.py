@@ -224,6 +224,7 @@ class mgmtsystem_nonconformity(models.Model):
             res[o.id] = _STATES_DICT.get(o.state, o.state)
         return res
 
+<<<<<<< 94f11df8d4c77ee3a7feebf4d1370e1528414857
 <<<<<<< 4590be07d52726216d516d3763733db0e6d138c7
     _columns = {
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
@@ -377,6 +378,10 @@ class mgmtsystem_nonconformity(models.Model):
         'ref': 'NEW',
     }
 =======
+=======
+    name = fields.Char('Name')
+
+>>>>>>> Added missing fields (used in demo data)
     # 1. Description
     ref = fields.Char(
         'Reference',
@@ -496,6 +501,18 @@ class mgmtsystem_nonconformity(models.Model):
         'Company',
         default=lambda self: self.env.user.company_id.id)
 >>>>>>> Removed ID and removed named lambdas
+
+    # Demo data missing fields...
+    corrective_action_id = fields.Many2one(
+        'mgmtsystem.action',
+        'Corrective action',
+        domain="[('nonconformity_id', '=', id)]",
+    )
+    preventive_action_id = fields.Many2one(
+        'mgmtsystem.action',
+        'Preventive action',
+        domain="[('nonconformity_id', '=', id)]",
+    )
 
     @api.model
     def create(self, vals):
