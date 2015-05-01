@@ -33,6 +33,7 @@ def logged_query(cr, query, args=None):
 =======
 
 def logged_query(cr, query, args=None):
+    """Log queries."""
     if args is None:
         args = []
     cr.execute(query, args)
@@ -43,7 +44,8 @@ def logged_query(cr, query, args=None):
 
 
 def migrate_nonconformity_action_ids(cr, column_names):
-    logged_query(cr,  """
+    """Migrate nonconformity_action_ids"""
+    logged_query(cr, """
         SELECT COUNT(*)
         FROM mgmtsystem_nonconformity_action_rel""")
     if cr.fetchone()[0] > 0:
@@ -81,7 +83,7 @@ def migrate_nonconformity_action_ids(cr, column_names):
     ]
     available_fields = [i for i in action_fields if i in column_names]
     for action_field in available_fields:
-        logged_query(cr,  """
+        logged_query(cr, """
 INSERT INTO mgmtsystem_nonconformity_action_rel (nonconformity_id, action_id)
 (SELECT id, %s action_id FROM mgmtsystem_nonconformity
 WHERE %s IS NOT NULL);""" % (action_field, action_field))
@@ -89,6 +91,7 @@ WHERE %s IS NOT NULL);""" % (action_field, action_field))
 
 
 def concatenate_action_comments(cr, column_names):
+    """Concatenate action comments."""
     logger.info("Concatenating action comments into evaluation_comments")
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
     action_fields = ['effectiveness_preventive', 'effectiveness_immediate', 'effectiveness_corrective']
@@ -104,22 +107,24 @@ def concatenate_action_comments(cr, column_names):
     )
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
     if concatenation:
-        logged_query(cr,  """
+        logged_query(cr, """
             UPDATE mgmtsystem_nonconformity
             SET evaluation_comments = %s
             WHERE evaluation_comments IS NULL;""" % concatenation)
 
 
 def update_state_flags(cr):
+    """Update state flags."""
     logger.info("Updating state flags")
     for i in [('open', 'o'), ('done', 'c')]:
-        logged_query(cr,  """
+        logged_query(cr, """
             UPDATE mgmtsystem_nonconformity
             SET state = %s
             WHERE state = %s;""", i)
 
 
 def migrate(cr, version):
+<<<<<<< 13e1999046b4defdeb03ea2574d58c112dd67470
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 <<<<<<< d1ae6c91b0f02e30eb83ceb60d42bbf891243ce1
 <<<<<<< 44fdbb69bcd6ca9c8f04f08af740c84b8c036dc0
@@ -157,6 +162,9 @@ def migrate(cr, version):
     logged_query(cr, """
 >>>>>>> [FIX] Migration scripts no longer fully dependent on openupgrade
 =======
+=======
+    """Migrate db."""
+>>>>>>> Fix flake8 errors
     if version is None:
         return
     logged_query(cr, """

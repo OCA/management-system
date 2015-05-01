@@ -23,9 +23,9 @@ from openerp.osv import osv
 
 
 class mgmtsystem_nonconformity_cause(models.Model):
-    """
-    Cause of the nonconformity of the management system
-    """
+
+    """Cause of the nonconformity of the management system."""
+
     _name = "mgmtsystem.nonconformity.cause"
     _description = "Cause of the nonconformity of the management system"
     _order = 'parent_id, sequence'

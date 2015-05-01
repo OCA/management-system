@@ -209,9 +209,9 @@ _STATES_DICT = dict(_STATES)
 
 
 class mgmtsystem_nonconformity(models.Model):
-    """
-    Management System - Nonconformity
-    """
+
+    """Management System - Nonconformity."""
+
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity of the management system"
     _rec_name = "description"
@@ -735,8 +735,13 @@ class mgmtsystem_nonconformity(models.Model):
 >>>>>>> Separated python in each model file:mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py
 =======
 
+<<<<<<< 13e1999046b4defdeb03ea2574d58c112dd67470
         if o.immediate_action_id and o.immediate_action_id.stage_id.is_starting:
 >>>>>>> Use stage is ending and is starting instead of by name
+=======
+        if (o.immediate_action_id and
+                o.immediate_action_id.stage_id.is_starting):
+>>>>>>> Fix flake8 errors
             o.immediate_action_id.case_open()
         for a in o.action_ids:
             if a.stage_id.is_starting:
@@ -785,6 +790,7 @@ class mgmtsystem_nonconformity(models.Model):
     def wkf_close(self, cr, uid, ids, context=None):
         """Change state from in progress to closed"""
         o = self.browse(cr, uid, ids, context=context)[0]
+<<<<<<< 13e1999046b4defdeb03ea2574d58c112dd67470
 <<<<<<< 5836488589af7e4b33185380a39618e98d33991e
 <<<<<<< 2ec8386018ef68321e61e374bab7e40164f20988
         done_states = ['done', 'cancelled']
@@ -802,6 +808,8 @@ class mgmtsystem_nonconformity(models.Model):
 >>>>>>> Add support for settled, rejected instead of done/canceled... quite ugly
 =======
         done_stages = ['settled', 'rejected']
+=======
+>>>>>>> Fix flake8 errors
 
 >>>>>>> Remove states as we are using stages on actions...
         if (o.immediate_action_id

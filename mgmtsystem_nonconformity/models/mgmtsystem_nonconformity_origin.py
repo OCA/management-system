@@ -22,9 +22,9 @@ from openerp import fields, models, api
 
 
 class mgmtsystem_nonconformity_origin(models.Model):
-    """
-    Origin of nonconformity of the management system
-    """
+
+    """Origin of nonconformity of the management system."""
+
     _name = "mgmtsystem.nonconformity.origin"
     _description = "Origin of nonconformity of the management system"
     _order = 'parent_id, sequence'

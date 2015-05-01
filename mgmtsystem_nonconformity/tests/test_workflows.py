@@ -56,7 +56,6 @@ class TestModelNonConformity(common.TransactionCase):
         And refresh the model to get back the changes from the
         database.
         """
-
         try:
             sid = self.cr.savepoint()
             with sid:
