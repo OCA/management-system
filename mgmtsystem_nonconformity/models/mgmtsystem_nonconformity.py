@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -18,6 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+<<<<<<< 06aa4f2b70a00af752d29b3a543ef5ebd33e203c
 
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 from tools.translate import _
@@ -29,6 +30,8 @@ import time
 from tools import DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT
 from tools import DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT
 =======
+=======
+>>>>>>> Added missing copyrights
 from openerp.tools.translate import _
 from openerp import netsvc
 from openerp.exceptions import except_orm
