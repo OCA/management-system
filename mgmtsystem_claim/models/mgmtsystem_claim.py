@@ -18,41 +18,47 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from openerp import fields, models, api
 
-from osv import fields, orm
 
-
-class mgmtsystem_claim(orm.Model):
+class mgmtsystem_claim(models.Model):
     _name = "mgmtsystem.claim"
     _description = "Claim"
     _inherit = "crm.claim"
-    _columns = {
-        'reference': fields.char(
-            'Reference',
-            size=64,
-            required=True,
-            readonly=True,
-        ),
-        'message_ids': fields.one2many(
-            'mail.message',
-            'res_id',
-            'Messages',
-            domain=[('model', '=', _name)],
-        ),
-        'company_id': fields.many2one('res.company', 'Company')
-    }
 
-    _defaults = {
-        'company_id': (
-            lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
-        'reference': 'NEW',
-    }
+    reference = fields.Char(
+        'Reference',
+        required=True,
+        readonly=True,
+        default='NEW'
+    )
 
-    def create(self, cr, uid, vals, context=None):
+    message_ids = fields.One2many(
+        'mail.message',
+        'res_id',
+        'Messages',
+        domain=[('model', '=', _name)]
+    )
+
+    company_id = fields.Many2one(
+        'res.company',
+        'Company',
+        default=lambda self: self.env.user.company_id.id
+    )
+
+    stage_id = fields.Many2one(
+        'mgmtsystem.claim.stage',
+        'Stage',
+        default=lambda self: self.get_default_stage()
+    )
+
+    @api.model
+    def get_default_stage(self):
+        return self.env['mgmtsystem.claim.stage'].search([])[0].id
+
+    @api.model
+    def create(self, vals):
         vals.update({
-            'reference': self.pool.get('ir.sequence').get(
-                cr, uid, 'mgmtsystem.claim'
-            )
+            'reference': self.env['ir.sequence'].get('mgmtsystem.claim')
         })
-        return super(mgmtsystem_claim, self).create(cr, uid, vals, context)
+        return super(mgmtsystem_claim, self).create(vals)
