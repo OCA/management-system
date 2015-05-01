@@ -86,6 +86,7 @@ class TestModelNonConformity(common.TransactionCase):
         })
         # Test draft
         self.assertEqual(conf_obj.state, 'draft')
+        self.assertEqual(conf_obj._state_name()[conf_obj.id], 'Draft')
         self.try_cancel(conf_obj)
 
         with self.cr.savepoint():
@@ -112,6 +113,7 @@ class TestModelNonConformity(common.TransactionCase):
         # draft-> analysis
         # self.try_invalid_signal(conf_obj, 'button_analysis_n', 'analysis')
         self.try_signal(conf_obj, 'button_analysis_n', 'analysis')
+        self.assertEqual(conf_obj._state_name()[conf_obj.id], 'Analysis')
         self.try_cancel(conf_obj)
 
         # Test Analysis to pending
@@ -148,6 +150,8 @@ class TestModelNonConformity(common.TransactionCase):
                 conf_obj.action_sign_evaluation()
 
         self.try_signal(conf_obj, 'button_review_n', 'pending')
+        self.assertEqual(conf_obj._state_name()[conf_obj.id],
+                         'Pending Approval')
         self.try_cancel(conf_obj)
 
         # Test Pending to Open
@@ -178,6 +182,7 @@ class TestModelNonConformity(common.TransactionCase):
             with self.assertRaises(Exception):
                 conf_obj.action_sign_actions()
         self.try_signal(conf_obj, 'button_open', 'open')
+        self.assertEqual(conf_obj._state_name()[conf_obj.id], 'In Progress')
 
         # Test Open to Done
         # pending -> analysis
@@ -202,6 +207,7 @@ class TestModelNonConformity(common.TransactionCase):
 
         conf_obj.action_sign_evaluation()
         self.try_signal(conf_obj, 'button_close', 'done')
+        self.assertEqual(conf_obj._state_name()[conf_obj.id], 'Closed')
 
         conf_obj.case_reset()
 
@@ -212,3 +218,6 @@ class TestModelNonConformity(common.TransactionCase):
         self.assertEqual(conf_obj.actions_user_id.id, False)
         self.assertEqual(conf_obj.evaluation_date, False)
         self.assertEqual(conf_obj.evaluation_user_id.id, False)
+
+        conf_obj.signal_workflow('button_cancel')
+        self.assertEqual(conf_obj._state_name()[conf_obj.id], 'Cancelled')
