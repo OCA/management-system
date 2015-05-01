@@ -147,7 +147,7 @@ class TestModelNonConformity(common.TransactionCase):
         conf_obj.action_sign_analysis()
         with self.cr.savepoint():
             with self.assertRaises(Exception):
-                conf_obj.action_sign_evaluation()
+                conf_obj.action_sign_analysis()
 
         self.try_signal(conf_obj, 'button_review_n', 'pending')
         self.assertEqual(conf_obj._state_name()[conf_obj.id],
