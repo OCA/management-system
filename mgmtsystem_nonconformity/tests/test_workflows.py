@@ -202,3 +202,13 @@ class TestModelNonConformity(common.TransactionCase):
 
         conf_obj.action_sign_evaluation()
         self.try_signal(conf_obj, 'button_close', 'done')
+
+        conf_obj.case_reset()
+
+        self.assertEqual(conf_obj.state, 'draft')
+        self.assertEqual(conf_obj.analysis_date, False)
+        self.assertEqual(conf_obj.analysis_user_id.id, False)
+        self.assertEqual(conf_obj.actions_date, False)
+        self.assertEqual(conf_obj.actions_user_id.id, False)
+        self.assertEqual(conf_obj.evaluation_date, False)
+        self.assertEqual(conf_obj.evaluation_user_id.id, False)
