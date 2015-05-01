@@ -5,4 +5,8 @@ import mgmtsystem_action
 =======
 
 from . import mgmtsystem_action
+<<<<<<< 2c0f94ae423926902139b96d41a1f267eda3452d
 >>>>>>> Ported mgmtsystem_action
+=======
+from . import mgmtsystem_action_stage
+>>>>>>> Added stages to mgmtststem_action
