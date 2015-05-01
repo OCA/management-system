@@ -320,13 +320,11 @@ class mgmtsystem_nonconformity(models.Model):
                 _('Action plan must be approved before opening.')
             )
         self.case_open_send_note(cr, uid, ids, context=context)
-        # Open related Actions
-        # TODO static variables... hmm update state isn't going to work
-        if (o.immediate_action_id
-                and o.immediate_action_id.stage_id.name.lower() == 'draft'):
+
+        if o.immediate_action_id and o.immediate_action_id.stage_id.is_starting:
             o.immediate_action_id.case_open()
         for a in o.action_ids:
-            if a.stage_id.name.lower() == 'draft':
+            if a.stage_id.is_starting:
                 a.case_open()
         return self.write(cr, uid, ids, {
             'state': 'open',
@@ -362,14 +360,12 @@ class mgmtsystem_nonconformity(models.Model):
         done_stages = ['settled', 'rejected']
 
         if (o.immediate_action_id
-                and o.immediate_action_id.stage_id.name.lower()
-                not in done_stages):
+                and not o.immediate_action_id.stage_id.is_ending):
             raise except_orm(
                 _('Error !'),
                 _('Immediate action from analysis has not been closed.')
             )
-        if ([i for i in o.action_ids
-                if i.stage_id.name.lower() not in done_stages]):
+        if [i for i in o.action_ids if not i.stage_id.is_ending]:
             raise except_orm(
                 _('Error !'),
                 _('Not all actions have been closed.')
