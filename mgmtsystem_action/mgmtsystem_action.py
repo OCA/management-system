@@ -103,7 +103,9 @@ class mgmtsystem_action(models.Model):
 
     @api.model
     def get_default_stage(self):
-        return self.env['mgmtsystem.action.stage'].search([['is_starting', '=', True]]).id
+        return self.env['mgmtsystem.action.stage'].search([
+            ['is_starting', '=', True]
+        ]).id
 
     @api.model
     def create(self, vals):
