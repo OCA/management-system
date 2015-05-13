@@ -892,6 +892,7 @@ class mgmtsystem_nonconformity(models.Model):
             'evaluation_date': None, 'evaluation_user_id': None,
         }
         return self.write(cr, uid, ids, vals, context=context)
+<<<<<<< 2394dcc563549fe896d383a41c8d1e4640172f11
 
     def case_cancel_send_note(self, cr, uid, ids, context=None):
         for id in ids:
@@ -949,3 +950,5 @@ class mgmtsystem_action(orm.Model):
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 >>>>>>> Added missing methodcase_close_send_note for workflows
+=======
+>>>>>>> Remove unused functions
