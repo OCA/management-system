@@ -53,7 +53,7 @@ class TestModelNonConformity(common.TransactionCase):
         database.
         """
         class BreakSavePoint(Exception):
-             pass
+            pass
         try:
             sid = self.cr.savepoint()
             with sid:
