@@ -18,17 +18,18 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields, api
-from openerp.osv import osv
+
+from openerp import models, fields, api, exceptions, _
 
 
-class mgmtsystem_nonconformity_cause(models.Model):
+class MgmtsystemNonconformityCause(models.Model):
 
     """Cause of the nonconformity of the management system."""
 
     _name = "mgmtsystem.nonconformity.cause"
     _description = "Cause of the nonconformity of the management system"
     _order = 'parent_id, sequence'
+    _parent_store = True
 
     name = fields.Char('Cause', required=True, translate=True)
     description = fields.Text('Description')
@@ -36,11 +37,8 @@ class mgmtsystem_nonconformity_cause(models.Model):
         'Sequence',
         help="Defines the order to present items",
     )
-
-    _parent_store = True
     parent_left = fields.Integer('Parent Left', index=True)
     parent_right = fields.Integer('Parent Right', index=True)
-
     parent_id = fields.Many2one(
         'mgmtsystem.nonconformity.cause',
         'Group',
@@ -63,10 +61,9 @@ class mgmtsystem_nonconformity_cause(models.Model):
             res.append((obj.id, name))
         return res
 
-    _constraints = [
-        (
-            osv.osv._check_recursion,
-            "Error! Cannot create recursive cycle.",
-            ['parent_id']
-        )
-    ]
+    @api.constrains("parent_id")
+    def _check_recursion(self):
+        if not super(MgmtsystemNonconformityCause, self)._check_recursion():
+            raise exceptions.ValidationError(
+                _("Error! Cannot create recursive cycle.")
+            )
