@@ -70,6 +70,7 @@
 >>>>>>> Ported mgmtsystem
         <field name="category_id" ref="module_category_management_system"/>
         <field name="implied_ids" eval="(4,ref('mgmtsystem.group_mgmtsystem_user'))"/>
+        <field name="users" eval="[(6,0,[ref('base.user_root')])]"/>
     </record>
 
 <<<<<<< c9a3eba175d74c79a93a10ed28643b85214dc452
