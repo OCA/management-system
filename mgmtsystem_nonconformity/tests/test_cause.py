@@ -22,6 +22,7 @@
 from contextlib import contextmanager
 from psycopg2 import IntegrityError
 from openerp.tests import common
+from openerp import exceptions
 
 
 class TestModelCause(common.TransactionCase):
@@ -77,3 +78,14 @@ class TestModelCause(common.TransactionCase):
 
         self.assertEqual(name_assoc[0][1], "TestCause / test2 / test3")
         self.assertEqual(name_assoc[0][0], record3.id)
+
+    def test_recursion(self):
+        parent = self.env['mgmtsystem.nonconformity.cause'].create({
+            "name": "ParentCause",
+        })
+        child = self.env['mgmtsystem.nonconformity.cause'].create({
+            "name": "ChildCause",
+            "parent_id": parent.id,
+        })
+        with self.assertRaisesRollback(exceptions.ValidationError):
+            parent.write({"parent_id": child.id})
