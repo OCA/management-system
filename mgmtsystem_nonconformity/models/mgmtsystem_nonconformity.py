@@ -215,6 +215,16 @@ class mgmtsystem_nonconformity(models.Model):
     _rec_name = "description"
     _inherit = ['mail.thread']
     _order = "date desc"
+    _track = {
+       'field': {
+           'mgmtsystem_nonconformity.subtype_analysis': (
+               lambda s, c, u, o, ctx=None: o["state"] == "analysis"
+           ),
+           'mgmtsystem_nonconformity.subtype_pending': (
+               lambda s, c, u, o, ctx=None: o["state"] == "pending"
+           ),
+       },
+    }
 
     def _state_name(self):
         res = dict()
@@ -426,7 +436,13 @@ class mgmtsystem_nonconformity(models.Model):
         'Procedure',
     )
     description = fields.Text('Description', required=True)
-    state = fields.Selection(_STATES, 'State', readonly=True, default="draft")
+    state = fields.Selection(
+        _STATES,
+        'State',
+        readonly=True,
+        default="draft",
+        track_visibility='onchange',
+    )
     state_name = fields.Char(
         compute='_state_name',
         string='State Description',
@@ -451,11 +467,16 @@ class mgmtsystem_nonconformity(models.Model):
         'Immediate action',
         domain="[('nonconformity_id', '=', id)]",
     )
-    analysis_date = fields.Datetime('Analysis Date', readonly=True)
+    analysis_date = fields.Datetime(
+        'Analysis Date',
+        readonly=True,
+        track_visibility='onchange',
+    )
     analysis_user_id = fields.Many2one(
         'res.users',
         'Analysis by',
         readonly=True,
+        track_visibility='onchange',
     )
 
     # 3. Action Plan
@@ -554,6 +575,7 @@ class mgmtsystem_nonconformity(models.Model):
         )
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
 
+<<<<<<< 2024a34797b9dc184b846f5ee3e9771d37c76175
     def case_send_note(self, cr, uid, ids, text, data=None, context=None):
         for id in ids:
             pre = self.case_get_note_msg_prefix(cr, uid, id, context=context)
@@ -579,12 +601,15 @@ class mgmtsystem_nonconformity(models.Model):
     def case_get_note_msg_prefix(self, cr, uid, id, context=None):
         return _('Nonconformity')
 
+=======
+>>>>>>> Use track and mail message subtypes instead of overriding functions
     def wkf_analysis(self, cr, uid, ids, context=None):
         """Change state from draft to analysis"""
         data = {
             'state': 'analysis',
             'analysis_date': None,
             'analysis_user_id': None}
+<<<<<<< 2024a34797b9dc184b846f5ee3e9771d37c76175
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         self.case_send_note(cr, uid, ids, _('Analysis'), data=data, context=context)
 =======
@@ -592,6 +617,8 @@ class mgmtsystem_nonconformity(models.Model):
             cr, uid, ids, _('Analysis'), data=data, context=context
         )
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
+=======
+>>>>>>> Use track and mail message subtypes instead of overriding functions
         return self.write(cr, uid, ids, data, context=context)
 
     def action_sign_analysis(self, cr, uid, ids, context=None):
@@ -630,20 +657,24 @@ class mgmtsystem_nonconformity(models.Model):
         }
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
         self.write(cr, uid, ids, vals, context=context)
-        note = _('Analysis Approved')
-        self.case_send_note(cr, uid, ids, note, context=context)
+        msg = '%s <b>%s</b>' % (self._description, _('Analysis Approved'))
+        self.message_post(cr, uid, ids, body=msg, context=context)
         return True
 
     def wkf_review(self, cr, uid, ids, context=None):
         """Change state from analysis to pending approval"""
-        o = self.browse(cr, uid, ids, context=context)[0]
-        if not o.analysis_date:
-            err = _('Analysis must be performed before submiting to approval.')
-            raise except_orm(_('Error !'), err)
+        for o in self.browse(cr, uid, ids, context=context):
+            if not o.analysis_date:
+                raise except_orm(
+                    _('Error!'),
+                    _('Analysis must be performed before submiting to '
+                      'approval.')
+                )
         vals = {
             'state': 'pending',
             'actions_date': None,
             'actions_user_id': None}
+<<<<<<< 2024a34797b9dc184b846f5ee3e9771d37c76175
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         self.case_send_note(cr, uid, ids, _('Pending Approval'), data=vals, context=context)
 =======
@@ -651,6 +682,8 @@ class mgmtsystem_nonconformity(models.Model):
             cr, uid, ids, _('Pending Approval'), data=vals, context=context
         )
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
+=======
+>>>>>>> Use track and mail message subtypes instead of overriding functions
         return self.write(cr, uid, ids, vals, context=context)
 
     def action_sign_actions(self, cr, uid, ids, context=None):
@@ -690,8 +723,8 @@ class mgmtsystem_nonconformity(models.Model):
         }
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
         self.write(cr, uid, ids, vals, context=context)
-        note = _('Action Plan Approved')
-        self.case_send_note(cr, uid, ids, note, context=context)
+        msg = '%s <b>%s</b>' % (self._description, _('Action Plan Approved'))
+        self.message_post(cr, uid, ids, body=msg, context=context)
         return True
 
     def wkf_open(self, cr, uid, ids, context=None):
@@ -776,8 +809,10 @@ class mgmtsystem_nonconformity(models.Model):
         }
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
         self.write(cr, uid, ids, vals, context=context)
-        note = _('Effectiveness Evaluation Approved')
-        self.case_send_note(cr, uid, ids, note, context=context)
+        msg = '%s <b>%s</b>' % (
+            self._description, _('Effectiveness Evaluation Approved')
+        )
+        self.message_post(cr, uid, ids, body=msg, context=context)
         return True
 
     def wkf_cancel(self, cr, uid, ids, context=None):
@@ -860,25 +895,19 @@ class mgmtsystem_nonconformity(models.Model):
 
     def case_cancel_send_note(self, cr, uid, ids, context=None):
         for id in ids:
-            msg = _('%s has been <b>canceled</b>.') % (
-                self.case_get_note_msg_prefix(cr, uid, id, context=context)
-            )
+            msg = _('%s has been <b>canceled</b>.') % self._description
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 
     def case_reset_send_note(self, cr, uid, ids, context=None):
         for id in ids:
-            msg = _('%s has been <b>renewed</b>.') % (
-                self.case_get_note_msg_prefix(cr, uid, id, context=context)
-            )
+            msg = _('%s has been <b>renewed</b>.') % self._description
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 
     def case_open_send_note(self, cr, uid, ids, context=None):
         for id in ids:
-            msg = _('%s has been <b>opened</b>.') % (
-                self.case_get_note_msg_prefix(cr, uid, id, context=context)
-            )
+            msg = _('%s has been <b>opened</b>.') % self._description
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 <<<<<<< bbf6fed93779d713aeaa0215af3019389b5a738b
@@ -916,9 +945,7 @@ class mgmtsystem_action(orm.Model):
 
     def case_close_send_note(self, cr, uid, ids, context=None):
         for id in ids:
-            msg = _('%s has been <b>closed</b>.') % (
-                self.case_get_note_msg_prefix(cr, uid, id, context=context)
-            )
+            msg = _('%s has been <b>closed</b>.') % self._description
             self.message_post(cr, uid, [id], body=msg, context=context)
         return True
 >>>>>>> Added missing methodcase_close_send_note for workflows
