@@ -470,7 +470,7 @@ class MgmtsystemNonconformity(models.Model):
     immediate_action_id = fields.Many2one(
         'mgmtsystem.action',
         'Immediate action',
-        domain="[('nonconformity_id', '=', id)]",
+        domain="[('nonconformity_ids', '=', id)]",
     )
     analysis_date = fields.Datetime(
         'Analysis Date',
