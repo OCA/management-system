@@ -18,17 +18,28 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.tests import common
+
+from contextlib import contextmanager
 from psycopg2 import IntegrityError
+from openerp.tests import common
+from openerp import exceptions
 
 
 class TestModelCause(common.TransactionCase):
+
+    @contextmanager
+    def assertRaisesRollback(self, *args, **kwargs):
+        """Do a regular assertRaises but perform rollback at the end
+        """
+        with self.assertRaises(*args, **kwargs) as ar:
+            yield ar
+        self.cr.rollback()
+
     def test_create_cause(self):
-        with self.assertRaises(IntegrityError):
+        with self.assertRaisesRollback(IntegrityError):
             # Will generate an error in the logs but we handle it
             self.env['mgmtsystem.nonconformity.cause'].create({})
             # Should not be possible to create without name
-        self.cr.rollback()
 
         record = self.env['mgmtsystem.nonconformity.cause'].create({
             "name": "TestCause",
@@ -67,3 +78,14 @@ class TestModelCause(common.TransactionCase):
 
         self.assertEqual(name_assoc[0][1], "TestCause / test2 / test3")
         self.assertEqual(name_assoc[0][0], record3.id)
+
+    def test_recursion(self):
+        parent = self.env['mgmtsystem.nonconformity.cause'].create({
+            "name": "ParentCause",
+        })
+        child = self.env['mgmtsystem.nonconformity.cause'].create({
+            "name": "ChildCause",
+            "parent_id": parent.id,
+        })
+        with self.assertRaisesRollback(exceptions.ValidationError):
+            parent.write({"parent_id": child.id})

@@ -18,10 +18,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+
 from openerp import models, fields
 
 
-class mgmtsystem_nonconformity_severity(models.Model):
+class MgmtsystemNonconformitySeverity(models.Model):
 
     """Nonconformity Severity - Critical, Major, Minor, Invalid, ..."""
 
