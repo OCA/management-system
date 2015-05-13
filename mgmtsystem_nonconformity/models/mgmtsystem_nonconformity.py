@@ -933,8 +933,8 @@ class MgmtsystemNonconformity(models.Model):
 =======
         self.ensure_one()
 
-        if (self.immediate_action_id
-                and not self.immediate_action_id.stage_id.is_ending):
+        if (self.immediate_action_id and
+                not self.immediate_action_id.stage_id.is_ending):
             raise exceptions.ValidationError(
 >>>>>>> Cleanup and full use of v8 and track features
                 _('Immediate action from analysis has not been closed.')
