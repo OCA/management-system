@@ -18,10 +18,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.tools.translate import _
-from openerp import netsvc
-from openerp.exceptions import except_orm
-from openerp import models, api, fields
+
+from openerp import models, api, fields, netsvc, exceptions, _
 
 from openerp.tools import (
     DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
@@ -42,7 +40,7 @@ _STATES = [
 _STATES_DICT = dict(_STATES)
 
 
-class mgmtsystem_nonconformity(models.Model):
+class MgmtsystemNonconformity(models.Model):
 
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity"
@@ -50,14 +48,14 @@ class mgmtsystem_nonconformity(models.Model):
     _inherit = ['mail.thread']
     _order = "date desc"
     _track = {
-       'field': {
-           'mgmtsystem_nonconformity.subtype_analysis': (
-               lambda s, c, u, o, ctx=None: o["state"] == "analysis"
-           ),
-           'mgmtsystem_nonconformity.subtype_pending': (
-               lambda s, c, u, o, ctx=None: o["state"] == "pending"
-           ),
-       },
+        'field': {
+            'mgmtsystem_nonconformity.subtype_analysis': (
+                lambda s, c, u, o, ctx=None: o["state"] == "analysis"
+            ),
+            'mgmtsystem_nonconformity.subtype_pending': (
+                lambda s, c, u, o, ctx=None: o["state"] == "pending"
+            ),
+        },
     }
 
     def _state_name(self):
@@ -206,189 +204,183 @@ class mgmtsystem_nonconformity(models.Model):
         domain="[('nonconformity_id', '=', id)]",
     )
 
+    @property
+    @api.multi
+    def verbose_name(self):
+        return self.env['ir.model'].search([('model', '=', self._name)]).name
+
     @api.model
     def create(self, vals):
         vals.update({
             'ref': self.env['ir.sequence'].get('mgmtsystem.nonconformity')
         })
-        return super(mgmtsystem_nonconformity, self).create(vals)
+        return super(MgmtsystemNonconformity, self).create(vals)
 
-    def message_auto_subscribe(
-            self, cr, uid, ids, updated_fields, context=None, values=None):
-        """Add the reponsible, manager and OpenChatter follow list."""
-        o = self.browse(cr, uid, ids, context=context)[0]
+    @api.multi
+    def message_auto_subscribe(self, updated_fields, values=None):
+        """Add the responsible, manager and OpenChatter follow list."""
+        self.ensure_one()
         user_ids = [
-            o.responsible_user_id.id,
-            o.manager_user_id.id,
-            o.author_user_id.id,
+            self.responsible_user_id.id,
+            self.manager_user_id.id,
+            self.author_user_id.id,
         ]
-        self.message_subscribe_users(
-            cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context
-        )
-        return super(mgmtsystem_nonconformity, self).message_auto_subscribe(
-            cr, uid, ids, updated_fields=updated_fields, context=context,
+        self.message_subscribe_users(user_ids=user_ids, subtype_ids=None)
+        return super(MgmtsystemNonconformity, self).message_auto_subscribe(
+            updated_fields=updated_fields,
             values=values
         )
 
-    def wkf_analysis(self, cr, uid, ids, context=None):
+    @api.multi
+    def wkf_analysis(self):
         """Change state from draft to analysis"""
-        data = {
+        return self.write({
             'state': 'analysis',
             'analysis_date': None,
             'analysis_user_id': None}
-        return self.write(cr, uid, ids, data, context=context)
+        )
 
-    def action_sign_analysis(self, cr, uid, ids, context=None):
+    @api.multi
+    def action_sign_analysis(self):
         """Sign-off the analysis"""
-        o = self.browse(cr, uid, ids, context=context)[0]
-        if o.state != 'analysis':
-            raise except_orm(
-                _('Error !'),
+        self.ensure_one()
+        if self.state != 'analysis':
+            raise exceptions.ValidationError(
                 _('This action can only be done in the Analysis state.')
             )
-        if o.analysis_date:
-            raise except_orm(
-                _('Error !'),
+        if self.analysis_date:
+            raise exceptions.ValidationError(
                 _('Analysis is already approved.')
             )
-        if not o.analysis:
-            raise except_orm(
-                _('Error !'),
+        if not self.analysis:
+            raise exceptions.ValidationError(
                 _('Please provide an analysis before approving.')
             )
-        vals = {
+        self.write({
             'analysis_date': time.strftime(DATETIME_FORMAT),
-            'analysis_user_id': uid,
-        }
-        self.write(cr, uid, ids, vals, context=context)
-        msg = '%s <b>%s</b>' % (self._description, _('Analysis Approved'))
-        self.message_post(cr, uid, ids, body=msg, context=context)
+            'analysis_user_id': self._uid,
+        })
+        self.message_post(
+            body='%s <b>%s</b>' % (self.verbose_name, _('Analysis Approved'))
+        )
         return True
 
-    def wkf_review(self, cr, uid, ids, context=None):
+    @api.multi
+    def wkf_review(self):
         """Change state from analysis to pending approval"""
-        for o in self.browse(cr, uid, ids, context=context):
+        for o in self:
             if not o.analysis_date:
-                raise except_orm(
-                    _('Error!'),
-                    _('Analysis must be performed before submiting to '
+                raise exceptions.ValidationError(
+                    _('Analysis must be performed before submitting to '
                       'approval.')
                 )
-        vals = {
+        return self.write({
             'state': 'pending',
             'actions_date': None,
             'actions_user_id': None}
-        return self.write(cr, uid, ids, vals, context=context)
+        )
 
-    def action_sign_actions(self, cr, uid, ids, context=None):
+    @api.multi
+    def action_sign_actions(self):
         """Sign-off the action plan"""
-        o = self.browse(cr, uid, ids, context=context)[0]
-        if o.state != 'pending':
-            raise except_orm(
-                _('Error !'),
+        self.ensure_one()
+        if self.state != 'pending':
+            raise exceptions.ValidationError(
                 _('This action can only be done in the Pending for Approval '
                   'state.')
             )
-        if o.actions_date:
-            raise except_orm(
-                _('Error !'),
+        if self.actions_date:
+            raise exceptions.ValidationError(
                 _('Action plan is already approved.')
             )
-        if not self.browse(cr, uid, ids, context=context)[0].analysis_date:
-            raise except_orm(
-                _('Error !'),
+        if not self.analysis_date:
+            raise exceptions.ValidationError(
                 _('Analysis approved before the review confirmation.')
             )
-        vals = {
+        self.write({
             'actions_date': time.strftime(DATETIME_FORMAT),
-            'actions_user_id': uid,
-        }
-        self.write(cr, uid, ids, vals, context=context)
-        msg = '%s <b>%s</b>' % (self._description, _('Action Plan Approved'))
-        self.message_post(cr, uid, ids, body=msg, context=context)
+            'actions_user_id': self._uid,
+        })
+        self.message_post(
+            body='%s <b>%s</b>' % (
+                self.verbose_name, _('Action Plan Approved')
+            )
+        )
         return True
 
-    def wkf_open(self, cr, uid, ids, context=None):
+    @api.multi
+    def wkf_open(self):
         """Change state from pending approval to in progress, and Open
         the related actions
         """
-        o = self.browse(cr, uid, ids, context=context)[0]
-        if not o.actions_date:
-            raise except_orm(
-                _('Error !'),
+        self.ensure_one()
+        if not self.actions_date:
+            raise exceptions.ValidationError(
                 _('Action plan must be approved before opening.')
             )
-        self.case_open_send_note(cr, uid, ids, context=context)
-
-        if (o.immediate_action_id and
-                o.immediate_action_id.stage_id.is_starting):
-            o.immediate_action_id.case_open()
-        for a in o.action_ids:
-            if a.stage_id.is_starting:
-                a.case_open()
-        return self.write(cr, uid, ids, {
+        if (self.immediate_action_id and
+                self.immediate_action_id.stage_id.is_starting):
+            self.immediate_action_id.case_open()
+        for action in self.action_ids:
+            if action.stage_id.is_starting:
+                action.case_open()
+        return self.write({
             'state': 'open',
-            'evaluation_date': None,
-            'evaluation_user_id': None,
-        }, context=context)
+            'evaluation_date': False,
+            'evaluation_user_id': False,
+        })
 
-    def action_sign_evaluation(self, cr, uid, ids, context=None):
+    @api.one
+    def action_sign_evaluation(self):
         """Sign-off the effectiveness evaluation"""
-        o = self.browse(cr, uid, ids, context=context)[0]
-        if o.state != 'open':
-            raise except_orm(
-                _('Error !'),
+        if self.state != 'open':
+            raise exceptions.ValidationError(
                 _('This action can only be done in the In Progress state.')
             )
-        vals = {
+        self.write({
             'evaluation_date': time.strftime(DATETIME_FORMAT),
-            'evaluation_user_id': uid,
-        }
-        self.write(cr, uid, ids, vals, context=context)
-        msg = '%s <b>%s</b>' % (
-            self._description, _('Effectiveness Evaluation Approved')
+            'evaluation_user_id': self._uid,
+        })
+        self.message_post(
+            body='%s <b>%s</b>' % (
+                self.verbose_name, _('Effectiveness Evaluation Approved')
+            )
         )
-        self.message_post(cr, uid, ids, body=msg, context=context)
-        return True
 
-    def wkf_cancel(self, cr, uid, ids, context=None):
+    @api.multi
+    def wkf_cancel(self):
         """Change state to cancel"""
-        self.case_cancel_send_note(cr, uid, ids, context=context)
-        return self.write(cr, uid, ids, {'state': 'cancel'}, context=context)
+        return self.write({'state': 'cancel'})
 
-    def wkf_close(self, cr, uid, ids, context=None):
+    @api.multi
+    def wkf_close(self):
         """Change state from in progress to closed"""
-        o = self.browse(cr, uid, ids, context=context)[0]
+        self.ensure_one()
 
-        if (o.immediate_action_id
-                and not o.immediate_action_id.stage_id.is_ending):
-            raise except_orm(
-                _('Error !'),
+        if (self.immediate_action_id
+                and not self.immediate_action_id.stage_id.is_ending):
+            raise exceptions.ValidationError(
                 _('Immediate action from analysis has not been closed.')
             )
-        if [i for i in o.action_ids if not i.stage_id.is_ending]:
-            raise except_orm(
-                _('Error !'),
+        if any(i for i in self.action_ids if not i.stage_id.is_ending):
+            raise exceptions.ValidationError(
                 _('Not all actions have been closed.')
             )
-        if not o.evaluation_date:
-            raise except_orm(
-                _('Error !'),
+        if not self.evaluation_date:
+            raise exceptions.ValidationError(
                 _('Effectiveness evaluation must be performed before closing.')
             )
-        self.case_close_send_note(cr, uid, ids, context=context)
-        return self.write(cr, uid, ids, {'state': 'done'}, context=context)
+        return self.write({'state': 'done'})
 
-    def case_reset(self, cr, uid, ids, context=None, *args):
-        """Reset to Draft and restart the workflows"""
+    @api.multi
+    def case_reset(self):
+        """Reset to Draft and restart the workflow"""
         wf_service = netsvc.LocalService("workflow")
-        for id in ids:
-            wf_service.trg_create(uid, self._name, id, cr)
-        self.case_reset_send_note(cr, uid, ids, context=context)
-        vals = {
+        for nc in self:
+            wf_service.trg_create(self._uid, self._name, nc.id, self._cr)
+        return self.write({
             'state': 'draft',
             'analysis_date': None, 'analysis_user_id': None,
             'actions_date': None, 'actions_user_id': None,
             'evaluation_date': None, 'evaluation_user_id': None,
-        }
-        return self.write(cr, uid, ids, vals, context=context)
+        })
