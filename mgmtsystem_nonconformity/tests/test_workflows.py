@@ -22,10 +22,6 @@
 from openerp.tests import common
 
 
-class BreakSavePoint(Exception):
-    pass
-
-
 class TestModelNonConformity(common.TransactionCase):
     def setUp(self):
         super(TestModelNonConformity, self).setUp()
@@ -56,6 +52,8 @@ class TestModelNonConformity(common.TransactionCase):
         And refresh the model to get back the changes from the
         database.
         """
+        class BreakSavePoint(Exception):
+             pass
         try:
             sid = self.cr.savepoint()
             with sid:
@@ -110,7 +108,6 @@ class TestModelNonConformity(common.TransactionCase):
         # open -> done
         self.try_invalid_signal(conf_obj, 'button_close', 'done')
         # draft-> analysis
-        # self.try_invalid_signal(conf_obj, 'button_analysis_n', 'analysis')
         self.try_signal(conf_obj, 'button_analysis_n', 'analysis')
         self.assertEqual(conf_obj._state_name()[conf_obj.id], 'Analysis')
         self.try_cancel(conf_obj)
@@ -120,8 +117,6 @@ class TestModelNonConformity(common.TransactionCase):
         self.try_signal(conf_obj, 'button_analysis_p', 'analysis')
         # draft-> analysis (already on analysis)
         self.try_signal(conf_obj, 'button_analysis_n', 'analysis')
-        # analysis -> pending
-        # self.try_invalid_signal(conf_obj, 'button_review_n', 'pending')
         # open -> pending
         self.try_invalid_signal(conf_obj, 'button_review_p', 'pending')
         # pending-> open
@@ -154,16 +149,12 @@ class TestModelNonConformity(common.TransactionCase):
         self.try_cancel(conf_obj)
 
         # Test Pending to Open
-        # pending -> analysis
-        # self.try_invalid_signal(conf_obj, 'button_analysis_p', 'analysis')
         # draft-> analysis
         self.try_invalid_signal(conf_obj, 'button_analysis_n', 'analysis')
         # analysis -> pending
         self.try_signal(conf_obj, 'button_review_n', 'pending')
         # open -> pending
         self.try_signal(conf_obj, 'button_review_p', 'pending')
-        # pending-> open
-        # self.try_invalid_signal(conf_obj, 'button_open', 'open')
         # open -> done
         self.try_invalid_signal(conf_obj, 'button_close', 'done')
 
