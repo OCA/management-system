@@ -18,16 +18,16 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+
 from openerp import fields, models, api
 
 
-class mgmtsystem_nonconformity_origin(models.Model):
-
-    """Origin of nonconformity of the management system."""
+class MgmtsystemNonconformityOrigin(models.Model):
 
     _name = "mgmtsystem.nonconformity.origin"
     _description = "Origin of nonconformity of the management system"
     _order = 'parent_id, sequence'
+    _parent_store = True
 
     name = fields.Char('Origin', required=True, translate=True)
     description = fields.Text('Description')
@@ -35,11 +35,8 @@ class mgmtsystem_nonconformity_origin(models.Model):
         'Sequence',
         help="Defines the order to present items",
     )
-
-    _parent_store = True
     parent_left = fields.Integer('Parent Left', index=True)
     parent_right = fields.Integer('Parent Right', index=True)
-
     parent_id = fields.Many2one(
         'mgmtsystem.nonconformity.origin',
         'Group',
