@@ -31,7 +31,6 @@ and safety management system.
     """,
     "depends": [
         'mgmtsystem',
-        'mgmtsystem_hazard_risk',
         'hr'
     ],
     "data": [
@@ -41,15 +40,11 @@ and safety management system.
         'view/mgmtsystem_hazard_hazard.xml',
         'view/mgmtsystem_hazard_origin.xml',
         'view/mgmtsystem_hazard_type.xml',
-        'view/mgmtsystem_hazard_risk_computation.xml',
-        'view/res_company.xml',
-        'view/mgmtsystem_hazard_risk_type.xml',
         'view/mgmtsystem_hazard_probability.xml',
         'view/mgmtsystem_hazard_severity.xml',
         'view/mgmtsystem_hazard_usage.xml',
         'view/mgmtsystem_hazard_control_measure.xml',
         'view/mgmtsystem_hazard_test.xml',
-        'view/mgmtsystem_hazard_residual_risk.xml',
         'data/mgmtsystem_hazard_hazard.xml',
         'data/mgmtsystem_hazard_origin.xml',
         'data/mgmtsystem_hazard_probability.xml',

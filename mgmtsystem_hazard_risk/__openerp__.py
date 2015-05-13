@@ -31,12 +31,18 @@ and safety management system. This is a sub module of management system
 hazard.
     """,
     "depends": [
-        'mgmtsystem',
+        'mgmtsystem_hazard',
         'hr'
     ],
     "data": [
+        'security/ir.model.access.csv',
         'data/mgmtsystem_hazard_risk_computation.xml',
         'data/mgmtsystem_hazard_risk_type.xml',
+        'view/res_company.xml',
+        'view/mgmtsystem_hazard.xml',
+        'view/mgmtsystem_hazard_risk_type.xml',
+        'view/mgmtsystem_hazard_risk_computation.xml',
+        'view/mgmtsystem_hazard_residual_risk.xml',
     ],
     "installable": True,
 }

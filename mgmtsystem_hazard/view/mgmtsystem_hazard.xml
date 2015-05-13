@@ -15,10 +15,8 @@
         <tree string="Hazard">
           <field name="type_id"/>
           <field name="name"/>
-          <field name="risk_type_id"/>
           <field name="hazard_id"/>
           <field name="origin_id"/>
-          <field name="risk"/>
           <field name="acceptability"/>
           <field name="company_id" group="base.group_multi_company"/>
         </tree>
@@ -33,10 +31,8 @@
           <group>
             <field name="type_id"/>
             <field name="name"/>
-            <field name="risk_type_id"/>
             <field name="hazard_id"/>
             <field name="origin_id"/>
-            <field name="risk"/>
             <field name="acceptability"/>
             <field name="company_id" group="base.group_multi_company"/>
           </group>
@@ -61,10 +57,9 @@
             <field name="company_id" group="base.group_multi_company"/>
             <newline/>
             <field name="hazard_id"/>
-            <field name="risk_type_id"/>
             <field name="origin_id"/>
           </group>
-          <notebook colspan="4">
+          <notebook name="mgmtsystem_hazard" colspan="4">
             <page string="Analysis">
               <group>
                 <field name="department_id"/>
@@ -72,27 +67,11 @@
                 <field name="analysis_date"/>
               </group>
             </page>
-            <page string="Risk Evaluation">
-              <group>
-                <field name="probability_id"/>
-                <field name="severity_id"/>
-                <newline/>
-                <field name="usage_id"/>
-                <field name="risk"/>
-                <newline/>
-                <field name="acceptability"/>
-                <newline/>
-                <field name="justification"/>
-              </group>
-            </page>
             <page string="Control Measures">
               <field name="control_measure_ids" nolabel="1"/>
             </page>
             <page string="Implementation Tests">
               <field name="test_ids" nolabel="1"/>
-            </page>
-            <page string="Residual Risk Evaluations">
-              <field name="residual_risk_ids" nolabel="1"/>
             </page>
           </notebook>
         </form>

@@ -28,13 +28,13 @@ class res_company(models.Model):
 
     def _get_formula(self):
         ids = self.env['mgmtsystem.hazard.risk.computation'].search(
-            [('name', '=', 'A * B * C')]
+            [('name', '=', 'A * B * C')],
+            limit=1,
         )
-        return ids and ids[0] or False
+        return ids
 
     risk_computation_id = fields.Many2one(
         'mgmtsystem.hazard.risk.computation',
         'Risk Computation',
-        required=True,
         default=_get_formula
     )
