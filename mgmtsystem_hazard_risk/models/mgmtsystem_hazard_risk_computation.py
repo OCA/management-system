@@ -19,14 +19,13 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class mgmtsystem_hazard_risk_computation(orm.Model):
+class MgmtsystemHazardRiskComputation(models.Model):
 
     _name = "mgmtsystem.hazard.risk.computation"
     _description = "Computation Risk"
-    _columns = {
-        'name': fields.char('Computation Risk', size=50, required=True),
-        'description': fields.text('Description'),
-    }
+
+    name = fields.Char('Computation Risk', size=50, required=True)
+    description = fields.Text('Description')

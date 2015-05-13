@@ -18,19 +18,31 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv import fields, orm
+
+from openerp import models, fields
 
 
-class mgmtsystem_hazard_control_measure(orm.Model):
+class MgmtsystemHazardControlMeasure(models.Model):
 
     _name = "mgmtsystem.hazard.control_measure"
     _description = "Control Measure of hazard"
-    _columns = {
-        'name': fields.char('Control Measure', size=50, required=True,
-                            translate=True),
-        'responsible_user_id': fields.many2one('res.users', 'Responsible',
-                                               required=True),
-        'comments': fields.text('Comments'),
-        'hazard_id': fields.many2one('mgmtsystem.hazard', 'Hazard',
-                                     ondelete='cascade', select=True),
-    }
+
+    name = fields.Char(
+        'Control Measure',
+        size=50,
+        required=True,
+        translate=True,
+    )
+    responsible_user_id = fields.Many2one(
+        'res.users',
+        'Responsible',
+        required=True,
+    )
+    comments = fields.Text('Comments')
+    hazard_id = fields.Many2one(
+        'mgmtsystem.hazard',
+        'Hazard',
+        ondelete='cascade',
+        required=False,
+        select=True,
+    )

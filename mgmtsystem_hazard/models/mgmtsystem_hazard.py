@@ -19,74 +19,71 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class mgmtsystem_hazard(orm.Model):
+class MgmtsystemHazard(models.Model):
+    """Hazards of the health and safety management system"""""
 
     _name = "mgmtsystem.hazard"
-    _description = "Hazards of the health and safety management system"
+    _description = __doc__
 
-    _columns = {
-        'name': fields.char('Name', size=50, required=True, translate=True),
-        'type_id': fields.many2one(
-            'mgmtsystem.hazard.type',
-            'Type',
-            required=True,
-        ),
-        'hazard_id': fields.many2one(
-            'mgmtsystem.hazard.hazard',
-            'Hazard',
-            required=True,
-        ),
-        'origin_id': fields.many2one(
-            'mgmtsystem.hazard.origin',
-            'Origin',
-            required=True,
-        ),
-        'department_id': fields.many2one(
-            'hr.department',
-            'Department',
-            required=True,
-        ),
-        'responsible_user_id': fields.many2one(
-            'res.users',
-            'Responsible',
-            required=True,
-        ),
-        'analysis_date': fields.date(
-            'Date',
-            required=True,
-        ),
-        'probability_id': fields.many2one(
-            'mgmtsystem.hazard.probability',
-            'Probability',
-        ),
-        'severity_id': fields.many2one(
-            'mgmtsystem.hazard.severity',
-            'Severity',
-        ),
-        'usage_id': fields.many2one(
-            'mgmtsystem.hazard.usage',
-            'Occupation / Usage',
-        ),
-        'acceptability': fields.boolean('Acceptability'),
-        'justification': fields.text('Justification'),
-        'control_measure_ids': fields.one2many(
-            'mgmtsystem.hazard.control_measure',
-            'hazard_id',
-            'Control Measures',
-        ),
-        'test_ids': fields.one2many(
-            'mgmtsystem.hazard.test',
-            'hazard_id',
-            'Implementation Tests',
-        ),
-        'company_id': fields.many2one('res.company', 'Company')
-    }
-
-    _defaults = {
-        'company_id': (
-            lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
-    }
+    name = fields.Char('Name', size=50, required=True, translate=True)
+    type_id = fields.Many2one(
+        'mgmtsystem.hazard.type',
+        'Type',
+        required=True,
+    )
+    hazard_id = fields.Many2one(
+        'mgmtsystem.hazard.hazard',
+        'Hazard',
+        required=True,
+    )
+    origin_id = fields.Many2one(
+        'mgmtsystem.hazard.origin',
+        'Origin',
+        required=True,
+    )
+    department_id = fields.Many2one(
+        'hr.department',
+        'Department',
+        required=True,
+    )
+    responsible_user_id = fields.Many2one(
+        'res.users',
+        'Responsible',
+        required=True,
+    )
+    analysis_date = fields.Date(
+        'Date',
+        required=True,
+    )
+    probability_id = fields.Many2one(
+        'mgmtsystem.hazard.probability',
+        'Probability',
+    )
+    severity_id = fields.Many2one(
+        'mgmtsystem.hazard.severity',
+        'Severity',
+    )
+    usage_id = fields.Many2one(
+        'mgmtsystem.hazard.usage',
+        'Occupation / Usage',
+    )
+    acceptability = fields.Boolean('Acceptability')
+    justification = fields.Text('Justification')
+    control_measure_ids = fields.One2many(
+        'mgmtsystem.hazard.control_measure',
+        'hazard_id',
+        'Control Measures',
+    )
+    test_ids = fields.One2many(
+        'mgmtsystem.hazard.test',
+        'hazard_id',
+        'Implementation Tests',
+    )
+    company_id = fields.Many2one(
+        'res.company',
+        'Company',
+        default=lambda s: s.env['res.users'].browse(s._uid).company_id,
+    )

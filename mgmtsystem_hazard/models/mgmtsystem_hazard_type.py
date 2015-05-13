@@ -19,14 +19,13 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class mgmtsystem_hazard_type(orm.Model):
+class MgmtsystemHazardType(models.Model):
 
     _name = "mgmtsystem.hazard.type"
-    _description = "Type of hazard"
-    _columns = {
-        'name': fields.char('Type', size=50, required=True, translate=True),
-        'description': fields.text('Description'),
-    }
+    _description = "Type of Hazard"
+
+    name = fields.Char('Type', size=50, required=True, translate=True)
+    description = fields.Text('Description')

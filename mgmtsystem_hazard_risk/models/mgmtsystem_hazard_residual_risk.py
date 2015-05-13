@@ -19,57 +19,47 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields, api
 from .common import _parse_risk_formula
 
 
-class mgmtsystem_hazard_residual_risk(orm.Model):
+class MgmtsystemHazardResidualRisk(models.Model):
 
     _name = "mgmtsystem.hazard.residual_risk"
     _description = "Residual Risks of hazard"
 
-    def _compute_risk(self, cr, uid, ids, field_name, arg, context=None):
-        result = {}
+    name = fields.Char('Name', size=50, required=True, translate=True)
+    probability_id = fields.Many2one(
+        'mgmtsystem.hazard.probability',
+        'Probability',
+        required=True,
+    )
+    severity_id = fields.Many2one(
+        'mgmtsystem.hazard.severity',
+        'Severity',
+        required=True,
+    )
+    usage_id = fields.Many2one('mgmtsystem.hazard.usage', 'Occupation / Usage')
+    acceptability = fields.Boolean('Acceptability')
+    justification = fields.Text('Justification')
+    hazard_id = fields.Many2one(
+        'mgmtsystem.hazard',
+        'Hazard',
+        ondelete='cascade',
+        select=True,
+    )
 
-        user = self.pool['res.users'].browse(cr, uid, uid, context=context)
-        mycompany = user.company_id
+    @api.depends("probability_id", "severity_id", "usage_id")
+    def _compute_risk(self):
+        mycompany = self.env['res.users'].browse(self._uid).company_id
+        if self.probability_id and self.severity_id and self.usage_id:
+            self.risk = _parse_risk_formula(
+                mycompany.risk_computation_id.name,
+                self.probability_id.value,
+                self.severity_id.value,
+                self.usage_id.value
+            )
+        else:
+            self.risk = False
 
-        for obj in self.browse(cr, uid, ids, context=context):
-            if obj.probability_id and obj.severity_id and obj.usage_id:
-                result[obj.id] = _parse_risk_formula(
-                    mycompany.risk_computation_id.name,
-                    obj.probability_id.value,
-                    obj.severity_id.value,
-                    obj.usage_id.value,
-                )
-            else:
-                result[obj.id] = False
-
-        return result
-
-    _columns = {
-        'name': fields.char('Name', size=50, required=True, translate=True),
-        'probability_id': fields.many2one(
-            'mgmtsystem.hazard.probability',
-            'Probability',
-            required=True,
-        ),
-        'severity_id': fields.many2one(
-            'mgmtsystem.hazard.severity',
-            'Severity',
-            required=True,
-        ),
-        'usage_id': fields.many2one(
-            'mgmtsystem.hazard.usage',
-            'Occupation / Usage',
-        ),
-        'risk': fields.function(_compute_risk, string='Risk', type='integer'),
-        'acceptability': fields.boolean('Acceptability'),
-        'justification': fields.text('Justification'),
-        'hazard_id': fields.many2one(
-            'mgmtsystem.hazard',
-            'Hazard',
-            ondelete='cascade',
-            select=True,
-        ),
-    }
+    risk = fields.Integer('Risk', compute=_compute_risk)

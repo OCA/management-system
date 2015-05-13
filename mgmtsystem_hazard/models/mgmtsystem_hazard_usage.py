@@ -19,16 +19,18 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class mgmtsystem_hazard_usage(orm.Model):
+class MgmtsystemHazardUsage(models.Model):
 
     _name = "mgmtsystem.hazard.usage"
     _description = "Usage of hazard"
-    _columns = {
-        'name': fields.char('Occupation / Usage', size=50, required=True,
-                            translate=True),
-        'value': fields.integer('Value', required=True),
-        'description': fields.text('Description')
-    }
+    name = fields.Char(
+        'Occupation / Usage',
+        size=50,
+        required=True,
+        translate=True,
+    )
+    value = fields.Integer('Value', required=True)
+    description = fields.Text('Description')

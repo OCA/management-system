@@ -19,16 +19,14 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class mgmtsystem_hazard_probability(orm.Model):
+class MgmtsystemHazardProbability(models.Model):
 
     _name = "mgmtsystem.hazard.probability"
     _description = "Probability of hazard"
-    _columns = {
-        'name': fields.char('Probability', size=50, required=True,
-                            translate=True),
-        'value': fields.integer('Value', required=True),
-        'description': fields.text('Description')
-    }
+
+    name = fields.Char('Probability', size=50, required=True, translate=True)
+    value = fields.Integer('Value', required=True)
+    description = fields.Text('Description', required=False, translate=False)

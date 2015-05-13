@@ -22,7 +22,7 @@
 from openerp import models, fields
 
 
-class res_company(models.Model):
+class ResCompany(models.Model):
 
     _inherit = "res.company"
 

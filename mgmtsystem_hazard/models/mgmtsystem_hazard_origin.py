@@ -19,14 +19,13 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class mgmtsystem_hazard_origin(orm.Model):
+class MgmtsystemHazardOrigin(models.Model):
 
     _name = "mgmtsystem.hazard.origin"
     _description = "Origin of hazard"
-    _columns = {
-        'name': fields.char('Origin', size=50, required=True, translate=True),
-        'description': fields.text('Description')
-    }
+
+    name = fields.Char('Origin', size=50, required=True, translate=True)
+    description = fields.Text('Description')

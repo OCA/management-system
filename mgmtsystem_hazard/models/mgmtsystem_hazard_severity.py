@@ -19,16 +19,14 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class mgmtsystem_hazard_severity(orm.Model):
+class MgmtsystemHazardSeverity(models.Model):
 
     _name = "mgmtsystem.hazard.severity"
     _description = "Severity of hazard"
-    _columns = {
-        'name': fields.char('Severity', size=50, required=True,
-                            translate=True),
-        'value': fields.integer('Value', required=True),
-        'description': fields.text('Description')
-    }
+
+    name = fields.Char('Severity', size=50, required=True, translate=True)
+    value = fields.Integer('Value', required=True)
+    description = fields.Text('Description', required=False, translate=False)
