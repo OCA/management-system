@@ -18,10 +18,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+
 from openerp import models, fields
 
 
-class mgmtsystem_action(models.Model):
+class MgmtsystemAction(models.Model):
     _inherit = "mgmtsystem.action"
 
     nonconformity_immediate_id = fields.One2many(
@@ -29,7 +30,6 @@ class mgmtsystem_action(models.Model):
         'immediate_action_id',
         readonly=True,
     )
-
     nonconformity_ids = fields.Many2many(
         'mgmtsystem.nonconformity',
         'mgmtsystem_nonconformity_action_rel',
@@ -38,5 +38,3 @@ class mgmtsystem_action(models.Model):
         'Nonconformities',
         readonly=True,
     )
-
-    # TODO add case_open/case_close conditions
