@@ -89,6 +89,8 @@ Contributors
 
 * Daniel Reis <dreis.pt@hotmail.com>
 * Glen Dromgoole <gdromgoole@tier1engineering.com>
+* Loic Lacroix <loic.lacroix@savoirfairelinux.com>
+* Sandy Carter <sandy.carter@savoirfairelinux.com>
     """,
     "depends": [
         'mgmtsystem_action',
@@ -102,13 +104,17 @@ Contributors
         'views/mgmtsystem_cause.xml',
         'views/mgmtsystem_severity.xml',
         'views/mgmtsystem_action.xml',
-        'mgmtsystem_nonconformity_workflow.xml',
-        'nonconformity_sequence.xml',
-        'board_mgmtsystem_nonconformity.xml',
-        'mgmtsystem_nonconformity_data.xml',
+        'views/board.xml',
+        'data/workflow.xml',
+        'data/sequence.xml',
+        'data/mgmtsystem_nonconformity_severity.xml',
+        'data/mgmtsystem_nonconformity_origin.xml',
+        'data/mgmtsystem_nonconformity_cause.xml',
     ],
     "demo": [
-        'demo_nonconformity.xml',
+        "demo/mgmtsystem_nonconformity_origin.xml",
+        "demo/mgmtsystem_nonconformity_cause.xml",
+        "demo/mgmtsystem_nonconformity.xml",
     ],
     'installable': True,
 }
