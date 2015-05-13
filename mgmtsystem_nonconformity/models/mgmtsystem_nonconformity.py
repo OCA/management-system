@@ -210,10 +210,8 @@ _STATES_DICT = dict(_STATES)
 
 class mgmtsystem_nonconformity(models.Model):
 
-    """Management System - Nonconformity."""
-
     _name = "mgmtsystem.nonconformity"
-    _description = "Nonconformity of the management system"
+    _description = "Nonconformity"
     _rec_name = "description"
     _inherit = ['mail.thread']
     _order = "date desc"
