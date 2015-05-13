@@ -18,8 +18,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.tests import common
+
+from contextlib import contextmanager
 from psycopg2 import IntegrityError
+from openerp.tests import common
 
 model_name = "mgmtsystem.nonconformity"
 
@@ -30,13 +32,20 @@ class TestModelNonConformity(common.TransactionCase):
 
         self.partner = self.env['res.partner'].search([])[0]
 
-    def create(self, **kargs):
-        return self.env[model_name].create(kargs)
+    def create(self, **kwargs):
+        return self.env[model_name].create(kwargs)
 
-    def create_raise_exception(self, **kargs):
-        with self.assertRaises(IntegrityError):
-            self.create(**kargs)
+    @contextmanager
+    def assertRaisesRollback(self, *args, **kwargs):
+        """Do a regular assertRaises but perform rollback at the end
+        """
+        with self.assertRaises(*args, **kwargs) as ar:
+            yield ar
         self.cr.rollback()
+
+    def create_raise_exception(self, **kwargs):
+        with self.assertRaisesRollback(IntegrityError):
+            self.env[model_name].create(kwargs)
 
     def test_create_model(self):
         self.create_raise_exception(
