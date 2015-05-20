@@ -14,4 +14,4 @@ Odoo modules to manage management systems:
 
 Translation Status
 ------------------
-[![Transifex Status](https://www.transifex.com/projects/p/OCA-management-system-7-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-management-system-7-0
+[![Transifex Status](https://www.transifex.com/projects/p/OCA-management-system-7-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-management-system-7-0)
