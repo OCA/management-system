@@ -16,3 +16,7 @@ These presentation may help with an overviews of the modules:
 
 * [OpenDays 2013 presentation](http://www.slideshare.net/max3903/iso-anmanagement-systemswithopenerpena) of the Management System project
 * [Overview presentation](http://www.slideshare.net/max3903/openerp-management-system-modules) (2012) by Savoir-Faire Linux
+
+Translation Status
+------------------
+[![Transifex Status](https://www.transifex.com/projects/p/OCA-management-system-8-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-management-system-8-0
