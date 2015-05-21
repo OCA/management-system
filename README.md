@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/OCA/management-system.svg?branch=8.0)](https://travis-ci.org/OCA/management-system)
 [![Coverage Status](https://coveralls.io/repos/OCA/management-system/badge.png?branch=8.0)](https://coveralls.io/r/OCA/management-system?branch=8.0)
-[![Codacy Badge](https://www.codacy.com/project/badge/c78df5686f514ce5b8323ccdf1335955)](https://www.codacy.com/public/dreispt/management-system)
+[![Codacy Badge](https://www.codacy.com/project/badge/88b8a3c69bda435581ea4b4f7850d7c2)](https://www.codacy.com/app/OCA/management-system)
 
 # Management System
 
