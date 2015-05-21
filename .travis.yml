@@ -8,6 +8,8 @@ addons:
     packages:
       - expect-dev  # provides unbuffer utility
       - python-lxml  # because pip installation is slow
+      - python-simplejson
+      - python-serial
 
 virtualenv:
   system_site_packages: true
