@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/OCA/management-system.svg?branch=7.0)](https://travis-ci.org/OCA/management-system)
-[![Coverage Status](https://coveralls.io/repos/OCA/management-system/badge.png?branch=7.0)](https://coveralls.io/r/OCA/management-system?branch=7.0)
+[![Coverage Status](https://coveralls.io/repos/OCA/management-system/badge.svg?branch=7.0)](https://coveralls.io/r/OCA/management-system?branch=7.0)
 
 Management System
 =================
