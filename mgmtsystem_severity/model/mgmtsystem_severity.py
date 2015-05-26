@@ -48,6 +48,7 @@ class MgmtSystemSeverity(orm.Model):
 
     _columns = {
         "name": fields.char("Name", required=True),
+        "description": fields.text("Description"),
         "value": fields.integer("Value", required=True),
         "category": fields.selection(
             __category_selection,

@@ -21,7 +21,8 @@ class TestCreateSeverity(TransactionCase):
         severity_id = self.severity_model.create(self.cr, self.uid, {
             "name": "test",
             "value": 0,
-            "category": "hazard"
+            "category": "hazard",
+            "description": 'Test 1',
         })
 
         self.assertNotEqual(severity_id, 0)
@@ -35,7 +36,8 @@ class TestCreateSeverity(TransactionCase):
         severity_id = self.severity_model.create(self.cr, self.uid, {
             "name": "test2",
             "value": 10,
-            "category": "security"
+            "category": "security",
+            "description": 'Test 2',
         })
 
         self.assertNotEqual(severity_id, 0)

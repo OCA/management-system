@@ -21,7 +21,8 @@ class TestCreateProbability(TransactionCase):
         probability_id = self.probability_model.create(self.cr, self.uid, {
             "name": "test",
             "value": 0,
-            "category": "hazard"
+            "category": "hazard",
+            "description": 'Test 1',
         })
 
         self.assertNotEqual(probability_id, 0)
@@ -35,7 +36,8 @@ class TestCreateProbability(TransactionCase):
         probability_id = self.probability_model.create(self.cr, self.uid, {
             "name": "test2",
             "value": 10,
-            "category": "security"
+            "category": "security",
+            "description": 'Test 2',
         })
 
         self.assertNotEqual(probability_id, 0)
