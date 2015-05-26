@@ -3,3 +3,6 @@ languages:
   Python: true
 exclude_paths:
 - "__unported__/*"
+- "__openerp__.py"
+- "pre-migration.py"
+- "post-migration.py"
