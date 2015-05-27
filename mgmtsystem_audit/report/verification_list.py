@@ -38,11 +38,14 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
     def get_lines_by_procedure(self, verification_lines):
         p = []
         for l in verification_lines:
-            proc_nm = self.pool.get('document.page').read(
-                self.cr, self.uid, l.procedure_id.id, ['name']
-            )
+            proc_nm_name = '>> '
+            if l.procedure_id:
+                proc_nm = self.pool.get('document.page').read(
+                    self.cr, self.uid, l.procedure_id.id, ['name']
+                )
+                proc_nm_name += proc_nm['name']
             p.append({"id": l.id,
-                      "procedure": proc_nm['name'],
+                      "procedure": proc_nm_name,
                       "name": l.name,
                       "yes_no": "Yes / No"})
         p = sorted(p, key=lambda k: k["procedure"])
