@@ -18,9 +18,9 @@ Configuration
 
 To configure this module, you need to:
 
- * In the Configuration menu, define your Asset Categories and Threat Origins
- * In the Manuals menu, define your Assets (Essentials and Underlying),
- Measures, Threat Scenarios, Security Events and Work Instructions
+ * In the Configuration menu, define your Asset Categories and Threat Sources
+ * In the Manuals menu, define your Assets (Primary and Supporting ones),
+ Vectors, Feared Events, Controls and Work Instructions
 
 Usage
 =====
