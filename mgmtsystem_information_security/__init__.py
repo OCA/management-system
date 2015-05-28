@@ -2,9 +2,9 @@
 ##############################################################################
 #
 #    Odoo, Open Source Management Solution
-#    This module copyright (C) 2015 Savoir-faire Linux, Odoo Community Association (OCA)
-#    (http://www.savoirfairelinux.com).
-#
+#    This module copyright (C) 2015
+#       Savoir-faire Linux (http://www.savoirfairelinux.com)
+#       Odoo Community Association (OCA)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
