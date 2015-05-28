@@ -50,6 +50,7 @@ required to deploy and manage your Information Security Management System
     },
 
     'data': [
+        'data/system.xml',
     ],
     'demo': [
     ],
