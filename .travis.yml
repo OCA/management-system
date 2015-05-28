@@ -30,6 +30,9 @@ install:
   - git clone https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
+  - apt-get install xfonts-75dpi
+  - wget http://sourceforge.net/projects/wkhtmltopdf/files/archive/0.12.2/wkhtmltox-0.12.2_linux-precise-amd64.deb
+  - dpkg -i wkhtmltox-0.12.2_linux-precise-amd64.deb
 
 script:
   - travis_run_tests
