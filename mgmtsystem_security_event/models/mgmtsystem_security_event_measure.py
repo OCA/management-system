@@ -37,18 +37,27 @@ class EventMeasureLines(orm.Model):
     _description = "Security Events - Measure Lines"
 
     _columns = {
-        'measures': fields.many2one(
-            "mgmtsystem.security.measure", "Measures"
+        'measure_id': fields.many2one(
+            "mgmtsystem.security.measure", "Measure",
         ),
-        'underlying_assets': fields.many2one(
-            "mgmtsystem.security.assets.underlying", "Underlying Assets"
+        'underlying_asset_id': fields.many2one(
+            "mgmtsystem.security.assets.underlying", "Underlying Assets",
         ),
         'security_event_id': fields.many2one(
-            "mgmtsystem.security.event", "Security Event"
+            "mgmtsystem.security.event", "Security Event",
         ),
         "prevention": fields.boolean("Prevention"),
         "protection": fields.boolean("Protection"),
         "recovery": fields.boolean("Recovery"),
+        'system_id': fields.related(
+            'security_event_id',
+            'system_id',
+            string='Management System',
+            readonly=True,
+            type='many2one',
+            relation='mgmtsystem.system',
+            store=True,
+        ),
     }
 
     def name_get(self, cr, uid, ids, context=None):
@@ -66,8 +75,8 @@ class EventMeasureLines(orm.Model):
 
         for obj in self.browse(cr, uid, ids, context=context):
             parts = [_("Events"),
-                     obj.measures.name,
-                     obj.underlying_assets.name]
+                     obj.measure_ids.name,
+                     obj.underlying_asset_ids.name]
             res[obj.id] = " - ".join(parts)
 
         return res

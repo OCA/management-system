@@ -19,24 +19,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import test_security_measure
-from . import test_security_assets_category
-from . import test_security_assets_essential
-from . import test_security_threat_origin
-from . import test_security_event_measure
-from . import test_security_assets_underlying
-from . import test_security_event_scenario
-from . import test_security_threat_scenario
+
 from . import test_security_event
+from . import test_risk_matrix
 
 checks = [
-    test_security_measure,
-    test_security_assets_category,
-    test_security_assets_essential,
-    test_security_threat_origin,
-    test_security_event_measure,
-    test_security_assets_underlying,
-    test_security_event_scenario,
-    test_security_threat_scenario,
     test_security_event,
+    test_risk_matrix,
 ]

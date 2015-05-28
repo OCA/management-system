@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-12 10:33+0000\n"
-"PO-Revision-Date: 2015-02-12 10:33+0000\n"
+"POT-Creation-Date: 2015-05-27 19:44+0000\n"
+"PO-Revision-Date: 2015-05-27 19:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,25 +18,26 @@ msgstr ""
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_category_assets_list
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_category_assets
-#: field:mgmtsystem.security.assets.underlying,category:0
+#: field:mgmtsystem.security.assets.underlying,category_id:0
 msgid "Category"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: help:mgmtsystem.security.threat.scenario,residual_probability:0
+#: help:mgmtsystem.security.threat.scenario,residual_probability_id:0
 msgid "Probability after remediation"
 msgstr ""
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_security_event_list
+#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_event
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_security_event
 #: view:mgmtsystem.security.event:0
 msgid "Security Events"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: model:ir.ui.menu,name:mgmtsystem_security_event.menu_mgmtsystem_threats
-msgid "Threats"
+#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_event_scenario
+msgid "Security Events - Scenario Lines"
 msgstr ""
 
 #. module: mgmtsystem_security_event
@@ -45,68 +46,95 @@ msgid "Recovery"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: field:mgmtsystem.security.threat.scenario,original_probability:0
+#: field:mgmtsystem.security.event,original_probability_id:0
+#: field:mgmtsystem.security.threat.scenario,original_probability_id:0
 msgid "Original Probability"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_assets_category
-msgid "mgmtsystem.security.assets.category"
-msgstr ""
-
-#. module: mgmtsystem_security_event
-#: field:mgmtsystem.security.assets.essential,responsible:0
+#: field:mgmtsystem.security.assets.essential,responsible_id:0
 msgid "Responsible"
 msgstr ""
 
 #. module: mgmtsystem_security_event
+#: field:mgmtsystem.security.event,current_probability_id:0
+#: field:mgmtsystem.security.threat.scenario,current_probability_id:0
+msgid "Current Probability"
+msgstr ""
+
+#. module: mgmtsystem_security_event
 #: view:mgmtsystem.security.event:0
-#: field:mgmtsystem.security.event,scenarios:0
+#: field:mgmtsystem.security.event,scenario_ids:0
 msgid "Scenarios"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_event_scenario
-msgid "mgmtsystem.security.event.scenario"
+#: field:mgmtsystem.security.assets.category,name:0
+#: field:mgmtsystem.security.assets.essential,name:0
+#: field:mgmtsystem.security.assets.underlying,name:0
+#: field:mgmtsystem.security.measure,name:0
+#: field:mgmtsystem.security.threat.origin,name:0
+#: field:mgmtsystem.security.threat.scenario,name:0
+msgid "Name"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_event_measure
-msgid "mgmtsystem.security.event.measure"
+#: selection:mgmtsystem.risk.matrix.level,color:0
+msgid "Orange"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: view:mgmtsystem.security.measure:0
-msgid "Security Measures"
+#: field:mgmtsystem.security.event,residual_severity_id:0
+#: field:mgmtsystem.security.threat.scenario,residual_severity_id:0
+msgid "Residual Severity"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: code:addons/mgmtsystem_security_event/model/security_event_measure.py:81
-#: code:addons/mgmtsystem_security_event/model/security_event_scenario.py:82
+#: field:mgmtsystem.risk.matrix,probability_ids:0
+msgid "Probability Levels"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_security_event_measure.py:68
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_security_event_scenario.py:66
+#: field:mgmtsystem.risk.matrix,event_ids:0
 #, python-format
 msgid "Events"
 msgstr ""
 
 #. module: mgmtsystem_security_event
+#: selection:mgmtsystem.risk.matrix.level,color:0
+msgid "Red"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_assets_essential
 #: view:mgmtsystem.security.assets.essential:0
 #: view:mgmtsystem.security.assets.underlying:0
-#: field:mgmtsystem.security.assets.underlying,essential_assets:0
+#: field:mgmtsystem.security.assets.underlying,essential_asset_ids:0
 msgid "Essential Assets"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_assets_underlying
-msgid "mgmtsystem.security.assets.underlying"
+#: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_underlying_assets_list
+#: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_underlying_assets
+msgid "Underlying"
 msgstr ""
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_threat_origin_list
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_threat_origin
 #: view:mgmtsystem.security.threat.origin:0
+msgid "Threat Origins"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: view:mgmtsystem.security.threat.origin:0
 msgid "Threat Origin"
 msgstr ""
 
 #. module: mgmtsystem_security_event
+#: view:mgmtsystem.risk.matrix:0
 #: view:mgmtsystem.security.event:0
 #: field:mgmtsystem.security.event.measure,security_event_id:0
 #: field:mgmtsystem.security.event.scenario,security_event_id:0
@@ -115,7 +143,8 @@ msgstr ""
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.assets.essential,description:0
-#: field:mgmtsystem.security.event,description:0
+#: view:mgmtsystem.security.event:0
+#: field:mgmtsystem.security.event,document_page_id:0
 #: field:mgmtsystem.security.event.scenario,description:0
 #: field:mgmtsystem.security.measure,description:0
 #: field:mgmtsystem.security.threat.scenario,description:0
@@ -123,46 +152,51 @@ msgid "Description"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: help:mgmtsystem.security.threat.scenario,residual_severity:0
+#: help:mgmtsystem.security.threat.scenario,residual_severity_id:0
 msgid "Severity after remediation"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_threat_scenario
-msgid "mgmtsystem.security.threat.scenario"
+#: model:ir.actions.act_window,name:mgmtsystem_security_event.action_risk_matrix_level
+#: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_risk_matrix_level
+#: view:mgmtsystem.risk.matrix.level:0
+msgid "Risk matrix Levels"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: view:mgmtsystem.security.threat.origin:0
-msgid "Threats Origin"
+#: help:mgmtsystem.risk.matrix.level,color:0
+msgid "The color to display in the matrix"
 msgstr ""
 
 #. module: mgmtsystem_security_event
+#: view:mgmtsystem.security.measure:0
+msgid "Security Measures"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_security_measure_list
+#: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_security_measure
 #: view:mgmtsystem.security.event:0
-#: field:mgmtsystem.security.event,measures:0
-#: field:mgmtsystem.security.event.measure,measures:0
+#: field:mgmtsystem.security.event,measure_ids:0
+#: field:mgmtsystem.security.event.measure,measure_ids:0
 msgid "Measures"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: field:mgmtsystem.security.threat.scenario,current_probability:0
-msgid "Current Probability"
+#: model:ir.actions.report.xml,name:mgmtsystem_security_event.account_report_general_ledger_webkit
+#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_risk_matrix
+msgid "Management System Risk Matrix"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: field:mgmtsystem.security.threat.scenario,residual_severity:0
-msgid "Residual Severity"
+#: field:mgmtsystem.risk.matrix.level,probability_max:0
+msgid "Maximal Probability"
 msgstr ""
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_security_event_scenario_list
 #: view:mgmtsystem.security.event.scenario:0
 msgid "Scenario Line"
-msgstr ""
-
-#. module: mgmtsystem_security_event
-#: help:mgmtsystem.security.event,description:0
-msgid "Document pages will also contain the information of the impact of the event"
 msgstr ""
 
 #. module: mgmtsystem_security_event
@@ -176,25 +210,41 @@ msgid "Measure Lines"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: help:mgmtsystem.security.threat.scenario,current_severity:0
+#: constraint:mgmtsystem.risk.matrix.level:0
+msgid "You can not have overlapping risk matrix levels."
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: help:mgmtsystem.security.threat.scenario,current_severity_id:0
 msgid "Severity with existing security measures"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: field:mgmtsystem.security.threat.scenario,residual_probability:0
+#: field:mgmtsystem.security.event,residual_probability_id:0
+#: field:mgmtsystem.security.threat.scenario,residual_probability_id:0
 msgid "Residual Probability"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_security_measure_list
-#: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_security_measure
+#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_assets_category
+#: view:mgmtsystem.security.assets.category:0
+msgid "Asset Categories"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_measure
 #: view:mgmtsystem.security.measure:0
 msgid "Security Measure"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_event
-msgid "mgmtsystem.security.event"
+#: field:mgmtsystem.risk.matrix.level,probability_min:0
+msgid "Minimal Probability"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: field:mgmtsystem.risk.matrix.level,severity_max:0
+msgid "Maximal Severity"
 msgstr ""
 
 #. module: mgmtsystem_security_event
@@ -203,13 +253,13 @@ msgid "Assets"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: field:mgmtsystem.security.event.scenario,scenario:0
+#: field:mgmtsystem.security.event.scenario,scenario_id:0
 msgid "Scenario"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: help:mgmtsystem.security.threat.scenario,original_probability:0
-#: help:mgmtsystem.security.threat.scenario,original_severity:0
+#: help:mgmtsystem.security.threat.scenario,original_probability_id:0
+#: help:mgmtsystem.security.threat.scenario,original_severity_id:0
 msgid "Probability without any security measures"
 msgstr ""
 
@@ -219,20 +269,32 @@ msgid "Scenario Lines"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: field:mgmtsystem.security.threat.scenario,current_severity:0
+#: report:addons/mgmtsystem_security_event/report/risk_matrix_webkit.mako:28
+#: model:ir.actions.act_window,name:mgmtsystem_security_event.action_risk_matrix_config
+#: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_risk_matrix_config
+msgid "Risk Matrix"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: report:addons/mgmtsystem_security_event/report/risk_matrix_webkit.mako:38
+#: field:mgmtsystem.security.event,severity_id:0
+msgid "Severity"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: field:mgmtsystem.security.event,current_severity_id:0
+#: field:mgmtsystem.security.threat.scenario,current_severity_id:0
 msgid "Current Severity"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_threat_scenario_list
-#: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_threat_scenario
-#: view:mgmtsystem.security.threat.scenario:0
-msgid "Threat Scenario"
+#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_risk_matrix_level
+msgid "Management System Risk Matrix Level"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: help:mgmtsystem.security.threat.scenario,current_probability:0
-msgid "Probability with existing security measures"
+#: selection:mgmtsystem.risk.matrix.level,color:0
+msgid "Green"
 msgstr ""
 
 #. module: mgmtsystem_security_event
@@ -242,15 +304,18 @@ msgstr ""
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.security.assets.category:0
-msgid "Category Asset"
+msgid "Asset Category"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: field:mgmtsystem.security.measure,work_instructions:0
-msgid "Work Instruction"
+#: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_threat_scenario_list
+#: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_threat_scenario
+#: view:mgmtsystem.security.threat.scenario:0
+msgid "Threat Scenarios"
 msgstr ""
 
 #. module: mgmtsystem_security_event
+#: model:ir.ui.menu,name:mgmtsystem_security_event.menu_mgmtsystem_manuals_security
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_mgmtsystem_security
 msgid "Security"
 msgstr ""
@@ -272,9 +337,13 @@ msgid "Prevention"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: field:mgmtsystem.security.event.scenario,origin:0
-#: field:mgmtsystem.security.threat.scenario,origin:0
+#: field:mgmtsystem.security.event.scenario,origin_id:0
 msgid "Origin"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: field:mgmtsystem.risk.matrix,severity_ids:0
+msgid "Severity Levels"
 msgstr ""
 
 #. module: mgmtsystem_security_event
@@ -284,65 +353,178 @@ msgid "Measure Line"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_measure
-msgid "mgmtsystem.security.measure"
-msgstr ""
-
-#. module: mgmtsystem_security_event
 #: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_threat_origin
-msgid "mgmtsystem.security.threat.origin"
+msgid "Threat origin"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: view:mgmtsystem.security.assets.underlying:0
-#: field:mgmtsystem.security.event.measure,underlying_assets:0
+#: field:mgmtsystem.security.event,confidentiality:0
+msgid "Confidentiality"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: report:addons/mgmtsystem_security_event/report/risk_matrix_webkit.mako:69
+#: field:mgmtsystem.security.event.scenario,probability_id:0
+msgid "Probability"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_threat_scenario
 #: view:mgmtsystem.security.threat.scenario:0
-#: field:mgmtsystem.security.threat.scenario,underlying_assets:0
+msgid "Threat Scenario"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: field:mgmtsystem.risk.matrix.level,color:0
+msgid "Color"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:30
+#: selection:mgmtsystem.risk.matrix,type:0
+#, python-format
+msgid "After applying the planned measures"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_assets_underlying
+#: view:mgmtsystem.security.assets.underlying:0
+#: field:mgmtsystem.security.event.measure,underlying_asset_ids:0
+#: view:mgmtsystem.security.threat.scenario:0
+#: field:mgmtsystem.security.threat.scenario,underlying_asset_ids:0
 msgid "Underlying Assets"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_underlying_assets_list
-#: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_underlying_assets
-msgid "Underlying"
+#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_event_measure
+msgid "Security Events - Measure Lines"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: view:mgmtsystem.security.assets.category:0
-msgid "Category Assets"
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:28
+#: selection:mgmtsystem.risk.matrix,type:0
+#, python-format
+msgid "Before applying any measure"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: view:mgmtsystem.security.threat.scenario:0
-msgid "Threat Scenarios"
+#: field:mgmtsystem.risk.matrix,type:0
+msgid "Type"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: field:mgmtsystem.security.assets.category,name:0
-#: field:mgmtsystem.security.assets.essential,name:0
-#: field:mgmtsystem.security.assets.underlying,name:0
-#: field:mgmtsystem.security.event,name:0
-#: field:mgmtsystem.security.event.measure,name:0
-#: field:mgmtsystem.security.event.scenario,name:0
-#: field:mgmtsystem.security.measure,name:0
-#: field:mgmtsystem.security.threat.origin,name:0
-#: field:mgmtsystem.security.threat.scenario,name:0
-msgid "Name"
+#: view:mgmtsystem.risk.matrix:0
+msgid "Done"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_assets_essential
-msgid "mgmtsystem.security.assets.essential"
+#: field:mgmtsystem.security.measure,work_instruction_id:0
+msgid "Work Instruction"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: field:mgmtsystem.security.event,severity:0
-#: field:mgmtsystem.security.event.scenario,severity:0
-msgid "Severity"
+#: view:mgmtsystem.security.threat.origin:0
+msgid "Threats Origin"
 msgstr ""
 
 #. module: mgmtsystem_security_event
-#: field:mgmtsystem.security.threat.scenario,original_severity:0
+#: view:mgmtsystem.risk.matrix:0
+msgid "Cancel"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: help:mgmtsystem.security.threat.scenario,current_probability_id:0
+msgid "Probability with existing security measures"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: field:mgmtsystem.risk.matrix.level,severity_min:0
+msgid "Minimal Severity"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:29
+#: selection:mgmtsystem.risk.matrix,type:0
+#, python-format
+msgid "With current measures"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: field:mgmtsystem.security.event,integrity:0
+msgid "Integrity"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: field:mgmtsystem.security.event,availability:0
+msgid "Availability"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: field:mgmtsystem.security.event,original_severity_id:0
+#: field:mgmtsystem.security.threat.scenario,original_severity_id:0
 msgid "Original Severity"
 msgstr ""
 
+#. module: mgmtsystem_security_event
+#: field:mgmtsystem.risk.matrix,system_id:0
+#: field:mgmtsystem.security.assets.essential,system_id:0
+#: field:mgmtsystem.security.assets.underlying,system_id:0
+#: field:mgmtsystem.security.event,system_id:0
+#: field:mgmtsystem.security.event.measure,system_id:0
+#: field:mgmtsystem.security.event.scenario,system_id:0
+#: field:mgmtsystem.security.measure,system_id:0
+#: field:mgmtsystem.security.threat.origin,system_id:0
+#: field:mgmtsystem.security.threat.scenario,system_id:0
+msgid "Management System"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: field:mgmtsystem.risk.matrix,company_id:0
+#: field:mgmtsystem.security.assets.essential,company_id:0
+#: field:mgmtsystem.security.assets.underlying,company_id:0
+#: field:mgmtsystem.security.event,company_id:0
+#: field:mgmtsystem.security.measure,company_id:0
+#: field:mgmtsystem.security.threat.origin,company_id:0
+#: field:mgmtsystem.security.threat.scenario,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:0
+msgid "Maximum (every week)"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:0
+msgid "Strong (every month)"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:0
+msgid "Significant (every year)"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:0
+msgid "Minimum (every decade)"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:0
+msgid "Critical"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:0
+msgid "Important"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:0
+msgid "Limited"
+msgstr ""
+
+#. module: mgmtsystem_security_event
+#: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:0
+msgid "Negligible"
+msgstr ""

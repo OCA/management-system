@@ -7,16 +7,19 @@
             <field name="arch" type="xml">
                 <form string="Underlying Asset">
                     <field name="name"/>
-                    <field name="category"/>
+                    <field name="system_id" domain="[('used_for_security', '=', True)]"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="category_id"/>
 
                     <notebook colspan="4">
                         <page string="Essential Assets">
                             <field
-                                name="essential_assets"
+                                name="essential_asset_ids"
                                 widget="many2many"
                                 colspan="4"
                                 nolabel="1"
                                 ref="view_mgmtsystem_essential_assets_tree"
+                                domain="[('company_id', 'in', company_id)]"
                                 />
                         </page>
                     </notebook>
@@ -30,7 +33,8 @@
             <field name="arch" type="xml">
                 <tree string="Underlying Assets">
                     <field name="name"/>
-                    <field name="category"/>
+                    <field name="system_id"/>
+                    <field name="category_id"/>
                 </tree>
             </field>
         </record>
@@ -47,7 +51,7 @@
             action="open_mgmtsystem_underlying_assets_list" 
             parent="menu_mgmtsystem_assets" 
             sequence="20" 
-            groups="mgmtsystem.group_mgmtsystem_manager"/>
+            />
 
     </data>
 </openerp>

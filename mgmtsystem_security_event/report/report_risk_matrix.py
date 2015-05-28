@@ -19,15 +19,24 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import mgmtsystem_security_assets_category
-from . import mgmtsystem_security_assets_essential
-from . import mgmtsystem_security_assets_underlying
 
-from . import mgmtsystem_security_event
-from . import mgmtsystem_security_measure
+from openerp.addons.report_webkit.webkit_report import WebKitParser
+from openerp import pooler
+from openerp.report import report_sxw
 
-from . import mgmtsystem_security_threat_origin
-from . import mgmtsystem_security_threat_scenario
 
-from . import mgmtsystem_security_event_scenario
-from . import mgmtsystem_security_event_measure
+class RiskMatrixParser(report_sxw.rml_parse):
+
+    def __init__(self, cursor, uid, name, context):
+        super(RiskMatrixParser, self).__init__(
+            cursor, uid, name, context=context)
+        self.pool = pooler.get_pool(self.cr.dbname)
+        self.cursor = self.cr
+
+        self.localcontext.update({})
+
+WebKitParser(
+    'report.mgmtsystem_security_event.risk_matrix_webkit',
+    'mgmtsystem.risk.matrix',
+    'addons/mgmtsystem_security_event/report/risk_matrix_webkit.mako',
+    parser=RiskMatrixParser)

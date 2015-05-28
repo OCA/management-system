@@ -19,50 +19,163 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+
 from openerp.tests.common import TransactionCase
-from . import pool
 
 
-class TestCreateSecurityEvent(TransactionCase):
+class TestCreateSecurityEventBase(TransactionCase):
 
-    """Test management security event object."""
+    def get_severity(self, value, browse=False):
+        res_id = self.severity_model.search(self.cr, self.uid, [
+            ('value', '=', value),
+            ('category', '=', 'security'),
+        ])[0]
+        if browse:
+            return self.severity_model.browse(
+                self.cr, self.uid, res_id, context=self.context)
+        return res_id
+
+    def get_probability(self, value, browse=False):
+        res_id = self.probability_model.search(self.cr, self.uid, [
+            ('value', '=', value),
+            ('category', '=', 'security'),
+        ])[0]
+        if browse:
+            return self.probability_model.browse(
+                self.cr, self.uid, res_id, context=self.context)
+        return res_id
 
     def setUp(self):
-        super(TestCreateSecurityEvent, self).setUp()
-        pool.init_pools(self)
+        super(TestCreateSecurityEventBase, self).setUp()
 
-        # document_page
-        document_page = self.registry('document.page')
-        self.document_id = document_page.create(
-            self.cr, self.uid, {
-                "name": "document",
-                "content": "content"
-            }
-        )
+        self.system_model = self.registry('mgmtsystem.system')
+        self.scenario_model = self.registry(
+            'mgmtsystem.security.threat.scenario')
+        self.event_model = self.registry('mgmtsystem.security.event')
+        self.probability_model = self.registry('mgmtsystem.probability')
+        self.severity_model = self.registry('mgmtsystem.severity')
+        self.user_model = self.registry('res.users')
 
-        # severity
-        severity = self.registry("mgmtsystem.severity")
-        self.severity_id = severity.create(
-            self.cr, self.uid, {
-                "name": "scenario",
-                "category": "security",
-                "value": 10,
-            }
-        )
+        self.context = self.user_model.context_get(self.cr, self.uid)
+        cr, uid, context = self.cr, self.uid, self.context
 
-    def test_create_security_event(self):
-        event_id = self.event.create(
-            self.cr, self.uid, {
-                "name": "security event",
-                "description": self.document_id,
-                "severity": self.severity_id,
-            }
-        )
+        self.system_id = self.system_model.create(cr, uid, {
+            'name': 'Security System',
+            'used_for_security': True,
+        }, context=context)
 
-        self.assertNotEqual(event_id, 0)
+        self.scenario_id = self.scenario_model.create(cr, uid, {
+            'name': 'S1',
+            'original_probability_id': self.get_probability(3),
+            'original_severity_id': self.get_severity(4),
+            'current_probability_id': self.get_probability(3),
+            'current_severity_id': self.get_severity(3),
+            'residual_probability_id': self.get_probability(1),
+            'residual_severity_id': self.get_severity(2),
+            'system_id': self.system_id,
+        }, context=context)
 
-        obj = self.event.browse(self.cr, self.uid, event_id)
+        self.scenario_2_id = self.scenario_model.create(cr, uid, {
+            'name': 'S2',
+            'original_probability_id': self.get_probability(4),
+            'original_severity_id': self.get_severity(4),
+            'current_probability_id': self.get_probability(2),
+            'current_severity_id': self.get_severity(2),
+            'residual_probability_id': self.get_probability(2),
+            'residual_severity_id': self.get_severity(1),
+            'system_id': self.system_id,
+        }, context=context)
 
-        self.assertEqual(obj.name, "security event")
-        self.assertEqual(obj.description.id, self.document_id)
-        self.assertEqual(obj.severity.id, self.severity_id)
+        self.scenario_3_id = self.scenario_model.create(cr, uid, {
+            'name': 'S3',
+            'original_probability_id': self.get_probability(3),
+            'original_severity_id': self.get_severity(3),
+            'current_probability_id': self.get_probability(2),
+            'current_severity_id': self.get_severity(1),
+            'residual_probability_id': self.get_probability(2),
+            'residual_severity_id': self.get_severity(1),
+            'system_id': self.system_id,
+        }, context=context)
+
+        self.event_id = self.event_model.create(cr, uid, {
+            'name': 'E1',
+            'system_id': self.system_id,
+            'scenario_ids': [
+                (0, 0, {
+                    'scenario_id': self.scenario_id,
+                }),
+                (0, 0, {
+                    'scenario_id': self.scenario_2_id,
+                }),
+            ],
+        }, context=context)
+
+        self.event = self.event_model.browse(
+            cr, uid, self.event_id, context=context)
+
+        self.event_2_id = self.event_model.create(cr, uid, {
+            'name': 'E2',
+            'system_id': self.system_id,
+            'scenario_ids': [
+                (0, 0, {
+                    'scenario_id': self.scenario_2_id,
+                }),
+                (0, 0, {
+                    'scenario_id': self.scenario_3_id,
+                }),
+            ]
+        }, context=context)
+
+        self.event_2 = self.event_model.browse(
+            cr, uid, self.event_2_id, context=context)
+
+
+class TestCreateSecurityEvent(TestCreateSecurityEventBase):
+
+    def test_event_multi_field(self):
+        self.assertEqual(
+            self.event.original_probability_id,
+            self.get_probability(4, browse=True))
+
+        self.assertEqual(
+            self.event.original_severity_id,
+            self.get_severity(4, browse=True))
+
+        self.assertEqual(
+            self.event.current_probability_id,
+            self.get_probability(3, browse=True))
+
+        self.assertEqual(
+            self.event.current_severity_id,
+            self.get_severity(3, browse=True))
+
+        self.assertEqual(
+            self.event.residual_probability_id,
+            self.get_probability(2, browse=True))
+
+        self.assertEqual(
+            self.event.residual_severity_id,
+            self.get_severity(2, browse=True))
+
+    def test_event_multi_field_change_value(self):
+        cr, uid, context = self.cr, self.uid, self.context
+
+        self.scenario_model.write(cr, uid, [self.scenario_id], {
+            'original_probability_id': self.get_probability(2),
+            'original_severity_id': self.get_severity(2),
+        }, context=context)
+
+        self.scenario_model.write(cr, uid, [self.scenario_2_id], {
+            'original_probability_id': self.get_probability(1),
+            'original_severity_id': self.get_severity(1),
+        }, context=context)
+
+        self.event.refresh()
+
+        self.assertEqual(
+            self.event.original_probability_id,
+            self.get_probability(2, browse=True))
+
+        self.assertEqual(
+            self.event.original_severity_id,
+            self.get_severity(2, browse=True))

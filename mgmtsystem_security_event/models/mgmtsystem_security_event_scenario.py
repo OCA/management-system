@@ -38,17 +38,26 @@ class EventScenarioLines(orm.Model):
 
     _columns = {
         'description': fields.text('Description'),
-        'scenario': fields.many2one(
+        'scenario_id': fields.many2one(
             "mgmtsystem.security.threat.scenario", "Scenario"
         ),
-        'origin': fields.many2one(
+        'origin_id': fields.many2one(
             "mgmtsystem.security.threat.origin", "Origin"
         ),
-        'severity': fields.many2one(
-            "mgmtsystem.severity", "Severity"
+        'probability_id': fields.many2one(
+            "mgmtsystem.probability", "Probability"
         ),
         'security_event_id': fields.many2one(
             "mgmtsystem.security.event", "Security Event"
+        ),
+        'system_id': fields.related(
+            'security_event_id',
+            'system_id',
+            string='Management System',
+            readonly=True,
+            type='many2one',
+            relation='mgmtsystem.system',
+            store=True,
         ),
     }
 

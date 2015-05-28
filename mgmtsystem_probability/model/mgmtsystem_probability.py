@@ -47,7 +47,7 @@ class MgmtSystemProbability(orm.Model):
         return self._category_selection(cr, uid, context)
 
     _columns = {
-        "name": fields.char("Name", required=True),
+        "name": fields.char("Name", required=True, translate=True),
         "description": fields.text("Description"),
         "value": fields.integer("Value", required=True),
         "category": fields.selection(

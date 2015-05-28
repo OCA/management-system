@@ -1,0 +1,46 @@
+<openerp>
+    <data>
+
+        <record id="view_risk_matrix_config_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.risk.matrix.form</field>
+            <field name="model">mgmtsystem.risk.matrix</field>
+            <field name="arch" type="xml">
+                <form string="Security Event" version="7.0">
+                    <group>
+                        <field name="system_id" domain="[('used_for_security', '=', True)]"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                        <field name="type"/>
+                    </group>
+                    <footer>
+                        <button
+                            name="print_report"
+                            type="object"
+                            string="Done"
+                            class="oe_highlight"/>
+                        <button
+                            string="Cancel"
+                            class="oe_link"
+                            special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_risk_matrix_config" model="ir.actions.act_window">
+            <field name="name">Risk Matrix</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mgmtsystem.risk.matrix</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_risk_matrix_config_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_open_risk_matrix_config" 
+            action="action_risk_matrix_config" 
+            parent="mgmtsystem_security_event.menu_mgmtsystem_manuals_security"
+            sequence="40"
+            />
+
+    </data>
+</openerp>

@@ -7,7 +7,9 @@
             <field name="arch" type="xml">
                 <form string="Essential Asset">
                     <field name="name"/>
-                    <field name="responsible"/>
+                    <field name="responsible_id" domain="[('company_id', 'in', company_id)]"/>
+                    <field name="system_id" domain="[('used_for_security', '=', True)]"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
 
                     <field name="description" colspan="4"/>
                 </form>
@@ -20,7 +22,8 @@
             <field name="arch" type="xml">
                 <tree string="Essential Assets">
                     <field name="name"/>
-                    <field name="responsible"/>
+                    <field name="system_id"/>
+                    <field name="responsible_id"/>
                     <field name="description"/>
                 </tree>
             </field>
@@ -38,7 +41,7 @@
             action="open_mgmtsystem_essential_assets_list" 
             parent="menu_mgmtsystem_assets" 
             sequence="20" 
-            groups="mgmtsystem.group_mgmtsystem_manager"/>
+            />
 
     </data>
 </openerp>

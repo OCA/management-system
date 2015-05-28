@@ -21,33 +21,35 @@
 ##############################################################################
 
 from openerp.osv import fields, orm
+from .mgmtsystem_security_event import _default_system_id
 
 
-class SecurityEvents(orm.Model):
+class EssentialAssets(orm.Model):
 
-    """Security Events."""
+    """Essential assets."""
 
-    _name = "mgmtsystem.security.event"
-    _description = "Security Events"
+    _name = "mgmtsystem.security.assets.essential"
+    _description = "Essential Assets"
 
     _columns = {
         'name': fields.char("Name"),
-        'description': fields.many2one(
-            "document.page", "Description",
-            help="Document pages will also contain the information of "
-                 "the impact of the event"
+        'description': fields.text("Description"),
+        'responsible_id': fields.many2one("res.users", "Responsible"),
+        'system_id': fields.many2one(
+            'mgmtsystem.system', 'Management System',
+            required=True,
         ),
-        'severity': fields.many2one(
-            "mgmtsystem.severity", "Severity"
+        'company_id': fields.related(
+            'system_id',
+            'company_id',
+            string='Company',
+            readonly=True,
+            type='many2one',
+            relation='res.company',
+            store=True,
         ),
-        'scenarios': fields.one2many(
-            "mgmtsystem.security.event.scenario",
-            "security_event_id",
-            "Scenarios",
-        ),
-        'measures': fields.one2many(
-            "mgmtsystem.security.event.measure",
-            "security_event_id",
-            "Measures"
-        ),
+    }
+
+    _defaults = {
+        'system_id': _default_system_id,
     }

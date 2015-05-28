@@ -6,13 +6,14 @@
             <field name="model">mgmtsystem.security.event.scenario</field>
             <field name="arch" type="xml">
                 <form string="Scenario Line">
-                    <field name="scenario" />
-                    <field name="origin" />
+                    <field name="system_id" />
+                    <field name="scenario_id" domain="[('system_id', '=', system_id)]"/>
+                    <field name="origin_id" domain="[('system_id', '=', system_id)]"/>
                     <field
-                        name="severity"
+                        name="probability_id"
                         domain="[('category', '=', 'security')]"
                         />
-                    <field name="security_event_id" />
+                    <field name="security_event_id" invisible="1"/>
                     <field name="description" colspan="4" />
                 </form>
             </field>
@@ -23,11 +24,12 @@
             <field name="model">mgmtsystem.security.event.scenario</field>
             <field name="arch" type="xml">
                 <tree string="Scenario Lines">
-                    <field name="description" />
-                    <field name="scenario" />
-                    <field name="origin" />
-                    <field name="severity" />
                     <field name="security_event_id" />
+                    <field name="system_id" />
+                    <field name="description" />
+                    <field name="scenario_id" />
+                    <field name="origin_id" />
+                    <field name="probability_id" />
                 </tree>
             </field>
         </record>

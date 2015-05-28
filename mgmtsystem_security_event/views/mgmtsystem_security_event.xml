@@ -5,37 +5,71 @@
             <field name="name">mgmtsystem.security.event.form</field>
             <field name="model">mgmtsystem.security.event</field>
             <field name="arch" type="xml">
-                <form string="Security Event">
-                    <field name="name"/>
-                    <field
-                        name="description"
-                        domain="[('parent_id', '=', %(document_page_group_security_events)d)]"
-                        />
+                <form string="Security Event" version="7.0">
+                    <group>
+                        <field name="name"/>
+                        <field name="system_id" domain="[('used_for_security', '=', True)]"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
 
-                    <field
-                        name="severity"
-                        domain="[('category', '=', 'security')]"
-                        />
+                        <field
+                            name="severity_id"
+                            domain="[('category', '=', 'security')]"
+                            />
+                        <field name="confidentiality"/>
+                        <field name="integrity"/>
+                        <field name="availability"/>
+                    </group>
 
                     <notebook colspan="4">
+                        <page string="Description">
+                            <field name="content"
+                                widget="html"
+                                class="oe_edit_only"
+                                nolabel="1"
+                                />
+                            <div class="oe_document_page">
+                                <field name="display_content" widget="html" class="oe_view_only" options='{"safe": True}'/>
+                            </div>
+                        </page>
                         <page string="Scenarios">
                             <field
-                                name="scenarios"
-                                widget="one2many"
+                                name="scenario_ids"
                                 colspan="4"
                                 nolabel="1"
                                 ref="open_mgmtsystem_security_event_scenario_tree"
+                                context="{
+                                    'default_security_event_id': id,
+                                    'default_system_id': system_id,
+                                }"
                                 >
+                                <tree>
+                                    <field name="system_id" invisible="1"/>
+                                    <field name="description"/>
+                                    <field name="scenario_id" />
+                                    <field name="origin_id" />
+                                    <field name="probability_id"/>
+                                </tree>
                             </field>
                         </page>
                         <page string="Measures">
                             <field
-                                name="measures"
-                                widget="one2many"
+                                name="measure_ids"
                                 colspan="4"
                                 nolabel="1"
                                 ref="open_mgmtsystem_security_event_measure_tree"
+                                context="{
+                                    'default_security_event_id': id,
+                                    'default_system_id': system_id,
+                                }"
                                 >
+                                <tree>
+                                    <field name="system_id" invisible="1"/>
+                                    <field name="measure_id" />
+                                    <field name="underlying_asset_id" />
+                                    <field name="prevention" />
+                                    <field name="recovery"/>
+                                    <field name="protection"/>
+                                </tree>
                             </field>
                         </page>
                     </notebook>
@@ -50,8 +84,8 @@
             <field name="arch" type="xml">
                 <tree string="Security Events">
                     <field name="name"/>
-                    <field name="description"/>
-                    <field name="severity"/>
+                    <field name="severity_id"/>
+                    <field name="system_id"/>
                 </tree>
             </field>
         </record>
@@ -66,9 +100,9 @@
 
         <menuitem id="menu_open_mgmtsystem_security_event" 
             action="open_mgmtsystem_security_event_list" 
-            parent="mgmtsystem.menu_mgmtsystem_manuals"
-            sequence="20" 
-            groups="mgmtsystem.group_mgmtsystem_manager"/>
+            parent="menu_mgmtsystem_manuals_security"
+            sequence="25"
+            />
 
     </data>
 </openerp>

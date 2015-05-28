@@ -23,23 +23,10 @@
 from openerp.osv import fields, orm
 
 
-class UnderlyingAssets(orm.Model):
+class System(orm.Model):
 
-    """Underlying Assets."""
-
-    _name = "mgmtsystem.security.assets.underlying"
-    _description = "Underlying Assets"
+    _inherit = "mgmtsystem.system"
 
     _columns = {
-        'name': fields.char("Name"),
-        'category': fields.many2one(
-            "mgmtsystem.security.assets.category", "Category"
-        ),
-        'essential_assets': fields.many2many(
-            "mgmtsystem.security.assets.essential",
-            "mgmtsystem_security_assets_essential_rel",
-            "underlying_asset_id",
-            "essential_asset_id",
-            "Essential Assets"
-        ),
+        'used_for_security': fields.boolean("Used for Security"),
     }

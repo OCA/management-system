@@ -20,18 +20,4 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
-
-
-class EssentialAssets(orm.Model):
-
-    """Essential assets."""
-
-    _name = "mgmtsystem.security.assets.essential"
-    _description = "Essential Assets"
-
-    _columns = {
-        'name': fields.char("Name"),
-        'description': fields.text("Description"),
-        'responsible': fields.many2one("res.users", "Responsible")
-    }
+from . import report_risk_matrix

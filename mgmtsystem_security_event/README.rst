@@ -15,24 +15,37 @@ To install this module, you need to:
 Configuration
 =============
 
-No configuration needed
+You may customize the colors to be displayed on the risk matrix.
+
+ * go to Management System > Configuration > Security > Risk Matrix Levels
+
+ Define the colors related to a range of cells in the risk matrix.
+
 
 Usage
 =====
 
 To use this module, you need to:
 
- * go to Management System > Configuration > Manuals > Security Events
- * go to Management System > Configuration > Security 
+ * go to Management System > Manuals > Security > Threat Scenarios
 
-For further information, please visit:
+    - Create a scenario (S1)
+    - Select the actual, original and residual probability and severity of the scenario
 
- * https://github.com/OCA/management-system/issues
+ * go to Management System > Manuals > Security > Threat Scenarios
 
-Known issues / Roadmap
-======================
+    - Create a measure (M1)
 
- None
+ * go to Management System > Manuals > Security > Security Events
+
+    - Create a security event (E1)
+    - Add scenario S1 on the event
+    - Add measure M1 on the event
+
+ * go to Management System > Security > Risk Matrix
+
+    - Select the type of matrix to generate and click on 'Done'
+
 
 Credits
 =======
@@ -41,6 +54,8 @@ Contributors
 ------------
 
 * Loïc Faure-Lacroix <loic.lacroix@savoirfairelinux.com>
+* David Dufresne <david.dufresne@savoirfairelinux.com>
+* Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
 
 Maintainer
 ----------

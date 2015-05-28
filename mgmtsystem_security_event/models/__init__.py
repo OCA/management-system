@@ -20,16 +20,20 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from . import mgmtsystem_risk_matrix
+from . import mgmtsystem_risk_matrix_level
 
+from . import mgmtsystem_security_assets_category
+from . import mgmtsystem_security_assets_essential
+from . import mgmtsystem_security_assets_underlying
 
-class ThreatOrigin(orm.Model):
+from . import mgmtsystem_security_event
+from . import mgmtsystem_security_measure
 
-    """Threat origin."""
+from . import mgmtsystem_security_threat_origin
+from . import mgmtsystem_security_threat_scenario
 
-    _name = "mgmtsystem.security.threat.origin"
-    _description = "Threat origin"
+from . import mgmtsystem_security_event_scenario
+from . import mgmtsystem_security_event_measure
 
-    _columns = {
-        'name': fields.char("Name"),
-    }
+from . import mgmtsystem_system

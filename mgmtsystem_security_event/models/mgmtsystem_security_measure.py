@@ -21,6 +21,7 @@
 ##############################################################################
 
 from openerp.osv import fields, orm
+from .mgmtsystem_security_event import _default_system_id
 
 
 class SecurityMeasure(orm.Model):
@@ -33,7 +34,24 @@ class SecurityMeasure(orm.Model):
     _columns = {
         'name': fields.char("Name"),
         'description': fields.text("Description"),
-        'work_instructions': fields.many2one(
+        'work_instruction_id': fields.many2one(
             "document.page", "Work Instruction"
         ),
+        'system_id': fields.many2one(
+            'mgmtsystem.system', 'Management System',
+            required=True,
+        ),
+        'company_id': fields.related(
+            'system_id',
+            'company_id',
+            string='Company',
+            readonly=True,
+            type='many2one',
+            relation='res.company',
+            store=True,
+        ),
+    }
+
+    _defaults = {
+        'system_id': _default_system_id,
     }

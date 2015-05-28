@@ -21,6 +21,7 @@
 ##############################################################################
 
 from openerp.osv import fields, orm
+from .mgmtsystem_security_event import _default_system_id
 
 
 class ThreatScenario(orm.Model):
@@ -33,38 +34,52 @@ class ThreatScenario(orm.Model):
     _columns = {
         'name': fields.char("Name"),
         'description': fields.text("Description"),
-        'origin': fields.many2one(
-            "mgmtsystem.security.threat.origin", "Origin"
-        ),
-        'underlying_assets': fields.many2many(
+        'underlying_asset_ids': fields.many2many(
             "mgmtsystem.security.assets.underlying",
             "mgmtststem_security_assets_underlying_rel",
             "threat_scenario_id",
             "underlying_asset_id",
             "Underlying Assets"
         ),
-        'original_probability': fields.many2one(
+        'original_probability_id': fields.many2one(
             "mgmtsystem.probability", "Original Probability",
             help="Probability without any security measures"
         ),
-        'original_severity': fields.many2one(
+        'original_severity_id': fields.many2one(
             "mgmtsystem.severity", "Original Severity",
             help="Probability without any security measures"
         ),
-        'current_probability': fields.many2one(
+        'current_probability_id': fields.many2one(
             "mgmtsystem.probability", "Current Probability",
             help="Probability with existing security measures"
         ),
-        'current_severity': fields.many2one(
+        'current_severity_id': fields.many2one(
             "mgmtsystem.severity", "Current Severity",
             help="Severity with existing security measures"
         ),
-        'residual_probability': fields.many2one(
+        'residual_probability_id': fields.many2one(
             "mgmtsystem.probability", "Residual Probability",
             help="Probability after remediation"
         ),
-        'residual_severity': fields.many2one(
+        'residual_severity_id': fields.many2one(
             "mgmtsystem.severity", "Residual Severity",
             help="Severity after remediation"
         ),
+        'system_id': fields.many2one(
+            'mgmtsystem.system', 'Management System',
+            required=True,
+        ),
+        'company_id': fields.related(
+            'system_id',
+            'company_id',
+            string='Company',
+            readonly=True,
+            type='many2one',
+            relation='res.company',
+            store=True,
+        ),
+    }
+
+    _defaults = {
+        'system_id': _default_system_id,
     }

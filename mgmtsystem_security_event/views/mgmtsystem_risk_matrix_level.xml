@@ -1,0 +1,33 @@
+<openerp>
+    <data>
+
+        <record id="view_risk_matrix_level_list" model="ir.ui.view">
+            <field name="name">mgmtsystem.risk.matrix.level.list</field>
+            <field name="model">mgmtsystem.risk.matrix.level</field>
+            <field name="arch" type="xml">
+                <tree string="Risk matrix Levels" editable="top">
+                    <field name="severity_min"/>
+                    <field name="severity_max"/>
+                    <field name="probability_min"/>
+                    <field name="probability_max"/>
+                    <field name="color"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_risk_matrix_level" model="ir.actions.act_window">
+            <field name="name">Risk matrix Levels</field>
+            <field name="res_model">mgmtsystem.risk.matrix.level</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <menuitem id="menu_open_risk_matrix_level" 
+            action="action_risk_matrix_level" 
+            parent="mgmtsystem_security_event.menu_mgmtsystem_security"
+            sequence="40"
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+    </data>
+</openerp>

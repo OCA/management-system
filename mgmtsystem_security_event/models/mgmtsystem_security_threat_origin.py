@@ -19,25 +19,35 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.tests.common import TransactionCase
+
+from openerp.osv import fields, orm
+from .mgmtsystem_security_event import _default_system_id
 
 
-class TestCreateCategoryAssets(TransactionCase):
+class ThreatOrigin(orm.Model):
 
-    """Test management category assets object."""
+    """Threat origin."""
 
-    def setUp(self):
-        super(TestCreateCategoryAssets, self).setUp()
+    _name = "mgmtsystem.security.threat.origin"
+    _description = "Threat origin"
 
-        self.model = self.registry('mgmtsystem.security.assets.category')
+    _columns = {
+        'name': fields.char("Name"),
+        'system_id': fields.many2one(
+            'mgmtsystem.system', 'Management System',
+            required=True,
+        ),
+        'company_id': fields.related(
+            'system_id',
+            'company_id',
+            string='Company',
+            readonly=True,
+            type='many2one',
+            relation='res.company',
+            store=True,
+        ),
+    }
 
-    def test_create_category_asset(self):
-        category_id = self.model.create(self.cr, self.uid, {
-            "name": "test",
-        })
-
-        self.assertNotEqual(category_id, 0)
-
-        obj = self.model.browse(self.cr, self.uid, category_id)
-
-        self.assertEqual(obj.name, "test")
+    _defaults = {
+        'system_id': _default_system_id,
+    }

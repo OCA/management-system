@@ -9,18 +9,18 @@
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <menuitem
-            id="menu_mgmtsystem_assets"
-            name="Assets"
-            parent="menu_mgmtsystem_security"
-            sequence="10"
-            groups="mgmtsystem.group_mgmtsystem_manager"/>
+            id="menu_mgmtsystem_manuals_security"
+            name="Security"
+            parent="mgmtsystem.menu_mgmtsystem_manuals"
+            sequence="30"
+            />
 
         <menuitem
-            id="menu_mgmtsystem_threats"
-            name="Threats"
-            parent="menu_mgmtsystem_security"
-            sequence="30"
-            groups="mgmtsystem.group_mgmtsystem_manager"/>
+            id="menu_mgmtsystem_assets"
+            name="Assets"
+            parent="menu_mgmtsystem_manuals_security"
+            sequence="10"
+            />
 
     </data>
 </openerp>

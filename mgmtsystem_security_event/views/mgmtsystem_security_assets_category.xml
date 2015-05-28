@@ -5,7 +5,7 @@
             <field name="name">mgmtsystem.security.assets.category.form</field>
             <field name="model">mgmtsystem.security.assets.category</field>
             <field name="arch" type="xml">
-                <form string="Category Asset">
+                <form string="Asset Category">
                     <field name="name"/>
                 </form>
             </field>
@@ -15,14 +15,14 @@
             <field name="name">mgmtsystem.security.assets.category.tree</field>
             <field name="model">mgmtsystem.security.assets.category</field>
             <field name="arch" type="xml">
-                <tree string="Category Assets">
+                <tree string="Asset Categories">
                     <field name="name"/>
                 </tree>
             </field>
         </record>
 
         <record id="open_mgmtsystem_category_assets_list" model="ir.actions.act_window">
-            <field name="name">Category</field>
+            <field name="name">Asset Categories</field>
             <field name="res_model">mgmtsystem.security.assets.category</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -31,9 +31,9 @@
 
         <menuitem id="menu_open_mgmtsystem_category_assets" 
             action="open_mgmtsystem_category_assets_list" 
-            parent="menu_mgmtsystem_assets" 
+            parent="menu_mgmtsystem_security" 
             sequence="20" 
-            groups="mgmtsystem.group_mgmtsystem_manager"/>
+            />
 
     </data>
 </openerp>

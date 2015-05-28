@@ -7,8 +7,10 @@
             <field name="arch" type="xml">
                 <form string="Security Measure">
                     <field name="name"/>
+                    <field name="system_id" domain="[('used_for_security', '=', True)]"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
                     <field
-                        name="work_instructions"
+                        name="work_instruction_id"
                         domain="[('parent_id', '=', %(document_page_work_instructions.document_page_group_work_instructions)d)]"
                         />
                     <field name="description" colspan="4"/>
@@ -22,7 +24,7 @@
             <field name="arch" type="xml">
                 <tree string="Security Measures">
                     <field name="name"/>
-                    <field name="work_instructions"/>
+                    <field name="work_instruction_id"/>
 
                     <field name="description" colspan="4"/>
                 </tree>
@@ -30,7 +32,7 @@
         </record>
 
         <record id="open_mgmtsystem_security_measure_list" model="ir.actions.act_window">
-            <field name="name">Security Measure</field>
+            <field name="name">Measures</field>
             <field name="res_model">mgmtsystem.security.measure</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -39,9 +41,9 @@
 
         <menuitem id="menu_open_mgmtsystem_security_measure" 
             action="open_mgmtsystem_security_measure_list" 
-            parent="menu_mgmtsystem_security" 
-            sequence="20" 
-            groups="mgmtsystem.group_mgmtsystem_manager"/>
+            parent="menu_mgmtsystem_manuals_security" 
+            sequence="15" 
+            />
 
     </data>
 </openerp>

@@ -7,13 +7,14 @@
             <field name="arch" type="xml">
 
                 <form string="Measure Line">
-                    <field name="measures" />
+                    <field name="system_id" />
+                    <field name="measure_id" domain="[('system_id', '=', system_id)]"/>
                     <field name="prevention" />
 
-                    <field name="underlying_assets" />
+                    <field name="underlying_asset_id" domain="[('system_id', '=', system_id)]"/>
                     <field name="recovery" />
 
-                    <field name="security_event_id" />
+                    <field name="security_event_id" invisible="1"/>
                     <field name="protection" />
                 </form>
             </field>
@@ -24,9 +25,11 @@
             <field name="model">mgmtsystem.security.event.measure</field>
             <field name="arch" type="xml">
                 <tree string="Measure Lines">
-                    <field name="measures" />
-                    <field name="underlying_assets" />
                     <field name="security_event_id" />
+                    <field name="system_id" />
+
+                    <field name="measure_id" />
+                    <field name="underlying_asset_id" />
 
                     <field name="prevention" />
                     <field name="recovery" />
