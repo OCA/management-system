@@ -45,7 +45,7 @@ def _default_system_id(self, cr, uid, context=None):
     system_ids = self.pool['mgmtsystem.system'].search(
         cr, uid, [
             ('company_id', '=', company.id),
-            ('used_for_security', '=', True),
+            ('type', '=', 'information_security'),
         ],
         limit=1, context=context)
 

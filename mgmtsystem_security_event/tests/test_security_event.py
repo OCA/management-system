@@ -61,7 +61,7 @@ class TestCreateSecurityEventBase(TransactionCase):
 
         self.system_id = self.system_model.create(cr, uid, {
             'name': 'Security System',
-            'used_for_security': True,
+            'type': 'information_security',
         }, context=context)
 
         self.scenario_id = self.scenario_model.create(cr, uid, {

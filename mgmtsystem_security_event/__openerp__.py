@@ -55,7 +55,6 @@ This module allow you to manage security events.
         "views/mgmtsystem_security_threat_scenario.xml",
         'views/mgmtsystem_risk_matrix.xml',
         'views/mgmtsystem_risk_matrix_level.xml',
-        'views/mgmtsystem_system.xml',
         'report/header.xml',
         'report/report.xml',
         "security/ir.model.access.csv",

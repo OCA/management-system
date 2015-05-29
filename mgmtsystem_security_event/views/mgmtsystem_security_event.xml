@@ -8,7 +8,7 @@
                 <form string="Security Event" version="7.0">
                     <group>
                         <field name="name"/>
-                        <field name="system_id" domain="[('used_for_security', '=', True)]"/>
+                        <field name="system_id" domain="[('type', '=', 'information_security')]"/>
                         <field name="company_id" groups="base.group_multi_company"/>
 
                         <field
