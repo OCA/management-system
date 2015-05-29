@@ -27,7 +27,7 @@
     'author': 'Savoir-faire Linux, Odoo Community Association (OCA)',
     'maintainer': 'Odoo Community Association (OCA)',
     'website': 'http://www.savoirfairelinux.com',
-    'license': 'AGPL-3 or any later version',
+    'license': 'AGPL-3',
     'category': 'Management System',
     'summary': 'Manage your ISMS',
     'description': """
