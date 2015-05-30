@@ -51,6 +51,7 @@ required to deploy and manage your Information Security Management System
 
     'data': [
         'data/system.xml',
+        'views/mgmtsystem_action.xml',
     ],
     'demo': [
     ],
