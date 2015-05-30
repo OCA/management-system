@@ -53,7 +53,7 @@ class EventScenarioLines(orm.Model):
         'system_id': fields.related(
             'security_event_id',
             'system_id',
-            string='Management System',
+            string='System',
             readonly=True,
             type='many2one',
             relation='mgmtsystem.system',

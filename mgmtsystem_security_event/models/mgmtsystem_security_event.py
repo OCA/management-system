@@ -123,7 +123,7 @@ class SecurityEvents(orm.Model):
 
     _columns = {
         'system_id': fields.many2one(
-            'mgmtsystem.system', 'Management System',
+            'mgmtsystem.system', 'System',
             required=True,
         ),
         'company_id': fields.related(

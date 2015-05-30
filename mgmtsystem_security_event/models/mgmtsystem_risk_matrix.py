@@ -49,7 +49,7 @@ class MgmtsystemRiskMatrix(orm.TransientModel):
             required=True,
         ),
         'system_id': fields.many2one(
-            'mgmtsystem.system', 'Management System',
+            'mgmtsystem.system', 'System',
             required=True,
         ),
         'company_id': fields.related(

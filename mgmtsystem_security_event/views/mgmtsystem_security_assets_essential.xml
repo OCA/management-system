@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <form string="Essential Asset">
                     <field name="name"/>
-                    <field name="responsible_id" domain="[('company_id', 'in', company_id)]"/>
+                    <field name="responsible_id"/>
                     <field name="system_id" domain="[('type', '=', 'information_security')]"/>
                     <field name="company_id" groups="base.group_multi_company"/>
 

@@ -36,7 +36,7 @@ class EssentialAssets(orm.Model):
         'description': fields.text("Description"),
         'responsible_id': fields.many2one("res.users", "Responsible"),
         'system_id': fields.many2one(
-            'mgmtsystem.system', 'Management System',
+            'mgmtsystem.system', 'System',
             required=True,
         ),
         'company_id': fields.related(
