@@ -35,5 +35,3 @@ from . import mgmtsystem_security_threat_scenario
 
 from . import mgmtsystem_security_event_scenario
 from . import mgmtsystem_security_event_measure
-
-from . import mgmtsystem_system
