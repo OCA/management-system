@@ -8,8 +8,7 @@
             <field name="arch" type="xml">
                 <field name="nonconformity_ids" position="before">
                     <separator string="Security Controls" colspan="4"/>
-                    <field name="control_ids" colspan="4" nolabel="1" 
-                           attrs="{'invisible':[('system_id.type','!=', 'information_security')]}"/>
+                    <field name="control_ids" colspan="4" nolabel="1"/>
                 </field>
             </field>
         </record>
