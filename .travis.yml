@@ -31,8 +31,9 @@ install:
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
   - apt-get install xfonts-75dpi
-  - wget http://sourceforge.net/projects/wkhtmltopdf/files/archive/0.12.2/wkhtmltox-0.12.2_linux-precise-amd64.deb
-  - dpkg -i wkhtmltox-0.12.2_linux-precise-amd64.deb
+  - wget http://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.11.0_rc1-static-amd64.tar.bz2
+  - tar xf wkhtmltopdf-0.11.0_rc1-static-amd64.tar.bz2
+  - export PATH=${HOME}:${PATH}
 
 script:
   - travis_run_tests
