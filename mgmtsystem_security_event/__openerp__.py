@@ -26,7 +26,6 @@
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "complexity": "normal",
     "description": """\
 Management System Security Event
 ================================

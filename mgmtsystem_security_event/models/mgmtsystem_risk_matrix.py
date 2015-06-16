@@ -25,15 +25,6 @@ from openerp.tools.translate import _
 from .mgmtsystem_security_event import _default_system_id
 
 
-MATRIX_TYPES = [
-    ('original', _('Before applying any measure')),
-    ('current', _('With current measures')),
-    ('residual', _('After applying the planned measures')),
-]
-
-MATRIX_TYPE_DICT = {t[0]: t[1] for t in MATRIX_TYPES}
-
-
 class MgmtsystemRiskMatrix(orm.TransientModel):
 
     """Category of Assets."""
@@ -41,9 +32,16 @@ class MgmtsystemRiskMatrix(orm.TransientModel):
     _name = "mgmtsystem.risk.matrix"
     _description = "Management System Risk Matrix"
 
+    def get_matrix_types(self, cr, uid, context=None):
+        return [
+            ('original', _('Before applying any measure')),
+            ('current', _('With current measures')),
+            ('residual', _('After applying the planned measures')),
+        ]
+
     _columns = {
         'type': fields.selection(
-            MATRIX_TYPES,
+            get_matrix_types,
             type='char',
             string='Type',
             required=True,
@@ -147,7 +145,12 @@ class MgmtsystemRiskMatrix(orm.TransientModel):
 
         matrix = self.browse(cr, uid, ids[0], context=context)
 
-        return _(MATRIX_TYPE_DICT[matrix.type])
+        matrix_types = {
+            t[0]: t[1] for t in
+            self.get_matrix_types(cr, uid, context=context)
+        }
+
+        return matrix_types[matrix.type]
 
     def get_cell_color(
         self, cr, uid, ids, severity, probability, context=None
