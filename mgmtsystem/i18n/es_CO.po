@@ -3,20 +3,20 @@
 # * mgmtsystem
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013
+# JOSE ALEJANDRO ECHEVERRI VALENCIA <josealejandroeche@gmail.com>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: management-system (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-07 06:43+0000\n"
-"PO-Revision-Date: 2016-09-09 12:26+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Turkish (http://www.transifex.com/oca/OCA-management-system-9-0/language/tr/)\n"
+"POT-Creation-Date: 2018-01-16 07:18+0000\n"
+"PO-Revision-Date: 2018-01-16 07:18+0000\n"
+"Last-Translator: JOSE ALEJANDRO ECHEVERRI VALENCIA <josealejandroeche@gmail.com>, 2018\n"
+"Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/es_CO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: tr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: es_CO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_action
@@ -25,51 +25,53 @@ msgid ""
 "    Actions (immediate, corrective, preventive) and improvement opportunities\n"
 "        "
 msgstr ""
+"\n"
+"Acciones (inmediata, correctiva, preventiva) y oportunidades de mejora"
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Applications"
-msgstr ""
+msgstr "Aplicaciones"
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Apply"
-msgstr ""
+msgstr "Aplicar"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_user_manager
 msgid "Approving User"
-msgstr ""
+msgstr "Usuario Aprobador"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_auditor
 msgid "Auditor"
-msgstr ""
+msgstr "Auditor"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_audit
 msgid "Audits"
-msgstr ""
+msgstr "Auditorías"
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr "Cancelar"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_claim
 msgid "Claims"
-msgstr ""
+msgstr "Reclamos"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_company_id
 msgid "Company"
-msgstr ""
+msgstr "Compañía"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_configuration
 msgid "Configuration"
-msgstr "Yapılandırma"
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.actions.act_window,name:mgmtsystem.action_mgmtsystem_configuration
@@ -81,18 +83,23 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_create_uid
 msgid "Created by"
-msgstr "Oluşturan"
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_create_date
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_create_date
 msgid "Created on"
-msgstr "Oluşturuldu"
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_display_name
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_document_page_approval
+msgid "Document page approval"
 msgstr ""
 
 #. module: mgmtsystem
@@ -140,7 +147,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_id
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_information_security
@@ -162,13 +169,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_write_uid
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_write_uid
 msgid "Last Updated by"
-msgstr "Son güncelleyen"
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_write_date
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_write_date
 msgid "Last Updated on"
-msgstr "Son güncelleme"
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.module.category,description:mgmtsystem.module_category_management_system
@@ -183,7 +190,7 @@ msgstr ""
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
 #: model:ir.ui.view,arch_db:mgmtsystem.system_form
 msgid "Management System"
-msgstr "Yönetim Sistemi"
+msgstr "Sistema de Gestión"
 
 #. module: mgmtsystem
 #: model:ir.actions.act_window,name:mgmtsystem.system_action
@@ -195,6 +202,11 @@ msgstr ""
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_manager
 msgid "Manager"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
+msgid "Manual"
 msgstr ""
 
 #. module: mgmtsystem
@@ -237,7 +249,7 @@ msgstr ""
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_procedure
 msgid "Procedures"
-msgstr ""
+msgstr "Procedimientos"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_environmental_aspect
@@ -310,6 +322,13 @@ msgid ""
 msgstr ""
 
 #. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_document_page_approval
+msgid ""
+"Provide document approval and history. \n"
+"-This installs the module document_page_approval."
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_environment
 msgid ""
 "Provide environment management tools.\n"
@@ -361,36 +380,35 @@ msgstr ""
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_quality
 msgid "Quality (ISO 9001)"
-msgstr ""
+msgstr "Calidad (ISO 9001)"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_quality_manual
 msgid "Quality Manual template based on the ISO 9001:2008 standard"
-msgstr ""
+msgstr "Modelo de Manual de Calidad basado en el estándar ISO 9001:2008"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_report
 msgid "Reports"
-msgstr ""
+msgstr "Reportes"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_settings
 msgid "Settings"
-msgstr ""
+msgstr "Ajustes"
 
 #. module: mgmtsystem
-#: code:addons/mgmtsystem/models/mgmtsystem_system.py:32
-#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
+#: code:addons/mgmtsystem/models/mgmtsystem_system.py:15
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_name
 #, python-format
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_configuration_system
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Systems"
-msgstr ""
+msgstr "Sistemas"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_review
@@ -415,4 +433,4 @@ msgstr ""
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "or"
-msgstr ""
+msgstr "o"
