@@ -8,6 +8,20 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help">Procedures of your management system.</field>
+            <field name="domain" eval="[('parent_id','=',ref('document_page_group_procedure'))]"/>
+            <field name="context" eval="{'default_parent_id': ref('document_page_group_procedure')}"/>
+        </record>
+        <record id="action_procedures_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="0" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="document_page.view_wiki_tree"/>
+            <field name="act_window_id" ref="action_procedures"/>
+        </record>
+        <record id="action_procedures_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="5" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="document_page.view_wiki_form"/>
+            <field name="act_window_id" ref="action_procedures"/>
         </record>
 
         <menuitem id="menu_mgmtsystem_manuals_procedures" 
@@ -17,12 +31,6 @@
             sequence="10" 
             groups="base.group_user"
             />
-
-        <record model="ir.actions.act_window" id="action_procedures">
-            <field name="domain"
-                eval="[('parent_id','=',ref('document_page_group_procedure'))]"
-                />
-        </record>
 
     </data>
 </openerp>
