@@ -1,5 +1,6 @@
 "id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
 "access_mgmtsystem_action","mgmtsystem.action.user","model_mgmtsystem_action","mgmtsystem.group_mgmtsystem_user",1,1,1,0
+"access_mgmtsystem_claim","mgmtsystem.action.user","crm_claim.model_crm_claim_stage","mgmtsystem.group_mgmtsystem_user",1,0,0,0
 "access_mgmtsystem_action_viewer","mgmtsystem.action.user.viewer","model_mgmtsystem_action","mgmtsystem.group_mgmtsystem_viewer",1,0,0,0
 "access_mgmtsystem_action_auditor","mgmtsystem.action.user.auditor","model_mgmtsystem_action","mgmtsystem.group_mgmtsystem_auditor",1,0,0,0
 "access_mgmtsystem_action_manager","mgmtsystem.action.user.manager","model_mgmtsystem_action","mgmtsystem.group_mgmtsystem_manager",1,1,1,0
