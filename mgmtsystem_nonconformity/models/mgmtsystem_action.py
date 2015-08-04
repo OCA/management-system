@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -18,33 +18,23 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System - Action",
-    "version": "1.2",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "description": """\
-This module enables you to manage the different actions of your management
-system:
-  * immediate actions
-  * corrective actions
-  * preventive actions
-  * improvement opportunities.
-""",
-    "depends": ['mgmtsystem', 'crm_claim'],
-    "data": [
-        'data/mgmtsystem_action_stage.xml',
-        'security/ir.model.access.csv',
-        'security/mgmtsystem_action_security.xml',
-        'action_sequence.xml',
-        'workflow_mgmtsystem_action.xml',
-        'views/menus.xml',
-        'mgmtsystem_action.xml',
-        'views/mgmtsystem_action_stage.xml',
-        'board_mgmtsystem_action.xml',
-    ],
-    "demo": ['demo_action.xml'],
-    "installable": True,
-}
+
+from openerp import models, fields
+
+
+class MgmtsystemAction(models.Model):
+    _inherit = "mgmtsystem.action"
+
+    nonconformity_immediate_id = fields.One2many(
+        'mgmtsystem.nonconformity',
+        'immediate_action_id',
+        readonly=True,
+    )
+    nonconformity_ids = fields.Many2many(
+        'mgmtsystem.nonconformity',
+        'mgmtsystem_nonconformity_action_rel',
+        'action_id',
+        'nonconformity_id',
+        'Nonconformities',
+        readonly=True,
+    )

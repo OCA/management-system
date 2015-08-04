@@ -26,6 +26,7 @@
         <field name="comment">Module user with additional permission for approvals.</field>
         <field name="category_id" ref="module_category_management_system"/>
         <field name="implied_ids" eval="(4,ref('mgmtsystem.group_mgmtsystem_user'))"/>
+        <field name="users" eval="[(6,0,[ref('base.user_root')])]"/>
     </record>
 
     <record id="group_mgmtsystem_auditor" model="res.groups">

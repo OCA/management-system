@@ -45,6 +45,18 @@ class mgmtsystem_action(models.Model):
     system_id = fields.Many2one('mgmtsystem.system', 'System')
     company_id = fields.Many2one('res.company', 'System', default=own_company)
 
+    stage_id = fields.Many2one(
+        'mgmtsystem.action.stage',
+        'Stage',
+        default=lambda self: self.get_default_stage()
+    )
+
+    @api.model
+    def get_default_stage(self):
+        return self.env['mgmtsystem.action.stage'].search([
+            ('is_starting', '=', True)
+        ]).id
+
     @api.model
     def create(self, vals):
         vals.update({
@@ -69,9 +81,11 @@ class mgmtsystem_action(models.Model):
         for case in self:
             values = {'active': True}
 
-            values['stage_id'] = self.stage_find(
-                self, None, [('name', '=', 'In Progress')]
-            )
+            stages = self.env['mgmtsystem.action.stage']
+            values['stage_id'] = stages.search([
+                ['is_ending', '=', False],
+                ['is_starting', '=', False]
+            ]).id
 
             case.write(values)
 
