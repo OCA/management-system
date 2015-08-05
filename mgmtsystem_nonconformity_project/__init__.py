@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -19,4 +19,4 @@
 #
 ##############################################################################
 
-from . import mgmtsystem_nonconformity_project
+from . import models
