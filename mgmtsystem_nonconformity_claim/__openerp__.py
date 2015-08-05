@@ -29,7 +29,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/mgmtsystem_nonconformity.xml',
-        'data/mgmtsystem_nonconformity_data.xml',
+        'data/mgmtsystem_nonconformity_type.xml',
     ],
     'installable': True,
     'application': False,
