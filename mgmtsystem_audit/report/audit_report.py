@@ -44,4 +44,3 @@ report_sxw.report_sxw(
     'addons/mgmtsystem_audit/report/audit_report.rml',
     parser=mgmtsystem_audit_report
 )
-
