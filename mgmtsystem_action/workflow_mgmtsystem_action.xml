@@ -22,14 +22,14 @@
       <field name="body_html"><![CDATA[
 <p>Hello,</p>
 <p>A new action has been assigned to you:
-  <a href="http://localhost:8080">http://localhost:8080</a>
+  <a href="${object.get_action_url()}">${object.get_action_url()}</a>
 </p>
 <p>${object.description}</p>
 
 <p>
   Thank you<br />
   --<br />
-  OpenERP
+  Odoo
 </p>
         ]]>
       </field>
