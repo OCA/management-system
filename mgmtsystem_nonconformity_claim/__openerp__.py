@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Copyright (C) 2012 Daniel Reis
@@ -23,26 +23,13 @@
     'author': "Daniel Reis,Odoo Community Association (OCA)",
     'license': 'AGPL-3',
     'category': 'Management System',
-    'description': """\
-Extends the Nonconformity form so it can also represent NC candidates and other
-types of feedback, such as complaints, measurements, suggestions, etc.
-
-The "type" field identifies if the feedback corresponds to a nonconformity, or
-to other type of record, such as "best practice", "suggestion", etc.
-
-This module purpose overlaps with "mgmtsystem_claim" module, so you should use
-either one or the other.
-It will fit best to your uses cases requiring:
-  * a common numbering sequence for complaints and nonconformities;
-  * a single point-of-entry for all management system related occurrences.
-""",
     'depends': [
         'mgmtsystem_nonconformity'
     ],
     'data': [
         'security/ir.model.access.csv',
-        'mgmtsystem_nonconformity.xml',
-        'mgmtsystem_nonconformity_data.xml',
+        'views/mgmtsystem_nonconformity.xml',
+        'data/mgmtsystem_nonconformity_data.xml',
     ],
     'installable': True,
     'application': False,
