@@ -32,15 +32,15 @@ This module enables you to manage audits and verifications lists of your managem
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_audit_security.xml',
-        'audit_sequence.xml',
-        'mgmtsystem_audit.xml',
+        'data/audit_sequence.xml',
+        'views/mgmtsystem_audit.xml',
+        'views/board_mgmtsystem_audit.xml',
         'report/audit_report.xml',
         'report/verification_list.xml',
-        'board_mgmtsystem_audit.xml',
         'wizard/copy_verification_lines.xml',
     ],
     "demo": [
-        'demo_audit.xml',
+        'demo/demo_audit.xml',
     ],
     "installable": True,
     "certificate": ''

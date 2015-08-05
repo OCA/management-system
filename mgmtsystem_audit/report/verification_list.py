@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -77,4 +77,3 @@ report_sxw.report_sxw(
     'addons/mgmtsystem_audit/report/verification_list.rml',
     parser=mgmtsystem_audit_verification_list
 )
-
