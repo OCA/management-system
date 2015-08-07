@@ -20,14 +20,11 @@
 ##############################################################################
 {
     "name": "Management System - Review",
-    "version": "1.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "version": "8.0.1.0.0",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """\
-This module enables you to manage reviews of your management system.
-    """,
     "depends": [
         'mgmtsystem_nonconformity',
         'mgmtsystem_survey',
@@ -39,6 +36,5 @@ This module enables you to manage reviews of your management system.
         'views/mgmtsystem_review.xml',
         'report/review_report.xml',
     ],
-    "demo": [],
-    'installable': True,
+    "installable": True,
 }
