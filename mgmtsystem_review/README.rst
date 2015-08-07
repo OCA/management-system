@@ -24,6 +24,10 @@ To use this module, you need to:
  * Conclude your review with the date of the next one and save it
  * Print the report
 
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/128/8.0
+
 Known issues / Roadmap
 ======================
 
