@@ -4,7 +4,6 @@
         <!-- Feedback Type -->
         <record id="view_mgmtsystem_nonconformity_type_form" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.type.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.nonconformity.type</field>
             <field name="arch" type="xml">
                 <form string="Claim Types">
