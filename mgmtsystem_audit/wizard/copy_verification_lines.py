@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from osv import fields, orm
+from openerp.osv import fields, orm
 
 
 class copy_verification_lines(orm.TransientModel):

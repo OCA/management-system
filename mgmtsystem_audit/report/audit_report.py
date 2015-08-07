@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,7 +20,7 @@
 ##############################################################################
 
 import time
-from report import report_sxw
+from openerp.report import report_sxw
 
 
 class mgmtsystem_audit_report(report_sxw.rml_parse):
@@ -37,5 +37,3 @@ report_sxw.report_sxw(
     'addons/mgmtsystem_audit/report/audit_report.rml',
     parser=mgmtsystem_audit_report
 )
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

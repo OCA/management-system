@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -21,29 +21,23 @@
 {
     "name": "Management System - Audit",
     "version": "1.2",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """\
-This module enables you to manage audits and verifications lists of your
-management system.
-    """,
     "depends": ['mgmtsystem_nonconformity'],
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_audit_security.xml',
-        'audit_sequence.xml',
-        'mgmtsystem_audit.xml',
+        'data/audit_sequence.xml',
+        'views/mgmtsystem_audit.xml',
+        'views/board_mgmtsystem_audit.xml',
         'report/audit_report.xml',
         'report/verification_list.xml',
-        'board_mgmtsystem_audit.xml',
         'wizard/copy_verification_lines.xml',
     ],
     "demo": [
-        'demo_audit.xml',
+        'demo/demo_audit.xml',
     ],
-    'installable': False,
-    "certificate": ''
+    'installable': True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
