@@ -24,7 +24,6 @@ from openerp import netsvc
 from openerp.osv import fields, orm
 from openerp.addons.base_status.base_state import base_state
 from openerp.tools import (
-    ustr,
     DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
     DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT,
 )
@@ -202,10 +201,9 @@ class MgmtsystemNonconformity(base_state, orm.Model):
             msg = '%s <b>%s</b>' % (pre, text)
             if data:
                 o = self.browse(cr, uid, ids, context=context)[0]
-                post = '''
+                post = u'''
 <br />
-<ul><li> <b>''' + _('Stage:') + '''</b> %s %s %s</li></ul>''' % (o.state,
-                                                                 ustr(u'→'),
+<ul><li> <b>''' + _('Stage:') + '''</b> %s →  %s</li></ul>''' % (o.state,
                                                                  data['state'])
                 msg += post
             self.message_post(cr, uid, [id], body=msg, context=context)
