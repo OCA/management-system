@@ -116,7 +116,6 @@
 	<record model="ir.ui.view" id="mgmtsystem_claims_calendar_view">
 		<field name="name">Claims</field>
 		<field name="model">mgmtsystem.claim</field>
-		<field name="type">calendar</field>
 		<field name="priority" eval="2"/>
 		<field name="arch" type="xml">
 			<calendar string="Claims" date_start="date_action_next" color="user_id">
@@ -130,7 +129,6 @@
 	<record id="view_mgmtsystem_claims_filter" model="ir.ui.view">
 		<field name="name">Management System Claims Search</field>
 		<field name="model">mgmtsystem.claim</field>
-		<field name="type">search</field>
 		<field name="arch" type="xml">
 			<search string="Search Claims">
 				<filter icon="terp-check" string="Current" name="current"

@@ -68,6 +68,7 @@ Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
 Pedro M. Baeza <pedro.baeza@gmail.com>
 Sandy Carter <sandy.carter@savoirfairelinux.com>
 Virgil Dupras <virgil.dupras@savoirfairelinux.com>
+El hadji Dem <elhadji.dem@savoirfairelinux.com>
 
 Maintainer
 ----------

@@ -24,6 +24,7 @@ from urlparse import urljoin
 
 from openerp.tools.translate import _
 from openerp.osv import fields, orm
+from openerp.addons.crm import crm
 
 
 class MgmtsystemAction(orm.Model):
@@ -47,7 +48,18 @@ class MgmtsystemAction(orm.Model):
             'Response Type',
         ),
         'system_id': fields.many2one('mgmtsystem.system', 'System'),
-        'company_id': fields.many2one('res.company', 'Company')
+        'company_id': fields.many2one('res.company', 'Company'),
+        # Override state fields by adding the track_visibility option that
+        # allow to add the changes in the chatter
+        'state': fields.related(
+            'stage_id', 'state', type="selection", store=True,
+            track_visibility='onchange',
+            selection=crm.AVAILABLE_STATES, string="Status", readonly=True,
+            help="The status is set to 'Draft', when a case is created.\
+                If the case is in progress the status is set to 'Open'.\
+                When the case is over, the status is set to 'Done'.\
+                If the case needs to be reviewed then the status is \
+                set to 'Pending'."),
     }
 
     _defaults = {
@@ -76,7 +88,7 @@ class MgmtsystemAction(orm.Model):
             cr, uid, ids, updated_fields, context=context, values=values
         )
 
-    def case_close(self, cr, uid, ids, context=None):
+    def do_close(self, cr, uid, ids, context=None):
         """When Action is closed, post a message on the related NC's chatter"""
         for o in self.browse(cr, uid, ids, context=context):
             for nc in o.nonconformity_ids:
@@ -84,6 +96,27 @@ class MgmtsystemAction(orm.Model):
         return super(MgmtsystemAction, self).case_close(
             cr, uid, ids, context=context
         )
+
+    def do_pending(self, cr, uid, ids, context=None):
+        """Marks case as pending"""
+        return self.write(cr, uid, ids, {'state': 'pending'}, context=context)
+
+    def do_cancel(self, cr, uid, ids, context=None):
+        """ Cancels case """
+        self.write(cr, uid, ids, {
+            'state': 'cancel', 'active': True}, context=context)
+        return True
+
+    def do_open(self, cr, uid, ids, context=None):
+        """ Opens case """
+        cases = self.browse(cr, uid, ids, context=context)
+        for case in cases:
+            data = {'active': True}
+            if not case.user_id:
+                data['user_id'] = uid
+            data['state'] = 'open'
+            self.write(cr, uid, ids, data, context=context)
+        return True
 
     def get_action_url(self, cr, uid, ids, context=None):
         assert len(ids) == 1
