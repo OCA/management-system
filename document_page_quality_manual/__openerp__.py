@@ -31,7 +31,7 @@ Quality Manual Template.
 It provides the Wiki Category and a Wiki Page
 for the Quality Manual.
     """,
-    'author': 'OpenERP SA',
+    'author': "OpenERP SA,Odoo Community Association (OCA)",
     'website': 'http://openerp.com',
     'depends': ['mgmtsystem_manuals'],
     'data': ['document_page_quality_manual.xml'],

@@ -10,7 +10,6 @@
         <record id="view_mgmtsystem_hazard_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.tree</field>
             <field name="model">mgmtsystem.hazard</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Hazard">
                     <field name="type_id"/>
@@ -28,7 +27,6 @@
         <record id="view_mgmtsystem_hazard_filter" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.filter</field>
             <field name="model">mgmtsystem.hazard</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Hazard">
                     <group>
@@ -53,7 +51,6 @@
 
         <record id="view_mgmtsystem_hazard_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.hazard</field>
             <field name="arch" type="xml">
                 <form string="Hazard">
@@ -116,7 +113,6 @@
         
         <record id="view_mgmtsystem_hazard_hazard_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.hazard.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.hazard.hazard</field>
             <field name="arch" type="xml">
                 <form string="Hazard">
@@ -132,7 +128,6 @@
         <record id="view_mgmtsystem_hazard_hazard_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.hazard.tree</field>
             <field name="model">mgmtsystem.hazard.hazard</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Hazards">
                     <field name="name"/>
@@ -144,7 +139,6 @@
         <record id="view_mgmtsystem_hazard_hazard_filter" model="ir.ui.view">
             <field name="name">Hazards</field>
             <field name="model">mgmtsystem.hazard.hazard</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Hazards">
                     <field name="name"/>
@@ -172,7 +166,6 @@
         
         <record id="view_mgmtsystem_hazard_origin_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.origin.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.hazard.origin</field>
             <field name="arch" type="xml">
                 <form string="Origin">
@@ -188,7 +181,6 @@
         <record id="view_mgmtsystem_hazard_origin_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.origin.tree</field>
             <field name="model">mgmtsystem.hazard.origin</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Origins">
                     <field name="name"/>
@@ -200,7 +192,6 @@
         <record id="view_mgmtsystem_hazard_origin_filter" model="ir.ui.view">
             <field name="name">Origins</field>
             <field name="model">mgmtsystem.hazard.origin</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Origins">
                     <field name="name"/>
@@ -228,7 +219,6 @@
         
         <record id="view_mgmtsystem_hazard_type_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.type.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.hazard.type</field>
             <field name="arch" type="xml">
                 <form string="Type">
@@ -244,7 +234,6 @@
         <record id="view_mgmtsystem_hazard_type_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.type.tree</field>
             <field name="model">mgmtsystem.hazard.type</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Types">
                     <field name="name"/>
@@ -256,7 +245,6 @@
         <record id="view_mgmtsystem_hazard_type_filter" model="ir.ui.view">
             <field name="name">Types</field>
             <field name="model">mgmtsystem.hazard.type</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Types">
                     <field name="name"/>
@@ -284,7 +272,6 @@
         
         <record id="view_mgmtsystem_hazard_risk_computation_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.risk_computation.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.hazard.risk.computation</field>
             <field name="arch" type="xml">
                 <form string="Risk Computation">
@@ -300,7 +287,6 @@
         <record id="view_mgmtsystem_hazard_risk_computation_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.risk_computation.tree</field>
             <field name="model">mgmtsystem.hazard.risk.computation</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Risk Computations">
                     <field name="name"/>
@@ -312,7 +298,6 @@
         <record id="view_mgmtsystem_hazard_risk_computation_filter" model="ir.ui.view">
             <field name="name">Risk Computations</field>
             <field name="model">mgmtsystem.hazard.risk.computation</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Risk Computations">
                     <field name="name"/>
@@ -341,7 +326,6 @@
         <record model="ir.ui.view" id="company_form_view">
             <field name="name">res.company.form.inherit.mgmtsystem_hazard</field>
             <field name="model">res.company</field>
-            <field name="type">form</field>
             <field name="inherit_id" ref="base.view_company_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//page[@string='Configuration']" position="inside">
@@ -356,7 +340,6 @@
         
         <record id="view_mgmtsystem_hazard_risk_type_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.risk_type.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.hazard.risk.type</field>
             <field name="arch" type="xml">
                 <form string="Risk Type">
@@ -372,7 +355,6 @@
         <record id="view_mgmtsystem_hazard_risk_type_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.risk_type.tree</field>
             <field name="model">mgmtsystem.hazard.risk.type</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Risk Types">
                     <field name="name"/>
@@ -384,7 +366,6 @@
         <record id="view_mgmtsystem_hazard_risk_type_filter" model="ir.ui.view">
             <field name="name">Risk Types</field>
             <field name="model">mgmtsystem.hazard.risk.type</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Risk Types">
                     <field name="name"/>
@@ -412,7 +393,6 @@
         
         <record id="view_mgmtsystem_hazard_probability_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.probability.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.hazard.probability</field>
             <field name="arch" type="xml">
                 <form string="Probability">
@@ -429,7 +409,6 @@
         <record id="view_mgmtsystem_hazard_probability_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.probability.tree</field>
             <field name="model">mgmtsystem.hazard.probability</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Probabilities">
                     <field name="name"/>
@@ -442,7 +421,6 @@
         <record id="view_mgmtsystem_hazard_probability_filter" model="ir.ui.view">
             <field name="name">Probabilities</field>
             <field name="model">mgmtsystem.hazard.probability</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Probabilities">
                     <field name="name"/>
@@ -471,7 +449,6 @@
         
         <record id="view_mgmtsystem_hazard_severity_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.severity.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.hazard.severity</field>
             <field name="arch" type="xml">
                 <form string="Severity">
@@ -488,7 +465,6 @@
         <record id="view_mgmtsystem_hazard_severity_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.severity.tree</field>
             <field name="model">mgmtsystem.hazard.severity</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Severities">
                     <field name="name"/>
@@ -501,7 +477,6 @@
         <record id="view_mgmtsystem_hazard_severity_filter" model="ir.ui.view">
             <field name="name">Origins</field>
             <field name="model">mgmtsystem.hazard.severity</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Severities">
                     <field name="name"/>
@@ -530,7 +505,6 @@
         
         <record id="view_mgmtsystem_hazard_usage_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.usage.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.hazard.usage</field>
             <field name="arch" type="xml">
                 <form string="Occupation / Usage">
@@ -547,7 +521,6 @@
         <record id="view_mgmtsystem_hazard_usage_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.usage.tree</field>
             <field name="model">mgmtsystem.hazard.usage</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Occupations / Usages">
                     <field name="name"/>
@@ -560,7 +533,6 @@
         <record id="view_mgmtsystem_hazard_usage_filter" model="ir.ui.view">
             <field name="name">Origins</field>
             <field name="model">mgmtsystem.hazard.usage</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Occupations / Usages">
                     <field name="name"/>
@@ -589,7 +561,6 @@
         
         <record id="view_mgmtsystem_hazard_control_measure_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.control_measure.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.hazard.control_measure</field>
             <field name="arch" type="xml">
                 <form string="Control Measure">
@@ -606,7 +577,6 @@
         <record id="view_mgmtsystem_hazard_control_measure_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.control_measure.tree</field>
             <field name="model">mgmtsystem.hazard.control_measure</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Control Measures">
                     <field name="name"/>
@@ -619,7 +589,6 @@
         <record id="view_mgmtsystem_hazard_control_measure_filter" model="ir.ui.view">
             <field name="name">Control Measures</field>
             <field name="model">mgmtsystem.hazard.control_measure</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Control Measures">
                     <field name="name"/>
@@ -642,7 +611,6 @@
         
         <record id="view_mgmtsystem_hazard_test_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.test.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.hazard.test</field>
             <field name="arch" type="xml">
                 <form string="Implementation Test">
@@ -660,7 +628,6 @@
         <record id="view_mgmtsystem_hazard_test_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.test.tree</field>
             <field name="model">mgmtsystem.hazard.test</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Implementation Tests">
                     <field name="name"/>
@@ -674,7 +641,6 @@
         <record id="view_mgmtsystem_hazard_test_filter" model="ir.ui.view">
             <field name="name">Implementation Tests</field>
             <field name="model">mgmtsystem.hazard.test</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Implementation Tests">
                     <field name="name"/>
@@ -698,7 +664,6 @@
         
         <record id="view_mgmtsystem_hazard_residual_risk_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.residual_risk.form</field>
-            <field name="type">form</field>
             <field name="model">mgmtsystem.hazard.residual_risk</field>
             <field name="arch" type="xml">
                 <form string="Residual Risk">
@@ -720,7 +685,6 @@
         <record id="view_mgmtsystem_hazard_residual_risk_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.residual_risk.tree</field>
             <field name="model">mgmtsystem.hazard.residual_risk</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Residual Risks">
                     <field name="name"/>
@@ -736,7 +700,6 @@
         <record id="view_mgmtsystem_hazard_residual_risk_filter" model="ir.ui.view">
             <field name="name">Residual Risks</field>
             <field name="model">mgmtsystem.hazard.residual_risk</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Residual Risks">
                     <field name="name"/>

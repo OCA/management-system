@@ -5,7 +5,6 @@
         <record id="copy_verification_lines_form_view" model="ir.ui.view">
             <field name="name">copy.verification.lines.form</field>
             <field name="model">copy.verification.lines</field>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Copy Verification Lines">
                     <field name="audit_src" domain="[('state','=','done')]"/>

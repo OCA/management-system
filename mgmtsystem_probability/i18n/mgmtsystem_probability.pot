@@ -1,0 +1,67 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* mgmtsystem_probability
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-11 14:00+0000\n"
+"PO-Revision-Date: 2015-02-11 14:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mgmtsystem_probability
+#: field:mgmtsystem.probability,category:0
+msgid "Category"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: field:mgmtsystem.probability,name:0
+msgid "Name"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: model:ir.actions.act_window,name:mgmtsystem_probability.open_mgmtsystem_probability_list
+#: model:ir.ui.menu,name:mgmtsystem_probability.menu_open_mgmtsystem_probability
+#: view:mgmtsystem.probability:0
+msgid "Probability"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: view:mgmtsystem.probability:0
+msgid "Probabilities"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: field:mgmtsystem.probability,value:0
+msgid "Value"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: model:ir.model,name:mgmtsystem_probability.model_mgmtsystem_probability
+msgid "mgmtsystem.probability"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: code:addons/mgmtsystem_probability/model/mgmtsystem_probability.py:66
+#: selection:mgmtsystem.probability,category:0
+#, python-format
+msgid "hazard"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: code:addons/mgmtsystem_probability/model/mgmtsystem_probability.py:67
+#: selection:mgmtsystem.probability,category:0
+#, python-format
+msgid "security"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: field:mgmtsystem.probability,description:0
+msgid "Description"
+msgstr ""

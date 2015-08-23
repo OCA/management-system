@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-24 21:21+0000\n"
-"PO-Revision-Date: 2013-07-24 21:21+0000\n"
+"POT-Creation-Date: 2015-02-27 21:29+0000\n"
+"PO-Revision-Date: 2015-02-27 21:29+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,8 +26,9 @@ msgid "In Progress"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-msgid "Preventive Action"
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:83
+#, python-format
+msgid "Action \"%s\" was closed."
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -42,13 +43,8 @@ msgid "Responsible"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: field:mgmtsystem.action,system_id:0
-msgid "System"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: field:mgmtsystem.action,state:0
-msgid "Status"
+#: model:ir.actions.server,subject:mgmtsystem_action.action_email_reminder_action
+msgid "Reminder on Action: \"[[object.name]]\""
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -57,13 +53,9 @@ msgid "Priority"
 msgstr ""
 
 #. module: mgmtsystem_action
+#: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
 #: view:mgmtsystem.action:0
-msgid "Group By..."
-msgstr ""
-
-#. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "Send New Email"
+msgid "Action"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -84,8 +76,8 @@ msgid "Closed"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "Reply"
+#: field:mgmtsystem.action,message_unread:0
+msgid "Unread Messages"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -109,9 +101,19 @@ msgid "Email"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-#: selection:mgmtsystem.action,state:0
-msgid "Pending"
+#: model:ir.actions.server,message:mgmtsystem_action.action_email_reminder_action
+msgid "\n"
+"Hello,\n"
+"\n"
+"This is an automated message to remind you that the following action is due to be completed in 10 days ([[object.date_deadline]]):\n"
+"\n"
+"[[object.get_action_url()]]\n"
+"\n"
+"\n"
+"Thank you and have a nice day.\n"
+"--\n"
+"OpenERP\n"
+"            "
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -145,14 +147,19 @@ msgid "Next Action"
 msgstr ""
 
 #. module: mgmtsystem_action
+#: field:mgmtsystem.action,system_id:0
+msgid "System"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 #: field:mgmtsystem.action,description:0
 msgid "Description"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: field:mgmtsystem.action,date_action_next:0
-msgid "Next Action Date"
+#: selection:mgmtsystem.action,priority:0
+msgid "Normal"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -202,7 +209,8 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
-msgid "User"
+#: selection:mgmtsystem.action,state:0
+msgid "Pending"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -226,14 +234,13 @@ msgid "Stage"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "Action"
+#: field:mgmtsystem.action,date_action_next:0
+msgid "Next Action Date"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "History Information"
+#: field:mgmtsystem.action,state:0
+msgid "Status"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -247,8 +254,8 @@ msgid "Destination email for email gateway."
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.actions.server,subject:mgmtsystem_action.mgmtsystem_action_server_action
-msgid "[[object.name]]"
+#: field:mgmtsystem.action,write_date:0
+msgid "Update Date"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -288,13 +295,8 @@ msgid "Active"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: field:mgmtsystem.action,message_unread:0
-msgid "Unread Messages"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.actions.server,name:mgmtsystem_action.mgmtsystem_action_server_action
-msgid "Notify the person in charge of the new action"
+#: help:mgmtsystem.action,message_ids:0
+msgid "Messages and communication history"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -323,8 +325,8 @@ msgid "ID"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "History"
+#: selection:mgmtsystem.action,type_action:0
+msgid "Preventive Action"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -339,8 +341,8 @@ msgid "Reference"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,priority:0
-msgid "Normal"
+#: view:mgmtsystem.action:0
+msgid "Group By..."
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -355,13 +357,18 @@ msgid "High"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: view:mgmtsystem.action:0
-msgid "Global CC"
+#: model:ir.actions.server,name:mgmtsystem_action.mgmtsystem_action_server_action
+msgid "Notify the person in charge of the new action"
 msgstr ""
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,message_summary:0
 msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.actions.server,subject:mgmtsystem_action.mgmtsystem_action_server_action
+msgid "[[object.name]]"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -371,8 +378,13 @@ msgid "Deadline"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: field:mgmtsystem.action,write_date:0
-msgid "Update Date"
+#: view:mgmtsystem.action:0
+msgid "User"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.actions.server,name:mgmtsystem_action.action_email_reminder_action
+msgid "Reminder to Responsible"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -399,4 +411,3 @@ msgstr ""
 #: view:mgmtsystem.action:0
 msgid "Subject"
 msgstr ""
-

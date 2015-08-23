@@ -21,13 +21,25 @@
 {
     "name": "Management System - Nonconformity",
     "version": "1.2",
-    "author": "Savoir-faire Linux",
+    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """\
+    "description": """
+Management System - Nonconformity
+=================================
+
 This module enables you to manage the nonconformities of your management
 system: quality (ISO9001), environment (ISO14001) or security (ISO27001).
+
+Installation
+============
+
+To install this module, you need to:
+
+* Clone the project from github on your instance
+    * git clone https://github.com/OCA/management-system.git
+* Start odoo with the project in the addons path
 
 Configuration
 =============
@@ -56,7 +68,7 @@ enter the following information:
 Click on Save and then on Send for Analysis.
 
 As an approving user, go to the newly created NC and fill in the following
-informationi in the tab named Causes and Analysis:
+information in the tab named Causes and Analysis:
 
 * Causes: Add root causes
 * Analysis: Describe the result of the investigation
@@ -82,14 +94,42 @@ When the action plan is reviewed (comments) and approved, each action of the
 plan is opened.
 
 When all actions of the plan are done, their effectiveness must be evaluated
-before closingi the NC.
+before closing the NC.
+
+For further information, please visit:
+
+ * https://github.com/OCA/management-system/issues
+
+Known issues / Roadmap
+======================
+
+None
+
+Credits
+=======
 
 Contributors
-============
+------------
 
 * Daniel Reis <dreis.pt@hotmail.com>
 * Glen Dromgoole <gdromgoole@tier1engineering.com>
-    """,
+* Sandy Carter <sandy.carter@savoirfairelinux.com>
+
+Maintainer
+----------
+
+.. image:: http://odoo-community.org/logo.png
+   :alt: Odoo Community Association
+   :target: http://odoo-community.org
+
+This module is maintained by the OCA.
+
+OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
+
+To contribute to this module, please visit http://odoo-community.org.
+""",
     "depends": [
         'mgmtsystem_action',
         'document_page_procedure',
@@ -97,14 +137,17 @@ Contributors
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_nonconformity_security.xml',
-        'mgmtsystem_nonconformity.xml',
+        'view/mgmtsystem_nonconformity.xml',
+        'data/mgmtsystem_nonconformity_severity.xml',
+        'data/mgmtsystem_nonconformity_origin.xml',
+        'data/mgmtsystem_nonconformity_cause.xml',
         'mgmtsystem_nonconformity_workflow.xml',
-        'nonconformity_sequence.xml',
-        'board_mgmtsystem_nonconformity.xml',
-        'mgmtsystem_nonconformity_data.xml',
+        'mgmtsystem_nonconformity_sequence.xml',
     ],
     "demo": [
-        'demo_nonconformity.xml',
+        'demo/mgmtsystem_nonconformity_origin.xml',
+        'demo/mgmtsystem_nonconformity_cause.xml',
+        'demo/mgmtsystem_nonconformity.xml',
     ],
     "installable": True,
 }

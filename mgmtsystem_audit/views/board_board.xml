@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="board_mgmtsystem_audit_form" model="ir.ui.view">
+            <field name="name">board.mgmtsystem.audit.form</field>
+            <field name="model">board.board</field>
+            <field name="inherit_id" ref="mgmtsystem.board_mgmtsystem_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/hpaned/child2" position="inside">
+                  <action name="%(action_mgmtsystem_audit)d" string="Open Audits"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
