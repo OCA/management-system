@@ -15,8 +15,7 @@
             <field name="procedure_ids" eval="[(6,0,[ref('document_page_procedure.document_page_procedure')])]"/>
             <field name="cause_ids" eval="[(6,0,[ref('demo_cause')])]"/>
             <field name="immediate_action_id" ref="mgmtsystem_action.demo_immediate"/>
-            <field name="corrective_action_id" ref="mgmtsystem_action.demo_corrective"/>
-            <field name="preventive_action_id" ref="mgmtsystem_action.demo_preventive"/>
+            <field name="action_ids" eval="[(6,0,[ref('mgmtsystem_action.demo_corrective'),ref('mgmtsystem_action.demo_preventive')])]"/>
         </record>
 
     </data>
