@@ -19,106 +19,94 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import api, fields, models
 
 
-class mgmtsystem_review(models.Model):
+class MgmtsystemReview(models.Model):
     _name = "mgmtsystem.review"
     _description = "Review"
-    _columns = {
-        'name': fields.char('Name', size=50, required=True),
-        'reference': fields.char(
-            'Reference',
-            size=64,
-            required=True,
-            readonly=True,
-        ),
-        'date': fields.datetime('Date', required=True),
-        'user_ids': fields.many2many(
-            'res.users',
-            'mgmtsystem_review_user_rel',
-            'user_id',
-            'mgmtsystem_review_id',
-            'Participants',
-        ),
-        'response_ids': fields.many2many(
-            'survey.user_input',
-            'mgmtsystem_review_response_rel',
-            'response_id',
-            'mgmtsystem_review_id',
-            'Survey Answers',
-        ),
-        'policy': fields.text('Policy'),
-        'changes': fields.text('Changes'),
-        'line_ids': fields.one2many(
-            'mgmtsystem.review.line',
-            'review_id',
-            'Lines',
-        ),
-        'conclusion': fields.text('Conclusion'),
-        'state': fields.selection(
-            [
-                ('open', 'Open'),
-                ('done', 'Closed'),
-            ],
-            'State',
-        ),
-        'company_id': fields.many2one('res.company', 'Company'),
-    }
 
-    _defaults = {
-        'company_id': (
-            lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
-        'reference': 'NEW',
-        'state': 'open'
-    }
+    name = fields.Char('Name', size=50, required=True)
+    reference = fields.Char(
+        'Reference',
+        size=64,
+        required=True,
+        readonly=True,
+        default='NEW')
+    date = fields.Datetime(
+        'Date',
+        required=True)
+    user_ids = fields.Many2Many(
+        'res.users',
+        'mgmtsystem_review_user_rel',
+        'user_id',
+        'mgmtsystem_review_id',
+        'Participants')
+    response_ids = fields.Many2Many(
+        'survey.user_input',
+        'mgmtsystem_review_response_rel',
+        'response_id',
+        'mgmtsystem_review_id',
+        'Survey Answers')
+    policy = fields.Text('Policy'),
+    changes = fields.Text('Changes'),
+    line_ids = fields.One2Many(
+        'mgmtsystem.review.line',
+        'review_id',
+        'Lines')
+    conclusion = fields.Text('Conclusion'),
+    state = fields.Selection(
+        [
+            ('open', 'Open'),
+            ('done', 'Closed'),
+        ],
+        'State',
+        readonly=True,
+        default="open",
+        track_visibility='onchange')
+    company_id = fields.Many2One(
+        'res.company',
+        'Company',
+        default=lambda self: self.env.user.company_id.id)
 
-    def create(self, cr, uid, vals, context=None):
+    @api.model
+    def create(self, vals):
         vals.update({
-            'reference': self.pool.get('ir.sequence').get(
-                cr, uid, 'mgmtsystem.review')
+            'reference': self.env['ir.sequence'].get('mgmtsystem.review')
         })
-        return super(mgmtsystem_review, self).create(cr, uid, vals, context)
+        return super(MgmtsystemReview, self).create(vals)
 
-    def button_close(self, cr, uid, ids, context=None):
-        return self.write(cr, uid, ids, {'state': 'done'})
+    @api.multi
+    def button_close(self):
+        return self.write({'state': 'done'})
 
 
-class mgmtsystem_review_line(models.Model):
+class MgmtsystemReviewLine(models.Model):
     _name = "mgmtsystem.review.line"
     _description = "Review Line"
-    _columns = {
-        'name': fields.char('Title', size=300, required=True),
-        'type': fields.selection(
-            (
-                ('action', 'Action'),
-                ('nonconformity', 'Nonconformity'),
-            ),
-            'Type',
-        ),
-        'action_id': fields.many2one(
-            'mgmtsystem.action',
-            'Action',
-            select=True,
-        ),
-        'nonconformity_id': fields.many2one(
-            'mgmtsystem.nonconformity',
-            'Nonconformity',
-            select=True,
-        ),
-        'decision': fields.text('Decision'),
-        'review_id': fields.many2one(
-            'mgmtsystem.review',
-            'Review',
-            ondelete='cascade',
-            select=True,
-        ),
-        'company_id': fields.many2one('res.company', 'Company'),
-    }
 
-    _defaults = {
-        'company_id': (
-            lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
-    }
+    name = fields.Char('Title', size=300, required=True)
+    type = fields.Selection(
+        [
+            ('action', 'Action'),
+            ('nonconformity', 'Nonconformity'),
+        ],
+        'Type')
+    action_id = fields.Many2One(
+        'mgmtsystem.action',
+        'Action',
+        select=True)
+    nonconformity_id = fields.Many2One(
+        'mgmtsystem.nonconformity',
+        'Nonconformity',
+        select=True)
+    decision = fields.Text('Decision')
+    review_id = fields.Many2One(
+        'mgmtsystem.review',
+        'Review',
+        ondelete='cascade',
+        select=True)
+    company_id = fields.Many2One(
+        'res.company',
+        'Company',
+        default=lambda self: self.env.user.company_id.id)
