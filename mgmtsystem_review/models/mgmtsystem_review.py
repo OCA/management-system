@@ -19,10 +19,10 @@
 #
 ##############################################################################
 
-from openerp import fields, orm
+from openerp import fields, models
 
 
-class mgmtsystem_review(orm.Model):
+class mgmtsystem_review(models.Model):
     _name = "mgmtsystem.review"
     _description = "Review"
     _columns = {
@@ -85,7 +85,7 @@ class mgmtsystem_review(orm.Model):
         return self.write(cr, uid, ids, {'state': 'done'})
 
 
-class mgmtsystem_review_line(orm.Model):
+class mgmtsystem_review_line(models.Model):
     _name = "mgmtsystem.review.line"
     _description = "Review Line"
     _columns = {
