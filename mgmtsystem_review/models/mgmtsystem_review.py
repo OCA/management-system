@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import fields, orm
 
 
 class mgmtsystem_review(orm.Model):
