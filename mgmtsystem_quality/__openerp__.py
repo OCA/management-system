@@ -19,22 +19,12 @@
 #
 ##############################################################################
 {
-    "name": " Quality Management System",
-    "version": "1.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "name": "Quality Management System",
+    "version": "8.0.1.0.0",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """\
-This module enables you to manage your quality management system, including :
-    * Quality Manual
-    * Reviews
-    * Audits
-    * Procedures
-    * Nonconformities
-    * Actions
-    * Employee Training
-    """,
     "depends": [
         'mgmtsystem_audit',
         'document_page_quality_manual',
@@ -43,7 +33,6 @@ This module enables you to manage your quality management system, including :
     "data": [
         'data/mgmtsystem_system.xml',
     ],
-    "demo": [],
     'installable': True,
     "application": True,
 }
