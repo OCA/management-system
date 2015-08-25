@@ -36,13 +36,13 @@ class MgmtsystemReview(models.Model):
     date = fields.Datetime(
         'Date',
         required=True)
-    user_ids = fields.Many2Many(
+    user_ids = fields.Many2many(
         'res.users',
         'mgmtsystem_review_user_rel',
         'user_id',
         'mgmtsystem_review_id',
         'Participants')
-    response_ids = fields.Many2Many(
+    response_ids = fields.Many2many(
         'survey.user_input',
         'mgmtsystem_review_response_rel',
         'response_id',
@@ -50,7 +50,7 @@ class MgmtsystemReview(models.Model):
         'Survey Answers')
     policy = fields.Text('Policy'),
     changes = fields.Text('Changes'),
-    line_ids = fields.One2Many(
+    line_ids = fields.One2many(
         'mgmtsystem.review.line',
         'review_id',
         'Lines')
@@ -64,7 +64,7 @@ class MgmtsystemReview(models.Model):
         readonly=True,
         default="open",
         track_visibility='onchange')
-    company_id = fields.Many2One(
+    company_id = fields.Many2one(
         'res.company',
         'Company',
         default=lambda self: self.env.user.company_id.id)
@@ -92,21 +92,21 @@ class MgmtsystemReviewLine(models.Model):
             ('nonconformity', 'Nonconformity'),
         ],
         'Type')
-    action_id = fields.Many2One(
+    action_id = fields.Many2one(
         'mgmtsystem.action',
         'Action',
         select=True)
-    nonconformity_id = fields.Many2One(
+    nonconformity_id = fields.Many2one(
         'mgmtsystem.nonconformity',
         'Nonconformity',
         select=True)
     decision = fields.Text('Decision')
-    review_id = fields.Many2One(
+    review_id = fields.Many2one(
         'mgmtsystem.review',
         'Review',
         ondelete='cascade',
         select=True)
-    company_id = fields.Many2One(
+    company_id = fields.Many2one(
         'res.company',
         'Company',
         default=lambda self: self.env.user.company_id.id)
