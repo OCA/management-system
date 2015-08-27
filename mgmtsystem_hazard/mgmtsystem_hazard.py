@@ -60,7 +60,9 @@ class res_company(orm.Model):
 
     def _get_formula(self, cr, uid, context=None):
         return self.pool['ir.model.data'].get_object_reference(
-            'mgmtsystem_hazard.risk_computation_a_times_b_times_c')[1]
+            cr, uid,
+            'mgmtsystem_hazard', 'risk_computation_a_times_b_times_c',
+        )[1]
 
     _defaults = {
         'risk_computation_id': _get_formula
