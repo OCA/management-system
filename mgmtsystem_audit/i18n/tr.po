@@ -11,12 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2016-08-04 02:45+0000\n"
 "PO-Revision-Date: 2016-08-04 02:45+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
+"Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sv\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_number_of_audits
@@ -70,7 +70,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_report_mgmtsystem_audit_graph
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_report_mgmtsystem_audit_pivot
 msgid "Audit"
-msgstr "Revision"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_user_id
@@ -93,24 +93,24 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_auditee_user_ids
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Auditees"
-msgstr "Revisionsobjekten"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Auditees:"
-msgstr "Revisionsobjekten:"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_auditor_user_ids
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Auditors"
-msgstr "Auditörer"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Auditors:"
-msgstr "Revisorer:"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_audit_list
@@ -120,23 +120,23 @@ msgstr "Revisorer:"
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_tree
 msgid "Audits"
-msgstr "Revisioner"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines_audit_src
 msgid "Choose audit"
-msgstr "Välj revision"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Close"
-msgstr "Stäng"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
 #: selection:mgmtsystem.audit,state:0
 msgid "Closed"
-msgstr "Stängd"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
@@ -152,7 +152,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_comments
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Comments"
-msgstr "Kommentarer"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_company_id
@@ -173,14 +173,14 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Conformed?"
-msgstr "Anpassad?"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.copy_verification_lines_act_window
 #: model:ir.model,name:mgmtsystem_audit.model_copy_verification_lines
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
 msgid "Copy Verification Lines"
-msgstr "Kopiera Verifieringsrader"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines_create_uid
@@ -199,7 +199,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_date
 msgid "Date"
-msgstr "Datum"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_last_post
@@ -210,7 +210,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Date:"
-msgstr "Datum:"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_days_since_last_update
@@ -267,7 +267,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_imp_opp_ids
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Improvement Opportunities"
-msgstr "Förbättringsmöjligheter"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
@@ -283,7 +283,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_is_conformed
 msgid "Is conformed"
-msgstr "Är anpassat"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_last_post
@@ -324,13 +324,13 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_name
 msgid "Name"
-msgstr "Namn"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_nonconformity_ids
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Nonconformities"
-msgstr "Avvikelser"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
@@ -371,17 +371,17 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
 #: selection:mgmtsystem.audit,state:0
 msgid "Open"
-msgstr "Öppna"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
 msgid "Open Audits"
-msgstr "Öppna Revisioner"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_to_improve_points
 msgid "Points To Improve"
-msgstr "Punkter att Förbättra"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.server,name:mgmtsystem_audit.action_email_prepare_to_audit
@@ -391,24 +391,24 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_procedure_id
 msgid "Procedure"
-msgstr "Rutin"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_name
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Question"
-msgstr "Fråga"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_reference
 msgid "Reference"
-msgstr "Referens"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Reference:"
-msgstr "Referens:"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_nonconformity_audit_ids
@@ -424,18 +424,18 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_seq
 msgid "Sequence"
-msgstr "Sekvens"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_state
 msgid "State"
-msgstr "Status"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_strong_points
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Strong Points"
-msgstr "Starka punkter"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_system_id
@@ -445,7 +445,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "To Improve Points"
-msgstr "Att Förbättra Poäng"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:193
@@ -456,7 +456,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Okunmamış Mesajlar"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_unread_counter
@@ -467,20 +467,20 @@ msgstr ""
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_verification_line
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_form
 msgid "Verification Line"
-msgstr "Verifiering Linje"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_filter
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_tree
 msgid "Verification Lines"
-msgstr "Verifieringsrader"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_line_ids
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Verification List"
-msgstr "VerifieringsLista"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.report.xml,name:mgmtsystem_audit.verification_report_mgmtsystem_audit
@@ -500,9 +500,9 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
 msgid "_Cancel"
-msgstr "_Avbryt"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
 msgid "_Copy"
-msgstr "_Kopiera"
+msgstr ""
