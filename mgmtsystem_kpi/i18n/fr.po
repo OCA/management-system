@@ -1,26 +1,26 @@
-# French translation for openerp-mgmtsystem
-# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
-# This file is distributed under the same license as the openerp-mgmtsystem package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
-#
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_kpi
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013
+# Maxime Chambreuil <maxime.chambreuil@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: openerp-mgmtsystem\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-04-03 18:36+0000\n"
-"PO-Revision-Date: 2013-05-14 01:00+0000\n"
-"Last-Translator: Maxime Chambreuil (http://www.savoirfairelinux.com) "
-"<maxime.chambreuil@savoirfairelinux.com>\n"
-"Language-Team: French <fr@li.org>\n"
+"Project-Id-Version: management-system (7.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-21 15:02+0000\n"
+"PO-Revision-Date: 2015-06-17 13:57+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: French (http://www.transifex.com/oca/OCA-management-system-7-0/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-24 06:29+0000\n"
-"X-Generator: Launchpad (build 16985)\n"
+"Content-Transfer-Encoding: \n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: mgmtsystem_kpi
-#: view:mgmtsystem.kpi:0
-#: field:mgmtsystem.kpi,category_id:0
+#: view:mgmtsystem.kpi:0 field:mgmtsystem.kpi,category_id:0
 #: view:mgmtsystem.kpi.category:0
 msgid "Category"
 msgstr "Catégorie"
@@ -42,11 +42,8 @@ msgstr "Historique de l'ICP"
 
 #. module: mgmtsystem_kpi
 #: help:mgmtsystem.kpi,kpi_code:0
-msgid ""
-"SQL code must return the result as 'value' (i.e. 'SELECT 5 AS value')."
-msgstr ""
-"Le code SQL doit retourner le résultat comme une \"value\" (ex: \"SELECT 5 "
-"AS value\")."
+msgid "SQL code must return the result as 'value' (i.e. 'SELECT 5 AS value')."
+msgstr "Le code SQL doit retourner le résultat comme une \"value\" (ex: \"SELECT 5 AS value\")."
 
 #. module: mgmtsystem_kpi
 #: field:mgmtsystem.kpi,kpi_type:0
@@ -93,10 +90,8 @@ msgid "Type"
 msgstr "Type"
 
 #. module: mgmtsystem_kpi
-#: field:mgmtsystem.kpi,name:0
-#: field:mgmtsystem.kpi.category,name:0
-#: field:mgmtsystem.kpi.history,name:0
-#: field:mgmtsystem.kpi.threshold,name:0
+#: field:mgmtsystem.kpi,name:0 field:mgmtsystem.kpi.category,name:0
+#: field:mgmtsystem.kpi.history,name:0 field:mgmtsystem.kpi.threshold,name:0
 #: field:mgmtsystem.kpi.threshold.range,name:0
 msgid "Name"
 msgstr "Nom"
@@ -107,8 +102,7 @@ msgid "Week"
 msgstr "Semaine"
 
 #. module: mgmtsystem_kpi
-#: view:mgmtsystem.kpi:0
-#: field:mgmtsystem.kpi,description:0
+#: view:mgmtsystem.kpi:0 field:mgmtsystem.kpi,description:0
 #: field:mgmtsystem.kpi.category,description:0
 msgid "Description"
 msgstr "Description"
@@ -119,9 +113,11 @@ msgid "Python"
 msgstr "Python"
 
 #. module: mgmtsystem_kpi
-#: field:mgmtsystem.kpi.threshold.range,max_code:0
-msgid "Maximum Computation Code"
-msgstr "Code de calcul du maximum"
+#: field:mgmtsystem.kpi,company_id:0 field:mgmtsystem.kpi.history,company_id:0
+#: field:mgmtsystem.kpi.threshold,company_id:0
+#: field:mgmtsystem.kpi.threshold.range,company_id:0
+msgid "Company"
+msgstr "Société"
 
 #. module: mgmtsystem_kpi
 #: field:mgmtsystem.kpi.threshold.range,min_type:0
@@ -131,14 +127,13 @@ msgstr "Type du minimum"
 #. module: mgmtsystem_kpi
 #: model:ir.actions.act_window,name:mgmtsystem_kpi.open_mgmtsystem_threshold_range_list
 #: model:ir.ui.menu,name:mgmtsystem_kpi.menu_mgmtsystem_configuration_kpi_range
-#: view:mgmtsystem.kpi.threshold:0
-#: field:mgmtsystem.kpi.threshold,range_ids:0
+#: view:mgmtsystem.kpi.threshold:0 field:mgmtsystem.kpi.threshold,range_ids:0
 #: view:mgmtsystem.kpi.threshold.range:0
 msgid "Ranges"
 msgstr "Intervalles"
 
 #. module: mgmtsystem_kpi
-#: code:addons/mgmtsystem_kpi/mgmtsystem_kpi.py:218
+#: code:addons/mgmtsystem_kpi/mgmtsystem_kpi.py:309
 #, python-format
 msgid "2 of your ranges are overlapping!"
 msgstr "2 périodes se chevauchent!"
@@ -147,6 +142,14 @@ msgstr "2 périodes se chevauchent!"
 #: model:ir.ui.menu,name:mgmtsystem_kpi.menu_mgmtsystem_configuration_kpi_dbsource
 msgid "Data Sources"
 msgstr "Sources de données"
+
+#. module: mgmtsystem_kpi
+#: model:ir.actions.act_window,name:mgmtsystem_kpi.open_mgmtsystem_threshold_list
+#: model:ir.ui.menu,name:mgmtsystem_kpi.menu_mgmtsystem_configuration_kpi_threshold
+#: view:mgmtsystem.kpi.threshold:0 view:mgmtsystem.kpi.threshold.range:0
+#: field:mgmtsystem.kpi.threshold.range,threshold_ids:0
+msgid "Thresholds"
+msgstr "Seuils"
 
 #. module: mgmtsystem_kpi
 #: field:mgmtsystem.kpi.threshold.range,max_type:0
@@ -158,13 +161,10 @@ msgstr "Type du maximum"
 msgid ""
 "Only active KPIs are computed by the scheduler based on the periodicity "
 "configuration."
-msgstr ""
-"Seuls les ICPs actifs sont calculés par l'ordonnanceur en fonction de la "
-"configuration de la périodicité."
+msgstr "Seuls les ICPs actifs sont calculés par l'ordonnanceur en fonction de la configuration de la périodicité."
 
 #. module: mgmtsystem_kpi
-#: view:mgmtsystem.kpi:0
-#: field:mgmtsystem.kpi,active:0
+#: view:mgmtsystem.kpi:0 field:mgmtsystem.kpi,active:0
 msgid "Active"
 msgstr "Actif"
 
@@ -195,7 +195,7 @@ msgid "Minimum Computation Code"
 msgstr "Code de calcul du minimum"
 
 #. module: mgmtsystem_kpi
-#: code:addons/mgmtsystem_kpi/mgmtsystem_kpi.py:218
+#: code:addons/mgmtsystem_kpi/mgmtsystem_kpi.py:310
 #, python-format
 msgid "Please make sure your ranges do not overlap!"
 msgstr "Assurez-vous que vos intervalles ne se chevauchent pas !"
@@ -254,21 +254,17 @@ msgstr "Source de données externe"
 msgid ""
 "Only active KPIs will be updated by the scheduler based on the periodicity "
 "configuration."
-msgstr ""
-"Seuls les ICPs actif seront mis à jour par l'ordonnanceur en fonction de la "
-"configuration de la périodicité."
+msgstr "Seuls les ICPs actif seront mis à jour par l'ordonnanceur en fonction de la configuration de la périodicité."
 
 #. module: mgmtsystem_kpi
 #: model:ir.ui.menu,name:mgmtsystem_kpi.menu_mgmtsystem_configuration_kpi
 #: model:ir.ui.menu,name:mgmtsystem_kpi.menu_mgmtsystem_kpi
-#: view:mgmtsystem.kpi:0
-#: field:mgmtsystem.kpi.history,kpi_id:0
+#: view:mgmtsystem.kpi:0 field:mgmtsystem.kpi.history,kpi_id:0
 msgid "KPI"
 msgstr "ICP"
 
 #. module: mgmtsystem_kpi
-#: view:mgmtsystem.kpi:0
-#: field:mgmtsystem.kpi,history_ids:0
+#: view:mgmtsystem.kpi:0 field:mgmtsystem.kpi,history_ids:0
 msgid "History"
 msgstr "Historique"
 
@@ -306,8 +302,7 @@ msgid "Month"
 msgstr "Mois"
 
 #. module: mgmtsystem_kpi
-#: field:mgmtsystem.kpi,value:0
-#: field:mgmtsystem.kpi.history,value:0
+#: field:mgmtsystem.kpi,value:0 field:mgmtsystem.kpi.history,value:0
 msgid "Value"
 msgstr "Valeur"
 
@@ -331,14 +326,12 @@ msgid "Computation"
 msgstr "Calcul"
 
 #. module: mgmtsystem_kpi
-#: field:mgmtsystem.kpi,threshold_id:0
-#: view:mgmtsystem.kpi.threshold:0
+#: field:mgmtsystem.kpi,threshold_id:0 view:mgmtsystem.kpi.threshold:0
 msgid "Threshold"
 msgstr "Seuil"
 
 #. module: mgmtsystem_kpi
-#: view:mgmtsystem.kpi.threshold:0
-#: field:mgmtsystem.kpi.threshold,kpi_ids:0
+#: view:mgmtsystem.kpi.threshold:0 field:mgmtsystem.kpi.threshold,kpi_ids:0
 msgid "KPIs"
 msgstr "ICPs"
 
@@ -349,13 +342,9 @@ msgid "Message"
 msgstr "Message"
 
 #. module: mgmtsystem_kpi
-#: model:ir.actions.act_window,name:mgmtsystem_kpi.open_mgmtsystem_threshold_list
-#: model:ir.ui.menu,name:mgmtsystem_kpi.menu_mgmtsystem_configuration_kpi_threshold
-#: view:mgmtsystem.kpi.threshold:0
-#: view:mgmtsystem.kpi.threshold.range:0
-#: field:mgmtsystem.kpi.threshold.range,threshold_ids:0
-msgid "Thresholds"
-msgstr "Seuils"
+#: field:mgmtsystem.kpi.threshold.range,max_code:0
+msgid "Maximum Computation Code"
+msgstr "Code de calcul du maximum"
 
 #. module: mgmtsystem_kpi
 #: model:ir.model,name:mgmtsystem_kpi.model_mgmtsystem_kpi

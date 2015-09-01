@@ -1,22 +1,22 @@
-# Brazilian Portuguese translation for openerp-mgmtsystem
-# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
-# This file is distributed under the same license as the openerp-mgmtsystem package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
-#
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_audit
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: openerp-mgmtsystem\n"
+"Project-Id-Version: management-system (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-27 15:31+0000\n"
-"PO-Revision-Date: 2015-02-27 10:35-0500\n"
-"Last-Translator: Sandy Carter <sandy.carter@savoirfairelinux.com>\n"
-"Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
-"Language: pt_BR\n"
+"POT-Creation-Date: 2015-08-21 15:02+0000\n"
+"PO-Revision-Date: 2015-05-22 13:07+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-management-system-7-0/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-24 06:29+0000\n"
-"X-Generator: Poedit 1.7.4\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.server,subject:mgmtsystem_audit.action_email_send_verification_list
@@ -54,6 +54,12 @@ msgstr "Auditores"
 #: field:mgmtsystem.verification.line,comments:0
 msgid "Comments"
 msgstr "Observações"
+
+#. module: mgmtsystem_audit
+#: code:addons/mgmtsystem_audit/report/verification_list.py:48
+#, python-format
+msgid "Undefined"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:0 field:mgmtsystem.audit,user_id:0
@@ -191,7 +197,7 @@ msgid "System"
 msgstr "Sistema"
 
 #. module: mgmtsystem_audit
-#: code:addons/mgmtsystem_audit/mgmtsystem_audit.py:105
+#: code:addons/mgmtsystem_audit/model/mgmtsystem_audit.py:105
 #, python-format
 msgid "Audit closed"
 msgstr ""
@@ -322,8 +328,8 @@ msgstr "Pontos de melhoria"
 #. module: mgmtsystem_audit
 #: help:mgmtsystem.audit,message_summary:0
 msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is directly in "
-"html format in order to be inserted in kanban views."
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -349,7 +355,8 @@ msgstr "Fechar"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_audit_list
-#: model:ir.ui.menu,name:mgmtsystem_audit.menu_open_audit view:mgmtsystem.audit:0
+#: model:ir.ui.menu,name:mgmtsystem_audit.menu_open_audit
+#: view:mgmtsystem.audit:0
 msgid "Audits"
 msgstr "Auditorias"
 
@@ -362,12 +369,3 @@ msgstr "Auditores:"
 #: view:mgmtsystem.audit:0 field:mgmtsystem.audit,auditee_user_ids:0
 msgid "Auditees"
 msgstr "Auditados"
-
-#~ msgid "Yes / No"
-#~ msgstr "Sim / Não"
-
-#~ msgid "-"
-#~ msgstr "-"
-
-#~ msgid "."
-#~ msgstr "."

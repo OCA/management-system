@@ -1,50 +1,22 @@
-# Norwegian Bokmal translation for openerp-mgmtsystem
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
-# This file is distributed under the same license as the openerp-mgmtsystem package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
-#
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_nonconformity
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: openerp-mgmtsystem\n"
+"Project-Id-Version: management-system (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-27 19:54+0000\n"
-"PO-Revision-Date: 2015-02-27 14:58-0500\n"
-"Last-Translator: Sandy Carter <sandy.carter@savoirfairelinux.com>\n"
-"Language-Team: Norwegian Bokmal <nb@li.org>\n"
-"Language: nb\n"
+"POT-Creation-Date: 2015-08-21 15:02+0000\n"
+"PO-Revision-Date: 2015-05-22 13:07+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: Norwegian Bokmål (http://www.transifex.com/oca/OCA-management-system-7-0/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-24 06:29+0000\n"
-"X-Generator: Poedit 1.7.4\n"
-
-#. module: mgmtsystem_nonconformity
-#: code:_description:0
-#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_action
-#, python-format
-msgid "Action"
-msgstr "Handling"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Action Plan"
-msgstr "Handlingsplan"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:292
-#, python-format
-msgid "Action Plan Approved"
-msgstr "Tiltaksplan Godkjent"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,action_comments:0
-msgid "Action Plan Comments"
-msgstr "Kommentarer til tiltaksplan"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,actions_date:0
-msgid "Action Plan Date"
-msgstr "Handlingsplanens dato"
+"Content-Transfer-Encoding: \n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,actions_user_id:0
@@ -52,83 +24,11 @@ msgid "Action Plan by"
 msgstr "Tiltaksplan av"
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:280
-#, python-format
-msgid "Action plan is already approved."
-msgstr "Tiltaksplan er alt godkjent."
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:304
-#, python-format
-msgid "Action plan must be approved before opening."
-msgstr "Handlingsplan må være godkjent før den kan åpnes."
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0 field:mgmtsystem.nonconformity,action_ids:0
-msgid "Actions"
-msgstr "Tiltak"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity.severity,active:0
-msgid "Active?"
-msgstr "Aktiv?"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Add a description ..."
-msgstr "Legg til en beskrivelse..."
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:166
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:222
-#: view:mgmtsystem.nonconformity:0 field:mgmtsystem.nonconformity,analysis:0
-#, python-format
-msgid "Analysis"
-msgstr "Analyse"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:249
-#, python-format
-msgid "Analysis Approved"
-msgstr "Analyse godkjent"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Analysis Confirmation"
-msgstr "Bekrefte analyse"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,analysis_date:0
-msgid "Analysis Date"
-msgstr "Analyse dato"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:285
-#, python-format
-msgid "Analysis approved before the review confirmation."
-msgstr "Analyse må gjøres før revisjonen bekreftes."
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,analysis_user_id:0
-msgid "Analysis by"
-msgstr "Analysert av"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:237
-#, python-format
-msgid "Analysis is already approved."
-msgstr "Analysen er alt godkjent."
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:257
-#, python-format
-msgid "Analysis must be performed before submiting to approval."
-msgstr "Analyse må utføres før avsending til godkjenning."
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Approve"
-msgstr "Godkjenn"
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_severity_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_severity
+#: field:mgmtsystem.nonconformity,severity_id:0
+msgid "Severity"
+msgstr "Alvorlighetsgrad"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
@@ -136,458 +36,9 @@ msgid "Author"
 msgstr "Forfatter."
 
 #. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.bad_communication
-msgid "Bad communication"
-msgstr "Dårlig kommunikasjon"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.bad_partner_relation
-msgid "Bad customer/supplier relation"
-msgstr "Dårlig kunde/leverandør relasjon"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.badly_defined_need
-msgid "Badly defined need"
-msgstr "Dårlig definert behov"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Cancel"
-msgstr "Avbryt"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:170
-#, python-format
-msgid "Cancelled"
-msgstr "Avbrutt"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,cause_ids:0
-#: field:mgmtsystem.nonconformity.cause,name:0
-msgid "Cause"
-msgstr "Årsak"
-
-#. module: mgmtsystem_nonconformity
-#: code:_description:0
-#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_cause
-#, python-format
-msgid "Cause of the nonconformity of the management system"
-msgstr "Årsak til avvik i styringssystemet"
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_cause_list
-#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_cause
-#: view:mgmtsystem.nonconformity:0 view:mgmtsystem.nonconformity.cause:0
-msgid "Causes"
-msgstr "Årsaker"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Causes and Analysis"
-msgstr "Årsak og Analyse"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity.cause:0
-msgid "Causes of nonconformity"
-msgstr "Årsak til avvik"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity.cause,child_ids:0
-msgid "Child Causes"
-msgstr "Avhengige årsaker"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity.origin,child_ids:0
-msgid "Childs"
-msgstr "Barn"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Close"
-msgstr "Lukk"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:169
-#: view:mgmtsystem.nonconformity:0
-#, python-format
-msgid "Closed"
-msgstr "Stengt"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Closed Nonconformities"
-msgstr "Stengte avvik"
-
-#. module: mgmtsystem_nonconformity
-#: help:mgmtsystem.nonconformity,action_comments:0
-msgid "Comments on the action plan."
-msgstr "Kommentarer til tiltaksplan."
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,company_id:0
-msgid "Company"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
-#: help:mgmtsystem.nonconformity,evaluation_comments:0
-msgid "Conclusions from the last effectiveness evaluation."
-msgstr "Konklusjon fra siste effektivitetsevaluering."
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,date:0
-msgid "Date"
-msgstr "Dato"
-
-#. module: mgmtsystem_nonconformity
-#: help:mgmtsystem.nonconformity.cause,sequence:0
-#: help:mgmtsystem.nonconformity.origin,sequence:0
-msgid "Defines the order to present items"
-msgstr "Definerer rekkefølgen i forhold til tilstedeværende objekter."
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0 field:mgmtsystem.nonconformity,description:0
-#: field:mgmtsystem.nonconformity.cause,description:0
-#: field:mgmtsystem.nonconformity.origin,description:0
-#: field:mgmtsystem.nonconformity.severity,description:0
-msgid "Description"
-msgstr "Beskrivelse"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_dr
-msgid "Direction Review"
-msgstr "Gjennomgang av retning"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:165
-#: view:mgmtsystem.nonconformity:0
-#, python-format
-msgid "Draft"
-msgstr "Utkast"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Draft/New nonconformities"
-msgstr "Utkast/nye avvik"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:332
-#, python-format
-msgid "Effectiveness Evaluation Approved"
-msgstr "Effektivitetsevaluering Godkjent"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Effectiveness Review"
-msgstr "Effektivitetsoversikt"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:359
-#, python-format
-msgid "Effectiveness evaluation must be performed before closing."
-msgstr "Effektivitetsevaluering må utføres før stengning."
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:231
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:236
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:241
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:258
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:273
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:279
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:284
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:303
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:324
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:348
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:353
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:358
-#, python-format
-msgid "Error !"
-msgstr "Feil !"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity_cause.py:70
-#, python-format
-msgid "Error! Cannot create recursive cycle."
-msgstr "Feil! Kan lage rekursiv sirkel."
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,evaluation_comments:0
-msgid "Evaluation Comments"
-msgstr "Kommentar fra evaluering"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,evaluation_date:0
-msgid "Evaluation Date"
-msgstr "Evalueringsdato"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,evaluation_user_id:0
-msgid "Evaluation by"
-msgstr "Evaluert av"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_extenal_audit
-msgid "External Audit"
-msgstr "Ekstern revisjon"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_external_client
-msgid "External client complaint"
-msgstr "Ekstern klientklage"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,author_user_id:0
-msgid "Filled in by"
-msgstr "Fylt ut av"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,message_follower_ids:0
-msgid "Followers"
-msgstr "Følgere"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity.cause,parent_id:0
-#: field:mgmtsystem.nonconformity.origin,parent_id:0
-msgid "Group"
-msgstr "Gruppe"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Group By..."
-msgstr "Grupper etter ..."
-
-#. module: mgmtsystem_nonconformity
-#: help:mgmtsystem.nonconformity,message_summary:0
-msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is directly in "
-"html format in order to be inserted in kanban views."
-msgstr ""
-"Inneholder meldingsoppsummering (antall meldinger, ...). Denne oppsummeringen er "
-"i direkte html format slik at den kan settes inn i kanban visning."
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.hr_unavailable_inadequate
-msgid "Human resource not available or inadequate"
-msgstr "Menneskelig ressurs utiligjengelig eller utilstrekkelig"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,id:0 field:mgmtsystem.nonconformity.cause,id:0
-#: field:mgmtsystem.nonconformity.origin,id:0
-msgid "ID"
-msgstr "ID"
-
-#. module: mgmtsystem_nonconformity
-#: help:mgmtsystem.nonconformity,message_unread:0
-msgid "If checked new messages require your attention."
-msgstr "Hvis det er merket nye meldinger så krever dette din oppmerksomhet."
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,immediate_action_id:0
-msgid "Immediate action"
-msgstr "Umiddelbare tiltak"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:349
-#, python-format
-msgid "Immediate action from analysis has not been closed."
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:168
-#: view:mgmtsystem.nonconformity:0
-#, python-format
-msgid "In Progress"
-msgstr "Pågår"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.information_not_available
-msgid "Information not available"
-msgstr "Informasjon ikke tilgjengelig"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.instruction_not_respected
-msgid "Instruction not respected"
-msgstr "Instruksjon ikke anmodet"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.demo_origin
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_internal_audit
-msgid "Internal Audit"
-msgstr "Intern revisjon"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_internal_client
-msgid "Internal client complaint"
-msgstr "Intern klientklage"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,message_is_follower:0
-msgid "Is a Follower"
-msgstr "Er en følger."
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.demo_cause
-msgid "Lack of expertise"
-msgstr "Mangel på ekspertise"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_maj
-msgid "Major"
-msgstr "Hoved"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0 field:mgmtsystem.nonconformity,manager_user_id:0
-msgid "Manager"
-msgstr "Leder"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,message_ids:0
-msgid "Messages"
-msgstr "Meldinger"
-
-#. module: mgmtsystem_nonconformity
-#: help:mgmtsystem.nonconformity,message_ids:0
-msgid "Messages and communication history"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_min
-msgid "Minor"
-msgstr "Delnummer"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,name:0
-msgid "Name"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Non-Conformities"
-msgstr "Avvik"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Non-Conformity"
-msgstr "Avvik"
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list
-#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities
-#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity
-#: field:mgmtsystem.action,nonconformity_ids:0
-msgid "Nonconformities"
-msgstr "Avvik"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Nonconformities pending review"
-msgstr "Avvik som avventer gjennomgang"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:213
-#, python-format
-msgid "Nonconformity"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
-#: code:_description:0
-#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity
-#, python-format
-msgid "Nonconformity of the management system"
-msgstr "Avvik i styringssystemet"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:354
-#, python-format
-msgid "Not all actions have been closed."
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
-#: view:board.board:0 view:mgmtsystem.nonconformity:0
-msgid "Open Nonconformities"
-msgstr "Åpne avvik"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,origin_ids:0
-#: field:mgmtsystem.nonconformity.origin,name:0
-msgid "Origin"
-msgstr "Opphav"
-
-#. module: mgmtsystem_nonconformity
-#: code:_description:0
-#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_origin
-#, python-format
-msgid "Origin of nonconformity of the management system"
-msgstr "Kilde til avvik i styringssystemet"
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_origin_list
-#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_origin
-#: view:mgmtsystem.nonconformity.origin:0
-msgid "Origins"
-msgstr "Opprinnelse"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity.origin:0
-msgid "Origins of nonconformity"
-msgstr "Kilde til avvik"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0 field:mgmtsystem.nonconformity,partner_id:0
-msgid "Partner"
-msgstr "Partner"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:167
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:264
-#, python-format
-msgid "Pending Approval"
-msgstr "Avventer godkjenning"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Plan Review"
-msgstr "Planlegge gjennomgang"
-
-#. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:242
-#, python-format
-msgid "Please provide an analysis before approving."
-msgstr "Vennligst gi en analyse før godkjennelse."
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0 field:mgmtsystem.nonconformity,procedure_ids:0
-msgid "Procedure"
-msgstr "Prosedyre"
-
-#. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.procedure_not_defined
 msgid "Procedure not defined"
 msgstr "Prosedyren er ikke definert"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.procedure_not_respected
-msgid "Procedure not respected"
-msgstr "Prosedyre ikke fulgt"
-
-#. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-msgid "Procedures"
-msgstr "Prosedyrer"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_process
-msgid "Process Execution"
-msgstr "Prosessevaluering"
-
-#. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_qc
-msgid "Quality Commitee"
-msgstr "Kvalitetskomite"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,ref:0
-msgid "Reference"
-msgstr "Referanse"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity.cause,ref_code:0
@@ -596,25 +47,46 @@ msgid "Reference Code"
 msgstr "Referansekode"
 
 #. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.action:0
-msgid "Related Nonconformities"
-msgstr "Relaterte avvik"
-
-#. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,reference:0
-msgid "Related to"
-msgstr "Relatert til."
-
-#. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
-msgid "Reset to New"
-msgstr "Tilbakestille til ny."
+msgid "Group By..."
+msgstr "Grupper etter ..."
 
 #. module: mgmtsystem_nonconformity
-#: view:mgmtsystem.nonconformity:0
-#: field:mgmtsystem.nonconformity,responsible_user_id:0
-msgid "Responsible"
-msgstr "Ansvarlig"
+#: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_min
+msgid "Minor"
+msgstr "Delnummer"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.instruction_not_respected
+msgid "Instruction not respected"
+msgstr "Instruksjon ikke anmodet"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:283
+#, python-format
+msgid "Analysis approved before the review confirmation."
+msgstr "Analyse må gjøres før revisjonen bekreftes."
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_severity
+#: view:mgmtsystem.nonconformity.severity:0
+msgid "Severity of Complaints and Nonconformities"
+msgstr "Alvorlighetsgrad på klager og avvik"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,message_unread:0
+msgid "Unread Messages"
+msgstr "Uleste meldinger"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.severity,name:0
+msgid "Title"
+msgstr "Tittel"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
@@ -627,57 +99,125 @@ msgid "Send for Review"
 msgstr "Sent til godkjennelse"
 
 #. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity.cause,sequence:0
-#: field:mgmtsystem.nonconformity.origin,sequence:0
-#: field:mgmtsystem.nonconformity.severity,sequence:0
-msgid "Sequence"
-msgstr "Rekkefølge"
+#: field:mgmtsystem.nonconformity,evaluation_date:0
+msgid "Evaluation Date"
+msgstr "Evalueringsdato"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_severity_list
-#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_severity
-#: field:mgmtsystem.nonconformity,severity_id:0
-msgid "Severity"
-msgstr "Alvorlighetsgrad"
-
-#. module: mgmtsystem_nonconformity
-#: code:_description:0
-#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_severity
-#: view:mgmtsystem.nonconformity.severity:0
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:167
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:262
 #, python-format
-msgid "Severity of Complaints and Nonconformities"
-msgstr "Alvorlighetsgrad på klager og avvik"
+msgid "Pending Approval"
+msgstr "Avventer godkjenning"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
-msgid "Sign Evaluation"
-msgstr "Signer evaluering"
+msgid "Draft/New nonconformities"
+msgstr "Utkast/nye avvik"
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:206
-#, python-format
-msgid "Stage:"
-msgstr ""
+#: help:mgmtsystem.nonconformity,evaluation_comments:0
+msgid "Conclusions from the last effectiveness evaluation."
+msgstr "Konklusjon fra siste effektivitetsevaluering."
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
-msgid "Start/Open"
-msgstr "Start/åpne"
+msgid "Closed Nonconformities"
+msgstr "Stengte avvik"
 
 #. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,state:0
-msgid "State"
-msgstr "Status"
+#: view:mgmtsystem.nonconformity.origin:0
+msgid "Origins of nonconformity"
+msgstr "Kilde til avvik"
 
 #. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,state_name:0
-msgid "State Description"
-msgstr "Beskrivelse av status"
+#: field:mgmtsystem.nonconformity,message_ids:0
+msgid "Messages"
+msgstr "Meldinger"
 
 #. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,message_summary:0
-msgid "Summary"
-msgstr "Oppsummering."
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:166
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:220
+#: view:mgmtsystem.nonconformity:0 field:mgmtsystem.nonconformity,analysis:0
+#, python-format
+msgid "Analysis"
+msgstr "Analyse"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,evaluation_user_id:0
+msgid "Evaluation by"
+msgstr "Evaluert av"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity.cause:0
+msgid "Causes of nonconformity"
+msgstr "Årsak til avvik"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:170
+#, python-format
+msgid "Cancelled"
+msgstr "Avbrutt"
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Hvis det er merket nye meldinger så krever dette din oppmerksomhet."
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,origin_ids:0
+#: field:mgmtsystem.nonconformity.origin,name:0
+msgid "Origin"
+msgstr "Opphav"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.origin,child_ids:0
+msgid "Childs"
+msgstr "Barn"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,ref:0
+msgid "Reference"
+msgstr "Referanse"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:230
+#, python-format
+msgid "This action can only be done in the Analysis state."
+msgstr "Denne handlingen kan kun utføres i Analyse status."
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,analysis_user_id:0
+msgid "Analysis by"
+msgstr "Analysert av"
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity,message_summary:0
+msgid ""
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
+msgstr "Inneholder meldingsoppsummering (antall meldinger, ...). Denne oppsummeringen er i direkte html format slik at den kan settes inn i kanban visning."
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.bad_communication
+msgid "Bad communication"
+msgstr "Dårlig kommunikasjon"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0 field:mgmtsystem.nonconformity,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Effectiveness Review"
+msgstr "Effektivitetsoversikt"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:235
+#, python-format
+msgid "Analysis is already approved."
+msgstr "Analysen er alt godkjent."
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0 field:mgmtsystem.nonconformity,system_id:0
@@ -685,47 +225,224 @@ msgid "System"
 msgstr "System"
 
 #. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.technical_failure
-msgid "Technical failure"
-msgstr "Teknisk feil"
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_origin
+msgid "Origin of nonconformity of the management system"
+msgstr "Kilde til avvik i styringssystemet"
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:232
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:204
 #, python-format
-msgid "This action can only be done in the Analysis state."
-msgstr "Denne handlingen kan kun utføres i Analyse status."
+msgid "Stage:"
+msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:325
+#: field:mgmtsystem.nonconformity,message_follower_ids:0
+msgid "Followers"
+msgstr "Følgere"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Non-Conformity"
+msgstr "Avvik"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:323
 #, python-format
 msgid "This action can only be done in the In Progress state."
 msgstr "Denne handlingen kan kun utføres i Under Behandling status."
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:274
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:240
 #, python-format
-msgid "This action can only be done in the Pending for Approval state."
-msgstr "Denne handlingen kan kun utføres i Avventer Godkjenning-status."
+msgid "Please provide an analysis before approving."
+msgstr "Vennligst gi en analyse før godkjennelse."
 
 #. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity.severity,name:0
-msgid "Title"
-msgstr "Tittel"
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:229
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:234
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:239
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:256
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:271
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:277
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:282
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:301
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:322
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:346
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:351
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:356
+#, python-format
+msgid "Error !"
+msgstr "Feil !"
 
 #. module: mgmtsystem_nonconformity
-#: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_no
-msgid "Unfounded"
-msgstr "Uten grunnlag"
+#: field:mgmtsystem.nonconformity.cause,child_ids:0
+msgid "Child Causes"
+msgstr "Avhengige årsaker"
 
 #. module: mgmtsystem_nonconformity
-#: field:mgmtsystem.nonconformity,message_unread:0
-msgid "Unread Messages"
-msgstr "Uleste meldinger"
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:352
+#, python-format
+msgid "Not all actions have been closed."
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_external_client
+msgid "External client complaint"
+msgstr "Ekstern klientklage"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.action:0
+msgid "Related Nonconformities"
+msgstr "Relaterte avvik"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:211
+#, python-format
+msgid "Nonconformity"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.procedure_not_respected
+msgid "Procedure not respected"
+msgstr "Prosedyre ikke fulgt"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,state_name:0
+msgid "State Description"
+msgstr "Beskrivelse av status"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.information_not_available
+msgid "Information not available"
+msgstr "Informasjon ikke tilgjengelig"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_origin_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_origin
+#: view:mgmtsystem.nonconformity.origin:0
+msgid "Origins"
+msgstr "Opprinnelse"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:0
-msgid "User"
-msgstr "Bruker"
+msgid "Sign Evaluation"
+msgstr "Signer evaluering"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Action Plan"
+msgstr "Handlingsplan"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_qc
+msgid "Quality Commitee"
+msgstr "Kvalitetskomite"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity
+msgid "Claims and Nonconformities"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Nonconformities pending review"
+msgstr "Avvik som avventer gjennomgang"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,author_user_id:0
+msgid "Filled in by"
+msgstr "Fylt ut av"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_process
+msgid "Process Execution"
+msgstr "Prosessevaluering"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:255
+#, python-format
+msgid "Analysis must be performed before submiting to approval."
+msgstr "Analyse må utføres før avsending til godkjenning."
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_internal_client
+msgid "Internal client complaint"
+msgstr "Intern klientklage"
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity.cause,sequence:0
+#: help:mgmtsystem.nonconformity.origin,sequence:0
+msgid "Defines the order to present items"
+msgstr "Definerer rekkefølgen i forhold til tilstedeværende objekter."
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity_cause.py:70
+#, python-format
+msgid "Error! Cannot create recursive cycle."
+msgstr "Feil! Kan lage rekursiv sirkel."
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.severity,active:0
+msgid "Active?"
+msgstr "Aktiv?"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.cause,parent_id:0
+#: field:mgmtsystem.nonconformity.origin,parent_id:0
+msgid "Group"
+msgstr "Gruppe"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Analysis Confirmation"
+msgstr "Bekrefte analyse"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Add a description ..."
+msgstr "Legg til en beskrivelse..."
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Reset to New"
+msgstr "Tilbakestille til ny."
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities
+#: field:mgmtsystem.action,nonconformity_ids:0
+msgid "Nonconformities"
+msgstr "Avvik"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:357
+#, python-format
+msgid "Effectiveness evaluation must be performed before closing."
+msgstr "Effektivitetsevaluering må utføres før stengning."
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:165
+#: view:mgmtsystem.nonconformity:0
+#, python-format
+msgid "Draft"
+msgstr "Utkast"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:169
+#: view:mgmtsystem.nonconformity:0
+#, python-format
+msgid "Closed"
+msgstr "Stengt"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.bad_partner_relation
+msgid "Bad customer/supplier relation"
+msgstr "Dårlig kunde/leverandør relasjon"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:247
+#, python-format
+msgid "Analysis Approved"
+msgstr "Analyse godkjent"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
@@ -733,18 +450,289 @@ msgid "Work conditions"
 msgstr "Arbeidsforhold"
 
 #. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Start/Open"
+msgstr "Start/åpne"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.technical_failure
+msgid "Technical failure"
+msgstr "Teknisk feil"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,immediate_action_id:0
+msgid "Immediate action"
+msgstr "Umiddelbare tiltak"
+
+#. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.action,nonconformity_immediate_id:0
 msgid "unknown"
 msgstr "Ukjent"
 
-#~ msgid "History Information"
-#~ msgstr "Historisk informasjon"
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Plan Review"
+msgstr "Planlegge gjennomgang"
 
-#~ msgid "Send New Email"
-#~ msgstr "Send ny e-post"
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,id:0
+#: field:mgmtsystem.nonconformity.cause,id:0
+#: field:mgmtsystem.nonconformity.origin,id:0
+msgid "ID"
+msgstr "ID"
 
-#~ msgid "Reply"
-#~ msgstr "Svar"
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Er en følger."
 
-#~ msgid "History"
-#~ msgstr "Historie"
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "User"
+msgstr "Bruker"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_extenal_audit
+msgid "External Audit"
+msgstr "Ekstern revisjon"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,date:0
+msgid "Date"
+msgstr "Dato"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,analysis_date:0
+msgid "Analysis Date"
+msgstr "Analyse dato"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list
+msgid "Claims and Nonconformities."
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_no
+msgid "Unfounded"
+msgstr "Uten grunnlag"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:272
+#, python-format
+msgid "This action can only be done in the Pending for Approval state."
+msgstr "Denne handlingen kan kun utføres i Avventer Godkjenning-status."
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:278
+#, python-format
+msgid "Action plan is already approved."
+msgstr "Tiltaksplan er alt godkjent."
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,reference:0
+msgid "Related to"
+msgstr "Relatert til."
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.badly_defined_need
+msgid "Badly defined need"
+msgstr "Dårlig definert behov"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,message_summary:0
+msgid "Summary"
+msgstr "Oppsummering."
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_action
+msgid "Action"
+msgstr "Handling"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+#: field:mgmtsystem.nonconformity,procedure_ids:0
+msgid "Procedure"
+msgstr "Prosedyre"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:330
+#, python-format
+msgid "Effectiveness Evaluation Approved"
+msgstr "Effektivitetsevaluering Godkjent"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity
+msgid "Nonconformity of the management system"
+msgstr "Avvik i styringssystemet"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,state:0
+msgid "State"
+msgstr "Status"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Cancel"
+msgstr "Avbryt"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Close"
+msgstr "Lukk"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_cause_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_cause
+#: view:mgmtsystem.nonconformity:0 view:mgmtsystem.nonconformity.cause:0
+msgid "Causes"
+msgstr "Årsaker"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:168
+#: view:mgmtsystem.nonconformity:0
+#, python-format
+msgid "In Progress"
+msgstr "Pågår"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+#: field:mgmtsystem.nonconformity,responsible_user_id:0
+msgid "Responsible"
+msgstr "Ansvarlig"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,actions_date:0
+msgid "Action Plan Date"
+msgstr "Handlingsplanens dato"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,cause_ids:0
+#: field:mgmtsystem.nonconformity.cause,name:0
+msgid "Cause"
+msgstr "Årsak"
+
+#. module: mgmtsystem_nonconformity
+#: view:board.board:0 view:mgmtsystem.nonconformity:0
+msgid "Open Nonconformities"
+msgstr "Åpne avvik"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+#: field:mgmtsystem.nonconformity,description:0
+#: field:mgmtsystem.nonconformity.cause,description:0
+#: field:mgmtsystem.nonconformity.origin,description:0
+#: field:mgmtsystem.nonconformity.severity,description:0
+msgid "Description"
+msgstr "Beskrivelse"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_dr
+msgid "Direction Review"
+msgstr "Gjennomgang av retning"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.demo_origin
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_internal_audit
+msgid "Internal Audit"
+msgstr "Intern revisjon"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Non-Conformities"
+msgstr "Avvik"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,evaluation_comments:0
+msgid "Evaluation Comments"
+msgstr "Kommentar fra evaluering"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Procedures"
+msgstr "Prosedyrer"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Causes and Analysis"
+msgstr "Årsak og Analyse"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,name:0
+msgid "Name"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.demo_cause
+msgid "Lack of expertise"
+msgstr "Mangel på ekspertise"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,action_comments:0
+msgid "Action Plan Comments"
+msgstr "Kommentarer til tiltaksplan"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:302
+#, python-format
+msgid "Action plan must be approved before opening."
+msgstr "Handlingsplan må være godkjent før den kan åpnes."
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+msgid "Approve"
+msgstr "Godkjenn"
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_maj
+msgid "Major"
+msgstr "Hoved"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:347
+#, python-format
+msgid "Immediate action from analysis has not been closed."
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.cause,sequence:0
+#: field:mgmtsystem.nonconformity.origin,sequence:0
+#: field:mgmtsystem.nonconformity.severity,sequence:0
+msgid "Sequence"
+msgstr "Rekkefølge"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_cause
+msgid "Cause of the nonconformity of the management system"
+msgstr "Årsak til avvik i styringssystemet"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0 field:mgmtsystem.nonconformity,action_ids:0
+msgid "Actions"
+msgstr "Tiltak"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.hr_unavailable_inadequate
+msgid "Human resource not available or inadequate"
+msgstr "Menneskelig ressurs utiligjengelig eller utilstrekkelig"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:0
+#: field:mgmtsystem.nonconformity,manager_user_id:0
+msgid "Manager"
+msgstr "Leder"
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity,action_comments:0
+msgid "Comments on the action plan."
+msgstr "Kommentarer til tiltaksplan."
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/model/mgmtsystem_nonconformity.py:290
+#, python-format
+msgid "Action Plan Approved"
+msgstr "Tiltaksplan Godkjent"

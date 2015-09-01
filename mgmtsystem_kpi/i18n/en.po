@@ -1,0 +1,351 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_kpi
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: management-system (7.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-21 15:02+0000\n"
+"PO-Revision-Date: 2015-05-22 13:07+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: English (http://www.transifex.com/oca/OCA-management-system-7-0/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi:0 field:mgmtsystem.kpi,category_id:0
+#: view:mgmtsystem.kpi.category:0
+msgid "Category"
+msgstr "Category"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi:0
+msgid "KPI Computation"
+msgstr "KPI Computation"
+
+#. module: mgmtsystem_kpi
+#: help:mgmtsystem.kpi.threshold.range,color:0
+msgid "RGB code with #"
+msgstr "RGB code with #"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi.history:0
+msgid "KPI History"
+msgstr "KPI History"
+
+#. module: mgmtsystem_kpi
+#: help:mgmtsystem.kpi,kpi_code:0
+msgid "SQL code must return the result as 'value' (i.e. 'SELECT 5 AS value')."
+msgstr "SQL code must return the result as 'value' (i.e. 'SELECT 5 AS value')."
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi,kpi_type:0
+msgid "KPI Computation Type"
+msgstr "KPI Computation Type"
+
+#. module: mgmtsystem_kpi
+#: model:ir.actions.act_window,name:mgmtsystem_kpi.open_mgmtsystem_kpi_list
+#: view:mgmtsystem.kpi:0
+msgid "Key Performance Indicators"
+msgstr "Key Performance Indicators"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi:0
+msgid "Group By..."
+msgstr "Group By..."
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi.threshold,valid:0
+#: field:mgmtsystem.kpi.threshold.range,valid:0
+msgid "Valid"
+msgstr "Valid"
+
+#. module: mgmtsystem_kpi
+#: selection:mgmtsystem.kpi,kpi_type:0
+#: selection:mgmtsystem.kpi.threshold.range,max_type:0
+#: selection:mgmtsystem.kpi.threshold.range,min_type:0
+msgid "SQL - Local DB"
+msgstr "SQL - Local DB"
+
+#. module: mgmtsystem_kpi
+#: model:ir.model,name:mgmtsystem_kpi.model_mgmtsystem_kpi_category
+msgid "KPI Category"
+msgstr "KPI Category"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi,periodicity_uom:0
+msgid "Periodicity UoM"
+msgstr "Periodicity UoM"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi:0
+msgid "Type"
+msgstr "Type"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi,name:0 field:mgmtsystem.kpi.category,name:0
+#: field:mgmtsystem.kpi.history,name:0 field:mgmtsystem.kpi.threshold,name:0
+#: field:mgmtsystem.kpi.threshold.range,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: mgmtsystem_kpi
+#: selection:mgmtsystem.kpi,periodicity_uom:0
+msgid "Week"
+msgstr "Week"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi:0 field:mgmtsystem.kpi,description:0
+#: field:mgmtsystem.kpi.category,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: mgmtsystem_kpi
+#: selection:mgmtsystem.kpi,kpi_type:0
+msgid "Python"
+msgstr "Python"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi,company_id:0 field:mgmtsystem.kpi.history,company_id:0
+#: field:mgmtsystem.kpi.threshold,company_id:0
+#: field:mgmtsystem.kpi.threshold.range,company_id:0
+msgid "Company"
+msgstr "Company"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi.threshold.range,min_type:0
+msgid "Min Type"
+msgstr "Min Type"
+
+#. module: mgmtsystem_kpi
+#: model:ir.actions.act_window,name:mgmtsystem_kpi.open_mgmtsystem_threshold_range_list
+#: model:ir.ui.menu,name:mgmtsystem_kpi.menu_mgmtsystem_configuration_kpi_range
+#: view:mgmtsystem.kpi.threshold:0 field:mgmtsystem.kpi.threshold,range_ids:0
+#: view:mgmtsystem.kpi.threshold.range:0
+msgid "Ranges"
+msgstr "Ranges"
+
+#. module: mgmtsystem_kpi
+#: code:addons/mgmtsystem_kpi/mgmtsystem_kpi.py:309
+#, python-format
+msgid "2 of your ranges are overlapping!"
+msgstr "2 of your ranges are overlapping!"
+
+#. module: mgmtsystem_kpi
+#: model:ir.ui.menu,name:mgmtsystem_kpi.menu_mgmtsystem_configuration_kpi_dbsource
+msgid "Data Sources"
+msgstr "Data Sources"
+
+#. module: mgmtsystem_kpi
+#: model:ir.actions.act_window,name:mgmtsystem_kpi.open_mgmtsystem_threshold_list
+#: model:ir.ui.menu,name:mgmtsystem_kpi.menu_mgmtsystem_configuration_kpi_threshold
+#: view:mgmtsystem.kpi.threshold:0 view:mgmtsystem.kpi.threshold.range:0
+#: field:mgmtsystem.kpi.threshold.range,threshold_ids:0
+msgid "Thresholds"
+msgstr "Thresholds"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi.threshold.range,max_type:0
+msgid "Max Type"
+msgstr "Max Type"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi:0
+msgid ""
+"Only active KPIs are computed by the scheduler based on the periodicity "
+"configuration."
+msgstr "Only active KPIs are computed by the scheduler based on the periodicity configuration."
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi:0 field:mgmtsystem.kpi,active:0
+msgid "Active"
+msgstr "Active"
+
+#. module: mgmtsystem_kpi
+#: model:ir.model,name:mgmtsystem_kpi.model_mgmtsystem_kpi_threshold
+msgid "KPI Threshold"
+msgstr "KPI Threshold"
+
+#. module: mgmtsystem_kpi
+#: selection:mgmtsystem.kpi,periodicity_uom:0
+msgid "Day"
+msgstr "Day"
+
+#. module: mgmtsystem_kpi
+#: selection:mgmtsystem.kpi.threshold.range,max_type:0
+#: selection:mgmtsystem.kpi.threshold.range,min_type:0
+msgid "Fixed value"
+msgstr "Fixed value"
+
+#. module: mgmtsystem_kpi
+#: model:ir.model,name:mgmtsystem_kpi.model_mgmtsystem_kpi_threshold_range
+msgid "KPI Threshold Range"
+msgstr "KPI Threshold Range"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi.threshold.range,min_code:0
+msgid "Minimum Computation Code"
+msgstr "Minimum Computation Code"
+
+#. module: mgmtsystem_kpi
+#: code:addons/mgmtsystem_kpi/mgmtsystem_kpi.py:310
+#, python-format
+msgid "Please make sure your ranges do not overlap!"
+msgstr "Please make sure your ranges do not overlap!"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi,kpi_code:0
+msgid "KPI Code"
+msgstr "KPI Code"
+
+#. module: mgmtsystem_kpi
+#: selection:mgmtsystem.kpi,periodicity_uom:0
+msgid "Hour"
+msgstr "Hour"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi.history,date:0
+msgid "Execution Date"
+msgstr "Execution Date"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi.threshold.range:0
+#: field:mgmtsystem.kpi.threshold.range,max_fixed_value:0
+#: field:mgmtsystem.kpi.threshold.range,max_value:0
+msgid "Maximum"
+msgstr "Maximum"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi:0
+msgid "Compute KPI Now"
+msgstr "Compute KPI Now"
+
+#. module: mgmtsystem_kpi
+#: selection:mgmtsystem.kpi.threshold.range,min_type:0
+msgid "SQL - Externa DB"
+msgstr "SQL - Externa DB"
+
+#. module: mgmtsystem_kpi
+#: model:ir.model,name:mgmtsystem_kpi.model_mgmtsystem_kpi_history
+msgid "History of the KPI"
+msgstr "History of the KPI"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi,next_execution_date:0
+msgid "Next execution date"
+msgstr "Next execution date"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi,dbsource_id:0
+#: field:mgmtsystem.kpi.threshold.range,max_dbsource_id:0
+#: field:mgmtsystem.kpi.threshold.range,min_dbsource_id:0
+msgid "External DB Source"
+msgstr "External DB Source"
+
+#. module: mgmtsystem_kpi
+#: help:mgmtsystem.kpi,active:0
+msgid ""
+"Only active KPIs will be updated by the scheduler based on the periodicity "
+"configuration."
+msgstr "Only active KPIs will be updated by the scheduler based on the periodicity configuration."
+
+#. module: mgmtsystem_kpi
+#: model:ir.ui.menu,name:mgmtsystem_kpi.menu_mgmtsystem_configuration_kpi
+#: model:ir.ui.menu,name:mgmtsystem_kpi.menu_mgmtsystem_kpi
+#: view:mgmtsystem.kpi:0 field:mgmtsystem.kpi.history,kpi_id:0
+msgid "KPI"
+msgstr "KPI"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi:0 field:mgmtsystem.kpi,history_ids:0
+msgid "History"
+msgstr "History"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi,periodicity:0
+msgid "Periodicity"
+msgstr "Periodicity"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi.history,color:0
+#: field:mgmtsystem.kpi.threshold.range,color:0
+msgid "Color"
+msgstr "Color"
+
+#. module: mgmtsystem_kpi
+#: selection:mgmtsystem.kpi,kpi_type:0
+#: selection:mgmtsystem.kpi.threshold.range,max_type:0
+msgid "SQL - External DB"
+msgstr "SQL - External DB"
+
+#. module: mgmtsystem_kpi
+#: selection:mgmtsystem.kpi.threshold.range,max_type:0
+#: selection:mgmtsystem.kpi.threshold.range,min_type:0
+msgid "Python Code"
+msgstr "Python Code"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi.threshold.range:0
+msgid "Range"
+msgstr "Range"
+
+#. module: mgmtsystem_kpi
+#: selection:mgmtsystem.kpi,periodicity_uom:0
+msgid "Month"
+msgstr "Month"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi,value:0 field:mgmtsystem.kpi.history,value:0
+msgid "Value"
+msgstr "Value"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi.threshold.range:0
+#: field:mgmtsystem.kpi.threshold.range,min_fixed_value:0
+#: field:mgmtsystem.kpi.threshold.range,min_value:0
+msgid "Minimum"
+msgstr "Minimum"
+
+#. module: mgmtsystem_kpi
+#: model:ir.actions.act_window,name:mgmtsystem_kpi.open_mgmtsystem_category_list
+#: model:ir.ui.menu,name:mgmtsystem_kpi.menu_mgmtsystem_configuration_kpi_category
+#: view:mgmtsystem.kpi.category:0
+msgid "Categories"
+msgstr "Categories"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi:0
+msgid "Computation"
+msgstr "Computation"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi,threshold_id:0 view:mgmtsystem.kpi.threshold:0
+msgid "Threshold"
+msgstr "Threshold"
+
+#. module: mgmtsystem_kpi
+#: view:mgmtsystem.kpi.threshold:0 field:mgmtsystem.kpi.threshold,kpi_ids:0
+msgid "KPIs"
+msgstr "KPIs"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi.threshold,invalid_message:0
+#: field:mgmtsystem.kpi.threshold.range,invalid_message:0
+msgid "Message"
+msgstr "Message"
+
+#. module: mgmtsystem_kpi
+#: field:mgmtsystem.kpi.threshold.range,max_code:0
+msgid "Maximum Computation Code"
+msgstr "Maximum Computation Code"
+
+#. module: mgmtsystem_kpi
+#: model:ir.model,name:mgmtsystem_kpi.model_mgmtsystem_kpi
+#: view:mgmtsystem.kpi:0
+msgid "Key Performance Indicator"
+msgstr "Key Performance Indicator"
