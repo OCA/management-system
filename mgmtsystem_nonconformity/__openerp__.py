@@ -205,6 +205,7 @@ Contributors
         "demo/mgmtsystem_nonconformity_cause.xml",
         "demo/mgmtsystem_nonconformity.xml",
     ],
+<<<<<<< 16bcc50b9f8cdf9477d48591d152de7dc71573a2
 <<<<<<< aedf771434404b2aa8c10c5f41955537a4c5e0cd
 <<<<<<< 032a397f8f66a2977ac532de018235444c6316f6
 <<<<<<< 71aa0a8a6f4f4f006d1786851185cfac782618dd
@@ -223,5 +224,8 @@ Contributors
 =======
     'installable': True,
 >>>>>>> mgmtsystem_nonconformity progress
+=======
+    'installable': False,
+>>>>>>> [MIG] Make modules uninstallable
 }
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
