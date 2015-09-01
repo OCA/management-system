@@ -10,11 +10,11 @@ msgstr ""
 "POT-Creation-Date: 2015-08-07 14:27+0000\n"
 "PO-Revision-Date: 2015-08-07 14:16+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Portuguese (http://www.transifex.com/oca/OCA-management-system-8-0/language/pt/)\n"
+"Language-Team: English (http://www.transifex.com/oca/OCA-management-system-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt\n"
+"Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_action
@@ -37,7 +37,7 @@ msgid ""
 "</p>\n"
 "        \n"
 "      "
-msgstr ""
+msgstr "\n<p>Hello,</p>\n\n<p>\n  This is an automated message to remind you that the\n  following action is due to be completed in 10 days (${object.date_deadline}):\n\n  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n</p>\n\n<p>\n  Thank you and have a nice day.<br />\n  --<br />\n  Odoo\n</p>\n        \n      "
 
 #. module: mgmtsystem_action
 #: model:email.template,body_html:mgmtsystem_action.wkf_action_email_template_reminder_action
@@ -56,12 +56,12 @@ msgid ""
 "</p>\n"
 "        \n"
 "      "
-msgstr ""
+msgstr "\n<p>Hello,</p>\n<p>A new action has been assigned to you:\n  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n</p>\n<p>${object.description}</p>\n\n<p>\n  Thank you<br />\n  --<br />\n  Odoo\n</p>\n        \n      "
 
 #. module: mgmtsystem_action
 #: model:email.template,subject:mgmtsystem_action.wkf_action_email_template_reminder_action
 msgid "${object.name}"
-msgstr ""
+msgstr "${object.name}"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
@@ -69,103 +69,103 @@ msgstr ""
 #: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_form
 #: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_tree
 msgid "Action"
-msgstr "Ação"
+msgstr "Action"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.open_mgmtsystem_action_list
 #: model:ir.ui.menu,name:mgmtsystem_action.menu_config_action
 #: model:ir.ui.menu,name:mgmtsystem_action.menu_open_action
 msgid "Actions"
-msgstr "Ações"
+msgstr "Actions"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,active:0
 msgid "Active"
-msgstr ""
+msgstr "Active"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,categ_id:0
 msgid "Category"
-msgstr "Categoria"
+msgstr "Category"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,date:0
 msgid "Claim Date"
-msgstr "Data da reclamação"
+msgstr "Claim Date"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,name:0
 msgid "Claim Subject"
-msgstr "Assunto"
+msgstr "Claim Subject"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_stage
 msgid "Claim stages"
-msgstr ""
+msgstr "Claim stages"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,date_closed:0
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_close
 msgid "Closed"
-msgstr "Fechado"
+msgstr "Closed"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,case_default:0
 msgid "Common to All Teams"
-msgstr ""
+msgstr "Common to All Teams"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 msgid "Corrective Action"
-msgstr "Ação corretiva"
+msgstr "Corrective Action"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,create_uid:0
 #: field:mgmtsystem.action.stage,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Created by"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Created on"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,create_date:0
 msgid "Creation Date"
-msgstr "Data de criação"
+msgstr "Creation Date"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_form
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Date of the last message posted on the record."
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_form
 #: field:mgmtsystem.action,date_deadline:0
 msgid "Deadline"
-msgstr "Prazo limite"
+msgstr "Deadline"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_form
 #: field:mgmtsystem.action,description:0
 msgid "Description"
-msgstr "Descrição"
+msgstr "Description"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,email_from:0
 msgid "Destination email for email gateway."
-msgstr ""
+msgstr "Destination email for email gateway."
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_draft
 msgid "Draft"
-msgstr ""
+msgstr "Draft"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,email_from:0
@@ -175,29 +175,29 @@ msgstr "Email"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,is_ending:0
 msgid "Ending stage"
-msgstr ""
+msgstr "Ending stage"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "Followers"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Group By..."
-msgstr "Agrupar por..."
+msgstr "Group By..."
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
 msgid "High"
-msgstr "Alta"
+msgstr "High"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,message_summary:0
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr ""
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,id:0 field:mgmtsystem.action.stage,id:0
@@ -207,82 +207,82 @@ msgstr "ID"
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "If checked new messages require your attention."
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action.stage,case_default:0
 msgid ""
 "If you check this field, this stage will be proposed by default on each "
 "sales team. It will not assign this stage to existing teams."
-msgstr ""
+msgstr "If you check this field, this stage will be proposed by default on each sales team. It will not assign this stage to existing teams."
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 msgid "Immediate Action"
-msgstr "Ação imediata"
+msgstr "Immediate Action"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 msgid "Improvement Opportunity"
-msgstr "Oportundiades de melhoria"
+msgstr "Improvement Opportunity"
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_open
 msgid "In Progress"
-msgstr ""
+msgstr "In Progress"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_is_follower:0
 msgid "Is a Follower"
-msgstr ""
+msgstr "Is a Follower"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_last_post:0
 msgid "Last Message Date"
-msgstr ""
+msgstr "Last Message Date"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,write_uid:0
 #: field:mgmtsystem.action.stage,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Last Updated by"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Last Updated on"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action.stage,section_ids:0
 msgid ""
 "Link between stages and sales teams. When set, this limitate the current "
 "stage to the selected sales teams."
-msgstr ""
+msgstr "Link between stages and sales teams. When set, this limitate the current stage to the selected sales teams."
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
 msgid "Low"
-msgstr "Baixa"
+msgstr "Low"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_ids:0
 msgid "Messages"
-msgstr "Mensagens"
+msgstr "Messages"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "Messages and communication history"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,action_next:0
 msgid "Next Action"
-msgstr "Próxima ação"
+msgstr "Next Action"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,date_action_next:0
 msgid "Next Action Date"
-msgstr "Data da próxima ação"
+msgstr "Next Action Date"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -292,127 +292,127 @@ msgstr "Normal"
 #. module: mgmtsystem_action
 #: model:ir.actions.server,name:mgmtsystem_action.mgmtsystem_action_server_action
 msgid "Notify the person in charge of the new action"
-msgstr ""
+msgstr "Notify the person in charge of the new action"
 
 #. module: mgmtsystem_action
 #: view:board.board:mgmtsystem_action.board_mgmtsystem_action_form
 msgid "Open Actions"
-msgstr "Ações em aberto"
+msgstr "Open Actions"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,partner_id:0
 msgid "Partner"
-msgstr "Parceiro"
+msgstr "Partner"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,partner_phone:0
 msgid "Phone"
-msgstr "Telefone"
+msgstr "Phone"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 msgid "Preventive Action"
-msgstr "Ação preventiva"
+msgstr "Preventive Action"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,priority:0
 msgid "Priority"
-msgstr "Prioridade"
+msgstr "Priority"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,ref:0 field:mgmtsystem.action,reference:0
 msgid "Reference"
-msgstr "Referência"
+msgstr "Reference"
 
 #. module: mgmtsystem_action
 #: model:email.template,subject:mgmtsystem_action.action_email_template_reminder_action
 msgid "Reminder on Action: \"${object.name}\""
-msgstr ""
+msgstr "Reminder on Action: \"${object.name}\""
 
 #. module: mgmtsystem_action
 #: model:ir.actions.server,name:mgmtsystem_action.action_email_reminder_action
 msgid "Reminder to Responsible"
-msgstr ""
+msgstr "Reminder to Responsible"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,resolution:0
 msgid "Resolution"
-msgstr "Resolução"
+msgstr "Resolution"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,type_action:0
 msgid "Response Type"
-msgstr ""
+msgstr "Response Type"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_form
 #: field:mgmtsystem.action,user_id:0
 msgid "Responsible"
-msgstr "Responsável"
+msgstr "Responsible"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,section_id:0
 msgid ""
 "Responsible sales team. Define Responsible user and Email account for mail "
 "gateway."
-msgstr ""
+msgstr "Responsible sales team. Define Responsible user and Email account for mail gateway."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,cause:0
 msgid "Root Cause"
-msgstr "Causa principal"
+msgstr "Root Cause"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,section_id:0
 msgid "Sales Team"
-msgstr "Equipa responsável"
+msgstr "Sales Team"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,section_ids:0
 msgid "Sections"
-msgstr ""
+msgstr "Sections"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,sequence:0
 msgid "Sequence"
-msgstr ""
+msgstr "Sequence"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,stage_id:0
 msgid "Stage"
-msgstr "Etapa"
+msgstr "Stage"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,name:0
 msgid "Stage Name"
-msgstr ""
+msgstr "Stage Name"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.mgmtsystem_action_stage_action
 #: model:ir.ui.menu,name:mgmtsystem_action.menu_mgmtsystem_action_stages
 #: view:mgmtsystem.action.stage:mgmtsystem_action.mgmtsystem_action_stage_tree_view
 msgid "Stages"
-msgstr ""
+msgstr "Stages"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,is_starting:0
 msgid "Starting stage"
-msgstr ""
+msgstr "Starting stage"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_tree
 msgid "Subject"
-msgstr ""
+msgstr "Subject"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_summary:0
 msgid "Summary"
-msgstr ""
+msgstr "Summary"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,company_id:0 field:mgmtsystem.action,system_id:0
 msgid "System"
-msgstr ""
+msgstr "System"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,email_cc:0
@@ -420,54 +420,54 @@ msgid ""
 "These email addresses will be added to the CC field of all inbound and "
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
-msgstr "Estes endereços de email serão acrescentados ao campo CC dos emails enviados relativos a este caso. Separe múltiplos endereços com vírgula."
+msgstr "These email addresses will be added to the CC field of all inbound and outbound emails for this record before being sent. Separate multiple email addresses with a comma"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,user_fault:0
 msgid "Trouble Responsible"
-msgstr "Responsál pelo problema"
+msgstr "Trouble Responsible"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Type"
-msgstr "Tipo"
+msgstr "Type"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Unread Messages"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,write_date:0
 msgid "Update Date"
-msgstr "Data últ. atualização"
+msgstr "Update Date"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action.stage,sequence:0
 msgid "Used to order stages. Lower is better."
-msgstr ""
+msgstr "Used to order stages. Lower is better."
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "User"
-msgstr "Utilizador"
+msgstr "User"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,email_cc:0
 msgid "Watchers Emails"
-msgstr "Emails dr observadores (CC)"
+msgstr "Watchers Emails"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,website_message_ids:0
 msgid "Website Messages"
-msgstr ""
+msgstr "Website Messages"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,website_message_ids:0
 msgid "Website communication history"
-msgstr ""
+msgstr "Website communication history"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.action_mgmtsystem_action
 msgid "mgmtsystem.action.window"
-msgstr ""
+msgstr "mgmtsystem.action.window"

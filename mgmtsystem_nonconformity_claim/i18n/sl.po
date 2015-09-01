@@ -3,92 +3,93 @@
 # * mgmtsystem_nonconformity_claim
 # 
 # Translators:
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-08-07 14:27+0000\n"
-"PO-Revision-Date: 2015-08-07 14:29+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Portuguese (http://www.transifex.com/oca/OCA-management-system-8-0/language/pt/)\n"
+"PO-Revision-Date: 2015-08-10 05:56+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-management-system-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #. module: mgmtsystem_nonconformity_claim
 #: field:mgmtsystem.nonconformity.type,active:0
 msgid "Active?"
-msgstr "Ativo?"
+msgstr "Aktivno?"
 
 #. module: mgmtsystem_nonconformity_claim
 #: model:ir.model,name:mgmtsystem_nonconformity_claim.model_mgmtsystem_nonconformity_type
 msgid "Claim Type"
-msgstr "Tipo de ocorrência"
+msgstr "Tip zahtevka"
 
 #. module: mgmtsystem_nonconformity_claim
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity_claim.view_mgmtsystem_nonconformity_form
 msgid "Claims and Nonconformities"
-msgstr "Ocorrências e não conformidades"
+msgstr "Zahtevki in neustreznosti"
 
 #. module: mgmtsystem_nonconformity_claim
 #: field:mgmtsystem.nonconformity.type,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Ustvaril"
 
 #. module: mgmtsystem_nonconformity_claim
 #: field:mgmtsystem.nonconformity.type,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Ustvarjeno"
 
 #. module: mgmtsystem_nonconformity_claim
 #: field:mgmtsystem.nonconformity.type,description:0
 msgid "Description"
-msgstr "Descrição"
+msgstr "Opis"
 
 #. module: mgmtsystem_nonconformity_claim
 #: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_gp
 msgid "Good Practice"
-msgstr "Boa prática"
+msgstr "Dobra praksa"
 
 #. module: mgmtsystem_nonconformity_claim
 #: field:mgmtsystem.nonconformity.type,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: mgmtsystem_nonconformity_claim
 #: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_io
 msgid "Improvement Opportunity"
-msgstr "Oportunidade de melhoria"
+msgstr "Priložnost za izboljšave"
 
 #. module: mgmtsystem_nonconformity_claim
 #: field:mgmtsystem.nonconformity.type,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Zadnjič posodobil"
 
 #. module: mgmtsystem_nonconformity_claim
 #: field:mgmtsystem.nonconformity.type,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Zadnjič posodobljeno"
 
 #. module: mgmtsystem_nonconformity_claim
 #: model:ir.model,name:mgmtsystem_nonconformity_claim.model_mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_nc
 msgid "Nonconformity"
-msgstr "Não conformidade"
+msgstr "Neustreznost"
 
 #. module: mgmtsystem_nonconformity_claim
 #: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_ob
 msgid "Observation"
-msgstr "Observação"
+msgstr "Ugotovitev"
 
 #. module: mgmtsystem_nonconformity_claim
 #: field:mgmtsystem.nonconformity.type,name:0
 msgid "Title"
-msgstr "Título"
+msgstr "Titula"
 
 #. module: mgmtsystem_nonconformity_claim
 #: field:mgmtsystem.nonconformity,type_id:0
 msgid "Type"
-msgstr ""
+msgstr "Tip"
