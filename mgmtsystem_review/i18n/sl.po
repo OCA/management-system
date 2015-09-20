@@ -11,12 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2016-08-04 02:45+0000\n"
 "PO-Revision-Date: 2016-08-04 02:45+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
+"Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sv\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
@@ -48,55 +48,55 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 #: selection:mgmtsystem.review.line,type:0
 msgid "Action"
-msgstr "Åtgärd"
+msgstr "Ukrep"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Action:"
-msgstr "Åtgärd"
+msgstr "Ukrep:"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_changes
 msgid "Changes"
-msgstr "Ändringar"
+msgstr "Spremembe"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Changes affecting the management systems"
-msgstr "Förändringar som påverkar ledningssystem"
+msgstr "Spremembe glede sistemov upravljanja"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Close"
-msgstr "Stäng"
+msgstr "Zaključi"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 #: selection:mgmtsystem.review,state:0
 msgid "Closed"
-msgstr "Stängd"
+msgstr "Zaključeno"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 msgid "Closed Reviews"
-msgstr "Stängda Granskning"
+msgstr "Zaključene revizije"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Comments:"
-msgstr "Kommentarer:"
+msgstr "Komentarji:"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_company_id
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_company_id
 msgid "Company"
-msgstr ""
+msgstr "Družba"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_conclusion
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Conclusion"
-msgstr "Slutsats"
+msgstr "Zaključek"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
@@ -107,13 +107,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Ustvaril"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_create_date
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Ustvarjeno"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_date
@@ -128,12 +128,12 @@ msgstr "Datum:"
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_decision
 msgid "Decision"
-msgstr "Beslut"
+msgstr "Odločitev"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Decision:"
-msgstr "Beslut:"
+msgstr "Odločitev:"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
@@ -149,23 +149,23 @@ msgstr ""
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Expectations:"
-msgstr "Förväntningar:"
+msgstr "Pričakovanja:"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_id
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Improvements:"
-msgstr "Förbättringar:"
+msgstr "Izboljšave:"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Inputs"
-msgstr "Ingångsvärde"
+msgstr "Vhodni podatki"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review___last_update
@@ -177,64 +177,64 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Zadnjič posodobil"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_write_date
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Zadnjič posodobljeno"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_ids
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Lines"
-msgstr "Rader"
+msgstr "Postavke"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_name
 msgid "Name"
-msgstr "Namn"
+msgstr "Naziv"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_nonconformity_id
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 #: selection:mgmtsystem.review.line,type:0
 msgid "Nonconformity"
-msgstr "Avvikelse"
+msgstr "Neustreznost"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 #: selection:mgmtsystem.review,state:0
 msgid "Open"
-msgstr "Öppna"
+msgstr "Odprto"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 msgid "Open Reviews"
-msgstr "Öppna Granskningar"
+msgstr "Odprte revizije"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_user_ids
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Participants"
-msgstr "Deltagare"
+msgstr "Sodelujoči"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Participants:"
-msgstr "Deltagare:"
+msgstr "Sodelujoči:"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_policy
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Policy"
-msgstr "Policy"
+msgstr "Pravilo"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_reference
 msgid "Reference"
-msgstr "Referens"
+msgstr "Sklic"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
@@ -244,7 +244,7 @@ msgstr ""
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Reference:"
-msgstr "Referens"
+msgstr "Sklic:"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
@@ -256,20 +256,20 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_review_id
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Review"
-msgstr "Granskning"
+msgstr "Revizija"
 
 #. module: mgmtsystem_review
 #: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review_line
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_form
 msgid "Review Line"
-msgstr "Bedömning Rader"
+msgstr "Revizijska postavka"
 
 #. module: mgmtsystem_review
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_line_list
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_filter
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_tree
 msgid "Review Lines"
-msgstr "Granskningsrader"
+msgstr "Revizijske postavke"
 
 #. module: mgmtsystem_review
 #: model:ir.actions.report.xml,name:mgmtsystem_review.review_report_mgmtsystem_review
@@ -283,30 +283,30 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_tree
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_review_calendar
 msgid "Reviews"
-msgstr "Recensioner"
+msgstr "Revizije"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_state
 msgid "State"
-msgstr "Status"
+msgstr "Stanje"
 
 #. module: mgmtsystem_review
 #: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "State:"
-msgstr "Status:"
+msgstr "Stanje:"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_response_ids
 #: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Survey Answers"
-msgstr "Enkätsvar"
+msgstr "Odgovori na raziskavo"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_name
 msgid "Title"
-msgstr "Titel"
+msgstr "Naslov"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_type
 msgid "Type"
-msgstr "Typ"
+msgstr "Tip"
