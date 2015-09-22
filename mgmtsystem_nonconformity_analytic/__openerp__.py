@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Copyright (C) 2012 Daniel Reis
@@ -17,15 +17,18 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-from openerp.osv import fields, orm
-
-
-class mgmtsystem_nonconformity(orm.Model):
-    _inherit = "mgmtsystem.nonconformity"
-    _columns = {
-        'analytic_account_id': fields.many2one(
-            'account.analytic.account',
-            'Contract',
-        ),
-    }
+{
+    "name": "Management System Nonconformity - Analytic Account",
+    "version": "1.0",
+    "author": "Daniel Reis, Odoo Community Association (OCA)",
+    "license": "AGPL-3",
+    "category": "Management System",
+    "depends": [
+        'mgmtsystem_nonconformity',
+        'analytic'
+    ],
+    "data": [
+        'views/mgmtsystem_nonconformity.xml'
+    ],
+    'installable': True,
+}

@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Copyright (C) 2012 Daniel Reis
@@ -17,15 +17,15 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System Nonconformity - Analytic Account",
-    "version": "1.0",
-    "author": "Daniel Reis,Odoo Community Association (OCA)",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "description": """Add Analytic Accounts / Contracts to Non Conformities""",
-    "depends": ['mgmtsystem_nonconformity', 'analytic'],
-    "data": ['mgmtsystem_nonconformity.xml'],
-    'installable': False,
-}
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+
+from openerp.osv import fields, orm
+
+
+class mgmtsystem_nonconformity(orm.Model):
+    _inherit = "mgmtsystem.nonconformity"
+    _columns = {
+        'analytic_account_id': fields.many2one(
+            'account.analytic.account',
+            'Contract',
+        ),
+    }
