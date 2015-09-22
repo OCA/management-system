@@ -1,6 +1,7 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
+================================
 Nonconformity - Analytic Account
 ================================
 
@@ -14,6 +15,10 @@ To use this module, you need to:
 * create a nonconformity
 * walk through the different steps of the workflow to create your action plan
 * create a project instead of actions to correct or prevent the nonconformity
+
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/128/8.0
 
 Known issues / Roadmap
 ======================
