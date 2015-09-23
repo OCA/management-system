@@ -18,6 +18,48 @@ These presentation may help with an overviews of the modules:
 * [OpenDays 2013 presentation](http://www.slideshare.net/max3903/iso-anmanagement-systemswithopenerpena) of the Management System project
 * [Overview presentation](http://www.slideshare.net/max3903/openerp-management-system-modules) (2012) by Savoir-Faire Linux
 
+[//]: # (addons)
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[document_page_environment_manual](document_page_environment_manual/) | 1.0 | Document Management - Wiki - Environment Manual
+[document_page_environmental_aspect](document_page_environmental_aspect/) | 1.0 | Document Management - Wiki - Environmental Aspects
+[document_page_health_safety_manual](document_page_health_safety_manual/) | 1.0 | Document Management - Wiki - Health and Safety Manual
+[document_page_procedure](document_page_procedure/) | 1.0 | Document Management - Wiki - Procedures
+[document_page_quality_manual](document_page_quality_manual/) | 1.0 | Quality Manual
+[document_page_work_instructions](document_page_work_instructions/) | 1.0 | Document Management - Wiki - Work Instructions
+[information_security_manual](information_security_manual/) | 1.0 | Information Security Management System Manual
+[mgmtsystem](mgmtsystem/) | 1.0 | Management System
+[mgmtsystem_action](mgmtsystem_action/) | 1.2 | Management System - Action
+[mgmtsystem_audit](mgmtsystem_audit/) | 1.2 | Management System - Audit
+[mgmtsystem_claim](mgmtsystem_claim/) | 1.1 | Management System - Claim
+[mgmtsystem_environment](mgmtsystem_environment/) | 8.0.1.0.0 | Environment Management System
+[mgmtsystem_manuals](mgmtsystem_manuals/) | 1.1 | Management System - Manual
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 1.2 | Management System - Nonconformity
+[mgmtsystem_nonconformity_analytic](mgmtsystem_nonconformity_analytic/) | 1.0 | Management System Nonconformity - Analytic Account
+[mgmtsystem_nonconformity_claim](mgmtsystem_nonconformity_claim/) | 1.0 | Management System - Claims and Nonconformities
+[mgmtsystem_quality](mgmtsystem_quality/) | 8.0.1.0.0 | Quality Management System
+[mgmtsystem_review](mgmtsystem_review/) | 8.0.1.0.0 | Management System - Review
+[mgmtsystem_survey](mgmtsystem_survey/) | 1.0 | Management System - Survey
+
+Unported addons
+---------------
+addon | version | summary
+--- | --- | ---
+[mgmtsystem_action_audittrail](__unported__/mgmtsystem_action_audittrail/) | 1.0 (unported) | Management System - Actions Audit Trail tracking
+[mgmtsystem_audit_audittrail](__unported__/mgmtsystem_audit_audittrail/) | 1.0 (unported) | Management System - Audits Audit Trail tracking
+[mgmtsystem_claim_audittrail](__unported__/mgmtsystem_claim_audittrail/) | 1.0 (unported) | Management System - Claims Audit Trail tracking
+[mgmtsystem_hazard](__unported__/mgmtsystem_hazard/) | 1.1 (unported) | Management System - Hazard
+[mgmtsystem_hazard_audittrail](__unported__/mgmtsystem_hazard_audittrail/) | 1.0 (unported) | Management System - Hazards Audit Trail tracking
+[mgmtsystem_health_safety](__unported__/mgmtsystem_health_safety/) | 1.0 (unported) | Health and Safety Management System
+[mgmtsystem_kpi](__unported__/mgmtsystem_kpi/) | 1.1 (unported) | Key Performance Indicator
+[mgmtsystem_nonconformity_deptm](__unported__/mgmtsystem_nonconformity_deptm/) | 1.0 (unported) | Management System Nonconformity - Department
+[mgmtsystem_nonconformity_project](__unported__/mgmtsystem_nonconformity_project/) | 1.0 (unported) | Management System - Project
+[mgmtsystem_review_audittrail](__unported__/mgmtsystem_review_audittrail/) | 1.0 (unported) | Management System - Reviews Audit Trail tracking
+
+[//]: # (end addons)
+
 Translation Status
 ------------------
 [![Transifex Status](https://www.transifex.com/projects/p/OCA-management-system-8-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-management-system-8-0)
