@@ -61,7 +61,7 @@ WARNING: when upgrading from v0.1, data conversion is required, since there are 
 =======
 =======
     "name": "Management System - Nonconformity",
-    "version": "1.2",
+    "version": "8.0.1.2.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
