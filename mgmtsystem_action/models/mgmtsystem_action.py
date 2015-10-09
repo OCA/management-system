@@ -67,6 +67,7 @@ class MgmtsystemAction(orm.Model):
             lambda self, cr, uid, c:
             self.pool['res.users'].browse(cr, uid, uid, c).company_id.id),
         'reference': 'NEW',
+        'state': 'draft',
     }
 
     def create(self, cr, uid, vals, context=None):
