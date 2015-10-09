@@ -53,7 +53,7 @@
 This module enables you to manage audits and verifications lists of your management system.
 =======
     "name": "Management System - Audit",
-    "version": "1.2",
+    "version": "8.0.1.2.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
