@@ -21,7 +21,7 @@
 
 {
     'name': 'Quality Manual',
-    'version': '1.0',
+    'version': '8.0.1.0.0',
     'category': 'Management System',
     'complexity': "easy",
     'description': """
