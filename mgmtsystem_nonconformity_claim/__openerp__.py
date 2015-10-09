@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Management System - Claims and Nonconformities',
-    'version': '1.0',
+    'version': '8.0.1.0.0',
     'author': "Daniel Reis,Odoo Community Association (OCA)",
     'license': 'AGPL-3',
     'category': 'Management System',
