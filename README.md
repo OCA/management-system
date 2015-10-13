@@ -47,16 +47,16 @@ Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[mgmtsystem_action_audittrail](__unported__/mgmtsystem_action_audittrail/) | 1.0 (unported) | Management System - Actions Audit Trail tracking
-[mgmtsystem_audit_audittrail](__unported__/mgmtsystem_audit_audittrail/) | 1.0 (unported) | Management System - Audits Audit Trail tracking
-[mgmtsystem_claim_audittrail](__unported__/mgmtsystem_claim_audittrail/) | 1.0 (unported) | Management System - Claims Audit Trail tracking
-[mgmtsystem_hazard](__unported__/mgmtsystem_hazard/) | 1.1 (unported) | Management System - Hazard
-[mgmtsystem_hazard_audittrail](__unported__/mgmtsystem_hazard_audittrail/) | 1.0 (unported) | Management System - Hazards Audit Trail tracking
-[mgmtsystem_health_safety](__unported__/mgmtsystem_health_safety/) | 1.0 (unported) | Health and Safety Management System
-[mgmtsystem_kpi](__unported__/mgmtsystem_kpi/) | 1.1 (unported) | Key Performance Indicator
-[mgmtsystem_nonconformity_deptm](__unported__/mgmtsystem_nonconformity_deptm/) | 1.0 (unported) | Management System Nonconformity - Department
-[mgmtsystem_nonconformity_project](__unported__/mgmtsystem_nonconformity_project/) | 1.0 (unported) | Management System - Project
-[mgmtsystem_review_audittrail](__unported__/mgmtsystem_review_audittrail/) | 1.0 (unported) | Management System - Reviews Audit Trail tracking
+[mgmtsystem_action_audittrail](mgmtsystem_action_audittrail/) | 1.0 (unported) | Management System - Actions Audit Trail tracking
+[mgmtsystem_audit_audittrail](mgmtsystem_audit_audittrail/) | 1.0 (unported) | Management System - Audits Audit Trail tracking
+[mgmtsystem_claim_audittrail](mgmtsystem_claim_audittrail/) | 1.0 (unported) | Management System - Claims Audit Trail tracking
+[mgmtsystem_hazard](mgmtsystem_hazard/) | 1.1 (unported) | Management System - Hazard
+[mgmtsystem_hazard_audittrail](mgmtsystem_hazard_audittrail/) | 1.0 (unported) | Management System - Hazards Audit Trail tracking
+[mgmtsystem_health_safety](mgmtsystem_health_safety/) | 1.0 (unported) | Health and Safety Management System
+[mgmtsystem_kpi](mgmtsystem_kpi/) | 1.1 (unported) | Key Performance Indicator
+[mgmtsystem_nonconformity_deptm](mgmtsystem_nonconformity_deptm/) | 1.0 (unported) | Management System Nonconformity - Department
+[mgmtsystem_nonconformity_project](mgmtsystem_nonconformity_project/) | 1.0 (unported) | Management System - Project
+[mgmtsystem_review_audittrail](mgmtsystem_review_audittrail/) | 1.0 (unported) | Management System - Reviews Audit Trail tracking
 
 [//]: # (end addons)
 
