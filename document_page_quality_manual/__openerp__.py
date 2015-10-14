@@ -47,7 +47,7 @@ Contributors
         'data/document_page_data.xml'
     ],
     'demo': [],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'images': [
         'images/wiki_pages_quality_manual.jpeg'
