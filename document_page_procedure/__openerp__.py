@@ -76,6 +76,7 @@
     "demo": [
         'demo/document_page.xml',
     ],
+<<<<<<< 0ca876f1776d2d3b9b73093ae412c476b6a4634c
 >>>>>>> Review changes from PR#35
     'installable': True,
 <<<<<<< c82318b1532b7dad2f426a18e47d3a5a7e02bfd9
@@ -83,4 +84,7 @@
     "certificate": ''
 =======
 >>>>>>> Removed certificate from __openerp__
+=======
+    'installable': False,
+>>>>>>> [MIG] Make modules uninstallable
 }
