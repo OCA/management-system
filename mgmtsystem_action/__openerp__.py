@@ -77,6 +77,7 @@ system:
         'board_mgmtsystem_action.xml',
     ],
     "demo": ['demo_action.xml'],
+<<<<<<< 8a613dac39a83508dda8ffee50736a0e4aed0699
 <<<<<<< 22ac775a1ed32d9a73fa3338a4b6c15d7e7b3d41
 <<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
     "installable": True,
@@ -86,4 +87,7 @@ system:
 =======
     "installable": True,
 >>>>>>> Added tests and updated code to v8
+=======
+    'installable': False,
+>>>>>>> [MIG] Make modules uninstallable
 }
