@@ -28,5 +28,5 @@
     "depends": ['mgmtsystem_manuals'],
     "data": ['document_page_health_safety_manual.xml'],
     "demo": [],
-    'installable': True,
+    'installable': False,
 }
