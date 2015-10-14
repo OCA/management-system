@@ -31,6 +31,6 @@
         'views/mgmtsystem_nonconformity.xml',
         'data/mgmtsystem_nonconformity_type.xml',
     ],
-    'installable': True,
+    'installable': False,
     'application': False,
 }

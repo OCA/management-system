@@ -39,5 +39,5 @@
     "demo": [
         'demo/demo_audit.xml',
     ],
-    'installable': True,
+    'installable': False,
 }

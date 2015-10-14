@@ -34,6 +34,6 @@
     ],
     "data": ['environment.xml'],
     "demo": [],
-    'installable': True,
+    'installable': False,
     "application": True,
 }

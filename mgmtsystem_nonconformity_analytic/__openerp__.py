@@ -30,5 +30,5 @@
     "data": [
         'views/mgmtsystem_nonconformity.xml'
     ],
-    'installable': True,
+    'installable': False,
 }

@@ -48,5 +48,5 @@ This module is the basis of any management system applications:
         'board_mgmtsystem_view.xml',
     ],
     "demo": [],
-    'installable': True,
+    'installable': False,
 }

@@ -33,6 +33,6 @@
     "data": [
         'data/mgmtsystem_system.xml',
     ],
-    'installable': True,
+    'installable': False,
     "application": True,
 }

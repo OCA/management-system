@@ -41,5 +41,5 @@ This module adds a menu item "Manual" and is a dependency of:
         'views/document_page.xml',
     ],
     "demo": [],
-    'installable': True,
+    'installable': False,
 }

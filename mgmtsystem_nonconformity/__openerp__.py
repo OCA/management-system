@@ -117,5 +117,5 @@ Contributors
         "demo/mgmtsystem_nonconformity_cause.xml",
         "demo/mgmtsystem_nonconformity.xml",
     ],
-    'installable': True,
+    'installable': False,
 }

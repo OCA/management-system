@@ -36,5 +36,5 @@
         'views/mgmtsystem_review.xml',
         'report/review_report.xml',
     ],
-    "installable": True,
+    'installable': False,
 }
