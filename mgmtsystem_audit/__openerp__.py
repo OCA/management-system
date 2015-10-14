@@ -80,6 +80,7 @@ management system.
     "demo": [
         'demo/demo_audit.xml',
     ],
+<<<<<<< 7b789f414fa0decc3c5afe3bd77d89f33eb53e4f
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
     "installable": True,
 =======
@@ -89,4 +90,7 @@ management system.
     "certificate": ''
 =======
 >>>>>>> Removed vim lines
+=======
+    'installable': False,
+>>>>>>> [MIG] Make modules uninstallable
 }
