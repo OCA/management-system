@@ -76,6 +76,6 @@ This module enables you to manage reviews of your management system.
         'views/mgmtsystem_review.xml',
         'report/review_report.xml',
     ],
-    "installable": True,
+    'installable': False,
 }
 >>>>>>> Moved mgmtsystem_review to root folder
