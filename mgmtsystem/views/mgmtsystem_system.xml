@@ -9,7 +9,7 @@
         <form string="Management System">
           <group>
             <field name="name"/>
-            <field name="manual"/>
+
             <field name="company_id" groups="base.group_multi_company"/>
           </group>
         </form>
@@ -22,7 +22,7 @@
       <field name="arch" type="xml">
         <tree string="Management Systems">
           <field name="name"/>
-          <field name="manual"/>
+          
           <field name="company_id" groups="base.group_multi_company"/>
         </tree>
       </field>

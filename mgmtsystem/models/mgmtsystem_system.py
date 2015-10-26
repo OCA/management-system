@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,25 +18,20 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System",
-    "version": "9.0.1.0.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "complexity": "normal",
-    "depends": [
-        'base',
-        'board',
-    ],
-    "data": [
-        'security/mgmtsystem_security.xml',
-        'security/ir.model.access.csv',
-        'views/menus.xml',
-        'views/mgmtsystem_system.xml',
-        'views/board_mgmtsystem.xml',
-    ],
-    "demo": [],
-    'installable': True,
-}
+
+from openerp import models, fields
+
+
+def own_company(self):
+    return self.env.user.company_id.id
+
+
+class mgmtsystem_system(models.Model):
+
+    _name = 'mgmtsystem.system'
+    _description = 'System'
+
+    name = fields.Char(string='System', required=True)
+    # manual = fields.Many2one('document.page', string='Manual')
+    company_id = fields.Many2one('res.company', string='Company',
+                                 default=own_company)
