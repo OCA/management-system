@@ -20,33 +20,22 @@
 ##############################################################################
 {
     "name": "Management System",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
     "complexity": "normal",
-    "description": """\
-This module is the basis of any management system applications:
-     * audit reports,
-     * nonconformities,
-     * immediate actions,
-     * preventive actions,
-     * corrective actions,
-     * improvement opportunities.
-    """,
     "depends": [
         'base',
         'board',
-        'document_page',
     ],
     "data": [
         'security/mgmtsystem_security.xml',
         'security/ir.model.access.csv',
-        'menus.xml',
-        'mgmtsystem_system.xml',
-        'board_mgmtsystem_view.xml',
+        'views/menus.xml',
+        'views/board_mgmtsystem_view.xml',
     ],
     "demo": [],
-    'installable': False,
+    'installable': True,
 }

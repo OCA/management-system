@@ -26,10 +26,10 @@ def own_company(self):
     return self.env.user.company_id.id
 
 
-class mgmtsystem_system(models.Model):
+class MgmtsystemSystem(models.Model):
 
     _name = 'mgmtsystem.system'
-    _description = 'System'
+    _description = 'Manual'
 
     name = fields.Char(string='System', required=True)
     manual = fields.Many2one('document.page', string='Manual')
