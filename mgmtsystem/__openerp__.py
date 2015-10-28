@@ -34,7 +34,6 @@
         'security/mgmtsystem_security.xml',
         'security/ir.model.access.csv',
         'views/menus.xml',
-        'views/mgmtsystem_system.xml',
         'views/board_mgmtsystem.xml',
     ],
     "demo": [],

@@ -3,7 +3,7 @@
    :alt: License: AGPL-3
 
 ================================
-Management System base
+Management System -  Base
 ================================
 
 This module is the basis of any management system applications:
@@ -17,8 +17,7 @@ This module is the basis of any management system applications:
 Installation
 ============
 
-Makes the Management System base Application Configuration available from where you can install
-any oder management system applications.
+Makes the Management System base Application available so that other Management System can be insalled
 
 Configuration
 =============
@@ -27,13 +26,6 @@ No configuration required
 
 Usage
 =====
-
-To use this module, you need to:
-* go to Management system > Configuration > System to create your system domain
-
-.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
-   :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/118/9.0
 
 Known issues / Roadmap
 ======================
@@ -84,11 +76,12 @@ Here are the modification that have been done
 
 The manual field is been removed from model mgmtsystem_system so that the module
  no more depends on document_page module.
- The manual field is also removed from views system_form and system_tree which are inside
- mgmtsystem_system.xml
+ model mgmtsystem_system.py and the view mgmtsystem_system.xml are moved to mgmtsystem_manuals module
+
+
 
 We added views folder
-we moved menus.xml, mgmtsystem_system.xml and board_mgmtsystem_view.xml to views
+we moved menus.xml and board_mgmtsystem_view.xml to views
 we renamed board_mgmtsystem_view.xml to board_mgmtsystem.xml
 
  In oder to fixed an missing context.js error
@@ -108,10 +101,10 @@ we removed inside the menuitem with id "menu_mgmtsystem_root" the following para
 web_icon="images/mgmtsystem.png"
 web_icon_hover="images/mgmtsystem-hover.png"
 
-we created models folder
-we moved mgmtsystem_system.py to that folder and edited it to respect the new Odoo model api
-and OCA guidelines
-we created the __init__.py file
+inside security/mgmtsystem_security.xml
+we removed the rule mgmtsystem_rule and moved it to module mgmtsystem_manuals, because it depends on
+mgmtsystem_system.py object that we moved to mgmtsystem_manual
+we moved the test code to mgmtsystem_manual module
 
 we edited the __openerp__.py file to reflect the new folder structure
 we edited the __init__.py file to initialised the python module
