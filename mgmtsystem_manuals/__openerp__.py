@@ -30,8 +30,9 @@
         'mgmtsystem',
     ],
     "data": [
-        'data/document_page.xml',
-        'views/mgmtsystem_manual.xml',
+        'data/mgmtsystem_manuals.xml',
+        'security/mgmtsystem_manuals.xml',
+        'views/mgmtsystem_manuals.xml',
         'views/mgmtsystem_system.xml',
     ],
     "demo": [],
