@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="system_form_manual">
+        <field name="name">mgmtsystem_system_form_manual</field>
+        <field name="model">mgmtsystem.system</field>
+        <field name="inherit_id" ref="mgmtsystem.system_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="manual"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="system_tree_manual">
+        <field name="name">mgmtsystem_system_tree_manual</field>
+        <field name="model">mgmtsystem.system</field>
+        <field name="inherit_id" ref="mgmtsystem.system_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="manual"/>
+            </field>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_manuals">
+        <field name="name">Manuals</field>
+        <field name="res_model">document.page</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="document_page.view_wiki_tree"/>
+        <field name="search_view_id" ref="document_page.view_wiki_filter"/>
+        <field name="help">Manuals of your management systems.</field>
+        <field name="domain" eval="[('parent_id','=',ref('manuals'))]"/>
+    </record>
+
+    <menuitem id="menu_mgmtsystem_manuals_manuals" name="Manuals" action="action_manuals" parent="mgmtsystem.menu_mgmtsystem_manuals" sequence="0" groups="mgmtsystem.group_mgmtsystem_viewer"/>
+</odoo>
