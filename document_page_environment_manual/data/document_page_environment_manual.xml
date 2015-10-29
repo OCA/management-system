@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data>
+<odoo>
 
-      <record id="document_page_environment_manual" model="document.page">
+    <record id="document_page_environment_manual" model="document.page">
         <field name="name">Environment Manual</field>
-        <field name="type">content</field>
-        <field name="parent_id" ref="mgmtsystem_manuals.manuals"/>
+        <field name="type">category</field>
         <field name="content">
-<![CDATA[
+            <![CDATA[
 <h1>Application Domain</h1>
 
 <h2>General</h2>
@@ -65,7 +63,6 @@
 <h2>Management Review</h2>
 ]]>
         </field>
-      </record>
+    </record>
 
-    </data>
-</openerp>
+</odoo>
