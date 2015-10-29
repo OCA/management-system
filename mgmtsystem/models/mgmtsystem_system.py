@@ -29,9 +29,8 @@ def own_company(self):
 class MgmtsystemSystem(models.Model):
 
     _name = 'mgmtsystem.system'
-    _description = 'Manual'
+    _description = 'System'
 
     name = fields.Char(string='System', required=True)
-    manual = fields.Many2one('document.page', string='Manual')
     company_id = fields.Many2one('res.company', string='Company',
                                  default=own_company)

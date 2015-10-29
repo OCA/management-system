@@ -31,7 +31,6 @@
     ],
     "data": [
         'data/mgmtsystem_manuals.xml',
-        'security/mgmtsystem_manuals.xml',
         'views/mgmtsystem_manuals.xml',
         'views/mgmtsystem_system.xml',
     ],
