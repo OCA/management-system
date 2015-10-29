@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#    Copyright (C) 2012 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,24 +18,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System",
-    "version": "9.0.1.0.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "complexity": "normal",
-    "depends": [
-        'base',
-        'board',
-    ],
-    "data": [
-        'security/mgmtsystem_security.xml',
-        'security/ir.model.access.csv',
-        'views/menus.xml',
-        'views/board_mgmtsystem_view.xml',
-    ],
-    "demo": [],
-    'installable': True,
-}
+
+
+from . import test_create_mgmtsystem

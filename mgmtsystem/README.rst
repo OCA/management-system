@@ -75,8 +75,8 @@ v9.0.1.0.0
 Here are the modification that have been done
 
 The manual field is been removed from model mgmtsystem_system so that the module
- no more depends on document_page module.
- model mgmtsystem_system.py and the view mgmtsystem_system.xml are moved to mgmtsystem_manuals module
+ does no depends anymore on document_page module.
+ The view mgmtsystem_system.xml moved to mgmtsystem_manuals module
 
 
 
@@ -102,9 +102,6 @@ web_icon="images/mgmtsystem.png"
 web_icon_hover="images/mgmtsystem-hover.png"
 
 inside security/mgmtsystem_security.xml
-we removed the rule mgmtsystem_rule and moved it to module mgmtsystem_manuals, because it depends on
-mgmtsystem_system.py object that we moved to mgmtsystem_manual
-we moved the test code to mgmtsystem_manual module
 
 we edited the __openerp__.py file to reflect the new folder structure
 we edited the __init__.py file to initialised the python module
