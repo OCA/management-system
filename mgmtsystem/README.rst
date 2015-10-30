@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-================================
+=========================
 Management System -  Base
-================================
+=========================
 
 This module is the basis of any management system applications:
      * audit reports,
@@ -72,36 +72,4 @@ Changelog
 
 v9.0.1.0.0
 
-Here are the modification that have been done
-
-The manual field is been removed from model mgmtsystem_system so that the module
- does no depends anymore on document_page module.
- The view mgmtsystem_system.xml moved to mgmtsystem_manuals module
-
-
-
-We added views folder
-we moved menus.xml and board_mgmtsystem_view.xml to views
-we renamed board_mgmtsystem_view.xml to board_mgmtsystem.xml
-
- In oder to fixed an missing context.js error
- The following code was removed from board_mgmtsystem.xml view
-<hpaned>
-    <child1>
-    </child1>
-    <child2>
-    </child2>
-</hpaned>
-
-inside the form tag
-
-inside menu.xml
-
-we removed inside the menuitem with id "menu_mgmtsystem_root" the following parameters
-web_icon="images/mgmtsystem.png"
-web_icon_hover="images/mgmtsystem-hover.png"
-
-inside security/mgmtsystem_security.xml
-
-we edited the __openerp__.py file to reflect the new folder structure
-we edited the __init__.py file to initialised the python module
+* the module does no depends anymore on document_page module.
