@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -48,20 +48,23 @@
 ##############################################################################
 {
     "name": "Document Management - Wiki - Procedures",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
+<<<<<<< 8be13d08270133e4a2f1db7fdda9f940fe3b12aa
 >>>>>>> Moved document_page_procedure to root folder for port
     "description": """Procedure Template
     """,
+=======
+>>>>>>> Migration of document_page_procedure to Odoo 9.0
     "depends": [
-        'document_page_work_instructions'
+        'document_page_work_instruction'
     ],
     "data": [
-        'data/document_page.xml',
-        'views/document_page.xml',
+        'data/document_page_procedure.xml',
+        'views/document_page_procedure.xml',
     ],
 <<<<<<< b8b2c5c5a717bf426e543efe6428d2961b847aad
     "demo": [],
@@ -74,8 +77,9 @@
 =======
 =======
     "demo": [
-        'demo/document_page.xml',
+        'demo/document_page_procedure.xml',
     ],
+<<<<<<< 8be13d08270133e4a2f1db7fdda9f940fe3b12aa
 <<<<<<< 0ca876f1776d2d3b9b73093ae412c476b6a4634c
 >>>>>>> Review changes from PR#35
     'installable': True,
@@ -87,4 +91,7 @@
 =======
     'installable': False,
 >>>>>>> [MIG] Make modules uninstallable
+=======
+    'installable': True,
+>>>>>>> Migration of document_page_procedure to Odoo 9.0
 }
