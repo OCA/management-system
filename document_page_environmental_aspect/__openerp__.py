@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,23 +20,19 @@
 ##############################################################################
 {
     "name": "Document Management - Wiki - Environmental Aspects",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
-    "description": """Environmental Aspects Template
-Useful for Environment Management System
-    """,
     "depends": [
         'document_page_approval',
         'mgmtsystem',
     ],
     "data": [
-        'data/document_page.xml',
-
-        'views/document_page.xml',
+        'data/document_page_environmental_aspect.xml',
+        'views/document_page_environmental_aspect.xml',
     ],
     "demo": [],
-    'installable': False,
+    'installable': True,
 }
