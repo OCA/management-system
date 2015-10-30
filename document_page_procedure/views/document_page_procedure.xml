@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data>
+<odoo>
+
 
         <record model="ir.actions.act_window" id="action_procedures">
             <field name="name">Procedures</field>
@@ -24,13 +24,13 @@
             <field name="act_window_id" ref="action_procedures"/>
         </record>
 
-        <menuitem id="menu_mgmtsystem_manuals_procedures" 
+        <menuitem id="menu_mgmtsystem_manuals_procedures"
             name="Procedures"
             action="action_procedures"
-            parent="mgmtsystem.menu_mgmtsystem_manuals" 
-            sequence="10" 
+            parent="mgmtsystem.menu_mgmtsystem_manuals"
+            sequence="10"
             groups="base.group_user"
             />
 
-    </data>
-</openerp>
+    
+</odoo>
