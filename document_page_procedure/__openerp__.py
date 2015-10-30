@@ -20,22 +20,20 @@
 ##############################################################################
 {
     "name": "Document Management - Wiki - Procedures",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
-    "description": """Procedure Template
-    """,
     "depends": [
         'document_page_work_instructions'
     ],
     "data": [
-        'data/document_page.xml',
-        'views/document_page.xml',
+        'data/document_page_procedure.xml',
+        'views/document_page_procedure.xml',
     ],
     "demo": [
-        'demo/document_page.xml',
+        'demo/document_page_procedure.xml',
     ],
-    'installable': False,
+    'installable': True,
 }
