@@ -20,20 +20,18 @@
 ##############################################################################
 {
     "name": "Information Security Management System Manual",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
-    "description": """Information Security Manual Template
-    """,
     "depends": [
-        'mgmtsystem_manuals'
+        'mgmtsystem_manual'
     ],
     "init": [],
     "data": [
-        'data/document_page.xml',
+        'data/information_security_manual.xml',
     ],
     "demo": [],
-    'installable': False,
+    'installable': True,
 }

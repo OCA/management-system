@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data>
-
+<odoo>
       <record id="document_page_information_security_manual" model="document.page">
         <field name="name">Information Security Manual</field>
-        <field name="type">content</field>
-        <field name="parent_id" ref="mgmtsystem_manuals.manuals"/>
+        <field name="type">category</field>
         <field name="content">
 <![CDATA[
 <h1>Application Domain</h1>
@@ -70,6 +67,4 @@
 ]]>
         </field>
       </record>
-
-    </data>
-</openerp>
+</odoo>
