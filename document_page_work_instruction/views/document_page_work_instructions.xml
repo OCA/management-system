@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="work_instructions_action">
+      <field name="name">Work Instructions</field>
+      <field name="res_model">document.page</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help">Work instructions of your management system.</field>
+      <field name="domain" eval="[('parent_id','=',ref('document_page_group_work_instructions'))]"/>
+      <field name="context" eval="{'default_parent_id': ref('document_page_group_work_instructions')}"/>
+    </record>
+    <record id="work_instructions_action_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="0" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="document_page.view_wiki_tree"/>
+            <field name="act_window_id" ref="work_instructions_action"/>
+        </record>
+        <record id="work_instructions_action_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="5" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="document_page.view_wiki_form"/>
+            <field name="act_window_id" ref="work_instructions_action"/>
+        </record>
+
+    <menuitem id="menu_mgmtsystem_manuals_work_instructions"
+      name="Work Instructions"
+      action="work_instructions_action"
+      parent="mgmtsystem.menu_mgmtsystem_manuals"
+      sequence="90"
+      groups="base.group_user"/>
+
+</odoo>
