@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,25 +20,11 @@
 ##############################################################################
 {
     "name": "Health and Safety Management System",
-    "version": "1.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "version": "8.0.1.0.0",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """\
-This module enables you to manage your health and safety management system,
-including :
-            * Hazards
-            * Equipments
-            * Employee Training
-            * Reviews
-            * Audits
-            * Procedures
-            * Nonconformities
-            * Actions
-            * Claims
-            * Letters
-    """,
     "depends": [
         'mgmtsystem_audit',
         'mgmtsystem_review',
