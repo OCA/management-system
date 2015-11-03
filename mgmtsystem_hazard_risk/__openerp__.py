@@ -19,34 +19,25 @@
 #
 ##############################################################################
 {
-    "name": "Hazard",
+    "name": "Hazard Risk",
     "version": "8.0.1.1.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
     "depends": [
-        'mgmtsystem',
+        'mgmtsystem_hazard',
         'hr'
     ],
     "data": [
         'security/ir.model.access.csv',
-        'security/mgmtsystem_hazard_security.xml',
+        'data/mgmtsystem_hazard_risk_computation.xml',
+        'data/mgmtsystem_hazard_risk_type.xml',
+        'views/res_company.xml',
         'views/mgmtsystem_hazard.xml',
-        'views/mgmtsystem_hazard_hazard.xml',
-        'views/mgmtsystem_hazard_origin.xml',
-        'views/mgmtsystem_hazard_type.xml',
-        'views/mgmtsystem_hazard_probability.xml',
-        'views/mgmtsystem_hazard_severity.xml',
-        'views/mgmtsystem_hazard_usage.xml',
-        'views/mgmtsystem_hazard_control_measure.xml',
-        'views/mgmtsystem_hazard_test.xml',
-        'data/mgmtsystem_hazard_hazard.xml',
-        'data/mgmtsystem_hazard_origin.xml',
-        'data/mgmtsystem_hazard_probability.xml',
-        'data/mgmtsystem_hazard_severity.xml',
-        'data/mgmtsystem_hazard_type.xml',
-        'data/mgmtsystem_hazard_usage.xml',
+        'views/mgmtsystem_hazard_risk_type.xml',
+        'views/mgmtsystem_hazard_risk_computation.xml',
+        'views/mgmtsystem_hazard_residual_risk.xml',
     ],
     "installable": True,
 }
