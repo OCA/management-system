@@ -35,6 +35,8 @@ addon | version | summary
 [mgmtsystem_audit](mgmtsystem_audit/) | 8.0.1.2.0 | Management System - Audit
 [mgmtsystem_claim](mgmtsystem_claim/) | 8.0.1.1.0 | Management System - Claim
 [mgmtsystem_environment](mgmtsystem_environment/) | 8.0.1.0.0 | Environment Management System
+[mgmtsystem_hazard](mgmtsystem_hazard/) | 8.0.1.1.0 | Hazard
+[mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 8.0.1.1.0 | Hazard Risk
 [mgmtsystem_manuals](mgmtsystem_manuals/) | 8.0.1.1.0 | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 8.0.1.2.0 | Management System - Nonconformity
 [mgmtsystem_nonconformity_analytic](mgmtsystem_nonconformity_analytic/) | 8.0.1.0.0 | Management System Nonconformity - Analytic Account
@@ -50,7 +52,6 @@ addon | version | summary
 [mgmtsystem_action_audittrail](mgmtsystem_action_audittrail/) | 1.0 (unported) | Management System - Actions Audit Trail tracking
 [mgmtsystem_audit_audittrail](mgmtsystem_audit_audittrail/) | 1.0 (unported) | Management System - Audits Audit Trail tracking
 [mgmtsystem_claim_audittrail](mgmtsystem_claim_audittrail/) | 1.0 (unported) | Management System - Claims Audit Trail tracking
-[mgmtsystem_hazard](mgmtsystem_hazard/) | 1.1 (unported) | Management System - Hazard
 [mgmtsystem_hazard_audittrail](mgmtsystem_hazard_audittrail/) | 1.0 (unported) | Management System - Hazards Audit Trail tracking
 [mgmtsystem_health_safety](mgmtsystem_health_safety/) | 1.0 (unported) | Health and Safety Management System
 [mgmtsystem_kpi](mgmtsystem_kpi/) | 1.1 (unported) | Key Performance Indicator
