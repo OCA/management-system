@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -18,20 +18,5 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System - Project",
-    "version": "1.0",
-    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "depends": [
-        'mgmtsystem_nonconformity',
-        'project'
-    ],
-    "data": [
-        'views/mgmtsystem_nonconformity_project.xml',
-        'data/mgmtsystem_nonconformity_project_data.xml',
-    ],
-    'installable': True,
-}
+
+from . import mgmtsystem_nonconformity_project
