@@ -19,14 +19,17 @@
 ##############################################################################
 {
     "name": "Management System Nonconformity - Department",
-    "version": "1.0",
-    "author": "Daniel Reis,Odoo Community Association (OCA)",
+    "version": "8.0.1.0.0",
+    "author": "Daniel Reis, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """Add Department to Non Conformities""",
-    "depends": ['mgmtsystem_nonconformity', 'hr'],
-    "init": [],
-    "data": ['mgmtsystem_nonconformity.xml'],
-    'installable': False,
+    "summary": "Add Department to Non Conformities",
+    "depends": [
+        'mgmtsystem_nonconformity',
+        'hr',
+    ],
+    "data": [
+        'views/mgmtsystem_nonconformity.xml'
+    ],
+    'installable': True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
