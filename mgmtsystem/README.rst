@@ -48,7 +48,6 @@ Credits
 Contributors
 ------------
 
-* Odoo SA <info@odoo.com>
 * Savoir-faire Linux <support@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 

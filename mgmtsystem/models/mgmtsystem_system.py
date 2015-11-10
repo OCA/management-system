@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from openerp import models, fields
+from openerp import models, fields, _
 
 
 def own_company(self):
@@ -32,8 +32,8 @@ class MgmtsystemSystem(models.Model):
     """Use to setup the management system."""
 
     _name = 'mgmtsystem.system'
-    _description = 'System'
+    _description = _('System')
 
-    name = fields.Char(string='System', required=True)
-    company_id = fields.Many2one('res.company', string='Company',
+    name = fields.Char(string=_('System'), required=True)
+    company_id = fields.Many2one('res.company', string=_('Company'),
                                  default=own_company)
