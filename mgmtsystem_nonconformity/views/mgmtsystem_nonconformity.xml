@@ -147,8 +147,7 @@
                   </group>
                 </group>
 
-                <group attrs="{'invisible':[('state','not in',['open','done'])]}">
-                  <separator string="Effectiveness Review"/>
+                <group attrs="{'invisible':[('state','not in',['open','done'])]}" string="Effectiveness Review">
                   <group>
                     <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['open'])]}"/>
                   </group>
