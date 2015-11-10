@@ -149,7 +149,7 @@
 
                 <group attrs="{'invisible':[('state','not in',['open','done'])]}" string="Effectiveness Review">
                   <group>
-                    <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['open'])]}"/>
+                    <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['open'])]}" nolabel="1" placeholder="Evaluation Comments"/>
                   </group>
                   <group>
                     <field name="evaluation_user_id"/>
