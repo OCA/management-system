@@ -1,4 +1,5 @@
-# -*- encoding: utf-8 -*-
+"""Module's tests"""
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -23,8 +24,10 @@ from openerp.tests import common
 
 
 class TestModelAction(common.TransactionCase):
+    """Class use to test the module."""
 
     def test_create_system(self):
+        """Test of the system creation."""
         record = self.env['mgmtsystem.system'].create({
             "name": "SampleSystem",
         })

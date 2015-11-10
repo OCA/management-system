@@ -1,4 +1,5 @@
-# -*- encoding: utf-8 -*-
+"""Management System model."""
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -23,10 +24,12 @@ from openerp import models, fields
 
 
 def own_company(self):
+    """return the id of the current company."""
     return self.env.user.company_id.id
 
 
 class MgmtsystemSystem(models.Model):
+    """Use to setup the management system."""
 
     _name = 'mgmtsystem.system'
     _description = 'System'
