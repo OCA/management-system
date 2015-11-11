@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
   <data>
 
     <menuitem
       id="menu_mgmtsystem_root"
       name="Management System"
       sequence="150"
-      groups="mgmtsystem.group_mgmtsystem_manager,base.group_user"
+      groups="mgmtsystem.group_mgmtsystem_manager,group_mgmtsystem_viewer"
       />
 
     <menuitem
@@ -14,14 +14,14 @@
       name="Management System"
       parent="menu_mgmtsystem_root"
       sequence="0"
-      groups="base.group_user"/>
+      groups="group_mgmtsystem_viewer"/>
 
     <menuitem
       id="menu_mgmtsystem_manuals"
       name="Manuals"
       parent="menu_mgmtsystem_root"
       sequence="10"
-      groups="base.group_user"/>
+      groups="group_mgmtsystem_viewer"/>
 
     <menuitem
       id="menu_mgmtsystem_configuration"
@@ -31,4 +31,4 @@
       sequence="50"/>
 
   </data>
-</openerp>
+</odoo>

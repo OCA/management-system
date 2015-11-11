@@ -1,4 +1,5 @@
-# -*- encoding: utf-8 -*-
+"""Module's configuration"""
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -25,7 +26,6 @@
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "complexity": "normal",
     "depends": [
         'base',
         'board',
@@ -34,7 +34,8 @@
         'security/mgmtsystem_security.xml',
         'security/ir.model.access.csv',
         'views/menus.xml',
-        'views/board_mgmtsystem_view.xml',
+        'views/mgmtsystem_system.xml',
+        'views/board_mgmtsystem.xml',
     ],
     "demo": [],
     'installable': True,
