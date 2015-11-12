@@ -1,4 +1,3 @@
-"""Management System model."""
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -24,16 +23,15 @@ from openerp import models, fields, _
 
 
 def own_company(self):
-    """return the id of the current company."""
     return self.env.user.company_id.id
 
 
-class MgmtsystemSystem(models.Model):
-    """Use to setup the management system."""
+class MgmtSystemSystem(models.Model):
 
     _name = 'mgmtsystem.system'
     _description = _('System')
 
     name = fields.Char(string=_('System'), required=True)
+    manual = fields.Many2one('document.page', string=_('Manual'))
     company_id = fields.Many2one('res.company', string=_('Company'),
                                  default=own_company)

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="system_form">
+      <field name="name">mgmtsystem_system_form</field>
+      <field name="model">mgmtsystem.system</field>
+      <field name="arch" type="xml">
+        <form string="Management System">
+          <group>
+            <field name="name"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="system_tree">
+      <field name="name">mgmtsystem_system_tree</field>
+      <field name="model">mgmtsystem.system</field>
+      <field name="arch" type="xml">
+        <tree string="Management Systems">
+          <field name="name"/>
+          <field name="company_id" groups="base.group_multi_company"/>
+        </tree>
+      </field>
+    </record>
+
+  </data>
+</odoo>
