@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Management System",
-    "version": "1.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -34,7 +34,8 @@
         'security/mgmtsystem_security.xml',
         'security/ir.model.access.csv',
         'views/menus.xml',
-        'views/mgmtsystem_system.xml'
+        'views/mgmtsystem_system.xml',
+        'views/res_config.xml'
     ],
     "demo": [],
     'installable': True,

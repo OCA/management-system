@@ -1,10 +1,10 @@
 <openerp>
     <data>
 
-        <menuitem id="menu_mgmtsystem_configuration_hazards" 
+        <menuitem id="menu_mgmtsystem_configuration_hazards"
             name="Hazards"
             parent="mgmtsystem.menu_mgmtsystem_configuration"
-            groups="mgmtsystem.group_mgmtsystem_manager" 
+            groups="mgmtsystem.group_mgmtsystem_manager"
             sequence="10"/>
 
         <record id="view_mgmtsystem_hazard_tree" model="ir.ui.view">
@@ -49,7 +49,7 @@
                     </group>
                 </search>
             </field>
-        </record>        
+        </record>
 
         <record id="view_mgmtsystem_hazard_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.form</field>
@@ -106,14 +106,14 @@
             <field name="search_view_id" ref="view_mgmtsystem_hazard_filter"/>
         </record>
 
-        <menuitem id="menu_open_hazard" 
-            action="open_mgmtsystem_hazard_list" 
-            parent="mgmtsystem.menu_mgmtsystem_manuals" 
-            sequence="20" 
+        <menuitem id="menu_open_hazard"
+            action="open_mgmtsystem_hazard_list"
+            parent="mgmtsystem.menu_mgmtsystem_manuals"
+            sequence="20"
             groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
         <!-- Hazard Hazard -->
-        
+
         <record id="view_mgmtsystem_hazard_hazard_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.hazard.form</field>
             <field name="type">form</field>
@@ -162,14 +162,14 @@
             <field name="search_view_id" ref="view_mgmtsystem_hazard_hazard_filter"/>
         </record>
 
-        <menuitem id="menu_open_hazard_hazard" 
-            action="open_mgmtsystem_hazard_hazard_list" 
-            parent="menu_mgmtsystem_configuration_hazards" 
-            sequence="20" 
+        <menuitem id="menu_open_hazard_hazard"
+            action="open_mgmtsystem_hazard_hazard_list"
+            parent="menu_mgmtsystem_configuration_hazards"
+            sequence="20"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Origin -->
-        
+
         <record id="view_mgmtsystem_hazard_origin_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.origin.form</field>
             <field name="type">form</field>
@@ -218,14 +218,14 @@
             <field name="search_view_id" ref="view_mgmtsystem_hazard_origin_filter"/>
         </record>
 
-        <menuitem id="menu_open_hazard_origin" 
-            action="open_mgmtsystem_hazard_origin_list" 
-            parent="menu_mgmtsystem_configuration_hazards" 
-            sequence="20" 
+        <menuitem id="menu_open_hazard_origin"
+            action="open_mgmtsystem_hazard_origin_list"
+            parent="menu_mgmtsystem_configuration_hazards"
+            sequence="20"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Type -->
-        
+
         <record id="view_mgmtsystem_hazard_type_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.type.form</field>
             <field name="type">form</field>
@@ -274,14 +274,14 @@
             <field name="search_view_id" ref="view_mgmtsystem_hazard_type_filter"/>
         </record>
 
-        <menuitem id="menu_open_hazard_type" 
-            action="open_mgmtsystem_hazard_type_list" 
-            parent="menu_mgmtsystem_configuration_hazards" 
-            sequence="20" 
+        <menuitem id="menu_open_hazard_type"
+            action="open_mgmtsystem_hazard_type_list"
+            parent="menu_mgmtsystem_configuration_hazards"
+            sequence="20"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Risk Computation -->
-        
+
         <record id="view_mgmtsystem_hazard_risk_computation_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.risk_computation.form</field>
             <field name="type">form</field>
@@ -330,10 +330,10 @@
             <field name="search_view_id" ref="view_mgmtsystem_hazard_risk_computation_filter"/>
         </record>
 
-        <menuitem id="menu_open_hazard_risk_computation" 
-            action="open_mgmtsystem_hazard_risk_computation_list" 
-            parent="menu_mgmtsystem_configuration_hazards" 
-            sequence="20" 
+        <menuitem id="menu_open_hazard_risk_computation"
+            action="open_mgmtsystem_hazard_risk_computation_list"
+            parent="menu_mgmtsystem_configuration_hazards"
+            sequence="20"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- res.company -->
@@ -344,7 +344,7 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="base.view_company_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//page[@string='Configuration']" position="inside">
+                <xpath expr="//page[@name='configuration']" position="inside">
                     <group name="mgmtsystem_group" string="Management System">
                         <field name="risk_computation_id"/>
                     </group>
@@ -353,7 +353,7 @@
         </record>
 
         <!-- Risk Type -->
-        
+
         <record id="view_mgmtsystem_hazard_risk_type_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.risk_type.form</field>
             <field name="type">form</field>
@@ -402,14 +402,14 @@
             <field name="search_view_id" ref="view_mgmtsystem_hazard_risk_type_filter"/>
         </record>
 
-        <menuitem id="menu_open_hazard_risk_type" 
-            action="open_mgmtsystem_hazard_risk_type_list" 
-            parent="menu_mgmtsystem_configuration_hazards" 
-            sequence="20" 
+        <menuitem id="menu_open_hazard_risk_type"
+            action="open_mgmtsystem_hazard_risk_type_list"
+            parent="menu_mgmtsystem_configuration_hazards"
+            sequence="20"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Hazard Probability -->
-        
+
         <record id="view_mgmtsystem_hazard_probability_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.probability.form</field>
             <field name="type">form</field>
@@ -461,14 +461,14 @@
             <field name="search_view_id" ref="view_mgmtsystem_hazard_type_filter"/>
         </record>
 
-        <menuitem id="menu_open_hazard_probability" 
-            action="open_mgmtsystem_hazard_probability_list" 
-            parent="menu_mgmtsystem_configuration_hazards" 
-            sequence="20" 
+        <menuitem id="menu_open_hazard_probability"
+            action="open_mgmtsystem_hazard_probability_list"
+            parent="menu_mgmtsystem_configuration_hazards"
+            sequence="20"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Hazard Severity -->
-        
+
         <record id="view_mgmtsystem_hazard_severity_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.severity.form</field>
             <field name="type">form</field>
@@ -520,14 +520,14 @@
             <field name="search_view_id" ref="view_mgmtsystem_hazard_type_filter"/>
         </record>
 
-        <menuitem id="menu_open_hazard_severity" 
-            action="open_mgmtsystem_hazard_severity_list" 
-            parent="menu_mgmtsystem_configuration_hazards" 
-            sequence="20" 
+        <menuitem id="menu_open_hazard_severity"
+            action="open_mgmtsystem_hazard_severity_list"
+            parent="menu_mgmtsystem_configuration_hazards"
+            sequence="20"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Hazard Usage -->
-        
+
         <record id="view_mgmtsystem_hazard_usage_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.usage.form</field>
             <field name="type">form</field>
@@ -579,14 +579,14 @@
             <field name="search_view_id" ref="view_mgmtsystem_hazard_type_filter"/>
         </record>
 
-        <menuitem id="menu_open_hazard_usage" 
-            action="open_mgmtsystem_hazard_usage_list" 
-            parent="menu_mgmtsystem_configuration_hazards" 
-            sequence="20" 
+        <menuitem id="menu_open_hazard_usage"
+            action="open_mgmtsystem_hazard_usage_list"
+            parent="menu_mgmtsystem_configuration_hazards"
+            sequence="20"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
         <!-- Control Measures  -->
-        
+
         <record id="view_mgmtsystem_hazard_control_measure_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.control_measure.form</field>
             <field name="type">form</field>
@@ -639,7 +639,7 @@
         </record>
 
         <!-- Implementation Tests  -->
-        
+
         <record id="view_mgmtsystem_hazard_test_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.test.form</field>
             <field name="type">form</field>
@@ -695,7 +695,7 @@
         </record>
 
         <!-- Residual Risks  -->
-        
+
         <record id="view_mgmtsystem_hazard_residual_risk_form" model="ir.ui.view">
             <field name="name">mgmtsystem.hazard.residual_risk.form</field>
             <field name="type">form</field>
@@ -760,4 +760,3 @@
 
     </data>
 </openerp>
-

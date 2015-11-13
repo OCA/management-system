@@ -41,8 +41,7 @@ This module enables you to manage the claims of your management system.
         'views/menus.xml',
         'views/mgmtsystem_claim.xml',
         'views/mgmtsystem_claim_stage.xml',
-        'workflows/mgmtsystem_claim.xml',
-        'views/board_mgmtsystem_claim.xml',
+        'workflows/mgmtsystem_claim.xml'
     ],
     'installable': True,
 }
