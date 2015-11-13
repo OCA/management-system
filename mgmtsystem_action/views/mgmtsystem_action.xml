@@ -40,7 +40,7 @@
           </group>
         </search>
       </field>
-    </record>        
+    </record>
 
     <record id="view_mgmtsystem_action_form" model="ir.ui.view">
       <field name="name">mgmtsystem.action.form</field>
@@ -59,7 +59,7 @@
               <field name="date" string="Date"/>
               <field name="date_deadline" string="Deadline"/>
               <field name="system_id"/>
-              <field name="section_id"/>
+              <field name="stage_id"/>
               <field name="company_id" groups="base.group_multi_company"/>
             </group>
             <notebook colspan="4">
@@ -86,10 +86,10 @@
       <field name="context">{"search_default_current":1,"search_default_user_id":uid}</field>
     </record>
 
-    <menuitem id="menu_open_action" 
-      action="open_mgmtsystem_action_list" 
-      parent="mgmtsystem.menu_mgmtsystem_main" 
-      sequence="30" 
+    <menuitem id="menu_open_action"
+      action="open_mgmtsystem_action_list"
+      parent="mgmtsystem.menu_mgmtsystem_main"
+      sequence="30"
       groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
   </data>
@@ -98,7 +98,7 @@
 
     <!-- Email template for Action Reminders -->
     <record id="action_email_template_reminder_action"
-      model="email.template">
+      model="mail.template">
       <field name="name">Reminder to Responsible</field>
       <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost.com'}</field>
       <field name="subject">Reminder on Action: "${object.name}"</field>

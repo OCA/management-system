@@ -11,7 +11,7 @@
 
     <!-- Email template for Action Reminders -->
     <record id="wkf_action_email_template_reminder_action"
-      model="email.template">
+      model="mail.template">
       <field name="name">Notify the person in charge of the new action</field>
       <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost.com'}</field>
       <field name="subject">${object.name}</field>
