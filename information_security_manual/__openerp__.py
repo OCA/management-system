@@ -26,7 +26,7 @@
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
     "depends": [
-        'mgmtsystem_manuals'
+        'mgmtsystem_manual'
     ],
     "init": [],
     "data": [
