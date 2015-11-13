@@ -8,7 +8,6 @@
       <field name="view_type">form</field>
       <field name="view_mode">tree</field>
       <field name="view_id" ref="view_mgmtsystem_action_tree"/>
-      <field name="domain">[('stage_id.fold', '=', False)]</field>
     </record>
 
     <record id="board_mgmtsystem_action_form" model="ir.ui.view">
