@@ -42,12 +42,14 @@ class MgmtsystemHazard(models.Model):
     def _compute_risk(self):
         mycompany = self.env['res.users'].browse(self._uid).company_id
         for hazard in self:
-            if hazard.probability_id and hazard.severity_id and hazard.usage_id:
+            if hazard.probability_id and\
+                    hazard.severity_id and\
+                    hazard.usage_id:
                 hazard.risk = _parse_risk_formula(
                     mycompany.risk_computation_id.name,
                     hazard.probability_id.value,
                     hazard.severity_id.value,
                     hazard.usage_id.value
-                ) 
+                )
             else:
                 hazard.risk = False
