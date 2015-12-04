@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Management System - Audit",
-    "version": "8.0.1.2.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -39,5 +39,5 @@
     "demo": [
         'demo/demo_audit.xml',
     ],
-    'installable': False,
+    'installable': True,
 }

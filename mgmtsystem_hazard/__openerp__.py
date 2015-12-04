@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -25,17 +25,12 @@
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """\
-This module enables you to manage the hazards and risks of your health
-and safety management system.
-    """,
     "depends": ['mgmtsystem', 'hr'],
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_hazard_security.xml',
-        'mgmtsystem_hazard.xml',
-        'mgmtsystem_hazard_data.xml',
+        'views/mgmtsystem_hazard.xml',
+        'data/mgmtsystem_hazard.xml',
     ],
-    "installable": False,
+    "installable": True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

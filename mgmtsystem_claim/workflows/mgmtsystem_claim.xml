@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <!-- Workflow -->
+    <record model="workflow" id="mgmtsystem_claim_workflow">
+      <field name="name">Management System Claim Workflow</field>
+      <field name="osv">mgmtsystem.claim</field>
+      <field name="on_create">True</field>
+    </record>
+
+    <!-- Template -->
+    <record id="action_email_template_reminder_action"
+      model="mail.template">
+      <field name="name">Notify the person in charge of the new claim</field>
+      <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost.com'}</field>
+      <field name="subject">${object.name}</field>
+      <field name="email_to">${object.user_id.email}</field>
+      <field name="model_id" ref="model_mgmtsystem_claim"/>
+      <field name="lang">${object.create_uid.partner_id.lang}</field>
+      <field name="body_html">
+        <![CDATA[
+<p>
+  Hello,</br>
+  A new claim has been assigned to you:
+</p>
+<p>
+  <a href="http://localhost:8080">http://localhost:8080</a>
+</p>
+<p>
+  ${object.description}
+</p>
+<p>
+Thank you.
+</p>
+--
+<p>
+  OpenERP
+</p>
+        ]]>
+      </field>
+    </record>
+
+    <!-- Server Action -->
+    <record id="mgmtsystem_claim_server_action" model="ir.actions.server">
+      <field name="name">Notify the person in charge of the new claim</field>
+      <field name="model_id" ref="model_mgmtsystem_claim" />
+      <field name="state">email</field>
+      <field name="condition">True</field>
+      <field name="type">ir.actions.server</field>
+      <field name="template_id" ref="action_email_template_reminder_action" />
+    </record>
+
+    <!-- Activities -->
+    <record model="workflow.activity" id="mgmtsystem_claim_open">
+      <field name="name">Open Management System Claim</field>
+      <field name="wkf_id" ref="mgmtsystem_claim_workflow"/>
+      <field name="kind">dummy</field>
+      <field name="flow_start">True</field>
+      <field name="split_mode">XOR</field>
+      <field name="join_mode">XOR</field>
+      <field name="action_id" ref="mgmtsystem_claim_server_action"/>
+    </record>
+
+    <record model="workflow.activity" id="mgmtsystem_claim_close">
+      <field name="name">Close Management System Claim</field>
+      <field name="wkf_id" ref="mgmtsystem_claim_workflow"/>
+      <field name="kind">dummy</field>
+      <field name="flow_stop">True</field>
+      <field name="split_mode">XOR</field>
+      <field name="join_mode">XOR</field>
+    </record>
+
+    <!-- Transitions -->
+    <record model="workflow.transition" id="mgmtsystem_claim_transition_close">
+      <field name="act_from" ref="mgmtsystem_claim_open"/>
+      <field name="act_to" ref="mgmtsystem_claim_close"/>
+      <field name="signal">case_close</field>
+      <field name="condition">True</field>
+    </record>
+
+  </data>
+</openerp>
