@@ -12,36 +12,48 @@
                         or
                         <button string="Cancel" type="object" name="cancel" class="oe_link"/>
                     </header>
-                    <separator string="Management system applications"/>
+                    <separator string="Management systems"/>
                     <group>
-                        <label for="id" string="Quality (ISO 9001)"/>
+                        <label for="id" string="Systems"/>
                         <div>
                             <div>
                                 <field name="module_mgmtsystem_quality" class="oe_inline"/>
                                 <label for="module_mgmtsystem_quality"/>
                             </div>
-                        </div>
-
-                        <label for="id" string="Environment (ISO 14001)"/>
-                        <div>
                             <div>
                                 <field name="module_mgmtsystem_environment" class="oe_inline"/>
                                 <label for="module_mgmtsystem_environment"/>
                             </div>
-                        </div>
-
-                        <label for="id" string="Health and Safety (OHSAS 18001)"/>
-                        <div>
                             <div>
                                 <field name="module_mgmtsystem_health_safety" class="oe_inline"/>
                                 <label for="module_mgmtsystem_health_safety"/>
                             </div>
-                        </div>
-                        <label for="id" string="Information Security (ISO 27001)"/>
-                        <div>
                             <div>
                                 <field name="module_information_security_manual" class="oe_inline"/>
                                 <label for="module_information_security_manual"/>
+                            </div>
+                        </div>
+                        <label for="id" string="Applications"/>
+                        <div>
+                            <div>
+                                <field name="module_mgmtsystem_action" class="oe_inline"/>
+                                <label for="module_mgmtsystem_action"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_nonconformity" class="oe_inline"/>
+                                <label for="module_mgmtsystem_nonconformity"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_claim" class="oe_inline"/>
+                                <label for="module_mgmtsystem_claim"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_audit" class="oe_inline"/>
+                                <label for="module_mgmtsystem_audit"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_review" class="oe_inline"/>
+                                <label for="module_mgmtsystem_review"/>
                             </div>
                         </div>
                     </group>

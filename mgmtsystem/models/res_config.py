@@ -52,3 +52,35 @@ class MgmtSystemConfigSettings(models.TransientModel):
         help='Provide information security manual tools.\n'
         '-This installs the module information_security_manual.'
     )
+
+    module_mgmtsystem_action = fields.Boolean(
+        """
+    Actions (immediate, corrective, preventive) and improvement opportunities
+        """,
+        help='Provide actions and improvement opportunities tools.\n'
+        '-This installs the module mgmtsystem_action.'
+    )
+
+    module_mgmtsystem_nonconformity = fields.Boolean(
+        'Nonconformities',
+        help='Provide non conformity tools.\n'
+        '-This installs the module mgmtsystem_nonconformity.'
+    )
+
+    module_mgmtsystem_claim = fields.Boolean(
+        'Claims',
+        help='Provide claim tools.\n'
+        '-This installs the module mgmtsystem_claim.'
+    )
+
+    module_mgmtsystem_audit = fields.Boolean(
+        'Audits',
+        help='Provide audit tools.\n'
+        '-This installs the module mgmtsystem_audit.'
+    )
+
+    module_mgmtsystem_review = fields.Boolean(
+        'Top management reviews',
+        help='Provide review tools.\n'
+        '-This installs the module mgmtsystem_review.'
+    )

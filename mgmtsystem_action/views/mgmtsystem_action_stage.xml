@@ -1,4 +1,4 @@
-<openerp>
+<odoo>
   <data>
 
     <record model="ir.ui.view" id="mgmtsystem_action_stage_tree_view">
@@ -22,13 +22,13 @@
       <field name="context">{}</field>
     </record>
 
-    <menuitem 
+    <menuitem
       id="menu_mgmtsystem_action_stages"
-      name="Stages" 
+      name="Stages"
       parent="menu_config_action"
-      action="mgmtsystem_action_stage_action" 
+      action="mgmtsystem_action_stage_action"
       sequence="90"
       groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
   </data>
-</openerp>
+</odoo>

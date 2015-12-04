@@ -14,28 +14,28 @@
       name="Management System"
       parent="menu_mgmtsystem_root"
       sequence="0"
-      groups="group_mgmtsystem_manager"/>
+      groups="group_mgmtsystem_viewer"/>
 
     <menuitem
       id="menu_mgmtsystem_manuals"
       name="Manuals"
       parent="menu_mgmtsystem_root"
       sequence="10"
-      groups="group_mgmtsystem_manager"/>
+      groups="group_mgmtsystem_viewer"/>
 
     <menuitem
-      id="menu_mgmtsystem_configuration"
-      name="Configuration"
-      parent="mgmtsystem.menu_mgmtsystem_root"
-      groups="group_mgmtsystem_manager"
-      sequence="50"/>
-
-    <menuitem
-      id="mgmtsystem_dashboard"
+      id="menu_mgmtsystem_report"
       name="Reports"
       sequence="50"
       parent="menu_mgmtsystem_root"
-      groups="group_mgmtsystem_manager"/>
+      groups="group_mgmtsystem_viewer"/>
+
+      <menuitem
+        id="menu_mgmtsystem_configuration"
+        name="Configuration"
+        parent="mgmtsystem.menu_mgmtsystem_root"
+        groups="group_mgmtsystem_manager"
+        sequence="100"/>
 
   </data>
 </odoo>

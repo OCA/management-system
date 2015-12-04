@@ -9,7 +9,7 @@ def own_company(self):
     return self.env.user.company_id.id
 
 
-class mgmtsystem_action(models.Model):
+class MgmtSystemAction(models.Model):
     _name = "mgmtsystem.action"
     _description = "Action"
     _inherit = "crm.claim"
@@ -43,17 +43,17 @@ class mgmtsystem_action(models.Model):
         vals.update({
             'reference': self.env['ir.sequence'].get('mgmtsystem.action')
         })
-        return super(mgmtsystem_action, self).create(vals)
+        return super(MgmtSystemAction, self).create(vals)
 
-    @api.multi
-    def message_auto_subscribe(self, updated_fields, values=None):
-        """Automatically add the responsible user to the follow list."""
-        for o in self:
-            self.message_subscribe_users(user_ids=[o.user_id.id],
-                                         subtype_ids=None)
-
-        base = super(mgmtsystem_action, self)
-        return base.message_auto_subscribe(updated_fields, values=values)
+#    @api.multi
+#    def message_auto_subscribe(self, updated_fields, values=None):
+#        """Automatically add the responsible user to the follow list."""
+#        for o in self:
+#            self.message_subscribe_users(user_ids=[o.user_id.id],
+#                                         subtype_ids=None)
+#
+#        base = super(MgmtSystemAction, self)
+#        return base.message_auto_subscribe(updated_fields, values=values)
 
     @api.multi
     def case_open(self):
