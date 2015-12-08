@@ -53,6 +53,7 @@ class TestMgmtsystemHazard(common.TransactionCase):
             'risk_type_id': r_type_rec.id,
         })
         self.assertEqual(record.name, "Hazard Test 01")
+        self.assertEqual(record.risk, False)
 
     def test_hazard_risk_computation_a_time_b_time_c(self):
         """
