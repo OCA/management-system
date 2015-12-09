@@ -135,10 +135,9 @@
                 <separator string="Action Plan"/>
                 <field name="action_ids" attrs="{'readonly':[('state','not in',['pending'])]}"/>
 
-                <separator string="Plan Review"/>
-                <group>
+                <group string="Plan Review">
                   <group>
-                    <field name="action_comments" attrs="{'readonly':[('state','not in',['pending'])]}"/>
+                    <field name="action_comments" attrs="{'readonly':[('state','not in',['pending'])]}" nolabel="1" placeholder="Action Plan Comments"/>
                   </group>
                   <group>
                     <field name="actions_user_id"/>
@@ -147,10 +146,9 @@
                   </group>
                 </group>
 
-                <group attrs="{'invisible':[('state','not in',['open','done'])]}">
-                  <separator string="Effectiveness Review"/>
+                <group attrs="{'invisible':[('state','not in',['open','done'])]}" string="Effectiveness Review">
                   <group>
-                    <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['open'])]}"/>
+                    <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['open'])]}" nolabel="1" placeholder="Evaluation Comments"/>
                   </group>
                   <group>
                     <field name="evaluation_user_id"/>
