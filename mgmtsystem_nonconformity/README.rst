@@ -102,7 +102,7 @@ Contributors
 * Glen Dromgoole <gdromgoole@tier1engineering.com>
 * Loic Lacroix <loic.lacroix@savoirfairelinux.com>
 * Sandy Carter <sandy.carter@savoirfairelinux.com>
-* Olivier de WITTE <olivier.dewitte@gmail.eu>
+* Olivier de WITTE <olivier.dewitte@gmail.com>
 
 Maintainer
 ----------
