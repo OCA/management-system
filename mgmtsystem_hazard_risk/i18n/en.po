@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-05 19:53+0000\n"
-"PO-Revision-Date: 2015-11-03 19:11+0000\n"
+"POT-Creation-Date: 2016-05-12 00:17+0000\n"
+"PO-Revision-Date: 2016-05-12 00:19+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-management-system-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -64,6 +64,13 @@ msgid "Description"
 msgstr "Description"
 
 #. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,display_name:0
+#: field:mgmtsystem.hazard.risk.computation,display_name:0
+#: field:mgmtsystem.hazard.risk.type,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mgmtsystem_hazard_risk
 #: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_environment
 msgid "Environment"
 msgstr "Environment"
@@ -94,6 +101,13 @@ msgstr "ID"
 #: field:mgmtsystem.hazard.residual_risk,justification:0
 msgid "Justification"
 msgstr "Justification"
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard.residual_risk,__last_update:0
+#: field:mgmtsystem.hazard.risk.computation,__last_update:0
+#: field:mgmtsystem.hazard.risk.type,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
 
 #. module: mgmtsystem_hazard_risk
 #: field:mgmtsystem.hazard.residual_risk,write_uid:0
@@ -156,6 +170,11 @@ msgstr "Residual Risks"
 #: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_residual_risk
 msgid "Residual Risks of hazard"
 msgstr "Residual Risks of hazard"
+
+#. module: mgmtsystem_hazard_risk
+#: field:mgmtsystem.hazard,risk:0 field:mgmtsystem.hazard.residual_risk,risk:0
+msgid "Risk"
+msgstr "Risk"
 
 #. module: mgmtsystem_hazard_risk
 #: view:mgmtsystem.hazard.risk.computation:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_form
