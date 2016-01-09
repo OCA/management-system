@@ -3,14 +3,15 @@
 # * mgmtsystem_action
 # 
 # Translators:
+# Antonio Trueba, 2016
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-07 14:27+0000\n"
-"PO-Revision-Date: 2015-08-07 14:16+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2015-12-21 16:40+0000\n"
+"PO-Revision-Date: 2016-01-07 15:13+0000\n"
+"Last-Translator: Antonio Trueba\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-management-system-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,7 +103,7 @@ msgstr "Objeto de la reclamación"
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_stage
 msgid "Claim stages"
-msgstr ""
+msgstr "Etapas de reclamaciones"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,date_closed:0
@@ -113,7 +114,7 @@ msgstr "Cerrado"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,case_default:0
 msgid "Common to All Teams"
-msgstr ""
+msgstr "Común a todos los equipos"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
@@ -129,7 +130,7 @@ msgstr "Creado por"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Creado el"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,create_date:0
@@ -166,7 +167,7 @@ msgstr "Correo electrónico de destino para la puerta de enlace de correo electr
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_draft
 msgid "Draft"
-msgstr ""
+msgstr "Borrador"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,email_from:0
@@ -176,7 +177,7 @@ msgstr "Correo electrónico"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,is_ending:0
 msgid "Ending stage"
-msgstr ""
+msgstr "Etapa final"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_follower_ids:0
@@ -215,7 +216,7 @@ msgstr "Si esta marcado nuevos mensajes requieren su atención."
 msgid ""
 "If you check this field, this stage will be proposed by default on each "
 "sales team. It will not assign this stage to existing teams."
-msgstr ""
+msgstr "Si selecciona esta opción, esta etapa se propondrá por defecto a cada equipo de venta, pero no la asignará a equipos existentes."
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
@@ -230,7 +231,7 @@ msgstr "Oportunidad de mejora"
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_open
 msgid "In Progress"
-msgstr ""
+msgstr "En curso"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_is_follower:0
@@ -251,14 +252,14 @@ msgstr "Ultima actualización por"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Actualizado por última vez el"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action.stage,section_ids:0
 msgid ""
 "Link between stages and sales teams. When set, this limitate the current "
 "stage to the selected sales teams."
-msgstr ""
+msgstr "Enlazar etapas y equipos de ventas. Cuando está activo, limita la etapa actual a los equipos de ventas seleccionados."
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -371,12 +372,12 @@ msgstr "Equipo de ventas"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,section_ids:0
 msgid "Sections"
-msgstr ""
+msgstr "Secciones"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,sequence:0
 msgid "Sequence"
-msgstr ""
+msgstr "Secuencia"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,stage_id:0
@@ -386,19 +387,19 @@ msgstr "Etapa"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,name:0
 msgid "Stage Name"
-msgstr ""
+msgstr "Nombre de etapa"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.mgmtsystem_action_stage_action
 #: model:ir.ui.menu,name:mgmtsystem_action.menu_mgmtsystem_action_stages
 #: view:mgmtsystem.action.stage:mgmtsystem_action.mgmtsystem_action_stage_tree_view
 msgid "Stages"
-msgstr ""
+msgstr "Etapas"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action.stage,is_starting:0
 msgid "Starting stage"
-msgstr ""
+msgstr "Etapa inicial"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_tree
@@ -446,7 +447,7 @@ msgstr "Fecha de actualización"
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action.stage,sequence:0
 msgid "Used to order stages. Lower is better."
-msgstr ""
+msgstr "Se usa para ordenar las etapas. Valores menores son mejores."
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_filter
