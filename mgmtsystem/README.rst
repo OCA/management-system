@@ -70,4 +70,5 @@ Changelog
 ---------
 
 v9.0.1.0.0
+
 * the module does no depends anymore on document_page module.

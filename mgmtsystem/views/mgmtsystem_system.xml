@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
-
-    <record model="ir.ui.view" id="system_form">
+  <record model="ir.ui.view" id="system_form">
       <field name="name">mgmtsystem_system_form</field>
       <field name="model">mgmtsystem.system</field>
       <field name="arch" type="xml">
@@ -26,5 +24,19 @@
       </field>
     </record>
 
-  </data>
+    <record id="system_action" model="ir.actions.act_window">
+      <field name="name">Management Systems</field>
+      <field name="res_model">mgmtsystem.system</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="system_tree"/>
+    </record>
+
+    <menuitem
+      id="menu_mgmtsystem_configuration_system"
+      name="Systems"
+      parent="mgmtsystem.menu_mgmtsystem_configuration"
+      groups="mgmtsystem.group_mgmtsystem_manager"
+      sequence="60"
+      action="system_action"/>
 </odoo>
