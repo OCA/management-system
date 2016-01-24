@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <data>
-
-    <record model="ir.ui.view" id="system_form_manual">
+  <record model="ir.ui.view" id="system_form_manual">
       <field name="name">mgmtsystem_system_form_manual</field>
       <field name="model">mgmtsystem.system</field>
       <field name="inherit_id" ref="mgmtsystem.system_form"/>
@@ -23,11 +21,6 @@
       </field>
       </field>
     </record>
-
-
-
-
-
     <record model="ir.actions.act_window" id="action_manuals">
       <field name="name">Manuals</field>
       <field name="res_model">document.page</field>
@@ -46,6 +39,4 @@
       parent="mgmtsystem.menu_mgmtsystem_manuals"
       sequence="0"
       groups="mgmtsystem.group_mgmtsystem_viewer"/>
-
-  </data>
 </odoo>
