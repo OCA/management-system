@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
-
     <menuitem
       id="menu_mgmtsystem_root"
       name="Management System"
@@ -36,6 +34,4 @@
         parent="mgmtsystem.menu_mgmtsystem_root"
         groups="group_mgmtsystem_manager"
         sequence="100"/>
-
-  </data>
 </odoo>

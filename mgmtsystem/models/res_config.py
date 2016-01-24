@@ -1,4 +1,3 @@
-"""MgmtSystemConfigSettings class."""
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -47,10 +46,10 @@ class MgmtSystemConfigSettings(models.TransientModel):
         '-This installs the module mgmtsystem_health_safety.'
     )
 
-    module_information_security_manual = fields.Boolean(
+    module_mgmtsystem_information_security = fields.Boolean(
         'Information Security (ISO 27001)',
-        help='Provide information security manual tools.\n'
-        '-This installs the module information_security_manual.'
+        help='Provide information security tools.\n'
+        '-This installs the module mgmtsystem_information_security.'
     )
 
     module_mgmtsystem_action = fields.Boolean(

@@ -28,7 +28,7 @@
     'website': 'http://openerp.com',
     'license': 'AGPL-3',
     'depends': [
-        'mgmtsystem_manuals'
+        'mgmtsystem_manual'
     ],
     'data': [
         'data/document_page_quality_manual.xml'

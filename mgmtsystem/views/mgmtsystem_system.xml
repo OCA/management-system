@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
-
-    <record model="ir.ui.view" id="system_form">
+  <record model="ir.ui.view" id="system_form">
       <field name="name">mgmtsystem_system_form</field>
       <field name="model">mgmtsystem.system</field>
       <field name="arch" type="xml">
@@ -41,5 +39,4 @@
       groups="mgmtsystem.group_mgmtsystem_manager"
       sequence="60"
       action="system_action"/>
-  </data>
 </odoo>

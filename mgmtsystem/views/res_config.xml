@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-
-        <record id="view_mgmtsystem_configuration" model="ir.ui.view">
+    <record id="view_mgmtsystem_configuration" model="ir.ui.view">
             <field name="name">Configure management system</field>
             <field name="model">mgmtsystem.config.settings</field>
             <field name="arch" type="xml">
@@ -29,8 +27,8 @@
                                 <label for="module_mgmtsystem_health_safety"/>
                             </div>
                             <div>
-                                <field name="module_information_security_manual" class="oe_inline"/>
-                                <label for="module_information_security_manual"/>
+                                <field name="module_mgmtsystem_information_security" class="oe_inline"/>
+                                <label for="module_mgmtsystem_information_security"/>
                             </div>
                         </div>
                         <label for="id" string="Applications"/>
@@ -68,6 +66,4 @@
         </record>
         <menuitem id="menu_mgmtsystem_settings" name="Settings" parent="menu_mgmtsystem_configuration"
             sequence="19" action="action_mgmtsystem_configuration"/>
-
-    </data>
 </odoo>
