@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -19,19 +19,18 @@
 #
 ##############################################################################
 
-from openerp import models, fields
+from openerp import models, fields, _
 
 
 def own_company(self):
     return self.env.user.company_id.id
 
 
-class mgmtsystem_system(models.Model):
+class MgmtSystemSystem(models.Model):
 
     _name = 'mgmtsystem.system'
-    _description = 'System'
+    _description = _('System')
 
-    name = fields.Char(string='System', required=True)
-    manual = fields.Many2one('document.page', string='Manual')
-    company_id = fields.Many2one('res.company', string='Company',
+    name = fields.Char(string=_('System'), required=True)
+    company_id = fields.Many2one('res.company', string=_('Company'),
                                  default=own_company)
