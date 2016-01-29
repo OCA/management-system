@@ -17,16 +17,16 @@ Configuration
 
 To enter your work instruction template, you need to:
 
- * go to Management Systems > Configuration > Categories
- * select the Work Instructions category and edit the template
+* go to Management Systems > Configuration > Categories
+* select the Work Instructions category and edit the template
 
 Usage
 =====
 
 To enter your work instruction, you need to:
 
- * go to Management Systems > Documentation > Work Instructions
- * Create a new page and select work instructions category
+* go to Management Systems > Documentation > Work Instructions
+* Create a new page and select work instructions category
 
  .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
     :alt: Try me on Runbot
