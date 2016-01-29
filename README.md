@@ -19,6 +19,12 @@ These presentation may help with an overviews of the modules:
 * [Overview presentation](http://www.slideshare.net/max3903/openerp-management-system-modules) (2012) by Savoir-Faire Linux
 
 [//]: # (addons)
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[mgmtsystem](mgmtsystem/) | 9.0.1.0.0 | Management System
+
 Unported addons
 ---------------
 addon | version | summary
@@ -30,7 +36,6 @@ addon | version | summary
 [document_page_quality_manual](document_page_quality_manual/) | 8.0.1.0.0 (unported) | Quality Manual
 [document_page_work_instructions](document_page_work_instructions/) | 8.0.1.0.0 (unported) | Document Management - Wiki - Work Instructions
 [information_security_manual](information_security_manual/) | 8.0.1.0.0 (unported) | Information Security Management System Manual
-[mgmtsystem](mgmtsystem/) | 8.0.1.0.0 (unported) | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 8.0.1.2.0 (unported) | Management System - Action
 [mgmtsystem_action_audittrail](mgmtsystem_action_audittrail/) | 1.0 (unported) | Management System - Actions Audit Trail tracking
 [mgmtsystem_audit](mgmtsystem_audit/) | 8.0.1.2.0 (unported) | Management System - Audit
