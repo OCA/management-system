@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -18,3 +18,21 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+{
+    "name": "Management System - Manual",
+    "version": "9.0.1.0.0",
+    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+    "depends": [
+        'document_page_approval',
+        'mgmtsystem',
+    ],
+    "data": [
+        'data/mgmtsystem_manual.xml',
+        'views/mgmtsystem_manual.xml',
+    ],
+    "demo": [],
+    'installable': True,
+}

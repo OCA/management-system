@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -18,28 +18,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System - Manual",
-    "version": "8.0.1.1.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "description": """
-This module adds a menu item "Manual" and is a dependency of:
- * document_page_environment_manual
- * document_page_health_safety_manual
- * mgmtsystem_quality
-    """,
-    "depends": [
-        'document_page_approval',
-        'mgmtsystem',
-    ],
-    "data": [
-        'data/document_page.xml',
-
-        'views/document_page.xml',
-    ],
-    "demo": [],
-    'installable': False,
-}
+from . import models
