@@ -58,12 +58,17 @@
                 </form>
             </field>
         </record>
+
         <record id="action_mgmtsystem_configuration" model="ir.actions.act_window">
             <field name="name">Configure management system</field>
             <field name="res_model">mgmtsystem.config.settings</field>
             <field name="view_mode">form</field>
             <field name="target">inline</field>
         </record>
-        <menuitem id="menu_mgmtsystem_settings" name="Settings" parent="menu_mgmtsystem_configuration"
-            sequence="19" action="action_mgmtsystem_configuration"/>
+
+        <menuitem id="menu_mgmtsystem_settings"
+                  name="Settings"
+                  parent="menu_mgmtsystem_configuration"
+                  sequence="0"
+                  action="action_mgmtsystem_configuration"/>
 </odoo>
