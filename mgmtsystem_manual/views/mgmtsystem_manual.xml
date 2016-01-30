@@ -29,7 +29,7 @@
         <field name="view_id" ref="document_page.view_wiki_tree"/>
         <field name="search_view_id" ref="document_page.view_wiki_filter"/>
         <field name="help">Manuals of your management systems.</field>
-        <field name="domain" eval="[('parent_id','=',ref('manuals'))]"/>
+        <field name="domain" eval="[('parent_id','ilike', 'manual')]"/>
     </record>
 
     <menuitem id="menu_mgmtsystem_manuals_manuals" name="Manuals" action="action_manuals" parent="mgmtsystem.menu_mgmtsystem_manuals" sequence="0" groups="mgmtsystem.group_mgmtsystem_viewer"/>
