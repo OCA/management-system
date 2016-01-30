@@ -6,20 +6,21 @@
 Management System - Manual
 ==========================
 
-This module adds a menu item "Manual" and is a dependency of:
- * document_page_environment_manual
- * document_page_health_safety_manual
- * mgmtsystem_quality.
+This module adds a menu item "Documentation" and is a dependency of:
+
+* document_page_environment_manual
+* document_page_health_safety_manual
+* mgmtsystem_quality.
 
 Installation
 ============
 
-Makes the Management System Manual available from where we can add templates document
+No installation required.
 
 Configuration
 =============
 
-No configuration required
+No configuration required.
 
 Usage
 =====
@@ -27,7 +28,7 @@ Usage
 To use this module, you need to:
 
 * go to Management Systems > Documentation > Manuals
-* Create a new page base on existing templates or create your own templates.
+* Create a new page based on existing templates or create your own templates.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
@@ -72,10 +73,3 @@ mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
 To contribute to this module, please visit http://odoo-community.org.
-
-Changelog
----------
-
-v9.0.1.0.0
-* we remove the dependance on document_page, because the dependance on document_page_approval is sufficient
-* we moved here the manual field from mgmtsystem module
