@@ -18,33 +18,15 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System - Hazard",
-    "version": "7.0.1.2.0",
-    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "description": """\
-This module enables you to manage the hazards and risks of your health
-and safety management system.
 
-Configuration
-=============
+from openerp.osv import fields, orm
 
-To configure this module, you need to:
-* go to Settings > Companies > Companies
-* open your company
-* in the configuration tab, select the default computation method for risk.
 
-A is for probability, B for severity and C for occupation/usage.
-    """,
-    "depends": ['mgmtsystem', 'hr'],
-    "data": [
-        'data/mgmtsystem_hazard_data.xml',
-        'security/ir.model.access.csv',
-        'security/mgmtsystem_hazard_security.xml',
-        'views/mgmtsystem_hazard.xml',
-    ],
-}
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+class res_company(orm.Model):
+    _inherit = "res.company"
+    _columns = {
+        'risk_computation_id': fields.many2one(
+            'mgmtsystem.hazard.risk.computation',
+            'Risk Computation',
+        ),
+    }

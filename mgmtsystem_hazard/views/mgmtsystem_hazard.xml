@@ -330,7 +330,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//page[@string='Configuration']" position="inside">
                     <group name="mgmtsystem_group" string="Management System">
-                        <field name="risk_computation_id"/>
+                        <field name="risk_computation_id" required="True"/>
                     </group>
                 </xpath>
             </field>
