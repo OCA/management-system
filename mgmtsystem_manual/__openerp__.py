@@ -32,6 +32,7 @@
     "data": [
         'data/mgmtsystem_manual.xml',
         'views/mgmtsystem_manual.xml',
+        'views/document_page.xml',
     ],
     "demo": [],
     'installable': True,
