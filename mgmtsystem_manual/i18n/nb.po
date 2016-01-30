@@ -1,29 +1,45 @@
-# Norwegian Bokmal translation for openerp-mgmtsystem
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
-# This file is distributed under the same license as the openerp-mgmtsystem package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
-#
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_manual
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: openerp-mgmtsystem\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-09-29 21:28+0000\n"
-"PO-Revision-Date: 2014-01-22 17:49+0000\n"
-"Last-Translator: Torvald Baade Bringsvor <torvald@bringsvor.com>\n"
-"Language-Team: Norwegian Bokmal <nb@li.org>\n"
+"Project-Id-Version: management-system (9.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-30 02:45+0000\n"
+"PO-Revision-Date: 2016-06-29 13:04+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Norwegian Bokmål (http://www.transifex.com/oca/OCA-management-system-9-0/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-24 06:29+0000\n"
-"X-Generator: Launchpad (build 16985)\n"
+"Content-Transfer-Encoding: \n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: mgmtsystem_manuals
-#: model:ir.actions.act_window,help:mgmtsystem_manuals.action_manuals
+#. module: mgmtsystem_manual
+#: model:ir.ui.menu,name:mgmtsystem_manual.menu_mgmtsystem_categories
+msgid "Categories"
+msgstr ""
+
+#. module: mgmtsystem_manual
+#: model:ir.model.fields,field_description:mgmtsystem_manual.field_mgmtsystem_system_manual
+msgid "Manual"
+msgstr ""
+
+#. module: mgmtsystem_manual
+#: model:ir.actions.act_window,name:mgmtsystem_manual.action_manuals
+#: model:ir.ui.menu,name:mgmtsystem_manual.menu_mgmtsystem_manuals_manuals
+msgid "Manuals"
+msgstr "Manualer"
+
+#. module: mgmtsystem_manual
+#: model:ir.actions.act_window,help:mgmtsystem_manual.action_manuals
 msgid "Manuals of your management systems."
 msgstr "Manualer til styringssystemet."
 
-#. module: mgmtsystem_manuals
-#: model:ir.actions.act_window,name:mgmtsystem_manuals.action_manuals
-#: model:ir.ui.menu,name:mgmtsystem_manuals.menu_mgmtsystem_manuals_manuals
-msgid "Manuals"
-msgstr "Manualer"
+#. module: mgmtsystem_manual
+#: model:ir.model,name:mgmtsystem_manual.model_mgmtsystem_system
+msgid "System"
+msgstr "System"
