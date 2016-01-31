@@ -19,7 +19,8 @@
 ##############################################################################
 {
     "name": "Management System Nonconformity - Department",
-    "version": "1.0",
+    "version": "7.0.1.0.0",
+    "license": "AGPL-3",
     "author": "Daniel Reis,Odoo Community Association (OCA)",
     "category": "Management System",
     "description": """Add Department to Non Conformities""",

@@ -19,8 +19,9 @@
 ##############################################################################
 {
     "name": "Management System Nonconformity - Analytic Account",
-    "version": "1.0",
-    "author": "Daniel Reis,Odoo Community Association (OCA)",
+    "version": "7.0.1.0.0",
+    "license": "AGPL-3",
+    "author": "Daniel Reis, Odoo Community Association (OCA)",
     "category": "Management System",
     "description": """Add Analytic Accounts / Contracts to Non Conformities""",
     "depends": ['mgmtsystem_nonconformity', 'analytic'],
