@@ -1,12 +1,14 @@
+==========================
 Management System - Action
 ==========================
 
 This module enables you to manage the different actions of your management
 system:
-  * immediate actions
-  * corrective actions
-  * preventive actions
-  * improvement opportunities.
+
+* immediate actions
+* corrective actions
+* preventive actions
+* improvement opportunities.
 
 Installation
 ============
@@ -14,7 +16,9 @@ Installation
 To install this module, you need to:
 
 * Clone the project from github on your instance
-    * git clone https://github.com/OCA/management-system.git
+
+  * git clone https://github.com/OCA/management-system.git
+
 * Start odoo with the project in the addons path
 
 Configuration
@@ -33,12 +37,13 @@ Credits
 
 Contributors
 ------------
-Daniel Reis <dreis.pt@hotmail.com>
-Joao Alfredo Gama Batista <joao.gama@savoirfairelinux.com>
-Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
-Pedro M. Baeza <pedro.baeza@gmail.com>
-Sandy Carter <sandy.carter@savoirfairelinux.com>
-Virgil Dupras <virgil.dupras@savoirfairelinux.com>
+
+* Daniel Reis <dreis.pt@hotmail.com>
+* Joao Alfredo Gama Batista <joao.gama@savoirfairelinux.com>
+* Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
+* Pedro M. Baeza <pedro.baeza@gmail.com>
+* Sandy Carter <sandy.carter@savoirfairelinux.com>
+* Virgil Dupras <virgil.dupras@savoirfairelinux.com>
 
 Maintainer
 ----------
