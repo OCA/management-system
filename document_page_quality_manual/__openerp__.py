@@ -41,4 +41,3 @@ for the Quality Manual.
     'certificate': '',
     'images': ['images/wiki_pages_quality_manual.jpeg'],
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

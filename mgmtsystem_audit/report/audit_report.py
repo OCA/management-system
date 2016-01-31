@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -38,4 +38,3 @@ report_sxw.report_sxw(
     parser=mgmtsystem_audit_report
 )
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
