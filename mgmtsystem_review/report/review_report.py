@@ -37,4 +37,3 @@ report_sxw.report_sxw(
     'addons/mgmtsystem_review/report/review_report.rml',
     parser=mgmtsystem_review_report
 )
-
