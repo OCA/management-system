@@ -1,0 +1,100 @@
+<openerp>
+    <data>
+
+        <record id="view_mgmtsystem_vector_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.vector.form</field>
+            <field name="model">mgmtsystem.security.vector</field>
+            <field name="arch" type="xml">
+                <form string="Vector">
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="system_id" domain="[('type', '=', 'information_security')]"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                        <newline/>
+
+                        <field
+                            name="original_probability_id"
+                            domain="[('category','=','security')]"
+                            />
+                        <field
+                            name="original_severity_id"
+                            domain="[('category','=','security')]"
+                            />
+
+                        <field
+                            name="current_probability_id"
+                            domain="[('category','=','security')]"
+                            />
+                        <field
+                            name="current_severity_id"
+                            domain="[('category','=','security')]"
+                            />
+
+                        <field
+                            name="residual_probability_id"
+                            domain="[('category','=','security')]"
+                            />
+                        <field
+                            name="residual_severity_id"
+                            domain="[('category','=','security')]"
+                            />
+
+                        <label for="description"/>
+                        <newline/>
+                        <field name="description" colspan="4" nolabel="1"/>
+                    </group>
+
+                    <notebook colspan="4">
+                        <page string="Supporting Assets">
+                            <field
+                                name="supporting_asset_ids"
+                                widget="many2many"
+                                colspan="4"
+                                nolabel="1"
+                                ref="view_mgmtsystem_supporting_asset_tree"
+                                />
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_vector_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.vector.tree</field>
+            <field name="model">mgmtsystem.security.vector</field>
+            <field name="arch" type="xml">
+                <tree string="Vectors">
+                    <field name="name"/>
+                    <field name="description"/>
+
+                    <field name="original_probability_id"/>
+                    <field name="original_severity_id"/>
+
+                    <field name="current_probability_id"/>
+                    <field name="current_severity_id"/>
+
+                    <field name="residual_probability_id"/>
+                    <field name="residual_severity_id"/>
+
+                    <field name="system_id"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_vector_list" model="ir.actions.act_window">
+            <field name="name">Vectors</field>
+            <field name="res_model">mgmtsystem.security.vector</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <menuitem id="menu_open_mgmtsystem_vector" 
+            action="open_mgmtsystem_vector_list" 
+            parent="menu_mgmtsystem_manual_security"
+            sequence="20" 
+            />
+
+    </data>
+</openerp>

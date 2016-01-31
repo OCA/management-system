@@ -1,0 +1,56 @@
+<openerp>
+    <data>
+
+        <record id="view_mgmtsystem_supporting_asset_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.asset.supporting.form</field>
+            <field name="model">mgmtsystem.security.asset.supporting</field>
+            <field name="arch" type="xml">
+                <form string="Supporting Asset">
+                    <field name="name"/>
+                    <field name="system_id" domain="[('type', '=', 'information_security')]"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="category_id"/>
+
+                    <notebook colspan="4">
+                        <page string="Primary Assets">
+                            <field
+                                name="primary_asset_ids"
+                                widget="many2many"
+                                colspan="4"
+                                nolabel="1"
+                                ref="view_mgmtsystem_primary_asset_tree"
+                                />
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_supporting_asset_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.asset.supporting.tree</field>
+            <field name="model">mgmtsystem.security.asset.supporting</field>
+            <field name="arch" type="xml">
+                <tree string="Supporting Assets">
+                    <field name="name"/>
+                    <field name="system_id"/>
+                    <field name="category_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_supporting_asset_list" model="ir.actions.act_window">
+            <field name="name">Supporting</field>
+            <field name="res_model">mgmtsystem.security.asset.supporting</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <menuitem id="menu_open_mgmtsystem_supporting_asset" 
+            action="open_mgmtsystem_supporting_asset_list" 
+            parent="menu_mgmtsystem_asset" 
+            sequence="20" 
+            />
+
+    </data>
+</openerp>

@@ -1,3 +1,4 @@
+=================================
 Management System - Nonconformity
 =================================
 
@@ -10,13 +11,16 @@ Installation
 To install this module, you need to:
 
 * Clone the project from github on your instance
-    * git clone https://github.com/OCA/management-system.git
+
+  * git clone https://github.com/OCA/management-system.git
+
 * Start odoo with the project in the addons path
 
 Configuration
 =============
 
 Users must be added to the appropriate groups within openERP as follows:
+
 * Creators: Settings > Users > Groups > Management System / User
 * Responsible Persons:
   Settings > Users > Groups > Management System / Approving User
@@ -75,7 +79,7 @@ For further information, please visit:
 Known issues / Roadmap
 ======================
 
-None
+* None
 
 Credits
 =======

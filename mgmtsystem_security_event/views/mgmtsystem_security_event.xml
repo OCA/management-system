@@ -1,0 +1,105 @@
+<openerp>
+    <data>
+
+        <record id="view_mgmtsystem_security_event_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.event.form</field>
+            <field name="model">mgmtsystem.security.event</field>
+            <field name="arch" type="xml">
+                <form string="Feared Event" version="7.0">
+                    <group>
+                        <field name="name"/>
+                        <field name="system_id" domain="[('type', '=', 'information_security')]"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                        <field
+                            name="severity_id"
+                            domain="[('category', '=', 'security')]"
+                            />
+                        <field name="confidentiality"/>
+                        <field name="integrity"/>
+                        <field name="availability"/>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Description">
+                            <field name="content"
+                                widget="html"
+                                class="oe_edit_only"
+                                nolabel="1"
+                                />
+                            <div class="oe_document_page">
+                                <field name="display_content" widget="html" class="oe_view_only" options='{"safe": True}'/>
+                            </div>
+                        </page>
+                        <page string="Scenarios">
+                            <field
+                                name="scenario_ids"
+                                colspan="4"
+                                nolabel="1"
+                                ref="open_mgmtsystem_security_event_scenario_tree"
+                                context="{
+                                    'default_security_event_id': id,
+                                    'default_system_id': system_id,
+                                }"
+                                >
+                                <tree>
+                                    <field name="system_id" invisible="1"/>
+                                    <field name="description"/>
+                                    <field name="vector_id" />
+                                    <field name="source_id" />
+                                    <field name="probability_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Controls">
+                            <field
+                                name="control_ids"
+                                colspan="4"
+                                nolabel="1"
+                                ref="open_mgmtsystem_security_event_control_tree"
+                                context="{
+                                    'default_security_event_id': id,
+                                    'default_system_id': system_id,
+                                }"
+                                >
+                                <tree>
+                                    <field name="system_id" invisible="1"/>
+                                    <field name="control_id" />
+                                    <field name="supporting_asset_id" />
+                                    <field name="prevention" />
+                                    <field name="recovery"/>
+                                    <field name="protection"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_security_event_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.event.tree</field>
+            <field name="model">mgmtsystem.security.event</field>
+            <field name="arch" type="xml">
+                <tree string="Feared Events">
+                    <field name="name"/>
+                    <field name="severity_id"/>
+                    <field name="system_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_security_event_list" model="ir.actions.act_window">
+            <field name="name">Feared Events</field>
+            <field name="res_model">mgmtsystem.security.event</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <menuitem id="menu_open_mgmtsystem_security_event" 
+            action="open_mgmtsystem_security_event_list" 
+            parent="menu_mgmtsystem_manual_security"
+            sequence="25"
+            />
+
+    </data>
+</openerp>

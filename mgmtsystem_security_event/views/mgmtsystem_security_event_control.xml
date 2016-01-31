@@ -1,0 +1,45 @@
+<openerp>
+    <data>
+
+        <record id="view_mgmtsystem_security_event_control_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.event.control.form</field>
+            <field name="model">mgmtsystem.security.event.control</field>
+            <field name="arch" type="xml">
+                <form string="Control Line">
+                    <field name="system_id" />
+                    <field name="control_id" domain="[('system_id', '=', system_id)]"/>
+                    <field name="prevention" />
+                    <field name="supporting_asset_id" domain="[('system_id', '=', system_id)]"/>
+                    <field name="recovery" />
+                    <field name="security_event_id" invisible="1"/>
+                    <field name="protection" />
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_security_event_control_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.event.control.tree</field>
+            <field name="model">mgmtsystem.security.event.control</field>
+            <field name="arch" type="xml">
+                <tree string="Control Lines">
+                    <field name="security_event_id" />
+                    <field name="system_id" />
+                    <field name="control_id" />
+                    <field name="supporting_asset_id" />
+                    <field name="prevention" />
+                    <field name="recovery" />
+                    <field name="protection" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_security_event_control_list" model="ir.actions.act_window">
+            <field name="name">Control Line</field>
+            <field name="res_model">mgmtsystem.security.event.control</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+    </data>
+</openerp>

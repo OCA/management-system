@@ -1,0 +1,48 @@
+<openerp>
+    <data>
+
+        <record id="view_mgmtsystem_security_control_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.control.form</field>
+            <field name="model">mgmtsystem.security.control</field>
+            <field name="arch" type="xml">
+                <form string="Security Control">
+                    <field name="name"/>
+                    <field name="system_id" domain="[('type', '=', 'information_security')]"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field
+                        name="work_instruction_id"
+                        domain="[('parent_id', '=', %(document_page_work_instructions.document_page_group_work_instructions)d)]"
+                        />
+                    <field name="description" colspan="4"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_security_control_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.control.form</field>
+            <field name="model">mgmtsystem.security.control</field>
+            <field name="arch" type="xml">
+                <tree string="Security Controls">
+                    <field name="name"/>
+                    <field name="work_instruction_id"/>
+                    <field name="description" colspan="4"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_security_control_list" model="ir.actions.act_window">
+            <field name="name">Controls</field>
+            <field name="res_model">mgmtsystem.security.control</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <menuitem id="menu_open_mgmtsystem_security_control" 
+            action="open_mgmtsystem_security_control_list" 
+            parent="menu_mgmtsystem_manual_security" 
+            sequence="15" 
+            />
+
+    </data>
+</openerp>

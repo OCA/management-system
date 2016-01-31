@@ -1,0 +1,46 @@
+<openerp>
+    <data>
+
+        <record id="view_mgmtsystem_security_event_scenario_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.event.scenario.form</field>
+            <field name="model">mgmtsystem.security.event.scenario</field>
+            <field name="arch" type="xml">
+                <form string="Scenario Line">
+                    <field name="system_id" />
+                    <field name="vector_id" domain="[('system_id', '=', system_id)]"/>
+                    <field name="source_id" domain="[('system_id', '=', system_id)]"/>
+                    <field
+                        name="probability_id"
+                        domain="[('category', '=', 'security')]"
+                        />
+                    <field name="security_event_id" invisible="1"/>
+                    <field name="description" colspan="4" />
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_security_event_scenario_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.security.event.scenario.tree</field>
+            <field name="model">mgmtsystem.security.event.scenario</field>
+            <field name="arch" type="xml">
+                <tree string="Scenario Lines">
+                    <field name="security_event_id" />
+                    <field name="system_id" />
+                    <field name="description" />
+                    <field name="vector_id" />
+                    <field name="source_id" />
+                    <field name="probability_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_security_event_scenario_list" model="ir.actions.act_window">
+            <field name="name">Scenario Line</field>
+            <field name="res_model">mgmtsystem.security.event.scenario</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+    </data>
+</openerp>
