@@ -31,6 +31,6 @@ class MgmtSystemSystem(models.Model):
     _name = 'mgmtsystem.system'
     _description = _('System')
 
-    name = fields.Char(string=_('System'), required=True)
-    company_id = fields.Many2one('res.company', string=_('Company'),
+    name = fields.Char('System', required=True)
+    company_id = fields.Many2one('res.company', 'Company',
                                  default=own_company)
