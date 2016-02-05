@@ -16,7 +16,7 @@ Odoo modules to support management systems:
 
 These presentation may help with an overviews of the modules:
 
-* [OpenDays 2013 presentation](http://www.slideshare.net/max3903/iso-anmanagement-systemswithopenerpena) of the Management System project
+* [OpenDays 2013 presentation](http://www.slideshare.net/max3903/iso-anmanagement-systemswithopenerpen) of the Management System project
 * [Overview presentation](http://www.slideshare.net/max3903/openerp-management-system-modules) (2012) by Savoir-Faire Linux
 
 [//]: # (addons)
