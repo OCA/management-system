@@ -32,7 +32,7 @@
     "data": [
         'data/document_page.xml',
 
-        'views/document_page.xml',
+        'views/document_page_work_instructions.xml',
     ],
     "demo": [],
     'installable': True,
