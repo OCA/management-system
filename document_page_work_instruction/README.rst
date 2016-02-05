@@ -28,14 +28,14 @@ To enter your work instruction, you need to:
 * go to Management Systems > Documentation > Work Instructions
 * Create a new page and select work instructions category
 
- .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
     :alt: Try me on Runbot
     :target: https://runbot.odoo-community.org/runbot/118/9.0
 
 Known issues / Roadmap
 ======================
 
- * Report any issue or ideas to https://github.com/OCA/management-system/issues
+* Report any issue or ideas to https://github.com/OCA/management-system/issues
 
 
 Bug Tracker
