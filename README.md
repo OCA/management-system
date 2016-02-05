@@ -24,6 +24,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[document_page_environment_manual](document_page_environment_manual/) | 9.0.1.0.0 | Document Management - Wiki - Environment Manual
 [mgmtsystem](mgmtsystem/) | 9.0.1.0.0 | Management System
 [mgmtsystem_manual](mgmtsystem_manual/) | 9.0.1.0.0 | Management System - Manual
 
@@ -31,7 +32,6 @@ Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[document_page_environment_manual](document_page_environment_manual/) | 8.0.1.0.0 (unported) | Document Management - Wiki - Environment Manual
 [document_page_environmental_aspect](document_page_environmental_aspect/) | 8.0.1.0.0 (unported) | Document Management - Wiki - Environmental Aspects
 [document_page_health_safety_manual](document_page_health_safety_manual/) | 8.0.1.0.0 (unported) | Document Management - Wiki - Health and Safety Manual
 [document_page_procedure](document_page_procedure/) | 8.0.1.0.0 (unported) | Document Management - Wiki - Procedures
