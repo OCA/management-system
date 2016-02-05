@@ -21,12 +21,13 @@
 
 {
     'name': 'Quality Manual',
-    'version': '1.0',
+    'version': '7.0.1.0.0',
+    'license': 'AGPL-3',
     'category': 'Management System',
     'complexity': "easy",
     'description': """
-Quality Manual Template.
-========================
+Quality Manual Template
+=======================
 
 It provides the Wiki Category and a Wiki Page
 for the Quality Manual.
@@ -41,4 +42,3 @@ for the Quality Manual.
     'certificate': '',
     'images': ['images/wiki_pages_quality_manual.jpeg'],
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

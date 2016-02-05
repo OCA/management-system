@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Copyright (C) 2012 Daniel Reis
@@ -19,12 +19,12 @@
 ##############################################################################
 {
     "name": "Management System Nonconformity - Analytic Account",
-    "version": "1.0",
-    "author": "Daniel Reis,Odoo Community Association (OCA)",
+    "version": "7.0.1.0.0",
+    "license": "AGPL-3",
+    "author": "Daniel Reis, Odoo Community Association (OCA)",
     "category": "Management System",
     "description": """Add Analytic Accounts / Contracts to Non Conformities""",
     "depends": ['mgmtsystem_nonconformity', 'analytic'],
     "data": ['mgmtsystem_nonconformity.xml'],
     "installable": True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

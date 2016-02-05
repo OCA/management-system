@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Copyright (C) 2012 Daniel Reis
@@ -19,8 +19,9 @@
 ##############################################################################
 {
     'name': 'Management System - Claims and Nonconformities',
-    'version': '1.0',
-    'author': "Daniel Reis,Odoo Community Association (OCA)",
+    'version': '7.0.1.0.0',
+    'license': 'AGPL-3',
+    'author': "Daniel Reis, Odoo Community Association (OCA)",
     'category': 'Management System',
     'description': """\
 Extends the Nonconformity form so it can also represent NC candidates and other
@@ -32,8 +33,9 @@ to other type of record, such as "best practice", "suggestion", etc.
 This module purpose overlaps with "mgmtsystem_claim" module, so you should use
 either one or the other.
 It will fit best to your uses cases requiring:
-  * a common numbering sequence for complaints and nonconformities;
-  * a single point-of-entry for all management system related occurrences.
+
+* a common numbering sequence for complaints and nonconformities;
+* a single point-of-entry for all management system related occurrences.
 """,
     'depends': ['mgmtsystem_nonconformity'],
     'data': [

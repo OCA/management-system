@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,8 +20,8 @@
 ##############################################################################
 {
     "name": "Health and Safety Management System",
-    "version": "1.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "version": "7.0.1.0.0",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
@@ -52,4 +52,3 @@ including :
     "application": True,
     "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
