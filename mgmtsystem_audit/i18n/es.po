@@ -4,13 +4,14 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
+# Gustavo Salgado Ocampo <gustavo2840@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-21 15:02+0000\n"
-"PO-Revision-Date: 2015-05-22 13:07+0000\n"
-"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"POT-Creation-Date: 2015-10-12 15:04+0000\n"
+"PO-Revision-Date: 2016-02-04 22:47+0000\n"
+"Last-Translator: Gustavo Salgado Ocampo <gustavo2840@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-management-system-7-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +22,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.actions.server,subject:mgmtsystem_audit.action_email_send_verification_list
 msgid "Send Verification List: \"[[object.name]]\""
-msgstr ""
+msgstr "Enviar Lista de Verificación: \"[[object.name]]\""
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:0 selection:mgmtsystem.audit,state:0
@@ -42,7 +43,7 @@ msgstr "Fecha:"
 #: view:mgmtsystem.audit:0 field:mgmtsystem.audit,nonconformity_ids:0
 #: report:mgmtsystem.audit.report:0
 msgid "Nonconformities"
-msgstr ""
+msgstr "No conformidades"
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:0 field:mgmtsystem.audit,auditor_user_ids:0
@@ -59,12 +60,12 @@ msgstr "Comentarios"
 #: code:addons/mgmtsystem_audit/report/verification_list.py:48
 #, python-format
 msgid "Undefined"
-msgstr ""
+msgstr "Indefinido"
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:0 field:mgmtsystem.audit,user_id:0
 msgid "Audit Manager"
-msgstr ""
+msgstr "Gestor de Auditoria"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,state:0
@@ -74,7 +75,7 @@ msgstr "Estado"
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_report
@@ -84,17 +85,17 @@ msgstr "Imprimir informe"
 #. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.verificationlist:0
 msgid "Conformed?"
-msgstr ""
+msgstr "¿Conformado?"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensajes no leídos "
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.nonconformity:0 field:mgmtsystem.nonconformity,audit_ids:0
 msgid "Related Audits"
-msgstr ""
+msgstr "Auditorias Relacionadas"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
@@ -110,12 +111,12 @@ msgstr "Puntos fuertes"
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.verification.line,is_conformed:0
 msgid "Is conformed"
-msgstr ""
+msgstr "es confirmado"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.server,subject:mgmtsystem_audit.action_email_prepare_to_audit
 msgid "Prepare to Audit: \"[[object.name]]\""
-msgstr ""
+msgstr "Prepárese para la auditoria: \"[[object.name]]\""
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_verification_list
@@ -130,7 +131,7 @@ msgstr "Oportunidades de mejora"
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_summary:0
 msgid "Summary"
-msgstr ""
+msgstr "Resumen"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.server,message:mgmtsystem_audit.action_email_prepare_to_audit
@@ -148,13 +149,13 @@ msgid ""
 "--\n"
 "OpenERP\n"
 "            "
-msgstr ""
+msgstr "\nHola,\n\nLa Auditoria \"[[object.name]]\" esta programada en dos semanas.\nPor favor prepare la lista de chequeo:\n\n[[object.get_audit_url()]]\n\n\nGracias.\n--\nOpenERP\n            "
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,company_id:0
 #: field:mgmtsystem.verification.line,company_id:0
 msgid "Company"
-msgstr ""
+msgstr "Compañia"
 
 #. module: mgmtsystem_audit
 #: view:copy.verification.lines:0
@@ -166,7 +167,7 @@ msgstr "Copiar lineas de verificación"
 #. module: mgmtsystem_audit
 #: help:mgmtsystem.audit,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "Historial de mensajes y comunicaciones"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.server,message:mgmtsystem_audit.action_email_send_verification_list
@@ -184,7 +185,7 @@ msgid ""
 "--\n"
 "OpenERP\n"
 "            "
-msgstr ""
+msgstr "\nHola,\n\nLa auditoria \"[[object.name]]\" esta programada en una semana.\nPor favor finalice la lista de chequeo y envié a los auditores:\n\n[[object.get_audit_url()]]\n\n\nGracias.\n--\nOpenERP\n            "
 
 #. module: mgmtsystem_audit
 #: view:copy.verification.lines:0
@@ -194,18 +195,18 @@ msgstr "_Copiar"
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,system_id:0
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #. module: mgmtsystem_audit
 #: code:addons/mgmtsystem_audit/model/mgmtsystem_audit.py:105
 #, python-format
 msgid "Audit closed"
-msgstr ""
+msgstr "Auditoria Cerrada"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_is_follower:0
 msgid "Is a Follower"
-msgstr ""
+msgstr "Es un seguidor"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,date:0
@@ -252,7 +253,7 @@ msgstr "Pregunta"
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_ids:0
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,to_improve_points:0 report:mgmtsystem.audit.report:0
@@ -272,7 +273,7 @@ msgstr "Puntos fuertes"
 #. module: mgmtsystem_audit
 #: help:mgmtsystem.audit,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Si nuevos mensajes requieren su atención."
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.verification.line,procedure_id:0
@@ -282,12 +283,12 @@ msgstr "Procedimiento"
 #. module: mgmtsystem_audit
 #: model:ir.actions.server,name:mgmtsystem_audit.action_email_prepare_to_audit
 msgid "Prepare to audit"
-msgstr ""
+msgstr "Preparase para auditoria"
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:0
 msgid "Closed Audits"
-msgstr ""
+msgstr "Auditorias Cerradas"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,reference:0
@@ -307,7 +308,7 @@ msgstr "Secuencia"
 #. module: mgmtsystem_audit
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
 msgid "Nonconformity of the management system"
-msgstr ""
+msgstr "No conformidades en el Sistema de Gestión"
 
 #. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.report:0
@@ -323,19 +324,19 @@ msgstr "Lista de verificación"
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:0
 msgid "To Improve Points"
-msgstr ""
+msgstr "Puntos para Mejora"
 
 #. module: mgmtsystem_audit
 #: help:mgmtsystem.audit,message_summary:0
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr ""
+msgstr "Holds the Chatter summary (numero de mensajes, ...). Este resumen esta directamente en formato HTML con el fin de ser insertando en vistas kanban."
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.server,name:mgmtsystem_audit.action_email_send_verification_list
 msgid "Send Verification List"
-msgstr ""
+msgstr "Enviar Lista de Verificación"
 
 #. module: mgmtsystem_audit
 #: view:copy.verification.lines:0

@@ -1,0 +1,80 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_nonconformity_claim
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: management-system (7.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-12 15:04+0000\n"
+"PO-Revision-Date: 2016-02-04 22:48+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/oca/OCA-management-system-7-0/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,active:0
+msgid "Active?"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,description:0
+msgid "Description"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,name:0
+msgid "Title"
+msgstr "Titulo"
+
+#. module: mgmtsystem_nonconformity_claim
+#: model:ir.model,name:mgmtsystem_nonconformity_claim.model_mgmtsystem_nonconformity
+msgid "Nonconformity of the management system"
+msgstr "No conformidades en el Sistema de Gestión"
+
+#. module: mgmtsystem_nonconformity_claim
+#: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_io
+msgid "Improvement Opportunity"
+msgstr "Oportunidades de mejora"
+
+#. module: mgmtsystem_nonconformity_claim
+#: model:ir.model,name:mgmtsystem_nonconformity_claim.model_mgmtsystem_nonconformity_type
+msgid "Claim Type"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_claim
+#: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_gp
+msgid "Good Practice"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_claim
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity_claim.open_mgmtsystem_nonconformity_type_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity_claim.menu_open_nonconformity_type
+#: view:mgmtsystem.nonconformity.type:0
+msgid "Claim Types"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_claim
+#: view:mgmtsystem.nonconformity:0
+msgid "Claims and Nonconformities"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_claim
+#: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_nc
+msgid "Nonconformity"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity,type_id:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: mgmtsystem_nonconformity_claim
+#: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_ob
+msgid "Observation"
+msgstr ""

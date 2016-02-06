@@ -1,6 +1,6 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-# * document_page_work_instructions
+# * document_page_procedure
 # 
 # Translators:
 # Gustavo Salgado Ocampo <gustavo2840@gmail.com>, 2016
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: management-system (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-12 15:04+0000\n"
-"PO-Revision-Date: 2016-02-03 19:28+0000\n"
+"PO-Revision-Date: 2016-02-03 19:27+0000\n"
 "Last-Translator: Gustavo Salgado Ocampo <gustavo2840@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-management-system-7-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: document_page_work_instructions
-#: model:ir.actions.act_window,help:document_page_work_instructions.work_instructions_action
-msgid "Work instructions of your management system."
-msgstr "Instrucciones de Trabajo en su Sistema de Gestión"
+#. module: document_page_procedure
+#: model:ir.actions.act_window,name:document_page_procedure.action_procedures
+#: model:ir.ui.menu,name:document_page_procedure.menu_mgmtsystem_manuals_procedures
+msgid "Procedures"
+msgstr "Procedimientos"
 
-#. module: document_page_work_instructions
-#: model:ir.actions.act_window,name:document_page_work_instructions.work_instructions_action
-#: model:ir.ui.menu,name:document_page_work_instructions.menu_mgmtsystem_manuals_work_instructions
-msgid "Work Instructions"
-msgstr "Instrucciones de Trabajo"
+#. module: document_page_procedure
+#: model:ir.actions.act_window,help:document_page_procedure.action_procedures
+msgid "Procedures of your management system."
+msgstr "Procedimientos en su sistema de gestión"

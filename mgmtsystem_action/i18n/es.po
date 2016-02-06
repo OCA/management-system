@@ -4,13 +4,15 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
+# Gustavo Salgado Ocampo <gustavo2840@gmail.com>, 2016
+# Maxime Chambreuil <maxime.chambreuil@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-21 15:02+0000\n"
-"PO-Revision-Date: 2015-08-21 15:03+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2015-10-12 15:04+0000\n"
+"PO-Revision-Date: 2016-02-04 22:51+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-management-system-7-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,18 +28,18 @@ msgstr "Categoría"
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,state:0
 msgid "In Progress"
-msgstr ""
+msgstr "En Progreso"
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:95
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:96
 #, python-format
 msgid "Action \"%s\" was closed."
-msgstr ""
+msgstr "Acción  \"%s\"  fue cerrada."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,type_action:0
 msgid "Response Type"
-msgstr ""
+msgstr "Tipo de Respuesta"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0 field:mgmtsystem.action,user_id:0
@@ -47,7 +49,7 @@ msgstr "Responsable"
 #. module: mgmtsystem_action
 #: model:ir.actions.server,subject:mgmtsystem_action.action_email_reminder_action
 msgid "Reminder on Action: \"[[object.name]]\""
-msgstr ""
+msgstr "Recordatorio sobre la Acción: \"[[object.name]]\""
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,priority:0
@@ -63,7 +65,7 @@ msgstr "Acción"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -79,12 +81,12 @@ msgstr "Cerrado"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensajes no leídos "
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,state:0
 msgid "New"
-msgstr ""
+msgstr "Nuevo"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,cause:0
@@ -137,7 +139,7 @@ msgid ""
 "--\n"
 "<br />\n"
 "OpenERP"
-msgstr ""
+msgstr "Buenos dias,\n<br />\n<br />\nTiene una nueva acciòn:\n<br />\n<a href=\"http://localhost:8080\">http://localhost:8080</a>\n<br />\n<br />\n[[object.description]]\n<br />\n<br />\nMuchas gracias.\n<br />\n--\n<br />\nOpenERP"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -152,7 +154,7 @@ msgstr "Acción siguiente"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,system_id:0
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0 field:mgmtsystem.action,description:0
@@ -192,7 +194,7 @@ msgstr "Observadores emails (CC)"
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Si nuevos mensajes requieren su atención."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,user_fault:0
@@ -207,7 +209,7 @@ msgstr "Teléfono"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_is_follower:0
 msgid "Is a Follower"
-msgstr ""
+msgstr "Es un seguidor"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0 selection:mgmtsystem.action,state:0
@@ -221,12 +223,12 @@ msgid ""
 "case is in progress the status is set to 'Open'.                When the "
 "case is over, the status is set to 'Done'.                If the case needs "
 "to be reviewed then the status is                 set to 'Pending'."
-msgstr ""
+msgstr "El estado se define como 'Borrador', cuando se crea un caso. Si el caso esta en progreso el estado es definido como 'Abierto'. Cuando se termina el caso, el estado se establece en 'Hecho'. Si el caso necesita ser revisado el estado se establece en 'Pendiente'. "
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Date"
-msgstr ""
+msgstr "Fecha"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -246,19 +248,19 @@ msgstr "Fecha próxima acción"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,state:0
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,section_id:0
 msgid ""
 "Responsible sales team. Define Responsible user and Email account for mail "
 "gateway."
-msgstr ""
+msgstr "Responsable Equipo de Ventas. Define usuario responsable y la cuenta de correo electrónico de salida"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,email_from:0
 msgid "Destination email for email gateway."
-msgstr ""
+msgstr "Correo electrónico de destino para email gateway"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,write_date:0
@@ -268,12 +270,12 @@ msgstr "Actualizar fecha"
 #. module: mgmtsystem_action
 #: view:board.board:0 view:mgmtsystem.action:0
 msgid "Open Actions"
-msgstr ""
+msgstr "Acciones Abiertas"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 msgid "Immediate Action"
-msgstr ""
+msgstr "Acciones Inmediatas"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_ids:0
@@ -288,27 +290,27 @@ msgstr "Fecha de reclamación"
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 msgid "Improvement Opportunity"
-msgstr ""
+msgstr "Oportunidades de mejora"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_summary:0
 msgid "Summary"
-msgstr ""
+msgstr "Resumen"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,active:0
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "Historial de mensajes y comunicaciones"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Closed Actions"
-msgstr ""
+msgstr "Acciones cerradas"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,state:0
@@ -367,19 +369,19 @@ msgstr "Alta"
 #. module: mgmtsystem_action
 #: model:ir.actions.server,name:mgmtsystem_action.mgmtsystem_action_server_action
 msgid "Notify the person in charge of the new action"
-msgstr ""
+msgstr "Notificar a la persona a cargo de la nueva acción"
 
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,message_summary:0
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr ""
+msgstr "Holds the Chatter summary (numero de mensajes, ...). Este resumen esta directamente en formato HTML con el fin de ser insertando en vistas kanban."
 
 #. module: mgmtsystem_action
 #: model:ir.actions.server,subject:mgmtsystem_action.mgmtsystem_action_server_action
 msgid "[[object.name]]"
-msgstr ""
+msgstr "[[object.name]]"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0 field:mgmtsystem.action,date_deadline:0
@@ -394,7 +396,7 @@ msgstr "Usuario"
 #. module: mgmtsystem_action
 #: model:ir.actions.server,name:mgmtsystem_action.action_email_reminder_action
 msgid "Reminder to Responsible"
-msgstr ""
+msgstr "Recordatorio para Responsable"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,partner_id:0
@@ -404,12 +406,12 @@ msgstr "Empresa"
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
@@ -419,4 +421,4 @@ msgstr "Abrir"
 #. module: mgmtsystem_action
 #: view:mgmtsystem.action:0
 msgid "Subject"
-msgstr ""
+msgstr "Asunto"
