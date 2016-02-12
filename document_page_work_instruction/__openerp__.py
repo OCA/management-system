@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,13 +20,11 @@
 ##############################################################################
 {
     "name": "Document Management - Wiki - Work Instructions",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
-    "description": """Work Instructions Template
-    """,
     "depends": [
         'mgmtsystem',
         'document_page_approval',
@@ -34,8 +32,8 @@
     "data": [
         'data/document_page.xml',
 
-        'views/document_page.xml',
+        'views/document_page_work_instructions.xml',
     ],
     "demo": [],
-    'installable': False,
+    'installable': True,
 }
