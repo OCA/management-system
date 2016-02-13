@@ -22,18 +22,17 @@ Usage
 
 To enter your information security manual, you need to:
 
- * go to Management Systems > Documentation > Manuals
- * Create a new page and select the Information security category.
+* go to Management Systems > Documentation > Manuals
+* Create a new page and select the Information Security category
 
- .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
-    :alt: Try me on Runbot
-    :target: https://runbot.odoo-community.org/runbot/118/9.
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/118/9.
 
 Known issues / Roadmap
 ======================
 
- * Report any issue or ideas to https://github.com/OCA/management-system/issues
-
+* Report any issue or ideas to https://github.com/OCA/management-system/issues
 
 Bug Tracker
 ===========
@@ -50,7 +49,6 @@ Credits
 Contributors
 ------------
 
-* Odoo SA <info@odoo.com>
 * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 
