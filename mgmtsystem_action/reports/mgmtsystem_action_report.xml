@@ -42,8 +42,11 @@
             <field name="help">Have a general overview of all actions processed in the system by sorting them with specific criteria.</field>
         </record>
 
-        <menuitem name="Action" id="menu_report_mgmtsystem_action_tree"
-            action="action_report_mgmtsystem_action" parent="menu_report_action" sequence="15"/>
+        <menuitem name="Actions"
+                  id="menu_report_mgmtsystem_action_tree"
+                  action="action_report_mgmtsystem_action"
+                  parent="mgmtsystem.menu_mgmtsystem_report"
+                  sequence="15"/>
 
     </data>
 </odoo>

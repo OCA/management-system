@@ -3,6 +3,7 @@
 from urllib import urlencode
 from urlparse import urljoin
 from openerp import fields, models, api
+import datetime
 
 
 def own_company(self):
@@ -14,6 +15,7 @@ class MgmtSystemAction(models.Model):
     _description = "Action"
     _inherit = "crm.claim"
 
+    opening_date = fields.Datetime('Opening Date', readonly=True)
     reference = fields.Char('Reference', required=True,
                             readonly=True, default="NEW")
     type_action = fields.Selection([
@@ -40,6 +42,7 @@ class MgmtSystemAction(models.Model):
 
     @api.model
     def create(self, vals):
+        """Creation of Action."""
         vals.update({
             'reference': self.env['ir.sequence'].get('mgmtsystem.action')
         })
@@ -57,8 +60,7 @@ class MgmtSystemAction(models.Model):
 
     @api.multi
     def case_open(self):
-        """ Opens case """
-
+        """Open case."""
         for case in self:
             values = {'active': True}
 
@@ -67,20 +69,28 @@ class MgmtSystemAction(models.Model):
                 ['is_ending', '=', False],
                 ['is_starting', '=', False]
             ]).id
-
+            if values['stage_id'].name == 'In Progress':
+                values['opening_date'] = datetime.now()
             case.write(values)
 
         return True
 
-    @api.one
+    @api.multi
     def get_action_url(self):
-        config_parameter = self.env['ir.config_parameter']
-        base_url = config_parameter.get_param('web.base_url',
-                                              default='http://localhost:8069')
+        """Return action url."""
+        base_url = self.env['ir.config_parameter'].get_param(
+            'web.base.url',
+            default='http://localhost:8069'
+        )
+        url = ('{}/web#db={}&id={}&model={}').format(
+                base_url,
+                self.env.cr.dbname,
+                self.id,
+                self._name
+            )
+        return url
 
-        query = {'db': self.env.cr.dbname}
-        fragment = {'id': self.id, 'model': self._name}
-
-        return urljoin(base_url, "?%s#%s" % (
-            urlencode(query), urlencode(fragment)
-        ))
+    def create(self, cr, uid, vals, context=None):
+        if opening_date in vals:
+            vals['opening_date'] = None
+        return super(MgmtSystemAction, self).create(cr, uid, vals, context)

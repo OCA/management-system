@@ -44,7 +44,7 @@ class mgmtsystemt_action_report(models.Model):
              CREATE OR REPLACE VIEW mgmtsystem_action_report AS (
                  select
                     m.id,
-                    m.date as action_date,
+                    m.opening_date as opening_date,
                     m.date_closed as date_closed,
                     m.date_deadline as date_deadline,
                     m.user_id,
@@ -53,14 +53,14 @@ class mgmtsystemt_action_report(models.Model):
                     m.type_action as type_action,
                     m.create_date as create_date,
                     avg(extract('epoch' from (current_date-m.create_date)))/(3600*24) as  age,
-                    avg(extract('epoch' from (m.date-m.create_date)))/(3600*24) as  number_of_days_to_open,
+                    avg(extract('epoch' from (m.opening_date-m.create_date)))/(3600*24) as  number_of_days_to_open,
                     avg(extract('epoch' from (m.date_closed-m.create_date)))/(3600*24) as  number_of_days_to_close,
-                    avg(extract('epoch' from (m.date_closed-m.date_deadline)))/(3600*24) as  number_of_exceedings_days,
+                    avg(extract('epoch' from (m.date_deadline - m.create_date)))/(3600*24) as  number_of_exceedings_days,
                     count(*) AS number_of_actions
                 from
                     mgmtsystem_action m
-                group by m.date,\
-                        m.user_id,m.system_id, m.stage_id,\
+                group by m.opening_date,\
+                        m.user_id,m.system_id, m.stage_id, \
                         m.create_date,m.type_action,m.date_deadline,m.date_closed, m.id
             )
             """)
