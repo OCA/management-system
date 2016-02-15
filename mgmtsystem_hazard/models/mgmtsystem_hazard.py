@@ -20,12 +20,13 @@
 ##############################################################################
 
 from openerp.osv import fields, orm
+from openerp.tools.safe_eval import safe_eval
 
 
 def _parse_risk_formula(formula, a, b, c):
     """Calculate the risk replacing the variables A, B, C into the formula."""
     f = formula.replace('A', str(a)).replace('B', str(b)).replace('C', str(c))
-    return eval(f)
+    return safe_eval(f)
 
 
 class mgmtsystem_hazard_type(orm.Model):
