@@ -19,9 +19,9 @@
 #
 ##############################################################################
 {
-    "name": "Document Management - Wiki - Environmental Aspects",
+    "name": "Environmental Aspects",
     "version": "9.0.1.0.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
@@ -30,9 +30,8 @@
         'mgmtsystem',
     ],
     "data": [
-        'data/document_page_environmental_aspect.xml',
-        'views/document_page_environmental_aspect.xml',
+        'data/document_page.xml',
+        'views/document_page.xml',
     ],
-    "demo": [],
     'installable': True,
 }
