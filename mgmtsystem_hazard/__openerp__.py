@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Management System - Hazard",
-    "version": "7.0.1.2.0",
+    "version": "7.0.1.2.1",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
