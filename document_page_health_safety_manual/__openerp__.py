@@ -19,9 +19,9 @@
 #
 ##############################################################################
 {
-    "name": "Document Management - Wiki - Health and Safety Manual",
+    "name": "Health and Safety Manual",
     "version": "9.0.1.0.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
@@ -29,8 +29,7 @@
         'mgmtsystem_manual'
     ],
     "data": [
-        'data/document_page_health_safety_manual.xml'
+        'data/document_page.xml'
         ],
-    "demo": [],
     'installable': True,
 }
