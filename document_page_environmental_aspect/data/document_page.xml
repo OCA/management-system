@@ -3,12 +3,6 @@
     <record id="document_page_group_environmental_aspect" model="document.page">
       <field name="name">Environmental Aspect</field>
       <field name="type">category</field>
-    </record>
-
-    <record id="document_page_environmental_aspect" model="document.page">
-      <field name="name">Environmental Aspect</field>
-      <field name="type">content</field>
-      <field name="parent_id" ref="document_page_group_environmental_aspect"/>
       <field name="content">
         <![CDATA[
 <h1>Activity</h1>
