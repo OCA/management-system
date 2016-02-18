@@ -55,7 +55,7 @@ addon | version | summary
 [mgmtsystem_audit_audittrail](mgmtsystem_audit_audittrail/) | 1.0 (unported) | Management System - Audits Audit Trail tracking
 [mgmtsystem_claim_audittrail](mgmtsystem_claim_audittrail/) | 1.0 (unported) | Management System - Claims Audit Trail tracking
 [mgmtsystem_hazard_audittrail](mgmtsystem_hazard_audittrail/) | 1.0 (unported) | Management System - Hazards Audit Trail tracking
-[mgmtsystem_kpi](mgmtsystem_kpi/) | 1.1 (unported) | Key Performance Indicator
+[mgmtsystem_kpi](mgmtsystem_kpi/) | 7.0.1.1.1 (unported) | Key Performance Indicator
 [mgmtsystem_nonconformity_deptm](mgmtsystem_nonconformity_deptm/) | 1.0 (unported) | Management System Nonconformity - Department
 [mgmtsystem_review_audittrail](mgmtsystem_review_audittrail/) | 1.0 (unported) | Management System - Reviews Audit Trail tracking
 
