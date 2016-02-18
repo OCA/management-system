@@ -48,7 +48,7 @@ addon | version | summary
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 1.1 (unported) | Management System - Hazard
 [mgmtsystem_hazard_audittrail](mgmtsystem_hazard_audittrail/) | 1.0 (unported) | Management System - Hazards Audit Trail tracking
 [mgmtsystem_health_safety](mgmtsystem_health_safety/) | 1.0 (unported) | Health and Safety Management System
-[mgmtsystem_kpi](mgmtsystem_kpi/) | 1.1 (unported) | Key Performance Indicator
+[mgmtsystem_kpi](mgmtsystem_kpi/) | 7.0.1.1.1 (unported) | Key Performance Indicator
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 8.0.1.2.0 (unported) | Management System - Nonconformity
 [mgmtsystem_nonconformity_analytic](mgmtsystem_nonconformity_analytic/) | 8.0.1.0.0 (unported) | Management System Nonconformity - Analytic Account
 [mgmtsystem_nonconformity_claim](mgmtsystem_nonconformity_claim/) | 8.0.1.0.0 (unported) | Management System - Claims and Nonconformities
