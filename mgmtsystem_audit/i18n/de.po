@@ -4,13 +4,14 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
+# Rudolf Schnapka <rs@techno-flex.de>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-13 19:15+0000\n"
-"PO-Revision-Date: 2015-11-25 09:48+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2016-01-09 19:32+0000\n"
+"PO-Revision-Date: 2016-02-23 12:31+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-management-system-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +30,7 @@ msgstr "Prüfung"
 #: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
 #: field:mgmtsystem.audit,user_id:0
 msgid "Audit Manager"
-msgstr ""
+msgstr "Audit-Manager"
 
 #. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.report:0
@@ -40,7 +41,7 @@ msgstr "Prüfbericht"
 #: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:104
 #, python-format
 msgid "Audit closed"
-msgstr ""
+msgstr "Audit abgeschlossen"
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
@@ -92,7 +93,7 @@ msgstr "Abgeschlossen"
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_filter
 msgid "Closed Audits"
-msgstr ""
+msgstr "Geschlossene Audits"
 
 #. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.verificationlist:0
@@ -135,7 +136,7 @@ msgstr "Angelegt durch"
 #: field:mgmtsystem.audit,create_date:0
 #: field:mgmtsystem.verification.line,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Angelegt am"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,date:0
@@ -145,7 +146,7 @@ msgstr "Datum"
 #. module: mgmtsystem_audit
 #: help:mgmtsystem.audit,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Datum der letzten Meldung zu diesem Datensatz."
 
 #. module: mgmtsystem_audit
 #: report:mgmtsystem.audit.report:0 report:mgmtsystem.audit.verificationlist:0
@@ -155,25 +156,25 @@ msgstr "Datum:"
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "Follower"
 
 #. module: mgmtsystem_audit
 #: help:mgmtsystem.audit,message_summary:0
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr ""
+msgstr "Beinhaltet die Meldungsübersicht (Anzahl Nachrichten, ...). Diese liegt in HTML vor, um direkt in Kanban-Sichten eingesetzt zu werden."
 
 #. module: mgmtsystem_audit
 #: field:copy.verification.lines,id:0 field:mgmtsystem.audit,id:0
 #: field:mgmtsystem.verification.line,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: mgmtsystem_audit
 #: help:mgmtsystem.audit,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Wenn angewählt, erfordern neue Meldungen Ihre Aufmerksamkeit,"
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
@@ -189,7 +190,7 @@ msgstr "Verbesserungsmöglichkeiten"
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_is_follower:0
 msgid "Is a Follower"
-msgstr ""
+msgstr "Ist ein Follower"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.verification.line,is_conformed:0
@@ -199,31 +200,31 @@ msgstr "Ist Eingehalten"
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_last_post:0
 msgid "Last Message Date"
-msgstr ""
+msgstr "Letztes Meldungsdatum"
 
 #. module: mgmtsystem_audit
 #: field:copy.verification.lines,write_uid:0
 #: field:mgmtsystem.audit,write_uid:0
 #: field:mgmtsystem.verification.line,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Zuletzt aktualisiert durch"
 
 #. module: mgmtsystem_audit
 #: field:copy.verification.lines,write_date:0
 #: field:mgmtsystem.audit,write_date:0
 #: field:mgmtsystem.verification.line,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Zuletzt aktualisiert am"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_ids:0
 msgid "Messages"
-msgstr ""
+msgstr "Meldungen"
 
 #. module: mgmtsystem_audit
 #: help:mgmtsystem.audit,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "Meldungen und Kommunikationsverlauf"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,name:0
@@ -239,7 +240,7 @@ msgstr "Nichteinhaltungen"
 #. module: mgmtsystem_audit
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
 msgid "Nonconformity"
-msgstr ""
+msgstr "Mängelprüfung"
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_filter
@@ -261,7 +262,7 @@ msgstr "Zu verbessernde Punkte"
 #. module: mgmtsystem_audit
 #: model:ir.actions.server,name:mgmtsystem_audit.action_email_prepare_to_audit
 msgid "Prepare to audit"
-msgstr ""
+msgstr "Vorbereitung zum Audit"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_report
@@ -298,12 +299,12 @@ msgstr "Verweis:"
 #: view:mgmtsystem.nonconformity:mgmtsystem_audit.view_mgmtsystem_nonconformity_form
 #: field:mgmtsystem.nonconformity,audit_ids:0
 msgid "Related Audits"
-msgstr ""
+msgstr "Zugehörige Audits"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.server,name:mgmtsystem_audit.action_email_send_verification_list
 msgid "Send Verification List"
-msgstr ""
+msgstr "Sende Prüfliste"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.verification.line,seq:0
@@ -329,12 +330,12 @@ msgstr "Bedeutende Punkte"
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_summary:0
 msgid "Summary"
-msgstr ""
+msgstr "Übersicht"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,system_id:0
 msgid "System"
-msgstr ""
+msgstr "System"
 
 #. module: mgmtsystem_audit
 #: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
@@ -345,12 +346,12 @@ msgstr "Zu verbessernde Punkte"
 #: code:addons/mgmtsystem_audit/report/verification_list.py:48
 #, python-format
 msgid "Undefined"
-msgstr ""
+msgstr "Undefiniert"
 
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Ungelesene Meldungen"
 
 #. module: mgmtsystem_audit
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_verification_line
@@ -375,12 +376,12 @@ msgstr "Kontroll-Liste"
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,website_message_ids:0
 msgid "Website Messages"
-msgstr ""
+msgstr "Webseiten-Meldungen"
 
 #. module: mgmtsystem_audit
 #: help:mgmtsystem.audit,website_message_ids:0
 msgid "Website communication history"
-msgstr ""
+msgstr "Webseiten-Kommunikationsverlauf"
 
 #. module: mgmtsystem_audit
 #: view:copy.verification.lines:mgmtsystem_audit.copy_verification_lines_form_view

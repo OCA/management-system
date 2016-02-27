@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-13 19:15+0000\n"
-"PO-Revision-Date: 2015-11-25 09:48+0000\n"
+"POT-Creation-Date: 2016-01-09 19:32+0000\n"
+"PO-Revision-Date: 2016-02-23 13:01+0000\n"
 "Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-management-system-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -57,12 +57,12 @@ msgstr "Maßnahmenart"
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Actions"
-msgstr ""
+msgstr "Aktionen"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,active:0
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
@@ -104,7 +104,7 @@ msgstr "Forderungsinhalt"
 #. module: mgmtsystem_claim
 #: model:ir.model,name:mgmtsystem_claim.model_mgmtsystem_claim_stage
 msgid "Claim stages"
-msgstr ""
+msgstr "Forderungsstufen"
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
@@ -134,7 +134,7 @@ msgstr "Abschluss"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim.stage,case_default:0
 msgid "Common to All Teams"
-msgstr ""
+msgstr "Allen Teams gemein"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,company_id:0
@@ -155,7 +155,7 @@ msgstr "Angelegt durch"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim.stage,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Angelegt am"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,create_date:0
@@ -175,7 +175,7 @@ msgstr "Abschlußdatum"
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Datum der letzten Meldung zu diesem Datensatz."
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
@@ -196,7 +196,7 @@ msgstr "Beschreibung"
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim,email_from:0
 msgid "Destination email for email gateway."
-msgstr ""
+msgstr "Ziel-Emailadresse für dieses Email-Gateway."
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
@@ -216,7 +216,7 @@ msgstr "Nachverfolgung"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "Follower"
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
@@ -233,51 +233,51 @@ msgstr "Hoch"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr ""
+msgstr "Beinhaltet die Meldungsübersicht (Anzahl Nachrichten, ...). Diese liegt in HTML vor, um direkt in Kanban-Sichten eingesetzt zu werden."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,id:0 field:mgmtsystem.claim.stage,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Wenn angewählt, erfordern neue Meldungen Ihre Aufmerksamkeit,"
 
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim.stage,case_default:0
 msgid ""
 "If you check this field, this stage will be proposed by default on each "
 "sales team. It will not assign this stage to existing teams."
-msgstr ""
+msgstr "Wenn Sie dieses Feld anwählen, wird diese Stufe als Vorgabe zu jedem Verkaufsteam vorgeschlagen. Sie wird nicht zu bestehenden Teams hinzugefügt."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,message_is_follower:0
 msgid "Is a Follower"
-msgstr ""
+msgstr "Ist ein Follower"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,message_last_post:0
 msgid "Last Message Date"
-msgstr ""
+msgstr "Letztes Meldungsdatum"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,write_uid:0 field:mgmtsystem.claim.stage,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Zuletzt aktualisiert durch"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim.stage,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Zuletzt aktualisiert am"
 
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim.stage,section_ids:0
 msgid ""
 "Link between stages and sales teams. When set, this limitate the current "
 "stage to the selected sales teams."
-msgstr ""
+msgstr "Verknüpfung zwischen Stufen und Verkaufsteams. Wenn gesetzt, wird diese Stufe auf gewählte Verkaufsteams beschränkt."
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
@@ -292,7 +292,7 @@ msgstr "Meldungen"
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "Meldungen und Kommunikationsverlauf"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,action_next:0
@@ -391,7 +391,7 @@ msgstr "Verantwortlicher Benutzer"
 msgid ""
 "Responsible sales team. Define Responsible user and Email account for mail "
 "gateway."
-msgstr ""
+msgstr "Verantwortliches Verkaufsteam. Lege verantwortlichen Benutzer und Email-Adresse für Email-Gateway fest."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,cause:0
@@ -416,12 +416,12 @@ msgstr "Forderungen durchsuchen"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim.stage,section_ids:0
 msgid "Sections"
-msgstr ""
+msgstr "Abschnitte"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim.stage,sequence:0
 msgid "Sequence"
-msgstr ""
+msgstr "Reihenfolge"
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
@@ -437,7 +437,7 @@ msgstr "Stufe"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim.stage,name:0
 msgid "Stage Name"
-msgstr ""
+msgstr "Stufenbezeichnung"
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.act_window,name:mgmtsystem_claim.mgmtsystem_claim_stage_action
@@ -450,7 +450,7 @@ msgstr "Stufen"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,message_summary:0
 msgid "Summary"
-msgstr ""
+msgstr "Übersicht"
 
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim,email_cc:0
@@ -479,7 +479,7 @@ msgstr "Nicht zugeordnete Forderungen"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Ungelesene Meldungen"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,write_date:0
@@ -489,7 +489,7 @@ msgstr "Aktualisierungsdatum"
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim.stage,sequence:0
 msgid "Used to order stages. Lower is better."
-msgstr ""
+msgstr "Verwendet, um Stufen zu sortieren. Niedriger ist besser."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,email_cc:0
@@ -499,12 +499,12 @@ msgstr "Emails der Beobachter"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,website_message_ids:0
 msgid "Website Messages"
-msgstr ""
+msgstr "Webseiten-Meldungen"
 
 #. module: mgmtsystem_claim
 #: help:mgmtsystem.claim,website_message_ids:0
 msgid "Website communication history"
-msgstr ""
+msgstr "Webseiten-Kommunikationsverlauf"
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.act_window,name:mgmtsystem_claim.action_mgmtsystem_claim

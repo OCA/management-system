@@ -4,13 +4,14 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
+# Rudolf Schnapka <rs@techno-flex.de>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-13 19:15+0000\n"
-"PO-Revision-Date: 2015-11-25 09:48+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2016-01-09 19:32+0000\n"
+"PO-Revision-Date: 2016-02-23 13:00+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-management-system-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,61 +22,62 @@ msgstr ""
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_action
 msgid "Action"
-msgstr ""
+msgstr "Handlung"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Action Plan"
-msgstr ""
+msgstr "Aktionsplan"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:306
 #, python-format
 msgid "Action Plan Approved"
-msgstr ""
+msgstr "Aktionsplan freigegeben"
 
 #. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 #: field:mgmtsystem.nonconformity,action_comments:0
 msgid "Action Plan Comments"
-msgstr ""
+msgstr "Aktionsplanbemerkungen"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,actions_date:0
 msgid "Action Plan Date"
-msgstr ""
+msgstr "Aktionsplan-Datum"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,actions_user_id:0
 msgid "Action Plan by"
-msgstr ""
+msgstr "Aktionsplanung durch"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:294
 #, python-format
 msgid "Action plan is already approved."
-msgstr ""
+msgstr "Aktionsplan ist bereits freigegeben."
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:319
 #, python-format
 msgid "Action plan must be approved before opening."
-msgstr ""
+msgstr "Aktionsplan muß vor Eröffnung freigegeben sein."
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 #: field:mgmtsystem.nonconformity,action_ids:0
 msgid "Actions"
-msgstr ""
+msgstr "Aktionen"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity.severity,active:0
 msgid "Active?"
-msgstr ""
+msgstr "Aktiv?"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Add a description ..."
-msgstr ""
+msgstr "Beschreibung hinzufügen..."
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:34
@@ -93,45 +95,45 @@ msgstr "Analyse"
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:264
 #, python-format
 msgid "Analysis Approved"
-msgstr ""
+msgstr "Analyse freigegeben"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Analysis Confirmation"
-msgstr ""
+msgstr "Analysebestätigung"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,analysis_date:0
 msgid "Analysis Date"
-msgstr ""
+msgstr "Analysedatum"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:298
 #, python-format
 msgid "Analysis approved before the review confirmation."
-msgstr ""
+msgstr "Analyse vor Bestätigung des Reviews freigegeben."
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,analysis_user_id:0
 msgid "Analysis by"
-msgstr ""
+msgstr "Analyse durch"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:253
 #, python-format
 msgid "Analysis is already approved."
-msgstr ""
+msgstr "Analyse ist bereits freigegeben."
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:274
 #, python-format
 msgid "Analysis must be performed before submitting to approval."
-msgstr ""
+msgstr "Analyse muß vor Einreichen zur Freigabe durchgeführt worden sein."
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Approve"
-msgstr ""
+msgstr "Freigeben"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
@@ -141,29 +143,29 @@ msgstr "Verfasser"
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.bad_communication
 msgid "Bad communication"
-msgstr ""
+msgstr "Schlechte Kommunikation"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.bad_partner_relation
 msgid "Bad customer/supplier relation"
-msgstr ""
+msgstr "Schlechte Kunden-/Lieferantenbeziehung"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.badly_defined_need
 msgid "Badly defined need"
-msgstr ""
+msgstr "Schlecht formulierter Bedarf"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:38
 #: selection:mgmtsystem.nonconformity,state:0
 #, python-format
 msgid "Cancelled"
-msgstr ""
+msgstr "Storniert"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,cause_ids:0
@@ -188,7 +190,7 @@ msgstr "Ursachen"
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Causes and Analysis"
-msgstr ""
+msgstr "Ursachen und Wirkung"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity.cause:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_cause_form
@@ -198,22 +200,22 @@ msgstr "Ursachen des Mangels"
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity.cause,child_ids:0
 msgid "Child Causes"
-msgstr ""
+msgstr "Untergeordnete Ursachen"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity.origin,child_ids:0
 msgid "Childs"
-msgstr ""
+msgstr "Untergeordnete"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity
 msgid "Claims and Nonconformities"
-msgstr ""
+msgstr "Beanstandungen und Mängel"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list
 msgid "Claims and Nonconformities."
-msgstr ""
+msgstr "Beanstandungen und Mängel."
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
@@ -231,12 +233,12 @@ msgstr "Abgeschlossen"
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Closed Nonconformities"
-msgstr ""
+msgstr "Geschlossene Mängel"
 
 #. module: mgmtsystem_nonconformity
 #: help:mgmtsystem.nonconformity,action_comments:0
 msgid "Comments on the action plan."
-msgstr ""
+msgstr "Bemerkungen zum Aktionsplan."
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,company_id:0
@@ -246,12 +248,12 @@ msgstr "Unternehmen"
 #. module: mgmtsystem_nonconformity
 #: help:mgmtsystem.nonconformity,evaluation_comments:0
 msgid "Conclusions from the last effectiveness evaluation."
-msgstr ""
+msgstr "Folgerungen aus letzter Effektivitätsbewertung."
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,corrective_action_id:0
 msgid "Corrective action"
-msgstr ""
+msgstr "Korrekturmaßnahme"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,create_uid:0
@@ -267,7 +269,7 @@ msgstr "Angelegt durch"
 #: field:mgmtsystem.nonconformity.origin,create_date:0
 #: field:mgmtsystem.nonconformity.severity,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Angelegt am"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,date:0
@@ -277,13 +279,13 @@ msgstr "Datum"
 #. module: mgmtsystem_nonconformity
 #: help:mgmtsystem.nonconformity,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Datum der letzten Meldung zu diesem Datensatz."
 
 #. module: mgmtsystem_nonconformity
 #: help:mgmtsystem.nonconformity.cause,sequence:0
 #: help:mgmtsystem.nonconformity.origin,sequence:0
 msgid "Defines the order to present items"
-msgstr ""
+msgstr "Legt die Reihenfolge vorhandener Elemente fest"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
@@ -297,7 +299,7 @@ msgstr "Beschreibung"
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_dr
 msgid "Direction Review"
-msgstr ""
+msgstr "Führungsreview"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:33
@@ -305,60 +307,61 @@ msgstr ""
 #: selection:mgmtsystem.nonconformity,state:0
 #, python-format
 msgid "Draft"
-msgstr ""
+msgstr "Entwurf"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Draft/New nonconformities"
-msgstr ""
+msgstr "Entwurf/Neue Mängel"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:346
 #, python-format
 msgid "Effectiveness Evaluation Approved"
-msgstr ""
+msgstr "Effektivitätsbewertung freigegeben"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Effectiveness Review"
-msgstr ""
+msgstr "Effektivitätsreview"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:371
 #, python-format
 msgid "Effectiveness evaluation must be performed before closing."
-msgstr ""
+msgstr "Effektivitätsbewertung muss vor Abschluss durchgeführt worden sein."
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_cause.py:68
 #, python-format
 msgid "Error! Cannot create recursive cycle."
-msgstr ""
+msgstr "Fehler. Kann Zyklen nicht rekursiv anlegen."
 
 #. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 #: field:mgmtsystem.nonconformity,evaluation_comments:0
 msgid "Evaluation Comments"
-msgstr ""
+msgstr "Bewertungsbemerkungen"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,evaluation_date:0
 msgid "Evaluation Date"
-msgstr ""
+msgstr "Bewertungsdatum"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,evaluation_user_id:0
 msgid "Evaluation by"
-msgstr ""
+msgstr "Bewertung durch"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_extenal_audit
 msgid "External Audit"
-msgstr ""
+msgstr "Externer Audit"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_external_client
 msgid "External client complaint"
-msgstr ""
+msgstr "Externe Kundenbeschwerde"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,author_user_id:0
@@ -368,30 +371,30 @@ msgstr "Ausgefüllt durch"
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "Follower"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity.cause,parent_id:0
 #: field:mgmtsystem.nonconformity.origin,parent_id:0
 msgid "Group"
-msgstr ""
+msgstr "Gruppe"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Group By..."
-msgstr ""
+msgstr "Gruppiert nach..."
 
 #. module: mgmtsystem_nonconformity
 #: help:mgmtsystem.nonconformity,message_summary:0
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr ""
+msgstr "Beinhaltet die Meldungsübersicht (Anzahl Nachrichten, ...). Diese liegt in HTML vor, um direkt in Kanban-Sichten eingesetzt zu werden."
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.hr_unavailable_inadequate
 msgid "Human resource not available or inadequate"
-msgstr ""
+msgstr "Personalressource nicht verfügbar oder unpassend"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,id:0
@@ -404,7 +407,7 @@ msgstr "Kennung"
 #. module: mgmtsystem_nonconformity
 #: help:mgmtsystem.nonconformity,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Wenn angewählt, erfordern neue Meldungen Ihre Aufmerksamkeit,"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,immediate_action_id:0
@@ -415,7 +418,7 @@ msgstr "Sofort-Maßnahmen"
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:363
 #, python-format
 msgid "Immediate action from analysis has not been closed."
-msgstr ""
+msgstr "Sofortmaßnahme aus Analyse noch nicht abgeschlossen."
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:36
@@ -423,43 +426,43 @@ msgstr ""
 #: selection:mgmtsystem.nonconformity,state:0
 #, python-format
 msgid "In Progress"
-msgstr ""
+msgstr "In Bearbeitung"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.information_not_available
 msgid "Information not available"
-msgstr ""
+msgstr "Information nicht verfügbar"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.instruction_not_respected
 msgid "Instruction not respected"
-msgstr ""
+msgstr "Anweisung nicht befolgt"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.demo_origin
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_internal_audit
 msgid "Internal Audit"
-msgstr ""
+msgstr "Interner Audit"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_internal_client
 msgid "Internal client complaint"
-msgstr ""
+msgstr "Interne Kundenbschwerde"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,message_is_follower:0
 msgid "Is a Follower"
-msgstr ""
+msgstr "Ist ein Follower"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.demo_cause
 msgid "Lack of expertise"
-msgstr ""
+msgstr "Mangel an Expertise"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,message_last_post:0
 msgid "Last Message Date"
-msgstr ""
+msgstr "Letztes Meldungsdatum"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,write_uid:0
@@ -467,7 +470,7 @@ msgstr ""
 #: field:mgmtsystem.nonconformity.origin,write_uid:0
 #: field:mgmtsystem.nonconformity.severity,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Zuletzt aktualisiert durch"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,write_date:0
@@ -475,12 +478,12 @@ msgstr ""
 #: field:mgmtsystem.nonconformity.origin,write_date:0
 #: field:mgmtsystem.nonconformity.severity,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Zuletzt aktualisiert am"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_maj
 msgid "Major"
-msgstr ""
+msgstr "Gravierend"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
@@ -491,32 +494,32 @@ msgstr "Vorgesetzter"
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,message_ids:0
 msgid "Messages"
-msgstr ""
+msgstr "Meldungen"
 
 #. module: mgmtsystem_nonconformity
 #: help:mgmtsystem.nonconformity,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "Meldungen und Kommunikationsverlauf"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_min
 msgid "Minor"
-msgstr ""
+msgstr "Geringwertig"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,name:0
 msgid "Name"
-msgstr ""
+msgstr "Bezeichnung"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_tree
 msgid "Non-Conformities"
-msgstr ""
+msgstr "Mängel"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Non-Conformity"
-msgstr ""
+msgstr "Mangel"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities
@@ -527,23 +530,23 @@ msgstr "Nichteinhaltungen"
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Nonconformities pending review"
-msgstr ""
+msgstr "Mängelprüfung ausstehend"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity
 msgid "Nonconformity"
-msgstr ""
+msgstr "Mängelprüfung"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.action,nonconformity_immediate_id:0
 msgid "Nonconformity immediate id"
-msgstr ""
+msgstr "Mangel unmittelbar ID"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:367
 #, python-format
 msgid "Not all actions have been closed."
-msgstr ""
+msgstr "Nicht alle Maßnahmen abgeschlossen."
 
 #. module: mgmtsystem_nonconformity
 #: view:board.board:mgmtsystem_nonconformity.board_mgmtsystem_nonconformity_form
@@ -579,19 +582,19 @@ msgstr "Mangelursachen"
 #: field:mgmtsystem.nonconformity.cause,parent_left:0
 #: field:mgmtsystem.nonconformity.origin,parent_left:0
 msgid "Parent Left"
-msgstr ""
+msgstr "Übergeordnet links"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity.cause,parent_right:0
 #: field:mgmtsystem.nonconformity.origin,parent_right:0
 msgid "Parent Right"
-msgstr ""
+msgstr "Übergeordnet rechts"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 #: field:mgmtsystem.nonconformity,partner_id:0
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:35
@@ -600,23 +603,23 @@ msgstr ""
 #: selection:mgmtsystem.nonconformity,state:0
 #, python-format
 msgid "Pending Approval"
-msgstr ""
+msgstr "Ausstehende freigabe"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Plan Review"
-msgstr ""
+msgstr "Prüfungsplan"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:257
 #, python-format
 msgid "Please provide an analysis before approving."
-msgstr ""
+msgstr "Bitte stellen Sie eine Analyse vor Freigabe."
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,preventive_action_id:0
 msgid "Preventive action"
-msgstr ""
+msgstr "Vorbeugende Maßnahme"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
@@ -627,12 +630,12 @@ msgstr "Ablauf"
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.procedure_not_defined
 msgid "Procedure not defined"
-msgstr ""
+msgstr "Prozedur nicht definiert"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.procedure_not_respected
 msgid "Procedure not respected"
-msgstr ""
+msgstr "Prozedur nicht befolgt"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
@@ -642,12 +645,12 @@ msgstr "Vorgänge"
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_process
 msgid "Process Execution"
-msgstr ""
+msgstr "Prozessausführung"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_qc
 msgid "Quality Committee"
-msgstr ""
+msgstr "Qualitätsausschuss"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,ref:0
@@ -658,22 +661,22 @@ msgstr "Bezug"
 #: field:mgmtsystem.nonconformity.cause,ref_code:0
 #: field:mgmtsystem.nonconformity.origin,ref_code:0
 msgid "Reference Code"
-msgstr ""
+msgstr "Referenzschlüssel"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.action:mgmtsystem_nonconformity.view_mgmtsystem_action_form
 msgid "Related Nonconformities"
-msgstr ""
+msgstr "Ähnliche Mängel"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,reference:0
 msgid "Related to"
-msgstr ""
+msgstr "Ähnlich zu"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Reset to New"
-msgstr ""
+msgstr "Zurücksetzen auf neu"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
@@ -684,42 +687,42 @@ msgstr "Verantwortlich"
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Send for Analysis"
-msgstr ""
+msgstr "Senden für Analyse"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Send for Review"
-msgstr ""
+msgstr "Senden für Prüfung"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity.cause,sequence:0
 #: field:mgmtsystem.nonconformity.origin,sequence:0
 #: field:mgmtsystem.nonconformity.severity,sequence:0
 msgid "Sequence"
-msgstr ""
+msgstr "Reihenfolge"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_severity_list
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_severity
 #: field:mgmtsystem.nonconformity,severity_id:0
 msgid "Severity"
-msgstr ""
+msgstr "Schweregrad"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_severity
 #: view:mgmtsystem.nonconformity.severity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_severity_form
 msgid "Severity of Complaints and Nonconformities"
-msgstr ""
+msgstr "Schweregrad von Beschwerden und Mängeln"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Sign Evaluation"
-msgstr ""
+msgstr "Bewertung abzeichnen"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Start/Open"
-msgstr ""
+msgstr "Beginnen/Öffnen"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,state:0
@@ -729,71 +732,71 @@ msgstr "Status"
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,message_summary:0
 msgid "Summary"
-msgstr ""
+msgstr "Übersicht"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 #: field:mgmtsystem.nonconformity,system_id:0
 msgid "System"
-msgstr ""
+msgstr "System"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.technical_failure
 msgid "Technical failure"
-msgstr ""
+msgstr "Technisches Versagen"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:249
 #, python-format
 msgid "This action can only be done in the Analysis state."
-msgstr ""
+msgstr "Diese Aktion darf nur im Status Analyse erfolgen."
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:338
 #, python-format
 msgid "This action can only be done in the In Progress state."
-msgstr ""
+msgstr "Diese Aktion darf nur im Status 'In Bearbeitung' erfolgen."
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:289
 #, python-format
 msgid "This action can only be done in the Pending for Approval state."
-msgstr ""
+msgstr "Diese Aktion darf nur im Status 'Erwarte Freigabe' erfolgen."
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity.severity,name:0
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_no
 msgid "Unfounded"
-msgstr ""
+msgstr "Unbegründet"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Ungelesene Meldungen"
 
 #. module: mgmtsystem_nonconformity
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "User"
-msgstr ""
+msgstr "Benutzer"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,website_message_ids:0
 msgid "Website Messages"
-msgstr ""
+msgstr "Webseiten-Meldungen"
 
 #. module: mgmtsystem_nonconformity
 #: help:mgmtsystem.nonconformity,website_message_ids:0
 msgid "Website communication history"
-msgstr ""
+msgstr "Webseiten-Kommunikationsverlauf"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
 msgid "Work conditions"
-msgstr ""
+msgstr "Arbeitsbedingungen"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.action_mgmtsystem_nonconformity
