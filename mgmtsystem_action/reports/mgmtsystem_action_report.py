@@ -28,6 +28,7 @@ class mgmtsystemt_action_report(models.Model):
         ], 'Response Type')
     action_date = fields.Datetime('Opening Date', readonly=True, select=True)
     create_date = fields.Datetime('Create Date', readonly=True, select=True)
+    opening_date = fields.Datetime('Opening Date', readonly=True, select=True)
     date_closed = fields.Datetime('Close Date', readonly=True, select=True)
     date_deadline = fields.Date('Deadline', readonly=True, select=True)
     user_id = fields.Many2one('res.users', 'User', readonly=True)
@@ -44,9 +45,9 @@ class mgmtsystemt_action_report(models.Model):
              CREATE OR REPLACE VIEW mgmtsystem_action_report AS (
                  select
                     m.id,
-                    m.opening_date as opening_date,
                     m.date_closed as date_closed,
                     m.date_deadline as date_deadline,
+                    m.opening_date as opening_date,
                     m.user_id,
                     m.stage_id,
                     m.system_id,
@@ -55,12 +56,11 @@ class mgmtsystemt_action_report(models.Model):
                     avg(extract('epoch' from (current_date-m.create_date)))/(3600*24) as  age,
                     avg(extract('epoch' from (m.opening_date-m.create_date)))/(3600*24) as  number_of_days_to_open,
                     avg(extract('epoch' from (m.date_closed-m.create_date)))/(3600*24) as  number_of_days_to_close,
-                    avg(extract('epoch' from (m.date_deadline - m.create_date)))/(3600*24) as  number_of_exceedings_days,
+                    avg(extract('epoch' from (m.date_closed - m.date_deadline)))/(3600*24) as  number_of_exceedings_days,
                     count(*) AS number_of_actions
                 from
                     mgmtsystem_action m
-                group by m.opening_date,\
-                        m.user_id,m.system_id, m.stage_id, \
+                group by m.user_id,m.system_id, m.stage_id, m.opening_date, \
                         m.create_date,m.type_action,m.date_deadline,m.date_closed, m.id
             )
             """)

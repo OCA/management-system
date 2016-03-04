@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 
-from urllib import urlencode
-from urlparse import urljoin
 from openerp import fields, models, api
-import datetime
+from datetime import datetime
 
 
 def own_company(self):
+    """Return the user company id."""
     return self.env.user.company_id.id
 
 
 class MgmtSystemAction(models.Model):
+    """Model class that manage action."""
+
     _name = "mgmtsystem.action"
     _description = "Action"
     _inherit = "crm.claim"
@@ -36,6 +37,7 @@ class MgmtSystemAction(models.Model):
 
     @api.model
     def get_default_stage(self):
+        """Return the default stage."""
         return self.env['mgmtsystem.action.stage'].search([
             ('is_starting', '=', True)
         ]).id
@@ -46,7 +48,35 @@ class MgmtSystemAction(models.Model):
         vals.update({
             'reference': self.env['ir.sequence'].get('mgmtsystem.action')
         })
-        return super(MgmtSystemAction, self).create(vals)
+        if self.opening_date in vals:
+            vals['opening_date'] = None
+        template = self.env.ref(
+            'mgmtsystem_action.email_template_new_action_reminder')
+        action = super(MgmtSystemAction, self).create(vals)
+        template.send_mail(action.id, force_send=True)
+        return action
+
+    @api.multi
+    def write(self, vals):
+        """Update user data."""
+        stage_open = self.env.ref('mgmtsystem_action.stage_open')
+        stage_close = self.env.ref('mgmtsystem_action.stage_close')
+        if vals.get('stage_id'):
+            if vals['stage_id'] == stage_open.id:
+                vals['opening_date'] = datetime.now()
+            if vals['stage_id'] == stage_close.id:
+                vals['date_closed'] = datetime.now()
+
+        result = super(MgmtSystemAction, self).write(vals)
+        return result
+
+    def send_mail_for_action(self, action):
+        """Set a document state as draft and notified the reviewers."""
+        template = self.env.ref(
+            'mgmtsystem_action.email_template_new_action_reminder')
+
+        template.send_mail(action.id, force_send=True)
+        return True
 
 #    @api.multi
 #    def message_auto_subscribe(self, updated_fields, values=None):
@@ -69,13 +99,11 @@ class MgmtSystemAction(models.Model):
                 ['is_ending', '=', False],
                 ['is_starting', '=', False]
             ]).id
-            if values['stage_id'].name == 'In Progress':
-                values['opening_date'] = datetime.now()
+
             case.write(values)
 
         return True
 
-    @api.multi
     def get_action_url(self):
         """Return action url."""
         base_url = self.env['ir.config_parameter'].get_param(
@@ -83,14 +111,25 @@ class MgmtSystemAction(models.Model):
             default='http://localhost:8069'
         )
         url = ('{}/web#db={}&id={}&model={}').format(
-                base_url,
-                self.env.cr.dbname,
-                self.id,
-                self._name
-            )
+            base_url,
+            self.env.cr.dbname,
+            self.id,
+            self._name
+        )
         return url
 
-    def create(self, cr, uid, vals, context=None):
-        if opening_date in vals:
-            vals['opening_date'] = None
-        return super(MgmtSystemAction, self).create(cr, uid, vals, context)
+    @api.model
+    def process_reminder_queue(self):
+        """Notify user when we are 10 days close to a deadline."""
+        stage_close = self.env.ref('mgmtsystem_action.stage_close')
+        action_obj = self.pool.get("mgmtsystem.action")
+        action_ids = self.pool.get("mgmtsystem.action").search(
+            self.env.cr, self.env.uid, ["&", ("stage_id", "!=", stage_close.id),("stage_id", "!=", stage_close.id)])
+
+        for action_id in action_ids:
+            action = action_obj.browse(self.env.cr, self.env.uid, action_id, context=self.env.context)
+            # if ((action.date_deadline - current_date) / (3600 * 24)) and
+            # action.stage_id != stage_close.id:
+            template = self.env.ref(
+                'mgmtsystem_action.action_email_template_reminder_action')
+            template.send_mail(action.id, force_send=True)
