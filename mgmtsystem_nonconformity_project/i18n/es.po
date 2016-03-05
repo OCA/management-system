@@ -1,6 +1,6 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-# * mgmtsystem_nonconformity_deptm
+# * mgmtsystem_nonconformity_project
 # 
 # Translators:
 # Gustavo Salgado Ocampo <gustavo2840@gmail.com>, 2016
@@ -18,17 +18,24 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: mgmtsystem_nonconformity_deptm
-#: field:mgmtsystem.nonconformity,department_id:0
-msgid "Department"
-msgstr "Departamento"
+#. module: mgmtsystem_nonconformity_project
+#: model:ir.model,name:mgmtsystem_nonconformity_project.model_mgmtsystem_action
+#: selection:mgmtsystem.action,action_type:0
+msgid "Action"
+msgstr "Acción"
 
-#. module: mgmtsystem_nonconformity_deptm
-#: model:ir.model,name:mgmtsystem_nonconformity_deptm.model_mgmtsystem_nonconformity
-msgid "Nonconformity of the management system"
-msgstr "No conformidades en el Sistema de Gestión"
+#. module: mgmtsystem_nonconformity_project
+#: field:mgmtsystem.action,action_type:0
+msgid "Action Type"
+msgstr "Tipo Acción"
 
-#. module: mgmtsystem_nonconformity_deptm
-#: field:mgmtsystem.nonconformity,superior_user_id:0
-msgid "Top Manager"
-msgstr "Top Gestor"
+#. module: mgmtsystem_nonconformity_project
+#: selection:mgmtsystem.action,action_type:0
+#: field:mgmtsystem.action,project_id:0
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: mgmtsystem_nonconformity_project
+#: field:mgmtsystem.action,complete_name:0
+msgid "Complete Name"
+msgstr "Nombre Completo"
