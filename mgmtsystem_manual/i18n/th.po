@@ -1,29 +1,45 @@
-# Thai translation for openerp-mgmtsystem
-# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
-# This file is distributed under the same license as the openerp-mgmtsystem package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
-#
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_manual
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: openerp-mgmtsystem\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-09-29 21:28+0000\n"
-"PO-Revision-Date: 2013-06-18 17:32+0000\n"
-"Last-Translator: Sumonchai ( เหลา ) <sumonchai@gmail.com>\n"
-"Language-Team: Thai <th@li.org>\n"
+"Project-Id-Version: management-system (9.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-05 01:40+0000\n"
+"PO-Revision-Date: 2016-03-04 19:39+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Thai (http://www.transifex.com/oca/OCA-management-system-9-0/language/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-24 06:29+0000\n"
-"X-Generator: Launchpad (build 16985)\n"
+"Content-Transfer-Encoding: \n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#. module: mgmtsystem_manuals
-#: model:ir.actions.act_window,help:mgmtsystem_manuals.action_manuals
+#. module: mgmtsystem_manual
+#: model:ir.ui.menu,name:mgmtsystem_manual.menu_mgmtsystem_categories
+msgid "Categories"
+msgstr ""
+
+#. module: mgmtsystem_manual
+#: model:ir.model.fields,field_description:mgmtsystem_manual.field_mgmtsystem_system_manual
+msgid "Manual"
+msgstr ""
+
+#. module: mgmtsystem_manual
+#: model:ir.actions.act_window,name:mgmtsystem_manual.action_manuals
+#: model:ir.ui.menu,name:mgmtsystem_manual.menu_mgmtsystem_manuals_manuals
+msgid "Manuals"
+msgstr "คู่มือการใช้งาน"
+
+#. module: mgmtsystem_manual
+#: model:ir.actions.act_window,help:mgmtsystem_manual.action_manuals
 msgid "Manuals of your management systems."
 msgstr "คู่มือระบบการจัดการของท่าน"
 
-#. module: mgmtsystem_manuals
-#: model:ir.actions.act_window,name:mgmtsystem_manuals.action_manuals
-#: model:ir.ui.menu,name:mgmtsystem_manuals.menu_mgmtsystem_manuals_manuals
-msgid "Manuals"
-msgstr "คู่มือการใช้งาน"
+#. module: mgmtsystem_manual
+#: model:ir.model,name:mgmtsystem_manual.model_mgmtsystem_system
+msgid "System"
+msgstr ""
