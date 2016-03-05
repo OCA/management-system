@@ -1,32 +1,45 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* mgmtsystem_manuals
-#
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015.
+# * mgmtsystem_manual
+# 
+# Translators:
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.0.3\n"
-"Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2011-09-29 21:28+0000\n"
-"PO-Revision-Date: 2015-05-04 17:49+0100\n"
-"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
-"Language-Team: Slovenian <translate@matmoz.si>\n"
+"Project-Id-Version: management-system (9.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-05 01:40+0000\n"
+"PO-Revision-Date: 2016-03-04 19:39+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-management-system-9-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
 "Language: sl\n"
-"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#. module: mgmtsystem_manuals
-#: model:ir.actions.act_window,help:mgmtsystem_manuals.action_manuals
-msgid "Manuals of your management systems."
-msgstr "Priročniki sistemov upravljanja."
+#. module: mgmtsystem_manual
+#: model:ir.ui.menu,name:mgmtsystem_manual.menu_mgmtsystem_categories
+msgid "Categories"
+msgstr ""
 
-#. module: mgmtsystem_manuals
-#: model:ir.actions.act_window,name:mgmtsystem_manuals.action_manuals
-#: model:ir.ui.menu,name:mgmtsystem_manuals.menu_mgmtsystem_manuals_manuals
+#. module: mgmtsystem_manual
+#: model:ir.model.fields,field_description:mgmtsystem_manual.field_mgmtsystem_system_manual
+msgid "Manual"
+msgstr ""
+
+#. module: mgmtsystem_manual
+#: model:ir.actions.act_window,name:mgmtsystem_manual.action_manuals
+#: model:ir.ui.menu,name:mgmtsystem_manual.menu_mgmtsystem_manuals_manuals
 msgid "Manuals"
 msgstr "Priročniki"
 
+#. module: mgmtsystem_manual
+#: model:ir.actions.act_window,help:mgmtsystem_manual.action_manuals
+msgid "Manuals of your management systems."
+msgstr "Priročniki sistemov upravljanja."
 
+#. module: mgmtsystem_manual
+#: model:ir.model,name:mgmtsystem_manual.model_mgmtsystem_system
+msgid "System"
+msgstr "Sistem"
