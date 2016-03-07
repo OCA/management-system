@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openerp import fields, models, api
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 def own_company(self):
@@ -121,15 +121,14 @@ class MgmtSystemAction(models.Model):
     @api.model
     def process_reminder_queue(self):
         """Notify user when we are 10 days close to a deadline."""
+        cur_date = datetime.now().date() + timedelta(days=10)
         stage_close = self.env.ref('mgmtsystem_action.stage_close')
         action_obj = self.pool.get("mgmtsystem.action")
         action_ids = self.pool.get("mgmtsystem.action").search(
-            self.env.cr, self.env.uid, ["&", ("stage_id", "!=", stage_close.id),("stage_id", "!=", stage_close.id)])
+            self.env.cr, self.env.uid, ["&", ("stage_id", "!=", stage_close.id), ("date_deadline", "=", cur_date)])
 
         for action_id in action_ids:
             action = action_obj.browse(self.env.cr, self.env.uid, action_id, context=self.env.context)
-            # if ((action.date_deadline - current_date) / (3600 * 24)) and
-            # action.stage_id != stage_close.id:
             template = self.env.ref(
                 'mgmtsystem_action.action_email_template_reminder_action')
             template.send_mail(action.id, force_send=True)
