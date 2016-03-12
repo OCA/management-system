@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: management-system (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-21 15:02+0000\n"
-"PO-Revision-Date: 2015-05-26 16:24+0000\n"
+"POT-Creation-Date: 2016-03-05 20:29+0000\n"
+"PO-Revision-Date: 2016-03-05 20:32+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-management-system-7-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -28,16 +28,21 @@ msgid "Management System Probability"
 msgstr "Management System Probability"
 
 #. module: mgmtsystem_probability
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.view_mgmtsystem_probability_hazard_2
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.view_mgmtsystem_probability_security_2
+msgid "Significant (every year)"
+msgstr "Significant (every year)"
+
+#. module: mgmtsystem_probability
 #: field:mgmtsystem.probability,description:0
 msgid "Description"
 msgstr "Description"
 
 #. module: mgmtsystem_probability
-#: model:ir.actions.act_window,name:mgmtsystem_probability.open_mgmtsystem_probability_list
-#: model:ir.ui.menu,name:mgmtsystem_probability.menu_open_mgmtsystem_probability
-#: view:mgmtsystem.probability:0
-msgid "Probability"
-msgstr "Probability"
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.view_mgmtsystem_probability_hazard_1
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.view_mgmtsystem_probability_security_1
+msgid "Minimum (every decade)"
+msgstr "Minimum (every decade)"
 
 #. module: mgmtsystem_probability
 #: view:mgmtsystem.probability:0
@@ -45,15 +50,34 @@ msgid "Probabilities"
 msgstr "Probabilities"
 
 #. module: mgmtsystem_probability
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.data_mgmtsystem_probability_hazard_4
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.data_mgmtsystem_probability_security_4
+msgid "Maximum (every week)"
+msgstr "Maximum (every week)"
+
+#. module: mgmtsystem_probability
 #: field:mgmtsystem.probability,value:0
 msgid "Value"
 msgstr "Value"
+
+#. module: mgmtsystem_probability
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.view_mgmtsystem_probability_hazard_3
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.view_mgmtsystem_probability_security_3
+msgid "Strong (every month)"
+msgstr "Strong (every month)"
 
 #. module: mgmtsystem_probability
 #: code:addons/mgmtsystem_probability/model/mgmtsystem_probability.py:67
 #, python-format
 msgid "hazard"
 msgstr "hazard"
+
+#. module: mgmtsystem_probability
+#: model:ir.actions.act_window,name:mgmtsystem_probability.open_mgmtsystem_probability_list
+#: model:ir.ui.menu,name:mgmtsystem_probability.menu_open_mgmtsystem_probability
+#: view:mgmtsystem.probability:0
+msgid "Probability"
+msgstr "Probability"
 
 #. module: mgmtsystem_probability
 #: code:addons/mgmtsystem_probability/model/mgmtsystem_probability.py:68

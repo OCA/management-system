@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: management-system (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-21 15:03+0000\n"
-"PO-Revision-Date: 2015-05-26 16:23+0000\n"
+"POT-Creation-Date: 2016-03-05 20:29+0000\n"
+"PO-Revision-Date: 2016-03-05 20:32+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-management-system-7-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -23,9 +23,15 @@ msgid "Category"
 msgstr "Category"
 
 #. module: mgmtsystem_severity
-#: field:mgmtsystem.severity,name:0
-msgid "Name"
-msgstr "Name"
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.view_mgmtsystem_severity_hazard_2
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.view_mgmtsystem_severity_security_2
+msgid "Limited"
+msgstr "Limited"
+
+#. module: mgmtsystem_severity
+#: field:mgmtsystem.severity,description:0
+msgid "Description"
+msgstr "Description"
 
 #. module: mgmtsystem_severity
 #: model:ir.model,name:mgmtsystem_severity.model_mgmtsystem_severity
@@ -43,15 +49,22 @@ msgid "Severities"
 msgstr "Severities"
 
 #. module: mgmtsystem_severity
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.data_mgmtsystem_severity_hazard_4
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.data_mgmtsystem_severity_security_4
+msgid "Critical"
+msgstr "Critical"
+
+#. module: mgmtsystem_severity
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.view_mgmtsystem_severity_hazard_1
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.view_mgmtsystem_severity_security_1
+msgid "Negligible"
+msgstr "Negligible"
+
+#. module: mgmtsystem_severity
 #: code:addons/mgmtsystem_severity/model/mgmtsystem_severity.py:67
 #, python-format
 msgid "hazard"
 msgstr "hazard"
-
-#. module: mgmtsystem_severity
-#: field:mgmtsystem.severity,description:0
-msgid "Description"
-msgstr "Description"
 
 #. module: mgmtsystem_severity
 #: code:addons/mgmtsystem_severity/model/mgmtsystem_severity.py:68
@@ -65,3 +78,14 @@ msgstr "security"
 #: view:mgmtsystem.severity:0
 msgid "Severity"
 msgstr "Severity"
+
+#. module: mgmtsystem_severity
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.view_mgmtsystem_severity_hazard_3
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.view_mgmtsystem_severity_security_3
+msgid "Important"
+msgstr "Important"
+
+#. module: mgmtsystem_severity
+#: field:mgmtsystem.severity,name:0
+msgid "Name"
+msgstr "Name"

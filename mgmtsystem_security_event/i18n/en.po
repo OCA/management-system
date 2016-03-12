@@ -10,54 +10,54 @@ msgstr ""
 "POT-Creation-Date: 2016-03-05 20:29+0000\n"
 "PO-Revision-Date: 2016-03-05 20:32+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: French (http://www.transifex.com/oca/OCA-management-system-7-0/language/fr/)\n"
+"Language-Team: English (http://www.transifex.com/oca/OCA-management-system-7-0/language/en/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.asset.supporting,category_id:0
 msgid "Category"
-msgstr "Catégorie"
+msgstr "Category"
 
 #. module: mgmtsystem_security_event
 #: help:mgmtsystem.security.vector,residual_probability_id:0
 msgid "Probability after remediation"
-msgstr "Probabilité après remédiation"
+msgstr "Probability after remediation"
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.security.threat.source:0
 msgid "Threats Sources"
-msgstr ""
+msgstr "Threats Sources"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event.control,recovery:0
 msgid "Recovery"
-msgstr "Récupération"
+msgstr "Recovery"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event,original_probability_id:0
 #: field:mgmtsystem.security.vector,original_probability_id:0
 msgid "Original Probability"
-msgstr "Probabilité d'origine"
+msgstr "Original Probability"
 
 #. module: mgmtsystem_security_event
 #: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_threat_source
 #: view:mgmtsystem.security.threat.source:0
 msgid "Threat Source"
-msgstr ""
+msgstr "Threat Source"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.asset.primary,responsible_id:0
 msgid "Responsible"
-msgstr "Responsable"
+msgstr "Responsible"
 
 #. module: mgmtsystem_security_event
 #: constraint:mgmtsystem.risk.matrix.level:0
 msgid "You can not have overlapping risk matrix levels."
-msgstr "Vous ne pouvez pas avoir des niveaux de matrice de risque qui s'entrecroisent."
+msgstr "You can not have overlapping risk matrix levels."
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.risk.matrix,system_id:0
@@ -70,7 +70,7 @@ msgstr "Vous ne pouvez pas avoir des niveaux de matrice de risque qui s'entrecro
 #: field:mgmtsystem.security.threat.source,system_id:0
 #: field:mgmtsystem.security.vector,system_id:0
 msgid "System"
-msgstr ""
+msgstr "System"
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_security_control_list
@@ -78,24 +78,24 @@ msgstr ""
 #: view:mgmtsystem.security.event:0
 #: field:mgmtsystem.security.event,control_ids:0
 msgid "Controls"
-msgstr ""
+msgstr "Controls"
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.report.xml,name:mgmtsystem_security_event.account_report_general_ledger_webkit
 #: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_risk_matrix
 msgid "Management System Risk Matrix"
-msgstr "Matrice de risque du système de gestion"
+msgstr "Management System Risk Matrix"
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.security.event:0
 #: field:mgmtsystem.security.event,scenario_ids:0
 msgid "Scenarios"
-msgstr "Scénarios"
+msgstr "Scenarios"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event.scenario,source_id:0
 msgid "Source"
-msgstr ""
+msgstr "Source"
 
 #. module: mgmtsystem_security_event
 #: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_asset_primary
@@ -103,7 +103,7 @@ msgstr ""
 #: view:mgmtsystem.security.asset.supporting:0
 #: field:mgmtsystem.security.asset.supporting,primary_asset_ids:0
 msgid "Primary Assets"
-msgstr ""
+msgstr "Primary Assets"
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_security_event_list
@@ -111,12 +111,12 @@ msgstr ""
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_security_event
 #: view:mgmtsystem.security.event:0
 msgid "Feared Events"
-msgstr ""
+msgstr "Feared Events"
 
 #. module: mgmtsystem_security_event
 #: help:mgmtsystem.security.vector,current_probability_id:0
 msgid "Probability with existing controls"
-msgstr ""
+msgstr "Probability with existing controls"
 
 #. module: mgmtsystem_security_event
 #: selection:mgmtsystem.risk.matrix.level,color:0
@@ -127,7 +127,7 @@ msgstr "Orange"
 #: field:mgmtsystem.security.event,residual_severity_id:0
 #: field:mgmtsystem.security.vector,residual_severity_id:0
 msgid "Residual Severity"
-msgstr "Sévérité risiduelle"
+msgstr "Residual Severity"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.risk.matrix,type:0
@@ -139,12 +139,12 @@ msgstr "Type"
 #: code:addons/mgmtsystem_security_event/models/mgmtsystem_security_event_scenario.py:76
 #, python-format
 msgid "Events"
-msgstr "Événements"
+msgstr "Events"
 
 #. module: mgmtsystem_security_event
 #: selection:mgmtsystem.risk.matrix.level,color:0
 msgid "Red"
-msgstr "Rouge"
+msgstr "Red"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.asset.category,name:0
@@ -154,23 +154,23 @@ msgstr "Rouge"
 #: field:mgmtsystem.security.threat.source,name:0
 #: field:mgmtsystem.security.vector,name:0
 msgid "Name"
-msgstr "Nom"
+msgstr "Name"
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_supporting_asset_list
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_supporting_asset
 msgid "Supporting"
-msgstr ""
+msgstr "Supporting"
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.security.event.control:0
 msgid "Control Lines"
-msgstr ""
+msgstr "Control Lines"
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.risk.matrix:0
 msgid "Security Event"
-msgstr "Événement de sécurité"
+msgstr "Security Event"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.asset.primary,description:0
@@ -185,19 +185,19 @@ msgstr "Description"
 #. module: mgmtsystem_security_event
 #: help:mgmtsystem.security.vector,residual_severity_id:0
 msgid "Severity after remediation"
-msgstr "Sévérité après remédiation"
+msgstr "Severity after remediation"
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.action_risk_matrix_level
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_risk_matrix_level
 #: view:mgmtsystem.risk.matrix.level:0
 msgid "Risk matrix Levels"
-msgstr "Niveaux de matrice de risque"
+msgstr "Risk matrix Levels"
 
 #. module: mgmtsystem_security_event
 #: help:mgmtsystem.risk.matrix.level,color:0
 msgid "The color to display in the matrix"
-msgstr "La couleur à afficher dans la matrice"
+msgstr "The color to display in the matrix"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.risk.matrix,company_id:0
@@ -208,30 +208,30 @@ msgstr "La couleur à afficher dans la matrice"
 #: field:mgmtsystem.security.threat.source,company_id:0
 #: field:mgmtsystem.security.vector,company_id:0
 msgid "Company"
-msgstr "Société"
+msgstr "Company"
 
 #. module: mgmtsystem_security_event
 #: report:addons/mgmtsystem_security_event/report/risk_matrix_webkit.mako:38
 #: field:mgmtsystem.security.event,severity_id:0
 msgid "Severity"
-msgstr "Sévérité"
+msgstr "Severity"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event,current_probability_id:0
 #: field:mgmtsystem.security.vector,current_probability_id:0
 msgid "Current Probability"
-msgstr "Probabilité actuelle"
+msgstr "Current Probability"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.risk.matrix.level,probability_max:0
 msgid "Maximal Probability"
-msgstr "Profitabilité maximale"
+msgstr "Maximal Probability"
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_security_event_scenario_list
 #: view:mgmtsystem.security.event.scenario:0
 msgid "Scenario Line"
-msgstr "Ligne de scénario"
+msgstr "Scenario Line"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event.control,protection:0
@@ -244,57 +244,57 @@ msgstr "Protection"
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_category_asset
 #: view:mgmtsystem.security.asset.category:0
 msgid "Asset Categories"
-msgstr "Catégories d'actifs"
+msgstr "Asset Categories"
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.security.event:0
 #: field:mgmtsystem.security.event.control,security_event_id:0
 #: field:mgmtsystem.security.event.scenario,security_event_id:0
 msgid "Feared Event"
-msgstr ""
+msgstr "Feared Event"
 
 #. module: mgmtsystem_security_event
 #: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_event_scenario
 msgid "Security Event - Scenario Lines"
-msgstr ""
+msgstr "Security Event - Scenario Lines"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event,residual_probability_id:0
 #: field:mgmtsystem.security.vector,residual_probability_id:0
 msgid "Residual Probability"
-msgstr "Probabilité résiduelle"
+msgstr "Residual Probability"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.risk.matrix.level,probability_min:0
 msgid "Minimal Probability"
-msgstr "Profitabilité minimale"
+msgstr "Minimal Probability"
 
 #. module: mgmtsystem_security_event
 #: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_control
 #: view:mgmtsystem.security.control:0
 msgid "Security Control"
-msgstr ""
+msgstr "Security Control"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.risk.matrix.level,severity_max:0
 msgid "Maximal Severity"
-msgstr "Sévérité maximale"
+msgstr "Maximal Severity"
 
 #. module: mgmtsystem_security_event
 #: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:39
 #, python-format
 msgid "After applying the planned controls"
-msgstr ""
+msgstr "After applying the planned controls"
 
 #. module: mgmtsystem_security_event
 #: help:mgmtsystem.security.vector,current_severity_id:0
 msgid "Severity with existing controls"
-msgstr ""
+msgstr "Severity with existing controls"
 
 #. module: mgmtsystem_security_event
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_mgmtsystem_asset
 msgid "Assets"
-msgstr "Actifs"
+msgstr "Assets"
 
 #. module: mgmtsystem_security_event
 #: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_asset_supporting
@@ -303,175 +303,175 @@ msgstr "Actifs"
 #: view:mgmtsystem.security.vector:0
 #: field:mgmtsystem.security.vector,supporting_asset_ids:0
 msgid "Supporting Assets"
-msgstr ""
+msgstr "Supporting Assets"
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.security.event.scenario:0
 msgid "Scenario Lines"
-msgstr "Lignes de scénario"
+msgstr "Scenario Lines"
 
 #. module: mgmtsystem_security_event
 #: report:addons/mgmtsystem_security_event/report/risk_matrix_webkit.mako:28
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.action_risk_matrix_config
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_risk_matrix_config
 msgid "Risk Matrix"
-msgstr "Matrice de risque"
+msgstr "Risk Matrix"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event,current_severity_id:0
 #: field:mgmtsystem.security.vector,current_severity_id:0
 msgid "Current Severity"
-msgstr "Sévérité actuelle"
+msgstr "Current Severity"
 
 #. module: mgmtsystem_security_event
 #: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_risk_matrix_level
 msgid "Management System Risk Matrix Level"
-msgstr "Niveau de la matrice de risque du système de gestion"
+msgstr "Management System Risk Matrix Level"
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_security_event_control_list
 #: view:mgmtsystem.security.event.control:0
 msgid "Control Line"
-msgstr ""
+msgstr "Control Line"
 
 #. module: mgmtsystem_security_event
 #: selection:mgmtsystem.risk.matrix.level,color:0
 msgid "Green"
-msgstr "Vert"
+msgstr "Green"
 
 #. module: mgmtsystem_security_event
 #: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_event_control
 msgid "Feared Events - Control Lines"
-msgstr ""
+msgstr "Feared Events - Control Lines"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.control,work_instruction_id:0
 msgid "Work Instruction"
-msgstr "Instruction de travail"
+msgstr "Work Instruction"
 
 #. module: mgmtsystem_security_event
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_mgmtsystem_manual_security
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_mgmtsystem_security
 msgid "Security"
-msgstr "Sécurité"
+msgstr "Security"
 
 #. module: mgmtsystem_security_event
 #: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:37
 #, python-format
 msgid "Before applying any control"
-msgstr ""
+msgstr "Before applying any control"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event.control,prevention:0
 msgid "Prevention"
-msgstr "Prévention"
+msgstr "Prevention"
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.security.control:0
 msgid "Security Controls"
-msgstr ""
+msgstr "Security Controls"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event.control,control_id:0
 msgid "Control"
-msgstr ""
+msgstr "Control"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event,confidentiality:0
 msgid "Confidentiality"
-msgstr "Confidentialité"
+msgstr "Confidentiality"
 
 #. module: mgmtsystem_security_event
 #: report:addons/mgmtsystem_security_event/report/risk_matrix_webkit.mako:69
 #: field:mgmtsystem.security.event.scenario,probability_id:0
 msgid "Probability"
-msgstr "Probabilité"
+msgstr "Probability"
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.security.asset.supporting:0
 msgid "Supporting Asset"
-msgstr ""
+msgstr "Supporting Asset"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.risk.matrix.level,color:0
 msgid "Color"
-msgstr "Couleur"
+msgstr "Color"
 
 #. module: mgmtsystem_security_event
 #: help:mgmtsystem.security.vector,original_probability_id:0
 #: help:mgmtsystem.security.vector,original_severity_id:0
 msgid "Probability without any control"
-msgstr ""
+msgstr "Probability without any control"
 
 #. module: mgmtsystem_security_event
 #: code:addons/mgmtsystem_security_event/models/mgmtsystem_risk_matrix.py:38
 #, python-format
 msgid "With current controls"
-msgstr ""
+msgstr "With current controls"
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_primary_asset_list
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_primary_asset
 msgid "Primary"
-msgstr ""
+msgstr "Primary"
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_threat_source_list
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_threat_source
 msgid "Threat Sources"
-msgstr ""
+msgstr "Threat Sources"
 
 #. module: mgmtsystem_security_event
 #: model:ir.model,name:mgmtsystem_security_event.model_mgmtsystem_security_vector
 #: field:mgmtsystem.security.event.scenario,vector_id:0
 #: view:mgmtsystem.security.vector:0
 msgid "Vector"
-msgstr ""
+msgstr "Vector"
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.risk.matrix:0
 msgid "Done"
-msgstr "Terminé"
+msgstr "Done"
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.security.asset.category:0
 msgid "Asset Category"
-msgstr "Catégorie d'actifs"
+msgstr "Asset Category"
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.security.asset.primary:0
 msgid "Primary Asset"
-msgstr ""
+msgstr "Primary Asset"
 
 #. module: mgmtsystem_security_event
 #: view:mgmtsystem.risk.matrix:0
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Cancel"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.risk.matrix.level,severity_min:0
 msgid "Minimal Severity"
-msgstr "Sévérité minimale"
+msgstr "Minimal Severity"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event,integrity:0
 msgid "Integrity"
-msgstr "Intégrité"
+msgstr "Integrity"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event,availability:0
 msgid "Availability"
-msgstr "Disponibilité"
+msgstr "Availability"
 
 #. module: mgmtsystem_security_event
 #: model:ir.actions.act_window,name:mgmtsystem_security_event.open_mgmtsystem_vector_list
 #: model:ir.ui.menu,name:mgmtsystem_security_event.menu_open_mgmtsystem_vector
 #: view:mgmtsystem.security.vector:0
 msgid "Vectors"
-msgstr ""
+msgstr "Vectors"
 
 #. module: mgmtsystem_security_event
 #: field:mgmtsystem.security.event,original_severity_id:0
 #: field:mgmtsystem.security.vector,original_severity_id:0
 msgid "Original Severity"
-msgstr "Sévérité d'origine"
+msgstr "Original Severity"
