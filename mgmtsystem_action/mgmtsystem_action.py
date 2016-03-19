@@ -43,7 +43,7 @@ class mgmtsystem_action(models.Model):
                                    ], 'Response Type')
 
     system_id = fields.Many2one('mgmtsystem.system', 'System')
-    company_id = fields.Many2one('res.company', 'System', default=own_company)
+    company_id = fields.Many2one('res.company', 'Company', default=own_company)
 
     stage_id = fields.Many2one(
         'mgmtsystem.action.stage',
