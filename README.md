@@ -26,6 +26,7 @@ addon | version | summary
 --- | --- | ---
 [document_page_environment_manual](document_page_environment_manual/) | 9.0.1.0.0 | Document Management - Wiki - Environment Manual
 [document_page_environmental_aspect](document_page_environmental_aspect/) | 9.0.1.0.0 | Environmental Aspects
+[document_page_health_safety_manual](document_page_health_safety_manual/) | 9.0.1.0.0 | Health and Safety Manual
 [document_page_procedure](document_page_procedure/) | 9.0.1.0.0 | Document Management - Wiki - Procedures
 [document_page_quality_manual](document_page_quality_manual/) | 9.0.1.0.0 | Quality Manual
 [document_page_work_instruction](document_page_work_instruction/) | 9.0.1.0.0 | Document Management - Wiki - Work Instructions
@@ -37,7 +38,6 @@ Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[document_page_health_safety_manual](document_page_health_safety_manual/) | 8.0.1.0.0 (unported) | Document Management - Wiki - Health and Safety Manual
 [mgmtsystem_action](mgmtsystem_action/) | 8.0.1.2.0 (unported) | Management System - Action
 [mgmtsystem_action_audittrail](mgmtsystem_action_audittrail/) | 1.0 (unported) | Management System - Actions Audit Trail tracking
 [mgmtsystem_audit](mgmtsystem_audit/) | 8.0.1.2.0 (unported) | Management System - Audit
