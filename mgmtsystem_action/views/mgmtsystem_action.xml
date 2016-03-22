@@ -90,7 +90,7 @@
                     <field name="system_id"/>
                     <templates>
                         <t t-name="kanban-box">
-
+                            <div class="oe_kanban_content">
                             <ul>
                                 <li><field name="name"/></li>
                                 <li><field name="type_action"/></li>
@@ -100,6 +100,7 @@
                                 <li><field name="date_deadline"/></li>
                                 <li><field name="system_id"/></li>
                             </ul>
+                        </div>
                         </t>
                     </templates>
                 </kanban>
@@ -111,7 +112,7 @@
             <field name="res_model">mgmtsystem.action</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form,kanban</field>
-            <field name="view_id" ref="view_mgmtsystem_action_tree"/>
+            <field name="view_id" ref="view_mgmtsystem_action_kanban"/>
             <field name="search_view_id" ref="view_mgmtsystem_action_filter"/>
             <field name="context">{"search_default_current":1,"search_default_user_id":uid}</field>
         </record>
