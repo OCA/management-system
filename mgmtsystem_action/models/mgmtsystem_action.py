@@ -119,6 +119,22 @@ class MgmtSystemAction(models.Model):
         return url
 
     @api.model
+    def _stage_groups(self, present_ids, domain, **kwargs):
+        stage_obj = self.env['mgmtsystem.action.stage']
+
+        # perform search
+        stage_ids = stage_obj._search([])
+        result = stage_obj.search([]).name_get()
+        # restore order of the search
+        result.sort(lambda x, y: cmp(
+            stage_ids.index(x[0]), stage_ids.index(y[0])))
+
+        fold = {}
+        for stage in stage_obj.browse(stage_ids):
+            fold[stage.id] = True
+        return result, None
+
+    @api.model
     def process_reminder_queue(self):
         """Notify user when we are 10 days close to a deadline."""
         cur_date = datetime.now().date() + timedelta(days=10)
@@ -128,7 +144,12 @@ class MgmtSystemAction(models.Model):
             self.env.cr, self.env.uid, ["&", ("stage_id", "!=", stage_close.id), ("date_deadline", "=", cur_date)])
 
         for action_id in action_ids:
-            action = action_obj.browse(self.env.cr, self.env.uid, action_id, context=self.env.context)
+            action = action_obj.browse(
+                self.env.cr, self.env.uid, action_id, context=self.env.context)
             template = self.env.ref(
                 'mgmtsystem_action.action_email_template_reminder_action')
             template.send_mail(action.id, force_send=True)
+
+    _group_by_full = {
+        'stage_id': _stage_groups
+    }
