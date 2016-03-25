@@ -109,11 +109,12 @@ Contributors
         'data/mgmtsystem_nonconformity_origin.xml',
         'data/mgmtsystem_nonconformity_cause.xml',
         'data/mail_message_subtype.xml',
+        'reports/mgmtsystem_nonconformity_report.xml',
     ],
     "demo": [
         "demo/mgmtsystem_nonconformity_origin.xml",
         "demo/mgmtsystem_nonconformity_cause.xml",
-        "demo/mgmtsystem_nonconformity.xml",
+        # "demo/mgmtsystem_nonconformity.xml",
     ],
     'installable': True,
 }

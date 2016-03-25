@@ -28,6 +28,7 @@
     "depends": ['mgmtsystem', 'crm_claim', 'mail'],
     "data": [
         'data/mgmtsystem_action_stage.xml',
+        'demo/mgmtsystem_action.xml',
         'data/automated_reminder.xml',
         'data/email_template.xml',
         'security/ir.model.access.csv',
