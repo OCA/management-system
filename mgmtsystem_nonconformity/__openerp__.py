@@ -104,8 +104,6 @@ Contributors
         'views/mgmtsystem_cause.xml',
         'views/mgmtsystem_severity.xml',
         'views/mgmtsystem_action.xml',
-        'views/board.xml',
-        'data/workflow.xml',
         'data/sequence.xml',
         'data/mgmtsystem_nonconformity_severity.xml',
         'data/mgmtsystem_nonconformity_origin.xml',
@@ -117,5 +115,5 @@ Contributors
         "demo/mgmtsystem_nonconformity_cause.xml",
         "demo/mgmtsystem_nonconformity.xml",
     ],
-    'installable': False,
+    'installable': True,
 }

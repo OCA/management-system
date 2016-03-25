@@ -1,10 +1,10 @@
 <openerp>
 <data>
 
-  <menuitem id="menu_mgmtsystem_configuration_nonconformities" 
+  <menuitem id="menu_mgmtsystem_configuration_nonconformities"
     name="Nonconformities"
     parent="mgmtsystem.menu_mgmtsystem_configuration"
-    groups="mgmtsystem.group_mgmtsystem_manager" 
+    groups="mgmtsystem.group_mgmtsystem_manager"
     sequence="10"/>
 
   <record id="view_mgmtsystem_nonconformity_tree" model="ir.ui.view">
@@ -40,7 +40,7 @@
           <separator orientation="vertical"/>
           <field name="ref"/>
           <field name="date"/>
-          <field name="author_user_id" string="User" 
+          <field name="author_user_id" string="User"
             filter_domain="['|','|',('author_user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
           <field name="system_id"/>
           <field name="company_id" groups="base.group_multi_company"/>
@@ -54,7 +54,7 @@
           <filter string="System" icon="gtk-execute" context="{'group_by':'system_id'}"/>
           <filter string="Partner" icon="terp-personal+" domain="[]" context="{'group_by':'partner_id'}"/>
           <filter string="Procedure" icon="terp-stock_symbol-selection" context="{'group_by':'procedure_ids'}"/>
-          <!-- 
+          <!--
           <separator orientation="vertical"/>
           <filter string="Origin" icon="terp-idea" context="{'group_by':'origin_ids'}"/>
           <filter string="Cause" icon="gtk-convert" context="{'group_by':'cause_ids'}"/>
@@ -63,7 +63,7 @@
         </group>
         </search>
       </field>
-    </record>        
+    </record>
 
     <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
       <field name="name">mgmtsystem.nonconformity.form</field>
@@ -183,10 +183,10 @@
     </record>
 
     <menuitem
-      id="menu_open_nonconformity" 
-      action="open_mgmtsystem_nonconformity_list" 
-      parent="mgmtsystem.menu_mgmtsystem_main" 
-      sequence="20" 
+      id="menu_open_nonconformity"
+      action="open_mgmtsystem_nonconformity_list"
+      parent="mgmtsystem.menu_mgmtsystem_main"
+      sequence="20"
       groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
   </data>
