@@ -3,11 +3,11 @@
    :alt: License: AGPL-3
 
 ==========================
-Management System - Hazard
+Management System - Action
 ==========================
 
-This module enables you to manage the different actions of your management
-system:
+This module enables you to manage the different actions of your management system:
+
 * immediate actions
 * corrective actions
 * preventive actions
@@ -16,15 +16,25 @@ system:
 Installation
 ============
 
-todo
+No installation required.
 
 Configuration
 =============
 
-No configuration required
+No configuration required.
 
 Usage
 =====
+
+To use this module:
+
+* Go to Management System > Actions
+* Create new Action
+* Select a type and enter the subject
+
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/128/9.0
 
 Known issues / Roadmap
 ======================

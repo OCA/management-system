@@ -11,3 +11,8 @@ class MgmtsystemActionStage(models.Model):
 
     is_starting = fields.Boolean('Starting stage')
     is_ending = fields.Boolean('Ending stage')
+    color = fields.Char(
+        string="Color",
+        help="Choose your color",
+        size=7
+    )

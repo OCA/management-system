@@ -7,5 +7,17 @@
       parent="mgmtsystem.menu_mgmtsystem_configuration"
       sequence="20" />
 
+      <menuitem name="Actions"
+                id="menu_report_mgmtsystem_action_tree"
+                action="action_report_mgmtsystem_action"
+                parent="mgmtsystem.menu_mgmtsystem_report"
+                sequence="15"/>
+
+     <menuitem id="menu_open_action"
+               action="open_mgmtsystem_action_list"
+               parent="mgmtsystem.menu_mgmtsystem_main"
+               sequence="30"
+               groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
+
   </data>
 </odoo>

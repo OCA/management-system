@@ -28,17 +28,18 @@
     "depends": ['mgmtsystem', 'crm_claim', 'mail'],
     "data": [
         'data/mgmtsystem_action_stage.xml',
-        'demo/mgmtsystem_action.xml',
         'data/automated_reminder.xml',
         'data/email_template.xml',
         'security/ir.model.access.csv',
         'security/mgmtsystem_action_security.xml',
-        'sequences/action_sequence.xml',
+        'data/action_sequence.xml',
         'views/menus.xml',
         'views/mgmtsystem_action.xml',
         'views/mgmtsystem_action_stage.xml',
         'reports/mgmtsystem_action_report.xml',
     ],
-    "demo": [],
+    "demo": [
+        'demo/mgmtsystem_action.xml',
+    ],
     'installable': True,
 }
