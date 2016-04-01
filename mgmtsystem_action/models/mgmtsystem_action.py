@@ -27,7 +27,7 @@ class MgmtSystemAction(models.Model):
                                    ], 'Response Type')
 
     system_id = fields.Many2one('mgmtsystem.system', 'System')
-    company_id = fields.Many2one('res.company', 'System', default=own_company)
+    company_id = fields.Many2one('res.company', 'Company', default=own_company)
 
     stage_id = fields.Many2one(
         'mgmtsystem.action.stage',
@@ -141,7 +141,11 @@ class MgmtSystemAction(models.Model):
         stage_close = self.env.ref('mgmtsystem_action.stage_close')
         action_obj = self.pool.get("mgmtsystem.action")
         action_ids = self.pool.get("mgmtsystem.action").search(
-            self.env.cr, self.env.uid, ["&", ("stage_id", "!=", stage_close.id), ("date_deadline", "=", cur_date)])
+            self.env.cr, self.env.uid, [
+                "&",
+                ("stage_id", "!=", stage_close.id),
+                ("date_deadline", "=", cur_date)]
+        )
 
         for action_id in action_ids:
             action = action_obj.browse(
