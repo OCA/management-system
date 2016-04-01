@@ -225,7 +225,7 @@ class MgmtsystemNonconformity(models.Model):
             self.manager_user_id.id,
             self.author_user_id.id,
         ]
-        self.message_subscribe_users(user_ids=user_ids, subtype_ids=None)
+        # self.message_subscribe_users(user_ids=user_ids, subtype_ids=None)
         # self.message_subscribe(self.env.cr, self.env.uid, self.ids, user_ids=user_ids, context=self.env.context)
         return super(MgmtsystemNonconformity, self).message_auto_subscribe(
             updated_fields=updated_fields,

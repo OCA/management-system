@@ -33,9 +33,9 @@
         'security/ir.model.access.csv',
         'security/mgmtsystem_action_security.xml',
         'data/action_sequence.xml',
-        'views/menus.xml',
         'views/mgmtsystem_action.xml',
         'views/mgmtsystem_action_stage.xml',
+        'views/menus.xml',
     ],
     "demo": [
         'demo/mgmtsystem_action.xml',
