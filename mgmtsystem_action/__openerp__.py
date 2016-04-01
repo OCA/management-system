@@ -36,7 +36,6 @@
         'views/menus.xml',
         'views/mgmtsystem_action.xml',
         'views/mgmtsystem_action_stage.xml',
-        'reports/mgmtsystem_action_report.xml',
     ],
     "demo": [
         'demo/mgmtsystem_action.xml',
