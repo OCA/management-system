@@ -22,13 +22,7 @@
       <field name="context">{}</field>
     </record>
 
-    <menuitem
-      id="menu_mgmtsystem_action_stages"
-      name="Stages"
-      parent="menu_config_action"
-      action="mgmtsystem_action_stage_action"
-      sequence="90"
-      groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
+    
 
   </data>
 </odoo>
