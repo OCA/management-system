@@ -29,15 +29,6 @@ from openerp.tools import (
 import time
 
 
-_STATES = [
-    ('draft', _('Draft')),
-    ('analysis', _('Analysis')),
-    ('pending', _('Pending Approval')),
-    ('open', _('In Progress')),
-    ('done', _('Closed')),
-    ('cancel', _('Cancelled')),
-]
-_STATES_DICT = dict(_STATES)
 
 
 class MgmtsystemNonconformity(models.Model):
@@ -58,10 +49,20 @@ class MgmtsystemNonconformity(models.Model):
         },
     }
 
+    _STATES = [
+        ('draft', _('Draft')),
+        ('analysis', _('Analysis')),
+        ('pending', _('Pending Approval')),
+        ('open', _('In Progress')),
+        ('done', _('Closed')),
+        ('cancel', _('Cancelled')),
+    ]
+    _STATES_DICT = dict(_STATES)
+
     def _state_name(self):
         res = dict()
         for o in self:
-            res[o.id] = _STATES_DICT.get(o.state, o.state)
+            res[o.id] = self._STATES_DICT.get(o.state, o.state)
         return res
 
     name = fields.Char('Name')
@@ -385,3 +386,36 @@ class MgmtsystemNonconformity(models.Model):
             'actions_date': None, 'actions_user_id': None,
             'evaluation_date': None, 'evaluation_user_id': None,
         })
+
+    @api.model
+    def state_groups(self, present_ids, domain, **kwargs):
+        folded = {key: (key in self._state_name()) for key, _ in self._STATES}
+        # Need to copy state_name list before returning it,
+        # because odoo modifies the list it gets,
+        # emptying it in the process. Bad odoo!
+        return self._STATES[:], folded
+
+    _group_by_full = {
+        'state': state_groups
+    }
+
+    def _read_group_fill_results(self, cr, uid, domain, groupby,
+                                 remaining_groupbys, aggregated_fields,
+                                 count_field, read_group_result,
+                                 read_group_order=None, context=None):
+        """
+        The method seems to support grouping using m2o fields only,
+        while we want to group by a simple status field.
+        Hence the code below - it replaces simple status values
+        with (value, name) tuples.
+        """
+        if groupby == 'state':
+            STATES_DICT = dict(self._STATES)
+            for result in read_group_result:
+                state = result['state']
+                result['state'] = (state, STATES_DICT.get(state))
+
+        return super(MgmtsystemNonconformity, self)._read_group_fill_results(
+            cr, uid, domain, groupby, remaining_groupbys, aggregated_fields,
+            count_field, read_group_result, read_group_order, context
+        )
