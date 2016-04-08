@@ -3,6 +3,7 @@
 from openerp.tests import common
 
 
+
 class TestModelAction(common.TransactionCase):
     def test_create_action(self):
         record = self.env['mgmtsystem.action'].create({
@@ -42,5 +43,5 @@ class TestModelAction(common.TransactionCase):
 
         # self.assertEqual(isinstance(ret, list), True)
         # self.assertEqual(len(ret), 1)
-        self.assertEqual(isinstance(ret[0], basestring), True)
-        self.assertEqual(ret[0].startswith('http'), True)
+        self.assertEqual(isinstance(ret, basestring), True)
+        self.assertEqual(ret.startswith('http'), True)
