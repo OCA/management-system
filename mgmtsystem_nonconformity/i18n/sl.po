@@ -3,13 +3,13 @@
 # * mgmtsystem_nonconformity
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 13:03+0000\n"
-"PO-Revision-Date: 2015-11-06 05:51+0000\n"
+"POT-Creation-Date: 2016-05-12 00:17+0000\n"
+"PO-Revision-Date: 2016-05-12 05:22+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-management-system-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -301,6 +301,14 @@ msgid "Direction Review"
 msgstr "Revizija vodstva"
 
 #. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,display_name:0
+#: field:mgmtsystem.nonconformity.cause,display_name:0
+#: field:mgmtsystem.nonconformity.origin,display_name:0
+#: field:mgmtsystem.nonconformity.severity,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:33
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 #: selection:mgmtsystem.nonconformity,state:0
@@ -462,6 +470,14 @@ msgstr "Pomanjkanje strokovnosti"
 #: field:mgmtsystem.nonconformity,message_last_post:0
 msgid "Last Message Date"
 msgstr "Datum zadnjega sporočila"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,__last_update:0
+#: field:mgmtsystem.nonconformity.cause,__last_update:0
+#: field:mgmtsystem.nonconformity.origin,__last_update:0
+#: field:mgmtsystem.nonconformity.severity,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,write_uid:0
@@ -727,6 +743,11 @@ msgstr "Zaženi/odpri"
 #: field:mgmtsystem.nonconformity,state:0
 msgid "State"
 msgstr "Stanje"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,state_name:0
+msgid "State Description"
+msgstr "Opis stanja"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,message_summary:0

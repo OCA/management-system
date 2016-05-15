@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 13:03+0000\n"
-"PO-Revision-Date: 2015-08-07 14:29+0000\n"
+"POT-Creation-Date: 2016-05-12 00:17+0000\n"
+"PO-Revision-Date: 2016-05-12 00:20+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-management-system-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -300,6 +300,14 @@ msgid "Direction Review"
 msgstr "Direction Review"
 
 #. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,display_name:0
+#: field:mgmtsystem.nonconformity.cause,display_name:0
+#: field:mgmtsystem.nonconformity.origin,display_name:0
+#: field:mgmtsystem.nonconformity.severity,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:33
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 #: selection:mgmtsystem.nonconformity,state:0
@@ -461,6 +469,14 @@ msgstr "Lack of expertise"
 #: field:mgmtsystem.nonconformity,message_last_post:0
 msgid "Last Message Date"
 msgstr "Last Message Date"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,__last_update:0
+#: field:mgmtsystem.nonconformity.cause,__last_update:0
+#: field:mgmtsystem.nonconformity.origin,__last_update:0
+#: field:mgmtsystem.nonconformity.severity,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,write_uid:0
@@ -726,6 +742,11 @@ msgstr "Start/Open"
 #: field:mgmtsystem.nonconformity,state:0
 msgid "State"
 msgstr "State"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,state_name:0
+msgid "State Description"
+msgstr "State Description"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,message_summary:0

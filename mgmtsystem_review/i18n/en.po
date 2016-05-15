@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-19 18:36+0000\n"
-"PO-Revision-Date: 2015-09-19 13:33+0000\n"
+"POT-Creation-Date: 2016-05-12 00:18+0000\n"
+"PO-Revision-Date: 2016-05-12 00:20+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-management-system-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -110,6 +110,12 @@ msgid "Decision:"
 msgstr "Decision:"
 
 #. module: mgmtsystem_review
+#: field:mgmtsystem.review,display_name:0
+#: field:mgmtsystem.review.line,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Expectations:"
 msgstr "Expectations:"
@@ -129,6 +135,12 @@ msgstr "Improvements:"
 #: report:mgmtsystem.review.report:0
 msgid "Inputs"
 msgstr "Inputs"
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review,__last_update:0
+#: field:mgmtsystem.review.line,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review,write_uid:0

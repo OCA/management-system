@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-05 19:53+0000\n"
-"PO-Revision-Date: 2015-11-03 19:11+0000\n"
+"POT-Creation-Date: 2016-05-12 00:17+0000\n"
+"PO-Revision-Date: 2016-05-12 00:19+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-management-system-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -122,6 +122,19 @@ msgstr "Department"
 #: field:mgmtsystem.hazard.usage,description:0
 msgid "Description"
 msgstr "Description"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,display_name:0
+#: field:mgmtsystem.hazard.control_measure,display_name:0
+#: field:mgmtsystem.hazard.hazard,display_name:0
+#: field:mgmtsystem.hazard.origin,display_name:0
+#: field:mgmtsystem.hazard.probability,display_name:0
+#: field:mgmtsystem.hazard.severity,display_name:0
+#: field:mgmtsystem.hazard.test,display_name:0
+#: field:mgmtsystem.hazard.type,display_name:0
+#: field:mgmtsystem.hazard.usage,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ems_action
@@ -239,6 +252,19 @@ msgstr "Intoxication"
 #: field:mgmtsystem.hazard,justification:0
 msgid "Justification"
 msgstr "Justification"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,__last_update:0
+#: field:mgmtsystem.hazard.control_measure,__last_update:0
+#: field:mgmtsystem.hazard.hazard,__last_update:0
+#: field:mgmtsystem.hazard.origin,__last_update:0
+#: field:mgmtsystem.hazard.probability,__last_update:0
+#: field:mgmtsystem.hazard.severity,__last_update:0
+#: field:mgmtsystem.hazard.test,__last_update:0
+#: field:mgmtsystem.hazard.type,__last_update:0
+#: field:mgmtsystem.hazard.usage,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,write_uid:0

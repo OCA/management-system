@@ -3,13 +3,13 @@
 # * mgmtsystem_nonconformity_claim
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-07 14:27+0000\n"
-"PO-Revision-Date: 2015-08-10 05:56+0000\n"
+"POT-Creation-Date: 2016-05-12 00:18+0000\n"
+"PO-Revision-Date: 2016-05-12 05:24+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-management-system-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -49,6 +49,11 @@ msgid "Description"
 msgstr "Opis"
 
 #. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: mgmtsystem_nonconformity_claim
 #: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_gp
 msgid "Good Practice"
 msgstr "Dobra praksa"
@@ -62,6 +67,11 @@ msgstr "ID"
 #: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_io
 msgid "Improvement Opportunity"
 msgstr "Priložnost za izboljšave"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: mgmtsystem_nonconformity_claim
 #: field:mgmtsystem.nonconformity.type,write_uid:0

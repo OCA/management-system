@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-19 00:53+0000\n"
-"PO-Revision-Date: 2016-04-18 20:11+0000\n"
+"POT-Creation-Date: 2016-05-12 00:17+0000\n"
+"PO-Revision-Date: 2016-05-12 00:19+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-management-system-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -168,6 +168,12 @@ msgid "Destination email for email gateway."
 msgstr "Destination email for email gateway."
 
 #. module: mgmtsystem_action
+#: field:mgmtsystem.action,display_name:0
+#: field:mgmtsystem.action.stage,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_draft
 msgid "Draft"
 msgstr "Draft"
@@ -245,6 +251,12 @@ msgstr "Is a Follower"
 #: field:mgmtsystem.action,message_last_post:0
 msgid "Last Message Date"
 msgstr "Last Message Date"
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,__last_update:0
+#: field:mgmtsystem.action.stage,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,write_uid:0

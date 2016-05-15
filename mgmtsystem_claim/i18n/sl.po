@@ -3,14 +3,14 @@
 # * mgmtsystem_claim
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-07 14:27+0000\n"
-"PO-Revision-Date: 2015-05-26 18:46+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2016-05-12 00:17+0000\n"
+"PO-Revision-Date: 2016-05-12 05:23+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-management-system-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -199,6 +199,12 @@ msgid "Destination email for email gateway."
 msgstr "Ciljni e-poštni naslov."
 
 #. module: mgmtsystem_claim
+#: field:mgmtsystem.claim,display_name:0
+#: field:mgmtsystem.claim.stage,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Draft and Open Claims"
 msgstr "Osnutki zahtevkov in odprti zahtevki"
@@ -261,6 +267,12 @@ msgstr "Je sledilec"
 #: field:mgmtsystem.claim,message_last_post:0
 msgid "Last Message Date"
 msgstr "Datum zadnjega sporočila"
+
+#. module: mgmtsystem_claim
+#: field:mgmtsystem.claim,__last_update:0
+#: field:mgmtsystem.claim.stage,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,write_uid:0 field:mgmtsystem.claim.stage,write_uid:0

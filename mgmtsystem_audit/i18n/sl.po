@@ -3,13 +3,13 @@
 # * mgmtsystem_audit
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-07 14:27+0000\n"
-"PO-Revision-Date: 2015-08-10 05:52+0000\n"
+"POT-Creation-Date: 2016-05-12 00:17+0000\n"
+"PO-Revision-Date: 2016-05-12 05:23+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-management-system-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -153,6 +153,13 @@ msgid "Date:"
 msgstr "Datum:"
 
 #. module: mgmtsystem_audit
+#: field:copy.verification.lines,display_name:0
+#: field:mgmtsystem.audit,display_name:0
+#: field:mgmtsystem.verification.line,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_follower_ids:0
 msgid "Followers"
 msgstr "Sledilci"
@@ -200,6 +207,13 @@ msgstr "Je ustrezno"
 #: field:mgmtsystem.audit,message_last_post:0
 msgid "Last Message Date"
 msgstr "Datum zadnjega sporočila"
+
+#. module: mgmtsystem_audit
+#: field:copy.verification.lines,__last_update:0
+#: field:mgmtsystem.audit,__last_update:0
+#: field:mgmtsystem.verification.line,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: mgmtsystem_audit
 #: field:copy.verification.lines,write_uid:0
