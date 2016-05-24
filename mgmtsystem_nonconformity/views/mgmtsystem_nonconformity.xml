@@ -72,6 +72,8 @@
         <field name="arch" type="xml">
             <kanban default_group_by="state" class="o_kanban_small_column">
                 <field name="state"/>
+                <field name="responsible_user_id"/>
+                <field name="ref"/>
                 <field name="name"/>
                 <templates>
                     <t t-name="kanban-box">
@@ -92,11 +94,13 @@
                             </div>
                             <div class="oe_kanban_content">
                                 <div>
-                                    <strong><field name="name"/></strong>
+                                    <strong><field name="ref"/> - <field name="name"/></strong>
                                 </div>
 
                                 <div class="o_kanban_footer  pull-right">
-                                    <br/>
+                                    <div>
+                                    <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_user_id.raw_value)" t-att-title="record.responsible_user_id.value" width="24" height="24" class="oe_kanban_avatar"/>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -129,6 +133,7 @@
           <sheet string="Non-Conformity">
             <group>
               <group>
+                <field name="name" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
@@ -220,17 +225,17 @@
       <field name="name">Nonconformities</field>
       <field name="res_model">mgmtsystem.nonconformity</field>
       <field name="view_type">form</field>
-      <field name="view_mode">tree,form,kanban</field>
-      <field name="view_id" ref="view_mgmtsystem_nonconformity_tree"/>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mgmtsystem_nonconformity_kanban"/>
       <field name="search_view_id" ref="view_mgmtsystem_nonconformity_filter"/>
-      <field name="context">{"search_default_pending":1,"search_default_current":1,"search_default_author_user_id":uid}</field>
+      <field name="context">{"search_default_author_user_id":uid}</field>
     </record>
 
     <menuitem
       id="menu_open_nonconformity"
       action="open_mgmtsystem_nonconformity_list"
       parent="mgmtsystem.menu_mgmtsystem_main"
-      sequence="20"
+      sequence="30"
       groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
   </data>
