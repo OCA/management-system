@@ -13,6 +13,11 @@ This module enables you to manage the different actions of your management syste
 * preventive actions
 * improvement opportunities.
 
+The person responsible for an action is notified by email:
+
+* when the action is assigned
+* 10 calendar days before the deadline	
+
 Installation
 ============
 
@@ -21,7 +26,7 @@ No installation required.
 Configuration
 =============
 
-No configuration required.
+The email content of notifications can be customized as any email templates.
 
 Usage
 =====
