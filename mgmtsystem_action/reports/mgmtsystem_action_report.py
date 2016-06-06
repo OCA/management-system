@@ -28,7 +28,6 @@ class MgmtsystemtActionReport(models.Model):
         ('prevention', 'Preventive Action'),
         ('improvement', 'Improvement Opportunity')
     ], 'Response Type')
-    action_date = fields.Datetime('Opening Date', readonly=True, select=True)
     create_date = fields.Datetime('Create Date', readonly=True, select=True)
     opening_date = fields.Datetime('Opening Date', readonly=True, select=True)
     date_closed = fields.Datetime('Close Date', readonly=True, select=True)
@@ -53,12 +52,10 @@ class MgmtsystemtActionReport(models.Model):
                     m.system_id,
                     m.type_action as type_action,
                     m.create_date as create_date,
+                    m.number_of_days_to_open as number_of_days_to_open,
+                    m.number_of_days_to_close as number_of_days_to_close,
                     avg(extract('epoch' from (current_date-m.create_date))
                     )/(3600*24) as  age,
-                    avg(extract('epoch' from (m.opening_date-m.create_date))
-                    )/(3600*24) as  number_of_days_to_open,
-                    avg(extract('epoch' from (m.date_closed-m.create_date))
-                    )/(3600*24) as  number_of_days_to_close,
                     avg(extract('epoch' from (m.date_closed - m.date_deadline))
                     )/(3600*24) as  number_of_exceedings_days,
                     count(*) AS number_of_actions
@@ -66,6 +63,7 @@ class MgmtsystemtActionReport(models.Model):
                     mgmtsystem_action m
                 group by m.user_id,m.system_id, m.stage_id, m.opening_date, \
                         m.create_date,m.type_action,m.date_deadline, \
-                        m.date_closed, m.id
+                        m.date_closed, m.id, m.number_of_days_to_open, \
+                        m.number_of_days_to_close
             )
             """)

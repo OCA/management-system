@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data noupdate="1">
         <record id="ir_cron_mgmtsystem_action_reminder" model="ir.cron">
             <field name="name">Email Action Reminders 10 days before due date.</field>
@@ -12,4 +12,4 @@
             <field eval="'process_reminder_queue'" name="function"/>
         </record>
    </data>
-</openerp>
+</odoo>

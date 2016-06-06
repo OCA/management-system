@@ -36,14 +36,24 @@ To use this module:
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/128/9.0
 
+Mention/Description
+===================
+
+* mgmtsystem_action/data/automated_reminder.xml
+    - Contains cron job actions
+* mgmtsystem_action/data/email_template.xml
+    - Contains needed email templates
+
 Known issues / Roadmap
 ======================
+
+* The custom emails should be replaced by Mail Tracking features and Subtypes (like in Project Tasks and Project Issues)
+* Replace the cron job (process_reminder_queue) by an automated actions. It is located in mgmtsystem_action.py
 
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/
-Management-system/issues>`_.
+Bugs are tracked on `GitHub Issues <https://github.com/OCA/Management-system/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed feedback `here <https://github.com/OCA/
 Management-system/issues/new?body=module:%20
@@ -81,3 +91,4 @@ Changelog
 v9.0.1.0.0
 
 * the module does no depends anymore on document_page module.
+* the module does no depends anymore on crm_claim module.

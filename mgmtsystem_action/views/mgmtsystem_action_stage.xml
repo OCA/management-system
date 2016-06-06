@@ -7,7 +7,7 @@
       <field name="arch" type="xml">
         <tree string="Stages">
           <field name="name"/>
-          <field name="sequence"/>
+          <field name="sequence" widget="handle" />
           <field name="is_starting"/>
           <field name="is_ending"/>
         </tree>
@@ -22,7 +22,7 @@
       <field name="context">{}</field>
     </record>
 
-    
+
 
   </data>
 </odoo>

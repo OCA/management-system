@@ -25,7 +25,7 @@
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": ['mgmtsystem', 'crm_claim', 'mail'],
+    "depends": ['mgmtsystem', 'mail'],
     "data": [
         'data/mgmtsystem_action_stage.xml',
         'data/automated_reminder.xml',
@@ -35,6 +35,7 @@
         'data/action_sequence.xml',
         'views/mgmtsystem_action.xml',
         'views/mgmtsystem_action_stage.xml',
+        'reports/mgmtsystem_action_report.xml',
         'views/menus.xml',
     ],
     "demo": [
