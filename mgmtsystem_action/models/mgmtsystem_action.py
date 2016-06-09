@@ -64,6 +64,23 @@ class MgmtSystemAction(models.Model):
             ('is_starting', '=', True)
         ]).id
 
+    @api.multi
+    def case_open(self):
+        """ Opens case """
+
+        for case in self:
+            values = {'active': True}
+
+            stages = self.env['mgmtsystem.action.stage']
+            values['stage_id'] = stages.search([
+                ['is_ending', '=', False],
+                ['is_starting', '=', False]
+            ]).id
+
+            case.write(values)
+
+        return True
+
     @api.model
     def create(self, vals):
         """Creation of Action."""

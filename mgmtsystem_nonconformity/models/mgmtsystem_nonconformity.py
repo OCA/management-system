@@ -227,16 +227,18 @@ class MgmtsystemNonconformity(models.Model):
 
     @api.multi
     def message_auto_subscribe(self, updated_fields, values=None):
-        """Add the responsible, manager and OpenChatter follow list."""
+        """
+        Add the responsible, manager and author to the OpenChatter follow list
+        """
         self.ensure_one()
         user_ids = [
             self.responsible_user_id.id,
             self.manager_user_id.id,
             self.author_user_id.id,
         ]
-        # self.message_subscribe_users(user_ids=user_ids, subtype_ids=None)
+        self.message_subscribe_users(user_ids=user_ids, subtype_ids=None)
         # self.message_subscribe(self.env.cr, self.env.uid, self.ids,
-        # user_ids=user_ids, context=self.env.context)
+        #                       user_ids=user_ids, context=self.env.context)
         return super(MgmtsystemNonconformity, self).message_auto_subscribe(
             updated_fields=updated_fields,
             values=values
@@ -256,12 +258,21 @@ class MgmtsystemNonconformity(models.Model):
                 vals.update(self.do_close())
             if vals.get('state') == "cancel":
                 vals.update(self.do_cancel())
+            if vals.get('state') == "draft":
+                vals.update(self.case_reset())
 
         result = super(MgmtsystemNonconformity, self).write(vals)
         return result
 
+    def checkifTheProcessIsClosedOrCancelled(self):
+        if self.cancel_date or self.closing_date:
+            raise exceptions.ValidationError(
+                _('Please reset the process to draft, to perform it again')
+            )
+
     def do_analysis(self):
         """Change state from draft to analysis."""
+        self.checkifTheProcessIsClosedOrCancelled()
         return {
             'state': 'analysis',
             'analysis_date': None,
@@ -270,6 +281,7 @@ class MgmtsystemNonconformity(models.Model):
     @api.multi
     def do_review(self):
         """Change state from analysis to pending approval"""
+        self.checkifTheProcessIsClosedOrCancelled()
         for o in self:
             if not o.analysis_date:
                 raise exceptions.ValidationError(
@@ -340,6 +352,7 @@ class MgmtsystemNonconformity(models.Model):
         the related actions
         """
         self.ensure_one()
+        self.checkifTheProcessIsClosedOrCancelled()
         if not self.actions_date:
             raise exceptions.ValidationError(
                 _('Action plan must be approved before opening.')
@@ -373,9 +386,12 @@ class MgmtsystemNonconformity(models.Model):
             )
         )
 
-    @api.multi
     def do_cancel(self):
-        """Change state to cancel"""
+        """Change state to cancel."""
+        if self.closing_date:
+            raise exceptions.ValidationError(
+                _('A close process cannot be cancelled')
+            )
         return {'state': 'cancel',
                 'cancel_date': time.strftime(DATETIME_FORMAT)}
 
@@ -383,7 +399,10 @@ class MgmtsystemNonconformity(models.Model):
     def do_close(self):
         """Change state from in progress to closed"""
         self.ensure_one()
-
+        if self.cancel_date:
+            raise exceptions.ValidationError(
+                _('A cancel process cannot be closed')
+            )
         if (self.immediate_action_id and
                 not self.immediate_action_id.stage_id.is_ending):
             raise exceptions.ValidationError(
@@ -400,18 +419,19 @@ class MgmtsystemNonconformity(models.Model):
         return {
             'state': 'done', 'closing_date': time.strftime(DATETIME_FORMAT)}
 
-    @api.multi
     def case_reset(self):
         """Reset to Draft."""
-        if not self.cancel_date or not self.closing_date:
-            _('Only a close or cancel process can be reset')
-        return self.write({
+        if not self.cancel_date and not self.closing_date:
+            raise exceptions.ValidationError(
+                _('Only a close or cancel process can be reset')
+            )
+        return {
             'state': 'draft',
             'closing_date': None, 'cancel_date': None,
             'analysis_date': None, 'analysis_user_id': None,
             'actions_date': None, 'actions_user_id': None,
             'evaluation_date': None, 'evaluation_user_id': None,
-        })
+        }
 
     @api.model
     def state_groups(self, present_ids, domain, **kwargs):
