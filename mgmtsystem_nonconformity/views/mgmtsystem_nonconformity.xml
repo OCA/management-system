@@ -1,3 +1,4 @@
+<<<<<<< aedf771434404b2aa8c10c5f41955537a4c5e0cd
 <openerp>
 <<<<<<< 04ff878397bbf74c55d94384d57539ae13b626d0
     <data>
@@ -456,12 +457,15 @@
 >>>>>>> Splitted xml views into 5 different xml files:mgmtsystem_nonconformity/views/mgmtsystem_nonconformity.xml
     </data>
 =======
+=======
+<odoo>
+>>>>>>> mgmtsystem_nonconformity progress
 <data>
 
-  <menuitem id="menu_mgmtsystem_configuration_nonconformities" 
+  <menuitem id="menu_mgmtsystem_configuration_nonconformities"
     name="Nonconformities"
     parent="mgmtsystem.menu_mgmtsystem_configuration"
-    groups="mgmtsystem.group_mgmtsystem_manager" 
+    groups="mgmtsystem.group_mgmtsystem_manager"
     sequence="10"/>
 
   <record id="view_mgmtsystem_nonconformity_tree" model="ir.ui.view">
@@ -470,7 +474,7 @@
     <field name="arch" type="xml">
       <tree string="Non-Conformities">
         <field name="ref"/>
-        <field name="date"/>
+        <field name="create_date"/>
         <field name="partner_id"/>
         <field name="description"/>
         <field name="author_user_id"/>
@@ -496,8 +500,8 @@
           <filter icon="terp-camera_test" domain="[('state','=','done')]" string="Closed" help="Closed Nonconformities"/>
           <separator orientation="vertical"/>
           <field name="ref"/>
-          <field name="date"/>
-          <field name="author_user_id" string="User" 
+          <field name="create_date"/>
+          <field name="author_user_id" string="User"
             filter_domain="['|','|',('author_user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
           <field name="system_id"/>
           <field name="company_id" groups="base.group_multi_company"/>
@@ -511,7 +515,7 @@
           <filter string="System" icon="gtk-execute" context="{'group_by':'system_id'}"/>
           <filter string="Partner" icon="terp-personal+" domain="[]" context="{'group_by':'partner_id'}"/>
           <filter string="Procedure" icon="terp-stock_symbol-selection" context="{'group_by':'procedure_ids'}"/>
-          <!-- 
+          <!--
           <separator orientation="vertical"/>
           <filter string="Origin" icon="terp-idea" context="{'group_by':'origin_ids'}"/>
           <filter string="Cause" icon="gtk-convert" context="{'group_by':'cause_ids'}"/>
@@ -520,30 +524,75 @@
         </group>
         </search>
       </field>
-    </record>        
+    </record>
+    <!-- Kanaban view -->
 
+    <record id="view_mgmtsystem_nonconformity_kanban" model="ir.ui.view">
+        <field name="name">mgmtsystem.nonconformity.kanban</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field name="arch" type="xml">
+            <kanban create="false" quick_create="false" default_group_by="state" class="o_kanban_small_column">
+                <field name="state"/>
+                <field name="responsible_user_id"/>
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="message_needaction_counter"/>
+                <templates>
+                    <t t-name="kanban-box">
+
+                        <div t-attf-class="#{kanban_color(red)} oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown">
+
+                                <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+                                    <span class="fa fa-bars fa-lg"/>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <t t-if="widget.editable">
+                                        <li>
+                                            <a type="edit">Edit</a>
+                                        </li>
+                                    </t>
+                                </ul>
+                            </div>
+                            <div class="oe_kanban_content">
+                                <div>
+                                    <strong><field name="ref"/> - <field name="name"/></strong>
+                                </div>
+                                <div>
+                                    <br/>
+                                </div>
+                                <div class="o_kanban_footer">
+                                    <span class='oe_kanban_mail_new' title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+                                    <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_user_id.raw_value)" t-att-title="record.responsible_user_id.value" width="24" height="24" class="oe_kanban_avatar"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+
+    <!-- End of kanaban view -->
     <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
       <field name="name">mgmtsystem.nonconformity.form</field>
       <field name="model">mgmtsystem.nonconformity</field>
       <field name="arch" type="xml">
         <form string="Non-Conformity" version="7.0">
           <header>
-            <button name="button_cancel" string="Cancel" states="draft,analysis,pending,open"/>
-            <button name="button_analysis_n" string="Send for Analysis" states="draft" class="oe_highlight"/>
-            <button name="button_analysis_p" string="Send for Analysis" states="pending"/>
-            <button name="button_review_n" string="Send for Review" states="analysis" class="oe_highlight"/>
-            <button name="button_review_p" string="Send for Review" states="open"/>
-            <button name="button_open" string="Start/Open" states="pending" class="oe_highlight"/>
+
             <button name="button_close" string="Close" class="oe_highlight"
               states="open" groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
-            <button name="case_reset" string="Reset to New" states="done,cancel" type="object"/>
-            <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done" />
+            <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done,cancel"  clickable="True" />
           </header>
           <sheet string="Non-Conformity">
             <group>
               <group>
+                <field name="name" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                <field name="date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                <field name="create_date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                 <field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="origin_ids" widget="many2many_tags" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
@@ -633,19 +682,23 @@
       <field name="name">Nonconformities</field>
       <field name="res_model">mgmtsystem.nonconformity</field>
       <field name="view_type">form</field>
-      <field name="view_mode">tree,form</field>
-      <field name="view_id" ref="view_mgmtsystem_nonconformity_tree"/>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mgmtsystem_nonconformity_kanban"/>
       <field name="search_view_id" ref="view_mgmtsystem_nonconformity_filter"/>
-      <field name="context">{"search_default_pending":1,"search_default_current":1,"search_default_author_user_id":uid}</field>
+      <field name="context">{"search_default_author_user_id":uid}</field>
     </record>
 
     <menuitem
-      id="menu_open_nonconformity" 
-      action="open_mgmtsystem_nonconformity_list" 
-      parent="mgmtsystem.menu_mgmtsystem_main" 
-      sequence="20" 
+      id="menu_open_nonconformity"
+      action="open_mgmtsystem_nonconformity_list"
+      parent="mgmtsystem.menu_mgmtsystem_main"
+      sequence="30"
       groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
   </data>
+<<<<<<< aedf771434404b2aa8c10c5f41955537a4c5e0cd
 >>>>>>> Reformat xml files removed tabs/space mix and 2 space indent
 </openerp>
+=======
+</odoo>
+>>>>>>> mgmtsystem_nonconformity progress
