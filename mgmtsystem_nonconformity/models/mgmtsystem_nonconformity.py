@@ -29,8 +29,6 @@ from openerp.tools import (
 import time
 
 
-
-
 class MgmtsystemNonconformity(models.Model):
 
     _name = "mgmtsystem.nonconformity"
@@ -79,6 +77,16 @@ class MgmtsystemNonconformity(models.Model):
         required=True,
         default=lambda *a: time.strftime(DATE_FORMAT)
     )
+    create_date = fields.Datetime('Creation Date', readonly=True)
+    closing_date = fields.Datetime('Closing Date', readonly=True)
+    cancel_date = fields.Datetime('Cancel Date', readonly=True)
+    number_of_days_to_analyse = fields.Integer(
+        '# of days to analyse', readonly=True)
+    number_of_days_to_plan = fields.Integer('# of days to plan', readonly=True)
+    number_of_days_to_execute = fields.Integer(
+        '# of days to execute', readonly=True)
+    number_of_days_to_close = fields.Integer(
+        '# of days to close', readonly=True)
     partner_id = fields.Many2one('res.partner', 'Partner', required=True)
     reference = fields.Char('Related to')
     responsible_user_id = fields.Many2one(
@@ -227,20 +235,51 @@ class MgmtsystemNonconformity(models.Model):
             self.author_user_id.id,
         ]
         # self.message_subscribe_users(user_ids=user_ids, subtype_ids=None)
-        # self.message_subscribe(self.env.cr, self.env.uid, self.ids, user_ids=user_ids, context=self.env.context)
+        # self.message_subscribe(self.env.cr, self.env.uid, self.ids,
+        # user_ids=user_ids, context=self.env.context)
         return super(MgmtsystemNonconformity, self).message_auto_subscribe(
             updated_fields=updated_fields,
             values=values
         )
 
     @api.multi
-    def wkf_analysis(self):
-        """Change state from draft to analysis"""
-        return self.write({
+    def write(self, vals):
+        """Update user data."""
+        if vals.get('state'):
+            if vals.get('state') == "analysis":
+                vals.update(self.do_analysis())
+            if vals.get('state') == "pending":
+                vals.update(self.do_review())
+            if vals.get('state') == "open":
+                vals.update(self.do_open())
+            if vals.get('state') == "done":
+                vals.update(self.do_close())
+            if vals.get('state') == "cancel":
+                vals.update(self.do_cancel())
+
+        result = super(MgmtsystemNonconformity, self).write(vals)
+        return result
+
+    def do_analysis(self):
+        """Change state from draft to analysis."""
+        return {
             'state': 'analysis',
             'analysis_date': None,
             'analysis_user_id': None}
-        )
+
+    @api.multi
+    def do_review(self):
+        """Change state from analysis to pending approval"""
+        for o in self:
+            if not o.analysis_date:
+                raise exceptions.ValidationError(
+                    _('Analysis must be performed before submitting to '
+                      'approval.')
+                )
+        return {
+            'state': 'pending',
+            'actions_date': None,
+            'actions_user_id': None}
 
     @api.multi
     def action_sign_analysis(self):
@@ -266,21 +305,6 @@ class MgmtsystemNonconformity(models.Model):
             body='%s <b>%s</b>' % (self.verbose_name, _('Analysis Approved'))
         )
         return True
-
-    @api.multi
-    def wkf_review(self):
-        """Change state from analysis to pending approval"""
-        for o in self:
-            if not o.analysis_date:
-                raise exceptions.ValidationError(
-                    _('Analysis must be performed before submitting to '
-                      'approval.')
-                )
-        return self.write({
-            'state': 'pending',
-            'actions_date': None,
-            'actions_user_id': None}
-        )
 
     @api.multi
     def action_sign_actions(self):
@@ -311,7 +335,7 @@ class MgmtsystemNonconformity(models.Model):
         return True
 
     @api.multi
-    def wkf_open(self):
+    def do_open(self):
         """Change state from pending approval to in progress, and Open
         the related actions
         """
@@ -326,11 +350,11 @@ class MgmtsystemNonconformity(models.Model):
         for action in self.action_ids:
             if action.stage_id.is_starting:
                 action.case_open()
-        return self.write({
+        return {
             'state': 'open',
             'evaluation_date': False,
             'evaluation_user_id': False,
-        })
+        }
 
     @api.one
     def action_sign_evaluation(self):
@@ -350,12 +374,13 @@ class MgmtsystemNonconformity(models.Model):
         )
 
     @api.multi
-    def wkf_cancel(self):
+    def do_cancel(self):
         """Change state to cancel"""
-        return self.write({'state': 'cancel'})
+        return {'state': 'cancel',
+                'cancel_date': time.strftime(DATETIME_FORMAT)}
 
     @api.multi
-    def wkf_close(self):
+    def do_close(self):
         """Change state from in progress to closed"""
         self.ensure_one()
 
@@ -372,16 +397,17 @@ class MgmtsystemNonconformity(models.Model):
             raise exceptions.ValidationError(
                 _('Effectiveness evaluation must be performed before closing.')
             )
-        return self.write({'state': 'done'})
+        return {
+            'state': 'done', 'closing_date': time.strftime(DATETIME_FORMAT)}
 
     @api.multi
     def case_reset(self):
-        """Reset to Draft and restart the workflow"""
-        wf_service = netsvc.LocalService("workflow")
-        for nc in self:
-            wf_service.trg_create(self._uid, self._name, nc.id, self._cr)
+        """Reset to Draft."""
+        if not self.cancel_date or not self.closing_date:
+            _('Only a close or cancel process can be reset')
         return self.write({
             'state': 'draft',
+            'closing_date': None, 'cancel_date': None,
             'analysis_date': None, 'analysis_user_id': None,
             'actions_date': None, 'actions_user_id': None,
             'evaluation_date': None, 'evaluation_user_id': None,

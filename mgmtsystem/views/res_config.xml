@@ -10,7 +10,7 @@
                         or
                         <button string="Cancel" type="object" name="cancel" class="oe_link"/>
                     </header>
-                    <separator string="Management systems"/>
+                    <separator string="Management Systems"/>
                     <group>
                         <label for="id" string="Systems"/>
                         <div>
@@ -31,6 +31,9 @@
                                 <label for="module_mgmtsystem_information_security"/>
                             </div>
                         </div>
+                    </group>
+                    <separator string="Applications"/>
+                    <group>
                         <label for="id" string="Applications"/>
                         <div>
                             <div>
@@ -55,15 +58,64 @@
                             </div>
                         </div>
                     </group>
+                    <separator string="Manuals"/>
+                    <group>
+                        <label for="id" string="Manuals"/>
+                        <div>
+                            <div>
+                                <field name="module_mgmtsystem_quality_manual" class="oe_inline"/>
+                                <label for="module_mgmtsystem_quality_manual"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_environment_manual" class="oe_inline"/>
+                                <label for="module_mgmtsystem_environment_manual"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_health_safety_manual" class="oe_inline"/>
+                                <label for="module_mgmtsystem_health_safety_manual"/>
+                            </div>
+                            <div>
+                                <field name="module_information_security_manual" class="oe_inline"/>
+                                <label for="module_information_security_manual"/>
+                            </div>
+                        </div>
+                    </group>
+                    <separator string="Documentation"/>
+                    <group>
+                        <label for="id" string="Documentation"/>
+                        <div>
+                            <div>
+                                <field name="module_mgmtsystem_procedure" class="oe_inline"/>
+                                <label for="module_mgmtsystem_procedure"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_environmental_aspect" class="oe_inline"/>
+                                <label for="module_mgmtsystem_environmental_aspect"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_hazard" class="oe_inline"/>
+                                <label for="module_mgmtsystem_hazard"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_security_event" class="oe_inline"/>
+                                <label for="module_mgmtsystem_security_event"/>
+                            </div>
+                        </div>
+                    </group>
                 </form>
             </field>
         </record>
+
         <record id="action_mgmtsystem_configuration" model="ir.actions.act_window">
             <field name="name">Configure management system</field>
             <field name="res_model">mgmtsystem.config.settings</field>
             <field name="view_mode">form</field>
             <field name="target">inline</field>
         </record>
-        <menuitem id="menu_mgmtsystem_settings" name="Settings" parent="menu_mgmtsystem_configuration"
-            sequence="19" action="action_mgmtsystem_configuration"/>
+
+        <menuitem id="menu_mgmtsystem_settings"
+                  name="Settings"
+                  parent="menu_mgmtsystem_configuration"
+                  sequence="0"
+                  action="action_mgmtsystem_configuration"/>
 </odoo>

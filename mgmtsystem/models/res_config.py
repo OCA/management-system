@@ -28,6 +28,8 @@ class MgmtSystemConfigSettings(models.TransientModel):
     _name = 'mgmtsystem.config.settings'
     _inherit = 'res.config.settings'
 
+    # Systems
+
     module_mgmtsystem_quality = fields.Boolean(
         'Quality (ISO 9001)',
         help='Provide quality management tools.\n'
@@ -51,6 +53,8 @@ class MgmtSystemConfigSettings(models.TransientModel):
         help='Provide information security tools.\n'
         '-This installs the module mgmtsystem_information_security.'
     )
+
+    # Applications
 
     module_mgmtsystem_action = fields.Boolean(
         """
@@ -82,4 +86,56 @@ class MgmtSystemConfigSettings(models.TransientModel):
         'Top management reviews',
         help='Provide review tools.\n'
         '-This installs the module mgmtsystem_review.'
+    )
+
+    # Manuals
+
+    module_mgmtsystem_quality_manual = fields.Boolean(
+        'Quality Manual template based on the ISO 9001:2008 standard',
+        help='Provide a quality manual template.\n'
+        '- This installs the module mgmtsystem_quality_manual.'
+    )
+
+    module_mgmtsystem_environment_manual = fields.Boolean(
+        'Environment Manual template based on the ISO 14001:2004 standard',
+        help='Provide an environment manual template.\n'
+        '- This installs the module mgmtsystem_environment_manual.'
+    )
+
+    module_mgmtsystem_health_safety_manual = fields.Boolean(
+        'Health & Safety Manual template based on the OHSAS 18001 standard',
+        help='Provide a health and safety manual template.\n'
+        '- This installs the module mgmtsystem_health_safety_manual.'
+    )
+
+    module_information_security_manual = fields.Boolean(
+        'Information Security Manual template based on ISO 27001',
+        help='Provide an information security manual.\n'
+        '- This installs the module information_security_manual.'
+    )
+
+    # Documentation
+
+    module_mgmtsystem_procedure = fields.Boolean(
+        'Procedures',
+        help='Provide procedures category.\n'
+        '- This installs the module mgmtsystem_procedure.'
+    )
+
+    module_mgmtsystem_environmental_aspect = fields.Boolean(
+        'Environmental Aspects',
+        help='Provide Environmental Aspect category.\n'
+        '- This installs the module mgmtsystem_environmental_aspect.'
+    )
+
+    module_mgmtsystem_hazard = fields.Boolean(
+        'Hazards',
+        help='Provide Hazards.\n'
+        '- This installs the module mgmtsystem_hazard.'
+    )
+
+    module_mgmtsystem_security_event = fields.Boolean(
+        'Feared Events',
+        help='Provide Feared Events.\n'
+        '- This installs the module mgmtsystem_security_event.'
     )
