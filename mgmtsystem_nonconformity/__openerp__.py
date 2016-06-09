@@ -61,11 +61,12 @@ WARNING: when upgrading from v0.1, data conversion is required, since there are 
 =======
 =======
     "name": "Management System - Nonconformity",
-    "version": "8.0.1.2.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
+<<<<<<< aedf771434404b2aa8c10c5f41955537a4c5e0cd
     "description": """\
 This module enables you to manage the nonconformities of your management
 system: quality (ISO9001), environment (ISO14001) or security (ISO27001).
@@ -176,6 +177,8 @@ Contributors
 * Sandy Carter <sandy.carter@savoirfairelinux.com>
 >>>>>>> Move datas to their own folders
     """,
+=======
+>>>>>>> mgmtsystem_nonconformity progress
     "depends": [
         'mgmtsystem_action',
         'document_page_procedure',
@@ -188,8 +191,7 @@ Contributors
         'views/mgmtsystem_cause.xml',
         'views/mgmtsystem_severity.xml',
         'views/mgmtsystem_action.xml',
-        'views/board.xml',
-        'data/workflow.xml',
+        'reports/mgmtsystem_nonconformity_report.xml',
         'data/sequence.xml',
         'data/mgmtsystem_nonconformity_severity.xml',
         'data/mgmtsystem_nonconformity_origin.xml',
@@ -201,6 +203,7 @@ Contributors
         "demo/mgmtsystem_nonconformity_cause.xml",
         "demo/mgmtsystem_nonconformity.xml",
     ],
+<<<<<<< aedf771434404b2aa8c10c5f41955537a4c5e0cd
 <<<<<<< 032a397f8f66a2977ac532de018235444c6316f6
 <<<<<<< 71aa0a8a6f4f4f006d1786851185cfac782618dd
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
@@ -215,5 +218,8 @@ Contributors
 =======
     'installable': False,
 >>>>>>> [MIG] Make modules uninstallable
+=======
+    'installable': True,
+>>>>>>> mgmtsystem_nonconformity progress
 }
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
