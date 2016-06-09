@@ -27,6 +27,7 @@ model_name = "mgmtsystem.nonconformity"
 
 
 class TestModelNonConformity(common.TransactionCase):
+
     def setUp(self):
         super(TestModelNonConformity, self).setUp()
 
@@ -66,8 +67,8 @@ class TestModelNonConformity(common.TransactionCase):
     def test_create_model_all_required(self):
         # All required fields
         self.create(
-            manager_user_id=self.env.user.id,
             partner_id=self.partner.id,
+            manager_user_id=self.env.user.id,
             description="description",
             responsible_user_id=self.env.user.id,
         )

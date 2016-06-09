@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import models, api, fields, netsvc, exceptions, _
+from openerp import models, api, fields, exceptions, _
 
 from openerp.tools import (
     DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
@@ -29,40 +29,33 @@ from openerp.tools import (
 import time
 
 
-_STATES = [
-    ('draft', _('Draft')),
-    ('analysis', _('Analysis')),
-    ('pending', _('Pending Approval')),
-    ('open', _('In Progress')),
-    ('done', _('Closed')),
-    ('cancel', _('Cancelled')),
-]
-_STATES_DICT = dict(_STATES)
-
-
 class MgmtsystemNonconformity(models.Model):
 
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity"
     _rec_name = "description"
-    _inherit = ['mail.thread']
-    _order = "date desc"
+    _inherit = ['mail.thread', 'ir.needaction_mixin']
+    _order = "create_date desc"
     _track = {
         'field': {
             'mgmtsystem_nonconformity.subtype_analysis': (
-                lambda s, c, u, o, ctx=None: o["state"] == "analysis"
+                lambda s, o: o["state"] == "analysis"
             ),
             'mgmtsystem_nonconformity.subtype_pending': (
-                lambda s, c, u, o, ctx=None: o["state"] == "pending"
+                lambda s, o: o["state"] == "pending"
             ),
         },
     }
 
-    def _state_name(self):
-        res = dict()
-        for o in self:
-            res[o.id] = _STATES_DICT.get(o.state, o.state)
-        return res
+    _STATES = [
+        ('draft', _('Draft')),
+        ('analysis', _('Analysis')),
+        ('pending', _('Pending Approval')),
+        ('open', _('In Progress')),
+        ('done', _('Closed')),
+        ('cancel', _('Cancelled')),
+    ]
+    _STATES_DICT = dict(_STATES)
 
     name = fields.Char('Name')
 
@@ -73,28 +66,53 @@ class MgmtsystemNonconformity(models.Model):
         readonly=True,
         default="NEW"
     )
-    date = fields.Date(
-        'Date',
+
+    # Compute data
+    number_of_nonconformities = fields.Integer(
+        '# of nonconformities', readonly=True, default=1)
+    age = fields.Integer('Age', readonly=True,
+                         compute='_compute_age', store=True)
+    number_of_days_to_analyse = fields.Integer(
+        '# of days to analyse', compute='_compute_number_of_days_to_analyse',
+        store=True, readonly=True)
+    number_of_days_to_plan = fields.Integer(
+        '# of days to plan', compute='_compute_number_of_days_to_plan',
+        store=True, readonly=True)
+    number_of_days_to_execute = fields.Integer(
+        '# of days to execute', compute='_compute_number_of_days_to_execute',
+        store=True, readonly=True)
+    number_of_days_to_close = fields.Integer(
+        '# of days to close', compute='_compute_number_of_days_to_execute',
+        store=True, readonly=True)
+
+    create_date = fields.Date(
+        'Creation Date',
         required=True,
         default=lambda *a: time.strftime(DATE_FORMAT)
     )
+    closing_date = fields.Datetime('Closing Date', readonly=True)
+    cancel_date = fields.Datetime('Cancel Date', readonly=True)
+
     partner_id = fields.Many2one('res.partner', 'Partner', required=True)
     reference = fields.Char('Related to')
     responsible_user_id = fields.Many2one(
         'res.users',
         'Responsible',
         required=True,
+        track_visibility="onchange"
     )
     manager_user_id = fields.Many2one(
         'res.users',
         'Manager',
         required=True,
+        track_visibility="onchange"
     )
     author_user_id = fields.Many2one(
         'res.users',
         'Filled in by',
         required=True,
-        default=lambda self: self.env.user.id
+        default=lambda self: self.env.user.id,
+        track_visibility="onchange"
     )
     origin_ids = fields.Many2many(
         'mgmtsystem.nonconformity.origin',
@@ -119,10 +137,7 @@ class MgmtsystemNonconformity(models.Model):
         default="draft",
         track_visibility='onchange',
     )
-    state_name = fields.Char(
-        compute='_state_name',
-        string='State Description',
-    )
+
     system_id = fields.Many2one('mgmtsystem.system', 'System')
 
     # 2. Root Cause Analysis
@@ -204,6 +219,53 @@ class MgmtsystemNonconformity(models.Model):
         domain="[('nonconformity_id', '=', id)]",
     )
 
+    def _compute_age(self):
+        return self._elapsed_days(
+            self.create_date, time.strftime(DATETIME_FORMAT))
+
+    @api.depends('analysis_date', 'create_date')
+    def _compute_number_of_days_to_analyse(self):
+        for nc in self:
+            nc.number_of_days_to_close_open = nc._elapsed_days(
+                nc.create_date,
+                nc.analysis_date)
+
+    @api.depends('closing_date', 'create_date')
+    def _compute_number_of_days_to_close(self):
+        for nc in self:
+            nc.number_of_days_to_close_open = nc._elapsed_days(
+                nc.create_date,
+                nc.closing_date)
+
+    @api.depends('actions_date', 'analysis_date')
+    def _compute_number_of_days_to_plan(self):
+        for nc in self:
+            nc.number_of_days_to_close_open = nc._elapsed_days(
+                nc.analysis_date,
+                nc.actions_date)
+
+    @api.depends('evaluation_date', 'actions_date')
+    def _compute_number_of_days_to_execute(self):
+        for nc in self:
+            nc.number_of_days_to_close_open = nc._elapsed_days(
+                nc.actions_date,
+                nc.evaluation_date)
+
+    @api.model
+    def _elapsed_days(self, dt1_text, dt2_text):
+        res = 0
+        if dt1_text and dt2_text:
+            dt1 = fields.Datetime.from_string(dt1_text)
+            dt2 = fields.Datetime.from_string(dt2_text)
+            res = (dt2 - dt1).days
+        return res
+
+    def _state_name(self):
+        res = dict()
+        for o in self:
+            res[o.id] = self._STATES_DICT.get(o.state, o.state)
+        return res
+
     @property
     @api.multi
     def verbose_name(self):
@@ -212,33 +274,81 @@ class MgmtsystemNonconformity(models.Model):
     @api.model
     def create(self, vals):
         vals.update({
-            'ref': self.env['ir.sequence'].get('mgmtsystem.nonconformity')
+            'ref': self.env['ir.sequence'].next_by_code(
+                'mgmtsystem.nonconformity')
         })
+
         return super(MgmtsystemNonconformity, self).create(vals)
 
     @api.multi
     def message_auto_subscribe(self, updated_fields, values=None):
-        """Add the responsible, manager and OpenChatter follow list."""
+        """
+        Add the responsible, manager and author to the OpenChatter follow list
+        """
         self.ensure_one()
-        user_ids = [
-            self.responsible_user_id.id,
-            self.manager_user_id.id,
-            self.author_user_id.id,
-        ]
-        self.message_subscribe_users(user_ids=user_ids, subtype_ids=None)
+
+        # user_ids = [
+        #    self.responsible_user_id._uid,
+        #    self.manager_user_id._uid,
+        #    self.author_user_id._uid,
+        # ]
+        # self.message_subscribe_users(user_ids=user_ids)
+
         return super(MgmtsystemNonconformity, self).message_auto_subscribe(
             updated_fields=updated_fields,
             values=values
         )
 
     @api.multi
-    def wkf_analysis(self):
-        """Change state from draft to analysis"""
-        return self.write({
+    def write(self, vals):
+        """Update user data."""
+        if vals.get('state'):
+            if vals.get('state') == "analysis":
+                vals.update(self.do_analysis())
+            if vals.get('state') == "pending":
+                vals.update(self.do_review())
+            if vals.get('state') == "open":
+                vals.update(self.do_open())
+            if vals.get('state') == "done":
+                vals.update(self.do_close())
+            if vals.get('state') == "cancel":
+                vals.update(self.do_cancel())
+            if vals.get('state') == "draft":
+                vals.update(self.case_reset())
+
+        result = super(MgmtsystemNonconformity, self).write(vals)
+        return result
+
+    def check_if_the_process_is_closed_or_cancelled(self):
+        if self.cancel_date or self.closing_date:
+            raise exceptions.ValidationError(
+                _('Please reset the process to draft, to perform it again')
+            )
+
+    def do_analysis(self):
+        """Change state from draft to analysis."""
+        self.check_if_the_process_is_closed_or_cancelled()
+        return {
             'state': 'analysis',
             'analysis_date': None,
-            'analysis_user_id': None}
-        )
+            'analysis_user_id': None,
+            'actions_date': None,
+            'actions_user_id': None}
+
+    @api.multi
+    def do_review(self):
+        """Change state from analysis to pending approval"""
+        self.check_if_the_process_is_closed_or_cancelled()
+        for o in self:
+            if not o.analysis_date:
+                raise exceptions.ValidationError(
+                    _('Analysis must be performed before submitting to '
+                      'approval.')
+                )
+        return {
+            'state': 'pending',
+            'actions_date': None,
+            'actions_user_id': None}
 
     @api.multi
     def action_sign_analysis(self):
@@ -256,29 +366,15 @@ class MgmtsystemNonconformity(models.Model):
             raise exceptions.ValidationError(
                 _('Please provide an analysis before approving.')
             )
+
         self.write({
             'analysis_date': time.strftime(DATETIME_FORMAT),
-            'analysis_user_id': self._uid,
+            'analysis_user_id': self._uid
         })
         self.message_post(
             body='%s <b>%s</b>' % (self.verbose_name, _('Analysis Approved'))
         )
         return True
-
-    @api.multi
-    def wkf_review(self):
-        """Change state from analysis to pending approval"""
-        for o in self:
-            if not o.analysis_date:
-                raise exceptions.ValidationError(
-                    _('Analysis must be performed before submitting to '
-                      'approval.')
-                )
-        return self.write({
-            'state': 'pending',
-            'actions_date': None,
-            'actions_user_id': None}
-        )
 
     @api.multi
     def action_sign_actions(self):
@@ -309,11 +405,12 @@ class MgmtsystemNonconformity(models.Model):
         return True
 
     @api.multi
-    def wkf_open(self):
+    def do_open(self):
         """Change state from pending approval to in progress, and Open
         the related actions
         """
         self.ensure_one()
+        self.check_if_the_process_is_closed_or_cancelled()
         if not self.actions_date:
             raise exceptions.ValidationError(
                 _('Action plan must be approved before opening.')
@@ -324,15 +421,16 @@ class MgmtsystemNonconformity(models.Model):
         for action in self.action_ids:
             if action.stage_id.is_starting:
                 action.case_open()
-        return self.write({
+        return {
             'state': 'open',
             'evaluation_date': False,
             'evaluation_user_id': False,
-        })
+        }
 
-    @api.one
+    @api.multi
     def action_sign_evaluation(self):
         """Sign-off the effectiveness evaluation"""
+        self.ensure_one()
         if self.state != 'open':
             raise exceptions.ValidationError(
                 _('This action can only be done in the In Progress state.')
@@ -347,16 +445,32 @@ class MgmtsystemNonconformity(models.Model):
             )
         )
 
-    @api.multi
-    def wkf_cancel(self):
-        """Change state to cancel"""
-        return self.write({'state': 'cancel'})
+    def do_cancel(self):
+        """Change state to cancel."""
+        if self.closing_date:
+            raise exceptions.ValidationError(
+                _('A close process cannot be cancelled')
+            )
+        return {'state': 'cancel',
+                'cancel_date': time.strftime(DATETIME_FORMAT)}
 
     @api.multi
-    def wkf_close(self):
+    def do_close(self):
         """Change state from in progress to closed"""
         self.ensure_one()
 
+        if (not self.env.ref('mgmtsystem.group_mgmtsystem_manager') in
+            self.env.user.groups_id and
+            not self.env.ref('mgmtsystem.group_mgmtsystem_auditor') in
+                self.env.user.groups_id):
+            raise exceptions.ValidationError(
+                _("You don't have the right to close a non conformity.")
+            )
+
+        if self.cancel_date:
+            raise exceptions.ValidationError(
+                _('A cancel process cannot be closed')
+            )
         if (self.immediate_action_id and
                 not self.immediate_action_id.stage_id.is_ending):
             raise exceptions.ValidationError(
@@ -370,17 +484,57 @@ class MgmtsystemNonconformity(models.Model):
             raise exceptions.ValidationError(
                 _('Effectiveness evaluation must be performed before closing.')
             )
-        return self.write({'state': 'done'})
 
-    @api.multi
+        return {
+            'state': 'done',
+            'closing_date': time.strftime(DATETIME_FORMAT),
+        }
+
     def case_reset(self):
-        """Reset to Draft and restart the workflow"""
-        wf_service = netsvc.LocalService("workflow")
-        for nc in self:
-            wf_service.trg_create(self._uid, self._name, nc.id, self._cr)
-        return self.write({
+        """Reset to Draft."""
+        if not self.cancel_date and not self.closing_date:
+            raise exceptions.ValidationError(
+                _('Only a close or cancel process can be reset')
+            )
+        return {
             'state': 'draft',
+            'closing_date': None, 'cancel_date': None,
             'analysis_date': None, 'analysis_user_id': None,
             'actions_date': None, 'actions_user_id': None,
             'evaluation_date': None, 'evaluation_user_id': None,
-        })
+            'number_of_days_to_close': None, 'number_of_days_to_analyse': None,
+            'number_of_days_to_plan': None, 'number_of_days_to_execute': None,
+        }
+
+    @api.model
+    def state_groups(self, present_ids, domain, **kwargs):
+        folded = {key: (key in self._state_name()) for key, _ in self._STATES}
+        # Need to copy state_name list before returning it,
+        # because odoo modifies the list it gets,
+        # emptying it in the process. Bad odoo!
+        return self._STATES[:], folded
+
+    _group_by_full = {
+        'state': state_groups
+    }
+
+    def _read_group_fill_results(self, cr, uid, domain, groupby,
+                                 remaining_groupbys, aggregated_fields,
+                                 count_field, read_group_result,
+                                 read_group_order=None, context=None):
+        """
+        The method seems to support grouping using m2o fields only,
+        while we want to group by a simple status field.
+        Hence the code below - it replaces simple status values
+        with (value, name) tuples.
+        """
+        if groupby == 'state':
+            STATES_DICT = dict(self._STATES)
+            for result in read_group_result:
+                state = result['state']
+                result['state'] = (state, STATES_DICT.get(state))
+
+        return super(MgmtsystemNonconformity, self)._read_group_fill_results(
+            cr, uid, domain, groupby, remaining_groupbys, aggregated_fields,
+            count_field, read_group_result, read_group_order, context
+        )
