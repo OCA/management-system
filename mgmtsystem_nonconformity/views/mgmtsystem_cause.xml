@@ -1,4 +1,4 @@
-<openerp>
+<odoo>
   <data>
     <!-- Cause -->
 
@@ -55,11 +55,11 @@
     </record>
 
     <menuitem
-      id="menu_open_nonconformity_cause" 
-      action="open_mgmtsystem_nonconformity_cause_list" 
+      id="menu_open_nonconformity_cause"
+      action="open_mgmtsystem_nonconformity_cause_list"
       parent="menu_mgmtsystem_configuration_nonconformities"
-      sequence="30" 
+      sequence="30"
       groups="mgmtsystem.group_mgmtsystem_manager"/>
 
   </data>
-</openerp>
+</odoo>
