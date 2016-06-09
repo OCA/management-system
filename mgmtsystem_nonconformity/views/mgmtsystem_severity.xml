@@ -1,4 +1,4 @@
-<openerp>
+<odoo>
   <data>
     <!-- Severity -->
 
@@ -26,10 +26,10 @@
     </record>
 
     <menuitem
-      id="menu_open_nonconformity_severity" 
-      action="open_mgmtsystem_nonconformity_severity_list" 
-      parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities" 
+      id="menu_open_nonconformity_severity"
+      action="open_mgmtsystem_nonconformity_severity_list"
+      parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities"
       groups="mgmtsystem.group_mgmtsystem_manager"/>
 
   </data>
-</openerp>
+</odoo>
