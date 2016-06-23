@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="verification_report">
+
+            <t t-set="doc" t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})" />
+            <t t-call="report.external_layout">
+                <div class="page">
+                        <h2 t-field="doc.name"/>
+                        <p t-field="doc.user_id.name"/>
+                </div>
+            </t>
+
+        </template>
+    </data>
+</odoo>

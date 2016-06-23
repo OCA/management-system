@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="audit_report">
+            <t t-set="doc" t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"/>
+            <t t-call="report.internal_layout">
+                <div class="page">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="page-header text-center">
+                                <h2>Audit Report</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="text-center"><h2 t-field="doc.name"/></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            Condidentially: Internal
+                        </div>
+                        <div class="col-xs-12">
+                            Reference: <span t-field="doc.reference"/>
+                        </div>
+                        <div class="col-xs-12">
+                            Date: <span t-field="doc.date"/>
+                        </div>
+                        <div class="col-xs-12">
+                            Auditors:
+                        </div>
+                        <div class="col-xs-12">
+                            <ul>
+                                <t t-foreach="doc.auditor_user_ids" t-as="auditor">
+                                    <li><span t-field="auditor.name"/></li>
+                                </t>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>
