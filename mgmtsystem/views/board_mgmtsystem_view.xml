@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- This board view will be completed by other mgmtsystem_* modules-->
+        <record id="board_mgmtsystem_form" model="ir.ui.view">
+            <field name="name">board.mgmtsystem.form</field>
+            <field name="model">board.board</field>
+            <field name="arch" type="xml">
+                <form string="Management Systems Dashboard">
+                    <hpaned>
+                        <child1>
+                        </child1>
+                        <child2>
+                        </child2>
+                    </hpaned>
+                </form>
+            </field>
+        </record>
+
+       <record id="open_board_mgmtsystem" model="ir.actions.act_window">
+            <field name="name">Management System Dashboard</field>
+            <field name="res_model">board.board</field>
+            <field name="usage">menu</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="board_mgmtsystem_form"/>
+        </record>
+
+        <menuitem
+            id="mgmtsystem_dashboard"
+            name="Management Systems"
+            sequence="50"
+            parent="base.menu_reporting_dashboard"
+            action="open_board_mgmtsystem"/>
+
+    </data>
+</openerp>

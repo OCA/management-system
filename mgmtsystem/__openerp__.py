@@ -29,14 +29,14 @@
     "depends": [
         'base',
         'board',
-        'document_page',
     ],
     "data": [
         'security/mgmtsystem_security.xml',
         'security/ir.model.access.csv',
         'views/menus.xml',
         'views/mgmtsystem_system.xml',
-        'views/res_config.xml'
+        'views/res_config.xml',
+        'views/board_mgmtsystem_view.xml'
     ],
     "demo": [],
     'installable': True,
