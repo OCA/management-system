@@ -12,8 +12,7 @@ class TestModelAction(common.TransactionCase):
         stage = self.env.ref('mgmtsystem_action.stage_open')
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
-            "type_action": "immediate",
-            "opening_date": datetime.now()
+            "type_action": "immediate"
         })
 
         self.assertEqual(record.name, "SampleAction")
