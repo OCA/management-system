@@ -15,25 +15,17 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
-import time
-from openerp.report import report_sxw
+from openerp import fields, models
 
 
-class mgmtsystem_audit_report(report_sxw.rml_parse):
+class MgmtSystemNonconformity(models.Model):
+    """Class use to add audit_ids association to MgmtSystemNonconformity."""
 
-    def __init__(self, cr, uid, name, context):
-        super(mgmtsystem_audit_report, self).__init__(cr, uid, name, context)
-        self.localcontext.update({
-            'time': time,
-        })
-
-report_sxw.report_sxw(
-    'report.mgmtsystem.audit.report',
-    'mgmtsystem.audit',
-    'addons/mgmtsystem_audit/report/audit_report.rml',
-    parser=mgmtsystem_audit_report
-)
+    _name = "mgmtsystem.nonconformity"
+    _inherit = "mgmtsystem.nonconformity"
+    audit_ids = fields.Many2many(
+        'mgmtsystem.audit', string='Related Audits')

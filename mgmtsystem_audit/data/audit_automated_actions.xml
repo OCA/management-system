@@ -1,0 +1,72 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Email template for "Prepare to audit" message to all auditors. -->
+        <record id="action_email_prepare_to_audit" model="ir.actions.server">
+            <field name="name">Prepare to audit</field>
+            <field name="model_id" ref="model_mgmtsystem_audit"/>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">email</field>
+            <field name="email_to">",".join(set([ i.email for i in object.auditor_user_ids ]))</field>
+            <field name="subject">Prepare to Audit: "[[object.name]]"</field>
+            <field name="body_html">
+Hello,
+
+The audit "[[object.name]]" is scheduled in 2 weeks.
+Please prepare the verification list:
+
+[[object.get_audit_url()]]
+
+
+Thank you.
+--
+Odoo
+            </field>
+        </record>
+
+        <!-- Automated Action: Email all auditors 2 weeks before Audit. -->
+        <record id="rule_set_prepare_to_audit" model="base.action.rule">
+            <field name="name">Email all auditors 2 weeks before audit.</field>
+            <field name="model_id" ref="model_mgmtsystem_audit"/>
+            <field name="trg_date_id" ref="field_mgmtsystem_audit_date"/>
+            <field name="trg_date_range">14</field>
+            <field name="trg_date_range_type">day</field>
+            <field name="server_action_ids" eval="[(6, 0, [ref('action_email_prepare_to_audit')])]"/>
+        </record>
+
+        <!-- Email template for "Send verification list" message to all followers -->
+        <record id="action_email_send_verification_list" model="ir.actions.server">
+            <field name="name">Send Verification List</field>
+            <field name="model_id" ref="model_mgmtsystem_audit"/>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">email</field>
+            <field name="email_to">",".join(set([i.email for i in object.auditor_user_ids] + [i.email for i in object.auditee_user_ids] + [object.user_id.email]))</field>
+            <field name="subject">Send Verification List: "[[object.name]]"</field>
+            <field name="body_html">
+Hello,
+
+The audit "[[object.name]]" is scheduled in 1 week.
+Please finish the verification list and send it to the auditees:
+
+[[object.get_audit_url()]]
+
+
+Thank you.
+--
+Odoo
+            </field>
+        </record>
+
+        <!-- Automated Action: Email all followers 1 weeks before Audit. -->
+        <record id="rule_set_send_verification_list" model="base.action.rule">
+            <field name="name">Email all followers 1 week before audit.</field>
+            <field name="model_id" ref="model_mgmtsystem_audit"/>
+            <field name="trg_date_id" ref="field_mgmtsystem_audit_date"/>
+            <field name="trg_date_range">7</field>
+            <field name="trg_date_range_type">day</field>
+            <field name="server_action_ids" eval="[(6, 0, [ref('action_email_send_verification_list')])]"/>
+        </record>
+
+    </data>
+</odoo>
