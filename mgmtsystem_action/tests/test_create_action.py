@@ -5,7 +5,11 @@ class TestModelAction(common.TransactionCase):
     def test_create_action(self):
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
+<<<<<<< 1b8e49b877d1f53e685156cb680857f6d57d1f8c
             "type_action": "immediate",
+=======
+            "type_action": "immediate"
+>>>>>>> Fixing test error
         })
 
         self.assertEqual(record.name, "SampleAction")
