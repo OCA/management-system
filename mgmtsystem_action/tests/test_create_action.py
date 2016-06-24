@@ -101,7 +101,13 @@ class TestModelAction(common.TransactionCase):
             record.write({'stage_id': stage.id})
         except exceptions.ValidationError:
             self.assertTrue(True)
+<<<<<<< 30ebbfd9670688c1eb756e7fe5a91f0b68aa67b7
 >>>>>>> Improving test coverage
+=======
+        record.write({'stage_id': stage_new.id})
+        self.assertFalse(record.date_closed)
+        self.assertFalse(record.opening_date)
+>>>>>>> Fixing pylint error
 
     def test_get_action_url(self):
         record = self.env['mgmtsystem.action'].create({
