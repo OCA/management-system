@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from openerp import fields, models, api, _
+from openerp import fields, models, api, exceptions, _
 from datetime import datetime, timedelta
 
 
@@ -54,6 +54,7 @@ class MgmtSystemAction(models.Model):
 
     create_date = fields.Datetime('Create Date', readonly=True,
                                   default=fields.datetime.now())
+    cancel_date = fields.Datetime('Cancel Date', readonly=True)
     opening_date = fields.Datetime('Opening Date', readonly=True)
     date_closed = fields.Datetime('Closed Date', readonly=True)
     number_of_days_to_open = fields.Integer(
@@ -142,9 +143,19 @@ class MgmtSystemAction(models.Model):
     @api.multi
     def write(self, vals):
         """Update user data."""
+        stage_new = self._get_stage_new()
         stage_open = self._get_stage_open()
         stage_close = self._get_stage_close()
         stage_cancel = self._get_stage_cancel()
+        if vals['stage_id'] == stage_new.id:
+            if self.opening_date:
+                raise exceptions.ValidationError(
+                    _('We cannot bring back the action to draft stage')
+                )
+                self.message_post(
+                    body=' %s ' % (_('Action back to draft stage on ') +
+                                   vals['opening_date'])
+                )
         if vals['stage_id'] == stage_open.id:
             vals['opening_date'] = fields.Datetime.now()
             self.message_post(
@@ -153,12 +164,19 @@ class MgmtSystemAction(models.Model):
             )
             vals['date_closed'] = None
         if vals['stage_id'] == stage_close.id:
+            if not self.opening_date or self.cancel_date:
+                raise exceptions.ValidationError(
+                    _('You should first open the action')
+                )
             vals['date_closed'] = fields.Datetime.now()
             self.message_post(
                 body=' %s ' % (_('Action closed on ') +
                                vals['date_closed'])
             )
         if vals['stage_id'] == stage_cancel.id:
+            vals['date_closed'] = None
+            vals['opening_date'] = None
+            vals['cancel_date'] = fields.Datetime.now()
             self.message_post(
                 body=' %s ' % (_('Action cancelled on ') +
                                fields.Datetime.now())
