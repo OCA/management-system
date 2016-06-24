@@ -152,6 +152,7 @@ class MgmtSystemAction(models.Model):
                 raise exceptions.ValidationError(
                     _('We cannot bring back the action to draft stage')
                 )
+            vals['cancel_date'] = None
             self.message_post(
                 body=' %s ' % (_('Action back to draft stage on ') +
                                fields.Datetime.now())
@@ -163,6 +164,7 @@ class MgmtSystemAction(models.Model):
                                vals['opening_date'])
             )
             vals['date_closed'] = None
+            vals['cancel_date'] = None
         if vals['stage_id'] == stage_close.id:
             if not self.opening_date or self.cancel_date:
                 raise exceptions.ValidationError(
