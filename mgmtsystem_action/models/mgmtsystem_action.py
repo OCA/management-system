@@ -127,7 +127,7 @@ class MgmtSystemAction(models.Model):
         for case in self:
             case.write({
                 'active': True,
-                'stage_id': case._get_stage_open.id})
+                'stage_id': case._get_stage_open().id})
         return True
 
     @api.model
@@ -170,7 +170,7 @@ class MgmtSystemAction(models.Model):
         template = self.env.ref(
             'mgmtsystem_action.email_template_new_action_reminder')
         for action in self:
-            template.send_mail(action, force_send=force_send)
+            template.send_mail(action.id, force_send=force_send)
         return True
 
     def get_action_url(self):

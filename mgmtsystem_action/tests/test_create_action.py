@@ -27,12 +27,14 @@ class TestModelAction(common.TransactionCase):
         ))
 
     def test_case_open(self):
+        """Test object open state."""
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
             "type_action": "immediate",
         })
 
-        record.active = False
+        record.write(
+            {'active': False, 'stage_id': record._get_stage_open().id})
 
         ret = record.case_open()
 
