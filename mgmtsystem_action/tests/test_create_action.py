@@ -19,14 +19,19 @@ class TestModelAction(common.TransactionCase):
         self.assertEqual(record.stage_id.is_starting, True)
 
     def test_case_open(self):
+<<<<<<< f6b774890daa11142d5dd0f33efc18252f456ac9
 <<<<<<< 30b7755499fb1bc52d6afb3c3e19c803eb3ba928
 =======
+=======
+        """Test object open state."""
+>>>>>>> Fixing error by making test work
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
             "type_action": "immediate",
         })
 
-        record.active = False
+        record.write(
+            {'active': False, 'stage_id': record._get_stage_open().id})
 
         ret = record.case_open()
 
