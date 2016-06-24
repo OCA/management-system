@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from openerp import exceptions
 from openerp.tests import common
 from datetime import datetime, timedelta
 
@@ -44,19 +45,43 @@ class TestModelAction(common.TransactionCase):
         self.assertEqual(record.stage_id.is_starting, False)
         self.assertEqual(record.stage_id.is_ending, False)
 
-    def test_case_close(self):
-        """Test object close state."""
-        stage = self.env.ref('mgmtsystem_action.stage_close')
+    def test_get_new_stage(self):
+        """Get stage new."""
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
             "type_action": "immediate",
         })
+        stage = record._get_stage_new()
 
+        self.assertEqual(stage.name, 'Draft')
+
+    def test_case_close(self):
+        """Test object close state."""
+        record = self.env['mgmtsystem.action'].create({
+            "name": "SampleAction",
+            "type_action": "immediate",
+        })
+        stage = record._get_stage_open()
+        stage_new = record._get_stage_new()
         record.stage_id = stage
-
+        stage = record._get_stage_close()
+        record.stage_id = stage
         self.assertEqual(record.date_closed[:-3], datetime.now().strftime(
             '%Y-%m-%d %H:%M'
         ))
+        try:
+            record.write({'stage_id': stage_new.id})
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+        stage = record._get_stage_cancel()
+        record.stage_id = stage
+        self.assertFalse(record.date_closed)
+        self.assertFalse(record.opening_date)
+        stage = record._get_stage_close()
+        try:
+            record.write({'stage_id': stage.id})
+        except exceptions.ValidationError:
+            self.assertTrue(True)
 
     def test_get_action_url(self):
         """Test if action url start with http."""
