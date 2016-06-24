@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from openerp import fields, models, api
+from openerp import fields, models, api, _
 from datetime import datetime, timedelta
 
 
@@ -52,6 +52,8 @@ class MgmtSystemAction(models.Model):
     active = fields.Boolean('Active', default=True)
     date_deadline = fields.Date('Deadline')
 
+    create_date = fields.Datetime('Create Date', readonly=True,
+                                  default=fields.datetime.now())
     opening_date = fields.Datetime('Opening Date', readonly=True)
     date_closed = fields.Datetime('Closed Date', readonly=True)
     number_of_days_to_open = fields.Integer(
@@ -88,8 +90,10 @@ class MgmtSystemAction(models.Model):
     def _stage_groups(self, present_ids, domain, **kwargs):
         """This method is used by Kanban view to show empty stages."""
         # perform search
+        # We search here only stage ids
         stage_ids = self.env['mgmtsystem.action.stage']._search([])
-        result = stage_ids.name_get()
+        # We search here stages objects
+        result = self.env['mgmtsystem.action.stage'].search([]).name_get()
         # restore order of the search
         result.sort(lambda x, y: cmp(
             stage_ids.index(x[0]), stage_ids.index(y[0])))
@@ -113,6 +117,10 @@ class MgmtSystemAction(models.Model):
     def _get_stage_close(self):
         return self.env.ref('mgmtsystem_action.stage_close')
 
+    @api.model
+    def _get_stage_cancel(self):
+        return self.env.ref('mgmtsystem_action.stage_cancel')
+
     @api.multi
     def case_open(self):
         """ Opens case """
@@ -128,7 +136,7 @@ class MgmtSystemAction(models.Model):
         Sequence = self.env['ir.sequence']
         vals['reference'] = Sequence.next_by_code('mgmtsystem.action')
         action = super(MgmtSystemAction, self).create(vals)
-        action.send_mail_for_action()
+        self.send_mail_for_action(action)
         return action
 
     @api.multi
@@ -136,11 +144,25 @@ class MgmtSystemAction(models.Model):
         """Update user data."""
         stage_open = self._get_stage_open()
         stage_close = self._get_stage_close()
+        stage_cancel = self._get_stage_cancel()
         if vals['stage_id'] == stage_open.id:
             vals['opening_date'] = fields.Datetime.now()
+            self.message_post(
+                body=' %s ' % (_('Action opened on ') +
+                               vals['opening_date'])
+            )
             vals['date_closed'] = None
         if vals['stage_id'] == stage_close.id:
             vals['date_closed'] = fields.Datetime.now()
+            self.message_post(
+                body=' %s ' % (_('Action closed on ') +
+                               vals['date_closed'])
+            )
+        if vals['stage_id'] == stage_cancel.id:
+            self.message_post(
+                body=' %s ' % (_('Action cancelled on ') +
+                               fields.Datetime.now())
+            )
         return super(MgmtSystemAction, self).write(vals)
 
     def send_mail_for_action(self, action, force_send=True):
