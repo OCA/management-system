@@ -53,11 +53,12 @@
 This module enables you to manage audits and verifications lists of your management system.
 =======
     "name": "Management System - Audit",
-    "version": "8.0.1.2.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
 <<<<<<< 0bb2f475778b7c2c2694bf72154fdacddbde7d91
     "description": """\
 This module enables you to manage audits and verifications lists of your
@@ -67,19 +68,25 @@ management system.
 =======
 >>>>>>> [IMP] Module structure
     "depends": ['mgmtsystem_nonconformity'],
+=======
+    "depends": ['mgmtsystem_nonconformity', 'base_action_rule'],
+>>>>>>> [MIG] mgmtsystem_audit
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_audit_security.xml',
         'data/audit_sequence.xml',
+        'data/audit_automated_actions.xml',
         'views/mgmtsystem_audit.xml',
-        'views/board_mgmtsystem_audit.xml',
-        'report/audit_report.xml',
-        'report/verification_list.xml',
+        'report/audit.xml',
+        'report/verification.xml',
+        'report/report.xml',
+        'report/mgmtsystem_audit_pivot.xml',
         'wizard/copy_verification_lines.xml',
     ],
     "demo": [
         'demo/demo_audit.xml',
     ],
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
 <<<<<<< 7b789f414fa0decc3c5afe3bd77d89f33eb53e4f
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
     "installable": True,
@@ -93,4 +100,7 @@ management system.
 =======
     'installable': False,
 >>>>>>> [MIG] Make modules uninstallable
+=======
+    'installable': True,
+>>>>>>> [MIG] mgmtsystem_audit
 }

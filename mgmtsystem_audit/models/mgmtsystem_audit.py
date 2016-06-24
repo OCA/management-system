@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -19,6 +19,7 @@
 #
 ##############################################################################
 
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
 from tools.translate import _
 =======
@@ -27,12 +28,18 @@ from openerp.tools.translate import _
 from openerp.osv import fields, orm
 from urllib import urlencode
 from urlparse import urljoin
+=======
+from openerp import fields, models, api, _
+>>>>>>> [MIG] mgmtsystem_audit
 
 
-class mgmtsystem_audit(orm.Model):
+class MgmtSystemAudit(models.Model):
+    """Model class that manage audit."""
+
     _name = "mgmtsystem.audit"
     _description = "Audit"
     _inherit = ['mail.thread']
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
     _columns = {
         'name': fields.char('Name', size=50),
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
@@ -126,12 +133,144 @@ class mgmtsystem_audit(orm.Model):
         return super(mgmtsystem_audit, self).create(
             cr, uid, vals, context=context)
 >>>>>>> Moved mgmtsystem_audit to root and fixed imports
+=======
+    name = fields.Char('Name')
 
-    def button_close(self, cr, uid, ids, context=None):
+    reference = fields.Char(
+        'Reference',
+        size=64,
+        required=True,
+        readonly=True,
+        default='NEW'
+    )
+    date = fields.Datetime('Date')
+    line_ids = fields.One2many(
+        'mgmtsystem.verification.line',
+        'audit_id',
+        'Verification List',
+    )
+    number_of_audits = fields.Integer('# of audits', readonly=True, default=1)
+    number_of_nonconformities = fields.Integer(
+        'Number of nonconformities', readonly=True, store=True,
+        compute="_compute_number_of_nonconformities")
+    number_of_questions_in_verification_list = fields.Integer(
+        'Number of questions in verification list', readonly=True, store=True,
+        compute="_compute_number_of_questions_in_verification_list")
+    number_of_improvements_opportunity = fields.Integer(
+        'Number of improvements Opportunities', readonly=True, store=True,
+        compute="_compute_number_of_improvement_opportunities")
+    days_since_last_update = fields.Integer(
+        'Days since last update', readonly=True, store=True,
+        compute="_compute_days_since_last_update")
+    closing_date = fields.Datetime('Closing Date', readonly=True)
+
+    number_of_days_to_close = fields.Integer(
+        '# of days to close', readonly=True, store=True,
+        compute="_compute_number_of_days_to_close")
+
+    user_id = fields.Many2one('res.users', 'Audit Manager')
+    auditor_user_ids = fields.Many2many(
+        'res.users',
+        'mgmtsystem_auditor_user_rel',
+        'user_id',
+        'mgmtsystem_audit_id',
+        'Auditors',
+    )
+    auditee_user_ids = fields.Many2many(
+        'res.users',
+        'mgmtsystem_auditee_user_rel',
+        'user_id',
+        'mgmtsystem_audit_id',
+        'Auditees',
+    )
+    strong_points = fields.Html('Strong Points')
+    to_improve_points = fields.Html('Points To Improve')
+    imp_opp_ids = fields.Many2many(
+        'mgmtsystem.action',
+        'mgmtsystem_audit_imp_opp_rel',
+        'mgmtsystem_action_id',
+        'mgmtsystem_audit_id',
+        'Improvement Opportunities',
+    )
+
+    nonconformity_ids = fields.Many2many(
+        'mgmtsystem.nonconformity',
+        string='Nonconformities',
+    )
+    state = fields.Selection(
+        [
+            ('open', 'Open'),
+            ('done', 'Closed'),
+        ],
+        'State',
+        default="open"
+    )
+    system_id = fields.Many2one('mgmtsystem.system', 'System')
+    company_id = fields.Many2one(
+        'res.company', 'Company',
+        default=lambda self: self.env.user.company_id.id)
+
+    @api.depends("nonconformity_ids")
+    def _compute_number_of_nonconformities(self):
+        """Count number of nonconformities."""
+        for audit in self:
+            audit.number_of_nonconformities = len(self.nonconformity_ids)
+
+    @api.depends("imp_opp_ids")
+    def _compute_number_of_improvement_opportunities(self):
+        """Count number of improvements Opportunities."""
+        for audit in self:
+            audit.number_of_improvements_opportunity = len(audit.imp_opp_ids)
+
+    @api.depends("line_ids")
+    def _compute_number_of_questions_in_verification_list(self):
+        for audit in self:
+            audit.number_of_questions_in_verification_list = len(
+                audit.line_ids)
+
+    @api.depends("write_date")
+    def _compute_days_since_last_update(self):
+        for audit in self:
+            audit.days_since_last_update = audit._elapsed_days(
+                audit.create_date,
+                audit.write_date)
+
+    @api.depends("closing_date")
+    def _compute_number_of_days_to_close(self):
+        for audit in self:
+            audit.number_of_days_to_close = audit._elapsed_days(
+                audit.create_date,
+                audit.closing_date)
+
+    @api.model
+    def _elapsed_days(self, dt1_text, dt2_text):
+        res = 0
+        if dt1_text and dt2_text:
+            dt1 = fields.Datetime.from_string(dt1_text)
+            dt2 = fields.Datetime.from_string(dt2_text)
+            res = (dt2 - dt1).days
+        return res
+
+    @api.model
+    def create(self, vals):
+        """Audit creation."""
+        vals.update({
+            'reference': self.env['ir.sequence'].next_by_code(
+                'mgmtsystem.audit'
+            ),
+        })
+        audit_id = super(MgmtSystemAudit, self).create(vals)
+        return audit_id
+>>>>>>> [MIG] mgmtsystem_audit
+
+    @api.multi
+    def button_close(self):
         """When Audit is closed, post a message to followers' chatter."""
-        self.message_post(cr, uid, ids, _("Audit closed"), context=context)
-        return self.write(cr, uid, ids, {'state': 'done'})
+        self.message_post(_("Audit closed"))
+        return self.write({'state': 'done',
+                           'closing_date': fields.Datetime.now()})
 
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
     def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None, values=None):
         """Automatically add the Auditors, Auditees and Audit Manager to the follow list"""
@@ -160,10 +299,14 @@ class mgmtsystem_audit(orm.Model):
 >>>>>>> Moved mgmtsystem_audit to root and fixed imports
 
     def get_audit_url(self, cr, uid, ids, context=None):
+=======
+    def get_action_url(self):
+>>>>>>> [MIG] mgmtsystem_audit
         """
         Return a short link to the audit form view
         eg. http://localhost:8069/?db=prod#id=1&model=mgmtsystem.audit
         """
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
         assert len(ids) == 1
         audit = self.browse(cr, uid, ids[0], context=context)
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
@@ -175,16 +318,37 @@ class mgmtsystem_audit(orm.Model):
         base_url = self.pool.get('ir.config_parameter').get_param(
             cr, uid, 'web.base.url', default='http://localhost:8069',
             context=context,
+=======
+
+        base_url = self.env['ir.config_parameter'].get_param(
+            'web.base.url',
+            default='http://localhost:8069'
+>>>>>>> [MIG] mgmtsystem_audit
         )
-        query = {'db': cr.dbname}
-        fragment = {'id': audit.id, 'model': self._name}
-        return urljoin(
-            base_url, "?%s#%s" %
-            (urlencode(query), urlencode(fragment))
+        url = ('{}/web#db={}&id={}&model={}').format(
+            base_url,
+            self.env.cr.dbname,
+            self.id,
+            self._name
         )
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
 >>>>>>> Moved mgmtsystem_audit to root and fixed imports
+=======
+        return url
+>>>>>>> [MIG] mgmtsystem_audit
 
+    def get_lines_by_procedure(self):
+        p = []
+        for l in self.line_ids:
+            if l.procedure_id.id:
+                proc_nm = self.pool.get('document.page').read(
+                    self.env.cr, self.env.uid, l.procedure_id.id, ['name']
+                )
+                procedure_name = proc_nm['name']
+            else:
+                procedure_name = _('Undefined')
 
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
 class mgmtsystem_verification_line(orm.Model):
     _name = "mgmtsystem.verification.line"
     _description = "Verification Line"
@@ -256,3 +420,28 @@ class mgmtsystem_nonconformity(orm.Model):
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 =======
 >>>>>>> Moved mgmtsystem_audit to root and fixed imports
+=======
+            p.append({"id": l.id,
+                      "procedure": procedure_name,
+                      "name": l.name,
+                      "yes_no": "Yes / No"})
+        p = sorted(p, key=lambda k: k["procedure"])
+        proc_line = False
+        q = []
+        proc_name = ''
+        for i in range(len(p)):
+            if proc_name != p[i]['procedure']:
+                proc_line = True
+            if proc_line:
+                q.append({"id": p[i]['id'],
+                          "procedure": p[i]['procedure'],
+                          "name": "",
+                          "yes_no": ""})
+                proc_line = False
+                proc_name = p[i]['procedure']
+            q.append({"id": p[i]['id'],
+                      "procedure": "",
+                      "name": p[i]['name'],
+                      "yes_no": "Yes / No"})
+        return q
+>>>>>>> [MIG] mgmtsystem_audit

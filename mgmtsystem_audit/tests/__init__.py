@@ -18,6 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324:mgmtsystem_audit/report/audit_report.py
 
 import time
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
@@ -43,4 +44,9 @@ report_sxw.report_sxw(
     'mgmtsystem.audit',
     'addons/mgmtsystem_audit/report/audit_report.rml',
     parser=mgmtsystem_audit_report
+=======
+from . import (
+    test_audit,
+    test_copy_verification_lines,
+>>>>>>> [MIG] mgmtsystem_audit:mgmtsystem_audit/tests/__init__.py
 )

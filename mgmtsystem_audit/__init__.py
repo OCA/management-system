@@ -23,7 +23,6 @@ from . import wizard
 # -*- coding: utf-8 -*-
 from . import (
     models,
-    report,
     wizard
 )
 >>>>>>> [IMP] Module structure

@@ -1,4 +1,4 @@
-<openerp>
+<odoo>
     <data>
 
         <!-- Verification Lines -->
@@ -31,11 +31,11 @@
                         <field name="procedure_id" domain="[('parent_id','in',['Procedure', 'Environmental Aspect', 'Quality Manual', 'Environment Manual'])]"/>
                         <field name="is_conformed"/>
                         <field name="comments"/>
-                    	<field name="company_id" groups="base.group_multi_company"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
                     </group>
                 </search>
             </field>
-        </record>        
+        </record>
 
         <record id="view_mgmtsystem_verification_line_form" model="ir.ui.view">
             <field name="name">mgmtsystem.verification.line.form</field>
@@ -51,7 +51,7 @@
                         <field name="seq"/>
                         <newline/>
                         <field name="comments"/>
-                    	<field name="company_id" groups="base.group_multi_company"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
                     </group>
                 </form>
             </field>
@@ -74,6 +74,7 @@
                 <tree string="Audits">
                     <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
                     <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
+                    <field name="create_date"/>
                     <field name="reference"/>
                     <field name="system_id"/>
                     <field name="company_id" groups="base.group_multi_company"/>
@@ -96,12 +97,12 @@
                         <field name="name"/>
                         <field name="date"/>
                         <field name="reference"/>
-			<field name="system_id"/>
-                    	<field name="company_id" groups="base.group_multi_company"/>
+                        <field name="system_id"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
                     </group>
                 </search>
             </field>
-        </record>        
+        </record>
 
         <record id="view_mgmtsystem_audit_form" model="ir.ui.view">
             <field name="name">mgmtsystem.audit.form</field>
@@ -218,20 +219,16 @@
             <field name="context">{"search_default_current":1}</field>
         </record>
 
-        <menuitem id="menu_open_audit" 
-            action="open_mgmtsystem_audit_list" 
-            parent="mgmtsystem.menu_mgmtsystem_main" 
-            sequence="10" 
-            groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
+        <menuitem id="menu_open_audit" action="open_mgmtsystem_audit_list" parent="mgmtsystem.menu_mgmtsystem_main" sequence="40" groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
 
-
-       <!-- Nonconformities related to Audits -->
+        <!-- Nonconformities related to Audits -->
         <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.form</field>
             <field name="model">mgmtsystem.nonconformity</field>
             <field name="inherit_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"/>
             <field name="arch" type="xml">
 
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
                  <notebook position="inside">
                         <page string="Related Audits" groups="base.group_extended,mgmtsystem.group_mgmtsystem_auditor">
                             <field name="audit_ids" colspan="4" nolabel="1"/>
@@ -266,13 +263,18 @@ Please prepare the verification list:
 
 [[object.get_audit_url()]]
 
+=======
+                <notebook position="inside">
+                    <page string="Related Audits" groups="base.group_extended,mgmtsystem.group_mgmtsystem_auditor">
+                        <field name="audit_ids" colspan="4" nolabel="1"/>
+                    </page>
+                </notebook>
+>>>>>>> [MIG] mgmtsystem_audit
 
-Thank you.
---
-Odoo
             </field>
         </record>
 
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
         <!-- Automated Action: Email all auditors 2 weeks before Audit. -->
         <record id="rule_set_prepare_to_audit" model="base.action.rule">
             <field name="name">Email all auditors 2 weeks before audit.</field>
@@ -325,5 +327,7 @@ Odoo
             <field name="server_action_ids" eval="[(6, 0, [ref('action_email_send_verification_list')])]"/>
         </record>
 
+=======
+>>>>>>> [MIG] mgmtsystem_audit
     </data>
-</openerp>
+</odoo>
