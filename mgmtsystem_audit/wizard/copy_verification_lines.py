@@ -19,6 +19,7 @@
 #
 ##############################################################################
 
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
 from osv import fields, osv
 
@@ -33,12 +34,17 @@ class copy_verification_lines(orm.TransientModel):
     """
     Copy Verification Lines
     """
+=======
+from openerp import fields, models, api
+
+
+class CopyVerificationLines(models.TransientModel):
+    """Copy Verification Lines."""
+>>>>>>> [MIG] mgmtsystem_audit
     _name = "copy.verification.lines"
     _description = "Copy Verification Lines"
-    _columns = {
-        'audit_src': fields.many2one('mgmtsystem.audit', 'Choose audit'),
-    }
 
+<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
     def copy(self, cr, uid, ids, context=None):
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
         # Code to copy verification lines from the chosen audit to the current one
@@ -62,12 +68,25 @@ class copy_verification_lines(orm.TransientModel):
                 cr, uid, src_id, context=context).line_ids:
 >>>>>>> Moved mgmtsystem_audit to root and fixed imports
             verification_line_proxy.create(cr, uid, {
+=======
+    audit_src = fields.Many2one('mgmtsystem.audit', 'Choose audit')
+
+    @api.multi
+    def copyVerificationLines(self):
+        # Copy verification lines from the chosen audit to the current one
+        audit_proxy = self.env[self._context.get('active_model')]
+        verification_line_proxy = self.env['mgmtsystem.verification.line']
+        audit_id = self._context.get('active_id')
+        src_id = self.read(['audit_src'])[0]['audit_src'][0]
+        for line in audit_proxy.browse(src_id).line_ids:
+            verification_line_proxy.create({
+>>>>>>> [MIG] mgmtsystem_audit
                 'seq': line.seq,
                 'name': line.name,
-                'audit_id': context['active_id'],
+                'audit_id': audit_id,
                 'procedure_id': line.procedure_id.id,
                 'is_conformed': False,
-            }, context=context)
+            })
         return {'type': 'ir.actions.act_window_close'}
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
 
