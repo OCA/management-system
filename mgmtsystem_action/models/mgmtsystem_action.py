@@ -152,10 +152,10 @@ class MgmtSystemAction(models.Model):
                 raise exceptions.ValidationError(
                     _('We cannot bring back the action to draft stage')
                 )
-                self.message_post(
-                    body=' %s ' % (_('Action back to draft stage on ') +
-                                   vals['opening_date'])
-                )
+            self.message_post(
+                body=' %s ' % (_('Action back to draft stage on ') +
+                               fields.Datetime.now())
+            )
         if vals['stage_id'] == stage_open.id:
             vals['opening_date'] = fields.Datetime.now()
             self.message_post(

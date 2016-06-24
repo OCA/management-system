@@ -82,6 +82,9 @@ class TestModelAction(common.TransactionCase):
             record.write({'stage_id': stage.id})
         except exceptions.ValidationError:
             self.assertTrue(True)
+        record.write({'stage_id': stage_new.id})
+        self.assertFalse(record.date_closed)
+        self.assertFalse(record.opening_date)
 
     def test_get_action_url(self):
         """Test if action url start with http."""
