@@ -143,46 +143,47 @@ class MgmtSystemAction(models.Model):
     @api.multi
     def write(self, vals):
         """Update user data."""
-        stage_new = self._get_stage_new()
-        stage_open = self._get_stage_open()
-        stage_close = self._get_stage_close()
-        stage_cancel = self._get_stage_cancel()
-        if vals['stage_id'] == stage_new.id:
-            if self.opening_date:
-                raise exceptions.ValidationError(
-                    _('We cannot bring back the action to draft stage')
+        if vals.get('stage_id'):
+            stage_new = self._get_stage_new()
+            stage_open = self._get_stage_open()
+            stage_close = self._get_stage_close()
+            stage_cancel = self._get_stage_cancel()
+            if vals['stage_id'] == stage_new.id:
+                if self.opening_date:
+                    raise exceptions.ValidationError(
+                        _('We cannot bring back the action to draft stage')
+                    )
+                vals['cancel_date'] = None
+                self.message_post(
+                    body=' %s ' % (_('Action back to draft stage on ') +
+                                   fields.Datetime.now())
                 )
-            vals['cancel_date'] = None
-            self.message_post(
-                body=' %s ' % (_('Action back to draft stage on ') +
-                               fields.Datetime.now())
-            )
-        if vals['stage_id'] == stage_open.id:
-            vals['opening_date'] = fields.Datetime.now()
-            self.message_post(
-                body=' %s ' % (_('Action opened on ') +
-                               vals['opening_date'])
-            )
-            vals['date_closed'] = None
-            vals['cancel_date'] = None
-        if vals['stage_id'] == stage_close.id:
-            if not self.opening_date or self.cancel_date:
-                raise exceptions.ValidationError(
-                    _('You should first open the action')
+            if vals['stage_id'] == stage_open.id:
+                vals['opening_date'] = fields.Datetime.now()
+                self.message_post(
+                    body=' %s ' % (_('Action opened on ') +
+                                   vals['opening_date'])
                 )
-            vals['date_closed'] = fields.Datetime.now()
-            self.message_post(
-                body=' %s ' % (_('Action closed on ') +
-                               vals['date_closed'])
-            )
-        if vals['stage_id'] == stage_cancel.id:
-            vals['date_closed'] = None
-            vals['opening_date'] = None
-            vals['cancel_date'] = fields.Datetime.now()
-            self.message_post(
-                body=' %s ' % (_('Action cancelled on ') +
-                               fields.Datetime.now())
-            )
+                vals['date_closed'] = None
+                vals['cancel_date'] = None
+            if vals['stage_id'] == stage_close.id:
+                if not self.opening_date or self.cancel_date:
+                    raise exceptions.ValidationError(
+                        _('You should first open the action')
+                    )
+                vals['date_closed'] = fields.Datetime.now()
+                self.message_post(
+                    body=' %s ' % (_('Action closed on ') +
+                                   vals['date_closed'])
+                )
+            if vals['stage_id'] == stage_cancel.id:
+                vals['date_closed'] = None
+                vals['opening_date'] = None
+                vals['cancel_date'] = fields.Datetime.now()
+                self.message_post(
+                    body=' %s ' % (_('Action cancelled on ') +
+                                   fields.Datetime.now())
+                )
         return super(MgmtSystemAction, self).write(vals)
 
     def send_mail_for_action(self, action, force_send=True):
