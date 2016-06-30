@@ -97,6 +97,12 @@ class TestModelNonConformity(common.TransactionCase):
             "analysis": "analysis test"
         })
 
+        # Test transition to open state without action_sign_actions perform
+        try:
+            nonconformity.state = "open"
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+
         # Test transition to pending state without action_sign_analysis perform
         try:
             nonconformity.state = "pending"
@@ -106,7 +112,7 @@ class TestModelNonConformity(common.TransactionCase):
         nonconformity.action_sign_analysis()
         self.assertTrue(nonconformity.analysis_date)
 
-        # Perform action_sign_analysis when it is already done
+        #Perform action_sign_analysis when it is already done
         try:
             nonconformity.action_sign_analysis()
         except exceptions.ValidationError:
@@ -121,7 +127,52 @@ class TestModelNonConformity(common.TransactionCase):
         nonconformity.state = "cancel"
         self.assertTrue(nonconformity.cancel_date)
 
+        # Bring to pending state a cancel object
+        try:
+            nonconformity.state = "pending"
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+
         # Reset the object
         nonconformity.state = "draft"
         self.assertFalse(nonconformity.analysis_date)
         self.assertFalse(nonconformity.actions_date)
+
+        # Goto pending state
+        nonconformity.write({
+            "state": "analysis",
+            "analysis": "analysis test"
+        })
+
+        # Sign action in non pending state
+        try:
+            nonconformity.action_sign_actions()
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+
+        nonconformity.action_sign_analysis()
+        nonconformity.state = "pending"
+
+        # Sign action in non open state
+        try:
+            nonconformity.action_sign_evaluation()
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+
+        analysis_date = nonconformity.analysis_date
+        nonconformity.analysis_date = None
+        # Sign action in non pending state
+        try:
+            nonconformity.action_sign_actions()
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+        nonconformity.analysis_date = analysis_date
+        nonconformity.action_sign_actions()
+        self.assertTrue(nonconformity.actions_date)
+        actions = self.env["mgmtsystem.action"].search([])[0]
+        nonconformity.action_ids = actions
+        nonconformity.immediate_action_id = actions
+        nonconformity.state = "open"
+        self.assertFalse(nonconformity.evaluation_date)
+        nonconformity.action_sign_evaluation()
+        self.assertTrue(nonconformity.evaluation_date)
