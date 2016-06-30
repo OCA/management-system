@@ -127,6 +127,12 @@ class TestModelNonConformity(common.TransactionCase):
         nonconformity.state = "cancel"
         self.assertTrue(nonconformity.cancel_date)
 
+        # Done a cancel object
+        try:
+            nonconformity.state = "done"
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+
         # Bring to pending state a cancel object
         try:
             nonconformity.state = "pending"
@@ -179,8 +185,27 @@ class TestModelNonConformity(common.TransactionCase):
         nonconformity.immediate_action_id = actions[1]
         nonconformity.state = "open"
         self.assertFalse(nonconformity.evaluation_date)
+        # Done without signing evaluation
+        try:
+            nonconformity.state = "done"
+        except exceptions.ValidationError:
+            self.assertTrue(True)
         nonconformity.action_sign_evaluation()
         self.assertTrue(nonconformity.evaluation_date)
+        # Done without closing immediate action
+        try:
+            nonconformity.state = "done"
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+        stage = nonconformity.immediate_action_id._get_stage_close()
+        nonconformity.immediate_action_id.stage_id = stage
+        # Done without closing actions
+        try:
+            nonconformity.state = "done"
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+        for action_id in nonconformity.action_ids:
+            action_id.stage_id = stage
         nonconformity.state = "done"
         self.assertEqual(nonconformity.age, 0)
         self.assertNotNull(nonconformity.state_groups())
