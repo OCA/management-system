@@ -208,4 +208,4 @@ class TestModelNonConformity(common.TransactionCase):
             action_id.stage_id = stage
         nonconformity.state = "done"
         self.assertEqual(nonconformity.age, 0)
-        self.assertNotNull(nonconformity.state_groups())
+        self.assertNotNone(nonconformity.state_groups())
