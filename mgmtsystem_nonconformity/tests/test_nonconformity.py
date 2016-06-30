@@ -67,30 +67,61 @@ class TestModelNonConformity(common.TransactionCase):
 
     def test_create_model_all_required(self):
         # All required fields
-        self.create(
+        return self.create(
             partner_id=self.partner.id,
             manager_user_id=self.env.user.id,
             description="description",
             responsible_user_id=self.env.user.id,
         )
 
-    def test_state_analysis(self):
+    def test_state_transition(self):
+        # Analysis
         nonconformity = self.test_create_model_all_required()
+        # Test action_sign_analysis in non analysis mode
+        try:
+            nonconformity.action_sign_analysis()
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+        # Set analysis
+        nonconformity.write({
+            "state": "analysis",
+        })
+        # Test action_sign_analysis in analysis state and in non analysis mode
         try:
             nonconformity.action_sign_analysis()
         except exceptions.ValidationError:
             self.assertTrue(True)
 
-        nonconformity.state = "analysis"
-        self.assertTrue(nonconformity.analysis_date, None)
-        self.assertTrue(nonconformity.actions_date, None)
+        # Test action_sign_analysis  set analysis
+        nonconformity.write({
+            "analysis": "analysis test"
+        })
+
+        # Test transition to pending state without action_sign_analysis perform
         try:
             nonconformity.state = "pending"
         except exceptions.ValidationError:
             self.assertTrue(True)
+        # perform action_sign_analysis
         nonconformity.action_sign_analysis()
-        self.assertFalse(nonconformity.analysis_date, None)
+        self.assertTrue(nonconformity.analysis_date)
+
+        #Perform action_sign_analysis when it is already done
         try:
             nonconformity.action_sign_analysis()
         except exceptions.ValidationError:
             self.assertTrue(True)
+
+        # Back to draft state when the object is not in cancel state
+        try:
+            nonconformity.state = "draft"
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+        # Cancel the object
+        nonconformity.state = "cancel"
+        self.assertTrue(nonconformity.cancel_date)
+
+        # Reset the object
+        nonconformity.state = "draft"
+        self.assertFalse(nonconformity.analysis_date)
+        self.assertFalse(nonconformity.actions_date)
