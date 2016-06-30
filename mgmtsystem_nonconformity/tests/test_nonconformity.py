@@ -168,11 +168,19 @@ class TestModelNonConformity(common.TransactionCase):
             self.assertTrue(True)
         nonconformity.analysis_date = analysis_date
         nonconformity.action_sign_actions()
+        # Sign an already sign actions
+        try:
+            nonconformity.action_sign_actions()
+        except exceptions.ValidationError:
+            self.assertTrue(True)
         self.assertTrue(nonconformity.actions_date)
-        actions = self.env["mgmtsystem.action"].search([])[0]
-        nonconformity.action_ids = actions
-        nonconformity.immediate_action_id = actions
+        actions = self.env["mgmtsystem.action"].search([])
+        nonconformity.action_ids = actions[0]
+        nonconformity.immediate_action_id = actions[1]
         nonconformity.state = "open"
         self.assertFalse(nonconformity.evaluation_date)
         nonconformity.action_sign_evaluation()
         self.assertTrue(nonconformity.evaluation_date)
+        nonconformity.state = "close"
+        self.assertEqual(nonconformity.age,0)
+        self.assertNotNull(nonconformity.state_groups())
