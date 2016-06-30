@@ -112,7 +112,7 @@ class TestModelNonConformity(common.TransactionCase):
         nonconformity.action_sign_analysis()
         self.assertTrue(nonconformity.analysis_date)
 
-        #Perform action_sign_analysis when it is already done
+        # Perform action_sign_analysis when it is already done
         try:
             nonconformity.action_sign_analysis()
         except exceptions.ValidationError:
@@ -181,6 +181,6 @@ class TestModelNonConformity(common.TransactionCase):
         self.assertFalse(nonconformity.evaluation_date)
         nonconformity.action_sign_evaluation()
         self.assertTrue(nonconformity.evaluation_date)
-        nonconformity.state = "close"
-        self.assertEqual(nonconformity.age,0)
+        nonconformity.state = "done"
+        self.assertEqual(nonconformity.age, 0)
         self.assertNotNull(nonconformity.state_groups())
