@@ -22,6 +22,7 @@
 from contextlib import contextmanager
 from psycopg2 import IntegrityError
 from openerp.tests import common
+from openerp import exceptions
 
 model_name = "mgmtsystem.nonconformity"
 
@@ -72,3 +73,24 @@ class TestModelNonConformity(common.TransactionCase):
             description="description",
             responsible_user_id=self.env.user.id,
         )
+
+    def test_state_analysis(self):
+        nonconformity = self.test_create_model_all_required()
+        try:
+            nonconformity.action_sign_analysis()
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+
+        nonconformity.state = "analysis"
+        self.assertTrue(nonconformity.analysis_date, None)
+        self.assertTrue(nonconformity.actions_date, None)
+        try:
+            nonconformity.state = "pending"
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+        nonconformity.action_sign_analysis()
+        self.assertFalse(nonconformity.analysis_date, None)
+        try:
+            nonconformity.action_sign_analysis()
+        except exceptions.ValidationError:
+            self.assertTrue(True)

@@ -748,7 +748,7 @@ class MgmtsystemNonconformity(models.Model):
         result = super(MgmtsystemNonconformity, self).write(vals)
         return result
 
-    def check_if_the_process_is_closed_or_cancelled(self):
+    def check_closed_or_cancelled(self):
         if self.cancel_date or self.closing_date:
             raise exceptions.ValidationError(
                 _('Please reset the process to draft, to perform it again')
@@ -756,7 +756,7 @@ class MgmtsystemNonconformity(models.Model):
 
     def do_analysis(self):
         """Change state from draft to analysis."""
-        self.check_if_the_process_is_closed_or_cancelled()
+        self.check_closed_or_cancelled()
         return {
             'state': 'analysis',
             'analysis_date': None,
@@ -767,7 +767,7 @@ class MgmtsystemNonconformity(models.Model):
     @api.multi
     def do_review(self):
         """Change state from analysis to pending approval"""
-        self.check_if_the_process_is_closed_or_cancelled()
+        self.check_closed_or_cancelled()
         for o in self:
             if not o.analysis_date:
                 raise exceptions.ValidationError(
@@ -947,7 +947,7 @@ class MgmtsystemNonconformity(models.Model):
         the related actions
         """
         self.ensure_one()
-        self.check_if_the_process_is_closed_or_cancelled()
+        self.check_closed_or_cancelled()
         if not self.actions_date:
             raise exceptions.ValidationError(
                 _('Action plan must be approved before opening.')
