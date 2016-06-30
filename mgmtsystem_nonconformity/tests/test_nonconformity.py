@@ -106,7 +106,7 @@ class TestModelNonConformity(common.TransactionCase):
         nonconformity.action_sign_analysis()
         self.assertTrue(nonconformity.analysis_date)
 
-        #Perform action_sign_analysis when it is already done
+        # Perform action_sign_analysis when it is already done
         try:
             nonconformity.action_sign_analysis()
         except exceptions.ValidationError:
