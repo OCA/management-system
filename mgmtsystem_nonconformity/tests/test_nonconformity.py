@@ -185,13 +185,7 @@ class TestModelNonConformity(common.TransactionCase):
         nonconformity.immediate_action_id = actions[1]
         nonconformity.state = "open"
         self.assertFalse(nonconformity.evaluation_date)
-        # Done without signing evaluation
-        try:
-            nonconformity.state = "done"
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-        nonconformity.action_sign_evaluation()
-        self.assertTrue(nonconformity.evaluation_date)
+
         # Done without closing immediate action
         try:
             nonconformity.state = "done"
@@ -206,6 +200,31 @@ class TestModelNonConformity(common.TransactionCase):
             self.assertTrue(True)
         for action_id in nonconformity.action_ids:
             action_id.stage_id = stage
+        # Done without signing evaluation
+        try:
+            nonconformity.state = "done"
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+        nonconformity.action_sign_evaluation()
+        self.assertTrue(nonconformity.evaluation_date)
+
+        # Done without the right to do it
+        self.env.user.sudo(self.env.ref("base.user_demo"))
         nonconformity.state = "done"
-        self.assertEqual(nonconformity.age, 0)
+        try:
+            nonconformity.state = "done"
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+        # Switch to administrator before doing done
+        self.env.user.sudo()
+        nonconformity.state = "done"
+        self.assertFalse(nonconformity._compute_age())
+        self.assertFalse(nonconformity._compute_number_of_days_to_close())
+
+        # cancel a close object
+        try:
+            nonconformity.state = "cancel"
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+
         self.assertIsNotNone(nonconformity.state_groups(None, None))
