@@ -208,6 +208,16 @@ class TestModelNonConformity(common.TransactionCase):
         nonconformity.action_sign_evaluation()
         self.assertTrue(nonconformity.evaluation_date)
 
+        # Done without the right to do it
+        user_demo = self.browse_ref('base.user_demo')
+        self.env = self.env(user=user_demo)
+        nonconformity.state = "done"
+        try:
+            nonconformity.state = "done"
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+        # Switch to administrator before doing done
+        self.env.user.sudo()
         nonconformity.state = "done"
         self.assertFalse(nonconformity._compute_age())
         self.assertFalse(nonconformity._compute_number_of_days_to_close())
@@ -217,5 +227,4 @@ class TestModelNonConformity(common.TransactionCase):
             nonconformity.state = "cancel"
         except exceptions.ValidationError:
             self.assertTrue(True)
-
-        self.assertIsNotNone(nonconformity.state_groups(None, None))
+        self.assertEqual(len(nonconformity._stage_groups(None, None)[0]), 6)
