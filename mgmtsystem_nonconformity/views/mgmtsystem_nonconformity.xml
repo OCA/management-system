@@ -482,7 +482,7 @@
         <field name="manager_user_id"/>
         <field name="system_id"/>
         <field name="company_id" groups="base.group_multi_company"/>
-        <field name="state"/>
+        <field name="state_id"/>
       </tree>
     </field>
   </record>
@@ -531,8 +531,8 @@
         <field name="name">mgmtsystem.nonconformity.kanban</field>
         <field name="model">mgmtsystem.nonconformity</field>
         <field name="arch" type="xml">
-            <kanban create="false" quick_create="false" default_group_by="state" class="o_kanban_small_column">
-                <field name="state"/>
+            <kanban quick_create="false" default_group_by="state_id" class="o_kanban_small_column">
+                <field name="state_id"/>
                 <field name="responsible_user_id"/>
                 <field name="ref"/>
                 <field name="name"/>
@@ -582,9 +582,6 @@
       <field name="arch" type="xml">
         <form string="Non-Conformity" version="7.0">
           <header>
-
-            <button name="button_close" string="Close" class="oe_highlight"
-              states="open" groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
             <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done,cancel"  clickable="True" />
           </header>
           <sheet string="Non-Conformity">

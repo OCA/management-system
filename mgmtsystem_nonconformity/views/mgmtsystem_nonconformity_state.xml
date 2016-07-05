@@ -1,0 +1,33 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="mgmtsystem_nonconformity_state_tree_view">
+      <field name="name">Management System Nonconformity State Tree</field>
+      <field name="model">mgmtsystem.nonconformity.state</field>
+      <field name="arch" type="xml">
+        <tree string="States">
+          <field name="name"/>
+          <field name="sequence" widget="handle" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mgmtsystem_nonconformity_state_action">
+      <field name="name">States</field>
+      <field name="res_model">mgmtsystem.nonconformity.state</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context">{}</field>
+    </record>
+
+    <menuitem  id="menu_mgmtsystem_nonconformity_states"
+                 name="States"
+                 parent="menu_mgmtsystem_configuration_nonconformities"
+                 action="mgmtsystem_nonconformity_state_action"
+                 sequence="90"
+                 groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
+
+
+
+  </data>
+</odoo>
