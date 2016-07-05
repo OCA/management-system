@@ -32,8 +32,8 @@
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_nonconformity_security.xml',
-        'views/mgmtsystem_nonconformity_state.xml',
         'views/mgmtsystem_nonconformity.xml',
+        'views/mgmtsystem_nonconformity_state.xml',
         'views/mgmtsystem_origin.xml',
         'views/mgmtsystem_cause.xml',
         'views/mgmtsystem_severity.xml',
