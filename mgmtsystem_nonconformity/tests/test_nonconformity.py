@@ -226,5 +226,3 @@ class TestModelNonConformity(common.TransactionCase):
             nonconformity.state = "cancel"
         except exceptions.ValidationError:
             self.assertTrue(True)
-
-        self.assertIsNotNone(nonconformity.state_groups(None, None))
