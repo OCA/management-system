@@ -32,6 +32,7 @@
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_nonconformity_security.xml',
+        'views/mgmtsystem_nonconformity_state.xml',
         'views/mgmtsystem_nonconformity.xml',
         'views/mgmtsystem_origin.xml',
         'views/mgmtsystem_cause.xml',
@@ -42,6 +43,7 @@
         'data/mgmtsystem_nonconformity_severity.xml',
         'data/mgmtsystem_nonconformity_origin.xml',
         'data/mgmtsystem_nonconformity_cause.xml',
+        'data/mgmtsystem_nonconformity_state.xml',
         'data/mail_message_subtype.xml',
     ],
     "demo": [

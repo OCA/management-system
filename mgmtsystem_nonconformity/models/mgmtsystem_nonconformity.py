@@ -47,6 +47,25 @@ class MgmtsystemNonconformity(models.Model):
         },
     }
 
+    def _default_state(self):
+        """Return the default stage."""
+        return self.env.ref('mgmtsystem_nonconformity.state_draft')
+
+    @api.model
+    def _state_groups(self, present_ids, domain, **kwargs):
+        """This method is used by Kanban view to show empty states."""
+        # perform search
+        # We search here only state ids
+        state_ids = self.env['mgmtsystem.nonconformity.state']._search([])
+        # We search here states objects
+        result = self.env[
+            'mgmtsystem.nonconformity.state'].search([]).name_get()
+        return result, None
+
+    _group_by_full = {
+        'state_id': _state_groups
+    }
+
     _STATES = [
         ('draft', _('Draft')),
         ('analysis', _('Analysis')),
@@ -66,6 +85,11 @@ class MgmtsystemNonconformity(models.Model):
         readonly=True,
         default="NEW"
     )
+
+    state_id = fields.Many2one(
+        'mgmtsystem.nonconformity.state',
+        'State',
+        default=_default_state)
 
     # Compute data
     number_of_nonconformities = fields.Integer(
@@ -302,18 +326,30 @@ class MgmtsystemNonconformity(models.Model):
     @api.multi
     def write(self, vals):
         """Update user data."""
-        if vals.get('state'):
-            if vals.get('state') == "analysis":
+        if vals.get('state') or vals.get('state_id'):
+            if vals.get('state') == "analysis" or vals.get(
+                    'state_id') == self.env.ref(
+                    "mgmtsystem_nonconformity.state_analysis").id:
                 vals.update(self.do_analysis())
-            if vals.get('state') == "pending":
+            if vals.get('state') == "pending" or vals.get(
+                    'state_id') == self.env.ref(
+                    "mgmtsystem_nonconformity.state_pending").id:
                 vals.update(self.do_review())
-            if vals.get('state') == "open":
+            if vals.get('state') == "open" or vals.get(
+                    'state_id') == self.env.ref(
+                    "mgmtsystem_nonconformity.state_open").id:
                 vals.update(self.do_open())
-            if vals.get('state') == "done":
+            if vals.get('state') == "done" or vals.get(
+                    'state_id') == self.env.ref(
+                    "mgmtsystem_nonconformity.state_done").id:
                 vals.update(self.do_close())
-            if vals.get('state') == "cancel":
+            if vals.get('state') == "cancel" or vals.get(
+                    'state_id') == self.env.ref(
+                    "mgmtsystem_nonconformity.state_cancel").id:
                 vals.update(self.do_cancel())
-            if vals.get('state') == "draft":
+            if vals.get('state') == "draft" or vals.get(
+                    'state_id') == self.env.ref(
+                    "mgmtsystem_nonconformity.state_draft").id:
                 vals.update(self.case_reset())
 
         result = super(MgmtsystemNonconformity, self).write(vals)
@@ -330,6 +366,8 @@ class MgmtsystemNonconformity(models.Model):
         self.check_closed_or_cancelled()
         return {
             'state': 'analysis',
+            'state_id': self.env.ref(
+                "mgmtsystem_nonconformity.state_analysis").id,
             'analysis_date': None,
             'analysis_user_id': None,
             'actions_date': None,
@@ -347,6 +385,8 @@ class MgmtsystemNonconformity(models.Model):
                 )
         return {
             'state': 'pending',
+            'state_id': self.env.ref(
+                "mgmtsystem_nonconformity.state_pending").id,
             'actions_date': None,
             'actions_user_id': None}
 
@@ -423,6 +463,8 @@ class MgmtsystemNonconformity(models.Model):
                 action.case_open()
         return {
             'state': 'open',
+            'state_id': self.env.ref(
+                "mgmtsystem_nonconformity.state_open").id,
             'evaluation_date': False,
             'evaluation_user_id': False,
         }
@@ -452,6 +494,8 @@ class MgmtsystemNonconformity(models.Model):
                 _('A close process cannot be cancelled')
             )
         return {'state': 'cancel',
+                'state_id': self.env.ref(
+                    "mgmtsystem_nonconformity.state_cancel").id,
                 'cancel_date': time.strftime(DATETIME_FORMAT)}
 
     @api.multi
@@ -487,6 +531,8 @@ class MgmtsystemNonconformity(models.Model):
 
         return {
             'state': 'done',
+            'state_id': self.env.ref(
+                "mgmtsystem_nonconformity.state_done").id,
             'closing_date': time.strftime(DATETIME_FORMAT),
         }
 
@@ -498,6 +544,8 @@ class MgmtsystemNonconformity(models.Model):
             )
         return {
             'state': 'draft',
+            'state_id': self.env.ref(
+                "mgmtsystem_nonconformity.state_draft").id,
             'closing_date': None, 'cancel_date': None,
             'analysis_date': None, 'analysis_user_id': None,
             'actions_date': None, 'actions_user_id': None,
@@ -505,36 +553,3 @@ class MgmtsystemNonconformity(models.Model):
             'number_of_days_to_close': None, 'number_of_days_to_analyse': None,
             'number_of_days_to_plan': None, 'number_of_days_to_execute': None,
         }
-
-    @api.model
-    def state_groups(self, present_ids, domain, **kwargs):
-        folded = {key: (key in self._state_name()) for key, _ in self._STATES}
-        # Need to copy state_name list before returning it,
-        # because odoo modifies the list it gets,
-        # emptying it in the process. Bad odoo!
-        return self._STATES[:], folded
-
-    _group_by_full = {
-        'state': state_groups
-    }
-
-    def _read_group_fill_results(self, cr, uid, domain, groupby,
-                                 remaining_groupbys, aggregated_fields,
-                                 count_field, read_group_result,
-                                 read_group_order=None, context=None):
-        """
-        The method seems to support grouping using m2o fields only,
-        while we want to group by a simple status field.
-        Hence the code below - it replaces simple status values
-        with (value, name) tuples.
-        """
-        if groupby == 'state':
-            STATES_DICT = dict(self._STATES)
-            for result in read_group_result:
-                state = result['state']
-                result['state'] = (state, STATES_DICT.get(state))
-
-        return super(MgmtsystemNonconformity, self)._read_group_fill_results(
-            cr, uid, domain, groupby, remaining_groupbys, aggregated_fields,
-            count_field, read_group_result, read_group_order, context
-        )
