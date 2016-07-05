@@ -246,8 +246,6 @@ class MgmtsystemNonconformity(models.Model):
     def _state_groups(self, present_ids, domain, **kwargs):
         """This method is used by Kanban view to show empty states."""
         # perform search
-        # We search here only state ids
-        state_ids = self.env['mgmtsystem.nonconformity.state']._search([])
         # We search here states objects
         result = self.env[
             'mgmtsystem.nonconformity.state'].search([]).name_get()
