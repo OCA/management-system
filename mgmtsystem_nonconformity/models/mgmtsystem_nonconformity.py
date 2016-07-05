@@ -634,12 +634,6 @@ class MgmtsystemNonconformity(models.Model):
             res = (dt2 - dt1).days
         return res
 
-    def _state_name(self):
-        res = dict()
-        for o in self:
-            res[o.id] = self._STATES_DICT.get(o.state, o.state)
-        return res
-
     @property
     @api.multi
     def verbose_name(self):
