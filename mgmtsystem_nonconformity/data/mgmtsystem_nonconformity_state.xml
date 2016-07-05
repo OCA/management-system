@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="state_draft" model="mgmtsystem.nonconformity.state">
+      <field name="name">Draft</field>
+      <field name="sequence">0</field>
+    </record>
+    <record id="state_analysis" model="mgmtsystem.nonconformity.state">
+      <field name="name">Analysis</field>
+      <field name="sequence">50</field>
+    </record>
+    <record id="state_pending" model="mgmtsystem.nonconformity.state">
+      <field name="name">Pending Approval</field>
+      <field name="sequence">100</field>
+    </record>
+    <record id="state_open" model="mgmtsystem.nonconformity.state">
+      <field name="name">In Progress</field>
+      <field name="sequence">150</field>
+    </record>
+    <record id="state_done" model="mgmtsystem.nonconformity.state">
+      <field name="name">Closed</field>
+      <field name="sequence">200</field>
+    </record>
+    <record id="state_cancel" model="mgmtsystem.nonconformity.state">
+      <field name="name">Cancelled</field>
+      <field name="sequence">250</field>
+    </record>
+  </data>
+</odoo>
