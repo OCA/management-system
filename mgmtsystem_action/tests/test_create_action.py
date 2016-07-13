@@ -1,11 +1,19 @@
+# -*- coding: utf-8 -*-
+
+from openerp import exceptions
 from openerp.tests import common
+from datetime import datetime, timedelta
 
 
 class TestModelAction(common.TransactionCase):
+    """Test class for mgmtsystem_action."""
+
     def test_create_action(self):
+        """Test object creation."""
+        stage = self.env.ref('mgmtsystem_action.stage_open')
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
-            "type_action": "immediate",
+            "type_action": "immediate"
         })
 
         self.assertEqual(record.name, "SampleAction")
@@ -13,14 +21,21 @@ class TestModelAction(common.TransactionCase):
         self.assertEqual(record.type_action, "immediate")
         self.assertEqual(record.stage_id.name, "Draft")
         self.assertEqual(record.stage_id.is_starting, True)
+        self.assertFalse(record.opening_date)
+        record.stage_id = stage
+        self.assertEqual(record.opening_date[:-3], datetime.now().strftime(
+            '%Y-%m-%d %H:%M'
+        ))
 
     def test_case_open(self):
+        """Test object open state."""
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
             "type_action": "immediate",
         })
 
-        record.active = False
+        record.write(
+            {'active': False, 'stage_id': record._get_stage_open().id})
 
         ret = record.case_open()
 
@@ -30,7 +45,49 @@ class TestModelAction(common.TransactionCase):
         self.assertEqual(record.stage_id.is_starting, False)
         self.assertEqual(record.stage_id.is_ending, False)
 
+    def test_get_new_stage(self):
+        """Get stage new."""
+        record = self.env['mgmtsystem.action'].create({
+            "name": "SampleAction",
+            "type_action": "immediate",
+        })
+        stage = record._get_stage_new()
+
+        self.assertEqual(stage.name, 'Draft')
+
+    def test_case_close(self):
+        """Test object close state."""
+        record = self.env['mgmtsystem.action'].create({
+            "name": "SampleAction",
+            "type_action": "immediate",
+        })
+        stage = record._get_stage_open()
+        stage_new = record._get_stage_new()
+        record.stage_id = stage
+        stage = record._get_stage_close()
+        record.stage_id = stage
+        self.assertEqual(record.date_closed[:-3], datetime.now().strftime(
+            '%Y-%m-%d %H:%M'
+        ))
+        try:
+            record.write({'stage_id': stage_new.id})
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+        stage = record._get_stage_cancel()
+        record.stage_id = stage
+        self.assertFalse(record.date_closed)
+        self.assertFalse(record.opening_date)
+        stage = record._get_stage_close()
+        try:
+            record.write({'stage_id': stage.id})
+        except exceptions.ValidationError:
+            self.assertTrue(True)
+        record.write({'stage_id': stage_new.id})
+        self.assertFalse(record.date_closed)
+        self.assertFalse(record.opening_date)
+
     def test_get_action_url(self):
+        """Test if action url start with http."""
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
             "type_action": "immediate",
@@ -38,7 +95,35 @@ class TestModelAction(common.TransactionCase):
 
         ret = record.get_action_url()
 
-        self.assertEqual(isinstance(ret, list), True)
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(isinstance(ret[0], basestring), True)
-        self.assertEqual(ret[0].startswith('http'), True)
+        # self.assertEqual(isinstance(ret, list), True)
+        # self.assertEqual(len(ret), 1)
+        self.assertEqual(isinstance(ret, basestring), True)
+        self.assertEqual(ret.startswith('http'), True)
+
+    def test_process_reminder_queue(self):
+        """Check if process_reminder_queue work when days reminder are 10."""
+        record = self.env['mgmtsystem.action'].create({
+            "name": "SampleAction",
+            "type_action": "immediate",
+            "date_deadline": datetime.now() + timedelta(days=10)
+        })
+        self.assertTrue(record.process_reminder_queue())
+
+    def test_stage_groups(self):
+        """Check if stage_groups return all stages."""
+        record = self.env['mgmtsystem.action'].create({
+            "name": "SampleAction",
+            "type_action": "immediate",
+        })
+        stages = self.env['mgmtsystem.action.stage'].search([])
+        stages_found = record._stage_groups({}, None)
+        state = (len(stages) == len(stages_found[0]))
+        self.assertTrue(state)
+
+    def test_send_mail(self):
+        """Check if mail send action work."""
+        record = self.env['mgmtsystem.action'].create({
+            "name": "SampleAction",
+            "type_action": "immediate",
+        })
+        self.assertTrue(record.send_mail_for_action(record))
