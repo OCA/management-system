@@ -2,12 +2,6 @@
 <openerp>
   <data noupdate="1">
 
-    <!-- Sequences for mgmtsystem.claim -->
-    <!--<record id="seq_type_mgmtsystem_claim" model="ir.sequence.type">
-      <field name="name">Management System Claim</field>
-      <field name="code">mgmtsystem.claim</field>
-    </record>-->
-
     <record id="seq_mgmtsystem_claim" model="ir.sequence">
       <field name="name">Management System Claim</field>
       <field name="code">mgmtsystem.claim</field>
