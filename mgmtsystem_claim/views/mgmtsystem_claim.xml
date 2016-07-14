@@ -38,7 +38,7 @@
               <field name="name"/>
               <field name="date"/>
               <field name="reference"/>
-              <field name="company_id" group="base.group_multi_company"/>
+              <field name="company_id" groups="base.group_multi_company"/>
             </group>
             <group colspan="4" col="4"  groups="base.group_user">
               <field name="user_id"/>
