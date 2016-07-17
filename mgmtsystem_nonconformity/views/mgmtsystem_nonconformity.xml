@@ -638,29 +638,27 @@
                 <separator string="Action Plan"/>
                 <field name="action_ids" attrs="{'readonly':[('state','not in',['pending'])]}"/>
 
-                <separator string="Plan Review"/>
-                <group>
-                  <group>
-                    <field name="action_comments" attrs="{'readonly':[('state','not in',['pending'])]}"/>
-                  </group>
-                  <group>
-                    <field name="actions_user_id"/>
-                    <field name="actions_date"/>
-                    <button name="action_sign_actions" string="Approve" icon="terp-camera_test" type="object" states="pending" groups="mgmtsystem.group_mgmtsystem_user_manager"/>
-                  </group>
-                </group>
+                <group string="Plan Review">
+                 <group>
+                   <field name="action_comments" attrs="{'readonly':[('state','not in',['pending'])]}" nolabel="1" placeholder="Action Plan Comments"/>
+                 </group>
+                 <group>
+                   <field name="actions_user_id"/>
+                   <field name="actions_date"/>
+                   <button name="action_sign_actions" string="Approve" icon="terp-camera_test" type="object" states="pending" groups="mgmtsystem.group_mgmtsystem_user_manager"/>
+                 </group>
+               </group>
 
-                <group attrs="{'invisible':[('state','not in',['open','done'])]}">
-                  <separator string="Effectiveness Review"/>
-                  <group>
-                    <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['open'])]}"/>
-                  </group>
-                  <group>
-                    <field name="evaluation_user_id"/>
-                    <field name="evaluation_date"/>
-                    <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test" type="object" states="open" groups="mgmtsystem.group_mgmtsystem_auditor"/>
-                  </group>
-                </group>
+               <group attrs="{'invisible':[('state','not in',['open','done'])]}" string="Effectiveness Review">
+                 <group>
+                   <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['open'])]}" nolabel="1" placeholder="Evaluation Comments"/>
+                 </group>
+                 <group>
+                   <field name="evaluation_user_id"/>
+                   <field name="evaluation_date"/>
+                   <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test" type="object" states="open" groups="mgmtsystem.group_mgmtsystem_auditor"/>
+                 </group>
+             </group>
               </page>
 
             </notebook>

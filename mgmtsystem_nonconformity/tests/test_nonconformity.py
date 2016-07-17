@@ -209,7 +209,8 @@ class TestModelNonConformity(common.TransactionCase):
         self.assertTrue(nonconformity.evaluation_date)
 
         # Done without the right to do it
-        self.env.user.sudo(self.env.ref("base.user_demo"))
+        user_demo = self.browse_ref('base.user_demo')
+        self.env = self.env(user=user_demo)
         nonconformity.state = "done"
         try:
             nonconformity.state = "done"
@@ -226,3 +227,4 @@ class TestModelNonConformity(common.TransactionCase):
             nonconformity.state = "cancel"
         except exceptions.ValidationError:
             self.assertTrue(True)
+        self.assertEqual(len(nonconformity._state_groups(None, None)[0]), 6)

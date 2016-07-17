@@ -440,7 +440,7 @@ class MgmtsystemNonconformity(models.Model):
     number_of_nonconformities = fields.Integer(
         '# of nonconformities', readonly=True, default=1)
     age = fields.Integer('Age', readonly=True,
-                         compute='_compute_age', store=True)
+                         compute='_compute_age')
     number_of_days_to_analyse = fields.Integer(
         '# of days to analyse', compute='_compute_number_of_days_to_analyse',
         store=True, readonly=True)
