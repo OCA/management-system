@@ -37,6 +37,36 @@
                                 </t>
                             </ul>
                         </div>
+                        <div class="col-xs-12">
+                            Strong points:
+                        </div>
+                        <span t-field="doc.strong_points"/>
+                        <div class="col-xs-12">
+                            Points To Improve:
+                        </div>
+                        <span t-field="doc.to_improve_points"/>
+                        <div class="col-xs-12">
+                            Improvement opportunities:
+                        </div>
+
+                        <div class="col-xs-12">
+                            <ul>
+                                <t t-foreach="doc.imp_opp_ids" t-as="improvement">
+                                    <li><span t-field="improvement.name"/></li>
+                                </t>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12">
+                            Nonconformities:
+                        </div>
+                        <div class="col-xs-12">
+                            <ul>
+                                <t t-foreach="doc.nonconformity_ids" t-as="nonconformity">
+                                    <li><span t-field="nonconformity.description"/></li>
+                                </t>
+                            </ul>
+                        </div>
+
                     </div>
 
                 </div>
