@@ -59,6 +59,6 @@ class mgmtsystem_claim(models.Model):
     @api.model
     def create(self, vals):
         vals.update({
-            'reference': self.env['ir.sequence'].get('mgmtsystem.claim')
+            'reference': self.env['ir.sequence'].next_by_code('mgmtsystem.claim')
         })
         return super(mgmtsystem_claim, self).create(vals)
