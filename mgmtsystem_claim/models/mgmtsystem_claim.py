@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -21,7 +21,7 @@
 from openerp import fields, models, api
 
 
-class mgmtsystem_claim(models.Model):
+class MgmtsystemClaim(models.Model):
     _name = "mgmtsystem.claim"
     _description = "Claim"
     _inherit = "crm.claim"
@@ -59,6 +59,7 @@ class mgmtsystem_claim(models.Model):
     @api.model
     def create(self, vals):
         vals.update({
-            'reference': self.env['ir.sequence'].next_by_code('mgmtsystem.claim')
+            'reference': self.env['ir.sequence']
+                .next_by_code('mgmtsystem.claim')
         })
         return super(mgmtsystem_claim, self).create(vals)
