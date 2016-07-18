@@ -38,11 +38,11 @@ This module enables you to manage the claims of your management system.
         'security/mgmtsystem_claim_security.xml',
         'data/claim_sequence.xml',
         'data/mgmtsystem_claim_stage.xml',
-        'views/menus.xml',
         'views/mgmtsystem_claim.xml',
         'views/mgmtsystem_claim_stage.xml',
+        'reports/mgmtsystem_claim_report.xml',
         'workflow_mgmtsystem_claim.xml',
-	'reports/mgmtsystem_claim_report.xml',
+        'views/menus.xml',
     ],
     'installable': True,
 }
