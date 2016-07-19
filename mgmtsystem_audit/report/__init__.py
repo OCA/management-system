@@ -1,5 +1,3 @@
 # -*- coding: utf-8 -*-
-from . import (
-    audit_report,
-    verification_list
-)
+
+from . import mgmtsystem_audit_report

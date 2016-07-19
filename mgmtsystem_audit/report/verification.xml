@@ -4,81 +4,96 @@
         <template id="verification_report">
 
             <t t-set="doc" t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"/>
-            <t t-call="report.internal_layout">
+            <t t-call="report.external_layout">
                 <div class="page">
-                    <div class="row">
+                    <div class="row" style="padding-top:10px">
                         <div class="col-xs-12">
-                            <div class="page-header text-center">
-                                <h2>Audit Report</h2>
+                            <div class="text-center">
+                                <h3>
+                                    <strong>Verification List</strong>
+                                </h3>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="padding-top:10px">
                         <div class="col-xs-12">
-                            <div class="text-center"><h2 t-field="doc.name"/></div>
+                            <div class="text-center">
+                                <h3><strong t-field="doc.name"/></h3>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            Condidentially: Internal
+                    <div class="row" style="padding-top:10px">
+                        <div class="col-xs-2">
+                            Confidentially:
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-xs-10">
+                            Internal
+                        </div>
+                        <div class="col-xs-2">
                             Reference:
+                        </div>
+                        <div class="col-xs-10">
                             <span t-field="doc.reference"/>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-xs-2">
                             Date:
+                        </div>
+                        <div class="col-xs-10">
                             <span t-field="doc.date"/>
                         </div>
                     </div>
-                    <div class="row">
-                        <table>
-                            <tr>
-                                <td>
-                                    Auditors:
-                                    <ul>
-                                        <t t-foreach="doc.auditor_user_ids" t-as="auditor">
-                                            <li><span t-field="auditor.name"/></li>
-                                        </t>
-                                    </ul>
-                                </td>
-                                <td>
-                                    Auditees:
-                                    <ul>
-                                        <t t-foreach="doc.auditee_user_ids" t-as="auditee">
-                                            <li><span t-field="auditee.name"/></li>
-                                        </t>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class="row" style="padding-top:20px">
+                        <div class="col-xs-12">
+                            <table class="table">
+                                <tr>
+                                    <th>Auditors:</th>
+                                    <th>Auditees:</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <ul style="padding-left:30px">
+                                            <t t-foreach="doc.auditor_user_ids" t-as="auditor">
+                                                <li><span t-field="auditor.name"/></li>
+                                            </t>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul style="padding-left:30px">
+                                            <t t-foreach="doc.auditee_user_ids" t-as="auditee">
+                                                <li><span t-field="auditee.name"/></li>
+                                            </t>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class="row">
-                        <table>
-                          <tr>
-                            <td>Question</td>
-                            <td>Conformed?</td>
-                            <td>Comments</td>
-                          </tr>
-                      </table>
-                      <table>
-                      <para>[[ repeatIn(get_lines_by_procedure(o.line_ids),'line') ]]</para>
-                      <tr>
-                        <td>
-                          <para> [[ line['procedure'] ]] [[ line['name'] ]]</para>
-                        </td>
-                        <td>
-                          <para style="terp_default_Centre_9">[[ line['yes_no'] ]]</para>
-                        </td>
-                        <td>
-                          <para></para>
-                        </td>
-                      </tr>
-                  </table>
+                    <div class="row" style="padding-top:20px">
+                        <div class="col-xs-12">
+                            <table class="table">
+                                <tr>
+                                    <th>Question</th>
+                                    <th>Conformed?</th>
+                                    <th>Comments</th>
+                                </tr>
+                                <t t-foreach="doc.get_lines_by_procedure()" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <span t-esc="line['procedure']" />
+                                        </td>
+                                        <td>
+                                            <span t-esc="line['name']" />
+                                        </td>
+                                        <td>
+                                            <span t-esc="line['yes_no']" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </t>
-
         </template>
     </data>
 </odoo>

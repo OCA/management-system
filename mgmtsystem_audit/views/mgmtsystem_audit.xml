@@ -73,7 +73,7 @@
             <field name="arch" type="xml">
                 <tree string="Audits">
                     <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
-                    <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
+                    <field name="create_date" attrs="{'readonly':[('state','=','done')]}"/>
                     <field name="reference"/>
                     <field name="system_id"/>
                     <field name="company_id" groups="base.group_multi_company"/>
@@ -94,7 +94,7 @@
                         <filter icon="terp-camera_test" domain="[('state','=','done')]" string="Closed" help="Closed Audits"/>
                         <separator orientation="vertical"/>
                         <field name="name"/>
-                        <field name="date"/>
+                        <field name="create_date"/>
                         <field name="reference"/>
 			<field name="system_id"/>
                     	<field name="company_id" groups="base.group_multi_company"/>
@@ -116,7 +116,7 @@
                         <group col="4" colspan="2">
                             <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
                             <field name="reference"/>
-                            <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
+                            <field name="create_date" attrs="{'readonly':[('state','=','done')]}"/>
                             <field name="user_id" string="Audit Manager" required="1"/>
                             <field name="company_id" groups="base.group_multi_company"/>
                             <field name="system_id"/>
@@ -159,7 +159,7 @@
             <field name="type">calendar</field>
             <field eval="2" name="priority"/>
             <field name="arch" type="xml">
-                <calendar color="name" date_start="date" string="Audits">
+                <calendar color="name" date_start="create_date" string="Audits">
                     <field name="name"/>
                     <field name="auditor_user_ids"/>
                 </calendar>

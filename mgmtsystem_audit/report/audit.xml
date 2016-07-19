@@ -3,75 +3,84 @@
     <data>
         <template id="audit_report">
             <t t-set="doc" t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"/>
-            <t t-call="report.internal_layout">
+            <t t-call="report.external_layout">
                 <div class="page">
-                    <div class="row">
+                    <div class="row" style="padding-top:10px">
                         <div class="col-xs-12">
-                            <div class="page-header text-center">
-                                <h2>Audit Report</h2>
+                            <div class="text-center">
+                                    <h3><strong>Audit Report</strong></h3>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="padding-top:10px">
                         <div class="col-xs-12">
-                            <div class="text-center"><h2 t-field="doc.name"/></div>
+                            <div class="text-center">
+                                <h3><strong t-field="doc.name"></strong></h3>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            Condidentially: Internal
+                    <div class="row" style="padding-top:10px">
+                        <div class="col-xs-2">
+                            Confidentially:
                         </div>
-                        <div class="col-xs-12">
-                            Reference: <span t-field="doc.reference"/>
+                        <div class="col-xs-10">
+                            Internal
                         </div>
-                        <div class="col-xs-12">
-                            Date: <span t-field="doc.date"/>
+                        <div class="col-xs-2">
+                            Reference:
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-xs-10">
+                             <span t-field="doc.reference"/>
+                        </div>
+                        <div class="col-xs-2">
+                            Date:
+                        </div>
+                        <div class="col-xs-10">
+                            <span t-field="doc.date"/>
+                        </div>
+                        <div class="col-xs-2">
                             Auditors:
                         </div>
-                        <div class="col-xs-12">
-                            <ul>
+                        <div class="col-xs-10">
+                            <ul class="list-unstyled">
                                 <t t-foreach="doc.auditor_user_ids" t-as="auditor">
                                     <li><span t-field="auditor.name"/></li>
                                 </t>
                             </ul>
                         </div>
+                    </div>
+                    <div class="row" style="padding-top:10px">
                         <div class="col-xs-12">
-                            Strong points:
-                        </div>
-                        <span t-field="doc.strong_points"/>
-                        <div class="col-xs-12">
-                            Points To Improve:
-                        </div>
-                        <span t-field="doc.to_improve_points"/>
-                        <div class="col-xs-12">
-                            Improvement opportunities:
+                            <h3><strong>Strong points:</strong></h3>
+                            <span t-field="doc.strong_points"/>
                         </div>
 
                         <div class="col-xs-12">
-                            <ul>
+                            <h3><strong>Points To Improve:</strong></h3>
+                            <span t-field="doc.to_improve_points"/>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <h3><strong>Improvement opportunities:</strong></h3>
+                            <ul style="padding-left:50px">
                                 <t t-foreach="doc.imp_opp_ids" t-as="improvement">
                                     <li><span t-field="improvement.name"/></li>
                                 </t>
                             </ul>
                         </div>
+
                         <div class="col-xs-12">
-                            Nonconformities:
-                        </div>
-                        <div class="col-xs-12">
-                            <ul>
+                            <h3><strong>Nonconformities:</strong></h3>
+                            <ul style="padding-left:50px">
                                 <t t-foreach="doc.nonconformity_ids" t-as="nonconformity">
                                     <li><span t-field="nonconformity.description"/></li>
                                 </t>
                             </ul>
                         </div>
-
                     </div>
 
-                </div>
+                    </div>
             </t>
         </template>
-
     </data>
 </odoo>

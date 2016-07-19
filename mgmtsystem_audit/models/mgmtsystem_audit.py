@@ -50,32 +50,20 @@ class MgmtSystemAudit(models.Model):
         readonly=True,
         default='NEW'
     )
-    date = fields.Datetime('Date')
+    create_date = fields.Datetime('Create Date')
     line_ids = fields.One2many(
         'mgmtsystem.verification.line',
         'audit_id',
         'Verification List',
     )
-    quantity = fields.Integer('Number of audits', readonly=True, default=1)
     number_of_nonconformities = fields.Integer(
-        'Number of nonconformities',
-        compute='_number_of_nonconformity', readonly=True)
+        'Number of nonconformities', readonly=True)
     number_of_questions_in_verification_list = fields.Integer(
-        'Number of questions in verification list',
-        compute='_number_of_questions_in_verification_list', readonly=True)
+        'Number of questions in verification list', readonly=True)
     number_of_improvements_opportunity = fields.Integer(
-        'Number of improvements Opportunities',
-        compute='_number_of_improvement_opportunity', readonly=True)
+        'Number of improvements Opportunities', readonly=True)
 
     closing_date = fields.Datetime('Closing Date', readonly=True)
-
-    age = fields.Integer('Age', readonly=True, compute='_get_age')
-
-    def _get_age(self):
-        """Get audit current age."""
-        return (
-            datetime.now() - datetime.strptime(self.date, "%Y-%m-%d %H:%M:%S")
-        ).days
 
     number_of_exceeding_days = fields.Integer(
         '# of exceeding days', readonly=True,
@@ -84,7 +72,7 @@ class MgmtSystemAudit(models.Model):
     def _get_number_of_exceeding_days(self):
         """Get number of exceeding days."""
         return (
-            datetime.now() - datetime.strptime(self.date, "%Y-%m-%d %H:%M:%S")
+            datetime.now() - datetime.strptime(self.create_date, "%Y-%m-%d %H:%M:%S")
         ).days
     number_of_days_to_close = fields.Integer(
         '# of days to close', readonly=True)
@@ -130,21 +118,21 @@ class MgmtSystemAudit(models.Model):
     company_id = fields.Many2one(
         'res.company', 'Company', default=_own_company)
 
-    def _number_of_nonconformity(self):
+    def get_number_of_nonconformities(self):
         """Count number of nonconformities."""
         number = 0
         for id in self.nonconformity_ids:
             number = number + 1
         return number
 
-    def _number_of_improvement_opportunity(self):
+    def get_number_of_improvement_opportunities(self):
         """Count number of improvements Opportunities."""
         number = 0
         for id in self.imp_opp_ids:
             number = number + 1
         return number
 
-    def _number_of_questions_in_verification_list(self):
+    def get_number_of_questions_in_verification_list(self):
         number = 0
         for id in self.line_ids:
             number = number + 1
@@ -156,18 +144,30 @@ class MgmtSystemAudit(models.Model):
         vals.update({
             'reference': self.env['ir.sequence'].next_by_code(
                 'mgmtsystem.audit'
-            )
+            ),
+            #'number_of_nonconformities':
+            # self.get_number_of_nonconformities(),
+            #'number_of_improvements_opportunity':
+            # self.get_number_of_improvement_opportunities(),
+            #'number_of_questions_in_verification_list':
+            # self.get_number_of_questions_in_verification_list()
         })
         if vals.get('closing_date'):
             vals['closing_date'] = None
-        return super(MgmtSystemAudit, self).create(vals)
+        audit = super(MgmtSystemAudit, self).create(vals)
+        audit.number_of_nonconformities = self.get_number_of_nonconformities()
+        audit.number_of_improvements_opportunity \
+            = self.get_number_of_improvement_opportunities()
+        audit.number_of_questions_in_verification_list \
+            = self.get_number_of_questions_in_verification_list()
+        return audit
 
     @api.model
     def button_close(self):
         """When Audit is closed, post a message to followers' chatter."""
         self.message_post(_("Audit closed"))
         number_of_days_to_close = (
-            datetime.now() - datetime.strptime(self.date, "%Y-%m-%d %H:%M:%S")
+            datetime.now() - datetime.strptime(self.create_date, "%Y-%m-%d %H:%M:%S")
         ).days
         return self.write({'state': 'done',
                            'closing_date': time.strftime(DATETIME_FORMAT),
@@ -208,6 +208,41 @@ class MgmtSystemAudit(models.Model):
         )
         return url
 
+    def get_lines_by_procedure(self):
+        p = []
+        for l in self.line_ids:
+            if l.procedure_id.id:
+                proc_nm = self.pool.get('document.page').read(
+                    self.env.cr, self.env.uid, l.procedure_id.id, ['name']
+                )
+                procedure_name = proc_nm['name']
+            else:
+                procedure_name = _('Undefined')
+
+            p.append({"id": l.id,
+                      "procedure": procedure_name,
+                      "name": l.name,
+                      "yes_no": "Yes / No"})
+        p = sorted(p, key=lambda k: k["procedure"])
+        proc_line = False
+        q = []
+        proc_name = ''
+        for i in range(len(p)):
+            if proc_name != p[i]['procedure']:
+                proc_line = True
+            if proc_line:
+                q.append({"id": p[i]['id'],
+                          "procedure": p[i]['procedure'],
+                          "name": "",
+                          "yes_no": ""})
+                proc_line = False
+                proc_name = p[i]['procedure']
+            q.append({"id": p[i]['id'],
+                      "procedure": "",
+                      "name": p[i]['name'],
+                      "yes_no": "Yes / No"})
+        return q
+
 
 class MgmtSystemVerificationLine(models.Model):
     """Class to manage verification's Line."""
@@ -215,11 +250,11 @@ class MgmtSystemVerificationLine(models.Model):
     _description = "Verification Line"
     _order = "seq"
 
-    name = fields.Char('Question', size=300, required=True)
+    name = fields.Char('Question', required=True)
     audit_id = fields.Many2one(
         'mgmtsystem.audit',
         'Audit',
-        ondelete='cascade',
+        ondelete='restrict',
         select=True,
     )
     procedure_id = fields.Many2one(

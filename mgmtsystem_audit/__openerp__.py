@@ -36,8 +36,6 @@
         'report/verification.xml',
         'report/report.xml',
         'report/mgmtsystem_audit_pivot.xml',
-        'report/audit_report.xml',
-        'report/verification_list.xml',
         'wizard/copy_verification_lines.xml',
     ],
     "demo": [
