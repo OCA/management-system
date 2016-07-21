@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -48,7 +48,7 @@ This module enables you to manage reviews of your management system.
     """,
 =======
     "name": "Management System - Review",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -74,8 +74,9 @@ This module enables you to manage reviews of your management system.
 =======
         'data/ir_sequence.xml',
         'views/mgmtsystem_review.xml',
-        'report/review_report.xml',
+        'report/review.xml',
+        'report/report.xml',
     ],
-    "installable": True,
+    'installable': True,
 }
 >>>>>>> Moved mgmtsystem_review to root folder

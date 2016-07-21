@@ -32,7 +32,7 @@ To use this module, you need to:
 Known issues / Roadmap
 ======================
 
-* Please report any issue to https://github.com/OCA/management-system/issues 
+* Please report any issue to https://github.com/OCA/management-system/issues
 
 Credits
 =======
@@ -42,6 +42,8 @@ Contributors
 
 * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
 * Loïc Faure-Lacroix <loic.lacroix@savoirfairelinux.com>
+* Gervais Naoussi <gervaisnaoussi@gmail.com>
+* Luk Vermeylen <luk@allmas-it.be>
 
 Maintainer
 ----------

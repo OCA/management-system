@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -19,21 +19,35 @@
 #
 ##############################################################################
 
-import time
-from openerp.report import report_sxw
+from openerp import fields, models
 
 
-class mgmtsystem_review_report(report_sxw.rml_parse):
+class MgmtsystemReviewLine(models.Model):
+    _name = "mgmtsystem.review.line"
+    _description = "Review Line"
 
-    def __init__(self, cr, uid, name, context):
-        super(mgmtsystem_review_report, self).__init__(cr, uid, name, context)
-        self.localcontext.update({
-            'time': time,
-        })
-
-report_sxw.report_sxw(
-    'report.mgmtsystem.review.report',
-    'mgmtsystem.review',
-    'addons/mgmtsystem_review/report/review_report.rml',
-    parser=mgmtsystem_review_report
-)
+    name = fields.Char('Title', size=300, required=True)
+    type = fields.Selection(
+        [
+            ('action', 'Action'),
+            ('nonconformity', 'Nonconformity'),
+        ],
+        'Type')
+    action_id = fields.Many2one(
+        'mgmtsystem.action',
+        'Action',
+        select=True)
+    nonconformity_id = fields.Many2one(
+        'mgmtsystem.nonconformity',
+        'Nonconformity',
+        select=True)
+    decision = fields.Text('Decision')
+    review_id = fields.Many2one(
+        'mgmtsystem.review',
+        'Review',
+        ondelete='cascade',
+        select=True)
+    company_id = fields.Many2one(
+        'res.company',
+        'Company',
+        default=lambda self: self.env.user.company_id.id)
