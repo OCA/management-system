@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -72,7 +72,8 @@ class MgmtsystemReview(models.Model):
     @api.model
     def create(self, vals):
         vals.update({
-            'reference': self.env['ir.sequence'].get('mgmtsystem.review')
+            'reference': self.env['ir.sequence'].next_by_code(
+                'mgmtsystem.review')
         })
         return super(MgmtsystemReview, self).create(vals)
 
