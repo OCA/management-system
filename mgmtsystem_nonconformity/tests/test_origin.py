@@ -18,17 +18,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+
 from openerp.tests import common
-from psycopg2 import IntegrityError
 
 
 class TestModelOrigin(common.TransactionCase):
     def test_create_origin(self):
-
-        with self.assertRaises(IntegrityError):
-            self.env['mgmtsystem.nonconformity.origin'].create({})
-        self.cr.rollback()
-
         record = self.env['mgmtsystem.nonconformity.origin'].create({
             "name": "TestOrigin",
         })
