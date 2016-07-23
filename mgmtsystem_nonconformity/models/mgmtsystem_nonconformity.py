@@ -47,21 +47,21 @@ class MgmtsystemNonconformity(models.Model):
         },
     }
 
-    def _default_state(self):
+    def _default_stage(self):
         """Return the default stage."""
-        return self.env.ref('mgmtsystem_nonconformity.state_draft')
+        return self.env.ref('mgmtsystem_nonconformity.stage_draft')
 
     @api.model
-    def _state_groups(self, present_ids, domain, **kwargs):
-        """This method is used by Kanban view to show empty states."""
+    def _stage_groups(self, present_ids, domain, **kwargs):
+        """This method is used by Kanban view to show empty stages."""
         # perform search
-        # We search here states objects
+        # We search here stages objects
         result = self.env[
-            'mgmtsystem.nonconformity.state'].search([]).name_get()
+            'mgmtsystem.nonconformity.stage'].search([]).name_get()
         return result, None
 
     _group_by_full = {
-        'state_id': _state_groups
+        'stage_id': _stage_groups
     }
 
     _STATES = [
@@ -84,16 +84,12 @@ class MgmtsystemNonconformity(models.Model):
         default="NEW"
     )
 
-    state_id = fields.Many2one(
-        'mgmtsystem.nonconformity.state',
+    stage_id = fields.Many2one(
+        'mgmtsystem.nonconformity.stage',
         'State',
-        default=_default_state)
+        default=_default_stage)
 
     # Compute data
-    number_of_nonconformities = fields.Integer(
-        '# of nonconformities', readonly=True, default=1)
-    age = fields.Integer('Age', readonly=True,
-                         compute='_compute_age')
     number_of_days_to_analyse = fields.Integer(
         '# of days to analyse', compute='_compute_number_of_days_to_analyse',
         store=True, readonly=True)
@@ -104,14 +100,11 @@ class MgmtsystemNonconformity(models.Model):
         '# of days to execute', compute='_compute_number_of_days_to_execute',
         store=True, readonly=True)
     number_of_days_to_close = fields.Integer(
-        '# of days to close', compute='_compute_number_of_days_to_execute',
+        '# of days to close', compute='_compute_number_of_days_to_close',
         store=True, readonly=True)
 
-    create_date = fields.Date(
-        'Creation Date',
-        required=True,
-        default=lambda *a: time.strftime(DATE_FORMAT)
-    )
+    create_date = fields.Datetime('Create Date', readonly=True,
+                                  default=fields.datetime.now())
     closing_date = fields.Datetime('Closing Date', readonly=True)
     cancel_date = fields.Datetime('Cancel Date', readonly=True)
 
@@ -241,35 +234,31 @@ class MgmtsystemNonconformity(models.Model):
         domain="[('nonconformity_id', '=', id)]",
     )
 
-    def _compute_age(self):
-        return self._elapsed_days(
-            self.create_date, time.strftime(DATETIME_FORMAT))
-
     @api.depends('analysis_date', 'create_date')
     def _compute_number_of_days_to_analyse(self):
         for nc in self:
-            nc.number_of_days_to_close_open = nc._elapsed_days(
+            nc.number_of_days_to_analyse = nc._elapsed_days(
                 nc.create_date,
                 nc.analysis_date)
 
     @api.depends('closing_date', 'create_date')
     def _compute_number_of_days_to_close(self):
         for nc in self:
-            nc.number_of_days_to_close_open = nc._elapsed_days(
+            nc.number_of_days_to_close = nc._elapsed_days(
                 nc.create_date,
                 nc.closing_date)
 
     @api.depends('actions_date', 'analysis_date')
     def _compute_number_of_days_to_plan(self):
         for nc in self:
-            nc.number_of_days_to_close_open = nc._elapsed_days(
+            nc.number_of_days_to_plan = nc._elapsed_days(
                 nc.analysis_date,
                 nc.actions_date)
 
     @api.depends('evaluation_date', 'actions_date')
     def _compute_number_of_days_to_execute(self):
         for nc in self:
-            nc.number_of_days_to_close_open = nc._elapsed_days(
+            nc.number_of_days_to_execute = nc._elapsed_days(
                 nc.actions_date,
                 nc.evaluation_date)
 
@@ -318,30 +307,30 @@ class MgmtsystemNonconformity(models.Model):
     @api.multi
     def write(self, vals):
         """Update user data."""
-        if vals.get('state') or vals.get('state_id'):
+        if vals.get('state') or vals.get('stage_id'):
             if vals.get('state') == "analysis" or vals.get(
-                    'state_id') == self.env.ref(
-                    "mgmtsystem_nonconformity.state_analysis").id:
+                    'stage_id') == self.env.ref(
+                    "mgmtsystem_nonconformity.stage_analysis").id:
                 vals.update(self.do_analysis())
             if vals.get('state') == "pending" or vals.get(
-                    'state_id') == self.env.ref(
-                    "mgmtsystem_nonconformity.state_pending").id:
+                    'stage_id') == self.env.ref(
+                    "mgmtsystem_nonconformity.stage_pending").id:
                 vals.update(self.do_review())
             if vals.get('state') == "open" or vals.get(
-                    'state_id') == self.env.ref(
-                    "mgmtsystem_nonconformity.state_open").id:
+                    'stage_id') == self.env.ref(
+                    "mgmtsystem_nonconformity.stage_open").id:
                 vals.update(self.do_open())
             if vals.get('state') == "done" or vals.get(
-                    'state_id') == self.env.ref(
-                    "mgmtsystem_nonconformity.state_done").id:
+                    'stage_id') == self.env.ref(
+                    "mgmtsystem_nonconformity.stage_done").id:
                 vals.update(self.do_close())
             if vals.get('state') == "cancel" or vals.get(
-                    'state_id') == self.env.ref(
-                    "mgmtsystem_nonconformity.state_cancel").id:
+                    'stage_id') == self.env.ref(
+                    "mgmtsystem_nonconformity.stage_cancel").id:
                 vals.update(self.do_cancel())
             if vals.get('state') == "draft" or vals.get(
-                    'state_id') == self.env.ref(
-                    "mgmtsystem_nonconformity.state_draft").id:
+                    'stage_id') == self.env.ref(
+                    "mgmtsystem_nonconformity.stage_draft").id:
                 vals.update(self.case_reset())
 
         result = super(MgmtsystemNonconformity, self).write(vals)
@@ -358,8 +347,8 @@ class MgmtsystemNonconformity(models.Model):
         self.check_closed_or_cancelled()
         return {
             'state': 'analysis',
-            'state_id': self.env.ref(
-                "mgmtsystem_nonconformity.state_analysis").id,
+            'stage_id': self.env.ref(
+                "mgmtsystem_nonconformity.stage_analysis").id,
             'analysis_date': None,
             'analysis_user_id': None,
             'actions_date': None,
@@ -377,8 +366,8 @@ class MgmtsystemNonconformity(models.Model):
                 )
         return {
             'state': 'pending',
-            'state_id': self.env.ref(
-                "mgmtsystem_nonconformity.state_pending").id,
+            'stage_id': self.env.ref(
+                "mgmtsystem_nonconformity.stage_pending").id,
             'actions_date': None,
             'actions_user_id': None}
 
@@ -455,8 +444,8 @@ class MgmtsystemNonconformity(models.Model):
                 action.case_open()
         return {
             'state': 'open',
-            'state_id': self.env.ref(
-                "mgmtsystem_nonconformity.state_open").id,
+            'stage_id': self.env.ref(
+                "mgmtsystem_nonconformity.stage_open").id,
             'evaluation_date': False,
             'evaluation_user_id': False,
         }
@@ -486,8 +475,8 @@ class MgmtsystemNonconformity(models.Model):
                 _('A close process cannot be cancelled')
             )
         return {'state': 'cancel',
-                'state_id': self.env.ref(
-                    "mgmtsystem_nonconformity.state_cancel").id,
+                'stage_id': self.env.ref(
+                    "mgmtsystem_nonconformity.stage_cancel").id,
                 'cancel_date': time.strftime(DATETIME_FORMAT)}
 
     @api.multi
@@ -523,8 +512,8 @@ class MgmtsystemNonconformity(models.Model):
 
         return {
             'state': 'done',
-            'state_id': self.env.ref(
-                "mgmtsystem_nonconformity.state_done").id,
+            'stage_id': self.env.ref(
+                "mgmtsystem_nonconformity.stage_done").id,
             'closing_date': time.strftime(DATETIME_FORMAT),
         }
 
@@ -536,8 +525,8 @@ class MgmtsystemNonconformity(models.Model):
             )
         return {
             'state': 'draft',
-            'state_id': self.env.ref(
-                "mgmtsystem_nonconformity.state_draft").id,
+            'stage_id': self.env.ref(
+                "mgmtsystem_nonconformity.stage_draft").id,
             'closing_date': None, 'cancel_date': None,
             'analysis_date': None, 'analysis_user_id': None,
             'actions_date': None, 'actions_user_id': None,

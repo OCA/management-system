@@ -21,7 +21,7 @@
         <field name="manager_user_id"/>
         <field name="system_id"/>
         <field name="company_id" groups="base.group_multi_company"/>
-        <field name="state_id"/>
+        <field name="stage_id"/>
       </tree>
     </field>
   </record>
@@ -70,8 +70,8 @@
         <field name="name">mgmtsystem.nonconformity.kanban</field>
         <field name="model">mgmtsystem.nonconformity</field>
         <field name="arch" type="xml">
-            <kanban quick_create="false" default_group_by="state_id" class="o_kanban_small_column">
-                <field name="state_id"/>
+            <kanban quick_create="false" default_group_by="stage_id" class="o_kanban_small_column">
+                <field name="stage_id"/>
                 <field name="responsible_user_id"/>
                 <field name="ref"/>
                 <field name="name"/>
