@@ -8,6 +8,7 @@
         <tree string="Stages">
           <field name="name"/>
           <field name="sequence" widget="handle" />
+          <field name="state"/>
         </tree>
       </field>
     </record>
@@ -26,8 +27,6 @@
                  action="mgmtsystem_nonconformity_stage_action"
                  sequence="90"
                  groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
-
-
 
   </data>
 </odoo>

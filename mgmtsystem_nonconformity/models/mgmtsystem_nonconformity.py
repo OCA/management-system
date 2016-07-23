@@ -1,23 +1,7 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
 
 from openerp import models, api, fields, exceptions, _
 
@@ -54,7 +38,7 @@ class MgmtsystemNonconformity(models.Model):
     def _stage_groups(self, present_ids, domain, **kwargs):
         """This method is used by Kanban view to show empty stages."""
         # perform search
-        # We search here stages objects
+        # We search here stage objects
         result = self.env[
             'mgmtsystem.nonconformity.stage'].search([]).name_get()
         return result, None
@@ -63,18 +47,7 @@ class MgmtsystemNonconformity(models.Model):
         'stage_id': _stage_groups
     }
 
-    _STATES = [
-        ('draft', _('Draft')),
-        ('analysis', _('Analysis')),
-        ('pending', _('Pending Approval')),
-        ('open', _('In Progress')),
-        ('done', _('Closed')),
-        ('cancel', _('Cancelled')),
-    ]
-    _STATES_DICT = dict(_STATES)
-
     name = fields.Char('Name')
-
     # 1. Description
     ref = fields.Char(
         'Reference',
@@ -82,12 +55,6 @@ class MgmtsystemNonconformity(models.Model):
         readonly=True,
         default="NEW"
     )
-
-    stage_id = fields.Many2one(
-        'mgmtsystem.nonconformity.stage',
-        'State',
-        default=_default_stage)
-
     # Compute data
     number_of_days_to_analyse = fields.Integer(
         '# of days to analyse', compute='_compute_number_of_days_to_analyse',
@@ -101,9 +68,6 @@ class MgmtsystemNonconformity(models.Model):
     number_of_days_to_close = fields.Integer(
         '# of days to close', compute='_compute_number_of_days_to_close',
         store=True, readonly=True)
-
-    create_date = fields.Datetime('Create Date', readonly=True,
-                                  default=fields.datetime.now())
     closing_date = fields.Datetime('Closing Date', readonly=True)
     cancel_date = fields.Datetime('Cancel Date', readonly=True)
 
@@ -144,15 +108,15 @@ class MgmtsystemNonconformity(models.Model):
         'Procedure',
     )
     description = fields.Text('Description', required=True)
+    system_id = fields.Many2one('mgmtsystem.system', 'System')
+    stage_id = fields.Many2one(
+        'mgmtsystem.nonconformity.stage',
+        'Stage',
+        default=_default_stage)
     state = fields.Selection(
-        _STATES,
-        'State',
-        readonly=True,
-        default="draft",
+        related='stage_id.state',
         track_visibility='onchange',
     )
-
-    system_id = fields.Many2one('mgmtsystem.system', 'System')
 
     # 2. Root Cause Analysis
     cause_ids = fields.Many2many(
@@ -221,7 +185,6 @@ class MgmtsystemNonconformity(models.Model):
         'Company',
         default=lambda self: self.env.user.company_id.id)
 
-    # Demo data missing fields...
     corrective_action_id = fields.Many2one(
         'mgmtsystem.action',
         'Corrective action',
@@ -232,6 +195,19 @@ class MgmtsystemNonconformity(models.Model):
         'Preventive action',
         domain="[('nonconformity_id', '=', id)]",
     )
+
+    @api.model
+    def _elapsed_days(self, dt1_text, dt2_text):
+        res = 0
+        if dt1_text and dt2_text:
+            dt1 = fields.Datetime.from_string(dt1_text)
+            dt2 = fields.Datetime.from_string(dt2_text)
+            res = (dt2 - dt1).days
+        return res
+
+    def _compute_age(self):
+        return self._elapsed_days(
+            self.create_date, fields.Datetime.now())
 
     @api.depends('analysis_date', 'create_date')
     def _compute_number_of_days_to_analyse(self):
@@ -261,15 +237,6 @@ class MgmtsystemNonconformity(models.Model):
                 nc.actions_date,
                 nc.evaluation_date)
 
-    @api.model
-    def _elapsed_days(self, dt1_text, dt2_text):
-        res = 0
-        if dt1_text and dt2_text:
-            dt1 = fields.Datetime.from_string(dt1_text)
-            dt2 = fields.Datetime.from_string(dt2_text)
-            res = (dt2 - dt1).days
-        return res
-
     @property
     @api.multi
     def verbose_name(self):
@@ -281,7 +248,6 @@ class MgmtsystemNonconformity(models.Model):
             'ref': self.env['ir.sequence'].next_by_code(
                 'mgmtsystem.nonconformity')
         })
-
         return super(MgmtsystemNonconformity, self).create(vals)
 
     @api.multi
@@ -306,6 +272,7 @@ class MgmtsystemNonconformity(models.Model):
     @api.multi
     def write(self, vals):
         """Update user data."""
+
         if vals.get('state') or vals.get('stage_id'):
             if vals.get('state') == "analysis" or vals.get(
                     'stage_id') == self.env.ref(

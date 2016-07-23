@@ -112,16 +112,13 @@
         </field>
     </record>
 
-
-
-    <!-- End of kanaban view -->
     <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
       <field name="name">mgmtsystem.nonconformity.form</field>
       <field name="model">mgmtsystem.nonconformity</field>
       <field name="arch" type="xml">
         <form string="Non-Conformity" version="7.0">
           <header>
-            <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done,cancel"  clickable="True" />
+            <field name="stage_id" widget="statusbar" clickable="True" />
           </header>
           <sheet string="Non-Conformity">
             <group>
