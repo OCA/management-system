@@ -219,7 +219,6 @@ class TestModelNonConformity(common.TransactionCase):
         # Switch to administrator before doing done
         self.env.user.sudo()
         nonconformity.state = "done"
-        self.assertFalse(nonconformity._compute_age())
         self.assertFalse(nonconformity._compute_number_of_days_to_close())
 
         # cancel a close object
