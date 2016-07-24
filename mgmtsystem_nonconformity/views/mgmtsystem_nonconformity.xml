@@ -477,7 +477,7 @@
         <field name="create_date"/>
         <field name="partner_id"/>
         <field name="description"/>
-        <field name="author_user_id"/>
+        <field name="user_id"/>
         <field name="responsible_user_id"/>
         <field name="manager_user_id"/>
         <field name="system_id"/>
@@ -501,14 +501,14 @@
           <separator orientation="vertical"/>
           <field name="ref"/>
           <field name="create_date"/>
-          <field name="author_user_id" string="User"
-            filter_domain="['|','|',('author_user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
+          <field name="user_id" string="User"
+            filter_domain="['|','|',('user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
           <field name="system_id"/>
           <field name="company_id" groups="base.group_multi_company"/>
         </group>
         <newline />
         <group expand="0" string="Group By...">
-          <filter string="Author" icon="gtk-edit" context="{'group_by':'author_user_id'}"/>
+          <filter string="Author" icon="gtk-edit" context="{'group_by':'user_id'}"/>
           <filter string="Responsible" icon="terp-personal" context="{'group_by':'responsible_user_id'}"/>
           <filter string="Manager" icon="terp-personal+" context="{'group_by':'manager_user_id'}"/>
           <separator orientation="vertical"/>
@@ -525,8 +525,8 @@
         </search>
       </field>
     </record>
-    <!-- Kanaban view -->
 
+    <!-- Kanban view -->
     <record id="view_mgmtsystem_nonconformity_kanban" model="ir.ui.view">
         <field name="name">mgmtsystem.nonconformity.kanban</field>
         <field name="model">mgmtsystem.nonconformity</field>
@@ -561,8 +561,11 @@
                                 <div>
                                     <br/>
                                 </div>
-                                <div class="o_kanban_footer">
+                                <div class="oe_kanban_bottom_left">
                                     <span class='oe_kanban_mail_new' title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <field name="kanban_state" widget="kanban_state_selection" />
                                     <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_user_id.raw_value)" t-att-title="record.responsible_user_id.value" width="24" height="24" class="oe_kanban_avatar"/>
                                 </div>
                             </div>
@@ -582,9 +585,15 @@
       <field name="arch" type="xml">
         <form string="Non-Conformity" version="7.0">
           <header>
+<<<<<<< 6fec840b8d9a29f157839d4b6eb62db952e56a95
             <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done,cancel"  clickable="True" />
+=======
+            <field name="stage_id" widget="statusbar" clickable="True" />
+            <field name="state" invisible="True" />
+>>>>>>> Nonconformity view must load state data
           </header>
           <sheet string="Non-Conformity">
+            <field name="kanban_state" widget="kanban_state_selection" />
             <group>
               <group>
                 <field name="name" attrs="{'readonly':[('state','not in',['draft'])]}"/>
@@ -597,7 +606,7 @@
               <group>
                 <field name="responsible_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                 <field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                <field name="author_user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                <field name="user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                 <field name="company_id" groups="base.group_multi_company"/>
               </group>
@@ -615,7 +624,7 @@
 
               <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
                 <separator string="Analysis"/>
-                <field name="analysis" attrs="{'readonly':[('state','not in',['analysis'])], 'required':[('state','in',['analysis','pending','open'])]}"/>
+                <field name="analysis" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
 
                 <separator string="Causes"/>
                 <field name="cause_ids" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
@@ -625,11 +634,6 @@
                   <group>
                     <field name="severity_id" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
                     <field name="immediate_action_id" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
-                  </group>
-                  <group>
-                    <field name="analysis_user_id"/>
-                    <field name="analysis_date"/>
-                    <button name="action_sign_analysis" string="Approve" icon="terp-camera_test" type="object" states="analysis" groups="mgmtsystem.group_mgmtsystem_user_manager"/>
                   </group>
                 </group>
               </page>
@@ -642,21 +646,11 @@
                  <group>
                    <field name="action_comments" attrs="{'readonly':[('state','not in',['pending'])]}" nolabel="1" placeholder="Action Plan Comments"/>
                  </group>
-                 <group>
-                   <field name="actions_user_id"/>
-                   <field name="actions_date"/>
-                   <button name="action_sign_actions" string="Approve" icon="terp-camera_test" type="object" states="pending" groups="mgmtsystem.group_mgmtsystem_user_manager"/>
-                 </group>
                </group>
 
                <group attrs="{'invisible':[('state','not in',['open','done'])]}" string="Effectiveness Review">
                  <group>
                    <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['open'])]}" nolabel="1" placeholder="Evaluation Comments"/>
-                 </group>
-                 <group>
-                   <field name="evaluation_user_id"/>
-                   <field name="evaluation_date"/>
-                   <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test" type="object" states="open" groups="mgmtsystem.group_mgmtsystem_auditor"/>
                  </group>
              </group>
               </page>
@@ -680,7 +674,7 @@
       <field name="view_mode">kanban,tree,form</field>
       <field name="view_id" ref="view_mgmtsystem_nonconformity_kanban"/>
       <field name="search_view_id" ref="view_mgmtsystem_nonconformity_filter"/>
-      <field name="context">{"search_default_author_user_id":uid}</field>
+      <field name="context">{"search_default_user_id":uid}</field>
     </record>
 
     <menuitem
