@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="stage_draft" model="mgmtsystem.nonconformity.stage">
+      <field name="name">Draft</field>
+      <field name="sequence">0</field>
+      <field name="state">draft</field>
+    </record>
+    <record id="stage_analysis" model="mgmtsystem.nonconformity.stage">
+      <field name="name">Analysis</field>
+      <field name="sequence">50</field>
+      <field name="state">analysis</field>
+    </record>
+    <record id="stage_pending" model="mgmtsystem.nonconformity.stage">
+      <field name="name">Action Plan</field>
+      <field name="sequence">100</field>
+      <field name="state">pending</field>
+    </record>
+    <record id="stage_open" model="mgmtsystem.nonconformity.stage">
+      <field name="name">In Progress</field>
+      <field name="sequence">150</field>
+      <field name="state">open</field>
+    </record>
+    <record id="stage_done" model="mgmtsystem.nonconformity.stage">
+      <field name="name">Closed</field>
+      <field name="sequence">200</field>
+      <field name="state">done</field>
+    </record>
+    <record id="stage_cancel" model="mgmtsystem.nonconformity.stage">
+      <field name="name">Cancelled</field>
+      <field name="sequence">250</field>
+      <field name="state">cancel</field>
+    </record>
+  </data>
+</odoo>
