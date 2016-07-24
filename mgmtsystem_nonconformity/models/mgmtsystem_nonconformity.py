@@ -109,10 +109,23 @@ class MgmtsystemNonconformity(models.Model):
         related='stage_id.state',
         track_visibility='onchange',
     )
+    kanban_state = fields.Selection(
+        [('normal', 'In Progress'),
+         ('done', 'Ready for next stage'),
+         ('blocked', 'Blocked')],
+        'Kanban State',
+        track_visibility='onchange',
+        help="A tkanban state indicates special situations affecting it:\n"
+        " * Normal is the default situation\n"
+        " * Blocked indicates something is preventing"
+        " the progress of this task\n"
+        " * Ready for next stage indicates the"
+        " task is ready to be pulled to the next stage",
+        required=True, copy=False)
 
     # 2. Root Cause Analysis
     cause_ids = fields.Many2many(
-    'mgmtsystem.nonconformity.cause',
+        'mgmtsystem.nonconformity.cause',
         'mgmtsystem_nonconformity_cause_rel',
         'nonconformity_id',
         'cause_id',
@@ -192,8 +205,8 @@ class MgmtsystemNonconformity(models.Model):
 
         if False and 'is_writing' not in self.env.context:
             for nc in result.with_context(is_writing=True):
-                if nc.state=='done' and not nc.closing_date:
+                if nc.state == 'done' and not nc.closing_date:
                     nc.closing_date = fields.Datetime.now()
-                if nc.state!='done' and nc.closing_date:
+                if nc.state != 'done' and nc.closing_date:
                     nc.closing_date = None
         return result
