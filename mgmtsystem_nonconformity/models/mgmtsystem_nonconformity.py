@@ -3,13 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from openerp import models, api, fields, exceptions, _
-
-from openerp.tools import (
-    DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
-)
-
-import time
+from openerp import models, api, fields
 
 
 class MgmtsystemNonconformity(models.Model):
@@ -47,8 +41,8 @@ class MgmtsystemNonconformity(models.Model):
         'stage_id': _stage_groups
     }
 
-    name = fields.Char('Name')
     # 1. Description
+    name = fields.Char('Name')
     ref = fields.Char(
         'Reference',
         required=True,
@@ -56,20 +50,17 @@ class MgmtsystemNonconformity(models.Model):
         default="NEW"
     )
     # Compute data
-    number_of_days_to_analyse = fields.Integer(
-        '# of days to analyse', compute='_compute_number_of_days_to_analyse',
-        store=True, readonly=True)
-    number_of_days_to_plan = fields.Integer(
-        '# of days to plan', compute='_compute_number_of_days_to_plan',
-        store=True, readonly=True)
-    number_of_days_to_execute = fields.Integer(
-        '# of days to execute', compute='_compute_number_of_days_to_execute',
-        store=True, readonly=True)
+    number_of_nonconformities = fields.Integer(
+        '# of nonconformities', readonly=True, default=1)
+    age = fields.Integer(
+        'Age', readonly=True,
+        compute='_compute_age')
     number_of_days_to_close = fields.Integer(
-        '# of days to close', compute='_compute_number_of_days_to_close',
-        store=True, readonly=True)
+        '# of days to close',
+        compute='_compute_number_of_days_to_close',
+        store=True,
+        readonly=True)
     closing_date = fields.Datetime('Closing Date', readonly=True)
-    cancel_date = fields.Datetime('Cancel Date', readonly=True)
 
     partner_id = fields.Many2one('res.partner', 'Partner', required=True)
     reference = fields.Char('Related to')
@@ -77,20 +68,20 @@ class MgmtsystemNonconformity(models.Model):
         'res.users',
         'Responsible',
         required=True,
-        track_visibility="onchange"
+        track_visibility=True,
     )
     manager_user_id = fields.Many2one(
         'res.users',
         'Manager',
         required=True,
-        track_visibility="onchange"
+        track_visibility=True,
     )
     author_user_id = fields.Many2one(
         'res.users',
         'Filled in by',
         required=True,
         default=lambda self: self.env.user.id,
-        track_visibility="onchange"
+        track_visibility=True,
     )
     origin_ids = fields.Many2many(
         'mgmtsystem.nonconformity.origin',
@@ -112,6 +103,7 @@ class MgmtsystemNonconformity(models.Model):
     stage_id = fields.Many2one(
         'mgmtsystem.nonconformity.stage',
         'Stage',
+        track_visibility=True,
         default=_default_stage)
     state = fields.Selection(
         related='stage_id.state',
@@ -120,7 +112,7 @@ class MgmtsystemNonconformity(models.Model):
 
     # 2. Root Cause Analysis
     cause_ids = fields.Many2many(
-        'mgmtsystem.nonconformity.cause',
+    'mgmtsystem.nonconformity.cause',
         'mgmtsystem_nonconformity_cause_rel',
         'nonconformity_id',
         'cause_id',
@@ -136,17 +128,6 @@ class MgmtsystemNonconformity(models.Model):
         'Immediate action',
         domain="[('nonconformity_ids', '=', id)]",
     )
-    analysis_date = fields.Datetime(
-        'Analysis Date',
-        readonly=True,
-        track_visibility='onchange',
-    )
-    analysis_user_id = fields.Many2one(
-        'res.users',
-        'Analysis by',
-        readonly=True,
-        track_visibility='onchange',
-    )
 
     # 3. Action Plan
     action_ids = fields.Many2many(
@@ -156,24 +137,12 @@ class MgmtsystemNonconformity(models.Model):
         'action_id',
         'Actions',
     )
-    actions_date = fields.Datetime('Action Plan Date', readonly=True)
-    actions_user_id = fields.Many2one(
-        'res.users',
-        'Action Plan by',
-        readonly=True,
-    )
     action_comments = fields.Text(
         'Action Plan Comments',
         help="Comments on the action plan.",
     )
 
     # 4. Effectiveness Evaluation
-    evaluation_date = fields.Datetime('Evaluation Date', readonly=True)
-    evaluation_user_id = fields.Many2one(
-        'res.users',
-        'Evaluation by',
-        readonly=True,
-    )
     evaluation_comments = fields.Text(
         'Evaluation Comments',
         help="Conclusions from the last effectiveness evaluation.",
@@ -209,39 +178,6 @@ class MgmtsystemNonconformity(models.Model):
         return self._elapsed_days(
             self.create_date, fields.Datetime.now())
 
-    @api.depends('analysis_date', 'create_date')
-    def _compute_number_of_days_to_analyse(self):
-        for nc in self:
-            nc.number_of_days_to_analyse = nc._elapsed_days(
-                nc.create_date,
-                nc.analysis_date)
-
-    @api.depends('closing_date', 'create_date')
-    def _compute_number_of_days_to_close(self):
-        for nc in self:
-            nc.number_of_days_to_close = nc._elapsed_days(
-                nc.create_date,
-                nc.closing_date)
-
-    @api.depends('actions_date', 'analysis_date')
-    def _compute_number_of_days_to_plan(self):
-        for nc in self:
-            nc.number_of_days_to_plan = nc._elapsed_days(
-                nc.analysis_date,
-                nc.actions_date)
-
-    @api.depends('evaluation_date', 'actions_date')
-    def _compute_number_of_days_to_execute(self):
-        for nc in self:
-            nc.number_of_days_to_execute = nc._elapsed_days(
-                nc.actions_date,
-                nc.evaluation_date)
-
-    @property
-    @api.multi
-    def verbose_name(self):
-        return self.env['ir.model'].search([('model', '=', self._name)]).name
-
     @api.model
     def create(self, vals):
         vals.update({
@@ -251,252 +187,13 @@ class MgmtsystemNonconformity(models.Model):
         return super(MgmtsystemNonconformity, self).create(vals)
 
     @api.multi
-    def message_auto_subscribe(self, updated_fields, values=None):
-        """
-        Add the responsible, manager and author to the OpenChatter follow list
-        """
-        self.ensure_one()
-
-        # user_ids = [
-        #    self.responsible_user_id._uid,
-        #    self.manager_user_id._uid,
-        #    self.author_user_id._uid,
-        # ]
-        # self.message_subscribe_users(user_ids=user_ids)
-
-        return super(MgmtsystemNonconformity, self).message_auto_subscribe(
-            updated_fields=updated_fields,
-            values=values
-        )
-
-    @api.multi
     def write(self, vals):
-        """Update user data."""
-
-        if vals.get('state') or vals.get('stage_id'):
-            if vals.get('state') == "analysis" or vals.get(
-                    'stage_id') == self.env.ref(
-                    "mgmtsystem_nonconformity.stage_analysis").id:
-                vals.update(self.do_analysis())
-            if vals.get('state') == "pending" or vals.get(
-                    'stage_id') == self.env.ref(
-                    "mgmtsystem_nonconformity.stage_pending").id:
-                vals.update(self.do_review())
-            if vals.get('state') == "open" or vals.get(
-                    'stage_id') == self.env.ref(
-                    "mgmtsystem_nonconformity.stage_open").id:
-                vals.update(self.do_open())
-            if vals.get('state') == "done" or vals.get(
-                    'stage_id') == self.env.ref(
-                    "mgmtsystem_nonconformity.stage_done").id:
-                vals.update(self.do_close())
-            if vals.get('state') == "cancel" or vals.get(
-                    'stage_id') == self.env.ref(
-                    "mgmtsystem_nonconformity.stage_cancel").id:
-                vals.update(self.do_cancel())
-            if vals.get('state') == "draft" or vals.get(
-                    'stage_id') == self.env.ref(
-                    "mgmtsystem_nonconformity.stage_draft").id:
-                vals.update(self.case_reset())
-
         result = super(MgmtsystemNonconformity, self).write(vals)
+
+        if False and 'is_writing' not in self.env.context:
+            for nc in result.with_context(is_writing=True):
+                if nc.state=='done' and not nc.closing_date:
+                    nc.closing_date = fields.Datetime.now()
+                if nc.state!='done' and nc.closing_date:
+                    nc.closing_date = None
         return result
-
-    def check_closed_or_cancelled(self):
-        if self.cancel_date or self.closing_date:
-            raise exceptions.ValidationError(
-                _('Please reset the process to draft, to perform it again')
-            )
-
-    def do_analysis(self):
-        """Change state from draft to analysis."""
-        self.check_closed_or_cancelled()
-        return {
-            'state': 'analysis',
-            'stage_id': self.env.ref(
-                "mgmtsystem_nonconformity.stage_analysis").id,
-            'analysis_date': None,
-            'analysis_user_id': None,
-            'actions_date': None,
-            'actions_user_id': None}
-
-    @api.multi
-    def do_review(self):
-        """Change state from analysis to pending approval"""
-        self.check_closed_or_cancelled()
-        for o in self:
-            if not o.analysis_date:
-                raise exceptions.ValidationError(
-                    _('Analysis must be performed before submitting to '
-                      'approval.')
-                )
-        return {
-            'state': 'pending',
-            'stage_id': self.env.ref(
-                "mgmtsystem_nonconformity.stage_pending").id,
-            'actions_date': None,
-            'actions_user_id': None}
-
-    @api.multi
-    def action_sign_analysis(self):
-        """Sign-off the analysis"""
-        self.ensure_one()
-        if self.state != 'analysis':
-            raise exceptions.ValidationError(
-                _('This action can only be done in the Analysis state.')
-            )
-        if self.analysis_date:
-            raise exceptions.ValidationError(
-                _('Analysis is already approved.')
-            )
-        if not self.analysis:
-            raise exceptions.ValidationError(
-                _('Please provide an analysis before approving.')
-            )
-
-        self.write({
-            'analysis_date': time.strftime(DATETIME_FORMAT),
-            'analysis_user_id': self._uid
-        })
-        self.message_post(
-            body='%s <b>%s</b>' % (self.verbose_name, _('Analysis Approved'))
-        )
-        return True
-
-    @api.multi
-    def action_sign_actions(self):
-        """Sign-off the action plan"""
-        self.ensure_one()
-        if self.state != 'pending':
-            raise exceptions.ValidationError(
-                _('This action can only be done in the Pending for Approval '
-                  'state.')
-            )
-        if self.actions_date:
-            raise exceptions.ValidationError(
-                _('Action plan is already approved.')
-            )
-        if not self.analysis_date:
-            raise exceptions.ValidationError(
-                _('Analysis approved before the review confirmation.')
-            )
-        self.write({
-            'actions_date': time.strftime(DATETIME_FORMAT),
-            'actions_user_id': self._uid,
-        })
-        self.message_post(
-            body='%s <b>%s</b>' % (
-                self.verbose_name, _('Action Plan Approved')
-            )
-        )
-        return True
-
-    @api.multi
-    def do_open(self):
-        """Change state from pending approval to in progress, and Open
-        the related actions
-        """
-        self.ensure_one()
-        self.check_closed_or_cancelled()
-        if not self.actions_date:
-            raise exceptions.ValidationError(
-                _('Action plan must be approved before opening.')
-            )
-        if (self.immediate_action_id and
-                self.immediate_action_id.stage_id.is_starting):
-            self.immediate_action_id.case_open()
-        for action in self.action_ids:
-            if action.stage_id.is_starting:
-                action.case_open()
-        return {
-            'state': 'open',
-            'stage_id': self.env.ref(
-                "mgmtsystem_nonconformity.stage_open").id,
-            'evaluation_date': False,
-            'evaluation_user_id': False,
-        }
-
-    @api.multi
-    def action_sign_evaluation(self):
-        """Sign-off the effectiveness evaluation"""
-        self.ensure_one()
-        if self.state != 'open':
-            raise exceptions.ValidationError(
-                _('This action can only be done in the In Progress state.')
-            )
-        self.write({
-            'evaluation_date': time.strftime(DATETIME_FORMAT),
-            'evaluation_user_id': self._uid,
-        })
-        self.message_post(
-            body='%s <b>%s</b>' % (
-                self.verbose_name, _('Effectiveness Evaluation Approved')
-            )
-        )
-
-    def do_cancel(self):
-        """Change state to cancel."""
-        if self.closing_date:
-            raise exceptions.ValidationError(
-                _('A close process cannot be cancelled')
-            )
-        return {'state': 'cancel',
-                'stage_id': self.env.ref(
-                    "mgmtsystem_nonconformity.stage_cancel").id,
-                'cancel_date': time.strftime(DATETIME_FORMAT)}
-
-    @api.multi
-    def do_close(self):
-        """Change state from in progress to closed"""
-        self.ensure_one()
-
-        if (not self.env.ref('mgmtsystem.group_mgmtsystem_manager') in
-            self.env.user.groups_id and
-            not self.env.ref('mgmtsystem.group_mgmtsystem_auditor') in
-                self.env.user.groups_id):
-            raise exceptions.ValidationError(
-                _("You don't have the right to close a non conformity.")
-            )
-
-        if self.cancel_date:
-            raise exceptions.ValidationError(
-                _('A cancel process cannot be closed')
-            )
-        if (self.immediate_action_id and
-                not self.immediate_action_id.stage_id.is_ending):
-            raise exceptions.ValidationError(
-                _('Immediate action from analysis has not been closed.')
-            )
-        if any(i for i in self.action_ids if not i.stage_id.is_ending):
-            raise exceptions.ValidationError(
-                _('Not all actions have been closed.')
-            )
-        if not self.evaluation_date:
-            raise exceptions.ValidationError(
-                _('Effectiveness evaluation must be performed before closing.')
-            )
-
-        return {
-            'state': 'done',
-            'stage_id': self.env.ref(
-                "mgmtsystem_nonconformity.stage_done").id,
-            'closing_date': time.strftime(DATETIME_FORMAT),
-        }
-
-    def case_reset(self):
-        """Reset to Draft."""
-        if not self.cancel_date and not self.closing_date:
-            raise exceptions.ValidationError(
-                _('Only a close or cancel process can be reset')
-            )
-        return {
-            'state': 'draft',
-            'stage_id': self.env.ref(
-                "mgmtsystem_nonconformity.stage_draft").id,
-            'closing_date': None, 'cancel_date': None,
-            'analysis_date': None, 'analysis_user_id': None,
-            'actions_date': None, 'actions_user_id': None,
-            'evaluation_date': None, 'evaluation_user_id': None,
-            'number_of_days_to_close': None, 'number_of_days_to_analyse': None,
-            'number_of_days_to_plan': None, 'number_of_days_to_execute': None,
-        }
