@@ -27,6 +27,7 @@ import netsvc as netsvc
 from openerp.osv import fields, orm
 from openerp.addons.base_status.base_state import base_state
 
+<<<<<<< 54cd66fbb258a25fae00e3cbcd78934e5cc0f129
 import time
 from tools import DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT
 from tools import DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT
@@ -178,6 +179,9 @@ class mgmtsystem_nonconformity_origin(orm.Model):
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
         'ref_code': fields.char('Reference Code', size=20),
     }
+=======
+from openerp import models, api, fields
+>>>>>>> Remove forced workflow logic
 
 
 <<<<<<< f843bb604319064d273a798a76021b9fa80fb3ab
@@ -227,16 +231,6 @@ class MgmtsystemNonconformity(models.Model):
     _rec_name = "description"
     _inherit = ['mail.thread', 'ir.needaction_mixin']
     _order = "create_date desc"
-    _track = {
-        'field': {
-            'mgmtsystem_nonconformity.subtype_analysis': (
-                lambda s, o: o["state"] == "analysis"
-            ),
-            'mgmtsystem_nonconformity.subtype_pending': (
-                lambda s, o: o["state"] == "pending"
-            ),
-        },
-    }
 
     def _default_state(self):
         """Return the default stage."""
@@ -405,6 +399,7 @@ class MgmtsystemNonconformity(models.Model):
         'company_id': fields.many2one('res.company', 'Company'),
     }
 
+<<<<<<< 54cd66fbb258a25fae00e3cbcd78934e5cc0f129
     _defaults = {
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
         'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
@@ -423,7 +418,10 @@ class MgmtsystemNonconformity(models.Model):
     name = fields.Char('Name')
 
 >>>>>>> Added missing fields (used in demo data)
+=======
+>>>>>>> Remove forced workflow logic
     # 1. Description
+    name = fields.Char('Name')
     ref = fields.Char(
         'Reference',
         required=True,
@@ -439,6 +437,8 @@ class MgmtsystemNonconformity(models.Model):
     # Compute data
     number_of_nonconformities = fields.Integer(
         '# of nonconformities', readonly=True, default=1)
+<<<<<<< ea25c31bcd6394fa1477e1e8769ae549ae23fad9
+<<<<<<< 54cd66fbb258a25fae00e3cbcd78934e5cc0f129
     age = fields.Integer('Age', readonly=True,
                          compute='_compute_age')
     number_of_days_to_analyse = fields.Integer(
@@ -459,8 +459,23 @@ class MgmtsystemNonconformity(models.Model):
         required=True,
         default=lambda *a: time.strftime(DATE_FORMAT)
     )
+=======
+    age = fields.Integer(
+        'Age', readonly=True,
+        compute='_compute_age')
+=======
+    days_since_updated = fields.Integer(
+        readonly=True,
+        compute='_compute_days_since_updated',
+        store=True)
+>>>>>>> Replace age by days since last update
+    number_of_days_to_close = fields.Integer(
+        '# of days to close',
+        compute='_compute_number_of_days_to_close',
+        store=True,
+        readonly=True)
+>>>>>>> Remove forced workflow logic
     closing_date = fields.Datetime('Closing Date', readonly=True)
-    cancel_date = fields.Datetime('Cancel Date', readonly=True)
 
     partner_id = fields.Many2one('res.partner', 'Partner', required=True)
     reference = fields.Char('Related to')
@@ -468,20 +483,21 @@ class MgmtsystemNonconformity(models.Model):
         'res.users',
         'Responsible',
         required=True,
-        track_visibility="onchange"
+        track_visibility=True,
     )
     manager_user_id = fields.Many2one(
         'res.users',
         'Manager',
         required=True,
-        track_visibility="onchange"
+        track_visibility=True,
     )
-    author_user_id = fields.Many2one(
+    user_id = fields.Many2one(
         'res.users',
         'Filled in by',
         required=True,
-        default=lambda self: self.env.user.id,
-        track_visibility="onchange"
+        default=lambda self: self.env.user,
+        track_visibility=True,
+        oldname="author_user_id",  # automatic migration
     )
     origin_ids = fields.Many2many(
         'mgmtsystem.nonconformity.origin',
@@ -499,13 +515,42 @@ class MgmtsystemNonconformity(models.Model):
         'Procedure',
     )
     description = fields.Text('Description', required=True)
+<<<<<<< 54cd66fbb258a25fae00e3cbcd78934e5cc0f129
+=======
+    system_id = fields.Many2one('mgmtsystem.system', 'System')
+    stage_id = fields.Many2one(
+        'mgmtsystem.nonconformity.stage',
+        'Stage',
+        track_visibility=True,
+        copy=False,
+        default=_default_stage)
+>>>>>>> Remove forced workflow logic
     state = fields.Selection(
+<<<<<<< 4797893fadc84679949ff00befcca4596e322da6
         _STATES,
         'State',
         readonly=True,
         default="draft",
         track_visibility='onchange',
+=======
+        related='stage_id.state',
+>>>>>>> Fix duplicate stage/state tracking
+        store=True,
     )
+    kanban_state = fields.Selection(
+        [('normal', 'In Progress'),
+         ('done', 'Ready for next stage'),
+         ('blocked', 'Blocked')],
+        'Kanban State',
+        default='normal',
+        track_visibility='onchange',
+        help="A kanban state indicates special situations affecting it:\n"
+        " * Normal is the default situation\n"
+        " * Blocked indicates something is preventing"
+        " the progress of this task\n"
+        " * Ready for next stage indicates the"
+        " task is ready to be pulled to the next stage",
+        required=True, copy=False)
 
     system_id = fields.Many2one('mgmtsystem.system', 'System')
 
@@ -527,17 +572,6 @@ class MgmtsystemNonconformity(models.Model):
         'Immediate action',
         domain="[('nonconformity_ids', '=', id)]",
     )
-    analysis_date = fields.Datetime(
-        'Analysis Date',
-        readonly=True,
-        track_visibility='onchange',
-    )
-    analysis_user_id = fields.Many2one(
-        'res.users',
-        'Analysis by',
-        readonly=True,
-        track_visibility='onchange',
-    )
 
     # 3. Action Plan
     action_ids = fields.Many2many(
@@ -547,24 +581,12 @@ class MgmtsystemNonconformity(models.Model):
         'action_id',
         'Actions',
     )
-    actions_date = fields.Datetime('Action Plan Date', readonly=True)
-    actions_user_id = fields.Many2one(
-        'res.users',
-        'Action Plan by',
-        readonly=True,
-    )
     action_comments = fields.Text(
         'Action Plan Comments',
         help="Comments on the action plan.",
     )
 
     # 4. Effectiveness Evaluation
-    evaluation_date = fields.Datetime('Evaluation Date', readonly=True)
-    evaluation_user_id = fields.Many2one(
-        'res.users',
-        'Evaluation by',
-        readonly=True,
-    )
     evaluation_comments = fields.Text(
         'Evaluation Comments',
         help="Conclusions from the last effectiveness evaluation.",
@@ -593,10 +615,12 @@ class MgmtsystemNonconformity(models.Model):
         domain="[('nonconformity_id', '=', id)]",
     )
 
+<<<<<<< 042f3d40d08ae509d00fef0bff5648153c9727ba
     def _compute_age(self):
         return self._elapsed_days(
             self.create_date, time.strftime(DATETIME_FORMAT))
 
+<<<<<<< 54cd66fbb258a25fae00e3cbcd78934e5cc0f129
     @api.depends('analysis_date', 'create_date')
     def _compute_number_of_days_to_analyse(self):
         for nc in self:
@@ -624,6 +648,23 @@ class MgmtsystemNonconformity(models.Model):
             nc.number_of_days_to_close_open = nc._elapsed_days(
                 nc.actions_date,
                 nc.evaluation_date)
+=======
+    @api.constrains('stage_id')
+    def _check_open_with_action_comments(self):
+        for nc in self:
+            if nc.state == 'open' and not nc.action_comments:
+                raise models.ValidationError(
+                    "Action plan  comments are required "
+                    "in order to put a nonconformity In Progress.")
+
+    @api.constrains('stage_id')
+    def _check_close_with_evaluation(self):
+        for nc in self:
+            if nc.state == 'done' and not nc.evaluation_comments:
+                raise models.ValidationError(
+                    "Evaluation Comments are required "
+                    "in order to close a Nonconformity.")
+>>>>>>> Add validation on close, requiring evaluation comment
 
     @api.model
     def _elapsed_days(self, dt1_text, dt2_text):
@@ -634,11 +675,34 @@ class MgmtsystemNonconformity(models.Model):
             res = (dt2 - dt1).days
         return res
 
+<<<<<<< ea25c31bcd6394fa1477e1e8769ae549ae23fad9
+<<<<<<< e11781eb2f7f81e5285b3246d7bf45c8288b7893
     @property
     @api.multi
     def verbose_name(self):
         return self.env['ir.model'].search([('model', '=', self._name)]).name
+=======
+    def _compute_age(self, now_date=None):
+        now = now_date or fields.Datetime.now()
+        return self._elapsed_days(
+            self.create_date, now)
+>>>>>>> Adjust tests and make them pass
+=======
+    @api.depends('write_date')
+    def _compute_days_since_updated(self):
+        for nc in self:
+            nc.days_since_updated = self._elapsed_days(
+<<<<<<< 4b0b8840e252bdb4df6c42f5efa716fdd1f7b5da
+                self.create_date,
+                self.write_date)
+>>>>>>> Replace age by days since last update
+=======
+                nc.create_date,
+                nc.write_date)
+>>>>>>> Require action plan review for In Progress; Open Actions when In Progress
 
+=======
+>>>>>>> Remove forced workflow logic
     @api.model
     def create(self, vals):
         vals.update({
@@ -670,6 +734,7 @@ class MgmtsystemNonconformity(models.Model):
         return super(MgmtsystemNonconformity, self).create(vals)
 
     @api.multi
+<<<<<<< 54cd66fbb258a25fae00e3cbcd78934e5cc0f129
     def message_auto_subscribe(self, updated_fields, values=None):
         """
         Add the responsible, manager and author to the OpenChatter follow list
@@ -1331,3 +1396,39 @@ class mgmtsystem_action(orm.Model):
 >>>>>>> mgmtsystem_nonconformity progress
 =======
 >>>>>>> adding drag and drop to kanban view
+=======
+    def write(self, vals):
+        is_writing = 'is_writing' in self.env.context
+        is_state_change = 'stage_id' in vals or 'state' in vals
+        # Reset Kanban State on Stage change
+        if is_state_change:
+            was_not_open = {
+                x.id: x.state in ('draft', 'analysis', 'pending') for x in self}
+            for nc in self:
+                if nc.kanban_state != 'normal':
+                    vals['kanban_state'] = 'normal'
+
+        result = super(MgmtsystemNonconformity, self).write(vals)
+
+        # Set/reset the closing date
+        if not is_writing and is_state_change:
+            for nc in self.with_context(is_writing=True):
+                # On Close set Closing Date
+                if nc.state == 'done' and not nc.closing_date:
+                    nc.closing_date = fields.Datetime.now()
+                # On reopen resete Closing Date
+                if nc.state != 'done' and nc.closing_date:
+                    nc.closing_date = None
+                # On action plan approval, Open the Actions
+                if nc.state == 'open' and was_not_open[nc.id]:
+                    actions = (nc.action_ids +
+                               nc.corrective_action_id +
+                               nc.preventive_action_id)
+                    print actions
+                    for action in actions:
+                        if action.stage_id.is_starting:
+                            print action, action.stage_id.name
+                            action.case_open()
+                            print action, action.stage_id.name
+        return result
+>>>>>>> Remove forced workflow logic
