@@ -626,11 +626,6 @@
                     <field name="severity_id" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
                     <field name="immediate_action_id" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
                   </group>
-                  <group>
-                    <field name="analysis_user_id"/>
-                    <field name="analysis_date"/>
-                    <button name="action_sign_analysis" string="Approve" icon="terp-camera_test" type="object" states="analysis" groups="mgmtsystem.group_mgmtsystem_user_manager"/>
-                  </group>
                 </group>
               </page>
 
@@ -642,21 +637,11 @@
                  <group>
                    <field name="action_comments" attrs="{'readonly':[('state','not in',['pending'])]}" nolabel="1" placeholder="Action Plan Comments"/>
                  </group>
-                 <group>
-                   <field name="actions_user_id"/>
-                   <field name="actions_date"/>
-                   <button name="action_sign_actions" string="Approve" icon="terp-camera_test" type="object" states="pending" groups="mgmtsystem.group_mgmtsystem_user_manager"/>
-                 </group>
                </group>
 
                <group attrs="{'invisible':[('state','not in',['open','done'])]}" string="Effectiveness Review">
                  <group>
                    <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['open'])]}" nolabel="1" placeholder="Evaluation Comments"/>
-                 </group>
-                 <group>
-                   <field name="evaluation_user_id"/>
-                   <field name="evaluation_date"/>
-                   <button name="action_sign_evaluation" string="Sign Evaluation" icon="terp-camera_test" type="object" states="open" groups="mgmtsystem.group_mgmtsystem_auditor"/>
                  </group>
              </group>
               </page>

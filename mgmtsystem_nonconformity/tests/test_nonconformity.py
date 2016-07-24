@@ -24,50 +24,14 @@ from psycopg2 import IntegrityError
 from openerp.tests import common
 from openerp import exceptions
 
-model_name = "mgmtsystem.nonconformity"
-
 
 class TestModelNonConformity(common.TransactionCase):
 
     def setUp(self):
         super(TestModelNonConformity, self).setUp()
-
+        self.nc_model = self.env['mgmtsystem.nonconformity']
         self.partner = self.env['res.partner'].search([])[0]
-
-    def create(self, **kwargs):
-        return self.env[model_name].create(kwargs)
-
-    @contextmanager
-    def assertRaisesRollback(self, *args, **kwargs):
-        """Do a regular assertRaises but perform rollback at the end
-        """
-        with self.assertRaises(*args, **kwargs) as ar:
-            yield ar
-        self.cr.rollback()
-
-    def create_raise_exception(self, **kwargs):
-        with self.assertRaisesRollback(IntegrityError):
-            self.env[model_name].create(kwargs)
-
-    def test_create_model(self):
-        self.create_raise_exception(
-            manager_user_id=self.env.user.id,
-        )
-
-        self.create_raise_exception(
-            manager_user_id=self.env.user.id,
-            partner_id=self.partner.id,
-        )
-
-        self.create_raise_exception(
-            manager_user_id=self.env.user.id,
-            partner_id=self.partner.id,
-            description="description",
-        )
-
-    def test_create_model_all_required(self):
-        # All required fields
-        return self.create(
+        self.nc_test = self.nc_model.create(
             partner_id=self.partner.id,
             manager_user_id=self.env.user.id,
             description="description",
@@ -76,7 +40,6 @@ class TestModelNonConformity(common.TransactionCase):
 
     def test_state_transition(self):
         # Analysis
-        nonconformity = self.test_create_model_all_required()
         # Test action_sign_analysis in non analysis mode
         try:
             nonconformity.action_sign_analysis()
