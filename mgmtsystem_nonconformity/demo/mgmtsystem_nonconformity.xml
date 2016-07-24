@@ -8,7 +8,7 @@
             <field name="name">Demo Nonconformity</field>
             <field name="responsible_user_id" ref="base.user_demo"/>
             <field name="manager_user_id" ref="base.user_root"/>
-            <field name="author_user_id" ref="base.user_demo"/>
+            <field name="user_id" ref="base.user_demo"/>
             <field name="description">The procedure has changed with no comments on the revision.</field>
             <field name="analysis">Administrator didn't know he had to add a comment when changing the procedure.</field>
             <field name="origin_ids" eval="[(6,0,[ref('demo_origin')])]"/>
