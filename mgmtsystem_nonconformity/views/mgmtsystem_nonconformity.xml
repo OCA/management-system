@@ -582,7 +582,12 @@
       <field name="arch" type="xml">
         <form string="Non-Conformity" version="7.0">
           <header>
+<<<<<<< 6fec840b8d9a29f157839d4b6eb62db952e56a95
             <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done,cancel"  clickable="True" />
+=======
+            <field name="stage_id" widget="statusbar" clickable="True" />
+            <field name="state" invisible="True" />
+>>>>>>> Nonconformity view must load state data
           </header>
           <sheet string="Non-Conformity">
             <group>
