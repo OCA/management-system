@@ -188,9 +188,10 @@ class MgmtsystemNonconformity(models.Model):
             res = (dt2 - dt1).days
         return res
 
-    def _compute_age(self):
+    def _compute_age(self, now_date=None):
+        now = now_date or fields.Datetime.now()
         return self._elapsed_days(
-            self.create_date, fields.Datetime.now())
+            self.create_date, now)
 
     @api.model
     def create(self, vals):

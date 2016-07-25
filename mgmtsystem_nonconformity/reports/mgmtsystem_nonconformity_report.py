@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import fields, models, _
+from openerp import fields, models
 from openerp import tools
 from ..models.mgmtsystem_nonconformity_stage import _STATES
 
@@ -98,13 +100,7 @@ class MgmtsystemNonconformityReport(models.Model):
                     m.id,
                     m.create_date as create_date,
                     m.closing_date as closing_date,
-                    m.analysis_date as analysis_date,
-                    m.evaluation_date as evaluation_date,
-                    m.actions_date as actions_date,
                     m.partner_id,
-                    m.actions_user_id,
-                    m.evaluation_user_id,
-                    m.analysis_user_id,
                     m.manager_user_id,
                     m.author_user_id,
                     m.responsible_user_id,
@@ -113,17 +109,12 @@ class MgmtsystemNonconformityReport(models.Model):
                     m.name as name,
                     m.state as state,
                     m.number_of_days_to_close as number_of_days_to_close,
-                    m.number_of_days_to_analyse as number_of_days_to_analyse,
-                    m.number_of_days_to_execute as number_of_days_to_execute,
-                    m.number_of_days_to_plan as number_of_days_to_plan,
                     avg(extract('epoch' from (current_date-m.create_date))
                     )/(3600*24) as  age,
                     count(*) AS number_of_nonconformities
                 from
                     mgmtsystem_nonconformity m
-                group by m.id,m.create_date, m.closing_date, m.analysis_date, \
-                m.evaluation_date, m.actions_date, m.partner_id, \
-                m.actions_user_id, m.evaluation_user_id, m.analysis_user_id, \
+                group by m.id,m.create_date, m.closing_date, m.partner_id, \
                 m.manager_user_id, m.author_user_id, m.responsible_user_id, \
                 m.severity_id, m.system_id, m.name, m.state
             )

@@ -1,28 +1,11 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from contextlib import contextmanager
-from psycopg2 import IntegrityError
+from datetime import datetime
+from datetime import timedelta
+from openerp import fields
 from openerp.tests import common
-from openerp import exceptions
 
 
 class TestModelNonConformity(common.TransactionCase):
@@ -31,162 +14,25 @@ class TestModelNonConformity(common.TransactionCase):
         super(TestModelNonConformity, self).setUp()
         self.nc_model = self.env['mgmtsystem.nonconformity']
         self.partner = self.env['res.partner'].search([])[0]
-        self.nc_test = self.nc_model.create(
-            partner_id=self.partner.id,
-            manager_user_id=self.env.user.id,
-            description="description",
-            responsible_user_id=self.env.user.id,
-        )
+        self.nc_test = self.nc_model.create({
+            'partner_id': self.partner.id,
+            'manager_user_id': self.env.user.id,
+            'description': "description",
+            'responsible_user_id': self.env.user.id,
+            })
+
+    def test_compute_age(self):
+        """Compute Nonconformity age"""
+        tomorrow = datetime.now() + timedelta(days=1)
+        age = self.nc_test._compute_age(fields.Datetime.to_string(tomorrow))
+        self.assertEqual(age, 1)
 
     def test_state_transition(self):
-        # Analysis
-        # Test action_sign_analysis in non analysis mode
-        try:
-            nonconformity.action_sign_analysis()
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-        # Set analysis
-        nonconformity.write({
-            "state": "analysis",
-        })
-        # Test action_sign_analysis in analysis state and in non analysis mode
-        try:
-            nonconformity.action_sign_analysis()
-        except exceptions.ValidationError:
-            self.assertTrue(True)
+        """Close and reopen Nonconformity"""
+        self.nc_test.stage_id = self.env.ref(
+            'mgmtsystem_nonconformity.stage_done')
+        self.assertEqual(self.nc_test.state, 'done')
 
-        # Test action_sign_analysis  set analysis
-        nonconformity.write({
-            "analysis": "analysis test"
-        })
-
-        # Test transition to open state without action_sign_actions perform
-        try:
-            nonconformity.state = "open"
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-
-        # Test transition to pending state without action_sign_analysis perform
-        try:
-            nonconformity.state = "pending"
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-        # perform action_sign_analysis
-        nonconformity.action_sign_analysis()
-        self.assertTrue(nonconformity.analysis_date)
-
-        # Perform action_sign_analysis when it is already done
-        try:
-            nonconformity.action_sign_analysis()
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-
-        # Back to draft state when the object is not in cancel state
-        try:
-            nonconformity.state = "draft"
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-        # Cancel the object
-        nonconformity.state = "cancel"
-        self.assertTrue(nonconformity.cancel_date)
-
-        # Done a cancel object
-        try:
-            nonconformity.state = "done"
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-
-        # Bring to pending state a cancel object
-        try:
-            nonconformity.state = "pending"
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-
-        # Reset the object
-        nonconformity.state = "draft"
-        self.assertFalse(nonconformity.analysis_date)
-        self.assertFalse(nonconformity.actions_date)
-
-        # Goto pending state
-        nonconformity.write({
-            "state": "analysis",
-            "analysis": "analysis test"
-        })
-
-        # Sign action in non pending state
-        try:
-            nonconformity.action_sign_actions()
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-
-        nonconformity.action_sign_analysis()
-        nonconformity.state = "pending"
-
-        # Sign action in non open state
-        try:
-            nonconformity.action_sign_evaluation()
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-
-        analysis_date = nonconformity.analysis_date
-        nonconformity.analysis_date = None
-        # Sign action in non pending state
-        try:
-            nonconformity.action_sign_actions()
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-        nonconformity.analysis_date = analysis_date
-        nonconformity.action_sign_actions()
-        # Sign an already sign actions
-        try:
-            nonconformity.action_sign_actions()
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-        self.assertTrue(nonconformity.actions_date)
-        actions = self.env["mgmtsystem.action"].search([])
-        nonconformity.action_ids = actions[0]
-        nonconformity.immediate_action_id = actions[1]
-        nonconformity.state = "open"
-        self.assertFalse(nonconformity.evaluation_date)
-
-        # Done without closing immediate action
-        try:
-            nonconformity.state = "done"
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-        stage = nonconformity.immediate_action_id._get_stage_close()
-        nonconformity.immediate_action_id.stage_id = stage
-        # Done without closing actions
-        try:
-            nonconformity.state = "done"
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-        for action_id in nonconformity.action_ids:
-            action_id.stage_id = stage
-        # Done without signing evaluation
-        try:
-            nonconformity.state = "done"
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-        nonconformity.action_sign_evaluation()
-        self.assertTrue(nonconformity.evaluation_date)
-
-        # Done without the right to do it
-        user_demo = self.browse_ref('base.user_demo')
-        self.env = self.env(user=user_demo)
-        nonconformity.state = "done"
-        try:
-            nonconformity.state = "done"
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-        # Switch to administrator before doing done
-        self.env.user.sudo()
-        nonconformity.state = "done"
-        self.assertFalse(nonconformity._compute_number_of_days_to_close())
-
-        # cancel a close object
-        try:
-            nonconformity.state = "cancel"
-        except exceptions.ValidationError:
-            self.assertTrue(True)
-        self.assertEqual(len(nonconformity._stage_groups(None, None)[0]), 6)
+        self.nc_test.stage_id = self.env.ref(
+            'mgmtsystem_nonconformity.stage_open')
+        self.assertEqual(self.nc_test.state, 'open')
