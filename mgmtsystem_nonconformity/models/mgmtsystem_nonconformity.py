@@ -653,10 +653,17 @@ class MgmtsystemNonconformity(models.Model):
             res = (dt2 - dt1).days
         return res
 
+<<<<<<< e11781eb2f7f81e5285b3246d7bf45c8288b7893
     @property
     @api.multi
     def verbose_name(self):
         return self.env['ir.model'].search([('model', '=', self._name)]).name
+=======
+    def _compute_age(self, now_date=None):
+        now = now_date or fields.Datetime.now()
+        return self._elapsed_days(
+            self.create_date, now)
+>>>>>>> Adjust tests and make them pass
 
 =======
 >>>>>>> Remove forced workflow logic

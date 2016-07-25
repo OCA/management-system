@@ -1,28 +1,11 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from contextlib import contextmanager
-from psycopg2 import IntegrityError
+from datetime import datetime
+from datetime import timedelta
+from openerp import fields
 from openerp.tests import common
-from openerp import exceptions
 
 
 class TestModelNonConformity(common.TransactionCase):
@@ -31,14 +14,21 @@ class TestModelNonConformity(common.TransactionCase):
         super(TestModelNonConformity, self).setUp()
         self.nc_model = self.env['mgmtsystem.nonconformity']
         self.partner = self.env['res.partner'].search([])[0]
-        self.nc_test = self.nc_model.create(
-            partner_id=self.partner.id,
-            manager_user_id=self.env.user.id,
-            description="description",
-            responsible_user_id=self.env.user.id,
-        )
+        self.nc_test = self.nc_model.create({
+            'partner_id': self.partner.id,
+            'manager_user_id': self.env.user.id,
+            'description': "description",
+            'responsible_user_id': self.env.user.id,
+            })
+
+    def test_compute_age(self):
+        """Compute Nonconformity age"""
+        tomorrow = datetime.now() + timedelta(days=1)
+        age = self.nc_test._compute_age(fields.Datetime.to_string(tomorrow))
+        self.assertEqual(age, 1)
 
     def test_state_transition(self):
+<<<<<<< e11781eb2f7f81e5285b3246d7bf45c8288b7893
         # Analysis
         # Test action_sign_analysis in non analysis mode
         try:
@@ -191,3 +181,13 @@ class TestModelNonConformity(common.TransactionCase):
         except exceptions.ValidationError:
             self.assertTrue(True)
         self.assertEqual(len(nonconformity._stage_groups(None, None)[0]), 6)
+=======
+        """Close and reopen Nonconformity"""
+        self.nc_test.stage_id = self.env.ref(
+            'mgmtsystem_nonconformity.stage_done')
+        self.assertEqual(self.nc_test.state, 'done')
+
+        self.nc_test.stage_id = self.env.ref(
+            'mgmtsystem_nonconformity.stage_open')
+        self.assertEqual(self.nc_test.state, 'open')
+>>>>>>> Adjust tests and make them pass
