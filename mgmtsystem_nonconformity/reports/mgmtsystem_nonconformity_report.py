@@ -2,6 +2,7 @@
 
 from openerp import fields, models, _
 from openerp import tools
+from ..models.mgmtsystem_nonconformity_stage import _STATES
 
 
 class MgmtsystemNonconformityReport(models.Model):
@@ -11,15 +12,6 @@ class MgmtsystemNonconformityReport(models.Model):
     _auto = False
     _description = "Management System Non Conformity Report"
     _rec_name = 'id'
-
-    _STATES = [
-        ('draft', _('Draft')),
-        ('analysis', _('Analysis')),
-        ('pending', _('Pending Approval')),
-        ('open', _('In Progress')),
-        ('done', _('Closed')),
-        ('cancel', _('Cancelled')),
-    ]
 
     # Compute data
     number_of_nonconformities = fields.Integer('# of nonconformities',
