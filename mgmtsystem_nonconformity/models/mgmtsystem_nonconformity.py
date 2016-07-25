@@ -532,6 +532,7 @@ class MgmtsystemNonconformity(models.Model):
         readonly=True,
         default="draft",
         track_visibility='onchange',
+        store=True,
     )
     kanban_state = fields.Selection(
         [('normal', 'In Progress'),
