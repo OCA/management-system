@@ -41,6 +41,10 @@
             <field name="help">Have a general overview of all non conformities processed in the system by sorting them with specific criteria.</field>
         </record>
 
-        <menuitem name="Non conformity" id="menu_report_mgmtsystem_nonconformity_tree" action="action_report_mgmtsystem_nonconformity" parent="mgmtsystem.menu_mgmtsystem_report" sequence="15"/>
+        <menuitem name="Nonconformity" id="menu_report_mgmtsystem_nonconformity_tree"
+            action="action_report_mgmtsystem_nonconformity"
+            parent="mgmtsystem.menu_mgmtsystem_report"
+            sequence="15"/>
+
     </data>
 </odoo>
