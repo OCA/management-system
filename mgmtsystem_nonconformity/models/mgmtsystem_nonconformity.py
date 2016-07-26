@@ -616,6 +616,7 @@ class MgmtsystemNonconformity(models.Model):
         domain="[('nonconformity_id', '=', id)]",
     )
 
+<<<<<<< 042f3d40d08ae509d00fef0bff5648153c9727ba
     def _compute_age(self):
         return self._elapsed_days(
             self.create_date, time.strftime(DATETIME_FORMAT))
@@ -648,6 +649,15 @@ class MgmtsystemNonconformity(models.Model):
             nc.number_of_days_to_close_open = nc._elapsed_days(
                 nc.actions_date,
                 nc.evaluation_date)
+=======
+    @api.constrains('stage_id')
+    def _check_close_with_evaluation(self):
+        for nc in self:
+            if nc.state == 'done' and not nc.evaluation_comments:
+                raise models.ValidationError(
+                    "Evaluation Comments are required "
+                    "in order to close a Nonconformity.")
+>>>>>>> Add validation on close, requiring evaluation comment
 
     @api.model
     def _elapsed_days(self, dt1_text, dt2_text):
