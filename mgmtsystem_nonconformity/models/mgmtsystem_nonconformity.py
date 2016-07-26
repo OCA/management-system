@@ -539,6 +539,7 @@ class MgmtsystemNonconformity(models.Model):
          ('done', 'Ready for next stage'),
          ('blocked', 'Blocked')],
         'Kanban State',
+        default='normal',
         track_visibility='onchange',
         help="A tkanban state indicates special situations affecting it:\n"
         " * Normal is the default situation\n"

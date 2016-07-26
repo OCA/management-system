@@ -561,8 +561,11 @@
                                 <div>
                                     <br/>
                                 </div>
-                                <div class="o_kanban_footer">
+                                <div class="oe_kanban_bottom_left">
                                     <span class='oe_kanban_mail_new' title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <field name="kanban_state" widget="kanban_state_selection" />
                                     <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_user_id.raw_value)" t-att-title="record.responsible_user_id.value" width="24" height="24" class="oe_kanban_avatar"/>
                                 </div>
                             </div>
@@ -590,6 +593,7 @@
 >>>>>>> Nonconformity view must load state data
           </header>
           <sheet string="Non-Conformity">
+            <field name="kanban_state" widget="kanban_state_selection" />
             <group>
               <group>
                 <field name="name" attrs="{'readonly':[('state','not in',['draft'])]}"/>
