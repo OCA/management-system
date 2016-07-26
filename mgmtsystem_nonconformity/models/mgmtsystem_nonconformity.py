@@ -527,11 +527,15 @@ class MgmtsystemNonconformity(models.Model):
         default=_default_stage)
 >>>>>>> Remove forced workflow logic
     state = fields.Selection(
+<<<<<<< 4797893fadc84679949ff00befcca4596e322da6
         _STATES,
         'State',
         readonly=True,
         default="draft",
         track_visibility='onchange',
+=======
+        related='stage_id.state',
+>>>>>>> Fix duplicate stage/state tracking
         store=True,
     )
     kanban_state = fields.Selection(
