@@ -6,6 +6,7 @@ from datetime import datetime
 from datetime import timedelta
 from openerp import fields
 from openerp.tests import common
+from openerp.exceptions import ValidationError
 
 
 class TestModelNonConformity(common.TransactionCase):
@@ -20,6 +21,9 @@ class TestModelNonConformity(common.TransactionCase):
             'description': "description",
             'responsible_user_id': self.env.user.id,
             })
+        action_vals = {'name': 'An Action', 'type_action': 'correction'}
+        action1 = self.nc_model.action_ids.create(action_vals)
+        self.nc_test.corrective_action_id = action1
 
     def test_compute_age(self):
         """Compute Nonconformity age"""
@@ -27,8 +31,15 @@ class TestModelNonConformity(common.TransactionCase):
         age = self.nc_test._compute_age(fields.Datetime.to_string(tomorrow))
         self.assertEqual(age, 1)
 
+    def test_done_validation(self):
+        """Don't allow closing an NC without evaluation comments"""
+        done_stage = self.env.ref('mgmtsystem_nonconformity.stage_done')
+        with self.assertRaises(ValidationError):
+            self.nc_test.stage_id = done_stage
+
     def test_state_transition(self):
         """Close and reopen Nonconformity"""
+        self.nc_test.evaluation_comments = 'OK!'
         self.nc_test.stage_id = self.env.ref(
             'mgmtsystem_nonconformity.stage_done')
         self.assertEqual(self.nc_test.state, 'done')

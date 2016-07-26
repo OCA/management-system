@@ -179,6 +179,14 @@ class MgmtsystemNonconformity(models.Model):
         domain="[('nonconformity_id', '=', id)]",
     )
 
+    @api.constrains('stage_id')
+    def _check_close_with_evaluation(self):
+        for nc in self:
+            if nc.state == 'done' and not nc.evaluation_comments:
+                raise models.ValidationError(
+                    "Evaluation Comments are required "
+                    "in order to close a Nonconformity.")
+
     @api.model
     def _elapsed_days(self, dt1_text, dt2_text):
         res = 0
