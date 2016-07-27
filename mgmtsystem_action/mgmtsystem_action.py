@@ -85,7 +85,7 @@ class mgmtsystem_action(models.Model):
             values['stage_id'] = stages.search([
                 ['is_ending', '=', False],
                 ['is_starting', '=', False]
-            ]).id
+            ], limit=1, order='sequence').id
 
             case.write(values)
 
