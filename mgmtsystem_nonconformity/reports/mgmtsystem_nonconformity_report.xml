@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
         <!-- Management System Non Conformity Report Pivot View -->
         <record id="view_report_mgmtsystem_action_pivot" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.report.pivot</field>
@@ -15,8 +16,12 @@
         </record>
 
         <!-- Non Conformity Report Graph View -->
+<<<<<<< 88ad17caef8cda6a47e14472ac15ccf6b8619cb6
 
         <record id="view_report_mgmtsystem_action_graph" model="ir.ui.view">
+=======
+        <record id="view_report_mgmtsystem_nonconformity_graph" model="ir.ui.view">
+>>>>>>> Fix reports
             <field name="name">mgmtsystem.nonconformity.report.graph</field>
             <field name="model">mgmtsystem.nonconformity</field>
             <field name="arch" type="xml">
@@ -29,7 +34,6 @@
         </record>
 
         <!-- Management system Non Conformity Report Action -->
-
         <record id="action_report_mgmtsystem_nonconformity" model="ir.actions.act_window">
             <field name="name">Management System Analysis</field>
             <field name="res_model">mgmtsystem.nonconformity</field>
