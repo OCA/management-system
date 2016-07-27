@@ -447,6 +447,7 @@ class MgmtsystemNonconformity(models.Model):
     # Compute data
     number_of_nonconformities = fields.Integer(
         '# of nonconformities', readonly=True, default=1)
+<<<<<<< ea25c31bcd6394fa1477e1e8769ae549ae23fad9
 <<<<<<< 54cd66fbb258a25fae00e3cbcd78934e5cc0f129
     age = fields.Integer('Age', readonly=True,
                          compute='_compute_age')
@@ -472,6 +473,12 @@ class MgmtsystemNonconformity(models.Model):
     age = fields.Integer(
         'Age', readonly=True,
         compute='_compute_age')
+=======
+    days_since_updated = fields.Integer(
+        readonly=True,
+        compute='_compute_days_since_updated',
+        store=True)
+>>>>>>> Replace age by days since last update
     number_of_days_to_close = fields.Integer(
         '# of days to close',
         compute='_compute_number_of_days_to_close',
@@ -524,6 +531,7 @@ class MgmtsystemNonconformity(models.Model):
         'mgmtsystem.nonconformity.stage',
         'Stage',
         track_visibility=True,
+        copy=False,
         default=_default_stage)
 >>>>>>> Remove forced workflow logic
     state = fields.Selection(
@@ -545,7 +553,7 @@ class MgmtsystemNonconformity(models.Model):
         'Kanban State',
         default='normal',
         track_visibility='onchange',
-        help="A tkanban state indicates special situations affecting it:\n"
+        help="A kanban state indicates special situations affecting it:\n"
         " * Normal is the default situation\n"
         " * Blocked indicates something is preventing"
         " the progress of this task\n"
@@ -668,6 +676,7 @@ class MgmtsystemNonconformity(models.Model):
             res = (dt2 - dt1).days
         return res
 
+<<<<<<< ea25c31bcd6394fa1477e1e8769ae549ae23fad9
 <<<<<<< e11781eb2f7f81e5285b3246d7bf45c8288b7893
     @property
     @api.multi
@@ -679,6 +688,14 @@ class MgmtsystemNonconformity(models.Model):
         return self._elapsed_days(
             self.create_date, now)
 >>>>>>> Adjust tests and make them pass
+=======
+    @api.depends('write_date')
+    def _compute_days_since_updated(self, now_date=None):
+        for nc in self:
+            nc.days_since_updated = self._elapsed_days(
+                self.create_date,
+                self.write_date)
+>>>>>>> Replace age by days since last update
 
 =======
 >>>>>>> Remove forced workflow logic
