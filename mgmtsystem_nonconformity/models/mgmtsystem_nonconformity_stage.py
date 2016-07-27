@@ -29,5 +29,4 @@ class MgmtsystemNonconformityStage(models.Model):
         'State',
         readonly=True,
         default="draft",
-        track_visibility='onchange',
     )
