@@ -52,9 +52,10 @@ class MgmtsystemNonconformity(models.Model):
     # Compute data
     number_of_nonconformities = fields.Integer(
         '# of nonconformities', readonly=True, default=1)
-    age = fields.Integer(
-        'Age', readonly=True,
-        compute='_compute_age')
+    days_since_updated = fields.Integer(
+        readonly=True,
+        compute='_compute_days_since_updated',
+        store=True)
     number_of_days_to_close = fields.Integer(
         '# of days to close',
         compute='_compute_number_of_days_to_close',
@@ -76,12 +77,13 @@ class MgmtsystemNonconformity(models.Model):
         required=True,
         track_visibility=True,
     )
-    author_user_id = fields.Many2one(
+    user_id = fields.Many2one(
         'res.users',
         'Filled in by',
         required=True,
-        default=lambda self: self.env.user.id,
+        default=lambda self: self.env.user,
         track_visibility=True,
+        oldname="author_user_id",  # automatic migration
     )
     origin_ids = fields.Many2many(
         'mgmtsystem.nonconformity.origin',
@@ -104,6 +106,7 @@ class MgmtsystemNonconformity(models.Model):
         'mgmtsystem.nonconformity.stage',
         'Stage',
         track_visibility=True,
+        copy=False,
         default=_default_stage)
     state = fields.Selection(
         related='stage_id.state',
@@ -116,7 +119,7 @@ class MgmtsystemNonconformity(models.Model):
         'Kanban State',
         default='normal',
         track_visibility='onchange',
-        help="A tkanban state indicates special situations affecting it:\n"
+        help="A kanban state indicates special situations affecting it:\n"
         " * Normal is the default situation\n"
         " * Blocked indicates something is preventing"
         " the progress of this task\n"
@@ -196,10 +199,12 @@ class MgmtsystemNonconformity(models.Model):
             res = (dt2 - dt1).days
         return res
 
-    def _compute_age(self, now_date=None):
-        now = now_date or fields.Datetime.now()
-        return self._elapsed_days(
-            self.create_date, now)
+    @api.depends('write_date')
+    def _compute_days_since_updated(self):
+        for nc in self:
+            nc.days_since_updated = self._elapsed_days(
+                self.create_date,
+                self.write_date)
 
     @api.model
     def create(self, vals):
@@ -211,10 +216,17 @@ class MgmtsystemNonconformity(models.Model):
 
     @api.multi
     def write(self, vals):
+        # Reset Kanban State on Stage change
+        if 'stage_id' in vals:
+            for nc in self:
+                if nc.kanban_state != 'normal':
+                    vals['kanban_state'] = 'normal'
+
         result = super(MgmtsystemNonconformity, self).write(vals)
 
-        if False and 'is_writing' not in self.env.context:
-            for nc in result.with_context(is_writing=True):
+        # Set/reset the closing date
+        if 'is_writing' not in self.env.context:
+            for nc in self.with_context(is_writing=True):
                 if nc.state == 'done' and not nc.closing_date:
                     nc.closing_date = fields.Datetime.now()
                 if nc.state != 'done' and nc.closing_date:
