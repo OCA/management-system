@@ -624,7 +624,7 @@
 
               <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
                 <separator string="Analysis"/>
-                <field name="analysis" attrs="{'readonly':[('state','not in',['analysis'])], 'required':[('state','in',['analysis','pending','open'])]}"/>
+                <field name="analysis" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
 
                 <separator string="Causes"/>
                 <field name="cause_ids" attrs="{'readonly':[('state','not in',['analysis'])]}"/>

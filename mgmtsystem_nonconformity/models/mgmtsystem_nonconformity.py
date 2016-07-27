@@ -231,16 +231,6 @@ class MgmtsystemNonconformity(models.Model):
     _rec_name = "description"
     _inherit = ['mail.thread', 'ir.needaction_mixin']
     _order = "create_date desc"
-    _track = {
-        'field': {
-            'mgmtsystem_nonconformity.subtype_analysis': (
-                lambda s, o: o["state"] == "analysis"
-            ),
-            'mgmtsystem_nonconformity.subtype_pending': (
-                lambda s, o: o["state"] == "pending"
-            ),
-        },
-    }
 
     def _default_state(self):
         """Return the default stage."""
@@ -660,6 +650,14 @@ class MgmtsystemNonconformity(models.Model):
                 nc.evaluation_date)
 =======
     @api.constrains('stage_id')
+    def _check_open_with_action_comments(self):
+        for nc in self:
+            if nc.state == 'open' and not nc.action_comments:
+                raise models.ValidationError(
+                    "Action plan  comments are required "
+                    "in order to put a nonconformity In Progress.")
+
+    @api.constrains('stage_id')
     def _check_close_with_evaluation(self):
         for nc in self:
             if nc.state == 'done' and not nc.evaluation_comments:
@@ -694,9 +692,14 @@ class MgmtsystemNonconformity(models.Model):
     def _compute_days_since_updated(self):
         for nc in self:
             nc.days_since_updated = self._elapsed_days(
+<<<<<<< 4b0b8840e252bdb4df6c42f5efa716fdd1f7b5da
                 self.create_date,
                 self.write_date)
 >>>>>>> Replace age by days since last update
+=======
+                nc.create_date,
+                nc.write_date)
+>>>>>>> Require action plan review for In Progress; Open Actions when In Progress
 
 =======
 >>>>>>> Remove forced workflow logic
@@ -1395,8 +1398,12 @@ class mgmtsystem_action(orm.Model):
 >>>>>>> adding drag and drop to kanban view
 =======
     def write(self, vals):
+        is_writing = 'is_writing' in self.env.context
+        is_state_change = 'stage_id' in vals or 'state' in vals
         # Reset Kanban State on Stage change
-        if 'stage_id' in vals:
+        if is_state_change:
+            was_not_open = {
+                x.id: x.state in ('draft', 'analysis', 'pending') for x in self}
             for nc in self:
                 if nc.kanban_state != 'normal':
                     vals['kanban_state'] = 'normal'
@@ -1404,11 +1411,24 @@ class mgmtsystem_action(orm.Model):
         result = super(MgmtsystemNonconformity, self).write(vals)
 
         # Set/reset the closing date
-        if 'is_writing' not in self.env.context:
+        if not is_writing and is_state_change:
             for nc in self.with_context(is_writing=True):
+                # On Close set Closing Date
                 if nc.state == 'done' and not nc.closing_date:
                     nc.closing_date = fields.Datetime.now()
+                # On reopen resete Closing Date
                 if nc.state != 'done' and nc.closing_date:
                     nc.closing_date = None
+                # On action plan approval, Open the Actions
+                if nc.state == 'open' and was_not_open[nc.id]:
+                    actions = (nc.action_ids +
+                               nc.corrective_action_id +
+                               nc.preventive_action_id)
+                    print actions
+                    for action in actions:
+                        if action.stage_id.is_starting:
+                            print action, action.stage_id.name
+                            action.case_open()
+                            print action, action.stage_id.name
         return result
 >>>>>>> Remove forced workflow logic
