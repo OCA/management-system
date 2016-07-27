@@ -16,7 +16,7 @@
         <field name="create_date"/>
         <field name="partner_id"/>
         <field name="description"/>
-        <field name="author_user_id"/>
+        <field name="user_id"/>
         <field name="responsible_user_id"/>
         <field name="manager_user_id"/>
         <field name="system_id"/>
@@ -40,14 +40,14 @@
           <separator orientation="vertical"/>
           <field name="ref"/>
           <field name="create_date"/>
-          <field name="author_user_id" string="User"
-            filter_domain="['|','|',('author_user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
+          <field name="user_id" string="User"
+            filter_domain="['|','|',('user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
           <field name="system_id"/>
           <field name="company_id" groups="base.group_multi_company"/>
         </group>
         <newline />
         <group expand="0" string="Group By...">
-          <filter string="Author" icon="gtk-edit" context="{'group_by':'author_user_id'}"/>
+          <filter string="Author" icon="gtk-edit" context="{'group_by':'user_id'}"/>
           <filter string="Responsible" icon="terp-personal" context="{'group_by':'responsible_user_id'}"/>
           <filter string="Manager" icon="terp-personal+" context="{'group_by':'manager_user_id'}"/>
           <separator orientation="vertical"/>
@@ -138,7 +138,7 @@
               <group>
                 <field name="responsible_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                 <field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
-                <field name="author_user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                <field name="user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                 <field name="company_id" groups="base.group_multi_company"/>
               </group>
@@ -206,7 +206,7 @@
       <field name="view_mode">kanban,tree,form</field>
       <field name="view_id" ref="view_mgmtsystem_nonconformity_kanban"/>
       <field name="search_view_id" ref="view_mgmtsystem_nonconformity_filter"/>
-      <field name="context">{"search_default_author_user_id":uid}</field>
+      <field name="context">{"search_default_user_id":uid}</field>
     </record>
 
     <menuitem
