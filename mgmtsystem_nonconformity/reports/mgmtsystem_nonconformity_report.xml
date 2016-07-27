@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
                 <pivot string="Non conformity" disable_linking="True">
                     <field name="state" type="row"/>
-                    <field name="author_user_id" type="col"/>
+                    <field name="user_id" type="col"/>
                     <field name="number_of_nonconformities" type="measure"/>
                 </pivot>
             </field>
@@ -27,7 +27,7 @@
             <field name="arch" type="xml">
                 <graph string="Non conformity">
                     <field name="state"/>
-                    <field name="author_user_id"/>
+                    <field name="user_id"/>
                     <field name="number_of_nonconformities" type="measure"/>
                 </graph>
             </field>

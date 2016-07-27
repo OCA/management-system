@@ -501,12 +501,13 @@ class MgmtsystemNonconformity(models.Model):
         required=True,
         track_visibility=True,
     )
-    author_user_id = fields.Many2one(
+    user_id = fields.Many2one(
         'res.users',
         'Filled in by',
         required=True,
-        default=lambda self: self.env.user.id,
+        default=lambda self: self.env.user,
         track_visibility=True,
+        oldname="author_user_id",  # automatic migration
     )
     origin_ids = fields.Many2many(
         'mgmtsystem.nonconformity.origin',
