@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Management System - Action",
-    "version": "8.0.1.2.1",
+    "version": "8.0.1.2.2",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
