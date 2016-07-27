@@ -691,7 +691,7 @@ class MgmtsystemNonconformity(models.Model):
 >>>>>>> Adjust tests and make them pass
 =======
     @api.depends('write_date')
-    def _compute_days_since_updated(self, now_date=None):
+    def _compute_days_since_updated(self):
         for nc in self:
             nc.days_since_updated = self._elapsed_days(
                 self.create_date,
@@ -1403,8 +1403,9 @@ class mgmtsystem_action(orm.Model):
 
         result = super(MgmtsystemNonconformity, self).write(vals)
 
-        if False and 'is_writing' not in self.env.context:
-            for nc in result.with_context(is_writing=True):
+        # Set/reset the closing date
+        if 'is_writing' not in self.env.context:
+            for nc in self.with_context(is_writing=True):
                 if nc.state == 'done' and not nc.closing_date:
                     nc.closing_date = fields.Datetime.now()
                 if nc.state != 'done' and nc.closing_date:
