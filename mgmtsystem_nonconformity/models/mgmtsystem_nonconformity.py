@@ -1394,6 +1394,12 @@ class mgmtsystem_action(orm.Model):
 >>>>>>> adding drag and drop to kanban view
 =======
     def write(self, vals):
+        # Reset Kanban State on Stage change
+        if 'stage_id' in vals:
+            for nc in self:
+                if nc.kanban_state != 'normal':
+                    vals['kanban_state'] = 'normal'
+
         result = super(MgmtsystemNonconformity, self).write(vals)
 
         if False and 'is_writing' not in self.env.context:
