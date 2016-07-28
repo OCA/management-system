@@ -22,6 +22,15 @@ class TestModelNonConformity(common.TransactionCase):
         action1 = self.nc_model.action_ids.create(action_vals)
         self.nc_test.corrective_action_id = action1
 
+    def test_stage_group(self):
+        """Group by Stage shows all stages"""
+        group_stages = self.nc_test.read_group(
+            domain=[],
+            fields=['stage_id'],
+            groupby=['stage_id'])
+        num_stages = len(self.nc_model.stage_id.search([]))
+        self.assertEqual(len(group_stages), num_stages)
+
     def test_open_validation(self):
         """Don't allow approving/In Progress action comments"""
         open_stage = self.env.ref('mgmtsystem_nonconformity.stage_open')
