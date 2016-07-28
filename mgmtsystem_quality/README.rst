@@ -74,6 +74,7 @@ Contributors
 ------------
 
 * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
+* Gervais Naoussi <gervaisnaoussi@gmail.com>
 
 Maintainer
 ----------
@@ -89,4 +90,3 @@ mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
 To contribute to this module, please visit http://odoo-community.org.
-
