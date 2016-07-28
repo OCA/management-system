@@ -8,7 +8,7 @@ from openerp import models, fields, _
 _STATES = [
     ('draft', _('Draft')),
     ('analysis', _('Analysis')),
-    ('pending', _('Pending Approval')),
+    ('pending', _('Action Plan')),
     ('open', _('In Progress')),
     ('done', _('Closed')),
     ('cancel', _('Cancelled')),
@@ -29,5 +29,4 @@ class MgmtsystemNonconformityStage(models.Model):
         'State',
         readonly=True,
         default="draft",
-        track_visibility='onchange',
     )
