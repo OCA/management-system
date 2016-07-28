@@ -31,7 +31,7 @@
                         <field name="procedure_id" domain="[('parent_id','in',['Procedure', 'Environmental Aspect', 'Quality Manual', 'Environment Manual'])]"/>
                         <field name="is_conformed"/>
                         <field name="comments"/>
-                    	<field name="company_id" groups="base.group_multi_company"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
                     </group>
                 </search>
             </field>
@@ -51,7 +51,7 @@
                         <field name="seq"/>
                         <newline/>
                         <field name="comments"/>
-                    	<field name="company_id" groups="base.group_multi_company"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
                     </group>
                 </form>
             </field>
@@ -97,8 +97,8 @@
                         <field name="name"/>
                         <field name="date"/>
                         <field name="reference"/>
-			<field name="system_id"/>
-                    	<field name="company_id" groups="base.group_multi_company"/>
+                        <field name="system_id"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
                     </group>
                 </search>
             </field>
@@ -177,25 +177,20 @@
             <field name="context">{"search_default_current":1}</field>
         </record>
 
-        <menuitem id="menu_open_audit"
-            action="open_mgmtsystem_audit_list"
-            parent="mgmtsystem.menu_mgmtsystem_main"
-            sequence="10"
-            groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
+        <menuitem id="menu_open_audit" action="open_mgmtsystem_audit_list" parent="mgmtsystem.menu_mgmtsystem_main" sequence="10" groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
 
-
-       <!-- Nonconformities related to Audits -->
+        <!-- Nonconformities related to Audits -->
         <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
             <field name="name">mgmtsystem.nonconformity.form</field>
             <field name="model">mgmtsystem.nonconformity</field>
             <field name="inherit_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"/>
             <field name="arch" type="xml">
 
-                 <notebook position="inside">
-                        <page string="Related Audits" groups="base.group_extended,mgmtsystem.group_mgmtsystem_auditor">
-                            <field name="audit_ids" colspan="4" nolabel="1"/>
-                        </page>
-                 </notebook>
+                <notebook position="inside">
+                    <page string="Related Audits" groups="base.group_extended,mgmtsystem.group_mgmtsystem_auditor">
+                        <field name="audit_ids" colspan="4" nolabel="1"/>
+                    </page>
+                </notebook>
 
             </field>
         </record>

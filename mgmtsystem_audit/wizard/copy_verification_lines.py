@@ -30,7 +30,7 @@ class CopyVerificationLines(models.TransientModel):
     audit_src = fields.Many2one('mgmtsystem.audit', 'Choose audit')
 
     @api.multi
-    def copy(self):
+    def copyVerificationLines(self):
         # Copy verification lines from the chosen audit to the current one
         audit_proxy = self.env[self._context.get('active_model')]
         verification_line_proxy = self.env['mgmtsystem.verification.line']

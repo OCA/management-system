@@ -10,7 +10,7 @@
                     <field name="audit_src" domain="[('state','=','done')]"/>
                     <group colspan="2" col="3">
                         <button string="_Cancel" icon="gtk-cancel" special="cancel"/>
-                        <button string="_Copy" name="copy" type="object"/>
+                        <button string="_Copy" name="copyVerificationLines" type="object"/>
                     </group>
                 </form>
             </field>
