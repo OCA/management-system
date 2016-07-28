@@ -619,6 +619,7 @@ class MgmtsystemNonconformity(models.Model):
         domain="[('nonconformity_id', '=', id)]",
     )
 
+<<<<<<< 80259c196796c528452aa96023bd970610c0dd19
 <<<<<<< 042f3d40d08ae509d00fef0bff5648153c9727ba
     def _compute_age(self):
         return self._elapsed_days(
@@ -653,6 +654,15 @@ class MgmtsystemNonconformity(models.Model):
                 nc.actions_date,
                 nc.evaluation_date)
 =======
+=======
+    @api.multi
+    def _get_all_actions(self):
+        self.ensure_one()
+        return (self.action_ids +
+                self.corrective_action_id +
+                self.preventive_action_id)
+
+>>>>>>> Don't close an NC with open Actions
     @api.constrains('stage_id')
     def _check_open_with_action_comments(self):
         for nc in self:
@@ -664,6 +674,7 @@ class MgmtsystemNonconformity(models.Model):
     @api.constrains('stage_id')
     def _check_close_with_evaluation(self):
         for nc in self:
+<<<<<<< 80259c196796c528452aa96023bd970610c0dd19
             if nc.state == 'done' and not nc.evaluation_comments:
                 raise models.ValidationError(
 <<<<<<< b316b86299035b4e277de3a11a171647a8f3c6b6
@@ -674,6 +685,20 @@ class MgmtsystemNonconformity(models.Model):
                     _("Evaluation Comments are required "
                       "in order to close a Nonconformity."))
 >>>>>>> Removing pylint and flake8 error using comment
+=======
+            if nc.state == 'done':
+                if not nc.evaluation_comments:
+                    raise models.ValidationError(
+                        _("Evaluation Comments are required "
+                          "in order to close a Nonconformity."))
+                actions_are_closed = (
+                    x.stage_id.is_ending
+                    for x in nc._get_all_actions())
+                if not all(actions_are_closed):
+                    raise models.ValidationError(
+                        _("All actions must be done "
+                          "before closing a Nonconformity."))
+>>>>>>> Don't close an NC with open Actions
 
     @api.model
     def _elapsed_days(self, dt1_text, dt2_text):
@@ -1431,14 +1456,8 @@ class mgmtsystem_action(orm.Model):
                     nc.closing_date = None
                 # On action plan approval, Open the Actions
                 if nc.state == 'open' and was_not_open[nc.id]:
-                    actions = (nc.action_ids +
-                               nc.corrective_action_id +
-                               nc.preventive_action_id)
-                    # print actions
-                    for action in actions:
+                    for action in nc._get_all_actions():
                         if action.stage_id.is_starting:
-                            # print action, action.stage_id.name
                             action.case_open()
-                            # print action, action.stage_id.name
         return result
 >>>>>>> Remove forced workflow logic
