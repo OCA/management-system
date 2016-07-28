@@ -31,6 +31,13 @@ class TestModelNonConformity(common.TransactionCase):
         num_stages = len(self.nc_model.stage_id.search([]))
         self.assertEqual(len(group_stages), num_stages)
 
+    def test_reset_kanban_state(self):
+        """Reset Kanban State on Stage change"""
+        self.nc_test.kanban_state = 'done'
+        self.nc_test.stage_id = \
+            self.env.ref('mgmtsystem_nonconformity.stage_analysis')
+        self.assertEqual(self.nc_test.kanban_state, 'normal')
+
     def test_open_validation(self):
         """Don't allow approving/In Progress action comments"""
         open_stage = self.env.ref('mgmtsystem_nonconformity.stage_open')
