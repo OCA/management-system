@@ -193,8 +193,8 @@ class TestModelNonConformity(common.TransactionCase):
         self.nc_test.action_comments = 'OK!'
         self.nc_test.stage_id = self.env.ref(
             'mgmtsystem_nonconformity.stage_open')
-        print self.nc_test.corrective_action_id.stage_id.is_starting
-        print self.nc_test.corrective_action_id.stage_id.name
+        # print self.nc_test.corrective_action_id.stage_id.is_starting
+        # print self.nc_test.corrective_action_id.stage_id.name
         self.assertEqual(
             self.nc_test.corrective_action_id.stage_id,
             self.env.ref('mgmtsystem_action.stage_open'),
