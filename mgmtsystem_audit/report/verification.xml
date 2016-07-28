@@ -23,18 +23,22 @@
                         </div>
                     </div>
                     <div class="row" style="padding-top:10px">
-                        <div class="col-xs-2">
+                        <div class="col-xs-3">
                             Confidentially:
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col-xs-9">
                             Internal
                         </div>
-                        <div class="col-xs-2">
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
                             Reference:
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col-xs-9">
                             <span t-field="doc.reference"/>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-xs-2">
                             Date:
                         </div>

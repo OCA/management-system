@@ -5,7 +5,7 @@
             <t t-set="doc" t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"/>
             <t t-call="report.external_layout">
                 <div class="page">
-                    <div class="row" style="padding-top:10px">
+                    <div class="row">
                         <div class="col-xs-12">
                             <div class="text-center">
                                     <h3><strong>Audit Report</strong></h3>
@@ -20,28 +20,34 @@
                         </div>
                     </div>
                     <div class="row" style="padding-top:10px">
-                        <div class="col-xs-2">
+                        <div class="col-xs-3">
                             Confidentially:
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col-xs-9">
                             Internal
                         </div>
-                        <div class="col-xs-2">
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
                             Reference:
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col-xs-9">
                              <span t-field="doc.reference"/>
                         </div>
-                        <div class="col-xs-2">
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
                             Date:
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col-xs-9">
                             <span t-field="doc.date"/>
                         </div>
-                        <div class="col-xs-2">
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
                             Auditors:
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col-xs-9">
                             <ul class="list-unstyled">
                                 <t t-foreach="doc.auditor_user_ids" t-as="auditor">
                                     <li><span t-field="auditor.name"/></li>
@@ -64,7 +70,9 @@
                             <h3><strong>Improvement opportunities:</strong></h3>
                             <ul style="padding-left:50px">
                                 <t t-foreach="doc.imp_opp_ids" t-as="improvement">
-                                    <li><span t-field="improvement.name"/></li>
+                                    <t t-if="improvement.stage_id.name != 'Cancelled'">
+                                        <li><span t-field="improvement.name"/></li>
+                                    </t>
                                 </t>
                             </ul>
                         </div>
@@ -73,7 +81,9 @@
                             <h3><strong>Nonconformities:</strong></h3>
                             <ul style="padding-left:50px">
                                 <t t-foreach="doc.nonconformity_ids" t-as="nonconformity">
+                                    <t t-if="nonconformity.state != 'cancel'">
                                     <li><span t-field="nonconformity.description"/></li>
+                                </t>
                                 </t>
                             </ul>
                         </div>

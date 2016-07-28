@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -50,32 +50,29 @@ class MgmtSystemAudit(models.Model):
         readonly=True,
         default='NEW'
     )
-    create_date = fields.Datetime('Create Date')
+    date = fields.Datetime('Date')
     line_ids = fields.One2many(
         'mgmtsystem.verification.line',
         'audit_id',
         'Verification List',
     )
+    number_of_audits = fields.Integer('# of audits', readonly=True, default=1)
     number_of_nonconformities = fields.Integer(
-        'Number of nonconformities', readonly=True)
+        'Number of nonconformities', readonly=True, store=True,
+        compute="_compute_number_of_nonconformities")
     number_of_questions_in_verification_list = fields.Integer(
-        'Number of questions in verification list', readonly=True)
+        'Number of questions in verification list', readonly=True, store=True,
+        compute="_compute_number_of_questions_in_verification_list")
     number_of_improvements_opportunity = fields.Integer(
-        'Number of improvements Opportunities', readonly=True)
-
+        'Number of improvements Opportunities', readonly=True, store=True,
+        compute="_compute_number_of_improvement_opportunities")
+    days_since_last_update = fields.Integer(
+        'Days since last update', readonly=True, store=True,
+        compute="_compute_days_since_last_update")
     closing_date = fields.Datetime('Closing Date', readonly=True)
 
-    number_of_exceeding_days = fields.Integer(
-        '# of exceeding days', readonly=True,
-        compute='_get_number_of_exceeding_days')
-
-    def _get_number_of_exceeding_days(self):
-        """Get number of exceeding days."""
-        return (
-            datetime.now() - datetime.strptime(self.create_date, "%Y-%m-%d %H:%M:%S")
-        ).days
     number_of_days_to_close = fields.Integer(
-        '# of days to close', readonly=True)
+        '# of days to close', readonly=True, default=0)
 
     user_id = fields.Many2one('res.users', 'Audit Manager')
     auditor_user_ids = fields.Many2many(
@@ -118,25 +115,47 @@ class MgmtSystemAudit(models.Model):
     company_id = fields.Many2one(
         'res.company', 'Company', default=_own_company)
 
-    def get_number_of_nonconformities(self):
+    @api.depends("nonconformity_ids")
+    def _compute_number_of_nonconformities(self):
         """Count number of nonconformities."""
         number = 0
         for id in self.nonconformity_ids:
             number = number + 1
+        self.number_of_nonconformities = number
         return number
 
-    def get_number_of_improvement_opportunities(self):
+    @api.depends("imp_opp_ids")
+    def _compute_number_of_improvement_opportunities(self):
         """Count number of improvements Opportunities."""
         number = 0
         for id in self.imp_opp_ids:
             number = number + 1
+        self.number_of_improvements_opportunity = number
         return number
 
-    def get_number_of_questions_in_verification_list(self):
+    @api.depends("line_ids")
+    def _compute_number_of_questions_in_verification_list(self):
         number = 0
         for id in self.line_ids:
             number = number + 1
+        self.number_of_questions_in_verification_list = number
         return number
+
+    @api.depends("write_date")
+    def _compute_days_since_last_update(self):
+        for audit in self:
+            audit.days_since_last_update = audit._elapsed_days(
+                audit.create_date,
+                audit.write_date)
+
+    @api.model
+    def _elapsed_days(self, dt1_text, dt2_text):
+        res = 0
+        if dt1_text and dt2_text:
+            dt1 = fields.Datetime.from_string(dt1_text)
+            dt2 = fields.Datetime.from_string(dt2_text)
+            res = (dt2 - dt1).days
+        return res
 
     @api.model
     def create(self, vals):
@@ -145,29 +164,17 @@ class MgmtSystemAudit(models.Model):
             'reference': self.env['ir.sequence'].next_by_code(
                 'mgmtsystem.audit'
             ),
-            #'number_of_nonconformities':
-            # self.get_number_of_nonconformities(),
-            #'number_of_improvements_opportunity':
-            # self.get_number_of_improvement_opportunities(),
-            #'number_of_questions_in_verification_list':
-            # self.get_number_of_questions_in_verification_list()
         })
-        if vals.get('closing_date'):
-            vals['closing_date'] = None
-        audit = super(MgmtSystemAudit, self).create(vals)
-        audit.number_of_nonconformities = self.get_number_of_nonconformities()
-        audit.number_of_improvements_opportunity \
-            = self.get_number_of_improvement_opportunities()
-        audit.number_of_questions_in_verification_list \
-            = self.get_number_of_questions_in_verification_list()
-        return audit
+        audit_id = super(MgmtSystemAudit, self).create(vals)
+        return audit_id
 
-    @api.model
+    @api.multi
     def button_close(self):
         """When Audit is closed, post a message to followers' chatter."""
         self.message_post(_("Audit closed"))
         number_of_days_to_close = (
-            datetime.now() - datetime.strptime(self.create_date, "%Y-%m-%d %H:%M:%S")
+            datetime.now() - datetime.strptime(
+                self.create_date, "%Y-%m-%d %H:%M:%S")
         ).days
         return self.write({'state': 'done',
                            'closing_date': time.strftime(DATETIME_FORMAT),
