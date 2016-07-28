@@ -34,19 +34,26 @@ class TestModelNonConformity(common.TransactionCase):
         with self.assertRaises(ValidationError):
             self.nc_test.stage_id = done_stage
 
+    def test_done_actions_validation(self):
+        """Don't allow closing an NC with open actions"""
+        done_stage = self.env.ref('mgmtsystem_nonconformity.stage_done')
+        self.nc_test.evaluation_comments = 'OK!'
+        with self.assertRaises(ValidationError):
+            self.nc_test.stage_id = done_stage
+
     def test_state_transition(self):
         """Close and reopen Nonconformity"""
         self.nc_test.action_comments = 'OK!'
         self.nc_test.stage_id = self.env.ref(
             'mgmtsystem_nonconformity.stage_open')
-        # print self.nc_test.corrective_action_id.stage_id.is_starting
-        # print self.nc_test.corrective_action_id.stage_id.name
         self.assertEqual(
             self.nc_test.corrective_action_id.stage_id,
             self.env.ref('mgmtsystem_action.stage_open'),
             'Plan Approval starts Actions')
 
         self.nc_test.evaluation_comments = 'OK!'
+        self.nc_test.corrective_action_id.stage_id = \
+            self.env.ref('mgmtsystem_action.stage_close')
         self.nc_test.stage_id = self.env.ref(
             'mgmtsystem_nonconformity.stage_done')
         self.assertEqual(self.nc_test.state, 'done')
