@@ -654,17 +654,22 @@ class MgmtsystemNonconformity(models.Model):
         for nc in self:
             if nc.state == 'open' and not nc.action_comments:
                 raise models.ValidationError(
-                    "Action plan  comments are required "
-                    "in order to put a nonconformity In Progress.")
+                    _("Action plan  comments are required "
+                      "in order to put a nonconformity In Progress."))
 
     @api.constrains('stage_id')
     def _check_close_with_evaluation(self):
         for nc in self:
             if nc.state == 'done' and not nc.evaluation_comments:
                 raise models.ValidationError(
+<<<<<<< b316b86299035b4e277de3a11a171647a8f3c6b6
                     "Evaluation Comments are required "
                     "in order to close a Nonconformity.")
 >>>>>>> Add validation on close, requiring evaluation comment
+=======
+                    _("Evaluation Comments are required "
+                      "in order to close a Nonconformity."))
+>>>>>>> Removing pylint and flake8 error using comment
 
     @api.model
     def _elapsed_days(self, dt1_text, dt2_text):
@@ -1403,7 +1408,8 @@ class mgmtsystem_action(orm.Model):
         # Reset Kanban State on Stage change
         if is_state_change:
             was_not_open = {
-                x.id: x.state in ('draft', 'analysis', 'pending') for x in self}
+                x.id: x.state in ('draft',
+                                  'analysis', 'pending') for x in self}
             for nc in self:
                 if nc.kanban_state != 'normal':
                     vals['kanban_state'] = 'normal'
@@ -1424,11 +1430,11 @@ class mgmtsystem_action(orm.Model):
                     actions = (nc.action_ids +
                                nc.corrective_action_id +
                                nc.preventive_action_id)
-                    print actions
+                    # print actions
                     for action in actions:
                         if action.stage_id.is_starting:
-                            print action, action.stage_id.name
+                            # print action, action.stage_id.name
                             action.case_open()
-                            print action, action.stage_id.name
+                            # print action, action.stage_id.name
         return result
 >>>>>>> Remove forced workflow logic
