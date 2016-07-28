@@ -59,7 +59,7 @@ This module enables you to manage your quality management system, including :
     """,
 =======
     "name": "Quality Management System",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -82,7 +82,7 @@ This module enables you to manage your quality management system, including :
     "data": [
         'data/mgmtsystem_system.xml',
     ],
-    'installable': False,
+    'installable': True,
     "application": True,
 }
 >>>>>>> Migrate mgmtsystem_quality
