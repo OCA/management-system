@@ -27,6 +27,7 @@ import netsvc as netsvc
 from openerp.osv import fields, orm
 from openerp.addons.base_status.base_state import base_state
 
+<<<<<<< ff2fe34f4ebfb0b547638362c820600633b4555a
 <<<<<<< 54cd66fbb258a25fae00e3cbcd78934e5cc0f129
 import time
 from tools import DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT
@@ -39,6 +40,9 @@ from openerp import netsvc
 from openerp.exceptions import except_orm
 from openerp import models, api, fields
 =======
+=======
+from openerp import models, api, fields, _
+>>>>>>> import translator _
 
 <<<<<<< aedf771434404b2aa8c10c5f41955537a4c5e0cd
 from openerp import models, api, fields, netsvc, exceptions, _
