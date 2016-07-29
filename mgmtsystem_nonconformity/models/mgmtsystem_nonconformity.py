@@ -172,6 +172,13 @@ class MgmtsystemNonconformity(models.Model):
         domain="[('nonconformity_id', '=', id)]",
     )
 
+    @api.multi
+    def _get_all_actions(self):
+        self.ensure_one()
+        return (self.action_ids +
+                self.corrective_action_id +
+                self.preventive_action_id)
+
     @api.constrains('stage_id')
     def _check_open_with_action_comments(self):
         for nc in self:
@@ -183,10 +190,18 @@ class MgmtsystemNonconformity(models.Model):
     @api.constrains('stage_id')
     def _check_close_with_evaluation(self):
         for nc in self:
-            if nc.state == 'done' and not nc.evaluation_comments:
-                raise models.ValidationError(
-                    _("Evaluation Comments are required "
-                      "in order to close a Nonconformity."))
+            if nc.state == 'done':
+                if not nc.evaluation_comments:
+                    raise models.ValidationError(
+                        _("Evaluation Comments are required "
+                          "in order to close a Nonconformity."))
+                actions_are_closed = (
+                    x.stage_id.is_ending
+                    for x in nc._get_all_actions())
+                if not all(actions_are_closed):
+                    raise models.ValidationError(
+                        _("All actions must be done "
+                          "before closing a Nonconformity."))
 
     @api.model
     def _elapsed_days(self, dt1_text, dt2_text):
@@ -238,13 +253,7 @@ class MgmtsystemNonconformity(models.Model):
                     nc.closing_date = None
                 # On action plan approval, Open the Actions
                 if nc.state == 'open' and was_not_open[nc.id]:
-                    actions = (nc.action_ids +
-                               nc.corrective_action_id +
-                               nc.preventive_action_id)
-                    # print actions
-                    for action in actions:
+                    for action in nc._get_all_actions():
                         if action.stage_id.is_starting:
-                            # print action, action.stage_id.name
                             action.case_open()
-                            # print action, action.stage_id.name
         return result
