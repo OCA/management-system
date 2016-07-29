@@ -21,6 +21,9 @@
 
 from openerp import fields, models, api, _
 
+from datetime import datetime
+
+
 
 class MgmtSystemAudit(models.Model):
     """Model class that manage audit."""
@@ -161,23 +164,6 @@ class MgmtSystemAudit(models.Model):
         self.message_post(_("Audit closed"))
         return self.write({'state': 'done',
                            'closing_date': fields.Datetime.now()})
-
-    @api.multi
-    def message_auto_subscribe1(self, updated_fields, values=None):
-        """Automatically add the Auditors, Auditees and Audit Manager
-        to the follow list
-        """
-        self.ensure_one()
-        user_ids = [self.user_id.id]
-        user_ids += [a.id for a in self.auditor_user_ids]
-        user_ids += [a.id for a in self.auditee_user_ids]
-
-        self.message_subscribe_users(user_ids=user_ids, subtype_ids=None)
-
-        return super(MgmtSystemAudit, self).message_auto_subscribe(
-            updated_fields=updated_fields,
-            values=values
-        )
 
     def get_action_url(self):
         """
