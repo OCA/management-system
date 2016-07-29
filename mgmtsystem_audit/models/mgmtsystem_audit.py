@@ -19,8 +19,7 @@
 #
 ##############################################################################
 
-from openerp.tools.translate import _
-from openerp import fields, models, api
+from openerp import fields, models, api, _
 
 from openerp.tools import (
     DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
@@ -30,17 +29,12 @@ from datetime import datetime
 import time
 
 
-def _own_company(self):
-    """Return the user company id."""
-    return self.env.user.company_id.id
-
-
 class MgmtSystemAudit(models.Model):
     """Model class that manage audit."""
     _name = "mgmtsystem.audit"
     _description = "Audit"
     _inherit = ['mail.thread']
-    name = fields.Char('Name', size=50)
+    name = fields.Char('Name')
 
     reference = fields.Char(
         'Reference',
@@ -71,7 +65,8 @@ class MgmtSystemAudit(models.Model):
     closing_date = fields.Datetime('Closing Date', readonly=True)
 
     number_of_days_to_close = fields.Integer(
-        '# of days to close', readonly=True, default=0)
+        '# of days to close', readonly=True, store=True,
+        compute="_compute_number_of_days_to_close")
 
     user_id = fields.Many2one('res.users', 'Audit Manager')
     auditor_user_ids = fields.Many2many(
@@ -88,8 +83,8 @@ class MgmtSystemAudit(models.Model):
         'mgmtsystem_audit_id',
         'Auditees',
     )
-    strong_points = fields.Text('Strong Points')
-    to_improve_points = fields.Text('Points To Improve')
+    strong_points = fields.Html('Strong Points')
+    to_improve_points = fields.Html('Points To Improve')
     imp_opp_ids = fields.Many2many(
         'mgmtsystem.action',
         'mgmtsystem_audit_imp_opp_rel',
@@ -112,33 +107,26 @@ class MgmtSystemAudit(models.Model):
     )
     system_id = fields.Many2one('mgmtsystem.system', 'System')
     company_id = fields.Many2one(
-        'res.company', 'Company', default=_own_company)
+        'res.company', 'Company',
+        default=lambda self: self.env.user.company_id.id)
 
     @api.depends("nonconformity_ids")
     def _compute_number_of_nonconformities(self):
         """Count number of nonconformities."""
-        number = 0
-        for id in self.nonconformity_ids:
-            number = number + 1
-        self.number_of_nonconformities = number
-        return number
+        for audit in self:
+            audit.number_of_nonconformities = len(self.nonconformity_ids)
 
     @api.depends("imp_opp_ids")
     def _compute_number_of_improvement_opportunities(self):
         """Count number of improvements Opportunities."""
-        number = 0
-        for id in self.imp_opp_ids:
-            number = number + 1
-        self.number_of_improvements_opportunity = number
-        return number
+        for audit in self:
+            audit.number_of_improvements_opportunity = len(audit.imp_opp_ids)
 
     @api.depends("line_ids")
     def _compute_number_of_questions_in_verification_list(self):
-        number = 0
-        for id in self.line_ids:
-            number = number + 1
-        self.number_of_questions_in_verification_list = number
-        return number
+        for audit in self:
+            audit.number_of_questions_in_verification_list = len(
+                audit.line_ids)
 
     @api.depends("write_date")
     def _compute_days_since_last_update(self):
@@ -146,6 +134,13 @@ class MgmtSystemAudit(models.Model):
             audit.days_since_last_update = audit._elapsed_days(
                 audit.create_date,
                 audit.write_date)
+
+    @api.depends("closing_date")
+    def _compute_number_of_days_to_close(self):
+        for audit in self:
+            audit.number_of_days_to_close = audit._elapsed_days(
+                audit.create_date,
+                audit.closing_date)
 
     @api.model
     def _elapsed_days(self, dt1_text, dt2_text):
@@ -171,13 +166,8 @@ class MgmtSystemAudit(models.Model):
     def button_close(self):
         """When Audit is closed, post a message to followers' chatter."""
         self.message_post(_("Audit closed"))
-        number_of_days_to_close = (
-            datetime.now() - datetime.strptime(
-                self.create_date, "%Y-%m-%d %H:%M:%S")
-        ).days
         return self.write({'state': 'done',
-                           'closing_date': time.strftime(DATETIME_FORMAT),
-                           'number_of_days_to_close': number_of_days_to_close})
+                           'closing_date': time.strftime(DATETIME_FORMAT)})
 
     @api.multi
     def message_auto_subscribe1(self, updated_fields, values=None):
@@ -273,7 +263,8 @@ class MgmtSystemVerificationLine(models.Model):
     comments = fields.Text('Comments')
     seq = fields.Integer('Sequence')
     company_id = fields.Many2one(
-        'res.company', 'Company', default=_own_company)
+        'res.company', 'Company',
+        default=lambda self: self.env.user.company_id.id)
 
 
 class MgmtSystemNonconformity(models.Model):
