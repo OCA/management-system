@@ -21,11 +21,6 @@
 
 from openerp import fields, models, api, _
 
-from openerp.tools import (
-    DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
-)
-import time
-
 
 class MgmtSystemAudit(models.Model):
     """Model class that manage audit."""
@@ -165,7 +160,7 @@ class MgmtSystemAudit(models.Model):
         """When Audit is closed, post a message to followers' chatter."""
         self.message_post(_("Audit closed"))
         return self.write({'state': 'done',
-                           'closing_date': time.strftime(DATETIME_FORMAT)})
+                           'closing_date': fields.Datetime.now()})
 
     @api.multi
     def message_auto_subscribe1(self, updated_fields, values=None):
