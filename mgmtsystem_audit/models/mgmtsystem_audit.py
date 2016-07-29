@@ -24,8 +24,6 @@ from openerp import fields, models, api, _
 from openerp.tools import (
     DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
 )
-
-from datetime import datetime
 import time
 
 
