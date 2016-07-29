@@ -21,12 +21,10 @@
 
 from openerp import fields, models, api, _
 
-from datetime import datetime
-
-
 
 class MgmtSystemAudit(models.Model):
     """Model class that manage audit."""
+
     _name = "mgmtsystem.audit"
     _description = "Audit"
     _inherit = ['mail.thread']

@@ -20,7 +20,6 @@
 ##############################################################################
 
 from openerp.tests import common
-from openerp import fields
 
 
 class TestModelAudit(common.TransactionCase):
@@ -45,11 +44,14 @@ class TestModelAudit(common.TransactionCase):
 
     def test_get_lines_by_procedure(self):
         line_id = self.env["mgmtsystem.verification.line"].create({
-            "name": "What",
+            "name": "test",
             "procedure_id": self.env.ref("document_page.demo_page1").id
+        })
+        line_id2 = self.env["mgmtsystem.verification.line"].create({
+            "name": "test2",
         })
 
         record = self.env.ref("mgmtsystem_audit.mgmtsystem_audit_demo")
-        record.line_ids =[line_id.id]
+        record.line_ids = [line_id.id, line_id2.id]
         q = record.get_lines_by_procedure()
         self.assertTrue(q)
