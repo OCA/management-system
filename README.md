@@ -34,6 +34,7 @@ addon | version | summary
 [mgmtsystem_action](mgmtsystem_action/) | 9.0.1.0.0 | Management System - Action
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 9.0.1.0.0 | Information Security Management System Manual
 [mgmtsystem_manual](mgmtsystem_manual/) | 9.0.1.0.0 | Management System - Manual
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 9.0.1.0.0 | Management System - Nonconformity
 
 Unported addons
 ---------------
@@ -49,7 +50,6 @@ addon | version | summary
 [mgmtsystem_hazard_audittrail](mgmtsystem_hazard_audittrail/) | 1.0 (unported) | Management System - Hazards Audit Trail tracking
 [mgmtsystem_health_safety](mgmtsystem_health_safety/) | 1.0 (unported) | Health and Safety Management System
 [mgmtsystem_kpi](mgmtsystem_kpi/) | 7.0.1.1.1 (unported) | Key Performance Indicator
-[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 8.0.1.2.0 (unported) | Management System - Nonconformity
 [mgmtsystem_nonconformity_analytic](mgmtsystem_nonconformity_analytic/) | 8.0.1.0.0 (unported) | Management System Nonconformity - Analytic Account
 [mgmtsystem_nonconformity_claim](mgmtsystem_nonconformity_claim/) | 8.0.1.0.0 (unported) | Management System - Claims and Nonconformities
 [mgmtsystem_nonconformity_deptm](mgmtsystem_nonconformity_deptm/) | 1.0 (unported) | Management System Nonconformity - Department
