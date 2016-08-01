@@ -73,7 +73,9 @@ Credits
 Contributors
 ------------
 
-* Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
+* Luk Vermeylen <luk@allmas-it.be>
+* Daniel Reis <dgreis@sapo.pt>
+* Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 
 Maintainer
