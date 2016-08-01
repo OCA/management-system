@@ -19,7 +19,7 @@ class MgmtSystemVerificationLine(models.Model):
     procedure_id = fields.Many2one(
         'document.page',
         'Procedure',
-        ondelete='cascade',
+        ondelete='restrict',
         select=True,
     )
     is_conformed = fields.Boolean('Is conformed', default=False)

@@ -59,6 +59,9 @@ Contributors
 * Sandy Carter <sandy.carter@savoirfairelinux.com>
 * Virgil Dupras <virgil.dupras@savoirfairelinux.com>
 * Loïc lacroix <loic.lacroix@savoirfairelinux.com>
+* Gervais Naoussi <gervaisnaoussi@gmail.com>
+* Luk Vermeylen <luk@allmas-it.be>
+* Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 
 Maintainer
 ----------
