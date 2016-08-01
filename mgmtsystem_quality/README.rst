@@ -75,7 +75,7 @@ Contributors
 
 * Luk Vermeylen <luk@allmas-it.be>
 * Daniel Reis <dgreis@sapo.pt>
-* Maxime Chambreuil <mchambreuil@ursainfosystems.com>
+* Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 
 Maintainer
