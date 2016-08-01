@@ -81,17 +81,26 @@
                                     <th>Comments</th>
                                 </tr>
                                 <t t-foreach="doc.get_lines_by_procedure()" t-as="line">
-                                    <tr>
-                                        <td>
-                                            <span t-esc="line['procedure']" />
-                                        </td>
-                                        <td>
-                                            <span t-esc="line['name']" />
-                                        </td>
-                                        <td>
-                                            <span t-esc="line['yes_no']" />
-                                        </td>
-                                    </tr>
+                                    <t t-if="line['procedure']">
+                                        <tr>
+                                            <td>
+                                                <span t-esc="line['procedure']" />
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </t>
+                                    <t t-if="not line['procedure']">
+                                        <tr>
+                                            <td>
+                                                <span t-esc="line['name']" />
+                                            </td>
+                                            <td>
+                                                <span t-esc="line['yes_no']" />
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </t>
                                 </t>
                             </table>
                         </div>
