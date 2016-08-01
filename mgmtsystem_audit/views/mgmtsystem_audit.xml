@@ -177,7 +177,7 @@
             <field name="context">{"search_default_current":1}</field>
         </record>
 
-        <menuitem id="menu_open_audit" action="open_mgmtsystem_audit_list" parent="mgmtsystem.menu_mgmtsystem_main" sequence="10" groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
+        <menuitem id="menu_open_audit" action="open_mgmtsystem_audit_list" parent="mgmtsystem.menu_mgmtsystem_main" sequence="40" groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
 
         <!-- Nonconformities related to Audits -->
         <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">

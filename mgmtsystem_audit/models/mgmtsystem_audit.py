@@ -215,38 +215,3 @@ class MgmtSystemAudit(models.Model):
                       "name": p[i]['name'],
                       "yes_no": "Yes / No"})
         return q
-
-
-class MgmtSystemVerificationLine(models.Model):
-    """Class to manage verification's Line."""
-    _name = "mgmtsystem.verification.line"
-    _description = "Verification Line"
-    _order = "seq"
-
-    name = fields.Char('Question', required=True)
-    audit_id = fields.Many2one(
-        'mgmtsystem.audit',
-        'Audit',
-        ondelete='restrict',
-        select=True,
-    )
-    procedure_id = fields.Many2one(
-        'document.page',
-        'Procedure',
-        ondelete='cascade',
-        select=True,
-    )
-    is_conformed = fields.Boolean('Is conformed', default=False)
-    comments = fields.Text('Comments')
-    seq = fields.Integer('Sequence')
-    company_id = fields.Many2one(
-        'res.company', 'Company',
-        default=lambda self: self.env.user.company_id.id)
-
-
-class MgmtSystemNonconformity(models.Model):
-    """Class use to add audit_ids association to MgmtSystemNonconformity."""
-    _name = "mgmtsystem.nonconformity"
-    _inherit = "mgmtsystem.nonconformity"
-    audit_ids = fields.Many2many(
-        'mgmtsystem.audit', string='Related Audits')
