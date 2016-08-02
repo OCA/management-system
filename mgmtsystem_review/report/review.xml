@@ -24,28 +24,28 @@
                         </div>
                     </div>
                     <div class="row" style="padding-top:10px">
-                        <div class="col-xs-2">
+                        <div class="col-xs-3">
                             Confidentiality:
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col-xs-9 pull-right">
                             Direction Review
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-3">
                             Reference:
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col-xs-9 pull-right">
                             <span t-field="doc.reference"/>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-3">
                             Date:
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col-xs-9 pull-right">
                             <span t-field="doc.date"/>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-3">
                             Participants:
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col-xs-9 pull-right">
                             <ul class="list-unstyled">
                                 <t t-foreach="doc.user_ids" t-as="participant">
                                     <li><span t-field="participant.name"/></li>

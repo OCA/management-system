@@ -135,7 +135,7 @@
                                 </group>
                                 <newline/>
                                 <separator string="Survey Answers" colspan="4"/>
-                                <field name="response_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="response_ids" colspan="4" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                             </page>
                             <page string="Lines">
                                 <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
