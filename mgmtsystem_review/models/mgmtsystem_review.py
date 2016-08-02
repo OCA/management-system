@@ -49,12 +49,12 @@ class MgmtsystemReview(models.Model):
         'mgmtsystem_review_id',
         'Survey Answers')
     policy = fields.Html('Policy')
-    changes = fields.Text('Changes')
+    changes = fields.Html('Changes')
     line_ids = fields.One2many(
         'mgmtsystem.review.line',
         'review_id',
         'Lines')
-    conclusion = fields.Text('Conclusion')
+    conclusion = fields.Html('Conclusion')
     state = fields.Selection(
         [
             ('open', 'Open'),
