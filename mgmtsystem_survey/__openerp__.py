@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,14 +20,11 @@
 ##############################################################################
 {
     "name": "Management System - Survey",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """\
-This module enables you to manage your satisfaction surveys and its answers.
-""",
     "depends": [
         'mgmtsystem',
         'survey'
@@ -38,5 +35,5 @@ This module enables you to manage your satisfaction surveys and its answers.
     ],
     "demo": [
     ],
-    'installable': False,
+    'installable': True,
 }

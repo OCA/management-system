@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data noupdate="1">
 
+        <!-- Not used at the moment. To use them override the _track_subtype method -->
         <record id="subtype_analysis" model="mail.message.subtype">
             <field name="name">Analysis</field>
             <field name="res_model">mgmtsystem.nonconformity</field>
@@ -17,4 +18,4 @@
         </record>
 
     </data>
-</openerp>
+</odoo>
