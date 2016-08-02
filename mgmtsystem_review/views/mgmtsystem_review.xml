@@ -135,7 +135,19 @@
                                 </group>
                                 <newline/>
                                 <separator string="Survey Answers" colspan="4"/>
-                                <field name="response_ids" colspan="4" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="response_ids" colspan="4" nolabel="1" attrs="{'readonly':[('state','=','done')]}">
+                                    <tree create="true">
+                                        <field name="survey_id"/>
+                                        <field name="date_create"/>
+                                        <field name="deadline"/>
+                                        <field name="partner_id"/>
+                                        <field name="email"/>
+                                        <field name="type"/>
+                                        <field name="state"/>
+                                        <field name="test_entry" invisible="True"/>
+                                        <field name="quizz_score" groups="base.group_no_one"/>
+                                    </tree>
+                                </field>
                             </page>
                             <page string="Lines">
                                 <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
