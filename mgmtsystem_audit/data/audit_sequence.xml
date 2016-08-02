@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data noupdate="1">
 
         <!-- Sequences for mgmtsystem.audit -->
-        <record id="seq_type_mgmtsystem_audit" model="ir.sequence.type">
-            <field name="name">Management System Audit</field>
-            <field name="code">mgmtsystem.audit</field>
-        </record>
-
         <record id="seq_mgmtsystem_audit" model="ir.sequence">
             <field name="name">Management System Audit</field>
             <field name="code">mgmtsystem.audit</field>
@@ -16,4 +11,4 @@
         </record>
 
     </data>
-</openerp>
+</odoo>
