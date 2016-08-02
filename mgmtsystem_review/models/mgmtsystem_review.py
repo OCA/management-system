@@ -48,7 +48,7 @@ class MgmtsystemReview(models.Model):
         'response_id',
         'mgmtsystem_review_id',
         'Survey Answers')
-    policy = fields.Text('Policy')
+    policy = fields.Html('Policy')
     changes = fields.Text('Changes')
     line_ids = fields.One2many(
         'mgmtsystem.review.line',
@@ -64,6 +64,7 @@ class MgmtsystemReview(models.Model):
         readonly=True,
         default="open",
         track_visibility='onchange')
+
     company_id = fields.Many2one(
         'res.company',
         'Company',
@@ -80,34 +81,3 @@ class MgmtsystemReview(models.Model):
     @api.multi
     def button_close(self):
         return self.write({'state': 'done'})
-
-
-class MgmtsystemReviewLine(models.Model):
-    _name = "mgmtsystem.review.line"
-    _description = "Review Line"
-
-    name = fields.Char('Title', size=300, required=True)
-    type = fields.Selection(
-        [
-            ('action', 'Action'),
-            ('nonconformity', 'Nonconformity'),
-        ],
-        'Type')
-    action_id = fields.Many2one(
-        'mgmtsystem.action',
-        'Action',
-        select=True)
-    nonconformity_id = fields.Many2one(
-        'mgmtsystem.nonconformity',
-        'Nonconformity',
-        select=True)
-    decision = fields.Text('Decision')
-    review_id = fields.Many2one(
-        'mgmtsystem.review',
-        'Review',
-        ondelete='cascade',
-        select=True)
-    company_id = fields.Many2one(
-        'res.company',
-        'Company',
-        default=lambda self: self.env.user.company_id.id)
