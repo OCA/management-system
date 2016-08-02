@@ -35,6 +35,7 @@ addon | version | summary
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 9.0.1.0.0 | Information Security Management System Manual
 [mgmtsystem_manual](mgmtsystem_manual/) | 9.0.1.0.0 | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 9.0.1.0.0 | Management System - Nonconformity
+[mgmtsystem_survey](mgmtsystem_survey/) | 9.0.1.0.0 | Management System - Survey
 
 Unported addons
 ---------------
@@ -57,7 +58,6 @@ addon | version | summary
 [mgmtsystem_quality](mgmtsystem_quality/) | 8.0.1.0.0 (unported) | Quality Management System
 [mgmtsystem_review](mgmtsystem_review/) | 8.0.1.0.0 (unported) | Management System - Review
 [mgmtsystem_review_audittrail](mgmtsystem_review_audittrail/) | 1.0 (unported) | Management System - Reviews Audit Trail tracking
-[mgmtsystem_survey](mgmtsystem_survey/) | 8.0.1.0.0 (unported) | Management System - Survey
 
 [//]: # (end addons)
 
