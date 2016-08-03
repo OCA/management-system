@@ -184,7 +184,11 @@
             <field name="context">{"search_default_current":1}</field>
         </record>
 
-        <menuitem id="menu_open_review" action="open_mgmtsystem_review_list" parent="mgmtsystem.menu_mgmtsystem_main" sequence="50" groups="mgmtsystem.group_mgmtsystem_manager"/>
+        <menuitem id="menu_open_review"
+            action="open_mgmtsystem_review_list"
+            parent="mgmtsystem.menu_mgmtsystem_main"
+            sequence="50"
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
 
     </data>
 </odoo>
