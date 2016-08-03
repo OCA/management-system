@@ -77,6 +77,7 @@ Contributors
 * Daniel Reis <dgreis@sapo.pt>
 * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
+* Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 
 Maintainer
 ----------
