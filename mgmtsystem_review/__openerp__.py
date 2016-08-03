@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Management System - Review",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -34,7 +34,8 @@
         'security/mgmtsystem_review_security.xml',
         'data/ir_sequence.xml',
         'views/mgmtsystem_review.xml',
-        'report/review_report.xml',
+        'report/review.xml',
+        'report/report.xml',
     ],
-    'installable': False,
+    'installable': True,
 }
