@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Key Performance Indicator",
-    "version": "7.0.1.1.1",
+    "version": "1.1",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -55,7 +55,12 @@ This module depends on:
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_kpi_security.xml',
-        'mgmtsystem_kpi_view.xml',
+        'views/mgmtsystem_kpi_category.xml',
+        'views/mgmtsystem_kpi_history.xml',
+        'views/mgmtsystem_kpi_threshold_range.xml',
+        'views/mgmtsystem_kpi_threshold.xml',
+        'views/mgmtsystem_kpi.xml',
+        'data/mgmtsystem_kpi.xml',
     ],
     "images": [
         "images/kpi_definition.png",
@@ -65,6 +70,5 @@ This module depends on:
     ],
     "demo": [],
     "test": [],
-    'installable': False,
+    'installable': True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
