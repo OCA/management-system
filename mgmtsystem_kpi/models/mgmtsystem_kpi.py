@@ -1,4 +1,4 @@
-#  -*- encoding: utf-8 -*-
+#  -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -52,7 +52,7 @@ RE_SELECT_QUERY = re.compile('.*(' + '|'.join((
 )) + ')')
 
 
-def is_select_query(query):
+def is_sql_or_ddl_statement(query):
     """Check if sql query is a SELECT statement"""
     return not RE_SELECT_QUERY.match(query.upper())
 
@@ -63,7 +63,7 @@ class MgmtsystemKPI(models.Model):
     _name = "mgmtsystem.kpi"
     _description = "Key Performance Indicator"
 
-    name = fields.Char('Name', size=50, required=True)
+    name = fields.Char('Name', required=True)
     description = fields.Text('Description')
     category_id = fields.Many2one(
         'mgmtsystem.kpi.category',
@@ -134,13 +134,13 @@ class MgmtsystemKPI(models.Model):
     def compute_kpi_value(self):
         for obj in self:
             kpi_value = 0
-            if obj.kpi_type == 'local' and is_select_query(obj.kpi_code):
+            if obj.kpi_type == 'local' and is_sql_or_ddl_statement(obj.kpi_code):
                 self.env.cr.execute(obj.kpi_code)
                 dic = self.env.cr.dictfetchall()
                 if is_one_value(dic):
                     kpi_value = dic[0]['value']
             elif (obj.kpi_type == 'external' and obj.dbsource_id.id and
-                  is_select_query(obj.kpi_code)):
+                  is_sql_or_ddl_statement(obj.kpi_code)):
                 dbsrc_obj = obj.dbsource_id
                 res = dbsrc_obj.execute(obj.kpi_code)
                 if is_one_value(res):
@@ -157,7 +157,7 @@ class MgmtsystemKPI(models.Model):
 
             history_obj = self.env['mgmtsystem.kpi.history']
             history_id = history_obj.create(values)
-            obj.history_ids.append(history_id)
+            obj.history_ids = history_obj.browse([("kpi_id", "=", obj.id)])
 
         return True
 
@@ -175,11 +175,7 @@ class MgmtsystemKPI(models.Model):
                 delta = timedelta()
             new_date = datetime.now() + delta
 
-            values = {
-                'next_execution_date': new_date.strftime(DATETIME_FORMAT),
-            }
-
-            obj.write(values)
+            obj.next_execution_date = fields.Datetime.to_string()
 
         return True
 
