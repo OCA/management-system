@@ -32,9 +32,12 @@ addon | version | summary
 [document_page_work_instruction](document_page_work_instruction/) | 9.0.1.0.0 | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 9.0.1.0.0 | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 9.0.1.0.0 | Management System - Action
+[mgmtsystem_audit](mgmtsystem_audit/) | 9.0.1.0.0 | Management System - Audit
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 9.0.1.0.0 | Information Security Management System Manual
 [mgmtsystem_manual](mgmtsystem_manual/) | 9.0.1.0.0 | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 9.0.1.0.0 | Management System - Nonconformity
+[mgmtsystem_quality](mgmtsystem_quality/) | 9.0.1.0.0 | Quality Management System
+[mgmtsystem_review](mgmtsystem_review/) | 9.0.1.0.0 | Management System - Review
 [mgmtsystem_survey](mgmtsystem_survey/) | 9.0.1.0.0 | Management System - Survey
 
 Unported addons
@@ -42,7 +45,6 @@ Unported addons
 addon | version | summary
 --- | --- | ---
 [mgmtsystem_action_audittrail](mgmtsystem_action_audittrail/) | 1.0 (unported) | Management System - Actions Audit Trail tracking
-[mgmtsystem_audit](mgmtsystem_audit/) | 8.0.1.2.0 (unported) | Management System - Audit
 [mgmtsystem_audit_audittrail](mgmtsystem_audit_audittrail/) | 1.0 (unported) | Management System - Audits Audit Trail tracking
 [mgmtsystem_claim](mgmtsystem_claim/) | 9.0.1.1.1 | Management System - Claim
 [mgmtsystem_claim_audittrail](mgmtsystem_claim_audittrail/) | 1.0 (unported) | Management System - Claims Audit Trail tracking
@@ -55,8 +57,6 @@ addon | version | summary
 [mgmtsystem_nonconformity_claim](mgmtsystem_nonconformity_claim/) | 8.0.1.0.0 (unported) | Management System - Claims and Nonconformities
 [mgmtsystem_nonconformity_deptm](mgmtsystem_nonconformity_deptm/) | 1.0 (unported) | Management System Nonconformity - Department
 [mgmtsystem_nonconformity_project](mgmtsystem_nonconformity_project/) | 1.0 (unported) | Management System - Project
-[mgmtsystem_quality](mgmtsystem_quality/) | 8.0.1.0.0 (unported) | Quality Management System
-[mgmtsystem_review](mgmtsystem_review/) | 8.0.1.0.0 (unported) | Management System - Review
 [mgmtsystem_review_audittrail](mgmtsystem_review_audittrail/) | 1.0 (unported) | Management System - Reviews Audit Trail tracking
 
 [//]: # (end addons)

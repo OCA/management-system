@@ -3,15 +3,15 @@
 # * mgmtsystem_review
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
+# OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: management-system (8.0)\n"
+"Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-19 18:36+0000\n"
-"PO-Revision-Date: 2015-09-19 13:34+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Norwegian Bokmål (http://www.transifex.com/oca/OCA-management-system-8-0/language/nb/)\n"
+"POT-Creation-Date: 2016-08-04 02:45+0000\n"
+"PO-Revision-Date: 2016-08-04 02:45+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"Language-Team: Norwegian Bokmål (https://www.transifex.com/oca/teams/23907/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -19,256 +19,294 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review.line,action_id:0
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Changes affecting the management systems:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Conclusion:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Policies:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Review Report</strong>"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Satisfaction Survey Answers:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_action_id
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 #: selection:mgmtsystem.review.line,type:0
 msgid "Action"
 msgstr "Tiltak"
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Action:"
 msgstr "Tiltak:"
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review,changes:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_changes
 msgid "Changes"
 msgstr "Endringer"
 
 #. module: mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_form
-#: report:mgmtsystem.review.report:0
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Changes affecting the management systems"
 msgstr "Forandringer som påvirker styringssystemet"
 
 #. module: mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_form
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Close"
 msgstr "Lukk"
 
 #. module: mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 #: selection:mgmtsystem.review,state:0
 msgid "Closed"
 msgstr "Stengt"
 
 #. module: mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 msgid "Closed Reviews"
 msgstr "Stengte granskninger"
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Comments:"
 msgstr "Kommentarer:"
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review,company_id:0
-#: field:mgmtsystem.review.line,company_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_company_id
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_company_id
 msgid "Company"
 msgstr ""
 
 #. module: mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_form
-#: field:mgmtsystem.review,conclusion:0 report:mgmtsystem.review.report:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_conclusion
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Conclusion"
 msgstr "Konklusjon"
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
-msgid "Confidentiality: Direction Review"
-msgstr "Konfidensialitet: Retning Granskning"
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Confidentiality:"
+msgstr ""
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review,create_uid:0
-#: field:mgmtsystem.review.line,create_uid:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review,create_date:0
-#: field:mgmtsystem.review.line,create_date:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_create_date
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_create_date
 msgid "Created on"
 msgstr ""
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review,date:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_date
 msgid "Date"
 msgstr "Dato"
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Date:"
 msgstr "Dato :"
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review.line,decision:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_decision
 msgid "Decision"
 msgstr "Avgjørelse"
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Decision:"
 msgstr "Beslutning:"
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Direction Review"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_display_name
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Expectations:"
 msgstr "Forventninger:"
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review,id:0 field:mgmtsystem.review.line,id:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_id
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_id
 msgid "ID"
 msgstr ""
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Improvements:"
 msgstr "Forbedringer:"
 
 #. module: mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_form
-#: report:mgmtsystem.review.report:0
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Inputs"
 msgstr "Inndata"
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review,write_uid:0
-#: field:mgmtsystem.review.line,write_uid:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review___last_update
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review,write_date:0
-#: field:mgmtsystem.review.line,write_date:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_write_date
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_form
-#: field:mgmtsystem.review,line_ids:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_ids
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Lines"
 msgstr "Linjer"
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review,name:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_name
 msgid "Name"
 msgstr "Navn"
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review.line,nonconformity_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_nonconformity_id
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 #: selection:mgmtsystem.review.line,type:0
 msgid "Nonconformity"
 msgstr "Avvik"
 
 #. module: mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 #: selection:mgmtsystem.review,state:0
 msgid "Open"
 msgstr "Åpne"
 
 #. module: mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 msgid "Open Reviews"
 msgstr "Åpne Granskninger"
 
 #. module: mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_form
-#: field:mgmtsystem.review,user_ids:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_user_ids
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Participants"
 msgstr "Deltakere"
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Participants:"
 msgstr "Deltakere:"
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
-msgid "Policies"
-msgstr "Retningslinjer"
-
-#. module: mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_form
-#: field:mgmtsystem.review,policy:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_policy
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Policy"
 msgstr "Regel"
 
 #. module: mgmtsystem_review
-#: model:ir.actions.report.xml,name:mgmtsystem_review.mgmtsystem_review_report
-msgid "Print Report"
-msgstr "Skriv ut rapport"
-
-#. module: mgmtsystem_review
-#: field:mgmtsystem.review,reference:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_reference
 msgid "Reference"
 msgstr "Referanse"
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Reference :"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Reference:"
 msgstr "Referanse:"
 
 #. module: mgmtsystem_review
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Refrence:"
+msgstr ""
+
+#. module: mgmtsystem_review
 #: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_form
-#: field:mgmtsystem.review.line,review_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_review_id
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Review"
 msgstr "Granskning"
 
 #. module: mgmtsystem_review
 #: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review_line
-#: view:mgmtsystem.review.line:mgmtsystem_review.view_mgmtsystem_review_line_form
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_form
 msgid "Review Line"
 msgstr "Granskningslinje"
 
 #. module: mgmtsystem_review
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_line_list
-#: view:mgmtsystem.review.line:mgmtsystem_review.view_mgmtsystem_review_line_filter
-#: view:mgmtsystem.review.line:mgmtsystem_review.view_mgmtsystem_review_line_tree
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_tree
 msgid "Review Lines"
 msgstr "Granskningslinjer"
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
-msgid "Review Report"
-msgstr "Granskningsrapport"
+#: model:ir.actions.report.xml,name:mgmtsystem_review.review_report_mgmtsystem_review
+msgid "Review report"
+msgstr ""
 
 #. module: mgmtsystem_review
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_list
 #: model:ir.ui.menu,name:mgmtsystem_review.menu_open_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_filter
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_tree
-#: view:mgmtsystem.review:mgmtsystem_review.view_review_calendar
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_tree
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_review_calendar
 msgid "Reviews"
 msgstr "Granskninger"
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
-msgid "Satisfaction Survey Answers"
-msgstr "Svar på tilfredshetsundersøkelse"
-
-#. module: mgmtsystem_review
-#: field:mgmtsystem.review,state:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_state
 msgid "State"
 msgstr "Status"
 
 #. module: mgmtsystem_review
-#: report:mgmtsystem.review.report:0
+#: model:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "State:"
 msgstr "Status:"
 
 #. module: mgmtsystem_review
-#: view:mgmtsystem.review:mgmtsystem_review.view_mgmtsystem_review_form
-#: field:mgmtsystem.review,response_ids:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_response_ids
+#: model:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Survey Answers"
 msgstr "Svar på undersøkelsen"
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review.line,name:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_name
 msgid "Title"
 msgstr "Tittel"
 
 #. module: mgmtsystem_review
-#: field:mgmtsystem.review.line,type:0
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line_type
 msgid "Type"
 msgstr "Type"
