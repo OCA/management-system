@@ -1,0 +1,824 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_nonconformity
+# 
+# Translators:
+# Ana-Maria Olujić <ana-maria.olujic@slobodni-programi.hr>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: management-system (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-28 00:51+0000\n"
+"PO-Revision-Date: 2016-08-25 12:28+0000\n"
+"Last-Translator: Ana-Maria Olujić <ana-maria.olujic@slobodni-programi.hr>\n"
+"Language-Team: Croatian (http://www.transifex.com/oca/OCA-management-system-8-0/language/hr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_action
+msgid "Action"
+msgstr "Akcija"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Action Plan"
+msgstr "Akcijski plan"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:306
+#, python-format
+msgid "Action Plan Approved"
+msgstr "Odobreni akcijski plan"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+#: field:mgmtsystem.nonconformity,action_comments:0
+msgid "Action Plan Comments"
+msgstr "Komentari akcijskog plana"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,actions_date:0
+msgid "Action Plan Date"
+msgstr "Datum akcijskog plana"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,actions_user_id:0
+msgid "Action Plan by"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:294
+#, python-format
+msgid "Action plan is already approved."
+msgstr "Akcijski plan je već odobren."
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:319
+#, python-format
+msgid "Action plan must be approved before opening."
+msgstr "Akcijski plan mora biti odobren prije otvaranja."
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+#: field:mgmtsystem.nonconformity,action_ids:0
+msgid "Actions"
+msgstr "Akcije"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.severity,active:0
+msgid "Active?"
+msgstr "Aktivno?"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Add a description ..."
+msgstr "Dodaj opis..."
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:34
+#: model:mail.message.subtype,description:mgmtsystem_nonconformity.subtype_analysis
+#: model:mail.message.subtype,name:mgmtsystem_nonconformity.subtype_analysis
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+#: field:mgmtsystem.nonconformity,analysis:0
+#: selection:mgmtsystem.nonconformity,state:0
+#, python-format
+msgid "Analysis"
+msgstr "Analiza"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:264
+#, python-format
+msgid "Analysis Approved"
+msgstr "Odobrena analiza"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Analysis Confirmation"
+msgstr "Potvrda analize"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,analysis_date:0
+msgid "Analysis Date"
+msgstr "Datum analize"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:298
+#, python-format
+msgid "Analysis approved before the review confirmation."
+msgstr "Analiza je odobrena prije odobrenja recenzije."
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,analysis_user_id:0
+msgid "Analysis by"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:253
+#, python-format
+msgid "Analysis is already approved."
+msgstr "Analiza je već odobrena."
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:274
+#, python-format
+msgid "Analysis must be performed before submitting to approval."
+msgstr "Analiza mora biti dovršena prije predaje za odobrenje."
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Approve"
+msgstr "Odobri"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Author"
+msgstr "Autor"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.bad_communication
+msgid "Bad communication"
+msgstr "Loša komunikacija"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.bad_partner_relation
+msgid "Bad customer/supplier relation"
+msgstr "Loš odnos sa kupcem/dobavljačem"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.badly_defined_need
+msgid "Badly defined need"
+msgstr "Loše definirana potreba"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Cancel"
+msgstr "Otkaži"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:38
+#: selection:mgmtsystem.nonconformity,state:0
+#, python-format
+msgid "Cancelled"
+msgstr "Otkazano"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,cause_ids:0
+#: field:mgmtsystem.nonconformity.cause,name:0
+msgid "Cause"
+msgstr "Uzrok"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_cause
+msgid "Cause of the nonconformity of the management system"
+msgstr "Uzrok nesukladnosti upravljačkog sustava"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_cause_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_cause
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+#: view:mgmtsystem.nonconformity.cause:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_cause_filter
+#: view:mgmtsystem.nonconformity.cause:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_cause_tree
+msgid "Causes"
+msgstr "Uzroci"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Causes and Analysis"
+msgstr "Uzroci i analiza"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity.cause:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_cause_form
+msgid "Causes of nonconformity"
+msgstr "Uzroci nesukladnosti"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.cause,child_ids:0
+msgid "Child Causes"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.origin,child_ids:0
+msgid "Childs"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity
+msgid "Claims and Nonconformities"
+msgstr "Zahtjevi i nesukladnosti"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list
+msgid "Claims and Nonconformities."
+msgstr "Zahtjevi i nesukladnosti."
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Close"
+msgstr "Zatvori"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:37
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#: selection:mgmtsystem.nonconformity,state:0
+#, python-format
+msgid "Closed"
+msgstr "Zatvoreno"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Closed Nonconformities"
+msgstr "Zatvorene nesukladnosti"
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity,action_comments:0
+msgid "Comments on the action plan."
+msgstr "Komentari na akcijski plan."
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,company_id:0
+msgid "Company"
+msgstr "Poduzeće"
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity,evaluation_comments:0
+msgid "Conclusions from the last effectiveness evaluation."
+msgstr "Zaključci iz zadnje evaluacije učinkovitosti."
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,corrective_action_id:0
+msgid "Corrective action"
+msgstr "Korektivna akcija"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,create_uid:0
+#: field:mgmtsystem.nonconformity.cause,create_uid:0
+#: field:mgmtsystem.nonconformity.origin,create_uid:0
+#: field:mgmtsystem.nonconformity.severity,create_uid:0
+msgid "Created by"
+msgstr "Stvorio"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,create_date:0
+#: field:mgmtsystem.nonconformity.cause,create_date:0
+#: field:mgmtsystem.nonconformity.origin,create_date:0
+#: field:mgmtsystem.nonconformity.severity,create_date:0
+msgid "Created on"
+msgstr "Stvoreno na"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,date:0
+msgid "Date"
+msgstr "Datum"
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Datum zadnje poruke objavljene u zapisu."
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity.cause,sequence:0
+#: help:mgmtsystem.nonconformity.origin,sequence:0
+msgid "Defines the order to present items"
+msgstr "Definira redoslijed trenutačnih stavki"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+#: field:mgmtsystem.nonconformity,description:0
+#: field:mgmtsystem.nonconformity.cause,description:0
+#: field:mgmtsystem.nonconformity.origin,description:0
+#: field:mgmtsystem.nonconformity.severity,description:0
+msgid "Description"
+msgstr "Opis"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_dr
+msgid "Direction Review"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,display_name:0
+#: field:mgmtsystem.nonconformity.cause,display_name:0
+#: field:mgmtsystem.nonconformity.origin,display_name:0
+#: field:mgmtsystem.nonconformity.severity,display_name:0
+msgid "Display Name"
+msgstr "Prikaži naziv"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:33
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#: selection:mgmtsystem.nonconformity,state:0
+#, python-format
+msgid "Draft"
+msgstr "Skica"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Draft/New nonconformities"
+msgstr "Skica/Nove nesuglasnosti"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:346
+#, python-format
+msgid "Effectiveness Evaluation Approved"
+msgstr "Odobrena evaluacija učinkovitosti"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Effectiveness Review"
+msgstr "Ocjena učinkovitosti"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:371
+#, python-format
+msgid "Effectiveness evaluation must be performed before closing."
+msgstr "Evaluacija učinkovitosti mora biti izvršena prije zatvaranja."
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_cause.py:68
+#, python-format
+msgid "Error! Cannot create recursive cycle."
+msgstr "Pogreška! Ne možete keirati rekurzivan ciklus."
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+#: field:mgmtsystem.nonconformity,evaluation_comments:0
+msgid "Evaluation Comments"
+msgstr "Komentari evaluacije"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,evaluation_date:0
+msgid "Evaluation Date"
+msgstr "Datum evaluacije"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,evaluation_user_id:0
+msgid "Evaluation by"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_extenal_audit
+msgid "External Audit"
+msgstr "Vanjska revizija"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_external_client
+msgid "External client complaint"
+msgstr "Pritužba vanjskog klijenta"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,author_user_id:0
+msgid "Filled in by"
+msgstr "Popunio"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,message_follower_ids:0
+msgid "Followers"
+msgstr "Sljedbenici"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.cause,parent_id:0
+#: field:mgmtsystem.nonconformity.origin,parent_id:0
+msgid "Group"
+msgstr "Grupa"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Group By..."
+msgstr "Grupiraj po..."
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity,message_summary:0
+msgid ""
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
+msgstr "Sadrži kratki pregled ćaskanja (broj poruka, ...). Ovaj kratki pregled je zapisan direktno u html formatu kako bi se mogao koristiti u kanban pogledu."
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.hr_unavailable_inadequate
+msgid "Human resource not available or inadequate"
+msgstr "Ljudski resursi nisu dostupni ili su nedovoljni"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,id:0
+#: field:mgmtsystem.nonconformity.cause,id:0
+#: field:mgmtsystem.nonconformity.origin,id:0
+#: field:mgmtsystem.nonconformity.severity,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Ukoliko su nove poruke provjerene, traže Vašu pažnju."
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,immediate_action_id:0
+msgid "Immediate action"
+msgstr "Žurna akcija"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:363
+#, python-format
+msgid "Immediate action from analysis has not been closed."
+msgstr "Žurna akcija iz analize nije zatvorena."
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:36
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#: selection:mgmtsystem.nonconformity,state:0
+#, python-format
+msgid "In Progress"
+msgstr "U tijeku"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.information_not_available
+msgid "Information not available"
+msgstr "Informacija nije dostupna"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.instruction_not_respected
+msgid "Instruction not respected"
+msgstr "Uputa nije poštivana"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.demo_origin
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_internal_audit
+msgid "Internal Audit"
+msgstr "Interna revizija"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_internal_client
+msgid "Internal client complaint"
+msgstr "Pritužba internog klijenta"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Sljedbenik je"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.demo_cause
+msgid "Lack of expertise"
+msgstr "Manjak ekspertize"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,message_last_post:0
+msgid "Last Message Date"
+msgstr "Datum zadnje poruke"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,__last_update:0
+#: field:mgmtsystem.nonconformity.cause,__last_update:0
+#: field:mgmtsystem.nonconformity.origin,__last_update:0
+#: field:mgmtsystem.nonconformity.severity,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnja izmjena na"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,write_uid:0
+#: field:mgmtsystem.nonconformity.cause,write_uid:0
+#: field:mgmtsystem.nonconformity.origin,write_uid:0
+#: field:mgmtsystem.nonconformity.severity,write_uid:0
+msgid "Last Updated by"
+msgstr "Zadnji puta ažurirao"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,write_date:0
+#: field:mgmtsystem.nonconformity.cause,write_date:0
+#: field:mgmtsystem.nonconformity.origin,write_date:0
+#: field:mgmtsystem.nonconformity.severity,write_date:0
+msgid "Last Updated on"
+msgstr "Zadnje ažuriranje na"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_maj
+msgid "Major"
+msgstr "Glavni"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#: field:mgmtsystem.nonconformity,manager_user_id:0
+msgid "Manager"
+msgstr "Menadžer"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,message_ids:0
+msgid "Messages"
+msgstr "Poruke"
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity,message_ids:0
+msgid "Messages and communication history"
+msgstr "Povijest poruka i komunikacije"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_min
+msgid "Minor"
+msgstr "Podređeni"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,name:0
+msgid "Name"
+msgstr "Naziv"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_tree
+msgid "Non-Conformities"
+msgstr "Nesukladnosti"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Non-Conformity"
+msgstr "Nesukladnost"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities
+#: field:mgmtsystem.action,nonconformity_ids:0
+msgid "Nonconformities"
+msgstr "Nesukladnosti"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Nonconformities pending review"
+msgstr "Nesukladnosti u očekivanju ocjene"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity
+msgid "Nonconformity"
+msgstr "Nesukladnost"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.action,nonconformity_immediate_id:0
+msgid "Nonconformity immediate id"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:367
+#, python-format
+msgid "Not all actions have been closed."
+msgstr "Sve akcije nisu zatvorene."
+
+#. module: mgmtsystem_nonconformity
+#: view:board.board:mgmtsystem_nonconformity.board_mgmtsystem_nonconformity_form
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Open Nonconformities"
+msgstr "Otvorene nesukladnosti"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,origin_ids:0
+#: field:mgmtsystem.nonconformity.origin,name:0
+msgid "Origin"
+msgstr "Izvor"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_origin
+msgid "Origin of nonconformity of the management system"
+msgstr "Izvor nesukladnosti u upravljačkom sustavu"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_origin_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_origin
+#: view:mgmtsystem.nonconformity.origin:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_origin_filter
+#: view:mgmtsystem.nonconformity.origin:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_origin_tree
+msgid "Origins"
+msgstr "Izvori"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity.origin:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_origin_form
+msgid "Origins of nonconformity"
+msgstr "Izvori nesukladnosti"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.cause,parent_left:0
+#: field:mgmtsystem.nonconformity.origin,parent_left:0
+msgid "Parent Left"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.cause,parent_right:0
+#: field:mgmtsystem.nonconformity.origin,parent_right:0
+msgid "Parent Right"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#: field:mgmtsystem.nonconformity,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:35
+#: model:mail.message.subtype,description:mgmtsystem_nonconformity.subtype_pending
+#: model:mail.message.subtype,name:mgmtsystem_nonconformity.subtype_pending
+#: selection:mgmtsystem.nonconformity,state:0
+#, python-format
+msgid "Pending Approval"
+msgstr "Čeka se odobrenje"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Plan Review"
+msgstr "Recenzija plana"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:257
+#, python-format
+msgid "Please provide an analysis before approving."
+msgstr "Molimo Vas da omogućite analizu prije odobravanja."
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,preventive_action_id:0
+msgid "Preventive action"
+msgstr "Preventivna akcija"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#: field:mgmtsystem.nonconformity,procedure_ids:0
+msgid "Procedure"
+msgstr "Procedura"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.procedure_not_defined
+msgid "Procedure not defined"
+msgstr "Procedura nije definirana"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.procedure_not_respected
+msgid "Procedure not respected"
+msgstr "Procedura nije poštivana"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Procedures"
+msgstr "Procedure"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_process
+msgid "Process Execution"
+msgstr "Izvršenje procesa"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_qc
+msgid "Quality Committee"
+msgstr "Komitet za kvalitetu"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,ref:0
+msgid "Reference"
+msgstr "Referenca"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.cause,ref_code:0
+#: field:mgmtsystem.nonconformity.origin,ref_code:0
+msgid "Reference Code"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.action:mgmtsystem_nonconformity.view_mgmtsystem_action_form
+msgid "Related Nonconformities"
+msgstr "Povezane nesukladnosti"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,reference:0
+msgid "Related to"
+msgstr "Povezano "
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Reset to New"
+msgstr "Ponovno postavi kao novo"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#: field:mgmtsystem.nonconformity,responsible_user_id:0
+msgid "Responsible"
+msgstr "Odgovoran"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Send for Analysis"
+msgstr "Pošalji na analiziranje"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Send for Review"
+msgstr "Pošalji na ocjenjivanje"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.cause,sequence:0
+#: field:mgmtsystem.nonconformity.origin,sequence:0
+#: field:mgmtsystem.nonconformity.severity,sequence:0
+msgid "Sequence"
+msgstr "Redoslijed"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_severity_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_severity
+#: field:mgmtsystem.nonconformity,severity_id:0
+msgid "Severity"
+msgstr "Ozbiljnost"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_severity
+#: view:mgmtsystem.nonconformity.severity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_severity_form
+msgid "Severity of Complaints and Nonconformities"
+msgstr "Ozbiljnost pritužbi i nesukladnosti"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Sign Evaluation"
+msgstr "Evaluacija potpisa"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Start/Open"
+msgstr "Započni/otvori"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,state:0
+msgid "State"
+msgstr "Stanje"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,state_name:0
+msgid "State Description"
+msgstr "Opis stanja"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,message_summary:0
+msgid "Summary"
+msgstr "Sažetak"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#: field:mgmtsystem.nonconformity,system_id:0
+msgid "System"
+msgstr "Sustav"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.technical_failure
+msgid "Technical failure"
+msgstr "Tehnički kvar"
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:249
+#, python-format
+msgid "This action can only be done in the Analysis state."
+msgstr "Ova akcija može biti izvršena samo u fazi analize."
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:338
+#, python-format
+msgid "This action can only be done in the In Progress state."
+msgstr "Ova akcija može biti izvršena samo u fazi progresa."
+
+#. module: mgmtsystem_nonconformity
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:289
+#, python-format
+msgid "This action can only be done in the Pending for Approval state."
+msgstr "Ova akcija može biti izvršena samo u fazi čekanja na odobrenje."
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity.severity,name:0
+msgid "Title"
+msgstr "Naslov"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_no
+msgid "Unfounded"
+msgstr "Neosnovano"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,message_unread:0
+msgid "Unread Messages"
+msgstr "Nepročitane poruke"
+
+#. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "User"
+msgstr "Korisnik"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,website_message_ids:0
+msgid "Website Messages"
+msgstr "Web poruke"
+
+#. module: mgmtsystem_nonconformity
+#: help:mgmtsystem.nonconformity,website_message_ids:0
+msgid "Website communication history"
+msgstr "Povijest Web komunikacije"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
+msgid "Work conditions"
+msgstr "Uvjeti rada"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.action_mgmtsystem_nonconformity
+msgid "board.mgmtsystem.nonconformity.act_window"
+msgstr "board.mgmtsystem.nonconformity.act_window"

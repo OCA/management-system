@@ -1,0 +1,105 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_nonconformity_claim
+# 
+# Translators:
+# Ana-Maria Olujić <ana-maria.olujic@slobodni-programi.hr>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: management-system (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-28 00:51+0000\n"
+"PO-Revision-Date: 2016-08-25 12:29+0000\n"
+"Last-Translator: Ana-Maria Olujić <ana-maria.olujic@slobodni-programi.hr>\n"
+"Language-Team: Croatian (http://www.transifex.com/oca/OCA-management-system-8-0/language/hr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,active:0
+msgid "Active?"
+msgstr "Aktivno?"
+
+#. module: mgmtsystem_nonconformity_claim
+#: model:ir.model,name:mgmtsystem_nonconformity_claim.model_mgmtsystem_nonconformity_type
+msgid "Claim Type"
+msgstr "Vrsta zahtjeva"
+
+#. module: mgmtsystem_nonconformity_claim
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity_claim.view_mgmtsystem_nonconformity_form
+msgid "Claims and Nonconformities"
+msgstr "Zahtjevi i nesukladnosti"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,create_uid:0
+msgid "Created by"
+msgstr "Stvorio"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,create_date:0
+msgid "Created on"
+msgstr "Stvoreno na"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,description:0
+msgid "Description"
+msgstr "Opis"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,display_name:0
+msgid "Display Name"
+msgstr "Prikaži naziv"
+
+#. module: mgmtsystem_nonconformity_claim
+#: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_gp
+msgid "Good Practice"
+msgstr "Dobra praksa"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_nonconformity_claim
+#: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_io
+msgid "Improvement Opportunity"
+msgstr "Prilika za poboljšanje"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnja izmjena na"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,write_uid:0
+msgid "Last Updated by"
+msgstr "Zadnji puta ažurirao"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,write_date:0
+msgid "Last Updated on"
+msgstr "Zadnje ažuriranje na"
+
+#. module: mgmtsystem_nonconformity_claim
+#: model:ir.model,name:mgmtsystem_nonconformity_claim.model_mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_nc
+msgid "Nonconformity"
+msgstr "Nesukladnost"
+
+#. module: mgmtsystem_nonconformity_claim
+#: model:mgmtsystem.nonconformity.type,name:mgmtsystem_nonconformity_claim.nonconformity_type_ob
+msgid "Observation"
+msgstr "Opažanje"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity.type,name:0
+msgid "Title"
+msgstr "Naslov"
+
+#. module: mgmtsystem_nonconformity_claim
+#: field:mgmtsystem.nonconformity,type_id:0
+msgid "Type"
+msgstr "Vrsta"
