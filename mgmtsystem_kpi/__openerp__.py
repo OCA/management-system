@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -50,7 +50,6 @@ This module depends on:
     "depends": [
         'mgmtsystem',
         'base_external_dbsource',
-        'web_color',
     ],
     "data": [
         'security/ir.model.access.csv',

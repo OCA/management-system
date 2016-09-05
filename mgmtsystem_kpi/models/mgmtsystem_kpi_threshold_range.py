@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
 import re
 
 
@@ -47,7 +47,7 @@ RE_SELECT_QUERY = re.compile('.*(' + '|'.join((
 )) + ')')
 
 
-def is_select_query(query):
+def is_sql_or_ddl_statement(query):
     """Check if sql query is a SELECT statement"""
     return not RE_SELECT_QUERY.match(query.upper())
 
@@ -90,12 +90,12 @@ class MgmtsystemKPIThresholdRange(models.Model):
         'base.external.dbsource',
         'External DB Source',
     )
+
     color = fields.Char(
-        'Color',
-        help='RGB code with #',
-        size=7,
-        required=True,
+        string="Color",
+        help="Choose your color"
     )
+
     threshold_ids = fields.Many2many(
         'mgmtsystem.kpi.threshold',
         'mgmtsystem_kpi_threshold_range_rel',
@@ -107,18 +107,19 @@ class MgmtsystemKPIThresholdRange(models.Model):
         'res.company', 'Company',
         default=lambda self: self.env.user.company_id.id)
 
+    @api.multi
     def _compute_min_value(self):
         result = {}
         for obj in self:
             value = None
-            if obj.min_type == 'local' and is_select_query(obj.min_code):
+            if obj.min_type == 'local' and is_sql_or_ddl_statement(obj.min_code):
                 self.env.cr.execute(obj.min_code)
                 dic = self.env.cr.dictfetchall()
                 if is_one_value(dic):
                     value = dic[0]['value']
             elif (obj.min_type == 'external'
                   and obj.min_dbsource_id.id
-                  and is_select_query(obj.min_code)):
+                  and is_sql_or_ddl_statement(obj.min_code)):
                 dbsrc_obj = obj.min_dbsource_id
                 res = dbsrc_obj.execute(obj.min_code)
                 if is_one_value(res):
@@ -130,11 +131,12 @@ class MgmtsystemKPIThresholdRange(models.Model):
             result[obj.id] = value
         return result
 
+    @api.multi
     def _compute_max_value(self):
         result = {}
         for obj in self:
             value = None
-            if obj.max_type == 'local' and is_select_query(obj.max_code):
+            if obj.max_type == 'local' and is_sql_or_ddl_statement(obj.max_code):
                 self.env.cr.execute(obj.max_code)
                 dic = self.env.cr.dictfetchall()
                 if is_one_value(dic):
@@ -143,7 +145,7 @@ class MgmtsystemKPIThresholdRange(models.Model):
                 value = eval(obj.max_code)
             elif (obj.max_type == 'external'
                   and obj.max_dbsource_id.id
-                  and is_select_query(obj.max_code)):
+                  and is_sql_or_ddl_statement(obj.max_code)):
                 dbsrc_obj = obj.max_dbsource_id
                 res = dbsrc_obj.execute(obj.max_code)
                 if is_one_value(res):
@@ -153,6 +155,7 @@ class MgmtsystemKPIThresholdRange(models.Model):
             result[obj.id] = value
         return result
 
+    @api.multi
     def _compute_is_valid_range(self):
         result = {}
         for obj in self:
@@ -162,6 +165,7 @@ class MgmtsystemKPIThresholdRange(models.Model):
                 result[obj.id] = True
         return result
 
+    @api.multi
     def _compute_generate_invalid_message(self):
         result = {}
         for obj in self:

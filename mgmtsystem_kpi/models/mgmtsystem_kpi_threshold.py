@@ -75,21 +75,23 @@ class MgmtsystemKPIThreshold(models.Model):
         # TODO: This code can be done better
         range_obj1 = self.env['mgmtsystem.kpi.threshold.range']
         range_obj2 = self.env['mgmtsystem.kpi.threshold.range']
-        for range1 in data['range_ids'][0][2]:
-            range_obj1 = range_obj1.browse(range1)
-            for range2 in data['range_ids'][0][2]:
-                range_obj2 = range_obj2.browse(range2)
-                if (range_obj1.valid and range_obj2.valid and
-                        range_obj1.min_value < range_obj2.min_value):
-                    if range_obj1.max_value > range_obj2.min_value:
-                        raise exceptions.Warning(
-                            _("2 of your ranges are overlapping!"),
-                            _("Please make sure your ranges do not overlap!")
-                        )
-                range_obj2 = self.env['mgmtsystem.kpi.threshold.range']
-            range_obj1 = self.env['mgmtsystem.kpi.threshold.range']
+        if data.get('range_ids'):
+            for range1 in data['range_ids'][0][2]:
+                range_obj1 = range_obj1.browse(range1)
+                for range2 in data['range_ids'][0][2]:
+                    range_obj2 = range_obj2.browse(range2)
+                    if (range_obj1.valid and range_obj2.valid and
+                            range_obj1.min_value < range_obj2.min_value):
+                        if range_obj1.max_value > range_obj2.min_value:
+                            raise exceptions.Warning(
+                                _("2 of your ranges are overlapping!"),
+                                _("Please make sure your ranges do not overlap!")
+                            )
+                    range_obj2 = self.env['mgmtsystem.kpi.threshold.range']
+                range_obj1 = self.env['mgmtsystem.kpi.threshold.range']
         return super(MgmtsystemKPIThreshold, self).create(data)
 
+    @api.multi
     def get_color(self, kpi_value):
         color = '#FFFFFF'
         for obj in self:
