@@ -120,21 +120,25 @@ class MgmtsystemKPI(models.Model):
         'res.company', 'Company',
         default=lambda self: self.env.user.company_id.id)
 
+    @api.multi
     def _compute_display_last_kpi_value(self):
-        result = {}
-        for obj in self.browse(self.ids):
-            if obj.history_ids:
-                result[obj.id] = obj.history_ids[0].value
+        history_obj = self.env['mgmtsystem.kpi.history']
+        for obj in self:
+            history_ids = history_obj.search([("kpi_id", "=", obj.id)])
+            if history_ids:
+                obj.value = obj.history_ids[0].value
             else:
-                result[obj.id] = 0
-
-        return result
+                obj.value = 0
 
     @api.multi
     def compute_kpi_value(self):
+        import logging
         for obj in self:
             kpi_value = 0
-            if obj.kpi_type == 'local' and is_sql_or_ddl_statement(obj.kpi_code):
+            if obj.kpi_type == 'local' and is_sql_or_ddl_statement(
+                    obj.kpi_code):
+
+                logging.info(obj.kpi_code)
                 self.env.cr.execute(obj.kpi_code)
                 dic = self.env.cr.dictfetchall()
                 if is_one_value(dic):
@@ -155,12 +159,15 @@ class MgmtsystemKPI(models.Model):
                 'color': threshold_obj.get_color(kpi_value),
             }
 
+            logging.info(values)
+
             history_obj = self.env['mgmtsystem.kpi.history']
             history_id = history_obj.create(values)
-            obj.history_ids = history_obj.browse([("kpi_id", "=", obj.id)])
+            #obj.history_ids = history_obj.search([("kpi_id", "=", obj.id)])
 
         return True
 
+    @api.multi
     def update_next_execution_date(self):
         for obj in self:
             if obj.periodicity_uom == 'hour':
@@ -175,29 +182,32 @@ class MgmtsystemKPI(models.Model):
                 delta = timedelta()
             new_date = datetime.now() + delta
 
-            obj.next_execution_date = fields.Datetime.to_string()
+            obj.next_execution_date = new_date.strftime(DATETIME_FORMAT)
 
         return True
 
     # Method called by the scheduler
+    @api.model
     def update_kpi_value(self):
-        if not self.ids:
-            filters = [
-                '&',
-                '|',
-                ('active', '=', True),
-                ('next_execution_date', '<=',
-                    datetime.now().strftime(DATETIME_FORMAT)),
-                ('next_execution_date', '=', False),
-            ]
-            if 'filters' in self.env.context:
-                filters.extend(self.env.context['filters'])
-            self.ids = self.search(filters)
+        filters = [
+            '&',
+            '|',
+            ('active', '=', True),
+            ('next_execution_date', '<=', datetime.now().strftime(
+                DATETIME_FORMAT)),
+            ('next_execution_date', '=', False),
+        ]
+        if 'filters' in self.env.context:
+            filters.extend(self.env.context['filters'])
+        obj_ids = self.search(filters)
         res = None
 
         try:
-            res = self.compute_kpi_value()
-            self.update_next_execution_date()
+            # res = self.compute_kpi_value()
+            # self.update_next_execution_date()
+            for obj in obj_ids:
+                obj.compute_kpi_value()
+                obj.update_next_execution_date()
         except Exception:
             _logger.exception("Failed updating KPI values")
 

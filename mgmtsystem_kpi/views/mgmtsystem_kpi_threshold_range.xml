@@ -23,8 +23,8 @@
             <field name="arch" type="xml">
                 <form string="Range">
                     <field name="name"/>
-                    <field name="color"/>
-	            <field name="company_id" group="base.group_multi_company"/>
+                    <field name="color" widget="color"/>
+	            <field name="company_id" groups="base.group_multi_company"/>
                     <newline/>
                     <separator string="Minimum" colspan="4"/>
                     <newline/>
