@@ -1,4 +1,4 @@
-#  -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -85,7 +85,7 @@ class MgmtsystemKPIThreshold(models.Model):
                         if range_obj1.max_value > range_obj2.min_value:
                             raise exceptions.Warning(
                                 _("2 of your ranges are overlapping!"),
-                                _("Please make sure your ranges do not overlap!")
+                                _("Make sure your ranges do not overlap!")
                             )
                     range_obj2 = self.env['mgmtsystem.kpi.threshold.range']
                 range_obj1 = self.env['mgmtsystem.kpi.threshold.range']
