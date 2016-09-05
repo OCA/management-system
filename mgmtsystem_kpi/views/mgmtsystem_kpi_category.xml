@@ -8,8 +8,7 @@
             parent="mgmtsystem.menu_mgmtsystem_configuration"
             groups="mgmtsystem.group_mgmtsystem_manager"
             sequence="20"/>
-
-	<!-- Categories -->
+            <!-- Categories -->
 
         <record id="view_mgmtsystem_kpi_category_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.kpi.category.tree</field>

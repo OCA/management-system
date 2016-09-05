@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-	<!-- Ranges -->
+        <!-- Ranges -->
         <record id="view_mgmtsystem_kpi_threshold_range_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.kpi.threshold.range.tree</field>
             <field name="model">mgmtsystem.kpi.threshold.range</field>
@@ -12,7 +12,7 @@
                     <field name="max_value"/>
                     <field name="color" widget="color"/>
                     <field name="invalid_message"/>
-	            <field name="company_id" group="base.group_multi_company"/>
+                    <field name="company_id" group="base.group_multi_company"/>
                 </tree>
             </field>
         </record>
@@ -24,7 +24,7 @@
                 <form string="Range">
                     <field name="name"/>
                     <field name="color" widget="color"/>
-	            <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
                     <newline/>
                     <separator string="Minimum" colspan="4"/>
                     <newline/>
