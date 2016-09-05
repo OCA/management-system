@@ -1,4 +1,4 @@
-#  -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -21,7 +21,6 @@
 
 from openerp import fields, models, api
 import re
-
 
 
 def is_one_value(result):
@@ -112,14 +111,14 @@ class MgmtsystemKPIThresholdRange(models.Model):
         result = {}
         for obj in self:
             value = None
-            if obj.min_type == 'local' and is_sql_or_ddl_statement(obj.min_code):
+            if obj.min_type == 'local' and is_sql_or_ddl_statement(
+                    obj.min_code):
                 self.env.cr.execute(obj.min_code)
                 dic = self.env.cr.dictfetchall()
                 if is_one_value(dic):
                     value = dic[0]['value']
-            elif (obj.min_type == 'external'
-                  and obj.min_dbsource_id.id
-                  and is_sql_or_ddl_statement(obj.min_code)):
+            elif (obj.min_type == 'external' and obj.min_dbsource_id.id and
+                  is_sql_or_ddl_statement(obj.min_code)):
                 dbsrc_obj = obj.min_dbsource_id
                 res = dbsrc_obj.execute(obj.min_code)
                 if is_one_value(res):
@@ -136,16 +135,16 @@ class MgmtsystemKPIThresholdRange(models.Model):
         result = {}
         for obj in self:
             value = None
-            if obj.max_type == 'local' and is_sql_or_ddl_statement(obj.max_code):
+            if obj.max_type == 'local' and is_sql_or_ddl_statement(
+                    obj.max_code):
                 self.env.cr.execute(obj.max_code)
                 dic = self.env.cr.dictfetchall()
                 if is_one_value(dic):
                     value = dic[0]['value']
             elif obj.max_type == 'python':
                 value = eval(obj.max_code)
-            elif (obj.max_type == 'external'
-                  and obj.max_dbsource_id.id
-                  and is_sql_or_ddl_statement(obj.max_code)):
+            elif (obj.max_type == 'external' and obj.max_dbsource_id.id and
+                  is_sql_or_ddl_statement(obj.max_code)):
                 dbsrc_obj = obj.max_dbsource_id
                 res = dbsrc_obj.execute(obj.max_code)
                 if is_one_value(res):

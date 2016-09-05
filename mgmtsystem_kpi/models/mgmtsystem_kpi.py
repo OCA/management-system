@@ -1,4 +1,4 @@
-#  -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -132,13 +132,10 @@ class MgmtsystemKPI(models.Model):
 
     @api.multi
     def compute_kpi_value(self):
-        import logging
         for obj in self:
             kpi_value = 0
             if obj.kpi_type == 'local' and is_sql_or_ddl_statement(
                     obj.kpi_code):
-
-                logging.info(obj.kpi_code)
                 self.env.cr.execute(obj.kpi_code)
                 dic = self.env.cr.dictfetchall()
                 if is_one_value(dic):
@@ -158,12 +155,9 @@ class MgmtsystemKPI(models.Model):
                 'value': kpi_value,
                 'color': threshold_obj.get_color(kpi_value),
             }
-
-            logging.info(values)
-
             history_obj = self.env['mgmtsystem.kpi.history']
-            history_id = history_obj.create(values)
-            #obj.history_ids = history_obj.search([("kpi_id", "=", obj.id)])
+            history_obj.create(values)
+            # obj.history_ids = history_obj.search([("kpi_id", "=", obj.id)])
 
         return True
 
