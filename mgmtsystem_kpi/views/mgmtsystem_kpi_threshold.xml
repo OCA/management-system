@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-	<!-- Thresholds -->
+        <!-- Thresholds -->
         <record id="view_mgmtsystem_kpi_threshold_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.kpi.threshold.tree</field>
             <field name="model">mgmtsystem.kpi.threshold</field>
@@ -9,7 +9,7 @@
                 <tree string="Thresholds">
                     <field name="name"/>
                     <field name="invalid_message"/>
-	            <field name="company_id" group="base.group_multi_company"/>
+                    <field name="company_id" group="base.group_multi_company"/>
                 </tree>
             </field>
         </record>
@@ -31,7 +31,7 @@
                     <newline/>
                     <field name="invalid_message" nolabel="1" attrs="{'invisible' : [('invalid_message', '=', '')]}" colspan="2"/>
                     <newline/>
-	            <field name="company_id" group="base.group_multi_company"/>
+                    <field name="company_id" group="base.group_multi_company"/>
                 </form>
             </field>
         </record>
@@ -50,5 +50,5 @@
             parent="menu_mgmtsystem_configuration_kpi"
             groups="mgmtsystem.group_mgmtsystem_manager"
             sequence="10"/>
-	</data>
+    </data>
 </odoo>
