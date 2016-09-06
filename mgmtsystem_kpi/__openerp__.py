@@ -24,10 +24,10 @@
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
-    "category": "Report",
+    "category": "Reporting",
     "complexity": "normal",
     "depends": [
-        'kpi',
+        'kpi'
     ],
     "data": [
         'views/menu.xml',
