@@ -21,6 +21,7 @@
 
 from datetime import datetime, timedelta
 from openerp import fields, models, api
+from openerp.tools.safe_eval import safe_eval
 from openerp.tools import (
     DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
 )
@@ -147,7 +148,7 @@ class MgmtsystemKPI(models.Model):
                 if is_one_value(res):
                     kpi_value = res[0]['value']
             elif obj.kpi_type == 'python':
-                kpi_value = eval(obj.kpi_code)
+                kpi_value = safe_eval(obj.kpi_code)
 
             threshold_obj = obj.threshold_id
             values = {
