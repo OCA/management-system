@@ -20,6 +20,7 @@
 ##############################################################################
 
 from openerp import fields, models, api
+from openerp.tools.safe_eval import safe_eval
 import re
 
 
@@ -124,7 +125,7 @@ class MgmtsystemKPIThresholdRange(models.Model):
                 if is_one_value(res):
                     value = res[0]['value']
             elif obj.min_type == 'python':
-                value = eval(obj.min_code)
+                value = safe_eval(obj.min_code)
             else:
                 value = obj.min_fixed_value
             result[obj.id] = value
@@ -142,7 +143,7 @@ class MgmtsystemKPIThresholdRange(models.Model):
                 if is_one_value(dic):
                     value = dic[0]['value']
             elif obj.max_type == 'python':
-                value = eval(obj.max_code)
+                value = safe_eval(obj.max_code)
             elif (obj.max_type == 'external' and obj.max_dbsource_id.id and
                   is_sql_or_ddl_statement(obj.max_code)):
                 dbsrc_obj = obj.max_dbsource_id
