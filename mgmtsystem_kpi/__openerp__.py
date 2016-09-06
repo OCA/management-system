@@ -27,6 +27,7 @@
     "category": "Reporting",
     "complexity": "normal",
     "depends": [
+        'mgmtsystem',
         'kpi'
     ],
     "data": [
