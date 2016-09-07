@@ -24,7 +24,7 @@
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
-    "category": "Reporting",
+    "category": "Management Systems",
     "complexity": "normal",
     "depends": [
         'mgmtsystem',

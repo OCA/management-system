@@ -2,86 +2,29 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===
-KPI
-===
+==========================
+Key Performance Indicators
+==========================
 
-This module provides the basis for creating key performance indicators,
-including static and dynamic thresholds (SQL query or Python code),
-on local and remote data sources.
+This module provides a menu item to manage key performance indicators under
+the Management Systems application.
 
-The module also provides the mecanism to update KPIs automatically.
-A scheduler is executed every hour and updates the KPI values, based
-on the periodicity of each KPI. KPI computation can also be done
-manually.
-
-A threshold is a list of ranges and a range is:
-
-* a name (like Good, Warning, Bad)
-* a minimum value (fixed, sql query or python code)
-* a maximum value (fixed, sql query or python code)
-* color (RGB code like #00FF00 for green, #FFA500 for orange, #FF0000 for red)
-
+For more information, please see https://www.odoo.com/apps/modules/9.0/kpi
 
 Installation
 ============
 
-No installation required.
+* See https://www.odoo.com/apps/modules/9.0/kpi
 
 Configuration
 =============
 
-Users must be added to the appropriate groups within Odoo as follows:
-* Creators: Settings > Users > Groups > Management System / User
-* Responsible Persons: Settings > Users > Groups > Management System / Approving User
+* See https://www.odoo.com/apps/modules/9.0/kpi
 
 Usage
 =====
 
-To use this module:
-
-* Go to Management System > Nonconformities
-* Click on Create to enter the following information:
-
-* Partner : Customer, supplier or internal personnel
-* Related to: Any reference pointing to the NC (order id, project id, task id, etc.)
-* Responsible: Person responsible for the NC
-* Manager : Person managing the department or owner of the procedure
-* Filled in by: Originator of NC report
-* Origins:  The source of the NC, how was it discover
-* Procedures:  Against which procedure is the NC
-* Description: Evidence, reference to the standards
-
-* Click on Save and then on Send for Analysis.
-
-As an approving user, go to the newly created NC and fill in the following
-information in the tab named Causes and Analysis:
-
-* Causes: Add root causes
-* Analysis: Describe the results of the investigation
-* Severity: Select the severity among unfounded, minor and major
-* Immediate action: Create or select an immediate action if appropriate
-
-Click on Approve and then on Send for Review.
-
-In the Actions tab, select or create new actions by entering the following
-items:
-
-* Subject: What must be done - Return to Supplier, Use As Is, Scrap, Rework,
-  Re-grade, Repair
-* Deadline: Date by which the action must be completed
-* Responsible: Person in charge for implementing the action
-* Type: Immediate, corrective or preventive actions or improvement opportunity
-* Description: Details of the action
-
-When the action is created, a notification is sent to the person responsible
-for the action.
-
-When the action plan is reviewed (comments) and approved, each action of the
-plan is opened.
-
-When all actions of the plan are done, their effectiveness must be evaluated
-before closing the NC.
+* See https://www.odoo.com/apps/modules/9.0/kpi
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
@@ -90,17 +33,16 @@ before closing the NC.
 Known issues / Roadmap
 ======================
 
-* The custom emails should be replaced by Mail Tracking features and Subtypes (like in Project Tasks and Project Issues)
-* Automatically add responsible_user_id._uid, manager_user_id._uid, author_user_id._uid to chatter
+* None
 
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/Management-system/issues>`_.
+Bugs are tracked on `GitHub Issues <https://github.com/OCA/management-system/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed feedback `here <https://github.com/OCA/
-Management-system/issues/new?body=module:%20
-mgmtsystem_system%0Aversion:%20
+management-system/issues/new?body=module:%20
+mgmtsystem_kpi%0Aversion:%20
 9.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Credits
@@ -114,6 +56,7 @@ Contributors
 * Loic Lacroix <loic.lacroix@savoirfairelinux.com>
 * Sandy Carter <sandy.carter@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
+* Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 
 Maintainer
 ----------
