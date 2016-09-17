@@ -3,9 +3,10 @@
 # * mgmtsystem_nonconformity
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2018
 msgid ""
 msgstr ""
+<<<<<<< 19a6a1e2b2346973a7e606ae13ff71a295611ed8
 <<<<<<< 81f0f8b4a50f8350dbc31685704dae172c29e49e
 <<<<<<< 19d3f3816117255b1aa904f172ddd5c52c1092f4
 "Project-Id-Version: openerp-mgmtsystem\n"
@@ -165,10 +166,13 @@ msgstr "Évaluée par"
 =======
 "Project-Id-Version: Odoo Server 9.0c\n"
 >>>>>>> OCA Transbot updated translations from Transifex
+=======
+"Project-Id-Version: Odoo Server 10.0\n"
+>>>>>>> OCA Transbot updated translations from Transifex
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-04 02:45+0000\n"
-"PO-Revision-Date: 2016-08-04 02:45+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2018-01-15 18:09+0000\n"
+"PO-Revision-Date: 2018-01-15 18:09+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -202,11 +206,6 @@ msgid "Action"
 msgstr "Action"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_needaction
-msgid "Action Needed"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:11
 #: model:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 #: model:mgmtsystem.nonconformity.stage,name:mgmtsystem_nonconformity.stage_pending
@@ -222,7 +221,7 @@ msgid "Action Plan Comments"
 msgstr "Commentaires du plan d'action"
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:187
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:173
 #, python-format
 msgid ""
 "Action plan  comments are required in order to put a nonconformity In "
@@ -246,7 +245,7 @@ msgid "Add a description ..."
 msgstr "Ajouter une description..."
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:203
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:189
 #, python-format
 msgid "All actions must be done before closing a Nonconformity."
 msgstr ""
@@ -536,11 +535,6 @@ msgid "Conclusions from the last effectiveness evaluation."
 msgstr "Conclusions de la dernière évaluation d'efficacité."
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_corrective_action_id
-msgid "Corrective action"
-msgstr "Action corrective"
-
-#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin_create_uid
@@ -556,12 +550,7 @@ msgstr "Créée par"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity_create_date
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_create_date
 msgid "Created on"
-msgstr "Créé le"
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_last_post
-msgid "Date of the last message posted on the record."
-msgstr "Date du dernier message"
+msgstr "Créée le "
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_days_since_updated
@@ -595,7 +584,7 @@ msgstr "Revue de direction"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom à afficher"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:9
@@ -634,7 +623,7 @@ msgid "Evaluation Comments"
 msgstr "Commentaires de l'évaluation"
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:196
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:182
 #, python-format
 msgid "Evaluation Comments are required in order to close a Nonconformity."
 msgstr ""
@@ -685,18 +674,8 @@ msgid "Filled in by"
 msgstr "Remplie par"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_follower_ids
-msgid "Followers"
-msgstr "Abonnés"
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_partner_ids
-msgid "Followers (Partners)"
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_fold
+msgid "Folded in Kanban"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
@@ -839,17 +818,7 @@ msgstr "L'action immédiate de l'analyse n'est pas fermée."
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity_id
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_id
 msgid "ID"
-msgstr "Identifiant"
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_unread
-msgid "If checked new messages require your attention."
-msgstr "Si coché, les nouveaux messages demanderont votre attention."
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_needaction
-msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "ID"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_immediate_action_id
@@ -890,6 +859,7 @@ msgid "Internal client complaint"
 msgstr "Plainte d'un client interne"
 
 #. module: mgmtsystem_nonconformity
+<<<<<<< 19a6a1e2b2346973a7e606ae13ff71a295611ed8
 <<<<<<< 81f0f8b4a50f8350dbc31685704dae172c29e49e
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 #: help:mgmtsystem.nonconformity.cause,sequence:0
@@ -934,6 +904,10 @@ msgstr "Est abonné"
 =======
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_is_follower
 msgid "Is Follower"
+=======
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_is_starting
+msgid "Is starting Stage"
+>>>>>>> OCA Transbot updated translations from Transifex
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
@@ -948,18 +922,13 @@ msgid "Lack of expertise"
 msgstr "Manque d'expertise"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_last_post
-msgid "Last Message Date"
-msgstr "Date du dernier message"
-
-#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Dernière modification le"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause_write_uid
@@ -996,11 +965,6 @@ msgid "Manager"
 msgstr "Supérieur"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_ids
-msgid "Messages"
-msgstr "Messages"
-
-#. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_min
 msgid "Minor"
 msgstr "Mineure"
@@ -1034,7 +998,7 @@ msgstr "Non-conformité"
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_report_mgmtsystem_nonconformity_tree
 msgid "Nonconformities"
-msgstr "Non-conformités"
+msgstr "Nonconformités"
 
 #. module: mgmtsystem_nonconformity
 <<<<<<< 81f0f8b4a50f8350dbc31685704dae172c29e49e
@@ -1116,7 +1080,12 @@ msgstr "Non-conformités en attente de révision"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity
 msgid "Nonconformity"
-msgstr "Nonconformité"
+msgstr "Non-conformité"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.ui.view,arch_db:mgmtsystem_nonconformity.mgmtsystem_nonconformity_stage_form_view
+msgid "Nonconformity Stage"
+msgstr ""
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_stage
@@ -1127,21 +1096,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action_nonconformity_immediate_id
 msgid "Nonconformity immediate id"
 msgstr "Action immédiate"
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_needaction_counter
-msgid "Number of Actions"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_unread_counter
-msgid "Number of unread messages"
-msgstr ""
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
@@ -1203,6 +1157,7 @@ msgid "Plan Review"
 msgstr "Revue du plan"
 
 #. module: mgmtsystem_nonconformity
+<<<<<<< 19a6a1e2b2346973a7e606ae13ff71a295611ed8
 <<<<<<< 81f0f8b4a50f8350dbc31685704dae172c29e49e
 <<<<<<< 19d3f3816117255b1aa904f172ddd5c52c1092f4
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
@@ -1483,6 +1438,8 @@ msgstr "Action préventive"
 >>>>>>> OCA Transbot updated translations from Transifex
 #: field:mgmtsystem.nonconformity,procedure_ids:0
 =======
+=======
+>>>>>>> OCA Transbot updated translations from Transifex
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_procedure_ids
 #: model:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 >>>>>>> OCA Transbot updated translations from Transifex
@@ -1556,7 +1513,7 @@ msgstr "Séquence"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_severity_list
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity_id_2657
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity_id_2633
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_severity
 msgid "Severity"
 msgstr "Sévérité"
@@ -1568,21 +1525,21 @@ msgid "Severity of Complaints and Nonconformities"
 msgstr "Sévérité des plaintes et des non-conformités"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_id_2664
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_id_2640
 msgid "Stage"
-msgstr ""
+msgstr "Étape"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_name
 msgid "Stage Name"
-msgstr ""
+msgstr "Nom de l'étape"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.mgmtsystem_nonconformity_stage_action
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_nonconformity_stages
 #: model:ir.ui.view,arch_db:mgmtsystem_nonconformity.mgmtsystem_nonconformity_stage_tree_view
 msgid "Stages"
-msgstr ""
+msgstr "Étapes"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_state
@@ -1602,9 +1559,16 @@ msgid "Technical failure"
 msgstr "Panne technique"
 
 #. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_fold
+msgid ""
+"This stage is folded in the kanban view when there are \n"
+"no records in that stage to display."
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity_name
 msgid "Title"
-msgstr "Titre"
+msgstr "Intitulé"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_no
@@ -1612,15 +1576,9 @@ msgid "Unfounded"
 msgstr "Infondée"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_unread
 #: model:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_kanban
 msgid "Unread Messages"
 msgstr "Messages non-lus"
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_unread_counter
-msgid "Unread Messages Counter"
-msgstr ""
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_sequence
@@ -1633,19 +1591,10 @@ msgid "User"
 msgstr "Utilisateur"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_website_message_ids
-msgid "Website communication history"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
 msgid "Work conditions"
 msgstr "Conditions de travail"
+<<<<<<< 19a6a1e2b2346973a7e606ae13ff71a295611ed8
 <<<<<<< 81f0f8b4a50f8350dbc31685704dae172c29e49e
 
 #. module: mgmtsystem_nonconformity
@@ -1722,4 +1671,13 @@ msgid "board.mgmtsystem.nonconformity.act_window"
 msgstr "board.mgmtsystem.nonconformity.act_window"
 >>>>>>> OCA Transbot updated translations from Transifex
 =======
+>>>>>>> OCA Transbot updated translations from Transifex
+=======
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_is_starting
+msgid ""
+"select stis checkbox if this is the default stage \n"
+"for new nonconformities"
+msgstr ""
 >>>>>>> OCA Transbot updated translations from Transifex
