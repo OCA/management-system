@@ -3,20 +3,20 @@
 # * mgmtsystem_action
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
+# Peter Hageman <hageman.p@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-17 02:42+0000\n"
-"PO-Revision-Date: 2017-06-17 02:42+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Latvian (https://www.transifex.com/oca/teams/23907/lv/)\n"
+"POT-Creation-Date: 2017-06-17 04:24+0000\n"
+"PO-Revision-Date: 2017-06-17 04:24+0000\n"
+"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
+"Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: lv\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
@@ -67,7 +67,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_number_of_days_to_close
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_number_of_days_to_close
 msgid "# of days to close"
-msgstr ""
+msgstr "# dagen tot sluiting"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_number_of_days_to_open
@@ -83,27 +83,27 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "#0000ff"
-msgstr ""
+msgstr "#0000ff"
 
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "#00ff00"
-msgstr ""
+msgstr "#00ff00"
 
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "#ffa500"
-msgstr ""
+msgstr "#ffa500"
 
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "#ffffff"
-msgstr ""
+msgstr "#ffffff"
 
 #. module: mgmtsystem_action
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "${object.name}"
-msgstr ""
+msgstr "${object.name}"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
@@ -111,7 +111,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_tree
 msgid "Action"
-msgstr "Darbība"
+msgstr "Actie"
 
 #. module: mgmtsystem_action
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:148
@@ -150,12 +150,12 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_report_mgmtsystem_action_graph
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_report_mgmtsystem_action_pivot
 msgid "Actions"
-msgstr "Darbības"
+msgstr "Acties"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_active
 msgid "Active"
-msgstr "Aktīvs"
+msgstr "Actief"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_age
@@ -180,7 +180,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_close
 msgid "Closed"
-msgstr "Slēgts"
+msgstr "Gesloten"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_date_closed
@@ -195,49 +195,49 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_company_id
 msgid "Company"
-msgstr ""
+msgstr "Bedrijf"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 #: selection:mgmtsystem.action.report,type_action:0
 msgid "Corrective Action"
-msgstr "Korektīvās darbības"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_create_date
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_create_date
 msgid "Create Date"
-msgstr ""
+msgstr "Aanmaakdatum"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Aangemaakt door"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Aangemaakt op"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_date_deadline
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_date_deadline
 msgid "Deadline"
-msgstr "Termiņš"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_description
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 msgid "Description"
-msgstr "Apraksts"
+msgstr "Omschrijving"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Weergavenaam"
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_draft
@@ -279,37 +279,37 @@ msgstr ""
 #: selection:mgmtsystem.action,type_action:0
 #: selection:mgmtsystem.action.report,type_action:0
 msgid "Immediate Action"
-msgstr "Tūlītēja darbība"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 #: selection:mgmtsystem.action.report,type_action:0
 msgid "Improvement Opportunity"
-msgstr "Uzlabojuma iespēja"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_open
 msgid "In Progress"
-msgstr "Tiek izpildīts"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Laatst aangepast op"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Laatst bijgewerkt door"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_write_date
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_report
@@ -331,12 +331,12 @@ msgstr ""
 #: selection:mgmtsystem.action,type_action:0
 #: selection:mgmtsystem.action.report,type_action:0
 msgid "Preventive Action"
-msgstr "Preventīvā darbība"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_reference
 msgid "Reference"
-msgstr "Atsauce"
+msgstr "Referentie"
 
 #. module: mgmtsystem_action
 #: model:mail.template,subject:mgmtsystem_action.action_email_template_reminder_action
@@ -347,12 +347,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_type_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_type_action
 msgid "Response Type"
-msgstr "Reakcijas laiks"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_user_id
 msgid "Responsible"
-msgstr "Atbildīgais"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_sequence
@@ -363,19 +363,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_stage_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id
 msgid "Stage"
-msgstr "Stadija"
+msgstr "Fase"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_name
 msgid "Stage Name"
-msgstr ""
+msgstr "Fasenaam"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.mgmtsystem_action_stage_action
 #: model:ir.ui.menu,name:mgmtsystem_action.menu_mgmtsystem_action_stages
 #: model:ir.ui.view,arch_db:mgmtsystem_action.mgmtsystem_action_stage_tree_view
 msgid "Stages"
-msgstr ""
+msgstr "Fasen"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_is_starting
@@ -385,23 +385,23 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_name
 msgid "Subject"
-msgstr "Temats"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_system_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_system_id
 msgid "System"
-msgstr "Sistēma"
+msgstr "Systeem"
 
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Type"
-msgstr "Veids"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Unread Messages"
-msgstr "Neizlasītās vēstules"
+msgstr "Ongelezen berichten"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_stage_sequence
@@ -412,7 +412,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_user_id
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "User"
-msgstr "Lietotājs"
+msgstr "Gebruiker"
 
 #. module: mgmtsystem_action
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:144
@@ -429,4 +429,4 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
-msgstr ""
+msgstr "oe_kanban_text_red"
