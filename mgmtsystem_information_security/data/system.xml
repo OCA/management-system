@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="system_information_security" model="mgmtsystem.system">
+      <field name="name">Information Security</field>
+      <field name="manual" ref="information_security_manual.document_page_information_security_manual"/>
+      <field name="type">information_security</field>
+    </record>
+
+  </data>
+</odoo>
