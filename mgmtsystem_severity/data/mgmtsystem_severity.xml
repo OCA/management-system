@@ -1,6 +1,5 @@
-<openerp>
+<odoo>
     <data>
-
         <!-- Hazard Severity-->
         <record id="data_mgmtsystem_severity_hazard_4"
                 model="mgmtsystem.severity">
@@ -9,21 +8,21 @@
             <field name="category">hazard</field>
         </record>
 
-        <record id="view_mgmtsystem_severity_hazard_3"
+        <record id="data_mgmtsystem_severity_hazard_3"
                 model="mgmtsystem.severity">
             <field name="name">Important</field>
             <field name="value">3</field>
             <field name="category">hazard</field>
         </record>
 
-        <record id="view_mgmtsystem_severity_hazard_2"
+        <record id="data_mgmtsystem_severity_hazard_2"
                 model="mgmtsystem.severity">
             <field name="name">Limited</field>
             <field name="value">2</field>
             <field name="category">hazard</field>
         </record>
 
-        <record id="view_mgmtsystem_severity_hazard_1"
+        <record id="data_mgmtsystem_severity_hazard_1"
                 model="mgmtsystem.severity">
             <field name="name">Negligible</field>
             <field name="value">1</field>
@@ -38,26 +37,25 @@
             <field name="category">security</field>
         </record>
 
-        <record id="view_mgmtsystem_severity_security_3"
+        <record id="data_mgmtsystem_severity_security_3"
                 model="mgmtsystem.severity">
             <field name="name">Important</field>
             <field name="value">3</field>
             <field name="category">security</field>
         </record>
 
-        <record id="view_mgmtsystem_severity_security_2"
+        <record id="data_mgmtsystem_severity_security_2"
                 model="mgmtsystem.severity">
             <field name="name">Limited</field>
             <field name="value">2</field>
             <field name="category">security</field>
         </record>
 
-        <record id="view_mgmtsystem_severity_security_1"
+        <record id="data_mgmtsystem_severity_security_1"
                 model="mgmtsystem.severity">
             <field name="name">Negligible</field>
             <field name="value">1</field>
             <field name="category">security</field>
         </record>
-
-    </data>
-</openerp>
+    </data> 
+</odoo>
