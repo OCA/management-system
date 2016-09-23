@@ -1,6 +1,5 @@
-<openerp>
+<odoo>
     <data>
-
         <record id="view_mgmtsystem_probability_form" model="ir.ui.view">
             <field name="name">mgmtsystem.probability.form</field>
             <field name="model">mgmtsystem.probability</field>
@@ -38,11 +37,10 @@
             <field name="view_id" eval="False"/>
         </record>
 
-        <menuitem id="menu_open_mgmtsystem_probability" 
-            action="open_mgmtsystem_probability_list" 
-            parent="mgmtsystem.menu_mgmtsystem_configuration" 
-            sequence="20" 
+        <menuitem id="menu_open_mgmtsystem_probability"
+            action="open_mgmtsystem_probability_list"
+            parent="mgmtsystem.menu_mgmtsystem_configuration"
+            sequence="20"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
-
     </data>
-</openerp>
+</odoo>
