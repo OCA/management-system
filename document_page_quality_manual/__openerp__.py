@@ -32,7 +32,7 @@
     'data': [
         'data/document_page.xml'
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'images': [
         'images/wiki_pages_quality_manual.jpeg'
