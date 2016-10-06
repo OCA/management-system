@@ -76,6 +76,7 @@ system:
         'views/mgmtsystem_action_stage.xml',
         'board_mgmtsystem_action.xml',
     ],
+<<<<<<< fea8ec8be53703ae4078bb2f7f364cdfea8ed53e
     "demo": ['demo_action.xml'],
 <<<<<<< 8a613dac39a83508dda8ffee50736a0e4aed0699
 <<<<<<< 22ac775a1ed32d9a73fa3338a4b6c15d7e7b3d41
@@ -88,6 +89,12 @@ system:
     "installable": True,
 >>>>>>> Added tests and updated code to v8
 =======
+    'installable': False,
+>>>>>>> [MIG] Make modules uninstallable
+=======
+    "demo": [
+        'demo/mgmtsystem_action.xml',
+    ],
     'installable': False,
 >>>>>>> [MIG] Make modules uninstallable
 }
