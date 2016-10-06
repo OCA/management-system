@@ -35,5 +35,5 @@
         'views/document_page_work_instructions.xml',
     ],
     "demo": [],
-    'installable': True,
+    'installable': False,
 }
