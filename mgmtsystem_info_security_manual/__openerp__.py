@@ -32,5 +32,5 @@
         'data/information_security_manual.xml',
     ],
     "demo": [],
-    'installable': True,
+    'installable': False,
 }
