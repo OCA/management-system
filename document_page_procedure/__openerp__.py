@@ -79,6 +79,7 @@
     "demo": [
         'demo/document_page_procedure.xml',
     ],
+<<<<<<< 6d3f279523d8de2678337897d680647654357478
 <<<<<<< 8be13d08270133e4a2f1db7fdda9f940fe3b12aa
 <<<<<<< 0ca876f1776d2d3b9b73093ae412c476b6a4634c
 >>>>>>> Review changes from PR#35
@@ -94,4 +95,7 @@
 =======
     'installable': True,
 >>>>>>> Migration of document_page_procedure to Odoo 9.0
+=======
+    'installable': False,
+>>>>>>> [MIG] Make modules uninstallable
 }
