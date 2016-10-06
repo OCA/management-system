@@ -82,7 +82,7 @@ This module enables you to manage your quality management system, including :
     "data": [
         'data/mgmtsystem_system.xml',
     ],
-    'installable': True,
+    'installable': False,
     "application": True,
 }
 >>>>>>> Migrate mgmtsystem_quality
