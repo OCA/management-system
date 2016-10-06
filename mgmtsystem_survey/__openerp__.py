@@ -68,6 +68,6 @@
     ],
     "demo": [
     ],
-    'installable': True,
+    'installable': False,
 }
 >>>>>>> Added mgmtsystem_survey to ported code
