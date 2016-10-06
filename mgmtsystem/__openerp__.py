@@ -39,5 +39,5 @@
         'views/res_config.xml'
     ],
     "demo": [],
-    'installable': True,
+    'installable': False,
 }

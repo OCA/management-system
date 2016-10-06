@@ -35,5 +35,5 @@
     "demo": [
         'demo/document_page_procedure.xml',
     ],
-    'installable': True,
+    'installable': False,
 }

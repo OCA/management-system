@@ -41,5 +41,5 @@
     "demo": [
         'demo/mgmtsystem_action.xml',
     ],
-    'installable': True,
+    'installable': False,
 }
