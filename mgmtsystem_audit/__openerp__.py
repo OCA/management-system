@@ -86,6 +86,7 @@ management system.
     "demo": [
         'demo/demo_audit.xml',
     ],
+<<<<<<< b3c0a54eae7a03bc508cd23b094b2c6a5339d97a
 <<<<<<< e00fa43c595690d36669b683a085e5741efb9324
 <<<<<<< 7b789f414fa0decc3c5afe3bd77d89f33eb53e4f
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
@@ -103,4 +104,7 @@ management system.
 =======
     'installable': True,
 >>>>>>> [MIG] mgmtsystem_audit
+=======
+    'installable': False,
+>>>>>>> [MIG] Make modules uninstallable
 }
