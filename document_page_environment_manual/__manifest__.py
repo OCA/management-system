@@ -32,5 +32,5 @@
         'data/document_page_environment_manual.xml'
     ],
     "demo": [],
-    'installable': True,
+    'installable': False,
 }
