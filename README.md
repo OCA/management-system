@@ -42,7 +42,7 @@ addon | version | summary
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 8.0.1.2.0 | Management System - Nonconformity
 [mgmtsystem_nonconformity_analytic](mgmtsystem_nonconformity_analytic/) | 8.0.1.0.0 | Management System Nonconformity - Analytic Account
 [mgmtsystem_nonconformity_claim](mgmtsystem_nonconformity_claim/) | 8.0.1.0.0 | Management System - Claims and Nonconformities
-[mgmtsystem_nonconformity_project](mgmtsystem_nonconformity_project/) | 1.0 | Management System - Project
+[mgmtsystem_nonconformity_project](mgmtsystem_nonconformity_project/) | 8.0.1.0.0 | Management System - Project
 [mgmtsystem_quality](mgmtsystem_quality/) | 8.0.1.0.0 | Quality Management System
 [mgmtsystem_review](mgmtsystem_review/) | 8.0.1.0.0 | Management System - Review
 [mgmtsystem_survey](mgmtsystem_survey/) | 8.0.1.0.0 | Management System - Survey
