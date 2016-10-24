@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Management System Probability",
-    "version": "1.0",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "complexity": "normal",
     "depends": [
         "mgmtsystem",
     ],
