@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
+# Copyright 2015 Savoir-faire Linux <https://www.savoirfairelinux.com/>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import fields, models, _
 
 
 class MgmtSystemSeverity(models.Model):
-
     """
     Define the Severity for management system.
 
@@ -21,7 +22,7 @@ class MgmtSystemSeverity(models.Model):
 
     value = fields.Integer("Value", required=True)
 
-    category = fields.Selection((
+    category = fields.Selection([
         ("hazard", _("hazard")),
         ("security", _("security")),
-    ), 'Category', required=True)
+    ], 'Category', required=True)
