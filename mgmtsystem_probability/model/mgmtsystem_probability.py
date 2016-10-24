@@ -6,7 +6,6 @@ from openerp import fields, models, _
 
 
 class MgmtSystemProbability(models.Model):
-
     """
     Define the Probability for management system.
 
