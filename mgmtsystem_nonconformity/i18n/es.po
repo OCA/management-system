@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
+# Iván Todorovich <ivan.todorovich@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-07 06:43+0000\n"
-"PO-Revision-Date: 2016-08-07 06:43+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2016-09-17 22:16+0000\n"
+"PO-Revision-Date: 2016-09-17 22:16+0000\n"
+"Last-Translator: Iván Todorovich <ivan.todorovich@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,12 +22,12 @@ msgstr ""
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_number_of_days_to_close
 msgid "# of days to close"
-msgstr ""
+msgstr "# de días para cerrar"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_number_of_nonconformities
 msgid "# of nonconformities"
-msgstr ""
+msgstr "# de no conformidades"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_kanban_state
@@ -45,7 +46,7 @@ msgstr "Acción"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Acción requerida"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:11
@@ -69,6 +70,8 @@ msgid ""
 "Action plan  comments are required in order to put a nonconformity In "
 "Progress."
 msgstr ""
+"Los comentarios del plan de acción son requeridos para establecer a la no "
+"conformidad en estado 'En progreso'."
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_action_ids
@@ -91,6 +94,8 @@ msgstr "Añadir una descripción ..."
 #, python-format
 msgid "All actions must be done before closing a Nonconformity."
 msgstr ""
+"Todas las acciones deben estar realizadas antes de cerrar una no "
+"conformidad."
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:10
@@ -133,7 +138,7 @@ msgstr "Necesidad mal definida"
 #. module: mgmtsystem_nonconformity
 #: selection:mgmtsystem.nonconformity,kanban_state:0
 msgid "Blocked"
-msgstr ""
+msgstr "Bloqueado"
 
 #. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:14
@@ -200,7 +205,7 @@ msgstr "No conformidades cerradas"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_closing_date
 msgid "Closing Date"
-msgstr ""
+msgstr "Fecha de Cierre"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_action_comments
@@ -248,7 +253,7 @@ msgstr "Fecha del último mensaje publicado en el registro."
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_days_since_updated
 msgid "Days since updated"
-msgstr ""
+msgstr "Días desde la última actualización"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause_sequence
@@ -296,7 +301,7 @@ msgstr "Borrador/Nuevas no conformidades"
 #. module: mgmtsystem_nonconformity
 #: model:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_kanban
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
@@ -344,12 +349,12 @@ msgstr "Seguidores"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Seguidores (canales)"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Seguidores (empresas)"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause_parent_id

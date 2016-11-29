@@ -155,7 +155,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_report_mgmtsystem_action_graph
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_report_mgmtsystem_action_pivot
 msgid "Actions"
-msgstr ""
+msgstr "动作"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_active
@@ -228,7 +228,7 @@ msgstr "创建时间"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "发布到记录上的最后消息的日期"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_date_deadline
@@ -240,14 +240,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_description
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 msgid "Description"
-msgstr ""
+msgstr "说明"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "显示名称"
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_draft
@@ -267,7 +267,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "关注者"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_channel_ids
@@ -296,7 +296,7 @@ msgstr "ID"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_unread
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "查看是否有需要留意的新信息。"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_needaction
@@ -335,14 +335,14 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_last_post
 msgid "Last Message Date"
-msgstr ""
+msgstr "最后消息日期"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "最后修改时间"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_write_uid
@@ -369,7 +369,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_ids
 msgid "Messages"
-msgstr ""
+msgstr "消息"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_needaction_counter
@@ -422,7 +422,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_sequence
 msgid "Sequence"
-msgstr ""
+msgstr "序号"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_stage_id
@@ -461,13 +461,13 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_unread
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Unread Messages"
-msgstr ""
+msgstr "未读消息"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_unread_counter
@@ -494,12 +494,12 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "网站消息"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "网站沟通记录"
 
 #. module: mgmtsystem_action
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:172
