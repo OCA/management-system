@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
+# Ozge Altinisik <ozge@altinkaya.com.tr>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-30 02:50+0000\n"
-"PO-Revision-Date: 2016-07-30 02:50+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-01-06 14:14+0000\n"
+"PO-Revision-Date: 2017-01-06 14:14+0000\n"
+"Last-Translator: Ozge Altinisik <ozge@altinkaya.com.tr>, 2016\n"
 "Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -111,7 +112,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_tree
 msgid "Action"
-msgstr ""
+msgstr "Eylem"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_needaction
@@ -155,12 +156,12 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_report_mgmtsystem_action_graph
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_report_mgmtsystem_action_pivot
 msgid "Actions"
-msgstr ""
+msgstr "Eylemler"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_active
 msgid "Active"
-msgstr ""
+msgstr "Aktif"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_age
@@ -200,7 +201,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_company_id
 msgid "Company"
-msgstr ""
+msgstr "Şirket"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
@@ -218,17 +219,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Oluşturan"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Oluşturuldu"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Kayıda eklenen son mesajın tarihi."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_date_deadline
@@ -240,24 +241,24 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_description
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 msgid "Description"
-msgstr ""
+msgstr "Açıklama"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Görünen İsim"
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_draft
 msgid "Draft"
-msgstr ""
+msgstr "Taslak"
 
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Edit"
-msgstr ""
+msgstr "Düzenle"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_is_ending
@@ -267,7 +268,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Takipçiler"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_channel_ids
@@ -289,14 +290,14 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_id
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_2127
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_2560
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_unread
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Eğer işaretlenirse yeni mesajlar dikkatinizi ister."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_needaction
@@ -335,26 +336,26 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_last_post
 msgid "Last Message Date"
-msgstr ""
+msgstr "Son mesaj tarihi"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Son değişiklik"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Son güncelleyen"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_write_date
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Son güncelleme"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_report
@@ -369,7 +370,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mesajlar"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_needaction_counter
@@ -422,7 +423,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Sıra"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_stage_id
@@ -461,7 +462,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Type"
-msgstr ""
+msgstr "Tipi"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_unread
@@ -483,12 +484,22 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_user_id
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "User"
-msgstr ""
+msgstr "Kullanıcı"
 
 #. module: mgmtsystem_action
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:154
 #, python-format
 msgid "We cannot bring back the action to draft stage"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_website_message_ids
+msgid "Website communication history"
 msgstr ""
 
 #. module: mgmtsystem_action

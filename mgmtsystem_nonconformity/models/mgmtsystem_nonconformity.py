@@ -16,7 +16,9 @@ class MgmtsystemNonconformity(models.Model):
 
     def _default_stage(self):
         """Return the default stage."""
-        return self.env.ref('mgmtsystem_nonconformity.stage_draft')
+        return (
+            self.env.ref('mgmtsystem_nonconformity.stage_draft', False) or
+            self.env['mgmtsystem.nonconformity.stage'])
 
     @api.model
     def _stage_groups(self, present_ids, domain, **kwargs):
