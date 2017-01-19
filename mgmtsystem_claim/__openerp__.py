@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Management System - Claim",
-    "version": "8.0.1.1.0",
+    "version": "9.0.1.1.1",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -38,11 +38,12 @@ This module enables you to manage the claims of your management system.
         'security/mgmtsystem_claim_security.xml',
         'data/claim_sequence.xml',
         'data/mgmtsystem_claim_stage.xml',
-        'views/menus.xml',
         'views/mgmtsystem_claim.xml',
-        'views/mgmtsystem_claim_stage.xml',
+        'reports/mgmtsystem_claim_report.xml',
         'workflow_mgmtsystem_claim.xml',
-        'views/board_mgmtsystem_claim.xml',
+        'views/menus.xml',
+        'views/mgmtsystem_claim_stage.xml',
+
     ],
-    'installable': False,
+    'installable': True,
 }

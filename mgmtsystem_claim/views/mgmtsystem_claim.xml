@@ -20,7 +20,7 @@
           <field name="stage_id" />
           <field name="date_deadline" invisible="1"/>
           <field name="date_closed" invisible="1"/>
-          <field name="company_id" group="base.group_multi_company"/>
+          <field name="company_id" groups="base.group_multi_company"/>
         </tree>
       </field>
     </record>
@@ -38,12 +38,12 @@
               <field name="name"/>
               <field name="date"/>
               <field name="reference"/>
-              <field name="company_id" group="base.group_multi_company"/>
+              <field name="company_id" groups="base.group_multi_company"/>
             </group>
             <group colspan="4" col="4"  groups="base.group_user">
               <field name="user_id"/>
               <field name="priority"/>
-              <field name="section_id"/>
+              <field name="team_id"/>
               <field name="date_deadline"/>
             </group>
             <group colspan="4" col="4">
@@ -59,8 +59,7 @@
                   <group colspan="2" col="2" groups="base.group_user">
                     <separator colspan="2" string="Responsibilities"/>
                     <field name="user_fault"/>
-                    <field name="categ_id" widget="selection"
-                      domain="[('object_id.model', '=', 'crm.claim')]"/>
+                    <field name="categ_id" widget="selection"/>
                     <field name="ref"/>
                   </group>
                   <separator colspan="4" string="Claim/Action Description" groups="base.group_user"/>
