@@ -33,6 +33,7 @@ addon | version | summary
 [mgmtsystem](mgmtsystem/) | 9.0.1.0.0 | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 9.0.1.0.0 | Management System - Action
 [mgmtsystem_audit](mgmtsystem_audit/) | 9.0.1.0.0 | Management System - Audit
+[mgmtsystem_claim](mgmtsystem_claim/) | 9.0.1.1.1 | Management System - Claim
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 9.0.1.0.0 | Information Security Management System Manual
 [mgmtsystem_manual](mgmtsystem_manual/) | 9.0.1.0.0 | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 9.0.1.0.0 | Management System - Nonconformity
@@ -46,7 +47,6 @@ addon | version | summary
 --- | --- | ---
 [mgmtsystem_action_audittrail](mgmtsystem_action_audittrail/) | 1.0 (unported) | Management System - Actions Audit Trail tracking
 [mgmtsystem_audit_audittrail](mgmtsystem_audit_audittrail/) | 1.0 (unported) | Management System - Audits Audit Trail tracking
-[mgmtsystem_claim](mgmtsystem_claim/) | 8.0.1.1.0 (unported) | Management System - Claim
 [mgmtsystem_claim_audittrail](mgmtsystem_claim_audittrail/) | 1.0 (unported) | Management System - Claims Audit Trail tracking
 [mgmtsystem_environment](mgmtsystem_environment/) | 8.0.1.0.0 (unported) | Environment Management System
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 1.1 (unported) | Management System - Hazard
