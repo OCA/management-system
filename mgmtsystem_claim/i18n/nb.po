@@ -3,15 +3,15 @@
 # * mgmtsystem_claim
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: management-system (8.0)\n"
+"Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-07 14:27+0000\n"
-"PO-Revision-Date: 2015-05-22 13:07+0000\n"
-"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
-"Language-Team: Norwegian Bokmål (http://www.transifex.com/oca/OCA-management-system-8-0/language/nb/)\n"
+"POT-Creation-Date: 2017-01-20 03:39+0000\n"
+"PO-Revision-Date: 2017-01-20 03:39+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Norwegian Bokmål (https://www.transifex.com/oca/teams/23907/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_claim
-#: model:email.template,body_html:mgmtsystem_claim.action_email_template_reminder_action
+#: model:mail.template,body_html:mgmtsystem_claim.action_email_template_reminder_action
 msgid ""
 "\n"
 "        \n"
@@ -45,59 +45,109 @@ msgid ""
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: model:email.template,subject:mgmtsystem_claim.action_email_template_reminder_action
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_number_of_claims
+msgid "# of claims"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_number_of_days_to_close
+msgid "# of days to close"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_number_of_exceedings_days
+msgid "# of exceedings days"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.actions.server,subject:mgmtsystem_claim.mgmtsystem_claim_server_action
+#: model:mail.template,subject:mgmtsystem_claim.action_email_template_reminder_action
 msgid "${object.name}"
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,type_action:0
+#: model:ir.actions.server,body_html:mgmtsystem_claim.mgmtsystem_claim_server_action
+msgid ""
+"<p>\n"
+"  Hello,\n"
+"  A new claim has been assigned to you:\n"
+"</p>\n"
+"<p>\n"
+"  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
+"</p>\n"
+"<p>\n"
+"  ${object.description}\n"
+"</p>\n"
+"<p>\n"
+"Thank you.\n"
+"</p>\n"
+"--\n"
+"<p>\n"
+"  OpenERP\n"
+"</p>"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_type_action
 msgid "Action Type"
 msgstr "Tiltakstype"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_report_mgmtsystem_claim_graph
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_report_mgmtsystem_claim_pivot
 msgid "Actions"
 msgstr "Tiltak"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,active:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_active
 msgid "Active"
+msgstr "Aktiv"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_age
+msgid "Age"
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "All pending Claims"
 msgstr "Alle utestående krav."
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,categ_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_categ_id
 msgid "Category"
 msgstr "Kategori"
 
 #. module: mgmtsystem_claim
 #: model:ir.model,name:mgmtsystem_claim.model_mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claim"
 msgstr "Reklamasjon"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
-#: field:mgmtsystem.claim,date:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_date
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Claim Date"
 msgstr "Reklamasjonsdato"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claim Description"
 msgstr "Reklamasjonsbeskrivelse"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claim Reporter"
 msgstr "Reklamasjonsrapportør"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,name:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_name
 msgid "Claim Subject"
 msgstr "Reklamasjonsobjekt"
 
@@ -107,7 +157,7 @@ msgid "Claim stages"
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claim/Action Description"
 msgstr "Beskrivelse av krav/tiltak"
 
@@ -115,29 +165,35 @@ msgstr "Beskrivelse av krav/tiltak"
 #: model:ir.actions.act_window,name:mgmtsystem_claim.mgmtsystem_claim_action
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_config_claim
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_mgmtsystem_claims
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_calendar_view
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_tree_view
+#: model:ir.ui.menu,name:mgmtsystem_claim.menu_report_mgmtsystem_action_tree
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_calendar_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_tree_view
 msgid "Claims"
 msgstr "Reklamasjoner"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,date_closed:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_date_closed
+msgid "Close Date"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_date_closed
 msgid "Closed"
 msgstr "Stengt"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Closure"
 msgstr "Stengning"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim.stage,case_default:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_case_default
 msgid "Common to All Teams"
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,company_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_company_id
 msgid "Company"
 msgstr "Firma"
 
@@ -147,81 +203,111 @@ msgid "Corrective Action"
 msgstr "Korrigerende handling."
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,create_uid:0
-#: field:mgmtsystem.claim.stage,create_uid:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_create_date
+msgid "Create Date"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Opprettet av"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim.stage,create_date:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Opprettet den"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,create_date:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_create_date
 msgid "Creation Date"
 msgstr "Opprettelsesdato"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Current"
 msgstr "Gjeldende"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Date Closed"
 msgstr "Dato lukket"
 
 #. module: mgmtsystem_claim
-#: help:mgmtsystem.claim,message_last_post:0
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Dato for siste melding på denne posten."
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Dates"
 msgstr "Datoer"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
-#: field:mgmtsystem.claim,date_deadline:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_date_deadline
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_date_deadline
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Deadline"
 msgstr "Frist"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,description:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_description
 msgid "Description"
 msgstr "Beskrivelse"
 
 #. module: mgmtsystem_claim
-#: help:mgmtsystem.claim,email_from:0
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_email_from
 msgid "Destination email for email gateway."
-msgstr ""
+msgstr "Mottakers epost for epost grensesnitt."
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_display_name
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_display_name
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_display_name
+msgid "Display Name"
+msgstr "Visnings navn"
+
+#. module: mgmtsystem_claim
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Draft and Open Claims"
 msgstr "Utkas og åpne reklamasjoner"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,email_from:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_email_from
 msgid "Email"
 msgstr "E-post"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Follow Up"
 msgstr "Følg opp."
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,message_follower_ids:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_follower_ids
 msgid "Followers"
+msgstr "Følgere."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_channel_ids
+msgid "Followers (Channels)"
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Group By..."
 msgstr "Grupper etter ..."
+
+#. module: mgmtsystem_claim
+#: model:ir.actions.act_window,help:mgmtsystem_claim.action_report_mgmtsystem_claim
+msgid ""
+"Have a general overview of all claims processed in the system by sorting "
+"them with specific criteria."
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
@@ -229,51 +315,59 @@ msgid "High"
 msgstr "Høy"
 
 #. module: mgmtsystem_claim
-#: help:mgmtsystem.claim,message_summary:0
-msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
-msgstr ""
-
-#. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,id:0 field:mgmtsystem.claim.stage,id:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_id
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_id
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_id
 msgid "ID"
 msgstr "ID"
 
 #. module: mgmtsystem_claim
-#: help:mgmtsystem.claim,message_unread:0
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_message_unread
 msgid "If checked new messages require your attention."
+msgstr "Hvis det er merket nye meldinger så krever dette din oppmerksomhet."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_message_needaction
+msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: help:mgmtsystem.claim.stage,case_default:0
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_stage_case_default
 msgid ""
 "If you check this field, this stage will be proposed by default on each "
 "sales team. It will not assign this stage to existing teams."
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,message_is_follower:0
-msgid "Is a Follower"
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_is_follower
+msgid "Is Follower"
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,message_last_post:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_last_post
 msgid "Last Message Date"
-msgstr ""
+msgstr "Siste meldingsdato"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,write_uid:0 field:mgmtsystem.claim.stage,write_uid:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim___last_update
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report___last_update
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage___last_update
+msgid "Last Modified on"
+msgstr "Sist oppdatert "
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Sist oppdatert av"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim.stage,write_date:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Sist oppdatert"
 
 #. module: mgmtsystem_claim
-#: help:mgmtsystem.claim.stage,section_ids:0
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_stage_team_ids
 msgid ""
 "Link between stages and sales teams. When set, this limitate the current "
 "stage to the selected sales teams."
@@ -285,22 +379,27 @@ msgid "Low"
 msgstr "Lav"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,message_ids:0
+#: model:ir.actions.act_window,name:mgmtsystem_claim.action_report_mgmtsystem_claim
+msgid "Management System Analysis"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model,name:mgmtsystem_claim.model_mgmtsystem_claim_report
+msgid "Management System Claim Report"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_ids
 msgid "Messages"
 msgstr "Meldinger"
 
 #. module: mgmtsystem_claim
-#: help:mgmtsystem.claim,message_ids:0
-msgid "Messages and communication history"
-msgstr ""
-
-#. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,action_next:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_action_next
 msgid "Next Action"
 msgstr "Neste handling"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,date_action_next:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_date_action_next
 msgid "Next Action Date"
 msgstr "Dato for neste tiltak"
 
@@ -315,24 +414,34 @@ msgid "Notify the person in charge of the new claim"
 msgstr "Meddel personen som har ansvar for den nye reklamasjonen"
 
 #. module: mgmtsystem_claim
-#: view:board.board:mgmtsystem_claim.board_mgmtsystem_claim_form
-msgid "Open Claims"
-msgstr "Åpne reklamasjoner"
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
-#: field:mgmtsystem.claim,partner_id:0
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_partner_id
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Partner"
 msgstr "Partner"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Pending"
 msgstr "Venter"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,partner_phone:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_partner_phone
 msgid "Phone"
 msgstr "Telefon"
 
@@ -342,7 +451,7 @@ msgid "Preventive Action"
 msgstr "Forebyggende Tiltak"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,priority:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_priority
 msgid "Priority"
 msgstr "Prioritet"
 
@@ -356,160 +465,167 @@ msgid ""
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,ref:0 field:mgmtsystem.claim,reference:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_ref
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_reference
 msgid "Reference"
 msgstr "Referanse"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,resolution:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_resolution
 msgid "Resolution"
 msgstr "Løsning"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Resolution Actions"
 msgstr "Tiltak for løsning"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Responsibilities"
 msgstr "Ansvarsområder"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
-#: field:mgmtsystem.claim,user_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_user_id
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Responsible"
 msgstr "Ansvarlig"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Responsible User"
 msgstr "Ansvarlig bruker"
 
 #. module: mgmtsystem_claim
-#: help:mgmtsystem.claim,section_id:0
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_team_id
 msgid ""
 "Responsible sales team. Define Responsible user and Email account for mail "
 "gateway."
 msgstr ""
+"Ansvarlig salgsteam. Definer ansvarlig bruker og epostkonto for epost "
+"grensesnitt."
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,cause:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_cause
 msgid "Root Cause"
 msgstr "Rotårsak"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Root Causes"
 msgstr "Grunnleggende årsaker"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,section_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_team_id
 msgid "Sales Team"
 msgstr "Salgsteam"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Search Claims"
 msgstr "Søk i krav"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim.stage,section_ids:0
-msgid "Sections"
-msgstr ""
-
-#. module: mgmtsystem_claim
-#: field:mgmtsystem.claim.stage,sequence:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Sekvens"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Share a note..."
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
-#: field:mgmtsystem.claim,stage_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_stage_id
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_id_3139
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Stage"
 msgstr "Nivå"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim.stage,name:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_name
 msgid "Stage Name"
 msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.act_window,name:mgmtsystem_claim.mgmtsystem_claim_stage_action
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_mgmtsystem_claim_stages
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
-#: view:mgmtsystem.claim.stage:mgmtsystem_claim.mgmtsystem_claim_stage_tree_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claim_stage_tree_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Stages"
 msgstr "Stadier"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,message_summary:0
-msgid "Summary"
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_team_ids
+msgid "Teams"
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: help:mgmtsystem.claim,email_cc:0
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_email_cc
 msgid ""
 "These email addresses will be added to the CC field of all inbound and "
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
-msgstr "Disse e-postadressene vil bli lagt til kopi-feltet for alle inngående og utgående e-poster før de sendes. Skill flere e-postadresser med komma."
+msgstr ""
+"Disse e-postadressene vil bli lagt til kopi-feltet for alle inngående og "
+"utgående e-poster før de sendes. Skill flere e-postadresser med komma."
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,user_fault:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_user_fault
 msgid "Trouble Responsible"
 msgstr "Problemansvarlig"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_tree_view
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_tree_view
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Type"
 msgstr "Type"
 
 #. module: mgmtsystem_claim
-#: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
+#: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Unassigned Claims"
 msgstr "Reklamasjoner uten ansvarlige"
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,message_unread:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_unread
 msgid "Unread Messages"
+msgstr "Uleste meldinger."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_unread_counter
+msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,write_date:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_write_date
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_write_date
 msgid "Update Date"
 msgstr "Dato oppdatert"
 
 #. module: mgmtsystem_claim
-#: help:mgmtsystem.claim.stage,sequence:0
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_stage_sequence
 msgid "Used to order stages. Lower is better."
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,email_cc:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_user_id
+msgid "User"
+msgstr "Bruker"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_email_cc
 msgid "Watchers Emails"
 msgstr "Overvåkeres E-poster."
 
 #. module: mgmtsystem_claim
-#: field:mgmtsystem.claim,website_message_ids:0
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Meldinger fra Nettsted"
 
 #. module: mgmtsystem_claim
-#: help:mgmtsystem.claim,website_message_ids:0
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_website_message_ids
 msgid "Website communication history"
-msgstr ""
-
-#. module: mgmtsystem_claim
-#: model:ir.actions.act_window,name:mgmtsystem_claim.action_mgmtsystem_claim
-msgid "board.mgmtsystem.claim.act_window"
-msgstr ""
+msgstr "Historikk for kommuniksjon på nettsted"
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_cancel
