@@ -48,5 +48,5 @@
         'data/mgmtsystem_hazard_type.xml',
         'data/mgmtsystem_hazard_usage.xml',
     ],
-    "installable": False,
+    "installable": True,
 }
