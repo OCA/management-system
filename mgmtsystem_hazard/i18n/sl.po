@@ -3,65 +3,66 @@
 # * mgmtsystem_hazard
 # 
 # Translators:
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-05 19:53+0000\n"
-"PO-Revision-Date: 2015-11-03 19:11+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: French (http://www.transifex.com/oca/OCA-management-system-8-0/language/fr/)\n"
+"POT-Creation-Date: 2016-05-12 00:17+0000\n"
+"PO-Revision-Date: 2016-05-12 05:23+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-management-system-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,acceptability:0
 msgid "Acceptability"
-msgstr "Acceptabilité"
+msgstr "Sprejemljivost"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard:mgmtsystem_hazard.view_mgmtsystem_hazard_filter
 msgid "Accepted"
-msgstr "Accepté"
+msgstr "Sprejeto"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard:mgmtsystem_hazard.view_mgmtsystem_hazard_form
 msgid "Analysis"
-msgstr "Analyse"
+msgstr "Analiza"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_breakage
 msgid "Breakage"
-msgstr "Bris"
+msgstr "Zlom"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard.control_measure,comments:0
 msgid "Comments"
-msgstr "Commentaires"
+msgstr "Komentarji"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,company_id:0
 msgid "Company"
-msgstr ""
+msgstr "Družba"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_containment
 msgid "Containment Failure"
-msgstr "Échec du confinement"
+msgstr "Odpoved zadrževanja"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard.control_measure:mgmtsystem_hazard.view_mgmtsystem_hazard_control_measure_form
 #: field:mgmtsystem.hazard.control_measure,name:0
 msgid "Control Measure"
-msgstr "Mesure de contrôle"
+msgstr "Kontrolna izmera"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_control_measure
 msgid "Control Measure of hazard"
-msgstr "Mesure de contrôle du danger"
+msgstr "Kontrolna izmera nevarnosti"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_control_measure_list
@@ -70,7 +71,7 @@ msgstr "Mesure de contrôle du danger"
 #: view:mgmtsystem.hazard.control_measure:mgmtsystem_hazard.view_mgmtsystem_hazard_control_measure_filter
 #: view:mgmtsystem.hazard.control_measure:mgmtsystem_hazard.view_mgmtsystem_hazard_control_measure_tree
 msgid "Control Measures"
-msgstr "Mesures de contrôle"
+msgstr "Kontrolne izmere"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,create_uid:0
@@ -83,7 +84,7 @@ msgstr "Mesures de contrôle"
 #: field:mgmtsystem.hazard.type,create_uid:0
 #: field:mgmtsystem.hazard.usage,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Ustvaril"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,create_date:0
@@ -96,22 +97,22 @@ msgstr ""
 #: field:mgmtsystem.hazard.type,create_date:0
 #: field:mgmtsystem.hazard.usage,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Ustvarjeno"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_critical
 msgid "Critical"
-msgstr "Critique"
+msgstr "Kritična"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,analysis_date:0
 msgid "Date"
-msgstr "Date"
+msgstr "Datum"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,department_id:0
 msgid "Department"
-msgstr "Département"
+msgstr "Oddelek"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard.hazard,description:0
@@ -121,47 +122,60 @@ msgstr "Département"
 #: field:mgmtsystem.hazard.type,description:0
 #: field:mgmtsystem.hazard.usage,description:0
 msgid "Description"
-msgstr "Description"
+msgstr "Opis"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,display_name:0
+#: field:mgmtsystem.hazard.control_measure,display_name:0
+#: field:mgmtsystem.hazard.hazard,display_name:0
+#: field:mgmtsystem.hazard.origin,display_name:0
+#: field:mgmtsystem.hazard.probability,display_name:0
+#: field:mgmtsystem.hazard.severity,display_name:0
+#: field:mgmtsystem.hazard.test,display_name:0
+#: field:mgmtsystem.hazard.type,display_name:0
+#: field:mgmtsystem.hazard.usage,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ems_action
 msgid "EMS - Action"
-msgstr "EMS - Action"
+msgstr "Prva pomoč - ukrep"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ems_position
 msgid "EMS - Position"
-msgstr "EMS - Position"
+msgstr "Prva pomoč - pozicija"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_electric_bilge
 msgid "Electric Bilge"
-msgstr "Cale électrique"
+msgstr "Elektro-črpalna drenaža"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard.test,executed:0
 msgid "Executed"
-msgstr "Exécuté"
+msgstr "Izvedeno"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_exposure
 msgid "Exposure to Hazardous Materials"
-msgstr "Exposition à des matières dangereuses"
+msgstr "Izpostavljenost nevarnim snovem"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_fire_explosion
 msgid "Fire / Explosion"
-msgstr "Incendie / Explosion"
+msgstr "Požar / eksplozija"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_leak
 msgid "Gas Leak"
-msgstr "Fuite de gaz"
+msgstr "Uhajanje plina"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard:mgmtsystem_hazard.view_mgmtsystem_hazard_filter
 msgid "Group By..."
-msgstr "Regrouper par..."
+msgstr "Združi po..."
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_hazard
@@ -173,29 +187,29 @@ msgstr "Regrouper par..."
 #: field:mgmtsystem.hazard.hazard,name:0
 #: field:mgmtsystem.hazard.test,hazard_id:0
 msgid "Hazard"
-msgstr "Danger"
+msgstr "Nevarnost"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_mgmtsystem_configuration_hazards
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard
 msgid "Hazards"
-msgstr "Dangers"
+msgstr "Nevarnosti"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard
 msgid "Hazards of the health and safety management system"
-msgstr "Dangers du système de santé et de sécurité"
+msgstr "Nevarnosti v sistemu upravljanja zdravja in varnosti"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_heavy
 msgid "Heavy"
-msgstr "Lourde"
+msgstr "Težka"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_high
 msgid "High"
-msgstr "Élevé"
+msgstr "Visoka"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,id:0 field:mgmtsystem.hazard.control_measure,id:0
@@ -204,17 +218,17 @@ msgstr "Élevé"
 #: field:mgmtsystem.hazard.severity,id:0 field:mgmtsystem.hazard.test,id:0
 #: field:mgmtsystem.hazard.type,id:0 field:mgmtsystem.hazard.usage,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_ignition_gas
 msgid "Ignition of Flammable Gas"
-msgstr "Allumage de gaz inflammables"
+msgstr "Vžig vnetljivega plina"
 
 #. module: mgmtsystem_hazard
 #: view:mgmtsystem.hazard.test:mgmtsystem_hazard.view_mgmtsystem_hazard_test_form
 msgid "Implementation Test"
-msgstr "Test d'implémentation"
+msgstr "Test implementacije"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_test_list
@@ -223,22 +237,35 @@ msgstr "Test d'implémentation"
 #: view:mgmtsystem.hazard.test:mgmtsystem_hazard.view_mgmtsystem_hazard_test_filter
 #: view:mgmtsystem.hazard.test:mgmtsystem_hazard.view_mgmtsystem_hazard_test_tree
 msgid "Implementation Tests"
-msgstr "Tests d'implémentation"
+msgstr "Testiranja implementacije"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_test
 msgid "Implementation Tests of hazard"
-msgstr "Tests d'implémentation du danger"
+msgstr "Testiranja implementacije za nevarnosti"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_intoxication
 msgid "Intoxication"
-msgstr "Intoxication"
+msgstr "Zastrupitev"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,justification:0
 msgid "Justification"
-msgstr "Justification"
+msgstr "Razlog"
+
+#. module: mgmtsystem_hazard
+#: field:mgmtsystem.hazard,__last_update:0
+#: field:mgmtsystem.hazard.control_measure,__last_update:0
+#: field:mgmtsystem.hazard.hazard,__last_update:0
+#: field:mgmtsystem.hazard.origin,__last_update:0
+#: field:mgmtsystem.hazard.probability,__last_update:0
+#: field:mgmtsystem.hazard.severity,__last_update:0
+#: field:mgmtsystem.hazard.test,__last_update:0
+#: field:mgmtsystem.hazard.type,__last_update:0
+#: field:mgmtsystem.hazard.usage,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,write_uid:0
@@ -251,7 +278,7 @@ msgstr "Justification"
 #: field:mgmtsystem.hazard.type,write_uid:0
 #: field:mgmtsystem.hazard.usage,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Zadnji posodobil"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,write_date:0
@@ -264,51 +291,51 @@ msgstr ""
 #: field:mgmtsystem.hazard.type,write_date:0
 #: field:mgmtsystem.hazard.usage,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Zadnjič posodobljeno"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_low
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_low
 msgid "Low"
-msgstr "Faible"
+msgstr "Nizka"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_aging
 msgid "Materials Aging"
-msgstr "Usure des matériaux"
+msgstr "Staranje materialov"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_maybe
 msgid "Maybe"
-msgstr "Peut-être"
+msgstr "Mogoče"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_medium
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_medium
 msgid "Medium"
-msgstr "Moyen"
+msgstr "Srednja"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,name:0
 msgid "Name"
-msgstr "Nom"
+msgstr "Naziv"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ohsas_action
 msgid "OHSAS - Action"
-msgstr "OHSAS - Action"
+msgstr "Varnost in zdravje pri delu - ukrep"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ohsas_position
 msgid "OHSAS - Position"
-msgstr "OHSAS - Position"
+msgstr "Varnost in zdravje pri delu - pozicija"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,usage_id:0
 #: view:mgmtsystem.hazard.usage:mgmtsystem_hazard.view_mgmtsystem_hazard_usage_form
 #: field:mgmtsystem.hazard.usage,name:0
 msgid "Occupation / Usage"
-msgstr "Occupation / Usage"
+msgstr "Poklic / uporaba"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_usage_list
@@ -316,19 +343,19 @@ msgstr "Occupation / Usage"
 #: view:mgmtsystem.hazard.usage:mgmtsystem_hazard.view_mgmtsystem_hazard_usage_filter
 #: view:mgmtsystem.hazard.usage:mgmtsystem_hazard.view_mgmtsystem_hazard_usage_tree
 msgid "Occupations / Usages"
-msgstr "Occupations / Usages"
+msgstr "Poklic / uporabe"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,origin_id:0
 #: view:mgmtsystem.hazard.origin:mgmtsystem_hazard.view_mgmtsystem_hazard_origin_form
 #: field:mgmtsystem.hazard.origin,name:0
 msgid "Origin"
-msgstr "Origine"
+msgstr "Izvor"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_origin
 msgid "Origin of hazard"
-msgstr "Origine du danger"
+msgstr "Izvor nevarnosti"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_origin_list
@@ -336,12 +363,12 @@ msgstr "Origine du danger"
 #: view:mgmtsystem.hazard.origin:mgmtsystem_hazard.view_mgmtsystem_hazard_origin_filter
 #: view:mgmtsystem.hazard.origin:mgmtsystem_hazard.view_mgmtsystem_hazard_origin_tree
 msgid "Origins"
-msgstr "Origines"
+msgstr "Izvori"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_panic
 msgid "Panic"
-msgstr "Panique"
+msgstr "Panika"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_probability_list
@@ -349,36 +376,36 @@ msgstr "Panique"
 #: view:mgmtsystem.hazard.probability:mgmtsystem_hazard.view_mgmtsystem_hazard_probability_filter
 #: view:mgmtsystem.hazard.probability:mgmtsystem_hazard.view_mgmtsystem_hazard_probability_tree
 msgid "Probabilities"
-msgstr "Probabilités"
+msgstr "Verjetnost"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,probability_id:0
 #: view:mgmtsystem.hazard.probability:mgmtsystem_hazard.view_mgmtsystem_hazard_probability_form
 #: field:mgmtsystem.hazard.probability,name:0
 msgid "Probability"
-msgstr "Probabilité"
+msgstr "Verjetnost"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_probability
 msgid "Probability of hazard"
-msgstr "Probabilité du danger"
+msgstr "Verjetnost nevarnosti"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_probably
 msgid "Probably"
-msgstr "Probablement"
+msgstr "Verjetno"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,responsible_user_id:0
 #: field:mgmtsystem.hazard.control_measure,responsible_user_id:0
 #: field:mgmtsystem.hazard.test,responsible_user_id:0
 msgid "Responsible"
-msgstr "Responsable"
+msgstr "Odgovorni"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard.test,review_date:0
 msgid "Review Date"
-msgstr "Date de revue"
+msgstr "Datum revizije"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_severity_list
@@ -386,29 +413,29 @@ msgstr "Date de revue"
 #: view:mgmtsystem.hazard.severity:mgmtsystem_hazard.view_mgmtsystem_hazard_severity_filter
 #: view:mgmtsystem.hazard.severity:mgmtsystem_hazard.view_mgmtsystem_hazard_severity_tree
 msgid "Severities"
-msgstr "Sévérités"
+msgstr "Resnost"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,severity_id:0
 #: view:mgmtsystem.hazard.severity:mgmtsystem_hazard.view_mgmtsystem_hazard_severity_form
 #: field:mgmtsystem.hazard.severity,name:0
 msgid "Severity"
-msgstr "Sévérité"
+msgstr "Resnost"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_severity
 msgid "Severity of hazard"
-msgstr "Sévérité du danger"
+msgstr "Resnost nevarnosti"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_simple
 msgid "Simple"
-msgstr "Simple"
+msgstr "Enostavna"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_spilling
 msgid "Spilling"
-msgstr "Déversement"
+msgstr "Izliv"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard.test,name:0
@@ -421,12 +448,12 @@ msgstr "Test"
 #: view:mgmtsystem.hazard.type:mgmtsystem_hazard.view_mgmtsystem_hazard_type_form
 #: field:mgmtsystem.hazard.type,name:0
 msgid "Type"
-msgstr "Type"
+msgstr "Tip"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_type
 msgid "Type of Hazard"
-msgstr ""
+msgstr "Tip nevarnosti"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_type_list
@@ -434,31 +461,31 @@ msgstr ""
 #: view:mgmtsystem.hazard.type:mgmtsystem_hazard.view_mgmtsystem_hazard_type_filter
 #: view:mgmtsystem.hazard.type:mgmtsystem_hazard.view_mgmtsystem_hazard_type_tree
 msgid "Types"
-msgstr "Types"
+msgstr "Tipi"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_usage
 msgid "Usage of hazard"
-msgstr "Usage du danger"
+msgstr "Raba nevarnosti"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard.probability,value:0
 #: field:mgmtsystem.hazard.severity,value:0
 #: field:mgmtsystem.hazard.usage,value:0
 msgid "Value"
-msgstr "Valeur"
+msgstr "Vrednost"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_very_high
 msgid "Very High"
-msgstr "Très élevé"
+msgstr "Zelo visoka"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_very_likely
 msgid "Very likely"
-msgstr "Très probable"
+msgstr "Zelo verjetna"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_very_low
 msgid "Very low"
-msgstr "Très faible"
+msgstr "Zelo nizka"
