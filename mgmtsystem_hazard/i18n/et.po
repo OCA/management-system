@@ -11,12 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2017-05-13 04:19+0000\n"
 "PO-Revision-Date: 2017-05-13 04:19+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Vietnamese (https://www.transifex.com/oca/teams/23907/vi/)\n"
-"Language: vi\n"
+"Language-Team: Estonian (https://www.transifex.com/oca/teams/23907/et/)\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_acceptability
@@ -46,7 +46,7 @@ msgstr ""
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_company_id
 msgid "Company"
-msgstr ""
+msgstr "Ettevõte"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_containment
@@ -84,7 +84,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage_create_uid
 msgid "Created by"
-msgstr "Được tạo bởi"
+msgstr "Loonud"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure_create_date
@@ -97,7 +97,7 @@ msgstr "Được tạo bởi"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type_create_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage_create_date
 msgid "Created on"
-msgstr "Được tạo vào"
+msgstr "Loodud"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_critical
@@ -107,7 +107,7 @@ msgstr ""
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_analysis_date
 msgid "Date"
-msgstr "Ngày"
+msgstr "Kuupäev"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_department_id
@@ -135,7 +135,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage_display_name
 msgid "Display Name"
-msgstr "Tên hiển thị"
+msgstr "Näidatav nimi"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ems_action
@@ -269,7 +269,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage___last_update
 msgid "Last Modified on"
-msgstr "Sửa lần cuối vào"
+msgstr "Viimati muudetud"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure_write_uid
@@ -282,7 +282,7 @@ msgstr "Sửa lần cuối vào"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage_write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_write_uid
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr "Viimati uuendatud"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure_write_date
@@ -295,7 +295,7 @@ msgstr "Last Updated by"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage_write_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_write_date
 msgid "Last Updated on"
-msgstr "Cập nhật lần cuối vào"
+msgstr "Viimati uuendatud"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_low
@@ -322,7 +322,7 @@ msgstr ""
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_name
 msgid "Name"
-msgstr "Tên"
+msgstr "Nimi"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ohsas_action
@@ -452,7 +452,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_filter
 #: model:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_type_form
 msgid "Type"
-msgstr "Loại"
+msgstr "Tüüp"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_type
