@@ -1,0 +1,57 @@
+<odoo>
+
+    <record id="view_mgmtsystem_hazard_usage_form" model="ir.ui.view">
+      <field name="name">mgmtsystem.hazard.usage.form</field>
+      <field name="model">mgmtsystem.hazard.usage</field>
+      <field name="arch" type="xml">
+        <form string="Occupation / Usage">
+          <group colspan="4" col="6">
+            <field name="name"/>
+            <field name="value"/>
+            <newline/>
+            <field name="description"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_usage_tree" model="ir.ui.view">
+      <field name="name">mgmtsystem.hazard.usage.tree</field>
+      <field name="model">mgmtsystem.hazard.usage</field>
+      <field name="arch" type="xml">
+        <tree string="Occupations / Usages">
+          <field name="name"/>
+          <field name="value"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_usage_filter" model="ir.ui.view">
+      <field name="name">Origins</field>
+      <field name="model">mgmtsystem.hazard.usage</field>
+      <field name="arch" type="xml">
+        <search string="Occupations / Usages">
+          <field name="name"/>
+          <field name="value"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="open_mgmtsystem_hazard_usage_list" model="ir.actions.act_window">
+      <field name="name">Occupations / Usages</field>
+      <field name="res_model">mgmtsystem.hazard.usage</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" eval="False"/>
+      <field name="search_view_id" ref="view_mgmtsystem_hazard_type_filter"/>
+    </record>
+
+    <menuitem id="menu_open_hazard_usage"
+      action="open_mgmtsystem_hazard_usage_list"
+      parent="menu_mgmtsystem_configuration_hazards"
+      sequence="20"
+      groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+</odoo>
