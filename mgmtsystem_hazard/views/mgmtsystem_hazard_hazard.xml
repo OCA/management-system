@@ -1,0 +1,54 @@
+<odoo>
+
+    <record id="view_mgmtsystem_hazard_origin_form" model="ir.ui.view">
+      <field name="name">mgmtsystem.hazard.origin.form</field>
+      <field name="model">mgmtsystem.hazard.origin</field>
+      <field name="arch" type="xml">
+        <form string="Origin">
+          <group colspan="4" col="4">
+            <field name="name"/>
+            <newline/>
+            <field name="description"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_origin_tree" model="ir.ui.view">
+      <field name="name">mgmtsystem.hazard.origin.tree</field>
+      <field name="model">mgmtsystem.hazard.origin</field>
+      <field name="arch" type="xml">
+        <tree string="Origins">
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_origin_filter" model="ir.ui.view">
+      <field name="name">Origins</field>
+      <field name="model">mgmtsystem.hazard.origin</field>
+      <field name="arch" type="xml">
+        <search string="Origins">
+          <field name="name"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="open_mgmtsystem_hazard_origin_list" model="ir.actions.act_window">
+      <field name="name">Origins</field>
+      <field name="res_model">mgmtsystem.hazard.origin</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" eval="False"/>
+      <field name="search_view_id" ref="view_mgmtsystem_hazard_origin_filter"/>
+    </record>
+
+    <menuitem id="menu_open_hazard_origin"
+      action="open_mgmtsystem_hazard_origin_list"
+      parent="menu_mgmtsystem_configuration_hazards"
+      sequence="20"
+      groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+</odoo>
