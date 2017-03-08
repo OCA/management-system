@@ -1,18 +1,69 @@
 <odoo>
   <data>
-
+<!-- tree view -->
     <record model="ir.ui.view" id="mgmtsystem_nonconformity_stage_tree_view">
       <field name="name">Management System Nonconformity Stage Tree</field>
       <field name="model">mgmtsystem.nonconformity.stage</field>
       <field name="arch" type="xml">
         <tree string="Stages">
-          <field name="name"/>
-          <field name="sequence" widget="handle" />
-          <field name="state"/>
+                    <field name="sequence" widget="handle" groups="base.group_no_one"/>
+                    <field name="name"/>
+                    <field name="fold"/>
+                    <field name="description"/>
+                    <field name="state"/>
         </tree>
       </field>
     </record>
 
+
+        <record id="mgmtsystem_nonconformity_stage_form_view" model="ir.ui.view">
+            <field name="name">mgmtsystem.nonconformity.stage.form.view</field>
+            <field name="model">mgmtsystem.nonconformity.stage</field>
+            <field name="arch" type="xml">
+                <form string="Nonconformity Stage">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="mail_template_id"/>
+                            </group>
+                            <group>
+                                <field name="fold"/>
+                                <field name="nonconformity_ids" widget="many2many_tags" groups="base.group_no_one"/>
+                                <field name="sequence" groups="base.group_no_one"/>
+                                <field name="is_starting"/>
+                            </group>
+                        </group>
+                        <group string="Stage Description and Tooltips">
+                            <p class="text-muted" colspan="2">
+                                At each stage employees can block or make nonconformities/actions ready for next stage.
+                                You can define here labels that will be displayed for the state instead
+                                of the default labels.
+                            </p>
+                            <label for="legend_normal" string=" " class="oe_kanban_status oe_project_kanban_legend"/>
+                            <field name="legend_normal" nolabel="1"/>
+                            <label for="legend_blocked" string=" " class="oe_kanban_status oe_kanban_status_red oe_project_kanban_legend"/>
+                            <field name="legend_blocked" nolabel="1"/>
+                            <label for="legend_done" string=" " class="oe_kanban_status oe_kanban_status_green oe_project_kanban_legend"/>
+                            <field name="legend_done" nolabel="1"/>
+
+                            <p class="text-muted" colspan="2">
+                                You can also give a tooltip about the use of the stars available in the kanban and form views.
+                            </p>
+                            <label for="legend_priority" string=" " class="fa fa-star fa-lg o_star_on oe_project_kanban_legend"/>
+                            <field name="legend_priority" nolabel="1"/>
+
+                            <p class="text-muted" colspan="2">
+                                You can also add a description to help your coworkers understand the meaning and purpose of the stage.
+                            </p>
+                            <field name="description" placeholder="Add a description..." nolabel="1" colspan="2"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!-- action to open form view -->
     <record model="ir.actions.act_window" id="mgmtsystem_nonconformity_stage_action">
       <field name="name">Stages</field>
       <field name="res_model">mgmtsystem.nonconformity.stage</field>

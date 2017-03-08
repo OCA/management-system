@@ -1,10 +1,10 @@
 <odoo>
 <data>
 
-  <menuitem id="menu_mgmtsystem_configuration_nonconformities"
+  <menuitem id="menu_mgmtsystem_configuration_nonconformities" 
     name="Nonconformities"
     parent="mgmtsystem.menu_mgmtsystem_configuration"
-    groups="mgmtsystem.group_mgmtsystem_manager"
+    groups="mgmtsystem.group_mgmtsystem_manager" 
     sequence="10"/>
 
   <record id="view_mgmtsystem_nonconformity_tree" model="ir.ui.view">
@@ -35,12 +35,12 @@
         <group>
           <filter name="draft" icon="terp-document-new" domain="[('state','=','draft')]" string="Draft" help="Draft/New nonconformities"/>
           <filter name="pending" icon="terp-gtk-media-pause" domain="[('state','in',['analysis','pending'])]" string="Analysis" help="Nonconformities pending review"/>
-          <filter name="current" icon="terp-check" domain="[('state','=','open')]" string="In Progress" help="Open Nonconformities"/>
+          <filter name="current" icon="fa-check" domain="[('state','=','open')]" string="In Progress" help="Open Nonconformities"/>
           <filter icon="terp-camera_test" domain="[('state','=','done')]" string="Closed" help="Closed Nonconformities"/>
           <separator orientation="vertical"/>
           <field name="ref"/>
           <field name="create_date"/>
-          <field name="user_id" string="User"
+          <field name="user_id" string="User" 
             filter_domain="['|','|',('user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
           <field name="system_id"/>
           <field name="company_id" groups="base.group_multi_company"/>
@@ -54,17 +54,17 @@
           <filter string="System" icon="gtk-execute" context="{'group_by':'system_id'}"/>
           <filter string="Partner" icon="terp-personal+" domain="[]" context="{'group_by':'partner_id'}"/>
           <filter string="Procedure" icon="terp-stock_symbol-selection" context="{'group_by':'procedure_ids'}"/>
-          <!--
+          
           <separator orientation="vertical"/>
           <filter string="Origin" icon="terp-idea" context="{'group_by':'origin_ids'}"/>
           <filter string="Cause" icon="gtk-convert" context="{'group_by':'cause_ids'}"/>
           <filter string="Severity" icon="stock_log" context="{'group_by':'severity_id'}"/>
-          -->
+          
         </group>
         </search>
       </field>
     </record>
-
+    
     <!-- Kanban view -->
     <record id="view_mgmtsystem_nonconformity_kanban" model="ir.ui.view">
         <field name="name">mgmtsystem.nonconformity.kanban</field>
@@ -114,22 +114,35 @@
             </kanban>
         </field>
     </record>
+    
 
     <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
       <field name="name">mgmtsystem.nonconformity.form</field>
       <field name="model">mgmtsystem.nonconformity</field>
       <field name="arch" type="xml">
-        <form string="Non-Conformity" version="7.0">
+        <form string="Non-Conformity" version="10.0">
           <header>
-            <field name="stage_id" widget="statusbar" clickable="True" />
-            <field name="state" invisible="True" />
+            <field name="stage_id" widget="statusbar" clickable="False"/>
+            <button name="button_cancel" string="Cancel" states="draft,analysis,pending,open,review"/>
+            <button name="button_analysis_n" string="Send for Analysis" states="draft" class="oe_highlight"/>
+            <button name="button_planing_n" string="Send to Planing" states="analysis" class="oe_highlight"/>
+            <button name="button_analysis_p" string="Redo Analysis" states="pending"/>
+            <button name="button_open" string="Start/Open" states="pending" class="oe_highlight"/>
+            <button name="button_planing_p" string="Redo Planing" states="open" class="oe_highlight"/>
+            <button name="button_review_n" string="Send to Review" states="open" class="oe_highlight"/>
+            <button name="button_close" string="Close" class="oe_highlight"
+              states="review" groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
+            <button name="case_reset" string="Reset to New" states="done,cancel" type="object"/>
+            <!-- <field name="state" widget="statusbar" statusbar_visible="draft,analysis,pending,open,done" /> -->
+            <field name="state" invisible="True"/>
           </header>
           <sheet string="Non-Conformity">
             <field name="kanban_state" widget="kanban_state_selection" />
             <group>
               <group>
+                <!-- <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/> -->
+                <field name="ref"/>
                 <field name="name" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="create_date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                 <field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
@@ -156,7 +169,7 @@
 
               <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
                 <separator string="Analysis"/>
-                <field name="analysis" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
+                <field name="analysis" attrs="{'readonly':[('state','not in',['analysis'])], 'required':[('state','in',['analysis','pending','open'])]}"/>
 
                 <separator string="Causes"/>
                 <field name="cause_ids" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
@@ -167,6 +180,13 @@
                     <field name="severity_id" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
                     <field name="immediate_action_id" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
                   </group>
+                  <group>
+                    <field name="analysis_user_id"/>
+                    <field name="analysis_date"/>
+                  </group>
+                  <group>
+                    <button name="action_sign_analysis" string="Approve" icon="fa-check" type="object" states="analysis" groups="mgmtsystem.group_mgmtsystem_manager"/>
+                  </group>
                 </group>
               </page>
 
@@ -175,16 +195,28 @@
                 <field name="action_ids" attrs="{'readonly':[('state','not in',['pending'])]}"/>
 
                 <group string="Plan Review">
-                 <group>
-                   <field name="action_comments" attrs="{'readonly':[('state','not in',['pending'])]}" nolabel="1" placeholder="Action Plan Comments"/>
-                 </group>
-               </group>
+                  <group>
+                    <field name="action_comments" attrs="{'readonly':[('state','not in',['pending'])], 'required':[('state','in',['pending'])]}" nolabel="1" placeholder="Action Plan Comments"/>
+                  </group>
+                  <group>
+                    <field name="actions_user_id"/>
+                    <field name="actions_date"/>
+                    <button name="action_sign_actions" string="Approve" icon="fa-check" type="object" states="pending" groups="mgmtsystem.group_mgmtsystem_manager"/>
+                  </group>
+                </group>
+              </page>
 
-               <group attrs="{'invisible':[('state','not in',['open','done'])]}" string="Effectiveness Review">
-                 <group>
-                   <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['open'])]}" nolabel="1" placeholder="Evaluation Comments"/>
-                 </group>
-             </group>
+               <page string="Review" attrs="{'invisible':[('state','not in',['review','done'])]}" >
+                <group string="Effectiveness Review">
+                  <group>
+                    <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['review'])]}" nolabel="1" placeholder="Evaluation Comments"/>
+                  </group>
+                  <group>
+                    <field name="evaluation_user_id"/>
+                    <field name="evaluation_date"/>
+                    <button name="action_sign_evaluation" string="Sign Evaluation" icon="fa-check" type="object" states="review" groups="mgmtsystem.group_mgmtsystem_auditor"/>
+                  </group>
+                </group>
               </page>
 
             </notebook>
@@ -210,10 +242,10 @@
     </record>
 
     <menuitem
-      id="menu_open_nonconformity"
-      action="open_mgmtsystem_nonconformity_list"
-      parent="mgmtsystem.menu_mgmtsystem_main"
-      sequence="30"
+      id="menu_open_nonconformity" 
+      action="open_mgmtsystem_nonconformity_list" 
+      parent="mgmtsystem.menu_mgmtsystem_main" 
+      sequence="20" 
       groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
   </data>

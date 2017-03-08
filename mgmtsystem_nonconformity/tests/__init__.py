@@ -18,8 +18,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import (
+import (
     test_cause,
     test_origin,
     test_nonconformity,
+    test_workflows,
 )
