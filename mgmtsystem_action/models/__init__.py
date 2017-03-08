@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 
-from . import mgmtsystem_action
-from . import mgmtsystem_action_stage
+import mgmtsystem_action
+import mgmtsystem_action_stage

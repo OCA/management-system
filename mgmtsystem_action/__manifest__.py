@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,26 +20,39 @@
 ##############################################################################
 {
     "name": "Management System - Action",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.2.2",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": ['mgmtsystem', 'mail'],
+    "description": """\
+This module enables you to manage the different actions of your management
+system:
+  * immediate actions
+  * corrective actions
+  * preventive actions
+  * improvement opportunities.
+""",
+    "depends": [
+        'base_action_rule',
+        'base_setup',
+        'mgmtsystem',
+        'mail', 
+        'website'],
     "data": [
+        'data/action_sequence.xml',
         'data/mgmtsystem_action_stage.xml',
         'data/automated_reminder.xml',
         'data/email_template.xml',
+        #'data/workflow_mgmtsystem_action.xml',
         'security/ir.model.access.csv',
         'security/mgmtsystem_action_security.xml',
-        'data/action_sequence.xml',
         'views/mgmtsystem_action.xml',
         'views/mgmtsystem_action_stage.xml',
+        'views/board_mgmtsystem_action.xml',
         'reports/mgmtsystem_action_report.xml',
         'views/menus.xml',
     ],
-    "demo": [
-        'demo/mgmtsystem_action.xml',
-    ],
-    'installable': False,
+    "demo": ['demo_action.xml'],
+    "installable": True,
 }

@@ -1,15 +1,78 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
+##############################################################################
+#
+#    OpenERP, Open Source Management Solution
+#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
 
-from openerp import fields, models, api, exceptions, _
+from odoo import models, api, fields, netsvc, exceptions, _
+from odoo.exceptions import AccessError, UserError, ValidationError
 from datetime import datetime, timedelta
+from odoo.tools import (
+    DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
+    DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT,
+)
+from odoo.addons.mail.models.mail_template import format_tz
+from odoo.exceptions import AccessError, UserError, ValidationError
+from odoo.tools.translate import html_translate
+from dateutil.relativedelta import relativedelta
+import time
+import pytz
+import re
+import logging
+import pdb
+_logger = logging.getLogger(__name__)
 
 
-class MgmtSystemAction(models.Model):
+_STATES = [
+    ('draft', _('Draft')),
+    ('analysis', _('Analysis')),
+    ('pending', _('Pending Approval')),
+    ('open', _('In Progress')),
+    ('done', _('Closed')),
+    ('cancel', _('Cancelled')),
+]
+_STATES_DICT = dict(_STATES)
+
+
+class MgmtsystemAction(models.Model):
     """Model class that manage action."""
 
     _name = "mgmtsystem.action"
     _description = "Action"
-    _inherit = ['mail.thread', 'ir.needaction_mixin']
+    _rec_name = "name"
+    _inherit = ['mail.thread']
+    _order = "date_deadline desc"
+    _track = {
+        'field': {
+            'mgmtsystem_action.subtype_immediate': (
+                lambda s, c, u, o, ctx=None: o["type_action"] == "immediate"
+            ),
+            'mgmtsystem_action.subtype_prevention': (
+                lambda s, c, u, o, ctx=None: o["type_action"] == "prevention"
+            ),
+        },
+    }
+
+    def _state_name(self):
+        res = dict()
+        for o in self:
+            res[o.id] = _STATES_DICT.get(o.state, o.state)
+        return res
 
     def _default_company(self):
         """Return the user company id."""
@@ -21,9 +84,7 @@ class MgmtSystemAction(models.Model):
 
     def _default_stage(self):
         """Return the default stage."""
-        return self.env['mgmtsystem.action.stage'].search(
-            [('is_starting', '=', True)],
-            limit=1)
+        return self.env.ref('mgmtsystem_action.stage_draft')
 
     @api.model
     def _elapsed_days(self, dt1_text, dt2_text):
@@ -48,7 +109,34 @@ class MgmtSystemAction(models.Model):
                 action.create_date,
                 action.date_closed)
 
-    name = fields.Char('Subject', required=True)
+    @api.model
+    def _stage_groups(self,stages,domain,order):
+        stage_ids = self.env['mgmtsystem.action.stage'].search([])
+        return stage_ids
+
+
+    @api.model
+    def _read_group_stage_ids(self, stages, domain, order):
+        search_domain = [('id', 'in', stages.ids)]
+        if 'default_project_id' in self.env.context:
+            search_domain = ['|', ('project_ids', '=', self.env.context['default_project_id'])] + search_domain
+        stage_ids = stages._search(search_domain, order=order, access_rights_uid=SUPERUSER_ID)
+        return stages.browse(stage_ids)
+
+    @api.model
+    def _get_stage_new(self):
+        return self.env['mgmtsystem.action.stage'].search(
+            [('is_starting', '=', True)],
+            limit=1)
+
+    name = fields.Char('Subject', required=True, default="Maßnahme")
+    # 1. Description
+    ref = fields.Char(
+        'Reference',
+        required=True,
+        readonly=True,
+        default="NEW"
+    )
     active = fields.Boolean('Active', default=True)
     date_deadline = fields.Date('Deadline')
 
@@ -65,8 +153,8 @@ class MgmtSystemAction(models.Model):
         '# of days to close',
         compute=_compute_number_of_days_to_close,
         store=True)
-    reference = fields.Char('Reference', required=True,
-                            readonly=True, default="NEW")
+    reference = fields.Char('Related to', required=False,
+                            readonly=False)
     user_id = fields.Many2one(
         'res.users', 'Responsible', default=_default_owner, required=True)
     description = fields.Text('Description')
@@ -76,39 +164,18 @@ class MgmtSystemAction(models.Model):
             ('correction', 'Corrective Action'),
             ('prevention', 'Preventive Action'),
             ('improvement', 'Improvement Opportunity')
-        ], 'Response Type', required=True)
-
+        ], 'Response Type', required=False, default="improvement")
     system_id = fields.Many2one('mgmtsystem.system', 'System')
     company_id = fields.Many2one(
         'res.company', 'Company',
         default=_default_company)
+
     stage_id = fields.Many2one(
         'mgmtsystem.action.stage',
         'Stage',
-        default=_default_stage)
-
-    @api.model
-    def _stage_groups(self, present_ids, domain, **kwargs):
-        """This method is used by Kanban view to show empty stages."""
-        # perform search
-        # We search here only stage ids
-        stage_ids = self.env['mgmtsystem.action.stage']._search([])
-        # We search here stages objects
-        result = self.env['mgmtsystem.action.stage'].search([]).name_get()
-        # restore order of the search
-        result.sort(lambda x, y: cmp(
-            stage_ids.index(x[0]), stage_ids.index(y[0])))
-        return result, None
-
-    _group_by_full = {
-        'stage_id': _stage_groups
-    }
-
-    @api.model
-    def _get_stage_new(self):
-        return self.env['mgmtsystem.action.stage'].search(
-            [('is_starting', '=', True)],
-            limit=1)
+        track_visibility='onchange', index=True,
+        copy=False,
+        default=_get_stage_new, group_expand='_stage_groups')
 
     @api.model
     def _get_stage_open(self):
@@ -135,10 +202,18 @@ class MgmtSystemAction(models.Model):
     def create(self, vals):
         """Creation of Action."""
         Sequence = self.env['ir.sequence']
-        vals['reference'] = Sequence.next_by_code('mgmtsystem.action')
-        action = super(MgmtSystemAction, self).create(vals)
-        self.send_mail_for_action(action)
+        vals['ref'] = Sequence.next_by_code('mgmtsystem.action')
+        action = super(MgmtsystemAction, self).create(vals)
         return action
+
+    @api.multi
+    def _track_template(self, tracking):
+        self.ensure_one()
+        res = super(MgmtsystemAction, self)._track_template(tracking)
+        changes, dummy = tracking[self.id]
+        if 'stage_id' in changes and self.stage_id.mail_template_id:
+            res['stage_id'] = (self.stage_id.mail_template_id, {'composition_mode': 'mass_mail'})
+        return res
 
     @api.multi
     def write(self, vals):
@@ -184,15 +259,14 @@ class MgmtSystemAction(models.Model):
                     body=' %s ' % (_('Action cancelled on ') +
                                    fields.Datetime.now())
                 )
-        return super(MgmtSystemAction, self).write(vals)
+        return super(MgmtsystemAction, self).write(vals)
 
+    @api.multi
     def send_mail_for_action(self, action, force_send=True):
         """Set a document state as draft and notified the reviewers."""
-        template = self.env.ref(
-            'mgmtsystem_action.email_template_new_action_reminder')
-        for action in self:
-            template.send_mail(action.id, force_send=force_send)
-        return True
+        template = self.env.ref('mgmtsystem_action.email_template_new_action_reminder')
+        self.env['mail.template'].browse(template.id).send_mail(action.id, force_send=force_send)
+
 
     def get_action_url(self):
         """Return action url to be used in email templates."""
