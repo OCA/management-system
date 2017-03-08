@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,12 +20,21 @@
 ##############################################################################
 {
     "name": "Management System",
-    "version": "9.0.1.0.0",
+    "version": "10.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    'images': ['images/mgmtsystem.png', 'images/mgmtsystem-hover.png'],
+    "complexity": "normal",
+    "description": """\
+This module is the basis of any management system applications:
+     * audit reports,
+     * nonconformities,
+     * immediate actions,
+     * preventive actions,
+     * corrective actions,
+     * improvement opportunities.
+    """,
     "depends": [
         'base',
         'board',
@@ -36,8 +45,9 @@
         'security/ir.model.access.csv',
         'views/menus.xml',
         'views/mgmtsystem_system.xml',
-        'views/res_config.xml'
+        'views/board_mgmtsystem_view.xml',
+        'views/res_config.xml',
     ],
     "demo": [],
-    'installable': False,
+    'installable': True,
 }

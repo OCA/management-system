@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <record model="ir.ui.view" id="system_form">
+  <data>
+
+    <record model="ir.ui.view" id="system_form">
       <field name="name">mgmtsystem_system_form</field>
       <field name="model">mgmtsystem.system</field>
       <field name="arch" type="xml">
         <form string="Management System">
           <group>
             <field name="name"/>
+            <field name="manual"/>
             <field name="company_id" groups="base.group_multi_company"/>
           </group>
         </form>
@@ -19,6 +22,7 @@
       <field name="arch" type="xml">
         <tree string="Management Systems">
           <field name="name"/>
+          <field name="manual"/>
           <field name="company_id" groups="base.group_multi_company"/>
         </tree>
       </field>
@@ -35,8 +39,10 @@
     <menuitem
       id="menu_mgmtsystem_configuration_system"
       name="Systems"
-      parent="mgmtsystem.menu_mgmtsystem_configuration"
-      groups="mgmtsystem.group_mgmtsystem_manager"
-      sequence="10"
+      parent="menu_mgmtsystem_configuration"
+      groups="group_mgmtsystem_manager"
+      sequence="60"
       action="system_action"/>
+
+  </data>
 </odoo>

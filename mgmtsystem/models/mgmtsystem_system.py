@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -19,18 +19,24 @@
 #
 ##############################################################################
 
-from openerp import models, fields, _
+from odoo import models, fields
+
+import re
+import logging
+import pdb
+_logger = logging.getLogger(__name__)
 
 
 def own_company(self):
     return self.env.user.company_id.id
 
 
-class MgmtSystemSystem(models.Model):
+class mgmtsystem_system(models.Model):
 
     _name = 'mgmtsystem.system'
-    _description = _('System')
+    _description = 'System'
 
-    name = fields.Char('System', required=True)
-    company_id = fields.Many2one('res.company', 'Company',
+    name = fields.Char(string='System', required=True)
+    manual = fields.Many2one('document.page', string='Manual')
+    company_id = fields.Many2one('res.company', string='Company',
                                  default=own_company)

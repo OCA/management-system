@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp.tests import common
+from odoo.tests import common
 
 
 class TestModelAction(common.TransactionCase):
