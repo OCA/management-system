@@ -18,23 +18,22 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System - Review",
-    "version": "8.0.1.0.0",
-    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "depends": [
-        'mgmtsystem_nonconformity',
-        'mgmtsystem_survey',
-    ],
-    "data": [
-        'security/ir.model.access.csv',
-        'security/mgmtsystem_review_security.xml',
-        'data/ir_sequence.xml',
-        'views/mgmtsystem_review.xml',
-        'report/review_report.xml',
-    ],
-    "installable": True,
-}
+
+import time
+from odoo.report import report_sxw
+
+
+class mgmtsystem_review_report(report_sxw.rml_parse):
+
+    def __init__(self, cr, uid, name, context):
+        super(mgmtsystem_review_report, self).__init__(cr, uid, name, context)
+        self.localcontext.update({
+            'time': time,
+        })
+
+report_sxw.report_sxw(
+    'report.mgmtsystem.review.report',
+    'mgmtsystem.review',
+    'addons/mgmtsystem_review/report/review_report.rml',
+    parser=mgmtsystem_review_report
+)
