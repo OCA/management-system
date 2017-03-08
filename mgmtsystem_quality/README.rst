@@ -26,7 +26,7 @@ To configure this module, you need to:
 * Import your documentation (manuals and procedures)
 * Review the data provided (i.e. NC origins and causes)
 * Customize the Customer Satisfaction survey
-* Customize email templates for reminders
+* Customize mail.templates for reminders
 * Import your legacy data (NC, actions)
 
 Usage
@@ -73,11 +73,7 @@ Credits
 Contributors
 ------------
 
-* Luk Vermeylen <luk@allmas-it.be>
-* Daniel Reis <dgreis@sapo.pt>
 * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
-* Gervais Naoussi <gervaisnaoussi@gmail.com>
-* Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 
 Maintainer
 ----------
@@ -93,3 +89,4 @@ mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
 To contribute to this module, please visit http://odoo-community.org.
+
