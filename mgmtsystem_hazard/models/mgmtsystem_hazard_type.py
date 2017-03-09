@@ -10,5 +10,5 @@ class MgmtsystemHazardType(models.Model):
     _name = "mgmtsystem.hazard.type"
     _description = "Type of Hazard"
 
-    name = fields.Char('Type', size=50, required=True, translate=True)
+    name = fields.Char('Type', required=True, translate=True)
     description = fields.Text('Description')

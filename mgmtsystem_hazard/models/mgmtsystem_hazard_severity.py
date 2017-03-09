@@ -10,6 +10,6 @@ class MgmtsystemHazardSeverity(models.Model):
     _name = "mgmtsystem.hazard.severity"
     _description = "Severity of hazard"
 
-    name = fields.Char('Severity', size=50, required=True, translate=True)
+    name = fields.Char('Severity', required=True, translate=True)
     value = fields.Integer('Value', required=True)
     description = fields.Text('Description', required=False, translate=False)

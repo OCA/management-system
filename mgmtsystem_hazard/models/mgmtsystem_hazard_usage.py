@@ -11,7 +11,6 @@ class MgmtsystemHazardUsage(models.Model):
     _description = "Usage of hazard"
     name = fields.Char(
         'Occupation / Usage',
-        size=50,
         required=True,
         translate=True,
     )

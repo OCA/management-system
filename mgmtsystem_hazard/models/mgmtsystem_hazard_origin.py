@@ -10,5 +10,5 @@ class MgmtsystemHazardOrigin(models.Model):
     _name = "mgmtsystem.hazard.origin"
     _description = "Origin of hazard"
 
-    name = fields.Char('Origin', size=50, required=True, translate=True)
+    name = fields.Char('Origin', required=True, translate=True)
     description = fields.Text('Description')
