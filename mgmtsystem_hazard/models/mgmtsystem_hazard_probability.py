@@ -10,6 +10,6 @@ class MgmtsystemHazardProbability(models.Model):
     _name = "mgmtsystem.hazard.probability"
     _description = "Probability of hazard"
 
-    name = fields.Char('Probability', size=50, required=True, translate=True)
+    name = fields.Char('Probability', required=True, translate=True)
     value = fields.Integer('Value', required=True)
     description = fields.Text('Description', required=False, translate=False)

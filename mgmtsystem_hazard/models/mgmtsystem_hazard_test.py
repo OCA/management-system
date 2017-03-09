@@ -10,7 +10,7 @@ class MgmtsystemHazardTest(models.Model):
     _name = "mgmtsystem.hazard.test"
     _description = "Implementation Tests of hazard"
 
-    name = fields.Char('Test', size=50, required=True, translate=True)
+    name = fields.Char('Test', required=True, translate=True)
     responsible_user_id = fields.Many2one(
         'res.users',
         'Responsible',
