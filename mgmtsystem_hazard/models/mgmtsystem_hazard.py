@@ -68,5 +68,5 @@ class MgmtsystemHazard(models.Model):
     company_id = fields.Many2one(
         'res.company',
         'Company',
-        default=lambda s: s.env['res.users'].browse(s._uid).company_id,
+        default=lambda s: s.env.user.company_id,
     )
