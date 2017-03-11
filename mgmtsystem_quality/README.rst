@@ -73,6 +73,7 @@ Credits
 Contributors
 ------------
 
+* Eugen Don <eugen.don@don-systems.de>
 * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
 
 Maintainer
