@@ -2,7 +2,12 @@
 <odoo>
     <data noupdate="1">
 
-        <!-- Sequences for mgmtsystem.audit -->
+        <!-- deprecated since V9 -->
+<!--         <record id="seq_type_mgmtsystem_audit" model="ir.sequence.type">
+            <field name="name">Management System Audit</field>
+            <field name="code">mgmtsystem.audit</field>
+        </record> -->
+
         <record id="seq_mgmtsystem_audit" model="ir.sequence">
             <field name="name">Management System Audit</field>
             <field name="code">mgmtsystem.audit</field>

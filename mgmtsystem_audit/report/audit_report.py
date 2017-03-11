@@ -18,26 +18,22 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name": "Management System - Audit",
-    "version": "10.0.1.2.0",
-    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
-    "depends": ['mgmtsystem_nonconformity'],
-    "data": [
-        'security/ir.model.access.csv',
-        'security/mgmtsystem_audit_security.xml',
-        'data/audit_sequence.xml',
-        'views/mgmtsystem_audit.xml',
-        'views/board_mgmtsystem_audit.xml',
-        'report/audit_report.xml',
-        'report/verification_list.xml',
-        'wizard/copy_verification_lines.xml',
-    ],
-    "demo": [
-        'demo/demo_audit.xml',
-    ],
-    'installable': True,
-}
+
+import time
+from odoo.report import report_sxw
+
+
+class mgmtsystem_audit_report(report_sxw.rml_parse):
+
+    def __init__(self, cr, uid, name, context):
+        super(mgmtsystem_audit_report, self).__init__(cr, uid, name, context)
+        self.localcontext.update({
+            'time': time,
+        })
+
+report_sxw.report_sxw(
+    'report.mgmtsystem.audit.report',
+    'mgmtsystem.audit',
+    'addons/mgmtsystem_audit/report/audit_report.rml',
+    parser=mgmtsystem_audit_report
+)

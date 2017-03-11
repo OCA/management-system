@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
     <data>
+
         <record id="copy_verification_lines_form_view" model="ir.ui.view">
             <field name="name">copy.verification.lines.form</field>
             <field name="model">copy.verification.lines</field>
@@ -10,11 +11,12 @@
                     <field name="audit_src" domain="[('state','=','done')]"/>
                     <group colspan="2" col="3">
                         <button string="_Cancel" icon="gtk-cancel" special="cancel"/>
-                        <button string="_Copy" name="copyVerificationLines" type="object"/>
+                        <button string="_Copy" name="copy" type="object"/>
                     </group>
                 </form>
             </field>
         </record>
+
         <act_window name="Copy Verification Lines"
                 res_model="copy.verification.lines"
                 src_model="mgmtsystem.audit"
@@ -22,5 +24,6 @@
                 target="new"
                 key2="client_action_multi"
                 id="copy_verification_lines_act_window"/>
+
     </data>
 </odoo>
