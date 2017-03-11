@@ -22,11 +22,10 @@
 import time
 from odoo.report import report_sxw
 
+class MgmtsystemReviewReport(report_sxw.rml_parse):
 
-class mgmtsystem_review_report(report_sxw.rml_parse):
-
-    def __init__(self, cr, uid, name, context):
-        super(mgmtsystem_review_report, self).__init__(cr, uid, name, context)
+    def __init__(self, name):
+        super(mgmtsystem_review_report, self).__init__(name)
         self.localcontext.update({
             'time': time,
         })
@@ -35,5 +34,5 @@ report_sxw.report_sxw(
     'report.mgmtsystem.review.report',
     'mgmtsystem.review',
     'addons/mgmtsystem_review/report/review_report.rml',
-    parser=mgmtsystem_review_report
+    parser=MgmtsystemReviewReport
 )
