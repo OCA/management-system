@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Management System - Nonconformity",
-    "version": "8.0.1.2.0",
+    "version": "10.0.1.2.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
