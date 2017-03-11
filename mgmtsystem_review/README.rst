@@ -40,6 +40,7 @@ Credits
 Contributors
 ------------
 
+* Eugen Don <eugen.don@don-systems.de>
 * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
 * Loïc Faure-Lacroix <loic.lacroix@savoirfairelinux.com>
 
