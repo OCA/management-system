@@ -21,18 +21,33 @@
 
 {
     'name': 'Quality Manual',
-    'version': '9.0.1.0.0',
+    'version': '10.0.1.0.0',
     'category': 'Management System',
-    'author': "OpenERP SA, Odoo Community Association (OCA)",
-    'website': 'http://odoo.com',
+    'complexity': "easy",
+    'description': """
+Quality Manual
+==============
+
+This module provides a quality manual template with the same structure
+as the ISO 9001 standard.
+
+Contributors
+------------
+
+ * Odoo SA <info@odoo.com>
+ * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
+    """,
+    'author': "OpenERP SA,Odoo Community Association (OCA)",
+    'website': 'http://openerp.com',
     'license': 'AGPL-3',
     'depends': [
-        'mgmtsystem_manual'
+        'mgmtsystem_manuals'
     ],
     'data': [
-        'data/document_page.xml'
+        'data/document_page_data.xml'
     ],
-    'installable': False,
+    'demo': [],
+    'installable': True,
     'auto_install': False,
     'images': [
         'images/wiki_pages_quality_manual.jpeg'
