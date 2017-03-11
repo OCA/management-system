@@ -20,21 +20,10 @@
 ##############################################################################
 
 from odoo import models, api, fields, netsvc, exceptions, _
-from odoo.exceptions import AccessError, UserError, ValidationError
 from datetime import datetime, timedelta
-from odoo.tools import (
-    DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT,
-    DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT,
-)
-from odoo.addons.mail.models.mail_template import format_tz
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.tools.translate import html_translate
-from dateutil.relativedelta import relativedelta
-import time
-import pytz
-import re
+
 import logging
-import pdb
+
 _logger = logging.getLogger(__name__)
 
 

@@ -44,7 +44,6 @@ system:
         'data/mgmtsystem_action_stage.xml',
         'data/automated_reminder.xml',
         'data/email_template.xml',
-        #'data/workflow_mgmtsystem_action.xml',
         'security/ir.model.access.csv',
         'security/mgmtsystem_action_security.xml',
         'views/mgmtsystem_action.xml',
