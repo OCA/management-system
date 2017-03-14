@@ -1,23 +1,6 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
 <<<<<<< 8a12276cf0affae66506dcba67980c75aac42247
 <<<<<<< b9a32de449f11b9294519ef63ed8a1b78e6eb0f8
@@ -61,7 +44,7 @@ WARNING: when upgrading from v0.1, data conversion is required, since there are 
 =======
 =======
     "name": "Management System - Nonconformity",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -187,24 +170,30 @@ Contributors
         'security/ir.model.access.csv',
         'security/mgmtsystem_nonconformity_security.xml',
         'views/mgmtsystem_nonconformity.xml',
+<<<<<<< 157e9a9e5bd2fcd6a75c3226eed6aa4b51c94cc2
         'views/mgmtsystem_nonconformity_state.xml',
+=======
+>>>>>>> MIG-mgmtsystem_nonconformity-to-V.-10.0
         'views/mgmtsystem_origin.xml',
         'views/mgmtsystem_cause.xml',
         'views/mgmtsystem_severity.xml',
         'views/mgmtsystem_action.xml',
-        'reports/mgmtsystem_nonconformity_report.xml',
+        'views/mgmtsystem_nonconformity_stage.xml',
         'data/sequence.xml',
         'data/mgmtsystem_nonconformity_severity.xml',
         'data/mgmtsystem_nonconformity_origin.xml',
         'data/mgmtsystem_nonconformity_cause.xml',
         'data/mgmtsystem_nonconformity_state.xml',
         'data/mail_message_subtype.xml',
+        'reports/mgmtsystem_nonconformity_report.xml',
     ],
+    "images": [],
     "demo": [
         "demo/mgmtsystem_nonconformity_origin.xml",
         "demo/mgmtsystem_nonconformity_cause.xml",
         "demo/mgmtsystem_nonconformity.xml",
     ],
+<<<<<<< 157e9a9e5bd2fcd6a75c3226eed6aa4b51c94cc2
 <<<<<<< 16bcc50b9f8cdf9477d48591d152de7dc71573a2
 <<<<<<< aedf771434404b2aa8c10c5f41955537a4c5e0cd
 <<<<<<< 032a397f8f66a2977ac532de018235444c6316f6
@@ -227,5 +216,8 @@ Contributors
 =======
     'installable': False,
 >>>>>>> [MIG] Make modules uninstallable
+=======
+    'installable': True,
+>>>>>>> MIG-mgmtsystem_nonconformity-to-V.-10.0
 }
 >>>>>>> Moved mgmtsystem_nonconformity to root for port
