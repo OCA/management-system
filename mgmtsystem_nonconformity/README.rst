@@ -24,7 +24,10 @@ Configuration
 
 Users must be added to the appropriate groups within Odoo as follows:
 * Creators: Settings > Users > Groups > Management System / User
-* Responsible Persons: Settings > Users > Groups > Management System / Approving User
+To configure email notifications for certain stages go to:
+* Management System > Configuration > Nonconformities > Stages
+* Click on any stage and click the edit button.
+* Click on the dropdown icon in the field Email Template, select your template and click Save. 
 
 Usage
 =====
@@ -43,9 +46,9 @@ To use this module:
 * Procedures:  Against which procedure is the NC
 * Description: Evidence, reference to the standards
 
-* Click on Save and then on Send for Analysis.
+* Click on Save and then on Analysis.
 
-As an approving user, go to the newly created NC and fill in the following
+Go to the newly created NC and fill in the following
 information in the tab named Causes and Analysis:
 
 * Causes: Add root causes
@@ -53,7 +56,7 @@ information in the tab named Causes and Analysis:
 * Severity: Select the severity among unfounded, minor and major
 * Immediate action: Create or select an immediate action if appropriate
 
-Click on Approve and then on Send for Review.
+Click on the Save button and then on the "Action Plan" button in the top right corner.
 
 In the Actions tab, select or create new actions by entering the following
 items:
@@ -68,15 +71,16 @@ items:
 When the action is created, a notification is sent to the person responsible
 for the action.
 
-When the action plan is reviewed (comments) and approved, each action of the
-plan is opened.
+Enter comments into the input field below the "Plan Review" section, those comments are required to reach the next stage.
+
+To begin the work on the planned Actions change the stage of the NC to open by clicking on the "In Progress" button in the top right corner.
 
 When all actions of the plan are done, their effectiveness must be evaluated
 before closing the NC.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/128/9.0
+   :target: https://runbot.odoo-community.org/runbot/128/10.0
 
 Known issues / Roadmap
 ======================
@@ -92,7 +96,7 @@ In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed feedback `here <https://github.com/OCA/
 Management-system/issues/new?body=module:%20
 mgmtsystem_system%0Aversion:%20
-9.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+10.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Credits
 =======
@@ -105,6 +109,7 @@ Contributors
 * Loic Lacroix <loic.lacroix@savoirfairelinux.com>
 * Sandy Carter <sandy.carter@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
+* Eugen Don <eugen.don@don-systems.de>
 
 Maintainer
 ----------
