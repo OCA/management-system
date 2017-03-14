@@ -27,6 +27,7 @@ import netsvc as netsvc
 from openerp.osv import fields, orm
 from openerp.addons.base_status.base_state import base_state
 
+<<<<<<< 157e9a9e5bd2fcd6a75c3226eed6aa4b51c94cc2
 <<<<<<< ff2fe34f4ebfb0b547638362c820600633b4555a
 <<<<<<< 54cd66fbb258a25fae00e3cbcd78934e5cc0f129
 import time
@@ -43,6 +44,9 @@ from openerp import models, api, fields
 =======
 from openerp import models, api, fields, _
 >>>>>>> import translator _
+=======
+from odoo import models, api, fields, _
+>>>>>>> MIG-mgmtsystem_nonconformity-to-V.-10.0
 
 <<<<<<< aedf771434404b2aa8c10c5f41955537a4c5e0cd
 from openerp import models, api, fields, netsvc, exceptions, _
@@ -236,6 +240,7 @@ class MgmtsystemNonconformity(models.Model):
     _inherit = ['mail.thread', 'ir.needaction_mixin']
     _order = "create_date desc"
 
+<<<<<<< 157e9a9e5bd2fcd6a75c3226eed6aa4b51c94cc2
     def _default_state(self):
         """Return the default stage."""
         return self.env.ref('mgmtsystem_nonconformity.state_draft')
@@ -420,6 +425,21 @@ class MgmtsystemNonconformity(models.Model):
 =======
 =======
     name = fields.Char('Name')
+=======
+    @api.model
+    def _default_stage(self):
+        """Return the default stage."""
+        return (
+            self.env.ref('mgmtsystem_nonconformity.stage_draft', False) or
+            self.env['mgmtsystem.nonconformity.stage'].search(
+                [('is_starting', '=', True)],
+                limit=1))
+
+    @api.model
+    def _stage_groups(self, stages, domain, order):
+        stage_ids = self.env['mgmtsystem.nonconformity.stage'].search([])
+        return stage_ids
+>>>>>>> MIG-mgmtsystem_nonconformity-to-V.-10.0
 
 >>>>>>> Added missing fields (used in demo data)
 =======
@@ -527,8 +547,12 @@ class MgmtsystemNonconformity(models.Model):
         'Stage',
         track_visibility=True,
         copy=False,
+<<<<<<< 157e9a9e5bd2fcd6a75c3226eed6aa4b51c94cc2
         default=_default_stage)
 >>>>>>> Remove forced workflow logic
+=======
+        default=_default_stage, group_expand='_stage_groups')
+>>>>>>> MIG-mgmtsystem_nonconformity-to-V.-10.0
     state = fields.Selection(
 <<<<<<< 4797893fadc84679949ff00befcca4596e322da6
         _STATES,
@@ -607,6 +631,7 @@ class MgmtsystemNonconformity(models.Model):
         default=lambda self: self.env.user.company_id.id)
 >>>>>>> Removed ID and removed named lambdas
 
+<<<<<<< 157e9a9e5bd2fcd6a75c3226eed6aa4b51c94cc2
     # Demo data missing fields...
     corrective_action_id = fields.Many2one(
         'mgmtsystem.action',
@@ -655,12 +680,14 @@ class MgmtsystemNonconformity(models.Model):
                 nc.evaluation_date)
 =======
 =======
+=======
+>>>>>>> MIG-mgmtsystem_nonconformity-to-V.-10.0
     @api.multi
     def _get_all_actions(self):
         self.ensure_one()
-        return (self.action_ids +
-                self.corrective_action_id +
-                self.preventive_action_id)
+        return (
+            self.action_ids +
+            self.immediate_action_id)
 
 >>>>>>> Don't close an NC with open Actions
     @api.constrains('stage_id')
