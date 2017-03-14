@@ -1,5 +1,4 @@
 <odoo>
-  <data>
 
     <record model="ir.ui.view" id="mgmtsystem_nonconformity_stage_tree_view">
       <field name="name">Management System Nonconformity Stage Tree</field>
@@ -12,6 +11,25 @@
         </tree>
       </field>
     </record>
+
+        <record id="mgmtsystem_nonconformity_stage_form_view" model="ir.ui.view">
+            <field name="name">mgmtsystem.nonconformity.stage.form.view</field>
+            <field name="model">mgmtsystem.nonconformity.stage</field>
+            <field name="arch" type="xml">
+                <form string="Nonconformity Stage">
+                    <sheet>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="fold"/>
+                                <field name="sequence" groups="base.group_no_one"/>
+                                <field name="is_starting"/>
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
     <record model="ir.actions.act_window" id="mgmtsystem_nonconformity_stage_action">
       <field name="name">Stages</field>
@@ -28,5 +46,4 @@
                  sequence="90"
                  groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
-  </data>
 </odoo>

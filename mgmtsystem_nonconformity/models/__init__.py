@@ -3,11 +3,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from . import (
-    mgmtsystem_nonconformity_stage,
-    mgmtsystem_nonconformity_cause,
-    mgmtsystem_nonconformity_origin,
-    mgmtsystem_nonconformity_severity,
-    mgmtsystem_nonconformity,
-    mgmtsystem_action,
-)
+from . import mgmtsystem_nonconformity_stage
+from . import mgmtsystem_nonconformity_cause
+from . import mgmtsystem_nonconformity_origin
+from . import mgmtsystem_nonconformity_severity
+from . import mgmtsystem_nonconformity
+from . import mgmtsystem_action
