@@ -2,7 +2,7 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, _
+from odoo import models, fields, _
 
 
 _STATES = [
@@ -30,3 +30,11 @@ class MgmtsystemNonconformityStage(models.Model):
         readonly=True,
         default="draft",
     )
+    is_starting = fields.Boolean(
+        string='Is starting Stage',
+        help="select stis checkbox if this is the default stage \n"
+             "for new nonconformities")
+    fold = fields.Boolean(
+        string='Folded in Kanban',
+        help="This stage is folded in the kanban view when there are \n"
+             "no records in that stage to display.")

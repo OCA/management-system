@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
+#    odoo, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -21,8 +21,8 @@
 
 from contextlib import contextmanager
 from psycopg2 import IntegrityError
-from openerp.tests import common
-from openerp import exceptions
+from odoo.tests import common
+from odoo import exceptions
 
 
 class TestModelCause(common.TransactionCase):
