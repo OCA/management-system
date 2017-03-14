@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-
       <record id="document_page_procedure" model="document.page">
         <field name="name">Procedure</field>
         <field name="parent_id" ref="document_page_group_procedure"/>
@@ -21,5 +20,4 @@
         </field>
       </record>
 
-    
 </odoo>
