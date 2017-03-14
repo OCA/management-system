@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+<<<<<<< 0de4ea70c3d8817adc72b247e1743e90a46a519f
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -46,9 +47,14 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+=======
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
+>>>>>>> MIG document_page_procedure to V. 10.0
 {
     "name": "Document Management - Wiki - Procedures",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -79,6 +85,7 @@
     "demo": [
         'demo/document_page_procedure.xml',
     ],
+<<<<<<< 0de4ea70c3d8817adc72b247e1743e90a46a519f
 <<<<<<< 6d3f279523d8de2678337897d680647654357478
 <<<<<<< 8be13d08270133e4a2f1db7fdda9f940fe3b12aa
 <<<<<<< 0ca876f1776d2d3b9b73093ae412c476b6a4634c
@@ -98,4 +105,7 @@
 =======
     'installable': False,
 >>>>>>> [MIG] Make modules uninstallable
+=======
+    'installable': True,
+>>>>>>> MIG document_page_procedure to V. 10.0
 }
