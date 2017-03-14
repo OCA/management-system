@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from openerp import models, fields
+from odoo import models, fields
 
 
 class MgmtsystemActionStage(models.Model):

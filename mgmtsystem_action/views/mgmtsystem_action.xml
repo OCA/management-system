@@ -1,5 +1,4 @@
 <odoo>
-    <data>
 
         <record id="view_mgmtsystem_action_tree" model="ir.ui.view">
             <field name="name">mgmtsystem.action.tree</field>
@@ -137,7 +136,5 @@
             <field name="view_mode">kanban,tree,form</field>
             <field name="context">{"search_default_current":1,"search_default_user_id":uid}</field>
         </record>
-
-    </data>
 
 </odoo>
