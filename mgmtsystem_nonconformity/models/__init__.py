@@ -19,6 +19,7 @@
 #
 ##############################################################################
 
+<<<<<<< 157e9a9e5bd2fcd6a75c3226eed6aa4b51c94cc2
 from . import (
     mgmtsystem_nonconformity_state,
     mgmtsystem_nonconformity_cause,
@@ -27,3 +28,11 @@ from . import (
     mgmtsystem_nonconformity,
     mgmtsystem_action,
 )
+=======
+from . import mgmtsystem_nonconformity_stage
+from . import mgmtsystem_nonconformity_cause
+from . import mgmtsystem_nonconformity_origin
+from . import mgmtsystem_nonconformity_severity
+from . import mgmtsystem_nonconformity
+from . import mgmtsystem_action
+>>>>>>> MIG-mgmtsystem_nonconformity-to-V.-10.0
