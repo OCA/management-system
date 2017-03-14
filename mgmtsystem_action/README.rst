@@ -63,7 +63,7 @@ In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed feedback `here <https://github.com/OCA/
 Management-system/issues/new?body=module:%20
 mgmtsystem_system%0Aversion:%20
-9.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+10.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 
 Credits
@@ -74,6 +74,7 @@ Contributors
 
 * Savoir-faire Linux <support@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
+* Eugen Don <eugen.don@don-systems.de>
 
 Maintainer
 ----------
@@ -92,6 +93,7 @@ To contribute to this module, please visit http://odoo-community.org.
 
 Changelog
 ---------
+
 
 v9.0.1.0.0
 
