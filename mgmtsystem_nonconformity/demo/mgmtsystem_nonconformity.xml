@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
 
-        <record id="demo_nonconformity" model="mgmtsystem.nonconformity">
-            <field name="partner_id" ref="base.res_partner_3"/>
-            <field name="create_date">2010-12-03</field>
-            <field name="name">Demo Nonconformity</field>
-            <field name="responsible_user_id" ref="base.user_demo"/>
-            <field name="manager_user_id" ref="base.user_root"/>
-            <field name="user_id" ref="base.user_demo"/>
-            <field name="description">The procedure has changed with no comments on the revision.</field>
-            <field name="analysis">Administrator didn't know he had to add a comment when changing the procedure.</field>
-            <field name="origin_ids" eval="[(6,0,[ref('demo_origin')])]"/>
-            <field name="procedure_ids" eval="[(6,0,[ref('document_page_procedure.document_page_procedure')])]"/>
-            <field name="cause_ids" eval="[(6,0,[ref('demo_cause')])]"/>
-            <field name="immediate_action_id" ref="mgmtsystem_action.demo_immediate"/>
-            <field name="corrective_action_id" ref="mgmtsystem_action.demo_corrective"/>
-            <field name="preventive_action_id" ref="mgmtsystem_action.demo_preventive"/>
-        </record>
+    <record id="demo_nonconformity" model="mgmtsystem.nonconformity">
+        <field name="partner_id" ref="base.res_partner_3"/>
+        <field name="create_date">2010-12-03</field>
+        <field name="name">Demo Nonconformity</field>
+        <field name="responsible_user_id" ref="base.user_demo"/>
+        <field name="manager_user_id" ref="base.user_root"/>
+        <field name="user_id" ref="base.user_demo"/>
+        <field name="description">The procedure has changed with no comments on the revision.</field>
+        <field name="analysis">Administrator didn't know he had to add a comment when changing the procedure.</field>
+        <field name="origin_ids" eval="[(6,0,[ref('demo_origin')])]"/>
+        <field name="procedure_ids" eval="[(6,0,[ref('document_page_procedure.document_page_procedure')])]"/>
+        <field name="cause_ids" eval="[(6,0,[ref('demo_cause')])]"/>
+        <field name="immediate_action_id" ref="mgmtsystem_action.demo_immediate"/>
+        <field name="action_ids" eval="[(6, 0, [ref('mgmtsystem_action.demo_immediate'), ref('mgmtsystem_action.demo_corrective'), ref('mgmtsystem_action.demo_preventive')])]"/>
+    </record>
 
-    </data>
 </odoo>

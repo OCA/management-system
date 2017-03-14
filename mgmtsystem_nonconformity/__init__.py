@@ -11,6 +11,7 @@ from . import mgmtsystem_nonconformity
 =======
 =======
 # -*- coding: utf-8 -*-
+<<<<<<< 157e9a9e5bd2fcd6a75c3226eed6aa4b51c94cc2
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -33,3 +34,11 @@ from . import mgmtsystem_nonconformity
 >>>>>>> Added missing copyrights
 from . import models
 >>>>>>> Separated python in each model file
+=======
+# Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
+
+from . import models
+from . import reports
+>>>>>>> MIG-mgmtsystem_nonconformity-to-V.-10.0
