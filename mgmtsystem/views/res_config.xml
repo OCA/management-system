@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_mgmtsystem_configuration" model="ir.ui.view">
+            <field name="name">Configure management system</field>
+            <field name="model">mgmtsystem.config.settings</field>
+            <field name="arch" type="xml">
+                <form string="Configure management system" class= "oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <separator string="Management Systems"/>
+                    <group>
+                        <label for="id" string="Systems"/>
+                        <div>
+                            <div>
+                                <field name="module_mgmtsystem_quality" class="oe_inline"/>
+                                <label for="module_mgmtsystem_quality"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_environment" class="oe_inline"/>
+                                <label for="module_mgmtsystem_environment"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_health_safety" class="oe_inline"/>
+                                <label for="module_mgmtsystem_health_safety"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_information_security" class="oe_inline"/>
+                                <label for="module_mgmtsystem_information_security"/>
+                            </div>
+                        </div>
+                    </group>
+                    <separator string="Applications"/>
+                    <group>
+                        <label for="id" string="Applications"/>
+                        <div>
+                            <div>
+                                <field name="module_mgmtsystem_action" class="oe_inline"/>
+                                <label for="module_mgmtsystem_action"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_nonconformity" class="oe_inline"/>
+                                <label for="module_mgmtsystem_nonconformity"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_claim" class="oe_inline"/>
+                                <label for="module_mgmtsystem_claim"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_audit" class="oe_inline"/>
+                                <label for="module_mgmtsystem_audit"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_review" class="oe_inline"/>
+                                <label for="module_mgmtsystem_review"/>
+                            </div>
+                        </div>
+                    </group>
+                    <separator string="Manuals"/>
+                    <group>
+                        <label for="id" string="Manuals"/>
+                        <div>
+                            <div>
+                                <field name="module_mgmtsystem_quality_manual" class="oe_inline"/>
+                                <label for="module_mgmtsystem_quality_manual"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_environment_manual" class="oe_inline"/>
+                                <label for="module_mgmtsystem_environment_manual"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_health_safety_manual" class="oe_inline"/>
+                                <label for="module_mgmtsystem_health_safety_manual"/>
+                            </div>
+                            <div>
+                                <field name="module_information_security_manual" class="oe_inline"/>
+                                <label for="module_information_security_manual"/>
+                            </div>
+                        </div>
+                    </group>
+                    <separator string="Documentation"/>
+                    <group>
+                        <label for="id" string="Documentation"/>
+                        <div>
+                            <div>
+                                <field name="module_mgmtsystem_procedure" class="oe_inline"/>
+                                <label for="module_mgmtsystem_procedure"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_environmental_aspect" class="oe_inline"/>
+                                <label for="module_mgmtsystem_environmental_aspect"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_hazard" class="oe_inline"/>
+                                <label for="module_mgmtsystem_hazard"/>
+                            </div>
+                            <div>
+                                <field name="module_mgmtsystem_security_event" class="oe_inline"/>
+                                <label for="module_mgmtsystem_security_event"/>
+                            </div>
+                        </div>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_mgmtsystem_configuration" model="ir.actions.act_window">
+            <field name="name">Configure management system</field>
+            <field name="res_model">mgmtsystem.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem id="menu_mgmtsystem_settings"
+                  name="Settings"
+                  parent="menu_mgmtsystem_configuration"
+                  sequence="0"
+                  action="action_mgmtsystem_configuration"/>
+</odoo>
