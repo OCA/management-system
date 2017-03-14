@@ -2,9 +2,15 @@
 =======
 # -*- coding: utf-8 -*-
 
+<<<<<<< 2129e7ae751a8f47d8a71257da6b304537d1e081
 from openerp import exceptions
 >>>>>>> Improving test coverage
 from openerp.tests import common
+=======
+from odoo import exceptions
+from odoo.tests import common
+from datetime import datetime, timedelta
+>>>>>>> MIG mgmtsystem_action to V. 10.0
 
 
 class TestModelAction(common.TransactionCase):
@@ -117,7 +123,42 @@ class TestModelAction(common.TransactionCase):
 
         ret = record.get_action_url()
 
+<<<<<<< 2129e7ae751a8f47d8a71257da6b304537d1e081
         self.assertEqual(isinstance(ret, list), True)
         self.assertEqual(len(ret), 1)
         self.assertEqual(isinstance(ret[0], basestring), True)
         self.assertEqual(ret[0].startswith('http'), True)
+=======
+        # self.assertEqual(isinstance(ret, list), True)
+        # self.assertEqual(len(ret), 1)
+        self.assertEqual(isinstance(ret, basestring), True)
+        self.assertEqual(ret.startswith('http'), True)
+
+    def test_process_reminder_queue(self):
+        """Check if process_reminder_queue work when days reminder are 10."""
+        record = self.env['mgmtsystem.action'].create({
+            "name": "SampleAction",
+            "type_action": "immediate",
+            "date_deadline": datetime.now() + timedelta(days=10)
+        })
+        self.assertTrue(record.process_reminder_queue())
+
+    def test_stage_groups(self):
+        """Check if stage_groups return all stages."""
+        record = self.env['mgmtsystem.action'].create({
+            "name": "SampleAction",
+            "type_action": "immediate",
+        })
+        stage_ids = self.env['mgmtsystem.action.stage'].search([])
+        stages_found = record._stage_groups(self, record, stage_ids)
+        state = (len(stage_ids) == len(stages_found[0]))
+        self.assertFalse(state)
+
+    def test_send_mail(self):
+        """Check if mail send action work."""
+        record = self.env['mgmtsystem.action'].create({
+            "name": "SampleAction",
+            "type_action": "immediate",
+        })
+        self.assertTrue(record.send_mail_for_action(record))
+>>>>>>> MIG mgmtsystem_action to V. 10.0
