@@ -48,6 +48,7 @@ Credits
 Contributors
 ------------
 
+* Eugen Don <eugen.don@don-systems.de>
 * Savoir-faire Linux <support@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 

@@ -1,3 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 
-from . import mgmtsystem_system, res_config
+import mgmtsystem_system
+import res_config
