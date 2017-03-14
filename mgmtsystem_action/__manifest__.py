@@ -1,3 +1,4 @@
+<<<<<<< 2129e7ae751a8f47d8a71257da6b304537d1e081
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
@@ -18,6 +19,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+=======
+# -*- coding: utf-8 -*-
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
+>>>>>>> MIG mgmtsystem_action to V. 10.0
 {
 <<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
 <<<<<<< 19a28d85a2132bf3e180ba87be85af98327c8555
@@ -42,7 +49,11 @@
 =======
 >>>>>>> Ported mgmtsystem_action
     "name": "Management System - Action",
+<<<<<<< 2129e7ae751a8f47d8a71257da6b304537d1e081
     "version": "8.0.1.2.0",
+=======
+    "version": "10.0.1.0.0",
+>>>>>>> MIG mgmtsystem_action to V. 10.0
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -95,6 +106,10 @@ system:
     "demo": [
         'demo/mgmtsystem_action.xml',
     ],
+<<<<<<< 2129e7ae751a8f47d8a71257da6b304537d1e081
     'installable': False,
 >>>>>>> [MIG] Make modules uninstallable
+=======
+    'installable': True,
+>>>>>>> MIG mgmtsystem_action to V. 10.0
 }
