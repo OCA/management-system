@@ -52,7 +52,7 @@ information in the tab named Causes and Analysis:
 * Severity: Select the severity among unfounded, minor and major
 * Immediate action: Create or select an immediate action if appropriate
 
-Click on Save and then on Action Plan.
+Click on the Save button and then on the "Action Plan" button in the top right corner.
 
 In the Actions tab, select or create new actions by entering the following
 items:
@@ -67,7 +67,7 @@ items:
 When the action is created, a notification is sent to the person responsible
 for the action.
 
-Enter comments below the Plan Review field, those comments are required to reach the next stage.
+Enter comments into the input field below the "Plan Review" section, those comments are required to reach the next stage.
 
 To begin the work on the planned Actions change the stage of the NC to open by clicking on the "In Progress" button in the top right corner.
 
