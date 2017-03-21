@@ -24,7 +24,6 @@ Configuration
 
 Users must be added to the appropriate groups within Odoo as follows:
 * Creators: Settings > Users > Groups > Management System / User
-* Responsible Persons: Settings > Users > Groups > Management System / Approving User
 
 Usage
 =====
@@ -43,9 +42,9 @@ To use this module:
 * Procedures:  Against which procedure is the NC
 * Description: Evidence, reference to the standards
 
-* Click on Save and then on Send for Analysis.
+* Click on Save and then on Analysis.
 
-As an approving user, go to the newly created NC and fill in the following
+Go to the newly created NC and fill in the following
 information in the tab named Causes and Analysis:
 
 * Causes: Add root causes
@@ -53,7 +52,7 @@ information in the tab named Causes and Analysis:
 * Severity: Select the severity among unfounded, minor and major
 * Immediate action: Create or select an immediate action if appropriate
 
-Click on Approve and then on Send for Review.
+Click on the Save button and then on the "Action Plan" button in the top right corner.
 
 In the Actions tab, select or create new actions by entering the following
 items:
@@ -68,8 +67,9 @@ items:
 When the action is created, a notification is sent to the person responsible
 for the action.
 
-When the action plan is reviewed (comments) and approved, each action of the
-plan is opened.
+Enter comments into the input field below the "Plan Review" section, those comments are required to reach the next stage.
+
+To begin the work on the planned Actions change the stage of the NC to open by clicking on the "In Progress" button in the top right corner.
 
 When all actions of the plan are done, their effectiveness must be evaluated
 before closing the NC.
