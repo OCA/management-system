@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from openerp import fields, models
+from odoo import fields, models
 
 
-class MgmtSystemVerificationLine(models.Model):
+class MgmtsystemVerificationLine(models.Model):
     """Class to manage verification's Line."""
     _name = "mgmtsystem.verification.line"
     _description = "Verification Line"
@@ -14,13 +14,13 @@ class MgmtSystemVerificationLine(models.Model):
         'mgmtsystem.audit',
         'Audit',
         ondelete='cascade',
-        select=True,
+        index=True,
     )
     procedure_id = fields.Many2one(
         'document.page',
         'Procedure',
         ondelete='restrict',
-        select=True,
+        index=True,
     )
     is_conformed = fields.Boolean('Is conformed', default=False)
     comments = fields.Text('Comments')
