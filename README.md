@@ -19,6 +19,7 @@ These presentation may help with an overviews of the modules:
 * [Overview presentation](http://www.slideshare.net/max3903/openerp-management-system-modules) (2012) by Savoir-Faire Linux
 
 [//]: # (addons)
+
 Available addons
 ----------------
 addon | version | summary
