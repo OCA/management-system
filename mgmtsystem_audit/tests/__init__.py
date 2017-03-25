@@ -18,7 +18,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import (
-    test_audit,
-    test_copy_verification_lines,
-)
+
+from . import test_audit
+from . import test_copy_verification_lines
