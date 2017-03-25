@@ -1,6 +1,4 @@
 <odoo>
-    <data>
-
         <!-- Verification Lines -->
 
         <record id="view_mgmtsystem_verification_line_tree" model="ir.ui.view">
@@ -110,7 +108,7 @@
             <field name="arch" type="xml">
                 <form string="Audit" version="7.0">
                     <header>
-                        <button name="button_close" string="Close" states="open" type="object" icon="gtk-jump-to"/>
+                        <button name="button_close" string="Close" states="open" type="object"/>
                         <field name="state" widget="statusbar" select="1" readonly="1"/>
                     </header>
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
@@ -153,12 +151,18 @@
                             <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
                             <field name="reference"/>
                             <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
+<<<<<<< 07addfd1ffded4f91261048bef8351b6a7711522
                             <field name="user_id" string="Audit Manager" required="1"/>
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
 =======
                             <field name="company_id" groups="base.group_multi_company"/>
 >>>>>>> Moved mgmtsystem_audit to root and fixed imports
                             <field name="system_id"/>
+=======
+                            <field name="user_id" string="Audit Manager" required="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="system_id" attrs="{'readonly':[('state','=','done')]}"/>
+>>>>>>> MIG 10.0
                         </group>
                         <notebook colspan="4">
                             <page string="Auditors">
@@ -274,6 +278,7 @@ Please prepare the verification list:
             </field>
         </record>
 
+<<<<<<< 07addfd1ffded4f91261048bef8351b6a7711522
 <<<<<<< e00fa43c595690d36669b683a085e5741efb9324
         <!-- Automated Action: Email all auditors 2 weeks before Audit. -->
         <record id="rule_set_prepare_to_audit" model="base.action.rule">
@@ -330,4 +335,6 @@ Odoo
 =======
 >>>>>>> [MIG] mgmtsystem_audit
     </data>
+=======
+>>>>>>> MIG 10.0
 </odoo>

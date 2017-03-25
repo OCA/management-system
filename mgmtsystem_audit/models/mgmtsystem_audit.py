@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+<<<<<<< 07addfd1ffded4f91261048bef8351b6a7711522
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -34,6 +35,16 @@ from openerp import fields, models, api, _
 
 
 class MgmtSystemAudit(models.Model):
+=======
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
+
+from odoo import fields, models, api, _
+
+
+class MgmtsystemAudit(models.Model):
+>>>>>>> MIG 10.0
     """Model class that manage audit."""
 
     _name = "mgmtsystem.audit"
@@ -259,7 +270,7 @@ class MgmtSystemAudit(models.Model):
                 'mgmtsystem.audit'
             ),
         })
-        audit_id = super(MgmtSystemAudit, self).create(vals)
+        audit_id = super(MgmtsystemAudit, self).create(vals)
         return audit_id
 >>>>>>> [MIG] mgmtsystem_audit
 
@@ -341,10 +352,7 @@ class MgmtSystemAudit(models.Model):
         p = []
         for l in self.line_ids:
             if l.procedure_id.id:
-                proc_nm = self.pool.get('document.page').read(
-                    self.env.cr, self.env.uid, l.procedure_id.id, ['name']
-                )
-                procedure_name = proc_nm['name']
+                procedure_name = l.procedure_id.name
             else:
                 procedure_name = _('Undefined')
 

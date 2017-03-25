@@ -18,6 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+<<<<<<< 07addfd1ffded4f91261048bef8351b6a7711522
 <<<<<<< e00fa43c595690d36669b683a085e5741efb9324:mgmtsystem_audit/report/audit_report.py
 
 import time
@@ -50,3 +51,8 @@ from . import (
     test_copy_verification_lines,
 >>>>>>> [MIG] mgmtsystem_audit:mgmtsystem_audit/tests/__init__.py
 )
+=======
+
+from . import test_audit
+from . import test_copy_verification_lines
+>>>>>>> MIG 10.0
