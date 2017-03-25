@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
         <template id="verification_report">
 
             <t t-set="doc" t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"/>
@@ -108,5 +107,4 @@
                 </div>
             </t>
         </template>
-    </data>
 </odoo>
