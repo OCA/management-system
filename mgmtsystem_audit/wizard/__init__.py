@@ -4,7 +4,11 @@
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
 =======
 # -*- coding: utf-8 -*-
+<<<<<<< 07addfd1ffded4f91261048bef8351b6a7711522
 >>>>>>> [IMP] Module structure
+=======
+
+>>>>>>> MIG 10.0
 from . import copy_verification_lines
 <<<<<<< 4f3f22d0380be9de7d49aa2a47077871c2b4c703
 =======

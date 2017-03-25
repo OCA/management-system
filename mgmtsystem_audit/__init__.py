@@ -21,8 +21,17 @@ from . import wizard
 >>>>>>> Removed vim lines
 =======
 # -*- coding: utf-8 -*-
+<<<<<<< 07addfd1ffded4f91261048bef8351b6a7711522
 from . import (
     models,
     wizard
 )
 >>>>>>> [IMP] Module structure
+=======
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
+
+from . import models
+from . import wizard
+>>>>>>> MIG 10.0

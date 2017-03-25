@@ -1,23 +1,6 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
 <<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
 <<<<<<< b2fef5464e02e345d90a60666de68bf7b7affe15
@@ -53,7 +36,7 @@
 This module enables you to manage audits and verifications lists of your management system.
 =======
     "name": "Management System - Audit",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -86,6 +69,7 @@ management system.
     "demo": [
         'demo/demo_audit.xml',
     ],
+<<<<<<< 07addfd1ffded4f91261048bef8351b6a7711522
 <<<<<<< b3c0a54eae7a03bc508cd23b094b2c6a5339d97a
 <<<<<<< e00fa43c595690d36669b683a085e5741efb9324
 <<<<<<< 7b789f414fa0decc3c5afe3bd77d89f33eb53e4f
@@ -107,4 +91,7 @@ management system.
 =======
     'installable': False,
 >>>>>>> [MIG] Make modules uninstallable
+=======
+    'installable': True,
+>>>>>>> MIG 10.0
 }
