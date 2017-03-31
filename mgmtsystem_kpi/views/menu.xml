@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+            <menuitem id="menu_mgmtsystem_kpi"
+                      name="KPI"
+                      action="kpi.open_kpi_list"
+                      sequence="15"
+                      parent="mgmtsystem.menu_mgmtsystem_main"
+                      groups="base.group_user"/>
+      </data>
+ </odoo>

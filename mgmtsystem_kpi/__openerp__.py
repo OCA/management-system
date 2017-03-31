@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,51 +20,21 @@
 ##############################################################################
 {
     "name": "Key Performance Indicator",
-    "version": "7.0.1.1.1",
+    "version": "9.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
-    "category": "Management System",
+    "category": "Management Systems",
     "complexity": "normal",
-    "description": """\
-This module provides the basis for creating key performance indicators,
-including static and dynamic thresholds (SQL query or Python code),
-on local and remote data sources.
-
-The module also provides the mecanism to update KPIs automatically.
-A scheduler is executed every hour and updates the KPI values, based
-on the periodicity of each KPI. KPI computation can also be done
-manually.
-
-A threshold is a list of ranges and a range is:
- * a name (like Good, Warning, Bad)
- * a minimum value (fixed, sql query or python code)
- * a maximum value (fixed, sql query or python code)
- * color (RGB code like #00FF00 for green, #FFA500 for orange,
-   #FF0000 for red)
-
-This module depends on:
- * base_external_dbsource (available in lp:openobject-extension)
- * web_color (available in lp:web-addons)
-    """,
     "depends": [
         'mgmtsystem',
-        'base_external_dbsource',
-        'web_color',
+        'kpi'
     ],
     "data": [
-        'security/ir.model.access.csv',
-        'security/mgmtsystem_kpi_security.xml',
-        'mgmtsystem_kpi_view.xml',
+        'views/menu.xml',
     ],
-    "images": [
-        "images/kpi_definition.png",
-        "images/kpi_computation.png",
-        "images/kpi_threshold.png",
-        "images/kpi_range.png",
-    ],
+    "images": [],
     "demo": [],
     "test": [],
-    'installable': False,
+    'installable': True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
