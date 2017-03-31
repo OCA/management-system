@@ -25,6 +25,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[document_page_work_instruction](document_page_work_instruction/) | 10.0.1.0.0 | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 10.0.1.0.0 | Management System
 [mgmtsystem_manual](mgmtsystem_manual/) | 10.0.1.0.0 | Management System - Manual
 [mgmtsystem_survey](mgmtsystem_survey/) | 10.0.1.0.0 | Management System - Survey
@@ -39,7 +40,6 @@ addon | version | summary
 [document_page_health_safety_manual](document_page_health_safety_manual/) | 9.0.1.0.0 (unported) | Health and Safety Manual
 [document_page_procedure](document_page_procedure/) | 9.0.1.0.0 (unported) | Document Management - Wiki - Procedures
 [document_page_quality_manual](document_page_quality_manual/) | 9.0.1.0.0 (unported) | Quality Manual
-[document_page_work_instruction](document_page_work_instruction/) | 9.0.1.0.0 (unported) | Document Management - Wiki - Work Instructions
 [mgmtsystem_action](mgmtsystem_action/) | 9.0.1.0.0 (unported) | Management System - Action
 [mgmtsystem_action_audittrail](mgmtsystem_action_audittrail/) | 1.0 (unported) | Management System - Actions Audit Trail tracking
 [mgmtsystem_audit](mgmtsystem_audit/) | 9.0.1.0.0 (unported) | Management System - Audit
