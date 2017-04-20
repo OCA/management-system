@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from openerp import fields, models
-from openerp import tools
+from odoo import fields, models, api
+from odoo import tools
 
 
 class MgmtsystemtActionReport(models.Model):
@@ -28,19 +28,20 @@ class MgmtsystemtActionReport(models.Model):
         ('prevention', 'Preventive Action'),
         ('improvement', 'Improvement Opportunity')
     ], 'Response Type')
-    create_date = fields.Datetime('Create Date', readonly=True, select=True)
-    opening_date = fields.Datetime('Opening Date', readonly=True, select=True)
-    date_closed = fields.Datetime('Close Date', readonly=True, select=True)
-    date_deadline = fields.Date('Deadline', readonly=True, select=True)
+    create_date = fields.Datetime('Create Date', readonly=True, index=True)
+    opening_date = fields.Datetime('Opening Date', readonly=True, index=True)
+    date_closed = fields.Datetime('Close Date', readonly=True, index=True)
+    date_deadline = fields.Date('Deadline', readonly=True, index=True)
     user_id = fields.Many2one('res.users', 'User', readonly=True)
     stage_id = fields.Many2one(
         'mgmtsystem.action.stage', 'Stage', readonly=True)
     system_id = fields.Many2one('mgmtsystem.system', 'System', readonly=True)
 
-    def init(self, cr):
+    @api.model_cr
+    def init(self):
         """Display a pivot view of action."""
-        tools.drop_view_if_exists(cr, 'mgmtsystem_action_report')
-        cr.execute("""
+        tools.drop_view_if_exists(self._cr, 'mgmtsystem_action_report')
+        self.env.cr.execute("""
              CREATE OR REPLACE VIEW mgmtsystem_action_report AS (
                  select
                     m.id,
