@@ -71,6 +71,12 @@ class MgmtsystemConfigSettings(models.TransientModel):
         '-This installs the module mgmtsystem_review.'
     )
 
+    module_document_page_approval = fields.Boolean(
+        'Document page approval',
+        help='Provide document approval and history. \n'
+        '-This installs the module document_page_approval.'
+    )
+
     # Manuals
 
     module_mgmtsystem_quality_manual = fields.Boolean(
