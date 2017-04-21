@@ -10,8 +10,8 @@
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
     "depends": [
+        'document_page',
         'mgmtsystem',
-        'document_page_approval',
     ],
     "data": [
         'data/document_page.xml',
