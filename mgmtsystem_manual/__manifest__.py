@@ -10,7 +10,7 @@
     "license": "AGPL-3",
     "category": "Management System",
     "depends": [
-        'document_page_approval',
+        'document_page',
         'mgmtsystem',
     ],
     "data": [
