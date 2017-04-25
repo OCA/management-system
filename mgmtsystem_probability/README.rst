@@ -7,10 +7,12 @@ used across different modules (health and safety, information security).
 Installation
 ============
 
+* No specific installation required.
+
 Configuration
 =============
 
-No configuration needed
+* No specific configuration required.
 
 Usage
 =====
@@ -30,7 +32,7 @@ For further information, please visit:
 Known issues / Roadmap
 ======================
 
- None
+* None
 
 Credits
 =======
@@ -41,6 +43,7 @@ Contributors
 * Loïc Faure-Lacroix <loic.lacroix@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
+* Gervais Naoussi <gervaisnaoussi@gmail.com>
 
 Maintainer
 ----------
