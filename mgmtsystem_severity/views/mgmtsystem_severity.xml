@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+
+        <record id="view_mgmtsystem_severity_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.severity.form</field>
+            <field name="model">mgmtsystem.severity</field>
+            <field name="arch" type="xml">
+                <form string="Severity">
+                    <group colspan="4" col="4">
+                        <field name="name"/>
+                        <field name="value"/>
+                        <newline/>
+                        <field name="category"/>
+                        <newline/>
+                        <field name="description"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_severity_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.severity.tree</field>
+            <field name="model">mgmtsystem.severity</field>
+            <field name="arch" type="xml">
+                <tree string="Severities">
+                    <field name="name"/>
+                    <field name="value"/>
+                    <field name="category"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_severity_list" model="ir.actions.act_window">
+            <field name="name">Severity</field>
+            <field name="res_model">mgmtsystem.severity</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <menuitem id="menu_open_mgmtsystem_severity"
+            action="open_mgmtsystem_severity_list"
+            parent="mgmtsystem.menu_mgmtsystem_configuration"
+            sequence="20"
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+    </data>
+</odoo>

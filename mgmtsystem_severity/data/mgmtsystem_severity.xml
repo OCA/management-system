@@ -1,0 +1,61 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Hazard Severity-->
+        <record id="data_mgmtsystem_severity_hazard_4"
+                model="mgmtsystem.severity">
+            <field name="name">Critical</field>
+            <field name="value">4</field>
+            <field name="category">hazard</field>
+        </record>
+
+        <record id="data_mgmtsystem_severity_hazard_3"
+                model="mgmtsystem.severity">
+            <field name="name">Important</field>
+            <field name="value">3</field>
+            <field name="category">hazard</field>
+        </record>
+
+        <record id="data_mgmtsystem_severity_hazard_2"
+                model="mgmtsystem.severity">
+            <field name="name">Limited</field>
+            <field name="value">2</field>
+            <field name="category">hazard</field>
+        </record>
+
+        <record id="data_mgmtsystem_severity_hazard_1"
+                model="mgmtsystem.severity">
+            <field name="name">Negligible</field>
+            <field name="value">1</field>
+            <field name="category">hazard</field>
+        </record>
+
+        <!-- Security Severity -->
+        <record id="data_mgmtsystem_severity_security_4"
+                model="mgmtsystem.severity">
+            <field name="name">Critical</field>
+            <field name="value">4</field>
+            <field name="category">security</field>
+        </record>
+
+        <record id="data_mgmtsystem_severity_security_3"
+                model="mgmtsystem.severity">
+            <field name="name">Important</field>
+            <field name="value">3</field>
+            <field name="category">security</field>
+        </record>
+
+        <record id="data_mgmtsystem_severity_security_2"
+                model="mgmtsystem.severity">
+            <field name="name">Limited</field>
+            <field name="value">2</field>
+            <field name="category">security</field>
+        </record>
+
+        <record id="data_mgmtsystem_severity_security_1"
+                model="mgmtsystem.severity">
+            <field name="name">Negligible</field>
+            <field name="value">1</field>
+            <field name="category">security</field>
+        </record>
+    </data>
+</odoo>
