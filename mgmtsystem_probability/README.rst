@@ -1,3 +1,8 @@
+.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+   :alt: License: AGPL-3
+
+=============================
 Management System Probability
 =============================
 
@@ -19,7 +24,7 @@ Usage
 
 To use this module, you need to:
 
- * go to Management System > Configuration > Probability
+* go to Management System > Configuration > Probability
 
  .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
@@ -27,7 +32,7 @@ To use this module, you need to:
 
 For further information, please visit:
 
- * https://github.com/OCA/management-system/issues
+* https://github.com/OCA/management-system/issues
 
 Known issues / Roadmap
 ======================
