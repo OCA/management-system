@@ -1,0 +1,63 @@
+<odoo>
+    <data noupdate="1">
+
+        <!-- Hazard Probability-->
+        <record id="data_mgmtsystem_probability_hazard_4"
+                model="mgmtsystem.probability">
+            <field name="name">Maximum (every week)</field>
+            <field name="value">4</field>
+            <field name="category">hazard</field>
+        </record>
+
+        <record id="data_mgmtsystem_probability_hazard_3"
+                model="mgmtsystem.probability">
+            <field name="name">Strong (every month)</field>
+            <field name="value">3</field>
+            <field name="category">hazard</field>
+        </record>
+
+        <record id="data_mgmtsystem_probability_hazard_2"
+                model="mgmtsystem.probability">
+            <field name="name">Significant (every year)</field>
+            <field name="value">2</field>
+            <field name="category">hazard</field>
+        </record>
+
+        <record id="data_mgmtsystem_probability_hazard_1"
+                model="mgmtsystem.probability">
+            <field name="name">Minimum (every decade)</field>
+            <field name="value">1</field>
+            <field name="category">hazard</field>
+        </record>
+
+        <!-- Security probability -->
+        <record id="data_mgmtsystem_probability_security_4"
+                model="mgmtsystem.probability">
+            <field name="name">Maximum (every week)</field>
+            <field name="value">4</field>
+            <field name="category">security</field>
+        </record>
+
+        <record id="data_mgmtsystem_probability_security_3"
+                model="mgmtsystem.probability">
+            <field name="name">Strong (every month)</field>
+            <field name="value">3</field>
+            <field name="category">security</field>
+        </record>
+
+        <record id="data_mgmtsystem_probability_security_2"
+                model="mgmtsystem.probability">
+            <field name="name">Significant (every year)</field>
+            <field name="value">2</field>
+            <field name="category">security</field>
+        </record>
+
+        <record id="data_mgmtsystem_probability_security_1"
+                model="mgmtsystem.probability">
+            <field name="name">Minimum (every decade)</field>
+            <field name="value">1</field>
+            <field name="category">security</field>
+        </record>
+
+    </data>
+</odoo>

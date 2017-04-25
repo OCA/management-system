@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record id="view_mgmtsystem_probability_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.probability.form</field>
+            <field name="model">mgmtsystem.probability</field>
+            <field name="arch" type="xml">
+                <form string="Probability">
+                    <group colspan="4" col="4">
+                        <field name="name"/>
+                        <field name="value"/>
+                        <newline/>
+                        <field name="category"/>
+                        <newline/>
+                        <field name="description"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_probability_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.probability.tree</field>
+            <field name="model">mgmtsystem.probability</field>
+            <field name="arch" type="xml">
+                <tree string="Probabilities">
+                    <field name="name"/>
+                    <field name="value"/>
+                    <field name="category"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_probability_list" model="ir.actions.act_window">
+            <field name="name">Probability</field>
+            <field name="res_model">mgmtsystem.probability</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <menuitem id="menu_open_mgmtsystem_probability"
+            action="open_mgmtsystem_probability_list"
+            parent="mgmtsystem.menu_mgmtsystem_configuration"
+            sequence="20"
+            groups="mgmtsystem.group_mgmtsystem_manager"/>
+    </data>
+</odoo>
