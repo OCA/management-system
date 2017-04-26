@@ -40,8 +40,10 @@ addon | version | summary
 [mgmtsystem_kpi](mgmtsystem_kpi/) | 9.0.1.0.0 | Key Performance Indicator
 [mgmtsystem_manual](mgmtsystem_manual/) | 9.0.1.0.0 | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 9.0.1.0.0 | Management System - Nonconformity
+[mgmtsystem_probability](mgmtsystem_probability/) | 9.0.1.0.0 | Management System Probability
 [mgmtsystem_quality](mgmtsystem_quality/) | 9.0.1.0.0 | Quality Management System
 [mgmtsystem_review](mgmtsystem_review/) | 9.0.1.0.0 | Management System - Review
+[mgmtsystem_severity](mgmtsystem_severity/) | 9.0.1.0.0 | Management System Severity
 [mgmtsystem_survey](mgmtsystem_survey/) | 9.0.1.0.0 | Management System - Survey
 
 
