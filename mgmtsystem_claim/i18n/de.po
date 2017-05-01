@@ -4,14 +4,13 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
-# Akim Juillerat <akim.juillerat@camptocamp.com>, 2017
 # Rudolf Schnapka <rs@techno-flex.de>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-11 03:52+0000\n"
-"PO-Revision-Date: 2017-03-11 03:52+0000\n"
+"POT-Creation-Date: 2017-04-26 02:48+0000\n"
+"PO-Revision-Date: 2017-04-26 02:48+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>, 2017\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
@@ -45,6 +44,27 @@ msgid ""
 "        \n"
 "      "
 msgstr ""
+"\n"
+"        \n"
+"<p>\n"
+"  Hallo,</br>\n"
+"  Ihnen wurde eine neue Forderung zugewiesen:\n"
+"</p>\n"
+"<p>\n"
+"  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
+"</p>\n"
+"<p>\n"
+"  ${object.description}\n"
+"</p>\n"
+"<p>\n"
+"Vielen Dank.\n"
+"</p>\n"
+"--\n"
+"<p>\n"
+"  Odoo\n"
+"</p>\n"
+"        \n"
+"      "
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_number_of_claims
@@ -65,7 +85,7 @@ msgstr ""
 #: model:ir.actions.server,subject:mgmtsystem_claim.mgmtsystem_claim_server_action
 #: model:mail.template,subject:mgmtsystem_claim.action_email_template_reminder_action
 msgid "${object.name}"
-msgstr ""
+msgstr "${object.name}"
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.server,body_html:mgmtsystem_claim.mgmtsystem_claim_server_action
@@ -114,7 +134,7 @@ msgstr "Aktiv"
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_age
 msgid "Age"
-msgstr ""
+msgstr "Alter"
 
 #. module: mgmtsystem_claim
 #: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
@@ -469,6 +489,11 @@ msgid ""
 "history for a claim (emails sent, intervention type and so on). Claims may "
 "automatically be linked to an email address using the mail gateway module."
 msgstr ""
+"Festhalten und Verfolgen Ihrer Kundenbeschwerden. Beschwerden können an "
+"einen Auftrag oder ein Los geknüpft sein. Sie können Emails mit Anhängen "
+"versenden und damit den vollständigen Verlauf erhalten (Gesendete Emails, "
+"Gegenmßnahmen, -art, usw.). Beschwerden können über das Email-Gateway-Modul "
+"automatisch mit einer Email-Anschrift verknüpft werden."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_ref
@@ -539,11 +564,11 @@ msgstr "Reihenfolge"
 #. module: mgmtsystem_claim
 #: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Share a note..."
-msgstr ""
+msgstr "Eine Notiz teilen..."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_stage_id
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_id_3363
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_id_3478
 #: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Stage"
 msgstr "Stufe"
@@ -637,24 +662,24 @@ msgstr "Webseiten-Kommunikationsverlauf"
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_cancel
 msgid "cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_close
 msgid "close"
-msgstr ""
+msgstr "Schließen"
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_draft
 msgid "draft"
-msgstr ""
+msgstr "Entwurf"
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_open
 msgid "open"
-msgstr ""
+msgstr "Öffnen"
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_pending
 msgid "pending"
-msgstr ""
+msgstr "In Bearbeitung"

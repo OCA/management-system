@@ -1,0 +1,129 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_severity
+# 
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-26 02:48+0000\n"
+"PO-Revision-Date: 2017-04-26 02:48+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Spanish (Dominican Republic) (https://www.transifex.com/oca/teams/23907/es_DO/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es_DO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: mgmtsystem_severity
+#: model:ir.model.fields,field_description:mgmtsystem_severity.field_mgmtsystem_severity_category
+msgid "Category"
+msgstr "Categoría"
+
+#. module: mgmtsystem_severity
+#: model:ir.model.fields,field_description:mgmtsystem_severity.field_mgmtsystem_severity_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: mgmtsystem_severity
+#: model:ir.model.fields,field_description:mgmtsystem_severity.field_mgmtsystem_severity_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: mgmtsystem_severity
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.data_mgmtsystem_severity_hazard_4
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.data_mgmtsystem_severity_security_4
+msgid "Critical"
+msgstr ""
+
+#. module: mgmtsystem_severity
+#: model:ir.model.fields,field_description:mgmtsystem_severity.field_mgmtsystem_severity_description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: mgmtsystem_severity
+#: model:ir.model.fields,field_description:mgmtsystem_severity.field_mgmtsystem_severity_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: mgmtsystem_severity
+#: model:ir.model.fields,field_description:mgmtsystem_severity.field_mgmtsystem_severity_id
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_severity
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.data_mgmtsystem_severity_hazard_3
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.data_mgmtsystem_severity_security_3
+msgid "Important"
+msgstr ""
+
+#. module: mgmtsystem_severity
+#: model:ir.model.fields,field_description:mgmtsystem_severity.field_mgmtsystem_severity___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: mgmtsystem_severity
+#: model:ir.model.fields,field_description:mgmtsystem_severity.field_mgmtsystem_severity_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: mgmtsystem_severity
+#: model:ir.model.fields,field_description:mgmtsystem_severity.field_mgmtsystem_severity_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: mgmtsystem_severity
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.data_mgmtsystem_severity_hazard_2
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.data_mgmtsystem_severity_security_2
+msgid "Limited"
+msgstr ""
+
+#. module: mgmtsystem_severity
+#: model:ir.model,name:mgmtsystem_severity.model_mgmtsystem_severity
+msgid "Management System Severity"
+msgstr ""
+
+#. module: mgmtsystem_severity
+#: model:ir.model.fields,field_description:mgmtsystem_severity.field_mgmtsystem_severity_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: mgmtsystem_severity
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.data_mgmtsystem_severity_hazard_1
+#: model:mgmtsystem.severity,name:mgmtsystem_severity.data_mgmtsystem_severity_security_1
+msgid "Negligible"
+msgstr ""
+
+#. module: mgmtsystem_severity
+#: model:ir.ui.view,arch_db:mgmtsystem_severity.view_mgmtsystem_severity_tree
+msgid "Severities"
+msgstr ""
+
+#. module: mgmtsystem_severity
+#: model:ir.actions.act_window,name:mgmtsystem_severity.open_mgmtsystem_severity_list
+#: model:ir.ui.menu,name:mgmtsystem_severity.menu_open_mgmtsystem_severity
+#: model:ir.ui.view,arch_db:mgmtsystem_severity.view_mgmtsystem_severity_form
+msgid "Severity"
+msgstr ""
+
+#. module: mgmtsystem_severity
+#: model:ir.model.fields,field_description:mgmtsystem_severity.field_mgmtsystem_severity_value
+msgid "Value"
+msgstr ""
+
+#. module: mgmtsystem_severity
+#: code:addons/mgmtsystem_severity/models/mgmtsystem_severity.py:26
+#: selection:mgmtsystem.severity,category:0
+#, python-format
+msgid "hazard"
+msgstr ""
+
+#. module: mgmtsystem_severity
+#: code:addons/mgmtsystem_severity/models/mgmtsystem_severity.py:27
+#: selection:mgmtsystem.severity,category:0
+#, python-format
+msgid "security"
+msgstr ""

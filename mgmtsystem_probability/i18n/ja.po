@@ -1,0 +1,129 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_probability
+# 
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-26 02:48+0000\n"
+"PO-Revision-Date: 2017-04-26 02:48+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Japanese (https://www.transifex.com/oca/teams/23907/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: mgmtsystem_probability
+#: model:ir.model.fields,field_description:mgmtsystem_probability.field_mgmtsystem_probability_category
+msgid "Category"
+msgstr "分類"
+
+#. module: mgmtsystem_probability
+#: model:ir.model.fields,field_description:mgmtsystem_probability.field_mgmtsystem_probability_create_uid
+msgid "Created by"
+msgstr "作成者"
+
+#. module: mgmtsystem_probability
+#: model:ir.model.fields,field_description:mgmtsystem_probability.field_mgmtsystem_probability_create_date
+msgid "Created on"
+msgstr "作成日"
+
+#. module: mgmtsystem_probability
+#: model:ir.model.fields,field_description:mgmtsystem_probability.field_mgmtsystem_probability_description
+msgid "Description"
+msgstr "説明"
+
+#. module: mgmtsystem_probability
+#: model:ir.model.fields,field_description:mgmtsystem_probability.field_mgmtsystem_probability_display_name
+msgid "Display Name"
+msgstr "表示名"
+
+#. module: mgmtsystem_probability
+#: model:ir.model.fields,field_description:mgmtsystem_probability.field_mgmtsystem_probability_id
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_probability
+#: model:ir.model.fields,field_description:mgmtsystem_probability.field_mgmtsystem_probability___last_update
+msgid "Last Modified on"
+msgstr "最終更新日"
+
+#. module: mgmtsystem_probability
+#: model:ir.model.fields,field_description:mgmtsystem_probability.field_mgmtsystem_probability_write_uid
+msgid "Last Updated by"
+msgstr "最終更新者"
+
+#. module: mgmtsystem_probability
+#: model:ir.model.fields,field_description:mgmtsystem_probability.field_mgmtsystem_probability_write_date
+msgid "Last Updated on"
+msgstr "最終更新日"
+
+#. module: mgmtsystem_probability
+#: model:ir.model,name:mgmtsystem_probability.model_mgmtsystem_probability
+msgid "Management System Probability"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.data_mgmtsystem_probability_hazard_4
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.data_mgmtsystem_probability_security_4
+msgid "Maximum (every week)"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.data_mgmtsystem_probability_hazard_1
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.data_mgmtsystem_probability_security_1
+msgid "Minimum (every decade)"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: model:ir.model.fields,field_description:mgmtsystem_probability.field_mgmtsystem_probability_name
+msgid "Name"
+msgstr "名称"
+
+#. module: mgmtsystem_probability
+#: model:ir.ui.view,arch_db:mgmtsystem_probability.view_mgmtsystem_probability_tree
+msgid "Probabilities"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: model:ir.actions.act_window,name:mgmtsystem_probability.open_mgmtsystem_probability_list
+#: model:ir.ui.menu,name:mgmtsystem_probability.menu_open_mgmtsystem_probability
+#: model:ir.ui.view,arch_db:mgmtsystem_probability.view_mgmtsystem_probability_form
+msgid "Probability"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.data_mgmtsystem_probability_hazard_2
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.data_mgmtsystem_probability_security_2
+msgid "Significant (every year)"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.data_mgmtsystem_probability_hazard_3
+#: model:mgmtsystem.probability,name:mgmtsystem_probability.data_mgmtsystem_probability_security_3
+msgid "Strong (every month)"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: model:ir.model.fields,field_description:mgmtsystem_probability.field_mgmtsystem_probability_value
+msgid "Value"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: code:addons/mgmtsystem_probability/model/mgmtsystem_probability.py:26
+#: selection:mgmtsystem.probability,category:0
+#, python-format
+msgid "hazard"
+msgstr ""
+
+#. module: mgmtsystem_probability
+#: code:addons/mgmtsystem_probability/model/mgmtsystem_probability.py:27
+#: selection:mgmtsystem.probability,category:0
+#, python-format
+msgid "security"
+msgstr ""

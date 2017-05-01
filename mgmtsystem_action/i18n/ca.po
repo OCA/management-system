@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-11 04:20+0000\n"
-"PO-Revision-Date: 2017-03-11 04:20+0000\n"
+"POT-Creation-Date: 2017-04-26 02:48+0000\n"
+"PO-Revision-Date: 2017-04-26 02:48+0000\n"
 "Last-Translator: Marc Tormo i Bochaca <mtbochaca@gmail.com>, 2017\n"
 "Language-Team: Catalan (https://www.transifex.com/oca/teams/23907/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -112,12 +112,12 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_tree
 msgid "Action"
-msgstr ""
+msgstr "Acció"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Acció necessària "
 
 #. module: mgmtsystem_action
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:158
@@ -176,7 +176,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_cancel
 msgid "Cancelled"
-msgstr ""
+msgstr "Cancel·lat "
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_date_closed
@@ -253,7 +253,7 @@ msgstr "Veure el nom"
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_draft
 msgid "Draft"
-msgstr ""
+msgstr "Esborrany"
 
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
@@ -268,17 +268,17 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguidors"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Seguidors (Canals) "
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Seguidors (Empreses) "
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,help:mgmtsystem_action.action_report_mgmtsystem_action
@@ -290,7 +290,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_id
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_3118
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_3211
 msgid "ID"
 msgstr "ID"
 
@@ -302,7 +302,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si està marcat, els nous missatges volen la vostra atenció. "
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_stage_case_default
@@ -331,7 +331,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "És seguidor"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_last_post
@@ -370,22 +370,22 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Missatges"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Número d'accions "
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Número de missatges que requereixen una acció "
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Número de missatges no llegits "
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_opening_date
@@ -473,7 +473,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Comptador de missatges sense llegir"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_stage_sequence

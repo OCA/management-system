@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-11 03:52+0000\n"
-"PO-Revision-Date: 2017-03-11 03:52+0000\n"
+"POT-Creation-Date: 2017-04-26 02:48+0000\n"
+"PO-Revision-Date: 2017-04-26 02:48+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>, 2017\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +104,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "${object.name}"
-msgstr ""
+msgstr "${object.name}"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
@@ -166,7 +166,7 @@ msgstr "Aktiv"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_age
 msgid "Age"
-msgstr ""
+msgstr "Alter"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_cancel_date
@@ -176,7 +176,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_cancel
 msgid "Cancelled"
-msgstr ""
+msgstr "Storniert"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_date_closed
@@ -290,7 +290,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_id
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_3118
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_3211
 msgid "ID"
 msgstr "Kennung"
 
@@ -495,12 +495,12 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Webseiten-Mitteilungen"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Webseiten-Kommunikationsverlauf"
 
 #. module: mgmtsystem_action
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:172
