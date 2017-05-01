@@ -4,13 +4,14 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
+# Rudolf Schnapka <rs@techno-flex.de>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-09 19:32+0000\n"
-"PO-Revision-Date: 2016-02-23 13:01+0000\n"
-"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"POT-Creation-Date: 2017-03-28 04:56+0000\n"
+"PO-Revision-Date: 2017-04-19 11:44+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-management-system-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,12 +43,12 @@ msgid ""
 "</p>\n"
 "        \n"
 "      "
-msgstr ""
+msgstr "\n        \n<p>\n  Hallo,</br>\n  Ihnen wurde eine neue Beschwerde zugewiesen:\n</p>\n<p>\n  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n</p>\n<p>\n  ${object.description}\n</p>\n<p>\nVielen Dank.\n</p>\n--\n<p>\n  Odoo\n</p>\n        \n      "
 
 #. module: mgmtsystem_claim
 #: model:email.template,subject:mgmtsystem_claim.action_email_template_reminder_action
 msgid "${object.name}"
-msgstr ""
+msgstr "${object.name}"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,type_action:0
@@ -199,6 +200,12 @@ msgid "Destination email for email gateway."
 msgstr "Ziel-Emailadresse für dieses Email-Gateway."
 
 #. module: mgmtsystem_claim
+#: field:mgmtsystem.claim,display_name:0
+#: field:mgmtsystem.claim.stage,display_name:0
+msgid "Display Name"
+msgstr "Anzeigebezeichnung"
+
+#. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Draft and Open Claims"
 msgstr "Laufende Forderungen und Entwürfe"
@@ -261,6 +268,12 @@ msgstr "Ist ein Follower"
 #: field:mgmtsystem.claim,message_last_post:0
 msgid "Last Message Date"
 msgstr "Letztes Meldungsdatum"
+
+#. module: mgmtsystem_claim
+#: field:mgmtsystem.claim,__last_update:0
+#: field:mgmtsystem.claim.stage,__last_update:0
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,write_uid:0 field:mgmtsystem.claim.stage,write_uid:0
@@ -334,7 +347,7 @@ msgstr "In Bearbeitung"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,partner_phone:0
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,type_action:0
@@ -344,7 +357,7 @@ msgstr "Präventivmaßnahme"
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,priority:0
 msgid "Priority"
-msgstr ""
+msgstr "Priorität"
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_action
@@ -353,7 +366,7 @@ msgid ""
 "order or a lot. You can send emails with attachments and keep the full "
 "history for a claim (emails sent, intervention type and so on). Claims may "
 "automatically be linked to an email address using the mail gateway module."
-msgstr ""
+msgstr "Festhalten und Verfolgen Ihrer Kundenbeschwerden. Beschwerden können an einen Auftrag oder ein Los geknüpft sein. Sie können Emails mit Anhängen versenden und damit den vollständigen Verlauf erhalten (Gesendete Emails, Gegenmßnahmen, -art, usw.). Beschwerden können über das Email-Gateway-Modul automatisch mit einer Email-Anschrift verknüpft werden."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,ref:0 field:mgmtsystem.claim,reference:0
@@ -426,7 +439,7 @@ msgstr "Reihenfolge"
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Share a note..."
-msgstr ""
+msgstr "Eine Notiz teilen..."
 
 #. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
@@ -509,29 +522,29 @@ msgstr "Webseiten-Kommunikationsverlauf"
 #. module: mgmtsystem_claim
 #: model:ir.actions.act_window,name:mgmtsystem_claim.action_mgmtsystem_claim
 msgid "board.mgmtsystem.claim.act_window"
-msgstr ""
+msgstr "board.mgmtsystem.claim.act_window"
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_cancel
 msgid "cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_close
 msgid "close"
-msgstr ""
+msgstr "Schließen"
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_draft
 msgid "draft"
-msgstr ""
+msgstr "Entwurf"
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_open
 msgid "open"
-msgstr ""
+msgstr "Öffnen"
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_pending
 msgid "pending"
-msgstr ""
+msgstr "In Bearbeitung"

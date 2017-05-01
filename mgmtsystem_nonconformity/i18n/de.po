@@ -4,13 +4,13 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
-# Rudolf Schnapka <rs@techno-flex.de>, 2016
+# Rudolf Schnapka <rs@techno-flex.de>, 2016-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-09 19:32+0000\n"
-"PO-Revision-Date: 2016-02-23 13:00+0000\n"
+"POT-Creation-Date: 2017-03-28 04:57+0000\n"
+"PO-Revision-Date: 2017-04-19 11:44+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-management-system-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -302,6 +302,14 @@ msgid "Direction Review"
 msgstr "Führungsreview"
 
 #. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,display_name:0
+#: field:mgmtsystem.nonconformity.cause,display_name:0
+#: field:mgmtsystem.nonconformity.origin,display_name:0
+#: field:mgmtsystem.nonconformity.severity,display_name:0
+msgid "Display Name"
+msgstr "Anzeigebezeichnung"
+
+#. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:33
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 #: selection:mgmtsystem.nonconformity,state:0
@@ -463,6 +471,14 @@ msgstr "Mangel an Expertise"
 #: field:mgmtsystem.nonconformity,message_last_post:0
 msgid "Last Message Date"
 msgstr "Letztes Meldungsdatum"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,__last_update:0
+#: field:mgmtsystem.nonconformity.cause,__last_update:0
+#: field:mgmtsystem.nonconformity.origin,__last_update:0
+#: field:mgmtsystem.nonconformity.severity,__last_update:0
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,write_uid:0
@@ -730,6 +746,11 @@ msgid "State"
 msgstr "Status"
 
 #. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,state_name:0
+msgid "State Description"
+msgstr "Statusbeschreibung"
+
+#. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,message_summary:0
 msgid "Summary"
 msgstr "Übersicht"
@@ -801,4 +822,4 @@ msgstr "Arbeitsbedingungen"
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.action_mgmtsystem_nonconformity
 msgid "board.mgmtsystem.nonconformity.act_window"
-msgstr ""
+msgstr "board.mgmtsystem.nonconformity.act_window"

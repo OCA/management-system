@@ -4,13 +4,13 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
-# Rudolf Schnapka <rs@techno-flex.de>, 2015
+# Rudolf Schnapka <rs@techno-flex.de>, 2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-09 19:32+0000\n"
-"PO-Revision-Date: 2016-02-23 13:00+0000\n"
+"POT-Creation-Date: 2017-03-28 04:57+0000\n"
+"PO-Revision-Date: 2017-04-19 11:44+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-management-system-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -104,12 +104,18 @@ msgstr "Jahr:"
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review.line,decision:0
 msgid "Decision"
-msgstr ""
+msgstr "Entscheidung"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Decision:"
 msgstr "Entscheidung:"
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review,display_name:0
+#: field:mgmtsystem.review.line,display_name:0
+msgid "Display Name"
+msgstr "Anzeigebezeichnung"
 
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
@@ -131,6 +137,12 @@ msgstr "Verbesserungen:"
 #: report:mgmtsystem.review.report:0
 msgid "Inputs"
 msgstr "Eingaben"
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review,__last_update:0
+#: field:mgmtsystem.review.line,__last_update:0
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review,write_uid:0
@@ -246,7 +258,7 @@ msgstr "Bewertungen"
 #. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Satisfaction Survey Answers"
-msgstr ""
+msgstr "Antworten zu Zufriedenheitsumfrage"
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review,state:0
