@@ -3,14 +3,15 @@
 # * mgmtsystem_manual
 # 
 # Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: management-system (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-05 01:40+0000\n"
-"PO-Revision-Date: 2016-03-04 19:39+0000\n"
-"Last-Translator: <>\n"
-"Language-Team: Spanish (http://www.transifex.com/oca/OCA-management-system-9-0/language/es/)\n"
+"POT-Creation-Date: 2017-04-21 18:16+0000\n"
+"PO-Revision-Date: 2017-04-21 18:16+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -23,6 +24,7 @@ msgid "Categories"
 msgstr ""
 
 #. module: mgmtsystem_manual
+#: model:ir.model,name:mgmtsystem_manual.model_mgmtsystem_system
 #: model:ir.model.fields,field_description:mgmtsystem_manual.field_mgmtsystem_system_manual
 msgid "Manual"
 msgstr ""
@@ -37,8 +39,3 @@ msgstr "Manuales"
 #: model:ir.actions.act_window,help:mgmtsystem_manual.action_manuals
 msgid "Manuals of your management systems."
 msgstr ""
-
-#. module: mgmtsystem_manual
-#: model:ir.model,name:mgmtsystem_manual.model_mgmtsystem_system
-msgid "System"
-msgstr "Sistema"

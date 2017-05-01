@@ -3,16 +3,15 @@
 # * mgmtsystem
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
-# Rudolf Schnapka <rs@techno-flex.de>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: management-system (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-07 01:45+0000\n"
-"PO-Revision-Date: 2016-03-11 17:13+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-management-system-9-0/language/de/)\n"
+"POT-Creation-Date: 2017-04-21 18:16+0000\n"
+"PO-Revision-Date: 2017-04-21 18:16+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -25,7 +24,10 @@ msgid ""
 "\n"
 "    Actions (immediate, corrective, preventive) and improvement opportunities\n"
 "        "
-msgstr "\nHandlungen (Sofort, Berichtigend, Vorbeugend) und Verbesserungsmöglichkeiten\n      "
+msgstr ""
+"\n"
+"Handlungen (Sofort, Berichtigend, Vorbeugend) und Verbesserungsmöglichkeiten\n"
+"      "
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
@@ -97,6 +99,11 @@ msgid "Display Name"
 msgstr "Anzeigename"
 
 #. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_document_page_approval
+msgid "Document page approval"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_manuals
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Documentation"
@@ -110,7 +117,8 @@ msgstr "Umwelt (ISO 14001)"
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_environment_manual
 msgid "Environment Manual template based on the ISO 14001:2004 standard"
-msgstr "Vorlage des Umwelt-Handbuchs basiert auf den Vorgaben gem. ISO 14001:2004"
+msgstr ""
+"Vorlage des Umwelt-Handbuchs basiert auf den Vorgaben gem. ISO 14001:2004"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_environmental_aspect
@@ -130,7 +138,9 @@ msgstr "Gefahren"
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_health_safety_manual
 msgid "Health & Safety Manual template based on the OHSAS 18001 standard"
-msgstr "Vorlage des Gesundheits- und Sicherkeitshandbuches basiert auf den Vorgaben gem. OHSAS 18001"
+msgstr ""
+"Vorlage des Gesundheits- und Sicherkeitshandbuches basiert auf den Vorgaben "
+"gem. OHSAS 18001"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_health_safety
@@ -151,7 +161,9 @@ msgstr "Informationssicherheit (ISO 27001)"
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_information_security_manual
 msgid "Information Security Manual template based on ISO 27001"
-msgstr "Vorlage des Sicherheitshandbuchs zur Informationsverarbeitung basiert auf den Vorgaben gem. ISO 27001"
+msgstr ""
+"Vorlage des Sicherheitshandbuchs zur Informationsverarbeitung basiert auf "
+"den Vorgaben gem. ISO 27001"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings___last_update
@@ -176,7 +188,9 @@ msgstr "Zuletzt aktualisiert am"
 msgid ""
 "Manage management systems, manuals, KPIs, nonconformities, actions, "
 "feedbacks, audits, reviews."
-msgstr "Verwalte Managementsysteme, Handbücher, KPI's, Mängelprüfungen, Handlungen, Rückmeldungen, Audits, Reviews."
+msgstr ""
+"Verwalte Managementsysteme, Handbücher, KPI's, Mängelprüfungen, Handlungen, "
+"Rückmeldungen, Audits, Reviews."
 
 #. module: mgmtsystem
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
@@ -199,6 +213,11 @@ msgid "Manager"
 msgstr "Manager"
 
 #. module: mgmtsystem
+#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
+msgid "Manual"
+msgstr "Handbuch"
+
+#. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Manuals"
 msgstr "Handbücher"
@@ -218,7 +237,9 @@ msgstr "Modul-Anwender mit zusätzlichen Berechtigungen für Freigaben."
 msgid ""
 "Module user with additional permission specific for the auditor job, such as"
 " effectiveness reviews."
-msgstr "Modul-Anwender mit auditorspezifischen Berechtigungen, wie z. B. Effektivitäts-Reviews."
+msgstr ""
+"Modul-Anwender mit auditorspezifischen Berechtigungen, wie z. B. "
+"Effektivitäts-Reviews."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_viewer
@@ -245,119 +266,160 @@ msgstr "Prozeduren"
 msgid ""
 "Provide Environmental Aspect category.\n"
 "- This installs the module mgmtsystem_environmental_aspect."
-msgstr "Stelle Kategorie für Umwelt-Management bereit.\n- Das Modul mgmtsystem_environmental_aspect wird installiert."
+msgstr ""
+"Stelle Kategorie für Umwelt-Management bereit.\n"
+"- Das Modul mgmtsystem_environmental_aspect wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_security_event
 msgid ""
 "Provide Feared Events.\n"
 "- This installs the module mgmtsystem_security_event."
-msgstr "Stelle Risikomanagement bereit.\n- Das Modul mgmtsystem_security_event wird installiert."
+msgstr ""
+"Stelle Risikomanagement bereit.\n"
+"- Das Modul mgmtsystem_security_event wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_hazard
 msgid ""
 "Provide Hazards.\n"
 "- This installs the module mgmtsystem_hazard."
-msgstr "Stelle Gefahren-Management bereit.\n- Das Modul mgmtsystems_hazard wird installiert."
+msgstr ""
+"Stelle Gefahren-Management bereit.\n"
+"- Das Modul mgmtsystems_hazard wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_health_safety_manual
 msgid ""
 "Provide a health and safety manual template.\n"
 "- This installs the module mgmtsystem_health_safety_manual."
-msgstr "Stellt Handbuch für Gesundheits- und Arbeitssicherheit bereit.\n- Das Modul mgmtsystem_health_safety_manual wird installiert."
+msgstr ""
+"Stellt Handbuch für Gesundheits- und Arbeitssicherheit bereit.\n"
+"- Das Modul mgmtsystem_health_safety_manual wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_quality_manual
 msgid ""
 "Provide a quality manual template.\n"
 "- This installs the module mgmtsystem_quality_manual."
-msgstr "Stellt Handbuchvorlage zum Qualitätsmanagement bereit.\n- Das Modul mgmtsystem_quality_manual wird installiert."
+msgstr ""
+"Stellt Handbuchvorlage zum Qualitätsmanagement bereit.\n"
+"- Das Modul mgmtsystem_quality_manual wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_action
 msgid ""
 "Provide actions and improvement opportunities tools.\n"
 "-This installs the module mgmtsystem_action."
-msgstr "Stellt Mittel zur Aktions- und Verbesserungsplanung bereit bereit.\n- Das Modul mgmtsystem_action wird installiert."
+msgstr ""
+"Stellt Mittel zur Aktions- und Verbesserungsplanung bereit bereit.\n"
+"- Das Modul mgmtsystem_action wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_environment_manual
 msgid ""
 "Provide an environment manual template.\n"
 "- This installs the module mgmtsystem_environment_manual."
-msgstr "Stellt Handbuchvorlage zum Umweltmanagement bereit.\n- Das Modul mgmtsystem_environment_manual wird installiert."
+msgstr ""
+"Stellt Handbuchvorlage zum Umweltmanagement bereit.\n"
+"- Das Modul mgmtsystem_environment_manual wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_information_security_manual
 msgid ""
 "Provide an information security manual.\n"
 "- This installs the module information_security_manual."
-msgstr "Stellt Handbuchvorlage zur Sicherheit in der Informationsverarbeitung bereit.\n- Das Modul mgmtsystem_security_manual wird installiert."
+msgstr ""
+"Stellt Handbuchvorlage zur Sicherheit in der Informationsverarbeitung bereit.\n"
+"- Das Modul mgmtsystem_security_manual wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_audit
 msgid ""
 "Provide audit tools.\n"
 "-This installs the module mgmtsystem_audit."
-msgstr "Stellt Hilfsmittel zum Auditieren bereit.\n- Das Modul mgmtsystem_audit wird installiert."
+msgstr ""
+"Stellt Hilfsmittel zum Auditieren bereit.\n"
+"- Das Modul mgmtsystem_audit wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_claim
 msgid ""
 "Provide claim tools.\n"
 "-This installs the module mgmtsystem_claim."
-msgstr "Stellt Hilfsmittel zum Forderungsmanagement bereit.\n- Das Modul mgmtsystem_claim wird installiert."
+msgstr ""
+"Stellt Hilfsmittel zum Forderungsmanagement bereit.\n"
+"- Das Modul mgmtsystem_claim wird installiert."
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_document_page_approval
+msgid ""
+"Provide document approval and history. \n"
+"-This installs the module document_page_approval."
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_environment
 msgid ""
 "Provide environment management tools.\n"
 "-This installs the module mgmtsystem_environment."
-msgstr "Stellt Hilfsmittel zum Umweltmanagement bereit.\n- Das Modul mgmtsystem_environment wird installiert."
+msgstr ""
+"Stellt Hilfsmittel zum Umweltmanagement bereit.\n"
+"- Das Modul mgmtsystem_environment wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_health_safety
 msgid ""
 "Provide health and safety management tools.\n"
 "-This installs the module mgmtsystem_health_safety."
-msgstr "Stellt Hilfsmittel Gesundheits- und Arbeitssicherheit bereit.\n- Das Modul mgmtsystem_health_safety wird installiert."
+msgstr ""
+"Stellt Hilfsmittel Gesundheits- und Arbeitssicherheit bereit.\n"
+"- Das Modul mgmtsystem_health_safety wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_information_security
 msgid ""
 "Provide information security tools.\n"
 "-This installs the module mgmtsystem_information_security."
-msgstr "Stellt Hilfsmittel für Sicherheit in der Informationsverarbeitung bereit.\n- Das Modul mgmtsystem_information_security wird installiert."
+msgstr ""
+"Stellt Hilfsmittel für Sicherheit in der Informationsverarbeitung bereit.\n"
+"- Das Modul mgmtsystem_information_security wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_nonconformity
 msgid ""
 "Provide non conformity tools.\n"
 "-This installs the module mgmtsystem_nonconformity."
-msgstr "Stellt Hilfsmittel zum Mängelmanagement bereit.\n- Das Modul mgmtsystem_nonconformity wird installiert."
+msgstr ""
+"Stellt Hilfsmittel zum Mängelmanagement bereit.\n"
+"- Das Modul mgmtsystem_nonconformity wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_procedure
 msgid ""
 "Provide procedures category.\n"
 "- This installs the module mgmtsystem_procedure."
-msgstr "Stellt Kategorie Prozeduren bereit.\n- Das Modul mgmtsystem_procedure wird installiert."
+msgstr ""
+"Stellt Kategorie Prozeduren bereit.\n"
+"- Das Modul mgmtsystem_procedure wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_quality
 msgid ""
 "Provide quality management tools.\n"
 "-This installs the module mgmtsystem_quality."
-msgstr "Stellt Hilfsmittel zum Qualitätsmanagement bereit.\n- Das Modul mgmtsystem_quality wird installiert."
+msgstr ""
+"Stellt Hilfsmittel zum Qualitätsmanagement bereit.\n"
+"- Das Modul mgmtsystem_quality wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_review
 msgid ""
 "Provide review tools.\n"
 "-This installs the module mgmtsystem_review."
-msgstr "Stellt Hilfsmittel für Revies bereit.\n- Das Modul mgmtsystem_review wird installiert."
+msgstr ""
+"Stellt Hilfsmittel für Revies bereit.\n"
+"- Das Modul mgmtsystem_review wird installiert."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_quality
@@ -367,7 +429,8 @@ msgstr "Qualität (ISO 9001)"
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_quality_manual
 msgid "Quality Manual template based on the ISO 9001:2008 standard"
-msgstr "Vorlage des Qualitätshandbuches basiert auf den Vorgaben gem. ISO 9001:2008"
+msgstr ""
+"Vorlage des Qualitätshandbuches basiert auf den Vorgaben gem. ISO 9001:2008"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_report
@@ -380,8 +443,7 @@ msgid "Settings"
 msgstr "Einstellungen"
 
 #. module: mgmtsystem
-#: code:addons/mgmtsystem/models/mgmtsystem_system.py:32
-#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
+#: code:addons/mgmtsystem/models/mgmtsystem_system.py:15
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_name
 #, python-format
 msgid "System"

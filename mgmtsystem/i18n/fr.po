@@ -3,16 +3,15 @@
 # * mgmtsystem
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
-# Maxime Chambreuil <mchambreuil@ursainfosystems.com>, 2015
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: management-system (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-07 06:43+0000\n"
-"PO-Revision-Date: 2016-09-17 19:03+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: French (http://www.transifex.com/oca/OCA-management-system-9-0/language/fr/)\n"
+"POT-Creation-Date: 2017-04-21 18:16+0000\n"
+"PO-Revision-Date: 2017-04-21 18:16+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -97,6 +96,11 @@ msgid "Display Name"
 msgstr "Nom à afficher"
 
 #. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_document_page_approval
+msgid "Document page approval"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_manuals
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Documentation"
@@ -176,7 +180,9 @@ msgstr "Mis à jour le"
 msgid ""
 "Manage management systems, manuals, KPIs, nonconformities, actions, "
 "feedbacks, audits, reviews."
-msgstr "Gérer vos systèmes de gestion, manuels, indicateurs de performance, non-conformités, actions, retours d'expérience, audits, revues de direction."
+msgstr ""
+"Gérer vos systèmes de gestion, manuels, indicateurs de performance, non-"
+"conformités, actions, retours d'expérience, audits, revues de direction."
 
 #. module: mgmtsystem
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
@@ -199,6 +205,11 @@ msgid "Manager"
 msgstr "Responsable"
 
 #. module: mgmtsystem
+#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
+msgid "Manual"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Manuals"
 msgstr "Manuels"
@@ -206,7 +217,8 @@ msgstr "Manuels"
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_manager
 msgid "Module administrator, able to modify configuration data."
-msgstr "Administrateur du module, capable de modifier les données de configuration."
+msgstr ""
+"Administrateur du module, capable de modifier les données de configuration."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_user_manager
@@ -218,7 +230,9 @@ msgstr "Utilisateur du module sans les permissions d'approbation."
 msgid ""
 "Module user with additional permission specific for the auditor job, such as"
 " effectiveness reviews."
-msgstr "Utilisateur du module avec les permissions d'approbation sur les audits pour les revues d'efficacité par exemple."
+msgstr ""
+"Utilisateur du module avec les permissions d'approbation sur les audits pour"
+" les revues d'efficacité par exemple."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_viewer
@@ -311,6 +325,13 @@ msgid ""
 msgstr ""
 
 #. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_document_page_approval
+msgid ""
+"Provide document approval and history. \n"
+"-This installs the module document_page_approval."
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_environment
 msgid ""
 "Provide environment management tools.\n"
@@ -380,8 +401,7 @@ msgid "Settings"
 msgstr ""
 
 #. module: mgmtsystem
-#: code:addons/mgmtsystem/models/mgmtsystem_system.py:32
-#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
+#: code:addons/mgmtsystem/models/mgmtsystem_system.py:15
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_name
 #, python-format
 msgid "System"

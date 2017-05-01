@@ -3,15 +3,15 @@
 # * mgmtsystem
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: management-system (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-07 06:43+0000\n"
-"PO-Revision-Date: 2016-09-16 21:45+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-management-system-9-0/language/sl/)\n"
+"POT-Creation-Date: 2017-04-21 18:16+0000\n"
+"PO-Revision-Date: 2017-04-21 18:16+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -96,6 +96,11 @@ msgid "Display Name"
 msgstr "Prikazni naziv"
 
 #. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_config_settings_module_document_page_approval
+msgid "Document page approval"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_manuals
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Documentation"
@@ -175,7 +180,9 @@ msgstr "Zadnjič posodobljeno"
 msgid ""
 "Manage management systems, manuals, KPIs, nonconformities, actions, "
 "feedbacks, audits, reviews."
-msgstr "Upravljanje sistemov upravljanja, priročniki, kazatelji storilnosti, neskladnosti, ukrepi, povratne informacije, revizije, pregledi."
+msgstr ""
+"Upravljanje sistemov upravljanja, priročniki, kazatelji storilnosti, "
+"neskladnosti, ukrepi, povratne informacije, revizije, pregledi."
 
 #. module: mgmtsystem
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
@@ -198,6 +205,11 @@ msgid "Manager"
 msgstr "Upravitelj"
 
 #. module: mgmtsystem
+#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
+msgid "Manual"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Manuals"
 msgstr "Priročniki"
@@ -217,7 +229,9 @@ msgstr "Uporabnik modula z dodatnimi dovoljenji za odobritve."
 msgid ""
 "Module user with additional permission specific for the auditor job, such as"
 " effectiveness reviews."
-msgstr "Uporabnik modula z dodatnim dovoljenjem za specifično revizorsko delovno mesto, kot npr. pregled učinkovitosti"
+msgstr ""
+"Uporabnik modula z dodatnim dovoljenjem za specifično revizorsko delovno "
+"mesto, kot npr. pregled učinkovitosti"
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_viewer
@@ -310,6 +324,13 @@ msgid ""
 msgstr ""
 
 #. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_document_page_approval
+msgid ""
+"Provide document approval and history. \n"
+"-This installs the module document_page_approval."
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_mgmtsystem_config_settings_module_mgmtsystem_environment
 msgid ""
 "Provide environment management tools.\n"
@@ -379,8 +400,7 @@ msgid "Settings"
 msgstr ""
 
 #. module: mgmtsystem
-#: code:addons/mgmtsystem/models/mgmtsystem_system.py:32
-#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
+#: code:addons/mgmtsystem/models/mgmtsystem_system.py:15
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_name
 #, python-format
 msgid "System"
