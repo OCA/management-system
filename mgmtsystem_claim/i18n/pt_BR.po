@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# Rodrigo de Almeida Sottomaior Macedo <rmsolucoeseminformatic4@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-26 02:48+0000\n"
-"PO-Revision-Date: 2017-04-26 02:48+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2017-05-13 04:19+0000\n"
+"PO-Revision-Date: 2017-05-13 04:19+0000\n"
+"Last-Translator: Rodrigo de Almeida Sottomaior Macedo <rmsolucoeseminformatic4@gmail.com>, 2017\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,11 +44,32 @@ msgid ""
 "        \n"
 "      "
 msgstr ""
+"\n"
+"        \n"
+"<p>\n"
+"  Olá,</br>\n"
+"  Uma nova reivindicação foi-lhe atribuída:\n"
+"</p>\n"
+"<p>\n"
+"  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
+"</p>\n"
+"<p>\n"
+"  ${object.description}\n"
+"</p>\n"
+"<p>\n"
+"Obrigado.\n"
+"</p>\n"
+"--\n"
+"<p>\n"
+"  Odoo\n"
+"</p>\n"
+"        \n"
+"      "
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_number_of_claims
 msgid "# of claims"
-msgstr ""
+msgstr "# de reinvidicações"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_number_of_days_to_close
@@ -86,6 +108,24 @@ msgid ""
 "  OpenERP\n"
 "</p>"
 msgstr ""
+"   \n"
+"<p>\n"
+"  Olá,</br>\n"
+"  Uma nova reivindicação foi-lhe atribuída:\n"
+"</p>\n"
+"<p>\n"
+"  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
+"</p>\n"
+"<p>\n"
+"  ${object.description}\n"
+"</p>\n"
+"<p>\n"
+"Obrigado.\n"
+"</p>\n"
+"--\n"
+"<p>\n"
+"  Odoo\n"
+"</p>"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_needaction
@@ -308,6 +348,8 @@ msgid ""
 "Have a general overview of all claims processed in the system by sorting "
 "them with specific criteria."
 msgstr ""
+"Tenha uma visão geral de todas as reivindicações processadas no sistema "
+"classificando-as com critérios específicos."
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
@@ -390,7 +432,7 @@ msgstr "Sistema de Gestão de Análise"
 #. module: mgmtsystem_claim
 #: model:ir.model,name:mgmtsystem_claim.model_mgmtsystem_claim_report
 msgid "Management System Claim Report"
-msgstr ""
+msgstr "Relatório de Reivindicação do Sistema de Gerenciamento"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_ids
@@ -467,6 +509,12 @@ msgid ""
 "history for a claim (emails sent, intervention type and so on). Claims may "
 "automatically be linked to an email address using the mail gateway module."
 msgstr ""
+"Registre e rastreie as reivindicações de seus clientes. As reivindicações "
+"podem estar ligadas a uma ordem de venda ou a um lote. Você pode enviar "
+"e-mails com anexos e manter o histórico completo de uma reivindicação "
+"(e-mails enviados, tipo de intervenção e assim por diante). As "
+"reivindicações podem ser vinculadas automaticamente a um endereço de e-mail "
+"usando o módulo de gateway de e-mail."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_ref
@@ -562,7 +610,7 @@ msgstr "Estágios"
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_team_ids
 msgid "Teams"
-msgstr ""
+msgstr "Times"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_email_cc
