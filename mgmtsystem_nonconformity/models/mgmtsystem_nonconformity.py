@@ -163,23 +163,12 @@ class MgmtsystemNonconformity(models.Model):
         'Company',
         default=lambda self: self.env.user.company_id.id)
 
-    corrective_action_id = fields.Many2one(
-        'mgmtsystem.action',
-        'Corrective action',
-        domain="[('nonconformity_id', '=', id)]",
-    )
-    preventive_action_id = fields.Many2one(
-        'mgmtsystem.action',
-        'Preventive action',
-        domain="[('nonconformity_id', '=', id)]",
-    )
-
     @api.multi
     def _get_all_actions(self):
         self.ensure_one()
-        return (self.action_ids +
-                self.corrective_action_id +
-                self.preventive_action_id)
+        return (
+            self.action_ids +
+            self.immediate_action_id)
 
     @api.constrains('stage_id')
     def _check_open_with_action_comments(self):
