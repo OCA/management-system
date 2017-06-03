@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-26 02:48+0000\n"
-"PO-Revision-Date: 2017-04-26 02:48+0000\n"
+"POT-Creation-Date: 2017-05-30 04:38+0000\n"
+"PO-Revision-Date: 2017-05-30 04:38+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
@@ -63,7 +63,7 @@ msgid "Action Plan Comments"
 msgstr "Comentarios plan de acción"
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:189
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:178
 #, python-format
 msgid ""
 "Action plan  comments are required in order to put a nonconformity In "
@@ -89,7 +89,7 @@ msgid "Add a description ..."
 msgstr "Añadir una descripción ..."
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:205
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:194
 #, python-format
 msgid "All actions must be done before closing a Nonconformity."
 msgstr ""
@@ -222,11 +222,6 @@ msgid "Conclusions from the last effectiveness evaluation."
 msgstr "Conclusiones de la última evaluación de la efectividad."
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_corrective_action_id
-msgid "Corrective action"
-msgstr "Acción correctiva"
-
-#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin_create_uid
@@ -320,7 +315,7 @@ msgid "Evaluation Comments"
 msgstr "Comentarios de evaluación"
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:198
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:187
 #, python-format
 msgid "Evaluation Comments are required in order to close a Nonconformity."
 msgstr ""
@@ -630,11 +625,6 @@ msgid "Plan Review"
 msgstr "Plan de revisión"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_preventive_action_id
-msgid "Preventive action"
-msgstr "Acción preventiva"
-
-#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_procedure_ids
 #: model:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Procedure"
@@ -707,7 +697,7 @@ msgstr "Secuencia"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_severity_list
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity_id_3580
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity_id_3579
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_severity
 msgid "Severity"
 msgstr "Severidad"
@@ -719,7 +709,7 @@ msgid "Severity of Complaints and Nonconformities"
 msgstr "Severidad de quejas y no conformidades"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_id_3587
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_id_3586
 msgid "Stage"
 msgstr ""
 
@@ -786,12 +776,12 @@ msgstr "Usuario"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Mensajes del sitio web"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historial de comunicación del sitio web"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
