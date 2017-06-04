@@ -187,7 +187,6 @@ Contributors
         'data/mail_message_subtype.xml',
         'reports/mgmtsystem_nonconformity_report.xml',
     ],
-    "images": [],
     "demo": [
         "demo/mgmtsystem_nonconformity_origin.xml",
         "demo/mgmtsystem_nonconformity_cause.xml",
