@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from openerp import models, api, fields, _
+from odoo import models, api, fields, _
 
 
 class MgmtsystemNonconformity(models.Model):
@@ -14,22 +14,19 @@ class MgmtsystemNonconformity(models.Model):
     _inherit = ['mail.thread', 'ir.needaction_mixin']
     _order = "create_date desc"
 
+    @api.model
     def _default_stage(self):
         """Return the default stage."""
-        return self.env.ref('mgmtsystem_nonconformity.stage_draft')
+        return (
+            self.env.ref('mgmtsystem_nonconformity.stage_draft', False) or
+            self.env['mgmtsystem.nonconformity.stage'].search(
+                [('is_starting', '=', True)],
+                limit=1))
 
     @api.model
-    def _stage_groups(self, present_ids, domain, **kwargs):
-        """This method is used by Kanban view to show empty stages."""
-        # perform search
-        # We search here stage objects
-        result = self.env[
-            'mgmtsystem.nonconformity.stage'].search([]).name_get()
-        return result, None
-
-    _group_by_full = {
-        'stage_id': _stage_groups
-    }
+    def _stage_groups(self, stages, domain, order):
+        stage_ids = self.env['mgmtsystem.nonconformity.stage'].search([])
+        return stage_ids
 
     # 1. Description
     name = fields.Char('Name')
@@ -97,7 +94,7 @@ class MgmtsystemNonconformity(models.Model):
         'Stage',
         track_visibility=True,
         copy=False,
-        default=_default_stage)
+        default=_default_stage, group_expand='_stage_groups')
     state = fields.Selection(
         related='stage_id.state',
         store=True,
@@ -161,23 +158,12 @@ class MgmtsystemNonconformity(models.Model):
         'Company',
         default=lambda self: self.env.user.company_id.id)
 
-    corrective_action_id = fields.Many2one(
-        'mgmtsystem.action',
-        'Corrective action',
-        domain="[('nonconformity_id', '=', id)]",
-    )
-    preventive_action_id = fields.Many2one(
-        'mgmtsystem.action',
-        'Preventive action',
-        domain="[('nonconformity_id', '=', id)]",
-    )
-
     @api.multi
     def _get_all_actions(self):
         self.ensure_one()
-        return (self.action_ids +
-                self.corrective_action_id +
-                self.preventive_action_id)
+        return (
+            self.action_ids +
+            self.immediate_action_id)
 
     @api.constrains('stage_id')
     def _check_open_with_action_comments(self):
