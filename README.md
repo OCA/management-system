@@ -30,6 +30,7 @@ addon | version | summary
 [document_page_work_instruction](document_page_work_instruction/) | 10.0.1.0.0 | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 10.0.1.0.0 | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 10.0.1.0.0 | Management System - Action
+[mgmtsystem_audit](mgmtsystem_audit/) | 10.0.1.0.0 | Management System - Audit
 [mgmtsystem_manual](mgmtsystem_manual/) | 10.0.1.0.0 | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 10.0.1.0.0 | Management System - Nonconformity
 [mgmtsystem_survey](mgmtsystem_survey/) | 10.0.1.0.0 | Management System - Survey
@@ -43,7 +44,6 @@ addon | version | summary
 [document_page_environmental_aspect](document_page_environmental_aspect/) | 9.0.1.0.0 (unported) | Environmental Aspects
 [document_page_health_safety_manual](document_page_health_safety_manual/) | 9.0.1.0.0 (unported) | Health and Safety Manual
 [mgmtsystem_action_audittrail](mgmtsystem_action_audittrail/) | 1.0 (unported) | Management System - Actions Audit Trail tracking
-[mgmtsystem_audit](mgmtsystem_audit/) | 9.0.1.0.0 (unported) | Management System - Audit
 [mgmtsystem_audit_audittrail](mgmtsystem_audit_audittrail/) | 1.0 (unported) | Management System - Audits Audit Trail tracking
 [mgmtsystem_claim](mgmtsystem_claim/) | 8.0.1.1.0 (unported) | Management System - Claim
 [mgmtsystem_claim_audittrail](mgmtsystem_claim_audittrail/) | 1.0 (unported) | Management System - Claims Audit Trail tracking
