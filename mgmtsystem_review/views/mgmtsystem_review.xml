@@ -1,5 +1,4 @@
 <odoo>
-    <data>
 
         <!-- Review Lines -->
 
@@ -87,8 +86,8 @@
             <field name="arch" type="xml">
                 <search string="Reviews">
                     <group>
-                        <filter name="current" icon="terp-document-new" domain="[('state','=','open')]" string="Open" help="Open Reviews"/>
-                        <filter icon="terp-camera_test" domain="[('state','=','done')]" string="Closed" help="Closed Reviews"/>
+                        <filter name="current" domain="[('state','=','open')]" string="Open" help="Open Reviews"/>
+                        <filter domain="[('state','=','done')]" string="Closed" help="Closed Reviews"/>
                         <separator orientation="vertical"/>
                         <field name="name"/>
                         <field name="date"/>
@@ -105,7 +104,7 @@
             <field name="arch" type="xml">
                 <form string="Review">
                     <header>
-                        <button name="button_close" string="Close" states="open" type="object" icon="gtk-jump-to"/>
+                        <button name="button_close" string="Close" states="open" type="object"/>
                         <field name="state" widget="statusbar" select="1" readonly="1"/>
                     </header>
                     <sheet>
@@ -190,5 +189,4 @@
             sequence="50"
             groups="mgmtsystem.group_mgmtsystem_manager"/>
 
-    </data>
 </odoo>
