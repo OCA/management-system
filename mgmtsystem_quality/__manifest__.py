@@ -2,6 +2,7 @@
 # -*- encoding: utf-8 -*-
 =======
 # -*- coding: utf-8 -*-
+<<<<<<< bd8029bed2eb1d2851f887faf67475489cb0f78e
 >>>>>>> Migrate mgmtsystem_quality
 ##############################################################################
 #
@@ -22,6 +23,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+=======
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
+>>>>>>> MIG mgmtsystem_quality to v. 10.0
 {
 <<<<<<< 30d639046d4a0862cd4144a32f76826bb489b0b0
 <<<<<<< 1f65871678dc62e50eb086ae107502490474b8ec
@@ -59,7 +65,7 @@ This module enables you to manage your quality management system, including :
     """,
 =======
     "name": "Quality Management System",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -82,7 +88,7 @@ This module enables you to manage your quality management system, including :
     "data": [
         'data/mgmtsystem_system.xml',
     ],
-    'installable': False,
+    'installable': True,
     "application": True,
 }
 >>>>>>> Migrate mgmtsystem_quality
