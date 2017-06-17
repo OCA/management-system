@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_audit
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2016-08-07 06:43+0000\n"
 "PO-Revision-Date: 2016-08-07 06:43+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Greek (Greece) (https://www.transifex.com/oca/teams/23907/el_GR/)\n"
+"Language-Team: Greek (Greece) (https://www.transifex.com/oca/teams/23907/"
+"el_GR/)\n"
+"Language: el_GR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: el_GR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_audit
@@ -59,11 +60,6 @@ msgid "<strong>Verification List</strong>"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_needaction
-msgid "Action Needed"
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_audit_id
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
@@ -79,7 +75,7 @@ msgid "Audit Manager"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:162
+#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:146
 #, python-format
 msgid "Audit closed"
 msgstr ""
@@ -202,11 +198,6 @@ msgid "Date"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_last_post
-msgid "Date of the last message posted on the record."
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Date:"
@@ -225,21 +216,6 @@ msgid "Display Name"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_follower_ids
-msgid "Followers"
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_partner_ids
-msgid "Followers (Partners)"
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model:ir.actions.act_window,help:mgmtsystem_audit.action_report_mgmtsystem_audit
 msgid ""
 "Have a general overview of all audits processed in the system by sorting "
@@ -254,16 +230,6 @@ msgid "ID"
 msgstr "Κωδικός"
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_unread
-msgid "If checked new messages require your attention."
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_needaction
-msgid "If checked, new messages require your attention."
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_imp_opp_ids
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Improvement Opportunities"
@@ -276,18 +242,8 @@ msgid "Internal"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_is_follower
-msgid "Is Follower"
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_is_conformed
 msgid "Is conformed"
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_last_post
-msgid "Last Message Date"
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -317,11 +273,6 @@ msgid "Management System Audit Analysis"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_ids
-msgid "Messages"
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_name
 msgid "Name"
 msgstr ""
@@ -338,18 +289,8 @@ msgid "Nonconformity"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_needaction_counter
-msgid "Number of Actions"
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_number_of_improvements_opportunity
 msgid "Number of improvements Opportunities"
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_needaction_counter
-msgid "Number of messages which requires an action"
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -360,11 +301,6 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_number_of_questions_in_verification_list
 msgid "Number of questions in verification list"
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_unread_counter
-msgid "Number of unread messages"
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -448,19 +384,9 @@ msgid "To Improve Points"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:193
+#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:174
 #, python-format
 msgid "Undefined"
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_unread
-msgid "Unread Messages"
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_unread_counter
-msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -485,16 +411,6 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.actions.report.xml,name:mgmtsystem_audit.verification_report_mgmtsystem_audit
 msgid "Verification list report"
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_website_message_ids
-msgid "Website communication history"
 msgstr ""
 
 #. module: mgmtsystem_audit
