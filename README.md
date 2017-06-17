@@ -33,6 +33,7 @@ addon | version | summary
 [mgmtsystem_audit](mgmtsystem_audit/) | 10.0.1.0.0 | Management System - Audit
 [mgmtsystem_manual](mgmtsystem_manual/) | 10.0.1.0.0 | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 10.0.1.0.0 | Management System - Nonconformity
+[mgmtsystem_review](mgmtsystem_review/) | 10.0.1.0.0 | Management System - Review
 [mgmtsystem_survey](mgmtsystem_survey/) | 10.0.1.0.0 | Management System - Survey
 
 
@@ -58,7 +59,6 @@ addon | version | summary
 [mgmtsystem_nonconformity_deptm](mgmtsystem_nonconformity_deptm/) | 1.0 (unported) | Management System Nonconformity - Department
 [mgmtsystem_nonconformity_project](mgmtsystem_nonconformity_project/) | 1.0 (unported) | Management System - Project
 [mgmtsystem_quality](mgmtsystem_quality/) | 9.0.1.0.0 (unported) | Quality Management System
-[mgmtsystem_review](mgmtsystem_review/) | 9.0.1.0.0 (unported) | Management System - Review
 [mgmtsystem_review_audittrail](mgmtsystem_review_audittrail/) | 1.0 (unported) | Management System - Reviews Audit Trail tracking
 
 [//]: # (end addons)
