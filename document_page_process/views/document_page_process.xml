@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_mgmtsystem_manuals_processes">
+        <field name="name">Processes</field>
+        <field name="res_model">document.page</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help">Processes of your management system.</field>
+        <field name="domain" eval="[('parent_id','=',ref('document_page_process'))]"/>
+        <field name="context" eval="{'default_parent_id': ref('document_page_process')}"/>
+    </record>
+
+    <record model="ir.ui.menu" id="menu_mgmtsystem_manuals_processes">
+        <field name="name">Processes</field>
+        <field name="parent_id" ref="mgmtsystem.menu_mgmtsystem_manuals"/>
+        <field name="action" ref="action_mgmtsystem_manuals_processes"/>
+        <field name="sequence" eval="15"/>
+    </record>
+
+</odoo>
