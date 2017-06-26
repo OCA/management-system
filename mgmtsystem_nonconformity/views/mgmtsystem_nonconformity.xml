@@ -618,7 +618,11 @@
             <notebook>
 
               <page string="Description">
-                <field name="description" placeholder="Add a description ..." attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                  <field name="description" placeholder="Add a description ..." attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                  <group>
+                    <field name="immediate_action_id" domain="[('type_action','=','immediate')]"
+                           attrs="{'readonly':[('state','not in',['draft', 'analysis'])]}"/>
+                  </group>
               </page>
 
               <page string="Procedures">
@@ -636,7 +640,6 @@
                 <group>
                   <group>
                     <field name="severity_id" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
-                    <field name="immediate_action_id" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
                   </group>
                 </group>
               </page>
