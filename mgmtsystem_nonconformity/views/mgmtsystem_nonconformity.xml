@@ -601,7 +601,7 @@
               <group>
                 <field name="name" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                <field name="create_date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                <field name="create_date" readonly="1"/>
                 <field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                 <field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="origin_ids" widget="many2many_tags" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
@@ -617,8 +617,12 @@
 
             <notebook>
 
-              <page string="Description">
-                <field name="description" placeholder="Add a description ..." attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+              <page string="Description" name="description">
+                  <field name="description" placeholder="Add a description ..." attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                  <group>
+                    <field name="immediate_action_id" domain="[('type_action','=','immediate')]"
+                           attrs="{'readonly':[('state','not in',['draft', 'analysis'])]}"/>
+                  </group>
               </page>
 
               <page string="Procedures">
@@ -630,13 +634,20 @@
                 <field name="analysis" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
 
                 <separator string="Causes"/>
-                <field name="cause_ids" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
+                <field name="cause_ids" attrs="{'readonly':[('state','not in',['analysis'])]}"
+                       options="{'no_create': True}">
+                  <tree create="1" delete="1" colors="blue:parent_id;">
+                    <field name="parent_id"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="sequence"/>
+                  </tree>
+                </field>
 
                 <separator string="Analysis Confirmation"/>
                 <group>
                   <group>
                     <field name="severity_id" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
-                    <field name="immediate_action_id" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
                   </group>
                 </group>
               </page>
