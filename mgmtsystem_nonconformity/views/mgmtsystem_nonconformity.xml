@@ -617,7 +617,7 @@
 
             <notebook>
 
-              <page string="Description">
+              <page string="Description" name="description">
                   <field name="description" placeholder="Add a description ..." attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                   <group>
                     <field name="immediate_action_id" domain="[('type_action','=','immediate')]"
