@@ -1,3 +1,3 @@
-# -*- encoding: utf-8 -*-
-
-from . import mgmtsystem_nonconformity_project
+# -*- coding: utf-8 -*-
+from . import models
+from .hooks import set_action_type
