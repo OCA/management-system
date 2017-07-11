@@ -36,7 +36,7 @@
 This module enables you to manage audits and verifications lists of your management system.
 =======
     "name": "Management System - Audit",
-    "version": "10.0.1.0.0",
+    "version": "10.0.1.0.1",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -60,6 +60,7 @@ management system.
         'data/audit_sequence.xml',
         'data/audit_automated_actions.xml',
         'views/mgmtsystem_audit.xml',
+        'views/res_users.xml',
         'report/audit.xml',
         'report/verification.xml',
         'report/report.xml',
