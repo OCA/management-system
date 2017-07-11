@@ -123,7 +123,9 @@
                         </group>
                         <notebook colspan="4">
                             <page string="Participants">
-                                <field name="user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"
+                                       options="{'no_create': True}"
+                                       context="{'tree_view_ref': 'mgmtsystem_review.mgmtsystem_review_res_users_x2m_tree'}"/>
                             </page>
                             <page string="Inputs">
                                 <group colspan="4">
