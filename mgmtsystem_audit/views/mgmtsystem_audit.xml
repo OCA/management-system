@@ -122,10 +122,14 @@
                         </group>
                         <notebook colspan="4">
                             <page string="Auditors">
-                                <field name="auditor_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="auditor_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"
+                                       options="{'no_create': True}"
+                                       context="{'tree_view_ref': 'mgmtsystem_audit.mgmtsystem_audit_res_users_x2m_tree'}"/>
                             </page>
                             <page string="Auditees">
-                                <field name="auditee_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="auditee_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"
+                                       options="{'no_create': True}"
+                                       context="{'tree_view_ref': 'mgmtsystem_audit.mgmtsystem_audit_res_users_x2m_tree'}"/>
                             </page>
                             <page string="Verification List">
                                 <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
