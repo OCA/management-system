@@ -634,7 +634,15 @@
                 <field name="analysis" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
 
                 <separator string="Causes"/>
-                <field name="cause_ids" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
+                <field name="cause_ids" attrs="{'readonly':[('state','not in',['analysis'])]}"
+                       options="{'no_create': True}">
+                  <tree create="1" delete="1" colors="blue:parent_id;">
+                    <field name="parent_id"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="sequence"/>
+                  </tree>
+                </field>
 
                 <separator string="Analysis Confirmation"/>
                 <group>
