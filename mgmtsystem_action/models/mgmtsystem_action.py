@@ -52,8 +52,7 @@ class MgmtsystemAction(models.Model):
     active = fields.Boolean('Active', default=True)
     date_deadline = fields.Date('Deadline')
 
-    create_date = fields.Datetime('Create Date', readonly=True,
-                                  default=fields.datetime.now())
+    create_date = fields.Datetime('Create Date', readonly=True)
     cancel_date = fields.Datetime('Cancel Date', readonly=True)
     opening_date = fields.Datetime('Opening Date', readonly=True)
     date_closed = fields.Datetime('Closed Date', readonly=True)
