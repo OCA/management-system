@@ -129,7 +129,7 @@
               <group>
                 <field name="name" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
-                <field name="create_date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                <field name="create_date" readonly="1"/>
                 <field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
                 <field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
                 <field name="origin_ids" widget="many2many_tags" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
