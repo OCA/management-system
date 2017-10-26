@@ -31,6 +31,7 @@ class mgmtsystem_audit_report(report_sxw.rml_parse):
             'time': time,
         })
 
+
 report_sxw.report_sxw(
     'report.mgmtsystem.audit.report',
     'mgmtsystem.audit',

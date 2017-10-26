@@ -71,6 +71,7 @@ class mgmtsystem_audit_verification_list(report_sxw.rml_parse):
                       "yes_no": "Yes / No"})
         return q
 
+
 report_sxw.report_sxw(
     'report.mgmtsystem.audit.verificationlist',
     'mgmtsystem.audit',
