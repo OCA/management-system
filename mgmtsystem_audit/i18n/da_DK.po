@@ -3,19 +3,19 @@
 # * mgmtsystem_audit
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# Hans Henrik Gabelgaard <hhg@gabelgaard.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-09 00:37+0000\n"
 "PO-Revision-Date: 2017-09-09 00:37+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
+"Last-Translator: Hans Henrik Gabelgaard <hhg@gabelgaard.org>, 2017\n"
+"Language-Team: Danish (Denmark) (https://www.transifex.com/oca/teams/23907/da_DK/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: it\n"
+"Language: da_DK\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_audit
@@ -61,7 +61,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_needaction
 msgid "Action Needed"
-msgstr "Azione Necessaria"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_audit
@@ -130,7 +130,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Close"
-msgstr "Chiudi"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
@@ -158,7 +158,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_company_id
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_company_id
 msgid "Company"
-msgstr "Azienda"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
@@ -187,30 +187,30 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_create_uid
 msgid "Created by"
-msgstr "Creato da"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines_create_date
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_create_date
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_create_date
 msgid "Created on"
-msgstr "Creato il"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_date
 msgid "Date"
-msgstr "Data"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr "Date of the last message posted on the record."
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Date:"
-msgstr "Data:"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_days_since_last_update
@@ -222,22 +222,22 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_display_name
 msgid "Display Name"
-msgstr "Nome da visualizzare"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_follower_ids
 msgid "Followers"
-msgstr "Followers"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_channel_ids
 msgid "Followers (Channels)"
-msgstr "Followers (Canali)"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Followers (Partners)"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,help:mgmtsystem_audit.action_report_mgmtsystem_audit
@@ -251,17 +251,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_id
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_unread
 msgid "If checked new messages require your attention."
-msgstr "If checked new messages require your attention."
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "Se selezionato, i nuovi messaggi richiedono la tua attenzione."
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_imp_opp_ids
@@ -278,7 +278,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_is_follower
 msgid "Is Follower"
-msgstr "È un follower"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_is_conformed
@@ -288,28 +288,28 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_last_post
 msgid "Last Message Date"
-msgstr "Last Message Date"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line___last_update
 msgid "Last Modified on"
-msgstr "Ultima modifica il"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines_write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_write_uid
 msgid "Last Updated by"
-msgstr "Ultimo aggiornamento di"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines_write_date
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_write_date
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_write_date
 msgid "Last Updated on"
-msgstr "Ultimo aggiornamento il"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.action_report_mgmtsystem_audit
@@ -319,12 +319,12 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_ids
 msgid "Messages"
-msgstr "Messages"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_name
 msgid "Name"
-msgstr "Nome"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_nonconformity_ids
@@ -340,7 +340,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_needaction_counter
 msgid "Number of Actions"
-msgstr "Numero di Azioni"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_number_of_improvements_opportunity
@@ -350,7 +350,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr "Numero di messaggi che richiedono un'azione"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_number_of_nonconformities
@@ -365,7 +365,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_unread_counter
 msgid "Number of unread messages"
-msgstr "Numero di messaggi non letti"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
@@ -402,7 +402,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_reference
 msgid "Reference"
-msgstr "Riferimento"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
@@ -424,12 +424,12 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_seq
 msgid "Sequence"
-msgstr "Sequenza"
+msgstr "Rækkefølge"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_state
 msgid "State"
-msgstr "Stato"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_strong_points
@@ -456,12 +456,12 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_unread
 msgid "Unread Messages"
-msgstr "Unread Messages"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_unread_counter
 msgid "Unread Messages Counter"
-msgstr "Contatore Messaggi non letti"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_verification_line
