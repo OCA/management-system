@@ -94,7 +94,7 @@ class mgmtsystem_action(models.Model):
     @api.one
     def get_action_url(self):
         config_parameter = self.env['ir.config_parameter']
-        base_url = config_parameter.get_param('web.base_url',
+        base_url = config_parameter.get_param('web.base.url',
                                               default='http://localhost:8069')
 
         query = {'db': self.env.cr.dbname}
