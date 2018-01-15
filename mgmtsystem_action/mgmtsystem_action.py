@@ -20,7 +20,6 @@
 ##############################################################################
 
 from urllib import urlencode
-from urlparse import urljoin
 from openerp import fields, models, api
 
 
@@ -93,13 +92,7 @@ class mgmtsystem_action(models.Model):
 
     @api.one
     def get_action_url(self):
-        config_parameter = self.env['ir.config_parameter']
-        base_url = config_parameter.get_param('web.base_url',
-                                              default='http://localhost:8069')
-
         query = {'db': self.env.cr.dbname}
         fragment = {'id': self.id, 'model': self._name}
 
-        return urljoin(base_url, "?%s#%s" % (
-            urlencode(query), urlencode(fragment)
-        ))
+        return "/?%s#%s" % urlencode(query), urlencode(fragment)
