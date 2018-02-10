@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# Carlos Hormigo, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-26 02:48+0000\n"
-"PO-Revision-Date: 2017-04-26 02:48+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2018-01-16 07:27+0000\n"
+"PO-Revision-Date: 2018-01-16 07:27+0000\n"
+"Last-Translator: Carlos Hormigo, 2018\n"
 "Language-Team: Catalan (Spain) (https://www.transifex.com/oca/teams/23907/ca_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -187,14 +188,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creat per"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines_create_date
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_create_date
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creat a"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_date
@@ -222,7 +223,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom visible"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_follower_ids
@@ -295,21 +296,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Darrera modificació en"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines_write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Darrera actualització per"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines_write_date
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_write_date
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Darrera actualització el"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.action_report_mgmtsystem_audit
@@ -324,7 +325,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_name
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_nonconformity_ids

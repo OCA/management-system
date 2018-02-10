@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# Carlos Hormigo, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-20 03:39+0000\n"
-"PO-Revision-Date: 2017-01-20 03:39+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2018-01-16 07:27+0000\n"
+"PO-Revision-Date: 2018-01-16 07:27+0000\n"
+"Last-Translator: Carlos Hormigo, 2018\n"
 "Language-Team: Catalan (Spain) (https://www.transifex.com/oca/teams/23907/ca_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,7 +85,9 @@ msgid ""
 "--\n"
 "<p>\n"
 "  OpenERP\n"
-"</p>"
+"</p>\n"
+"        \n"
+"      "
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -211,17 +214,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creat per"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creat a"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_create_date
 msgid "Creation Date"
-msgstr ""
+msgstr "Data de creació"
 
 #. module: mgmtsystem_claim
 #: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
@@ -253,7 +256,7 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_description
 msgid "Description"
-msgstr ""
+msgstr "Descripció"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_email_from
@@ -265,7 +268,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom visible"
 
 #. module: mgmtsystem_claim
 #: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
@@ -353,18 +356,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Darrera modificació en"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Darrera actualització per"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Darrera actualització el"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_stage_team_ids
@@ -406,7 +409,7 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.server,name:mgmtsystem_claim.mgmtsystem_claim_server_action
@@ -535,7 +538,7 @@ msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_stage_id
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_id_3139
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_id_3478
 #: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Stage"
 msgstr ""
@@ -575,7 +578,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_tree_view
 #: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Type"
-msgstr ""
+msgstr "Tipus"
 
 #. module: mgmtsystem_claim
 #: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
