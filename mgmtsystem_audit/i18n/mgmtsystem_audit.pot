@@ -1,0 +1,390 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mgmtsystem_audit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-30 17:15+0000\n"
+"PO-Revision-Date: 2015-07-30 17:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mgmtsystem_audit
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
+#: field:mgmtsystem.verification.line,audit_id:0
+msgid "Audit"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
+#: field:mgmtsystem.audit,user_id:0
+msgid "Audit Manager"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+msgid "Audit Report"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: code:addons/mgmtsystem_audit/mgmtsystem_audit.py:104
+#, python-format
+msgid "Audit closed"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
+#: field:mgmtsystem.audit,auditee_user_ids:0
+msgid "Auditees"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Auditees:"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
+#: field:mgmtsystem.audit,auditor_user_ids:0
+msgid "Auditors"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Auditors:"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_audit_list
+#: model:ir.ui.menu,name:mgmtsystem_audit.menu_open_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_audit_calendar
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_filter
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_tree
+msgid "Audits"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:copy.verification.lines,audit_src:0
+msgid "Choose audit"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
+msgid "Close"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_filter
+#: selection:mgmtsystem.audit,state:0
+msgid "Closed"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_filter
+msgid "Closed Audits"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.verificationlist:0
+#: field:mgmtsystem.verification.line,comments:0
+msgid "Comments"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,company_id:0
+#: field:mgmtsystem.verification.line,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Confidentiality: Internal"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Conformed?"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:copy.verification.lines:mgmtsystem_audit.copy_verification_lines_form_view
+#: model:ir.actions.act_window,name:mgmtsystem_audit.copy_verification_lines_act_window
+#: model:ir.model,name:mgmtsystem_audit.model_copy_verification_lines
+msgid "Copy Verification Lines"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:copy.verification.lines,create_uid:0
+#: field:mgmtsystem.audit,create_uid:0
+#: field:mgmtsystem.verification.line,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:copy.verification.lines,create_date:0
+#: field:mgmtsystem.audit,create_date:0
+#: field:mgmtsystem.verification.line,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,date:0
+msgid "Date"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: help:mgmtsystem.audit,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Date:"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: help:mgmtsystem.audit,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:copy.verification.lines,id:0
+#: field:mgmtsystem.audit,id:0
+#: field:mgmtsystem.verification.line,id:0
+msgid "ID"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: help:mgmtsystem.audit,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
+#: field:mgmtsystem.audit,imp_opp_ids:0
+msgid "Improvement Opportunities"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+msgid "Improvement opportunities"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.verification.line,is_conformed:0
+msgid "Is conformed"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:copy.verification.lines,write_uid:0
+#: field:mgmtsystem.audit,write_uid:0
+#: field:mgmtsystem.verification.line,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:copy.verification.lines,write_date:0
+#: field:mgmtsystem.audit,write_date:0
+#: field:mgmtsystem.verification.line,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: help:mgmtsystem.audit,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,name:0
+msgid "Name"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
+#: field:mgmtsystem.audit,nonconformity_ids:0
+#: report:mgmtsystem.audit.report:0
+msgid "Nonconformities"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
+msgid "Nonconformity"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_filter
+#: selection:mgmtsystem.audit,state:0
+msgid "Open"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:board.board:mgmtsystem_audit.board_mgmtsystem_audit_form
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_filter
+msgid "Open Audits"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,to_improve_points:0
+#: report:mgmtsystem.audit.report:0
+msgid "Points To Improve"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.server,name:mgmtsystem_audit.action_email_prepare_to_audit
+msgid "Prepare to audit"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_report
+msgid "Print Report"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_verification_list
+msgid "Print Verification List"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.verification.line,procedure_id:0
+msgid "Procedure"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.verificationlist:0
+#: field:mgmtsystem.verification.line,name:0
+msgid "Question"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,reference:0
+msgid "Reference"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Reference:"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.nonconformity:mgmtsystem_audit.view_mgmtsystem_nonconformity_form
+#: field:mgmtsystem.nonconformity,audit_ids:0
+msgid "Related Audits"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.server,name:mgmtsystem_audit.action_email_send_verification_list
+msgid "Send Verification List"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.verification.line,seq:0
+msgid "Sequence"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,state:0
+msgid "State"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
+#: field:mgmtsystem.audit,strong_points:0
+msgid "Strong Points"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+msgid "Strong points"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,system_id:0
+msgid "System"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
+msgid "To Improve Points"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: code:addons/mgmtsystem_audit/report/verification_list.py:48
+#, python-format
+msgid "Undefined"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_verification_line
+#: view:mgmtsystem.verification.line:mgmtsystem_audit.view_mgmtsystem_verification_line_form
+msgid "Verification Line"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
+#: view:mgmtsystem.verification.line:mgmtsystem_audit.view_mgmtsystem_verification_line_filter
+#: view:mgmtsystem.verification.line:mgmtsystem_audit.view_mgmtsystem_verification_line_tree
+msgid "Verification Lines"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
+#: field:mgmtsystem.audit,line_ids:0
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Verification List"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:copy.verification.lines:mgmtsystem_audit.copy_verification_lines_form_view
+msgid "_Cancel"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:copy.verification.lines:mgmtsystem_audit.copy_verification_lines_form_view
+msgid "_Copy"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.act_window,name:mgmtsystem_audit.action_mgmtsystem_audit
+msgid "board.mgmtsystem.audit.act_window"
+msgstr ""
