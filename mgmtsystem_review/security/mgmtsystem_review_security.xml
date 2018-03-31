@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Rule -->
+
+        <record model="ir.rule" id="mgmtsystem_review_rule">
+            <field name="name">mgmtsystem_review multi-company</field>
+            <field name="model_id" ref="model_mgmtsystem_review"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+
+        <record model="ir.rule" id="mgmtsystem_review_line_rule">
+            <field name="name">mgmtsystem_review_line multi-company</field>
+            <field name="model_id" ref="model_mgmtsystem_review_line"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+
+    </data>
+</odoo>

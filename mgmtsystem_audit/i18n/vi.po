@@ -1,0 +1,265 @@
+# Vietnamese translation for openerp-mgmtsystem
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the openerp-mgmtsystem package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openerp-mgmtsystem\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-07-27 19:08+0000\n"
+"PO-Revision-Date: 2014-03-04 12:01+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Vietnamese <vi@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-04-24 06:29+0000\n"
+"X-Generator: Launchpad (build 16985)\n"
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+#: selection:mgmtsystem.audit,state:0
+msgid "Closed"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:copy.verification.lines,audit_src:0
+msgid "Choose audit"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Date:"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+#: field:mgmtsystem.audit,nonconformity_ids:0
+#: report:mgmtsystem.audit.report:0
+msgid "Nonconformities"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+#: field:mgmtsystem.audit,auditor_user_ids:0
+msgid "Auditors"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.verificationlist:0
+#: field:mgmtsystem.verification.line,comments:0
+msgid "Comments"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,state:0
+msgid "State"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_report
+msgid "Print Report"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Conformed?"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.nonconformity:0
+#: field:mgmtsystem.nonconformity,audit_ids:0
+msgid "Related Audits"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
+#: view:mgmtsystem.verification.line:0
+msgid "Verification Lines"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.verification.line,is_conformed:0
+msgid "Is conformed"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,system_id:0
+msgid "System"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_verification_list
+msgid "Print Verification List"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+#: field:mgmtsystem.audit,imp_opp_ids:0
+msgid "Improvement Opportunities"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+#: field:mgmtsystem.audit,auditee_user_ids:0
+msgid "Auditees"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:copy.verification.lines:0
+#: model:ir.actions.act_window,name:mgmtsystem_audit.copy_verification_lines_act_window
+#: model:ir.model,name:mgmtsystem_audit.model_copy_verification_lines
+msgid "Copy Verification Lines"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+#: field:mgmtsystem.audit,strong_points:0
+msgid "Strong Points"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:copy.verification.lines:0
+msgid "_Copy"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,date:0
+msgid "Date"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Reference:"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:board.board:0
+#: view:mgmtsystem.audit:0
+msgid "Open Audits"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+#: field:mgmtsystem.verification.line,audit_id:0
+msgid "Audit"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+#: selection:mgmtsystem.audit,state:0
+msgid "Open"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,name:0
+msgid "Name"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+msgid "Improvement opportunities"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.verificationlist:0
+#: field:mgmtsystem.verification.line,name:0
+msgid "Question"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,to_improve_points:0
+#: report:mgmtsystem.audit.report:0
+msgid "Points To Improve"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Auditees:"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+msgid "Strong points"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.verification.line,procedure_id:0
+msgid "Procedure"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+msgid "Closed Audits"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.audit,reference:0
+msgid "Reference"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Confidentiality: Internal"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:mgmtsystem.verification.line,seq:0
+msgid "Sequence"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
+msgid "Nonconformity of the management system"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+msgid "Audit Report"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+#: field:mgmtsystem.audit,line_ids:0
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Verification List"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+msgid "To Improve Points"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:copy.verification.lines:0
+msgid "_Cancel"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_verification_line
+#: view:mgmtsystem.verification.line:0
+msgid "Verification Line"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: view:mgmtsystem.audit:0
+msgid "Close"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_audit_list
+#: model:ir.ui.menu,name:mgmtsystem_audit.menu_open_audit
+#: view:mgmtsystem.audit:0
+msgid "Audits"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: report:mgmtsystem.audit.report:0
+#: report:mgmtsystem.audit.verificationlist:0
+msgid "Auditors:"
+msgstr ""
