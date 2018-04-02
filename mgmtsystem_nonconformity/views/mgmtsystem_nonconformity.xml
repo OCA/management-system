@@ -165,14 +165,16 @@
                 <group>
                   <group>
                     <field name="severity_id" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
-                    <field name="immediate_action_id" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
+                    <field name="immediate_action_id" domain="[('type_action','=','immediate')]" attrs="{'readonly':[('state','not in',['analysis'])]}"
+                        context="{'default_type_action': 'immediate', 'default_company_id': company_id, 'default_system_id': system_id}"/>
                   </group>
                 </group>
               </page>
 
               <page string="Actions" attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}">
                 <separator string="Action Plan"/>
-                <field name="action_ids" attrs="{'readonly':[('state','not in',['pending'])]}"/>
+                <field name="action_ids" attrs="{'readonly':[('state','not in',['pending'])]}"
+                      context="{'default_type_action': 'correction', 'default_company_id': company_id, 'default_system_id': system_id}"/>
 
                 <group string="Plan Review">
                  <group>

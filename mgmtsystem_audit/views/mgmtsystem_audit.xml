@@ -139,10 +139,12 @@
                                 <field name="to_improve_points" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                             </page>
                             <page string="Improvement Opportunities">
-                                <field name="imp_opp_ids" domain="[('type_action','=','improvement')]" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="imp_opp_ids" domain="[('type_action','=','improvement')]" nolabel="1" attrs="{'readonly':[('state','=','done')]}"
+                                    context="{'default_type_action': 'improvement', 'default_company_id': company_id, default_system_id': system_id}"/>
                             </page>
                             <page string="Nonconformities">
-                                <field name="nonconformity_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                                <field name="nonconformity_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"
+                                    context="{'default_manager_user_id': user_id, 'default_responsible_user_id': user_id, 'default_company_id': company_id, 'default_system_id': system_id, 'default_reference': reference}"/>
                             </page>
                         </notebook>
                     </sheet>
