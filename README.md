@@ -30,11 +30,11 @@ addon | version | summary
 [document_page_work_instruction](document_page_work_instruction/) | 10.0.1.0.0 | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 10.0.1.0.0 | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 10.0.1.0.0 | Management System - Action
-[mgmtsystem_audit](mgmtsystem_audit/) | 10.0.1.0.0 | Management System - Audit
+[mgmtsystem_audit](mgmtsystem_audit/) | 10.0.1.0.1 | Management System - Audit
 [mgmtsystem_manual](mgmtsystem_manual/) | 10.0.1.0.0 | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 10.0.1.0.0 | Management System - Nonconformity
 [mgmtsystem_quality](mgmtsystem_quality/) | 10.0.1.0.0 | Quality Management System
-[mgmtsystem_review](mgmtsystem_review/) | 10.0.1.0.0 | Management System - Review
+[mgmtsystem_review](mgmtsystem_review/) | 10.0.1.0.1 | Management System - Review
 [mgmtsystem_survey](mgmtsystem_survey/) | 10.0.1.0.0 | Management System - Survey
 
 
