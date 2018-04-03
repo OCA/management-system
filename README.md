@@ -33,13 +33,13 @@ addon | version | summary
 [document_page_work_instruction](document_page_work_instruction/) | 9.0.1.0.0 | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 9.0.1.0.0 | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 9.0.1.0.0 | Management System - Action
-[mgmtsystem_audit](mgmtsystem_audit/) | 9.0.1.0.0 | Management System - Audit
+[mgmtsystem_audit](mgmtsystem_audit/) | 9.0.1.1.0 | Management System - Audit
 [mgmtsystem_claim](mgmtsystem_claim/) | 9.0.1.1.1 | Management System - Claim
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 9.0.1.0.0 | Hazard
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 9.0.1.0.0 | Information Security Management System Manual
 [mgmtsystem_kpi](mgmtsystem_kpi/) | 9.0.1.0.0 | Key Performance Indicator
 [mgmtsystem_manual](mgmtsystem_manual/) | 9.0.1.0.0 | Management System - Manual
-[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 9.0.1.0.0 | Management System - Nonconformity
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 9.0.1.1.0 | Management System - Nonconformity
 [mgmtsystem_probability](mgmtsystem_probability/) | 9.0.1.0.0 | Management System Probability
 [mgmtsystem_quality](mgmtsystem_quality/) | 9.0.1.0.0 | Quality Management System
 [mgmtsystem_review](mgmtsystem_review/) | 9.0.1.0.0 | Management System - Review
