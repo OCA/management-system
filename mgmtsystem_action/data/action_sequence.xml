@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
   <data noupdate="1">
-
-    <!-- Sequences for mgmtsystem.action -->
-    <record id="seq_type_mgmtsystem_action" model="ir.sequence.type">
-      <field name="name">Management System Action</field>
-      <field name="code">mgmtsystem.action</field>
-    </record>
-
     <record id="seq_mgmtsystem_action" model="ir.sequence">
       <field name="name">Management System Action</field>
       <field name="code">mgmtsystem.action</field>
@@ -15,4 +8,4 @@
     </record>
 
   </data>
-</openerp>
+</odoo>
