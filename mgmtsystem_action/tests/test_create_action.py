@@ -1,27 +1,18 @@
-<<<<<<< a235f9511a527a31b4f2a7a2a68f45c3463732e0
-=======
-# -*- coding: utf-8 -*-
 
-<<<<<<< 2129e7ae751a8f47d8a71257da6b304537d1e081
-from openerp import exceptions
->>>>>>> Improving test coverage
-from openerp.tests import common
-=======
 from odoo import exceptions
 from odoo.tests import common
 from datetime import datetime, timedelta
->>>>>>> MIG mgmtsystem_action to V. 10.0
 
 
 class TestModelAction(common.TransactionCase):
+    """Test class for mgmtsystem_action."""
+
     def test_create_action(self):
+        """Test object creation."""
+        stage = self.env.ref('mgmtsystem_action.stage_open')
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
-<<<<<<< 1b8e49b877d1f53e685156cb680857f6d57d1f8c
-            "type_action": "immediate",
-=======
             "type_action": "immediate"
->>>>>>> Fixing test error
         })
 
         self.assertEqual(record.name, "SampleAction")
@@ -29,14 +20,14 @@ class TestModelAction(common.TransactionCase):
         self.assertEqual(record.type_action, "immediate")
         self.assertEqual(record.stage_id.name, "Draft")
         self.assertEqual(record.stage_id.is_starting, True)
+        self.assertFalse(record.opening_date)
+        record.stage_id = stage
+        self.assertEqual(record.opening_date[:-3], datetime.now().strftime(
+            '%Y-%m-%d %H:%M'
+        ))
 
     def test_case_open(self):
-<<<<<<< f6b774890daa11142d5dd0f33efc18252f456ac9
-<<<<<<< 30b7755499fb1bc52d6afb3c3e19c803eb3ba928
-=======
-=======
         """Test object open state."""
->>>>>>> Fixing error by making test work
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
             "type_action": "immediate",
@@ -65,27 +56,10 @@ class TestModelAction(common.TransactionCase):
 
     def test_case_close(self):
         """Test object close state."""
-<<<<<<< a235f9511a527a31b4f2a7a2a68f45c3463732e0
-        stage = self.env.ref('mgmtsystem_action.stage_close')
->>>>>>> add the case_open method, because it is usefull for mgmtsystem_nonconformity
-=======
->>>>>>> Improving test coverage
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
             "type_action": "immediate",
         })
-<<<<<<< a235f9511a527a31b4f2a7a2a68f45c3463732e0
-
-        record.active = False
-
-        ret = record.case_open()
-
-        self.assertEqual(ret, True)
-        self.assertEqual(record.active, True)
-        self.assertEqual(record.stage_id.name, 'In Progress')
-        self.assertEqual(record.stage_id.is_starting, False)
-        self.assertEqual(record.stage_id.is_ending, False)
-=======
         stage = record._get_stage_open()
         stage_new = record._get_stage_new()
         record.stage_id = stage
@@ -107,15 +81,12 @@ class TestModelAction(common.TransactionCase):
             record.write({'stage_id': stage.id})
         except exceptions.ValidationError:
             self.assertTrue(True)
-<<<<<<< 30ebbfd9670688c1eb756e7fe5a91f0b68aa67b7
->>>>>>> Improving test coverage
-=======
         record.write({'stage_id': stage_new.id})
         self.assertFalse(record.date_closed)
         self.assertFalse(record.opening_date)
->>>>>>> Fixing pylint error
 
     def test_get_action_url(self):
+        """Test if action url start with http."""
         record = self.env['mgmtsystem.action'].create({
             "name": "SampleAction",
             "type_action": "immediate",
@@ -123,15 +94,9 @@ class TestModelAction(common.TransactionCase):
 
         ret = record.get_action_url()
 
-<<<<<<< 2129e7ae751a8f47d8a71257da6b304537d1e081
-        self.assertEqual(isinstance(ret, list), True)
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(isinstance(ret[0], basestring), True)
-        self.assertEqual(ret[0].startswith('http'), True)
-=======
         # self.assertEqual(isinstance(ret, list), True)
         # self.assertEqual(len(ret), 1)
-        self.assertEqual(isinstance(ret, basestring), True)
+        self.assertEqual(isinstance(ret, str), True)
         self.assertEqual(ret.startswith('http'), True)
 
     def test_process_reminder_queue(self):
@@ -161,4 +126,3 @@ class TestModelAction(common.TransactionCase):
             "type_action": "immediate",
         })
         self.assertTrue(record.send_mail_for_action(record))
->>>>>>> MIG mgmtsystem_action to V. 10.0
