@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from odoo import fields, models, api, exceptions, _
 from datetime import datetime, timedelta
@@ -8,8 +7,8 @@ class MgmtsystemAction(models.Model):
     """Model class that manage action."""
 
     _name = "mgmtsystem.action"
+    _inherit = ['mail.thread']
     _description = "Action"
-    _inherit = ['mail.thread', 'ir.needaction_mixin']
 
     def _default_company(self):
         """Return the user company id."""
