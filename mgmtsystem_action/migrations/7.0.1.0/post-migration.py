@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -79,12 +78,6 @@ def migrate_stage_id(cr):
 
 
 def migrate(cr, version):
-<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
-    migrate_stage_id(cr)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-=======
     if version is None:
         return
     migrate_stage_id(cr)
->>>>>>> Ported mgmtsystem_action
