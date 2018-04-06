@@ -1,9 +1,4 @@
-<<<<<<< 2129e7ae751a8f47d8a71257da6b304537d1e081
-<openerp>
-  <data>
-=======
 <odoo>
->>>>>>> MIG mgmtsystem_action to V. 10.0
 
     <record model="ir.ui.view" id="mgmtsystem_action_stage_tree_view">
       <field name="name">Management System action Stage Tree</field>
@@ -11,7 +6,7 @@
       <field name="arch" type="xml">
         <tree string="Stages">
           <field name="name"/>
-          <field name="sequence"/>
+          <field name="sequence" widget="handle" />
           <field name="is_starting"/>
           <field name="is_ending"/>
         </tree>
@@ -26,17 +21,4 @@
       <field name="context">{}</field>
     </record>
 
-<<<<<<< 2129e7ae751a8f47d8a71257da6b304537d1e081
-    <menuitem 
-      id="menu_mgmtsystem_action_stages"
-      name="Stages" 
-      parent="menu_config_action"
-      action="mgmtsystem_action_stage_action" 
-      sequence="90"
-      groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
-
-  </data>
-</openerp>
-=======
 </odoo>
->>>>>>> MIG mgmtsystem_action to V. 10.0

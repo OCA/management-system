@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -24,29 +23,19 @@ from openerp import release
 import logging
 logger = logging.getLogger('upgrade')
 
-<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
-=======
 
->>>>>>> Ported mgmtsystem_action
 def get_legacy_name(original_name):
     return 'legacy_' + ('_').join(
         map(str, release.version_info[0:2])) + '_' + original_name
 
-<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
-=======
 
->>>>>>> Ported mgmtsystem_action
 def rename_columns(cr, column_spec):
-    for table in column_spec.keys():
+    for table in list(column_spec.keys()):
         for (old, new) in column_spec[table]:
             if new is None:
                 new = get_legacy_name(old)
             logger.info("table %s, column %s: renaming to %s",
                         table, old, new)
-<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
-            cr.execute('ALTER TABLE "%s" RENAME "%s" TO "%s"' % (table, old, new,))
-            cr.execute('DROP INDEX IF EXISTS "%s_%s_index"' % (table, old))
-=======
             cr.execute(
                 'ALTER TABLE "%s" RENAME "%s" TO "%s"' %
                 (table, old, new,)
@@ -55,7 +44,6 @@ def rename_columns(cr, column_spec):
                 'DROP INDEX IF EXISTS "%s_%s_index"' %
                 (table, old)
             )
->>>>>>> Ported mgmtsystem_action
 
 
 column_renames = {
@@ -66,12 +54,6 @@ column_renames = {
 
 
 def migrate(cr, version):
-<<<<<<< 2cb3e23cd6da406a2afd4eedfd7745ab01746e88
-    rename_columns(cr, column_renames)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-=======
     if version is None:
         return
     rename_columns(cr, column_renames)
->>>>>>> Ported mgmtsystem_action
