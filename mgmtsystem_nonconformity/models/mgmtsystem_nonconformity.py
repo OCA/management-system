@@ -10,7 +10,6 @@ class MgmtsystemNonconformity(models.Model):
 
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity"
-    _rec_name = "description"
     _inherit = ['mail.thread', 'ir.needaction_mixin']
     _order = "create_date desc"
 
