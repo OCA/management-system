@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    odoo, Open Source Management Solution
@@ -19,15 +18,10 @@
 #
 ##############################################################################
 from odoo.tests import common
-from psycopg2 import IntegrityError
 
 
 class TestModelOrigin(common.TransactionCase):
     def test_create_origin(self):
-
-        with self.assertRaises(IntegrityError):
-            self.env['mgmtsystem.nonconformity.origin'].create({})
-        self.cr.rollback()
 
         record = self.env['mgmtsystem.nonconformity.origin'].create({
             "name": "TestOrigin",
