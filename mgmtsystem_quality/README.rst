@@ -85,6 +85,7 @@ Contributors
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 * Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 * Eugen Don <eugen.don@don-systems.de>
+* Jose Maria Alzaga <jose.alzaga@aselcis.com>
 
 Maintainer
 ----------
