@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_manual
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,12 +10,14 @@ msgstr ""
 "POT-Creation-Date: 2016-06-30 02:45+0000\n"
 "PO-Revision-Date: 2016-03-04 19:39+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: Latvian (http://www.transifex.com/oca/OCA-management-system-9-0/language/lv/)\n"
+"Language-Team: Latvian (http://www.transifex.com/oca/OCA-management-"
+"system-9-0/language/lv/)\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: lv\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
 #. module: mgmtsystem_manual
 #: model:ir.ui.menu,name:mgmtsystem_manual.menu_mgmtsystem_categories
@@ -23,7 +25,8 @@ msgid "Categories"
 msgstr ""
 
 #. module: mgmtsystem_manual
-#: model:ir.model.fields,field_description:mgmtsystem_manual.field_mgmtsystem_system_manual
+#: model:ir.model,name:mgmtsystem_manual.model_mgmtsystem_system
+#: model:ir.model.fields,field_description:mgmtsystem_manual.field_mgmtsystem_system_manual_id
 msgid "Manual"
 msgstr ""
 
@@ -38,7 +41,5 @@ msgstr ""
 msgid "Manuals of your management systems."
 msgstr ""
 
-#. module: mgmtsystem_manual
-#: model:ir.model,name:mgmtsystem_manual.model_mgmtsystem_system
-msgid "System"
-msgstr "Sistēma"
+#~ msgid "System"
+#~ msgstr "Sistēma"
