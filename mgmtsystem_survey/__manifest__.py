@@ -1,43 +1,9 @@
-# -*- coding: utf-8 -*-
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-<<<<<<< 3ef0d6681c9f2b5d1e2d5250a3a97b2ed9d9b6eb
-<<<<<<< 1079161f42ff13d72cc09e135702bf9974ec0d26
-    "name" : "Management System - Survey",
-    "version" : "1.0",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-<<<<<<< 94d214c43b1c1025f4471291cd2a5e0bcb297021
-<<<<<<< 5df8409ead71a04a7588d51ad33d5d46bc319c79
-    "license" : "AGPL-3",
-=======
-    "license" : "GPL",
->>>>>>> [CHG] AGPL license; set verion to 1.0
-=======
-    "license" : "AGPL-3",
->>>>>>> [CHG] Selections use words instead of letters; fixed AGPL-3 reference
-    "category" : "Management System",
-=======
     "name": "Management System - Survey",
-    "version": "1.0",
-    "author": "Savoir-faire Linux",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    "category": "Management System",
->>>>>>> [FIX] PEP8 compliance after running flake8
-    "description": """This module enables you to manage your satisfaction surveys and its answers.""",
-    "depends": ['survey'],
-    "data": ['mgmtsystem_survey.xml'],
-    "demo": [],
-    "installable": True,
-    "certificate": ''
-}
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-=======
-    "name": "Management System - Survey",
-    "version": "10.0.1.0.0",
+    "version": "11.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -54,4 +20,3 @@
     ],
     'installable': True,
 }
->>>>>>> Added mgmtsystem_survey to ported code

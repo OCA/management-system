@@ -67,6 +67,7 @@ Contributors
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 * Luk Vermeylen <luk@allmas-it.be> 
 * Eugen Don <eugen.don@don-systems.de>
+* Jose Maria Alzaga <jose.alzaga@aselcis.com>
 
 Maintainer
 ----------
