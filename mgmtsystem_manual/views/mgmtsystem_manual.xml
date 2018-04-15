@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="mgmtsystem.system_form"/>
         <field name="arch" type="xml">
             <field name="name" position="after">
-                <field name="manual"/>
+                <field name="manual_id"/>
             </field>
         </field>
     </record>
@@ -17,7 +17,7 @@
         <field name="inherit_id" ref="mgmtsystem.system_tree"/>
         <field name="arch" type="xml">
             <field name="name" position="after">
-                <field name="manual"/>
+                <field name="manual_id"/>
             </field>
         </field>
     </record>
