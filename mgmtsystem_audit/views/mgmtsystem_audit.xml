@@ -111,69 +111,21 @@
                         <button name="button_close" string="Close" states="open" type="object"/>
                         <field name="state" widget="statusbar" select="1" readonly="1"/>
                     </header>
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-<<<<<<< 1290b8bcf482ceea2c5882df0aac7a856e2b4bd8
-                    <group col="8" colspan="6">
-                        <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
-                        <field name="reference"/>
-                        <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
-                        <field name="system_id"/>
-                    	<field name="company_id" groups="base.group_multi_company"/>
-                    </group>
-                    <notebook colspan="4">
-                        <page string="Auditors">
-                            <field name="auditor_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
-                        </page>
-                        <page string="Auditees">
-                            <field name="auditee_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
-                        </page>
-                        <page string="Verification List">
-                            <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
-                        </page>
-                        <page string="Strong Points">
-                            <field name="strong_points" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
-                        </page>
-                        <page string="To Improve Points">
-                            <field name="to_improve_points" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
-                        </page>
-                        <page string="Improvement Opportunities">
-                            <field name="imp_opp_ids" domain="[('type_action','=','improvement')]" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
-                        </page>
-                        <page string="Nonconformities">
-                            <field name="nonconformity_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
-                        </page>
-                    </notebook>
-=======
-=======
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
                     <sheet string="Audit">
                         <group col="4" colspan="2">
                             <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
                             <field name="reference"/>
                             <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
-<<<<<<< 07addfd1ffded4f91261048bef8351b6a7711522
-                            <field name="user_id" string="Audit Manager" required="1"/>
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-=======
-                            <field name="company_id" groups="base.group_multi_company"/>
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-                            <field name="system_id"/>
-=======
                             <field name="user_id" string="Audit Manager" required="1" attrs="{'readonly':[('state','=','done')]}"/>
                             <field name="company_id" groups="base.group_multi_company"/>
                             <field name="system_id" attrs="{'readonly':[('state','=','done')]}"/>
->>>>>>> MIG 10.0
                         </group>
                         <notebook colspan="4">
                             <page string="Auditors">
-                                <field name="auditor_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"
-                                       options="{'no_create': True}"
-                                       context="{'tree_view_ref': 'mgmtsystem_audit.mgmtsystem_audit_res_users_x2m_tree'}"/>
+                                <field name="auditor_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                             </page>
                             <page string="Auditees">
-                                <field name="auditee_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"
-                                       options="{'no_create': True}"
-                                       context="{'tree_view_ref': 'mgmtsystem_audit.mgmtsystem_audit_res_users_x2m_tree'}"/>
+                                <field name="auditee_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
                             </page>
                             <page string="Verification List">
                                 <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
@@ -196,10 +148,6 @@
                         <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
                         <field name="message_ids" widget="mail_thread"/>
                     </div>
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
->>>>>>> Addapted audit to use openchatter
-=======
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
                 </form>
             </field>
         </record>
@@ -236,109 +184,13 @@
             <field name="inherit_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"/>
             <field name="arch" type="xml">
 
-<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
-                 <notebook position="inside">
-                        <page string="Related Audits" groups="base.group_extended,mgmtsystem.group_mgmtsystem_auditor">
-                            <field name="audit_ids" colspan="4" nolabel="1"/>
-                        </page>
-                 </notebook>
-
-            </field>
-        </record>
-
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-<<<<<<< 306783748c66e295d24b6bea7ecdcb66861db947
-=======
-=======
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-    </data>
-
-    <data noupdate="1">
-        <!-- Email template for "Prepare to audit" message to all auditors. -->
-        <record id="action_email_prepare_to_audit" model="ir.actions.server">
-            <field name="name">Prepare to audit</field>
-            <field name="model_id" ref="model_mgmtsystem_audit"/>
-            <field name="condition">True</field>
-            <field name="type">ir.actions.server</field>
-            <field name="state">email</field>
-            <field name="email_to">",".join(set([ i.email for i in object.auditor_user_ids ]))</field>
-            <field name="subject">Prepare to Audit: "[[object.name]]"</field>
-            <field name="body_html">
-Hello,
-
-The audit "[[object.name]]" is scheduled in 2 weeks.
-Please prepare the verification list:
-
-[[object.get_audit_url()]]
-
-=======
                 <notebook position="inside">
                     <page string="Related Audits" groups="base.group_extended,mgmtsystem.group_mgmtsystem_auditor">
                         <field name="audit_ids" colspan="4" nolabel="1"/>
                     </page>
                 </notebook>
->>>>>>> [MIG] mgmtsystem_audit
 
             </field>
         </record>
 
-<<<<<<< 07addfd1ffded4f91261048bef8351b6a7711522
-<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
-        <!-- Automated Action: Email all auditors 2 weeks before Audit. -->
-        <record id="rule_set_prepare_to_audit" model="base.action.rule">
-            <field name="name">Email all auditors 2 weeks before audit.</field>
-            <field name="model_id" ref="model_mgmtsystem_audit"/>
-            <field name="trg_date_id" ref="field_mgmtsystem_audit_date"/>
-            <field name="trg_date_range">14</field>
-            <field name="trg_date_range_type">day</field>
-            <field name="server_action_ids" eval="[(6, 0, [ref('action_email_prepare_to_audit')])]"/>
-        </record>
-<<<<<<< 4d2d94bdc912705b82125705bfd388ed9a6263b0
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
->>>>>>> Added email templates that send one a week before and one 2 weeks before audit.
-=======
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-    </data>
-=======
->>>>>>> [FIX] Runbot warnings
-
-        <!-- Email template for "Send verification list" message to all followers -->
-        <record id="action_email_send_verification_list" model="ir.actions.server">
-            <field name="name">Send Verification List</field>
-            <field name="model_id" ref="model_mgmtsystem_audit"/>
-            <field name="condition">True</field>
-            <field name="type">ir.actions.server</field>
-            <field name="state">email</field>
-            <field name="email_to">",".join(set([i.email for i in object.auditor_user_ids] + [i.email for i in object.auditee_user_ids] + [object.user_id.email]))</field>
-            <field name="subject">Send Verification List: "[[object.name]]"</field>
-            <field name="body_html">
-Hello,
-
-The audit "[[object.name]]" is scheduled in 1 week.
-Please finish the verification list and send it to the auditees:
-
-[[object.get_audit_url()]]
-
-
-Thank you.
---
-Odoo
-            </field>
-        </record>
-
-        <!-- Automated Action: Email all followers 1 weeks before Audit. -->
-        <record id="rule_set_send_verification_list" model="base.action.rule">
-            <field name="name">Email all followers 1 week before audit.</field>
-            <field name="model_id" ref="model_mgmtsystem_audit"/>
-            <field name="trg_date_id" ref="field_mgmtsystem_audit_date"/>
-            <field name="trg_date_range">7</field>
-            <field name="trg_date_range_type">day</field>
-            <field name="server_action_ids" eval="[(6, 0, [ref('action_email_send_verification_list')])]"/>
-        </record>
-
-=======
->>>>>>> [MIG] mgmtsystem_audit
-    </data>
-=======
->>>>>>> MIG 10.0
 </odoo>

@@ -3,7 +3,7 @@
         <template id="verification_report">
 
             <t t-set="doc" t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"/>
-            <t t-call="report.external_layout">
+            <t t-call="web.external_layout">
                 <div class="page">
                     <div class="row" style="padding-top:10px">
                         <div class="col-xs-12">

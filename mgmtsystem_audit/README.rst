@@ -72,6 +72,7 @@ Contributors
 * Luk Vermeylen <luk@allmas-it.be>
 * Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 * Eugen Don <eugen.don@don-systems.de>
+* Jose Maria Alzaga <jose.alzaga@aselcis.com>
 
 Maintainer
 ----------
