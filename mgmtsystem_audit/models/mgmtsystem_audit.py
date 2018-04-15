@@ -1,41 +1,3 @@
-# -*- coding: utf-8 -*-
-<<<<<<< 07addfd1ffded4f91261048bef8351b6a7711522
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program. If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-
-<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-from tools.translate import _
-=======
-from openerp.tools.translate import _
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-from openerp.osv import fields, orm
-from urllib import urlencode
-from urlparse import urljoin
-=======
-from openerp import fields, models, api, _
->>>>>>> [MIG] mgmtsystem_audit
-
-
-class MgmtSystemAudit(models.Model):
-=======
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -44,107 +6,11 @@ from odoo import fields, models, api, _
 
 
 class MgmtsystemAudit(models.Model):
->>>>>>> MIG 10.0
     """Model class that manage audit."""
 
     _name = "mgmtsystem.audit"
     _description = "Audit"
     _inherit = ['mail.thread']
-<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
-    _columns = {
-        'name': fields.char('Name', size=50),
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-        'reference': fields.char('Reference', size=64, required=True, readonly=True),
-        'date': fields.datetime('Date'),
-        'line_ids': fields.one2many('mgmtsystem.verification.line', 'audit_id', 'Verification List'),
-        'user_id': fields.many2one('res.users', 'Audit Manager'),
-        'auditor_user_ids': fields.many2many('res.users', 'mgmtsystem_auditor_user_rel', 'user_id', 'mgmtsystem_audit_id', 'Auditors'),
-        'auditee_user_ids': fields.many2many('res.users', 'mgmtsystem_auditee_user_rel', 'user_id', 'mgmtsystem_audit_id', 'Auditees'),
-        'strong_points': fields.text('Strong Points'),
-        'to_improve_points': fields.text('Points To Improve'),
-        'imp_opp_ids': fields.many2many('mgmtsystem.action', 'mgmtsystem_audit_imp_opp_rel', 'mgmtsystem_action_id', 'mgmtsystem_audit_id', 'Improvement Opportunities'),
-        'nonconformity_ids': fields.many2many('mgmtsystem.nonconformity', string='Nonconformities'),
-        'state': fields.selection([('open', 'Open'), ('done', 'Closed')], 'State'),
-=======
-        'reference': fields.char(
-            'Reference',
-            size=64,
-            required=True,
-            readonly=True,
-        ),
-        'date': fields.datetime('Date'),
-        'line_ids': fields.one2many(
-            'mgmtsystem.verification.line',
-            'audit_id',
-            'Verification List',
-        ),
-        'user_id': fields.many2one('res.users', 'Audit Manager'),
-        'auditor_user_ids': fields.many2many(
-            'res.users',
-            'mgmtsystem_auditor_user_rel',
-            'user_id',
-            'mgmtsystem_audit_id',
-            'Auditors',
-        ),
-        'auditee_user_ids': fields.many2many(
-            'res.users',
-            'mgmtsystem_auditee_user_rel',
-            'user_id',
-            'mgmtsystem_audit_id',
-            'Auditees',
-        ),
-        'strong_points': fields.text('Strong Points'),
-        'to_improve_points': fields.text('Points To Improve'),
-        'imp_opp_ids': fields.many2many(
-            'mgmtsystem.action',
-            'mgmtsystem_audit_imp_opp_rel',
-            'mgmtsystem_action_id',
-            'mgmtsystem_audit_id',
-            'Improvement Opportunities',
-        ),
-        'nonconformity_ids': fields.many2many(
-            'mgmtsystem.nonconformity',
-            string='Nonconformities',
-        ),
-        'state': fields.selection(
-            [
-                ('open', 'Open'),
-                ('done', 'Closed'),
-            ],
-            'State',
-        ),
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-        'system_id': fields.many2one('mgmtsystem.system', 'System'),
-        'company_id': fields.many2one('res.company', 'Company')
-    }
-
-    _defaults = {
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
-=======
-        'company_id': (
-            lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id),
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-        'reference': 'NEW',
-        'state': 'open'
-    }
-
-    def create(self, cr, uid, vals, context=None):
-        vals.update({
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-            'reference': self.pool.get('ir.sequence').get(cr, uid, 'mgmtsystem.audit')
-        })
-        return super(mgmtsystem_audit, self).create(cr, uid, vals, context=context)
-=======
-            'reference': self.pool.get('ir.sequence').get(
-                cr, uid, 'mgmtsystem.audit'
-            )
-        })
-        return super(mgmtsystem_audit, self).create(
-            cr, uid, vals, context=context)
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-=======
     name = fields.Char('Name')
 
     reference = fields.Char(
@@ -272,7 +138,6 @@ class MgmtsystemAudit(models.Model):
         })
         audit_id = super(MgmtsystemAudit, self).create(vals)
         return audit_id
->>>>>>> [MIG] mgmtsystem_audit
 
     @api.multi
     def button_close(self):
@@ -281,60 +146,15 @@ class MgmtsystemAudit(models.Model):
         return self.write({'state': 'done',
                            'closing_date': fields.Datetime.now()})
 
-<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-    def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None, values=None):
-        """Automatically add the Auditors, Auditees and Audit Manager to the follow list"""
-=======
-    def message_auto_subscribe(
-            self, cr, uid, ids, updated_fields, context=None, values=None):
-        """Automatically add the Auditors, Auditees and Audit Manager
-        to the follow list
-        """
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-        for o in self.browse(cr, uid, ids, context=context):
-            user_ids = [o.user_id.id]
-            user_ids += [a.id for a in o.auditor_user_ids]
-            user_ids += [a.id for a in o.auditee_user_ids]
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-            self.message_subscribe_users(cr, uid, ids, user_ids=user_ids, subtype_ids=None, context=context)
-        return super(mgmtsystem_audit, self).message_auto_subscribe(cr, uid, ids, updated_fields, context=context, values=values)
-=======
-            self.message_subscribe_users(
-                cr, uid, ids, user_ids=user_ids, subtype_ids=None,
-                context=context
-            )
-        return super(mgmtsystem_audit, self).message_auto_subscribe(
-            cr, uid, ids, updated_fields, context=context, values=values
-        )
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-
-    def get_audit_url(self, cr, uid, ids, context=None):
-=======
     def get_action_url(self):
->>>>>>> [MIG] mgmtsystem_audit
         """
         Return a short link to the audit form view
         eg. http://localhost:8069/?db=prod#id=1&model=mgmtsystem.audit
         """
-<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
-        assert len(ids) == 1
-        audit = self.browse(cr, uid, ids[0], context=context)
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-        base_url = self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url', default='http://localhost:8069', context=context)
-        query = {'db': cr.dbname}
-        fragment = {'id': audit.id, 'model': self._name}
-        return urljoin(base_url, "?%s#%s" % (urlencode(query), urlencode(fragment)))
-=======
-        base_url = self.pool.get('ir.config_parameter').get_param(
-            cr, uid, 'web.base.url', default='http://localhost:8069',
-            context=context,
-=======
 
-        base_url = self.env['ir.config_parameter'].get_param(
+        base_url = self.env['ir.config_parameter'].sudo().get_param(
             'web.base.url',
             default='http://localhost:8069'
->>>>>>> [MIG] mgmtsystem_audit
         )
         url = ('{}/web#db={}&id={}&model={}').format(
             base_url,
@@ -342,11 +162,7 @@ class MgmtsystemAudit(models.Model):
             self.id,
             self._name
         )
-<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-=======
         return url
->>>>>>> [MIG] mgmtsystem_audit
 
     def get_lines_by_procedure(self):
         p = []
@@ -356,79 +172,6 @@ class MgmtsystemAudit(models.Model):
             else:
                 procedure_name = _('Undefined')
 
-<<<<<<< e00fa43c595690d36669b683a085e5741efb9324
-class mgmtsystem_verification_line(orm.Model):
-    _name = "mgmtsystem.verification.line"
-    _description = "Verification Line"
-    _columns = {
-        'name': fields.char('Question', size=300, required=True),
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-        'audit_id': fields.many2one('mgmtsystem.audit', 'Audit', ondelete='cascade', select=True),
-<<<<<<< ad4a1d15a9393eb931e2492c91792187aaf42bd0
-        'procedure_id': fields.many2one('document.page', 'Procedure', ondelete='cascade', select=True),
-	'is_conformed': fields.boolean('Is conformed'),
-	'comments': fields.text('Comments'),
-	'seq': fields.integer('Sequence'),
-=======
-        'procedure_id': fields.many2one('wiki.wiki', 'Procedure', ondelete='cascade', select=True),
-        'is_conformed': fields.boolean('Is conformed'),
-        'comments': fields.text('Comments'),
-        'seq': fields.integer('Sequence'),
-<<<<<<< 3c429ddfc9b244c4efbb2c0ec723d8e20dd12278
->>>>>>> [FIX] fixes from review comments
-    }
-=======
-        'company_id': fields.many2one('res.company', 'Company')
-    }
-
->>>>>>> [IMP] Add company_id in views
-    _order = "seq"
-    _defaults = {
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id,
-=======
-        'audit_id': fields.many2one(
-            'mgmtsystem.audit',
-            'Audit',
-            ondelete='cascade',
-            select=True,
-        ),
-        'procedure_id': fields.many2one(
-            'document.page',
-            'Procedure',
-            ondelete='cascade',
-            select=True,
-        ),
-        'is_conformed': fields.boolean('Is conformed'),
-        'comments': fields.text('Comments'),
-        'seq': fields.integer('Sequence'),
-        'company_id': fields.many2one('res.company', 'Company')
-    }
-
-    _order = "seq"
-    _defaults = {
-        'company_id': (
-            lambda self, cr, uid, c:
-            self.pool.get('res.users').browse(cr, uid, uid, c).company_id.id
-        ),
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-        'is_conformed': False
-    }
-
-
-class mgmtsystem_nonconformity(orm.Model):
-    _name = "mgmtsystem.nonconformity"
-    _inherit = "mgmtsystem.nonconformity"
-    _columns = {
-        'audit_ids': fields.many2many(
-            'mgmtsystem.audit', string='Related Audits'),
-    }
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-=======
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-=======
             p.append({"id": l.id,
                       "procedure": procedure_name,
                       "name": l.name,
@@ -452,4 +195,3 @@ class mgmtsystem_nonconformity(orm.Model):
                       "name": p[i]['name'],
                       "yes_no": "Yes / No"})
         return q
->>>>>>> [MIG] mgmtsystem_audit

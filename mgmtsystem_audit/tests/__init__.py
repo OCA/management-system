@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -18,41 +17,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-<<<<<<< 07addfd1ffded4f91261048bef8351b6a7711522
-<<<<<<< e00fa43c595690d36669b683a085e5741efb9324:mgmtsystem_audit/report/audit_report.py
-
-import time
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-from report import report_sxw
-
-
-class mgmtsystem_audit_report(report_sxw.rml_parse):
-=======
-from openerp.report import report_sxw
-
-
-class mgmtsystem_audit_report(report_sxw.rml_parse):
-
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-    def __init__(self, cr, uid, name, context):
-        super(mgmtsystem_audit_report, self).__init__(cr, uid, name, context)
-        self.localcontext.update({
-            'time': time,
-        })
-
-report_sxw.report_sxw(
-    'report.mgmtsystem.audit.report',
-    'mgmtsystem.audit',
-    'addons/mgmtsystem_audit/report/audit_report.rml',
-    parser=mgmtsystem_audit_report
-=======
-from . import (
-    test_audit,
-    test_copy_verification_lines,
->>>>>>> [MIG] mgmtsystem_audit:mgmtsystem_audit/tests/__init__.py
-)
-=======
 
 from . import test_audit
 from . import test_copy_verification_lines
->>>>>>> MIG 10.0

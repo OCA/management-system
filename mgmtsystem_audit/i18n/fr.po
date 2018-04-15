@@ -1,59 +1,4 @@
-<<<<<<< 4e4b3b82e31f8c63877f0c21fce0ee1c93d16d0a
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-# French translation for openerp-mgmtsystem
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the openerp-mgmtsystem package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: openerp-mgmtsystem\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-07-27 19:08+0000\n"
-"PO-Revision-Date: 2012-09-09 04:50+0000\n"
-"Last-Translator: Maxime Chambreuil (http://www.savoirfairelinux.com) "
-"<maxime.chambreuil@savoirfairelinux.com>\n"
-"Language-Team: French <fr@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-24 06:29+0000\n"
-"X-Generator: Launchpad (build 16985)\n"
-
-#. module: mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: selection:mgmtsystem.audit,state:0
-msgid "Closed"
-msgstr "Fermé"
-
-#. module: mgmtsystem_audit
-#: field:copy.verification.lines,audit_src:0
-msgid "Choose audit"
-msgstr "Choisir un audit"
-
-#. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.report:0
-#: report:mgmtsystem.audit.verificationlist:0
-msgid "Date:"
-msgstr "Date :"
-
-#. module: mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: field:mgmtsystem.audit,nonconformity_ids:0
-#: report:mgmtsystem.audit.report:0
-msgid "Nonconformities"
-msgstr "Non-conformités"
-
-#. module: mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: field:mgmtsystem.audit,auditor_user_ids:0
-msgid "Auditors"
-msgstr "Auditeurs"
-=======
-# Translation of OpenERP Server.
-=======
 # Translation of Odoo Server.
->>>>>>> OCA Transbot updated translations from Transifex
 # This file contains the translation of the following modules:
 # * mgmtsystem_audit
 # 
@@ -135,7 +80,7 @@ msgid "Audit closed"
 msgstr "Audit fermé"
 
 #. module: mgmtsystem_audit
-#: model:ir.actions.report.xml,name:mgmtsystem_audit.audit_report_mgmtsystem_audit
+#: model:ir.actions.report,name:mgmtsystem_audit.audit_report_mgmtsystem_audit
 msgid "Audit report"
 msgstr ""
 
@@ -192,7 +137,6 @@ msgstr "Fermée"
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
 msgid "Closed Audits"
 msgstr "Audits fermés"
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_closing_date
@@ -206,41 +150,12 @@ msgid "Comments"
 msgstr "Commentaires"
 
 #. module: mgmtsystem_audit
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-<<<<<<< 4e4b3b82e31f8c63877f0c21fce0ee1c93d16d0a
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-#: field:mgmtsystem.audit,state:0
-msgid "State"
-msgstr "État"
-
-#. module: mgmtsystem_audit
-#: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_report
-msgid "Print Report"
-msgstr "Imprimer le rapport"
-=======
-#: help:mgmtsystem.nonconformity,action_comments:0
-msgid "Comments on the action plan."
-msgstr "Commentaires sur le plan d'action"
-
-#. module: mgmtsystem_audit
-=======
->>>>>>> OCA Transbot updated translations from Transifex
-#: field:mgmtsystem.audit,company_id:0
-#: field:mgmtsystem.verification.line,company_id:0
-=======
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_company_id
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_company_id
->>>>>>> OCA Transbot updated translations from Transifex
 msgid "Company"
 msgstr "Société"
 
 #. module: mgmtsystem_audit
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-#: report:mgmtsystem.audit.report:0 report:mgmtsystem.audit.verificationlist:0
-msgid "Confidentiality: Internal"
-msgstr "Confidentialité : Interne"
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-=======
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Confidentiality:"
 msgstr ""
@@ -249,7 +164,6 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "Confidentially:"
 msgstr ""
->>>>>>> OCA Transbot updated translations from Transifex
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
@@ -257,101 +171,6 @@ msgid "Conformed?"
 msgstr "Conforme ?"
 
 #. module: mgmtsystem_audit
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-<<<<<<< 4e4b3b82e31f8c63877f0c21fce0ee1c93d16d0a
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-#: view:mgmtsystem.nonconformity:0
-#: field:mgmtsystem.nonconformity,audit_ids:0
-msgid "Related Audits"
-msgstr "Audits liés"
-
-#. module: mgmtsystem_audit
-#: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
-#: view:mgmtsystem.verification.line:0
-msgid "Verification Lines"
-msgstr "Lignes de vérification"
-
-#. module: mgmtsystem_audit
-#: field:mgmtsystem.verification.line,is_conformed:0
-msgid "Is conformed"
-msgstr "Est conforme ?"
-
-#. module: mgmtsystem_audit
-#: field:mgmtsystem.audit,system_id:0
-msgid "System"
-msgstr "Système"
-
-#. module: mgmtsystem_audit
-#: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_verification_list
-msgid "Print Verification List"
-msgstr "Imprimer la liste de vérification"
-
-#. module: mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: field:mgmtsystem.audit,imp_opp_ids:0
-msgid "Improvement Opportunities"
-msgstr "Opportunités d'amélioration"
-
-#. module: mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: field:mgmtsystem.audit,auditee_user_ids:0
-msgid "Auditees"
-msgstr "Audités"
-
-#. module: mgmtsystem_audit
-#: view:copy.verification.lines:0
-#: model:ir.actions.act_window,name:mgmtsystem_audit.copy_verification_lines_act_window
-#: model:ir.model,name:mgmtsystem_audit.model_copy_verification_lines
-msgid "Copy Verification Lines"
-msgstr "Copier les lignes de vérification"
-
-#. module: mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: field:mgmtsystem.audit,strong_points:0
-msgid "Strong Points"
-msgstr "Points forts"
-
-#. module: mgmtsystem_audit
-#: view:copy.verification.lines:0
-msgid "_Copy"
-msgstr "_Copier"
-
-#. module: mgmtsystem_audit
-#: field:mgmtsystem.audit,date:0
-msgid "Date"
-msgstr "Date"
-
-#. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.report:0
-#: report:mgmtsystem.audit.verificationlist:0
-msgid "Reference:"
-msgstr "Référence :"
-
-#. module: mgmtsystem_audit
-#: view:board.board:0
-#: view:mgmtsystem.audit:0
-msgid "Open Audits"
-msgstr "Audits ouverts"
-
-#. module: mgmtsystem_audit
-#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: field:mgmtsystem.verification.line,audit_id:0
-msgid "Audit"
-msgstr "Audit"
-
-#. module: mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: selection:mgmtsystem.audit,state:0
-msgid "Open"
-msgstr "Ouvert"
-=======
-#: code:_description:0 view:copy.verification.lines:0
-=======
-#: view:copy.verification.lines:mgmtsystem_audit.copy_verification_lines_form_view
->>>>>>> OCA Transbot updated translations from Transifex
-=======
->>>>>>> OCA Transbot updated translations from Transifex
 #: model:ir.actions.act_window,name:mgmtsystem_audit.copy_verification_lines_act_window
 #: model:ir.model,name:mgmtsystem_audit.model_copy_verification_lines
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
@@ -453,57 +272,13 @@ msgid "Management System Audit Analysis"
 msgstr ""
 
 #. module: mgmtsystem_audit
-<<<<<<< 6df813b7b3230192fb374d1e2920a49a10138d44
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-#: help:mgmtsystem.audit,message_ids:0
-msgid "Messages and communication history"
-<<<<<<< 4e4b3b82e31f8c63877f0c21fce0ee1c93d16d0a
-msgstr ""
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-=======
-msgstr "Messages et historique de communication"
->>>>>>> OCA Transbot updated translations from Transifex
-=======
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_ids
-msgid "Messages"
-msgstr "Messages"
->>>>>>> OCA Transbot updated translations from Transifex
-
-#. module: mgmtsystem_audit
-=======
->>>>>>> OCA Transbot updated translations from Transifex
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_name
 msgid "Name"
 msgstr "Nom"
 
 #. module: mgmtsystem_audit
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-<<<<<<< 4e4b3b82e31f8c63877f0c21fce0ee1c93d16d0a
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-#: report:mgmtsystem.audit.report:0
-msgid "Improvement opportunities"
-msgstr "Opportunités d'amélioration"
-
-#. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.verificationlist:0
-#: field:mgmtsystem.verification.line,name:0
-msgid "Question"
-msgstr "Question"
-
-#. module: mgmtsystem_audit
-#: field:mgmtsystem.audit,to_improve_points:0
-#: report:mgmtsystem.audit.report:0
-=======
-#: view:mgmtsystem.audit:0 field:mgmtsystem.audit,nonconformity_ids:0
-#: report:mgmtsystem.audit.report:0
-=======
-#: view:mgmtsystem.audit:mgmtsystem_audit.view_mgmtsystem_audit_form
-#: field:mgmtsystem.audit,nonconformity_ids:0 report:mgmtsystem.audit.report:0
->>>>>>> OCA Transbot updated translations from Transifex
-=======
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_nonconformity_ids
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
->>>>>>> OCA Transbot updated translations from Transifex
 msgid "Nonconformities"
 msgstr "Nonconformités"
 
@@ -539,74 +314,25 @@ msgid "Open Audits"
 msgstr "Audits ouverts"
 
 #. module: mgmtsystem_audit
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-#: field:mgmtsystem.audit,to_improve_points:0 report:mgmtsystem.audit.report:0
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-=======
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_to_improve_points
->>>>>>> OCA Transbot updated translations from Transifex
 msgid "Points To Improve"
 msgstr "Points à améliorer"
 
 #. module: mgmtsystem_audit
-<<<<<<< 4e4b3b82e31f8c63877f0c21fce0ee1c93d16d0a
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-#: report:mgmtsystem.audit.verificationlist:0
-msgid "Auditees:"
-msgstr "Audités :"
-
-#. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.report:0
-msgid "Strong points"
-msgstr "Points forts"
-=======
-#: model:ir.actions.server,subject:mgmtsystem_audit.action_email_prepare_to_audit
-msgid "Prepare to Audit: \"[[object.name]]\""
-msgstr "Préparer à auditer: \"[[object.name]]\""
-
-#. module: mgmtsystem_audit
-=======
->>>>>>> OCA Transbot updated translations from Transifex
 #: model:ir.actions.server,name:mgmtsystem_audit.action_email_prepare_to_audit
 msgid "Prepare to audit"
 msgstr "Préparer à auditer"
 
 #. module: mgmtsystem_audit
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-#: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_report
-msgid "Print Report"
-msgstr "Imprimer le rapport"
-
-#. module: mgmtsystem_audit
-#: model:ir.actions.report.xml,name:mgmtsystem_audit.mgmtsystem_audit_verification_list
-msgid "Print Verification List"
-msgstr "Imprimer la liste de vérification"
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-
-#. module: mgmtsystem_audit
-#: field:mgmtsystem.verification.line,procedure_id:0
-=======
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_procedure_id
->>>>>>> OCA Transbot updated translations from Transifex
 msgid "Procedure"
 msgstr "Procédure"
 
 #. module: mgmtsystem_audit
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-#: view:mgmtsystem.audit:0
-msgid "Closed Audits"
-msgstr "Audits archivés"
-=======
-#: report:mgmtsystem.audit.verificationlist:0
-#: field:mgmtsystem.verification.line,name:0
-=======
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_name
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
->>>>>>> OCA Transbot updated translations from Transifex
 msgid "Question"
 msgstr "Question"
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_reference
@@ -614,18 +340,8 @@ msgid "Reference"
 msgstr "Référence"
 
 #. module: mgmtsystem_audit
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-#: report:mgmtsystem.audit.report:0
-#: report:mgmtsystem.audit.verificationlist:0
-msgid "Confidentiality: Internal"
-msgstr "Confidentialité : Interne"
-=======
-#: report:mgmtsystem.audit.report:0 report:mgmtsystem.audit.verificationlist:0
-=======
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
->>>>>>> OCA Transbot updated translations from Transifex
 msgid "Reference:"
 msgstr "Référence :"
 
@@ -641,54 +357,12 @@ msgid "Send Verification List"
 msgstr "Envoyer la liste de vérification"
 
 #. module: mgmtsystem_audit
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-<<<<<<< 4e4b3b82e31f8c63877f0c21fce0ee1c93d16d0a
-#: model:ir.actions.server,subject:mgmtsystem_audit.action_email_send_verification_list
-msgid "Send Verification List: \"[[object.name]]\""
-msgstr "Envoyer la liste de vérification : \"[[object.name]]\""
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-
-#. module: mgmtsystem_audit
-=======
->>>>>>> OCA Transbot updated translations from Transifex
-#: field:mgmtsystem.verification.line,seq:0
-=======
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_seq
->>>>>>> OCA Transbot updated translations from Transifex
 msgid "Sequence"
 msgstr "Séquence"
 
 #. module: mgmtsystem_audit
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-<<<<<<< 4e4b3b82e31f8c63877f0c21fce0ee1c93d16d0a
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
-msgid "Nonconformity of the management system"
-msgstr "Non-conformité du système de gestion"
-
-#. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.report:0
-msgid "Audit Report"
-msgstr "Rapport d'audit"
-
-#. module: mgmtsystem_audit
-#: view:mgmtsystem.audit:0
-#: field:mgmtsystem.audit,line_ids:0
-#: report:mgmtsystem.audit.verificationlist:0
-msgid "Verification List"
-msgstr "Liste de vérification"
-=======
-#: field:mgmtsystem.nonconformity,severity_id:0
-msgid "Severity"
-msgstr "Sévérité"
-
-#. module: mgmtsystem_audit
-=======
->>>>>>> OCA Transbot updated translations from Transifex
-#: field:mgmtsystem.audit,state:0
-=======
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_state
->>>>>>> OCA Transbot updated translations from Transifex
 msgid "State"
 msgstr "État"
 
@@ -702,7 +376,6 @@ msgstr "Points forts"
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_system_id
 msgid "System"
 msgstr "Système"
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
 
 #. module: mgmtsystem_audit
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
@@ -710,92 +383,18 @@ msgid "To Improve Points"
 msgstr "Points à améliorer"
 
 #. module: mgmtsystem_audit
-<<<<<<< 6df813b7b3230192fb374d1e2920a49a10138d44
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-<<<<<<< 4e4b3b82e31f8c63877f0c21fce0ee1c93d16d0a
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-#: view:copy.verification.lines:0
-msgid "_Cancel"
-msgstr "_Annuler"
-
-#. module: mgmtsystem_audit
-#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_verification_line
-#: view:mgmtsystem.verification.line:0
-=======
-=======
-#: code:addons/mgmtsystem_audit/report/verification_list.py:48
-=======
-#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:193
->>>>>>> OCA Transbot updated translations from Transifex
-=======
 #: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:174
->>>>>>> OCA Transbot updated translations from Transifex
 #, python-format
 msgid "Undefined"
 msgstr "Non-défini"
 
 #. module: mgmtsystem_audit
-<<<<<<< 6df813b7b3230192fb374d1e2920a49a10138d44
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
->>>>>>> OCA Transbot updated translations from Transifex
-#: field:mgmtsystem.audit,message_unread:0
-=======
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_unread
->>>>>>> OCA Transbot updated translations from Transifex
-msgid "Unread Messages"
-msgstr "Messages non-lus"
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_unread_counter
-msgid "Unread Messages Counter"
-msgstr ""
-
-#. module: mgmtsystem_audit
-=======
->>>>>>> OCA Transbot updated translations from Transifex
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_verification_line
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-<<<<<<< 4e4b3b82e31f8c63877f0c21fce0ee1c93d16d0a
-#: view:mgmtsystem.verification.line:0
-#, python-format
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-=======
-#: view:mgmtsystem.verification.line:mgmtsystem_audit.view_mgmtsystem_verification_line_form
->>>>>>> OCA Transbot updated translations from Transifex
-=======
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_form
->>>>>>> OCA Transbot updated translations from Transifex
 msgid "Verification Line"
 msgstr "Ligne de vérification"
 
 #. module: mgmtsystem_audit
-<<<<<<< 697b7c1967849d398f6212cef8d15618f8ce3201
-#: view:mgmtsystem.audit:0
-msgid "Close"
-msgstr "Archiver"
-
-#. module: mgmtsystem_audit
-#: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_audit_list
-#: model:ir.ui.menu,name:mgmtsystem_audit.menu_open_audit
-#: view:mgmtsystem.audit:0
-msgid "Audits"
-msgstr "Audits"
-
-#. module: mgmtsystem_audit
-#: report:mgmtsystem.audit.report:0
-#: report:mgmtsystem.audit.verificationlist:0
-msgid "Auditors:"
-msgstr "Auditeurs :"
-
-#~ msgid "-"
-#~ msgstr "-"
-
-#~ msgid "."
-#~ msgstr "."
-
-#~ msgid "Yes / No"
-#~ msgstr "Oui / Non"
-=======
 #: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_filter
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_tree
@@ -809,7 +408,7 @@ msgid "Verification List"
 msgstr "Liste de vérification"
 
 #. module: mgmtsystem_audit
-#: model:ir.actions.report.xml,name:mgmtsystem_audit.verification_report_mgmtsystem_audit
+#: model:ir.actions.report,name:mgmtsystem_audit.verification_report_mgmtsystem_audit
 msgid "Verification list report"
 msgstr ""
 
@@ -822,15 +421,3 @@ msgstr "Annuler"
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
 msgid "_Copy"
 msgstr "_Copier"
-<<<<<<< 4b78428d0a5a560e48b5ec26657633105f0bb126
-<<<<<<< 4e4b3b82e31f8c63877f0c21fce0ee1c93d16d0a
->>>>>>> Moved mgmtsystem_audit to root and fixed imports
-=======
-
-#. module: mgmtsystem_audit
-#: model:ir.actions.act_window,name:mgmtsystem_audit.action_mgmtsystem_audit
-msgid "board.mgmtsystem.audit.act_window"
-msgstr "board.mgmtsystem.audit.act_window"
->>>>>>> OCA Transbot updated translations from Transifex
-=======
->>>>>>> OCA Transbot updated translations from Transifex
