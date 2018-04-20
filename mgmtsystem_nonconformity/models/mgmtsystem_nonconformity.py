@@ -55,20 +55,20 @@ class MgmtsystemNonconformity(models.Model):
         'res.users',
         'Responsible',
         required=True,
-        track_visibility=True,
+        track_visibility='always',
     )
     manager_user_id = fields.Many2one(
         'res.users',
         'Manager',
         required=True,
-        track_visibility=True,
+        track_visibility='always',
     )
     user_id = fields.Many2one(
         'res.users',
         'Filled in by',
         required=True,
         default=lambda self: self.env.user,
-        track_visibility=True,
+        track_visibility='always',
         oldname="author_user_id",  # automatic migration
     )
     origin_ids = fields.Many2many(
@@ -91,7 +91,7 @@ class MgmtsystemNonconformity(models.Model):
     stage_id = fields.Many2one(
         'mgmtsystem.nonconformity.stage',
         'Stage',
-        track_visibility=True,
+        track_visibility='always',
         copy=False,
         default=_default_stage, group_expand='_stage_groups')
     state = fields.Selection(
