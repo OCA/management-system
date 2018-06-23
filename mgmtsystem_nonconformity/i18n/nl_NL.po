@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_nonconformity
-# 
+#
 # Translators:
 # Peter Hageman <hageman.p@gmail.com>, 2017
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2017-06-17 04:24+0000\n"
 "PO-Revision-Date: 2017-06-17 04:24+0000\n"
 "Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
-"Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
+"Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/"
+"teams/23907/nl_NL/)\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_nonconformity
@@ -34,7 +35,8 @@ msgid ""
 "A kanban state indicates special situations affecting it:\n"
 " * Normal is the default situation\n"
 " * Blocked indicates something is preventing the progress of this task\n"
-" * Ready for next stage indicates the task is ready to be pulled to the next stage"
+" * Ready for next stage indicates the task is ready to be pulled to the next "
+"stage"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
@@ -58,7 +60,7 @@ msgid "Action Plan Comments"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:173
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:172
 #, python-format
 msgid ""
 "Action plan  comments are required in order to put a nonconformity In "
@@ -82,7 +84,7 @@ msgid "Add a description ..."
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:189
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:188
 #, python-format
 msgid "All actions must be done before closing a Nonconformity."
 msgstr ""
@@ -301,7 +303,7 @@ msgid "Evaluation Comments"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:182
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:181
 #, python-format
 msgid "Evaluation Comments are required in order to close a Nonconformity."
 msgstr ""
@@ -643,7 +645,7 @@ msgstr ""
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_severity_list
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity_id_2633
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity_id_2639
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_severity
 msgid "Severity"
 msgstr ""
@@ -655,7 +657,7 @@ msgid "Severity of Complaints and Nonconformities"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_id_2640
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage_id_2646
 msgid "Stage"
 msgstr "Fase"
 
