@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_nonconformity
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2015-08-07 14:27+0000\n"
 "PO-Revision-Date: 2015-08-07 14:29+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Portuguese (http://www.transifex.com/oca/OCA-management-system-8-0/language/pt/)\n"
+"Language-Team: Portuguese (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/pt/)\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_nonconformity
@@ -34,6 +35,7 @@ msgid "Action Plan Approved"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 #: field:mgmtsystem.nonconformity,action_comments:0
 msgid "Action Plan Comments"
 msgstr ""
@@ -299,6 +301,14 @@ msgid "Direction Review"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,display_name:0
+#: field:mgmtsystem.nonconformity.cause,display_name:0
+#: field:mgmtsystem.nonconformity.origin,display_name:0
+#: field:mgmtsystem.nonconformity.severity,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:33
 #: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 #: selection:mgmtsystem.nonconformity,state:0
@@ -335,6 +345,7 @@ msgid "Error! Cannot create recursive cycle."
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#: view:mgmtsystem.nonconformity:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 #: field:mgmtsystem.nonconformity,evaluation_comments:0
 msgid "Evaluation Comments"
 msgstr ""
@@ -458,6 +469,14 @@ msgstr ""
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,message_last_post:0
 msgid "Last Message Date"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,__last_update:0
+#: field:mgmtsystem.nonconformity.cause,__last_update:0
+#: field:mgmtsystem.nonconformity.origin,__last_update:0
+#: field:mgmtsystem.nonconformity.severity,__last_update:0
+msgid "Last Modified on"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
@@ -724,6 +743,12 @@ msgstr ""
 #: field:mgmtsystem.nonconformity,state:0
 msgid "State"
 msgstr "Estado"
+
+#. module: mgmtsystem_nonconformity
+#: field:mgmtsystem.nonconformity,state_name:0
+#, fuzzy
+msgid "State Description"
+msgstr "Descrição"
 
 #. module: mgmtsystem_nonconformity
 #: field:mgmtsystem.nonconformity,message_summary:0
