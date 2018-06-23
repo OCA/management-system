@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_audit
-# 
+#
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2015-08-07 14:27+0000\n"
 "PO-Revision-Date: 2015-08-07 14:16+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Swedish (http://www.transifex.com/oca/OCA-management-system-8-0/language/sv/)\n"
+"Language-Team: Swedish (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/sv/)\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_audit
@@ -153,6 +154,13 @@ msgid "Date:"
 msgstr "Datum:"
 
 #. module: mgmtsystem_audit
+#: field:copy.verification.lines,display_name:0
+#: field:mgmtsystem.audit,display_name:0
+#: field:mgmtsystem.verification.line,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_follower_ids:0
 msgid "Followers"
 msgstr ""
@@ -199,6 +207,13 @@ msgstr "Är anpassat"
 #. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_last_post:0
 msgid "Last Message Date"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: field:copy.verification.lines,__last_update:0
+#: field:mgmtsystem.audit,__last_update:0
+#: field:mgmtsystem.verification.line,__last_update:0
+msgid "Last Modified on"
 msgstr ""
 
 #. module: mgmtsystem_audit

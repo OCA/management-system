@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_audit
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2015-08-07 14:27+0000\n"
 "PO-Revision-Date: 2015-08-07 14:16+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Spanish (http://www.transifex.com/oca/OCA-management-system-8-0/language/es/)\n"
+"Language-Team: Spanish (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_audit
@@ -152,6 +153,13 @@ msgid "Date:"
 msgstr "Fecha:"
 
 #. module: mgmtsystem_audit
+#: field:copy.verification.lines,display_name:0
+#: field:mgmtsystem.audit,display_name:0
+#: field:mgmtsystem.verification.line,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: field:mgmtsystem.audit,message_follower_ids:0
 msgid "Followers"
 msgstr "Seguidores"
@@ -161,7 +169,9 @@ msgstr "Seguidores"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr "Sostiene el resumen Chatter (número de mensajes, ...). Este resumen está directamente en formato html para ser insertado en vistas kanban."
+msgstr ""
+"Sostiene el resumen Chatter (número de mensajes, ...). Este resumen está "
+"directamente en formato html para ser insertado en vistas kanban."
 
 #. module: mgmtsystem_audit
 #: field:copy.verification.lines,id:0 field:mgmtsystem.audit,id:0
@@ -199,6 +209,14 @@ msgstr "Está conforme"
 #: field:mgmtsystem.audit,message_last_post:0
 msgid "Last Message Date"
 msgstr "Fecha del último mensaje"
+
+#. module: mgmtsystem_audit
+#: field:copy.verification.lines,__last_update:0
+#: field:mgmtsystem.audit,__last_update:0
+#: field:mgmtsystem.verification.line,__last_update:0
+#, fuzzy
+msgid "Last Modified on"
+msgstr "Ultima actualización en"
 
 #. module: mgmtsystem_audit
 #: field:copy.verification.lines,write_uid:0
