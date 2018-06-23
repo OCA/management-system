@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_claim
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 # Rudolf Schnapka <rs@techno-flex.de>, 2017
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2017-05-30 04:37+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>, 2017\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_claim
@@ -89,6 +89,7 @@ msgstr "${object.name}"
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.server,body_html:mgmtsystem_claim.mgmtsystem_claim_server_action
+#, fuzzy
 msgid ""
 "<p>\n"
 "  Hello,\n"
@@ -106,8 +107,31 @@ msgid ""
 "--\n"
 "<p>\n"
 "  OpenERP\n"
-"</p>"
+"</p>\n"
+"        \n"
+"      "
 msgstr ""
+"\n"
+"        \n"
+"<p>\n"
+"  Hallo,</br>\n"
+"  Ihnen wurde eine neue Forderung zugewiesen:\n"
+"</p>\n"
+"<p>\n"
+"  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
+"</p>\n"
+"<p>\n"
+"  ${object.description}\n"
+"</p>\n"
+"<p>\n"
+"Vielen Dank.\n"
+"</p>\n"
+"--\n"
+"<p>\n"
+"  Odoo\n"
+"</p>\n"
+"        \n"
+"      "
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_needaction
@@ -568,7 +592,7 @@ msgstr "Eine Notiz teilen..."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_stage_id
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_id_3478
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_id_3504
 #: model:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Stage"
 msgstr "Stufe"
