@@ -1,22 +1,17 @@
-# Vietnamese translation for openerp-mgmtsystem
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
-# This file is distributed under the same license as the openerp-mgmtsystem package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mgmtsystem_hazard
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: openerp-mgmtsystem\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-25 21:40+0000\n"
-"PO-Revision-Date: 2014-03-05 02:13+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Vietnamese <vi@li.org>\n"
-"Language: vi\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-24 06:30+0000\n"
-"X-Generator: Launchpad (build 16985)\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: mgmtsystem_hazard
 #: field:mgmtsystem.hazard,acceptability:0
@@ -212,11 +207,15 @@ msgid "High"
 msgstr ""
 
 #. module: mgmtsystem_hazard
-#: field:mgmtsystem.hazard,id:0 field:mgmtsystem.hazard.control_measure,id:0
-#: field:mgmtsystem.hazard.hazard,id:0 field:mgmtsystem.hazard.origin,id:0
+#: field:mgmtsystem.hazard,id:0
+#: field:mgmtsystem.hazard.control_measure,id:0
+#: field:mgmtsystem.hazard.hazard,id:0
+#: field:mgmtsystem.hazard.origin,id:0
 #: field:mgmtsystem.hazard.probability,id:0
-#: field:mgmtsystem.hazard.severity,id:0 field:mgmtsystem.hazard.test,id:0
-#: field:mgmtsystem.hazard.type,id:0 field:mgmtsystem.hazard.usage,id:0
+#: field:mgmtsystem.hazard.severity,id:0
+#: field:mgmtsystem.hazard.test,id:0
+#: field:mgmtsystem.hazard.type,id:0
+#: field:mgmtsystem.hazard.usage,id:0
 msgid "ID"
 msgstr ""
 
@@ -489,3 +488,4 @@ msgstr ""
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_very_low
 msgid "Very low"
 msgstr ""
+
