@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_review
-# 
+#
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2015-09-19 18:36+0000\n"
 "PO-Revision-Date: 2015-09-19 13:34+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Swedish (http://www.transifex.com/oca/OCA-management-system-8-0/language/sv/)\n"
+"Language-Team: Swedish (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/sv/)\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_review
@@ -111,6 +112,12 @@ msgid "Decision:"
 msgstr "Beslut:"
 
 #. module: mgmtsystem_review
+#: field:mgmtsystem.review,display_name:0
+#: field:mgmtsystem.review.line,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem_review
 #: report:mgmtsystem.review.report:0
 msgid "Expectations:"
 msgstr "Förväntningar:"
@@ -130,6 +137,12 @@ msgstr "Förbättringar:"
 #: report:mgmtsystem.review.report:0
 msgid "Inputs"
 msgstr "Ingångsvärde"
+
+#. module: mgmtsystem_review
+#: field:mgmtsystem.review,__last_update:0
+#: field:mgmtsystem.review.line,__last_update:0
+msgid "Last Modified on"
+msgstr ""
 
 #. module: mgmtsystem_review
 #: field:mgmtsystem.review,write_uid:0
