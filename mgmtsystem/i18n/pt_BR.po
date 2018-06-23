@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem
-# 
+#
 # Translators:
 # danimaribeiro <danimaribeiro@gmail.com>, 2015
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
@@ -12,11 +12,12 @@ msgstr ""
 "POT-Creation-Date: 2015-08-07 14:27+0000\n"
 "PO-Revision-Date: 2015-07-20 19:12+0000\n"
 "Last-Translator: danimaribeiro <danimaribeiro@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-management-system-8-0/language/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-"
+"management-system-8-0/language/pt_BR/)\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: mgmtsystem
@@ -50,9 +51,20 @@ msgid "Created on"
 msgstr "Criado em"
 
 #. module: mgmtsystem
+#: field:mgmtsystem.system,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem
 #: field:mgmtsystem.system,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: mgmtsystem
+#: field:mgmtsystem.system,__last_update:0
+#, fuzzy
+msgid "Last Modified on"
+msgstr "Última atualização em"
 
 #. module: mgmtsystem
 #: field:mgmtsystem.system,write_uid:0
@@ -69,7 +81,9 @@ msgstr "Última atualização em"
 msgid ""
 "Manage management systems, manuals, KPIs, nonconformities, actions, "
 "feedbacks, audits, reviews."
-msgstr "Configure sistemas de gestão, manuais, KPIs, não conformidades, ações, feedbacks, auditorias, revisões."
+msgstr ""
+"Configure sistemas de gestão, manuais, KPIs, não conformidades, ações, "
+"feedbacks, auditorias, revisões."
 
 #. module: mgmtsystem
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
@@ -124,9 +138,11 @@ msgstr "Módulo usuario com permissões adicionais para aprovação"
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_auditor
 msgid ""
-"Module user with additional permission specific for the auditor job, such as"
-" effectiveness reviews."
-msgstr "Módulo de usuário com permissões especificas para o trabalho de auditor, como efetivar revisões."
+"Module user with additional permission specific for the auditor job, such as "
+"effectiveness reviews."
+msgstr ""
+"Módulo de usuário com permissões especificas para o trabalho de auditor, "
+"como efetivar revisões."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_viewer
