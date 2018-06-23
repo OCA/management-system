@@ -1,35 +1,27 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * mgmtsystem_action
+#	* mgmtsystem_action
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-26 02:48+0000\n"
-"PO-Revision-Date: 2017-04-26 02:48+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Spanish (Peru) (https://www.transifex.com/oca/teams/23907/"
-"es_PE/)\n"
-"Language: es_PE\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
-msgid ""
-"\n"
+msgid "\n"
 "                \n"
 "    <p>Hello,</p>\n"
 "\n"
 "    <p>\n"
 "      This is an automated message to remind you that the\n"
-"      following action is due to be completed in 10 days (${object."
-"date_deadline}):\n"
+"      following action is due to be completed in 10 days (${object.date_deadline}):\n"
 "\n"
 "      <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
 "    </p>\n"
@@ -45,12 +37,10 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.email_template_new_action_reminder
-msgid ""
-"\n"
+msgid "\n"
 "                \n"
 "<p>Hello,</p>\n"
-"<p>A new action has been assigned to you : <a href=\"${object."
-"get_action_url()}\">${object.get_action_url()}</a></p>\n"
+"<p>A new action has been assigned to you : <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a></p>\n"
 "<p>${object.description}</p>\n"
 "\n"
 "<p>\n"
@@ -158,7 +148,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_report_mgmtsystem_action_graph
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_report_mgmtsystem_action_pivot
 msgid "Actions"
-msgstr "Acciones"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_active
@@ -221,17 +211,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr "Fecha del ultimo mensaje actualizado en el registro."
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_date_deadline
@@ -243,14 +233,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_description
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 msgid "Description"
-msgstr "Descripción"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_display_name
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_display_name
 msgid "Display Name"
-msgstr "Nombre a Mostrar"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_draft
@@ -270,7 +260,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_follower_ids
 msgid "Followers"
-msgstr "Seguidores"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_channel_ids
@@ -284,9 +274,7 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,help:mgmtsystem_action.action_report_mgmtsystem_action
-msgid ""
-"Have a general overview of all actions processed in the system by sorting "
-"them with specific criteria."
+msgid "Have a general overview of all actions processed in the system by sorting them with specific criteria."
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -294,12 +282,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_3237
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_unread
 msgid "If checked new messages require your attention."
-msgstr "Si está marcado nuevos mensajes requieren su atención."
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_needaction
@@ -308,9 +296,7 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_stage_case_default
-msgid ""
-"If you check this field,         this stage will be proposed by default on "
-"each sales team.         It will not assign this stage to existing teams."
+msgid "If you check this field,         this stage will be proposed by default on each sales team.         It will not assign this stage to existing teams."
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -338,26 +324,26 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_last_post
 msgid "Last Message Date"
-msgstr "Fecha del último mensaje"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report___last_update
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage___last_update
 msgid "Last Modified on"
-msgstr "Ultima Modificación en"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_write_uid
 msgid "Last Updated by"
-msgstr "Actualizado última vez por"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_write_date
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_write_date
 msgid "Last Updated on"
-msgstr "Ultima Actualización"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_report
@@ -372,7 +358,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_ids
 msgid "Messages"
-msgstr "Mensajes"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_needaction_counter
@@ -425,7 +411,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_sequence
 msgid "Sequence"
-msgstr "Secuencia"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_stage_id
@@ -464,13 +450,13 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Type"
-msgstr "Tipo"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_unread
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Unread Messages"
-msgstr "Mensajes no leidos"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_unread_counter
@@ -497,12 +483,12 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_website_message_ids
 msgid "Website Messages"
-msgstr "Mensajes del Sitio Web"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_website_message_ids
 msgid "Website communication history"
-msgstr "Historial de comunicación del sitio web"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:172
@@ -514,3 +500,4 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
 msgstr ""
+
