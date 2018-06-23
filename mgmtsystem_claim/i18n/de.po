@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_claim
-# 
+#
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 # Rudolf Schnapka <rs@techno-flex.de>, 2017
@@ -12,11 +12,12 @@ msgstr ""
 "POT-Creation-Date: 2017-03-28 04:56+0000\n"
 "PO-Revision-Date: 2017-04-19 11:44+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-management-system-8-0/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_claim
@@ -43,7 +44,28 @@ msgid ""
 "</p>\n"
 "        \n"
 "      "
-msgstr "\n        \n<p>\n  Hallo,</br>\n  Ihnen wurde eine neue Beschwerde zugewiesen:\n</p>\n<p>\n  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n</p>\n<p>\n  ${object.description}\n</p>\n<p>\nVielen Dank.\n</p>\n--\n<p>\n  Odoo\n</p>\n        \n      "
+msgstr ""
+"\n"
+"        \n"
+"<p>\n"
+"  Hallo,</br>\n"
+"  Ihnen wurde eine neue Beschwerde zugewiesen:\n"
+"</p>\n"
+"<p>\n"
+"  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
+"</p>\n"
+"<p>\n"
+"  ${object.description}\n"
+"</p>\n"
+"<p>\n"
+"Vielen Dank.\n"
+"</p>\n"
+"--\n"
+"<p>\n"
+"  Odoo\n"
+"</p>\n"
+"        \n"
+"      "
 
 #. module: mgmtsystem_claim
 #: model:email.template,subject:mgmtsystem_claim.action_email_template_reminder_action
@@ -240,7 +262,9 @@ msgstr "Hoch"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr "Beinhaltet die Meldungsübersicht (Anzahl Nachrichten, ...). Diese liegt in HTML vor, um direkt in Kanban-Sichten eingesetzt zu werden."
+msgstr ""
+"Beinhaltet die Meldungsübersicht (Anzahl Nachrichten, ...). Diese liegt in "
+"HTML vor, um direkt in Kanban-Sichten eingesetzt zu werden."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,id:0 field:mgmtsystem.claim.stage,id:0
@@ -257,7 +281,9 @@ msgstr "Wenn angewählt, erfordern neue Meldungen Ihre Aufmerksamkeit,"
 msgid ""
 "If you check this field, this stage will be proposed by default on each "
 "sales team. It will not assign this stage to existing teams."
-msgstr "Wenn Sie dieses Feld anwählen, wird diese Stufe als Vorgabe zu jedem Verkaufsteam vorgeschlagen. Sie wird nicht zu bestehenden Teams hinzugefügt."
+msgstr ""
+"Wenn Sie dieses Feld anwählen, wird diese Stufe als Vorgabe zu jedem "
+"Verkaufsteam vorgeschlagen. Sie wird nicht zu bestehenden Teams hinzugefügt."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,message_is_follower:0
@@ -290,7 +316,9 @@ msgstr "Zuletzt aktualisiert am"
 msgid ""
 "Link between stages and sales teams. When set, this limitate the current "
 "stage to the selected sales teams."
-msgstr "Verknüpfung zwischen Stufen und Verkaufsteams. Wenn gesetzt, wird diese Stufe auf gewählte Verkaufsteams beschränkt."
+msgstr ""
+"Verknüpfung zwischen Stufen und Verkaufsteams. Wenn gesetzt, wird diese "
+"Stufe auf gewählte Verkaufsteams beschränkt."
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
@@ -366,7 +394,12 @@ msgid ""
 "order or a lot. You can send emails with attachments and keep the full "
 "history for a claim (emails sent, intervention type and so on). Claims may "
 "automatically be linked to an email address using the mail gateway module."
-msgstr "Festhalten und Verfolgen Ihrer Kundenbeschwerden. Beschwerden können an einen Auftrag oder ein Los geknüpft sein. Sie können Emails mit Anhängen versenden und damit den vollständigen Verlauf erhalten (Gesendete Emails, Gegenmßnahmen, -art, usw.). Beschwerden können über das Email-Gateway-Modul automatisch mit einer Email-Anschrift verknüpft werden."
+msgstr ""
+"Festhalten und Verfolgen Ihrer Kundenbeschwerden. Beschwerden können an "
+"einen Auftrag oder ein Los geknüpft sein. Sie können Emails mit Anhängen "
+"versenden und damit den vollständigen Verlauf erhalten (Gesendete Emails, "
+"Gegenmßnahmen, -art, usw.). Beschwerden können über das Email-Gateway-Modul "
+"automatisch mit einer Email-Anschrift verknüpft werden."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,ref:0 field:mgmtsystem.claim,reference:0
@@ -404,7 +437,9 @@ msgstr "Verantwortlicher Benutzer"
 msgid ""
 "Responsible sales team. Define Responsible user and Email account for mail "
 "gateway."
-msgstr "Verantwortliches Verkaufsteam. Lege verantwortlichen Benutzer und Email-Adresse für Email-Gateway fest."
+msgstr ""
+"Verantwortliches Verkaufsteam. Lege verantwortlichen Benutzer und Email-"
+"Adresse für Email-Gateway fest."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,cause:0
@@ -471,7 +506,10 @@ msgid ""
 "These email addresses will be added to the CC field of all inbound and "
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
-msgstr "Diese Email Anschriften erhalten eine Kopie (CC) aller ein- und ausgehenden Emails zu diesem Vorgang. Trenne mehrere Email Kopie Empfänger durch eine Komma separierte Auflistung in diesem Feld."
+msgstr ""
+"Diese Email Anschriften erhalten eine Kopie (CC) aller ein- und ausgehenden "
+"Emails zu diesem Vorgang. Trenne mehrere Email Kopie Empfänger durch eine "
+"Komma separierte Auflistung in diesem Feld."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,user_fault:0

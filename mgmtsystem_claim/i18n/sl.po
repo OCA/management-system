@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_claim
-# 
+#
 # Translators:
 # Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
@@ -11,12 +11,14 @@ msgstr ""
 "POT-Creation-Date: 2016-05-12 00:17+0000\n"
 "PO-Revision-Date: 2016-05-12 05:23+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
-"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-management-system-8-0/language/sl/)\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
 
 #. module: mgmtsystem_claim
 #: model:email.template,body_html:mgmtsystem_claim.action_email_template_reminder_action
@@ -42,7 +44,28 @@ msgid ""
 "</p>\n"
 "        \n"
 "      "
-msgstr "\n        \n<p>\n  Pozdravljeni.</br>\n  Dodeljen vam je bil nov zahtevek:\n</p>\n<p>\n  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n</p>\n<p>\n  ${object.description}\n</p>\n<p>\nHvala.\n</p>\n--\n<p>\n  OpenERP\n</p>\n        \n      "
+msgstr ""
+"\n"
+"        \n"
+"<p>\n"
+"  Pozdravljeni.</br>\n"
+"  Dodeljen vam je bil nov zahtevek:\n"
+"</p>\n"
+"<p>\n"
+"  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
+"</p>\n"
+"<p>\n"
+"  ${object.description}\n"
+"</p>\n"
+"<p>\n"
+"Hvala.\n"
+"</p>\n"
+"--\n"
+"<p>\n"
+"  OpenERP\n"
+"</p>\n"
+"        \n"
+"      "
 
 #. module: mgmtsystem_claim
 #: model:email.template,subject:mgmtsystem_claim.action_email_template_reminder_action
@@ -239,7 +262,9 @@ msgstr "Visoka"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr "Povzetek komunikacij (število sporočil, ...). Ta povzetek je neposredno v html formatu, da se lahko vstavlja v poglede kanban."
+msgstr ""
+"Povzetek komunikacij (število sporočil, ...). Ta povzetek je neposredno v "
+"html formatu, da se lahko vstavlja v poglede kanban."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,id:0 field:mgmtsystem.claim.stage,id:0
@@ -256,7 +281,9 @@ msgstr "Če je označeno, zahtevajo nova sporočila vašo pozornost."
 msgid ""
 "If you check this field, this stage will be proposed by default on each "
 "sales team. It will not assign this stage to existing teams."
-msgstr "Če označite to polje, bo ta stopnja privzeto predlagana vsaki prodajni ekipi, ne bo pa dodeljena obstoječim ekipam."
+msgstr ""
+"Če označite to polje, bo ta stopnja privzeto predlagana vsaki prodajni "
+"ekipi, ne bo pa dodeljena obstoječim ekipam."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,message_is_follower:0
@@ -289,7 +316,9 @@ msgstr "Zadnjič posodobljeno"
 msgid ""
 "Link between stages and sales teams. When set, this limitate the current "
 "stage to the selected sales teams."
-msgstr "Povezava med stopnjami in prodajnimi ekipami. Ko je nastavljeno, omejuje trenutno stopnjo le za izbrane prodajne ekipe."
+msgstr ""
+"Povezava med stopnjami in prodajnimi ekipami. Ko je nastavljeno, omejuje "
+"trenutno stopnjo le za izbrane prodajne ekipe."
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
@@ -365,7 +394,12 @@ msgid ""
 "order or a lot. You can send emails with attachments and keep the full "
 "history for a claim (emails sent, intervention type and so on). Claims may "
 "automatically be linked to an email address using the mail gateway module."
-msgstr "Knjiženje in sledenje reklamacijskim zahtevkom kupcev. Zahtevki so lahko povezani s prodajnim nalogom ali lotom. Pošiljate lahko e-pošto s prilogami in vodite celotno zgodovino zahtevka (poslana e-pošta, tip intervencije itd.) Zahtevki se lahko samodejno povežejo z e-poštnim naslovom preko modula mail gateway."
+msgstr ""
+"Knjiženje in sledenje reklamacijskim zahtevkom kupcev. Zahtevki so lahko "
+"povezani s prodajnim nalogom ali lotom. Pošiljate lahko e-pošto s prilogami "
+"in vodite celotno zgodovino zahtevka (poslana e-pošta, tip intervencije "
+"itd.) Zahtevki se lahko samodejno povežejo z e-poštnim naslovom preko modula "
+"mail gateway."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,ref:0 field:mgmtsystem.claim,reference:0
@@ -403,7 +437,8 @@ msgstr "Odgovorni uporabnik"
 msgid ""
 "Responsible sales team. Define Responsible user and Email account for mail "
 "gateway."
-msgstr "Odgovorna prodajna ekipa. Določite odgovornega uporabnika in e-poštni naslov."
+msgstr ""
+"Odgovorna prodajna ekipa. Določite odgovornega uporabnika in e-poštni naslov."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,cause:0
@@ -470,7 +505,9 @@ msgid ""
 "These email addresses will be added to the CC field of all inbound and "
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
-msgstr "Ti e-poštni naslovni bodo dodani v polje CC za vso vhodno in izhodno pošto glede tega zapisa. V primeru več naslovov jih ločujte z vejico."
+msgstr ""
+"Ti e-poštni naslovni bodo dodani v polje CC za vso vhodno in izhodno pošto "
+"glede tega zapisa. V primeru več naslovov jih ločujte z vejico."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,user_fault:0

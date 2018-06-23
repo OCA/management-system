@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_claim
-# 
+#
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2015-08-07 14:27+0000\n"
 "PO-Revision-Date: 2015-05-22 13:07+0000\n"
 "Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
-"Language-Team: Norwegian Bokmål (http://www.transifex.com/oca/OCA-management-system-8-0/language/nb/)\n"
+"Language-Team: Norwegian Bokmål (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/nb/)\n"
+"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: nb\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_claim
@@ -199,6 +200,12 @@ msgid "Destination email for email gateway."
 msgstr ""
 
 #. module: mgmtsystem_claim
+#: field:mgmtsystem.claim,display_name:0
+#: field:mgmtsystem.claim.stage,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Draft and Open Claims"
 msgstr "Utkas og åpne reklamasjoner"
@@ -260,6 +267,12 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,message_last_post:0
 msgid "Last Message Date"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: field:mgmtsystem.claim,__last_update:0
+#: field:mgmtsystem.claim.stage,__last_update:0
+msgid "Last Modified on"
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -458,7 +471,9 @@ msgid ""
 "These email addresses will be added to the CC field of all inbound and "
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
-msgstr "Disse e-postadressene vil bli lagt til kopi-feltet for alle inngående og utgående e-poster før de sendes. Skill flere e-postadresser med komma."
+msgstr ""
+"Disse e-postadressene vil bli lagt til kopi-feltet for alle inngående og "
+"utgående e-poster før de sendes. Skill flere e-postadresser med komma."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,user_fault:0

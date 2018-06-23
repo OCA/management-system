@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_claim
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2015-12-09 13:03+0000\n"
 "PO-Revision-Date: 2015-05-21 16:37+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: Indonesian (http://www.transifex.com/oca/OCA-management-system-8-0/language/id/)\n"
+"Language-Team: Indonesian (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/id/)\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: mgmtsystem_claim
@@ -198,6 +199,12 @@ msgid "Destination email for email gateway."
 msgstr ""
 
 #. module: mgmtsystem_claim
+#: field:mgmtsystem.claim,display_name:0
+#: field:mgmtsystem.claim.stage,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Draft and Open Claims"
 msgstr ""
@@ -260,6 +267,13 @@ msgstr ""
 #: field:mgmtsystem.claim,message_last_post:0
 msgid "Last Message Date"
 msgstr ""
+
+#. module: mgmtsystem_claim
+#: field:mgmtsystem.claim,__last_update:0
+#: field:mgmtsystem.claim.stage,__last_update:0
+#, fuzzy
+msgid "Last Modified on"
+msgstr "Tanggal terakhir dirubah"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,write_uid:0 field:mgmtsystem.claim.stage,write_uid:0

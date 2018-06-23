@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_claim
-# 
+#
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 # Maxime Chambreuil <maxime.chambreuil@gmail.com>, 2015
@@ -13,11 +13,12 @@ msgstr ""
 "POT-Creation-Date: 2015-08-07 14:27+0000\n"
 "PO-Revision-Date: 2015-08-26 00:08+0000\n"
 "Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
-"Language-Team: French (http://www.transifex.com/oca/OCA-management-system-8-0/language/fr/)\n"
+"Language-Team: French (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: mgmtsystem_claim
@@ -44,7 +45,20 @@ msgid ""
 "</p>\n"
 "        \n"
 "      "
-msgstr "\n<p>Bonjour,</p>\n<p>Une nouvelle action vous a été assigné :\n  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n</p>\n<p>${object.description}</p>\n<p>\n  Merci<br />\n  --<br />\n  Odoo\n</p>\n        \n      "
+msgstr ""
+"\n"
+"<p>Bonjour,</p>\n"
+"<p>Une nouvelle action vous a été assigné :\n"
+"  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
+"</p>\n"
+"<p>${object.description}</p>\n"
+"<p>\n"
+"  Merci<br />\n"
+"  --<br />\n"
+"  Odoo\n"
+"</p>\n"
+"        \n"
+"      "
 
 #. module: mgmtsystem_claim
 #: model:email.template,subject:mgmtsystem_claim.action_email_template_reminder_action
@@ -201,6 +215,12 @@ msgid "Destination email for email gateway."
 msgstr "Courriel de destination pour la passerelle de courriel."
 
 #. module: mgmtsystem_claim
+#: field:mgmtsystem.claim,display_name:0
+#: field:mgmtsystem.claim.stage,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem_claim
 #: view:mgmtsystem.claim:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Draft and Open Claims"
 msgstr "Réclamations brouillon ou ouvertes"
@@ -235,7 +255,9 @@ msgstr "Haute"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr "Contient le résumé de la discussion (nombre de messages, ...). Ce résumé est au format HTML pour permettre son utilisation dans les vues kanban."
+msgstr ""
+"Contient le résumé de la discussion (nombre de messages, ...). Ce résumé est "
+"au format HTML pour permettre son utilisation dans les vues kanban."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,id:0 field:mgmtsystem.claim.stage,id:0
@@ -252,7 +274,9 @@ msgstr "Si coché, les nouveaux messages demanderont votre attention."
 msgid ""
 "If you check this field, this stage will be proposed by default on each "
 "sales team. It will not assign this stage to existing teams."
-msgstr "Si vous cochez ce champ, cette étape sera proposé par défaut à chaque équipe commerciale. Cela n'assignera pas cette étape aux équipes existantes."
+msgstr ""
+"Si vous cochez ce champ, cette étape sera proposé par défaut à chaque équipe "
+"commerciale. Cela n'assignera pas cette étape aux équipes existantes."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,message_is_follower:0
@@ -263,6 +287,13 @@ msgstr "Est un abonné"
 #: field:mgmtsystem.claim,message_last_post:0
 msgid "Last Message Date"
 msgstr "Date du dernier message"
+
+#. module: mgmtsystem_claim
+#: field:mgmtsystem.claim,__last_update:0
+#: field:mgmtsystem.claim.stage,__last_update:0
+#, fuzzy
+msgid "Last Modified on"
+msgstr "Mis à jour le"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,write_uid:0 field:mgmtsystem.claim.stage,write_uid:0
@@ -279,7 +310,9 @@ msgstr "Mis à jour le"
 msgid ""
 "Link between stages and sales teams. When set, this limitate the current "
 "stage to the selected sales teams."
-msgstr "Lien entre les étapes et les équipes commerciales. Lorsque renseigné, cela limite cette étape aux équipes commerciales sélectionnées."
+msgstr ""
+"Lien entre les étapes et les équipes commerciales. Lorsque renseigné, cela "
+"limite cette étape aux équipes commerciales sélectionnées."
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
@@ -355,7 +388,13 @@ msgid ""
 "order or a lot. You can send emails with attachments and keep the full "
 "history for a claim (emails sent, intervention type and so on). Claims may "
 "automatically be linked to an email address using the mail gateway module."
-msgstr "Enregistrez et faîtes le suivi des réclamations de vos clients. Les réclamations peuvent être liées à une commande de ventes ou un lot. Vous pouvez envoyer des courriels avec des pièces jointes et conserver l'historique de la réclamation (courriels envoyés, type d'intervention). Les réclamations peuvent être liées automatiquement à une adresse courriel en utilisant la passerelle de messagerie."
+msgstr ""
+"Enregistrez et faîtes le suivi des réclamations de vos clients. Les "
+"réclamations peuvent être liées à une commande de ventes ou un lot. Vous "
+"pouvez envoyer des courriels avec des pièces jointes et conserver "
+"l'historique de la réclamation (courriels envoyés, type d'intervention). Les "
+"réclamations peuvent être liées automatiquement à une adresse courriel en "
+"utilisant la passerelle de messagerie."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,ref:0 field:mgmtsystem.claim,reference:0
@@ -393,7 +432,9 @@ msgstr "Responsable"
 msgid ""
 "Responsible sales team. Define Responsible user and Email account for mail "
 "gateway."
-msgstr "Équipe de vente responsable. Définissez un utilisateur responsable et un compte de courriel pour la passerelle de courriel."
+msgstr ""
+"Équipe de vente responsable. Définissez un utilisateur responsable et un "
+"compte de courriel pour la passerelle de courriel."
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,cause:0
@@ -460,7 +501,10 @@ msgid ""
 "These email addresses will be added to the CC field of all inbound and "
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
-msgstr "Ces adresses courriels seront ajoutées au champ CC de tous les courriels entrants et sortants de cet enregistrement. Séparez plusieurs adresses par des virgules"
+msgstr ""
+"Ces adresses courriels seront ajoutées au champ CC de tous les courriels "
+"entrants et sortants de cet enregistrement. Séparez plusieurs adresses par "
+"des virgules"
 
 #. module: mgmtsystem_claim
 #: field:mgmtsystem.claim,user_fault:0
