@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_action
-# 
+#
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2016-04-19 00:53+0000\n"
 "PO-Revision-Date: 2016-04-18 20:11+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Norwegian Nynorsk (http://www.transifex.com/oca/OCA-management-system-8-0/language/nn/)\n"
+"Language-Team: Norwegian Nynorsk (http://www.transifex.com/oca/OCA-"
+"management-system-8-0/language/nn/)\n"
+"Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: nn\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_action
@@ -26,7 +27,8 @@ msgid ""
 "\n"
 "<p>\n"
 "  This is an automated message to remind you that the\n"
-"  following action is due to be completed in 10 days (${object.date_deadline}):\n"
+"  following action is due to be completed in 10 days (${object."
+"date_deadline}):\n"
 "\n"
 "  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
 "</p>\n"
@@ -169,6 +171,12 @@ msgid "Destination email for email gateway."
 msgstr "Mottakar sin epost for epost grensesnitt."
 
 #. module: mgmtsystem_action
+#: field:mgmtsystem.action,display_name:0
+#: field:mgmtsystem.action.stage,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_draft
 msgid "Draft"
 msgstr ""
@@ -203,7 +211,9 @@ msgstr "Høg"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr "Inneheld meldingsoppsummering (tal på meldingar, ...). Denne oppsummeringa er i direkte html format slik at den kan settast inn i kanban visning."
+msgstr ""
+"Inneheld meldingsoppsummering (tal på meldingar, ...). Denne oppsummeringa "
+"er i direkte html format slik at den kan settast inn i kanban visning."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,id:0 field:mgmtsystem.action.stage,id:0
@@ -245,6 +255,12 @@ msgstr "Er en fylgjar"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_last_post:0
 msgid "Last Message Date"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,__last_update:0
+#: field:mgmtsystem.action.stage,__last_update:0
+msgid "Last Modified on"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -361,7 +377,9 @@ msgstr "Ansvarleg"
 msgid ""
 "Responsible sales team. Define Responsible user and Email account for mail "
 "gateway."
-msgstr "Ansvarleg salgsteam. Definer ansvarleg brukar og epostkonto for epost grensesnitt."
+msgstr ""
+"Ansvarleg salgsteam. Definer ansvarleg brukar og epostkonto for epost "
+"grensesnitt."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,cause:0
@@ -426,7 +444,9 @@ msgid ""
 "These email addresses will be added to the CC field of all inbound and "
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
-msgstr "Desse e-postadressene vil bli lage til i kopi-feltet for alle inngåande og utgåande e-postar før dei vert sende. Skil fleire e-postadresser med komma."
+msgstr ""
+"Desse e-postadressene vil bli lage til i kopi-feltet for alle inngåande og "
+"utgåande e-postar før dei vert sende. Skil fleire e-postadresser med komma."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,user_fault:0

@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_action
-# 
+#
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013
 msgid ""
@@ -11,12 +11,14 @@ msgstr ""
 "POT-Creation-Date: 2016-04-19 00:53+0000\n"
 "PO-Revision-Date: 2016-04-18 20:11+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Latvian (http://www.transifex.com/oca/OCA-management-system-8-0/language/lv/)\n"
+"Language-Team: Latvian (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/lv/)\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: lv\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
 #. module: mgmtsystem_action
 #: model:email.template,body_html:mgmtsystem_action.action_email_template_reminder_action
@@ -26,7 +28,8 @@ msgid ""
 "\n"
 "<p>\n"
 "  This is an automated message to remind you that the\n"
-"  following action is due to be completed in 10 days (${object.date_deadline}):\n"
+"  following action is due to be completed in 10 days (${object."
+"date_deadline}):\n"
 "\n"
 "  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
 "</p>\n"
@@ -169,6 +172,12 @@ msgid "Destination email for email gateway."
 msgstr ""
 
 #. module: mgmtsystem_action
+#: field:mgmtsystem.action,display_name:0
+#: field:mgmtsystem.action.stage,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_draft
 msgid "Draft"
 msgstr ""
@@ -245,6 +254,12 @@ msgstr "Ir sekotājs"
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_last_post:0
 msgid "Last Message Date"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,__last_update:0
+#: field:mgmtsystem.action.stage,__last_update:0
+msgid "Last Modified on"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -426,7 +441,9 @@ msgid ""
 "These email addresses will be added to the CC field of all inbound and "
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
-msgstr "Šīs e-pasta adreses pirms nosūtīšanas tiks pievienotas CC laukam visām šī ieraksta ienākošajām un izejošajām vēstulēm. Atdaliet adeses ar komatu."
+msgstr ""
+"Šīs e-pasta adreses pirms nosūtīšanas tiks pievienotas CC laukam visām šī "
+"ieraksta ienākošajām un izejošajām vēstulēm. Atdaliet adeses ar komatu."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,user_fault:0

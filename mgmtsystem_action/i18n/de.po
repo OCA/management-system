@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_action
-# 
+#
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 # Rudolf Schnapka <rs@techno-flex.de>, 2016-2017
@@ -12,11 +12,12 @@ msgstr ""
 "POT-Creation-Date: 2017-03-28 04:56+0000\n"
 "PO-Revision-Date: 2017-04-19 11:44+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-management-system-8-0/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_action
@@ -27,7 +28,8 @@ msgid ""
 "\n"
 "<p>\n"
 "  This is an automated message to remind you that the\n"
-"  following action is due to be completed in 10 days (${object.date_deadline}):\n"
+"  following action is due to be completed in 10 days (${object."
+"date_deadline}):\n"
 "\n"
 "  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
 "</p>\n"
@@ -39,7 +41,25 @@ msgid ""
 "</p>\n"
 "        \n"
 "      "
-msgstr "\n<p>Hallo,</p>\n\n<p>\n  Dies ist eine automatische Nachricht an Sie, zur Erinnerung daran, \ndass die nachfolgende Aktion in 10 Tage zum Abschluss fällig ist: (${object.date_deadline}):\n\n  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n</p>\n\n<p>\n  Danke und einen schönen Tag noch.<br />\n  --<br />\n  Odoo\n</p>\n        \n      "
+msgstr ""
+"\n"
+"<p>Hallo,</p>\n"
+"\n"
+"<p>\n"
+"  Dies ist eine automatische Nachricht an Sie, zur Erinnerung daran, \n"
+"dass die nachfolgende Aktion in 10 Tage zum Abschluss fällig ist: (${object."
+"date_deadline}):\n"
+"\n"
+"  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"  Danke und einen schönen Tag noch.<br />\n"
+"  --<br />\n"
+"  Odoo\n"
+"</p>\n"
+"        \n"
+"      "
 
 #. module: mgmtsystem_action
 #: model:email.template,body_html:mgmtsystem_action.wkf_action_email_template_reminder_action
@@ -58,7 +78,21 @@ msgid ""
 "</p>\n"
 "        \n"
 "      "
-msgstr "\n<p>Hallo,</p>\n<p>Ihnen wurde eine neue Aufgabe zugeteilt:\n  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n</p>\n<p>${object.description}</p>\n\n<p>\n  Vielen Dank<br />\n  --<br />\n  Odoo\n</p>\n        \n      "
+msgstr ""
+"\n"
+"<p>Hallo,</p>\n"
+"<p>Ihnen wurde eine neue Aufgabe zugeteilt:\n"
+"  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
+"</p>\n"
+"<p>${object.description}</p>\n"
+"\n"
+"<p>\n"
+"  Vielen Dank<br />\n"
+"  --<br />\n"
+"  Odoo\n"
+"</p>\n"
+"        \n"
+"      "
 
 #. module: mgmtsystem_action
 #: model:email.template,subject:mgmtsystem_action.wkf_action_email_template_reminder_action
@@ -210,7 +244,9 @@ msgstr "Hoch"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr "Beinhaltet die Meldungsübersicht (Anzahl Nachrichten, ...). Diese liegt in HTML vor, um direkt in Kanban-Sichten eingesetzt zu werden."
+msgstr ""
+"Beinhaltet die Meldungsübersicht (Anzahl Nachrichten, ...). Diese liegt in "
+"HTML vor, um direkt in Kanban-Sichten eingesetzt zu werden."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,id:0 field:mgmtsystem.action.stage,id:0
@@ -227,7 +263,9 @@ msgstr "Wenn angewählt, erfordern neue Meldungen Ihre Aufmerksamkeit,"
 msgid ""
 "If you check this field, this stage will be proposed by default on each "
 "sales team. It will not assign this stage to existing teams."
-msgstr "Wenn Sie dieses Feld anwählen, wird diese Stufe als Vorgabe zu jedem Verkaufsteam vorgeschlagen. Sie wird nicht zu bestehenden Teams hinzugefügt."
+msgstr ""
+"Wenn Sie dieses Feld anwählen, wird diese Stufe als Vorgabe zu jedem "
+"Verkaufsteam vorgeschlagen. Sie wird nicht zu bestehenden Teams hinzugefügt."
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
@@ -276,7 +314,9 @@ msgstr "Zuletzt aktualisiert am"
 msgid ""
 "Link between stages and sales teams. When set, this limitate the current "
 "stage to the selected sales teams."
-msgstr "Verknüpfung zwischen Stufen und Verkaufsteams. Wenn gesetzt, wird diese Stufe auf gewählte Verkaufsteams beschränkt."
+msgstr ""
+"Verknüpfung zwischen Stufen und Verkaufsteams. Wenn gesetzt, wird diese "
+"Stufe auf gewählte Verkaufsteams beschränkt."
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -374,7 +414,9 @@ msgstr "Verantwortlich"
 msgid ""
 "Responsible sales team. Define Responsible user and Email account for mail "
 "gateway."
-msgstr "Verantwortliches Verkaufsteam. Lege verantwortlichen Benutzer und Email-Adresse für Email-Gateway fest."
+msgstr ""
+"Verantwortliches Verkaufsteam. Lege verantwortlichen Benutzer und Email-"
+"Adresse für Email-Gateway fest."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,cause:0
@@ -439,7 +481,10 @@ msgid ""
 "These email addresses will be added to the CC field of all inbound and "
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
-msgstr "Diese Email Anschriften erhalten eine Kopie (CC) aller ein- und ausgehenden Emails zu diesem Vorgang. Trenne mehrere Email Kopie Empfänger durch eine Komma separierte Auflistung in diesem Feld."
+msgstr ""
+"Diese Email Anschriften erhalten eine Kopie (CC) aller ein- und ausgehenden "
+"Emails zu diesem Vorgang. Trenne mehrere Email Kopie Empfänger durch eine "
+"Komma separierte Auflistung in diesem Feld."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,user_fault:0

@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_action
-# 
+#
 # Translators:
 # Ana-Maria Olujić <ana-maria.olujic@slobodni-programi.hr>, 2016
 msgid ""
@@ -11,12 +11,14 @@ msgstr ""
 "POT-Creation-Date: 2016-07-28 00:51+0000\n"
 "PO-Revision-Date: 2016-08-25 11:26+0000\n"
 "Last-Translator: Ana-Maria Olujić <ana-maria.olujic@slobodni-programi.hr>\n"
-"Language-Team: Croatian (http://www.transifex.com/oca/OCA-management-system-8-0/language/hr/)\n"
+"Language-Team: Croatian (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/hr/)\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: hr\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. module: mgmtsystem_action
 #: model:email.template,body_html:mgmtsystem_action.action_email_template_reminder_action
@@ -26,7 +28,8 @@ msgid ""
 "\n"
 "<p>\n"
 "  This is an automated message to remind you that the\n"
-"  following action is due to be completed in 10 days (${object.date_deadline}):\n"
+"  following action is due to be completed in 10 days (${object."
+"date_deadline}):\n"
 "\n"
 "  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
 "</p>\n"
@@ -38,7 +41,22 @@ msgid ""
 "</p>\n"
 "        \n"
 "      "
-msgstr "\n<p>Pozdrav,</p>\n\n<p>\nOvo je automatska poruka kako bi Vas podsjetila\nda ova akcija mora biti završena u 10 dana (${object.date_deadline}):\n\n<a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n</p>\n\n<p>\nHvala Vam i ugodan dan.<br />\n--<br />\nOdoo\n</p>"
+msgstr ""
+"\n"
+"<p>Pozdrav,</p>\n"
+"\n"
+"<p>\n"
+"Ovo je automatska poruka kako bi Vas podsjetila\n"
+"da ova akcija mora biti završena u 10 dana (${object.date_deadline}):\n"
+"\n"
+"<a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Hvala Vam i ugodan dan.<br />\n"
+"--<br />\n"
+"Odoo\n"
+"</p>"
 
 #. module: mgmtsystem_action
 #: model:email.template,body_html:mgmtsystem_action.wkf_action_email_template_reminder_action
@@ -57,7 +75,19 @@ msgid ""
 "</p>\n"
 "        \n"
 "      "
-msgstr "\n<p>Pozdrav,</p>\n<p>Dodijeljena Vam je nova akcija:\n<a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n</p>\n<p>${object.description}</p>\n\n<p>\nHvala Vam<br />\n--<br />\nOdoo\n</p>"
+msgstr ""
+"\n"
+"<p>Pozdrav,</p>\n"
+"<p>Dodijeljena Vam je nova akcija:\n"
+"<a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
+"</p>\n"
+"<p>${object.description}</p>\n"
+"\n"
+"<p>\n"
+"Hvala Vam<br />\n"
+"--<br />\n"
+"Odoo\n"
+"</p>"
 
 #. module: mgmtsystem_action
 #: model:email.template,subject:mgmtsystem_action.wkf_action_email_template_reminder_action
@@ -209,7 +239,9 @@ msgstr "Visoki"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr "Sadrži kratki pregled ćaskanja (broj poruka, ...). Ovaj kratki pregled je zapisan direktno u html formatu kako bi se mogao koristiti u kanban pogledu."
+msgstr ""
+"Sadrži kratki pregled ćaskanja (broj poruka, ...). Ovaj kratki pregled je "
+"zapisan direktno u html formatu kako bi se mogao koristiti u kanban pogledu."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,id:0 field:mgmtsystem.action.stage,id:0
@@ -226,7 +258,9 @@ msgstr "Ukoliko su nove poruke provjerene, traže Vašu pažnju."
 msgid ""
 "If you check this field, this stage will be proposed by default on each "
 "sales team. It will not assign this stage to existing teams."
-msgstr "Ukoliko označite ovo polje, ovaj stupanj će biti direktno predložen svakom prodajnom timu. Neće pridružiti ovo stanje postojećim timovima."
+msgstr ""
+"Ukoliko označite ovo polje, ovaj stupanj će biti direktno predložen svakom "
+"prodajnom timu. Neće pridružiti ovo stanje postojećim timovima."
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
@@ -275,7 +309,9 @@ msgstr "Zadnje ažuriranje na"
 msgid ""
 "Link between stages and sales teams. When set, this limitate the current "
 "stage to the selected sales teams."
-msgstr "Poveznica između stupnjeva i prodajnih timova. Kada se postavi, ograničava trenutni stupanj na odabrane prodajne timove."
+msgstr ""
+"Poveznica između stupnjeva i prodajnih timova. Kada se postavi, ograničava "
+"trenutni stupanj na odabrane prodajne timove."
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -373,7 +409,9 @@ msgstr "Odgovoran"
 msgid ""
 "Responsible sales team. Define Responsible user and Email account for mail "
 "gateway."
-msgstr "Odgovorni prodajni tim. Definiraj odgovornog korisnika i e-mail račun za usmjeravanje pošte."
+msgstr ""
+"Odgovorni prodajni tim. Definiraj odgovornog korisnika i e-mail račun za "
+"usmjeravanje pošte."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,cause:0
@@ -438,7 +476,9 @@ msgid ""
 "These email addresses will be added to the CC field of all inbound and "
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
-msgstr "Ove e-mail adrese će biti dodane u CC polje svih dolaznih i odlaznih e-mailova za ovaj zapis prije slanja. Odvoji više e-mail adresa zarezom"
+msgstr ""
+"Ove e-mail adrese će biti dodane u CC polje svih dolaznih i odlaznih e-"
+"mailova za ovaj zapis prije slanja. Odvoji više e-mail adresa zarezom"
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,user_fault:0

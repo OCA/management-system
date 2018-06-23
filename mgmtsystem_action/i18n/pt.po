@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_action
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2015-08-07 14:27+0000\n"
 "PO-Revision-Date: 2015-08-07 14:16+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Portuguese (http://www.transifex.com/oca/OCA-management-system-8-0/language/pt/)\n"
+"Language-Team: Portuguese (http://www.transifex.com/oca/OCA-management-"
+"system-8-0/language/pt/)\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_action
@@ -25,7 +26,8 @@ msgid ""
 "\n"
 "<p>\n"
 "  This is an automated message to remind you that the\n"
-"  following action is due to be completed in 10 days (${object.date_deadline}):\n"
+"  following action is due to be completed in 10 days (${object."
+"date_deadline}):\n"
 "\n"
 "  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
 "</p>\n"
@@ -115,6 +117,11 @@ msgid "Common to All Teams"
 msgstr ""
 
 #. module: mgmtsystem_action
+#: field:mgmtsystem.action,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: selection:mgmtsystem.action,type_action:0
 msgid "Corrective Action"
 msgstr "Ação corretiva"
@@ -160,6 +167,12 @@ msgstr "Descrição"
 #. module: mgmtsystem_action
 #: help:mgmtsystem.action,email_from:0
 msgid "Destination email for email gateway."
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,display_name:0
+#: field:mgmtsystem.action.stage,display_name:0
+msgid "Display Name"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -239,6 +252,12 @@ msgstr ""
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,message_last_post:0
 msgid "Last Message Date"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,__last_update:0
+#: field:mgmtsystem.action.stage,__last_update:0
+msgid "Last Modified on"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -410,7 +429,7 @@ msgid "Summary"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: field:mgmtsystem.action,company_id:0 field:mgmtsystem.action,system_id:0
+#: field:mgmtsystem.action,system_id:0
 msgid "System"
 msgstr ""
 
@@ -420,7 +439,9 @@ msgid ""
 "These email addresses will be added to the CC field of all inbound and "
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
-msgstr "Estes endereços de email serão acrescentados ao campo CC dos emails enviados relativos a este caso. Separe múltiplos endereços com vírgula."
+msgstr ""
+"Estes endereços de email serão acrescentados ao campo CC dos emails enviados "
+"relativos a este caso. Separe múltiplos endereços com vírgula."
 
 #. module: mgmtsystem_action
 #: field:mgmtsystem.action,user_fault:0
