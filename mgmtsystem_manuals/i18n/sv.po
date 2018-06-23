@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-29 21:28+0000\n"
 "PO-Revision-Date: 2012-12-03 10:45+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Swedish <sv@li.org>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,12 +19,12 @@ msgstr ""
 "X-Generator: Launchpad (build 16985)\n"
 
 #. module: mgmtsystem_manuals
-#: model:ir.actions.act_window,help:mgmtsystem_manuals.action_manuals
-msgid "Manuals of your management systems."
-msgstr "Manualer för ditt Ledningssystem."
-
-#. module: mgmtsystem_manuals
 #: model:ir.actions.act_window,name:mgmtsystem_manuals.action_manuals
 #: model:ir.ui.menu,name:mgmtsystem_manuals.menu_mgmtsystem_manuals_manuals
 msgid "Manuals"
 msgstr "Manualer"
+
+#. module: mgmtsystem_manuals
+#: model:ir.actions.act_window,help:mgmtsystem_manuals.action_manuals
+msgid "Manuals of your management systems."
+msgstr "Manualer för ditt Ledningssystem."
