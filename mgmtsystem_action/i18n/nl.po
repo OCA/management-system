@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_action
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
@@ -12,10 +12,10 @@ msgstr ""
 "PO-Revision-Date: 2016-08-07 06:43+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Dutch (https://www.transifex.com/oca/teams/23907/nl/)\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_action
@@ -27,7 +27,8 @@ msgid ""
 "\n"
 "    <p>\n"
 "      This is an automated message to remind you that the\n"
-"      following action is due to be completed in 10 days (${object.date_deadline}):\n"
+"      following action is due to be completed in 10 days (${object."
+"date_deadline}):\n"
 "\n"
 "      <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
 "    </p>\n"
@@ -47,7 +48,8 @@ msgid ""
 "\n"
 "                \n"
 "<p>Hello,</p>\n"
-"<p>A new action has been assigned to you : <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a></p>\n"
+"<p>A new action has been assigned to you : <a href=\"${object."
+"get_action_url()}\">${object.get_action_url()}</a></p>\n"
 "<p>${object.description}</p>\n"
 "\n"
 "<p>\n"
@@ -114,30 +116,25 @@ msgid "Action"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_needaction
-msgid "Action Needed"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:158
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:147
 #, python-format
 msgid "Action back to draft stage on "
 msgstr ""
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:184
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:173
 #, python-format
 msgid "Action cancelled on "
 msgstr ""
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:176
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:165
 #, python-format
 msgid "Action closed on "
 msgstr ""
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:164
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:153
 #, python-format
 msgid "Action opened on "
 msgstr ""
@@ -226,11 +223,6 @@ msgid "Created on"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_last_post
-msgid "Date of the last message posted on the record."
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_date_deadline
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_date_deadline
 msgid "Deadline"
@@ -265,21 +257,6 @@ msgid "Ending stage"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_follower_ids
-msgid "Followers"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_partner_ids
-msgid "Followers (Partners)"
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model:ir.actions.act_window,help:mgmtsystem_action.action_report_mgmtsystem_action
 msgid ""
 "Have a general overview of all actions processed in the system by sorting "
@@ -289,18 +266,8 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_id
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_2560
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_2315
 msgid "ID"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_unread
-msgid "If checked new messages require your attention."
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_needaction
-msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -325,16 +292,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_open
 msgid "In Progress"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_is_follower
-msgid "Is Follower"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_last_post
-msgid "Last Message Date"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -364,26 +321,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.action_report_mgmtsystem_action
 msgid "Management System Analysis"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_ids
-msgid "Messages"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_needaction_counter
-msgid "Number of Actions"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_message_unread_counter
-msgid "Number of unread messages"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -464,14 +401,8 @@ msgid "Type"
 msgstr "Type"
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_unread
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Unread Messages"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_message_unread_counter
-msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -486,23 +417,13 @@ msgid "User"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:154
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:143
 #, python-format
 msgid "We cannot bring back the action to draft stage"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_website_message_ids
-msgid "Website communication history"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:172
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:161
 #, python-format
 msgid "You should first open the action"
 msgstr ""
