@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Tecnativa - Jairo Llopis
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<data>
+
+    <template id="form">
+        <!-- Use web.login_layout because it gets automatically wrapped
+             by website layout if website is installed, and otherwise includes
+             all possibly needed assets -->
+        <t t-call="web.login_layout">
+            <div class="jumbotron">
+                <h1>Thank you!</h1>
+                <p>
+                    Hello, <b t-esc="consent.partner_id.display_name"/>
+                </p>
+                <p>
+                    We asked you to authorize us to process your data in this management system:
+                    <b t-esc="consent.system_id.display_name"/>
+                </p>
+                <p t-if="consent.accepted">
+                    You have <b class="text-success">accepted</b> such processing.
+                </p>
+                <p t-else="">
+                    You have <b class="text-danger">rejected</b> such processing.
+                </p>
+                <p>
+                    If it was a mistake, you can undo it here:
+                    <div class="text-center">
+                        <a
+                            t-if="consent.accepted"
+                            t-att-href="consent._url(False)"
+                            class="btn btn-danger btn-lg"
+                        >
+                            I <b>reject</b> this processing of my data
+                        </a>
+                        <a
+                            t-else=""
+                            t-att-href="consent._url(True)"
+                            class="btn btn-success btn-lg"
+                        >
+                            I <b>accept</b> this processing of my data
+                        </a>
+                    </div>
+                </p>
+                <p>
+                    Thanks for your response.
+                </p>
+                <p>
+                    <b>You have a new email</b> about this, and we have recorded this action on your side.
+                </p>
+                <p class="text-muted">
+                    Sincerely,<br/>
+                    <i t-raw="consent.system_id.company_id.with_context(show_address=True, html_format=True).partner_id.name_get()[0][1]"/>
+                </p>
+            </div>
+        </t>
+    </template>
+
+</data>

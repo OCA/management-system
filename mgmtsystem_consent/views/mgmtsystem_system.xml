@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Tecnativa - Jairo Llopis
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<data>
+
+    <record id="system_form" model="ir.ui.view">
+        <field name="name">Add consent fields</field>
+        <field name="model">mgmtsystem.system</field>
+        <field name="inherit_id" ref="mgmtsystem.system_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+                    attrs='{"invisible": [("consent_required", "=", False)]}'
+                    class="oe_stat_button"
+                    context='{"search_default_system_id": active_id}'
+                    icon="fa-users"
+                    name="%(consent_action)d"
+                    type="action"
+                >
+                    <field
+                        name="consent_ids_count"
+                        widget="statinfo"
+                    />
+                </button>
+            </div>
+
+            <group position="inside">
+                <label for="consent_required"/>
+                <div>
+                    <field name="consent_required" class="oe_inline"/>
+                    <button
+                        attrs='{"invisible": [("consent_required", "!=", "manual")]}'
+                        class="btn-link"
+                        icon="fa-user-plus"
+                        name="action_new_consents"
+                        type="object"
+                        string="Generate missing draft consent requests"
+                    />
+                    <button
+                        attrs='{"invisible": [("consent_required", "!=", "auto")]}'
+                        class="btn-link"
+                        icon="fa-user-plus"
+                        name="action_new_consents"
+                        type="object"
+                        string="Generate and send missing consent requests"
+                        confirm="This could send many consent emails, are you sure to proceed?"
+                    />
+                </div>
+            </group>
+
+            <sheet position="inside">
+                <group
+                    string="Consent"
+                    name="consent"
+                    attrs='{"invisible": [("consent_required", "=", False)]}'
+                >
+                    <group>
+                        <field name="default_consent"/>
+                        <field
+                            name="server_action_id"
+                            groups="base.group_no_one"
+                        />
+                    </group>
+                    <group>
+                        <field
+                            name="consent_template_default_body_html"
+                            invisible="1"
+                        />
+                        <field
+                            name="consent_template_default_subject"
+                            invisible="1"
+                        />
+                        <field
+                            name="consent_template_id"
+                            attrs='{"required": [("consent_required", "=", "auto")]}'
+                            context='{
+                                "default_model": "mgmtsystem.consent",
+                                "default_body_html": consent_template_default_body_html,
+                                "default_subject": consent_template_default_subject,
+                            }'
+                        />
+                        <field
+                            name="subject_domain"
+                            widget="char_domain"
+                            options='{"model": "res.partner"}'
+                            attrs='{"required": [("consent_required", "!=", False)]}'
+                        />
+                    </group>
+                </group>
+            </sheet>
+        </field>
+    </record>
+
+</data>

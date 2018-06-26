@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Tecnativa - Jairo Llopis
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<data>
+
+    <record id="cron_auto_consent" model="ir.cron">
+        <field name="name">Request automatic management system consents</field>
+        <field name="model">mgmtsystem.system</field>
+        <field name="function">_cron_new_consents</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">work_days</field>
+        <field name="numbercall">-1</field>
+    </record>
+
+</data>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Tecnativa - Jairo Llopis
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<data>
+
+    <record id="consent_mail" model="mail.template">
+        <field name="name">Personal data processing consent request</field>
+        <field name="subject">Data processing consent request for ${object.system_id.display_name}</field>
+        <field name="model_id" ref="model_mgmtsystem_consent"/>
+        <field name="use_default_to" eval="True"/>
+        <field name="body_html" type="xml">
+            <div style="background:#F3F5F6;color:#515166;padding:25px 0px;font-family:Arial,Helvetica,sans-serif;font-size:14px;">
+                <table style="width:600px;margin:5px auto;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="/">
+                                    <img src="/logo" alt="${object.system_id.company_id.name}" style="vertical-align:baseline;max-width:100px;"/>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="width:600px;margin:0px auto;background:white;border:1px solid #e1e1e1;">
+                    <tbody>
+                        <tr>
+                            <td colspan="2" style="padding:15px 20px 0px 20px; font-size:16px;">
+                                <p>
+                                    Hello, ${object.partner_id.name|safe}
+                                </p>
+                                <p>
+                                    We contacted you to ask you to give us your explicit consent to include your data in a management system called
+                                    <b>${object.system_id.display_name|safe}</b>, property of
+                                    <i>${object.system_id.company_id.name}</i>
+                                </p>
+                                <p>
+                                    % if object.state == "answered":
+                                        The last time you answered, you
+                                    % elif object.state == "sent":
+                                        If you do nothing, we will assume you have
+                                    % endif
+
+                                    % if object.accepted:
+                                        <b>accepted</b>
+                                    % else:
+                                        <b>rejected</b>
+                                    % endif
+                                    such data processing.
+                                </p>
+                                <p>
+                                    You can update your preferences below:
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:15px 20px 0px 20px; font-size:16px; text-align:right;">
+                                <a href="/consent/accept/" style="background-color: #449d44; padding: 12px; font-weight: 12px; text-decoration: none; color: #fff; border-radius: 5px; font-size:16px;">
+                                    Accept
+                                </a>
+                            </td>
+                            <td style="padding:15px 20px 0px 20px; font-size:16px; text-align:left;">
+                                <a href="/consent/reject/" style="background-color: #d9534f; padding: 12px; font-weight: 12px; text-decoration: none; color: #fff; border-radius: 5px; font-size:16px;">
+                                    Reject
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding:15px 20px 15px 20px; font-size:16px;">
+                                <p>
+                                    If you need further information, please respond to this email and we will attend your request as soon as possible.
+                                </p>
+                                <p>
+                                    Thank you!
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="width:600px;margin:0px auto;text-align:center;">
+                    <tbody>
+                        <tr>
+                            <td style="padding-top:10px;font-size: 12px;">
+                                <p>
+                                    Sent by
+                                    <a href="/" style="color:#717188;">${object.system_id.company_id.display_name}</a>.
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </field>
+    </record>
+
+</data>
