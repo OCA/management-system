@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Tecnativa - Jairo Llopis
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<data>
+
+    <record id="update_opt_out" model="ir.actions.server">
+        <field name="name">Update partner's opt out</field>
+        <field name="model_id" ref="model_mgmtsystem_consent"/>
+        <field name="crud_model_id" ref="base.model_res_partner"/>
+        <field name="state">object_write</field>
+        <field name="use_write">expression</field>
+        <field name="write_expression">record.partner_id</field>
+    </record>
+
+    <record id="update_opt_out_line_1" model="ir.server.object.lines">
+        <field name="server_id" ref="update_opt_out"/>
+        <field name="col1" ref="mail.field_res_partner_opt_out"/>
+        <field name="type">equation</field>
+        <field name="value">not record.accepted</field>
+    </record>
+
+</data>

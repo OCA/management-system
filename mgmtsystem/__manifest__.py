@@ -4,14 +4,17 @@
 
 {
     "name": "Management System",
-    "version": "10.0.1.0.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
+    "version": "10.0.2.0.0",
+    "author":
+        "Savoir-faire Linux, "
+        "Tecnativa, "
+        "Odoo Community Association (OCA)",
+    "website": "http://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
     'images': ['images/mgmtsystem.png', 'images/mgmtsystem-hover.png'],
     "depends": [
-        'base',
+        'mail',
     ],
     "data": [
         'security/mgmtsystem_security.xml',
@@ -20,6 +23,5 @@
         'views/mgmtsystem_system.xml',
         'views/res_config.xml'
     ],
-    "demo": [],
     'installable': True,
 }

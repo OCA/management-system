@@ -59,6 +59,12 @@ class MgmtsystemConfigSettings(models.TransientModel):
         '-This installs the module mgmtsystem_claim.'
     )
 
+    module_mgmtsystem_consent = fields.Boolean(
+        'Subject consent',
+        help='Provide subject explicit consent tools.\n'
+        '-This installs the module mgmtsystem_consent.'
+    )
+
     module_mgmtsystem_audit = fields.Boolean(
         'Audits',
         help='Provide audit tools.\n'
