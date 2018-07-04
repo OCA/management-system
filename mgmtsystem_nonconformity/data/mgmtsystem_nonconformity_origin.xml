@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="nc_origin_qc" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Quality Committee</field>
+        </record>
+
+        <record id="nc_origin_dr" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Direction Review</field>
+        </record>
+
+        <record id="nc_origin_internal_client" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Internal client complaint</field>
+        </record>
+
+        <record id="nc_origin_external_client" model="mgmtsystem.nonconformity.origin">
+            <field name="name">External client complaint</field>
+        </record>
+
+        <record id="nc_origin_process" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Process Execution</field>
+        </record>
+
+        <record id="nc_origin_internal_audit" model="mgmtsystem.nonconformity.origin">
+            <field name="name">Internal Audit</field>
+        </record>
+
+        <record id="nc_origin_extenal_audit" model="mgmtsystem.nonconformity.origin">
+            <field name="name">External Audit</field>
+        </record>
+
+    </data>
+</odoo>

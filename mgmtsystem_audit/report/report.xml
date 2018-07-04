@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <report id="audit_report_mgmtsystem_audit"
+            string="Audit report"
+            model="mgmtsystem.audit"
+            report_type="qweb-pdf"
+            name="mgmtsystem_audit.audit_report_template"/>
+
+            <report id="verification_report_mgmtsystem_audit"
+                string="Verification list report"
+                model="mgmtsystem.audit"
+                report_type="qweb-pdf"
+                name="mgmtsystem_audit.verification_report_template"/>
+
+            <template id="audit_report_template">
+                <t t-call="report.html_container">
+                    <t t-foreach="docs" t-as="doc">
+                        <t t-call="mgmtsystem_audit.audit_report" t-lang="doc.user_id.partner_id.lang"/>
+                    </t>
+                </t>
+            </template>
+            <template id="verification_report_template">
+                <t t-call="report.html_container">
+                    <t t-foreach="docs" t-as="doc">
+                        <t t-call="mgmtsystem_audit.verification_report" t-lang="doc.user_id.partner_id.lang"/>
+                    </t>
+                </t>
+            </template>
+</odoo>
