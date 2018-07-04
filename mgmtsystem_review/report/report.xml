@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <report id="review_report_mgmtsystem_review"
+            string="Review report"
+            model="mgmtsystem.review"
+            report_type="qweb-pdf"
+            name="mgmtsystem_review.review_report_template"/>
+
+            <template id="review_report_template">
+                <t t-call="report.html_container">
+                    <t t-foreach="docs" t-as="doc">
+                        <t t-call="mgmtsystem_review.review_report"/>
+                    </t>
+                </t>
+            </template>
+</odoo>

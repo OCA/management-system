@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- Top menu item -->
+  <menuitem
+      id="menu_document"
+      name="Knowledge"
+      groups="base.group_system,knowledge.group_document_user"
+      web_icon="knowledge,static/description/icon.png"
+      sequence="116"/>
+
+  <menuitem
+      id="menu_document_configuration"
+      name="Configuration"
+      parent="menu_document"
+      sequence="50"/>
+
+</odoo>

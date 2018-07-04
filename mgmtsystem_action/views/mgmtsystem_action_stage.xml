@@ -1,0 +1,24 @@
+<odoo>
+
+    <record model="ir.ui.view" id="mgmtsystem_action_stage_tree_view">
+      <field name="name">Management System action Stage Tree</field>
+      <field name="model">mgmtsystem.action.stage</field>
+      <field name="arch" type="xml">
+        <tree string="Stages">
+          <field name="name"/>
+          <field name="sequence" widget="handle" />
+          <field name="is_starting"/>
+          <field name="is_ending"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mgmtsystem_action_stage_action">
+      <field name="name">Stages</field>
+      <field name="res_model">mgmtsystem.action.stage</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context">{}</field>
+    </record>
+
+</odoo>
