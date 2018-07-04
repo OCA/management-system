@@ -56,6 +56,7 @@ Contributors
 ------------
 
 * Odoo SA <info@odoo.com>
+* Jérôme Guerriat <jerome@niboo.be>
 * Savoir-faire Linux <support@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 * Eugen Don <eugen.don@don-systems.de>

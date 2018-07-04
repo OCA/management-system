@@ -59,6 +59,7 @@ Images
 Contributors
 ------------
 
+* Jérôme Guerriat <jerome@niboo.be>
 * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
 * Daniel Reis <dgreis@sapo.pt>
 * Loïc Lacroix <loic.lacroix@savoirfairelinux.com>

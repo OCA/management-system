@@ -79,6 +79,7 @@ Credits
 Contributors
 ------------
 
+* Jérôme Guerriat <jerome@niboo.be>
 * Luk Vermeylen <luk@allmas-it.be>
 * Daniel Reis <dgreis@sapo.pt>
 * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>

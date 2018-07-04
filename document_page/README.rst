@@ -53,6 +53,7 @@ Images
 Contributors
 ------------
 
+* Jérôme Guerriat <jerome@niboo.be>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 * Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 * Iván Todorovich <ivan.todorovich@gmail.com>

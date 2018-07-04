@@ -62,6 +62,7 @@ Credits
 Contributors
 ------------
 
+* Jérôme Guerriat <jerome@niboo.be>
 * Daniel Reis <dreis.pt@hotmail.com>
 * Joao Alfredo Gama Batista <joao.gama@savoirfairelinux.com>
 * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>

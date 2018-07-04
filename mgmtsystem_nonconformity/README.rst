@@ -104,6 +104,7 @@ Credits
 Contributors
 ------------
 
+* Jérôme Guerriat <jerome@niboo.be>
 * Daniel Reis <dreis.pt@hotmail.com>
 * Glen Dromgoole <gdromgoole@tier1engineering.com>
 * Loic Lacroix <loic.lacroix@savoirfairelinux.com>
