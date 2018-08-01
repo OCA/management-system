@@ -13,10 +13,7 @@ Configuration
 
 To configure this module, you need to:
 
-* go to Settings > Companies > Companies and select your company
-* in the configuration tab, select the risk computation formulae
-
-You should also review and customize items of dropdown lists in Management Systems > Configuration > Hazard.
+* review and customize items of dropdown lists in Management Systems > Configuration > Hazard.
 
 Usage
 =====
