@@ -4,7 +4,7 @@
 
 {
     "name": "Hazard",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -25,12 +25,14 @@
         'views/mgmtsystem_hazard_usage.xml',
         'views/mgmtsystem_hazard_control_measure.xml',
         'views/mgmtsystem_hazard_test.xml',
-        'data/mgmtsystem_hazard_hazard.xml',
-        'data/mgmtsystem_hazard_origin.xml',
-        'data/mgmtsystem_hazard_probability.xml',
-        'data/mgmtsystem_hazard_severity.xml',
-        'data/mgmtsystem_hazard_type.xml',
-        'data/mgmtsystem_hazard_usage.xml',
+    ],
+    "demo": [
+        'demo/mgmtsystem_hazard_hazard.xml',
+        'demo/mgmtsystem_hazard_origin.xml',
+        'demo/mgmtsystem_hazard_probability.xml',
+        'demo/mgmtsystem_hazard_severity.xml',
+        'demo/mgmtsystem_hazard_type.xml',
+        'demo/mgmtsystem_hazard_usage.xml',
     ],
     "installable": True,
 }
