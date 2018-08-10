@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="nonconformity_report_translatable">
+            <t t-call="mgmtsystem_nonconformity_report.external_layout">
+                <div class="page">
+                    <table class="table">
+                        <tr class="row">
+                            <td class="col-xs-2" style="border: 1px solid black;"><strong>Champion:</strong></td>
+                            <td class="col-xs-6" style="border: 1px solid black;">
+                                <span t-if="o.responsible_user_id" t-raw="o.responsible_user_id.name"/>
+                            </td>
+                            <td rowspan="2" class="col-xs-1" style="border: 1px solid black;"><strong>Report No.:</strong></td>
+                            <td rowspan="2" class="col-xs-2" style="border: 1px solid black;">
+                                <span t-raw="o.ref or ''"/>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-xs-2"><strong>Part No.</strong></td>
+                            <td class="col-xs-6">
+                                <span t-raw="o.product_id and o.product_id.name or ''"/>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-xs-3"><strong>Part Name</strong></td>
+                            <td class="col-md-xs">
+                                <span t-raw="get_part_name(o.product_id, o.partner_id)"/>
+                            </td>
+                            <td class="col-xs-1"><strong>Date:</strong></td>
+                            <td class="col-xs-2">
+                                <span t-field="o.date" t-field-options='{"widget": "date"}'/>
+                            </td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <table class="table">
+                        <tr class="row">
+                            <th class="col-xs-6" style="border: 1px solid black;"><strong>1. Team members</strong></th>
+                            <th class="col-xs-6" style="border: 1px solid black;"><strong>2. Problem Description</strong></th>
+                        </tr>
+                        <tr class="row">
+                            <td class="td">
+                                <t t-foreach="members_team(o)" t-as="member">
+                                    <span t-raw="member.name"/><br/>
+                                </t>
+                            </td>
+                            <td>
+                                <span t-raw="o.description or ''"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="table">
+                        <tr class="row">
+                            <th class="col-xs-8"><strong>3. Containment Actions</strong></th>
+                            <th class="col-xs-3"><strong>Resp.</strong></th>
+                            <th class="col-xs-1"><strong>Date</strong></th>
+                        </tr>
+                        <t t-set="lines_ok" t-value="False"/>
+                        <t t-foreach="o.action_ids" t-as="action">
+                            <t t-if="action.type_action == 'immediate'">
+                                <t t-set="lines_ok" t-value="True"/>
+                                <tr class="row">
+                                    <td><span t-raw="action.description or ''"/></td>
+                                    <td><span t-raw="action.user_id.name or ''"/></td>
+                                    <td><span t-field="action.create_date" t-field-options='{"widget": "date"}'/></td>
+                                </tr>
+                            </t>
+                        </t>
+                        <t t-if="not lines_ok">
+                            <tr class="row">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </t>
+                    </table>
+                    <table class="table">
+                        <tr class="row">
+                            <th class="col-xs-12">
+                                <strong>4. Root Cause Analysis</strong>
+                            </th>
+                        </tr>
+                        <tr class="row">
+                            <td><strong>Problem</strong></td>
+                        </tr>
+                    </table>
+                    <table class="table">
+                        <tr class="row">
+                            <td class="col-xs-12" colspan="5"><strong>5. Permanent Corrective Actions</strong></td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-xs-1"><span>No.</span></td>
+                            <td class="col-xs-6"><strong>Action</strong></td>
+                            <td class="col-xs-2"><strong>Resp.</strong></td>
+                            <td class="col-xs-1"><strong>Date</strong></td>
+                            <td class="col-xs-2"><strong>Close Date</strong></td>
+                        </tr>
+                        <t t-set="lines_ok" t-value="False"/>
+                        <t t-foreach="o.action_ids" t-as="action">
+                            <t t-if="action.type_action in ('prevention', 'correction', 'improvement')">
+                                <t t-set="lines_ok" t-value="True"/>
+                                <tr class="row">
+                                    <td><span t-raw="action.reference or ''"/></td>
+                                    <td><span t-raw="action.description or ''"/></td>
+                                    <td><span t-raw="action.user_id.name or ''"/></td>
+                                    <td><span t-field="action.create_date" t-field-options='{"widget": "date"}'/></td>
+                                    <td><span t-field="action.date_deadline" t-field-options='{"widget": "date"}'/></td>
+                                </tr>
+                            </t>
+                        </t>
+                        <t t-if="not lines_ok">
+                            <tr class="row">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </t>
+                        <tr class="row">
+                            <td><span></span></td>
+                            <td><strong>Training</strong></td>
+                            <td><strong></strong></td>
+                            <td><strong></strong></td>
+                            <td><strong></strong></td>
+                        </tr>
+                        <t t-set="lines_ok" t-value="False"/>
+                        <t t-foreach="o.action_ids" t-as="action">
+                            <t t-if="action.type_action == 'training'">
+                                <t t-set="lines_ok" t-value="True"/>
+                                <tr class="row">
+                                    <td><span t-raw="action.reference or ''"/></td>
+                                    <td><span t-raw="action.description or ''"/></td>
+                                    <td><span t-raw="action.user_id.name or ''"/></td>
+                                    <td><span t-field="action.create_date" t-field-options='{"widget": "date"}'/></td>
+                                    <td><span t-field="action.date_deadline" t-field-options='{"widget": "date"}'/></td>
+                                </tr>
+                            </t>
+                        </t>
+                        <t t-if="not lines_ok">
+                            <tr class="row">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </t>
+                    </table>
+                    <table class="table">
+                        <tr class="row">
+                            <td class="col-xs-12" colspan="2">
+                                <strong>6. Verification and effectiveness of actions</strong>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td rowspan="3" class="col-md-9"><span>Evidence</span></td>
+                            <td class="col-xs-3"><span>Close Date</span></td>
+                        </tr>
+                        <tr class="row">
+                            <td><span> </span></td>
+                        </tr>
+                        <tr class="row">
+                            <td><span> </span></td>
+                        </tr>
+                    </table>
+                    <table class="table">
+                        <tr class="row">
+                            <td class="col-xs-12" colspan="2">
+                                <strong>7. Controls and Preventions</strong>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <th class="col-xs-6"><span>Can be implemented at other product or Process?</span></th>
+                            <th class="col-xs-6"><span>Error Proofing Required?</span></th>
+                        </tr>
+                        <tr class="row">
+                            <td><span> </span></td>
+                            <td><span> </span></td>
+                        </tr>
+                    </table>
+                    <table class="table">
+                        <tr class="row">
+                            <th class="col-xs-3"><strong>Documents to be Updated</strong></th>
+                            <th class="col-xs-1"><span>Undated</span></th>
+                            <th class="col-xs-4"><span>Details</span></th>
+                            <th class="col-xs-3"><span>Resp.</span></th>
+                            <th class="col-xs-1"><span>Date</span></th>
+                        </tr>
+                        <tr class="row">
+                            <td><strong></strong></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                        </tr>
+                    </table>
+                    <table class="table">
+                        <tr class="row">
+                            <td class="col-xs-6"><strong>Lessons Learned</strong></td>
+                            <td class="col-xs-6"><strong>8. Team Recognition</strong></td>
+                        </tr>
+                        <tr class="row">
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </template>
+
+        <!-- Templates -->
+        <template id="nonconformity_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="mgmtsystem_nonconformity_report.nonconformity_report_translatable" t-lang="o.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+        <!-- Report action -->
+        <report
+            id="report_nonconformity_8ds"
+            model="mgmtsystem.nonconformity"
+            name="mgmtsystem_nonconformity_report.nonconformity_report"
+            string="Nonconformity"
+            report_type="qweb-pdf"
+            paperformat="mgmtsystem_nonconformity_report.paperformat_nonconformity"
+            />
+
+</odoo>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="mgmtsystem_nonconformity_report.layout" inherit_id="web.report_layout" primary="True">
+            <!-- Add report attributes -->
+            <xpath expr="//html" position="attributes">
+                <attribute name="t-att-data-report-margin-top">data_report_margin_top if data_report_margin_top else None</attribute>
+                <attribute name="t-att-data-report-header-spacing">data_report_header_spacing if data_report_header_spacing else None</attribute>
+                <attribute name="t-att-data-report-dpi">data_report_dpi if data_report_dpi else None</attribute>
+            </xpath>
+            <!-- Add report style -->
+            <xpath expr="//head" position="inside">
+                <style type="text/css">
+                    <t t-call="mgmtsystem_nonconformity_report.style"/>
+                </style>
+            </xpath>
+        </template>
+
+        <template id="mgmtsystem_nonconformity_report.html_container">
+            <t t-set="body_classname" t-value="'container'"/>
+            <t t-call="mgmtsystem_nonconformity_report.layout">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+        <template id="mgmtsystem_nonconformity_report.style">
+
+            .table {
+            border-collapse: collapse;
+            width:100%;
+            border: 0px solid white;
+            margin-bottom: 0;
+            }
+            .table td, .table th {
+            border-collapse: collapse;
+            border: 1px solid black;
+            }
+        </template>
+
+        <template id="mgmtsystem_nonconformity_report.external_layout">
+            <!-- Multicompany -->
+            <t t-if="not o and doc">
+                <t t-set="o" t-value="doc"/>
+            </t>
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"></t>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"></t>
+            </t>
+            <t t-call="mgmtsystem_nonconformity_report.nonconformity_report_layout"><t t-raw="0"/></t>
+        </template>
+
+        <template id="nonconformity_report_layout">
+            <div class="header" height="10px">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <img class="img img-responsive" t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-width: 150px;"/>
+                    </div>
+                    <div class="col-xs-8 col-xs-offset-2"><h3><strong>8Ds Analysis Report</strong></h3></div>
+                </div>
+            </div>
+            <div class="article">
+                <t t-raw="0" />
+            </div>
+            <div class="footer">
+            </div>
+        </template>
+</odoo>
