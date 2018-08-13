@@ -46,6 +46,7 @@ Contributors
 
 * Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com> 
 * Loïc Lacroix <loic.lacroix@savoirfairelinux.com>
+* Nadège Grandjean <nadege.grandjean@outlook.be>
 
 Maintainer
 ----------
