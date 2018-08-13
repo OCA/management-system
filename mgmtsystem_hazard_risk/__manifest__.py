@@ -14,6 +14,7 @@
     ],
     "data": [
         'security/ir.model.access.csv',
+        'security/mgmtsystem_hazard_security.xml',
         'data/mgmtsystem_hazard_risk_computation.xml',
         'data/mgmtsystem_hazard_risk_type.xml',
         'views/res_company.xml',
