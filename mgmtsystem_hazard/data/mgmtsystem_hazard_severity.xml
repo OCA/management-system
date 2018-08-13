@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+        <!-- Severity -->
+
+        <record id="severity_simple" model="mgmtsystem.hazard.severity">
+            <field name="name">Simple</field>
+            <field name="value">1</field>
+            <field name="description">First aid is not needed</field>
+        </record>
+
+        <record id="severity_medium" model="mgmtsystem.hazard.severity">
+            <field name="name">Medium</field>
+            <field name="value">2</field>
+            <field name="description">Medical treatment</field>
+        </record>
+
+        <record id="severity_heavy" model="mgmtsystem.hazard.severity">
+            <field name="name">Heavy</field>
+            <field name="value">3</field>
+            <field name="description">Injury</field>
+        </record>
+
+        <record id="severity_critical" model="mgmtsystem.hazard.severity">
+            <field name="name">Critical</field>
+            <field name="value">4</field>
+            <field name="description">Death</field>
+        </record>
+
+</odoo>
