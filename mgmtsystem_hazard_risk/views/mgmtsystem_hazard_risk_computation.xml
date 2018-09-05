@@ -1,5 +1,4 @@
-<openerp>
-  <data>
+<odoo>
 
     <record id="view_mgmtsystem_hazard_risk_computation_form" model="ir.ui.view">
       <field name="name">mgmtsystem.hazard.risk_computation.form</field>
@@ -21,7 +20,7 @@
       <field name="model">mgmtsystem.hazard.risk.computation</field>
       <field name="type">tree</field>
       <field name="arch" type="xml">
-        <tree string="Risk Computations">
+        <tree>
           <field name="name"/>
           <field name="description"/>
         </tree>
@@ -55,5 +54,4 @@
       sequence="20"
       groups="mgmtsystem.group_mgmtsystem_manager"/>
 
-  </data>
-</openerp>
+</odoo>
