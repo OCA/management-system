@@ -1,5 +1,4 @@
-<openerp>
-  <data>
+<odoo>
 
     <record id="view_mgmtsystem_hazard_tree" model="ir.ui.view">
       <field name="inherit_id" ref="mgmtsystem_hazard.view_mgmtsystem_hazard_tree"/>
@@ -34,7 +33,7 @@
         <field name="hazard_id" position="after">
           <field name="risk_type_id"/>
         </field>
-        <page string="Analysis" position="after">
+        <xpath expr="//page[1]" position="after">
           <page string="Risk Evaluation">
             <group>
               <field name="probability_id"/>
@@ -48,7 +47,7 @@
               <field name="justification"/>
             </group>
           </page>
-        </page>
+        </xpath>
         <notebook name="mgmtsystem_hazard" position="inside">
           <page string="Residual Risk Evaluations">
             <field name="residual_risk_ids" nolabel="1"/>
@@ -57,5 +56,4 @@
       </field>
     </record>
 
-  </data>
-</openerp>
+</odoo>
