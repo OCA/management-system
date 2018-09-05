@@ -1,5 +1,4 @@
-<openerp>
-  <data>
+<odoo>
 
     <record id="view_mgmtsystem_hazard_residual_risk_form" model="ir.ui.view">
       <field name="name">mgmtsystem.hazard.residual_risk.form</field>
@@ -25,7 +24,7 @@
       <field name="name">mgmtsystem.hazard.residual_risk.tree</field>
       <field name="model">mgmtsystem.hazard.residual_risk</field>
       <field name="arch" type="xml">
-        <tree string="Residual Risks">
+        <tree>
           <field name="name"/>
           <field name="probability_id"/>
           <field name="severity_id"/>
@@ -60,5 +59,4 @@
       <field name="search_view_id" ref="view_mgmtsystem_hazard_residual_risk_filter"/>
     </record>
 
-  </data>
-</openerp>
+</odoo>
