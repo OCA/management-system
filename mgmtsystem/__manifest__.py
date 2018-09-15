@@ -8,7 +8,7 @@
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    'images': ['images/mgmtsystem.png', 'images/mgmtsystem-hover.png'],
+    "images": ['images/mgmtsystem.png', 'images/mgmtsystem-hover.png'],
     "depends": [
         'base',
     ],
@@ -20,5 +20,6 @@
         'views/res_config.xml'
     ],
     "demo": [],
-    'installable': True,
+    "installable": True,
+    "application": True,
 }
