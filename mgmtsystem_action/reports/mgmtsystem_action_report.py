@@ -28,7 +28,7 @@ class MgmtsystemtActionReport(models.Model):
         ('improvement', 'Improvement Opportunity')
     ], 'Response Type')
     create_date = fields.Datetime('Create Date', readonly=True, index=True)
-    opening_date = fields.Datetime('Opening Date', readonly=True, index=True)
+    date_open = fields.Datetime('Opening Date', readonly=True, index=True)
     date_closed = fields.Datetime('Close Date', readonly=True, index=True)
     date_deadline = fields.Date('Deadline', readonly=True, index=True)
     user_id = fields.Many2one('res.users', 'User', readonly=True)
@@ -46,7 +46,7 @@ class MgmtsystemtActionReport(models.Model):
                     m.id,
                     m.date_closed as date_closed,
                     m.date_deadline as date_deadline,
-                    m.opening_date as opening_date,
+                    m.date_open as date_open,
                     m.user_id,
                     m.stage_id,
                     m.system_id,
@@ -61,7 +61,7 @@ class MgmtsystemtActionReport(models.Model):
                     count(*) AS number_of_actions
                 from
                     mgmtsystem_action m
-                group by m.user_id,m.system_id, m.stage_id, m.opening_date, \
+                group by m.user_id,m.system_id, m.stage_id, m.date_open, \
                         m.create_date,m.type_action,m.date_deadline, \
                         m.date_closed, m.id, m.number_of_days_to_open, \
                         m.number_of_days_to_close
