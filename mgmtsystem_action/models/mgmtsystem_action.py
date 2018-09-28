@@ -7,8 +7,9 @@ class MgmtsystemAction(models.Model):
     """Model class that manage action."""
 
     _name = "mgmtsystem.action"
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Action"
+    _order = "priority desc, sequence, id desc"
 
     def _default_company(self):
         """Return the user company id."""
@@ -49,6 +50,12 @@ class MgmtsystemAction(models.Model):
 
     name = fields.Char('Subject', required=True)
     active = fields.Boolean('Active', default=True)
+    priority = fields.Selection([
+        ('0', 'Low'),
+        ('1', 'Normal'),
+        ], default='0', index=True, string="Priority")
+    sequence = fields.Integer(string='Sequence', index=True, default=10,
+        help="Gives the sequence order when displaying a list of actions.")
     date_deadline = fields.Date('Deadline')
 
     create_date = fields.Datetime('Create Date', readonly=True)
@@ -67,7 +74,7 @@ class MgmtsystemAction(models.Model):
                             readonly=True, default="NEW")
     user_id = fields.Many2one(
         'res.users', 'Responsible', default=_default_owner, required=True)
-    description = fields.Text('Description')
+    description = fields.Html('Description')
     type_action = fields.Selection(
         [
             ('immediate', 'Immediate Action'),
@@ -86,6 +93,7 @@ class MgmtsystemAction(models.Model):
         track_visibility='onchange', index=True,
         copy=False,
         default=_default_stage, group_expand='_stage_groups')
+    tag_ids = fields.Many2many('mgmtsystem.action.tag', string='Tags')
 
     @api.model
     def _stage_groups(self, stages, domain, order):
