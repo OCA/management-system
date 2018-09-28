@@ -7,10 +7,9 @@
             <field name="interval_number">1</field>
             <field name="interval_type">days</field>
             <field name="numbercall">-1</field>
-	    <field name="model_id" ref="model_mgmtsystem_action"/>
-            <field eval="False" name="doall"/>
-            <field eval="'mgmtsystem.action'" name="model"/>
-            <field eval="'process_reminder_queue'" name="function"/>
+            <field name="model_id" ref="model_mgmtsystem_action"/>
+            <field name="doall" eval="False"/>
+            <field name="code">model.process_reminder_queue()</field>
         </record>
    </data>
 </odoo>

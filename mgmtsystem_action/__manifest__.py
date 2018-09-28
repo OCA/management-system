@@ -3,7 +3,7 @@
 
 {
     "name": "Management System - Action",
-    "version": "11.0.1.0.0",
+    "version": "11.0.2.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -18,6 +18,7 @@
         'data/action_sequence.xml',
         'views/mgmtsystem_action.xml',
         'views/mgmtsystem_action_stage.xml',
+        'views/mgmtsystem_action_tag.xml',
         'reports/mgmtsystem_action_report.xml',
         'views/menus.xml',
     ],
