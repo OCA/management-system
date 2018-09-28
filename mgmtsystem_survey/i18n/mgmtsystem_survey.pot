@@ -1,13 +1,11 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
 #	* mgmtsystem_survey
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.1-dev\n"
-"Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2011-07-25 18:17+0000\n"
-"PO-Revision-Date: 2011-07-25 18:17+0000\n"
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,29 +14,13 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: mgmtsystem_survey
-#: model:ir.ui.menu,name:mgmtsystem_survey.menu_open_answers
-msgid "Survey Answers"
-msgstr "Réponses au questionnaire"
+#: model:survey.stage,name:mgmtsystem_survey.mgmtsystem_survey_type
+msgid "Management System"
+msgstr ""
 
 #. module: mgmtsystem_survey
 #: model:ir.actions.act_window,name:mgmtsystem_survey.action_survey_form
 #: model:ir.ui.menu,name:mgmtsystem_survey.menu_open_survey
 msgid "Surveys"
-msgstr "Sondages"
-
-#. module: mgmtsystem_survey
-#: model:ir.module.module,description:mgmtsystem_survey.module_meta_information
-msgid "\n"
-"	This module enables you to manage your satisfaction surveys\n"
-"        and its answers.\n"
-"    "
-msgstr "\n"
-"	Ce module vous permet de gérer votre questionnaire de satisfaction\n"
-"       et ces réponses.\n"
-"    "
-
-#. module: mgmtsystem_survey
-#: model:ir.module.module,shortdesc:mgmtsystem_survey.module_meta_information
-msgid "Management System - Survey"
-msgstr "Système de gestion - Questionnaire"
+msgstr ""
 
