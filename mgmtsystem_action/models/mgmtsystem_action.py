@@ -4,23 +4,18 @@ from datetime import datetime, timedelta
 
 
 class MgmtsystemAction(models.Model):
-    """Model class that manage action."""
-
     _name = "mgmtsystem.action"
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Action"
     _order = "priority desc, sequence, id desc"
 
     def _default_company(self):
-        """Return the user company id."""
         return self.env.user.company_id
 
     def _default_owner(self):
-        """Return the user."""
         return self.env.user
 
     def _default_stage(self):
-        """Return the default stage."""
         return self.env['mgmtsystem.action.stage'].search(
             [('is_starting', '=', True)],
             limit=1)
@@ -34,12 +29,12 @@ class MgmtsystemAction(models.Model):
             res = (dt2 - dt1).days
         return res
 
-    @api.depends('opening_date', 'create_date')
+    @api.depends('date_open', 'create_date')
     def _compute_number_of_days_to_open(self):
         for action in self:
             action.number_of_days_to_close_open = action._elapsed_days(
                 action.create_date,
-                action.opening_date)
+                action.date_open)
 
     @api.depends('date_closed', 'create_date')
     def _compute_number_of_days_to_close(self):
@@ -50,18 +45,28 @@ class MgmtsystemAction(models.Model):
 
     name = fields.Char('Subject', required=True)
     active = fields.Boolean('Active', default=True)
-    priority = fields.Selection([
-        ('0', 'Low'),
-        ('1', 'Normal'),
+
+    priority = fields.Selection(
+        [
+            ('0', 'Low'),
+            ('1', 'Normal'),
         ], default='0', index=True, string="Priority")
-    sequence = fields.Integer(string='Sequence', index=True, default=10,
-        help="Gives the sequence order when displaying a list of actions.")
+
+    sequence = fields.Integer(
+        'Sequence',
+        index=True, default=10,
+        help="Gives the sequence order when displaying a list of actions."
+    )
+
     date_deadline = fields.Date('Deadline')
 
-    create_date = fields.Datetime('Create Date', readonly=True)
-    cancel_date = fields.Datetime('Cancel Date', readonly=True)
-    opening_date = fields.Datetime('Opening Date', readonly=True)
+    date_open = fields.Datetime(
+        'Opening Date',
+        readonly=True, oldname='opening_date'
+    )
+
     date_closed = fields.Datetime('Closed Date', readonly=True)
+
     number_of_days_to_open = fields.Integer(
         '# of days to open',
         compute=_compute_number_of_days_to_open,
@@ -70,11 +75,18 @@ class MgmtsystemAction(models.Model):
         '# of days to close',
         compute=_compute_number_of_days_to_close,
         store=True)
-    reference = fields.Char('Reference', required=True,
-                            readonly=True, default="NEW")
+
+    reference = fields.Char('Reference', required=True, readonly=True)
+
     user_id = fields.Many2one(
-        'res.users', 'Responsible', default=_default_owner, required=True)
+        'res.users',
+        'Responsible',
+        default=_default_owner,
+        required=True,
+    )
+
     description = fields.Html('Description')
+
     type_action = fields.Selection(
         [
             ('immediate', 'Immediate Action'),
@@ -84,103 +96,48 @@ class MgmtsystemAction(models.Model):
         ], 'Response Type', required=True)
 
     system_id = fields.Many2one('mgmtsystem.system', 'System')
+
     company_id = fields.Many2one(
-        'res.company', 'Company',
-        default=_default_company)
+        'res.company',
+        'Company',
+        default=_default_company,
+    )
+
     stage_id = fields.Many2one(
         'mgmtsystem.action.stage',
         'Stage',
         track_visibility='onchange', index=True,
         copy=False,
-        default=_default_stage, group_expand='_stage_groups')
+        default=_default_stage, group_expand='_stage_groups',
+    )
+
     tag_ids = fields.Many2many('mgmtsystem.action.tag', string='Tags')
 
     @api.model
-    def _stage_groups(self, stages, domain, order):
-        stage_ids = self.env['mgmtsystem.action.stage'].search([])
-        return stage_ids
-
-    @api.model
-    def _get_stage_new(self):
-        return self.env['mgmtsystem.action.stage'].search(
-            [('is_starting', '=', True)],
-            limit=1)
-
-    @api.model
-    def _get_stage_open(self):
-        return self.env.ref('mgmtsystem_action.stage_open')
-
-    @api.model
-    def _get_stage_close(self):
-        return self.env.ref('mgmtsystem_action.stage_close')
-
-    @api.model
-    def _get_stage_cancel(self):
-        return self.env.ref('mgmtsystem_action.stage_cancel')
-
-    @api.multi
-    def case_open(self):
-        """ Opens case """
-        for case in self:
-            case.write({
-                'active': True,
-                'stage_id': case._get_stage_open().id})
-        return True
+    def _stage_groups(self, stages=None, domain=None, order=None):
+        return self.env['mgmtsystem.action.stage'].search([], order=order)
 
     @api.model
     def create(self, vals):
-        """Creation of Action."""
         Sequence = self.env['ir.sequence']
         vals['reference'] = Sequence.next_by_code('mgmtsystem.action')
         action = super(MgmtsystemAction, self).create(vals)
         self.send_mail_for_action(action)
         return action
 
-    @api.multi
-    def write(self, vals):
-        """Update user data."""
-        if vals.get('stage_id'):
-            stage_new = self._get_stage_new()
-            stage_open = self._get_stage_open()
-            stage_close = self._get_stage_close()
-            stage_cancel = self._get_stage_cancel()
-            if vals['stage_id'] == stage_new.id:
-                if self.opening_date:
-                    raise exceptions.ValidationError(
-                        _('We cannot bring back the action to draft stage')
-                    )
-                vals['cancel_date'] = None
-                self.message_post(
-                    body=' %s ' % (_('Action back to draft stage on ') +
-                                   fields.Datetime.now())
-                )
-            if vals['stage_id'] == stage_open.id:
-                vals['opening_date'] = fields.Datetime.now()
-                self.message_post(
-                    body=' %s ' % (_('Action opened on ') +
-                                   vals['opening_date'])
-                )
-                vals['date_closed'] = None
-                vals['cancel_date'] = None
-            if vals['stage_id'] == stage_close.id:
-                if not self.opening_date or self.cancel_date:
-                    raise exceptions.ValidationError(
-                        _('You should first open the action')
-                    )
-                vals['date_closed'] = fields.Datetime.now()
-                self.message_post(
-                    body=' %s ' % (_('Action closed on ') +
-                                   vals['date_closed'])
-                )
-            if vals['stage_id'] == stage_cancel.id:
-                vals['date_closed'] = None
-                vals['opening_date'] = None
-                vals['cancel_date'] = fields.Datetime.now()
-                self.message_post(
-                    body=' %s ' % (_('Action cancelled on ') +
-                                   fields.Datetime.now())
-                )
-        return super(MgmtsystemAction, self).write(vals)
+    @api.constrains('stage_id')
+    def _check_stage_id(self):
+        for rec in self:
+            # Do not allow to bring back actions to draft
+            if rec.date_open and rec.stage_id.is_starting:
+                raise exceptions.ValidationError(
+                    _('We cannot bring back the action to draft stage'))
+            # If stage is changed, the action is opened
+            if not rec.date_open and not rec.stage_id.is_starting:
+                rec.date_open = fields.Datetime.now()
+            # If stage is ending, set closed date
+            if not rec.date_closed and rec.stage_id.is_ending:
+                rec.date_closed = fields.Datetime.now()
 
     @api.model
     def send_mail_for_action(self, action, force_send=True):
