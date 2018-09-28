@@ -1,0 +1,369 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mgmtsystem_action
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-28 18:20+0000\n"
+"PO-Revision-Date: 2015-07-28 18:20+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mgmtsystem_action
+#: model:email.template,body_html:mgmtsystem_action.action_email_template_reminder_action
+msgid "\n"
+"<p>Hello,</p>\n"
+"\n"
+"<p>\n"
+"  This is an automated message to remind you that the\n"
+"  following action is due to be completed in 10 days (${object.date_deadline}):\n"
+"\n"
+"  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"  Thank you and have a nice day.<br />\n"
+"  --<br />\n"
+"  Odoo\n"
+"</p>\n"
+"        \n"
+"      "
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:email.template,body_html:mgmtsystem_action.wkf_action_email_template_reminder_action
+msgid "\n"
+"<p>Hello,</p>\n"
+"<p>A new action has been assigned to you:\n"
+"  <a href=\"${object.get_action_url()}\">${object.get_action_url()}</a>\n"
+"</p>\n"
+"<p>${object.description}</p>\n"
+"\n"
+"<p>\n"
+"  Thank you<br />\n"
+"  --<br />\n"
+"  Odoo\n"
+"</p>\n"
+"        \n"
+"      "
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:email.template,subject:mgmtsystem_action.wkf_action_email_template_reminder_action
+msgid "${object.name}"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
+#: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_filter
+#: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_form
+#: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_tree
+msgid "Action"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.actions.act_window,name:mgmtsystem_action.open_mgmtsystem_action_list
+#: model:ir.ui.menu,name:mgmtsystem_action.menu_open_action
+msgid "Actions"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,active:0
+msgid "Active"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,categ_id:0
+msgid "Category"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,date:0
+msgid "Claim Date"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,name:0
+msgid "Claim Subject"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,date_closed:0
+msgid "Closed"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,type_action:0
+msgid "Corrective Action"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,create_date:0
+msgid "Creation Date"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_form
+msgid "Date"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_form
+#: field:mgmtsystem.action,date_deadline:0
+msgid "Deadline"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_form
+#: field:mgmtsystem.action,description:0
+msgid "Description"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,email_from:0
+msgid "Destination email for email gateway."
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,email_from:0
+msgid "Email"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_filter
+msgid "Group By..."
+msgstr ""
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,priority:0
+msgid "High"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,id:0
+msgid "ID"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,type_action:0
+msgid "Immediate Action"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,type_action:0
+msgid "Improvement Opportunity"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,priority:0
+msgid "Low"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,action_next:0
+msgid "Next Action"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,date_action_next:0
+msgid "Next Action Date"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,priority:0
+msgid "Normal"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.actions.server,name:mgmtsystem_action.mgmtsystem_action_server_action
+msgid "Notify the person in charge of the new action"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:board.board:mgmtsystem_action.board_mgmtsystem_action_form
+msgid "Open Actions"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,partner_id:0
+msgid "Partner"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,partner_phone:0
+msgid "Phone"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: selection:mgmtsystem.action,type_action:0
+msgid "Preventive Action"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,priority:0
+msgid "Priority"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,ref:0
+#: field:mgmtsystem.action,reference:0
+msgid "Reference"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:email.template,subject:mgmtsystem_action.action_email_template_reminder_action
+msgid "Reminder on Action: \"${object.name}\""
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.actions.server,name:mgmtsystem_action.action_email_reminder_action
+msgid "Reminder to Responsible"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,resolution:0
+msgid "Resolution"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,type_action:0
+msgid "Response Type"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_form
+#: field:mgmtsystem.action,user_id:0
+msgid "Responsible"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,section_id:0
+msgid "Responsible sales team. Define Responsible user and Email account for mail gateway."
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,cause:0
+msgid "Root Cause"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,section_id:0
+msgid "Sales Team"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,stage_id:0
+msgid "Stage"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_tree
+msgid "Subject"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,company_id:0
+#: field:mgmtsystem.action,system_id:0
+msgid "System"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: help:mgmtsystem.action,email_cc:0
+msgid "These email addresses will be added to the CC field of all inbound and outbound emails for this record before being sent. Separate multiple email addresses with a comma"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,user_fault:0
+msgid "Trouble Responsible"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_filter
+msgid "Type"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,write_date:0
+msgid "Update Date"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: view:mgmtsystem.action:mgmtsystem_action.view_mgmtsystem_action_filter
+msgid "User"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: field:mgmtsystem.action,email_cc:0
+msgid "Watchers Emails"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.actions.act_window,name:mgmtsystem_action.action_mgmtsystem_action
+msgid "mgmtsystem.action.window"
+msgstr ""
