@@ -102,6 +102,8 @@
                                     </group>
                                     <group>
                                         <field name="create_date"/>
+                                        <field name="date_open" attrs="{'invisible': [('date_open', '=', False)]}"/>
+                                        <field name="date_closed" attrs="{'invisible': [('date_closed', '=', False)]}"/>
                                     </group>
                                 </group>
                             </page>
