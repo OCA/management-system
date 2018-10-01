@@ -9,6 +9,8 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo11-addon-mgmtsystem',
+        'odoo11-addon-mgmtsystem_action',
+        'odoo11-addon-mgmtsystem_survey',
     ],
     classifiers=[
         'Programming Language :: Python',
