@@ -195,6 +195,11 @@ msgid "Manager"
 msgstr ""
 
 #. module: mgmtsystem
+#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
+msgid "Manual"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Manuals"
 msgstr ""
@@ -364,7 +369,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: code:addons/mgmtsystem/models/mgmtsystem_system.py:14
-#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_name
 #, python-format
 msgid "System"
