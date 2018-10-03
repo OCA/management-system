@@ -8,8 +8,10 @@ setuptools.setup(
     description="Meta package for oca-management-system Odoo addons",
     version=version,
     install_requires=[
+        'odoo11-addon-document_page_work_instruction',
         'odoo11-addon-mgmtsystem',
         'odoo11-addon-mgmtsystem_action',
+        'odoo11-addon-mgmtsystem_manual',
         'odoo11-addon-mgmtsystem_survey',
     ],
     classifiers=[
