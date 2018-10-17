@@ -1,41 +1,38 @@
-# -*- encoding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# -*- coding: utf-8 -*-
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
 {
-    "name": "Management System - Hazard",
-    "version": "1.1",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "name": "Hazard",
+    "version": "10.0.1.0.0",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "description": """\
-This module enables you to manage the hazards and risks of your health
-and safety management system.
-    """,
-    "depends": ['mgmtsystem', 'hr'],
+    "depends": [
+        'mgmtsystem',
+        'hr'
+    ],
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_hazard_security.xml',
-        'mgmtsystem_hazard.xml',
-        'mgmtsystem_hazard_data.xml',
+        'views/mgmtsystem_hazard.xml',
+        'views/mgmtsystem_hazard_hazard.xml',
+        'views/mgmtsystem_hazard_origin.xml',
+        'views/mgmtsystem_hazard_type.xml',
+        'views/mgmtsystem_hazard_probability.xml',
+        'views/mgmtsystem_hazard_severity.xml',
+        'views/mgmtsystem_hazard_usage.xml',
+        'views/mgmtsystem_hazard_control_measure.xml',
+        'views/mgmtsystem_hazard_test.xml',
     ],
-    "installable": False,
+    "demo": [
+        'demo/mgmtsystem_hazard_hazard.xml',
+        'demo/mgmtsystem_hazard_origin.xml',
+        'demo/mgmtsystem_hazard_probability.xml',
+        'demo/mgmtsystem_hazard_severity.xml',
+        'demo/mgmtsystem_hazard_type.xml',
+        'demo/mgmtsystem_hazard_usage.xml',
+    ],
+    "installable": True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
