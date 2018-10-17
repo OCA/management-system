@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo10-addon-mgmtsystem',
         'odoo10-addon-mgmtsystem_action',
         'odoo10-addon-mgmtsystem_audit',
+        'odoo10-addon-mgmtsystem_hazard',
         'odoo10-addon-mgmtsystem_manual',
         'odoo10-addon-mgmtsystem_nonconformity',
         'odoo10-addon-mgmtsystem_quality',
