@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo11-addon-document_page_procedure',
+        'odoo11-addon-document_page_quality_manual',
         'odoo11-addon-document_page_work_instruction',
         'odoo11-addon-mgmtsystem',
         'odoo11-addon-mgmtsystem_action',
