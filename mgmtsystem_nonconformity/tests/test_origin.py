@@ -18,7 +18,6 @@
 #
 ##############################################################################
 from odoo.tests import common
-from psycopg2 import IntegrityError
 
 
 class TestModelOrigin(common.TransactionCase):
