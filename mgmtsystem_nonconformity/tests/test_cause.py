@@ -19,7 +19,6 @@
 ##############################################################################
 
 from contextlib import contextmanager
-from psycopg2 import IntegrityError
 from odoo.tests import common
 from odoo import exceptions
 
