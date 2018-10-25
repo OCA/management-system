@@ -35,10 +35,6 @@ class TestModelCause(common.TransactionCase):
         self.cr.rollback()
 
     def test_create_cause(self):
-        with self.assertRaisesRollback(IntegrityError):
-            # Will generate an error in the logs but we handle it
-            self.env['mgmtsystem.nonconformity.cause'].create({})
-            # Should not be possible to create without name
 
         record = self.env['mgmtsystem.nonconformity.cause'].create({
             "name": "TestCause",
