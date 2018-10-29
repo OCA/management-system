@@ -152,7 +152,7 @@ class MgmtsystemAudit(models.Model):
         eg. http://localhost:8069/?db=prod#id=1&model=mgmtsystem.audit
         """
 
-        base_url = self.env['ir.config_parameter'].get_param(
+        base_url = self.env['ir.config_parameter'].sudo().get_param(
             'web.base.url',
             default='http://localhost:8069'
         )

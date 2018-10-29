@@ -7,7 +7,7 @@
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": ['mgmtsystem_nonconformity','base_automation'],
+    "depends": ['mgmtsystem_nonconformity', 'base_automation'],
     "data": [
         'security/ir.model.access.csv',
         'security/mgmtsystem_audit_security.xml',
