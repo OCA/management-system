@@ -173,3 +173,16 @@ class MgmtsystemAction(models.Model):
         for action in action_ids:
             template.send_mail(action.id)
         return True
+
+    @api.model
+    def _get_stage_open(self):
+        return self.env.ref('mgmtsystem_action.stage_open')
+
+    @api.multi
+    def case_open(self):
+        """ Opens case """
+        for case in self:
+            case.write({
+                'active': True,
+                'stage_id': case._get_stage_open().id})
+        return True
