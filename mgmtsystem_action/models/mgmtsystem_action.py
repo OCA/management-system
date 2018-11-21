@@ -76,7 +76,11 @@ class MgmtsystemAction(models.Model):
         compute=_compute_number_of_days_to_close,
         store=True)
 
-    reference = fields.Char('Reference', required=True, readonly=True)
+    reference = fields.Char(
+        'Reference',
+        required=True,
+        readonly=True,
+        default=lambda self: _('New'))
 
     user_id = fields.Many2one(
         'res.users',
@@ -119,8 +123,9 @@ class MgmtsystemAction(models.Model):
 
     @api.model
     def create(self, vals):
-        Sequence = self.env['ir.sequence']
-        vals['reference'] = Sequence.next_by_code('mgmtsystem.action')
+        if vals.get('reference', _('New')) == _('New'):
+            Sequence = self.env['ir.sequence']
+            vals['reference'] = Sequence.next_by_code('mgmtsystem.action')
         action = super(MgmtsystemAction, self).create(vals)
         self.send_mail_for_action(action)
         return action
