@@ -17,6 +17,7 @@
         'data/mgmtsystem_manual.xml',
         'views/mgmtsystem_manual.xml',
         'views/document_page.xml',
+        'security/manual_security.xml',
     ],
     "demo": [],
     'installable': True,

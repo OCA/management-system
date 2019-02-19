@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Read/Write/Create/Unlink access in 'Management System / viewer' group
+        to 'Work instruction' documents -->
+    <record id="work_document_rule_mgmtsystem_viewer" model="ir.rule">
+        <field name="name">Work document page for viewers</field>
+        <field name="model_id" ref="document_page.model_document_page"/>
+        <field name="domain_force" eval="['|', ('parent_id','=',ref('document_page_group_work_instructions')), ('id','=',ref('document_page_group_work_instructions'))]"/>
+        <field name="groups" eval="[(4, ref('mgmtsystem.group_mgmtsystem_viewer'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="work_document_history_rule_mgmtsystem_viewer" model="ir.rule">
+        <field name="name">Work document page history for viewers</field>
+        <field name="model_id" ref="document_page.model_document_page_history"/>
+        <field name="domain_force" eval="['|', ('page_id.parent_id','=',ref('document_page_group_work_instructions')), ('page_id','=',ref('document_page_group_work_instructions'))]"/>
+        <field name="groups" eval="[(4, ref('mgmtsystem.group_mgmtsystem_viewer'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+</odoo>

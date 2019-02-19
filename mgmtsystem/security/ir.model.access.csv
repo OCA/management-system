@@ -1,5 +1,10 @@
 "id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
 "access_mgmtsystem_system_user","mgmtsystem.system.user","model_mgmtsystem_system","mgmtsystem.group_mgmtsystem_user",1,0,0,0
 "access_mgmtsystem_system_viewer","mgmtsystem.system.viewer","model_mgmtsystem_system","mgmtsystem.group_mgmtsystem_viewer",1,0,0,0
+"access_document_page_mgmtsystem_viewer","document.page.mgmtsystem.viewer","document_page.model_document_page","group_mgmtsystem_viewer",1,0,0,0
+"access_document_page_history_mgmtsystem_viewer","document.page.history.mgmtsystem.viewer","document_page.model_document_page_history","group_mgmtsystem_viewer",1,0,0,0
 "access_mgmtsystem_system_auditor","mgmtsystem.system.auditor","model_mgmtsystem_system","mgmtsystem.group_mgmtsystem_auditor",1,0,0,0
+"access_document_page_mgmtsystem_auditor","document.page.mgmtsystem.auditor","document_page.model_document_page","group_mgmtsystem_auditor",1,1,1,0
+"access_document_page_history_mgmtsystem_auditor","document.page.history.mgmtsystem.auditor","document_page.model_document_page_history","group_mgmtsystem_auditor",1,1,1,0
 "access_mgmtsystem_system_manager","mgmtsystem.system.manager","model_mgmtsystem_system","mgmtsystem.group_mgmtsystem_manager",1,1,1,1
+"access_document_page_mgmtsystem_manager","document.page.mgmtsystem.manager","document_page.model_document_page","group_mgmtsystem_manager",1,1,1,1

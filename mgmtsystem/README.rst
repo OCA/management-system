@@ -51,6 +51,9 @@ Contributors
 * Savoir-faire Linux <support@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 * Eugen Don <eugen.don@don-systems.de>
+* `Tecnativa <https://www.tecnativa.com>`_:
+
+  * Ernesto Tejeda
 
 Maintainer
 ----------

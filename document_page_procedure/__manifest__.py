@@ -15,6 +15,7 @@
     "data": [
         'data/document_page_procedure.xml',
         'views/document_page_procedure.xml',
+        'security/procedure_security.xml',
     ],
     "demo": [
         'demo/document_page_procedure.xml',

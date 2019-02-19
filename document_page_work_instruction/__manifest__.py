@@ -17,6 +17,7 @@
         'data/document_page.xml',
 
         'views/document_page_work_instructions.xml',
+        'security/work_instruction_security.xml',
     ],
     "demo": [],
     'installable': True,
