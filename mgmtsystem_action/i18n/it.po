@@ -48,8 +48,8 @@ msgstr ""
 "\n"
 "<p>\n"
 "  Questo è un messaggio automatico per ricordarti che la\n"
-"  seguente azione deve essere completata entro 10 giorni "
-"(${object.date_deadline}):\n"
+"  seguente azione deve essere completata entro 10 giorni (${object."
+"date_deadline}):\n"
 "\n"
 "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
 "</p>\n"
@@ -87,8 +87,8 @@ msgstr ""
 "                \n"
 "<p>Ciao ${object.user_id.name},</p>\n"
 "\n"
-"<p>Ti è stata assegnata una nuova azione: <b><a href=\""
-"${object.get_action_url()}\">${object.name}</a></b></p>\n"
+"<p>Ti è stata assegnata una nuova azione: <b><a href=\"${object."
+"get_action_url()}\">${object.name}</a></b></p>\n"
 "<p><b>Scadenza: </b>${object.date_deadline or ''}</p>\n"
 "\n"
 "<p>Utilizza gli stati dell'azione e i messaggi per tenere traccia dei "
@@ -348,7 +348,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_id
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_2119
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_2126
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag_id
 msgid "ID"
 msgstr "ID"
@@ -442,6 +442,13 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: mgmtsystem_action
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:83
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:126
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
 msgid "Normal"
 msgstr "Normale"
@@ -499,7 +506,8 @@ msgstr "Sequenza"
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 #, fuzzy
 msgid "Show all records which has next action date is before today"
-msgstr "Visualizzare tutte le righe con l'azione successiva antecedente ad oggi"
+msgstr ""
+"Visualizzare tutte le righe con l'azione successiva antecedente ad oggi"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_stage_id
@@ -590,7 +598,7 @@ msgid "User"
 msgstr "Utente"
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:134
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:139
 #, python-format
 msgid "We cannot bring back the action to draft stage"
 msgstr "Impossibile riportare l'azione alla fase bozza"
