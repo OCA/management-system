@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- risk_computation -->
+
+    <record id="risk_computation_a_times_b_times_c" model="mgmtsystem.hazard.risk.computation">
+        <field name="name">A * B * C</field>
+        <field name="description">Risk = Probability (A) x Severity (B) x Usage (C)</field>
+    </record>
+
+    <record id="risk_computation_a_times_b" model="mgmtsystem.hazard.risk.computation">
+        <field name="name">A * B</field>
+        <field name="description">Risk = Probability (A) x Severity (B)</field>
+    </record>
+
+    <record id="risk_computation_a_plus_b" model="mgmtsystem.hazard.risk.computation">
+        <field name="name">A + B</field>
+        <field name="description">Risk = Probability (A) + Severity (B)</field>
+    </record>
+
+    <record id="risk_computation_a_times_b_plus_c" model="mgmtsystem.hazard.risk.computation">
+        <field name="name">(A * B) + C</field>
+        <field name="description">Risk = ( Probability (A) x Severity (B) ) + Usage (C)</field>
+    </record>
+
+    <record id="risk_computation_a_plus_b_times_c" model="mgmtsystem.hazard.risk.computation">
+        <field name="name">(A + B) * C</field>
+        <field name="description">Risk = ( Probability (A) + Severity (B) ) x Usage (C)</field>
+    </record>
+
+    <record id="risk_computation_a_plus_b_plus_c" model="mgmtsystem.hazard.risk.computation">
+        <field name="name">A + B + C</field>
+        <field name="description">Risk = Probability (A) + Severity (B) + Usage (C)</field>
+    </record>
+
+</odoo>
