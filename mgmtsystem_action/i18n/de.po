@@ -311,7 +311,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_id
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_2119
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_2126
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag_id
 msgid "ID"
 msgstr "ID"
@@ -399,6 +399,13 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag_name
 msgid "Name"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:83
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:126
+#, python-format
+msgid "New"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -547,7 +554,7 @@ msgid "User"
 msgstr "Benutzer"
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:134
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:139
 #, python-format
 msgid "We cannot bring back the action to draft stage"
 msgstr ""
