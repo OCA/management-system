@@ -20,14 +20,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,acceptability:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_acceptability
 msgid "Acceptability"
 msgstr "Aceitabilidade"
-
-#. module: mgmtsystem_hazard_risk
-#: view:mgmtsystem.hazard:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_form
-msgid "Analysis"
-msgstr "Análise"
 
 #. module: mgmtsystem_hazard_risk
 #: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_chemical
@@ -41,34 +36,34 @@ msgstr "Empresas"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_risk_computation
-#: field:mgmtsystem.hazard.risk.computation,name:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation_name
 msgid "Computation Risk"
 msgstr "Calculo Risco"
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,create_uid:0
-#: field:mgmtsystem.hazard.risk.computation,create_uid:0
-#: field:mgmtsystem.hazard.risk.type,create_uid:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation_create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type_create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,create_date:0
-#: field:mgmtsystem.hazard.risk.computation,create_date:0
-#: field:mgmtsystem.hazard.risk.type,create_date:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_create_date
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation_create_date
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type_create_date
 msgid "Created on"
 msgstr ""
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.risk.computation,description:0
-#: field:mgmtsystem.hazard.risk.type,description:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation_description
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type_description
 msgid "Description"
 msgstr "Descrição"
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,display_name:0
-#: field:mgmtsystem.hazard.risk.computation,display_name:0
-#: field:mgmtsystem.hazard.risk.type,display_name:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_display_name
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation_display_name
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type_display_name
 msgid "Display Name"
 msgstr ""
 
@@ -83,7 +78,7 @@ msgid "Fire"
 msgstr "Fogo"
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,hazard_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_hazard_id
 msgid "Hazard"
 msgstr "Perigo"
 
@@ -93,50 +88,50 @@ msgid "Hazards of the health and safety management system"
 msgstr "Riscos do Sistema de Gestão de Saúde e Segurança"
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,id:0
-#: field:mgmtsystem.hazard.risk.computation,id:0
-#: field:mgmtsystem.hazard.risk.type,id:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation_id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type_id
 msgid "ID"
 msgstr ""
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,justification:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_justification
 msgid "Justification"
 msgstr "Justificação"
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,__last_update:0
-#: field:mgmtsystem.hazard.risk.computation,__last_update:0
-#: field:mgmtsystem.hazard.risk.type,__last_update:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk___last_update
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation___last_update
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type___last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,write_uid:0
-#: field:mgmtsystem.hazard.risk.computation,write_uid:0
-#: field:mgmtsystem.hazard.risk.type,write_uid:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation_write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type_write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,write_date:0
-#: field:mgmtsystem.hazard.risk.computation,write_date:0
-#: field:mgmtsystem.hazard.risk.type,write_date:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_write_date
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation_write_date
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type_write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: mgmtsystem_hazard_risk
-#: view:res.company:mgmtsystem_hazard_risk.company_form_view
+#: model:ir.ui.view,arch_db:mgmtsystem_hazard_risk.company_form_view
 msgid "Management System"
 msgstr "Sistema de Gestão"
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,name:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_name
 msgid "Name"
 msgstr "Nome"
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,usage_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_usage_id
 msgid "Occupation / Usage"
 msgstr "Ocupação / Uso"
 
@@ -146,25 +141,24 @@ msgid "Physical"
 msgstr "Físico"
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,probability_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_probability_id
 msgid "Probability"
 msgstr "Probabilidade"
 
 #. module: mgmtsystem_hazard_risk
-#: view:mgmtsystem.hazard.residual_risk:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_residual_risk_form
+#: model:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_residual_risk_form
 msgid "Residual Risk"
 msgstr "Risco Residual"
 
 #. module: mgmtsystem_hazard_risk
-#: view:mgmtsystem.hazard:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_form
-#: field:mgmtsystem.hazard,residual_risk_ids:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_ids
+#: model:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_form
 msgid "Residual Risk Evaluations"
 msgstr "Avaliação risco residual"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.actions.act_window,name:mgmtsystem_hazard_risk.open_mgmtsystem_hazard_residual_risk_list
-#: view:mgmtsystem.hazard.residual_risk:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_residual_risk_filter
-#: view:mgmtsystem.hazard.residual_risk:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_residual_risk_tree
+#: model:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_residual_risk_filter
 msgid "Residual Risks"
 msgstr "Riscos residuais"
 
@@ -174,42 +168,41 @@ msgid "Residual Risks of hazard"
 msgstr "Riscos residuais de perigo"
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard,risk:0 field:mgmtsystem.hazard.residual_risk,risk:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk
 #, fuzzy
 msgid "Risk"
 msgstr "Tipo de Risco"
 
 #. module: mgmtsystem_hazard_risk
-#: view:mgmtsystem.hazard.risk.computation:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_form
-#: field:res.company,risk_computation_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_res_company_risk_computation_id
+#: model:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_form
 msgid "Risk Computation"
 msgstr "Cálculo de Risco"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.actions.act_window,name:mgmtsystem_hazard_risk.open_mgmtsystem_hazard_risk_computation_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard_risk.menu_open_hazard_risk_computation
-#: view:mgmtsystem.hazard.risk.computation:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_filter
-#: view:mgmtsystem.hazard.risk.computation:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_tree
+#: model:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_filter
 msgid "Risk Computations"
 msgstr "Cálculos de risco"
 
 #. module: mgmtsystem_hazard_risk
-#: view:mgmtsystem.hazard:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_form
+#: model:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_form
 msgid "Risk Evaluation"
 msgstr "Avaliação de Risco"
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard,risk_type_id:0
-#: view:mgmtsystem.hazard.risk.type:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_type_form
-#: field:mgmtsystem.hazard.risk.type,name:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type_id_2832
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type_name
+#: model:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_type_form
 msgid "Risk Type"
 msgstr "Tipo de Risco"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.actions.act_window,name:mgmtsystem_hazard_risk.open_mgmtsystem_hazard_risk_type_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard_risk.menu_open_hazard_risk_type
-#: view:mgmtsystem.hazard.risk.type:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_type_filter
-#: view:mgmtsystem.hazard.risk.type:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_type_tree
+#: model:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_type_filter
 msgid "Risk Types"
 msgstr "Tipos de risco"
 
@@ -219,6 +212,9 @@ msgid "Risk type of the hazard"
 msgstr "Tipo de risco do perigo"
 
 #. module: mgmtsystem_hazard_risk
-#: field:mgmtsystem.hazard.residual_risk,severity_id:0
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_severity_id
 msgid "Severity"
 msgstr "Severidade"
+
+#~ msgid "Analysis"
+#~ msgstr "Análise"
