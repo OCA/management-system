@@ -1,5 +1,3 @@
 
-from . import (
-    mgmtsystem_system,
-    res_config,
-)
+from . import mgmtsystem_system
+from . import res_config
