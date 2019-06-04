@@ -22,6 +22,7 @@
             <field name="model">mgmtsystem.action</field>
             <field name="type">search</field>
             <field name="arch" type="xml">
+            <!-- TODO: validation broken somehow -->
                 <search string="Action">
                     <field name="name"/>
                     <field name="reference"/>
@@ -31,33 +32,33 @@
                     <field name="system_id"/>
                     <field name="company_id" groups="base.group_multi_company"/>
                     <newline/>
-                    <filter string="Pending" name="pending" domain="[('stage_id.is_ending', '=', False)]"/>
+                    <filter name="pending" string="Pending" domain="[('stage_id.is_ending', '=', False)]"/>
                     <separator/>
-                    <filter string="My Actions" name="my_actions" domain="[('user_id','=',uid)]"/>
-                    <filter string="My Followed Actions" domain="[('message_is_follower', '=', True)]" />
+                    <filter name="my_actions" string="My Actions" domain="[('user_id','=',uid)]"/>
+                    <filter name="my_followed_actions" string="My Followed Actions" domain="[('message_is_follower', '=', True)]" />
                     <separator/>
-                    <filter string="Unread Messages" name="message_needaction"
+                    <filter name="message_needaction" string="Unread Messages"
                             domain="[('message_needaction','=',True)]"/>
-                    <filter string="Archived" name="inactive"
+                    <filter name="inactive" string="Archived"
                             domain="[('active','=',False)]"/>
                     <separator/>
-                    <filter string="My Activities" name="activities_my"
+                    <filter name="activities_my" string="My Activities"
                             domain="[('activity_ids.user_id', '=', uid)]"/>
                     <separator/>
-                    <filter string="Late Activities" name="activities_overdue"
+                    <filter name="activities_overdue" string="Late Activities"
                             domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
                             help="Show all records which has next action date is before today"/>
-                    <filter string="Today Activities" name="activities_today"
+                    <filter name="activities_today" string="Today Activities"
                             domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
-                    <filter string="Future Activities" name="activities_upcoming_all"
+                    <filter name="activities_upcoming_all" string="Future Activities"
                             domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
                     <group expand="0" string="Group By">
-                        <filter string="User" context="{'group_by':'user_id'}"/>
-                        <filter string="Type" context="{'group_by':'type_action'}"/>
-                        <filter string="Stage" name="Stage" context="{'group_by':'stage_id'}"/>
-                        <filter string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                        <filter name="group_by_user" string="User" context="{'group_by':'user_id'}"/>
+                        <filter name="group_by_type" string="Type" context="{'group_by':'type_action'}"/>
+                        <filter name="group_by_state" string="Stage" context="{'group_by':'stage_id'}"/>
+                        <filter name="group_by_company" string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
                         <separator/>
-                        <filter string="Last Message" name="group_message_last_post" context="{'group_by':'message_last_post:week'}" invisible="1"/>
+                        <filter name="group_by_message_last_post" string="Last Message" context="{'group_by':'message_last_post:week'}" invisible="1"/>
                     </group>
                 </search>
             </field>
@@ -78,29 +79,29 @@
                                 <field name="name" placeholder="Action title..." required="1" />
                             </h1>
                         </div>
-                        <group>
-                            <group>
+                        <group name="main">
+                            <group name="config">
                                 <field name="type_action"/>
                                 <field name="user_id"/>
                                 <field name="date_deadline"/>
                             </group>
-                            <group>
+                            <group name="meta">
                                 <field name="reference"/>
                                 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
                             </group>
                         </group>
                         <notebook>
-                            <page string="Description">
+                            <page name="desc" string="Description">
                                 <field name="description" nolabel="1"/>
                             </page>
-                            <page string="Extra Information">
-                                <group>
-                                    <group>
+                            <page name="extra" string="Extra Information">
+                                <group name="main_extra">
+                                    <group name="extra">
                                         <field name="sequence"/>
                                         <field name="system_id"/>
                                         <field name="company_id" groups="base.group_multi_company"/>
                                     </group>
-                                    <group>
+                                    <group name="dates">
                                         <field name="create_date"/>
                                         <field name="date_open" attrs="{'invisible': [('date_open', '=', False)]}"/>
                                         <field name="date_closed" attrs="{'invisible': [('date_closed', '=', False)]}"/>
@@ -156,7 +157,7 @@
                                         </div>
 
                                         <div class="o_dropdown_kanban dropdown" groups="base.group_user">
-                                            <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+                                            <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" role="button">
                                                 <span class="fa fa-ellipsis-v" aria-hidden="true"/>
                                             </a>
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -179,7 +180,10 @@
                                             </t>
                                         </div>
                                         <div class="oe_kanban_bottom_right">
-                                            <img t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)" t-att-title="record.user_id.value" width="24" height="24" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)"
+                                                 t-att-title="record.user_id.value"
+                                                 t-att-alt="record.user_id.value"
+                                                 width="24" height="24" class="oe_kanban_avatar"/>
                                         </div>
                                     </div>
                                 </div>

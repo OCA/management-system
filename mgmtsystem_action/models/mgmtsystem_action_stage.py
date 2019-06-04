@@ -1,3 +1,5 @@
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import models, fields
 
@@ -15,6 +17,5 @@ class MgmtSystemActionStage(models.Model):
         help='This stage is folded in the kanban view when there are '
              'no records in that stage to display.',
     )
-
     is_starting = fields.Boolean('Starting stage')
     is_ending = fields.Boolean('Ending stage')

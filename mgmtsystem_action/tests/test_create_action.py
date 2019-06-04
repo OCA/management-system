@@ -4,8 +4,21 @@ from odoo.tests import common
 from datetime import datetime, timedelta
 
 
-class TestModelAction(common.TransactionCase):
+class TestModelAction(common.SavepointCase):
     """Test class for mgmtsystem_action."""
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        # disable tracking test suite wise
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+
+    def _assert_date_equal(self, val, expected=None):
+        expected = expected or datetime.now()
+        self.assertEqual(
+            tuple(val.timetuple())[:5],
+            tuple(expected.timetuple())[:5]
+        )
 
     def test_create_action(self):
         """Test object creation."""
@@ -14,7 +27,6 @@ class TestModelAction(common.TransactionCase):
             "name": "SampleAction",
             "type_action": "immediate"
         })
-
         self.assertEqual(record.name, "SampleAction")
         self.assertNotEqual(record.reference, "NEW")
         self.assertEqual(record.type_action, "immediate")
@@ -22,9 +34,7 @@ class TestModelAction(common.TransactionCase):
         self.assertEqual(record.stage_id.is_starting, True)
         self.assertFalse(record.date_open)
         record.stage_id = stage
-        self.assertEqual(record.date_open[:-3], datetime.now().strftime(
-            '%Y-%m-%d %H:%M'
-        ))
+        self._assert_date_equal(record.date_open)
 
     def test_case_close(self):
         """Test object close state."""
@@ -37,9 +47,7 @@ class TestModelAction(common.TransactionCase):
         record.stage_id = stage
         stage = self.env.ref('mgmtsystem_action.stage_close')
         record.stage_id = stage
-        self.assertEqual(record.date_closed[:-3], datetime.now().strftime(
-            '%Y-%m-%d %H:%M'
-        ))
+        self._assert_date_equal(record.date_closed)
         try:
             record.write({'stage_id': stage_new.id})
         except exceptions.ValidationError:
