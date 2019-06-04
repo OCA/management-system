@@ -3,12 +3,17 @@
 
 {
     "name": "Management System - Action",
-    "version": "11.0.2.0.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
+    "version": "12.0.1.0.0",
+    "author": "Savoir-faire Linux, "
+              "Camptocamp, "
+              "Odoo Community Association (OCA)",
+    "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": ['mgmtsystem', 'mail'],
+    "depends": [
+        'mgmtsystem',
+        'mail',
+    ],
     "data": [
         'data/mgmtsystem_action_stage.xml',
         'data/automated_reminder.xml',
@@ -17,6 +22,7 @@
         'security/mgmtsystem_action_security.xml',
         'data/action_sequence.xml',
         'views/mgmtsystem_action.xml',
+        'views/mgmtsystem_action_kanban.xml',
         'views/mgmtsystem_action_stage.xml',
         'views/mgmtsystem_action_tag.xml',
         'reports/mgmtsystem_action_report.xml',
