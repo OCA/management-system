@@ -6,21 +6,20 @@
       <field name="arch" type="xml">
         <form string="Task Stage">
           <sheet>
-              <group>
-                  <group>
+              <group name="main">
+                  <group name="name">
                       <field name="name"/>
                   </group>
-                  <group>
+                  <group name="config">
                       <field name="is_starting"/>
                       <field name="is_ending"/>
                       <field name="fold"/>
                       <field name="sequence" groups="base.group_no_one"/>
                   </group>
               </group>
-
-              <group>
-                  <field  name="description" placeholder="Add a description..."
-                          nolabel="1" colspan="2"/>
+              <group name="desc">
+                  <field name="description" placeholder="Add a description..."
+                         nolabel="1" colspan="2"/>
               </group>
           </sheet>
         </form>
