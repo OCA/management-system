@@ -110,7 +110,9 @@ class MgmtsystemNonconformity(models.Model):
         " the progress of this task\n"
         " * Ready for next stage indicates the"
         " task is ready to be pulled to the next stage",
-        required=True, copy=False)
+        required=True,
+        copy=False,
+    )
 
     # 2. Root Cause Analysis
     cause_ids = fields.Many2many(
@@ -209,7 +211,7 @@ class MgmtsystemNonconformity(models.Model):
             'ref': self.env['ir.sequence'].next_by_code(
                 'mgmtsystem.nonconformity')
         })
-        return super(MgmtsystemNonconformity, self).create(vals)
+        return super().create(vals)
 
     @api.multi
     def write(self, vals):
@@ -224,7 +226,7 @@ class MgmtsystemNonconformity(models.Model):
                 if nc.kanban_state != 'normal':
                     vals['kanban_state'] = 'normal'
 
-        result = super(MgmtsystemNonconformity, self).write(vals)
+        result = super().write(vals)
 
         # Set/reset the closing date
         if not is_writing and is_state_change:

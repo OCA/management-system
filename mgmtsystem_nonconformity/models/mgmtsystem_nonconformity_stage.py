@@ -32,8 +32,10 @@ class MgmtsystemNonconformityStage(models.Model):
     is_starting = fields.Boolean(
         string='Is starting Stage',
         help="select stis checkbox if this is the default stage \n"
-             "for new nonconformities")
+             "for new nonconformities",
+    )
     fold = fields.Boolean(
         string='Folded in Kanban',
         help="This stage is folded in the kanban view when there are \n"
-             "no records in that stage to display.")
+             "no records in that stage to display.",
+    )
