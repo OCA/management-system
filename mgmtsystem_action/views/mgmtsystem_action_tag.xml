@@ -15,7 +15,7 @@
         <field name="model">mgmtsystem.action.tag</field>
         <field name="arch" type="xml">
             <form string="Tags">
-                <group>
+                <group name="main">
                     <field name="name"/>
                 </group>
             </form>
