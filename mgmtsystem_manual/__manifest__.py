@@ -3,9 +3,9 @@
 
 {
     "name": "Management System - Manual",
-    "version": "11.0.1.0.0",
+    "version": "12.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
+    "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
     "depends": [
@@ -17,6 +17,5 @@
         'views/mgmtsystem_manual.xml',
         'views/document_page.xml',
     ],
-    "demo": [],
     'installable': True,
 }
