@@ -1,3 +1,5 @@
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import fields, models, api, exceptions, _
 from datetime import datetime, timedelta
@@ -8,6 +10,69 @@ class MgmtsystemAction(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Action"
     _order = "priority desc, sequence, id desc"
+
+    name = fields.Char('Subject', required=True)
+    system_id = fields.Many2one('mgmtsystem.system', 'System')
+    company_id = fields.Many2one(
+        'res.company',
+        'Company',
+        default=lambda self: self._default_company(),
+    )
+    active = fields.Boolean('Active', default=True)
+    priority = fields.Selection([
+        ('0', 'Low'),
+        ('1', 'Normal'),
+    ], default='0', index=True, string="Priority")
+    sequence = fields.Integer(
+        'Sequence',
+        index=True, default=10,
+        help="Gives the sequence order when displaying a list of actions."
+    )
+    date_deadline = fields.Date('Deadline')
+    date_open = fields.Datetime(
+        'Opening Date',
+        readonly=True, oldname='opening_date'
+    )
+    date_closed = fields.Datetime('Closed Date', readonly=True)
+    number_of_days_to_open = fields.Integer(
+        '# of days to open',
+        compute='_compute_number_of_days_to_open',
+        store=True,
+    )
+    number_of_days_to_close = fields.Integer(
+        '# of days to close',
+        compute='_compute_number_of_days_to_close',
+        store=True,
+    )
+    reference = fields.Char(
+        'Reference',
+        required=True,
+        readonly=True,
+        default=lambda self: _('New'),
+    )
+    user_id = fields.Many2one(
+        'res.users',
+        'Responsible',
+        default=lambda self: self._default_owner(),
+        required=True,
+    )
+    description = fields.Html('Description')
+    type_action = fields.Selection([
+        ('immediate', 'Immediate Action'),
+        ('correction', 'Corrective Action'),
+        ('prevention', 'Preventive Action'),
+        ('improvement', 'Improvement Opportunity')
+    ], 'Response Type', required=True)
+    stage_id = fields.Many2one(
+        'mgmtsystem.action.stage',
+        'Stage',
+        track_visibility='onchange',
+        index=True,
+        copy=False,
+        default=lambda self: self._default_stage(),
+        group_expand='_stage_groups',
+    )
+    tag_ids = fields.Many2many('mgmtsystem.action.tag', string='Tags')
 
     def _default_company(self):
         return self.env.user.company_id
@@ -42,80 +107,6 @@ class MgmtsystemAction(models.Model):
             action.number_of_days_to_close_open = action._elapsed_days(
                 action.create_date,
                 action.date_closed)
-
-    name = fields.Char('Subject', required=True)
-    active = fields.Boolean('Active', default=True)
-
-    priority = fields.Selection(
-        [
-            ('0', 'Low'),
-            ('1', 'Normal'),
-        ], default='0', index=True, string="Priority")
-
-    sequence = fields.Integer(
-        'Sequence',
-        index=True, default=10,
-        help="Gives the sequence order when displaying a list of actions."
-    )
-
-    date_deadline = fields.Date('Deadline')
-
-    date_open = fields.Datetime(
-        'Opening Date',
-        readonly=True, oldname='opening_date'
-    )
-
-    date_closed = fields.Datetime('Closed Date', readonly=True)
-
-    number_of_days_to_open = fields.Integer(
-        '# of days to open',
-        compute=_compute_number_of_days_to_open,
-        store=True)
-    number_of_days_to_close = fields.Integer(
-        '# of days to close',
-        compute=_compute_number_of_days_to_close,
-        store=True)
-
-    reference = fields.Char(
-        'Reference',
-        required=True,
-        readonly=True,
-        default=lambda self: _('New'))
-
-    user_id = fields.Many2one(
-        'res.users',
-        'Responsible',
-        default=_default_owner,
-        required=True,
-    )
-
-    description = fields.Html('Description')
-
-    type_action = fields.Selection(
-        [
-            ('immediate', 'Immediate Action'),
-            ('correction', 'Corrective Action'),
-            ('prevention', 'Preventive Action'),
-            ('improvement', 'Improvement Opportunity')
-        ], 'Response Type', required=True)
-
-    system_id = fields.Many2one('mgmtsystem.system', 'System')
-
-    company_id = fields.Many2one(
-        'res.company',
-        'Company',
-        default=_default_company,
-    )
-
-    stage_id = fields.Many2one(
-        'mgmtsystem.action.stage',
-        'Stage',
-        track_visibility='onchange', index=True,
-        copy=False,
-        default=_default_stage, group_expand='_stage_groups',
-    )
-
-    tag_ids = fields.Many2many('mgmtsystem.action.tag', string='Tags')
 
     @api.model
     def _stage_groups(self, stages=None, domain=None, order=None):
@@ -153,7 +144,7 @@ class MgmtsystemAction(models.Model):
 
     def get_action_url(self):
         """Return action url to be used in email templates."""
-        base_url = self.env['ir.config_parameter'].get_param(
+        base_url = self.env['ir.config_parameter'].sudo().get_param(
             'web.base.url',
             default='http://localhost:8069'
         )
