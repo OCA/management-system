@@ -19,8 +19,7 @@ class MgmtsystemNonconformityCause(models.Model):
         'Sequence',
         help="Defines the order to present items",
     )
-    parent_left = fields.Integer('Parent Left', index=True)
-    parent_right = fields.Integer('Parent Right', index=True)
+    parent_path = fields.Char(index=True)
     parent_id = fields.Many2one(
         'mgmtsystem.nonconformity.cause',
         'Group',
@@ -45,7 +44,7 @@ class MgmtsystemNonconformityCause(models.Model):
 
     @api.constrains("parent_id")
     def _check_recursion(self):
-        if not super(MgmtsystemNonconformityCause, self)._check_recursion():
+        if not super()._check_recursion():
             raise exceptions.ValidationError(
                 _("Error! Cannot create recursive cycle.")
             )

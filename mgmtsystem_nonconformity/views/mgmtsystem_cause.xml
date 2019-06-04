@@ -35,7 +35,6 @@
     <record id="view_mgmtsystem_nonconformity_cause_filter" model="ir.ui.view">
       <field name="name">Causes</field>
       <field name="model">mgmtsystem.nonconformity.cause</field>
-      <field name="type">search</field>
       <field name="arch" type="xml">
         <search string="Causes">
           <field name="parent_id"/>
