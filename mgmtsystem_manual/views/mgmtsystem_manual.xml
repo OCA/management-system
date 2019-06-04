@@ -32,5 +32,11 @@
         <field name="domain" eval="[('parent_id','ilike', 'manual')]"/>
     </record>
 
-    <menuitem id="menu_mgmtsystem_manuals_manuals" name="Manuals" action="action_manuals" parent="mgmtsystem.menu_mgmtsystem_manuals" sequence="0" groups="mgmtsystem.group_mgmtsystem_viewer"/>
+    <menuitem id="menu_mgmtsystem_manuals_manuals"
+              name="Manuals"
+              action="action_manuals"
+              parent="mgmtsystem.menu_mgmtsystem_manuals"
+              sequence="0"
+              groups="mgmtsystem.group_mgmtsystem_viewer"
+              />
 </odoo>
