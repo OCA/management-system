@@ -5,7 +5,7 @@
       name="Management System"
       web_icon="mgmtsystem,static/description/icon.png"
       sequence="150"
-      groups="mgmtsystem.group_mgmtsystem_manager,group_mgmtsystem_viewer"
+      groups="group_mgmtsystem_manager,group_mgmtsystem_viewer"
       />
 
     <menuitem
@@ -29,10 +29,10 @@
       parent="menu_mgmtsystem_root"
       groups="group_mgmtsystem_viewer"/>
 
-      <menuitem
-        id="menu_mgmtsystem_configuration"
-        name="Configuration"
-        parent="mgmtsystem.menu_mgmtsystem_root"
-        groups="group_mgmtsystem_manager"
-        sequence="100"/>
+    <menuitem
+      id="menu_mgmtsystem_configuration"
+      name="Configuration"
+      parent="menu_mgmtsystem_root"
+      groups="group_mgmtsystem_manager"
+      sequence="100"/>
 </odoo>
