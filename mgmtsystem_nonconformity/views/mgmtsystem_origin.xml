@@ -36,7 +36,6 @@
     <record id="view_mgmtsystem_nonconformity_origin_filter" model="ir.ui.view">
       <field name="name">Origins</field>
       <field name="model">mgmtsystem.nonconformity.origin</field>
-      <field name="type">search</field>
       <field name="arch" type="xml">
         <search string="Origins">
           <field name="parent_id"/>
