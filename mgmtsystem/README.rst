@@ -27,12 +27,12 @@ Management System
 
 This module is the basis of any management system applications:
 
-* audit reports,
-* nonconformities,
-* immediate actions,
-* preventive actions,
-* corrective actions,
-* improvement opportunities.
+* audit reports
+* nonconformities
+* immediate actions
+* preventive actions
+* corrective actions
+* improvement opportunities
 
 **Table of contents**
 
@@ -42,7 +42,13 @@ This module is the basis of any management system applications:
 Configuration
 =============
 
-Go to "Management System" app -> Configuration
+**Manage systems**
+
+Go to "Management System" app -> Configuration -> Systems
+
+**Manage applications**
+
+Go to "Management System" app -> Configuration -> Settings
 
 Bug Tracker
 ===========
