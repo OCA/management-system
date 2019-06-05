@@ -1,6 +1,5 @@
-
 from odoo.tests import common
-from datetime import datetime
+from odoo import fields
 
 
 class TestModelReview(common.TransactionCase):
@@ -10,7 +9,7 @@ class TestModelReview(common.TransactionCase):
         """Test object creation."""
         record = self.env['mgmtsystem.review'].create({
             "name": "SampleReview",
-            "date": datetime.now()
+            "date": fields.Datetime.now()
         })
 
         self.assertEqual(record.name, "SampleReview")
