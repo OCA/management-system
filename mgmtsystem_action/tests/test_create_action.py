@@ -1,7 +1,17 @@
 
 from odoo import exceptions
 from odoo.tests import common
-from datetime import datetime, timedelta
+from datetime import datetime
+import mock
+import time
+
+
+def freeze_time(dt_tuple):
+    mock_time = mock.Mock()
+    mock_time.return_value = time.mktime(
+        datetime(*dt_tuple).timetuple()
+    )
+    return mock_time
 
 
 class TestModelAction(common.SavepointCase):
@@ -12,6 +22,10 @@ class TestModelAction(common.SavepointCase):
         super().setUpClass()
         # disable tracking test suite wise
         cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.record = cls.env['mgmtsystem.action'].create({
+            "name": "SampleAction",
+            "type_action": "immediate"
+        })
 
     def _assert_date_equal(self, val, expected=None):
         expected = expected or datetime.now()
@@ -23,76 +37,63 @@ class TestModelAction(common.SavepointCase):
     def test_create_action(self):
         """Test object creation."""
         stage = self.env.ref('mgmtsystem_action.stage_open')
-        record = self.env['mgmtsystem.action'].create({
-            "name": "SampleAction",
-            "type_action": "immediate"
-        })
-        self.assertEqual(record.name, "SampleAction")
-        self.assertNotEqual(record.reference, "NEW")
-        self.assertEqual(record.type_action, "immediate")
-        self.assertEqual(record.stage_id.name, "Draft")
-        self.assertEqual(record.stage_id.is_starting, True)
-        self.assertFalse(record.date_open)
-        record.stage_id = stage
-        self._assert_date_equal(record.date_open)
+        self.assertEqual(self.record.name, "SampleAction")
+        self.assertNotEqual(self.record.reference, "NEW")
+        self.assertEqual(self.record.type_action, "immediate")
+        self.assertEqual(self.record.stage_id.name, "Draft")
+        self.assertEqual(self.record.stage_id.is_starting, True)
+        self.assertFalse(self.record.date_open)
+        self.record.stage_id = stage
+        self._assert_date_equal(self.record.date_open)
 
     def test_case_close(self):
         """Test object close state."""
-        record = self.env['mgmtsystem.action'].create({
-            "name": "SampleAction",
-            "type_action": "immediate",
-        })
         stage = self.env.ref('mgmtsystem_action.stage_open')
         stage_new = self.env.ref('mgmtsystem_action.stage_draft')
-        record.stage_id = stage
+        self.record.stage_id = stage
         stage = self.env.ref('mgmtsystem_action.stage_close')
-        record.stage_id = stage
-        self._assert_date_equal(record.date_closed)
+        self.record.stage_id = stage
+        self._assert_date_equal(self.record.date_closed)
         try:
-            record.write({'stage_id': stage_new.id})
+            self.record.write({'stage_id': stage_new.id})
         except exceptions.ValidationError:
             self.assertTrue(True)
         stage = self.env.ref('mgmtsystem_action.stage_close')
         try:
-            record.write({'stage_id': stage.id})
+            self.record.write({'stage_id': stage.id})
         except exceptions.ValidationError:
             self.assertTrue(True)
 
     def test_get_action_url(self):
         """Test if action url start with http."""
-        record = self.env['mgmtsystem.action'].create({
-            "name": "SampleAction",
-            "type_action": "immediate",
-        })
-
-        ret = record.get_action_url()
-        self.assertEqual(isinstance(ret, str), True)
-        self.assertEqual(ret.startswith('http'), True)
+        url = self.record.get_action_url()
+        self.assertEqual(url.startswith('http'), True)
+        self.assertIn(
+            '&id={}&model={}'.format(self.record.id, self.record._name), url
+        )
 
     def test_process_reminder_queue(self):
         """Check if process_reminder_queue work when days reminder are 10."""
-        record = self.env['mgmtsystem.action'].create({
-            "name": "SampleAction",
-            "type_action": "immediate",
-            "date_deadline": datetime.now() + timedelta(days=10)
+        self.record.write({
+            'date_deadline': '2019-06-15',  # 10 days from now
+            'stage_id': self.env.ref('mgmtsystem_action.stage_open').id,
         })
-        self.assertTrue(record.process_reminder_queue())
+        with mock.patch('time.time', freeze_time((2019, 6, 5))):
+            tmpl_model = self.env['mail.template']
+            with mock.patch.object(type(tmpl_model), 'send_mail') as mocked:
+                self.env['mgmtsystem.action'].process_reminder_queue()
+                mocked.assert_called_with(self.record.id)
 
     def test_stage_groups(self):
         """Check if stage_groups return all stages."""
-        record = self.env['mgmtsystem.action'].create({
-            "name": "SampleAction",
-            "type_action": "immediate",
-        })
         stage_ids = self.env['mgmtsystem.action.stage'].search([])
-        stages_found = record._stage_groups(stage_ids)
+        stages_found = self.record._stage_groups(stage_ids)
         state = (len(stage_ids) == len(stages_found[0]))
         self.assertFalse(state)
 
     def test_send_mail(self):
         """Check if mail send action work."""
-        record = self.env['mgmtsystem.action'].create({
-            "name": "SampleAction",
-            "type_action": "immediate",
-        })
-        self.assertTrue(record.send_mail_for_action(record))
+        tmpl_model = self.env['mail.template']
+        with mock.patch.object(type(tmpl_model), 'send_mail') as mocked:
+            self.env['mgmtsystem.action'].send_mail_for_action(self.record)
+            mocked.assert_called_with(self.record.id, force_send=True)
