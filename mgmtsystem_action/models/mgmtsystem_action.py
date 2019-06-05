@@ -161,14 +161,17 @@ class MgmtsystemAction(models.Model):
         """Notify user when we are 10 days close to a deadline."""
         cur_date = datetime.now().date() + timedelta(days=reminder_days)
         stage_close = self.env.ref('mgmtsystem_action.stage_close')
-        action_ids = self.search(
-            [("stage_id", "!=", stage_close.id),
-             ("date_deadline", "=", cur_date)])
-        template = self.env.ref(
-            'mgmtsystem_action.action_email_template_reminder_action')
-        for action in action_ids:
-            template.send_mail(action.id)
-        return True
+        actions = self.search([
+            ("stage_id", "!=", stage_close.id),
+            ("date_deadline", "=", cur_date)
+        ])
+        if actions:
+            template = self.env.ref(
+                'mgmtsystem_action.action_email_template_reminder_action')
+            for action in actions:
+                template.send_mail(action.id)
+            return True
+        return False
 
     @api.model
     def _get_stage_open(self):
@@ -176,9 +179,9 @@ class MgmtsystemAction(models.Model):
 
     @api.multi
     def case_open(self):
-        """ Opens case """
-        for case in self:
-            case.write({
-                'active': True,
-                'stage_id': case._get_stage_open().id})
-        return True
+        """Opens case."""
+        # TODO smk: is this used?
+        return self.write({
+            'active': True,
+            'stage_id': self._get_stage_open().id
+        })
