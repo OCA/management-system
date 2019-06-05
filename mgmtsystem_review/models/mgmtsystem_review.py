@@ -54,11 +54,9 @@ class MgmtsystemReview(models.Model):
 
     @api.model
     def create(self, vals):
-        vals.update({
-            'reference': self.env['ir.sequence'].next_by_code(
-                'mgmtsystem.review')
-        })
-        return super(MgmtsystemReview, self).create(vals)
+        vals['reference'] = self.env['ir.sequence'].next_by_code(
+            'mgmtsystem.review')
+        return super().create(vals)
 
     @api.multi
     def button_close(self):
