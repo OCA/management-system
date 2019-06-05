@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_mgmtsystem_configuration" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.mgmtsystem</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="priority" eval="95"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" 
+                     data-string="Management System" string="Management System"
+                     data-key="mgmtsystem"
+                     groups="mgmtsystem.group_mgmtsystem_user_manager">
+
+                    <h2>Management Systems</h2>
+                    <div class="row mt16 o_settings_container" id="mgmtsystem_systems_setting">
+
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_quality"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_quality"/>
+                                <div class="text-muted">
+                                    Provide Quality management tools (ISO 9001)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_environment"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_environment"/>
+                                <div class="text-muted">
+                                    Provide Environment management tools (ISO 14001)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_health_safety"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_health_safety"/>
+                                <div class="text-muted">
+                                    Provide Health &amp; Safety management tools (OHSAS 18001)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_information_security"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_information_security"/>
+                                <div class="text-muted">
+                                    Provide Information Security management tools (ISO 27001)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h2>Applications</h2>
+                    <div class="row mt16 o_settings_container" id="mgmtsystem_applications_setting">
+
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_action" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_action"/>
+                                <div class="text-muted">
+                                    Manage immediate, corrective, and preventive actions and improvement opportunities
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_nonconformity" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_nonconformity"/>
+                                <div class="text-muted">
+                                    Manage nonconformities analysis, planning and resolution
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_claim" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_claim"/>
+                                <div class="text-muted">
+                                    Manage customer claims as nonconformities
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_audit" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_audit"/>
+                                <div class="text-muted">
+                                    Manage audits and verification lists
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_review" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_review"/>
+                                <div class="text-muted">
+                                    Top management reviews
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_document_page_approval" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_document_page_approval"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Manuals</h2>
+                    <div class="row mt16 o_settings_container" id="mgmtsystem_manuals_setting">
+
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_quality_manual" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_quality_manual"/>
+                                <div class="text-muted">
+                                    Provide a Quality Manual template based on the ISO 9001:2008 standard
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_environment_manual" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_environment_manual"/>
+                                <div class="text-muted">
+                                    Provide an Environment Manual template based on the ISO 14001:2004 standard
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_health_safety_manual" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_health_safety_manual"/>
+                                <div class="text-muted">
+                                    Provide a Health &amp; Safety Manual template based on the OHSAS 18001 standard
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_information_security_manual" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_information_security_manual"/>
+                                <div class="text-muted">
+                                    Provide an Information Security Manual template based on ISO 27001
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Documentation</h2>
+                    <div class="row mt16 o_settings_container" id="mgmtsystem_documentation_setting">
+
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_procedure" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_procedure"/>
+                                <div class="text-muted">
+                                    Provide a Procedure documentation category and template
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_environmental_aspect" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_environmental_aspect"/>
+                                <div class="text-muted">
+                                    Provide an Envioronmental Aspect documentation category and template
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_hazard" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_hazard"/>
+                                <div class="text-muted">
+                                    Provide a Hazards documentation category and template
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_mgmtsystem_security_event" class="oe_inline"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_mgmtsystem_security_event"/>
+                                <div class="text-muted">
+                                    Provide a Feared Event documentation category and template
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_mgmtsystem_configuration" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module': 'mgmtsystem'}</field>
+    </record>
+
+    <menuitem id="menu_mgmtsystem_settings"
+              name="Settings"
+              parent="menu_mgmtsystem_configuration"
+              sequence="0"
+              action="action_mgmtsystem_configuration"/>
+</odoo>
