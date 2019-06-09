@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo12-addon-mgmtsystem',
+        'odoo12-addon-mgmtsystem_manual',
         'odoo12-addon-mgmtsystem_survey',
     ],
     classifiers=[
