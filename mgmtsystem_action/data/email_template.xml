@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Email template for Action Reminders -->
+    <data noupdate="1">
+        <record id="email_template_new_action_reminder" model="mail.template">
+            <field name="name">Action Assigned</field>
+            <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost'}</field>
+            <field name="subject">${object.name}</field>
+            <field name="email_to">${object.user_id.email}</field>
+            <field name="model_id" ref="model_mgmtsystem_action"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.create_uid.partner_id.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+<p>Hello ${object.user_id.name},</p>
+
+<p>A new action has been assigned to you: <b><a href="${object.get_action_url()}">${object.name}</a></b></p>
+<p><b>Deadline: </b>${object.date_deadline or ''}</p>
+
+<p>Please, use the action stages and messages to log progress.</p>
+
+<p>
+  Thank you<br>
+  --<br>
+  Odoo
+</p>
+                ]]>
+            </field>
+        </record>
+
+        <!-- Email template for Action Reminders -->
+        <record id="action_email_template_reminder_action" model="mail.template">
+            <field name="name">Reminder to Responsible</field>
+            <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost'}</field>
+            <field name="subject">Reminder on Action: "${object.name}"</field>
+            <field name="email_to">${object.user_id.email}</field>
+            <field name="model_id" ref="model_mgmtsystem_action"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.create_uid.partner_id.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+<p>Hello ${object.user_id.name},</p>
+
+<p>
+  This is an automated message to remind you that the
+  following action is due to be completed in 10 days (${object.date_deadline}):
+
+  <b><a href="${object.get_action_url()}">${object.name}</a></b>
+</p>
+
+<p>
+  Thank you and have a nice day.<br />
+  --<br />
+  Odoo
+</p>
+                ]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>
