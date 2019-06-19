@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+      <record id="document_page_procedure" model="document.page">
+        <field name="name">Procedure</field>
+        <field name="parent_id" ref="document_page_group_procedure"/>
+        <field name="type">content</field>
+        <field name="template">
+<![CDATA[
+<h1>Objective</h1>
+
+<h1>Application Domain</h1>
+
+<h1>Terms and Definitions</h1>
+
+<h1>Responsibilities</h1>
+
+<h1>Process</h1>
+]]>
+        </field>
+      </record>
+
+</odoo>
