@@ -3,7 +3,7 @@
 
 {
     'name': 'Quality Manual',
-    'version': '11.0.1.0.0',
+    'version': '12.0.1.0.0',
     'category': 'Management System',
     'author': "OpenERP SA, Odoo Community Association (OCA)",
     'website': 'http://odoo.com',
