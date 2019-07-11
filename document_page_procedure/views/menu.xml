@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <!-- action added in views -->
+  <menuitem
+    id="menu_mgmtsystem_manuals_procedures"
+    name="Procedures"
+    parent="mgmtsystem.menu_mgmtsystem_manuals"
+    sequence="10"
+    groups="base.group_user"
+    />
+
+</odoo>

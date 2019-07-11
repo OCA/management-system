@@ -23,12 +23,7 @@
         <field name="act_window_id" ref="action_procedures"/>
     </record>
 
-    <menuitem id="menu_mgmtsystem_manuals_procedures"
-        name="Procedures"
-        action="action_procedures"
-        parent="mgmtsystem.menu_mgmtsystem_manuals"
-        sequence="10"
-        groups="base.group_user"
-        />
+    <!-- add action only -->
+    <menuitem id="menu_mgmtsystem_manuals_procedures" action="action_procedures" />
 
 </odoo>

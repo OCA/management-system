@@ -13,9 +13,10 @@
         'mgmtsystem',
     ],
     "data": [
+        'views/menu.xml',
+        # keep this after menu item creation
         'data/document_page.xml',
         'views/document_page_work_instructions.xml',
     ],
-    "demo": [],
     'installable': True,
 }

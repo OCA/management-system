@@ -23,11 +23,7 @@
             <field name="act_window_id" ref="work_instructions_action"/>
         </record>
 
-    <menuitem id="menu_mgmtsystem_manuals_work_instructions"
-      name="Work Instructions"
-      action="work_instructions_action"
-      parent="mgmtsystem.menu_mgmtsystem_manuals"
-      sequence="90"
-      groups="base.group_user"/>
+    <!-- add action only -->
+    <menuitem id="menu_mgmtsystem_manuals_work_instructions" action="work_instructions_action"/>
 
 </odoo>

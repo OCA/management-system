@@ -5,6 +5,7 @@
     <record id="document_page_group_work_instructions" model="document.page">
       <field name="name">Work Instructions</field>
       <field name="type">category</field>
+      <field name="menu_id" ref="menu_mgmtsystem_manuals_work_instructions" />
       <field name="template">
         <![CDATA[
 <h1>Step 1</h1>

@@ -12,6 +12,8 @@
         'document_page_work_instruction'
     ],
     "data": [
+        'views/menu.xml',
+        # keep this after menu item creation
         'data/document_page_procedure.xml',
         'views/document_page_procedure.xml',
     ],

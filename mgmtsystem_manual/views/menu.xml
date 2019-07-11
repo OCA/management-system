@@ -6,4 +6,12 @@
               parent="mgmtsystem.menu_mgmtsystem_configuration"
               sequence="20"
               groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+    <!-- action added in views -->
+    <menuitem id="menu_mgmtsystem_manuals_manuals"
+              name="Manuals"
+              parent="mgmtsystem.menu_mgmtsystem_manuals"
+              sequence="0"
+              groups="mgmtsystem.group_mgmtsystem_viewer"
+              />
 </odoo>

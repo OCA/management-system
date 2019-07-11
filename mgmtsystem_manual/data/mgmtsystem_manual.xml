@@ -3,5 +3,6 @@
     <record model="document.page" id="manuals">
       <field name="name">Manuals</field>
       <field name="type">category</field>
+      <field name="menu_id" ref="menu_mgmtsystem_manuals_manuals" />
     </record>
 </odoo>
