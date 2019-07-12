@@ -1,15 +1,9 @@
 
 from odoo import exceptions
 from odoo.tests import common
-from datetime import datetime, timedelta
+from datetime import datetime
+from freezegun import freeze_time
 import mock
-import time
-
-
-def freeze_time(dt):
-    mock_time = mock.Mock()
-    mock_time.return_value = time.mktime(dt.timetuple())
-    return mock_time
 
 
 class TestModelAction(common.SavepointCase):
@@ -70,18 +64,17 @@ class TestModelAction(common.SavepointCase):
             '&id={}&model={}'.format(self.record.id, self.record._name), url
         )
 
+    @freeze_time('2019-06-05')
     def test_process_reminder_queue(self):
         """Check if process_reminder_queue work when days reminder are 10."""
-        ten_days_date = datetime.now().date() + timedelta(days=10)
         self.record.write({
-            'date_deadline': ten_days_date,  # 10 days from now
+            'date_deadline': '2019-06-15',  # 10 days from now
             'stage_id': self.env.ref('mgmtsystem_action.stage_open').id,
         })
-        with mock.patch('time.time', freeze_time(ten_days_date)):
-            tmpl_model = self.env['mail.template']
-            with mock.patch.object(type(tmpl_model), 'send_mail') as mocked:
-                self.env['mgmtsystem.action'].process_reminder_queue()
-                mocked.assert_called_with(self.record.id)
+        tmpl_model = self.env['mail.template']
+        with mock.patch.object(type(tmpl_model), 'send_mail') as mocked:
+            self.env['mgmtsystem.action'].process_reminder_queue()
+            mocked.assert_called_with(self.record.id)
 
     def test_stage_groups(self):
         """Check if stage_groups return all stages."""
