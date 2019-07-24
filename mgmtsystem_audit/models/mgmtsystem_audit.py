@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -19,7 +18,7 @@ class MgmtsystemAudit(models.Model):
         size=64,
         required=True,
         readonly=True,
-        default='NEW'
+        default='NEW',
     )
     date = fields.Datetime('Date')
     line_ids = fields.One2many(
@@ -143,7 +142,7 @@ class MgmtsystemAudit(models.Model):
     @api.multi
     def button_close(self):
         """When Audit is closed, post a message to followers' chatter."""
-        self.message_post(_("Audit closed"))
+        self.message_post(body=_("Audit closed"))
         return self.write({'state': 'done',
                            'closing_date': fields.Datetime.now()})
 
