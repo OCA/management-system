@@ -90,7 +90,7 @@
                 <search string="Audits">
                     <group>
                         <filter name="current" icon="terp-document-new" domain="[('state','=','open')]" string="Open" help="Open Audits"/>
-                        <filter icon="terp-camera_test" domain="[('state','=','done')]" string="Closed" help="Closed Audits"/>
+                        <filter name="closed" icon="terp-camera_test" domain="[('state','=','done')]" string="Closed" help="Closed Audits"/>
                         <separator orientation="vertical"/>
                         <field name="name"/>
                         <field name="date"/>
@@ -189,7 +189,7 @@
             <field name="arch" type="xml">
 
                 <notebook position="inside">
-                    <page string="Related Audits" groups="base.group_extended,mgmtsystem.group_mgmtsystem_auditor">
+                    <page string="Related Audits" groups="mgmtsystem.group_mgmtsystem_auditor">
                         <field name="audit_ids" colspan="4" nolabel="1"/>
                     </page>
                 </notebook>
