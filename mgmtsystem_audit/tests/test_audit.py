@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -14,7 +13,7 @@ class TestModelAudit(common.TransactionCase):
 
         ret = record.get_action_url()
 
-        self.assertEqual(isinstance(ret, basestring), True)
+        self.assertEqual(isinstance(ret, str), True)
         self.assertEqual(ret.startswith('http'), True)
 
     def test_button_close(self):
