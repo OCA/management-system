@@ -37,9 +37,9 @@
           </group>
           <newline/>
           <group expand="0" string="Group By...">
-            <filter string="Accepted" context="{'group_by':'acceptability'}"/>
+            <filter name="group_by_acceptability" string="Accepted" context="{'group_by':'acceptability'}"/>
             <separator orientation="vertical"/>
-            <filter string="Type" context="{'group_by':'type_id'}"/>
+            <filter name="group_by_type_id" string="Type" context="{'group_by':'type_id'}"/>
           </group>
         </search>
       </field>
@@ -50,7 +50,8 @@
       <field name="model">mgmtsystem.hazard</field>
       <field name="arch" type="xml">
         <form string="Hazard">
-          <group colspan="4" col="4">
+          <sheet>
+            <group colspan="4" col="4">
             <field name="name"/>
             <field name="type_id"/>
             <field name="company_id" group="base.group_multi_company"/>
@@ -58,7 +59,7 @@
             <field name="hazard_id"/>
             <field name="origin_id"/>
           </group>
-          <notebook name="mgmtsystem_hazard" colspan="4">
+            <notebook name="mgmtsystem_hazard" colspan="4">
             <page string="Analysis">
               <group>
                 <field name="department_id"/>
@@ -73,6 +74,7 @@
               <field name="test_ids" nolabel="1"/>
             </page>
           </notebook>
+          </sheet>
           <div class="oe_chatter">
               <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
               <field name="message_ids" widget="mail_thread"/>
