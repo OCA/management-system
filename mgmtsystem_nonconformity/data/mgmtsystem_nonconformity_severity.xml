@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="nonconformity_severity_maj" model="mgmtsystem.nonconformity.severity">
+            <field name="name">Major</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="nonconformity_severity_min" model="mgmtsystem.nonconformity.severity">
+            <field name="name">Minor</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="nonconformity_severity_no" model="mgmtsystem.nonconformity.severity">
+            <field name="name">Unfounded</field>
+            <field name="active" eval="True"/>
+        </record>
+
+    </data>
+</odoo>
