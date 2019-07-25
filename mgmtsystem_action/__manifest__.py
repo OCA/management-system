@@ -22,7 +22,6 @@
         'security/mgmtsystem_action_security.xml',
         'data/action_sequence.xml',
         'views/mgmtsystem_action.xml',
-        'views/mgmtsystem_action_kanban.xml',
         'views/mgmtsystem_action_stage.xml',
         'views/mgmtsystem_action_tag.xml',
         'reports/mgmtsystem_action_report.xml',
