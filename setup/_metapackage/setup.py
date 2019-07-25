@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo12-addon-mgmtsystem',
         'odoo12-addon-mgmtsystem_action',
         'odoo12-addon-mgmtsystem_manual',
+        'odoo12-addon-mgmtsystem_nonconformity',
         'odoo12-addon-mgmtsystem_survey',
     ],
     classifiers=[
