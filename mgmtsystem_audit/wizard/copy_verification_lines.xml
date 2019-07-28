@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="copy_verification_lines_form_view" model="ir.ui.view">
+        <field name="name">copy.verification.lines.form</field>
+        <field name="model">copy.verification.lines</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Copy Verification Lines">
+                <field name="audit_src" domain="[('state','=','done')]"/>
+                <group colspan="2" col="3">
+                    <button string="_Cancel" special="cancel"/>
+                    <button string="_Copy" name="copyVerificationLines" type="object"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <act_window name="Copy Verification Lines"
+            res_model="copy.verification.lines"
+            src_model="mgmtsystem.audit"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="copy_verification_lines_act_window"/>
+</odoo>
