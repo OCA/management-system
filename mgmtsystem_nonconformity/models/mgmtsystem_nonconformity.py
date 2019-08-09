@@ -9,7 +9,7 @@ class MgmtsystemNonconformity(models.Model):
 
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity"
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = "create_date desc"
 
     @api.model
