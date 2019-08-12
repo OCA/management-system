@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Review Lines -->
+
+    <record id="view_mgmtsystem_review_line_tree" model="ir.ui.view">
+        <field name="name">mgmtsystem.review.line.tree</field>
+        <field name="model">mgmtsystem.review.line</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Review Lines">
+                <field name="name"/>
+                <field name="type"/>
+                <field name="action_id" attrs="{'invisible' : [('type', '!=', 'action')]}"/>
+                <field name="nonconformity_id" attrs="{'invisible' : [('type', '!=', 'nonconformity')]}"/>
+                <field name="decision"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_review_line_filter" model="ir.ui.view">
+        <field name="name">mgmtsystem.review.line.filter</field>
+        <field name="model">mgmtsystem.review.line</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Review Lines">
+                <field name="name"/>
+                <field name="type"/>
+                <field name="action_id"/>
+                <field name="nonconformity_id"/>
+                <field name="decision"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_review_line_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.review.line.form</field>
+        <field name="type">form</field>
+        <field name="model">mgmtsystem.review.line</field>
+        <field name="arch" type="xml">
+            <form string="Review Line">
+                <group colspan="4" col="4">
+                    <field name="name"/>
+                    <field name="type"/>
+                    <newline/>
+                    <field name="action_id" attrs="{'invisible' : [('type', '!=', 'action')]}"/>
+                    <field name="nonconformity_id" attrs="{'invisible' : [('type', '!=', 'nonconformity')]}"/>
+                    <newline/>
+                    <field name="decision"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="open_mgmtsystem_review_line_list" model="ir.actions.act_window">
+        <field name="name">Review Lines</field>
+        <field name="res_model">mgmtsystem.review.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Reviews -->
+
+    <record id="view_mgmtsystem_review_tree" model="ir.ui.view">
+        <field name="name">mgmtsystem.review.tree</field>
+        <field name="model">mgmtsystem.review</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Reviews">
+                <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
+                <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
+                <field name="reference"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <!-- Invisible fields below are to allow their use in domains of this view -->
+                <field name="state" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_review_filter" model="ir.ui.view">
+        <field name="name">mgmtsystem.review.filter</field>
+        <field name="model">mgmtsystem.review</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Reviews">
+                <group>
+                    <filter name="current" domain="[('state','=','open')]" string="Open" help="Open Reviews"/>
+                    <filter name="closed" domain="[('state','=','done')]" string="Closed" help="Closed Reviews"/>
+                    <separator orientation="vertical"/>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="reference"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_review_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.review.form</field>
+        <field name="model">mgmtsystem.review</field>
+        <field name="arch" type="xml">
+            <form string="Review">
+                <header>
+                    <button name="button_close" string="Close" states="open" type="object"/>
+                    <field name="state" widget="statusbar" select="1" readonly="1"/>
+                </header>
+                <sheet>
+                    <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
+                        </group>
+                        <group>
+                            <field name="reference"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Participants">
+                            <field name="user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"
+                                   options="{'no_create': True}"
+                                   context="{'tree_view_ref': 'mgmtsystem_review.mgmtsystem_review_res_users_x2m_tree'}"/>
+                        </page>
+                        <page string="Inputs">
+                            <group colspan="4">
+                                <separator string="Policy" colspan="2"/>
+                                <field name="policy" attrs="{'readonly':[('state','=','done')]}" colspan="2" nolabel="1"/>
+                                <separator string="Changes affecting the management systems" colspan="2"/>
+                                <field name="changes" attrs="{'readonly':[('state','=','done')]}" colspan="2" nolabel="1"/>
+                            </group>
+                            <newline/>
+                            <separator string="Survey Answers" colspan="4"/>
+                            <field name="response_ids" colspan="4" nolabel="1" attrs="{'readonly':[('state','=','done')]}">
+                                <tree create="true">
+                                    <field name="survey_id"/>
+                                    <field name="date_create"/>
+                                    <field name="deadline"/>
+                                    <field name="partner_id"/>
+                                    <field name="email"/>
+                                    <field name="type"/>
+                                    <field name="state"/>
+                                    <field name="test_entry" invisible="True"/>
+                                    <field name="quizz_score" groups="base.group_no_one"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Lines">
+                            <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                        </page>
+                        <page string="Conclusion">
+                            <field name="conclusion" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_review_calendar" model="ir.ui.view">
+        <field name="name">mgmtsystem.review.calendar</field>
+        <field name="model">mgmtsystem.review</field>
+        <field name="type">calendar</field>
+        <field eval="2" name="priority"/>
+        <field name="arch" type="xml">
+            <calendar color="name" date_start="date" string="Reviews">
+                <field name="name"/>
+                <field name="user_ids"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="open_mgmtsystem_review_list" model="ir.actions.act_window">
+        <field name="name">Reviews</field>
+        <field name="res_model">mgmtsystem.review</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="view_id" ref="view_mgmtsystem_review_tree"/>
+        <field name="search_view_id" ref="view_mgmtsystem_review_filter"/>
+        <field name="context">{"search_default_current":1}</field>
+    </record>
+
+    <menuitem id="menu_open_review"
+        action="open_mgmtsystem_review_list"
+        parent="mgmtsystem.menu_mgmtsystem_main"
+        sequence="50"
+        groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+</odoo>
