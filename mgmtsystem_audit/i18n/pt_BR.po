@@ -10,15 +10,16 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-15 18:09+0000\n"
-"PO-Revision-Date: 2018-01-15 18:09+0000\n"
-"Last-Translator: falexandresilva <falexandresilva@gmail.com>, 2018\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
-"teams/23907/pt_BR/)\n"
+"PO-Revision-Date: 2019-08-26 15:01+0000\n"
+"Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
+"23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.8\n"
 
 #. module: mgmtsystem_audit
 #: model:mail.template,body_html:mgmtsystem_audit.template_email_send_verification_list
@@ -59,7 +60,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_audits
 msgid "# of audits"
-msgstr ""
+msgstr "# de auditorias"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_days_to_close
@@ -69,32 +70,32 @@ msgstr "Nº De dias para fechar"
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "<strong>Audit Report</strong>"
-msgstr ""
+msgstr "<strong>Relatório de Auditoria</strong>"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "<strong>Improvement opportunities:</strong>"
-msgstr "Oportunidades de Melhoria"
+msgstr "<strong>Oportunidades de Melhoria:</strong>"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "<strong>Nonconformities:</strong>"
-msgstr "Não-conformidades"
+msgstr "<strong>Não-conformidades:</strong>"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "<strong>Points To Improve:</strong>"
-msgstr "Pontos de melhoria"
+msgstr "<strong>Pontos de melhoria:</strong>"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "<strong>Strong points:</strong>"
-msgstr ""
+msgstr "<strong>Pontos fortes:</strong>"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "<strong>Verification List</strong>"
-msgstr ""
+msgstr "<strong>Lista de Verificação</strong>"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction
@@ -119,18 +120,18 @@ msgstr "Auditoria"
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__user_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Audit Manager"
-msgstr ""
+msgstr "Gerenciar Auditoria"
 
 #. module: mgmtsystem_audit
 #: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:145
 #, python-format
 msgid "Audit closed"
-msgstr ""
+msgstr "Auditoria Encerrada"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.report,name:mgmtsystem_audit.audit_report_mgmtsystem_audit
 msgid "Audit report"
-msgstr ""
+msgstr "Relatório de Auditoria"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__auditee_user_ids
@@ -141,7 +142,7 @@ msgstr "Auditados"
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Auditees:"
-msgstr "Auditados"
+msgstr "Auditados:"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__auditor_user_ids
@@ -189,7 +190,7 @@ msgstr "Auditorias Fechadas"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__closing_date
 msgid "Closing Date"
-msgstr ""
+msgstr "Data de Encerramento"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__comments
@@ -206,12 +207,12 @@ msgstr "Empresa"
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Confidentiality:"
-msgstr ""
+msgstr "Confidencialidade:"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "Confidentially:"
-msgstr ""
+msgstr "Confidencialidade:"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
@@ -253,7 +254,7 @@ msgstr "Data:"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__days_since_last_update
 msgid "Days since last update"
-msgstr ""
+msgstr "Dias desde a última atualização"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__display_name
@@ -295,6 +296,8 @@ msgid ""
 "Have a general overview of all audits processed in the system by sorting "
 "them with specific criteria."
 msgstr ""
+"Tenha uma visão geral de todas as auditorias processadas no sistema, "
+"classificando-as com critérios específicos."
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__id
@@ -328,7 +331,7 @@ msgstr "Oportunidades de Melhoria"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Internal"
-msgstr ""
+msgstr "Interno"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_is_follower
@@ -369,7 +372,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.action_report_mgmtsystem_audit
 msgid "Management System Audit Analysis"
-msgstr ""
+msgstr "Análise de Auditoria do Sistema de Gestão"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error
@@ -410,7 +413,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_improvements_opportunity
 msgid "Number of improvements Opportunities"
-msgstr ""
+msgstr "Número de melhorias Oportunidades"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction_counter
@@ -425,12 +428,12 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_nonconformities
 msgid "Number of nonconformities"
-msgstr ""
+msgstr "Número de não-conformidades"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_questions_in_verification_list
 msgid "Number of questions in verification list"
-msgstr ""
+msgstr "Número de perguntas na lista de verificação"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_unread_counter
@@ -521,7 +524,7 @@ msgstr "Pontos de melhoria"
 #: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:173
 #, python-format
 msgid "Undefined"
-msgstr ""
+msgstr "Indefinido"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_unread
@@ -555,7 +558,7 @@ msgstr "Checklist"
 #. module: mgmtsystem_audit
 #: model:ir.actions.report,name:mgmtsystem_audit.verification_report_mgmtsystem_audit
 msgid "Verification list report"
-msgstr ""
+msgstr "Relatório da lista de verificação"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
