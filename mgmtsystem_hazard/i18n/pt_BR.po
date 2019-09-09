@@ -10,16 +10,16 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-13 04:19+0000\n"
-"PO-Revision-Date: 2017-05-13 04:19+0000\n"
-"Last-Translator: Rodrigo de Almeida Sottomaior Macedo "
-"<rmsolucoeseminformatic4@gmail.com>, 2017\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
-"teams/23907/pt_BR/)\n"
+"PO-Revision-Date: 2019-09-09 14:24+0000\n"
+"Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
+"23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.8\n"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__acceptability
@@ -34,7 +34,7 @@ msgstr "Aceito"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Ação Necessária"
 
 #. module: mgmtsystem_hazard
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_form
@@ -44,7 +44,7 @@ msgstr "Análise"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Contador de Anexos"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_breakage
@@ -183,17 +183,17 @@ msgstr "Incendio / Explosão"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Seguidores (Canais)"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Seguidores (Parceiros)"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_leak
@@ -255,17 +255,17 @@ msgstr "Identificação"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Se marcada, novas mensagens requerem sua atenção."
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Se marcada, novas mensagens requerem sua atenção."
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Se marcada, algumas mensagens tem um erro de entrega."
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_ignition_gas
@@ -299,7 +299,7 @@ msgstr "Intoxicação"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "É seguidor"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__justification
@@ -354,7 +354,7 @@ msgstr "Baixo"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Anexo Principal"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_aging
@@ -375,12 +375,12 @@ msgstr "Médio"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Mensagem de erro de entrega"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mensagens"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__name
@@ -390,27 +390,27 @@ msgstr "Nome"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Número de Ações"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error_counter
 msgid "Number of error"
-msgstr ""
+msgstr "Número de erro"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Número de mensagens que requerem uma ação"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Número de mensagens com erro de entrega"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Número de mensagens não-lidas"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ohsas_action
@@ -558,12 +558,12 @@ msgstr "Tipos"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensagens não-lidas"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Contador de Mensagens não-lidas"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_usage
