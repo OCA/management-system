@@ -25,16 +25,16 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[document_page_environmental_aspect](document_page_environmental_aspect/) | 10.0.1.0.0 | Environmental Aspects
-[document_page_procedure](document_page_procedure/) | 10.0.1.0.0 | Document Management - Wiki - Procedures
+[document_page_environmental_aspect](document_page_environmental_aspect/) | 10.0.1.1.0 | Environmental Aspects
+[document_page_procedure](document_page_procedure/) | 10.0.1.1.0 | Document Management - Wiki - Procedures
 [document_page_quality_manual](document_page_quality_manual/) | 10.0.1.0.0 | Quality Manual
-[document_page_work_instruction](document_page_work_instruction/) | 10.0.1.0.0 | Document Management - Wiki - Work Instructions
-[mgmtsystem](mgmtsystem/) | 10.0.1.0.0 | Management System
+[document_page_work_instruction](document_page_work_instruction/) | 10.0.1.1.0 | Document Management - Wiki - Work Instructions
+[mgmtsystem](mgmtsystem/) | 10.0.1.1.0 | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 10.0.1.0.0 | Management System - Action
 [mgmtsystem_audit](mgmtsystem_audit/) | 10.0.1.0.1 | Management System - Audit
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 10.0.1.0.0 | Hazard
 [mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 10.0.1.1.0 | Hazard Risk
-[mgmtsystem_manual](mgmtsystem_manual/) | 10.0.1.0.0 | Management System - Manual
+[mgmtsystem_manual](mgmtsystem_manual/) | 10.0.1.1.0 | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 10.0.1.0.1 | Management System - Nonconformity
 [mgmtsystem_quality](mgmtsystem_quality/) | 10.0.1.0.0 | Quality Management System
 [mgmtsystem_review](mgmtsystem_review/) | 10.0.1.0.1 | Management System - Review
