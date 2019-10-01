@@ -12,13 +12,14 @@
     'images': ['images/mgmtsystem.png', 'images/mgmtsystem-hover.png'],
     "depends": [
         'base',
+        'document_page',
     ],
     "data": [
         'security/mgmtsystem_security.xml',
         'security/ir.model.access.csv',
         'views/menus.xml',
         'views/mgmtsystem_system.xml',
-        'views/res_config.xml'
+        'views/res_config.xml',
     ],
     "demo": [],
     'installable': True,
