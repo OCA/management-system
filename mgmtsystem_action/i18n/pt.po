@@ -48,8 +48,8 @@ msgstr ""
 "\n"
 "     <p>\n"
 "       Esta é uma mensagem automática para lembrá-lo de que a\n"
-"       ação seguinte, deverá ser concluída em 10 dias ($ "
-"{object.date_deadline}):\n"
+"       ação seguinte, deverá ser concluída em 10 dias ($ {object."
+"date_deadline}):\n"
 "\n"
 "       <a href=\"${object.get_action_url()}\"> $ {object.get_action_url ()} "
 "</a>\n"
@@ -302,7 +302,7 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_id
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_2440
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_id_2666
 msgid "ID"
 msgstr "ID"
 
