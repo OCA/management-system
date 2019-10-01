@@ -39,11 +39,6 @@ msgid "Apply"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:res.groups,name:mgmtsystem.group_mgmtsystem_user_manager
-msgid "Approving User"
-msgstr "Uporabnik, ki odobri"
-
-#. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_auditor
 msgid "Auditor"
 msgstr "Revizor"
@@ -220,11 +215,6 @@ msgstr "Priročniki"
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_manager
 msgid "Module administrator, able to modify configuration data."
 msgstr "Administrator modula, ki lahko spreminja nastavitve."
-
-#. module: mgmtsystem
-#: model:res.groups,comment:mgmtsystem.group_mgmtsystem_user_manager
-msgid "Module user with additional permission for approvals."
-msgstr "Uporabnik modula z dodatnimi dovoljenji za odobritve."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_auditor
@@ -438,3 +428,9 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "or"
 msgstr ""
+
+#~ msgid "Approving User"
+#~ msgstr "Uporabnik, ki odobri"
+
+#~ msgid "Module user with additional permission for approvals."
+#~ msgstr "Uporabnik modula z dodatnimi dovoljenji za odobritve."
