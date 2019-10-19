@@ -1,0 +1,208 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mgmtsystem_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-11 19:52+0000\n"
+"PO-Revision-Date: 2019-07-11 19:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mgmtsystem_extended
+#: model:mail.template,body_html:mgmtsystem_extended.email_template_nonconformity
+msgid "\n"
+"                \n"
+"                    <p>Dear ${object.partner_id.quality_contact_name},<br/><br/>\n"
+"                    in attachment you have the nonconformity report:<br/>\n"
+"                    <strong>Nonconformity N°</strong>: ${object.id}<br/>\n"
+"                    <strong>Name</strong>: ${object.name}<br/>\n"
+"                    <strong>Description</strong>: ${object.description}<br/>\n"
+"                    <br/>\n"
+"                    Best regards<br>\n"
+"                    </p>\n"
+"                      \n"
+"            "
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,help:mgmtsystem_extended.field_mgmtsystem_action_efficacy_value
+msgid "0:not effective | 50:efficacy not complete | 100: effective"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model,name:mgmtsystem_extended.model_mgmtsystem_action
+msgid "Action"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: selection:mgmtsystem.nonconformity,nc_type:0
+msgid "Customer"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_mgmtsystem_action_efficacy_description
+msgid "Description"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.ui.view,arch_db:mgmtsystem_extended.view_mgmtsystem_action_efficacy
+msgid "Efficacy"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: selection:mgmtsystem.nonconformity,nc_type:0
+msgid "External"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,help:mgmtsystem_extended.field_mgmtsystem_action_template_id
+msgid "Fill Action's fileds with Template's values"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,help:mgmtsystem_extended.field_stock_picking_related_partner_id
+msgid "Fill only if necessary."
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.ui.view,arch_db:mgmtsystem_extended.view_mgmtsystem_nonconformity_fix_nc
+msgid "Footer"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_mgmtsystem_nonconformity_footer
+msgid "Footer note"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: selection:mgmtsystem.nonconformity,nc_type:0
+msgid "Internal"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.ui.view,arch_db:mgmtsystem_extended.view_mgmtsystem_action_filter
+msgid "Is Template"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.ui.view,arch_db:mgmtsystem_extended.view_mgmtsystem_action_filter
+msgid "Is not a Template"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_stock_move_lot_reference
+msgid "Lot reference"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: code:addons/mgmtsystem_extended/models/mgm_extend_action.py:56
+#, python-format
+msgid "NEW"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model,name:mgmtsystem_extended.model_mgmtsystem_nonconformity
+msgid "Nonconformity"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:mail.template,subject:mgmtsystem_extended.email_template_nonconformity
+msgid "Nonconformity N° ${object.id}: ${object.name}"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_mgmtsystem_action_is_printable
+msgid "Printable"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_mgmtsystem_nonconformity_qty_checked
+msgid "Quantity checked"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_mgmtsystem_nonconformity_qty_noncompliant
+msgid "Quantity non-compliant"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_mgmtsystem_action_efficacy_value
+msgid "Rating"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_mgmtsystem_action_template_id
+msgid "Reference Template"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_stock_picking_related_partner_id
+msgid "Related partner"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_mgmtsystem_action_efficacy_user_id
+msgid "Responsible"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.ui.view,arch_db:mgmtsystem_extended.view_mgmtsystem_nonconformity_send_email
+msgid "Send by Email"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,help:mgmtsystem_extended.field_mgmtsystem_action_is_template
+msgid "Set Action as Template to create simlilar one. Type, Responsible, Tags and Title are used."
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,help:mgmtsystem_extended.field_mgmtsystem_action_is_printable
+msgid "Set if Action is printable on Nonconformity report."
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model,name:mgmtsystem_extended.model_stock_move
+msgid "Stock Move"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: selection:mgmtsystem.nonconformity,nc_type:0
+msgid "Supplier"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_stock_picking_td_date
+msgid "TD date"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.ui.view,arch_db:mgmtsystem_extended.view_mgm_td_info
+msgid "TD information"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_stock_picking_td
+msgid "TD number"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_mgmtsystem_action_is_template
+msgid "Template"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model,name:mgmtsystem_extended.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: mgmtsystem_extended
+#: model:ir.model.fields,field_description:mgmtsystem_extended.field_mgmtsystem_nonconformity_nc_type
+msgid "Type"
+msgstr ""

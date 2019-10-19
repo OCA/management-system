@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright 2019 Marcelo Frare (Associazione PNLUG - Gruppo Odoo <http://odoo.pnlug.it>)
+     Copyright 2019 Stefano Consolaro (Associazione PNLUG - Gruppo Odoo <http://odoo.pnlug.it>)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl) -->
+     
+<odoo>
+        <!-- inherit picking form view 
+                adding lot reference, transport document info -->
+        <record id="quality_trace_lot_reference" model="ir.ui.view">
+            <field name="name">quality.trace.lot.reference</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="TD information">
+                        <group>
+                            <field name="related_partner_id"/>
+                            <field name="td"/>
+                            <field name="td_date"/>
+                        </group>
+                    </page>
+                </notebook>
+                <xpath expr="//field[@name='move_lines']/tree/field[@name='product_uom_qty']" position="before">
+                    <field name="lot_reference"/>
+                </xpath>
+            </field>
+        </record>
+
+</odoo>
