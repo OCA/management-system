@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+      id="menu_mgmtsystem_root"
+      name="Management System"
+      web_icon="mgmtsystem,static/description/icon.png"
+      sequence="150"
+      groups="group_mgmtsystem_manager,group_mgmtsystem_viewer"
+      />
+
+    <menuitem
+      id="menu_mgmtsystem_main"
+      name="Management System"
+      parent="menu_mgmtsystem_root"
+      sequence="0"
+      groups="group_mgmtsystem_viewer"/>
+
+    <menuitem
+      id="menu_mgmtsystem_manuals"
+      name="Documentation"
+      parent="menu_mgmtsystem_root"
+      sequence="10"
+      groups="group_mgmtsystem_viewer"/>
+
+    <menuitem
+      id="menu_mgmtsystem_report"
+      name="Reports"
+      sequence="50"
+      parent="menu_mgmtsystem_root"
+      groups="group_mgmtsystem_viewer"/>
+
+    <menuitem
+      id="menu_mgmtsystem_configuration"
+      name="Configuration"
+      parent="menu_mgmtsystem_root"
+      groups="group_mgmtsystem_manager"
+      sequence="100"/>
+</odoo>

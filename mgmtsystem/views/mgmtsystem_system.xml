@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record model="ir.ui.view" id="system_form">
+      <field name="name">mgmtsystem_system_form</field>
+      <field name="model">mgmtsystem.system</field>
+      <field name="arch" type="xml">
+        <form string="Management System">
+          <group>
+            <field name="name"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="system_tree">
+      <field name="name">mgmtsystem_system_tree</field>
+      <field name="model">mgmtsystem.system</field>
+      <field name="arch" type="xml">
+        <tree string="Management Systems">
+          <field name="name"/>
+          <field name="company_id" groups="base.group_multi_company"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="system_action" model="ir.actions.act_window">
+      <field name="name">Management Systems</field>
+      <field name="res_model">mgmtsystem.system</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="system_tree"/>
+    </record>
+
+    <menuitem
+      id="menu_mgmtsystem_configuration_system"
+      name="Systems"
+      parent="menu_mgmtsystem_configuration"
+      groups="group_mgmtsystem_manager"
+      sequence="10"
+      action="system_action"/>
+</odoo>
