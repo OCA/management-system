@@ -24,7 +24,6 @@
     <record model="ir.actions.act_window" id="action_manuals">
         <field name="name">Manuals</field>
         <field name="res_model">document.page</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="document_page.view_wiki_tree"/>
         <field name="search_view_id" ref="document_page.view_wiki_filter"/>
