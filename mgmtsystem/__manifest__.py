@@ -8,15 +8,13 @@
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": [
-        'base',
-    ],
+    "depends": ["base"],
     "data": [
-        'security/mgmtsystem_security.xml',
-        'security/ir.model.access.csv',
-        'views/menus.xml',
-        'views/mgmtsystem_system.xml',
-        'views/res_config.xml'
+        "security/mgmtsystem_security.xml",
+        "security/ir.model.access.csv",
+        "views/menus.xml",
+        "views/mgmtsystem_system.xml",
+        "views/res_config.xml",
     ],
     "installable": True,
     "application": True,
