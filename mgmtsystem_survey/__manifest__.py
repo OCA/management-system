@@ -8,15 +8,8 @@
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": [
-        'mgmtsystem',
-        'survey'
-    ],
-    "data": [
-        'data/survey_stage.xml',
-        'views/survey_survey.xml',
-    ],
-    "demo": [
-    ],
-    'installable': True,
+    "depends": ["mgmtsystem", "survey"],
+    "data": ["data/survey_stage.xml", "views/survey_survey.xml"],
+    "demo": [],
+    "installable": True,
 }
