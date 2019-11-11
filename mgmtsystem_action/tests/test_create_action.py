@@ -91,5 +91,5 @@ class TestModelAction(common.SavepointCase):
         """Check if mail send action work."""
         tmpl_model = self.env["mail.template"]
         with mock.patch.object(type(tmpl_model), "send_mail") as mocked:
-            self.env["mgmtsystem.action"].send_mail_for_action(self.record)
+            self.record.send_mail_for_action()
             mocked.assert_called_with(self.record.id, force_send=True)
