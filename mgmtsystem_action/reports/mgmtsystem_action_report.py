@@ -1,4 +1,4 @@
-from odoo import api, fields, models, tools
+from odoo import fields, models, tools
 
 
 class MgmtsystemtActionReport(models.Model):
@@ -34,36 +34,59 @@ class MgmtsystemtActionReport(models.Model):
     stage_id = fields.Many2one("mgmtsystem.action.stage", "Stage", readonly=True)
     system_id = fields.Many2one("mgmtsystem.system", "System", readonly=True)
 
-    @api.model_cr
+    def _query(
+        self, with_clause="", fields="", where_clause="", groupby="", from_clause=""
+    ):
+        with_ = ("WITH %s" % with_clause) if with_clause else ""
+
+        select_ = (
+            """
+                m.id,
+                m.date_closed as date_closed,
+                m.date_deadline as date_deadline,
+                m.date_open as date_open,
+                m.user_id,
+                m.stage_id,
+                m.system_id,
+                m.type_action as type_action,
+                m.create_date as create_date,
+                m.number_of_days_to_open as number_of_days_to_open,
+                m.number_of_days_to_close as number_of_days_to_close,
+                avg(extract('epoch' from (current_date-m.create_date))
+                )/(3600*24) as  age,
+                avg(extract('epoch' from (m.date_closed - m.date_deadline))
+                )/(3600*24) as  number_of_exceedings_days,
+                count(*) AS number_of_actions %s
+            """
+            % fields
+        )
+
+        from_ = (
+            """
+                mgmtsystem_action m
+                %s
+            """
+            % from_clause
+        )
+
+        where_ = ("WHERE %s" % where_clause) if where_clause else ""
+
+        groupby_ = """
+                    m.user_id,m.system_id, m.stage_id, m.date_open,
+                    m.create_date,m.type_action,m.date_deadline,
+                    m.date_closed, m.id, m.number_of_days_to_open,
+                    m.number_of_days_to_close %s
+                """ % (
+            groupby
+        )
+
+        return "{} (SELECT {} FROM {} {} GROUP BY {})".format(
+            with_, select_, from_, where_, groupby_
+        )
+
     def init(self):
         """Display a pivot view of action."""
         tools.drop_view_if_exists(self._cr, "mgmtsystem_action_report")
         self.env.cr.execute(
-            """
-             CREATE OR REPLACE VIEW mgmtsystem_action_report AS (
-                 select
-                    m.id,
-                    m.date_closed as date_closed,
-                    m.date_deadline as date_deadline,
-                    m.date_open as date_open,
-                    m.user_id,
-                    m.stage_id,
-                    m.system_id,
-                    m.type_action as type_action,
-                    m.create_date as create_date,
-                    m.number_of_days_to_open as number_of_days_to_open,
-                    m.number_of_days_to_close as number_of_days_to_close,
-                    avg(extract('epoch' from (current_date-m.create_date))
-                    )/(3600*24) as  age,
-                    avg(extract('epoch' from (m.date_closed - m.date_deadline))
-                    )/(3600*24) as  number_of_exceedings_days,
-                    count(*) AS number_of_actions
-                from
-                    mgmtsystem_action m
-                group by m.user_id,m.system_id, m.stage_id, m.date_open, \
-                        m.create_date,m.type_action,m.date_deadline, \
-                        m.date_closed, m.id, m.number_of_days_to_open, \
-                        m.number_of_days_to_close
-            )
-            """
+            "CREATE or REPLACE VIEW {} as ({})".format(self._table, self._query())
         )
