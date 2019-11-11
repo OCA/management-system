@@ -28,7 +28,7 @@ class MgmtsystemAction(models.Model):
         help="Gives the sequence order when displaying a list of actions.",
     )
     date_deadline = fields.Date("Deadline")
-    date_open = fields.Datetime("Opening Date", readonly=True, oldname="opening_date")
+    date_open = fields.Datetime("Opening Date", readonly=True)
     date_closed = fields.Datetime("Closed Date", readonly=True)
     number_of_days_to_open = fields.Integer(
         "# of days to open", compute="_compute_number_of_days_to_open", store=True
@@ -82,9 +82,7 @@ class MgmtsystemAction(models.Model):
     def _elapsed_days(self, dt1_text, dt2_text):
         res = 0
         if dt1_text and dt2_text:
-            dt1 = fields.Datetime.from_string(dt1_text)
-            dt2 = fields.Datetime.from_string(dt2_text)
-            res = (dt2 - dt1).days
+            res = (dt1_text - dt2_text).days
         return res
 
     @api.depends("date_open", "create_date")
@@ -105,14 +103,15 @@ class MgmtsystemAction(models.Model):
     def _stage_groups(self, stages=None, domain=None, order=None):
         return self.env["mgmtsystem.action.stage"].search([], order=order)
 
-    @api.model
-    def create(self, vals):
-        if vals.get("reference", _("New")) == _("New"):
-            Sequence = self.env["ir.sequence"]
-            vals["reference"] = Sequence.next_by_code("mgmtsystem.action")
-        action = super(MgmtsystemAction, self).create(vals)
-        self.send_mail_for_action(action)
-        return action
+    @api.model_create_multi
+    def create(self, vals_list):
+        for one_vals in vals_list:
+            if one_vals.get("reference", _("New")) == _("New"):
+                Sequence = self.env["ir.sequence"]
+                one_vals["reference"] = Sequence.next_by_code("mgmtsystem.action")
+        actions = super().create(vals_list)
+        actions.send_mail_for_action()
+        return actions
 
     @api.constrains("stage_id")
     def _check_stage_id(self):
@@ -129,10 +128,10 @@ class MgmtsystemAction(models.Model):
             if not rec.date_closed and rec.stage_id.is_ending:
                 rec.date_closed = fields.Datetime.now()
 
-    @api.model
-    def send_mail_for_action(self, action, force_send=True):
+    def send_mail_for_action(self, force_send=True):
         template = self.env.ref("mgmtsystem_action.email_template_new_action_reminder")
-        template.send_mail(action.id, force_send=force_send)
+        for action in self:
+            template.send_mail(action.id, force_send=force_send)
         return True
 
     def get_action_url(self):
@@ -168,7 +167,6 @@ class MgmtsystemAction(models.Model):
     def _get_stage_open(self):
         return self.env.ref("mgmtsystem_action.stage_open")
 
-    @api.multi
     def case_open(self):
         """Opens case."""
         # TODO smk: is this used?
