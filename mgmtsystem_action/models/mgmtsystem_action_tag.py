@@ -9,8 +9,6 @@ class MgmtsystemActionTag(models.Model):
     _description = "Action Tags"
 
     name = fields.Char(required=True)
-    color = fields.Integer(string='Color Index', default=10)
+    color = fields.Integer(string="Color Index", default=10)
 
-    _sql_constraints = [
-        ('name_uniq', 'unique (name)', "Tag name already exists !"),
-    ]
+    _sql_constraints = [("name_uniq", "unique (name)", "Tag name already exists !")]
