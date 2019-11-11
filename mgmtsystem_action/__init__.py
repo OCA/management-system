@@ -1,5 +1,1 @@
-
-from . import (
-    models,
-    reports,
-)
+from . import models, reports
