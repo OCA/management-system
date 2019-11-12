@@ -254,7 +254,7 @@ msgid "Nonconformities"
 msgstr "Non conformità"
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_procedure
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_procedure
 msgid "Procedures"
 msgstr "Procedure"
 
@@ -358,11 +358,11 @@ msgstr ""
 "- Verrà installato il modulo mgmtsystem_health_safety_manual."
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
 #, fuzzy
 msgid ""
 "Provide a quality manual template.\n"
-"- This installs the module mgmtsystem_quality_manual."
+"- This installs the module document_page_quality_manual."
 msgstr ""
 "Attiva un modello del manuale qualità.\n"
 "- Verrà installato il modulo mgmtsystem_quality_manual."
@@ -491,11 +491,11 @@ msgstr ""
 "- Verrà installato il modulo mgmtsystem_nonconformity."
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_procedure
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_procedure
 #, fuzzy
 msgid ""
 "Provide procedures category.\n"
-"- This installs the module mgmtsystem_procedure."
+"- This installs the module document_page_procedure."
 msgstr ""
 "Attiva categoria procedure.\n"
 "- Verrà installato il modulo mgmtsystem_procedure."
@@ -526,7 +526,7 @@ msgid "Quality"
 msgstr "Qualità"
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
 msgid "Quality Manual Template"
 msgstr "Modello del manuale qualità"
 
