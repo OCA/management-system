@@ -3,12 +3,12 @@
 
 {
     "name": "Quality Manual",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.0",
     "category": "Management System",
     "author": "OpenERP SA, Odoo Community Association (OCA)",
     "website": "http://odoo.com",
     "license": "AGPL-3",
-    "depends": ["mgmtsystem_manual"],
+    "depends": ["document_page"],
     "data": ["data/document_page.xml"],
     "installable": True,
     "auto_install": False,
