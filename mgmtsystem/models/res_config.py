@@ -78,10 +78,10 @@ class MgmtsystemConfigSettings(models.TransientModel):
     )
 
     # Documentation
-    module_mgmtsystem_procedure = fields.Boolean(
+    module_document_page_procedure = fields.Boolean(
         "Procedures",
         help="Provide procedures category.\n"
-        "- This installs the module mgmtsystem_procedure.",
+        "- This installs the module document_page_procedure.",
     )
     module_mgmtsystem_environmental_aspect = fields.Boolean(
         "Environmental Aspects",
