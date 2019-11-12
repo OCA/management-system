@@ -56,10 +56,10 @@ class MgmtsystemConfigSettings(models.TransientModel):
     )
 
     # Manuals
-    module_mgmtsystem_quality_manual = fields.Boolean(
+    module_document_page_quality_manual = fields.Boolean(
         "Quality Manual Template",
         help="Provide a quality manual template.\n"
-        "- This installs the module mgmtsystem_quality_manual.",
+        "- This installs the module document_page_quality_manual.",
     )
     module_mgmtsystem_environment_manual = fields.Boolean(
         "Environment Manual Template",
