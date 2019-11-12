@@ -49,7 +49,7 @@
         <field name="name">mgmtsystem multi-company</field>
         <field name="model_id" ref="model_mgmtsystem_system"/>
         <field name="global" eval="True"/>
-        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
     </record>
 
 </odoo>
