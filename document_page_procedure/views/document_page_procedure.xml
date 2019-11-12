@@ -4,7 +4,6 @@
     <record model="ir.actions.act_window" id="action_procedures">
         <field name="name">Procedures</field>
         <field name="res_model">document.page</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="help">Procedures of your management system.</field>
         <field name="domain" eval="[('parent_id','=',ref('document_page_group_procedure'))]"/>
