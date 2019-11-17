@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo13-addon-document_page_quality_manual',
         'odoo13-addon-document_page_work_instruction',
         'odoo13-addon-mgmtsystem',
+        'odoo13-addon-mgmtsystem_survey',
     ],
     classifiers=[
         'Programming Language :: Python',
