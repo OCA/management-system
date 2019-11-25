@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* mgmtsystem_action
+# 	* mgmtsystem_action
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,7 +15,8 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
-msgid "\n"
+msgid ""
+"\n"
 "                \n"
 "<p>Hello ${object.user_id.name},</p>\n"
 "\n"
@@ -27,8 +28,8 @@ msgid "\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"  Thank you and have a nice day.<br />\n"
-"  --<br />\n"
+"  Thank you and have a nice day.<br>\n"
+"  --<br>\n"
 "  Odoo\n"
 "</p>\n"
 "                \n"
@@ -37,7 +38,8 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.email_template_new_action_reminder
-msgid "\n"
+msgid ""
+"\n"
 "                \n"
 "<p>Hello ${object.user_id.name},</p>\n"
 "\n"
@@ -151,6 +153,11 @@ msgid "Activities"
 msgstr ""
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_state
 msgid "Activity State"
 msgstr ""
@@ -212,8 +219,8 @@ msgid "Company"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-#: selection:mgmtsystem.action.report,type_action:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__correction
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__correction
 msgid "Corrective Action"
 msgstr ""
 
@@ -326,7 +333,9 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model_terms:ir.actions.act_window,help:mgmtsystem_action.action_report_mgmtsystem_action
-msgid "Have a general overview of all actions processed in the system by sorting them with specific criteria."
+msgid ""
+"Have a general overview of all actions processed in the system by sorting "
+"them with specific criteria."
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -338,29 +347,36 @@ msgid "ID"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_unread
-msgid "If checked new messages require your attention."
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_exception_icon
+msgid "Icon to indicate an exception activity."
 msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_needaction
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-#: selection:mgmtsystem.action.report,type_action:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__immediate
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__immediate
 msgid "Immediate Action"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-#: selection:mgmtsystem.action.report,type_action:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__improvement
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__improvement
 msgid "Improvement Opportunity"
 msgstr ""
 
@@ -372,11 +388,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_is_follower
 msgid "Is Follower"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
-msgid "Last Message"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -407,7 +418,7 @@ msgid "Late Activities"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,priority:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__priority__0
 msgid "Low"
 msgstr ""
 
@@ -457,8 +468,8 @@ msgid "Name"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:51
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:117
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #, python-format
 msgid "New"
 msgstr ""
@@ -479,7 +490,7 @@ msgid "Next Activity Type"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,priority:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__priority__1
 msgid "Normal"
 msgstr ""
 
@@ -490,7 +501,7 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
-msgid "Number of error"
+msgid "Number of errors"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -515,23 +526,13 @@ msgid "Opening Date"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,activity_state:0
-msgid "Overdue"
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Pending"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,activity_state:0
-msgid "Planned"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-#: selection:mgmtsystem.action.report,type_action:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__prevention
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__prevention
 msgid "Preventive Action"
 msgstr ""
 
@@ -564,6 +565,11 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_user_id
 msgid "Responsible User"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
+msgid "SMS Delivery error"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -603,7 +609,8 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_state
-msgid "Status based on activities\n"
+msgid ""
+"Status based on activities\n"
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
@@ -621,7 +628,7 @@ msgid "System"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: sql_constraint:mgmtsystem.action.tag:0
+#: model:ir.model.constraint,message:mgmtsystem_action.constraint_mgmtsystem_action_tag_name_uniq
 msgid "Tag name already exists !"
 msgstr ""
 
@@ -641,12 +648,9 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_stage__fold
-msgid "This stage is folded in the kanban view when there are no records in that stage to display."
-msgstr ""
-
-#. module: mgmtsystem_action
-#: selection:mgmtsystem.action,activity_state:0
-msgid "Today"
+msgid ""
+"This stage is folded in the kanban view when there are no records in that "
+"stage to display."
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -657,6 +661,11 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Type"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_exception_decoration
+msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -678,7 +687,7 @@ msgid "User"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:130
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #, python-format
 msgid "We cannot bring back the action to draft stage"
 msgstr ""
@@ -687,4 +696,3 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
 msgstr ""
-
