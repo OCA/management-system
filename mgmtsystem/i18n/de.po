@@ -258,7 +258,7 @@ msgid "Nonconformities"
 msgstr "Nichteinhaltungen"
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_procedure
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_procedure
 msgid "Procedures"
 msgstr "Vorgänge"
 
@@ -350,10 +350,14 @@ msgstr ""
 "- Das Modul mgmtsystem_health_safety_manual wird installiert."
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
+#, fuzzy
+#| msgid ""
+#| "Provide a quality manual template.\n"
+#| "- This installs the module mgmtsystem_quality_manual."
 msgid ""
 "Provide a quality manual template.\n"
-"- This installs the module mgmtsystem_quality_manual."
+"- This installs the module document_page_quality_manual."
 msgstr ""
 "Stellt Handbuchvorlage zum Qualitätsmanagement bereit.\n"
 "- Das Modul mgmtsystem_quality_manual wird installiert."
@@ -471,10 +475,14 @@ msgstr ""
 "- Das Modul mgmtsystem_nonconformity wird installiert."
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_procedure
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_procedure
+#, fuzzy
+#| msgid ""
+#| "Provide procedures category.\n"
+#| "- This installs the module mgmtsystem_procedure."
 msgid ""
 "Provide procedures category.\n"
-"- This installs the module mgmtsystem_procedure."
+"- This installs the module document_page_procedure."
 msgstr ""
 "Stellt Kategorie Prozeduren bereit.\n"
 "- Das Modul mgmtsystem_procedure wird installiert."
@@ -503,7 +511,7 @@ msgid "Quality"
 msgstr "Qualität"
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
 msgid "Quality Manual Template"
 msgstr "Qualitätsmanagementhandbuch Vorlage"
 
