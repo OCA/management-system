@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="stage_draft" model="mgmtsystem.action.stage">
+      <field name="name">Draft</field>
+      <field name="sequence">0</field>
+      <field name="is_starting" eval="True" />
+      <field name="is_ending" eval="False" />
+    </record>
+
+    <record id="stage_open" model="mgmtsystem.action.stage">
+      <field name="name">In Progress</field>
+      <field name="sequence">250</field>
+      <field name="is_starting" eval="False" />
+      <field name="is_ending" eval="False" />
+    </record>
+
+    <record id="stage_close" model="mgmtsystem.action.stage">
+      <field name="name">Closed</field>
+      <field name="sequence">500</field>
+      <field name="is_starting" eval="False" />
+      <field name="is_ending" eval="True" />
+      <field name="fold" eval="True" />
+    </record>
+
+    <record id="stage_cancel" model="mgmtsystem.action.stage">
+      <field name="name">Cancelled</field>
+      <field name="sequence">750</field>
+      <field name="is_starting" eval="False" />
+      <field name="is_ending" eval="True" />
+      <field name="fold" eval="True" />
+    </record>
+
+</odoo>
