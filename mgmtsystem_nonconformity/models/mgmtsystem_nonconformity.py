@@ -56,7 +56,6 @@ class MgmtsystemNonconformity(models.Model):
         required=True,
         default=lambda self: self.env.user,
         track_visibility=True,
-        oldname="author_user_id",  # automatic migration
     )
     origin_ids = fields.Many2many(
         "mgmtsystem.nonconformity.origin",
@@ -142,7 +141,6 @@ class MgmtsystemNonconformity(models.Model):
         "res.company", "Company", default=lambda self: self.env.user.company_id.id
     )
 
-    @api.multi
     def _get_all_actions(self):
         self.ensure_one()
         return self.action_ids + self.immediate_action_id
@@ -169,22 +167,15 @@ class MgmtsystemNonconformity(models.Model):
                             "in order to close a Nonconformity."
                         )
                     )
-                actions_are_closed = (
-                    x.stage_id.is_ending for x in nc._get_all_actions()
-                )
+                actions_are_closed = nc._get_all_actions().mapped("stage_id.is_ending")
                 if not all(actions_are_closed):
                     raise models.ValidationError(
                         _("All actions must be done " "before closing a Nonconformity.")
                     )
 
     @api.model
-    def _elapsed_days(self, dt1_text, dt2_text):
-        res = 0
-        if dt1_text and dt2_text:
-            dt1 = fields.Datetime.from_string(dt1_text)
-            dt2 = fields.Datetime.from_string(dt2_text)
-            res = (dt2 - dt1).days
-        return res
+    def _elapsed_days(self, dt1, dt2):
+        return (dt2 - dt1).days if dt1 and dt2 else 0
 
     @api.depends("write_date")
     def _compute_days_since_updated(self):
@@ -198,18 +189,16 @@ class MgmtsystemNonconformity(models.Model):
         )
         return super().create(vals)
 
-    @api.multi
     def write(self, vals):
-        is_writing = "is_writing" in self.env.context
+        is_writing = self.env.context.get("is_writing", False)
         is_state_change = "stage_id" in vals or "state" in vals
         # Reset Kanban State on Stage change
         if is_state_change:
             was_not_open = {
                 x.id: x.state in ("draft", "analysis", "pending") for x in self
             }
-            for nc in self:
-                if nc.kanban_state != "normal":
-                    vals["kanban_state"] = "normal"
+            if any(self.filtered(lambda x: x.kanban_state != "normal")):
+                vals["kanban_state"] = "normal"
 
         result = super().write(vals)
 
@@ -220,7 +209,7 @@ class MgmtsystemNonconformity(models.Model):
                 if nc.state == "done" and not nc.closing_date:
                     nc.closing_date = fields.Datetime.now()
                 # On reopen resete Closing Date
-                if nc.state != "done" and nc.closing_date:
+                elif nc.state != "done" and nc.closing_date:
                     nc.closing_date = None
                 # On action plan approval, Open the Actions
                 if nc.state == "open" and was_not_open[nc.id]:
