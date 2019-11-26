@@ -51,12 +51,6 @@
           <filter name="groupby_system" string="System" icon="gtk-execute" context="{'group_by':'system_id'}"/>
           <filter name="groupby_partner" string="Partner" icon="terp-personal+" domain="[]" context="{'group_by':'partner_id'}"/>
           <filter name="groupby_procedure" string="Procedure" icon="terp-stock_symbol-selection" context="{'group_by':'procedure_ids'}"/>
-          <!--
-          <separator orientation="vertical"/>
-          <filter string="Origin" icon="terp-idea" context="{'group_by':'origin_ids'}"/>
-          <filter string="Cause" icon="gtk-convert" context="{'group_by':'cause_ids'}"/>
-          <filter string="Severity" icon="stock_log" context="{'group_by':'severity_id'}"/>
-          -->
         </group>
         </search>
       </field>
@@ -211,7 +205,6 @@
     <record model="ir.actions.act_window" id="open_mgmtsystem_nonconformity_list">
       <field name="name">Nonconformities</field>
       <field name="res_model">mgmtsystem.nonconformity</field>
-      <field name="view_type">form</field>
       <field name="view_mode">kanban,tree,form</field>
       <field name="view_id" ref="view_mgmtsystem_nonconformity_kanban"/>
       <field name="search_view_id" ref="view_mgmtsystem_nonconformity_filter"/>
