@@ -1,7 +1,7 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import _, api, exceptions, fields, models
+from odoo import fields, models
 
 
 class MgmtsystemNonconformityCause(models.Model):
@@ -25,17 +25,12 @@ class MgmtsystemNonconformityCause(models.Model):
     )
     ref_code = fields.Char("Reference Code")
 
-    @api.multi
     def name_get(self):
         res = []
         for obj in self:
-            name = obj.name
             if obj.parent_id:
-                name = obj.parent_id.name_get()[0][1] + " / " + name
+                name = obj.parent_id.name_get()[0][1] + " / " + obj.name
+            else:
+                name = obj.name
             res.append((obj.id, name))
         return res
-
-    @api.constrains("parent_id")
-    def _check_recursion(self):
-        if not super()._check_recursion():
-            raise exceptions.ValidationError(_("Error! Cannot create recursive cycle."))
