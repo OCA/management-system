@@ -7,7 +7,7 @@ from odoo.tests import common
 
 class TestModelNonConformity(common.TransactionCase):
     def setUp(self):
-        super(TestModelNonConformity, self).setUp()
+        super().setUp()
         self.nc_model = self.env["mgmtsystem.nonconformity"]
         self.partner = self.env["res.partner"].search([])[0]
         self.nc_test = self.nc_model.create(

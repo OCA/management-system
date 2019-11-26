@@ -23,7 +23,7 @@
       <field name="model">mgmtsystem.nonconformity.cause</field>
       <field name="type">tree</field>
       <field name="arch" type="xml">
-        <tree string="Causes" colors="blue:parent_id;">
+        <tree>
           <field name="parent_id"/>
           <field name="name"/>
           <field name="description"/>
@@ -47,7 +47,6 @@
       <field name="name">Causes</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">mgmtsystem.nonconformity.cause</field>
-      <field name="view_type">form</field>
       <field name="view_id" eval="view_mgmtsystem_nonconformity_cause_tree"/>
       <field name="search_view_id" ref="view_mgmtsystem_nonconformity_cause_filter"/>
     </record>
