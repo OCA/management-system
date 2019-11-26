@@ -24,7 +24,7 @@
       <field name="model">mgmtsystem.nonconformity.origin</field>
       <field name="type">tree</field>
       <field name="arch" type="xml">
-        <tree string="Origins" colors="blue:parent_id;">
+        <tree>
           <field name="parent_id"/>
           <field name="name"/>
           <field name="description"/>
@@ -47,7 +47,6 @@
     <record id="open_mgmtsystem_nonconformity_origin_list" model="ir.actions.act_window">
       <field name="name">Origins</field>
       <field name="res_model">mgmtsystem.nonconformity.origin</field>
-      <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
       <field name="view_id" eval="False"/>
       <field name="search_view_id" ref="view_mgmtsystem_nonconformity_origin_filter"/>
