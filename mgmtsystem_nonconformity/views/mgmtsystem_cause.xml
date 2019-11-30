@@ -1,0 +1,61 @@
+<odoo>
+    <!-- Cause -->
+
+    <record id="view_mgmtsystem_nonconformity_cause_form" model="ir.ui.view">
+      <field name="name">mgmtsystem.nonconformity.cause.form</field>
+      <field name="type">form</field>
+      <field name="model">mgmtsystem.nonconformity.cause</field>
+      <field name="arch" type="xml">
+        <form string="Causes of nonconformity">
+          <group>
+            <field name="name"/>
+            <field name="sequence"/>
+            <field name="parent_id"/>
+            <field name="ref_code"/>
+            <field name="description" colspan="4"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_mgmtsystem_nonconformity_cause_tree" model="ir.ui.view">
+      <field name="name">mgmtsystem.nonconformity.cause.tree</field>
+      <field name="model">mgmtsystem.nonconformity.cause</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="parent_id"/>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="sequence"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_mgmtsystem_nonconformity_cause_filter" model="ir.ui.view">
+      <field name="name">Causes</field>
+      <field name="model">mgmtsystem.nonconformity.cause</field>
+      <field name="arch" type="xml">
+        <search string="Causes">
+          <field name="parent_id"/>
+          <field name="name"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="open_mgmtsystem_nonconformity_cause_list" model="ir.actions.act_window">
+      <field name="name">Causes</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mgmtsystem.nonconformity.cause</field>
+      <field name="view_id" eval="view_mgmtsystem_nonconformity_cause_tree"/>
+      <field name="search_view_id" ref="view_mgmtsystem_nonconformity_cause_filter"/>
+    </record>
+
+    <menuitem
+      id="menu_open_nonconformity_cause"
+      action="open_mgmtsystem_nonconformity_cause_list"
+      parent="menu_mgmtsystem_configuration_nonconformities"
+      sequence="30"
+      groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+</odoo>

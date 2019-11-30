@@ -1,0 +1,32 @@
+<odoo>
+    <!-- Severity -->
+
+    <record id="view_mgmtsystem_nonconformity_severity_form" model="ir.ui.view">
+      <field name="name">mgmtsystem.nonconformity.severity.form</field>
+      <field name="type">form</field>
+      <field name="model">mgmtsystem.nonconformity.severity</field>
+      <field name="arch" type="xml">
+        <form string="Severity of Complaints and Nonconformities">
+          <group>
+            <field name="name"/>
+            <field name="sequence"/>
+            <field name="description" colspan="2"/>
+            <field name="active"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="open_mgmtsystem_nonconformity_severity_list" model="ir.actions.act_window">
+      <field name="name">Severity</field>
+      <field name="res_model">mgmtsystem.nonconformity.severity</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+      id="menu_open_nonconformity_severity"
+      action="open_mgmtsystem_nonconformity_severity_list"
+      parent="mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities"
+      groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+</odoo>

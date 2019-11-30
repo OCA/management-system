@@ -1,0 +1,222 @@
+<odoo>
+
+  <menuitem id="menu_mgmtsystem_configuration_nonconformities"
+    name="Nonconformities"
+    parent="mgmtsystem.menu_mgmtsystem_configuration"
+    groups="mgmtsystem.group_mgmtsystem_manager"
+    sequence="10"/>
+
+  <record id="view_mgmtsystem_nonconformity_tree" model="ir.ui.view">
+    <field name="name">mgmtsystem.nonconformity.tree</field>
+    <field name="model">mgmtsystem.nonconformity</field>
+    <field name="arch" type="xml">
+      <tree string="Non-Conformities">
+        <field name="ref"/>
+        <field name="create_date"/>
+        <field name="partner_id"/>
+        <field name="description"/>
+        <field name="user_id"/>
+        <field name="responsible_user_id"/>
+        <field name="manager_user_id"/>
+        <field name="system_id"/>
+        <field name="company_id" groups="base.group_multi_company"/>
+        <field name="stage_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_mgmtsystem_nonconformity_filter" model="ir.ui.view">
+    <field name="name">mgmtsystem.nonconformity.filter</field>
+    <field name="model">mgmtsystem.nonconformity</field>
+    <field name="arch" type="xml">
+      <search>
+        <group name="filters">
+          <filter name="draft" icon="terp-document-new" domain="[('state','=','draft')]" string="Draft" help="Draft/New nonconformities"/>
+          <filter name="pending" icon="terp-gtk-media-pause" domain="[('state','in',['analysis','pending'])]" string="Analysis" help="Nonconformities pending review"/>
+          <filter name="current" icon="terp-check" domain="[('state','=','open')]" string="In Progress" help="Open Nonconformities"/>
+          <filter name="icon" icon="terp-camera_test" domain="[('state','=','done')]" string="Closed" help="Closed Nonconformities"/>
+          <separator orientation="vertical"/>
+          <field name="ref"/>
+          <field name="create_date"/>
+          <field name="user_id" string="User" domain="['|','|',('user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]" />
+          <field name="system_id"/>
+          <field name="company_id" groups="base.group_multi_company"/>
+        </group>
+        <newline />
+        <group expand="0" string="Group By...">
+          <filter name="groupby_author" string="Author" icon="gtk-edit" context="{'group_by':'user_id'}"/>
+          <filter name="groupby_responsible" string="Responsible" icon="terp-personal" context="{'group_by':'responsible_user_id'}"/>
+          <filter name="groupby_manager" string="Manager" icon="terp-personal+" context="{'group_by':'manager_user_id'}"/>
+          <separator orientation="vertical"/>
+          <filter name="groupby_system" string="System" icon="gtk-execute" context="{'group_by':'system_id'}"/>
+          <filter name="groupby_partner" string="Partner" icon="terp-personal+" domain="[]" context="{'group_by':'partner_id'}"/>
+          <filter name="groupby_procedure" string="Procedure" icon="terp-stock_symbol-selection" context="{'group_by':'procedure_ids'}"/>
+        </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- Kanban view -->
+    <record id="view_mgmtsystem_nonconformity_kanban" model="ir.ui.view">
+        <field name="name">mgmtsystem.nonconformity.kanban</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field name="arch" type="xml">
+            <kanban quick_create="false" default_group_by="stage_id" class="o_kanban_small_column">
+                <field name="stage_id"/>
+                <field name="responsible_user_id"/>
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="message_needaction_counter"/>
+                <templates>
+                    <t t-name="kanban-box">
+
+                        <div t-attf-class="#{kanban_color(red)} oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown">
+
+                                <a class="dropdown-toggle btn" role="button" data-toggle="dropdown" href="#">
+                                    <span class="fa fa-bars fa-lg"/>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <t t-if="widget.editable">
+                                        <li>
+                                            <a type="edit">Edit</a>
+                                        </li>
+                                    </t>
+                                </ul>
+                            </div>
+                            <div class="oe_kanban_content">
+                                <div>
+                                    <strong><field name="ref"/> - <field name="name"/></strong>
+                                </div>
+                                <div>
+                                    <br/>
+                                </div>
+                                <div class="oe_kanban_bottom_left">
+                                    <span class='oe_kanban_mail_new' title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <field name="kanban_state" widget="kanban_state_selection" />
+                                    <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_user_id.raw_value)" t-att-title="record.responsible_user_id.value" t-att-alt="record.responsible_user_id.value" width="24" height="24" class="oe_kanban_avatar"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
+      <field name="name">mgmtsystem.nonconformity.form</field>
+      <field name="model">mgmtsystem.nonconformity</field>
+      <field name="arch" type="xml">
+        <form string="Non-Conformity" version="7.0">
+          <header>
+            <field name="stage_id" widget="statusbar" clickable="True" />
+            <field name="state" invisible="True" />
+          </header>
+          <sheet string="Non-Conformity">
+            <field name="kanban_state" widget="kanban_state_selection" />
+            <group name="main">
+              <group name="config">
+                <field name="name" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                <field name="ref" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                <field name="create_date" readonly="1"/>
+                <field name="partner_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                <field name="reference" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                <field name="origin_ids" widget="many2many_tags" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+              </group>
+              <group name="meta">
+                <field name="responsible_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                <field name="manager_user_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                <field name="user_id" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                <field name="system_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+              </group>
+            </group>
+
+            <notebook>
+
+              <page string="Description" name="description">
+                  <field name="description" placeholder="Add a description ..." attrs="{'readonly':[('state','not in',['draft','analysis'])]}"/>
+                  <group name="state">
+                    <field name="immediate_action_id" domain="[('type_action','=','immediate')]"
+                           attrs="{'readonly':[('state','not in',['draft', 'analysis'])]}"/>
+                  </group>
+              </page>
+
+              <page string="Procedures">
+                <field name="procedure_ids" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]"/>
+              </page>
+
+              <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
+                <separator string="Analysis"/>
+                <field name="analysis" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
+
+                <separator string="Causes"/>
+                <field name="cause_ids" attrs="{'readonly':[('state','not in',['analysis'])]}"
+                       options="{'no_create': True}">
+                  <tree create="1" delete="1" colors="blue:parent_id;">
+                    <field name="parent_id"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="sequence"/>
+                  </tree>
+                </field>
+
+                <separator string="Analysis Confirmation"/>
+                <group>
+                  <group>
+                    <field name="severity_id" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
+                  </group>
+                </group>
+              </page>
+
+              <page string="Actions" attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}">
+                <separator string="Action Plan"/>
+                <field name="action_ids" attrs="{'readonly':[('state','not in',['pending'])]}"/>
+
+                <group string="Plan Review">
+                 <group>
+                   <field name="action_comments" attrs="{'readonly':[('state','not in',['pending'])]}" nolabel="1" placeholder="Action Plan Comments"/>
+                 </group>
+               </group>
+
+               <group attrs="{'invisible':[('state','not in',['open','done'])]}" string="Effectiveness Review">
+                 <group>
+                   <field name="evaluation_comments" attrs="{'readonly':[('state','not in',['open'])]}" nolabel="1" placeholder="Evaluation Comments"/>
+                 </group>
+             </group>
+              </page>
+
+            </notebook>
+          </sheet>
+
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+            <field name="activity_ids" widget="mail_activity"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="open_mgmtsystem_nonconformity_list">
+      <field name="name">Nonconformities</field>
+      <field name="res_model">mgmtsystem.nonconformity</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mgmtsystem_nonconformity_kanban"/>
+      <field name="search_view_id" ref="view_mgmtsystem_nonconformity_filter"/>
+      <field name="context">{"search_default_user_id":uid}</field>
+    </record>
+
+    <menuitem
+      id="menu_open_nonconformity"
+      string="Nonconformity"
+      action="open_mgmtsystem_nonconformity_list"
+      parent="mgmtsystem.menu_mgmtsystem_main"
+      sequence="30"
+      groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
+
+</odoo>
