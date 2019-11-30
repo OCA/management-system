@@ -21,6 +21,27 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "                \n"
+#| "<p>Hello ${object.user_id.name},</p>\n"
+#| "\n"
+#| "<p>\n"
+#| "  This is an automated message to remind you that the\n"
+#| "  following action is due to be completed in 10 days (${object."
+#| "date_deadline}):\n"
+#| "\n"
+#| "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
+#| "</p>\n"
+#| "\n"
+#| "<p>\n"
+#| "  Thank you and have a nice day.<br />\n"
+#| "  --<br />\n"
+#| "  Odoo\n"
+#| "</p>\n"
+#| "                \n"
+#| "            "
 msgid ""
 "\n"
 "                \n"
@@ -35,8 +56,8 @@ msgid ""
 "</p>\n"
 "\n"
 "<p>\n"
-"  Thank you and have a nice day.<br />\n"
-"  --<br />\n"
+"  Thank you and have a nice day.<br>\n"
+"  --<br>\n"
 "  Odoo\n"
 "</p>\n"
 "                \n"
@@ -48,8 +69,8 @@ msgstr ""
 "\n"
 "<p>\n"
 "  Dies ist eine automatisch erzeugte Nachricht um Sie daran zu erinnern, "
-"dass die folgende Maßnahme in den nächsten 10 Tagen fällig wird "
-"(${object.date_deadline}):\n"
+"dass die folgende Maßnahme in den nächsten 10 Tagen fällig wird (${object."
+"date_deadline}):\n"
 "\n"
 "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
 "</p>\n"
@@ -87,8 +108,8 @@ msgstr ""
 "                \n"
 "<p>Hallo ${object.user_id.name},</p>\n"
 "\n"
-"<p>Ihnen wurde eine neue Maßnahme zugewiesen: <b><a href=\""
-"${object.get_action_url()}\">${object.name}</a></b></p>\n"
+"<p>Ihnen wurde eine neue Maßnahme zugewiesen: <b><a href=\"${object."
+"get_action_url()}\">${object.name}</a></b></p>\n"
 "<p><b>Deadline: </b>${object.date_deadline or ''}</p>\n"
 "\n"
 "<p>Bitte nutzen Sie Maßnahmen Stufen und Nachrichten um den Fortschritt zu "
@@ -198,6 +219,11 @@ msgid "Activities"
 msgstr "Aktivitäten"
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_state
 msgid "Activity State"
 msgstr "Aktivitäten Stufe"
@@ -259,8 +285,8 @@ msgid "Company"
 msgstr "Unternehmen"
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-#: selection:mgmtsystem.action.report,type_action:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__correction
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__correction
 msgid "Corrective Action"
 msgstr "Korrektivmaßnahme"
 
@@ -389,31 +415,38 @@ msgid "ID"
 msgstr "ID"
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_unread
-msgid "If checked new messages require your attention."
-msgstr "Wenn angewählt gibt es Maßnahmen, die Ihre Aufmerksamkeit erfordern."
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_needaction
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 "Wenn angewählt gibt es neue Nachrichten, die Ihre Aufmerksamkeit erfordern."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 "Wenn angewählt gibt es Nachrichten, die nicht zugestellt werden konnten."
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-#: selection:mgmtsystem.action.report,type_action:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__immediate
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__immediate
 msgid "Immediate Action"
 msgstr "Sofortmaßnahme"
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-#: selection:mgmtsystem.action.report,type_action:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__improvement
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__improvement
 msgid "Improvement Opportunity"
 msgstr "Verbesserungsgelegenheit"
 
@@ -426,11 +459,6 @@ msgstr "In Bearbeitung"
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_is_follower
 msgid "Is Follower"
 msgstr "Ist Abonnent"
-
-#. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
-msgid "Last Message"
-msgstr "Letzte Nachricht"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action____last_update
@@ -460,7 +488,7 @@ msgid "Late Activities"
 msgstr "Überfällige Maßnahmen"
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,priority:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__priority__0
 msgid "Low"
 msgstr "Niedrig"
 
@@ -510,8 +538,7 @@ msgid "Name"
 msgstr "Name"
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:51
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:117
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #, python-format
 msgid "New"
 msgstr "Neu"
@@ -532,7 +559,7 @@ msgid "Next Activity Type"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,priority:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__priority__1
 msgid "Normal"
 msgstr ""
 
@@ -543,7 +570,9 @@ msgstr "Anzahl Maßnahmen"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
-msgid "Number of error"
+#, fuzzy
+#| msgid "Number of error"
+msgid "Number of errors"
 msgstr "Anzahl Fehler"
 
 #. module: mgmtsystem_action
@@ -568,23 +597,13 @@ msgid "Opening Date"
 msgstr "Eröffnungsdatum"
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,activity_state:0
-msgid "Overdue"
-msgstr "Überfällig"
-
-#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Pending"
 msgstr "Unerledigt"
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,activity_state:0
-msgid "Planned"
-msgstr "Geplant"
-
-#. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-#: selection:mgmtsystem.action.report,type_action:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__prevention
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__prevention
 msgid "Preventive Action"
 msgstr "Präventivmaßnahme"
 
@@ -618,6 +637,13 @@ msgstr "Verantwortlich"
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_user_id
 msgid "Responsible User"
 msgstr "Verantwortlicher Benutzer"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
+#, fuzzy
+#| msgid "Message Delivery error"
+msgid "SMS Delivery error"
+msgstr "Zustellungsfehler"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__sequence
@@ -679,7 +705,7 @@ msgid "System"
 msgstr "System"
 
 #. module: mgmtsystem_action
-#: sql_constraint:mgmtsystem.action.tag:0
+#: model:ir.model.constraint,message:mgmtsystem_action.constraint_mgmtsystem_action_tag_name_uniq
 msgid "Tag name already exists !"
 msgstr "Stichwort existiert bereits!"
 
@@ -707,11 +733,6 @@ msgstr ""
 "anzeigen in dieser Stufe gibt."
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,activity_state:0
-msgid "Today"
-msgstr "Heute"
-
-#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Today Activities"
 msgstr "Heutige Maßnahmen"
@@ -720,6 +741,11 @@ msgstr "Heutige Maßnahmen"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Type"
 msgstr "Typ"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_unread
@@ -740,7 +766,7 @@ msgid "User"
 msgstr "Benutzer"
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:130
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #, python-format
 msgid "We cannot bring back the action to draft stage"
 msgstr "Wir können die Maßnahme nicht zu einem Entwurf zurückstufen"
@@ -749,3 +775,19 @@ msgstr "Wir können die Maßnahme nicht zu einem Entwurf zurückstufen"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
 msgstr ""
+
+#~ msgid "If checked new messages require your attention."
+#~ msgstr ""
+#~ "Wenn angewählt gibt es Maßnahmen, die Ihre Aufmerksamkeit erfordern."
+
+#~ msgid "Last Message"
+#~ msgstr "Letzte Nachricht"
+
+#~ msgid "Overdue"
+#~ msgstr "Überfällig"
+
+#~ msgid "Planned"
+#~ msgstr "Geplant"
+
+#~ msgid "Today"
+#~ msgstr "Heute"
