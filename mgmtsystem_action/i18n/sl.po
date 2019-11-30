@@ -35,8 +35,8 @@ msgid ""
 "</p>\n"
 "\n"
 "<p>\n"
-"  Thank you and have a nice day.<br />\n"
-"  --<br />\n"
+"  Thank you and have a nice day.<br>\n"
+"  --<br>\n"
 "  Odoo\n"
 "</p>\n"
 "                \n"
@@ -165,6 +165,11 @@ msgid "Activities"
 msgstr "Aktivno"
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_state
 #, fuzzy
 msgid "Activity State"
@@ -228,8 +233,8 @@ msgid "Company"
 msgstr "Družba"
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-#: selection:mgmtsystem.action.report,type_action:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__correction
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__correction
 msgid "Corrective Action"
 msgstr "Korektivni ukrep"
 
@@ -356,29 +361,36 @@ msgid "ID"
 msgstr "ID"
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_unread
-msgid "If checked new messages require your attention."
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_exception_icon
+msgid "Icon to indicate an exception activity."
 msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_needaction
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-#: selection:mgmtsystem.action.report,type_action:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__immediate
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__immediate
 msgid "Immediate Action"
 msgstr "Takojšnji ukrepi"
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-#: selection:mgmtsystem.action.report,type_action:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__improvement
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__improvement
 msgid "Improvement Opportunity"
 msgstr "Priložnost za izboljšave"
 
@@ -391,12 +403,6 @@ msgstr "V teku"
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_is_follower
 msgid "Is Follower"
 msgstr ""
-
-#. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
-#, fuzzy
-msgid "Last Message"
-msgstr "Neprebrana sporočila"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action____last_update
@@ -426,7 +432,7 @@ msgid "Late Activities"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,priority:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__priority__0
 msgid "Low"
 msgstr ""
 
@@ -479,8 +485,7 @@ msgid "Name"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:51
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:117
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #, python-format
 msgid "New"
 msgstr ""
@@ -501,7 +506,7 @@ msgid "Next Activity Type"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,priority:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__priority__1
 msgid "Normal"
 msgstr ""
 
@@ -512,7 +517,7 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
-msgid "Number of error"
+msgid "Number of errors"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -539,23 +544,13 @@ msgid "Opening Date"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,activity_state:0
-msgid "Overdue"
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Pending"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,activity_state:0
-msgid "Planned"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: selection:mgmtsystem.action,type_action:0
-#: selection:mgmtsystem.action.report,type_action:0
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__prevention
+#: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__prevention
 msgid "Preventive Action"
 msgstr "Preventivni ukrep"
 
@@ -591,6 +586,11 @@ msgstr "Odgovorni"
 #| msgid "Responsible"
 msgid "Responsible User"
 msgstr "Odgovorni"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__sequence
@@ -648,7 +648,7 @@ msgid "System"
 msgstr "Sistem"
 
 #. module: mgmtsystem_action
-#: sql_constraint:mgmtsystem.action.tag:0
+#: model:ir.model.constraint,message:mgmtsystem_action.constraint_mgmtsystem_action_tag_name_uniq
 msgid "Tag name already exists !"
 msgstr ""
 
@@ -675,11 +675,6 @@ msgid ""
 msgstr ""
 
 #. module: mgmtsystem_action
-#: selection:mgmtsystem.action,activity_state:0
-msgid "Today"
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Today Activities"
 msgstr ""
@@ -688,6 +683,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Type"
 msgstr "Tip"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_unread
@@ -710,7 +710,7 @@ msgid "User"
 msgstr "Uporabnik"
 
 #. module: mgmtsystem_action
-#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:130
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #, python-format
 msgid "We cannot bring back the action to draft stage"
 msgstr ""
@@ -719,6 +719,10 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Last Message"
+#~ msgstr "Neprebrana sporočila"
 
 #~ msgid "Common to All Teams"
 #~ msgstr "Skupno vsem ekipam"
