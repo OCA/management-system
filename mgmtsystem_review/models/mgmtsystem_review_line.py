@@ -8,28 +8,18 @@ class MgmtsystemReviewLine(models.Model):
     _name = "mgmtsystem.review.line"
     _description = "Review Line"
 
-    name = fields.Char('Title', size=300, required=True)
+    name = fields.Char("Title", size=300, required=True)
     type = fields.Selection(
-        [
-            ('action', 'Action'),
-            ('nonconformity', 'Nonconformity'),
-        ],
-        'Type')
-    action_id = fields.Many2one(
-        'mgmtsystem.action',
-        'Action',
-        index=True)
+        [("action", "Action"), ("nonconformity", "Nonconformity")], "Type"
+    )
+    action_id = fields.Many2one("mgmtsystem.action", "Action", index=True)
     nonconformity_id = fields.Many2one(
-        'mgmtsystem.nonconformity',
-        'Nonconformity',
-        index=True)
-    decision = fields.Text('Decision')
+        "mgmtsystem.nonconformity", "Nonconformity", index=True
+    )
+    decision = fields.Text("Decision")
     review_id = fields.Many2one(
-        'mgmtsystem.review',
-        'Review',
-        ondelete='cascade',
-        index=True)
+        "mgmtsystem.review", "Review", ondelete="cascade", index=True
+    )
     company_id = fields.Many2one(
-        'res.company',
-        'Company',
-        default=lambda self: self.env.user.company_id.id)
+        "res.company", "Company", default=lambda self: self.env.user.company_id.id
+    )
