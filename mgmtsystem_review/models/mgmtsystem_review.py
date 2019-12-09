@@ -43,11 +43,13 @@ class MgmtsystemReview(models.Model):
         "res.company", "Company", default=lambda self: self.env.user.company_id.id
     )
 
-    @api.model
-    def create(self, vals):
-        vals["reference"] = self.env["ir.sequence"].next_by_code("mgmtsystem.review")
-        return super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            vals["reference"] = self.env["ir.sequence"].next_by_code(
+                "mgmtsystem.review"
+            )
+        return super().create(vals_list)
 
-    @api.multi
     def button_close(self):
         return self.write({"state": "done"})

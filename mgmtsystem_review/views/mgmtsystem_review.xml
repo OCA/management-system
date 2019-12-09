@@ -58,7 +58,6 @@
     <record id="open_mgmtsystem_review_line_list" model="ir.actions.act_window">
         <field name="name">Review Lines</field>
         <field name="res_model">mgmtsystem.review.line</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
 
@@ -140,11 +139,11 @@
                             <field name="response_ids" colspan="4" nolabel="1" attrs="{'readonly':[('state','=','done')]}">
                                 <tree create="true">
                                     <field name="survey_id"/>
-                                    <field name="date_create"/>
+                                    <field name="create_date"/>
                                     <field name="deadline"/>
                                     <field name="partner_id"/>
                                     <field name="email"/>
-                                    <field name="type"/>
+                                    <field name="input_type"/>
                                     <field name="state"/>
                                     <field name="test_entry" invisible="True"/>
                                     <field name="quizz_score" groups="base.group_no_one"/>
@@ -179,7 +178,6 @@
     <record id="open_mgmtsystem_review_list" model="ir.actions.act_window">
         <field name="name">Reviews</field>
         <field name="res_model">mgmtsystem.review</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form,calendar</field>
         <field name="view_id" ref="view_mgmtsystem_review_tree"/>
         <field name="search_view_id" ref="view_mgmtsystem_review_filter"/>
