@@ -5,3 +5,6 @@
 * Eugen Don <eugen.don@don-systems.de>
 * Jose Maria Alzaga <jose.alzaga@aselcis.com>
 * Julien Coux <julien.coux@camptocamp.com>
+* `Tecnativa <https://www.tecnativa.com>`_:
+
+  * Ernesto Tejeda
