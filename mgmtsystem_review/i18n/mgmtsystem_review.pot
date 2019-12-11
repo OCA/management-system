@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* mgmtsystem_review
+# 	* mgmtsystem_review
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,8 +40,8 @@ msgstr ""
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__action_id
+#: model:ir.model.fields.selection,name:mgmtsystem_review.selection__mgmtsystem_review_line__type__action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
-#: selection:mgmtsystem.review.line,type:0
 msgid "Action"
 msgstr ""
 
@@ -66,8 +66,8 @@ msgid "Close"
 msgstr ""
 
 #. module: mgmtsystem_review
+#: model:ir.model.fields.selection,name:mgmtsystem_review.selection__mgmtsystem_review__state__done
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
-#: selection:mgmtsystem.review,state:0
 msgid "Closed"
 msgstr ""
 
@@ -193,14 +193,14 @@ msgstr ""
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__nonconformity_id
+#: model:ir.model.fields.selection,name:mgmtsystem_review.selection__mgmtsystem_review_line__type__nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
-#: selection:mgmtsystem.review.line,type:0
 msgid "Nonconformity"
 msgstr ""
 
 #. module: mgmtsystem_review
+#: model:ir.model.fields.selection,name:mgmtsystem_review.selection__mgmtsystem_review__state__open
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
-#: selection:mgmtsystem.review,state:0
 msgid "Open"
 msgstr ""
 
@@ -305,4 +305,3 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__type
 msgid "Type"
 msgstr ""
-
