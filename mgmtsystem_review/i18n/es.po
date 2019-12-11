@@ -1,0 +1,313 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_review
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2018
+# enjolras <yo@miguelrevilla.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-10 07:39+0000\n"
+"PO-Revision-Date: 2018-02-10 07:39+0000\n"
+"Last-Translator: enjolras <yo@miguelrevilla.com>, 2018\n"
+"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Changes affecting the management systems:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Conclusion:</strong>"
+msgstr "<strong>Conclusión:</strong>"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Policies:</strong>"
+msgstr "<strong>Políticas:</strong>"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Review Report</strong>"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Satisfaction Survey Answers:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__action_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+#: selection:mgmtsystem.review.line,type:0
+msgid "Action"
+msgstr "Acción"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Action:"
+msgstr "Acción:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__changes
+msgid "Changes"
+msgstr "Cambios"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Changes affecting the management systems"
+msgstr "Cambios que afectan los sistemas de gestión"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
+#: selection:mgmtsystem.review,state:0
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
+msgid "Closed Reviews"
+msgstr "Revisiones cerradas"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Comments:"
+msgstr "Comentarios:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__company_id
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__conclusion
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Conclusion"
+msgstr "Conclusión"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Confidentiality:"
+msgstr "Confidencialidad:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Date:"
+msgstr "Fecha:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__decision
+msgid "Decision"
+msgstr "Decisión"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Decision:"
+msgstr "Decisión:"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Direction Review"
+msgstr "Revisión de la administración"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Expectations:"
+msgstr "Expectativas:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__id
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Improvements:"
+msgstr "Mejoras:"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Inputs"
+msgstr "Entradas"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización por"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__line_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__nonconformity_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+#: selection:mgmtsystem.review.line,type:0
+msgid "Nonconformity"
+msgstr "No conformidad"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
+#: selection:mgmtsystem.review,state:0
+msgid "Open"
+msgstr "Abierta"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
+msgid "Open Reviews"
+msgstr "Revisiones abiertas"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__user_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Participants"
+msgstr "Participantes"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Participants:"
+msgstr "Participantes:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__policy
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Policy"
+msgstr "Política"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Reference :"
+msgstr "Referencia:"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Reference:"
+msgstr "Referencia:"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Refrence:"
+msgstr "Referencia:"
+
+#. module: mgmtsystem_review
+#: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__review_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Review"
+msgstr "Revisión"
+
+#. module: mgmtsystem_review
+#: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review_line
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_form
+msgid "Review Line"
+msgstr "Línea de revisión"
+
+#. module: mgmtsystem_review
+#: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_line_list
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_filter
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_tree
+msgid "Review Lines"
+msgstr "Líneas de revisión"
+
+#. module: mgmtsystem_review
+#: model:ir.actions.report,name:mgmtsystem_review.review_report_mgmtsystem_review
+msgid "Review report"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_list
+#: model:ir.ui.menu,name:mgmtsystem_review.menu_open_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_tree
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_review_calendar
+msgid "Reviews"
+msgstr "Revisiones"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__state
+msgid "State"
+msgstr "Estado"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "State:"
+msgstr "Estado:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__response_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Survey Answers"
+msgstr "Respuestas encuesta"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__name
+msgid "Title"
+msgstr "Título"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__type
+msgid "Type"
+msgstr "Tipo"
