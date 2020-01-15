@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Server action to notify all auditors. -->
+        <record id="action_email_prepare_to_audit" model="ir.actions.server">
+            <field name="name">Prepare to audit</field>
+            <field name="model_id" ref="model_mgmtsystem_audit"/>
+            <field name="type">ir.actions.server</field>
+            <field name="state">email</field>
+            <field name="template_id" ref="email_prepare_to_audit"/>
+        </record>
+
+        <!-- Server action to send the verification list to all followers -->
+        <record id="action_email_send_verification_list" model="ir.actions.server">
+            <field name="name">Send Verification List</field>
+            <field name="model_id" ref="model_mgmtsystem_audit"/>
+            <field name="type">ir.actions.server</field>
+            <field name="state">email</field>
+            <field name="template_id" ref="email_send_verification_list"/>
+        </record>
+
+    </data>
+</odoo>
