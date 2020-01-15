@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="system_manual_form" model="ir.ui.view">
+        <field name="name">mgmtsystem_system_manual_form</field>
+        <field name="model">mgmtsystem.system</field>
+        <field name="arch" type="xml">
+            <form name="name" position="after">
+                <field name="manual_id"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="system_manual_tree" model="ir.ui.view" >
+        <field name="name">mgmtsystem_system_manual_tree</field>
+        <field name="model">mgmtsystem.system</field>
+        <field name="arch" type="xml">
+            <tree name="name" position="after">
+                <field name="manual_id"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
