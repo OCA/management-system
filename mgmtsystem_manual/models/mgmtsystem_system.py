@@ -16,4 +16,5 @@ class MgmtSystemSystem(models.Model):
                 ('type', '=', 'page')]
 
     manual_id = fields.Many2one('document.page', 'Manual',
+                                oldname='manual',
                                 domain=get_manual_domain)
