@@ -201,11 +201,6 @@ msgid "Manager"
 msgstr "Gestor"
 
 #. module: mgmtsystem
-#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
-msgid "Manual"
-msgstr "Manual"
-
-#. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Manuals"
 msgstr "Manuales"
@@ -460,6 +455,7 @@ msgid "Settings"
 msgstr "Ajustes"
 
 #. module: mgmtsystem
+#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_name
 msgid "System"
 msgstr "Sistema"
@@ -489,6 +485,9 @@ msgstr "Espectador"
 #, fuzzy
 msgid "res.config.settings"
 msgstr "mgmtsystem.config.settings"
+
+#~ msgid "Manual"
+#~ msgstr "Manual"
 
 #~ msgid "Apply"
 #~ msgstr "Aplicar"

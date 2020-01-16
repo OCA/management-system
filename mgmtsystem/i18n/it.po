@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2016-08-07 06:43+0000\n"
 "PO-Revision-Date: 2019-03-02 17:11+0000\n"
 "Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
-"Language-Team: Italian (http://www.transifex.com/oca/"
-"OCA-management-system-9-0/language/it/)\n"
+"Language-Team: Italian (http://www.transifex.com/oca/OCA-management-"
+"system-9-0/language/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -199,11 +199,6 @@ msgstr "Sistemi di gestione"
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_manager
 msgid "Manager"
 msgstr "Supervisore"
-
-#. module: mgmtsystem
-#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
-msgid "Manual"
-msgstr "Manuale"
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
@@ -530,6 +525,7 @@ msgid "Settings"
 msgstr "Impostazioni"
 
 #. module: mgmtsystem
+#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system_name
 msgid "System"
 msgstr "Sistema"
@@ -558,6 +554,9 @@ msgstr "Visualizzatore"
 #: model:ir.model,name:mgmtsystem.model_res_config_settings
 msgid "res.config.settings"
 msgstr "res.config.settings"
+
+#~ msgid "Manual"
+#~ msgstr "Manuale"
 
 #~ msgid "Cancel"
 #~ msgstr "Annulla"
