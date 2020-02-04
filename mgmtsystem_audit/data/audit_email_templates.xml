@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <!-- Email template for "Prepare to audit" message to all auditors. -->
+        <record id="action_email_prepare_to_audit" model="mail.template">
+            <field name="name">Prepare to audit</field>
+            <field name="model_id" ref="model_mgmtsystem_audit"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.create_uid.partner_id.lang}</field>
+            <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost'}</field>
+            <field name="email_to">",".join(set([ i.email for i in object.auditor_user_ids ]))</field>
+            <field name="subject">Prepare to Audit: "[[object.name]]"</field>
+            <field name="body_html">
+Hello,
+
+The audit "[[object.name]]" is scheduled in 2 weeks.
+Please prepare the verification list:
+
+[[object.get_audit_url()]]
+
+
+Thank you.
+--
+Odoo
+            </field>
+        </record>
+
+        <!-- Email template for "Send verification list" message to all followers -->
+        <record id="action_email_send_verification_list" model="mail.template">
+            <field name="name">Send Verification List</field>
+            <field name="model_id" ref="model_mgmtsystem_audit"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.create_uid.partner_id.lang}</field>
+            <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost'}</field>
+            <field name="email_to">",".join(set([i.email for i in object.auditor_user_ids] + [i.email for i in object.auditee_user_ids] + [object.user_id.email]))</field>
+            <field name="subject">Send Verification List: "[[object.name]]"</field>
+            <field name="body_html">
+Hello,
+
+The audit "[[object.name]]" is scheduled in 1 week.
+Please finish the verification list and send it to the auditees:
+
+[[object.get_audit_url()]]
+
+
+Thank you.
+--
+Odoo
+            </field>
+        </record>
+
+    </data>
+</odoo>
+
+
