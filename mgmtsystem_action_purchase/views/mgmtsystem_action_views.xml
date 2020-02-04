@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_mgmtsystem_action_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.action.form</field>
+        <field name="model">mgmtsystem.action</field>
+        <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_form"/>
+        <field name="arch" type="xml">
+        	<xpath expr="//notebook" position="inside">
+				<page name="purchase_orders" string="Purchase orders">
+					<field name="purchase_order_ids" widget="many2many_tags" string="Purchase orders"/>
+				</page>
+			</xpath>
+        </field>
+    </record>
+    
+	<record id="view_mgmtsystem_action_filter" model="ir.ui.view">
+        <field name="name">mgmtsystem.action.filter</field>
+        <field name="model">mgmtsystem.action</field>
+        <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_filter"/>
+        <field name="arch" type="xml">
+        	<xpath expr="//search" position="inside">
+				<field name="purchase_order_ids" string="Purchase orders"/>
+			</xpath>
+        </field>
+    </record>
+
+</odoo>
