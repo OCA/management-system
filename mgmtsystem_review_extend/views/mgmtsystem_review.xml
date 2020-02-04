@@ -1,0 +1,87 @@
+<odoo>
+
+	<!-- Review Lines -->
+
+	<record id="view_mgmtsystem_review_line_tree" model="ir.ui.view">
+		<field name="name">mgmtsystem.review.line.tree</field>
+		<field name="model">mgmtsystem.review.line</field>
+		<field name="inherit_id" ref="mgmtsystem_review.view_mgmtsystem_review_line_tree"/>
+		<field name="arch" type="xml">
+        	<xpath expr="//field[@name='name']" position="before">
+        		<field name="origin_ids"/>
+        	</xpath>
+		</field>
+	</record>
+	
+	<record id="view_mgmtsystem_review_line_filter" model="ir.ui.view">
+		<field name="name">mgmtsystem.review.line.filter</field>
+		<field name="model">mgmtsystem.review.line</field>
+		<field name="type">search</field>
+		<field name="inherit_id" ref="mgmtsystem_review.view_mgmtsystem_review_line_filter"/>
+		<field name="arch" type="xml">
+        	<xpath expr="//field[@name='name']" position="before">
+				<field name="origin_ids"/>
+			</xpath>
+		</field>
+	</record>
+
+	<record id="view_mgmtsystem_review_line_form" model="ir.ui.view">
+		<field name="name">mgmtsystem.review.line.form</field>
+		<field name="model">mgmtsystem.review.line</field>
+		<field name="inherit_id" ref="mgmtsystem_review.view_mgmtsystem_review_line_form"/>
+		<field name="arch" type="xml">
+        	<xpath expr="//field[@name='name']" position="before">
+				<field name="origin_ids" widget="many2many_tags"/>
+			</xpath>
+        </field>
+    </record>
+    
+	<!-- Reviews -->
+    
+    <record id="view_mgmtsystem_review_tree" model="ir.ui.view">
+		<field name="name">mgmtsystem.review.tree</field>
+		<field name="model">mgmtsystem.review</field>
+		<field name="inherit_id" ref="mgmtsystem_review.view_mgmtsystem_review_tree"/>
+		<field name="arch" type="xml">
+        	<xpath expr="//field[@name='name']" position="before">
+        		<field name="type_id"/>
+        	</xpath>
+		</field>
+	</record>
+	
+	<record id="view_mgmtsystem_review_filter" model="ir.ui.view">
+		<field name="name">mgmtsystem.review.filter</field>
+		<field name="model">mgmtsystem.review</field>
+		<field name="type">search</field>
+		<field name="inherit_id" ref="mgmtsystem_review.view_mgmtsystem_review_filter"/>
+		<field name="arch" type="xml">
+        	<xpath expr="//search/group" position="after">
+       			<group expand="0" string="Group By...">
+          			<filter name="Type" context="{'group_by':'type_id'}"/>
+          		</group>
+          	</xpath>
+		</field>
+	</record>
+
+	<record id="view_mgmtsystem_review_form" model="ir.ui.view">
+		<field name="name">mgmtsystem.review.form</field>
+		<field name="model">mgmtsystem.review</field>
+		<field name="inherit_id" ref="mgmtsystem_review.view_mgmtsystem_review_form"/>
+		<field name="arch" type="xml">
+        	<xpath expr="//form/sheet/label[1]" position="before">
+        		<group>
+					<field name="type_id"/>
+				</group>
+			</xpath>
+        </field>
+    </record>
+    
+    <!-- Review Configuration -->
+    
+    <menuitem id="menu_mgmtsystem_configuration_review"
+    name="Review"
+    parent="mgmtsystem.menu_mgmtsystem_configuration"
+    groups="mgmtsystem.group_mgmtsystem_manager"
+    sequence="10"/>
+    
+</odoo>

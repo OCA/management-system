@@ -1,0 +1,31 @@
+<odoo>
+    <!-- Type -->
+
+    <record id="view_mgmtsystem_review_type_form" model="ir.ui.view">
+      <field name="name">mgmtsystem.review.type.form</field>
+      <field name="type">form</field>
+      <field name="model">mgmtsystem.review.type</field>
+      <field name="arch" type="xml">
+        <form string="Review Type">
+          <group>
+            <field name="name"/>
+            <field name="sequence"/>
+            <field name="description" colspan="2"/>
+            <field name="active"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="open_mgmtsystem_review_type_list" model="ir.actions.act_window">
+      <field name="res_model">mgmtsystem.review.type</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+      id="menu_open_review_type"
+      action="open_mgmtsystem_review_type_list"
+      parent="menu_mgmtsystem_configuration_review"
+      groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+</odoo>
