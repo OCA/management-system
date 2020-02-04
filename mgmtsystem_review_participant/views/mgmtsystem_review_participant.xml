@@ -1,0 +1,29 @@
+<odoo>
+
+	<record id="view_mgmtsystem_review_form" model="ir.ui.view">
+		<field name="name">mgmtsystem.review.form</field>
+		<field name="model">mgmtsystem.review</field>
+		<field name="inherit_id" ref="mgmtsystem_review.view_mgmtsystem_review_form"/>
+		<field name="arch" type="xml">
+        	<xpath expr="//form/sheet/notebook/page[1]" position="after">
+				<page string="Participants interne">
+					<field name="employee_ids" nolabel="1" >
+						<tree string="Participants interne" editable="top" delete="true" create="true">
+							<field name="employee_id"/>	
+							<field name="presence"/>
+						</tree>
+					</field>
+				</page>
+				<page string="Participants externe">
+					<field name="partner_ids" nolabel="1" >
+						<tree string="Participants externe" editable="top" delete="true" create="true">
+							<field name="partner_id"/>	
+							<field name="presence"/>
+						</tree>
+					</field>
+				</page>
+			</xpath>
+        </field>
+    </record>
+    
+</odoo>

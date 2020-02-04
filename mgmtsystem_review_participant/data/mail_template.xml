@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- email template to sent to employee/partner with review informations -->
+    <data>
+        <record id="email_template_interne_review" model="mail.template">
+            <field name="name">Review</field>
+            <field name="email_from">review@fnc.be</field>
+            <field name="subject">Review N° ${object.review_id.id}:</field>
+            <field name="email_to">${object.employee_id.work_email}</field>
+            <field name="model_id" ref="mgmtsystem_review_participant.model_mgmtsystem_review_employee"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.env.user.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+                    <p>Dear ${object.employee_id.name_related},<br/><br/>
+                    in attachment you have the review report:<br/>
+                    <strong>Review N°</strong>: ${object.review_id.id}<br/>
+                    <br/>
+                    Best regards<br>
+                    </p>
+                      ]]>
+            </field>
+        </record>
+        
+        <record id="email_template_externe_review" model="mail.template">
+            <field name="name">Review</field>
+            <field name="email_from">review@fnc.be</field>
+            <field name="subject">Review N° ${object.review_id.id}:</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="model_id" ref="mgmtsystem_review_participant.model_mgmtsystem_review_partner"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.env.user.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+                    <p>Dear ${object.partner_id.name},<br/><br/>
+                    in attachment you have the review report:<br/>
+                    <strong>Review N°</strong>: ${object.review_id.id}<br/>
+                    <br/>
+                    Best regards<br>
+                    </p>
+                      ]]>
+            </field>
+        </record>
+    </data>
+</odoo>
+

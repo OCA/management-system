@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- add a new button to review form -->
+    <record id="view_mgmtsystem_review_send_email" model="ir.ui.view">
+        <field name="name">view.mgmtsystem.review.send_email</field>
+        <field name="model">mgmtsystem.review</field>
+        <field name="inherit_id" ref="mgmtsystem_review.view_mgmtsystem_review_form"/>
+        <field name="arch" type="xml">
+            <header>
+                <button name="action_review_interne_sent" type="object" string="Interne Email" class="oe_highlight"
+				groups="base.group_user"/>
+				<button name="action_review_externe_sent" type="object" string="Externe Email" class="oe_highlight"
+				groups="base.group_user"/>
+            </header>
+        </field>
+    </record>
+</odoo>
