@@ -34,7 +34,7 @@ class MgmtsystemAction(models.Model):
         "# of days to open", compute="_compute_number_of_days_to_open", store=True
     )
     number_of_days_to_close = fields.Integer(
-        "# of days to close", compute="_compute_number_of_days_to_close", store=True
+        "# of days to close", compute="_compute_number_of_days_to_close",store=True
     )
     reference = fields.Char(
         "Reference", required=True, readonly=True, default=lambda self: _("New")
@@ -88,16 +88,18 @@ class MgmtsystemAction(models.Model):
     @api.depends("date_open", "create_date")
     def _compute_number_of_days_to_open(self):
         for action in self:
-            action.number_of_days_to_close_open = action._elapsed_days(
+            number_of_days_to_open = action._elapsed_days(
                 action.create_date, action.date_open
             )
+        self.number_of_days_to_open = number_of_days_to_open
 
     @api.depends("date_closed", "create_date")
     def _compute_number_of_days_to_close(self):
         for action in self:
-            action.number_of_days_to_close_open = action._elapsed_days(
+            number_of_days_to_close = action._elapsed_days(
                 action.create_date, action.date_closed
             )
+        self.number_of_days_to_close = number_of_days_to_close
 
     @api.model
     def _stage_groups(self, stages=None, domain=None, order=None):
