@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="system_quality" model="mgmtsystem.system">
+      <field name="name">Quality</field>
+      <field name="manual_id" ref="document_page_quality_manual.document_page_quality_manual"/>
+    </record>
+
+</odoo>
