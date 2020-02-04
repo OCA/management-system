@@ -61,15 +61,15 @@ class MgmtsystemConfigSettings(models.TransientModel):
         help="Provide a quality manual template.\n"
         "- This installs the module document_page_quality_manual.",
     )
-    module_mgmtsystem_environment_manual = fields.Boolean(
+    module_document_page_environment_manual = fields.Boolean(
         "Environment Manual Template",
         help="Provide an environment manual template.\n"
-        "- This installs the module mgmtsystem_environment_manual.",
+        "- This installs the module document_page_environment_manual.",
     )
-    module_mgmtsystem_health_safety_manual = fields.Boolean(
+    module_document_page_health_safety_manual = fields.Boolean(
         "Health & Safety Manual Template",
         help="Provide a health and safety manual template.\n"
-        "- This installs the module mgmtsystem_health_safety_manual.",
+        "- This installs the module document_page_health_safety_manual.",
     )
     module_information_security_manual = fields.Boolean(
         "Information Security Manual Template",
@@ -83,10 +83,10 @@ class MgmtsystemConfigSettings(models.TransientModel):
         help="Provide procedures category.\n"
         "- This installs the module document_page_procedure.",
     )
-    module_mgmtsystem_environmental_aspect = fields.Boolean(
+    module_document_page_environmental_aspect = fields.Boolean(
         "Environmental Aspects",
         help="Provide Environmental Aspect category.\n"
-        "- This installs the module mgmtsystem_environmental_aspect.",
+        "- This installs the module document_page_environmental_aspect.",
     )
     module_mgmtsystem_hazard = fields.Boolean(
         "Hazards",
