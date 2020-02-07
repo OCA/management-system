@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="mgmtsystem_claims_form_view" model="ir.ui.view">
+		<field name="name">Management System Claims Form</field>
+		<field name="model">mgmtsystem.claim</field>
+		<field name="inherit_id" ref="mgmtsystem_claim.mgmtsystem_claims_form_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='activity_date_deadline']" position="after">
+					<field name="mgmtsystem_action_ids" widget="many2many" string="Actions"/>
+			</xpath>
+        </field>
+    </record>
+    
+    <record id="mgmtsystem_claims_filter_view" model="ir.ui.view">
+            <field name="name">Management System Claims Search</field>
+            <field name="model">mgmtsystem.claim</field>
+            <field name="inherit_id" ref="mgmtsystem_claim.mgmtsystem_claims_filter_view"/>
+            <field name="arch" type="xml">
+        	<xpath expr="//search" position="inside">
+				<field name="mgmtsystem_action_ids" string="Actions"/>
+			</xpath>
+        </field>
+    </record>
+  
+</odoo>
