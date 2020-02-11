@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <!-- Server Action -->
+    <record id="rule_mgmtsystem_claim_new_claim_email" model="base.automation">
+      <field name="name">Notify the person in charge of the new claim</field>
+      <field name="model_id" ref="mgmtsystem_claim.model_mgmtsystem_claim" />
+      <field name="active">1</field>
+      <field name="trigger">on_create_or_write</field>
+      <field name="state">email</field>
+      <field name="template_id" ref="mgmtsystem_claim.action_email_template_reminder_action"/>
+    </record>
+
+  </data>
+</odoo>
