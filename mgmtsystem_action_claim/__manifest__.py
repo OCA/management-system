@@ -2,7 +2,7 @@
 
 {
 	"name": "Management System - Action - Claim",
-    "version": "1.0",
+    "version": "13.0",
     "author" : "Ludovic Lelarge",
     "website": "www.eta123.be",
     'license': 'LGPL-3',
