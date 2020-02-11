@@ -23,3 +23,4 @@ class MgmtsystemClaim(models.Model):
     
     mgmtsystem_action_ids = fields.Many2many('mgmtsystem.action','mgmtsystem_action_mgmtsystem_claim_rel','mgmtsystem_claim_id','mgmtsystem_action_id','Action Ids')
     mgmtsystem_action_count = fields.Integer(compute='_compute_mgmtsystem_action_count', string="Number of action")
+    
