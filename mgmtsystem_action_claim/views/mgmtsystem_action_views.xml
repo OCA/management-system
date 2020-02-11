@@ -7,10 +7,10 @@
         <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_form"/>
         <field name="arch" type="xml">
         	<xpath expr="//notebook" position="inside">
-				<page name="claims" string="Claims">
-                    <field name="mgmtsystem_claim_ids" widget="many2many" string="Claims"/>
-				</page>
-			</xpath>
+						<page name="claims" string="Claims">
+        			<field name="mgmtsystem_claim_ids" widget="many2many" string="Claims"/>
+						</page>
+					</xpath>
         </field>
     </record>
     
@@ -19,9 +19,9 @@
         <field name="model">mgmtsystem.action</field>
         <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_filter"/>
         <field name="arch" type="xml">
-        	<xpath expr="//search" position="inside">
-				<field name="mgmtsystem_claim_ids" string="Claims"/>
-			</xpath>
+					<xpath expr="//search" position="inside">
+						<field name="mgmtsystem_claim_ids" string="Claims"/>
+					</xpath>
         </field>
     </record>
 
