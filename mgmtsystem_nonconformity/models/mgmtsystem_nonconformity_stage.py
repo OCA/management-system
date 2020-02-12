@@ -25,8 +25,6 @@ class MgmtsystemNonconformityStage(models.Model):
         'Sequence', help="Used to order states. Lower is better.", default=100)
     state = fields.Selection(
         _STATES,
-        'State',
-        readonly=True,
         default="draft",
     )
     is_starting = fields.Boolean(
