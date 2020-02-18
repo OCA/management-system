@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * mgmtsystem_audit
-# 
+#
 # Translators:
 # JOSE ALEJANDRO ECHEVERRI VALENCIA <josealejandroeche@gmail.com>, 2018
 msgid ""
@@ -10,13 +10,49 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-16 07:18+0000\n"
 "PO-Revision-Date: 2018-01-16 07:18+0000\n"
-"Last-Translator: JOSE ALEJANDRO ECHEVERRI VALENCIA <josealejandroeche@gmail.com>, 2018\n"
-"Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/es_CO/)\n"
+"Last-Translator: JOSE ALEJANDRO ECHEVERRI VALENCIA <josealejandroeche@gmail."
+"com>, 2018\n"
+"Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/"
+"es_CO/)\n"
+"Language: es_CO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es_CO\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: mgmtsystem_audit
+#: model:mail.template,body_html:mgmtsystem_audit.email_send_verification_list
+msgid ""
+"\n"
+"Hello,\n"
+"\n"
+"The audit \"[[object.name]]\" is scheduled in 1 week.\n"
+"Please finish the verification list and send it to the auditees:\n"
+"\n"
+"[[object.get_audit_url()]]\n"
+"\n"
+"Thank you.\n"
+"--\n"
+"Odoo\n"
+"            "
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:mail.template,body_html:mgmtsystem_audit.email_prepare_to_audit
+msgid ""
+"\n"
+"Hello,\n"
+"\n"
+"The audit \"[[object.name]]\" is scheduled in 2 weeks.\n"
+"Please prepare the verification list:\n"
+"\n"
+"[[object.get_audit_url()]]\n"
+"\n"
+"Thank you.\n"
+"--\n"
+"Odoo\n"
+"            "
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_number_of_audits
@@ -74,7 +110,7 @@ msgid "Audit Manager"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:146
+#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:145
 #, python-format
 msgid "Audit closed"
 msgstr ""
@@ -215,6 +251,18 @@ msgid "Display Name"
 msgstr ""
 
 #. module: mgmtsystem_audit
+#: model:base.automation,name:mgmtsystem_audit.rule_set_prepare_to_audit
+#: model:ir.actions.server,name:mgmtsystem_audit.rule_set_prepare_to_audit_ir_actions_server
+msgid "Email all auditors 2 weeks before audit."
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:base.automation,name:mgmtsystem_audit.rule_set_send_verification_list
+#: model:ir.actions.server,name:mgmtsystem_audit.rule_set_send_verification_list_ir_actions_server
+msgid "Email all followers 1 week before audit."
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: model:ir.actions.act_window,help:mgmtsystem_audit.action_report_mgmtsystem_audit
 msgid ""
 "Have a general overview of all audits processed in the system by sorting "
@@ -319,6 +367,11 @@ msgid "Points To Improve"
 msgstr ""
 
 #. module: mgmtsystem_audit
+#: model:mail.template,subject:mgmtsystem_audit.email_prepare_to_audit
+msgid "Prepare to Audit: \"[[object.name]]\""
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: model:ir.actions.server,name:mgmtsystem_audit.action_email_prepare_to_audit
 msgid "Prepare to audit"
 msgstr ""
@@ -357,6 +410,11 @@ msgid "Send Verification List"
 msgstr ""
 
 #. module: mgmtsystem_audit
+#: model:mail.template,subject:mgmtsystem_audit.email_send_verification_list
+msgid "Send Verification List: \"[[object.name]]\""
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line_seq
 msgid "Sequence"
 msgstr ""
@@ -383,7 +441,7 @@ msgid "To Improve Points"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:174
+#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:173
 #, python-format
 msgid "Undefined"
 msgstr ""
