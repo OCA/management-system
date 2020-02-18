@@ -45,7 +45,7 @@ class MgmtsystemNonconformityCause(models.Model):
 
     @api.constrains("parent_id")
     def _check_recursion(self):
-        if not super(MgmtsystemNonconformityCause, self)._check_recursion():
+        if not super()._check_recursion():
             raise exceptions.ValidationError(
                 _("Error! Cannot create recursive cycle.")
             )
