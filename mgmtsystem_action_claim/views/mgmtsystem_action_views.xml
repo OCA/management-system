@@ -14,7 +14,7 @@
         </field>
     </record>
     
-	<record id="view_mgmtsystem_action_filter" model="ir.ui.view">
+    <record id="view_mgmtsystem_action_filter" model="ir.ui.view">
         <field name="name">mgmtsystem.action.filter</field>
         <field name="model">mgmtsystem.action</field>
         <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_filter"/>
