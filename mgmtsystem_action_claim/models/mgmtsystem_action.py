@@ -2,6 +2,7 @@
 
 from odoo import fields, models
 
+
 class MgmtsystemAction(models.Model):
     _name = "mgmtsystem.action"
     _inherit = ["mgmtsystem.action"]
@@ -19,10 +20,12 @@ class MgmtsystemAction(models.Model):
         "mgmtsystem_claim_id",
         "Claim Ids",
     )
+    
     mgmtsystem_claim_count = fields.Integer(
         compute="_compute_mgmtsystem_claim_count", string="Number of claim"
     )
-    
+
+
 class MgmtsystemClaim(models.Model):
     _name = "mgmtsystem.claim"
     _inherit = ["mgmtsystem.claim"]
@@ -40,6 +43,7 @@ class MgmtsystemClaim(models.Model):
         "mgmtsystem_action_id",
         "Action Ids",
     )
+    
     mgmtsystem_action_count = fields.Integer(
         compute="_compute_mgmtsystem_action_count", string="Number of action"
     )
