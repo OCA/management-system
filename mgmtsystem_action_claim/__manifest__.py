@@ -9,9 +9,6 @@
     "license": "AGPL-3",
     "category": "Management System",
     "depends": ["mgmtsystem_action", "mgmtsystem_claim"],
-    "data": [
-        "views/mgmtsystem_action_views.xml", 
-        "views/mgmtsystem_claim_views.xml"
-    ],
+    "data": ["views/mgmtsystem_action_views.xml", "views/mgmtsystem_claim_views.xml"],
     "installable": True,
 }
