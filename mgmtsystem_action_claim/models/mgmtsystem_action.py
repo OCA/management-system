@@ -17,11 +17,10 @@ class MgmtsystemAction(models.Model):
         "mgmtsystem_action_mgmtsystem_claim_rel",
         "mgmtsystem_action_id",
         "mgmtsystem_claim_id",
-        "Claim Ids"
+        "Claim Ids",
     )
     mgmtsystem_claim_count = fields.Integer(
-        compute="_compute_mgmtsystem_claim_count",
-        string="Number of claim"
+        compute="_compute_mgmtsystem_claim_count", string="Number of claim"
     )
     
 class MgmtsystemClaim(models.Model):
@@ -39,10 +38,9 @@ class MgmtsystemClaim(models.Model):
         "mgmtsystem_action_mgmtsystem_claim_rel",
         "mgmtsystem_claim_id",
         "mgmtsystem_action_id",
-        "Action Ids"
+        "Action Ids",
     )
     mgmtsystem_action_count = fields.Integer(
-        compute="_compute_mgmtsystem_action_count",
-        string="Number of action"
+        compute="_compute_mgmtsystem_action_count", string="Number of action"
     )
     
