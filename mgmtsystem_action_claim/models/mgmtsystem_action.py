@@ -20,7 +20,8 @@ class MgmtsystemAction(models.Model):
         "Claim Ids"
     )
     mgmtsystem_claim_count = fields.Integer(
-        compute="_compute_mgmtsystem_claim_count", string="Number of claim"
+        compute="_compute_mgmtsystem_claim_count",
+        string="Number of claim"
     )
     
 class MgmtsystemClaim(models.Model):
