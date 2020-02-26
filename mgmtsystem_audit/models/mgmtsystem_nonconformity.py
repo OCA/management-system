@@ -9,5 +9,4 @@ class MgmtsystemNonconformity(models.Model):
 
     _name = "mgmtsystem.nonconformity"
     _inherit = "mgmtsystem.nonconformity"
-    audit_ids = fields.Many2many(
-        'mgmtsystem.audit', string='Related Audits')
+    audit_ids = fields.Many2many("mgmtsystem.audit", string="Related Audits")
