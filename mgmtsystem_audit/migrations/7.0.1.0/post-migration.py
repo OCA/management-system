@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -21,7 +20,7 @@
 
 import logging
 
-logger = logging.getLogger('upgrade')
+logger = logging.getLogger("upgrade")
 
 
 def migrate(cr, version):

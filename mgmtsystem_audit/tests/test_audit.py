@@ -5,7 +5,6 @@ from odoo.tests import common
 
 
 class TestModelAudit(common.TransactionCase):
-
     def test_get_action_url(self):
         """Test if action url start with http."""
 
@@ -14,7 +13,7 @@ class TestModelAudit(common.TransactionCase):
         ret = record.get_action_url()
 
         self.assertEqual(isinstance(ret, str), True)
-        self.assertEqual(ret.startswith('http'), True)
+        self.assertEqual(ret.startswith("http"), True)
 
     def test_button_close(self):
         """Test if button close change audit state to close."""
@@ -25,13 +24,13 @@ class TestModelAudit(common.TransactionCase):
         self.assertEqual(record.state, "done")
 
     def test_get_lines_by_procedure(self):
-        line_id = self.env["mgmtsystem.verification.line"].create({
-            "name": "test",
-            "procedure_id": self.env.ref("document_page.demo_page1").id
-        })
-        line_id2 = self.env["mgmtsystem.verification.line"].create({
-            "name": "test2",
-        })
+        line_id = self.env["mgmtsystem.verification.line"].create(
+            {
+                "name": "test",
+                "procedure_id": self.env.ref("document_page.demo_page1").id,
+            }
+        )
+        line_id2 = self.env["mgmtsystem.verification.line"].create({"name": "test2"})
 
         record = self.env.ref("mgmtsystem_audit.mgmtsystem_audit_demo")
         record.line_ids = [line_id.id, line_id2.id]
