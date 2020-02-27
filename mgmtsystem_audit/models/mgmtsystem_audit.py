@@ -139,7 +139,6 @@ class MgmtsystemAudit(models.Model):
         audit_id = super(MgmtsystemAudit, self).create(vals)
         return audit_id
 
-    @api.multi
     def button_close(self):
         """When Audit is closed, post a message to followers' chatter."""
         self.message_post(body=_("Audit closed"))
