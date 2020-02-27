@@ -16,9 +16,9 @@
     </record>
     <act_window name="Copy Verification Lines"
             res_model="copy.verification.lines"
-            src_model="mgmtsystem.audit"
+            binding_model="mgmtsystem.audit"
             view_mode="form"
             target="new"
-            key2="client_action_multi"
+            binding_views="form"
             id="copy_verification_lines_act_window"/>
 </odoo>
