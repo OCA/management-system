@@ -1,7 +1,7 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class CopyVerificationLines(models.TransientModel):
@@ -12,7 +12,6 @@ class CopyVerificationLines(models.TransientModel):
 
     audit_src = fields.Many2one("mgmtsystem.audit", "Choose audit")
 
-    @api.multi
     def copyVerificationLines(self):
         # Copy verification lines from the chosen audit to the current one
         audit_proxy = self.env[self._context.get("active_model")]

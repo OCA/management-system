@@ -58,7 +58,6 @@
         <record id="open_mgmtsystem_verification_line_list" model="ir.actions.act_window">
             <field name="name">Verification Lines</field>
             <field name="res_model">mgmtsystem.verification.line</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
 
@@ -172,7 +171,6 @@
         <record id="open_mgmtsystem_audit_list" model="ir.actions.act_window">
             <field name="name">Audits</field>
             <field name="res_model">mgmtsystem.audit</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form,calendar</field>
             <field name="view_id" ref="view_mgmtsystem_audit_tree"/>
             <field name="search_view_id" ref="view_mgmtsystem_audit_filter"/>
