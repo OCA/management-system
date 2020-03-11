@@ -3,7 +3,7 @@
 
 {
     "name": "Hazard",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
@@ -13,7 +13,6 @@
         "security/ir.model.access.csv",
         "security/mgmtsystem_hazard_security.xml",
         "views/mgmtsystem_hazard.xml",
-        "views/mgmtsystem_hazard_hazard.xml",
         "views/mgmtsystem_hazard_origin.xml",
         "views/mgmtsystem_hazard_type.xml",
         "views/mgmtsystem_hazard_probability.xml",
