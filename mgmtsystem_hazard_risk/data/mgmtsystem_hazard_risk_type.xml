@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- risk_type -->
+
+    <record id="risk_type_physical" model="mgmtsystem.hazard.risk.type" forcecreate="0">
+        <field name="name">Physical</field>
+    </record>
+
+    <record id="risk_type_chemical" model="mgmtsystem.hazard.risk.type" forcecreate="0">
+        <field name="name">Chemical</field>
+    </record>
+
+    <record id="risk_type_fire" model="mgmtsystem.hazard.risk.type" forcecreate="0">
+        <field name="name">Fire</field>
+    </record>
+
+    <record id="risk_type_environment" model="mgmtsystem.hazard.risk.type" forcecreate="0">
+        <field name="name">Environment</field>
+    </record>
+
+</odoo>
