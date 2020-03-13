@@ -56,8 +56,21 @@ msgid ""
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_audits
-msgid "# of audits"
+#: model:mail.template,body_html:mgmtsystem_audit.template_email_prepare_to_audit
+msgid ""
+"\n"
+"Hello,\n"
+"\n"
+"The audit \"${object.name}\" is scheduled in 2 weeks.\n"
+"Please prepare the verification list:\n"
+"\n"
+"${object.get_action_url()}\n"
+"\n"
+"\n"
+"Thank you.\n"
+"--\n"
+"Odoo\n"
+"            "
 msgstr ""
 "\n"
 "Hello,\n"
