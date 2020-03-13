@@ -11,3 +11,7 @@
 * `Tecnativa <https://www.tecnativa.com>`_:
 
   * Ernesto Tejeda
+
+* `Guadaltech <https://www.guadaltech.es>`_:
+
+  * Fernando La Chica
