@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -7,9 +6,8 @@ from .common import _parse_risk_formula
 
 
 class MgmtsystemHazardResidualRisk(models.Model):
-
-    _name = "mgmtsystem.hazard.residual_risk"
-    _description = "Residual Risks of hazard"
+    _name = 'mgmtsystem.hazard.residual_risk'
+    _description = 'Residual Risks of hazard'
 
     name = fields.Char('Name', size=50, required=True, translate=True)
     probability_id = fields.Many2one(
@@ -32,12 +30,11 @@ class MgmtsystemHazardResidualRisk(models.Model):
         index=True,
     )
 
-    @api.depends("probability_id", "severity_id", "usage_id")
+    @api.depends('probability_id', 'severity_id', 'usage_id')
     def _compute_risk(self):
-        mycompany = self.env['res.users'].browse(self._uid).company_id
         if self.probability_id and self.severity_id and self.usage_id:
             self.risk = _parse_risk_formula(
-                mycompany.risk_computation_id.name,
+                self.env.company.risk_computation_id.name,
                 self.probability_id.value,
                 self.severity_id.value,
                 self.usage_id.value
