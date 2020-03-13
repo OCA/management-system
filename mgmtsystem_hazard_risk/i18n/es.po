@@ -4,13 +4,14 @@
 #
 # Translators:
 # Antonio Trueba, 2016
+# Fernando La Chica, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-21 16:40+0000\n"
 "PO-Revision-Date: 2016-01-07 15:13+0000\n"
-"Last-Translator: Antonio Trueba\n"
+"Last-Translator: Fernando La Chica\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-management-"
 "system-8-0/language/es/)\n"
 "Language: es\n"
@@ -33,6 +34,12 @@ msgstr "Químico"
 #: model:ir.model,name:mgmtsystem_hazard_risk.model_res_company
 msgid "Companies"
 msgstr "Compañías"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__company_id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__company_id
+msgid "Company"
+msgstr ""
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_risk_computation
@@ -208,9 +215,19 @@ msgid "Risk Types"
 msgstr "Tipos de riesgo"
 
 #. module: mgmtsystem_hazard_risk
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.res_config_settings_view_form
+msgid "Risk computation"
+msgstr "Cálculo del riesgo"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_res_config_settings__risk_computation_id
+msgid "Risk formula"
+msgstr "Fórmula del riesgo"
+
+#. module: mgmtsystem_hazard_risk
 #: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_risk_type
 msgid "Risk type of the hazard"
-msgstr ""
+msgstr "Tipo de riesgo del peligro"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk_severity_id
