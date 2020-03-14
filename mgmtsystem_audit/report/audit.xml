@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="audit_report">
+        <t t-set="doc" t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"/>
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <h3><strong>Audit Report</strong></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:10px">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <h3><strong t-field="doc.name"></strong></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:10px">
+                    <div class="col-3">
+                        Confidentially:
+                    </div>
+                    <div class="col-9">
+                        Internal
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        Reference:
+                    </div>
+                    <div class="col-9">
+                         <span t-field="doc.reference"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        Date:
+                    </div>
+                    <div class="col-9">
+                        <span t-field="doc.date"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        Auditors:
+                    </div>
+                    <div class="col-9">
+                        <ul class="list-unstyled">
+                            <t t-foreach="doc.auditor_user_ids" t-as="auditor">
+                                <li><span t-field="auditor.name"/></li>
+                            </t>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:30px">
+                    <div class="col-12">
+                        <h3><strong>Strong points:</strong></h3>
+                        <span t-field="doc.strong_points"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h3><strong>Points To Improve:</strong></h3>
+                        <span t-field="doc.to_improve_points"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h3><strong>Improvement opportunities:</strong></h3>
+                        <ul style="padding-left:50px">
+                            <t t-foreach="doc.imp_opp_ids" t-as="improvement">
+                                <t t-if="improvement.stage_id.name != 'Cancelled'">
+                                    <li><span t-field="improvement.name"/></li>
+                                </t>
+                            </t>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h3><strong>Nonconformities:</strong></h3>
+                        <ul style="padding-left:50px">
+                            <t t-foreach="doc.nonconformity_ids" t-as="nonconformity">
+                                <t t-if="nonconformity.state != 'cancel'">
+                                <li><span t-field="nonconformity.description"/></li>
+                            </t>
+                            </t>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

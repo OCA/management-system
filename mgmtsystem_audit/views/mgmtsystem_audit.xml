@@ -1,0 +1,198 @@
+<odoo>
+        <!-- Verification Lines -->
+
+        <record id="view_mgmtsystem_verification_line_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.verification.line.tree</field>
+            <field name="model">mgmtsystem.verification.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Verification Lines">
+                    <field name="seq"/>
+                    <field name="name"/>
+                    <field name="is_conformed"/>
+                    <field name="procedure_id"/>
+                    <field name="comments"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_verification_line_filter" model="ir.ui.view">
+            <field name="name">mgmtsystem.verification.line.filter</field>
+            <field name="model">mgmtsystem.verification.line</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Verification Lines">
+                    <group>
+                        <field name="seq"/>
+                        <field name="name"/>
+                        <field name="procedure_id" domain="[('parent_id','in',['Procedure', 'Environmental Aspect', 'Quality Manual', 'Environment Manual'])]"/>
+                        <field name="is_conformed"/>
+                        <field name="comments"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_verification_line_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.verification.line.form</field>
+            <field name="type">form</field>
+            <field name="model">mgmtsystem.verification.line</field>
+            <field name="arch" type="xml">
+                <form string="Verification Line">
+                    <group colspan="4" col="4">
+                        <field name="name"/>
+                        <field name="is_conformed"/>
+                        <newline/>
+                        <field name="procedure_id" domain="[('parent_id','in',['Procedure', 'Environmental Aspect', 'Quality Manual', 'Environment Manual'])]"/>
+                        <field name="seq"/>
+                        <newline/>
+                        <field name="comments"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_verification_line_list" model="ir.actions.act_window">
+            <field name="name">Verification Lines</field>
+            <field name="res_model">mgmtsystem.verification.line</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Audits -->
+
+        <record id="view_mgmtsystem_audit_tree" model="ir.ui.view">
+            <field name="name">mgmtsystem.audit.tree</field>
+            <field name="model">mgmtsystem.audit</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Audits">
+                    <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
+                    <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
+                    <field name="create_date"/>
+                    <field name="reference"/>
+                    <field name="system_id"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <!-- Invisible fields below are to allow their use in domains of this view -->
+                    <field name="state" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_audit_filter" model="ir.ui.view">
+            <field name="name">mgmtsystem.audit.filter</field>
+            <field name="model">mgmtsystem.audit</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Audits">
+                    <group>
+                        <filter name="current" icon="terp-document-new" domain="[('state','=','open')]" string="Open" help="Open Audits"/>
+                        <filter name="closed" icon="terp-camera_test" domain="[('state','=','done')]" string="Closed" help="Closed Audits"/>
+                        <separator orientation="vertical"/>
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="reference"/>
+                        <field name="system_id"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_mgmtsystem_audit_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.audit.form</field>
+            <field name="model">mgmtsystem.audit</field>
+            <field name="arch" type="xml">
+                <form string="Audit" version="7.0">
+                    <header>
+                        <button name="button_close" string="Close" states="open" type="object"/>
+                        <field name="state" widget="statusbar" select="1" readonly="1"/>
+                    </header>
+                    <sheet string="Audit">
+                        <group col="4" colspan="2">
+                            <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
+                            <field name="reference"/>
+                            <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
+                            <field name="user_id" string="Audit Manager" required="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="system_id" attrs="{'readonly':[('state','=','done')]}"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Auditors">
+                                <field name="auditor_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"
+                                       options="{'no_create': True}"
+                                       context="{'tree_view_ref': 'mgmtsystem_audit.mgmtsystem_audit_res_users_x2m_tree'}"/>
+                            </page>
+                            <page string="Auditees">
+                                <field name="auditee_user_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"
+                                       options="{'no_create': True}"
+                                       context="{'tree_view_ref': 'mgmtsystem_audit.mgmtsystem_audit_res_users_x2m_tree'}"/>
+                            </page>
+                            <page string="Verification List">
+                                <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </page>
+                            <page string="Strong Points">
+                                <field name="strong_points" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </page>
+                            <page string="To Improve Points">
+                                <field name="to_improve_points" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </page>
+                            <page string="Improvement Opportunities">
+                                <field name="imp_opp_ids" domain="[('type_action','=','improvement')]" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </page>
+                            <page string="Nonconformities">
+                                <field name="nonconformity_ids" nolabel="1" attrs="{'readonly':[('state','=','done')]}"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_audit_calendar" model="ir.ui.view">
+            <field name="name">mgmtsystem.audit.calendar</field>
+            <field name="model">mgmtsystem.audit</field>
+            <field name="type">calendar</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <calendar color="name" date_start="date" string="Audits">
+                    <field name="name"/>
+                    <field name="auditor_user_ids"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="open_mgmtsystem_audit_list" model="ir.actions.act_window">
+            <field name="name">Audits</field>
+            <field name="res_model">mgmtsystem.audit</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_id" ref="view_mgmtsystem_audit_tree"/>
+            <field name="search_view_id" ref="view_mgmtsystem_audit_filter"/>
+            <field name="context">{"search_default_current":1}</field>
+        </record>
+
+        <menuitem id="menu_open_audit" action="open_mgmtsystem_audit_list" parent="mgmtsystem.menu_mgmtsystem_main" sequence="40" groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor"/>
+
+        <!-- Nonconformities related to Audits -->
+        <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.nonconformity.form</field>
+            <field name="model">mgmtsystem.nonconformity</field>
+            <field name="inherit_id" ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"/>
+            <field name="arch" type="xml">
+
+                <notebook position="inside">
+                    <page string="Related Audits" groups="mgmtsystem.group_mgmtsystem_auditor">
+                        <field name="audit_ids" colspan="4" nolabel="1"/>
+                    </page>
+                </notebook>
+
+            </field>
+        </record>
+
+</odoo>
