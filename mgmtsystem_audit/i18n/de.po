@@ -54,24 +54,6 @@ msgid ""
 "Odoo\n"
 "            "
 msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:mail.template,body_html:mgmtsystem_audit.template_email_prepare_to_audit
-msgid ""
-"\n"
-"Hello,\n"
-"\n"
-"The audit \"${object.name}\" is scheduled in 2 weeks.\n"
-"Please prepare the verification list:\n"
-"\n"
-"${object.get_action_url()}\n"
-"\n"
-"\n"
-"Thank you.\n"
-"--\n"
-"Odoo\n"
-"            "
-msgstr ""
 "\n"
 "Hello,\n"
 "\n"
@@ -135,16 +117,6 @@ msgstr "Maßnahme nötig"
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_attachment_count
 msgid "Attachment Count"
 msgstr "Anzahl Anhänge"
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction
-msgid "Action Needed"
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_attachment_count
-msgid "Attachment Count"
-msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_audit
@@ -349,11 +321,6 @@ msgid "If checked new messages require your attention."
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction
-msgid "If checked, new messages require your attention."
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
@@ -473,11 +440,6 @@ msgid "Number of questions in verification list"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_unread_counter
-msgid "Number of unread messages"
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
 #: selection:mgmtsystem.audit,state:0
 msgid "Open"
@@ -492,11 +454,6 @@ msgstr "Laufende Prüfungen"
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__to_improve_points
 msgid "Points To Improve"
 msgstr "Zu verbessernde Punkte"
-
-#. module: mgmtsystem_audit
-#: model:mail.template,subject:mgmtsystem_audit.template_email_prepare_to_audit
-msgid "Prepare to Audit: \"${object.name}\""
-msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__procedure_id
