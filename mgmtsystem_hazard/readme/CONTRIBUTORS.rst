@@ -6,4 +6,4 @@
   * Ernesto Tejeda
 * `Guadaltech <https://www.guadaltech.es>`_:
 
-  * Fernando La Chica
+  * Fernando La Chica <fernando.lachica@guadaltech.es>
