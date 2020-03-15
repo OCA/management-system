@@ -1,0 +1,61 @@
+<odoo>
+
+    <record id="view_mgmtsystem_hazard_residual_risk_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.hazard.residual_risk.form</field>
+        <field name="model">mgmtsystem.hazard.residual_risk</field>
+        <field name="arch" type="xml">
+            <form string="Residual Risk">
+                <group colspan="4" col="4">
+                    <field name="name"/>
+                    <newline/>
+                    <field name="probability_id"/>
+                    <field name="severity_id"/>
+                    <newline/>
+                    <field name="usage_id"/>
+                    <field name="acceptability"/>
+                    <newline/>
+                    <field name="justification"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_residual_risk_tree" model="ir.ui.view">
+        <field name="name">mgmtsystem.hazard.residual_risk.tree</field>
+        <field name="model">mgmtsystem.hazard.residual_risk</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="probability_id"/>
+                <field name="severity_id"/>
+                <field name="usage_id"/>
+                <field name="acceptability"/>
+                <field name="justification"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_residual_risk_filter" model="ir.ui.view">
+        <field name="name">Residual Risks</field>
+        <field name="model">mgmtsystem.hazard.residual_risk</field>
+        <field name="arch" type="xml">
+            <search string="Residual Risks">
+                <field name="name"/>
+                <field name="probability_id"/>
+                <field name="severity_id"/>
+                <field name="usage_id"/>
+                <field name="acceptability"/>
+                <field name="justification"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="open_mgmtsystem_hazard_residual_risk_list" model="ir.actions.act_window">
+        <field name="name">Residual Risks</field>
+        <field name="res_model">mgmtsystem.hazard.residual_risk</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="False"/>
+        <field name="search_view_id" ref="view_mgmtsystem_hazard_residual_risk_filter"/>
+    </record>
+
+</odoo>
