@@ -5,7 +5,7 @@ from odoo import fields, models
 
 
 class MgmtsystemHazard(models.Model):
-    """Hazards of the health and safety management system""" ""
+    """Hazards of the health and safety management system"""
 
     _name = "mgmtsystem.hazard"
     _description = __doc__
