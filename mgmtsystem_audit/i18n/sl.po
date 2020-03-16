@@ -121,7 +121,7 @@ msgid "Audit Manager"
 msgstr "Upravitelj revizij"
 
 #. module: mgmtsystem_audit
-#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:145
+#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:0
 #, python-format
 msgid "Audit closed"
 msgstr "Revizija zaključena"
@@ -175,8 +175,8 @@ msgid "Close"
 msgstr "Zaključi"
 
 #. module: mgmtsystem_audit
+#: model:ir.model.fields.selection,name:mgmtsystem_audit.selection__mgmtsystem_audit__state__done
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
-#: selection:mgmtsystem.audit,state:0
 msgid "Closed"
 msgstr "Zaključeno"
 
@@ -303,17 +303,14 @@ msgid "ID"
 msgstr "ID"
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_unread
-msgid "If checked new messages require your attention."
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -403,7 +400,7 @@ msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error_counter
-msgid "Number of error"
+msgid "Number of errors"
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -437,8 +434,8 @@ msgid "Number of unread messages"
 msgstr ""
 
 #. module: mgmtsystem_audit
+#: model:ir.model.fields.selection,name:mgmtsystem_audit.selection__mgmtsystem_audit__state__open
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
-#: selection:mgmtsystem.audit,state:0
 msgid "Open"
 msgstr "Odprto"
 
@@ -486,6 +483,11 @@ msgid "Related Audits"
 msgstr "Povezane revizije"
 
 #. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: model:mail.template,subject:mgmtsystem_audit.template_email_send_verification_list
 msgid "Send Verification List: \"${object.name}\""
 msgstr ""
@@ -517,7 +519,7 @@ msgid "To Improve Points"
 msgstr "Točke za izboljšanje"
 
 #. module: mgmtsystem_audit
-#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:173
+#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:0
 #, python-format
 msgid "Undefined"
 msgstr "Nedoločeno"
