@@ -8,6 +8,9 @@ class MgmtsystemHazardProbability(models.Model):
     _name = "mgmtsystem.hazard.probability"
     _description = "Probability of hazard"
 
+    company_id = fields.Many2one(
+        "res.company", "Company", required=True, default=lambda self: self.env.company
+    )
     name = fields.Char("Probability", required=True, translate=True)
     value = fields.Integer("Value", required=True)
     description = fields.Text("Description", required=False, translate=False)
