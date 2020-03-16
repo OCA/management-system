@@ -8,5 +8,8 @@ class MgmtsystemHazardOrigin(models.Model):
     _name = "mgmtsystem.hazard.origin"
     _description = "Origin of hazard"
 
+    company_id = fields.Many2one(
+        "res.company", "Company", required=True, default=lambda self: self.env.company
+    )
     name = fields.Char("Origin", required=True, translate=True)
     description = fields.Text("Description")
