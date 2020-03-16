@@ -6,6 +6,8 @@
       <field name="arch" type="xml">
         <form string="Occupation / Usage">
           <group colspan="4" col="6">
+              <field name="company_id" groups="base.group_multi_company"/>
+              <newline />
             <field name="name"/>
             <field name="value"/>
             <newline/>
@@ -20,6 +22,7 @@
       <field name="model">mgmtsystem.hazard.usage</field>
       <field name="arch" type="xml">
         <tree string="Occupations / Usages">
+            <field name="company_id" groups="base.group_multi_company"/>
           <field name="name"/>
           <field name="value"/>
           <field name="description"/>
@@ -32,6 +35,7 @@
       <field name="model">mgmtsystem.hazard.usage</field>
       <field name="arch" type="xml">
         <search string="Occupations / Usages">
+            <field name="company_id" groups="base.group_multi_company"/>
           <field name="name"/>
           <field name="value"/>
           <field name="description"/>
