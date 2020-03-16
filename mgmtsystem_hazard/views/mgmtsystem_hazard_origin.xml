@@ -6,7 +6,9 @@
       <field name="arch" type="xml">
         <form string="Origin">
           <group colspan="4" col="4">
-            <field name="name"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+              <newline/>
+              <field name="name"/>
             <newline/>
             <field name="description"/>
           </group>
@@ -19,7 +21,8 @@
       <field name="model">mgmtsystem.hazard.origin</field>
       <field name="arch" type="xml">
         <tree string="Origins">
-          <field name="name"/>
+          <field name="company_id" groups="base.group_multi_company"/>
+            <field name="name"/>
           <field name="description"/>
         </tree>
       </field>
@@ -30,6 +33,7 @@
       <field name="model">mgmtsystem.hazard.origin</field>
       <field name="arch" type="xml">
         <search string="Origins">
+            <field name="company_id" groups="base.group_multi_company"/>
           <field name="name"/>
           <field name="description"/>
         </search>
