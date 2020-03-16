@@ -17,13 +17,13 @@ Hazard
     :target: https://github.com/OCA/management-system/tree/13.0/mgmtsystem_hazard
     :alt: OCA/management-system
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/management-system-13.0/management-system-13.0-mgmtsystem_hazard
+    :target: https://translation.odoo-community.org/projects/management-system-13-0/management-system-13-0-mgmtsystem_hazard
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
     :target: https://runbot.odoo-community.org/runbot/128/13.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5|
+|badge1| |badge2| |badge3| |badge4| |badge5| 
 
 This module enables you to manage the hazards and risks of your health and safety management system.
 
@@ -79,6 +79,9 @@ Contributors
 * `Tecnativa <https://www.tecnativa.com>`_:
 
   * Ernesto Tejeda
+* `Guadaltech <https://www.guadaltech.es>`_:
+
+  * Fernando La Chica <fernando.lachica@guadaltech.es>
 
 Maintainers
 ~~~~~~~~~~~
