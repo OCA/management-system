@@ -8,3 +8,6 @@
 
 * Eugen Don <eugen.don@don-systems.de>
 * Jose Maria Alzaga <jose.alzaga@aselcis.com>
+* Guadaltech <https://www.guadaltech.es>
+
+  * Fernando La Chica <fernando.lachica@guadaltech.es>
