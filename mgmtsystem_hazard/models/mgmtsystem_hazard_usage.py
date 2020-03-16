@@ -8,6 +8,9 @@ class MgmtsystemHazardUsage(models.Model):
     _name = "mgmtsystem.hazard.usage"
     _description = "Usage of hazard"
 
+    company_id = fields.Many2one(
+        "res.company", "Company", required=True, default=lambda self: self.env.company
+    )
     name = fields.Char("Occupation / Usage", required=True, translate=True)
     value = fields.Integer("Value", required=True)
     description = fields.Text("Description")
