@@ -1,0 +1,59 @@
+<odoo>
+
+    <record id="view_mgmtsystem_hazard_tree" model="ir.ui.view">
+        <field name="inherit_id" ref="mgmtsystem_hazard.view_mgmtsystem_hazard_tree"/>
+        <field name="model">mgmtsystem.hazard</field>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="risk_type_id"/>
+            </field>
+            <field name="origin_id" position="after">
+                <field name="risk"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_filter" model="ir.ui.view">
+        <field name="inherit_id" ref="mgmtsystem_hazard.view_mgmtsystem_hazard_filter"/>
+        <field name="model">mgmtsystem.hazard</field>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="risk_type_id"/>
+            </field>
+            <field name="origin_id" position="after">
+                <field name="risk"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_form" model="ir.ui.view">
+        <field name="inherit_id" ref="mgmtsystem_hazard.view_mgmtsystem_hazard_form"/>
+        <field name="model">mgmtsystem.hazard</field>
+        <field name="arch" type="xml">
+            <field name="hazard_id" position="after">
+                <field name="risk_type_id"/>
+            </field>
+            <xpath expr="//page[1]" position="after">
+                <page string="Risk Evaluation">
+                    <group>
+                        <field name="probability_id"/>
+                        <field name="severity_id"/>
+                        <newline/>
+                        <field name="usage_id"/>
+                        <field name="risk"/>
+                        <newline/>
+                        <field name="acceptability"/>
+                        <newline/>
+                        <field name="justification"/>
+                    </group>
+                </page>
+            </xpath>
+            <notebook name="mgmtsystem_hazard" position="inside">
+                <page string="Residual Risk Evaluations">
+                    <field name="residual_risk_ids" nolabel="1"/>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>

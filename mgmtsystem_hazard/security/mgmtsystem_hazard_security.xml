@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+        <record model="ir.rule" id="mgmtsystem_hazard_rule">
+            <field name="name">mgmtsystem_hazard multi-company</field>
+            <field name="model_id" ref="model_mgmtsystem_hazard"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+    <record model="ir.rule" id="mgmtsystem_hazard_hazard_rule">
+            <field name="name">mgmtsystem_hazard_hazard multi-company</field>
+            <field name="model_id" ref="model_mgmtsystem_hazard_hazard"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+    <record model="ir.rule" id="mgmtsystem_hazard_origin_rule">
+            <field name="name">mgmtsystem_hazard_origin multi-company</field>
+            <field name="model_id" ref="model_mgmtsystem_hazard_origin"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+    <record model="ir.rule" id="mgmtsystem_hazard_probability_rule">
+            <field name="name">mgmtsystem_hazard_probability multi-company</field>
+            <field name="model_id" ref="model_mgmtsystem_hazard_probability"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+    <record model="ir.rule" id="mgmtsystem_hazard_severity_rule">
+            <field name="name">mgmtsystem_hazard_severity multi-company</field>
+            <field name="model_id" ref="model_mgmtsystem_hazard_severity"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+    <record model="ir.rule" id="mgmtsystem_hazard_type_rule">
+            <field name="name">mgmtsystem_hazard_type multi-company</field>
+            <field name="model_id" ref="model_mgmtsystem_hazard_type"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+    <record model="ir.rule" id="mgmtsystem_hazard_usage_rule">
+            <field name="name">mgmtsystem_hazard_usage multi-company</field>
+            <field name="model_id" ref="model_mgmtsystem_hazard_usage"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+</odoo>

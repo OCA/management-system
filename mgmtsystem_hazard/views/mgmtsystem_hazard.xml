@@ -1,0 +1,101 @@
+<odoo>
+
+    <menuitem
+      id="menu_mgmtsystem_configuration_hazards"
+      name="Hazards"
+      parent="mgmtsystem.menu_mgmtsystem_configuration"
+      groups="mgmtsystem.group_mgmtsystem_manager"
+      sequence="10"/>
+
+    <record id="view_mgmtsystem_hazard_tree" model="ir.ui.view">
+      <field name="name">mgmtsystem.hazard.tree</field>
+      <field name="model">mgmtsystem.hazard</field>
+      <field name="arch" type="xml">
+        <tree string="Hazard">
+          <field name="type_id"/>
+          <field name="name"/>
+          <field name="hazard_id"/>
+          <field name="origin_id"/>
+          <field name="acceptability"/>
+          <field name="company_id" group="base.group_multi_company"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_filter" model="ir.ui.view">
+      <field name="name">mgmtsystem.hazard.filter</field>
+      <field name="model">mgmtsystem.hazard</field>
+      <field name="arch" type="xml">
+        <search string="Hazard">
+          <group>
+            <field name="type_id"/>
+            <field name="name"/>
+            <field name="hazard_id"/>
+            <field name="origin_id"/>
+            <field name="acceptability"/>
+            <field name="company_id" group="base.group_multi_company"/>
+          </group>
+          <newline/>
+          <group expand="0" string="Group By...">
+            <filter name="group_by_acceptability" string="Accepted" context="{'group_by':'acceptability'}"/>
+            <separator orientation="vertical"/>
+            <filter name="group_by_type_id" string="Type" context="{'group_by':'type_id'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_form" model="ir.ui.view">
+      <field name="name">mgmtsystem.hazard.form</field>
+      <field name="model">mgmtsystem.hazard</field>
+      <field name="arch" type="xml">
+        <form string="Hazard">
+          <sheet>
+            <group colspan="4" col="4">
+            <field name="name"/>
+            <field name="type_id"/>
+            <field name="company_id" group="base.group_multi_company"/>
+            <newline/>
+            <field name="hazard_id"/>
+            <field name="origin_id"/>
+          </group>
+            <notebook name="mgmtsystem_hazard" colspan="4">
+            <page string="Analysis">
+              <group>
+                <field name="department_id"/>
+                <field name="responsible_user_id"/>
+                <field name="analysis_date"/>
+              </group>
+            </page>
+            <page string="Control Measures">
+              <field name="control_measure_ids" nolabel="1"/>
+            </page>
+            <page string="Implementation Tests">
+              <field name="test_ids" nolabel="1"/>
+            </page>
+          </notebook>
+          </sheet>
+          <div class="oe_chatter">
+              <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+              <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="open_mgmtsystem_hazard_list">
+      <field name="name">Hazards</field>
+      <field name="res_model">mgmtsystem.hazard</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="view_mgmtsystem_hazard_tree"/>
+      <field name="search_view_id" ref="view_mgmtsystem_hazard_filter"/>
+    </record>
+
+    <menuitem
+      id="menu_open_hazard"
+      action="open_mgmtsystem_hazard_list"
+      parent="mgmtsystem.menu_mgmtsystem_manuals"
+      sequence="20"
+      groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
+
+</odoo>
