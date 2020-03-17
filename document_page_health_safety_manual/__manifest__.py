@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,16 +19,12 @@
 ##############################################################################
 {
     "name": "Health and Safety Manual",
-    "version": "9.0.1.0.0",
+    "version": "13.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
-    "depends": [
-        'mgmtsystem_manual'
-    ],
-    "data": [
-        'data/document_page.xml'
-        ],
-    'installable': False,
+    "depends": ["mgmtsystem_manual"],
+    "data": ["data/document_page.xml"],
+    "installable": True,
 }
