@@ -94,7 +94,7 @@ class MgmtsystemAudit(models.Model):
     def _compute_number_of_nonconformities(self):
         """Count number of nonconformities."""
         for audit in self:
-            audit.number_of_nonconformities = len(self.nonconformity_ids)
+            audit.number_of_nonconformities = len(audit.nonconformity_ids)
 
     @api.depends("imp_opp_ids")
     def _compute_number_of_improvement_opportunities(self):
