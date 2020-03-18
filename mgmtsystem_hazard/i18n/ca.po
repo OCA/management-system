@@ -55,6 +55,12 @@ msgstr ""
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__company_id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__company_id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin__company_id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__company_id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__company_id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type__company_id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__company_id
 msgid "Company"
 msgstr "Companyia"
 
@@ -250,17 +256,14 @@ msgid "ID"
 msgstr "ID"
 
 #. module: mgmtsystem_hazard
-#: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread
-msgid "If checked new messages require your attention."
-msgstr ""
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_needaction
+#: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -391,7 +394,7 @@ msgstr ""
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error_counter
-msgid "Number of error"
+msgid "Number of errors"
 msgstr ""
 
 #. module: mgmtsystem_hazard
@@ -494,6 +497,11 @@ msgstr ""
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__review_date
 msgid "Review Date"
+msgstr ""
+
+#. module: mgmtsystem_hazard
+#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_sms_error
+msgid "SMS Delivery error"
 msgstr ""
 
 #. module: mgmtsystem_hazard
