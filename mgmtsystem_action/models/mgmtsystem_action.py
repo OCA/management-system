@@ -15,7 +15,7 @@ class MgmtsystemAction(models.Model):
     name = fields.Char("Subject", required=True)
     system_id = fields.Many2one("mgmtsystem.system", "System")
     company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self._default_company()
+        "res.company", "Company", default=lambda self: self.env.company
     )
     active = fields.Boolean("Active", default=True)
     priority = fields.Selection(
@@ -66,9 +66,6 @@ class MgmtsystemAction(models.Model):
         group_expand="_stage_groups",
     )
     tag_ids = fields.Many2many("mgmtsystem.action.tag", string="Tags")
-
-    def _default_company(self):
-        return self.env.user.company_id
 
     def _default_owner(self):
         return self.env.user
