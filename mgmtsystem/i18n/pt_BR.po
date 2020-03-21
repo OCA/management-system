@@ -10,16 +10,16 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-15 18:09+0000\n"
-"PO-Revision-Date: 2019-08-26 15:01+0000\n"
+"PO-Revision-Date: 2020-03-21 20:14+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
-"teams/23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
+"23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.8\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_action
@@ -79,7 +79,7 @@ msgstr "Criado em"
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__display_name
 msgid "Display Name"
-msgstr "Mostrar nome"
+msgstr "Exibir nome"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_approval
@@ -115,7 +115,7 @@ msgstr "Eventos temidos"
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_hazard
 msgid "Hazards"
-msgstr "Riscos"
+msgstr "Perigos"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
@@ -150,12 +150,12 @@ msgstr "Modificada pela última vez"
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__write_uid
 msgid "Last Updated by"
-msgstr "Última atualização por"
+msgstr "Atualizado pela última vez por"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__write_date
 msgid "Last Updated on"
-msgstr "Última atualização em"
+msgstr "Atualizado pela última vez em"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
@@ -343,16 +343,12 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
-#, fuzzy
-#| msgid ""
-#| "Provide a quality manual template.\n"
-#| "- This installs the module mgmtsystem_quality_manual."
 msgid ""
 "Provide a quality manual template.\n"
 "- This installs the module document_page_quality_manual."
 msgstr ""
 "Fornecer um modelo manual de qualidade.\n"
-"- Isso instala o  módulos mgmtsystem_quality_manual."
+"- Isso instala o módulo document_page_quality_manual."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_action
@@ -464,16 +460,12 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_procedure
-#, fuzzy
-#| msgid ""
-#| "Provide procedures category.\n"
-#| "- This installs the module mgmtsystem_procedure."
 msgid ""
 "Provide procedures category.\n"
 "- This installs the module document_page_procedure."
 msgstr ""
 "Fornecer categoria procedimentos.\n"
-"- Isso instala o módulo mgmtsystem_procedure."
+"- Isso instala o módulo document_page_procedure."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
