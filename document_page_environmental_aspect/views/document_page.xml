@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_environmental_aspects">
+      <field name="name">Environmental Aspects</field>
+      <field name="res_model">document.page</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help">Environmental aspects of your management system.</field>
+      <field name="domain" eval="[('parent_id','=',ref('document_page_group_environmental_aspect'))]"/>
+    </record>
+
+    <menuitem
+      id="menu_mgmtsystem_manuals_environmental_aspects"
+      name="Environmental Aspects"
+      action="action_environmental_aspects"
+      parent="mgmtsystem.menu_mgmtsystem_manuals"
+      sequence="20"
+      groups="base.group_user"/>
+
+</odoo>
