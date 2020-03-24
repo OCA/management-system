@@ -11,5 +11,5 @@ class MgmtSystemSystem(models.Model):
 
     name = fields.Char("System", required=True)
     company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self.env.user.company_id.id
+        "res.company", "Company", default=lambda self: self.env.company
     )
