@@ -138,7 +138,7 @@ class MgmtsystemNonconformity(models.Model):
 
     # Multi-company
     company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self.env.user.company_id.id
+        "res.company", "Company", default=lambda self: self.env.company
     )
 
     def _get_all_actions(self):
