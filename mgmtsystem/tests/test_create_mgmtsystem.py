@@ -9,4 +9,4 @@ class TestModelAction(common.TransactionCase):
         record = self.env["mgmtsystem.system"].create({"name": "SampleSystem"})
 
         self.assertEqual(record.name, "SampleSystem")
-        self.assertEqual(record.company_id.id, self.env.user.company_id.id)
+        self.assertEqual(record.company_id.id, self.env.company.id)
