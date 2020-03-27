@@ -177,6 +177,13 @@ class MgmtsystemNonconformity(models.Model):
     def _elapsed_days(self, dt1, dt2):
         return (dt2 - dt1).days if dt1 and dt2 else 0
 
+    @api.depends("closing_date", "create_date")
+    def _compute_number_of_days_to_close(self):
+        for nc in self:
+            nc.number_of_days_to_close_open = self._elapsed_days(
+                nc.create_date, nc.closing_date
+            )
+
     @api.depends("write_date")
     def _compute_days_since_updated(self):
         for nc in self:
