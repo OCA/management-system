@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,17 +19,13 @@
 ##############################################################################
 {
     "name": "Document Management - Wiki - Environment Manual",
-    "version": "1.0",
-    "author": "Savoir-faire Linux",
+    "version": "13.0.1.0.0",
+    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
-    "description": """Environment Manual Template
-    """,
-    "depends": ['mgmtsystem_manuals'],
-    "data": ['document_page_environment_manual.xml'],
+    "depends": ["mgmtsystem_manual"],
+    "data": ["data/document_page_environment_manual.xml"],
     "demo": [],
     "installable": True,
-    "certificate": ''
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
