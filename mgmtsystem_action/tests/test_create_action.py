@@ -1,6 +1,7 @@
 
 from odoo import exceptions
 from odoo.tests import common
+from datetime import datetime, timedelta
 import mock
 import time
 
@@ -80,7 +81,7 @@ class TestModelAction(common.SavepointCase):
             tmpl_model = self.env['mail.template']
             with mock.patch.object(type(tmpl_model), 'send_mail') as mocked:
                 self.env['mgmtsystem.action'].process_reminder_queue()
-                mocked.assert_called_with(self.record.id)        
+                mocked.assert_called_with(self.record.id)
 
     def test_stage_groups(self):
         """Check if stage_groups return all stages."""
