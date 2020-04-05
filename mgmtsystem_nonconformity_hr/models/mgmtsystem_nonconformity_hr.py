@@ -6,12 +6,7 @@ from odoo import fields, models
 
 
 class MgmtsystemMgmHR(models.Model):
-    """
-    Extend nonconformity adding fields for department
-    """
 
-    _inherit = ['mgmtsystem.nonconformity']
+    _inherit = ["mgmtsystem.nonconformity"]
 
-    # new fields
-    # department reference
-    department_id = fields.Many2one('hr.department', 'Department')
+    department_id = fields.Many2one("hr.department", "Department")
