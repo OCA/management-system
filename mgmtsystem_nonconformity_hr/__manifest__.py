@@ -4,12 +4,11 @@
 
 {
     "name":     "Management System - Nonconformity HR",
-    "summary":  "Bridge module between hr and mgmsystem and",
-    "version":  "11.0.1.0.0",
+    "summary":  "Bridge module between HR and Non Conformities",
+    "version":  "12.0.1.0.0",
 
     "author":   "Associazione PNLUG - Gruppo Odoo, Odoo Community Association (OCA)",
-    "website":  "https://gitlab.com/PNLUG/Odoo/management-system-improvements/tree/"
-                "11.0/mgmtsystem_extended",
+    "website":  "https://github.com/OCA/management-system",
     "license":  "AGPL-3",
 
     "category": "Management System",
@@ -20,7 +19,6 @@
     "data": [
         'views/mgmtsystem_nonconformity_views.xml',
         ],
-    'application': False,
     'installable': True,
     'auto_install': True,
 }
