@@ -95,6 +95,7 @@ class MgmtsystemNonconformity(models.Model):
         default=_default_stage, group_expand='_stage_groups')
     state = fields.Selection(
         related='stage_id.state',
+        readonly=True,
         store=True,
     )
     kanban_state = fields.Selection(
