@@ -11,7 +11,7 @@ class MgmtsystemConfigSettings(models.TransientModel):
 
     # Systems
     module_mgmtsystem_quality = fields.Boolean(
-        'Quality',
+        'Quality Management Tools',
         help='Provide quality management tools.\n'
         '- This installs the module mgmtsystem_quality.'
     )
