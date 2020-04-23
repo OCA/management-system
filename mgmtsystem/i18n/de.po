@@ -499,8 +499,10 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
-msgid "Quality"
-msgstr "Qualität"
+#, fuzzy
+#| msgid "Provide Quality management tools (ISO 9001)"
+msgid "Quality Management Tools"
+msgstr "Stelle Qualitätsmanagement bereit (ISO 9001)"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality_manual
@@ -548,6 +550,9 @@ msgstr "Benutzer"
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_viewer
 msgid "Viewer"
 msgstr "Betrachter"
+
+#~ msgid "Quality"
+#~ msgstr "Qualität"
 
 #~ msgid "Manual"
 #~ msgstr "Handbuch"
