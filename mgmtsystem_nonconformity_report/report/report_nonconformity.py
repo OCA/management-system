@@ -12,6 +12,7 @@ from odoo import api, models
 
 class MgmtsystemNonconformityReport(models.AbstractModel):
     _name = "report.mgmtsystem_nonconformity_report.nonconformity_report"
+    _description = "report.mgmtsystem_nonconformity_report.nonconformity_report"
 
     @api.model
     def get_report_values(self, docids, data=None):
