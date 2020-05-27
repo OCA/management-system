@@ -48,8 +48,8 @@ msgstr ""
 "\n"
 "<p>\n"
 "  Dies ist eine automatisch erzeugte Nachricht um Sie daran zu erinnern, "
-"dass die folgende Maßnahme in den nächsten 10 Tagen fällig wird "
-"(${object.date_deadline}):\n"
+"dass die folgende Maßnahme in den nächsten 10 Tagen fällig wird (${object."
+"date_deadline}):\n"
 "\n"
 "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
 "</p>\n"
@@ -87,8 +87,8 @@ msgstr ""
 "                \n"
 "<p>Hallo ${object.user_id.name},</p>\n"
 "\n"
-"<p>Ihnen wurde eine neue Maßnahme zugewiesen: <b><a href=\""
-"${object.get_action_url()}\">${object.name}</a></b></p>\n"
+"<p>Ihnen wurde eine neue Maßnahme zugewiesen: <b><a href=\"${object."
+"get_action_url()}\">${object.name}</a></b></p>\n"
 "<p><b>Deadline: </b>${object.date_deadline or ''}</p>\n"
 "\n"
 "<p>Bitte nutzen Sie Maßnahmen Stufen und Nachrichten um den Fortschritt zu "
@@ -226,6 +226,13 @@ msgstr "Anzahl Anhänge"
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_cancel
 msgid "Cancelled"
 msgstr "Abgebrochen"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__name
+#, fuzzy
+#| msgid "Subject"
+msgid "Claim Subject"
+msgstr "Betreff"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.actions.act_window,help:mgmtsystem_action.project_tags_action
@@ -668,11 +675,6 @@ msgstr ""
 "Geplant: Zukünftige Maßnahmen."
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__name
-msgid "Subject"
-msgstr "Betreff"
-
-#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__system_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__system_id
 msgid "System"
@@ -744,6 +746,18 @@ msgstr "Benutzer"
 #, python-format
 msgid "We cannot bring back the action to draft stage"
 msgstr "Wir können die Maßnahme nicht zu einem Entwurf zurückstufen"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+#, fuzzy
+#| msgid "Last Message"
+msgid "Website Messages"
+msgstr "Letzte Nachricht"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+msgid "Website communication history"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban

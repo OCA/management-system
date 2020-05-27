@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2018-01-15 18:09+0000\n"
 "PO-Revision-Date: 2019-08-26 15:01+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
-"23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
+"teams/23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,8 +49,8 @@ msgstr ""
 "\n"
 "     <p>\n"
 "       Esta é uma mensagem automática para lembrá-lo de que o\n"
-"       após a ação deverá ser concluída em 10 dias (${object.date_deadline}):"
-"\n"
+"       após a ação deverá ser concluída em 10 dias (${object."
+"date_deadline}):\n"
 "\n"
 "       <b><a href=\"${object.get_action_url()}\"> ${object.name} </a></b>\n"
 "     </p>\n"
@@ -88,8 +88,8 @@ msgstr ""
 "                \n"
 "<p> Olá, $ {object.user_id.name}, </p>\n"
 "\n"
-"<p>Uma nova ação foi atribuída a você: <b><a href=\""
-"${object.get_action_url()}\">${object.name} </a> </b> </p>\n"
+"<p>Uma nova ação foi atribuída a você: <b><a href=\"${object."
+"get_action_url()}\">${object.name} </a> </b> </p>\n"
 "<p><b>Prazo final:</b>${object.date_deadline ou ''} </p>\n"
 "\n"
 "<p>Por favor, use os estágios de ação e as mensagens para registrar o "
@@ -227,6 +227,13 @@ msgstr "Contador de anexo"
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_cancel
 msgid "Cancelled"
 msgstr "Cancelada"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__name
+#, fuzzy
+#| msgid "Subject"
+msgid "Claim Subject"
+msgstr "Definir"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.actions.act_window,help:mgmtsystem_action.project_tags_action
@@ -667,11 +674,6 @@ msgstr ""
 "Planejado: Atividades futuras."
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__name
-msgid "Subject"
-msgstr "Definir"
-
-#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__system_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__system_id
 msgid "System"
@@ -743,6 +745,18 @@ msgstr "Usuário"
 #, python-format
 msgid "We cannot bring back the action to draft stage"
 msgstr "Não podemos trazer de volta a ação a fase de projeto"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+#, fuzzy
+#| msgid "Last Message"
+msgid "Website Messages"
+msgstr "Última Mensagem"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+msgid "Website communication history"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban

@@ -233,6 +233,13 @@ msgid "Cancelled"
 msgstr "Annullata"
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__name
+#, fuzzy
+#| msgid "Subject"
+msgid "Claim Subject"
+msgstr "Soggetto"
+
+#. module: mgmtsystem_action
 #: model_terms:ir.actions.act_window,help:mgmtsystem_action.project_tags_action
 msgid "Click to add a new tag."
 msgstr "Fare clic per aggiungere una etichetta."
@@ -683,11 +690,6 @@ msgid ""
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__name
-msgid "Subject"
-msgstr "Soggetto"
-
-#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__system_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__system_id
 msgid "System"
@@ -762,6 +764,18 @@ msgstr "Utente"
 #, python-format
 msgid "We cannot bring back the action to draft stage"
 msgstr "Impossibile riportare l'azione alla fase bozza"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+#, fuzzy
+#| msgid "Last Message"
+msgid "Website Messages"
+msgstr "Ultimo messaggio"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+msgid "Website communication history"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban

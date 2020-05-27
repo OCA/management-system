@@ -191,6 +191,11 @@ msgid "Cancelled"
 msgstr ""
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__name
+msgid "Claim Subject"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: model_terms:ir.actions.act_window,help:mgmtsystem_action.project_tags_action
 msgid "Click to add a new tag."
 msgstr ""
@@ -627,11 +632,6 @@ msgid ""
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__name
-msgid "Subject"
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__system_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__system_id
 msgid "System"
@@ -702,6 +702,17 @@ msgstr ""
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:130
 #, python-format
 msgid "We cannot bring back the action to draft stage"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Mensagens não lidas"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+msgid "Website communication history"
 msgstr ""
 
 #. module: mgmtsystem_action
