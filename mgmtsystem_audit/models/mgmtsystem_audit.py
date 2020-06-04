@@ -160,17 +160,17 @@ class MgmtsystemAudit(models.Model):
 
     def get_lines_by_procedure(self):
         p = []
-        for l in self.line_ids:
-            if l.procedure_id.id:
-                procedure_name = l.procedure_id.name
+        for line in self.line_ids:
+            if line.procedure_id.id:
+                procedure_name = line.procedure_id.name
             else:
                 procedure_name = _("Undefined")
 
             p.append(
                 {
-                    "id": l.id,
+                    "id": line.id,
                     "procedure": procedure_name,
-                    "name": l.name,
+                    "name": line.name,
                     "yes_no": "Yes / No",
                 }
             )
