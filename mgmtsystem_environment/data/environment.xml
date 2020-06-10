@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+  <data>
+
+    <record id="system_environment" model="mgmtsystem.system">
+      <field name="name">Environment</field>
+      <field
+                name="manual_id"
+                ref="document_page_environment_manual.document_page_environment_manual"
+            />
+    </record>
+
+  </data>
+</openerp>
