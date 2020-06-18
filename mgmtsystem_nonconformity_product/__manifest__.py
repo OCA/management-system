@@ -4,8 +4,8 @@
 
 {
     "name":     "Management System - Nonconformity Product",
-    "summary":  "Bridge module between product and mgmsystem.",
-    "version":  "11.0.1.0.0",
+    "summary":  "Bridge module between Product and Management System.",
+    "version":  "12.0.1.0.0",
     "development_status": "Beta",
 
     "author":   "Associazione PNLUG - Gruppo Odoo, Odoo Community Association (OCA)",
@@ -21,7 +21,5 @@
     "data": [
         'views/mgmtsystem_nonconformity_views.xml',
         ],
-    'application': False,
     'installable': True,
-    'auto_install': True,
 }
