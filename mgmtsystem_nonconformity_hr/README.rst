@@ -51,10 +51,10 @@ NC Department
 Changelog
 =========
 
-12.0.1.0.0 (2020-04-01)
+12.0.1.0.0 (2020-06-01)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-* [INI] Initial development
+* [INI] Porting to 12.0
 
 Bug Tracker
 ===========

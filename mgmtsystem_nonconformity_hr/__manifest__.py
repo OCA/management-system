@@ -20,5 +20,4 @@
         'views/mgmtsystem_nonconformity_views.xml',
         ],
     'installable': True,
-    'auto_install': True,
 }
