@@ -4,9 +4,9 @@
 
 {
     "name":     "Management System - Nonconformity MRP",
-    "summary":  "Bridge module between mrp and mgmsystem",
-    "version":  "11.0.1.0.0",
-    "development_status": "beta",
+    "summary":  "Bridge module between MRP and Management System",
+    "version":  "12.0.1.0.0",
+    "development_status": "Beta",
 
     "author":   "Associazione PNLUG - Gruppo Odoo, Odoo Community Association (OCA)",
     "website":  "https://github.com/OCA/management-system",
@@ -20,7 +20,5 @@
     "data": [
         'views/mgmtsystem_nonconformity_views.xml',
         ],
-    'application': False,
     'installable': True,
-    'auto_install': True
 }
