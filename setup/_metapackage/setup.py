@@ -20,6 +20,7 @@ setuptools.setup(
         'odoo13-addon-mgmtsystem_hazard_risk',
         'odoo13-addon-mgmtsystem_manual',
         'odoo13-addon-mgmtsystem_nonconformity',
+        'odoo13-addon-mgmtsystem_nonconformity_hr',
         'odoo13-addon-mgmtsystem_quality',
         'odoo13-addon-mgmtsystem_review',
         'odoo13-addon-mgmtsystem_survey',
