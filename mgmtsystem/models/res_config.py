@@ -61,7 +61,7 @@ class MgmtsystemConfigSettings(models.TransientModel):
         help="Provide a quality manual template.\n"
         "- This installs the module document_page_quality_manual.",
     )
-    module_mgmtsystem_environment_manual = fields.Boolean(
+    module_document_page_environment_manual = fields.Boolean(
         "Environment Manual Template",
         help="Provide an environment manual template.\n"
         "- This installs the module mgmtsystem_environment_manual.",
@@ -83,7 +83,7 @@ class MgmtsystemConfigSettings(models.TransientModel):
         help="Provide procedures category.\n"
         "- This installs the module document_page_procedure.",
     )
-    module_mgmtsystem_environmental_aspect = fields.Boolean(
+    module_document_page_environmental_aspect = fields.Boolean(
         "Environmental Aspects",
         help="Provide Environmental Aspect category.\n"
         "- This installs the module mgmtsystem_environmental_aspect.",
