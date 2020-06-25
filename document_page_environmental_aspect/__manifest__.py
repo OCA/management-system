@@ -29,7 +29,6 @@
     "data": [
         "data/document_page.xml",
         "views/document_page.xml",
-        "security/environmental_aspect_security.xml",
     ],
     "installable": True,
 }
