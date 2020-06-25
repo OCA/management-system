@@ -98,12 +98,12 @@ msgid "Environment"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_environment_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
 msgid "Environment Manual Template"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_environmental_aspect
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_environmental_aspect
 msgid "Environmental Aspects"
 msgstr ""
 
@@ -255,7 +255,7 @@ msgid "Provide Environment management tools (ISO 14001)"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_environmental_aspect
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environmental_aspect
 msgid ""
 "Provide Environmental Aspect category.\n"
 "- This installs the module mgmtsystem_environmental_aspect."
@@ -291,6 +291,13 @@ msgid "Provide Quality management tools (ISO 9001)"
 msgstr ""
 
 #. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
+msgid ""
+"Provide Work Instructions category.\n"
+"- This installs the module document_page_work_instruction."
+msgstr ""
+
+#. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Provide a Feared Event documentation category and template"
 msgstr ""
@@ -315,6 +322,11 @@ msgstr ""
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Provide a Quality Manual template based on the ISO 9001:2008 standard"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Provide a Work Instructions documentation category and template"
 msgstr ""
 
 #. module: mgmtsystem
@@ -355,7 +367,7 @@ msgid "Provide an Information Security Manual template based on ISO 27001"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_environment_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
 msgid ""
 "Provide an environment manual template.\n"
 "- This installs the module mgmtsystem_environment_manual."
@@ -488,4 +500,9 @@ msgstr ""
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_viewer
 msgid "Viewer"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
+msgid "Work Instructions"
 msgstr ""
