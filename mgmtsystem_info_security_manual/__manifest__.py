@@ -19,13 +19,13 @@
 ##############################################################################
 {
     "name": "Information Security Management System Manual",
-    "version": "9.0.1.0.0",
+    "version": "13.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
+    "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
     "depends": ["mgmtsystem_manual"],
     "data": ["data/information_security_manual.xml"],
     "demo": [],
-    "installable": False,
+    "installable": True,
 }
