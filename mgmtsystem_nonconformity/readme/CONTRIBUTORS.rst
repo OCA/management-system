@@ -12,3 +12,4 @@
 Trobz
 
 * Dung Tran <dungtd@trobz.com>
+* Marcel Savegnago <marcel.savegnago@escodoo.com.br>
