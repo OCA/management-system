@@ -102,3 +102,8 @@ class MgmtsystemConfigSettings(models.TransientModel):
         help="Provide document approval and history. \n"
         "- This installs the module document_page_approval.",
     )
+    module_document_page_work_instruction = fields.Boolean(
+        "Work Instructions",
+        help="Provide Work Instructions category.\n"
+        "- This installs the module document_page_work_instruction.",
+    )
