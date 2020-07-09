@@ -23,7 +23,7 @@ Management System - Nonconformity
     :target: https://runbot.odoo-community.org/runbot/128/12.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module enables you to manage the nonconformities of your management systems:
 
@@ -147,17 +147,7 @@ Contributors
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 * Eugen Don <eugen.don@don-systems.de>
 * Jose Maria Alzaga <jose.alzaga@aselcis.com>
-
-Other credits
-~~~~~~~~~~~~~
-
-[ This file is optional and contains additional credits, other than
-  authors, contributors, and maintainers. ]
-
-The development of this module has been financially supported by:
-
-* Company 1 name
-* Company 2 name
+* Marcel Savegnago <marcel.savegnago@escodoo.com.br>
 
 Maintainers
 ~~~~~~~~~~~
