@@ -19,8 +19,36 @@ These presentation may help with an overviews of the modules:
 * [OpenDays 2013 presentation](http://www.slideshare.net/max3903/iso-anmanagement-systemswithopenerpen) of the Management System project
 * [Overview presentation](http://www.slideshare.net/max3903/openerp-management-system-modules) (2012) by Savoir-Faire Linux
 
+[//]: # (addons)
 
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[document_page_environment_manual](document_page_environment_manual/) | 13.0.1.1.0 | Document Management - Wiki - Environment Manual
+[document_page_environmental_aspect](document_page_environmental_aspect/) | 13.0.1.0.1 | Environmental Aspects
+[document_page_procedure](document_page_procedure/) | 13.0.1.0.0 | Document Management - Wiki - Procedures
+[document_page_quality_manual](document_page_quality_manual/) | 13.0.1.0.0 | Quality Manual
+[document_page_work_instruction](document_page_work_instruction/) | 13.0.1.0.0 | Document Management - Wiki - Work Instructions
+[mgmtsystem](mgmtsystem/) | 13.0.1.3.0 | Management System
+[mgmtsystem_action](mgmtsystem_action/) | 13.0.1.1.0 | Management System - Action
+[mgmtsystem_audit](mgmtsystem_audit/) | 13.0.1.1.0 | Management System - Audit
+[mgmtsystem_hazard](mgmtsystem_hazard/) | 13.0.1.1.0 | Hazard
+[mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 13.0.1.0.0 | Hazard Risk
+[mgmtsystem_manual](mgmtsystem_manual/) | 13.0.1.1.0 | Management System - Manual
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 13.0.1.1.0 | Management System - Nonconformity
+[mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 13.0.1.0.0 | Bridge module between hr and mgmsystem and
+[mgmtsystem_quality](mgmtsystem_quality/) | 13.0.1.0.0 | Manage your quality management system
+[mgmtsystem_review](mgmtsystem_review/) | 13.0.1.1.0 | Management System - Review
+[mgmtsystem_survey](mgmtsystem_survey/) | 13.0.1.0.0 | Management System - Survey
 
-Translation Status
-------------------
-[![Transifex Status](https://www.transifex.com/projects/p/OCA-management-system-13-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-management-system-13-0)
+[//]: # (end addons)
+
+## Translation Status
+
+[![Translation status](https://translation.odoo-community.org/widgets/management-system-13-0/-/multi-auto.svg)](https://translation.odoo-community.org/engage/management-system-13-0/?utm_source=widget)
+
+----
+OCA, or the [Odoo Community Association](http://odoo-community.org/), is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
