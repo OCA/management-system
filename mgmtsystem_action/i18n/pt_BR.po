@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-15 18:09+0000\n"
-"PO-Revision-Date: 2019-08-26 15:01+0000\n"
-"Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
-"teams/23907/pt_BR/)\n"
+"PO-Revision-Date: 2020-07-10 17:19+0000\n"
+"Last-Translator: Fernando Colus <fcolus1@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
+"23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.8\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
@@ -161,7 +161,7 @@ msgstr "Ação"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_needaction
 msgid "Action Needed"
-msgstr "Ação necessária"
+msgstr "Ação Necessária"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_stage
@@ -201,7 +201,7 @@ msgstr "Atividades"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_state
 msgid "Activity State"
-msgstr "Estado da atividade"
+msgstr "Estado da Atividade"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_stage_form
@@ -221,7 +221,7 @@ msgstr "Arquivado"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_attachment_count
 msgid "Attachment Count"
-msgstr "Contador de anexo"
+msgstr "Contagem de Anexos"
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_cancel
@@ -230,10 +230,8 @@ msgstr "Cancelada"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__name
-#, fuzzy
-#| msgid "Subject"
 msgid "Claim Subject"
-msgstr "Definir"
+msgstr "Assunto da Reivindicação"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.actions.act_window,help:mgmtsystem_action.project_tags_action
@@ -315,7 +313,7 @@ msgstr "Descrição"
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag__display_name
 msgid "Display Name"
-msgstr "Mostrar nome"
+msgstr "Exibir Nome"
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_draft
@@ -444,7 +442,7 @@ msgstr "Última Mensagem"
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag____last_update
 msgid "Last Modified on"
-msgstr "Modificada pela última vez"
+msgstr "Última Modificação Feita em"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__write_uid
@@ -468,7 +466,7 @@ msgstr "Atividades Atrasadas"
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
 msgid "Low"
-msgstr "Menor"
+msgstr "Baixo(a)"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_main_attachment_id
@@ -488,7 +486,7 @@ msgstr "Sistema de Gestão de Análise"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_error
 msgid "Message Delivery error"
-msgstr "Mensagem de erro de entrega"
+msgstr "Erro de Entrega de Mensagem"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_ids
@@ -535,7 +533,7 @@ msgstr "Resumo para a próxima atividade"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_type_id
 msgid "Next Activity Type"
-msgstr "Próximo tipo de atividade"
+msgstr "Tipo da Próxima Atividade"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -545,12 +543,12 @@ msgstr "Normal"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_needaction_counter
 msgid "Number of Actions"
-msgstr "Número de ações"
+msgstr "Número de Ações"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
 msgid "Number of error"
-msgstr "Número de erro"
+msgstr "Número de erros"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_needaction_counter
@@ -565,7 +563,7 @@ msgstr "Número de mensagens com erro de entrega"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_unread_counter
 msgid "Number of unread messages"
-msgstr "Número de Mensagens não lidas"
+msgstr "Número de mensagens não-lidas"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__date_open
@@ -576,7 +574,7 @@ msgstr "Data de abertura"
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,activity_state:0
 msgid "Overdue"
-msgstr "Atrasado"
+msgstr "Vencido(a)"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
@@ -727,12 +725,12 @@ msgstr "Tipo"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Unread Messages"
-msgstr "Mensagens não lidas"
+msgstr "Mensagens Não-Lidas"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr "Contador de Mensagens não lidas"
+msgstr "Contador de Mensagens Não-Lidas"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__user_id
@@ -748,15 +746,13 @@ msgstr "Não podemos trazer de volta a ação a fase de projeto"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-#, fuzzy
-#| msgid "Last Message"
 msgid "Website Messages"
-msgstr "Última Mensagem"
+msgstr "Mensagens do Site"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Histórico de Comunicação Através do Site"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
