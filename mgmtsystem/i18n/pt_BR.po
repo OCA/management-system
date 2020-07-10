@@ -305,6 +305,19 @@ msgid "Provide Quality management tools (ISO 9001)"
 msgstr "Fornecer ferramentas de gerenciamento de qualidade (ISO 9001)"
 
 #. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
+#, fuzzy
+#| msgid ""
+#| "Provide procedures category.\n"
+#| "- This installs the module document_page_procedure."
+msgid ""
+"Provide Work Instructions category.\n"
+"- This installs the module document_page_work_instruction."
+msgstr ""
+"Fornecer categoria procedimentos.\n"
+"- Isso instala o módulo document_page_procedure."
+
+#. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Provide a Feared Event documentation category and template"
 msgstr "Forneça uma categoria e modelo de documentação de evento com medo"
@@ -331,6 +344,13 @@ msgstr "Fornecer uma categoria e modelo de documentação do procedimento"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Provide a Quality Manual template based on the ISO 9001:2008 standard"
 msgstr "Modelo de manual da Qualidade baseado na norma ISO 9001: 2008"
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+#, fuzzy
+#| msgid "Provide a Hazards documentation category and template"
+msgid "Provide a Work Instructions documentation category and template"
+msgstr "Forneça uma categoria e um modelo de documentação de riscos"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
@@ -536,6 +556,11 @@ msgstr "Usuário"
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_viewer
 msgid "Viewer"
 msgstr "Visualizador"
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
+msgid "Work Instructions"
+msgstr ""
 
 #~ msgid "Manual"
 #~ msgstr "Manual"
