@@ -313,6 +313,16 @@ msgid "Provide Quality management tools (ISO 9001)"
 msgstr "Attiva strumenti di gestione qualità (ISO 9001)"
 
 #. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
+#, fuzzy
+msgid ""
+"Provide Work Instructions category.\n"
+"- This installs the module document_page_work_instruction."
+msgstr ""
+"Attiva categoria procedure.\n"
+"- Verrà installato il modulo mgmtsystem_procedure."
+
+#. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 #, fuzzy
 msgid "Provide a Feared Event documentation category and template"
@@ -346,6 +356,12 @@ msgstr "Attiva una categoria di documentazione e un modello di procedura"
 msgid "Provide a Quality Manual template based on the ISO 9001:2008 standard"
 msgstr ""
 "Attiva un modello di manuale qualità basato sullo standard ISO 9001:2008"
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+#, fuzzy
+msgid "Provide a Work Instructions documentation category and template"
+msgstr "Attiva una categoria di documentazione e un modello dei rischi"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
@@ -571,6 +587,11 @@ msgstr "Utente"
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_viewer
 msgid "Viewer"
 msgstr "Visualizzatore"
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
+msgid "Work Instructions"
+msgstr ""
 
 #~ msgid "Manual"
 #~ msgstr "Manuale"
