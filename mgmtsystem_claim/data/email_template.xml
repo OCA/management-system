@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Email template for Claim Reminders -->
+        <record id="email_template_new_claim_reminder" model="mail.template">
+            <field name="name">Reminder to Responsible</field>
+            <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost'}</field>
+            <field name="subject">Reminder on Action: "${object.name}"</field>
+            <field name="email_to">${object.user_id.email}</field>
+            <field name="model_id" ref="model_mgmtsystem_claim"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.create_uid.partner_id.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+<p>Hello ${object.user_id.name},</br>
+  A new claim has been assigned to you:
+
+<p>
+  ${object.description}
+</p>
+
+  <b><a href="${object.get_action_url()}">${object.name}</a></b>
+</p>
+
+<p>
+  Thank you and have a nice day.<br>
+  --<br>
+  Odoo
+</p>
+                ]]>
+            </field>
+        </record>
+
+
+        <!-- Email template for Claim Reminders -->
+        <record id="email_template_remain_claim_reminder" model="mail.template">
+            <field name="name">Reminder to Responsible</field>
+            <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost'}</field>
+            <field name="subject">Reminder on Action: "${object.name}"</field>
+            <field name="email_to">${object.user_id.email}</field>
+            <field name="model_id" ref="model_mgmtsystem_claim"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.create_uid.partner_id.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+<p>Hello ${object.user_id.name},</p>
+
+<p>
+  This is an automated message to remind you that the
+  following claim is due to be completed in 10 days (${object.date_deadline}):
+
+  <b><a href="${object.get_action_url()}">${object.name}</a></b>
+</p>
+
+<p>
+  ${object.description}
+</p>
+
+<p>
+  Thank you and have a nice day.<br>
+  --<br>
+  Odoo
+</p>
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

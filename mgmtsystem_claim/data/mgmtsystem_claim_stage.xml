@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+
+        <record id="stage_draft" model="mgmtsystem.claim.stage">
+            <field name="name">Draft</field>
+            <field name="sequence">0</field>
+            <field name="case_default" eval="True"/>
+        </record>
+
+        <record id="stage_pending" model="mgmtsystem.claim.stage">
+            <field name="name">Pending</field>
+            <field name="sequence">250</field>
+            <field name="case_default" eval="True"/>
+        </record>
+
+        <record id="stage_open" model="mgmtsystem.claim.stage">
+            <field name="name">Open</field>
+            <field name="sequence">500</field>
+            <field name="case_default" eval="True"/>
+        </record>
+
+        <record id="stage_close" model="mgmtsystem.claim.stage">
+            <field name="name">Close</field>
+            <field name="sequence">750</field>
+            <field name="case_default" eval="True"/>
+        </record>
+
+        <record id="stage_cancel" model="mgmtsystem.claim.stage">
+            <field name="name">Cancel</field>
+            <field name="sequence">750</field>
+            <field name="case_default" eval="True"/>
+        </record>
+
+    </data>
+</odoo>
