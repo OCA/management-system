@@ -18,4 +18,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import models
+from . import mgmtsystem_claim_stage
+from . import mgmtsystem_claim
+from . import res_partner
