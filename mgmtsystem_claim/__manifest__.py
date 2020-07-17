@@ -18,25 +18,24 @@
 #
 ##############################################################################
 {
-    "name" : "Management System - Claim",
-    "version" : "1.1",
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-<<<<<<< HEAD
-    "license" : "AGPL-3",
-=======
-    "license" : "AGPL",
->>>>>>> [CHG] AGPL license; set verion to 1.0
-    "category" : "Management System",
-    "description": """This module enables you to manage the claims of your management system.""",
-    "depends": ['mgmtsystem', 'crm_claim', 'mail'],
+    "name": "Management System - Claim",
+    "version": "13.0.1.0.0",
+    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "category": "Management System",
+    "depends": ["mgmtsystem", "crm_claim", "mail"],
     "data": [
-        'security/ir.model.access.csv',
-        'security/mgmtsystem_claim_security.xml',
-        'mgmtsystem_claim.xml',
-        'claim_sequence.xml',
-        'workflow_mgmtsystem_claim.xml',
-        'board_mgmtsystem_claim.xml',
+        "security/ir.model.access.csv",
+        "security/mgmtsystem_claim_security.xml",
+        "data/claim_sequence.xml",
+        "data/mgmtsystem_claim_stage.xml",
+        "data/email_template.xml",
+        "data/automated_reminder.xml",
+        "views/menus.xml",
+        "views/mgmtsystem_claim.xml",
+        "views/mgmtsystem_claim_stage.xml",
+        "views/res_partner_views.xml",
     ],
+    "installable": True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
