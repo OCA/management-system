@@ -194,18 +194,18 @@
         <field name="help">Record and track your customers' claims. Claims may be linked to a sales order or a lot. You can send emails with attachments and keep the full history for a claim (emails sent, intervention type and so on). Claims may automatically be linked to an email address using the mail gateway module.</field>
     </record>
 
-	<menuitem 
+	<menuitem
 		id="menu_mgmtsystem_claims"
-		name="Claims" 
-		parent="mgmtsystem.menu_mgmtsystem_main" 
-		action="mgmtsystem_claim_action" 
+		name="Claims"
+		parent="mgmtsystem.menu_mgmtsystem_main"
+		action="mgmtsystem_claim_action"
 		sequence="90"
 		groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
 
-	<menuitem 
-		id="menu_config_claim" 
+	<menuitem
+		id="menu_config_claim"
 		name="Claims"
-		parent="mgmtsystem.menu_mgmtsystem_configuration" 
+		parent="mgmtsystem.menu_mgmtsystem_configuration"
 		sequence="20" />
 
     </data>
