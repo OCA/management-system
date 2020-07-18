@@ -1,0 +1,131 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mgmtsystem_action_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-06 12:11+0000\n"
+"PO-Revision-Date: 2020-12-06 13:19+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: mgmtsystem_action_template
+#: model:ir.model,name:mgmtsystem_action_template.model_mgmtsystem_action
+msgid "Action"
+msgstr "Azione"
+
+#. module: mgmtsystem_action_template
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_action_template.mgmtsystem_action_template_form_view
+msgid "Action Template"
+msgstr "Modello azione"
+
+#. module: mgmtsystem_action_template
+#: model:ir.ui.menu,name:mgmtsystem_action_template.mgmtsystem_action_template_menu
+msgid "Action Templates"
+msgstr "Modelli azione"
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: model:ir.model,name:mgmtsystem_action_template.model_mgmtsystem_action_template
+msgid "Define fields to save action template values"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__description
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_action_template.mgmtsystem_action_template_form_view
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,help:mgmtsystem_action_template.field_mgmtsystem_action__template_id
+msgid "Fill Action's fields with Template's values"
+msgstr "Compilare i campi dell'azione con i valori del modello"
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__id
+msgid "ID"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: model:ir.actions.act_window,name:mgmtsystem_action_template.mgmtsystem_action_template_act_window
+msgid "Mgmtsystem Action Template"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: code:addons/mgmtsystem_action_template/models/mgmtsystem_action_template.py:44
+#, python-format
+msgid "NEW"
+msgstr "NUOVA"
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__name
+msgid "Name"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action__template_id
+msgid "Reference Template"
+msgstr "Modello di riferimento"
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__type_action
+msgid "Response Type"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__user_id
+msgid "Responsible"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__tag_ids
+msgid "Tags"
+msgstr ""
+
+#. module: mgmtsystem_action_template
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_action_template.mgmtsystem_action_template_form_view
+msgid "Template title..."
+msgstr "Nome modello..."
+
+#~ msgid "Is not a Template"
+#~ msgstr "Non è un modello"
+
+#~ msgid "Set Action as Template to create simlilar one. Type, Responsible, Tags and Title are used."
+#~ msgstr "Imposta l'azione come modello per crearne di simili. Tipo, responsabile, etichette e titolo verranno copiati."
