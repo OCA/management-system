@@ -12,8 +12,8 @@ msgstr ""
 "POT-Creation-Date: 2018-01-15 18:09+0000\n"
 "PO-Revision-Date: 2020-03-21 20:14+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
-"23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
+"teams/23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -878,6 +878,20 @@ msgstr "Usado para ordenar estados. Menor é melhor."
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "User"
 msgstr "Usuário"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+#, fuzzy
+#| msgid "Messages"
+msgid "Website Messages"
+msgstr "Mensagens"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+#, fuzzy
+#| msgid "Bad communication"
+msgid "Website communication history"
+msgstr "Falha de Comunicacao"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
