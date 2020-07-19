@@ -33,6 +33,7 @@ addon | version | summary
 [mgmtsystem](mgmtsystem/) | 13.0.1.4.0 | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 13.0.1.1.0 | Management System - Action
 [mgmtsystem_audit](mgmtsystem_audit/) | 13.0.1.1.0 | Management System - Audit
+[mgmtsystem_claim](mgmtsystem_claim/) | 13.0.1.0.0 | Management System - Claim
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 13.0.1.1.0 | Hazard
 [mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 13.0.1.0.0 | Hazard Risk
 [mgmtsystem_manual](mgmtsystem_manual/) | 13.0.1.1.0 | Management System - Manual
