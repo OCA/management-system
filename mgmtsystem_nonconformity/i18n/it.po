@@ -890,6 +890,20 @@ msgid "User"
 msgstr "Utente"
 
 #. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+#, fuzzy
+#| msgid "Unread Messages"
+msgid "Website Messages"
+msgstr "Messaggi non letti"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+#, fuzzy
+#| msgid "Bad communication"
+msgid "Website communication history"
+msgstr "Comunicazione errata"
+
+#. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
 msgid "Work conditions"
 msgstr "Condizioni di lavoro"
