@@ -30,6 +30,96 @@ msgid "# of nonconformities"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<span>Non-Conformity #</span>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Actions:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Analysis Confirmation:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Analysis:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Causes:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Date Created:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Description:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Effectiveness Review:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Filled in by:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Manager:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Origin:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Partner:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Plan Review:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Procedures:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Related to:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>Responsible:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>State:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "<strong>System:</strong>"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__kanban_state
 msgid ""
 "A kanban state indicates special situations affecting it:\n"
@@ -161,8 +251,14 @@ msgid "Cancelled"
 msgstr "Peruutettu"
 
 #. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "Category"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__cause_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__name
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
 msgid "Cause"
 msgstr ""
 
@@ -259,6 +355,11 @@ msgid "Days Since Updated"
 msgstr "Viimeksi päivittänyt"
 
 #. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "Deadline"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__sequence
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__sequence
 msgid "Defines the order to present items"
@@ -269,6 +370,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__description
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__description
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__description
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Description"
 msgstr ""
@@ -367,6 +469,7 @@ msgstr ""
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__parent_id
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__parent_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
 msgid "Group"
 msgstr ""
 
@@ -745,7 +848,13 @@ msgid "Related to"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "Response Type"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__responsible_user_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Responsible"
 msgstr ""
@@ -778,6 +887,7 @@ msgstr ""
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__stage_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
 msgid "Stage"
 msgstr ""
 
@@ -809,6 +919,11 @@ msgid ""
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
+msgid "Subject"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__system_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "System"
@@ -828,6 +943,7 @@ msgstr ""
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__name
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document
 msgid "Title"
 msgstr ""
 
