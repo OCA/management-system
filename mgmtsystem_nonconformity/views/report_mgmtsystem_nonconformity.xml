@@ -1,0 +1,191 @@
+<odoo>
+    <data>
+        <template id="report_mgmtsystem_nonconformity_document">
+            <t t-call="web.external_layout">
+                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+
+                <div class="page">
+                    <div class="oe_structure"/>
+
+                    <h2 class="mt16">
+                        <t>
+                            <span>Non-Conformity #</span>
+                        </t>
+                        <span t-field="doc.ref"/>
+                    </h2>
+
+                    <h3 class="mt16">
+                        <span t-field="doc.name"/>
+                    </h3>
+
+                    <div class="row mt32 mb32" id="informations">
+                      <div t-if="doc.create_date" class="col-auto mw-100 mb-2">
+                        <strong>Date Created:</strong>
+                        <p class="m-0" t-field="doc.create_date"/>
+                      </div>
+                      <div t-if="doc.responsible_user_id" class="col-auto mw-100 mb-2">
+                        <strong>Responsible:</strong>
+                        <p class="m-0" t-field="doc.responsible_user_id"/>
+                      </div>
+                      <div t-if="doc.manager_user_id" class="col-auto mw-100 mb-2">
+                        <strong>Manager:</strong>
+                        <p class="m-0" t-field="doc.manager_user_id"/>
+                      </div>
+                      <div t-if="doc.user_id" class="col-auto mw-100 mb-2">
+                        <strong>Filled in by:</strong>
+                        <p class="m-0" t-field="doc.user_id"/>
+                      </div>
+                      <div t-if="doc.state" class="col-auto mw-100 mb-2">
+                        <strong>State:</strong>
+                        <p class="m-0" t-field="doc.state"/>
+                      </div>
+                    </div>
+
+                    <div class="row mt32 mb32" id="references">
+                      <div t-if="doc.partner_id" class="col-auto mw-100 mb-2">
+                        <strong>Partner:</strong>
+                        <p class="m-0" t-field="doc.partner_id"/>
+                      </div>
+                      <div t-if="doc.reference" class="col-auto mw-100 mb-2">
+                        <strong>Related to:</strong>
+                        <p class="m-0" t-field="doc.reference"/>
+                      </div>
+                    </div>
+
+                    <div class="row mt32 mb32" id="origins">
+                      <div t-if="doc.system_id" class="col-auto mw-100 mb-2">
+                        <strong>System:</strong>
+                        <p class="m-0" t-field="doc.system_id"/>
+                      </div>
+                      <div t-if="doc.origin_ids" class="col-auto mw-100 mb-2">
+                        <strong>Origin:</strong>
+                        <p class="m-0" t-field="doc.origin_ids"/>
+                      </div>
+                    </div>
+
+                    <div class="row mt32 mb32" id="description">
+                      <div t-if="doc.description" class="col-auto mw-100 mb-2">
+                        <strong>Description:</strong>
+                        <p class="m-0" t-field="doc.description"/>
+                      </div>
+                    </div>
+
+                    <strong>Procedures:</strong>
+                    <table class="table table-sm o_main_table">
+                      <thead>
+                        <tr>
+                          <t t-set="colspan" t-value="5"/>
+                          <th class="text-left">Title</th>
+                          <th class="text-left">Category</th>
+                        </tr>
+                      </thead>
+                      <tbody class="action_tbody">
+                        <t t-foreach="doc.procedure_ids" t-as="line">
+                          <tr t-att-class="''">
+                            <td><span t-field="line.name"/></td>
+                            <td><span t-field="line.parent_id"/></td>
+                          </tr>
+                        </t>
+                      </tbody>
+                    </table>
+
+                    <div class="row mt32 mb32" id="analysis">
+                      <div t-if="doc.analysis" class="col-auto mw-100 mb-2">
+                        <strong>Analysis:</strong>
+                        <p class="m-0" t-field="doc.analysis"/>
+                      </div>
+                    </div>
+
+                    <strong>Causes:</strong>
+                    <table class="table table-sm o_main_table">
+                      <thead>
+                        <tr>
+                          <t t-set="colspan" t-value="5"/>
+                          <th class="text-left">Cause</th>
+                          <th class="text-left">Description</th>
+                          <th class="text-left">Group</th>
+                        </tr>
+                      </thead>
+                      <tbody class="cause_tbody">
+                        <t t-foreach="doc.cause_ids" t-as="line">
+                          <tr t-att-class="''">
+                            <td><span t-field="line.name"/></td>
+                            <td><span t-field="line.description"/></td>
+                            <td><span t-field="line.parent_id"/></td>
+                          </tr>
+                        </t>
+                      </tbody>
+                    </table>
+
+                    <div class="row mt32 mb32" id="analysis_confirmation">
+                      <div t-if="doc.severity_id" class="col-auto mw-100 mb-2">
+                        <strong>Analysis Confirmation:</strong>
+                        <p class="m-0" t-field="doc.severity_id"/>
+                      </div>
+                    </div>
+
+                    <strong>Actions:</strong>
+                    <table class="table table-sm o_main_table">
+                      <thead>
+                        <tr>
+                          <t t-set="colspan" t-value="5"/>
+                          <th class="text-left">Subject</th>
+                          <th class="text-left">Response Type</th>
+                          <th class="text-left">Responsible</th>
+                          <th class="text-left">Deadline</th>
+                          <th class="text-left">Stage</th>
+                        </tr>
+                      </thead>
+                      <tbody class="action_tbody">
+                        <t t-foreach="doc.action_ids" t-as="line">
+                          <tr t-att-class="''">
+                            <td><span t-field="line.name"/></td>
+                            <td><span t-field="line.type_action"/></td>
+                            <td><span t-field="line.user_id"/></td>
+                            <td><span t-field="line.date_deadline"/></td>
+                            <td><span t-field="line.stage_id"/></td>
+                          </tr>
+                        </t>
+                      </tbody>
+                    </table>
+
+                    <div class="row mt32 mb32" id="plan_review">
+                      <div t-if="doc.action_comments" class="col-auto mw-100 mb-2">
+                        <strong>Plan Review:</strong>
+                        <p class="m-0" t-field="doc.action_comments"/>
+                      </div>
+                    </div>
+
+                    <div class="row mt32 mb32" id="effectiveness_review">
+                      <div t-if="doc.evaluation_comments" class="col-auto mw-100 mb-2">
+                        <strong>Effectiveness Review:</strong>
+                        <p class="m-0" t-field="doc.evaluation_comments"/>
+                      </div>
+                    </div>
+
+                </div>
+
+            </t>
+        </template>
+
+        <template id="report_mgmtsystem_nonconformity">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="mgmtsystem_nonconformity.report_mgmtsystem_nonconformity_document" t-lang="doc.partner_id.lang" />
+                </t>
+            </t>
+        </template>
+
+        <report
+            id="action_report_mgmtsystem_nonconformity"
+            string="Non-Conformity Report"
+            model="mgmtsystem.nonconformity"
+            report_type="qweb-pdf"
+            file="mgmtsystem_nonconformity.report_mgmtsystem_nonconformity"
+            name="mgmtsystem_nonconformity.report_mgmtsystem_nonconformity"
+            print_report_name="'Non-Conformity - %s' % (object.ref)"
+        />
+
+    </data>
+
+</odoo>
