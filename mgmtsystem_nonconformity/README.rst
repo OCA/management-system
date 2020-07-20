@@ -23,7 +23,7 @@ Management System - Nonconformity
     :target: https://runbot.odoo-community.org/runbot/128/12.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5|
+|badge1| |badge2| |badge3| |badge4| |badge5| 
 
 This module enables you to manage the nonconformities of your management systems:
 
@@ -118,6 +118,11 @@ Changelog
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [MIG] Migration to 12.0.
+
+12.0.1.0.0 (2020-07-09)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [ADD] Add Non-Conformity Report.
 
 Bug Tracker
 ===========
