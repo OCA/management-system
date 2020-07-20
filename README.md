@@ -33,7 +33,7 @@ addon | version | summary
 [mgmtsystem_audit](mgmtsystem_audit/) | 12.0.1.0.1 | Management System - Audit
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 12.0.1.0.0 | Hazard
 [mgmtsystem_manual](mgmtsystem_manual/) | 12.0.1.0.0 | Management System - Manual
-[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 12.0.1.1.1 | Management System - Nonconformity
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 12.0.1.2.0 | Management System - Nonconformity
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 12.0.1.0.0 | Bridge module between HR and Non Conformities
 [mgmtsystem_nonconformity_product](mgmtsystem_nonconformity_product/) | 12.0.1.0.0 | Bridge module between Product and Management System.
 [mgmtsystem_nonconformity_project](mgmtsystem_nonconformity_project/) | 12.0.1.0.0 | Management System - Project
