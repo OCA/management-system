@@ -506,14 +506,16 @@ msgstr ""
 "-Este Instala o módulo mgmtsystem_review."
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
-msgid "Quality"
-msgstr "Qualidade"
-
-#. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
 msgid "Quality Manual Template"
 msgstr "Modelo de Manual de Qualidade"
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
+#, fuzzy
+#| msgid "Quality"
+msgid "Quality Tools"
+msgstr "Qualidade"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_report
