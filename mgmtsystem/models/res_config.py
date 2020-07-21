@@ -5,13 +5,13 @@ from odoo import fields, models
 
 
 class MgmtsystemConfigSettings(models.TransientModel):
-    """This class is useed to activate management system Applications."""
+    """This class is used to activate management system Applications."""
 
     _inherit = "res.config.settings"
 
     # Systems
     module_mgmtsystem_quality = fields.Boolean(
-        "Quality",
+        "Quality Tools",
         help="Provide quality management tools.\n"
         "- This installs the module mgmtsystem_quality.",
     )
