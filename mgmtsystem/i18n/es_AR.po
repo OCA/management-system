@@ -225,8 +225,8 @@ msgstr "Usuario del módulo con permiso adicional para aprobaciones."
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_auditor
 msgid ""
-"Module user with additional permission specific for the auditor job, such as"
-" effectiveness reviews."
+"Module user with additional permission specific for the auditor job, such as "
+"effectiveness reviews."
 msgstr ""
 "Usuario del módulo con permisos adicionales para el trabajo de auditor, como "
 "las revisiones de efectividad."
@@ -286,7 +286,8 @@ msgstr ""
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Provide Health &amp; Safety management tools (OHSAS 18001)"
-msgstr "Proporcionar herramientas de gestión de Salud y Seguridad (OHSAS 18001)"
+msgstr ""
+"Proporcionar herramientas de gestión de Salud y Seguridad (OHSAS 18001)"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
@@ -507,14 +508,16 @@ msgstr ""
 "- Esto instala el módulo mgmtsystem_review."
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
-msgid "Quality"
-msgstr "Calidad"
-
-#. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
 msgid "Quality Manual Template"
 msgstr "Plantilla del Manual de Calidad"
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
+#, fuzzy
+#| msgid "Quality"
+msgid "Quality Tools"
+msgstr "Calidad"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_report
