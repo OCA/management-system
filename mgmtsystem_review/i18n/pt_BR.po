@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-17 02:42+0000\n"
-"PO-Revision-Date: 2020-07-10 17:19+0000\n"
+"PO-Revision-Date: 2020-07-27 18:19+0000\n"
 "Last-Translator: Fernando Colus <fcolus1@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
 "23907/pt_BR/)\n"
@@ -38,7 +38,7 @@ msgstr "<strong>Políticas:</strong>"
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "<strong>Review Report</strong>"
-msgstr "<strong>Relatório de revisão</strong>"
+msgstr "<strong>Revisar Relatório</strong>"
 
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
@@ -81,7 +81,7 @@ msgstr "Fechado"
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 msgid "Closed Reviews"
-msgstr "Reuniões Fechadas"
+msgstr "Revisões Encerradas"
 
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
@@ -140,7 +140,7 @@ msgstr "Decisão:"
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Direction Review"
-msgstr "Revisão da direção"
+msgstr "Revisão da Direção"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__display_name
@@ -157,7 +157,7 @@ msgstr "Expectativas:"
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__id
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__id
 msgid "ID"
-msgstr "Identificação"
+msgstr "Identificação (ID)"
 
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
@@ -179,13 +179,13 @@ msgstr "Última Modificação Feita em"
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__write_uid
 msgid "Last Updated by"
-msgstr "Última atualização por"
+msgstr "Última Atualização Feita por"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__write_date
 msgid "Last Updated on"
-msgstr "Última atualização em"
+msgstr "Última Atualização Feita em"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__line_ids
@@ -214,7 +214,7 @@ msgstr "Abrir"
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 msgid "Open Reviews"
-msgstr "Reuniões Abertas"
+msgstr "Abrir Revisões"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__user_ids
@@ -258,25 +258,25 @@ msgstr "Referência:"
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__review_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Review"
-msgstr "Reunião"
+msgstr "Revisão"
 
 #. module: mgmtsystem_review
 #: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review_line
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_form
 msgid "Review Line"
-msgstr "Linha da reunião"
+msgstr "Linha da Revisão"
 
 #. module: mgmtsystem_review
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_line_list
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_tree
 msgid "Review Lines"
-msgstr "linhas da reunião"
+msgstr "Linhas da Revisão"
 
 #. module: mgmtsystem_review
 #: model:ir.actions.report,name:mgmtsystem_review.review_report_mgmtsystem_review
 msgid "Review report"
-msgstr "Relatório de revisão"
+msgstr "Revisar Relatório"
 
 #. module: mgmtsystem_review
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_list
