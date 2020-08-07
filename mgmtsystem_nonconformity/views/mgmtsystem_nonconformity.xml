@@ -112,7 +112,7 @@
       <field name="arch" type="xml">
         <form string="Non-Conformity" version="7.0">
           <header>
-            <field name="stage_id" widget="statusbar" clickable="True" />
+            <field name="stage_id" widget="statusbar" options="{'clickable': 1}" />
             <field name="state" invisible="True" />
           </header>
           <sheet string="Non-Conformity">
