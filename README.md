@@ -31,7 +31,7 @@ addon | version | summary
 [document_page_quality_manual](document_page_quality_manual/) | 13.0.1.0.0 | Quality Manual
 [document_page_work_instruction](document_page_work_instruction/) | 13.0.1.0.0 | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 13.0.1.4.1 | Management System
-[mgmtsystem_action](mgmtsystem_action/) | 13.0.1.1.0 | Management System - Action
+[mgmtsystem_action](mgmtsystem_action/) | 13.0.1.1.1 | Management System - Action
 [mgmtsystem_audit](mgmtsystem_audit/) | 13.0.1.1.0 | Management System - Audit
 [mgmtsystem_claim](mgmtsystem_claim/) | 13.0.1.1.0 | Management System - Claim
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 13.0.1.1.0 | Hazard
