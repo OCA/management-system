@@ -10,10 +10,10 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-15 18:09+0000\n"
-"PO-Revision-Date: 2020-03-21 20:14+0000\n"
+"PO-Revision-Date: 2020-08-12 19:00+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
-"teams/23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
+"23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -306,16 +306,12 @@ msgstr "Fornecer ferramentas de gerenciamento de qualidade (ISO 9001)"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
-#, fuzzy
-#| msgid ""
-#| "Provide procedures category.\n"
-#| "- This installs the module document_page_procedure."
 msgid ""
 "Provide Work Instructions category.\n"
 "- This installs the module document_page_work_instruction."
 msgstr ""
-"Fornecer categoria procedimentos.\n"
-"- Isso instala o módulo document_page_procedure."
+"Fornecer categoria de Instruções de Trabalho.\n"
+"- Isso instala o módulo document_page_work_instruction."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
@@ -347,10 +343,9 @@ msgstr "Modelo de manual da Qualidade baseado na norma ISO 9001: 2008"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
-#| msgid "Provide a Hazards documentation category and template"
 msgid "Provide a Work Instructions documentation category and template"
-msgstr "Forneça uma categoria e um modelo de documentação de riscos"
+msgstr ""
+"Fornece um modelo e uma categoria de documentação de Instruções de Trabalho"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
@@ -512,10 +507,8 @@ msgstr "Modelo de Manual de Qualidade"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
-#, fuzzy
-#| msgid "Quality"
 msgid "Quality Tools"
-msgstr "Qualidade"
+msgstr "Ferramentas de qualidade"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_report
@@ -562,7 +555,7 @@ msgstr "Visualizador"
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
 msgid "Work Instructions"
-msgstr ""
+msgstr "Instruções de trabalho"
 
 #~ msgid "Manual"
 #~ msgstr "Manual"
