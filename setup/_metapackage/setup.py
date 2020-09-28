@@ -18,6 +18,7 @@ setuptools.setup(
         'odoo12-addon-mgmtsystem_manual',
         'odoo12-addon-mgmtsystem_nonconformity',
         'odoo12-addon-mgmtsystem_nonconformity_hr',
+        'odoo12-addon-mgmtsystem_nonconformity_maintenance',
         'odoo12-addon-mgmtsystem_nonconformity_product',
         'odoo12-addon-mgmtsystem_nonconformity_project',
         'odoo12-addon-mgmtsystem_nonconformity_repair',
