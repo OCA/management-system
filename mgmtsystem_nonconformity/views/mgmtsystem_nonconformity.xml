@@ -158,7 +158,7 @@
                 <field name="procedure_ids" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]"/>
               </page>
 
-              <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
+              <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft'])]}">
                 <separator string="Analysis"/>
                 <field name="analysis" attrs="{'readonly':[('state','not in',['analysis'])]}"/>
 
@@ -181,7 +181,7 @@
                 </group>
               </page>
 
-              <page string="Actions" attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}">
+              <page string="Actions" attrs="{'invisible':[('state','in',['draft','analysis'])]}">
                 <separator string="Action Plan"/>
                 <field name="action_ids" attrs="{'readonly':[('state','not in',['pending'])]}"/>
 
