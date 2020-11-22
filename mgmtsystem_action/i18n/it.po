@@ -22,26 +22,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
 #, fuzzy
-#| msgid ""
-#| "\n"
-#| "                \n"
-#| "<p>Hello ${object.user_id.name},</p>\n"
-#| "\n"
-#| "<p>\n"
-#| "  This is an automated message to remind you that the\n"
-#| "  following action is due to be completed in 10 days (${object."
-#| "date_deadline}):\n"
-#| "\n"
-#| "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
-#| "</p>\n"
-#| "\n"
-#| "<p>\n"
-#| "  Thank you and have a nice day.<br />\n"
-#| "  --<br />\n"
-#| "  Odoo\n"
-#| "</p>\n"
-#| "                \n"
-#| "            "
 msgid ""
 "\n"
 "                \n"
@@ -181,7 +161,6 @@ msgstr "Azione"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_needaction
 #, fuzzy
-#| msgid "Action Stage"
 msgid "Action Needed"
 msgstr "Fase azione"
 
@@ -229,7 +208,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_state
 #, fuzzy
-#| msgid "Action Stage"
 msgid "Activity State"
 msgstr "Fase azione"
 
@@ -519,7 +497,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_ids
 #, fuzzy
-#| msgid "Last Message"
 msgid "Messages"
 msgstr "Ultimo messaggio"
 
@@ -565,7 +542,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_type_id
 #, fuzzy
-#| msgid "Late Activities"
 msgid "Next Activity Type"
 msgstr "Ultime attività"
 
@@ -577,14 +553,12 @@ msgstr "Normale"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_needaction_counter
 #, fuzzy
-#| msgid "# of actions"
 msgid "Number of Actions"
 msgstr "N. di azioni"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
 #, fuzzy
-#| msgid "# of actions"
 msgid "Number of errors"
 msgstr "N. di azioni"
 
@@ -601,7 +575,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_unread_counter
 #, fuzzy
-#| msgid "Unread Messages"
 msgid "Number of unread messages"
 msgstr "Messaggi non letti"
 
@@ -651,7 +624,6 @@ msgstr "Responsabile"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_user_id
 #, fuzzy
-#| msgid "Responsible"
 msgid "Responsible User"
 msgstr "Responsabile"
 
@@ -771,7 +743,6 @@ msgstr "Messaggi non letti"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_unread_counter
 #, fuzzy
-#| msgid "Unread Messages"
 msgid "Unread Messages Counter"
 msgstr "Messaggi non letti"
 
@@ -790,7 +761,6 @@ msgstr "Impossibile riportare l'azione alla fase bozza"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
 #, fuzzy
-#| msgid "Last Message"
 msgid "Website Messages"
 msgstr "Ultimo messaggio"
 
