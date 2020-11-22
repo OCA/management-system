@@ -22,26 +22,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
 #, fuzzy
-#| msgid ""
-#| "\n"
-#| "                \n"
-#| "<p>Hello ${object.user_id.name},</p>\n"
-#| "\n"
-#| "<p>\n"
-#| "  This is an automated message to remind you that the\n"
-#| "  following action is due to be completed in 10 days (${object."
-#| "date_deadline}):\n"
-#| "\n"
-#| "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
-#| "</p>\n"
-#| "\n"
-#| "<p>\n"
-#| "  Thank you and have a nice day.<br />\n"
-#| "  --<br />\n"
-#| "  Odoo\n"
-#| "</p>\n"
-#| "                \n"
-#| "            "
 msgid ""
 "\n"
 "                \n"
@@ -571,7 +551,6 @@ msgstr "Anzahl Maßnahmen"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
 #, fuzzy
-#| msgid "Number of error"
 msgid "Number of errors"
 msgstr "Anzahl Fehler"
 
@@ -641,7 +620,6 @@ msgstr "Verantwortlicher Benutzer"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 #, fuzzy
-#| msgid "Message Delivery error"
 msgid "SMS Delivery error"
 msgstr "Zustellungsfehler"
 
@@ -774,7 +752,6 @@ msgstr "Wir können die Maßnahme nicht zu einem Entwurf zurückstufen"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
 #, fuzzy
-#| msgid "Last Message"
 msgid "Website Messages"
 msgstr "Letzte Nachricht"
 
