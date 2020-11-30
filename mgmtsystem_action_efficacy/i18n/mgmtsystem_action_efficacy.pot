@@ -6,8 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-26 09:11+0000\n"
-"PO-Revision-Date: 2020-01-26 09:11+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: mgmtsystem_action_efficacy
-#: model:ir.model.fields,help:mgmtsystem_action_efficacy.field_mgmtsystem_action_efficacy_value
+#: model:ir.model.fields,help:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_value
 msgid "0:not effective | 50:efficacy not complete | 100: effective"
 msgstr ""
 
@@ -26,17 +24,22 @@ msgid "Action"
 msgstr ""
 
 #. module: mgmtsystem_action_efficacy
-#: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action_efficacy_description
-msgid "Notes"
-msgstr ""
-
-#. module: mgmtsystem_action_efficacy
-#: model:ir.ui.view,arch_db:mgmtsystem_action_efficacy.view_mgmtsystem_action_form
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_action_efficacy.view_mgmtsystem_action_form
 msgid "Efficacy"
 msgstr ""
 
 #. module: mgmtsystem_action_efficacy
-#: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action_efficacy_value
+#: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_user_id
+msgid "Inspector"
+msgstr ""
+
+#. module: mgmtsystem_action_efficacy
+#: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_description
+msgid "Notes"
+msgstr ""
+
+#. module: mgmtsystem_action_efficacy
+#: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_value
 msgid "Rating"
 msgstr ""
 
@@ -44,10 +47,5 @@ msgstr ""
 #: code:addons/mgmtsystem_action_efficacy/models/mgmtsystem_action_efficacy.py:36
 #, python-format
 msgid "Rating must be between 0 and 100"
-msgstr ""
-
-#. module: mgmtsystem_action_efficacy
-#: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action_efficacy_user_id
-msgid "Inspector"
 msgstr ""
 
