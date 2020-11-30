@@ -8,13 +8,21 @@
       <field name="model">mgmtsystem.nonconformity.origin</field>
       <field name="arch" type="xml">
         <form string="Origins of nonconformity">
-          <group>
-            <field name="name"/>
-            <field name="sequence"/>
-            <field name="parent_id"/>
-            <field name="ref_code"/>
-            <field name="description" colspan="4"/>
-          </group>
+          <sheet>
+            <div class="oe_button_box" name="button_box">
+              <button name="toggle_active" type="object"
+                      class="oe_stat_button" icon="fa-archive">
+              <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+              </button>
+            </div>
+            <group>
+              <field name="name"/>
+              <field name="sequence"/>
+              <field name="parent_id"/>
+              <field name="ref_code"/>
+              <field name="description" colspan="4"/>
+            </group>
+          </sheet>
         </form>
       </field>
     </record>

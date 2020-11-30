@@ -30,6 +30,8 @@ class MgmtsystemNonconformityOrigin(models.Model):
     )
     ref_code = fields.Char('Reference Code')
 
+    active = fields.Boolean(default=True)
+
     @api.multi
     def name_get(self):
         res = []
