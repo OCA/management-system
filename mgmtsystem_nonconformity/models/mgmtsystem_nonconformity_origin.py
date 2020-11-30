@@ -23,6 +23,8 @@ class MgmtsystemNonconformityOrigin(models.Model):
     )
     ref_code = fields.Char("Reference Code")
 
+    active = fields.Boolean(default=True)
+
     def name_get(self):
         res = []
         for obj in self:

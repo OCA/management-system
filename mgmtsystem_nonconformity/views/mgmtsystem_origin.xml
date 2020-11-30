@@ -8,13 +8,18 @@
       <field name="model">mgmtsystem.nonconformity.origin</field>
       <field name="arch" type="xml">
         <form string="Origins of nonconformity">
-          <group>
-            <field name="name"/>
-            <field name="sequence"/>
-            <field name="parent_id"/>
-            <field name="ref_code"/>
-            <field name="description" colspan="4"/>
-          </group>
+          <sheet>
+            <field name="active" invisible="1"/>
+            <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                    attrs="{'invisible': [('active', '=', True)]}"/>
+            <group>
+              <field name="name"/>
+              <field name="sequence"/>
+              <field name="parent_id"/>
+              <field name="ref_code"/>
+              <field name="description" colspan="4"/>
+            </group>
+          </sheet>
         </form>
       </field>
     </record>
