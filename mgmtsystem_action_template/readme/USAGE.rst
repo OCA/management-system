@@ -1,9 +1,8 @@
 Action Template - Define
 
-* Go to Management System → Actions
-* Create new Action
-* Check Template field: only Name, Type, Reference, Tags and Description remain visible
-* Fill fields
+* Go to Management System → Configuration → Action Templates
+* Create a new Template
+* Fill fields with predefined values
 
 Action Template - Use
 

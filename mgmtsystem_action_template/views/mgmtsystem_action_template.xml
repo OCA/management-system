@@ -22,7 +22,8 @@
                             <field name="user_id"/>
                         </group>
                         <group name="meta">
-                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
+                            <field name="tag_ids" widget="many2many_tags"
+                                options="{'color_field': 'color', 'no_create_edit': True}"/>
                         </group>
                     </group>
                     <notebook>

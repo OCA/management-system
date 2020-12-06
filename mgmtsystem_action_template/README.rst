@@ -27,9 +27,8 @@ Management System - Action Template
 
 This module add management of template for Actions.
 
-- new flag for define an Action as Template
+- new Action Template model to set default values
 - new field to select an Action Template to fill predefined fields automatically
-- add Template column on Tree View and Timbre icon on Kanban View
 
 **Table of contents**
 
@@ -41,10 +40,9 @@ Usage
 
 Action Template - Define
 
-* Go to Management System → Actions
-* Create new Action
-* Check Template field: only Name, Type, Reference, Tags and Description remain visible
-* Fill fields
+* Go to Management System → Configuration → Action Templates
+* Create a new Template
+* Fill fields with predefined values
 
 Action Template - Use
 
@@ -84,6 +82,7 @@ Contributors
 
 * Marcelo Frare <mf2965@gmail.com>
 * Stefano Consolaro <stefano.consolaro@mymage.it>
+* Creu Blanca
 
 Maintainers
 ~~~~~~~~~~~

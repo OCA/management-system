@@ -1,18 +1,27 @@
 # Copyright 2020 Creu Blanca
+# Copyright 2019 Marcelo Frare (Ass. PNLUG - Gruppo Odoo <http://odoo.pnlug.it>)
+# Copyright 2019 Stefano Consolaro (Ass. PNLUG - Gruppo Odoo <http://odoo.pnlug.it>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import fields, models
 
 
 class MgmtsystemActionTemplate(models.Model):
+    """
+    Define a support structure to set action template values
+    """
 
     _name = 'mgmtsystem.action.template'
-    _description = 'Extend actions adding fields and method for template management'
+    _description = 'Define fields to save action template values'
 
     def _selection_type_action(self):
+        # link to action type values
         return self.env['mgmtsystem.action']._fields['type_action'].selection
 
+    # fields
+    # template identification
     name = fields.Char(required=True)
+    # action preset
     description = fields.Html()
     type_action = fields.Selection(
         selection=lambda self: self._selection_type_action(),

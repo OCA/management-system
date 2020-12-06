@@ -8,8 +8,7 @@ from odoo import api, fields, models, _
 
 class MgmtsystemAction(models.Model):
     """
-    Extend actions adding
-    fields and method for template management
+    Extend actions adding template reference
     """
 
     _inherit = 'mgmtsystem.action'
