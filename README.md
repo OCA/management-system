@@ -36,6 +36,7 @@ addon | version | summary
 [mgmtsystem_claim](mgmtsystem_claim/) | 13.0.1.1.0 | Management System - Claim
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 13.0.1.1.0 | Hazard
 [mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 13.0.1.0.0 | Hazard Risk
+[mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 13.0.1.0.0 | Information Security Management System Manual
 [mgmtsystem_manual](mgmtsystem_manual/) | 13.0.1.1.0 | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 13.0.1.1.2 | Management System - Nonconformity
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 13.0.1.0.0 | Bridge module between hr and mgmsystem and
