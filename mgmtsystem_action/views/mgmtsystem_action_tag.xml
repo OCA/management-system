@@ -5,7 +5,7 @@
         <field name="model">mgmtsystem.action.tag</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
+                <field name="name" />
             </search>
         </field>
     </record>
@@ -16,7 +16,7 @@
         <field name="arch" type="xml">
             <form string="Tags">
                 <group name="main">
-                    <field name="name"/>
+                    <field name="name" />
                 </group>
             </form>
         </field>
