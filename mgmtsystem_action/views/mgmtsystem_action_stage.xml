@@ -8,18 +8,22 @@
           <sheet>
               <group name="main">
                   <group name="name">
-                      <field name="name"/>
+                      <field name="name" />
                   </group>
                   <group name="config">
-                      <field name="is_starting"/>
-                      <field name="is_ending"/>
-                      <field name="fold"/>
-                      <field name="sequence" groups="base.group_no_one"/>
+                      <field name="is_starting" />
+                      <field name="is_ending" />
+                      <field name="fold" />
+                      <field name="sequence" groups="base.group_no_one" />
                   </group>
               </group>
               <group name="desc">
-                  <field name="description" placeholder="Add a description..."
-                         nolabel="1" colspan="2"/>
+                  <field
+                            name="description"
+                            placeholder="Add a description..."
+                            nolabel="1"
+                            colspan="2"
+                        />
               </group>
           </sheet>
         </form>
@@ -32,10 +36,10 @@
       <field name="arch" type="xml">
         <tree string="Stages">
           <field name="sequence" widget="handle" />
-          <field name="name"/>
-          <field name="is_starting"/>
-          <field name="is_ending"/>
-          <field name="fold"/>
+          <field name="name" />
+          <field name="is_starting" />
+          <field name="is_ending" />
+          <field name="fold" />
         </tree>
       </field>
     </record>
