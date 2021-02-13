@@ -6,9 +6,10 @@
             <field name="view_mode">tree,form</field>
         </record>
         <menuitem
-            id="menu_open_survey"
-            action="action_survey_form"
-            parent="mgmtsystem.menu_mgmtsystem_configuration"
-            sequence="50"
-            groups="mgmtsystem.group_mgmtsystem_manager"/>
+        id="menu_open_survey"
+        action="action_survey_form"
+        parent="mgmtsystem.menu_mgmtsystem_configuration"
+        sequence="50"
+        groups="mgmtsystem.group_mgmtsystem_manager"
+    />
 </odoo>
