@@ -59,7 +59,7 @@ class MgmtsystemAction(models.Model):
     stage_id = fields.Many2one(
         "mgmtsystem.action.stage",
         "Stage",
-        track_visibility="onchange",
+        tracking=True,
         index=True,
         copy=False,
         default=lambda self: self._default_stage(),
@@ -85,14 +85,14 @@ class MgmtsystemAction(models.Model):
     @api.depends("date_open", "create_date")
     def _compute_number_of_days_to_open(self):
         for action in self:
-            action.number_of_days_to_close_open = action._elapsed_days(
+            action.number_of_days_to_open = action._elapsed_days(
                 action.create_date, action.date_open
             )
 
     @api.depends("date_closed", "create_date")
     def _compute_number_of_days_to_close(self):
         for action in self:
-            action.number_of_days_to_close_open = action._elapsed_days(
+            action.number_of_days_to_close = action._elapsed_days(
                 action.create_date, action.date_closed
             )
 
