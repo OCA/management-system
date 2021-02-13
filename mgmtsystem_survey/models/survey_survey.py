@@ -7,4 +7,7 @@ from odoo import fields, models
 class Survey(models.Model):
     _inherit = "survey.survey"
 
-    state = fields.Selection(selection_add=[("management_system", "Management System")])
+    state = fields.Selection(
+        selection_add=[("management_system", "Management System")],
+        ondelete={"management_system": "set default"},
+    )

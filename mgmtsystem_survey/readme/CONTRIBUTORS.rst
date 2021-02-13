@@ -11,3 +11,7 @@
 
   * Ernesto Tejeda
   * Pedro M. Baeza
+
+Trobz
+
+* Dung Tran <dungtd@trobz.com>
