@@ -201,11 +201,10 @@
                                     <field name="deadline" />
                                     <field name="partner_id" />
                                     <field name="email" />
-                                    <field name="input_type" />
                                     <field name="state" />
                                     <field name="test_entry" invisible="True" />
                                     <field
-                                        name="quizz_score"
+                                        name="scoring_percentage"
                                         groups="base.group_no_one"
                                     />
                                 </tree>
