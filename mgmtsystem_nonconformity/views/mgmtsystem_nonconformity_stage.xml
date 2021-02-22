@@ -5,9 +5,9 @@
       <field name="model">mgmtsystem.nonconformity.stage</field>
       <field name="arch" type="xml">
         <tree string="Stages">
-          <field name="name"/>
+          <field name="name" />
           <field name="sequence" widget="handle" />
-          <field name="state"/>
+          <field name="state" />
         </tree>
       </field>
     </record>
@@ -19,12 +19,12 @@
                 <form string="Nonconformity Stage">
                     <sheet>
                             <group>
-                                <field name="name"/>
+                                <field name="name" />
                             </group>
                             <group>
-                                <field name="fold"/>
-                                <field name="sequence" groups="base.group_no_one"/>
-                                <field name="is_starting"/>
+                                <field name="fold" />
+                                <field name="sequence" groups="base.group_no_one" />
+                                <field name="is_starting" />
                             </group>
                     </sheet>
                 </form>
@@ -38,11 +38,13 @@
       <field name="context">{}</field>
     </record>
 
-    <menuitem  id="menu_mgmtsystem_nonconformity_stages"
-                 name="Stages"
-                 parent="menu_mgmtsystem_configuration_nonconformities"
-                 action="mgmtsystem_nonconformity_stage_action"
-                 sequence="90"
-                 groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"/>
+    <menuitem
+        id="menu_mgmtsystem_nonconformity_stages"
+        name="Stages"
+        parent="menu_mgmtsystem_configuration_nonconformities"
+        action="mgmtsystem_nonconformity_stage_action"
+        sequence="90"
+        groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
+    />
 
 </odoo>

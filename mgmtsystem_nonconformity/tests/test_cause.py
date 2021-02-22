@@ -10,8 +10,7 @@ from odoo.tests import common
 class TestModelCause(common.TransactionCase):
     @contextmanager
     def assertRaisesRollback(self, *args, **kwargs):
-        """Do a regular assertRaises but perform rollback at the end
-        """
+        """Do a regular assertRaises but perform rollback at the end"""
         with self.assertRaises(*args, **kwargs) as ar:
             yield ar
         self.cr.rollback()
