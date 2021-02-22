@@ -1,32 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record model="ir.actions.act_window" id="action_manuals">
         <field name="name">Manuals</field>
         <field name="res_model">document.page</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="document_page.view_wiki_tree"/>
-        <field name="search_view_id" ref="document_page.view_wiki_filter"/>
+        <field name="view_id" ref="document_page.view_wiki_tree" />
+        <field name="search_view_id" ref="document_page.view_wiki_filter" />
         <field name="help">Manuals of your management systems.</field>
-        <field name="domain" eval="[('parent_id','ilike', 'manual')]"/>
+        <field name="domain" eval="[('parent_id','ilike', 'manual')]" />
     </record>
     <record id="action_manuals_tree" model="ir.actions.act_window.view">
         <field name="sequence" eval="0" />
         <field name="view_mode">tree</field>
-        <field name="view_id" ref="document_page.view_wiki_tree"/>
-        <field name="act_window_id" ref="action_manuals"/>
+        <field name="view_id" ref="document_page.view_wiki_tree" />
+        <field name="act_window_id" ref="action_manuals" />
     </record>
     <record id="action_manuals_form" model="ir.actions.act_window.view">
         <field name="sequence" eval="5" />
         <field name="view_mode">form</field>
-        <field name="view_id" ref="document_page.view_wiki_form"/>
-        <field name="act_window_id" ref="action_manuals"/>
+        <field name="view_id" ref="document_page.view_wiki_form" />
+        <field name="act_window_id" ref="action_manuals" />
     </record>
 
-    <menuitem id="menu_mgmtsystem_manuals_manuals"
-              name="Manuals"
-              action="action_manuals"
-              parent="mgmtsystem.menu_mgmtsystem_manuals"
-              sequence="0"
-              groups="mgmtsystem.group_mgmtsystem_viewer"
-              />
+    <menuitem
+        id="menu_mgmtsystem_manuals_manuals"
+        name="Manuals"
+        action="action_manuals"
+        parent="mgmtsystem.menu_mgmtsystem_manuals"
+        sequence="0"
+        groups="mgmtsystem.group_mgmtsystem_viewer"
+    />
 </odoo>
