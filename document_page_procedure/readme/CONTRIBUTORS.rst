@@ -5,3 +5,7 @@
 * `Tecnativa <https://www.tecnativa.com>`_:
 
   * Ernesto Tejeda
+
+Trobz
+
+* Dung Tran <dungtd@trobz.com>
