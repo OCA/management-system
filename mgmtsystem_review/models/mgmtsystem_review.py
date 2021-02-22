@@ -6,6 +6,7 @@ from odoo import api, fields, models
 
 class MgmtsystemReview(models.Model):
     _name = "mgmtsystem.review"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Review"
 
     name = fields.Char("Name", size=50, required=True)
@@ -36,7 +37,7 @@ class MgmtsystemReview(models.Model):
         "State",
         readonly=True,
         default="open",
-        track_visibility="onchange",
+        tracking=True,
     )
 
     company_id = fields.Many2one(
