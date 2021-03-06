@@ -5,7 +5,7 @@
 {
     "name":     "Management System - Nonconformity MRP",
     "summary":  "Bridge module between mrp and mgmsystem",
-    "version":  "11.0.1.0.0",
+    "version":  "13.0.1.0.0",
     "development_status": "Beta",
 
     "author":   "Associazione PNLUG - Gruppo Odoo, Odoo Community Association (OCA)",
