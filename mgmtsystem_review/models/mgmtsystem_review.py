@@ -6,6 +6,7 @@ from odoo import api, fields, models
 
 class MgmtsystemReview(models.Model):
     _name = "mgmtsystem.review"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Review"
 
     name = fields.Char("Name", size=50, required=True)
