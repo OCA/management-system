@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo12-addon-mgmtsystem',
         'odoo12-addon-mgmtsystem_action',
         'odoo12-addon-mgmtsystem_action_efficacy',
+        'odoo12-addon-mgmtsystem_action_template',
         'odoo12-addon-mgmtsystem_audit',
         'odoo12-addon-mgmtsystem_hazard',
         'odoo12-addon-mgmtsystem_manual',
