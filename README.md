@@ -42,7 +42,7 @@ addon | version | summary
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 13.0.1.2.0 | Management System - Nonconformity
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 13.0.1.0.0 | Bridge module between hr and mgmsystem and
 [mgmtsystem_quality](mgmtsystem_quality/) | 13.0.1.0.0 | Manage your quality management system
-[mgmtsystem_review](mgmtsystem_review/) | 13.0.1.1.0 | Management System - Review
+[mgmtsystem_review](mgmtsystem_review/) | 13.0.1.2.0 | Management System - Review
 [mgmtsystem_survey](mgmtsystem_survey/) | 13.0.1.0.0 | Management System - Survey
 
 [//]: # (end addons)
