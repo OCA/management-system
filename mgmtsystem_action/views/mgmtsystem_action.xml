@@ -310,14 +310,7 @@
                                             </t>
                                         </div>
                                         <div class="oe_kanban_bottom_right">
-                                            <img
-                                            t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)"
-                                            t-att-title="record.user_id.value"
-                                            t-att-alt="record.user_id.value"
-                                            width="24"
-                                            height="24"
-                                            class="oe_kanban_avatar"
-                                        />
+                                            <field name="user_id" widget="many2one_avatar_user"/>
                                         </div>
                                     </div>
                                 </div>
