@@ -9,24 +9,25 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-15 18:09+0000\n"
-"PO-Revision-Date: 2018-01-15 18:09+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"PO-Revision-Date: 2021-05-21 11:47+0000\n"
+"Last-Translator: Yann Papouin <y.papouin@dec-industrie.com>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_action
 msgid "Actions"
-msgstr ""
+msgstr "Actions"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Applications"
-msgstr ""
+msgstr "Applications"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_user_manager
@@ -46,7 +47,7 @@ msgstr "Audits"
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_claim
 msgid "Claims"
-msgstr ""
+msgstr "Créances immobilisées"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__company_id
@@ -55,9 +56,8 @@ msgstr "Société"
 
 #. module: mgmtsystem
 #: model:ir.model,name:mgmtsystem.model_res_config_settings
-#, fuzzy
 msgid "Config Settings"
-msgstr "Configuration"
+msgstr "Paramétrage"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_configuration
@@ -88,13 +88,12 @@ msgstr ""
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_manuals
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Documentation"
-msgstr ""
+msgstr "Documentation"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_environment
-#, fuzzy
 msgid "Environment"
-msgstr "Aspects environnementaux"
+msgstr "Environnement"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_environment_manual
@@ -110,12 +109,12 @@ msgstr "Aspects environnementaux"
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_security_event
 msgid "Feared Events"
-msgstr ""
+msgstr "Evénements redoutés"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_hazard
 msgid "Hazards"
-msgstr ""
+msgstr "Dangers"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
@@ -125,7 +124,7 @@ msgstr ""
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety
 msgid "Hygiene & Safety"
-msgstr ""
+msgstr "Hygiène et sécurité"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__id
@@ -456,18 +455,18 @@ msgstr ""
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_report
 msgid "Reports"
-msgstr ""
+msgstr "Rapports"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_review
 msgid "Reviews"
-msgstr ""
+msgstr "Revues"
 
 #. module: mgmtsystem
 #: model:ir.actions.act_window,name:mgmtsystem.action_mgmtsystem_configuration
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_settings
 msgid "Settings"
-msgstr ""
+msgstr "Configuration"
 
 #. module: mgmtsystem
 #: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
