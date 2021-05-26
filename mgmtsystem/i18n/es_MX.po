@@ -1,0 +1,508 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: management-system (9.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-07 06:43+0000\n"
+"PO-Revision-Date: 2016-03-04 19:38+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Spanish (Mexico) (http://www.transifex.com/oca/OCA-management-"
+"system-9-0/language/es_MX/)\n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_action
+msgid "Actions"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Applications"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,name:mgmtsystem.group_mgmtsystem_user_manager
+msgid "Approving User"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,name:mgmtsystem.group_mgmtsystem_auditor
+msgid "Auditor"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
+msgid "Audits"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_claim
+msgid "Claims"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__company_id
+msgid "Company"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model,name:mgmtsystem.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_approval
+msgid "Document Page Approval"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_manuals
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Documentation"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_environment
+msgid "Environment"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
+msgid "Environment Manual Template"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_environmental_aspect
+msgid "Environmental Aspects"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_security_event
+msgid "Feared Events"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_hazard
+msgid "Hazards"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
+msgid "Health & Safety Manual Template"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety
+msgid "Hygiene & Safety"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__id
+msgid "ID"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_information_security
+msgid "Information Security"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_information_security_manual
+msgid "Information Security Manual Template"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Manage audits and verification lists"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Manage customer claims as nonconformities"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid ""
+"Manage immediate, corrective, and preventive actions and improvement "
+"opportunities"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.module.category,description:mgmtsystem.module_category_management_system
+msgid ""
+"Manage management systems, manuals, KPIs, nonconformities, actions, "
+"feedbacks, audits, reviews."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Manage nonconformities analysis, planning and resolution"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.module.category,name:mgmtsystem.module_category_management_system
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_main
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.system_form
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Management System"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.actions.act_window,name:mgmtsystem.system_action
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.system_tree
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Management Systems"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,name:mgmtsystem.group_mgmtsystem_manager
+msgid "Manager"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Manuals"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,comment:mgmtsystem.group_mgmtsystem_manager
+msgid "Module administrator, able to modify configuration data."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,comment:mgmtsystem.group_mgmtsystem_user_manager
+msgid "Module user with additional permission for approvals."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,comment:mgmtsystem.group_mgmtsystem_auditor
+msgid ""
+"Module user with additional permission specific for the auditor job, such as "
+"effectiveness reviews."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,comment:mgmtsystem.group_mgmtsystem_viewer
+msgid "Module user with general read only access."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,comment:mgmtsystem.group_mgmtsystem_user
+msgid "Module user, with general read and write."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_nonconformity
+msgid "Nonconformities"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_procedure
+msgid "Procedures"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Provide Environment management tools (ISO 14001)"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environmental_aspect
+msgid ""
+"Provide Environmental Aspect category.\n"
+"- This installs the module mgmtsystem_environmental_aspect."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_security_event
+msgid ""
+"Provide Feared Events.\n"
+"- This installs the module mgmtsystem_security_event."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_hazard
+msgid ""
+"Provide Hazards.\n"
+"- This installs the module mgmtsystem_hazard."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Provide Health &amp; Safety management tools (OHSAS 18001)"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Provide Information Security management tools (ISO 27001)"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Provide Quality management tools (ISO 9001)"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
+msgid ""
+"Provide Work Instructions category.\n"
+"- This installs the module document_page_work_instruction."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Provide a Feared Event documentation category and template"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Provide a Hazards documentation category and template"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid ""
+"Provide a Health &amp; Safety Manual template based on the OHSAS 18001 "
+"standard"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Provide a Procedure documentation category and template"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Provide a Quality Manual template based on the ISO 9001:2008 standard"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Provide a Work Instructions documentation category and template"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
+msgid ""
+"Provide a health and safety manual template.\n"
+"- This installs the module mgmtsystem_health_safety_manual."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
+msgid ""
+"Provide a quality manual template.\n"
+"- This installs the module document_page_quality_manual."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_action
+msgid ""
+"Provide actions and improvement opportunities tools.\n"
+"- This installs the module mgmtsystem_action."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Provide an Envioronmental Aspect documentation category and template"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid ""
+"Provide an Environment Manual template based on the ISO 14001:2004 standard"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Provide an Information Security Manual template based on ISO 27001"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
+msgid ""
+"Provide an environment manual template.\n"
+"- This installs the module mgmtsystem_environment_manual."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_information_security_manual
+msgid ""
+"Provide an information security manual.\n"
+"- This installs the module information_security_manual."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
+msgid ""
+"Provide audit tools.\n"
+"- This installs the module mgmtsystem_audit."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_claim
+msgid ""
+"Provide claim tools.\n"
+"- This installs the module mgmtsystem_claim."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_approval
+msgid ""
+"Provide document approval and history. \n"
+"- This installs the module document_page_approval."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_environment
+msgid ""
+"Provide environment management tools.\n"
+"- This installs the module mgmtsystem_environment."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety
+msgid ""
+"Provide health and safety management tools.\n"
+"- This installs the module mgmtsystem_health_safety."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_information_security
+msgid ""
+"Provide information security tools.\n"
+"- This installs the module mgmtsystem_information_security."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_nonconformity
+msgid ""
+"Provide non conformity tools.\n"
+"- This installs the module mgmtsystem_nonconformity."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_procedure
+msgid ""
+"Provide procedures category.\n"
+"- This installs the module document_page_procedure."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
+msgid ""
+"Provide quality management tools.\n"
+"- This installs the module mgmtsystem_quality."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_review
+msgid ""
+"Provide review tools.\n"
+"- This installs the module mgmtsystem_review."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
+msgid "Quality Manual Template"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
+msgid "Quality Tools"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_report
+msgid "Reports"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_review
+msgid "Reviews"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.actions.act_window,name:mgmtsystem.action_mgmtsystem_configuration
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_settings
+msgid "Settings"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
+#: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__name
+msgid "System"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_configuration_system
+msgid "Systems"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+msgid "Top management reviews"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,name:mgmtsystem.group_mgmtsystem_user
+msgid "User"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:res.groups,name:mgmtsystem.group_mgmtsystem_viewer
+msgid "Viewer"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
+msgid "Work Instructions"
+msgstr ""
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
