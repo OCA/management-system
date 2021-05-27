@@ -14,11 +14,13 @@
             </form>
         </field>
     </record>
-    <act_window name="Copy Verification Lines"
-            res_model="copy.verification.lines"
-            binding_model="mgmtsystem.audit"
-            view_mode="form"
-            target="new"
-            binding_views="form"
-            id="copy_verification_lines_act_window"/>
+
+    <record id="copy_verification_lines_act_window" model="ir.actions.act_window">
+        <field name="name">Copy Verification Lines</field>
+        <field name="res_model">copy.verification.lines</field>
+        <field name="view_mode">form</field>
+        <field name="binding_views">form</field>
+        <field name="binding_model_id" ref="mgmtsystem.audit"/>
+        <field name="target">new</field>
+    </record>
 </odoo>
