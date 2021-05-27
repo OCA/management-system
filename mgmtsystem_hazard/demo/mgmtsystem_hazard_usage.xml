@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+        <!-- usage / occupation -->
+
+        <record id="usage_very_low" model="mgmtsystem.hazard.usage">
+            <field name="name">Very low</field>
+            <field name="value">1</field>
+            <field name="description">Less than once a year</field>
+        </record>
+
+        <record id="usage_low" model="mgmtsystem.hazard.usage">
+            <field name="name">Low</field>
+            <field name="value">2</field>
+            <field name="description">Less than once a month</field>
+        </record>
+
+        <record id="usage_medium" model="mgmtsystem.hazard.usage">
+            <field name="name">Medium</field>
+            <field name="value">3</field>
+            <field name="description">Less than once a week</field>
+        </record>
+
+        <record id="usage_high" model="mgmtsystem.hazard.usage">
+            <field name="name">High</field>
+            <field name="value">4</field>
+            <field name="description">Less than once in a shift</field>
+        </record>
+
+        <record id="usage_very_high" model="mgmtsystem.hazard.usage">
+            <field name="name">Very High</field>
+            <field name="value">5</field>
+            <field name="description">More than once in a shift</field>
+        </record>
+
+</odoo>

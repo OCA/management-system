@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+        <!-- Probability -->
+
+        <record id="probability_low" model="mgmtsystem.hazard.probability">
+            <field name="name">Low</field>
+            <field name="value">1</field>
+            <field name="description">Less than once in 10 years</field>
+        </record>
+
+        <record id="probability_maybe" model="mgmtsystem.hazard.probability">
+            <field name="name">Maybe</field>
+            <field name="value">2</field>
+            <field name="description">Between once a year and once in 10 years</field>
+        </record>
+
+        <record id="probability_probably" model="mgmtsystem.hazard.probability">
+            <field name="name">Probably</field>
+            <field name="value">3</field>
+            <field name="description">Between once a month and once a year</field>
+        </record>
+
+        <record id="probability_very_likely" model="mgmtsystem.hazard.probability">
+            <field name="name">Very likely</field>
+            <field name="value">4</field>
+            <field name="description">More than once a month</field>
+        </record>
+
+</odoo>

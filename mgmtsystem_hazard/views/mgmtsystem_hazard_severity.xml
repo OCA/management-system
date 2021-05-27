@@ -1,0 +1,59 @@
+<odoo>
+
+    <record id="view_mgmtsystem_hazard_severity_form" model="ir.ui.view">
+      <field name="name">mgmtsystem.hazard.severity.form</field>
+      <field name="model">mgmtsystem.hazard.severity</field>
+      <field name="arch" type="xml">
+        <form string="Severity">
+          <group colspan="4" col="4">
+              <field name="company_id" groups="base.group_multi_company"/>
+            <field name="name"/>
+            <field name="value"/>
+            <newline/>
+            <field name="description"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_severity_tree" model="ir.ui.view">
+      <field name="name">mgmtsystem.hazard.severity.tree</field>
+      <field name="model">mgmtsystem.hazard.severity</field>
+      <field name="arch" type="xml">
+        <tree string="Severities">
+            <field name="company_id" groups="base.group_multi_company"/>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_severity_filter" model="ir.ui.view">
+      <field name="name">Origins</field>
+      <field name="model">mgmtsystem.hazard.severity</field>
+      <field name="arch" type="xml">
+        <search string="Severities">
+            <field name="company_id" groups="base.group_multi_company"/>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="open_mgmtsystem_hazard_severity_list" model="ir.actions.act_window">
+      <field name="name">Severities</field>
+      <field name="res_model">mgmtsystem.hazard.severity</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" eval="False"/>
+      <field name="search_view_id" ref="view_mgmtsystem_hazard_type_filter"/>
+    </record>
+
+    <menuitem id="menu_open_hazard_severity"
+      action="open_mgmtsystem_hazard_severity_list"
+      parent="menu_mgmtsystem_configuration_hazards"
+      sequence="20"
+      groups="mgmtsystem.group_mgmtsystem_manager"/>
+
+</odoo>

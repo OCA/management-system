@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+        <!-- type -->
+
+        <record id="type_ohsas_position" model="mgmtsystem.hazard.type">
+            <field name="name">OHSAS - Position</field>
+        </record>
+
+        <record id="type_ohsas_action" model="mgmtsystem.hazard.type">
+            <field name="name">OHSAS - Action</field>
+        </record>
+
+        <record id="type_ems_position" model="mgmtsystem.hazard.type">
+            <field name="name">EMS - Position</field>
+        </record>
+
+        <record id="type_ems_action" model="mgmtsystem.hazard.type">
+            <field name="name">EMS - Action</field>
+        </record>
+
+</odoo>

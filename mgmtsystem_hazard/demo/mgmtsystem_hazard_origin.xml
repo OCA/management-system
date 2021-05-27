@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+        <!-- origin -->
+
+        <record id="origin_ignition_gas" model="mgmtsystem.hazard.origin" forcecreate="0">
+            <field name="name">Ignition of Flammable Gas</field>
+        </record>
+
+        <record id="origin_panic" model="mgmtsystem.hazard.origin" forcecreate="0">
+            <field name="name">Panic</field>
+        </record>
+
+        <record id="origin_exposure" model="mgmtsystem.hazard.origin" forcecreate="0">
+            <field name="name">Exposure to Hazardous Materials</field>
+        </record>
+
+        <record id="origin_containment" model="mgmtsystem.hazard.origin" forcecreate="0">
+            <field name="name">Containment Failure</field>
+        </record>
+
+        <record id="origin_leak" model="mgmtsystem.hazard.origin" forcecreate="0">
+            <field name="name">Gas Leak</field>
+        </record>
+
+        <record id="origin_aging" model="mgmtsystem.hazard.origin" forcecreate="0">
+            <field name="name">Materials Aging</field>
+        </record>
+
+</odoo>
