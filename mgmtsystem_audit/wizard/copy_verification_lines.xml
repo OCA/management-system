@@ -19,8 +19,7 @@
         <field name="name">Copy Verification Lines</field>
         <field name="res_model">copy.verification.lines</field>
         <field name="view_mode">form</field>
-        <field name="binding_views">form</field>
-        <field name="binding_model_id" ref="mgmtsystem.audit"/>
+        <field name="binding_model_id" ref="mgmtsystem_audit.model_mgmtsystem_audit"/>
         <field name="target">new</field>
     </record>
 </odoo>
