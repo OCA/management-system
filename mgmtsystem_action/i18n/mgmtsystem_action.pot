@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -163,6 +163,11 @@ msgid "Activity State"
 msgstr ""
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_stage_form
 msgid "Add a description..."
 msgstr ""
@@ -317,6 +322,11 @@ msgid "Followers (Partners)"
 msgstr ""
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Future Activities"
 msgstr ""
@@ -458,6 +468,11 @@ msgid "My Activities"
 msgstr ""
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "My Followed Actions"
 msgstr ""
@@ -468,6 +483,7 @@ msgid "Name"
 msgstr ""
 
 #. module: mgmtsystem_action
+#: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #, python-format
@@ -690,16 +706,6 @@ msgstr ""
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #, python-format
 msgid "We cannot bring back the action to draft stage"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-msgid "Website communication history"
 msgstr ""
 
 #. module: mgmtsystem_action
