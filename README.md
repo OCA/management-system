@@ -19,6 +19,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[document_page_quality_manual](document_page_quality_manual/) | 14.0.1.0.0 | Quality Manual
 [mgmtsystem](mgmtsystem/) | 14.0.1.0.0 | Management System
 
 [//]: # (end addons)
