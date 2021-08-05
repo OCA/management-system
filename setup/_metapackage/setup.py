@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo14-addon-document_page_quality_manual',
         'odoo14-addon-mgmtsystem',
+        'odoo14-addon-mgmtsystem_survey',
     ],
     classifiers=[
         'Programming Language :: Python',
