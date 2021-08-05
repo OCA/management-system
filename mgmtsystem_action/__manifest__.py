@@ -3,7 +3,7 @@
 
 {
     "name": "Management System - Action",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "author": "Savoir-faire Linux, " "Camptocamp, " "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
