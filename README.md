@@ -23,6 +23,7 @@ addon | version | summary
 [document_page_quality_manual](document_page_quality_manual/) | 14.0.1.0.0 | Quality Manual
 [mgmtsystem](mgmtsystem/) | 14.0.1.0.0 | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 14.0.1.0.2 | Management System - Action
+[mgmtsystem_manual](mgmtsystem_manual/) | 14.0.1.0.0 | Management System - Manual
 [mgmtsystem_survey](mgmtsystem_survey/) | 14.0.1.0.0 | Management System - Survey
 
 [//]: # (end addons)
