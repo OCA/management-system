@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo14-addon-document_page_quality_manual',
         'odoo14-addon-mgmtsystem',
         'odoo14-addon-mgmtsystem_action',
+        'odoo14-addon-mgmtsystem_manual',
         'odoo14-addon-mgmtsystem_survey',
     ],
     classifiers=[
