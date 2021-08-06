@@ -209,6 +209,11 @@ msgid "Activity State"
 msgstr "Aktivitäten Stufe"
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_stage_form
 msgid "Add a description..."
 msgstr "Beschreibung hinzufügen..."
@@ -322,6 +327,11 @@ msgstr "Entwurf"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
+msgid "Dropdown menu"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Edit Task"
 msgstr ""
 
@@ -361,6 +371,11 @@ msgstr "Abonnenten (Kanäle)"
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Abonnenten (Partner)"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
@@ -506,6 +521,11 @@ msgstr "Meine Maßnahmen"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "My Activities"
 msgstr "Meine Aktivitäten"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
@@ -750,20 +770,13 @@ msgid "We cannot bring back the action to draft stage"
 msgstr "Wir können die Maßnahme nicht zu einem Entwurf zurückstufen"
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-#, fuzzy
-msgid "Website Messages"
-msgstr "Letzte Nachricht"
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-msgid "Website communication history"
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Website Messages"
+#~ msgstr "Letzte Nachricht"
 
 #~ msgid "If checked new messages require your attention."
 #~ msgstr ""
