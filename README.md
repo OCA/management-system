@@ -17,15 +17,15 @@ TODO: add repo description.
 
 Available addons
 ----------------
-addon | version | summary
---- | --- | ---
-[document_page_procedure](document_page_procedure/) | 14.0.1.0.0 | Document Management - Wiki - Procedures
-[document_page_quality_manual](document_page_quality_manual/) | 14.0.1.0.0 | Quality Manual
-[document_page_work_instruction](document_page_work_instruction/) | 14.0.1.0.0 | Document Management - Wiki - Work Instructions
-[mgmtsystem](mgmtsystem/) | 14.0.1.0.0 | Management System
-[mgmtsystem_action](mgmtsystem_action/) | 14.0.1.0.2 | Management System - Action
-[mgmtsystem_manual](mgmtsystem_manual/) | 14.0.1.0.0 | Management System - Manual
-[mgmtsystem_survey](mgmtsystem_survey/) | 14.0.1.0.0 | Management System - Survey
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[document_page_procedure](document_page_procedure/) | 14.0.1.0.0 |  | Document Management - Wiki - Procedures
+[document_page_quality_manual](document_page_quality_manual/) | 14.0.1.0.0 |  | Quality Manual
+[document_page_work_instruction](document_page_work_instruction/) | 14.0.1.0.0 |  | Document Management - Wiki - Work Instructions
+[mgmtsystem](mgmtsystem/) | 14.0.1.0.0 |  | Management System
+[mgmtsystem_action](mgmtsystem_action/) | 14.0.1.0.2 |  | Management System - Action
+[mgmtsystem_manual](mgmtsystem_manual/) | 14.0.1.0.0 |  | Management System - Manual
+[mgmtsystem_survey](mgmtsystem_survey/) | 14.0.1.0.0 |  | Management System - Survey
 
 [//]: # (end addons)
 
