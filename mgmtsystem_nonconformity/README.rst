@@ -38,11 +38,6 @@ This module enables you to manage the nonconformities of your management systems
 .. contents::
    :local:
 
-Installation
-============
-
-No installation required.
-
 Configuration
 =============
 
@@ -110,19 +105,6 @@ Known issues / Roadmap
 
 * The custom emails should be replaced by Mail Tracking features and Subtypes (like in Project Tasks and Project Issues)
 * Automatically add responsible_user_id._uid, manager_user_id._uid, author_user_id._uid to chatter
-
-Changelog
-=========
-
-13.0.1.0.0 (2019-10-26)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [MIG] Migration to 13.0.
-
-12.0.1.0.0 (2019-06-04)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [MIG] Migration to 12.0.
 
 Bug Tracker
 ===========
