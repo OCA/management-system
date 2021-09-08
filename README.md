@@ -26,6 +26,7 @@ addon | version | maintainers | summary
 [mgmtsystem_action](mgmtsystem_action/) | 14.0.1.0.2 |  | Management System - Action
 [mgmtsystem_manual](mgmtsystem_manual/) | 14.0.1.0.0 |  | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 14.0.1.0.0 |  | Management System - Nonconformity
+[mgmtsystem_review](mgmtsystem_review/) | 14.0.1.0.0 |  | Management System - Review
 [mgmtsystem_survey](mgmtsystem_survey/) | 14.0.1.0.0 |  | Management System - Survey
 
 [//]: # (end addons)
