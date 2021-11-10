@@ -7,7 +7,8 @@
         <field name="view_id" ref="document_page.view_wiki_tree" />
         <field name="search_view_id" ref="document_page.view_wiki_filter" />
         <field name="help">Manuals of your management systems.</field>
-        <field name="domain" eval="[('parent_id','ilike', 'manual')]" />
+        <field name="domain" eval="[('parent_id','=',ref('manuals'))]" />
+        <field name="context" eval="{'default_parent_id': ref('manuals')}" />
     </record>
     <record id="action_manuals_tree" model="ir.actions.act_window.view">
         <field name="sequence" eval="0" />
