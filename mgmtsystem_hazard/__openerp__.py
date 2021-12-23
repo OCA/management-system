@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#
+#    
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,8 +15,33 @@
 #    GNU General Public License for more details.
 #
 #    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
 #
 ##############################################################################
-import mgmtsystem_hazard
+{
+    "name" : "Management System - Hazard",
+    "version" : "0.1",
+    "author" : "Savoir-faire Linux",
+    "website" : "http://www.savoirfairelinux.com",
+    "license" : "GPL-3",
+    "category" : "Management System",
+    "description": """
+	This module enables you to manage the hazards and risks of your health and 
+        safety management system.	
+    """,
+    "depends" : [
+        'mgmtsystem',
+        'hr',
+    ],
+    "init_xml" : [],
+    "update_xml" : [
+        'security/ir.model.access.csv',
+	'mgmtsystem_hazard.xml',
+	'mgmtsystem_hazard_data.xml',
+    ],
+    "demo_xml" : [],
+    "installable" : True,
+    "certificate" : ''
+}
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+
