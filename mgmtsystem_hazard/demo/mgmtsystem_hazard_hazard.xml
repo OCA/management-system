@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo noupdate="1">
 
         <!-- hazard hazard -->
@@ -7,11 +7,19 @@
             <field name="name">Spilling</field>
         </record>
 
-        <record id="hazard_fire_explosion" model="mgmtsystem.hazard.hazard" forcecreate="0">
+        <record
+        id="hazard_fire_explosion"
+        model="mgmtsystem.hazard.hazard"
+        forcecreate="0"
+    >
             <field name="name">Fire / Explosion</field>
         </record>
 
-        <record id="hazard_intoxication" model="mgmtsystem.hazard.hazard" forcecreate="0">
+        <record
+        id="hazard_intoxication"
+        model="mgmtsystem.hazard.hazard"
+        forcecreate="0"
+    >
             <field name="name">Intoxication</field>
         </record>
 
@@ -19,7 +27,11 @@
             <field name="name">Breakage</field>
         </record>
 
-        <record id="hazard_electric_bilge" model="mgmtsystem.hazard.hazard" forcecreate="0">
+        <record
+        id="hazard_electric_bilge"
+        model="mgmtsystem.hazard.hazard"
+        forcecreate="0"
+    >
             <field name="name">Electric Bilge</field>
         </record>
 
