@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template id="verification_report">
 
-        <t t-set="doc" t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"/>
+        <t
+            t-set="doc"
+            t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"
+        />
         <t t-call="web.external_layout">
             <div class="page">
                 <div class="row" style="padding-top:10px">
@@ -17,7 +20,7 @@
                 <div class="row" style="padding-top:10px">
                     <div class="col-12">
                         <div class="text-center">
-                            <h3><strong t-field="doc.name"/></h3>
+                            <h3><strong t-field="doc.name" /></h3>
                         </div>
                     </div>
                 </div>
@@ -34,7 +37,7 @@
                         Reference:
                     </div>
                     <div class="col-9 pull-right">
-                        <span t-field="doc.reference"/>
+                        <span t-field="doc.reference" />
                     </div>
                 </div>
                 <div class="row">
@@ -42,7 +45,7 @@
                         Date:
                     </div>
                     <div class="col-9 pull-right">
-                        <span t-field="doc.date"/>
+                        <span t-field="doc.date" />
                     </div>
                 </div>
                 <div class="row" style="padding-top:20px">
@@ -55,15 +58,21 @@
                             <tr>
                                 <td>
                                     <ul style="padding-left:30px">
-                                        <t t-foreach="doc.auditor_user_ids" t-as="auditor">
-                                            <li><span t-field="auditor.name"/></li>
+                                        <t
+                                            t-foreach="doc.auditor_user_ids"
+                                            t-as="auditor"
+                                        >
+                                            <li><span t-field="auditor.name" /></li>
                                         </t>
                                     </ul>
                                 </td>
                                 <td>
                                     <ul style="padding-left:30px">
-                                        <t t-foreach="doc.auditee_user_ids" t-as="auditee">
-                                            <li><span t-field="auditee.name"/></li>
+                                        <t
+                                            t-foreach="doc.auditee_user_ids"
+                                            t-as="auditee"
+                                        >
+                                            <li><span t-field="auditee.name" /></li>
                                         </t>
                                     </ul>
                                 </td>
@@ -85,8 +94,8 @@
                                         <td>
                                             <span t-esc="line['procedure']" />
                                         </td>
-                                        <td></td>
-                                        <td></td>
+                                        <td />
+                                        <td />
                                     </tr>
                                 </t>
                                 <t t-if="not line['procedure']">
@@ -97,7 +106,7 @@
                                         <td>
                                             <span t-esc="line['yes_no']" />
                                         </td>
-                                        <td></td>
+                                        <td />
                                     </tr>
                                 </t>
                             </t>
