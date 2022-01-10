@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template id="audit_report">
-        <t t-set="doc" t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"/>
+        <t
+            t-set="doc"
+            t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"
+        />
         <t t-call="web.external_layout">
             <div class="page">
                 <div class="row">
@@ -14,7 +17,7 @@
                 <div class="row" style="padding-top:10px">
                     <div class="col-12">
                         <div class="text-center">
-                            <h3><strong t-field="doc.name"></strong></h3>
+                            <h3><strong t-field="doc.name" /></h3>
                         </div>
                     </div>
                 </div>
@@ -31,7 +34,7 @@
                         Reference:
                     </div>
                     <div class="col-9">
-                         <span t-field="doc.reference"/>
+                         <span t-field="doc.reference" />
                     </div>
                 </div>
                 <div class="row">
@@ -39,7 +42,7 @@
                         Date:
                     </div>
                     <div class="col-9">
-                        <span t-field="doc.date"/>
+                        <span t-field="doc.date" />
                     </div>
                 </div>
                 <div class="row">
@@ -49,7 +52,7 @@
                     <div class="col-9">
                         <ul class="list-unstyled">
                             <t t-foreach="doc.auditor_user_ids" t-as="auditor">
-                                <li><span t-field="auditor.name"/></li>
+                                <li><span t-field="auditor.name" /></li>
                             </t>
                         </ul>
                     </div>
@@ -57,13 +60,13 @@
                 <div class="row" style="padding-top:30px">
                     <div class="col-12">
                         <h3><strong>Strong points:</strong></h3>
-                        <span t-field="doc.strong_points"/>
+                        <span t-field="doc.strong_points" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <h3><strong>Points To Improve:</strong></h3>
-                        <span t-field="doc.to_improve_points"/>
+                        <span t-field="doc.to_improve_points" />
                     </div>
                 </div>
                 <div class="row">
@@ -72,7 +75,7 @@
                         <ul style="padding-left:50px">
                             <t t-foreach="doc.imp_opp_ids" t-as="improvement">
                                 <t t-if="improvement.stage_id.name != 'Cancelled'">
-                                    <li><span t-field="improvement.name"/></li>
+                                    <li><span t-field="improvement.name" /></li>
                                 </t>
                             </t>
                         </ul>
@@ -84,7 +87,7 @@
                         <ul style="padding-left:50px">
                             <t t-foreach="doc.nonconformity_ids" t-as="nonconformity">
                                 <t t-if="nonconformity.state != 'cancel'">
-                                <li><span t-field="nonconformity.description"/></li>
+                                <li><span t-field="nonconformity.description" /></li>
                             </t>
                             </t>
                         </ul>
