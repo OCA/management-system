@@ -24,7 +24,7 @@ addon | version | maintainers | summary
 [document_page_work_instruction](document_page_work_instruction/) | 14.0.1.0.0 |  | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 14.0.1.0.0 |  | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 14.0.1.0.2 |  | Management System - Action
-[mgmtsystem_hazard](mgmtsystem_hazard/) | 14.0.1.0.0 |  | Hazard
+[mgmtsystem_hazard](mgmtsystem_hazard/) | 14.0.1.0.1 |  | Hazard
 [mgmtsystem_manual](mgmtsystem_manual/) | 14.0.1.1.0 |  | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 14.0.1.0.0 |  | Management System - Nonconformity
 [mgmtsystem_review](mgmtsystem_review/) | 14.0.1.1.0 |  | Management System - Review
