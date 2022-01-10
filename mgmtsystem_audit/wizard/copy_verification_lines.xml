@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
     <record id="copy_verification_lines_form_view" model="ir.ui.view">
         <field name="name">copy.verification.lines.form</field>
@@ -6,19 +6,20 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <form string="Copy Verification Lines">
-                <field name="audit_src" domain="[('state','=','done')]"/>
+                <field name="audit_src" domain="[('state','=','done')]" />
                 <group colspan="2" col="3">
-                    <button string="_Cancel" special="cancel"/>
-                    <button string="_Copy" name="copyVerificationLines" type="object"/>
+                    <button string="_Cancel" special="cancel" />
+                    <button string="_Copy" name="copyVerificationLines" type="object" />
                 </group>
             </form>
         </field>
     </record>
-    <act_window name="Copy Verification Lines"
-            res_model="copy.verification.lines"
-            binding_model="mgmtsystem.audit"
-            view_mode="form"
-            target="new"
-            binding_views="form"
-            id="copy_verification_lines_act_window"/>
+    <record id="copy_verification_lines_act_window" model="ir.actions.act_window">
+        <field name="name">Copy Verification Lines</field>
+        <field name="res_model">copy.verification.lines</field>
+        <field name="binding_model_id" ref="model_mgmtsystem_audit" />
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_view_types">form</field>
+    </record>
 </odoo>
