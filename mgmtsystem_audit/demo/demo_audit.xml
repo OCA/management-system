@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="mgmtsystem_audit_demo" model="mgmtsystem.audit">
+            <field name="name">Quality</field>
+            <field name="date">2010-12-03</field>
+            <field name="strong_points">
+                <![CDATA[
+                    <ul>
+                        <li>Good documentation</li>
+                    </ul>
+                    ]]>
+            </field>
+            <field name="to_improve_points">
+                <![CDATA[
+                    <ul>
+                        <li>Procedure respect</li>
+                    </ul>
+                    ]]>
+            </field>
+            <field name="user_id" ref="base.user_demo"/>
+            <field name="auditor_user_ids" eval="[(6,0,[ref('base.user_demo')])]"/>
+            <field name="auditee_user_ids" eval="[(6,0,[ref('base.user_root')])]"/>
+            <field name="imp_opp_ids" eval="[(6,0,[ref('mgmtsystem_action.demo_improvement')])]"/>
+            <field name="nonconformity_ids" eval="[(6,0,[ref('mgmtsystem_nonconformity.demo_nonconformity')])]"/>
+        </record>
+
+        <record id="mgmtsystem_audit_demo2" model="mgmtsystem.audit">
+            <field name="name">Quality2</field>
+            <field name="date">2012-12-06</field>
+            <field name="strong_points">* Good documentation</field>
+            <field name="to_improve_points">* Procedure respect</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="auditor_user_ids" eval="[(6,0,[ref('base.user_demo')])]"/>
+            <field name="auditee_user_ids" eval="[(6,0,[ref('base.user_root')])]"/>
+            <field name="imp_opp_ids" eval="[(6,0,[ref('mgmtsystem_action.demo_improvement')])]"/>
+            <field name="nonconformity_ids" eval="[(6,0,[ref('mgmtsystem_nonconformity.demo_nonconformity')])]"/>
+        </record>
+
+    </data>
+</odoo>
