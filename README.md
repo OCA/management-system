@@ -29,6 +29,7 @@ addon | version | maintainers | summary
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 14.0.1.0.1 |  | Hazard
 [mgmtsystem_manual](mgmtsystem_manual/) | 14.0.1.1.0 |  | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 14.0.1.0.0 |  | Management System - Nonconformity
+[mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 14.0.1.0.0 |  | Bridge module between hr and mgmsystem and
 [mgmtsystem_review](mgmtsystem_review/) | 14.0.1.1.0 |  | Management System - Review
 [mgmtsystem_survey](mgmtsystem_survey/) | 14.0.1.0.0 |  | Management System - Survey
 
