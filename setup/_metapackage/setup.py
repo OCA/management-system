@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo14-addon-document_page_work_instruction',
         'odoo14-addon-mgmtsystem',
         'odoo14-addon-mgmtsystem_action',
+        'odoo14-addon-mgmtsystem_audit',
         'odoo14-addon-mgmtsystem_hazard',
         'odoo14-addon-mgmtsystem_manual',
         'odoo14-addon-mgmtsystem_nonconformity',
