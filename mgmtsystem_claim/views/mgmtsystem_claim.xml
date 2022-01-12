@@ -1,0 +1,288 @@
+<odoo>
+    <data>
+
+        <!-- Claims -->
+
+        <record model="ir.ui.view" id="mgmtsystem_claims_tree_view">
+            <field name="name">Management System Claims Tree</field>
+            <field name="model">mgmtsystem.claim</field>
+            <field name="arch" type="xml">
+                <tree
+                    string="Claims"
+                    decoration-primary="stage_id==%(mgmtsystem_claim.stage_pending)d and not(date_deadline and (date_deadline &lt; current_date))"
+                    decoration-muted="stage_id in (%(mgmtsystem_claim.stage_close)d, %(mgmtsystem_claim.stage_cancel)d)"
+                    decoration-danger="date_deadline and (date_deadline &lt; current_date)"
+                >
+                    <field name="reference" />
+                    <field name="company_id" groups="base.group_multi_company" />
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <field name="user_id" />
+                    <field name="date" />
+                    <field name="team_id" invisible="1" />
+                    <field name="categ_id" string="Type" select="1" />
+                    <field name="stage_id" />
+                    <field name="date_deadline" invisible="1" />
+                    <field name="date_closed" invisible="1" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mgmtsystem_claims_form_view">
+            <field name="name">Management System Claims Form</field>
+            <field name="model">mgmtsystem.claim</field>
+            <field name="arch" type="xml">
+                <form string="Claim">
+                    <header>
+                        <field
+                            name="stage_id"
+                            widget="statusbar"
+                            options="{'clickable': 1}"
+                        />
+                    </header>
+                    <sheet string="Claims">
+                        <group>
+                            <field name="reference" />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                            <field name="name" />
+                            <field name="date" />
+                            <field name="team_id" invisible="1" />
+                        </group>
+                        <group colspan="4" col="4" groups="base.group_user">
+                            <field name="user_id" />
+                            <field name="priority" />
+                            <field name="categ_id" />
+                            <field name="date_deadline" />
+                        </group>
+                        <group colspan="4" col="4">
+                            <notebook>
+                                <page string="Claim Description">
+                                    <group colspan="2" col="2" groups="base.group_user">
+                                        <separator
+                                            colspan="2"
+                                            string="Claim Reporter"
+                                        />
+                                        <field
+                                            name="partner_id"
+                                            string="Partner"
+                                            on_change="onchange_partner_id(partner_id)"
+                                        />
+                                        <field name="partner_phone" />
+                                        <field name="email_from" widget="email" />
+                                    </group>
+                                    <group colspan="2" col="2" groups="base.group_user">
+                                        <separator
+                                            colspan="2"
+                                            string="Responsibilities"
+                                        />
+                                        <field
+                                            name="user_id"
+                                            context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'base.group_sale_salesman_all_leads']}"
+                                        />
+                                        <field name="user_fault" />
+                                        <field
+                                            name="categ_id"
+                                            options="{'no_create': True, 'no_open': True}"
+                                        />
+                                        <field name="team_id" />
+                                        <field name="model_ref_id" widget="reference" />
+                                    </group>
+                                    <separator
+                                        colspan="4"
+                                        string="Claim/Action Description"
+                                        groups="base.group_user"
+                                    />
+                                    <field name="description" colspan="4" nolabel="1" />
+                                </page>
+                                <page string="Follow Up" groups="base.group_user">
+
+                                    <group
+                                        colspan="2"
+                                        col="2"
+                                        groups="base.group_no_one"
+                                    >
+                                        <separator colspan="2" string="Dates" />
+                                        <field name="create_date" />
+                                        <field name="date_closed" />
+                                        <field name="write_date" />
+                                    </group>
+
+                                    <group colspan="2" col="2">
+                                        <separator colspan="2" string="Root Causes" />
+                                        <field name="cause" colspan="2" nolabel="1" />
+                                    </group>
+                                    <group colspan="2" col="2">
+                                        <separator
+                                            colspan="2"
+                                            string="Resolution Actions"
+                                        />
+                                        <field name="type_action" />
+                                        <field
+                                            name="resolution"
+                                            colspan="2"
+                                            nolabel="1"
+                                        />
+                                    </group>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="activity_ids" widget="mail_activity" />
+                        <field
+                            name="message_ids"
+                            widget="mail_thread"
+                            options="{'post_refresh': 'recipients'}"
+                        />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_mgmtsystem_claims_calendar_view">
+            <field name="name">Management System Claims Actions</field>
+            <field name="model">mgmtsystem.claim</field>
+            <field name="priority" eval="2" />
+            <field name="arch" type="xml">
+                <calendar
+                    string="Management System Claims"
+                    date_start="activity_date_deadline"
+                    color="user_id"
+                >
+                    <field name="name" />
+                </calendar>
+            </field>
+        </record>
+
+        <!-- Claim Search view -->
+        <record id="view_mgmtsystem_claims_filter" model="ir.ui.view">
+            <field name="name">Management System Claims Search</field>
+            <field name="model">mgmtsystem.claim</field>
+            <field name="arch" type="xml">
+                <search string="Search Claims">
+
+                    <filter
+                        icon="terp-check"
+                        string="Current"
+                        name="current"
+                        domain="[('stage_id','in',(%(mgmtsystem_claim.stage_draft)d, %(mgmtsystem_claim.stage_open)d))]"
+                        separator="1"
+                        help="Draft and Open Claims"
+                    />
+
+                    <filter
+                        icon="terp-gtk-media-pause"
+                        string="Pending"
+                        name="pending"
+                        domain="[('stage_id','=', %(mgmtsystem_claim.stage_pending)d)]"
+                        separator="1"
+                        help="All pending Claims"
+                    />
+
+                    <field name="name" select='1' />
+                    <field name="partner_id" select="1" />
+                    <field name="user_id" select="1" widget="selection">
+                        <filter
+                            icon="terp-personal-"
+                            name="unassigned"
+                            domain="[('user_id','=', False)]"
+                            help="Unassigned Claims"
+                        />
+                    </field>
+
+                    <newline />
+
+                    <group expand="0" string="Group By...">
+                        <filter
+                            string="Partner"
+                            icon="terp-partner"
+                            name="group_partner"
+                            domain="[]"
+                            help="Partner"
+                            context="{'group_by':'partner_id'}"
+                        />
+                        <filter
+                            string="Responsible"
+                            icon="terp-personal"
+                            name="group_responsible"
+                            domain="[]"
+                            help="Responsible User"
+                            context="{'group_by':'user_id'}"
+                        />
+                        <separator orientation="vertical" />
+                        <filter
+                            string="Type"
+                            icon="terp-stock_symbol-selection"
+                            name="group_categ"
+                            domain="[]"
+                            context="{'group_by':'categ_id'}"
+                        />
+
+                        <filter
+                            string="Stages"
+                            icon="terp-stock_effects-object-colorize"
+                            name="group_stage"
+                            domain="[]"
+                            context="{'group_by':'stage_id'}"
+                        />
+
+                        <separator orientation="vertical" />
+
+                        <filter
+                            string="Claim Date"
+                            icon="terp-go-month"
+                            name="group_date"
+                            domain="[]"
+                            help="Claim Date"
+                            context="{'group_by':'date'}"
+                        />
+                        <filter
+                            string="Deadline"
+                            icon="terp-go-month"
+                            name="group_date_deadline"
+                            domain="[]"
+                            context="{'group_by':'date_deadline'}"
+                        />
+                        <filter
+                            string="Closure"
+                            icon="terp-go-month"
+                            name="group_date_closed"
+                            domain="[]"
+                            help="Date Closed"
+                            context="{'group_by':'date_closed'}"
+                        />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mgmtsystem_claim_action">
+            <field name="name">Claims</field>
+            <field name="res_model">mgmtsystem.claim</field>
+            <field name="view_mode">tree,calendar,form</field>
+            <field
+                name="context"
+            >{"search_default_user_id":uid, "stage_type":'claim'}</field>
+            <field
+                name="help"
+            >Record and track your customers' claims. Claims may be linked to a sales order or a lot.
+                You can send emails with attachments and keep the full history for a claim (emails sent, intervention
+                type and so on). Claims may automatically be linked to an email address using the mail gateway module.
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_mgmtsystem_claims"
+            name="Claims"
+            parent="mgmtsystem.menu_mgmtsystem_main"
+            action="mgmtsystem_claim_action"
+            sequence="90"
+            groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
+        />
+
+    </data>
+</odoo>
