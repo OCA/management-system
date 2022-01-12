@@ -53,8 +53,38 @@ msgid "Action"
 msgstr ""
 
 #. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Action:"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_attachment_count
+msgid "Attachment Count"
 msgstr ""
 
 #. module: mgmtsystem_review
@@ -154,9 +184,51 @@ msgid "Expectations:"
 msgstr ""
 
 #. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__id
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__id
 msgid "ID"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_needaction
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: mgmtsystem_review
@@ -167,6 +239,11 @@ msgstr ""
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Inputs"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_is_follower
+msgid "Is Follower"
 msgstr ""
 
 #. module: mgmtsystem_review
@@ -194,8 +271,43 @@ msgid "Lines"
 msgstr ""
 
 #. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__name
 msgid "Name"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_type_id
+msgid "Next Activity Type"
 msgstr ""
 
 #. module: mgmtsystem_review
@@ -203,6 +315,31 @@ msgstr ""
 #: model:ir.model.fields.selection,name:mgmtsystem_review.selection__mgmtsystem_review_line__type__nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Nonconformity"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_unread_counter
+msgid "Number of unread messages"
 msgstr ""
 
 #. module: mgmtsystem_review
@@ -254,6 +391,11 @@ msgid "Refrence:"
 msgstr ""
 
 #. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: mgmtsystem_review
 #: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__review_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
@@ -288,6 +430,11 @@ msgid "Reviews"
 msgstr ""
 
 #. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__state
 msgid "State"
 msgstr ""
@@ -295,6 +442,15 @@ msgstr ""
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "State:"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
 msgstr ""
 
 #. module: mgmtsystem_review
@@ -311,4 +467,29 @@ msgstr ""
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__type
 msgid "Type"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__website_message_ids
+msgid "Website communication history"
 msgstr ""
