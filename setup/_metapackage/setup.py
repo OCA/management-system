@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo14-addon-mgmtsystem',
         'odoo14-addon-mgmtsystem_action',
         'odoo14-addon-mgmtsystem_audit',
+        'odoo14-addon-mgmtsystem_claim',
         'odoo14-addon-mgmtsystem_hazard',
         'odoo14-addon-mgmtsystem_hazard_risk',
         'odoo14-addon-mgmtsystem_manual',
