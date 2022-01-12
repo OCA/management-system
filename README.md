@@ -27,6 +27,7 @@ addon | version | maintainers | summary
 [mgmtsystem_action](mgmtsystem_action/) | 14.0.1.0.2 |  | Management System - Action
 [mgmtsystem_audit](mgmtsystem_audit/) | 14.0.1.0.0 |  | Management System - Audit
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 14.0.1.0.1 |  | Hazard
+[mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 14.0.1.0.0 |  | Hazard Risk
 [mgmtsystem_manual](mgmtsystem_manual/) | 14.0.1.1.0 |  | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 14.0.1.0.0 |  | Management System - Nonconformity
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 14.0.1.0.0 |  | Bridge module between hr and mgmsystem and
