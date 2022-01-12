@@ -1,0 +1,10 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_mgmtsystem_audit_user","mgmtsystem.audit.user","model_mgmtsystem_audit","mgmtsystem.group_mgmtsystem_user",1,0,0,0
+"access_mgmtsystem_audit_viewer","mgmtsystem.audit.viewer","model_mgmtsystem_audit","mgmtsystem.group_mgmtsystem_viewer",1,0,0,0
+"access_mgmtsystem_audit_auditor","mgmtsystem.audit.auditor","model_mgmtsystem_audit","mgmtsystem.group_mgmtsystem_auditor",1,1,0,0
+"access_mgmtsystem_audit_manager","mgmtsystem.audit.manager","model_mgmtsystem_audit","mgmtsystem.group_mgmtsystem_manager",1,1,1,0
+"access_mgmtsystem_verification_line_user","mgmtsystem.verification.line.user","model_mgmtsystem_verification_line","mgmtsystem.group_mgmtsystem_user",1,0,0,0
+"access_mgmtsystem_verification_line_viewer","mgmtsystem.verification.line.viewer","model_mgmtsystem_verification_line","mgmtsystem.group_mgmtsystem_viewer",1,0,0,0
+"access_mgmtsystem_verification_line_auditor","mgmtsystem.verification.line.auditor","model_mgmtsystem_verification_line","mgmtsystem.group_mgmtsystem_auditor",1,1,1,1
+"access_mgmtsystem_verification_line_manager","mgmtsystem.verification.line.manager","model_mgmtsystem_verification_line","mgmtsystem.group_mgmtsystem_manager",1,1,1,1
+access_copy_verification_lines_manager,copy.verification.lines.manager,model_copy_verification_lines,"mgmtsystem.group_mgmtsystem_auditor",1,1,1,1
