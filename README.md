@@ -23,27 +23,27 @@ These presentation may help with an overviews of the modules:
 
 Available addons
 ----------------
-addon | version | maintainers | summary
---- | --- | --- | ---
-[document_page_environment_manual](document_page_environment_manual/) | 13.0.1.1.0 |  | Document Management - Wiki - Environment Manual
-[document_page_environmental_aspect](document_page_environmental_aspect/) | 13.0.1.0.1 |  | Environmental Aspects
-[document_page_health_safety_manual](document_page_health_safety_manual/) | 13.0.1.0.0 |  | Health and Safety Manual
-[document_page_procedure](document_page_procedure/) | 13.0.1.0.0 |  | Document Management - Wiki - Procedures
-[document_page_quality_manual](document_page_quality_manual/) | 13.0.1.0.0 |  | Quality Manual
-[document_page_work_instruction](document_page_work_instruction/) | 13.0.1.0.0 |  | Document Management - Wiki - Work Instructions
-[mgmtsystem](mgmtsystem/) | 13.0.1.4.1 |  | Management System
-[mgmtsystem_action](mgmtsystem_action/) | 13.0.1.1.1 |  | Management System - Action
-[mgmtsystem_audit](mgmtsystem_audit/) | 13.0.1.1.0 |  | Management System - Audit
-[mgmtsystem_claim](mgmtsystem_claim/) | 13.0.1.1.0 |  | Management System - Claim
-[mgmtsystem_hazard](mgmtsystem_hazard/) | 13.0.1.1.0 |  | Hazard
-[mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 13.0.1.0.0 |  | Hazard Risk
-[mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 13.0.1.0.0 |  | Information Security Management System Manual
-[mgmtsystem_manual](mgmtsystem_manual/) | 13.0.1.2.0 |  | Management System - Manual
-[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 13.0.1.2.0 |  | Management System - Nonconformity
-[mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 13.0.1.0.0 |  | Bridge module between hr and mgmsystem and
-[mgmtsystem_quality](mgmtsystem_quality/) | 13.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Manage your quality management system
-[mgmtsystem_review](mgmtsystem_review/) | 13.0.1.2.0 |  | Management System - Review
-[mgmtsystem_survey](mgmtsystem_survey/) | 13.0.1.0.0 |  | Management System - Survey
+addon | version | summary
+--- | --- | ---
+[document_page_environment_manual](document_page_environment_manual/) | 13.0.1.1.0 | Document Management - Wiki - Environment Manual
+[document_page_environmental_aspect](document_page_environmental_aspect/) | 13.0.1.0.1 | Environmental Aspects
+[document_page_health_safety_manual](document_page_health_safety_manual/) | 13.0.1.0.0 | Health and Safety Manual
+[document_page_procedure](document_page_procedure/) | 13.0.1.0.0 | Document Management - Wiki - Procedures
+[document_page_quality_manual](document_page_quality_manual/) | 13.0.1.0.0 | Quality Manual
+[document_page_work_instruction](document_page_work_instruction/) | 13.0.1.0.0 | Document Management - Wiki - Work Instructions
+[mgmtsystem](mgmtsystem/) | 13.0.1.4.1 | Management System
+[mgmtsystem_action](mgmtsystem_action/) | 13.0.1.1.1 | Management System - Action
+[mgmtsystem_audit](mgmtsystem_audit/) | 13.0.1.1.0 | Management System - Audit
+[mgmtsystem_claim](mgmtsystem_claim/) | 13.0.1.1.0 | Management System - Claim
+[mgmtsystem_hazard](mgmtsystem_hazard/) | 13.0.1.1.0 | Hazard
+[mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 13.0.1.0.0 | Hazard Risk
+[mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 13.0.1.0.0 | Information Security Management System Manual
+[mgmtsystem_manual](mgmtsystem_manual/) | 13.0.1.1.0 | Management System - Manual
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 13.0.1.2.0 | Management System - Nonconformity
+[mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 13.0.1.0.0 | Bridge module between hr and mgmsystem and
+[mgmtsystem_quality](mgmtsystem_quality/) | 13.0.1.0.0 | Manage your quality management system
+[mgmtsystem_review](mgmtsystem_review/) | 13.0.1.1.0 | Management System - Review
+[mgmtsystem_survey](mgmtsystem_survey/) | 13.0.1.0.0 | Management System - Survey
 
 [//]: # (end addons)
 
