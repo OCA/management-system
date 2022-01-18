@@ -21,7 +21,7 @@
     "name": "Document Management - Wiki - Environment Manual",
     "version": "13.0.1.1.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
-    "website": "http://www.savoirfairelinux.com",
+    "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
     "depends": ["mgmtsystem_manual"],
