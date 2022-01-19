@@ -19,6 +19,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[document_page_environment_manual](document_page_environment_manual/) | 14.0.1.0.0 |  | Document Management - Wiki - Environment Manual
 [document_page_environmental_aspect](document_page_environmental_aspect/) | 14.0.1.0.0 |  | Environmental Aspects
 [document_page_procedure](document_page_procedure/) | 14.0.1.0.0 |  | Document Management - Wiki - Procedures
 [document_page_quality_manual](document_page_quality_manual/) | 14.0.1.0.0 |  | Quality Manual
