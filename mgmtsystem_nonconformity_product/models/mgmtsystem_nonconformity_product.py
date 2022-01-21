@@ -10,8 +10,8 @@ class MgmtsystemMgmProduct(models.Model):
     Extend nonconformity adding fields for product
     """
 
-    _inherit = ['mgmtsystem.nonconformity']
+    _inherit = ["mgmtsystem.nonconformity"]
 
     # new fields
     # product reference
-    product_id = fields.Many2one('product.product', 'Product')
+    product_id = fields.Many2one("product.product", "Product")
