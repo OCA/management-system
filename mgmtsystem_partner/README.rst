@@ -41,7 +41,11 @@ Usage
 
 Partner Quality E-mail
 
-* Go to Partner → Contacts & Addresses → create/select a contact → set type as Quality Address
+* Go to Purchases (or another app that has the Partner menu)
+* Select Vendors (or relative Partner menu)
+* Select a Partner and activate Edit mode
+* In Contacts & Addresses create/select a contact
+* Set address type (top radio options) as Quality Address
 
 Changelog
 =========
