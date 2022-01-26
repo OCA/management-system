@@ -39,7 +39,7 @@ addon | version | maintainers | summary
 [mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 13.0.1.0.0 |  | Hazard Risk
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 13.0.1.0.0 |  | Information Security Management System Manual
 [mgmtsystem_manual](mgmtsystem_manual/) | 13.0.1.2.0 |  | Management System - Manual
-[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 13.0.1.2.0 |  | Management System - Nonconformity
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 13.0.1.3.0 |  | Management System - Nonconformity
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 13.0.1.0.0 |  | Bridge module between hr and mgmsystem and
 [mgmtsystem_quality](mgmtsystem_quality/) | 13.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Manage your quality management system
 [mgmtsystem_review](mgmtsystem_review/) | 13.0.1.2.0 |  | Management System - Review
