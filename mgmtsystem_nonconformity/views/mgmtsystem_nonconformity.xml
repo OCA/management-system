@@ -216,6 +216,7 @@
                     <field name="state" invisible="True" />
                 </header>
                 <sheet string="Non-Conformity">
+                    <div class="oe_button_box" name="button_box" />
                     <field name="kanban_state" widget="kanban_state_selection" />
                     <group name="main">
                         <group name="config">
