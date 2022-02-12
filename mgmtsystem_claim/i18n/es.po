@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-25 18:17+0000\n"
-"PO-Revision-Date: 2013-09-01 18:23+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-02-12 21:17+0000\n"
+"Last-Translator: Miquel Romera <mromera@pmsastro.es>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 "X-Launchpad-Export-Date: 2014-04-24 06:29+0000\n"
-"X-Generator: Launchpad (build 16985)\n"
 
 #. module: mgmtsystem_claim
 #: model:mail.template,body_html:mgmtsystem_claim.email_template_new_claim_reminder
@@ -74,98 +75,98 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner__mgmtsystem_claim_count
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_users__mgmtsystem_claim_count
 msgid "# Mgmt Claims"
-msgstr ""
+msgstr "# Gestión de Reclamaciones"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Acción necesaria"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__type_action
 msgid "Action Type"
-msgstr ""
+msgstr "Tipo de acción"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__active
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Actividades"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Actividad Decoración de excepción"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Estado de la actividad"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "All pending Claims"
-msgstr ""
+msgstr "Todas las reclamaciones pendientes"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Recuento de anexos"
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_cancel
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__categ_id
 msgid "Category"
-msgstr ""
+msgstr "Categoría"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claim"
-msgstr ""
+msgstr "Reclamación"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__date
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Claim Date"
-msgstr ""
+msgstr "Fecha de la reclamación"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claim Description"
-msgstr ""
+msgstr "Descripción de la reclamación"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claim Reporter"
-msgstr ""
+msgstr "Informe de reclamaciones"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__name
 msgid "Claim Subject"
-msgstr ""
+msgstr "Asunto de la reclamación"
 
 #. module: mgmtsystem_claim
 #: model:ir.model,name:mgmtsystem_claim.model_mgmtsystem_claim
 msgid "Claim for Management System"
-msgstr ""
+msgstr "Reclamación para sistema de gestión"
 
 #. module: mgmtsystem_claim
 #: model:ir.model,name:mgmtsystem_claim.model_mgmtsystem_claim_stage
 msgid "Claim stages for Management system"
-msgstr ""
+msgstr "Etapas de reclamación para el sistema de gestión"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claim/Action Description"
-msgstr ""
+msgstr "Descripción de la reclamación/acción"
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.act_window,name:mgmtsystem_claim.mgmtsystem_claim_action
@@ -174,111 +175,113 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_tree_view
 msgid "Claims"
-msgstr ""
+msgstr "Reclamaciones"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_stage_action
 msgid ""
 "Click to setup a new stage in the processing of the Management System claims."
 msgstr ""
+"Haga clic para configurar una nueva etapa en la tramitación de las "
+"reclamaciones del Sistema de Gestión."
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_close
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__date_closed
 msgid "Closed"
-msgstr ""
+msgstr "Cerrado"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Closure"
-msgstr ""
+msgstr "Cierre"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__case_default
 msgid "Common to All Teams"
-msgstr ""
+msgstr "Común a todos los equipos"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__company_id
 msgid "Company"
-msgstr ""
+msgstr "Compañía"
 
 #. module: mgmtsystem_claim
 #: model:ir.model,name:mgmtsystem_claim.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado en"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__create_date
 msgid "Creation Date"
-msgstr ""
+msgstr "Fecha de creación"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Current"
-msgstr ""
+msgstr "Actual"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Date Closed"
-msgstr ""
+msgstr "Fecha de cierre"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Dates"
-msgstr ""
+msgstr "Fechas"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__date_deadline
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Deadline"
-msgstr ""
+msgstr "Fecha límite"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__description
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__email_from
 msgid "Destination email for email gateway."
-msgstr ""
+msgstr "Correo electrónico de destino para la pasarela de correo electrónico."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre de la pantalla"
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_draft
 msgid "Draft"
-msgstr ""
+msgstr "Borrador"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Draft and Open Claims"
-msgstr ""
+msgstr "Borradores y reclamaciones abiertas"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__email_from
 msgid "Email"
-msgstr ""
+msgstr "Correo electrónico"
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.server,name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder_ir_actions_server
@@ -286,59 +289,61 @@ msgstr ""
 #: model:ir.cron,name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder
 msgid "Email Claim Reminders 10 days before due date."
 msgstr ""
+"Recordatorios de reclamaciones por correo electrónico 10 días antes de la "
+"fecha de vencimiento."
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Follow Up"
-msgstr ""
+msgstr "Seguimiento"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Seguidores (Canales)"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Seguidores (Socios)"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Group By..."
-msgstr ""
+msgstr "Agrupar por..."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__id
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icono"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icono para indicar una actividad de excepción."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_unread
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si está marcada, los nuevos mensajes requieren su atención."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_error
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_stage__case_default
@@ -346,6 +351,8 @@ msgid ""
 "If you check this field, this stage will be proposed by default on each "
 "sales team. It will not assign this stage to existing teams."
 msgstr ""
+"Si marca este campo, esta etapa se propondrá por defecto en cada equipo de "
+"ventas. No se asignará esta etapa a los equipos existentes."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_is_follower
