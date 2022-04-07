@@ -10,3 +10,4 @@
 * `Trobz <https://trobz.com>`_:
 
   * Dung Tran <dungtd@trobz.com>
+* Yvan Dotet <yvan.dotet@logicasoft.eu>
