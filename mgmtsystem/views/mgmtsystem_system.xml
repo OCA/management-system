@@ -17,7 +17,7 @@
       <field name="name">mgmtsystem_system_tree</field>
       <field name="model">mgmtsystem.system</field>
       <field name="arch" type="xml">
-        <tree string="Management Systems">
+        <tree>
           <field name="name" />
           <field name="company_id" groups="base.group_multi_company" />
         </tree>
