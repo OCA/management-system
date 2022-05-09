@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,44 +17,44 @@ msgstr ""
 #: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
 msgid ""
 "\n"
-"                \n"
-"<p>Hello ${object.user_id.name},</p>\n"
+"            \n"
+"<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
 "\n"
 "<p>\n"
-"  This is an automated message to remind you that the\n"
-"  following action is due to be completed in 10 days (${object.date_deadline}):\n"
+"This is an automated message to remind you that the\n"
+"following action is due to be completed in 10 days (<t t-out=\"object.date_deadline\"/>):\n"
 "\n"
-"  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"  Thank you and have a nice day.<br>\n"
-"  --<br>\n"
-"  Odoo\n"
+"Thank you and have a nice day.<br>\n"
+"--<br>\n"
+"Odoo\n"
 "</p>\n"
-"                \n"
-"            "
+"            \n"
+"        "
 msgstr ""
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.email_template_new_action_reminder
 msgid ""
 "\n"
-"                \n"
-"<p>Hello ${object.user_id.name},</p>\n"
+"            \n"
+"<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
 "\n"
-"<p>A new action has been assigned to you: <b><a href=\"${object.get_action_url()}\">${object.name}</a></b></p>\n"
-"<p><b>Deadline: </b>${object.date_deadline or ''}</p>\n"
+"<p>A new action has been assigned to you: <b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b></p>\n"
+"<p><b>Deadline: </b><t t-out=\"object.date_deadline or ''\"/></p>\n"
 "\n"
 "<p>Please, use the action stages and messages to log progress.</p>\n"
 "\n"
 "<p>\n"
-"  Thank you<br>\n"
-"  --<br>\n"
-"  Odoo\n"
+"Thank you<br>\n"
+"--<br>\n"
+"Odoo\n"
 "</p>\n"
-"                \n"
-"            "
+"            \n"
+"        "
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -100,16 +100,15 @@ msgid "#ffffff"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
-msgid "${object.name}"
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_tree
 msgid "Action"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:mail.template,name:mgmtsystem_action.email_template_new_action_reminder
+msgid "Action Assigned"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -317,11 +316,6 @@ msgid "Followers"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
@@ -344,6 +338,11 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Group By"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__has_message
+msgid "Has Message"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -569,7 +568,12 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:mail.template,subject:mgmtsystem_action.action_email_template_reminder_action
-msgid "Reminder on Action: \"${object.name}\""
+msgid "Reminder on Action: \"{{object.name}}\""
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:mail.template,name:mgmtsystem_action.action_email_template_reminder_action
+msgid "Reminder to Responsible"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -619,7 +623,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.mgmtsystem_action_stage_action
 #: model:ir.ui.menu,name:mgmtsystem_action.menu_mgmtsystem_action_stages
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.mgmtsystem_action_stage_tree_view
 msgid "Stages"
 msgstr ""
 
@@ -714,16 +717,11 @@ msgid "We cannot bring back the action to draft stage"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-msgid "Website communication history"
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
+msgid "{{object.name}}"
 msgstr ""
