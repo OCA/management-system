@@ -5,7 +5,7 @@
             <field name="model">mgmtsystem.action</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="Action">
+                <tree>
                     <field name="reference" />
                     <field name="name" />
                     <field name="type_action" />

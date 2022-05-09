@@ -17,12 +17,11 @@ class MgmtsystemAction(models.Model):
     company_id = fields.Many2one(
         "res.company", "Company", default=lambda self: self.env.company
     )
-    active = fields.Boolean("Active", default=True)
+    active = fields.Boolean(default=True)
     priority = fields.Selection(
-        [("0", "Low"), ("1", "Normal")], default="0", index=True, string="Priority"
+        [("0", "Low"), ("1", "Normal")], default="0", index=True
     )
     sequence = fields.Integer(
-        "Sequence",
         index=True,
         default=10,
         help="Gives the sequence order when displaying a list of actions.",
@@ -36,16 +35,14 @@ class MgmtsystemAction(models.Model):
     number_of_days_to_close = fields.Integer(
         "# of days to close", compute="_compute_number_of_days_to_close", store=True
     )
-    reference = fields.Char(
-        "Reference", required=True, readonly=True, default=lambda self: _("New")
-    )
+    reference = fields.Char(required=True, readonly=True, default=lambda self: _("New"))
     user_id = fields.Many2one(
         "res.users",
         "Responsible",
         default=lambda self: self._default_owner(),
         required=True,
     )
-    description = fields.Html("Description")
+    description = fields.Html()
     type_action = fields.Selection(
         [
             ("immediate", "Immediate Action"),

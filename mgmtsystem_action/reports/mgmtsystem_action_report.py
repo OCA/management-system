@@ -11,7 +11,7 @@ class MgmtsystemtActionReport(models.Model):
 
     # Compute data
     number_of_actions = fields.Integer("# of actions", readonly=True)
-    age = fields.Integer("Age", readonly=True)
+    age = fields.Integer(readonly=True)
     number_of_days_to_open = fields.Integer("# of days to open", readonly=True)
     number_of_days_to_close = fields.Integer("# of days to close", readonly=True)
     number_of_exceedings_days = fields.Integer("# of exceedings days", readonly=True)
@@ -26,7 +26,7 @@ class MgmtsystemtActionReport(models.Model):
         ],
         "Response Type",
     )
-    create_date = fields.Datetime("Create Date", readonly=True, index=True)
+    create_date = fields.Datetime(readonly=True, index=True)
     date_open = fields.Datetime("Opening Date", readonly=True, index=True)
     date_closed = fields.Datetime("Close Date", readonly=True, index=True)
     date_deadline = fields.Date("Deadline", readonly=True, index=True)
