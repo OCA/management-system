@@ -12,4 +12,4 @@ class MgmtsystemHazardOrigin(models.Model):
         "res.company", "Company", required=True, default=lambda self: self.env.company
     )
     name = fields.Char("Origin", required=True, translate=True)
-    description = fields.Text("Description")
+    description = fields.Text()

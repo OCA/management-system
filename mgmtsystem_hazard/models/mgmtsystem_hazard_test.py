@@ -10,8 +10,8 @@ class MgmtsystemHazardTest(models.Model):
 
     name = fields.Char("Test", required=True, translate=True)
     responsible_user_id = fields.Many2one("res.users", "Responsible", required=True)
-    review_date = fields.Date("Review Date", required=True)
-    executed = fields.Boolean("Executed")
+    review_date = fields.Date(required=True)
+    executed = fields.Boolean()
     hazard_id = fields.Many2one(
         "mgmtsystem.hazard", "Hazard", ondelete="cascade", required=False, index=True
     )
