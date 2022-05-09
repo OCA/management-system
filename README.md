@@ -42,6 +42,7 @@ addon | version | maintainers | summary
 [mgmtsystem_nonconformity_product](mgmtsystem_nonconformity_product/) | 12.0.1.0.0 |  | Bridge module between Product and Management System.
 [mgmtsystem_nonconformity_project](mgmtsystem_nonconformity_project/) | 12.0.1.0.0 |  | Management System - Project
 [mgmtsystem_nonconformity_repair](mgmtsystem_nonconformity_repair/) | 12.0.1.0.0 |  | Bridge module between Repair and Non Conformities
+[mgmtsystem_partner](mgmtsystem_partner/) | 12.0.1.0.0 |  | Add Management System reference on Partner's Contacts.
 [mgmtsystem_quality](mgmtsystem_quality/) | 12.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Manage your quality management system
 [mgmtsystem_review](mgmtsystem_review/) | 12.0.1.0.0 |  | Management System - Review
 [mgmtsystem_survey](mgmtsystem_survey/) | 12.0.1.0.0 |  | Management System - Survey
