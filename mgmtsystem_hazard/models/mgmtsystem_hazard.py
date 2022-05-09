@@ -11,7 +11,7 @@ class MgmtsystemHazard(models.Model):
     _description = __doc__
     _inherit = ["mail.thread"]
 
-    name = fields.Char("Name", required=True, translate=True)
+    name = fields.Char(required=True, translate=True)
     type_id = fields.Many2one("mgmtsystem.hazard.type", "Type", required=True)
     hazard_id = fields.Many2one("mgmtsystem.hazard.hazard", "Hazard", required=True)
     origin_id = fields.Many2one("mgmtsystem.hazard.origin", "Origin", required=True)
@@ -21,8 +21,8 @@ class MgmtsystemHazard(models.Model):
     probability_id = fields.Many2one("mgmtsystem.hazard.probability", "Probability")
     severity_id = fields.Many2one("mgmtsystem.hazard.severity", "Severity")
     usage_id = fields.Many2one("mgmtsystem.hazard.usage", "Occupation / Usage")
-    acceptability = fields.Boolean("Acceptability")
-    justification = fields.Text("Justification")
+    acceptability = fields.Boolean()
+    justification = fields.Text()
     control_measure_ids = fields.One2many(
         "mgmtsystem.hazard.control_measure", "hazard_id", "Control Measures"
     )
