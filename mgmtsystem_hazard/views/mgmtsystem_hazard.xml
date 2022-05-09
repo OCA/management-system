@@ -12,7 +12,7 @@
       <field name="name">mgmtsystem.hazard.tree</field>
       <field name="model">mgmtsystem.hazard</field>
       <field name="arch" type="xml">
-        <tree string="Hazard">
+        <tree>
           <field name="type_id" />
           <field name="name" />
           <field name="hazard_id" />

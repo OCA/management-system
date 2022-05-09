@@ -12,5 +12,5 @@ class MgmtsystemHazardUsage(models.Model):
         "res.company", "Company", required=True, default=lambda self: self.env.company
     )
     name = fields.Char("Occupation / Usage", required=True, translate=True)
-    value = fields.Integer("Value", required=True)
-    description = fields.Text("Description")
+    value = fields.Integer(required=True)
+    description = fields.Text()

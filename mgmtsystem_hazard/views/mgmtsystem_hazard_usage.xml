@@ -21,7 +21,7 @@
       <field name="name">mgmtsystem.hazard.usage.tree</field>
       <field name="model">mgmtsystem.hazard.usage</field>
       <field name="arch" type="xml">
-        <tree string="Occupations / Usages">
+        <tree>
             <field name="company_id" groups="base.group_multi_company" />
           <field name="name" />
           <field name="value" />

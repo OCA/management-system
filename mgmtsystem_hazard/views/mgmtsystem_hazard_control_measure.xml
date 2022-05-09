@@ -19,7 +19,7 @@
       <field name="name">mgmtsystem.hazard.control_measure.tree</field>
       <field name="model">mgmtsystem.hazard.control_measure</field>
       <field name="arch" type="xml">
-        <tree string="Control Measures">
+        <tree>
           <field name="name" />
           <field name="responsible_user_id" />
           <field name="comments" />
