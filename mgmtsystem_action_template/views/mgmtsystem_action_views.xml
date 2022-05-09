@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright 2019 Marcelo Frare (Ass, PNLUG - Gruppo Odoo <http://odoo.pnlug.it>)
+     Copyright 2019 Stefano Consolaro (Ass, PNLUG - Gruppo Odoo <http://odoo.pnlug.it>)
+     Copyright 2020 Creu Blanca
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl) -->
+
+<odoo>
+    <!-- inherit action form view adding template management -->
+    <record id="view_mgmtsystem_action_form" model="ir.ui.view">
+        <field name="name">view.mgmtsystem.action</field>
+        <field name="model">mgmtsystem.action</field>
+        <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_form"/>
+        <field name="arch" type="xml">
+            <field name="tag_ids" position="after">
+                <field name="template_id" options="{'no_create': 1, 'no_open': 1}"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- inherit action kanban view 
+            adding template icon -->
+    <record id="view_mgmtsystem_action_kanban" model="ir.ui.view">
+        <field name="name">mgmtsystem.action.kanban</field>
+        <field name="model">mgmtsystem.action</field>
+        <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_kanban_bottom_left')]" position="inside">
+                <field name="template_id" attrs="{'invisible': 1}"/>
+                <img src="/mgmtsystem_action_template/static/description/template.png"
+                    attrs="{'invisible':[('template_id', '=', False)]}"
+                    title="Template"
+                    />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- inherit action filter view 
+            adding new option for template -->
+    <record id="view_mgmtsystem_action_filter" model="ir.ui.view">
+        <field name="name">view.mgmtsystem.action.filter</field>
+        <field name="model">mgmtsystem.action</field>
+        <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <filter name="template" string="Is Template" 
+                    domain="[('template_id', '!=', False)]"/>
+                <filter name="template_not" string="Is not a Template" 
+                    domain="[('template_id', '=', False)]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
