@@ -6,8 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-17 09:56+0000\n"
-"PO-Revision-Date: 2020-07-17 09:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,7 +30,7 @@ msgid "\n"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__quality_contact_name
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity_quality_contact_name
 msgid "Contact Name"
 msgstr ""
 
@@ -42,7 +40,7 @@ msgid "Customer"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__quality_contact_email
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity_quality_contact_email
 msgid "Email"
 msgstr ""
 
@@ -67,17 +65,17 @@ msgid "Nonconformity N° ${object.id}: ${object.name}"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__qty_checked
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity_qty_checked
 msgid "Quantity checked"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__qty_noncompliant
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity_qty_noncompliant
 msgid "Quantity non-compliant"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity_type.view_mgmtsystem_nonconformity_form
+#: model:ir.ui.view,arch_db:mgmtsystem_nonconformity_type.view_mgmtsystem_nonconformity_form
 msgid "Send by Email"
 msgstr ""
 
@@ -100,7 +98,7 @@ msgid "The partner's quality contact email is required in order to send the mess
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__nc_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity_nc_type
 msgid "Type"
 msgstr ""
 
