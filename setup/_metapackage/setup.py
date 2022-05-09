@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo11-addon-mgmtsystem',
         'odoo11-addon-mgmtsystem_action',
         'odoo11-addon-mgmtsystem_action_efficacy',
+        'odoo11-addon-mgmtsystem_action_template',
         'odoo11-addon-mgmtsystem_audit',
         'odoo11-addon-mgmtsystem_manual',
         'odoo11-addon-mgmtsystem_nonconformity',
