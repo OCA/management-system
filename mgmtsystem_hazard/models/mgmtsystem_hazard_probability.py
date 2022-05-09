@@ -12,5 +12,5 @@ class MgmtsystemHazardProbability(models.Model):
         "res.company", "Company", required=True, default=lambda self: self.env.company
     )
     name = fields.Char("Probability", required=True, translate=True)
-    value = fields.Integer("Value", required=True)
-    description = fields.Text("Description", required=False, translate=False)
+    value = fields.Integer(required=True)
+    description = fields.Text(required=False, translate=False)
