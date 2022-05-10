@@ -27,7 +27,7 @@ class MgmtsystemClaim(models.Model):
     _description = "Claim for Management System"
     _inherit = "crm.claim"
 
-    reference = fields.Char("Reference", required=True, readonly=True, default="NEW")
+    reference = fields.Char(required=True, readonly=True, default="NEW")
 
     message_ids = fields.One2many(
         "mail.message", "res_id", "Messages", domain=[("model", "=", _name)]
