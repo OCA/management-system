@@ -19,12 +19,12 @@
 ##############################################################################
 {
     "name": "Management System - Claim",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": ["mgmtsystem", "crm_claim", "mail"],
+    "depends": ["mgmtsystem", "crm_claim"],
     "data": [
         "security/ir.model.access.csv",
         "security/mgmtsystem_claim_security.xml",
