@@ -6,21 +6,22 @@ from odoo.tests import common
 
 
 class TestModelNonConformity(common.TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.nc_model = self.env["mgmtsystem.nonconformity"]
-        self.partner = self.env["res.partner"].search([])[0]
-        self.nc_test = self.nc_model.create(
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.nc_model = cls.env["mgmtsystem.nonconformity"]
+        cls.partner = cls.env["res.partner"].search([])[0]
+        cls.nc_test = cls.nc_model.create(
             {
-                "partner_id": self.partner.id,
-                "manager_user_id": self.env.user.id,
+                "partner_id": cls.partner.id,
+                "manager_user_id": cls.env.user.id,
                 "description": "description",
-                "responsible_user_id": self.env.user.id,
+                "responsible_user_id": cls.env.user.id,
             }
         )
         action_vals = {"name": "An Action", "type_action": "immediate"}
-        action1 = self.nc_model.action_ids.create(action_vals)
-        self.nc_test.immediate_action_id = action1
+        action1 = cls.nc_model.action_ids.create(action_vals)
+        cls.nc_test.immediate_action_id = action1
 
     def test_stage_group(self):
         """Group by Stage shows all stages"""
