@@ -12,7 +12,7 @@
         <field name="name">mgmtsystem.nonconformity.tree</field>
         <field name="model">mgmtsystem.nonconformity</field>
         <field name="arch" type="xml">
-            <tree string="Non-Conformities">
+            <tree>
                 <field name="ref" />
                 <field name="create_date" />
                 <field name="partner_id" />
@@ -309,7 +309,7 @@
                                 attrs="{'readonly':[('state','not in',['analysis'])]}"
                                 options="{'no_create': True}"
                             >
-                            <tree create="1" delete="1" colors="blue:parent_id;">
+                            <tree create="1" delete="1" decoration-info="parent_id">
                                 <field name="parent_id" />
                                 <field name="name" />
                                 <field name="description" />
