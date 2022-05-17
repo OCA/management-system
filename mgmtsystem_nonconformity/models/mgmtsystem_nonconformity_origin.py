@@ -12,8 +12,8 @@ class MgmtsystemNonconformityOrigin(models.Model):
     _parent_store = True
 
     name = fields.Char("Origin", required=True, translate=True)
-    description = fields.Text("Description")
-    sequence = fields.Integer("Sequence", help="Defines the order to present items")
+    description = fields.Text()
+    sequence = fields.Integer(help="Defines the order to present items")
     parent_path = fields.Char(index=True)
     parent_id = fields.Many2one(
         "mgmtsystem.nonconformity.origin", "Group", ondelete="restrict"
