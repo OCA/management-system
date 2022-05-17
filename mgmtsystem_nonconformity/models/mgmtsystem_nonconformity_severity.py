@@ -12,6 +12,6 @@ class MgmtsystemNonconformitySeverity(models.Model):
     _description = "Severity of Complaints and Nonconformities"
 
     name = fields.Char("Title", required=True, translate=True)
-    sequence = fields.Integer("Sequence")
-    description = fields.Text("Description", translate=True)
+    sequence = fields.Integer()
+    description = fields.Text(translate=True)
     active = fields.Boolean("Active?", default=True)

@@ -4,7 +4,7 @@
       <field name="name">Management System Nonconformity Stage Tree</field>
       <field name="model">mgmtsystem.nonconformity.stage</field>
       <field name="arch" type="xml">
-        <tree string="Stages">
+        <tree>
           <field name="name" />
           <field name="sequence" widget="handle" />
           <field name="state" />
