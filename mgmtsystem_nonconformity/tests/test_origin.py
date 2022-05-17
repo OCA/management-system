@@ -5,40 +5,32 @@ from odoo.tests import common
 
 
 class TestModelOrigin(common.TransactionCase):
-    def test_create_origin(self):
-
-        record = self.env["mgmtsystem.nonconformity.origin"].create(
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.record = cls.env["mgmtsystem.nonconformity.origin"].create(
             {"name": "TestOrigin"}
         )
+        cls.record2 = cls.env["mgmtsystem.nonconformity.origin"].create(
+            {"name": "test2", "parent_id": cls.record.id}
+        )
+        cls.record3 = cls.env["mgmtsystem.nonconformity.origin"].create(
+            {"name": "test3", "parent_id": cls.record2.id}
+        )
 
-        self.assertNotEqual(record.id, 0)
-        self.assertNotEqual(record.id, None)
+    def test_create_origin(self):
+        self.assertNotEqual(self.record.id, 0)
+        self.assertNotEqual(self.record.id, None)
 
     def test_name_get(self):
-
-        record = self.env["mgmtsystem.nonconformity.origin"].create(
-            {"name": "TestOrigin"}
-        )
-
-        name_assoc = record.name_get()
-
+        name_assoc = self.record.name_get()
         self.assertEqual(name_assoc[0][1], "TestOrigin")
-        self.assertEqual(name_assoc[0][0], record.id)
+        self.assertEqual(name_assoc[0][0], self.record.id)
 
-        record2 = self.env["mgmtsystem.nonconformity.origin"].create(
-            {"name": "test2", "parent_id": record.id}
-        )
-
-        name_assoc = record2.name_get()
-
+        name_assoc = self.record2.name_get()
         self.assertEqual(name_assoc[0][1], "TestOrigin / test2")
-        self.assertEqual(name_assoc[0][0], record2.id)
+        self.assertEqual(name_assoc[0][0], self.record2.id)
 
-        record3 = self.env["mgmtsystem.nonconformity.origin"].create(
-            {"name": "test3", "parent_id": record2.id}
-        )
-
-        name_assoc = record3.name_get()
-
+        name_assoc = self.record3.name_get()
         self.assertEqual(name_assoc[0][1], "TestOrigin / test2 / test3")
-        self.assertEqual(name_assoc[0][0], record3.id)
+        self.assertEqual(name_assoc[0][0], self.record3.id)
