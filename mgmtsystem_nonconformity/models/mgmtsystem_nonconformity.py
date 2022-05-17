@@ -25,7 +25,7 @@ class MgmtsystemNonconformity(models.Model):
         return stage_ids
 
     # 1. Description
-    name = fields.Char("Name")
+    name = fields.Char()
     ref = fields.Char("Reference", required=True, readonly=True, default="NEW")
     # Compute data
     number_of_nonconformities = fields.Integer(
@@ -40,7 +40,7 @@ class MgmtsystemNonconformity(models.Model):
         store=True,
         readonly=True,
     )
-    closing_date = fields.Datetime("Closing Date", readonly=True)
+    closing_date = fields.Datetime(readonly=True)
 
     partner_id = fields.Many2one("res.partner", "Partner", required=True)
     reference = fields.Char("Related to")
@@ -72,7 +72,7 @@ class MgmtsystemNonconformity(models.Model):
         "procedure_id",
         "Procedure",
     )
-    description = fields.Text("Description", required=True)
+    description = fields.Text(required=True)
     system_id = fields.Many2one("mgmtsystem.system", "System")
     stage_id = fields.Many2one(
         "mgmtsystem.nonconformity.stage",
@@ -89,7 +89,6 @@ class MgmtsystemNonconformity(models.Model):
             ("done", "Ready for next stage"),
             ("blocked", "Blocked"),
         ],
-        "Kanban State",
         default="normal",
         tracking=True,
         help="A kanban state indicates special situations affecting it:\n"
@@ -111,10 +110,9 @@ class MgmtsystemNonconformity(models.Model):
         "Cause",
     )
     severity_id = fields.Many2one("mgmtsystem.nonconformity.severity", "Severity")
-    analysis = fields.Text("Analysis")
+    analysis = fields.Text()
     immediate_action_id = fields.Many2one(
         "mgmtsystem.action",
-        "Immediate action",
         domain="[('nonconformity_ids', '=', id)]",
     )
 
@@ -132,7 +130,6 @@ class MgmtsystemNonconformity(models.Model):
 
     # 4. Effectiveness Evaluation
     evaluation_comments = fields.Text(
-        "Evaluation Comments",
         help="Conclusions from the last effectiveness evaluation.",
     )
 
