@@ -9,7 +9,7 @@
     "development_status": "Beta",
 
     "author":   "Associazione PNLUG - Gruppo Odoo, Odoo Community Association (OCA)",
-    "website":  "https://gitlab.com/PNLUG/Odoo/management-system-improvements/tree/"
+    "website":  "https://github.com/OCA/management-system"
                 "11.0/mgmtsystem_extended",
     "license":  "AGPL-3",
 

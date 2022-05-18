@@ -6,7 +6,7 @@
     'version': '12.0.1.0.0',
     'category': 'Management System',
     'author': "OpenERP SA, Odoo Community Association (OCA)",
-    'website': 'http://odoo.com',
+    'website': 'https://github.com/OCA/management-system',
     'license': 'AGPL-3',
     'depends': [
         'mgmtsystem_manual'
