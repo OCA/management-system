@@ -14,5 +14,5 @@
         "views/mgmtsystem_manual.xml",
         "views/document_page.xml",
     ],
-    "installable": True,
+    "development_status": "Production/Stable",
 }
