@@ -22,5 +22,5 @@
         "wizard/copy_verification_lines.xml",
     ],
     "demo": ["demo/demo_audit.xml"],
-    "installable": True,
+    "development_status": "Production/Stable",
 }
