@@ -1,14 +1,15 @@
 
 [![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=OCA/management-system&target_branch=14.0)
-[![Build Status](https://travis-ci.com/OCA/management-system.svg?branch=14.0)](https://travis-ci.com/OCA/management-system)
+[![Pre-commit Status](https://github.com/OCA/management-system/actions/workflows/pre-commit.yml/badge.svg?branch=14.0)](https://github.com/OCA/management-system/actions/workflows/pre-commit.yml?query=branch%3A14.0)
+[![Build Status](https://github.com/OCA/management-system/actions/workflows/test.yml/badge.svg?branch=14.0)](https://github.com/OCA/management-system/actions/workflows/test.yml?query=branch%3A14.0)
 [![codecov](https://codecov.io/gh/OCA/management-system/branch/14.0/graph/badge.svg)](https://codecov.io/gh/OCA/management-system)
 [![Translation Status](https://translation.odoo-community.org/widgets/management-system-14-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/management-system-14-0/?utm_source=widget)
 
 <!-- /!\ do not modify above this line -->
 
-# management-system
+# Management System
 
-TODO: add repo description.
+Odoo modules to support management systems
 
 <!-- /!\ do not modify below this line -->
 
