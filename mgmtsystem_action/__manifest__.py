@@ -23,5 +23,5 @@
         "views/menus.xml",
     ],
     "demo": ["demo/mgmtsystem_action.xml"],
-    "installable": True,
+    "development_status": "Production/Stable",
 }
