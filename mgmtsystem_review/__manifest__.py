@@ -18,5 +18,5 @@
         "report/review.xml",
         "report/report.xml",
     ],
-    "installable": True,
+    "development_status": "Production/Stable",
 }
