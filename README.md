@@ -30,6 +30,7 @@ addon | version | maintainers | summary
 [mgmtsystem_action](mgmtsystem_action/) | 15.0.1.0.0 |  | Management System - Action
 [mgmtsystem_claim](mgmtsystem_claim/) | 15.0.1.0.0 |  | Management System - Claim
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 15.0.1.0.0 |  | Hazard
+[mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 15.0.1.0.0 |  | Hazard Risk
 [mgmtsystem_manual](mgmtsystem_manual/) | 15.0.1.0.0 |  | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 15.0.1.0.0 |  | Management System - Nonconformity
 [mgmtsystem_review](mgmtsystem_review/) | 15.0.1.0.0 |  | Management System - Review
