@@ -9,14 +9,12 @@ class MgmtsystemReviewLine(models.Model):
     _description = "Review Line"
 
     name = fields.Char("Title", size=300, required=True)
-    type = fields.Selection(
-        [("action", "Action"), ("nonconformity", "Nonconformity")], "Type"
-    )
+    type = fields.Selection([("action", "Action"), ("nonconformity", "Nonconformity")])
     action_id = fields.Many2one("mgmtsystem.action", "Action", index=True)
     nonconformity_id = fields.Many2one(
         "mgmtsystem.nonconformity", "Nonconformity", index=True
     )
-    decision = fields.Text("Decision")
+    decision = fields.Text()
     review_id = fields.Many2one(
         "mgmtsystem.review", "Review", ondelete="cascade", index=True
     )
