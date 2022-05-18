@@ -12,4 +12,4 @@ class MgmtsystemHazardRiskComputation(models.Model):
         "res.company", "Company", required=True, default=lambda self: self.env.company
     )
     name = fields.Char("Computation Risk", size=50, required=True)
-    description = fields.Text("Description")
+    description = fields.Text()
