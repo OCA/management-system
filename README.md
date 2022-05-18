@@ -7,9 +7,9 @@
 
 <!-- /!\ do not modify above this line -->
 
-# management-system
+# Management System
 
-TODO: add repo description.
+Odoo modules to support management systems
 
 <!-- /!\ do not modify below this line -->
 
