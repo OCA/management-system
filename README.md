@@ -17,7 +17,31 @@ Odoo modules to support management systems
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[document_page_procedure](document_page_procedure/) | 12.0.1.0.0 |  | Document Management - Wiki - Procedures
+[document_page_quality_manual](document_page_quality_manual/) | 12.0.1.0.0 |  | Quality Manual
+[document_page_work_instruction](document_page_work_instruction/) | 12.0.1.0.0 |  | Document Management - Wiki - Work Instructions
+[mgmtsystem](mgmtsystem/) | 12.0.1.1.0 |  | Management System
+[mgmtsystem_action](mgmtsystem_action/) | 12.0.1.0.0 |  | Management System - Action
+[mgmtsystem_action_efficacy](mgmtsystem_action_efficacy/) | 12.0.1.0.0 |  | Add information on the application of the Action.
+[mgmtsystem_action_template](mgmtsystem_action_template/) | 12.0.1.1.0 |  | Add Template management for Actions.
+[mgmtsystem_audit](mgmtsystem_audit/) | 12.0.1.0.1 |  | Management System - Audit
+[mgmtsystem_hazard](mgmtsystem_hazard/) | 12.0.1.0.0 |  | Hazard
+[mgmtsystem_manual](mgmtsystem_manual/) | 12.0.1.1.0 |  | Management System - Manual
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 12.0.1.4.0 |  | Management System - Nonconformity
+[mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 12.0.1.0.0 |  | Bridge module between HR and Non Conformities
+[mgmtsystem_nonconformity_maintenance](mgmtsystem_nonconformity_maintenance/) | 12.0.1.0.0 |  | Bridge module between Maintenance and Non Conformities
+[mgmtsystem_nonconformity_mrp](mgmtsystem_nonconformity_mrp/) | 12.0.1.0.0 |  | Bridge module between MRP and Management System
+[mgmtsystem_nonconformity_product](mgmtsystem_nonconformity_product/) | 12.0.1.0.0 |  | Bridge module between Product and Management System.
+[mgmtsystem_nonconformity_project](mgmtsystem_nonconformity_project/) | 12.0.1.0.0 |  | Management System - Project
+[mgmtsystem_nonconformity_repair](mgmtsystem_nonconformity_repair/) | 12.0.1.0.0 |  | Bridge module between Repair and Non Conformities
+[mgmtsystem_partner](mgmtsystem_partner/) | 12.0.1.0.0 |  | Add Management System reference on Partner's Contacts.
+[mgmtsystem_quality](mgmtsystem_quality/) | 12.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Manage your quality management system
+[mgmtsystem_review](mgmtsystem_review/) | 12.0.1.0.0 |  | Management System - Review
+[mgmtsystem_survey](mgmtsystem_survey/) | 12.0.1.0.0 |  | Management System - Survey
 
 [//]: # (end addons)
 
