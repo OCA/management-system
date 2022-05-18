@@ -27,5 +27,5 @@
     "category": "Generic Modules/Others",
     "depends": ["document_page", "mgmtsystem"],
     "data": ["data/document_page.xml", "views/document_page.xml"],
-    "installable": True,
+    "development_status": "Production/Stable",
 }
