@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [document_page_procedure](document_page_procedure/) | 15.0.1.0.0 |  | Document Management - Wiki - Procedures
+[document_page_quality_manual](document_page_quality_manual/) | 15.0.1.0.0 |  | Quality Manual
 [mgmtsystem](mgmtsystem/) | 15.0.1.0.0 |  | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 15.0.1.0.0 |  | Management System - Action
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 15.0.1.0.0 |  | Hazard
