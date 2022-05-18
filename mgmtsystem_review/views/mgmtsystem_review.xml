@@ -8,7 +8,7 @@
         <field name="model">mgmtsystem.review.line</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="Review Lines">
+            <tree>
                 <field name="name" />
                 <field name="type" />
                 <field
@@ -80,7 +80,7 @@
         <field name="model">mgmtsystem.review</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="Reviews">
+            <tree>
                 <field name="name" attrs="{'readonly':[('state','=','done')]}" />
                 <field name="date" attrs="{'readonly':[('state','=','done')]}" />
                 <field name="reference" />

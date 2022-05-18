@@ -9,11 +9,9 @@ class MgmtsystemReview(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Review"
 
-    name = fields.Char("Name", size=50, required=True)
-    reference = fields.Char(
-        "Reference", size=64, required=True, readonly=True, default="NEW"
-    )
-    date = fields.Datetime("Date", required=True)
+    name = fields.Char(size=50, required=True)
+    reference = fields.Char(size=64, required=True, readonly=True, default="NEW")
+    date = fields.Datetime(required=True)
     user_ids = fields.Many2many(
         "res.users",
         "mgmtsystem_review_user_rel",
@@ -28,13 +26,12 @@ class MgmtsystemReview(models.Model):
         "mgmtsystem_review_id",
         "Survey Answers",
     )
-    policy = fields.Html("Policy")
-    changes = fields.Html("Changes")
+    policy = fields.Html()
+    changes = fields.Html()
     line_ids = fields.One2many("mgmtsystem.review.line", "review_id", "Lines")
-    conclusion = fields.Html("Conclusion")
+    conclusion = fields.Html()
     state = fields.Selection(
         [("open", "Open"), ("done", "Closed")],
-        "State",
         readonly=True,
         default="open",
         tracking=True,
