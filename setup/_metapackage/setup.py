@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo-addon-document_page_environmental_aspect>=15.0dev,<15.1dev',
         'odoo-addon-document_page_procedure>=15.0dev,<15.1dev',
         'odoo-addon-document_page_quality_manual>=15.0dev,<15.1dev',
+        'odoo-addon-document_page_work_instruction>=15.0dev,<15.1dev',
         'odoo-addon-mgmtsystem>=15.0dev,<15.1dev',
         'odoo-addon-mgmtsystem_action>=15.0dev,<15.1dev',
         'odoo-addon-mgmtsystem_claim>=15.0dev,<15.1dev',
