@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-management-system Odoo addons",
     version=version,
     install_requires=[
+        'odoo-addon-document_page_environmental_aspect>=15.0dev,<15.1dev',
         'odoo-addon-document_page_procedure>=15.0dev,<15.1dev',
         'odoo-addon-document_page_quality_manual>=15.0dev,<15.1dev',
         'odoo-addon-mgmtsystem>=15.0dev,<15.1dev',
