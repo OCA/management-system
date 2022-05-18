@@ -32,6 +32,7 @@ addon | version | maintainers | summary
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 15.0.1.0.0 |  | Hazard
 [mgmtsystem_manual](mgmtsystem_manual/) | 15.0.1.0.0 |  | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 15.0.1.0.0 |  | Management System - Nonconformity
+[mgmtsystem_survey](mgmtsystem_survey/) | 15.0.1.0.0 |  | Management System - Survey
 
 [//]: # (end addons)
 
