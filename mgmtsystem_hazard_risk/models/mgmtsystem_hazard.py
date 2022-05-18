@@ -8,10 +8,11 @@ from .common import _parse_risk_formula
 
 class MgmtsystemHazard(models.Model):
     _inherit = "mgmtsystem.hazard"
+
     risk_type_id = fields.Many2one(
         "mgmtsystem.hazard.risk.type", "Risk Type", required=True
     )
-    risk = fields.Integer(compute="_compute_risk", string="Risk")
+    risk = fields.Integer(compute="_compute_risk")
     residual_risk_ids = fields.One2many(
         "mgmtsystem.hazard.residual_risk", "hazard_id", "Residual Risk Evaluations"
     )

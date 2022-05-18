@@ -10,7 +10,7 @@ class MgmtsystemHazardResidualRisk(models.Model):
     _name = "mgmtsystem.hazard.residual_risk"
     _description = "Residual Risks of hazard"
 
-    name = fields.Char("Name", size=50, required=True, translate=True)
+    name = fields.Char(size=50, required=True, translate=True)
     probability_id = fields.Many2one(
         "mgmtsystem.hazard.probability", "Probability", required=True
     )
@@ -18,22 +18,23 @@ class MgmtsystemHazardResidualRisk(models.Model):
         "mgmtsystem.hazard.severity", "Severity", required=True
     )
     usage_id = fields.Many2one("mgmtsystem.hazard.usage", "Occupation / Usage")
-    acceptability = fields.Boolean("Acceptability")
-    justification = fields.Text("Justification")
+    acceptability = fields.Boolean()
+    justification = fields.Text()
     hazard_id = fields.Many2one(
         "mgmtsystem.hazard", "Hazard", ondelete="cascade", index=True
     )
 
     @api.depends("probability_id", "severity_id", "usage_id")
     def _compute_risk(self):
-        if self.probability_id and self.severity_id and self.usage_id:
-            self.risk = _parse_risk_formula(
-                self.env.company.risk_computation_id.name,
-                self.probability_id.value,
-                self.severity_id.value,
-                self.usage_id.value,
-            )
-        else:
-            self.risk = False
+        for record in self:
+            if record.probability_id and record.severity_id and record.usage_id:
+                record.risk = _parse_risk_formula(
+                    record.env.company.risk_computation_id.name,
+                    record.probability_id.value,
+                    record.severity_id.value,
+                    record.usage_id.value,
+                )
+            else:
+                record.risk = False
 
-    risk = fields.Integer("Risk", compute=_compute_risk)
+    risk = fields.Integer(compute=_compute_risk)

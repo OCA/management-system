@@ -12,4 +12,4 @@ class MgmtsystemHazardRiskType(models.Model):
         "res.company", "Company", required=True, default=lambda self: self.env.company
     )
     name = fields.Char("Risk Type", size=50, required=True, translate=True)
-    description = fields.Text("Description")
+    description = fields.Text()
