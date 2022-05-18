@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
   <data noupdate="1">
 
@@ -10,13 +10,17 @@
     </record>
 
     <record id="demo_corrective" model="mgmtsystem.action">
-      <field name="name">Explain Administrator to add comments to the procedure when making changes.</field>
+      <field
+                name="name"
+            >Explain Administrator to add comments to the procedure when making changes.</field>
       <field name="type_action">correction</field>
 
     </record>
 
     <record id="demo_preventive" model="mgmtsystem.action">
-      <field name="name">Explain in the new-employee training manual that they need to add comments to the procedure when making changes</field>
+      <field
+                name="name"
+            >Explain in the new-employee training manual that they need to add comments to the procedure when making changes</field>
       <field name="type_action">prevention</field>
 
     </record>

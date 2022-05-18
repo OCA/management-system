@@ -1,15 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <!-- Email template for Action Reminders -->
     <data noupdate="1">
         <record id="email_template_new_action_reminder" model="mail.template">
             <field name="name">Action Assigned</field>
-            <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost'}</field>
+            <field
+                name="email_from"
+            >${object.create_uid.company_id.email or 'noreply@localhost'}</field>
             <field name="subject">${object.name}</field>
             <field name="email_to">${object.user_id.email}</field>
-            <field name="model_id" ref="model_mgmtsystem_action"/>
-            <field name="auto_delete" eval="True"/>
+            <field name="model_id" ref="model_mgmtsystem_action" />
+            <field name="auto_delete" eval="True" />
             <field name="lang">${object.create_uid.partner_id.lang}</field>
             <field name="body_html">
                 <![CDATA[
@@ -32,11 +34,13 @@
         <!-- Email template for Action Reminders -->
         <record id="action_email_template_reminder_action" model="mail.template">
             <field name="name">Reminder to Responsible</field>
-            <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost'}</field>
+            <field
+                name="email_from"
+            >${object.create_uid.company_id.email or 'noreply@localhost'}</field>
             <field name="subject">Reminder on Action: "${object.name}"</field>
             <field name="email_to">${object.user_id.email}</field>
-            <field name="model_id" ref="model_mgmtsystem_action"/>
-            <field name="auto_delete" eval="True"/>
+            <field name="model_id" ref="model_mgmtsystem_action" />
+            <field name="auto_delete" eval="True" />
             <field name="lang">${object.create_uid.partner_id.lang}</field>
             <field name="body_html">
                 <![CDATA[
