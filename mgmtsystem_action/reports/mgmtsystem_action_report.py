@@ -1,3 +1,5 @@
+from psycopg2.extensions import AsIs
+
 from odoo import fields, models, tools
 
 
@@ -87,6 +89,7 @@ class MgmtsystemtActionReport(models.Model):
     def init(self):
         """Display a pivot view of action."""
         tools.drop_view_if_exists(self._cr, "mgmtsystem_action_report")
-        self.env.cr.execute(
-            "CREATE or REPLACE VIEW {} as ({})".format(self._table, self._query())
+        self._cr.execute(
+            "CREATE OR REPLACE VIEW %s AS (%s)",
+            (AsIs(self._table), AsIs(self._query())),
         )
