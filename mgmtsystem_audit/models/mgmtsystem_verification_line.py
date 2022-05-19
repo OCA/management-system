@@ -15,8 +15,8 @@ class MgmtsystemVerificationLine(models.Model):
     procedure_id = fields.Many2one(
         "document.page", "Procedure", ondelete="restrict", index=True
     )
-    is_conformed = fields.Boolean("Is conformed", default=False)
-    comments = fields.Text("Comments")
+    is_conformed = fields.Boolean(default=False)
+    comments = fields.Text()
     seq = fields.Integer("Sequence")
     company_id = fields.Many2one(
         "res.company", "Company", default=lambda self: self.env.company
