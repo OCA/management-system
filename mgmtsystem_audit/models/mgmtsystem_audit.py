@@ -10,46 +10,36 @@ class MgmtsystemAudit(models.Model):
 
     _name = "mgmtsystem.audit"
     _description = "Audit"
-    _inherit = ["mail.thread"]
-    name = fields.Char("Name")
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    reference = fields.Char(
-        "Reference", size=64, required=True, readonly=True, default="NEW"
-    )
-    date = fields.Datetime("Date")
+    name = fields.Char()
+    reference = fields.Char(size=64, required=True, readonly=True, default="NEW")
+    date = fields.Datetime()
     line_ids = fields.One2many(
         "mgmtsystem.verification.line", "audit_id", "Verification List"
     )
     number_of_audits = fields.Integer("# of audits", readonly=True, default=1)
     number_of_nonconformities = fields.Integer(
-        "Number of nonconformities",
-        readonly=True,
         store=True,
         compute="_compute_number_of_nonconformities",
     )
     number_of_questions_in_verification_list = fields.Integer(
-        "Number of questions in verification list",
-        readonly=True,
         store=True,
         compute="_compute_number_of_questions_in_verification_list",
     )
     number_of_improvements_opportunity = fields.Integer(
         "Number of improvements Opportunities",
-        readonly=True,
         store=True,
         compute="_compute_number_of_improvement_opportunities",
     )
     days_since_last_update = fields.Integer(
-        "Days since last update",
-        readonly=True,
         store=True,
         compute="_compute_days_since_last_update",
     )
-    closing_date = fields.Datetime("Closing Date", readonly=True)
+    closing_date = fields.Datetime(readonly=True)
 
     number_of_days_to_close = fields.Integer(
         "# of days to close",
-        readonly=True,
         store=True,
         compute="_compute_number_of_days_to_close",
     )
@@ -69,7 +59,7 @@ class MgmtsystemAudit(models.Model):
         "mgmtsystem_audit_id",
         "Auditees",
     )
-    strong_points = fields.Html("Strong Points")
+    strong_points = fields.Html()
     to_improve_points = fields.Html("Points To Improve")
     imp_opp_ids = fields.Many2many(
         "mgmtsystem.action",
@@ -83,7 +73,7 @@ class MgmtsystemAudit(models.Model):
         "mgmtsystem.nonconformity", string="Nonconformities"
     )
     state = fields.Selection(
-        [("open", "Open"), ("done", "Closed")], "State", default="open"
+        [("open", "Open"), ("done", "Closed")], default="open", required=True
     )
     system_id = fields.Many2one("mgmtsystem.system", "System")
     company_id = fields.Many2one(
