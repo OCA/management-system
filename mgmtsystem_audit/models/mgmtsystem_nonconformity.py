@@ -7,6 +7,6 @@ from odoo import fields, models
 class MgmtsystemNonconformity(models.Model):
     """Class use to add audit_ids association to MgmtsystemNonconformity."""
 
-    _name = "mgmtsystem.nonconformity"
     _inherit = "mgmtsystem.nonconformity"
+
     audit_ids = fields.Many2many("mgmtsystem.audit", string="Related Audits")
