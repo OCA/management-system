@@ -15,3 +15,4 @@
 * `Guadaltech <https://www.guadaltech.es>`_:
 
   * Fernando La Chica
+* Yvan Dotet <yvan.dotet@logicasoft.eu>
