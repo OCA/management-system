@@ -7,7 +7,7 @@ from odoo import fields, models
 
 class PartnerReference(models.Model):
     """
-    Extend res.partner with contact info for communications on quality
+    Add contact info for communications on quality
     """
 
     _inherit = ["res.partner"]
