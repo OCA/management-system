@@ -10,7 +10,7 @@ class PartnerReference(models.Model):
     Extend res.partner with contact info for communications on quality
     """
 
-    _inherit = ['res.partner']
+    _inherit = ["res.partner"]
 
     # type for manage quality contact
-    type = fields.Selection(selection_add=[('quality', 'Quality Address')])
+    type = fields.Selection(selection_add=[("quality", "Quality Address")])
