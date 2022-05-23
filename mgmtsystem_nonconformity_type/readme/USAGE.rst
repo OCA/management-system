@@ -6,7 +6,7 @@ NC Type
 
 NC Partner Quality E-mail
 
-* Go to Contacts 
+* Go to Contacts
 * Open a Partner
 * On tab Contacts & Adresses create/select a contact of type Quality Address
 * Go to Management System → Management System → Nonconformity
