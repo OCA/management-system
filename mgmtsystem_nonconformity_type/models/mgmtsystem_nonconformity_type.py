@@ -61,7 +61,6 @@ class MgmtsystemMgmEmail(models.Model):
     _inherit = ["mgmtsystem.nonconformity"]
 
     # new method
-    @api.multi
     def action_nc_sent(self):
         """
         send document to partner email
