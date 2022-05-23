@@ -27,6 +27,7 @@ setuptools.setup(
         'odoo13-addon-mgmtsystem_nonconformity_hr',
         'odoo13-addon-mgmtsystem_nonconformity_mrp',
         'odoo13-addon-mgmtsystem_nonconformity_product',
+        'odoo13-addon-mgmtsystem_partner',
         'odoo13-addon-mgmtsystem_quality',
         'odoo13-addon-mgmtsystem_review',
         'odoo13-addon-mgmtsystem_survey',
