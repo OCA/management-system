@@ -22,6 +22,7 @@ setuptools.setup(
         'odoo14-addon-mgmtsystem_manual',
         'odoo14-addon-mgmtsystem_nonconformity',
         'odoo14-addon-mgmtsystem_nonconformity_hr',
+        'odoo14-addon-mgmtsystem_nonconformity_mrp',
         'odoo14-addon-mgmtsystem_quality',
         'odoo14-addon-mgmtsystem_review',
         'odoo14-addon-mgmtsystem_survey',
