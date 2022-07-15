@@ -16,6 +16,7 @@ setuptools.setup(
         'odoo13-addon-document_page_work_instruction',
         'odoo13-addon-mgmtsystem',
         'odoo13-addon-mgmtsystem_action',
+        'odoo13-addon-mgmtsystem_action_efficacy',
         'odoo13-addon-mgmtsystem_action_template',
         'odoo13-addon-mgmtsystem_audit',
         'odoo13-addon-mgmtsystem_claim',
