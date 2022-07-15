@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 Marcelo Frare (Associazione PNLUG - Gruppo Odoo <http://odoo.pnlug.it>)
+     Copyright 2019 Stefano Consolaro (Associazione PNLUG - Gruppo Odoo <http://odoo.pnlug.it>)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl) -->
+<odoo>
+    <!-- inherit action form view
+            adding printable management, a new tab for efficacy -->
+    <record id="view_mgmtsystem_action_form" model="ir.ui.view">
+            <field name="name">view.mgmtsystem.action</field>
+            <field name="model">mgmtsystem.action</field>
+            <field
+            name="inherit_id"
+            ref="mgmtsystem_action.view_mgmtsystem_action_form"
+        />
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Efficacy">
+                        <group>
+                            <field name="efficacy_value" />
+                            <field name="efficacy_user_id" />
+                            <field name="efficacy_description" />
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+</odoo>
