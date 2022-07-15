@@ -139,7 +139,7 @@ class MgmtsystemAction(models.Model):
     def send_mail_for_action(self, action, force_send=True):
         template = self.env.ref(
             'mgmtsystem_action.email_template_new_action_reminder')
-        template.send_mail(action.id, force_send=force_send)
+        template.sudo().send_mail(action.id, force_send=force_send)
         return True
 
     def get_action_url(self):
