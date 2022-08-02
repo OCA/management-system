@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="verification_report">
+
+        <t
+            t-set="doc"
+            t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"
+        />
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="row" style="padding-top:10px">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <h3>
+                                <strong>Verification List</strong>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:10px">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <h3><strong t-field="doc.name" /></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:10px">
+                    <div class="col-3">
+                        Confidentiality:
+                    </div>
+                    <div class="col-9 pull-right">
+                        Internal
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        Reference:
+                    </div>
+                    <div class="col-9 pull-right">
+                        <span t-field="doc.reference" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        Date:
+                    </div>
+                    <div class="col-9 pull-right">
+                        <span t-field="doc.date" />
+                    </div>
+                </div>
+                <div class="row" style="padding-top:20px">
+                    <div class="col-12">
+                        <table class="table">
+                            <tr>
+                                <th>Auditors:</th>
+                                <th>Auditees:</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul style="padding-left:30px">
+                                        <t
+                                            t-foreach="doc.auditor_user_ids"
+                                            t-as="auditor"
+                                        >
+                                            <li><span t-field="auditor.name" /></li>
+                                        </t>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul style="padding-left:30px">
+                                        <t
+                                            t-foreach="doc.auditee_user_ids"
+                                            t-as="auditee"
+                                        >
+                                            <li><span t-field="auditee.name" /></li>
+                                        </t>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:20px">
+                    <div class="col-12">
+                        <table class="table">
+                            <tr>
+                                <th>Question</th>
+                                <th>Conformed?</th>
+                                <th>Comments</th>
+                            </tr>
+                            <t t-foreach="doc.get_lines_by_procedure()" t-as="line">
+                                <t t-if="line['procedure']">
+                                    <tr>
+                                        <td>
+                                            <span t-esc="line['procedure']" />
+                                        </td>
+                                        <td />
+                                        <td />
+                                    </tr>
+                                </t>
+                                <t t-if="not line['procedure']">
+                                    <tr>
+                                        <td>
+                                            <span t-esc="line['name']" />
+                                        </td>
+                                        <td>
+                                            <span t-esc="line['yes_no']" />
+                                        </td>
+                                        <td />
+                                    </tr>
+                                </t>
+                            </t>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
