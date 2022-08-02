@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* mgmtsystem_nonconformity_type
+# 	* mgmtsystem_nonconformity_type
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,7 +15,8 @@ msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
 #: model:mail.template,body_html:mgmtsystem_nonconformity_type.email_template_nonconformity
-msgid "\n"
+msgid ""
+"\n"
 "                \n"
 "                    <p>Dear ${object.quality_contact_name},<br/><br/>\n"
 "                    in attachment you have the Nonconformity report:<br/>\n"
@@ -35,7 +36,7 @@ msgid "Contact Name"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: selection:mgmtsystem.nonconformity,nc_type:0
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__customer
 msgid "Customer"
 msgstr ""
 
@@ -45,12 +46,12 @@ msgid "Email"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: selection:mgmtsystem.nonconformity,nc_type:0
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__external
 msgid "External"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: selection:mgmtsystem.nonconformity,nc_type:0
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__internal
 msgid "Internal"
 msgstr ""
 
@@ -80,25 +81,28 @@ msgid "Send by Email"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: selection:mgmtsystem.nonconformity,nc_type:0
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__supplier
 msgid "Supplier"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity_type.py:71
+#: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity_type.py:0
 #, python-format
-msgid "The partner's contacts quality type isn't available.\n"
+msgid ""
+"The partner's contacts quality type isn't available.\n"
 " Check if module mgmtsystem_nonconformity_partner is installed."
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity_type.py:94
+#: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity_type.py:0
+#: code:addons/mgmtsystem_nonconformity_type/tests/test_nonconformity_type.py:0
 #, python-format
-msgid "The partner's quality contact email is required in order to send the message."
+msgid ""
+"The partner's quality contact email is required in order to send the "
+"message."
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__nc_type
 msgid "Type"
 msgstr ""
-
