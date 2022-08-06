@@ -26,7 +26,6 @@ class MgmtsystemNonconformityStage(models.Model):
     state = fields.Selection(
         _STATES,
         'State',
-        readonly=True,
         default="draft",
     )
     is_starting = fields.Boolean(
