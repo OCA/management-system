@@ -298,7 +298,6 @@ msgid "Direction Review"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__display_name
@@ -374,11 +373,6 @@ msgid "Followers"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
@@ -400,6 +394,11 @@ msgid "Group By..."
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
 #: model_terms:ir.actions.act_window,help:mgmtsystem_nonconformity.action_report_mgmtsystem_nonconformity
 msgid ""
 "Have a general overview of all non conformities processed in the system by "
@@ -412,7 +411,6 @@ msgid "Human resource not available or inadequate"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__id
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__id
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__id
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__id
@@ -445,7 +443,7 @@ msgstr ""
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__immediate_action_id
-msgid "Immediate action"
+msgid "Immediate Action"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
@@ -500,7 +498,6 @@ msgid "Lack of expertise"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin____last_update
@@ -575,6 +572,11 @@ msgid "Name"
 msgstr "Namn"
 
 #. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr ""
@@ -590,14 +592,19 @@ msgid "Next Activity Type"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_report_mgmtsystem_nonconformity_graph
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_report_mgmtsystem_nonconformity_pivot
-msgid "Non conformity"
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_abstract__non_conformity_ids
+msgid "Non Conformity"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_tree
-msgid "Non-Conformities"
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_abstract__non_conformity_count
+msgid "Non Conformity Count"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_report_mgmtsystem_nonconformity_graph
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_report_mgmtsystem_nonconformity_pivot
+msgid "Non conformity"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
@@ -622,6 +629,11 @@ msgstr ""
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity
 msgid "Nonconformity"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_abstract
+msgid "Nonconformity Abstract"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
@@ -775,6 +787,16 @@ msgid "Related to"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__res_id
+msgid "Res"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__res_model
+msgid "Res Model"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__responsible_user_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Responsible"
@@ -825,7 +847,6 @@ msgstr ""
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.mgmtsystem_nonconformity_stage_action
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_nonconformity_stages
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.mgmtsystem_nonconformity_stage_tree_view
 msgid "Stages"
 msgstr ""
 
