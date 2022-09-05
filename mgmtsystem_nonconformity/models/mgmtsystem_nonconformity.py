@@ -137,6 +137,8 @@ class MgmtsystemNonconformity(models.Model):
     company_id = fields.Many2one(
         "res.company", "Company", default=lambda self: self.env.company
     )
+    res_model = fields.Char()
+    res_id = fields.Integer(index=True)
 
     def _get_all_actions(self):
         self.ensure_one()
