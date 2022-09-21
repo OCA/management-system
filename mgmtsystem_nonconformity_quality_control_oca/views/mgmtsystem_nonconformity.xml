@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="mgmtsystem_nonconformity_form_view">
+        <field
+            name="name"
+        >mgmtsystem.nonconformity.form (in mgmtsystem_nonconformity_quality_control_oca)</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field
+            name="inherit_id"
+            ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"
+        />
+        <field name="arch" type="xml">
+            <field name="system_id" position="after">
+                <field name="qc_inspection_id" />
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_nonconformity_tree_view">
+        <field
+            name="name"
+        >mgmtsystem.nonconformity.tree (in mgmtsystem_nonconformity_quality_control_oca)</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field
+            name="inherit_id"
+            ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_tree"
+        />
+        <field name="arch" type="xml">
+            <field name="system_id" position="after">
+                <field name="qc_inspection_id" />
+            </field>
+        </field>
+    </record>
+
+</odoo>
