@@ -23,6 +23,7 @@ setuptools.setup(
         'odoo13-addon-mgmtsystem_environment',
         'odoo13-addon-mgmtsystem_hazard',
         'odoo13-addon-mgmtsystem_hazard_risk',
+        'odoo13-addon-mgmtsystem_health_safety',
         'odoo13-addon-mgmtsystem_info_security_manual',
         'odoo13-addon-mgmtsystem_manual',
         'odoo13-addon-mgmtsystem_nonconformity',
