@@ -15,3 +15,7 @@
 * `Guadaltech <https://www.guadaltech.es>`_:
 
   * Fernando La Chica
+
+* `Punt Sistemes <https://www.puntsistemes.es>`_:
+
+  * Isaac Gallart <igallart@puntsistemes.es>
