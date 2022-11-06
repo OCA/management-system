@@ -4,7 +4,7 @@
 {
     "name": "Management System - Action Template",
     "summary": "Add Template management for Actions.",
-    "version": "13.0.1.1.0",
+    "version": "14.0.1.1.0",
     "author": "Associazione PNLUG - Gruppo Odoo, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
