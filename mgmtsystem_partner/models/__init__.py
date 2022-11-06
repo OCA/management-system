@@ -1,2 +1,1 @@
-
-from . import mgmtsystem_partner
+from . import res_partner
