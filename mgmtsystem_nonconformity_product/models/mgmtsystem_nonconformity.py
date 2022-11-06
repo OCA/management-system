@@ -4,7 +4,7 @@
 from odoo import fields, models
 
 
-class MgmtsystemMgmProduct(models.Model):
+class MgmtsystemNonconformity(models.Model):
     """
     Extend nonconformity adding fields for product
     """
