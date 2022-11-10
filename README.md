@@ -28,6 +28,7 @@ addon | version | maintainers | summary
 [document_page_work_instruction](document_page_work_instruction/) | 14.0.1.0.0 |  | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 14.0.1.0.0 |  | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 14.0.1.0.2 |  | Management System - Action
+[mgmtsystem_action_efficacy](mgmtsystem_action_efficacy/) | 14.0.1.0.0 |  | Add information on the application of the Action.
 [mgmtsystem_audit](mgmtsystem_audit/) | 14.0.1.0.0 |  | Management System - Audit
 [mgmtsystem_claim](mgmtsystem_claim/) | 14.0.1.0.0 |  | Management System - Claim
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 14.0.1.0.1 |  | Hazard
