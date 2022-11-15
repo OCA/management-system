@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-06 12:11+0000\n"
-"PO-Revision-Date: 2020-12-06 13:19+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2022-11-15 19:44+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: \n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: mgmtsystem_action_template
 #: model:ir.model,name:mgmtsystem_action_template.model_mgmtsystem_action
@@ -35,17 +35,17 @@ msgstr "Modelli azione"
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creato da"
 
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creato il"
 
 #. module: mgmtsystem_action_template
 #: model:ir.model,name:mgmtsystem_action_template.model_mgmtsystem_action_template
 msgid "Define fields to save action template values"
-msgstr ""
+msgstr "Definire i campi per salvare i valori modello azione"
 
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__description
@@ -56,7 +56,7 @@ msgstr "Descrizione"
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,help:mgmtsystem_action_template.field_mgmtsystem_action__template_id
@@ -66,27 +66,27 @@ msgstr "Compilare i campi dell'azione con i valori del modello"
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultimo aggiornamento di"
 
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultimo aggiornamento il"
 
 #. module: mgmtsystem_action_template
 #: model:ir.actions.act_window,name:mgmtsystem_action_template.mgmtsystem_action_template_act_window
 msgid "Mgmtsystem Action Template"
-msgstr ""
+msgstr "Modello azione sistema di gestione"
 
 #. module: mgmtsystem_action_template
 #: code:addons/mgmtsystem_action_template/models/mgmtsystem_action_template.py:44
@@ -97,7 +97,7 @@ msgstr "NUOVA"
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__name
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action__template_id
@@ -107,17 +107,17 @@ msgstr "Modello di riferimento"
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__type_action
 msgid "Response Type"
-msgstr ""
+msgstr "Tipo risposta"
 
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__user_id
 msgid "Responsible"
-msgstr ""
+msgstr "Responsabile"
 
 #. module: mgmtsystem_action_template
 #: model:ir.model.fields,field_description:mgmtsystem_action_template.field_mgmtsystem_action_template__tag_ids
 msgid "Tags"
-msgstr ""
+msgstr "Etichette"
 
 #. module: mgmtsystem_action_template
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action_template.mgmtsystem_action_template_form_view
