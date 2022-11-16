@@ -9,49 +9,50 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-15 04:39+0000\n"
-"PO-Revision-Date: 2017-07-15 04:39+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2022-11-16 14:44+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__acceptability
 msgid "Acceptability"
-msgstr ""
+msgstr "Accettabilità"
 
 #. module: mgmtsystem_hazard
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_filter
 msgid "Accepted"
-msgstr ""
+msgstr "Accettato"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Richiesta un'azione"
 
 #. module: mgmtsystem_hazard
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_form
 msgid "Analysis"
-msgstr ""
+msgstr "Analisi"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Conteggio allegati"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_breakage
 msgid "Breakage"
-msgstr ""
+msgstr "Danni"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__comments
 msgid "Comments"
-msgstr ""
+msgstr "Commenti"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__company_id
@@ -61,18 +62,18 @@ msgstr "Azienda"
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_containment
 msgid "Containment Failure"
-msgstr ""
+msgstr "Guasto contenimento"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__name
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_control_measure_form
 msgid "Control Measure"
-msgstr ""
+msgstr "Misura di controllo"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_control_measure
 msgid "Control Measure of hazard"
-msgstr ""
+msgstr "Misura di controllo del pericolo"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_control_measure_list
@@ -81,7 +82,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_control_measure_tree
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_form
 msgid "Control Measures"
-msgstr ""
+msgstr "Misure di controllo"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__create_uid
@@ -112,7 +113,7 @@ msgstr "Creato il"
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_critical
 msgid "Critical"
-msgstr ""
+msgstr "Critico"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__analysis_date
@@ -122,7 +123,7 @@ msgstr "Data"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__department_id
 msgid "Department"
-msgstr ""
+msgstr "Reparto"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__description
@@ -150,57 +151,57 @@ msgstr "Nome da visualizzare"
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ems_action
 msgid "EMS - Action"
-msgstr ""
+msgstr "EMS - Azione"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ems_position
 msgid "EMS - Position"
-msgstr ""
+msgstr "EMS - Posizione"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_electric_bilge
 msgid "Electric Bilge"
-msgstr ""
+msgstr "Sentina elettrica"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__executed
 msgid "Executed"
-msgstr ""
+msgstr "Eseguito"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_exposure
 msgid "Exposure to Hazardous Materials"
-msgstr ""
+msgstr "Esposizione a materiali pericolosi"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_fire_explosion
 msgid "Fire / Explosion"
-msgstr ""
+msgstr "Fiamme / Esplosione"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Iscritti"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Iscritti (canali)"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Iscritti (partner)"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_leak
 msgid "Gas Leak"
-msgstr ""
+msgstr "Perdita di gas"
 
 #. module: mgmtsystem_hazard
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_filter
 msgid "Group By..."
-msgstr ""
+msgstr "Raggruppa per..."
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_hazard
@@ -212,29 +213,29 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_form
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_tree
 msgid "Hazard"
-msgstr ""
+msgstr "Pericolo"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_mgmtsystem_configuration_hazards
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard
 msgid "Hazards"
-msgstr ""
+msgstr "Pericoli"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard
 msgid "Hazards of the health and safety management system"
-msgstr ""
+msgstr "Pericoli del sistema di gestione salute e sicurezza"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_heavy
 msgid "Heavy"
-msgstr ""
+msgstr "Pesante"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_high
 msgid "High"
-msgstr ""
+msgstr "Alto"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__id
@@ -252,27 +253,27 @@ msgstr "ID"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Se attivo, nuovi messaggi richiedono attenzione."
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Se attivo, nuovi messagi richiedono attenzione."
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Se attivo, alcuni messaggi hanno un errore di consegna."
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_ignition_gas
 msgid "Ignition of Flammable Gas"
-msgstr ""
+msgstr "Innesco di gas infiammagile"
 
 #. module: mgmtsystem_hazard
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_test_form
 msgid "Implementation Test"
-msgstr ""
+msgstr "Test implementazione"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_test_list
@@ -281,27 +282,27 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_test_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_test_tree
 msgid "Implementation Tests"
-msgstr ""
+msgstr "Test implementazione"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_test
 msgid "Implementation Tests of hazard"
-msgstr ""
+msgstr "Test implementazione del pericolo"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_intoxication
 msgid "Intoxication"
-msgstr ""
+msgstr "Intossicazione"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "È iscritto"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__justification
 msgid "Justification"
-msgstr ""
+msgstr "Giustificazione"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard____last_update
@@ -346,38 +347,38 @@ msgstr "Ultimo aggiornamento il"
 #: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_low
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_low
 msgid "Low"
-msgstr ""
+msgstr "Basso"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Allegato principale"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_aging
 msgid "Materials Aging"
-msgstr ""
+msgstr "Invecchiamento materiali"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_maybe
 msgid "Maybe"
-msgstr ""
+msgstr "Probabile"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_medium
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_medium
 msgid "Medium"
-msgstr ""
+msgstr "Medio"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Errore consegna messaggio"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Messaggi"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__name
@@ -387,44 +388,44 @@ msgstr "Nome"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Numero di azioni"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error_counter
 msgid "Number of error"
-msgstr ""
+msgstr "Numero di errori"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Numero di messaggi che richiedono un'azione"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Numero di messaggi con errore di consegna"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Numero di messaggi non letti"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ohsas_action
 msgid "OHSAS - Action"
-msgstr ""
+msgstr "OHSAS - Azione"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ohsas_position
 msgid "OHSAS - Position"
-msgstr ""
+msgstr "OHSAS - Posizione"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__usage_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__name
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_usage_form
 msgid "Occupation / Usage"
-msgstr ""
+msgstr "Impiego / Utilizzo"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_usage_list
@@ -432,19 +433,19 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_usage_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_usage_tree
 msgid "Occupations / Usages"
-msgstr ""
+msgstr "Impieghi / Utilizzi"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__origin_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin__name
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_origin_form
 msgid "Origin"
-msgstr ""
+msgstr "Origine"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_origin
 msgid "Origin of hazard"
-msgstr ""
+msgstr "Origine del pericolo"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_origin_list
@@ -452,12 +453,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_origin_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_origin_tree
 msgid "Origins"
-msgstr ""
+msgstr "Origini"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_panic
 msgid "Panic"
-msgstr ""
+msgstr "Panico"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_probability_list
@@ -465,36 +466,36 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_probability_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_probability_tree
 msgid "Probabilities"
-msgstr ""
+msgstr "Probabilità"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__probability_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__name
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_probability_form
 msgid "Probability"
-msgstr ""
+msgstr "Probabilità"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_probability
 msgid "Probability of hazard"
-msgstr ""
+msgstr "Probabilità del pericolo"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_probably
 msgid "Probably"
-msgstr ""
+msgstr "Probabilmente"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__responsible_user_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__responsible_user_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__responsible_user_id
 msgid "Responsible"
-msgstr ""
+msgstr "Responsabile"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__review_date
 msgid "Review Date"
-msgstr ""
+msgstr "Data revisione"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_severity_list
@@ -502,34 +503,34 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_severity_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_severity_tree
 msgid "Severities"
-msgstr ""
+msgstr "Gravità"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__severity_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__name
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_severity_form
 msgid "Severity"
-msgstr ""
+msgstr "Gravità"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_severity
 msgid "Severity of hazard"
-msgstr ""
+msgstr "Gravità del pericolo"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_simple
 msgid "Simple"
-msgstr ""
+msgstr "Semplice"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_spilling
 msgid "Spilling"
-msgstr ""
+msgstr "Rovesciare"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__name
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__type_id
@@ -542,7 +543,7 @@ msgstr "Tipo"
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_type
 msgid "Type of Hazard"
-msgstr ""
+msgstr "Tipo di rischio"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_type_list
@@ -550,51 +551,51 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_type_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_type_tree
 msgid "Types"
-msgstr ""
+msgstr "Tipi"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Messaggi non letti"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Contatore messaggi non letti"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_usage
 msgid "Usage of hazard"
-msgstr ""
+msgstr "Utilizzo del pericolo"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__value
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__value
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__value
 msgid "Value"
-msgstr ""
+msgstr "Valore"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_very_high
 msgid "Very High"
-msgstr ""
+msgstr "Molto alto"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_very_likely
 msgid "Very likely"
-msgstr ""
+msgstr "Molto probabile"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_very_low
 msgid "Very low"
-msgstr ""
+msgstr "Molto basso"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Messaggi sito web"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Storico comunicazioni sito web"
