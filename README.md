@@ -7,7 +7,7 @@
 
 <!-- /!\ do not modify above this line -->
 
-# Management System
+# Management Systems
 
 Odoo modules to support management systems
 
