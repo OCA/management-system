@@ -6,53 +6,57 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2022-11-16 14:44+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: mgmtsystem_partner
 #: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_partner__type
 #: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_users__type
 msgid "Address Type"
-msgstr ""
+msgstr "Tipo indirizzo"
 
 #. module: mgmtsystem_partner
 #: model:ir.model,name:mgmtsystem_partner.model_res_partner
 #: selection:res.partner,type:0
 msgid "Contact"
-msgstr ""
+msgstr "Contatto"
 
 #. module: mgmtsystem_partner
 #: selection:res.partner,type:0
 msgid "Invoice address"
-msgstr ""
+msgstr "Indirizzo fattura"
 
 #. module: mgmtsystem_partner
 #: selection:res.partner,type:0
 msgid "Other address"
-msgstr ""
+msgstr "Altri indirizzi"
 
 #. module: mgmtsystem_partner
 #: selection:res.partner,type:0
 msgid "Private Address"
-msgstr ""
+msgstr "Indirizzi privati"
 
 #. module: mgmtsystem_partner
 #: selection:res.partner,type:0
 msgid "Quality Address"
-msgstr ""
+msgstr "Indirizzi qualità"
 
 #. module: mgmtsystem_partner
 #: selection:res.partner,type:0
 msgid "Shipping address"
-msgstr ""
+msgstr "Indirizzi spedizione"
 
 #. module: mgmtsystem_partner
 #: model:ir.model.fields,help:mgmtsystem_partner.field_res_partner__type
 #: model:ir.model.fields,help:mgmtsystem_partner.field_res_users__type
 msgid "Used by Sales and Purchase Apps to select the relevant address depending on the context."
 msgstr ""
+"Utilizzado alle app Vendite e Acquisti per selezionare l'indirizzo utile in "
+"funzione del contesto."
