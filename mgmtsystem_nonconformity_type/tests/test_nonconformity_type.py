@@ -37,8 +37,18 @@ class TestModelNonConformity(TransactionCase):
         partner_child.type = "quality"
         partner_child.email = "quality@example.com"
         self.nc.partner_id = partner.id
-
         self.assertEqual(True, self.nc.action_nc_sent())
+
+        test_module = True
+        with self.assertRaises(ValidationError) as e:
+            self.assertEqual(True, self.nc.action_nc_sent(test_module))
+        self.assertIn(
+            _(
+                "The partner's contacts quality type isn't available.\n "
+                "Check if module mgmtsystem_nonconformity_partner is installed."
+            ),
+            str(e.exception),
+        )
 
         partner_child.type = "quality"
         partner_child.email = ""
