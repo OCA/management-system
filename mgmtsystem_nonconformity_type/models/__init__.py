@@ -1,1 +1,1 @@
-from . import mgmtsystem_nonconformity_type
+from . import mgmtsystem_nonconformity

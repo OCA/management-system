@@ -3,10 +3,11 @@
 from odoo import _, api, fields, models
 
 
-class MgmtsystemMgmType(models.Model):
+class MgmtsystemNonconformity(models.Model):
     """
     Extend nonconformity adding fields for type,
-    quantity checked and quantity non compliant
+    quantity checked and quantity non compliant,
+    adding method to send email
     """
 
     _inherit = ["mgmtsystem.nonconformity"]
@@ -52,28 +53,23 @@ class MgmtsystemMgmType(models.Model):
         if self.qty_checked < self.qty_noncompliant:
             self.qty_noncompliant = self.qty_checked
 
-
-class MgmtsystemMgmEmail(models.Model):
-    """
-    Extend nonconformity adding method to send email
-    """
-
-    _inherit = ["mgmtsystem.nonconformity"]
-
     # new method
-    def action_nc_sent(self):
+    def action_nc_sent(self, test_module=False):
         """
         send document to partner email
         if address not exists raises an error message
+        todo: use a better way to test module availability
         """
-        if "quality" not in self.env["res.partner"]._fields["type"].get_values([]):
+        if (
+            "quality" not in self.env["res.partner"]._fields["type"].get_values([])
+            or test_module
+        ):
             # raise an error for module not installed
-            raise models.ValidationError(
-                _(
-                    "The partner's contacts quality type isn't available.\n "
-                    "Check if module mgmtsystem_nonconformity_partner is installed."
-                )
+            message = _(
+                "The partner's contacts quality type isn't available.\n "
+                "Check if module mgmtsystem_nonconformity_partner is installed."
             )
+            raise models.ValidationError(message)
 
         # get first contact of type quality
         contact_quality = self.partner_id["child_ids"].search(
