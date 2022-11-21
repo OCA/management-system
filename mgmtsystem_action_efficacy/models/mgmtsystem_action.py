@@ -6,7 +6,7 @@ from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
-class MgmtsystemMgmEfficacy(models.Model):
+class MgmtsystemAction(models.Model):
     """
     Extend actions adding fields for record efficacy informations with changes tracking
     """
