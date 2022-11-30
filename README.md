@@ -37,6 +37,7 @@ addon | version | maintainers | summary
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 15.0.1.1.0 |  | Management System - Nonconformity
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 15.0.1.0.0 |  | Bridge module between hr and mgmsystem and
 [mgmtsystem_nonconformity_mrp](mgmtsystem_nonconformity_mrp/) | 15.0.1.0.0 |  | Bridge module between mrp and mgmsystem
+[mgmtsystem_partner](mgmtsystem_partner/) | 15.0.1.0.0 |  | Add Management System reference on Partner's Contacts.
 [mgmtsystem_quality](mgmtsystem_quality/) | 15.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Manage your quality management system
 [mgmtsystem_review](mgmtsystem_review/) | 15.0.1.0.0 |  | Management System - Review
 [mgmtsystem_survey](mgmtsystem_survey/) | 15.0.1.0.0 |  | Management System - Survey
