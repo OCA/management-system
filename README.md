@@ -40,6 +40,7 @@ addon | version | maintainers | summary
 [mgmtsystem_nonconformity_mrp](mgmtsystem_nonconformity_mrp/) | 14.0.1.0.0 |  | Bridge module between mrp and mgmsystem
 [mgmtsystem_nonconformity_product](mgmtsystem_nonconformity_product/) | 14.0.1.0.0 |  | Bridge module between Product and Management System.
 [mgmtsystem_nonconformity_quality_control_oca](mgmtsystem_nonconformity_quality_control_oca/) | 14.0.1.0.0 |  | Bridge module between Quality Control and Non Conformities
+[mgmtsystem_nonconformity_type](mgmtsystem_nonconformity_type/) | 14.0.1.0.0 |  | Add Nonconformity classification for the root context.
 [mgmtsystem_partner](mgmtsystem_partner/) | 14.0.1.0.0 |  | Add Management System reference on Partner's Contacts.
 [mgmtsystem_quality](mgmtsystem_quality/) | 14.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Manage your quality management system
 [mgmtsystem_review](mgmtsystem_review/) | 14.0.1.1.0 |  | Management System - Review
