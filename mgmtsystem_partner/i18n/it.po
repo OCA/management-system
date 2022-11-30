@@ -28,31 +28,25 @@ msgid "Contact"
 msgstr "Contatto"
 
 #. module: mgmtsystem_partner
-#: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_partner__display_name
-msgid "Display Name"
-msgstr "Nome visualizzato"
-
-#. module: mgmtsystem_partner
-#: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_partner__id
-msgid "ID"
-msgstr "ID"
-
-#. module: mgmtsystem_partner
 #: model:ir.model.fields,help:mgmtsystem_partner.field_res_partner__type
 #: model:ir.model.fields,help:mgmtsystem_partner.field_res_users__type
 msgid ""
-"Invoice & Delivery addresses are used in sales orders. Private addresses are"
-" only visible by authorized users."
+"Invoice & Delivery addresses are used in sales orders. Private addresses are "
+"only visible by authorized users."
 msgstr ""
 "Gli indirizzi di fatturazione e consegna sono usati negli ordini di vendita. "
 "Gli indirizzi privati sono visibili solo agli utenti autorizzati."
 
 #. module: mgmtsystem_partner
-#: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_partner____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
-
-#. module: mgmtsystem_partner
 #: model:ir.model.fields.selection,name:mgmtsystem_partner.selection__res_partner__type__quality
 msgid "Quality Address"
 msgstr "Indirizzo qualità"
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
