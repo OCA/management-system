@@ -28,29 +28,14 @@ msgid "Action"
 msgstr "Azione"
 
 #. module: mgmtsystem_action_efficacy
-#: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__display_name
-msgid "Display Name"
-msgstr "Nome visualizzato"
-
-#. module: mgmtsystem_action_efficacy
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action_efficacy.view_mgmtsystem_action_form
 msgid "Efficacy"
 msgstr "Efficace"
 
 #. module: mgmtsystem_action_efficacy
-#: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__id
-msgid "ID"
-msgstr "ID"
-
-#. module: mgmtsystem_action_efficacy
 #: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_user_id
 msgid "Inspector"
 msgstr "Ispettore"
-
-#. module: mgmtsystem_action_efficacy
-#: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
 
 #. module: mgmtsystem_action_efficacy
 #: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_description
@@ -63,8 +48,17 @@ msgid "Rating"
 msgstr "Valutazione"
 
 #. module: mgmtsystem_action_efficacy
-#: code:addons/mgmtsystem_action_efficacy/models/mgmtsystem_action_efficacy.py:0
+#: code:addons/mgmtsystem_action_efficacy/models/mgmtsystem_action.py:0
 #: code:addons/mgmtsystem_action_efficacy/tests/test_efficacy.py:0
 #, python-format
 msgid "Rating must be between 0 and 100"
 msgstr "La valutazione deve essere tra 0 e 100"
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
