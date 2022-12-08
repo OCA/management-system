@@ -19,13 +19,12 @@
 ##############################################################################
 {
     "name": "Document Management - Wiki - Environment Manual",
-    "version": "15.0.1.0.0",
+    "version": "16.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
     "depends": ["mgmtsystem_manual"],
     "data": ["data/document_page_environment_manual.xml"],
-    "demo": [],
     "installable": True,
 }
