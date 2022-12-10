@@ -23,10 +23,17 @@ class TestModelNonConformity(TransactionCase):
         self.nc["qty_noncompliant"] = 150
         self.nc._onchange_qty_noncompliant()
         self.assertEqual(self.nc["qty_noncompliant"] == self.nc["qty_checked"], True)
+        self.nc["qty_noncompliant"] = 50
+        self.nc._onchange_qty_noncompliant()
+        self.assertEqual(self.nc["qty_checked"] == 150, True)
 
+        self.nc["qty_noncompliant"] = 150
         self.nc["qty_checked"] = 50
         self.nc._onchange_qty_checked()
         self.assertEqual(self.nc["qty_noncompliant"] == self.nc["qty_checked"], True)
+        self.nc["qty_checked"] = 200
+        self.nc._onchange_qty_checked()
+        self.assertEqual(self.nc["qty_noncompliant"] == 50, True)
 
     def test_nc_email(self):
         """
