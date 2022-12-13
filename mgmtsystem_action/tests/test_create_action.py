@@ -1,7 +1,6 @@
 import time
 from datetime import datetime, timedelta
-
-import mock
+from unittest import mock
 
 from odoo import exceptions
 from odoo.tests import common
@@ -13,7 +12,7 @@ def freeze_time(dt):
     return mock_time
 
 
-class TestModelAction(common.SavepointCase):
+class TestModelAction(common.TransactionCase):
     """Test class for mgmtsystem_action."""
 
     @classmethod
