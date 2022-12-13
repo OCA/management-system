@@ -300,7 +300,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.actions.server,name:mgmtsystem_action.ir_cron_mgmtsystem_action_reminder_ir_actions_server
 #: model:ir.cron,cron_name:mgmtsystem_action.ir_cron_mgmtsystem_action_reminder
-#: model:ir.cron,name:mgmtsystem_action.ir_cron_mgmtsystem_action_reminder
 msgid "Email Action Reminders 10 days before due date."
 msgstr ""
 
@@ -381,7 +380,6 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_needaction
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
@@ -497,14 +495,10 @@ msgid "Name"
 msgstr ""
 
 #. module: mgmtsystem_action
+#. odoo-python
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #, python-format
 msgid "New"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -546,12 +540,6 @@ msgstr ""
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_unread_counter
-#, fuzzy
-msgid "Number of unread messages"
-msgstr "Mensagens não lidas"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__date_open
@@ -707,16 +695,9 @@ msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_unread
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Unread Messages"
-msgstr "Mensagens não lidas"
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_unread_counter
-#, fuzzy
-msgid "Unread Messages Counter"
 msgstr "Mensagens não lidas"
 
 #. module: mgmtsystem_action
@@ -726,20 +707,10 @@ msgid "User"
 msgstr ""
 
 #. module: mgmtsystem_action
+#. odoo-python
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #, python-format
 msgid "We cannot bring back the action to draft stage"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-#, fuzzy
-msgid "Website Messages"
-msgstr "Mensagens não lidas"
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-msgid "Website communication history"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -751,3 +722,15 @@ msgstr ""
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "{{object.name}}"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Number of unread messages"
+#~ msgstr "Mensagens não lidas"
+
+#, fuzzy
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Mensagens não lidas"
+
+#, fuzzy
+#~ msgid "Website Messages"
+#~ msgstr "Mensagens não lidas"
