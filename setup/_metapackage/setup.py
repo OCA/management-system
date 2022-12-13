@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo-addon-mgmtsystem>=16.0dev,<16.1dev',
+        'odoo-addon-mgmtsystem_action>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem_manual>=16.0dev,<16.1dev',
     ],
     classifiers=[
