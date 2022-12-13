@@ -21,6 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[document_page_environmental_aspect](document_page_environmental_aspect/) | 16.0.1.0.0 |  | Environmental Aspects
 [mgmtsystem](mgmtsystem/) | 16.0.1.0.0 |  | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 16.0.1.0.0 |  | Management System - Action
 [mgmtsystem_manual](mgmtsystem_manual/) | 16.0.1.0.0 |  | Management System - Manual
