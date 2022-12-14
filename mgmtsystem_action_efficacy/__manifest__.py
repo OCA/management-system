@@ -5,7 +5,7 @@
 {
     "name": "Management System - Action Efficacy",
     "summary": "Add information on the application of the Action.",
-    "version": "15.0.1.0.0",
+    "version": "16.0.1.0.0",
     "development_status": "Beta",
     "author": "Associazione PNLUG - Gruppo Odoo, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
