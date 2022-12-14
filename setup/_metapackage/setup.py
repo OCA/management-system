@@ -17,6 +17,7 @@ setuptools.setup(
         'odoo-addon-mgmtsystem_action>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem_manual>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem_nonconformity>=16.0dev,<16.1dev',
+        'odoo-addon-mgmtsystem_survey>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
