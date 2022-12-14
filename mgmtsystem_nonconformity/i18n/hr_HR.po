@@ -51,6 +51,7 @@ msgid "Action Needed"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#. odoo-python
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:0
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity_stage__state__pending
 #: model:mgmtsystem.nonconformity.stage,name:mgmtsystem_nonconformity.stage_pending
@@ -66,6 +67,7 @@ msgid "Action Plan Comments"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#. odoo-python
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:0
 #, python-format
 msgid ""
@@ -115,12 +117,14 @@ msgid "Add a description ..."
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#. odoo-python
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:0
 #, python-format
 msgid "All actions must be done before closing a Nonconformity."
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#. odoo-python
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:0
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__analysis
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity_stage__state__analysis
@@ -174,6 +178,7 @@ msgid "Blocked"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#. odoo-python
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:0
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity_stage__state__cancel
 #: model:mgmtsystem.nonconformity.stage,name:mgmtsystem_nonconformity.stage_cancel
@@ -221,6 +226,7 @@ msgid "Childs"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#. odoo-python
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:0
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity_stage__state__done
 #: model:mgmtsystem.nonconformity.stage,name:mgmtsystem_nonconformity.stage_done
@@ -308,6 +314,7 @@ msgid "Display Name"
 msgstr "Naziv"
 
 #. module: mgmtsystem_nonconformity
+#. odoo-python
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:0
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity_stage__state__draft
 #: model:mgmtsystem.nonconformity.stage,name:mgmtsystem_nonconformity.stage_draft
@@ -343,6 +350,7 @@ msgid "Evaluation Comments"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#. odoo-python
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:0
 #, python-format
 msgid "Evaluation Comments are required in order to close a Nonconformity."
@@ -432,7 +440,6 @@ msgstr ""
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_needaction
-#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
@@ -448,6 +455,7 @@ msgid "Immediate Action"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
+#. odoo-python
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:0
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity__kanban_state__normal
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity_stage__state__open
@@ -673,11 +681,6 @@ msgid "Number of messages with delivery error"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_unread_counter
-msgid "Number of unread messages"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Open Nonconformities"
 msgstr ""
@@ -897,14 +900,8 @@ msgid "Unfounded"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_unread
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_kanban
 msgid "Unread Messages"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_unread_counter
-msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity
