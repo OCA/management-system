@@ -1,0 +1,43 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_survey
+#
+# Translators:
+# danimaribeiro <danimaribeiro@gmail.com>, 2015
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: management-system (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-07 14:27+0000\n"
+"PO-Revision-Date: 2020-08-12 19:00+0000\n"
+"Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/"
+"OCA-management-system-8-0/language/pt_BR/)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.10\n"
+
+#. module: mgmtsystem_survey
+#: model:ir.model.fields.selection,name:mgmtsystem_survey.selection__survey_survey__state__management_system
+msgid "Management System"
+msgstr "Sistema de Gestão"
+
+#. module: mgmtsystem_survey
+#: model:ir.model,name:mgmtsystem_survey.model_survey_survey
+msgid "Survey"
+msgstr "Pesquisa"
+
+#. module: mgmtsystem_survey
+#: model:ir.model.fields,field_description:mgmtsystem_survey.field_survey_survey__state
+msgid "Survey Stage"
+msgstr "Estágio da Pesquisa"
+
+#. module: mgmtsystem_survey
+#: model:ir.actions.act_window,name:mgmtsystem_survey.action_survey_form
+#: model:ir.ui.menu,name:mgmtsystem_survey.menu_open_survey
+msgid "Surveys"
+msgstr "Pesquisas"
