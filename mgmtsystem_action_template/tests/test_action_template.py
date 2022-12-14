@@ -7,7 +7,7 @@ class TestModelNonConformity(TransactionCase):
         """
         Sets some enviroment
         """
-        super(TestModelNonConformity, self).setUp()
+        super().setUp()
 
         self.action_model = self.env["mgmtsystem.action"]
         self.action_template_model = self.env["mgmtsystem.action.template"]
