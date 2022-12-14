@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 Marcelo Frare (Ass, PNLUG - Gruppo Odoo <http://odoo.pnlug.it>)
+     Copyright 2019 Stefano Consolaro (Ass, PNLUG - Gruppo Odoo <http://odoo.pnlug.it>)
+     Copyright 2020 Creu Blanca
+     -->
+<odoo>
+
+    <record model="ir.ui.view" id="mgmtsystem_action_template_form_view">
+        <field
+            name="name"
+        >mgmtsystem.action.template.form (in mgmtsystem_action_template)</field>
+        <field name="model">mgmtsystem.action.template</field>
+        <field name="arch" type="xml">
+            <form string="Action Template">
+                <header />
+                <sheet string="Action Template">
+                    <div class="oe_title" modifiers="{}">
+                        <h1 class="o_row" modifiers="{}">
+                            <field name="name" placeholder="Template title..." />
+                        </h1>
+                    </div>
+                    <group name="main">
+                        <group name="config">
+                            <field name="type_action" />
+                            <field name="user_id" />
+                        </group>
+                        <group name="meta">
+                            <field
+                                name="tag_ids"
+                                widget="many2many_tags"
+                                options="{'color_field': 'color', 'no_create_edit': True}"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="desc" string="Description">
+                            <field name="description" nolabel="1" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_action_template_search_view">
+        <field
+            name="name"
+        >mgmtsystem.action.template.search (in mgmtsystem_action_template)</field>
+        <field name="model">mgmtsystem.action.template</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="type_action" />
+                <field name="user_id" />
+                <field name="tag_ids" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_action_template_tree_view">
+        <field
+            name="name"
+        >mgmtsystem.action.template.tree (in mgmtsystem_action_template)</field>
+        <field name="model">mgmtsystem.action.template</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="description" />
+                <field name="type_action" />
+                <field name="user_id" />
+                <field name="tag_ids" widget="many2many_tags" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mgmtsystem_action_template_act_window">
+        <field name="name">Mgmtsystem Action Template</field>
+        <field name="res_model">mgmtsystem.action.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="mgmtsystem_action_template_menu">
+        <field name="name">Action Templates</field>
+        <field name="parent_id" ref="mgmtsystem.menu_mgmtsystem_configuration" />
+        <field name="action" ref="mgmtsystem_action_template_act_window" />
+        <field name="sequence" eval="5" />
+    </record>
+
+</odoo>
