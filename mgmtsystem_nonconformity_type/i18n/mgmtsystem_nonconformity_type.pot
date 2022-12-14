@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -41,11 +41,6 @@ msgid "Customer"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__display_name
-msgid "Display Name"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__quality_contact_email
 msgid "Email"
 msgstr ""
@@ -56,22 +51,13 @@ msgid "External"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__id
-msgid "ID"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__internal
 msgid "Internal"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: mgmtsystem_nonconformity_type
 #: model:ir.model,name:mgmtsystem_nonconformity_type.model_mgmtsystem_nonconformity
+#: model:mail.template,name:mgmtsystem_nonconformity_type.email_template_nonconformity
 msgid "Nonconformity"
 msgstr ""
 
