@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo-addon-document_page_work_instruction>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem_action>=16.0dev,<16.1dev',
+        'odoo-addon-mgmtsystem_action_efficacy>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem_action_template>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem_manual>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem_nonconformity>=16.0dev,<16.1dev',
