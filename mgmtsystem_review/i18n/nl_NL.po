@@ -188,11 +188,6 @@ msgid "Followers"
 msgstr ""
 
 #. module: mgmtsystem_review
-#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
@@ -200,6 +195,11 @@ msgstr ""
 #. module: mgmtsystem_review
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__has_message
+msgid "Has Message"
 msgstr ""
 
 #. module: mgmtsystem_review
@@ -220,7 +220,6 @@ msgstr ""
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_needaction
-#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
@@ -246,12 +245,6 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: mgmtsystem_review
-#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line____last_update
-msgid "Last Modified on"
-msgstr "Laatst aangepast op"
-
-#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__write_uid
 msgid "Last Updated by"
@@ -267,11 +260,6 @@ msgstr "Laatst bijgewerkt op"
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__line_ids
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Lines"
-msgstr ""
-
-#. module: mgmtsystem_review
-#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_main_attachment_id
-msgid "Main Attachment"
 msgstr ""
 
 #. module: mgmtsystem_review
@@ -310,6 +298,16 @@ msgid "Next Activity Type"
 msgstr ""
 
 #. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__non_conformity_ids
+msgid "Non Conformity"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__non_conformity_count
+msgid "Non Conformity Count"
+msgstr ""
+
+#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__nonconformity_id
 #: model:ir.model.fields.selection,name:mgmtsystem_review.selection__mgmtsystem_review_line__type__nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
@@ -328,17 +326,12 @@ msgstr ""
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_needaction_counter
-msgid "Number of messages which requires an action"
+msgid "Number of messages requiring action"
 msgstr ""
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
-
-#. module: mgmtsystem_review
-#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_unread_counter
-msgid "Number of unread messages"
 msgstr ""
 
 #. module: mgmtsystem_review
@@ -410,7 +403,6 @@ msgstr ""
 #. module: mgmtsystem_review
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_line_list
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_tree
 msgid "Review Lines"
 msgstr ""
 
@@ -423,7 +415,6 @@ msgstr ""
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_list
 #: model:ir.ui.menu,name:mgmtsystem_review.menu_open_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_tree
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_review_calendar
 msgid "Reviews"
 msgstr ""
@@ -473,22 +464,5 @@ msgstr ""
 msgid "Type of the exception activity on record."
 msgstr ""
 
-#. module: mgmtsystem_review
-#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_unread
-msgid "Unread Messages"
-msgstr ""
-
-#. module: mgmtsystem_review
-#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr ""
-
-#. module: mgmtsystem_review
-#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: mgmtsystem_review
-#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__website_message_ids
-msgid "Website communication history"
-msgstr ""
+#~ msgid "Last Modified on"
+#~ msgstr "Laatst aangepast op"
