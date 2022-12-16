@@ -3,7 +3,7 @@
 {
     "name": "Management System - Partner",
     "summary": "Add Management System reference on Partner's Contacts.",
-    "version": "15.0.1.0.0",
+    "version": "16.0.1.0.0",
     "development_status": "Beta",
     "author": "Associazione PNLUG - Gruppo Odoo, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
