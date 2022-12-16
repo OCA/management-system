@@ -10,7 +10,7 @@ class MgmtsystemReview(models.Model):
     _description = "Review"
 
     name = fields.Char(size=50, required=True)
-    reference = fields.Char(size=64, required=True, readonly=True, default="NEW")
+    reference = fields.Char(size=64, required=True, default="NEW")
     date = fields.Datetime(required=True)
     user_ids = fields.Many2many(
         "res.users",
@@ -32,7 +32,6 @@ class MgmtsystemReview(models.Model):
     conclusion = fields.Html()
     state = fields.Selection(
         [("open", "Open"), ("done", "Closed")],
-        readonly=True,
         default="open",
         tracking=True,
     )

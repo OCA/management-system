@@ -11,13 +11,10 @@
             <tree>
                 <field name="name" />
                 <field name="type" />
-                <field
-                    name="action_id"
-                    attrs="{'invisible' : [('type', '!=', 'action')]}"
-                />
+                <field name="action_id" column_invisible="type != 'action'" />
                 <field
                     name="nonconformity_id"
-                    attrs="{'invisible' : [('type', '!=', 'nonconformity')]}"
+                    column_invisible="type != 'nonconformity'"
                 />
                 <field name="decision" />
                 <field name="company_id" groups="base.group_multi_company" />
@@ -51,13 +48,10 @@
                     <field name="name" />
                     <field name="type" />
                     <newline />
-                    <field
-                        name="action_id"
-                        attrs="{'invisible' : [('type', '!=', 'action')]}"
-                    />
+                    <field name="action_id" invisible="type != 'action'" />
                     <field
                         name="nonconformity_id"
-                        attrs="{'invisible' : [('type', '!=', 'nonconformity')]}"
+                        invisible="type != 'nonconformity'"
                     />
                     <newline />
                     <field name="decision" />
@@ -81,12 +75,12 @@
         <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name" attrs="{'readonly':[('state','=','done')]}" />
-                <field name="date" attrs="{'readonly':[('state','=','done')]}" />
-                <field name="reference" />
+                <field name="name" readonly="state == 'done'" />
+                <field name="date" readonly="state == 'done'" />
+                <field name="reference" readonly="1" />
                 <field name="company_id" groups="base.group_multi_company" />
                 <!-- Invisible fields below are to allow their use in domains of this view -->
-                <field name="state" invisible="1" />
+                <field name="state" readonly="1" column_invisible="1" />
             </tree>
         </field>
     </record>
@@ -113,7 +107,7 @@
                     <separator orientation="vertical" />
                     <field name="name" />
                     <field name="date" />
-                    <field name="reference" />
+                    <field name="reference" readonly="1" />
                     <field name="company_id" groups="base.group_multi_company" />
                 </group>
             </search>
@@ -129,7 +123,7 @@
                     <button
                         name="button_close"
                         string="Close"
-                        states="open"
+                        invisible="state != 'open'"
                         type="object"
                     />
                     <field name="state" widget="statusbar" select="1" readonly="1" />
@@ -137,20 +131,14 @@
                 <sheet>
                     <label for="name" class="oe_edit_only" />
                     <h1>
-                        <field
-                            name="name"
-                            attrs="{'readonly':[('state','=','done')]}"
-                        />
+                        <field name="name" readonly="state == 'done'" />
                     </h1>
                     <group>
                         <group>
-                            <field
-                                name="date"
-                                attrs="{'readonly':[('state','=','done')]}"
-                            />
+                            <field name="date" readonly="state == 'done'" />
                         </group>
                         <group>
-                            <field name="reference" />
+                            <field name="reference" readonly="1" />
                             <field
                                 name="company_id"
                                 groups="base.group_multi_company"
@@ -162,7 +150,7 @@
                             <field
                                 name="user_ids"
                                 nolabel="1"
-                                attrs="{'readonly':[('state','=','done')]}"
+                                readonly="state == 'done'"
                                 options="{'no_create': True}"
                                 context="{'tree_view_ref': 'mgmtsystem_review.mgmtsystem_review_res_users_x2m_tree'}"
                             />
@@ -172,7 +160,7 @@
                                 <separator string="Policy" colspan="2" />
                                 <field
                                     name="policy"
-                                    attrs="{'readonly':[('state','=','done')]}"
+                                    readonly="state == 'done'"
                                     colspan="2"
                                     nolabel="1"
                                 />
@@ -182,7 +170,7 @@
                                 />
                                 <field
                                     name="changes"
-                                    attrs="{'readonly':[('state','=','done')]}"
+                                    readonly="state == 'done'"
                                     colspan="2"
                                     nolabel="1"
                                 />
@@ -193,7 +181,7 @@
                                 name="response_ids"
                                 colspan="4"
                                 nolabel="1"
-                                attrs="{'readonly':[('state','=','done')]}"
+                                readonly="state == 'done'"
                             >
                                 <tree create="true">
                                     <field name="survey_id" />
@@ -202,7 +190,7 @@
                                     <field name="partner_id" />
                                     <field name="email" />
                                     <field name="state" />
-                                    <field name="test_entry" invisible="True" />
+                                    <field name="test_entry" column_invisible="True" />
                                     <field
                                         name="scoring_percentage"
                                         groups="base.group_no_one"
@@ -214,14 +202,14 @@
                             <field
                                 name="line_ids"
                                 nolabel="1"
-                                attrs="{'readonly':[('state','=','done')]}"
+                                readonly="state == 'done'"
                             />
                         </page>
                         <page string="Conclusion">
                             <field
                                 name="conclusion"
                                 nolabel="1"
-                                attrs="{'readonly':[('state','=','done')]}"
+                                readonly=" state == 'done'"
                             />
                         </page>
                     </notebook>
