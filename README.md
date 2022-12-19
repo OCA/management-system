@@ -31,6 +31,7 @@ addon | version | maintainers | summary
 [mgmtsystem_action_efficacy](mgmtsystem_action_efficacy/) | 16.0.1.0.0 |  | Add information on the application of the Action.
 [mgmtsystem_action_template](mgmtsystem_action_template/) | 16.0.1.0.0 |  | Add Template management for Actions.
 [mgmtsystem_audit](mgmtsystem_audit/) | 16.0.1.0.0 |  | Management System - Audit
+[mgmtsystem_hazard](mgmtsystem_hazard/) | 16.0.1.0.0 |  | Hazard
 [mgmtsystem_manual](mgmtsystem_manual/) | 16.0.1.0.0 |  | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 16.0.1.0.0 |  | Management System - Nonconformity
 [mgmtsystem_survey](mgmtsystem_survey/) | 16.0.1.0.0 |  | Management System - Survey
