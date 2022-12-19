@@ -87,7 +87,6 @@ msgstr "Medida de controle de risco"
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_control_measure_list
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__control_measure_ids
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_control_measure_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_control_measure_tree
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_form
 msgid "Control Measures"
 msgstr "Medidas de Controle"
@@ -192,11 +191,6 @@ msgid "Followers"
 msgstr "Seguidores"
 
 #. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Seguidores (Canais)"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Seguidores (Parceiros)"
@@ -212,6 +206,11 @@ msgid "Group By..."
 msgstr "Agrupar Por..."
 
 #. module: mgmtsystem_hazard
+#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__hazard_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__hazard_id
@@ -219,7 +218,6 @@ msgstr "Agrupar Por..."
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__hazard_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_form
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_tree
 msgid "Hazard"
 msgstr "Perigo"
 
@@ -260,7 +258,6 @@ msgstr "Identificação"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_needaction
-#: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Se marcada, novas mensagens requerem sua atenção."
 
@@ -285,7 +282,6 @@ msgstr "Implementação de teste"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__test_ids
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_form
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_test_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_test_tree
 msgid "Implementation Tests"
 msgstr "Implementação de testes"
 
@@ -412,11 +408,6 @@ msgid "Number of messages with delivery error"
 msgstr "Número de mensagens com erro de entrega"
 
 #. module: mgmtsystem_hazard
-#: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread_counter
-msgid "Number of unread messages"
-msgstr "Número de mensagens não-lidas"
-
-#. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ohsas_action
 msgid "OHSAS - Action"
 msgstr "OHSAS - Ação"
@@ -437,7 +428,6 @@ msgstr "Ocupação / Uso"
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_usage_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_usage
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_usage_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_usage_tree
 msgid "Occupations / Usages"
 msgstr "Ocupações / Usos"
 
@@ -457,7 +447,6 @@ msgstr "Origem dos perigos"
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_origin_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_origin
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_origin_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_origin_tree
 msgid "Origins"
 msgstr "Origens"
 
@@ -470,7 +459,6 @@ msgstr "Pânico"
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_probability_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_probability
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_probability_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_probability_tree
 msgid "Probabilities"
 msgstr "Probabilidades"
 
@@ -513,7 +501,6 @@ msgstr "Mensagem de erro de entrega"
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_severity_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_severity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_severity_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_severity_tree
 msgid "Severities"
 msgstr "Severidades"
 
@@ -561,19 +548,8 @@ msgstr "Tipo de Perigo"
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_type_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_type
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_type_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_type_tree
 msgid "Types"
 msgstr "Tipos"
-
-#. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread
-msgid "Unread Messages"
-msgstr "Mensagens não-lidas"
-
-#. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Contador de Mensagens não-lidas"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_usage
@@ -612,6 +588,18 @@ msgstr "Mensagens"
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
 msgid "Website communication history"
 msgstr ""
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Seguidores (Canais)"
+
+#~ msgid "Number of unread messages"
+#~ msgstr "Número de mensagens não-lidas"
+
+#~ msgid "Unread Messages"
+#~ msgstr "Mensagens não-lidas"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Contador de Mensagens não-lidas"
 
 #~ msgid "If checked new messages require your attention."
 #~ msgstr "Se marcada, novas mensagens requerem sua atenção."
