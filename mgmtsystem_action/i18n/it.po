@@ -760,6 +760,16 @@ msgid "We cannot bring back the action to draft stage"
 msgstr "Impossibile riportare l'azione alla fase bozza"
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+msgid "Website Messages"
+msgstr "Messaggi del sito web"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+msgid "Website communication history"
+msgstr "Storico messaggi sito web"
+
+#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
 msgstr "oe_kanban_text_red"
@@ -777,12 +787,6 @@ msgstr "{{object.name}}"
 
 #~ msgid "Unread Messages Counter"
 #~ msgstr "Conteggio messaggi non letti"
-
-#~ msgid "Website Messages"
-#~ msgstr "Messaggi del sito web"
-
-#~ msgid "Website communication history"
-#~ msgstr "Storico messaggi sito web"
 
 #, fuzzy
 #~ msgid ""

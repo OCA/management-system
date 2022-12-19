@@ -724,6 +724,17 @@ msgid "We cannot bring back the action to draft stage"
 msgstr ""
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Ulesne meldingar"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
 msgstr ""
@@ -739,8 +750,4 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "Unread Messages Counter"
-#~ msgstr "Ulesne meldingar"
-
-#, fuzzy
-#~ msgid "Website Messages"
 #~ msgstr "Ulesne meldingar"
