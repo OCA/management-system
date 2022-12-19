@@ -911,6 +911,17 @@ msgid "User"
 msgstr "Gebruiker"
 
 #. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Ongelezen berichten"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
 msgid "Work conditions"
 msgstr ""
@@ -928,8 +939,4 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "Unread Messages Counter"
-#~ msgstr "Ongelezen berichten"
-
-#, fuzzy
-#~ msgid "Website Messages"
 #~ msgstr "Ongelezen berichten"

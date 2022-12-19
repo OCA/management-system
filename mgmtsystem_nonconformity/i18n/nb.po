@@ -912,6 +912,18 @@ msgid "User"
 msgstr "Bruker"
 
 #. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Uleste meldinger"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+#, fuzzy
+msgid "Website communication history"
+msgstr "Dårlig kommunikasjon"
+
+#. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
 msgid "Work conditions"
 msgstr "Arbeidsforhold"
@@ -930,14 +942,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Unread Messages Counter"
 #~ msgstr "Uleste meldinger"
-
-#, fuzzy
-#~ msgid "Website Messages"
-#~ msgstr "Uleste meldinger"
-
-#, fuzzy
-#~ msgid "Website communication history"
-#~ msgstr "Dårlig kommunikasjon"
 
 #~ msgid "Immediate action"
 #~ msgstr "Umiddelbare tiltak"
