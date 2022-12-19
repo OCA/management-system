@@ -10,7 +10,7 @@ class MgmtsystemHazardResidualRisk(models.Model):
     _name = "mgmtsystem.hazard.residual_risk"
     _description = "Residual Risks of hazard"
 
-    name = fields.Char(size=50, required=True, translate=True)
+    name = fields.Char(required=True, translate=True)
     probability_id = fields.Many2one(
         "mgmtsystem.hazard.probability", "Probability", required=True
     )
