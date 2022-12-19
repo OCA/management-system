@@ -11,5 +11,5 @@ class MgmtsystemHazardRiskComputation(models.Model):
     company_id = fields.Many2one(
         "res.company", "Company", required=True, default=lambda self: self.env.company
     )
-    name = fields.Char("Computation Risk", size=50, required=True)
+    name = fields.Char("Computation Risk", required=True)
     description = fields.Text()
