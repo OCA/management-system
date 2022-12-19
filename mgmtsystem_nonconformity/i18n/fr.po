@@ -913,6 +913,18 @@ msgid "User"
 msgstr "Utilisateur"
 
 #. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Messages non-lus"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+#, fuzzy
+msgid "Website communication history"
+msgstr "Mauvaise communication"
+
+#. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
 msgid "Work conditions"
 msgstr "Conditions de travail"
@@ -931,14 +943,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Unread Messages Counter"
 #~ msgstr "Messages non-lus"
-
-#, fuzzy
-#~ msgid "Website Messages"
-#~ msgstr "Messages non-lus"
-
-#, fuzzy
-#~ msgid "Website communication history"
-#~ msgstr "Mauvaise communication"
 
 #~ msgid "Immediate action"
 #~ msgstr "Action immédiate"

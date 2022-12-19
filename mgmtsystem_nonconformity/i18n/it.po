@@ -923,6 +923,16 @@ msgid "User"
 msgstr "Utente"
 
 #. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+msgid "Website Messages"
+msgstr "Messaggi sito web"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+msgid "Website communication history"
+msgstr "Storico comunicazioni sito web"
+
+#. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
 msgid "Work conditions"
 msgstr "Condizioni di lavoro"
@@ -944,12 +954,6 @@ msgstr ""
 
 #~ msgid "Unread Messages Counter"
 #~ msgstr "Conteggio messaggi non letti"
-
-#~ msgid "Website Messages"
-#~ msgstr "Messaggi sito web"
-
-#~ msgid "Website communication history"
-#~ msgstr "Storico comunicazioni sito web"
 
 #~ msgid "Immediate action"
 #~ msgstr "Azione immediata"
