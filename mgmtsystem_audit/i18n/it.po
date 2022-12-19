@@ -637,6 +637,16 @@ msgid "Verification list report"
 msgstr "Resoconto lista di verifica"
 
 #. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__website_message_ids
+msgid "Website Messages"
+msgstr "Messaggi del sito web"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__website_message_ids
+msgid "Website communication history"
+msgstr "Storico messaggi sito web"
+
+#. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
 msgid "_Cancel"
 msgstr "Annulla"
@@ -733,9 +743,3 @@ msgstr "Copia"
 
 #~ msgid "Unread Messages Counter"
 #~ msgstr "Conteggio messaggi non letti"
-
-#~ msgid "Website Messages"
-#~ msgstr "Messaggi del sito web"
-
-#~ msgid "Website communication history"
-#~ msgstr "Storico messaggi sito web"
