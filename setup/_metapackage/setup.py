@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo14-addon-document_page_environment_manual',
         'odoo14-addon-document_page_environmental_aspect',
+        'odoo14-addon-document_page_health_safety_manual',
         'odoo14-addon-document_page_procedure',
         'odoo14-addon-document_page_quality_manual',
         'odoo14-addon-document_page_work_instruction',
