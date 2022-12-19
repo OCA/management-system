@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mgmtsystem_partner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2022-11-15 17:44+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. module: mgmtsystem_partner
+#: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_partner__type
+#: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_users__type
+msgid "Address Type"
+msgstr "Tipo indirizzo"
+
+#. module: mgmtsystem_partner
+#: model:ir.model,name:mgmtsystem_partner.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: mgmtsystem_partner
+#: model:ir.model.fields,help:mgmtsystem_partner.field_res_partner__type
+#: model:ir.model.fields,help:mgmtsystem_partner.field_res_users__type
+msgid ""
+"Invoice & Delivery addresses are used in sales orders. Private addresses are "
+"only visible by authorized users."
+msgstr ""
+"Gli indirizzi di fatturazione e consegna sono usati negli ordini di vendita. "
+"Gli indirizzi privati sono visibili solo agli utenti autorizzati."
+
+#. module: mgmtsystem_partner
+#: model:ir.model.fields.selection,name:mgmtsystem_partner.selection__res_partner__type__quality
+msgid "Quality Address"
+msgstr "Indirizzo qualità"
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
