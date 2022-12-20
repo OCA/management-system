@@ -1,0 +1,253 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mgmtsystem_hazard_risk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2022-11-03 16:45+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. module: mgmtsystem_hazard_risk
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.res_config_settings_view_form
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" role=\"img\" aria-label=\"Values set here are company-"
+"specific.\" groups=\"base.group_multi_company\"/>"
+msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"I valori impostati qui sono "
+"specifici per azienda.\" role=\"img\" aria-label=\"I valori impostati qui "
+"sono specifici per azienda.\" groups=\"base.group_multi_company\"/>"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__acceptability
+msgid "Acceptability"
+msgstr "Accettabilità"
+
+#. module: mgmtsystem_hazard_risk
+#: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_chemical
+msgid "Chemical"
+msgstr "Chimico"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model,name:mgmtsystem_hazard_risk.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__company_id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__company_id
+msgid "Company"
+msgstr "Azienda"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_risk_computation
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__name
+msgid "Computation Risk"
+msgstr "Rischio di valutazione"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model,name:mgmtsystem_hazard_risk.model_res_config_settings
+msgid "Config Settings"
+msgstr "Impostazione configurazione"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__description
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__description
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: mgmtsystem_hazard_risk
+#: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_environment
+msgid "Environment"
+msgstr "Ambiente"
+
+#. module: mgmtsystem_hazard_risk
+#: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_fire
+msgid "Fire"
+msgstr "Fuoco"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__hazard_id
+msgid "Hazard"
+msgstr "Pericolo"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard
+msgid "Hazards of the health and safety management system"
+msgstr "Pericoli del sistema di gestione ambiente e sicurezza"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__justification
+msgid "Justification"
+msgstr "Giustificazione"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__usage_id
+msgid "Occupation / Usage"
+msgstr "Impiego / Utilizzo"
+
+#. module: mgmtsystem_hazard_risk
+#: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_physical
+msgid "Physical"
+msgstr "Fisico"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__probability_id
+msgid "Probability"
+msgstr "Probabilità"
+
+#. module: mgmtsystem_hazard_risk
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_residual_risk_form
+msgid "Residual Risk"
+msgstr "Rischio residuo"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard__residual_risk_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_form
+msgid "Residual Risk Evaluations"
+msgstr "Valutazione rischio residuo"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.actions.act_window,name:mgmtsystem_hazard_risk.open_mgmtsystem_hazard_residual_risk_list
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_residual_risk_filter
+msgid "Residual Risks"
+msgstr "Rischi residui"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_residual_risk
+msgid "Residual Risks of hazard"
+msgstr "Rischio residuo del pericolo"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard__risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__risk
+msgid "Risk"
+msgstr "Rischio"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_res_company__risk_computation_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_form
+msgid "Risk Computation"
+msgstr "Calcolo del rischio"
+
+#. module: mgmtsystem_hazard_risk
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.res_config_settings_view_form
+msgid "Risk Computation formula"
+msgstr "Formula calcolo del rischio"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.actions.act_window,name:mgmtsystem_hazard_risk.open_mgmtsystem_hazard_risk_computation_list
+#: model:ir.ui.menu,name:mgmtsystem_hazard_risk.menu_open_hazard_risk_computation
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_filter
+msgid "Risk Computations"
+msgstr "Calcoli del rischio"
+
+#. module: mgmtsystem_hazard_risk
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_form
+msgid "Risk Evaluation"
+msgstr "Valutazione del rischio"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard__risk_type_id
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__name
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_type_form
+msgid "Risk Type"
+msgstr "Tipo del rischio"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.actions.act_window,name:mgmtsystem_hazard_risk.open_mgmtsystem_hazard_risk_type_list
+#: model:ir.ui.menu,name:mgmtsystem_hazard_risk.menu_open_hazard_risk_type
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_type_filter
+msgid "Risk Types"
+msgstr "Tipi di rischio"
+
+#. module: mgmtsystem_hazard_risk
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.res_config_settings_view_form
+msgid "Risk computation"
+msgstr "Calcolo del rischio"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_res_config_settings__risk_computation_id
+msgid "Risk formula"
+msgstr "Formula del rischio"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_risk_type
+msgid "Risk type of the hazard"
+msgstr "Tipo di rischio del pericolo"
+
+#. module: mgmtsystem_hazard_risk
+#: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__severity_id
+msgid "Severity"
+msgstr "Gravità"
+
+#. module: mgmtsystem_hazard_risk
+#: code:addons/mgmtsystem_hazard_risk/models/common.py:0
+#, python-format
+msgid "You must define the company's risk computing formula. Go to settings"
+msgstr ""
+"Bisogna definire la formula per il calcolo del rischio dell'azienda. "
+"Accedere alle impostazioni"
