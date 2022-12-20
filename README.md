@@ -23,6 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [document_page_environment_manual](document_page_environment_manual/) | 16.0.1.0.0 |  | Document Management - Wiki - Environment Manual
 [document_page_environmental_aspect](document_page_environmental_aspect/) | 16.0.1.0.0 |  | Environmental Aspects
+[document_page_health_safety_manual](document_page_health_safety_manual/) | 16.0.1.0.0 |  | Health and Safety Manual
 [document_page_procedure](document_page_procedure/) | 16.0.1.0.0 |  | Document Management - Wiki - Procedures
 [document_page_quality_manual](document_page_quality_manual/) | 16.0.1.0.0 |  | Quality Manual
 [document_page_work_instruction](document_page_work_instruction/) | 16.0.1.0.0 |  | Document Management - Wiki - Work Instructions
