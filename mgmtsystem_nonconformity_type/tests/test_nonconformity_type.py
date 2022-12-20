@@ -11,8 +11,12 @@ class TestModelNonConformity(TransactionCase):
         super(TestModelNonConformity, self).setUp()
 
         self.nc_model = self.env["mgmtsystem.nonconformity"]
+        self.partner_model = self.env["res.partner"]
 
         self.nc = self.nc_model.search([])[0]
+        self.partner = self.partner_model.search([("child_ids", "!=", False)])[0]
+
+        self.nc["partner_id"] = self.partner
         self.nc["qty_checked"] = 100
         self.nc["qty_noncompliant"] = 50
 
@@ -39,7 +43,7 @@ class TestModelNonConformity(TransactionCase):
         """
         Test NC partner email
         """
-        partner = self.nc.partner_id["child_ids"].search([])[0]
+        partner = self.nc.partner_id
         partner_child = partner["child_ids"][0]
         partner_child.type = "quality"
         partner_child.email = "quality@example.com"
