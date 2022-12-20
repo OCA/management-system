@@ -20,8 +20,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.res_config_settings_view_form
 msgid ""
 "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" role=\"img\" aria-label=\"Values set here are company-"
-"specific.\" groups=\"base.group_multi_company\"/>"
+"specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
+"\" groups=\"base.group_multi_company\"/>"
 msgstr ""
 "<span class=\"fa fa-lg fa-building-o\" title=\"I valori impostati qui sono "
 "specifici per azienda.\" role=\"img\" aria-label=\"I valori impostati qui "
@@ -245,6 +245,7 @@ msgid "Severity"
 msgstr "Gravità"
 
 #. module: mgmtsystem_hazard_risk
+#. odoo-python
 #: code:addons/mgmtsystem_hazard_risk/models/common.py:0
 #, python-format
 msgid "You must define the company's risk computing formula. Go to settings"
