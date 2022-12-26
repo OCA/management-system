@@ -1,7 +1,6 @@
 import time
 from datetime import datetime, timedelta
-
-import mock
+from unittest import mock
 
 from odoo.tests import common
 
@@ -12,7 +11,7 @@ def freeze_time(dt):
     return mock_time
 
 
-class TestModelClaim(common.SavepointCase):
+class TestModelClaim(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -68,6 +67,8 @@ class TestModelClaim(common.SavepointCase):
             tmpl_model = self.env["mail.template"]
             with mock.patch.object(type(tmpl_model), "send_mail") as mocked:
                 self.env["mgmtsystem.claim"].process_reminder_queue()
+                mocked.assert_called_with(self.claim.id)
+                self.env["mgmtsystem.claim"].process_reminder_queue(-100)
                 mocked.assert_called_with(self.claim.id)
 
     def test_send_mail_for_action(self):
