@@ -1,0 +1,110 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mgmtsystem_nonconformity_type
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:mail.template,body_html:mgmtsystem_nonconformity_type.email_template_nonconformity
+msgid ""
+"\n"
+"                \n"
+"                    <p>Dear ${object.quality_contact_name},<br/><br/>\n"
+"                    in attachment you have the Nonconformity report:<br/>\n"
+"                    <strong>Nonconformity N°</strong>: ${object.id}<br/>\n"
+"                    <strong>Name</strong>: ${object.name}<br/>\n"
+"                    <strong>Description</strong>: ${object.description}<br/>\n"
+"                    <br/>\n"
+"                    Best regards<br>\n"
+"                    </p>\n"
+"                      \n"
+"            "
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__quality_contact_name
+msgid "Contact Name"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__customer
+msgid "Customer"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__quality_contact_email
+msgid "Email"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__external
+msgid "External"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__internal
+msgid "Internal"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model,name:mgmtsystem_nonconformity_type.model_mgmtsystem_nonconformity
+#: model:mail.template,name:mgmtsystem_nonconformity_type.email_template_nonconformity
+msgid "Nonconformity"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model:mail.template,subject:mgmtsystem_nonconformity_type.email_template_nonconformity
+msgid "Nonconformity N° ${object.id}: ${object.name}"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__qty_checked
+msgid "Quantity checked"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__qty_noncompliant
+msgid "Quantity non-compliant"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity_type.view_mgmtsystem_nonconformity_form
+msgid "Send by Email"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__supplier
+msgid "Supplier"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity.py:0
+#: code:addons/mgmtsystem_nonconformity_type/tests/test_nonconformity_type.py:0
+#, python-format
+msgid ""
+"The partner's contacts quality type isn't available.\n"
+" Check if module mgmtsystem_nonconformity_partner is installed."
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity.py:0
+#: code:addons/mgmtsystem_nonconformity_type/tests/test_nonconformity_type.py:0
+#, python-format
+msgid ""
+"The partner's quality contact email is required in order to send the "
+"message."
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__nc_type
+msgid "Type"
+msgstr ""
