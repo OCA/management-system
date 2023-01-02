@@ -29,17 +29,17 @@ addon | version | maintainers | summary
 [document_page_work_instruction](document_page_work_instruction/) | 13.0.1.0.0 |  | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 13.0.1.4.1 |  | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 13.0.1.1.1 |  | Management System - Action
-[mgmtsystem_action_efficacy](mgmtsystem_action_efficacy/) | 13.0.1.0.0 |  | Add information on the application of the Action.
+[mgmtsystem_action_efficacy](mgmtsystem_action_efficacy/) | 13.0.1.0.1 |  | Add information on the application of the Action.
 [mgmtsystem_action_template](mgmtsystem_action_template/) | 13.0.1.1.0 |  | Add Template management for Actions.
 [mgmtsystem_audit](mgmtsystem_audit/) | 13.0.1.1.0 |  | Management System - Audit
 [mgmtsystem_claim](mgmtsystem_claim/) | 13.0.1.1.0 |  | Management System - Claim
 [mgmtsystem_environment](mgmtsystem_environment/) | 13.0.1.0.0 |  | Environment Management System
-[mgmtsystem_hazard](mgmtsystem_hazard/) | 13.0.1.1.0 |  | Hazard
+[mgmtsystem_hazard](mgmtsystem_hazard/) | 13.0.1.1.1 |  | Hazard
 [mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 13.0.1.0.0 |  | Hazard Risk
 [mgmtsystem_health_safety](mgmtsystem_health_safety/) | 13.0.1.0.0 |  | Health and Safety Management System
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 13.0.1.0.0 |  | Information Security Management System Manual
 [mgmtsystem_manual](mgmtsystem_manual/) | 13.0.1.2.0 |  | Management System - Manual
-[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 13.0.2.0.0 |  | Management System - Nonconformity
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 13.0.2.0.1 |  | Management System - Nonconformity
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 13.0.1.0.0 |  | Bridge module between hr and mgmsystem and
 [mgmtsystem_nonconformity_mrp](mgmtsystem_nonconformity_mrp/) | 13.0.1.0.0 |  | Bridge module between mrp and mgmsystem
 [mgmtsystem_nonconformity_product](mgmtsystem_nonconformity_product/) | 13.0.1.0.0 |  | Bridge module between Product and Management System.
