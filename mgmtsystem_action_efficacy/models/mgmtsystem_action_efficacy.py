@@ -22,7 +22,11 @@ class MgmtsystemMgmEfficacy(models.Model):
         track_visibility=True,
     )
     # user in charge of evaluation
-    efficacy_user_id = fields.Many2one("res.users", "Inspector", track_visibility=True,)
+    efficacy_user_id = fields.Many2one(
+        "res.users",
+        "Inspector",
+        track_visibility=True,
+    )
     # notes on the efficacy
     efficacy_description = fields.Text("Notes")
 
