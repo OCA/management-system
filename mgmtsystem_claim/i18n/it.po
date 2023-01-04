@@ -1,0 +1,769 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mgmtsystem_claim
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2022-11-03 16:45+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. module: mgmtsystem_claim
+#: model:mail.template,body_html:mgmtsystem_claim.email_template_new_claim_reminder
+msgid ""
+"\n"
+"            \n"
+"<p>Hello <t t-out=\"object.user_id.name\"/>,</br>\n"
+"A new claim has been assigned to you:\n"
+"\n"
+"<p>\n"
+"<t t-out=\"object.description\"/>\n"
+"</p>\n"
+"\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Thank you and have a nice day.<br>\n"
+"--<br>\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
+msgstr ""
+"\n"
+"            \n"
+"<p>Salve<t t-out=\"object.user_id.name\"/>,</br>\n"
+"Ti è stato assegnato un reclamo:\n"
+"\n"
+"<p>\n"
+"<t t-out=\"object.description\"/>\n"
+"</p>\n"
+"\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\""
+"/></a></b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Grazie e buona giornata.<br>\n"
+"--<br>\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
+
+#. module: mgmtsystem_claim
+#: model:mail.template,body_html:mgmtsystem_claim.email_template_remain_claim_reminder
+msgid ""
+"\n"
+"            \n"
+"<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
+"\n"
+"<p>\n"
+"This is an automated message to remind you that the\n"
+"following claim is due to be completed in 10 days (<t t-out=\"object.date_deadline\"/>):\n"
+"\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"<t t-out=\"object.description\"/>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Thank you and have a nice day.<br>\n"
+"--<br>\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
+msgstr ""
+"\n"
+"            \n"
+"<p>Salve<t t-out=\"object.user_id.name\"/>,</p>\n"
+"\n"
+"<p>\n"
+"Questo è un messaggio automatico per ricordarti che il\n"
+"reclamo seguente deve essere completato entro 10 giorni (<t t-out=\"object."
+"date_deadline\"/>):\n"
+"\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\""
+"/></a></b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"<t t-out=\"object.description\"/>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Grazie e buona giornata.<br>\n"
+"--<br>\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner__mgmtsystem_claim_count
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_users__mgmtsystem_claim_count
+msgid "# Mgmt Claims"
+msgstr "Nr. reclami gestione"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction
+msgid "Action Needed"
+msgstr "Richiesta un'azione"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__type_action
+msgid "Action Type"
+msgstr "Tipo azione"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__active
+msgid "Active"
+msgstr "Attiva"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_ids
+msgid "Activities"
+msgstr "Attività"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decorazione eccezione attività"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_state
+msgid "Activity State"
+msgstr "Stato attività"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icona tipo attività"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "All pending Claims"
+msgstr "Tutti i reclami aperti"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteggio allegati"
+
+#. module: mgmtsystem_claim
+#: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_cancel
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__categ_id
+msgid "Category"
+msgstr "Categoria"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+msgid "Claim"
+msgstr "Reclamo"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__date
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Claim Date"
+msgstr "Data reclamo"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+msgid "Claim Description"
+msgstr "Descrizione reclamo"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+msgid "Claim Reporter"
+msgstr "Referente reclamo"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__name
+msgid "Claim Subject"
+msgstr "Oggetto reclamo"
+
+#. module: mgmtsystem_claim
+#: model:ir.model,name:mgmtsystem_claim.model_mgmtsystem_claim
+msgid "Claim for Management System"
+msgstr "Reclamo per sistema di gestione"
+
+#. module: mgmtsystem_claim
+#: model:ir.model,name:mgmtsystem_claim.model_mgmtsystem_claim_stage
+msgid "Claim stages for Management system"
+msgstr "Fase reclamo per sistema di gestione"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+msgid "Claim/Action Description"
+msgstr "descrizione reclamo/azione"
+
+#. module: mgmtsystem_claim
+#: model:ir.actions.act_window,name:mgmtsystem_claim.mgmtsystem_claim_action
+#: model:ir.ui.menu,name:mgmtsystem_claim.menu_config_claim
+#: model:ir.ui.menu,name:mgmtsystem_claim.menu_mgmtsystem_claims
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+msgid "Claims"
+msgstr "Reclami"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_stage_action
+msgid ""
+"Click to setup a new stage in the processing of the Management System "
+"claims."
+msgstr ""
+"Cliccare per impostare una nuova fase nell'elaborazione dei reclami del "
+"sistema di gestione."
+
+#. module: mgmtsystem_claim
+#: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_close
+msgid "Close"
+msgstr "Chiudi"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__date_closed
+msgid "Closed"
+msgstr "Chiuso"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Closure"
+msgstr "Chiusura"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__case_default
+msgid "Common to All Teams"
+msgstr "Comune a tutte le squadre"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__company_id
+msgid "Company"
+msgstr "Azienda"
+
+#. module: mgmtsystem_claim
+#: model:ir.model,name:mgmtsystem_claim.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Current"
+msgstr "Attuale"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Date Closed"
+msgstr "Data chiusura"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+msgid "Dates"
+msgstr "Date"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__date_deadline
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Deadline"
+msgstr "Scadenza"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__description
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__email_from
+msgid "Destination email for email gateway."
+msgstr "Email destinazione per il gateway email."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: mgmtsystem_claim
+#: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_draft
+msgid "Draft"
+msgstr "Bozza"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Draft and Open Claims"
+msgstr "Reclami in bozza e aperti"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__email_from
+msgid "Email"
+msgstr "Email"
+
+#. module: mgmtsystem_claim
+#: model:ir.actions.server,name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder_ir_actions_server
+#: model:ir.cron,cron_name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder
+#: model:ir.cron,name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder
+msgid "Email Claim Reminders 10 days before due date."
+msgstr "Promemoria email reclami 10 giorni prima della scadenza."
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+msgid "Follow Up"
+msgstr "Approfondimento"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_follower_ids
+msgid "Followers"
+msgstr "Iscritti"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Iscritti (partner)"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icona font awesome es. fa-tasks"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Group By..."
+msgstr "Raggruppa per..."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__has_message
+msgid "Has Message"
+msgstr "Ha un messaggio"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__id
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__id
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_exception_icon
+msgid "Icon"
+msgstr "Icona"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icona per indicare una attività eccezione."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Se attivo, nuovi messaggi richiedono attenzione."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Se attivo, alcuni messaggi hanno un errore di consegna."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_stage__case_default
+msgid ""
+"If you check this field, this stage will be proposed by default on each "
+"sales team. It will not assign this stage to existing teams."
+msgstr ""
+"Se si imposta questo campo, questa fase verrà proposta come predefinita ad "
+"ogni squadra di vendita. Non verrà assegnata questa fase alle squadre "
+"esistenti."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_is_follower
+msgid "Is Follower"
+msgstr "È iscritto"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__write_uid
+msgid "Last Updated by"
+msgstr "Ultima modifica di"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_stage__team_ids
+msgid ""
+"Link between stages and sales teams. When set, this limitate the current "
+"stage to the selected sales teams."
+msgstr ""
+"Collegamento tra le fasi e le squadre di vendita. Quando impostato, limita "
+"la fase attuale alle squadre di vendita selezionate."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Allegato principale"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claim_stage_form
+msgid "Management System Claim Stage"
+msgstr "Fase reclamo sistema di gestione"
+
+#. module: mgmtsystem_claim
+#: model:ir.actions.act_window,name:mgmtsystem_claim.mgmtsystem_claim_stage_action
+msgid "Management System Claim Stages"
+msgstr "Fasi reclamo fasi di gestione"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_calendar_view
+msgid "Management System Claims"
+msgstr "Reclami sistema di gestione"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_has_error
+msgid "Message Delivery error"
+msgstr "Errore consegna messaggio"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_ids
+msgid "Messages"
+msgstr "Messaggi"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claim_res_partner_info_form
+msgid "Mgmt Claims"
+msgstr "Reclami gestione"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner__mgmtsystem_claim_ids
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_users__mgmtsystem_claim_ids
+msgid "Mgmtsystem Claim"
+msgstr "Reclamo sistema gestione"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__model_ref_id
+msgid "Model Reference"
+msgstr "Riferimento modello"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Scadenza mia attività"
+
+#. module: mgmtsystem_claim
+#: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
+#: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
+#, python-format
+msgid "New"
+msgstr "Nuovo"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Evento successivo calendario attività"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Scadenza attività successiva"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_summary
+msgid "Next Activity Summary"
+msgstr "Riepilogo attività successiva"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo attività successiva"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Numero di azioni"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_has_error_counter
+msgid "Number of errors"
+msgstr "Numero di azioni"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Numero di messaggi che richiedono un'azione"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Numero di messaggi con errore di consegna"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Numero di messaggi non letti"
+
+#. module: mgmtsystem_claim
+#: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_open
+msgid "Open"
+msgstr "Aperto"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__partner_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Partner"
+msgstr "Partner"
+
+#. module: mgmtsystem_claim
+#: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_pending
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Pending"
+msgstr "In sospeso"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__partner_phone
+msgid "Phone"
+msgstr "Telefono"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__priority
+msgid "Priority"
+msgstr "Priorità"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_action
+msgid ""
+"Record and track your customers' claims. Claims may be linked to a sales order or a lot.\n"
+"            You can send emails with attachments and keep the full history for a claim (emails sent, intervention\n"
+"            type and so on). Claims may automatically be linked to an email address using the mail gateway module."
+msgstr ""
+"Registra e traccia i reclami dei tuoi clienti. I reclami possono essere "
+"collegati a un ordine di vendita o a un lotto.\n"
+"            Si possono spedire email con allegati e avere la storia completa "
+"di un reclamo (email inviate, tipi intervento\n"
+"            e così via). I reclami possono essere collegati automaticamente "
+"ad un indirizzo email utilizzando il modulo email gateway."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__reference
+msgid "Reference"
+msgstr "Referenza"
+
+#. module: mgmtsystem_claim
+#: model:mail.template,subject:mgmtsystem_claim.email_template_new_claim_reminder
+#: model:mail.template,subject:mgmtsystem_claim.email_template_remain_claim_reminder
+msgid "Reminder on Action: \"{{object.name}}\""
+msgstr "Promemoria su azione: \"{{object.name}}\""
+
+#. module: mgmtsystem_claim
+#: model:mail.template,name:mgmtsystem_claim.email_template_new_claim_reminder
+#: model:mail.template,name:mgmtsystem_claim.email_template_remain_claim_reminder
+msgid "Reminder to Responsible"
+msgstr "Promemoria al responsabile"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__resolution
+msgid "Resolution"
+msgstr "Risoluzione"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+msgid "Resolution Actions"
+msgstr "Azioni risoluzione"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+msgid "Responsibilities"
+msgstr "Responsabilità"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__user_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Responsible"
+msgstr "Responsabile"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_user_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Responsible User"
+msgstr "Utente responsabile"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__team_id
+msgid ""
+"Responsible sales team. Define Responsible user and Email account for mail "
+"gateway."
+msgstr ""
+"Responsabile squadra vendita. Utente responsabile e account email per il "
+"gateway email."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__cause
+msgid "Root Cause"
+msgstr "Causa radice"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
+msgid "Root Causes"
+msgstr "Cause radice"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Errore consegna SMS"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__team_id
+msgid "Sales Team"
+msgstr "Squadra vendite"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Search Claims"
+msgstr "Cerca reclami"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__sequence
+msgid "Sequence"
+msgstr "Sequenza"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__stage_id
+msgid "Stage"
+msgstr "Fase"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__name
+msgid "Stage Name"
+msgstr "Nome fase"
+
+#. module: mgmtsystem_claim
+#: model:ir.ui.menu,name:mgmtsystem_claim.menu_mgmtsystem_claim_stages
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Stages"
+msgstr "Fasi"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Stato in base alle attività\n"
+"Scaduta: la data richiesta è trascorsa\n"
+"Oggi: la data attività è oggi\n"
+"Pianificata: attività future."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__team_ids
+msgid "Teams"
+msgstr "Squadre"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__email_cc
+msgid ""
+"These email addresses will be added to the CC field of all inbound and "
+"outbound emails for this record before being sent. Separate multiple email "
+"addresses with a comma"
+msgstr ""
+"Questo indirizzo email verrà aggiunto nel campo CC di tutte le email in "
+"entrata e uscita per questo record prima di essere spedito. Separare "
+"indirizzi multipli con una virgola"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__user_fault
+msgid "Trouble Responsible"
+msgstr "Responsabile problema"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_tree_view
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Type"
+msgstr "Tipo"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo dell'attività eccezione sul record."
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
+msgid "Unassigned Claims"
+msgstr "Reclamo non assegnato"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_unread
+msgid "Unread Messages"
+msgstr "Messaggi non letti"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Conteggio messaggi non letti"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_stage__sequence
+msgid "Used to order stages. Lower is better."
+msgstr "Utilizzato per ordinare le fasi. Inferiore è precedente."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__email_cc
+msgid "Watchers Emails"
+msgstr "Osservatore email"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__website_message_ids
+msgid "Website Messages"
+msgstr "Messaggi sito web"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__website_message_ids
+msgid "Website communication history"
+msgstr "Storico comunicazioni sito web"
+
+#. module: mgmtsystem_claim
+#: model_terms:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_stage_action
+msgid ""
+"You can create Management System claim stages to categorize the status of every\n"
+"                claim entered in the system. The stages define all the steps\n"
+"                required for the resolution of a claim."
+msgstr ""
+"Si possono creare fasi dei reclami del sistema di gestione per classificare "
+"lo stato di ogni\n"
+"                reclamo inserito nel sistema. Le fasi definiscono tutti i "
+"passi richiesti\n"
+"                per la soluzione di un reclamo."
