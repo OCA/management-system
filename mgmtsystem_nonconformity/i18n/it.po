@@ -588,6 +588,11 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Evento calendario azione successiva"
+
+#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Scadenza attività successiva"
@@ -945,9 +950,6 @@ msgid ""
 msgstr ""
 "Selezionare questa casella se questa è la fase predefinita \n"
 "per le nuove non conformità"
-
-#~ msgid "Next Activity Calendar Event"
-#~ msgstr "Evento calendario azione successiva"
 
 #~ msgid "Number of unread messages"
 #~ msgstr "Numero messaggi non letti"
