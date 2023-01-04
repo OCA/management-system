@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -278,7 +278,6 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: model:ir.actions.server,name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder_ir_actions_server
 #: model:ir.cron,cron_name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder
-#: model:ir.cron,name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder
 msgid "Email Claim Reminders 10 days before due date."
 msgstr ""
 
@@ -330,7 +329,6 @@ msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction
-#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
@@ -429,6 +427,7 @@ msgid "My Activity Deadline"
 msgstr ""
 
 #. module: mgmtsystem_claim
+#. odoo-python
 #: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
 #: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
 #, python-format
@@ -473,11 +472,6 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_unread_counter
-msgid "Number of unread messages"
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -654,16 +648,6 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Unassigned Claims"
-msgstr ""
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_unread
-msgid "Unread Messages"
-msgstr ""
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_unread_counter
-msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: mgmtsystem_claim
