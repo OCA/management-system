@@ -28,7 +28,8 @@ msgid ""
 "<t t-out=\"object.description\"/>\n"
 "</p>\n"
 "\n"
-"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -48,8 +49,8 @@ msgstr ""
 "<t t-out=\"object.description\"/>\n"
 "</p>\n"
 "\n"
-"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\""
-"/></a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -69,9 +70,11 @@ msgid ""
 "\n"
 "<p>\n"
 "This is an automated message to remind you that the\n"
-"following claim is due to be completed in 10 days (<t t-out=\"object.date_deadline\"/>):\n"
+"following claim is due to be completed in 10 days (<t t-out=\"object."
+"date_deadline\"/>):\n"
 "\n"
-"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -95,8 +98,8 @@ msgstr ""
 "reclamo seguente deve essere completato entro 10 giorni (<t t-out=\"object."
 "date_deadline\"/>):\n"
 "\n"
-"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\""
-"/></a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -224,8 +227,7 @@ msgstr "Reclami"
 #. module: mgmtsystem_claim
 #: model_terms:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_stage_action
 msgid ""
-"Click to setup a new stage in the processing of the Management System "
-"claims."
+"Click to setup a new stage in the processing of the Management System claims."
 msgstr ""
 "Cliccare per impostare una nuova fase nell'elaborazione dei reclami del "
 "sistema di gestione."
@@ -327,7 +329,6 @@ msgstr "Email"
 #. module: mgmtsystem_claim
 #: model:ir.actions.server,name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder_ir_actions_server
 #: model:ir.cron,cron_name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder
-#: model:ir.cron,name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder
 msgid "Email Claim Reminders 10 days before due date."
 msgstr "Promemoria email reclami 10 giorni prima della scadenza."
 
@@ -379,7 +380,6 @@ msgstr "Icona per indicare una attività eccezione."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction
-#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Se attivo, nuovi messaggi richiedono attenzione."
 
@@ -483,7 +483,7 @@ msgid "My Activity Deadline"
 msgstr "Scadenza mia attività"
 
 #. module: mgmtsystem_claim
-#: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
+#. odoo-python
 #: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
 #, python-format
 msgid "New"
@@ -530,11 +530,6 @@ msgid "Number of messages with delivery error"
 msgstr "Numero di messaggi con errore di consegna"
 
 #. module: mgmtsystem_claim
-#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_unread_counter
-msgid "Number of unread messages"
-msgstr "Numero di messaggi non letti"
-
-#. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_open
 msgid "Open"
 msgstr "Aperto"
@@ -565,9 +560,12 @@ msgstr "Priorità"
 #. module: mgmtsystem_claim
 #: model_terms:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_action
 msgid ""
-"Record and track your customers' claims. Claims may be linked to a sales order or a lot.\n"
-"            You can send emails with attachments and keep the full history for a claim (emails sent, intervention\n"
-"            type and so on). Claims may automatically be linked to an email address using the mail gateway module."
+"Record and track your customers' claims. Claims may be linked to a sales "
+"order or a lot.\n"
+"            You can send emails with attachments and keep the full history "
+"for a claim (emails sent, intervention\n"
+"            type and so on). Claims may automatically be linked to an email "
+"address using the mail gateway module."
 msgstr ""
 "Registra e traccia i reclami dei tuoi clienti. I reclami possono essere "
 "collegati a un ordine di vendita o a un lotto.\n"
@@ -726,16 +724,6 @@ msgid "Unassigned Claims"
 msgstr "Reclamo non assegnato"
 
 #. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_unread
-msgid "Unread Messages"
-msgstr "Messaggi non letti"
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Conteggio messaggi non letti"
-
-#. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_stage__sequence
 msgid "Used to order stages. Lower is better."
 msgstr "Utilizzato per ordinare le fasi. Inferiore è precedente."
@@ -758,8 +746,10 @@ msgstr "Storico comunicazioni sito web"
 #. module: mgmtsystem_claim
 #: model_terms:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_stage_action
 msgid ""
-"You can create Management System claim stages to categorize the status of every\n"
-"                claim entered in the system. The stages define all the steps\n"
+"You can create Management System claim stages to categorize the status of "
+"every\n"
+"                claim entered in the system. The stages define all the "
+"steps\n"
 "                required for the resolution of a claim."
 msgstr ""
 "Si possono creare fasi dei reclami del sistema di gestione per classificare "
@@ -767,3 +757,12 @@ msgstr ""
 "                reclamo inserito nel sistema. Le fasi definiscono tutti i "
 "passi richiesti\n"
 "                per la soluzione di un reclamo."
+
+#~ msgid "Number of unread messages"
+#~ msgstr "Numero di messaggi non letti"
+
+#~ msgid "Unread Messages"
+#~ msgstr "Messaggi non letti"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Conteggio messaggi non letti"
