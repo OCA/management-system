@@ -541,6 +541,11 @@ msgid "New"
 msgstr "Nuova"
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Evento successivo calendario attività"
+
+#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Scadenza attività successiva"
@@ -778,9 +783,6 @@ msgstr "oe_kanban_text_red"
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "{{object.name}}"
 msgstr "{{object.name}}"
-
-#~ msgid "Next Activity Calendar Event"
-#~ msgstr "Evento successivo calendario attività"
 
 #~ msgid "Number of unread messages"
 #~ msgstr "Numero di messaggi non letti"
