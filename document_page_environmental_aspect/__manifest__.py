@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Environmental Aspects",
-    "version": "13.0.1.0.1",
+    "version": "12.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
