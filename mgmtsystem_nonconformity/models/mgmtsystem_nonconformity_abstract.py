@@ -32,9 +32,9 @@ class MgmtsystemNonconformityAbstract(models.AbstractModel):
 
     def action_view_non_conformities(self):
         self.ensure_one()
-        action = self.env.ref(
+        action = self.env["ir.actions.act_window"]._for_xml_id(
             "mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list"
-        ).read()[0]
+        )
         action["domain"] = self._get_non_conformities_domain()
         action["context"] = self._get_non_conformities_context()
         return action
