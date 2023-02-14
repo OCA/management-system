@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-07 06:43+0000\n"
-"PO-Revision-Date: 2022-12-30 11:54+0000\n"
-"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"PO-Revision-Date: 2023-02-14 15:23+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -296,22 +296,22 @@ msgstr "Invia email agli auditor due settimane prima dell'audit."
 #: model:base.automation,name:mgmtsystem_audit.rule_set_send_verification_list
 #: model:ir.actions.server,name:mgmtsystem_audit.rule_set_send_verification_list_ir_actions_server
 msgid "Email all followers 1 week before audit."
-msgstr "Invia email agli iscritti una settimana prima dell'audit."
+msgstr "Invia email a chi segue una settimana prima dell'audit."
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_follower_ids
 msgid "Followers"
-msgstr "Iscritti"
+msgstr "Seguito da"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_channel_ids
 msgid "Followers (Channels)"
-msgstr "Iscritti (canali)"
+msgstr "Seguito da (canali)"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Iscritti (partner)"
+msgstr "Seguito da (partner)"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.actions.act_window,help:mgmtsystem_audit.action_report_mgmtsystem_audit
@@ -356,7 +356,7 @@ msgstr "Interno"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_is_follower
 msgid "Is Follower"
-msgstr "Iscritto"
+msgstr "Segue"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__is_conformed
