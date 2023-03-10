@@ -1,7 +1,6 @@
 import time
 from datetime import datetime, timedelta
-
-import mock
+from unittest import mock
 
 from odoo import exceptions
 from odoo.tests import common
