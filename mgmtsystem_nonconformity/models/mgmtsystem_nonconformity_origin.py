@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class MgmtsystemNonconformityOrigin(models.Model):
-
     _name = "mgmtsystem.nonconformity.origin"
     _description = "Origin of nonconformity of the management system"
     _order = "parent_id, sequence"
