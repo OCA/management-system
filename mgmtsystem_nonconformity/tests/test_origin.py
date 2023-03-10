@@ -6,7 +6,6 @@ from odoo.tests import common
 
 class TestModelOrigin(common.TransactionCase):
     def test_create_origin(self):
-
         record = self.env["mgmtsystem.nonconformity.origin"].create(
             {"name": "TestOrigin"}
         )
@@ -15,7 +14,6 @@ class TestModelOrigin(common.TransactionCase):
         self.assertNotEqual(record.id, None)
 
     def test_name_get(self):
-
         record = self.env["mgmtsystem.nonconformity.origin"].create(
             {"name": "TestOrigin"}
         )

@@ -16,7 +16,6 @@ class TestModelCause(common.TransactionCase):
         self.cr.rollback()
 
     def test_create_cause(self):
-
         record = self.env["mgmtsystem.nonconformity.cause"].create(
             {"name": "TestCause"}
         )
@@ -25,7 +24,6 @@ class TestModelCause(common.TransactionCase):
         self.assertNotEqual(record.id, None)
 
     def test_name_get(self):
-
         record = self.env["mgmtsystem.nonconformity.cause"].create(
             {"name": "TestCause"}
         )

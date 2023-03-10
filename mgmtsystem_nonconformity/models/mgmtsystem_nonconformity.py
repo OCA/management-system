@@ -6,7 +6,6 @@ from odoo import _, api, fields, models
 
 
 class MgmtsystemNonconformity(models.Model):
-
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity"
     _inherit = ["mail.thread", "mail.activity.mixin"]

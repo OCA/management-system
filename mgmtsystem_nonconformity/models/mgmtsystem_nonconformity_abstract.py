@@ -6,7 +6,6 @@ from odoo import api, fields, models
 
 
 class MgmtsystemNonconformityAbstract(models.AbstractModel):
-
     _name = "mgmtsystem.nonconformity.abstract"
     _description = "Nonconformity Abstract"
 
