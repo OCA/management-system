@@ -31,6 +31,7 @@ setuptools.setup(
         'odoo14-addon-mgmtsystem_nonconformity_mrp',
         'odoo14-addon-mgmtsystem_nonconformity_product',
         'odoo14-addon-mgmtsystem_nonconformity_quality_control_oca',
+        'odoo14-addon-mgmtsystem_nonconformity_repair',
         'odoo14-addon-mgmtsystem_nonconformity_type',
         'odoo14-addon-mgmtsystem_partner',
         'odoo14-addon-mgmtsystem_quality',
