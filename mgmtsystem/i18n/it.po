@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: management-system (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-07 06:43+0000\n"
-"PO-Revision-Date: 2019-03-02 17:11+0000\n"
-"Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
-"Language-Team: Italian (http://www.transifex.com/oca/OCA-management-"
-"system-9-0/language/it/)\n"
+"PO-Revision-Date: 2023-04-03 21:23+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: Italian (http://www.transifex.com/oca/"
+"OCA-management-system-9-0/language/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.4\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings_module_mgmtsystem_action
@@ -31,7 +31,6 @@ msgstr "Applicazioni"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_user_manager
-#, fuzzy
 msgid "Approving User"
 msgstr "Utente approvazione"
 
@@ -248,13 +247,11 @@ msgstr "Procedure"
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
 msgid "Provide Environment management tools (ISO 14001)"
 msgstr "Attiva strumenti di gestione ambientale (ISO 14001)"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_environmental_aspect
-#, fuzzy
 msgid ""
 "Provide Environmental Aspect category.\n"
 "- This installs the module mgmtsystem_environmental_aspect."
@@ -264,7 +261,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_security_event
-#, fuzzy
 msgid ""
 "Provide Feared Events.\n"
 "- This installs the module mgmtsystem_security_event."
@@ -274,7 +270,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_hazard
-#, fuzzy
 msgid ""
 "Provide Hazards.\n"
 "- This installs the module mgmtsystem_hazard."
@@ -284,37 +279,31 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
 msgid "Provide Health &amp; Safety management tools (OHSAS 18001)"
 msgstr "Attiva strumenti di gestione salute e sicurezza (OHSAS 18001)"
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
 msgid "Provide Information Security management tools (ISO 27001)"
 msgstr "Attiva strumenti di gestione sicurezza informazioni (ISO 27001)"
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
 msgid "Provide Quality management tools (ISO 9001)"
 msgstr "Attiva strumenti di gestione qualità (ISO 9001)"
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
 msgid "Provide a Feared Event documentation category and template"
 msgstr "Attiva una categoria di documentazione e un modello di eventi temuti"
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
 msgid "Provide a Hazards documentation category and template"
 msgstr "Attiva una categoria di documentazione e un modello dei rischi"
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
 msgid ""
 "Provide a Health &amp; Safety Manual template based on the OHSAS 18001 "
 "standard"
@@ -324,20 +313,17 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
 msgid "Provide a Procedure documentation category and template"
 msgstr "Attiva una categoria di documentazione e un modello di procedura"
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
 msgid "Provide a Quality Manual template based on the ISO 9001:2008 standard"
 msgstr ""
 "Attiva un modello di manuale qualità basato sullo standard ISO 9001:2008"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_health_safety_manual
-#, fuzzy
 msgid ""
 "Provide a health and safety manual template.\n"
 "- This installs the module mgmtsystem_health_safety_manual."
@@ -347,7 +333,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_quality_manual
-#, fuzzy
 msgid ""
 "Provide a quality manual template.\n"
 "- This installs the module mgmtsystem_quality_manual."
@@ -357,7 +342,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_action
-#, fuzzy
 msgid ""
 "Provide actions and improvement opportunities tools.\n"
 "-This installs the module mgmtsystem_action."
@@ -367,14 +351,12 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
 msgid "Provide an Envioronmental Aspect documentation category and template"
 msgstr ""
 "Attiva una categoria di documentazione e un modello degli aspetti ambientali"
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
 msgid ""
 "Provide an Environment Manual template based on the ISO 14001:2004 standard"
 msgstr ""
@@ -382,7 +364,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-#, fuzzy
 msgid "Provide an Information Security Manual template based on ISO 27001"
 msgstr ""
 "Attiva un modello del manuale sicurezza informazioni basato sullo standard "
@@ -390,7 +371,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_environment_manual
-#, fuzzy
 msgid ""
 "Provide an environment manual template.\n"
 "- This installs the module mgmtsystem_environment_manual."
@@ -400,7 +380,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_information_security_manual
-#, fuzzy
 msgid ""
 "Provide an information security manual.\n"
 "- This installs the module information_security_manual."
@@ -410,7 +389,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_audit
-#, fuzzy
 msgid ""
 "Provide audit tools.\n"
 "-This installs the module mgmtsystem_audit."
@@ -420,7 +398,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_claim
-#, fuzzy
 msgid ""
 "Provide claim tools.\n"
 "-This installs the module mgmtsystem_claim."
@@ -430,7 +407,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_environment
-#, fuzzy
 msgid ""
 "Provide environment management tools.\n"
 "-This installs the module mgmtsystem_environment."
@@ -440,7 +416,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_health_safety
-#, fuzzy
 msgid ""
 "Provide health and safety management tools.\n"
 "-This installs the module mgmtsystem_health_safety."
@@ -450,7 +425,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_information_security
-#, fuzzy
 msgid ""
 "Provide information security tools.\n"
 "-This installs the module mgmtsystem_information_security."
@@ -460,7 +434,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_nonconformity
-#, fuzzy
 msgid ""
 "Provide non conformity tools.\n"
 "-This installs the module mgmtsystem_nonconformity."
@@ -470,7 +443,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_procedure
-#, fuzzy
 msgid ""
 "Provide procedures category.\n"
 "- This installs the module mgmtsystem_procedure."
@@ -480,7 +452,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_quality
-#, fuzzy
 msgid ""
 "Provide quality management tools.\n"
 "-This installs the module mgmtsystem_quality."
@@ -490,7 +461,6 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings_module_mgmtsystem_review
-#, fuzzy
 msgid ""
 "Provide review tools.\n"
 "-This installs the module mgmtsystem_review."
