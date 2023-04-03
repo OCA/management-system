@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-17 02:42+0000\n"
-"PO-Revision-Date: 2023-01-03 12:48+0000\n"
-"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"PO-Revision-Date: 2023-04-03 08:19+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -409,9 +409,8 @@ msgstr "Basso"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_report
-#, fuzzy
 msgid "Management System Action Report"
-msgstr "Stampa azione del sistema gestione"
+msgstr "Resoconto azione del sistema di gestione"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.action_report_mgmtsystem_action
@@ -420,19 +419,16 @@ msgstr "Analisi del sistema di gestione"
 
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
-#, fuzzy
 msgid "My Actions"
 msgstr "Le mie azioni"
 
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
-#, fuzzy
 msgid "My Activities"
 msgstr "Le mie attività"
 
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
-#, fuzzy
 msgid "My Followed Actions"
 msgstr "Le azioni che seguo"
 
@@ -446,7 +442,7 @@ msgstr "Nome"
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:126
 #, python-format
 msgid "New"
-msgstr ""
+msgstr "Nuova"
 
 #. module: mgmtsystem_action
 #: selection:mgmtsystem.action,priority:0
@@ -504,10 +500,8 @@ msgstr "Sequenza"
 
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
-#, fuzzy
 msgid "Show all records which has next action date is before today"
-msgstr ""
-"Visualizzare tutte le righe con l'azione successiva antecedente ad oggi"
+msgstr "Visualizzare tutte le righe con l'azione successiva antecedente ad oggi"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_stage_id
@@ -567,12 +561,11 @@ msgstr "Fase attività"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_stage_fold
-#, fuzzy
 msgid ""
 "This stage is folded in the kanban view when there are no records in that "
 "stage to display."
 msgstr ""
-"Questa fase è chiusa nella vista kanban quando non ci sono record da "
+"Questa fase è chiusa nella vista kanban quando non ci sono righe da "
 "visualizzare nella fase stessa."
 
 #. module: mgmtsystem_action
