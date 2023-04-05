@@ -5,13 +5,13 @@
     "name": "Mgmtsystem Nonconformity Quality Control Oca",
     "summary": """
         Bridge module between Quality Control and Non Conformities""",
-    "version": "14.0.1.0.1",
+    "version": "12.0.1.0.0",
     "license": "AGPL-3",
     "author": "Escodoo,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "depends": [
         "mgmtsystem_nonconformity",
-        "quality_control_oca",
+        "quality_control",
     ],
     "data": [
         "views/qc_inspection.xml",

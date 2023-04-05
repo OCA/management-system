@@ -6,9 +6,9 @@
     <record model="ir.ui.view" id="qc_inspection_form_view">
         <field
             name="name"
-        >qc.inspection.form (in mgmtsystem_nonconformity_quality_control_oca)</field>
+        >qc.inspection.form (in mgmtsystem_nonconformity_quality_control)</field>
         <field name="model">qc.inspection</field>
-        <field name="inherit_id" ref="quality_control_oca.qc_inspection_form_view" />
+        <field name="inherit_id" ref="quality_control.qc_inspection_form_view" />
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
                 <button
@@ -39,7 +39,7 @@
 <!--    <record model="ir.ui.view" id="qc_inspection_search_view">-->
 <!--        <field-->
 <!--            name="name"-->
-<!--        >qc.inspection.search (in mgmtsystem_nonconformity_quality_control_oca)</field>-->
+<!--        >qc.inspection.search (in mgmtsystem_nonconformity_quality_control)</field>-->
 <!--        <field name="model">qc.inspection</field>-->
 <!--        <field name="inherit_id" ref="TODO othermodule.search_view" />-->
 <!--        <field name="arch" type="xml">-->
@@ -50,7 +50,7 @@
 <!--    <record model="ir.ui.view" id="qc_inspection_tree_view">-->
 <!--        <field-->
 <!--            name="name"-->
-<!--        >qc.inspection.tree (in mgmtsystem_nonconformity_quality_control_oca)</field>-->
+<!--        >qc.inspection.tree (in mgmtsystem_nonconformity_quality_control)</field>-->
 <!--        <field name="model">qc.inspection</field>-->
 <!--        <field name="inherit_id" ref="TODO othermodule.tree_view" />-->
 <!--        <field name="arch" type="xml">-->
