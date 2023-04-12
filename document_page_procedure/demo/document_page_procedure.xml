@@ -4,6 +4,7 @@
       <record id="document_page_procedure" model="document.page">
         <field name="name">Procedure</field>
         <field name="parent_id" ref="document_page_group_procedure" />
+        <field name="tag_ids" eval="[(4, ref('procedure_tag'))]" />
         <field name="type">content</field>
         <field name="content">
 <![CDATA[

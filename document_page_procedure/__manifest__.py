@@ -3,13 +3,17 @@
 
 {
     "name": "Document Management - Wiki - Procedures",
-    "version": "14.0.1.0.0",
+    "version": "14.0.2.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": ["document_page", "mgmtsystem"],
-    "data": ["data/document_page_procedure.xml", "views/document_page_procedure.xml"],
+    "depends": ["document_page_tag", "mgmtsystem"],
+    "data": [
+        "data/document_page_procedure.xml",
+        "data/document_page_tag.xml",
+        "views/document_page_procedure.xml",
+    ],
     "demo": ["demo/document_page_procedure.xml"],
     "installable": True,
 }

@@ -8,12 +8,9 @@
         <field name="help">Procedures of your management system.</field>
         <field
             name="domain"
-            eval="[('parent_id','=',ref('document_page_group_procedure'))]"
+            eval="[('tag_ids','=',ref('procedure_tag')), ('type', '=', 'content')]"
         />
-        <field
-            name="context"
-            eval="{'default_parent_id': ref('document_page_group_procedure')}"
-        />
+        <field name="context" eval="{'default_tag_ids': [(4, ref('procedure_tag'))]}" />
     </record>
     <record id="action_procedures_tree" model="ir.actions.act_window.view">
         <field name="sequence" eval="0" />
