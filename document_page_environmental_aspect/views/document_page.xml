@@ -6,13 +6,10 @@
       <field name="res_model">document.page</field>
       <field name="view_mode">tree,form</field>
       <field name="help">Environmental aspects of your management system.</field>
-      <field
-            name="domain"
-            eval="[('parent_id','=',ref('document_page_group_environmental_aspect'))]"
-        />
+      <field name="domain" eval="[('tag_ids','=',ref('environment_aspect_tag'))]" />
       <field
             name="context"
-            eval="{'default_parent_id': ref('document_page_group_environmental_aspect')}"
+            eval="{'default_tag_ids': [(4, ref('environment_aspect_tag'))]}"
         />
     </record>
     <record id="action_environmental_aspects_tree" model="ir.actions.act_window.view">

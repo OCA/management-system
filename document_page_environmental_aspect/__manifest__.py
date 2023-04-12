@@ -25,7 +25,11 @@
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
-    "depends": ["document_page", "mgmtsystem"],
-    "data": ["data/document_page.xml", "views/document_page.xml"],
+    "depends": ["document_page_tag", "mgmtsystem"],
+    "data": [
+        "data/document_page.xml",
+        "data/document_page_tag.xml",
+        "views/document_page.xml",
+    ],
     "development_status": "Production/Stable",
 }
