@@ -288,7 +288,7 @@
                             <field
                                 name="procedure_ids"
                                 attrs="{'readonly':[('state','not in',['draft','analysis'])]}"
-                                domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]"
+                                domain="[('tag_ids','=', %(document_page_procedure.procedure_tag)s)]"
                             />
                         </page>
 
