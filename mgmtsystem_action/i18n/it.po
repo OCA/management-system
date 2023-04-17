@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-17 02:42+0000\n"
-"PO-Revision-Date: 2023-04-15 12:34+0000\n"
+"PO-Revision-Date: 2023-04-17 16:40+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -319,7 +319,7 @@ msgstr "Informazione aggiuntiva"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage_fold
 msgid "Folded in Kanban"
-msgstr "Chiuso nel kanban"
+msgstr "Minimizzato nel Kanban"
 
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
@@ -501,7 +501,7 @@ msgstr "Sequenza"
 #. module: mgmtsystem_action
 #: model:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Show all records which has next action date is before today"
-msgstr "Visualizzare tutte le righe con l'azione successiva antecedente ad oggi"
+msgstr "Visualizza tutte le righe con l'azione successiva antecedente ad oggi"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report_stage_id
@@ -543,7 +543,7 @@ msgstr "Sistema"
 #: sql_constraint:mgmtsystem.action.tag:0
 #, python-format
 msgid "Tag name already exists !"
-msgstr "Il nome etichetta esiste già !"
+msgstr "Il nome etichetta esiste già!"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.mgmtsystem_action_tag_action
