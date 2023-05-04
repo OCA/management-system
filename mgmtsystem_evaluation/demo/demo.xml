@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="demo_result_passed" model="mgmtsystem.evaluation.result">
+        <field name="name">Passed</field>
+        <field name="passed" eval="True" />
+    </record>
+    <record id="demo_result_failed" model="mgmtsystem.evaluation.result">
+        <field name="name">Failed</field>
+        <field name="passed" eval="False" />
+    </record>
+    <record id="demo_template_once" model="mgmtsystem.evaluation.template">
+        <field name="name">First Evaluation - verify documentation</field>
+        <field
+            name="result_ids"
+            eval="[(4, ref('demo_result_passed')), (4, ref('demo_result_failed'))]"
+        />
+        <field name="model_id" ref="base.model_res_partner" />
+        <field
+            name="feedback"
+        >Review the presented documentation in order to verify that we can start</field>
+    </record>
+    <record id="demo_template_yearly_review" model="mgmtsystem.evaluation.template">
+        <field name="name">Yearly review of documentation</field>
+        <field
+            name="result_ids"
+            eval="[(4, ref('demo_result_passed')), (4, ref('demo_result_failed'))]"
+        />
+        <field name="model_id" ref="base.model_res_partner" />
+        <field
+            name="feedback"
+        >Review the presented documentation in order to verify that all is fine</field>
+        <field name="recurrence_type">yearly</field>
+        <field name="recurrence_period">1</field>
+    </record>
+</odoo>

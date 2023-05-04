@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template
+        id="account_financial_report_assets_backend"
+        name="account_financial_report assets_backend"
+        inherit_id="web.assets_backend"
+    >
+        <xpath expr="." position="inside">
+            <script
+                type="text/javascript"
+                src="/mgmtsystem_evaluation/static/src/components/evaluation_reference/evaluation_reference.js"
+            />
+        </xpath>
+    </template>
+
+</odoo>
