@@ -1,0 +1,3 @@
+This module allows to generate evaluations for any kind of models.
+
+Evaluations can be used to certify checks of different entities, like partners, employees, products...
