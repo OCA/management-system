@@ -16,5 +16,5 @@
     ],
     "data": ["data/health_safety.xml"],
     "installable": True,
-    "application": True,
+    "application": False,
 }
