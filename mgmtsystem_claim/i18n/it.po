@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-06-08 09:13+0000\n"
+"PO-Revision-Date: 2023-06-14 15:10+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -395,9 +395,8 @@ msgid ""
 "If you check this field, this stage will be proposed by default on each "
 "sales team. It will not assign this stage to existing teams."
 msgstr ""
-"Se si imposta questo campo, questa fase verrà proposta come predefinita ad "
-"ogni squadra di vendita. Non verrà assegnata questa fase alle squadre "
-"esistenti."
+"Se si spunta questo campo, la fase verrà proposta come predefinita ad ogni "
+"team vendita. Questa fase non verrà assegnata ai team esistenti."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_is_follower
@@ -428,8 +427,8 @@ msgid ""
 "Link between stages and sales teams. When set, this limitate the current "
 "stage to the selected sales teams."
 msgstr ""
-"Collegamento tra le fasi e le squadre di vendita. Quando impostato, limita "
-"la fase attuale alle squadre di vendita selezionate."
+"Collegamento tra fasi e team vendite. Quando impostato, limita la fase "
+"attuale ai team di vendita selezionati."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_main_attachment_id
@@ -624,8 +623,8 @@ msgid ""
 "Responsible sales team. Define Responsible user and Email account for mail "
 "gateway."
 msgstr ""
-"Responsabile squadra vendita. Utente responsabile e account email per il "
-"gateway email."
+"Team vendite responsabile. Definire l'utente responsabile e un indirizzo "
+"email per il gateway mail."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__cause
@@ -721,17 +720,17 @@ msgstr "Tipo di attività eccezione sul record."
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Unassigned Claims"
-msgstr "Reclamo non assegnato"
+msgstr "Reclami non assegnati"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_stage__sequence
 msgid "Used to order stages. Lower is better."
-msgstr "Utilizzato per ordinare le fasi. Inferiore è precedente."
+msgstr "Utilizzato per ordinare le fasi. Prima il più basso."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__email_cc
 msgid "Watchers Emails"
-msgstr "Osservatore email"
+msgstr "Email osservatori"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__website_message_ids
