@@ -280,8 +280,8 @@
                         <page string="Procedures" name="procedures">
                             <field
                                 name="procedure_ids"
-                                readonly="state not in ('draft', 'analysis')"
-                                domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]"
+                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}"
+                                domain="[('parent_id','child_of',('Procedure','Environmental Aspect','Manuals'))]"
                             />
                         </page>
 
