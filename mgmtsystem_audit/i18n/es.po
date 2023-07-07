@@ -10,14 +10,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-10 07:38+0000\n"
-"PO-Revision-Date: 2018-02-10 07:38+0000\n"
-"Last-Translator: enjolras <yo@miguelrevilla.com>, 2018\n"
+"PO-Revision-Date: 2023-07-07 17:10+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: mgmtsystem_audit
 #: model:mail.template,body_html:mgmtsystem_audit.template_email_send_verification_list
@@ -41,6 +42,24 @@ msgid ""
 "            \n"
 "        "
 msgstr ""
+"\n"
+"            \n"
+"<p>Hello,</p>\n"
+"\n"
+"<p>\n"
+"The audit <t t-out=\"object.name\" /> is scheduled in 1 week.\n"
+"Please finish the verification list and send it to the auditees:\n"
+"\n"
+"<a t-att-href=\"object.get_action_url()\">Link</a>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Thank you.\n"
+"--\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
 
 #. module: mgmtsystem_audit
 #: model:mail.template,body_html:mgmtsystem_audit.template_email_prepare_to_audit
@@ -64,76 +83,94 @@ msgid ""
 "            \n"
 "        "
 msgstr ""
+"\n"
+"            \n"
+"<p>Hello,</p>\n"
+"\n"
+"<p>\n"
+"The audit <t t-out=\"object.name\" /> is scheduled in 2 weeks.\n"
+"Please prepare the verification list:\n"
+"\n"
+"<a t-att-href=\"object.get_action_url()\">Link</a>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Thank you.\n"
+"--\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_audits
 msgid "# of audits"
-msgstr ""
+msgstr "# de auditorías"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_days_to_close
 msgid "# of days to close"
-msgstr ""
+msgstr "# de días para el cierre"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "<strong>Audit Report</strong>"
-msgstr ""
+msgstr "<strong>Informe de auditoría</strong>"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "<strong>Improvement opportunities:</strong>"
-msgstr ""
+msgstr "<strong>Oportunidades de mejora:</strong>"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "<strong>Nonconformities:</strong>"
-msgstr ""
+msgstr "<strong>Inconformidades:</strong>"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "<strong>Points To Improve:</strong>"
-msgstr ""
+msgstr "<strong>Puntos a mejorar:</strong>"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "<strong>Strong points:</strong>"
-msgstr ""
+msgstr "<strong>Puntos fuertes:</strong>"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "<strong>Verification List</strong>"
-msgstr ""
+msgstr "<strong>Lista de verificación</strong>"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Acción necesariaa"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "actividades"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "decoración de actividades de excepción"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "estado de la actividad"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icono del tipo de actividad"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "recuento de anexos"
 
 #. module: mgmtsystem_audit
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_audit
@@ -160,7 +197,7 @@ msgstr "Auditoría cerrada"
 #. module: mgmtsystem_audit
 #: model:ir.actions.report,name:mgmtsystem_audit.audit_report_mgmtsystem_audit
 msgid "Audit report"
-msgstr ""
+msgstr "Reporte de auditoría"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__auditee_user_ids
@@ -171,7 +208,7 @@ msgstr "Auditados"
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Auditees:"
-msgstr "Auditados"
+msgstr "Auditados:"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__auditor_user_ids
@@ -218,7 +255,7 @@ msgstr "Auditorías cerradas"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__closing_date
 msgid "Closing Date"
-msgstr ""
+msgstr "Fecha de Cierre"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__comments
@@ -240,7 +277,7 @@ msgstr "Confidencialidad:"
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "Confidentially:"
-msgstr ""
+msgstr "Confidencialmente:"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
@@ -282,7 +319,7 @@ msgstr "Fecha:"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__days_since_last_update
 msgid "Days Since Last Update"
-msgstr ""
+msgstr "Días desde la última actualización"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__display_name
@@ -295,31 +332,35 @@ msgstr "Nombre mostrado"
 #: model:ir.actions.server,name:mgmtsystem_audit.rule_set_prepare_to_audit_ir_actions_server
 msgid "Email all auditors 2 weeks before audit."
 msgstr ""
+"Envíe un correo electrónico a todos los auditores 2 semanas antes de la "
+"auditoría."
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.server,name:mgmtsystem_audit.rule_set_send_verification_list_ir_actions_server
 msgid "Email all followers 1 week before audit."
 msgstr ""
+"Envíe un correo electrónico a todos los seguidores 1 semana antes de la "
+"auditoría."
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores/as"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "seguidores (socios)"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "fuente iconos sorprendentes , por ejemplo fa-tasks"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Tienes un mensaje"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.actions.act_window,help:mgmtsystem_audit.action_report_mgmtsystem_audit
@@ -327,6 +368,8 @@ msgid ""
 "Have a general overview of all audits processed in the system by sorting "
 "them with specific criteria."
 msgstr ""
+"Disponga de una visión general de todas las auditorías procesadas en el "
+"sistema clasificándolas con criterios específicos."
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__id
@@ -338,23 +381,23 @@ msgstr "ID"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icono"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "icono para indicar una actividad por excepción."
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si está marcada, nuevos mensajes requieren tu atención."
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "si está marcada, algunos mensajes tienen un error de entrega."
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__imp_opp_ids
@@ -366,17 +409,17 @@ msgstr "Oportunidades de mejora"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Internal"
-msgstr ""
+msgstr "Interno"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__is_conformed
 msgid "Is Conformed"
-msgstr ""
+msgstr "Está Conforme"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Es seguidor/a"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines____last_update
@@ -402,27 +445,27 @@ msgstr "Ultima actualización en"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Archivo adjunto principal"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.action_report_mgmtsystem_audit
 msgid "Management System Audit Analysis"
-msgstr ""
+msgstr "Análisis de auditoría del sistema de gestión"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Error de envío de mensajes"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "mensajes"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Mi fecha límite de la actividad"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__name
@@ -432,22 +475,22 @@ msgstr "Nombre"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Próximo evento del calendario de actividades"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Fecha límite de la próxima actividad"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Resumen de la Siguiente Actividad"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Tipo de la Siguiente Actividad"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__nonconformity_ids
@@ -463,37 +506,37 @@ msgstr "No conformidad"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_nonconformities
 msgid "Number Of Nonconformities"
-msgstr ""
+msgstr "Número de disconformidades"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_questions_in_verification_list
 msgid "Number Of Questions In Verification List"
-msgstr ""
+msgstr "Número de preguntas de la lista de verificación"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "número de acciones"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "número de errores"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_improvements_opportunity
 msgid "Number of improvements Opportunities"
-msgstr ""
+msgstr "Número de oportunidades de mejora"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Número de mensajes que requieren una acción"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "número de mensajes con error de entrega"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields.selection,name:mgmtsystem_audit.selection__mgmtsystem_audit__state__open
@@ -514,7 +557,7 @@ msgstr "Puntos a mejorar"
 #. module: mgmtsystem_audit
 #: model:mail.template,subject:mgmtsystem_audit.template_email_prepare_to_audit
 msgid "Prepare to Audit: \"{{object.name}}\""
-msgstr ""
+msgstr "Preparar para auditoría: \"{{object.name}}\""
 
 #. module: mgmtsystem_audit
 #: model:mail.template,name:mgmtsystem_audit.template_email_prepare_to_audit
@@ -552,12 +595,12 @@ msgstr "Auditorías relacionadas"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Usuario Responsabele"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "Error en la entrega de SMS"
 
 #. module: mgmtsystem_audit
 #: model:mail.template,name:mgmtsystem_audit.template_email_send_verification_list
@@ -567,7 +610,7 @@ msgstr "Enviar lista de verificación"
 #. module: mgmtsystem_audit
 #: model:mail.template,subject:mgmtsystem_audit.template_email_send_verification_list
 msgid "Send Verification List: \"{{object.name}}\""
-msgstr ""
+msgstr "Enviar lista de verificación: \"{{object.name}}\""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__seq
@@ -587,6 +630,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Estado basado en actividades\n"
+"Atrasado: La fecha de vencimiento ya ha pasado\n"
+"Hoy: La fecha de la actividad es hoy\n"
+"Planificado: Actividades futuras."
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__strong_points
@@ -607,7 +654,7 @@ msgstr "Puntos a mejorar"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo (o clase) de actividad excepcional registrada."
 
 #. module: mgmtsystem_audit
 #. odoo-python
@@ -637,17 +684,17 @@ msgstr "Lista de verificación"
 #. module: mgmtsystem_audit
 #: model:ir.actions.report,name:mgmtsystem_audit.verification_report_mgmtsystem_audit
 msgid "Verification list report"
-msgstr ""
+msgstr "Informe sobre la lista de verificación"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "mensajes de la página web"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "historial de la comunicación en la web"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
