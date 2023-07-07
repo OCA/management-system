@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-26 02:48+0000\n"
-"PO-Revision-Date: 2023-06-28 18:09+0000\n"
+"PO-Revision-Date: 2023-07-07 20:09+0000\n"
 "Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
@@ -69,7 +69,7 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_number_of_claims
 msgid "# of claims"
-msgstr ""
+msgstr "# de reclamaciones"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_report_number_of_days_to_close
@@ -111,8 +111,8 @@ msgid ""
 "      "
 msgstr ""
 "<p>\n"
-"  Hola,</br>\n"
-"  Se le ha asignado una nueva reclamación:\n"
+"  Hello,\n"
+"  A new claim has been assigned to you:\n"
 "</p>\n"
 "<p>\n"
 "  <a href=\"http://localhost:8080\">http://localhost:8080</a>\n"
@@ -121,7 +121,7 @@ msgstr ""
 "  ${object.description}\n"
 "</p>\n"
 "<p>\n"
-"Gracias.\n"
+"Thank you.\n"
 "</p>\n"
 "--\n"
 "<p>\n"
@@ -301,7 +301,7 @@ msgstr "Descripción"
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_email_from
 msgid "Destination email for email gateway."
-msgstr "Correo electrónico de destino para email gateway"
+msgstr "Correo electrónico de destino para la pasarela de correo electrónico."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_display_name
@@ -351,6 +351,8 @@ msgid ""
 "Have a general overview of all claims processed in the system by sorting "
 "them with specific criteria."
 msgstr ""
+"Disponga de una visión general de todas las reclamaciones tramitadas en el "
+"sistema clasificándolas con criterios específicos."
 
 #. module: mgmtsystem_claim
 #: selection:mgmtsystem.claim,priority:0
@@ -428,12 +430,12 @@ msgstr "Baja"
 #. module: mgmtsystem_claim
 #: model:ir.actions.act_window,name:mgmtsystem_claim.action_report_mgmtsystem_claim
 msgid "Management System Analysis"
-msgstr ""
+msgstr "Análisis del sistema de gestión"
 
 #. module: mgmtsystem_claim
 #: model:ir.model,name:mgmtsystem_claim.model_mgmtsystem_claim_report
 msgid "Management System Claim Report"
-msgstr ""
+msgstr "Informe sobre reclamaciones al sistema de gestión"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_message_ids
@@ -562,7 +564,7 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_cause
 msgid "Root Cause"
-msgstr "Causa raíz "
+msgstr "Causa raíz"
 
 #. module: mgmtsystem_claim
 #: model:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
@@ -612,7 +614,7 @@ msgstr "Etapas"
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage_team_ids
 msgid "Teams"
-msgstr ""
+msgstr "Equipos"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_email_cc
@@ -623,7 +625,7 @@ msgid ""
 msgstr ""
 "Estas direcciones de correo serán añadidas al campo CC para todos los "
 "correos entrantes y salientes de este registro antes de ser enviados. Separe "
-"las diferentes direcciones de correo con una coma."
+"las diferentes direcciones de correo con una coma"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_user_fault
