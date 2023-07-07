@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-30 04:37+0000\n"
-"PO-Revision-Date: 2023-06-28 18:09+0000\n"
+"PO-Revision-Date: 2023-07-07 20:09+0000\n"
 "Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
@@ -246,6 +246,8 @@ msgid ""
 "Have a general overview of all audits processed in the system by sorting "
 "them with specific criteria."
 msgstr ""
+"Disponga de una visión general de todas las auditorías procesadas en el "
+"sistema clasificándolas con criterios específicos."
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines_id
@@ -274,7 +276,7 @@ msgstr "Oportunidades de mejora"
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 #: model:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Internal"
-msgstr ""
+msgstr "Interno"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_is_follower
@@ -315,7 +317,7 @@ msgstr "Ultima actualización en"
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.action_report_mgmtsystem_audit
 msgid "Management System Audit Analysis"
-msgstr ""
+msgstr "Análisis de auditoría del sistema de gestión"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_message_ids
@@ -346,7 +348,7 @@ msgstr "Número de acciones"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_number_of_improvements_opportunity
 msgid "Number of improvements Opportunities"
-msgstr ""
+msgstr "Número de oportunidades de mejora"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_needaction_counter
@@ -356,12 +358,12 @@ msgstr "Número de mensajes que requieren una acción"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_number_of_nonconformities
 msgid "Number of nonconformities"
-msgstr ""
+msgstr "Número de disconformidades"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_number_of_questions_in_verification_list
 msgid "Number of questions in verification list"
-msgstr ""
+msgstr "Número de preguntas en la lista de verificación"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit_message_unread_counter
@@ -486,7 +488,7 @@ msgstr "Lista de verificación"
 #. module: mgmtsystem_audit
 #: model:ir.actions.report.xml,name:mgmtsystem_audit.verification_report_mgmtsystem_audit
 msgid "Verification list report"
-msgstr ""
+msgstr "Informe de la lista de verificación"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_website_message_ids
