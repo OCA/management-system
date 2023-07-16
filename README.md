@@ -21,6 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[document_page_environmental_aspect](document_page_environmental_aspect/) | 12.0.1.0.0 |  | Environmental Aspects
 [document_page_procedure](document_page_procedure/) | 12.0.1.0.0 |  | Document Management - Wiki - Procedures
 [document_page_quality_manual](document_page_quality_manual/) | 12.0.1.0.0 |  | Quality Manual
 [document_page_work_instruction](document_page_work_instruction/) | 12.0.1.0.0 |  | Document Management - Wiki - Work Instructions
