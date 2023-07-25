@@ -7,5 +7,5 @@ from openupgradelib import openupgrade
 @openupgrade.migrate()
 def migrate(env, version):
     openupgrade.load_data(
-        env.cr, "mgmtsystem_review", "migrations/13.0.1.3.0/noupdate_changes.xml"
+        env.cr, "mgmtsystem_review", "migrations/13.0.1.0.0/noupdate_changes.xml"
     )
