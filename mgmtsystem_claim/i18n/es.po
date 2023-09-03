@@ -52,8 +52,8 @@ msgstr ""
 "<t t-out=\"object.description\"/>\n"
 "</p>\n"
 "\n"
-"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\""
-"/></a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -101,8 +101,8 @@ msgstr ""
 "following claim is due to be completed in 10 days (<t t-out=\"object."
 "date_deadline\"/>):\n"
 "\n"
-"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\""
-"/></a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -525,8 +525,8 @@ msgstr "número de errores"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Número de mensajes que requieren una acción"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_error_counter
@@ -763,6 +763,9 @@ msgstr ""
 "                                    claim entered in the system. The stages "
 "define all the steps\n"
 "                                    required for the resolution of a claim."
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Número de mensajes que requieren una acción"
 
 #~ msgid "Creation Date"
 #~ msgstr "Fecha de creación"
