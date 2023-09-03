@@ -542,8 +542,8 @@ msgstr "Anzahl Fehler"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Anzahl Nachrichten, die Maßnahmen erfordern"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
@@ -749,6 +749,9 @@ msgstr ""
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "{{object.name}}"
 msgstr ""
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Anzahl Nachrichten, die Maßnahmen erfordern"
 
 #~ msgid "Number of unread messages"
 #~ msgstr "Anzahl ungelesener Nachrichten"
