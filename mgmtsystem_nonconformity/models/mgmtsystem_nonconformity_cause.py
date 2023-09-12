@@ -16,7 +16,7 @@ class MgmtsystemNonconformityCause(models.Model):
     name = fields.Char("Cause", required=True, translate=True)
     description = fields.Text()
     sequence = fields.Integer(help="Defines the order to present items")
-    parent_path = fields.Char(index=True)
+    parent_path = fields.Char(index=True, unaccent=False)
     parent_id = fields.Many2one(
         "mgmtsystem.nonconformity.cause", "Group", ondelete="restrict"
     )
