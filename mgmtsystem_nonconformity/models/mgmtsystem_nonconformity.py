@@ -192,7 +192,11 @@ class MgmtsystemNonconformity(models.Model):
     def create(self, vals):
         for value in vals:
             value.update(
-                {"ref": self.env["ir.sequence"].next_by_code("mgmtsystem.nonconformity")}
+                {
+                    "ref": self.env["ir.sequence"].next_by_code(
+                        "mgmtsystem.nonconformity"
+                    )
+                }
             )
         return super().create(vals)
 
