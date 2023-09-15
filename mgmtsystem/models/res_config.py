@@ -107,3 +107,9 @@ class MgmtsystemConfigSettings(models.TransientModel):
         help="Provide Work Instructions category.\n"
         "- This installs the module document_page_work_instruction.",
     )
+
+    module_mgmtsystem_evaluation = fields.Boolean(
+        "Evaluation",
+        help="Provide a tool for evaluating different kind of resources.\n"
+        "- This installs the module mgmtsystem_quality.",
+    )
