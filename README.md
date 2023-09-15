@@ -36,7 +36,7 @@ addon | version | maintainers | summary
 [mgmtsystem_environment](mgmtsystem_environment/) | 16.0.1.0.0 |  | Environment Management System
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 16.0.1.0.0 |  | Hazard
 [mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 16.0.1.0.0 |  | Hazard Risk
-[mgmtsystem_health_safety](mgmtsystem_health_safety/) | 16.0.1.0.0 |  | Health and Safety Management System
+[mgmtsystem_health_safety](mgmtsystem_health_safety/) | 16.0.1.0.1 |  | Health and Safety Management System
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 16.0.1.0.0 |  | Information Security Management System Manual
 [mgmtsystem_manual](mgmtsystem_manual/) | 16.0.1.0.0 |  | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 16.0.1.0.2 |  | Management System - Nonconformity
