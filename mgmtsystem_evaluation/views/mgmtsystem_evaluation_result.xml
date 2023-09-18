@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 CreuBlanca
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="mgmtsystem_evaluation_result_form_view">
+        <field
+            name="name"
+        >mgmtsystem.evaluation.result.form (in mgmtsystem_evaluation)</field>
+        <field name="model">mgmtsystem.evaluation.result</field>
+        <field name="arch" type="xml">
+            <form>
+                <header />
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="passed" />
+                    </group>
+                </sheet>
+                <div class="oe_chatter" />
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_evaluation_result_search_view">
+        <field
+            name="name"
+        >mgmtsystem.evaluation.result.search (in mgmtsystem_evaluation)</field>
+        <field name="model">mgmtsystem.evaluation.result</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_evaluation_result_tree_view">
+        <field
+            name="name"
+        >mgmtsystem.evaluation.result.tree (in mgmtsystem_evaluation)</field>
+        <field name="model">mgmtsystem.evaluation.result</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="passed" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mgmtsystem_evaluation_result_act_window">
+        <field name="name">Evaluation Result</field>
+        <field name="res_model">mgmtsystem.evaluation.result</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="mgmtsystem_evaluation_result_menu">
+        <field name="name">Mgmtsystem Evaluation Result</field>
+        <field name="parent_id" ref="mgmtsystem.menu_mgmtsystem_configuration" />
+        <field name="action" ref="mgmtsystem_evaluation_result_act_window" />
+        <field name="sequence" eval="16" />
+    </record>
+
+</odoo>
