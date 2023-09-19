@@ -35,6 +35,7 @@ addon | version | maintainers | summary
 [mgmtsystem_claim](mgmtsystem_claim/) | 14.0.1.0.0 |  | Management System - Claim
 [mgmtsystem_environment](mgmtsystem_environment/) | 14.0.1.0.0 |  | Environment Management System
 [mgmtsystem_evaluation](mgmtsystem_evaluation/) | 14.0.1.0.0 |  | Evaluate records within your management system
+[mgmtsystem_evaluation_hr](mgmtsystem_evaluation_hr/) | 14.0.1.0.0 |  | Allow to use evaluations on Employees
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 14.0.1.0.1 |  | Hazard
 [mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 14.0.1.0.0 |  | Hazard Risk
 [mgmtsystem_health_safety](mgmtsystem_health_safety/) | 14.0.1.0.0 |  | Health and Safety Management System
