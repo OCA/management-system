@@ -76,6 +76,7 @@ msgstr "Erstellt am"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__display_name
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__display_name
 msgid "Display Name"
 msgstr "Anzeigename"
 
@@ -107,6 +108,11 @@ msgid "Environmental Aspects"
 msgstr "Umwelt-Betrachtungen"
 
 #. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_evaluation
+msgid "Evaluation"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_security_event
 msgid "Feared Events"
 msgstr "Befürchtete Geschehen"
@@ -132,6 +138,7 @@ msgstr "Hygiene & Sicherheit (OHSAS 18001)"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__id
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__id
 msgid "ID"
 msgstr "ID"
 
@@ -151,6 +158,7 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system____last_update
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings____last_update
 msgid "Last Modified on"
 msgstr "Zuletzt aktualisiert am"
 
@@ -374,6 +382,13 @@ msgid ""
 msgstr ""
 "Stellt Handbuchvorlage zum Qualitätsmanagement bereit.\n"
 "- Das Modul mgmtsystem_quality_manual wird installiert."
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_evaluation
+msgid ""
+"Provide a tool for evaluating different kind of resources.\n"
+"- This installs the module mgmtsystem_quality."
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_action
