@@ -120,7 +120,7 @@ class MgmtsystemAudit(models.Model):
             res = (dt2 - dt1).days
         return res
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
         """Audit creation."""
         vals.update(
