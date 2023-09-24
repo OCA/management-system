@@ -120,12 +120,13 @@ class MgmtsystemAudit(models.Model):
             res = (dt2 - dt1).days
         return res
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
         """Audit creation."""
-        vals.update(
-            {"reference": self.env["ir.sequence"].next_by_code("mgmtsystem.audit")}
-        )
+        for value in vals:
+            value.update(
+                {"reference": self.env["ir.sequence"].next_by_code("mgmtsystem.audit")}
+            )
         audit_id = super(MgmtsystemAudit, self).create(vals)
         return audit_id
 
