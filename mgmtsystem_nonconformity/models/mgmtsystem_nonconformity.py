@@ -190,13 +190,15 @@ class MgmtsystemNonconformity(models.Model):
 
     @api.model_create_multi
     def create(self, vals):
-        """Audit creation."""
         for value in vals:
             value.update(
-                {"reference": self.env["ir.sequence"].next_by_code("mgmtsystem.audit")}
+                {
+                    "ref": self.env["ir.sequence"].next_by_code(
+                        "mgmtsystem.nonconformity"
+                    )
+                }
             )
-        audit_id = super(MgmtsystemAudit, self).create(vals)
-        return audit_id
+        return super().create(vals)
 
     def write(self, vals):
         is_writing = self.env.context.get("is_writing", False)
