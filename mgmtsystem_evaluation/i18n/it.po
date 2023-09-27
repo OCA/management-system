@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2023-10-09 09:13+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model,name:mgmtsystem_evaluation.model_mgmtsystem_evaluation_abstract
@@ -22,55 +24,55 @@ msgstr ""
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Azione richiesta"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__active
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__active
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__active
 msgid "Active"
-msgstr ""
+msgstr "Attiva"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Attività"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Decorazione eccezione attività"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Stato attività"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icona tipo attività"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__manager_activity_type_id
 msgid "Activity for manager"
-msgstr ""
+msgstr "Attività per il responsabile"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__user_activity_type_id
 msgid "Activity for user"
-msgstr ""
+msgstr "Attività per l'utente"
 
 #. module: mgmtsystem_evaluation
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_template_form_view
 msgid "Archived"
-msgstr ""
+msgstr "In archivio"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Conteggio allegati"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__manager_activity_type_id
@@ -78,6 +80,8 @@ msgid ""
 "Automatically schedule this activity to the Manager\n"
 "        once the evaluation is started"
 msgstr ""
+"Programma automaticamente questa attività per il responsabile\n"
+"        una volta che la valutazione è iniziata"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__user_activity_type_id
@@ -85,40 +89,42 @@ msgid ""
 "Automatically schedule this activity to the user\n"
 "        (if exists) once the evaluation is started"
 msgstr ""
+"Programma automaticamente questa attività per l'utente\n"
+"        (se esiste) una volta che la valutazione è iniziata"
 
 #. module: mgmtsystem_evaluation
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
 msgid "Back to draft"
-msgstr ""
+msgstr "Ritorna a bozza"
 
 #. module: mgmtsystem_evaluation
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields.selection,name:mgmtsystem_evaluation.selection__mgmtsystem_evaluation__state__cancel
 msgid "Cancelled"
-msgstr ""
+msgstr "Annullata"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model,name:mgmtsystem_evaluation.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contatto"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creato da"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creato il"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_ir_model__display_name
@@ -128,17 +134,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_res_partner__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields.selection,name:mgmtsystem_evaluation.selection__mgmtsystem_evaluation__state__done
 msgid "Done"
-msgstr ""
+msgstr "Evasa"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields.selection,name:mgmtsystem_evaluation.selection__mgmtsystem_evaluation__state__draft
 msgid "Draft"
-msgstr ""
+msgstr "Bozza"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.actions.act_window,name:mgmtsystem_evaluation.mgmtsystem_evaluation_act_window
@@ -146,30 +152,30 @@ msgstr ""
 #: model:ir.model,name:mgmtsystem_evaluation.model_mgmtsystem_evaluation
 #: model:ir.ui.menu,name:mgmtsystem_evaluation.mgmtsystem_evaluation_menu
 msgid "Evaluation"
-msgstr ""
+msgstr "Valutazione"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.actions.act_window,name:mgmtsystem_evaluation.mgmtsystem_evaluation_result_act_window
 #: model:ir.model,name:mgmtsystem_evaluation.model_mgmtsystem_evaluation_result
 msgid "Evaluation Result"
-msgstr ""
+msgstr "Risultato valutazione"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.actions.act_window,name:mgmtsystem_evaluation.mgmtsystem_evaluation_template_act_window
 #: model:ir.model,name:mgmtsystem_evaluation.model_mgmtsystem_evaluation_template
 #: model:ir.ui.menu,name:mgmtsystem_evaluation.mgmtsystem_evaluation_template_menu
 msgid "Evaluation Template"
-msgstr ""
+msgstr "Modello valutazione"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__date
 msgid "Evaluation date"
-msgstr ""
+msgstr "Data valutazione"
 
 #. module: mgmtsystem_evaluation
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.view_partner_form
 msgid "Evaluations"
-msgstr ""
+msgstr "Valutazioni"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__feedback
@@ -177,27 +183,27 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_template_form_view
 msgid "Feedback"
-msgstr ""
+msgstr "Feedback"
 
 #. module: mgmtsystem_evaluation
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
 msgid "Finish"
-msgstr ""
+msgstr "Chiudi"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguito da"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Seguito da (canali)"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Seguito da (partner)"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_type_icon
