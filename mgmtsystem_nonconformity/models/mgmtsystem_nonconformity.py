@@ -188,11 +188,16 @@ class MgmtsystemNonconformity(models.Model):
         for nc in self:
             nc.days_since_updated = self._elapsed_days(nc.create_date, nc.write_date)
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
-        vals.update(
-            {"ref": self.env["ir.sequence"].next_by_code("mgmtsystem.nonconformity")}
-        )
+        for value in vals:
+            value.update(
+                {
+                    "ref": self.env["ir.sequence"].next_by_code(
+                        "mgmtsystem.nonconformity"
+                    )
+                }
+            )
         return super().create(vals)
 
     def write(self, vals):
