@@ -24,36 +24,46 @@ msgstr ""
 #: model:mail.template,body_html:mgmtsystem_audit.template_email_send_verification_list
 msgid ""
 "\n"
-"Hello,\n"
+"            \n"
+"<p>Hello,</p>\n"
 "\n"
-"The audit \"${object.name}\" is scheduled in 1 week.\n"
+"<p>\n"
+"The audit <t t-out=\"object.name\" /> is scheduled in 1 week.\n"
 "Please finish the verification list and send it to the auditees:\n"
 "\n"
-"${object.get_action_url()}\n"
+"<a t-att-href=\"object.get_action_url()\">Link</a>\n"
+"</p>\n"
 "\n"
-"\n"
+"<p>\n"
 "Thank you.\n"
 "--\n"
 "Odoo\n"
-"            "
+"</p>\n"
+"            \n"
+"        "
 msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:mail.template,body_html:mgmtsystem_audit.template_email_prepare_to_audit
 msgid ""
 "\n"
-"Hello,\n"
+"            \n"
+"<p>Hello,</p>\n"
 "\n"
-"The audit \"${object.name}\" is scheduled in 2 weeks.\n"
+"<p>\n"
+"The audit <t t-out=\"object.name\" /> is scheduled in 2 weeks.\n"
 "Please prepare the verification list:\n"
 "\n"
-"${object.get_action_url()}\n"
+"<a t-att-href=\"object.get_action_url()\">Link</a>\n"
+"</p>\n"
 "\n"
-"\n"
+"<p>\n"
 "Thank you.\n"
 "--\n"
 "Odoo\n"
-"            "
+"</p>\n"
+"            \n"
+"        "
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -99,6 +109,26 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction
 msgid "Action Needed"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_type_icon
+msgid "Activity Type Icon"
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -161,7 +191,6 @@ msgstr "Revizorji:"
 #: model:ir.ui.menu,name:mgmtsystem_audit.menu_report_mgmtsystem_audit_tree
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_audit_calendar
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_tree
 msgid "Audits"
 msgstr "Revizije"
 
@@ -252,13 +281,12 @@ msgstr "Datum:"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__days_since_last_update
-msgid "Days since last update"
+msgid "Days Since Last Update"
 msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__display_name
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_nonconformity__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__display_name
 msgid "Display Name"
 msgstr "Prikazani naziv"
@@ -281,13 +309,18 @@ msgid "Followers"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_channel_ids
-msgid "Followers (Channels)"
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_partner_ids
+msgid "Followers (Partners)"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_partner_ids
-msgid "Followers (Partners)"
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__has_message
+msgid "Has Message"
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -300,10 +333,19 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__id
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__id
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_nonconformity__id
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__id
 msgid "ID"
 msgstr "ID"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction
@@ -330,19 +372,18 @@ msgid "Internal"
 msgstr ""
 
 #. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__is_conformed
+msgid "Is Conformed"
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_is_follower
 msgid "Is Follower"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__is_conformed
-msgid "Is conformed"
-msgstr "Je ustrezno"
-
-#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_nonconformity____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line____last_update
 msgid "Last Modified on"
 msgstr "Zadnjič spremenjeno"
@@ -382,9 +423,34 @@ msgid "Messages"
 msgstr ""
 
 #. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__name
 msgid "Name"
 msgstr "Naziv"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__nonconformity_ids
@@ -396,6 +462,16 @@ msgstr "Neustreznosti"
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
 msgid "Nonconformity"
 msgstr "Neustreznost"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_nonconformities
+msgid "Number Of Nonconformities"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_questions_in_verification_list
+msgid "Number Of Questions In Verification List"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction_counter
@@ -423,16 +499,6 @@ msgid "Number of messages with delivery error"
 msgstr ""
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_nonconformities
-msgid "Number of nonconformities"
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_questions_in_verification_list
-msgid "Number of questions in verification list"
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_unread_counter
 msgid "Number of unread messages"
 msgstr ""
@@ -455,8 +521,13 @@ msgstr "Točke za izboljšanje"
 
 #. module: mgmtsystem_audit
 #: model:mail.template,subject:mgmtsystem_audit.template_email_prepare_to_audit
-msgid "Prepare to Audit: \"${object.name}\""
+msgid "Prepare to Audit: \"{{object.name}}\""
 msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:mail.template,name:mgmtsystem_audit.template_email_prepare_to_audit
+msgid "Prepare to audit"
+msgstr "Priprava na revizijo"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__procedure_id
@@ -487,13 +558,23 @@ msgid "Related Audits"
 msgstr "Povezane revizije"
 
 #. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr ""
 
 #. module: mgmtsystem_audit
+#: model:mail.template,name:mgmtsystem_audit.template_email_send_verification_list
+msgid "Send Verification List"
+msgstr "Pošlji verifikacijski seznam"
+
+#. module: mgmtsystem_audit
 #: model:mail.template,subject:mgmtsystem_audit.template_email_send_verification_list
-msgid "Send Verification List: \"${object.name}\""
+msgid "Send Verification List: \"{{object.name}}\""
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -505,6 +586,15 @@ msgstr "Zaporedje"
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__state
 msgid "State"
 msgstr "Stanje"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__strong_points
@@ -521,6 +611,11 @@ msgstr "Sistem"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "To Improve Points"
 msgstr "Točke za izboljšanje"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:0
@@ -547,7 +642,6 @@ msgstr "Verifikacijska postavka"
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_tree
 msgid "Verification Lines"
 msgstr "Verifikacijske postavke"
 
@@ -582,8 +676,5 @@ msgstr "_Preklic"
 msgid "_Copy"
 msgstr "_Kopiranje"
 
-#~ msgid "Prepare to audit"
-#~ msgstr "Priprava na revizijo"
-
-#~ msgid "Send Verification List"
-#~ msgstr "Pošlji verifikacijski seznam"
+#~ msgid "Is conformed"
+#~ msgstr "Je ustrezno"
