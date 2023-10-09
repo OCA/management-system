@@ -22,52 +22,54 @@ msgstr ""
 #: model:mail.template,body_html:mgmtsystem_claim.email_template_new_claim_reminder
 msgid ""
 "\n"
-"                \n"
-"<p>Hello ${object.user_id.name},</br>\n"
-"  A new claim has been assigned to you:\n"
+"            \n"
+"<p>Hello <t t-out=\"object.user_id.name\"/>,</br>\n"
+"A new claim has been assigned to you:\n"
 "\n"
 "<p>\n"
-"  ${object.description}\n"
+"<t t-out=\"object.description\"/>\n"
 "</p>\n"
 "\n"
-"  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"  Thank you and have a nice day.<br>\n"
-"  --<br>\n"
-"  Odoo\n"
+"Thank you and have a nice day.<br>\n"
+"--<br>\n"
+"Odoo\n"
 "</p>\n"
-"                \n"
-"            "
+"            \n"
+"        "
 msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:mail.template,body_html:mgmtsystem_claim.email_template_remain_claim_reminder
 msgid ""
 "\n"
-"                \n"
-"<p>Hello ${object.user_id.name},</p>\n"
+"            \n"
+"<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
 "\n"
 "<p>\n"
-"  This is an automated message to remind you that the\n"
-"  following claim is due to be completed in 10 days (${object."
-"date_deadline}):\n"
+"This is an automated message to remind you that the\n"
+"following claim is due to be completed in 10 days (<t t-out=\"object."
+"date_deadline\"/>):\n"
 "\n"
-"  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"  ${object.description}\n"
+"<t t-out=\"object.description\"/>\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"  Thank you and have a nice day.<br>\n"
-"  --<br>\n"
-"  Odoo\n"
+"Thank you and have a nice day.<br>\n"
+"--<br>\n"
+"Odoo\n"
 "</p>\n"
-"                \n"
-"            "
+"            \n"
+"        "
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -104,6 +106,11 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_state
 msgid "Activity State"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_type_icon
+msgid "Activity Type Icon"
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -172,7 +179,6 @@ msgstr ""
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_config_claim
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_mgmtsystem_claims
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_tree_view
 msgid "Claims"
 msgstr ""
 
@@ -219,13 +225,9 @@ msgid "Created by"
 msgstr ""
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__create_date
 msgid "Created on"
-msgstr ""
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__create_date
-msgid "Creation Date"
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -298,18 +300,23 @@ msgid "Followers"
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Group By..."
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__has_message
+msgid "Has Message"
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -365,6 +372,7 @@ msgid "Last Updated by"
 msgstr ""
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__write_date
 msgid "Last Updated on"
 msgstr ""
@@ -423,9 +431,19 @@ msgid "Model Reference"
 msgstr ""
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: mgmtsystem_claim
 #: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
 #, python-format
 msgid "New"
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -481,8 +499,8 @@ msgid "Partner"
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_pending
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Pending"
 msgstr ""
 
@@ -501,10 +519,10 @@ msgstr ""
 msgid ""
 "Record and track your customers' claims. Claims may be linked to a sales "
 "order or a lot.\n"
-"                You can send emails with attachments and keep the full "
-"history for a claim (emails sent, intervention\n"
-"                type and so on). Claims may automatically be linked to an "
-"email address using the mail gateway module."
+"            You can send emails with attachments and keep the full history "
+"for a claim (emails sent, intervention\n"
+"            type and so on). Claims may automatically be linked to an email "
+"address using the mail gateway module."
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -515,7 +533,13 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: model:mail.template,subject:mgmtsystem_claim.email_template_new_claim_reminder
 #: model:mail.template,subject:mgmtsystem_claim.email_template_remain_claim_reminder
-msgid "Reminder on Action: \"${object.name}\""
+msgid "Reminder on Action: \"{{object.name}}\""
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:mail.template,name:mgmtsystem_claim.email_template_new_claim_reminder
+#: model:mail.template,name:mgmtsystem_claim.email_template_remain_claim_reminder
+msgid "Reminder to Responsible"
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -594,7 +618,6 @@ msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_mgmtsystem_claim_stages
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claim_stage_tree_view
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Stages"
 msgstr ""
@@ -653,11 +676,6 @@ msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__write_date
-msgid "Update Date"
-msgstr ""
-
-#. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_stage__sequence
 msgid "Used to order stages. Lower is better."
 msgstr ""
@@ -682,7 +700,7 @@ msgstr ""
 msgid ""
 "You can create Management System claim stages to categorize the status of "
 "every\n"
-"                    claim entered in the system. The stages define all the "
+"                claim entered in the system. The stages define all the "
 "steps\n"
-"                    required for the resolution of a claim."
+"                required for the resolution of a claim."
 msgstr ""

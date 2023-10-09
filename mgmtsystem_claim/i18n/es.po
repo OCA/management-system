@@ -23,95 +23,55 @@ msgstr ""
 #: model:mail.template,body_html:mgmtsystem_claim.email_template_new_claim_reminder
 msgid ""
 "\n"
-"                \n"
-"<p>Hello ${object.user_id.name},</br>\n"
-"  A new claim has been assigned to you:\n"
+"            \n"
+"<p>Hello <t t-out=\"object.user_id.name\"/>,</br>\n"
+"A new claim has been assigned to you:\n"
 "\n"
 "<p>\n"
-"  ${object.description}\n"
+"<t t-out=\"object.description\"/>\n"
 "</p>\n"
 "\n"
-"  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"  Thank you and have a nice day.<br>\n"
-"  --<br>\n"
-"  Odoo\n"
+"Thank you and have a nice day.<br>\n"
+"--<br>\n"
+"Odoo\n"
 "</p>\n"
-"                \n"
-"            "
+"            \n"
+"        "
 msgstr ""
-"\n"
-"                \n"
-"<p>Hola ${object.user_id.name},</br>\n"
-"  Se le ha asignado una nueva reclamación:\n"
-"\n"
-"<p>\n"
-"  ${objeto.descripción}\n"
-"</p>\n"
-"\n"
-"  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"  Gracias y que tenga un buen día.<br>\n"
-"  --<br>\n"
-"  odoo\n"
-"</p>\n"
-"                \n"
-"            "
 
 #. module: mgmtsystem_claim
 #: model:mail.template,body_html:mgmtsystem_claim.email_template_remain_claim_reminder
 msgid ""
 "\n"
-"                \n"
-"<p>Hello ${object.user_id.name},</p>\n"
+"            \n"
+"<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
 "\n"
 "<p>\n"
-"  This is an automated message to remind you that the\n"
-"  following claim is due to be completed in 10 days (${object."
-"date_deadline}):\n"
+"This is an automated message to remind you that the\n"
+"following claim is due to be completed in 10 days (<t t-out=\"object."
+"date_deadline\"/>):\n"
 "\n"
-"  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"  ${object.description}\n"
+"<t t-out=\"object.description\"/>\n"
 "</p>\n"
 "\n"
 "<p>\n"
-"  Thank you and have a nice day.<br>\n"
-"  --<br>\n"
-"  Odoo\n"
+"Thank you and have a nice day.<br>\n"
+"--<br>\n"
+"Odoo\n"
 "</p>\n"
-"                \n"
-"            "
+"            \n"
+"        "
 msgstr ""
-"\n"
-"                \n"
-"<p>Hola ${object.user_id.name},</p>\n"
-"\n"
-"<p>\n"
-"  Este es un mensaje automático para recordarle que el\n"
-"  El siguiente reclamo debe completarse en 10 días (${object.date_deadline}):"
-"\n"
-"\n"
-"  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"  ${objeto.descripción}\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"  Gracias y que tengas un buen día.<br>\n"
-"  --<br>\n"
-"  odoo\n"
-"</p>\n"
-"                \n"
-"            "
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner__mgmtsystem_claim_count
@@ -148,6 +108,11 @@ msgstr "Actividad Decoración de excepción"
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_state
 msgid "Activity State"
 msgstr "Estado de la actividad"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
@@ -215,7 +180,6 @@ msgstr "Descripción de la reclamación/acción"
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_config_claim
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_mgmtsystem_claims
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_tree_view
 msgid "Claims"
 msgstr "Reclamaciones"
 
@@ -264,14 +228,10 @@ msgid "Created by"
 msgstr "Creado por"
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__create_date
 msgid "Created on"
 msgstr "Creado en"
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__create_date
-msgid "Creation Date"
-msgstr "Fecha de creación"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
@@ -345,19 +305,24 @@ msgid "Followers"
 msgstr "Seguidores"
 
 #. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Seguidores (Canales)"
-
-#. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Seguidores (Socios)"
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Group By..."
 msgstr "Agrupar por..."
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__has_message
+msgid "Has Message"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__id
@@ -414,6 +379,7 @@ msgid "Last Updated by"
 msgstr "Última actualización por"
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__write_date
 msgid "Last Updated on"
 msgstr "Última Actualización el"
@@ -474,10 +440,20 @@ msgid "Model Reference"
 msgstr "Modelo de referencia"
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: mgmtsystem_claim
 #: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
 #, python-format
 msgid "New"
 msgstr "Nuevo"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_date_deadline
@@ -532,8 +508,8 @@ msgid "Partner"
 msgstr "Socio"
 
 #. module: mgmtsystem_claim
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_pending
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Pending"
 msgstr "Pendiente"
 
@@ -552,19 +528,11 @@ msgstr "Prioridad"
 msgid ""
 "Record and track your customers' claims. Claims may be linked to a sales "
 "order or a lot.\n"
-"                You can send emails with attachments and keep the full "
-"history for a claim (emails sent, intervention\n"
-"                type and so on). Claims may automatically be linked to an "
-"email address using the mail gateway module."
+"            You can send emails with attachments and keep the full history "
+"for a claim (emails sent, intervention\n"
+"            type and so on). Claims may automatically be linked to an email "
+"address using the mail gateway module."
 msgstr ""
-"Registre y realice el seguimiento de las reclamaciones de sus clientes. Las "
-"reclamaciones pueden estar vinculadas a un pedido de venta o a un lote.\n"
-"                Puede enviar correos electrónicos con archivos adjuntos y "
-"conservar el historial completo de una reclamación (correos electrónicos "
-"enviados, intervención\n"
-"                tipo de intervención, etc.). Las reclamaciones pueden "
-"vincularse automáticamente a una dirección de correo electrónico mediante el "
-"módulo de pasarela de correo."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__reference
@@ -574,8 +542,14 @@ msgstr "Referencia"
 #. module: mgmtsystem_claim
 #: model:mail.template,subject:mgmtsystem_claim.email_template_new_claim_reminder
 #: model:mail.template,subject:mgmtsystem_claim.email_template_remain_claim_reminder
-msgid "Reminder on Action: \"${object.name}\""
-msgstr "Recordatorio sobre la acción: \"${object.name}\""
+msgid "Reminder on Action: \"{{object.name}}\""
+msgstr ""
+
+#. module: mgmtsystem_claim
+#: model:mail.template,name:mgmtsystem_claim.email_template_new_claim_reminder
+#: model:mail.template,name:mgmtsystem_claim.email_template_remain_claim_reminder
+msgid "Reminder to Responsible"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__resolution
@@ -655,7 +629,6 @@ msgstr "Nombre de etapa"
 
 #. module: mgmtsystem_claim
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_mgmtsystem_claim_stages
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claim_stage_tree_view
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Stages"
 msgstr "Etapas"
@@ -721,11 +694,6 @@ msgid "Unread Messages Counter"
 msgstr "Contador de mensajes no leídos"
 
 #. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__write_date
-msgid "Update Date"
-msgstr "Actualizar fecha"
-
-#. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim_stage__sequence
 msgid "Used to order stages. Lower is better."
 msgstr "Se usa para ordenar las etapas. Valores menores son mejores."
@@ -750,12 +718,140 @@ msgstr "Historial de la comunicación por sitio web"
 msgid ""
 "You can create Management System claim stages to categorize the status of "
 "every\n"
-"                    claim entered in the system. The stages define all the "
+"                claim entered in the system. The stages define all the "
 "steps\n"
-"                    required for the resolution of a claim."
+"                required for the resolution of a claim."
 msgstr ""
-"Puede crear etapas de reclamación en el sistema de gestión para clasificar "
-"el estado de cada reclamación introducida en el sistema.\n"
-"                    reclamación introducida en el sistema. Las etapas "
-"definen todos los pasos\n"
-"                    necesarios para la resolución de una reclamación."
+
+#~ msgid ""
+#~ "\n"
+#~ "                \n"
+#~ "<p>Hello ${object.user_id.name},</br>\n"
+#~ "  A new claim has been assigned to you:\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "  ${object.description}\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "  Thank you and have a nice day.<br>\n"
+#~ "  --<br>\n"
+#~ "  Odoo\n"
+#~ "</p>\n"
+#~ "                \n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "                \n"
+#~ "<p>Hola ${object.user_id.name},</br>\n"
+#~ "  Se le ha asignado una nueva reclamación:\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "  ${objeto.descripción}\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "  Gracias y que tenga un buen día.<br>\n"
+#~ "  --<br>\n"
+#~ "  odoo\n"
+#~ "</p>\n"
+#~ "                \n"
+#~ "            "
+
+#~ msgid ""
+#~ "\n"
+#~ "                \n"
+#~ "<p>Hello ${object.user_id.name},</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "  This is an automated message to remind you that the\n"
+#~ "  following claim is due to be completed in 10 days (${object."
+#~ "date_deadline}):\n"
+#~ "\n"
+#~ "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "  ${object.description}\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "  Thank you and have a nice day.<br>\n"
+#~ "  --<br>\n"
+#~ "  Odoo\n"
+#~ "</p>\n"
+#~ "                \n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "                \n"
+#~ "<p>Hola ${object.user_id.name},</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "  Este es un mensaje automático para recordarle que el\n"
+#~ "  El siguiente reclamo debe completarse en 10 días (${object."
+#~ "date_deadline}):\n"
+#~ "\n"
+#~ "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "  ${objeto.descripción}\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "  Gracias y que tengas un buen día.<br>\n"
+#~ "  --<br>\n"
+#~ "  odoo\n"
+#~ "</p>\n"
+#~ "                \n"
+#~ "            "
+
+#~ msgid "Creation Date"
+#~ msgstr "Fecha de creación"
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Seguidores (Canales)"
+
+#~ msgid ""
+#~ "Record and track your customers' claims. Claims may be linked to a sales "
+#~ "order or a lot.\n"
+#~ "                You can send emails with attachments and keep the full "
+#~ "history for a claim (emails sent, intervention\n"
+#~ "                type and so on). Claims may automatically be linked to an "
+#~ "email address using the mail gateway module."
+#~ msgstr ""
+#~ "Registre y realice el seguimiento de las reclamaciones de sus clientes. "
+#~ "Las reclamaciones pueden estar vinculadas a un pedido de venta o a un "
+#~ "lote.\n"
+#~ "                Puede enviar correos electrónicos con archivos adjuntos y "
+#~ "conservar el historial completo de una reclamación (correos electrónicos "
+#~ "enviados, intervención\n"
+#~ "                tipo de intervención, etc.). Las reclamaciones pueden "
+#~ "vincularse automáticamente a una dirección de correo electrónico mediante "
+#~ "el módulo de pasarela de correo."
+
+#~ msgid "Reminder on Action: \"${object.name}\""
+#~ msgstr "Recordatorio sobre la acción: \"${object.name}\""
+
+#~ msgid "Update Date"
+#~ msgstr "Actualizar fecha"
+
+#~ msgid ""
+#~ "You can create Management System claim stages to categorize the status of "
+#~ "every\n"
+#~ "                    claim entered in the system. The stages define all "
+#~ "the steps\n"
+#~ "                    required for the resolution of a claim."
+#~ msgstr ""
+#~ "Puede crear etapas de reclamación en el sistema de gestión para "
+#~ "clasificar el estado de cada reclamación introducida en el sistema.\n"
+#~ "                    reclamación introducida en el sistema. Las etapas "
+#~ "definen todos los pasos\n"
+#~ "                    necesarios para la resolución de una reclamación."
