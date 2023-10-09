@@ -108,6 +108,11 @@ msgid "Activity State"
 msgstr "Estado de la actividad"
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "All pending Claims"
 msgstr "Todas las reclamaciones pendientes"
@@ -265,6 +270,7 @@ msgstr "Correo electrónico de destino para la pasarela de correo electrónico."
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner__display_name
 msgid "Display Name"
 msgstr "Nombre de la pantalla"
 
@@ -313,6 +319,11 @@ msgid "Followers (Partners)"
 msgstr "Seguidores (Socios)"
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Group By..."
 msgstr "Agrupar por..."
@@ -320,6 +331,7 @@ msgstr "Agrupar por..."
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__id
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__id
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner__id
 msgid "ID"
 msgstr "ID"
 
@@ -362,6 +374,7 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner____last_update
 msgid "Last Modified on"
 msgstr ""
 
@@ -430,6 +443,11 @@ msgid "Model Reference"
 msgstr ""
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: mgmtsystem_claim
 #: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
 #, python-format
 msgid "New"
@@ -488,8 +506,8 @@ msgid "Partner"
 msgstr ""
 
 #. module: mgmtsystem_claim
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_pending
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Pending"
 msgstr ""
 

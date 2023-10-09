@@ -68,7 +68,8 @@ msgid ""
 "\n"
 "<p>\n"
 "  This is an automated message to remind you that the\n"
-"  following claim is due to be completed in 10 days (${object.date_deadline}):\n"
+"  following claim is due to be completed in 10 days (${object."
+"date_deadline}):\n"
 "\n"
 "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
 "</p>\n"
@@ -222,8 +223,7 @@ msgstr "Reclami"
 #. module: mgmtsystem_claim
 #: model_terms:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_stage_action
 msgid ""
-"Click to setup a new stage in the processing of the Management System "
-"claims."
+"Click to setup a new stage in the processing of the Management System claims."
 msgstr ""
 "Cliccare per impostare una nuova fase nel processo dei reclami del sistema "
 "di gestione."
@@ -487,7 +487,6 @@ msgstr "Scadenza mia attività"
 
 #. module: mgmtsystem_claim
 #: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
-#: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
 #, python-format
 msgid "New"
 msgstr "Nuovo"
@@ -563,9 +562,12 @@ msgstr "Priorità"
 #. module: mgmtsystem_claim
 #: model_terms:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_action
 msgid ""
-"Record and track your customers' claims. Claims may be linked to a sales order or a lot.\n"
-"                You can send emails with attachments and keep the full history for a claim (emails sent, intervention\n"
-"                type and so on). Claims may automatically be linked to an email address using the mail gateway module."
+"Record and track your customers' claims. Claims may be linked to a sales "
+"order or a lot.\n"
+"                You can send emails with attachments and keep the full "
+"history for a claim (emails sent, intervention\n"
+"                type and so on). Claims may automatically be linked to an "
+"email address using the mail gateway module."
 msgstr ""
 "Registra e traccia i reclami dei tuoi clienti. I reclami possono essere "
 "collegati all'ordine di vendita o ad un lotto.\n"
@@ -756,8 +758,10 @@ msgstr "Cronologia comunicazioni sito web"
 #. module: mgmtsystem_claim
 #: model_terms:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_stage_action
 msgid ""
-"You can create Management System claim stages to categorize the status of every\n"
-"                    claim entered in the system. The stages define all the steps\n"
+"You can create Management System claim stages to categorize the status of "
+"every\n"
+"                    claim entered in the system. The stages define all the "
+"steps\n"
 "                    required for the resolution of a claim."
 msgstr ""
 "Si possono creare fasi reclamo del sistema di gestione per classificare lo "
