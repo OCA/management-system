@@ -188,11 +188,6 @@ msgid "Followers"
 msgstr ""
 
 #. module: mgmtsystem_review
-#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
@@ -200,6 +195,11 @@ msgstr ""
 #. module: mgmtsystem_review
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__has_message
+msgid "Has Message"
 msgstr ""
 
 #. module: mgmtsystem_review
@@ -293,6 +293,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__name
 msgid "Name"
 msgstr "Navn"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_date_deadline
@@ -410,7 +415,6 @@ msgstr "Granskningslinje"
 #. module: mgmtsystem_review
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_line_list
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_tree
 msgid "Review Lines"
 msgstr "Granskningslinjer"
 
@@ -423,7 +427,6 @@ msgstr ""
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_list
 #: model:ir.ui.menu,name:mgmtsystem_review.menu_open_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_tree
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_review_calendar
 msgid "Reviews"
 msgstr "Granskninger"
