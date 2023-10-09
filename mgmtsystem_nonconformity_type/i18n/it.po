@@ -40,8 +40,8 @@ msgstr ""
 "                    inviamo in allegato il verbale di non conformità:<br/>\n"
 "                    <strong>Non conformità N°</strong>: ${object.id}<br/>\n"
 "                    <strong>Titolo</strong>: ${object.name}<br/>\n"
-"                    <strong>Descrizione</strong>: ${object.description}<br/>"
-"\n"
+"                    <strong>Descrizione</strong>: ${object.description}<br/"
+">\n"
 "                    <br/>\n"
 "                    Distinti saluti<br>\n"
 "                    </p>\n"
@@ -54,9 +54,14 @@ msgid "Contact Name"
 msgstr "Nome contatto"
 
 #. module: mgmtsystem_nonconformity_type
-#: selection:mgmtsystem.nonconformity,nc_type:0
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__customer
 msgid "Customer"
 msgstr "Cliente"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__display_name
+msgid "Display Name"
+msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__quality_contact_email
@@ -64,14 +69,24 @@ msgid "Email"
 msgstr "E-mail"
 
 #. module: mgmtsystem_nonconformity_type
-#: selection:mgmtsystem.nonconformity,nc_type:0
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__external
 msgid "External"
 msgstr "Esterna"
 
 #. module: mgmtsystem_nonconformity_type
-#: selection:mgmtsystem.nonconformity,nc_type:0
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__id
+msgid "ID"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__internal
 msgid "Internal"
 msgstr "Interna"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity____last_update
+msgid "Last Modified on"
+msgstr ""
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model,name:mgmtsystem_nonconformity_type.model_mgmtsystem_nonconformity
@@ -99,12 +114,13 @@ msgid "Send by Email"
 msgstr "Invia per e-mail"
 
 #. module: mgmtsystem_nonconformity_type
-#: selection:mgmtsystem.nonconformity,nc_type:0
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__supplier
 msgid "Supplier"
 msgstr "Fornitore"
 
 #. module: mgmtsystem_nonconformity_type
-#: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity_type.py:72
+#: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity.py:0
+#: code:addons/mgmtsystem_nonconformity_type/tests/test_nonconformity_type.py:0
 #, python-format
 msgid ""
 "The partner's contacts quality type isn't available.\n"
@@ -114,7 +130,8 @@ msgstr ""
 "Verificare che il modulo mgmtsystem_nonconformity_partner sia installato."
 
 #. module: mgmtsystem_nonconformity_type
-#: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity_type.py:95
+#: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity.py:0
+#: code:addons/mgmtsystem_nonconformity_type/tests/test_nonconformity_type.py:0
 #, python-format
 msgid ""
 "The partner's quality contact email is required in order to send the message."
