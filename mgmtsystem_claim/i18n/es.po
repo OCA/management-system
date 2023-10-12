@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: openerp-mgmtsystem\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-25 18:17+0000\n"
-"PO-Revision-Date: 2023-10-12 10:36+0000\n"
+"PO-Revision-Date: 2023-10-12 13:36+0000\n"
 "Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "Language: es\n"
@@ -49,7 +49,7 @@ msgstr ""
 "Se le ha asignado un nuevo reclamo:\n"
 "\n"
 "<p>\n"
-"<t t-out=\"objeto.description\"/>\n"
+"<t t-out=\"object.description\"/>\n"
 "</p>\n"
 "\n"
 "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\""
@@ -92,6 +92,30 @@ msgid ""
 "            \n"
 "        "
 msgstr ""
+"\n"
+"            \n"
+"<p>Hola <t t-out=\"object.user_id.name\"/>,</p>\n"
+"\n"
+"<p>\n"
+"Este es un mensaje automático para recordarle que el\n"
+"El siguiente reclamo debe completarse en 10 días (<t t-out=\"object."
+"date_deadline\"/>):\n"
+"\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\""
+"/></a></b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"<t t-out=\"object.description\"/>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Gracias y que tengas un buen día.<br>\n"
+"--<br>\n"
+"odoo\n"
+"</p>\n"
+"            \n"
+"        "
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner__mgmtsystem_claim_count
@@ -132,7 +156,7 @@ msgstr "Estado de la actividad"
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Tipo Icono Actividad"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
@@ -332,7 +356,7 @@ msgstr "Seguidores (Socios)"
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Fuente iconos asombrosos p.e. fa-tasks"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
@@ -342,7 +366,7 @@ msgstr "Agrupar por..."
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Tiene mensaje"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__id
@@ -462,7 +486,7 @@ msgstr "Modelo de referencia"
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Fecha Límite de Mi Actividad"
 
 #. module: mgmtsystem_claim
 #: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
@@ -473,7 +497,7 @@ msgstr "Nuevo"
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Próximo Evento del Calendario de Actividades"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_date_deadline
@@ -553,6 +577,14 @@ msgid ""
 "            type and so on). Claims may automatically be linked to an email "
 "address using the mail gateway module."
 msgstr ""
+"Registre y realice el seguimiento de las reclamaciones de sus clientes. Las "
+"reclamaciones pueden estar vinculadas a un pedido de venta o a un lote.\n"
+"            Puede enviar correos electrónicos con archivos adjuntos y "
+"conservar el historial completo de una reclamación (correos electrónicos "
+"enviados, intervención\n"
+"            tipo de intervención, etc.). Las reclamaciones pueden vincularse "
+"automáticamente a una dirección de correo electrónico mediante el módulo de "
+"pasarela de correo."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__reference
@@ -563,13 +595,13 @@ msgstr "Referencia"
 #: model:mail.template,subject:mgmtsystem_claim.email_template_new_claim_reminder
 #: model:mail.template,subject:mgmtsystem_claim.email_template_remain_claim_reminder
 msgid "Reminder on Action: \"{{object.name}}\""
-msgstr ""
+msgstr "Recordatorio sobre la acción: \"{{object.name}}\""
 
 #. module: mgmtsystem_claim
 #: model:mail.template,name:mgmtsystem_claim.email_template_new_claim_reminder
 #: model:mail.template,name:mgmtsystem_claim.email_template_remain_claim_reminder
 msgid "Reminder to Responsible"
-msgstr ""
+msgstr "Recordatorio para el/la responsable"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__resolution
@@ -742,6 +774,11 @@ msgid ""
 "steps\n"
 "                required for the resolution of a claim."
 msgstr ""
+"You can create Management System claim stages to categorize the status of "
+"every\n"
+"                                    claim entered in the system. The stages "
+"define all the steps\n"
+"                                    required for the resolution of a claim."
 
 #~ msgid ""
 #~ "\n"
