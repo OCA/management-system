@@ -35,11 +35,7 @@ repos:
         language: fail
         files: '[a-zA-Z0-9_]*/i18n/en\.po$'
   - repo: https://github.com/oca/maintainer-tools
-<<<<<<< before updating
-    rev: 05e217444784fbddf261be1bf1ebb86ad49674c7
-=======
     rev: 969238e47c07d0c40573acff81d170f63245d738
->>>>>>> after updating
     hooks:
       # update the NOT INSTALLABLE ADDONS section above
       - id: oca-update-pre-commit-excluded-addons
