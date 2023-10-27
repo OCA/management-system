@@ -12,6 +12,8 @@ exclude: |
   /static/(src/)?lib/|
   # Repos using Sphinx to generate docs don't need prettying
   ^docs/_templates/.*\.html$|
+  # Don't bother non-technical authors with formatting issues in docs
+  readme/.*\.(rst|md)$|
   # You don't usually want a bot to modify your legal texts
   (LICENSE.*|COPYING.*)
 default_language_version:
@@ -33,12 +35,28 @@ repos:
         language: fail
         files: '[a-zA-Z0-9_]*/i18n/en\.po$'
   - repo: https://github.com/oca/maintainer-tools
+<<<<<<< before updating
     rev: 05e217444784fbddf261be1bf1ebb86ad49674c7
+=======
+    rev: 969238e47c07d0c40573acff81d170f63245d738
+>>>>>>> after updating
     hooks:
       # update the NOT INSTALLABLE ADDONS section above
       - id: oca-update-pre-commit-excluded-addons
       - id: oca-fix-manifest-website
         args: ["https://github.com/OCA/management-system"]
+      - id: oca-gen-addon-readme
+        args:
+          - --addons-dir=.
+          - --branch=14.0
+          - --org-name=OCA
+          - --repo-name=management-system
+          - --if-source-changed
+  - repo: https://github.com/OCA/odoo-pre-commit-hooks
+    rev: v0.0.25
+    hooks:
+      - id: oca-checks-odoo-module
+      - id: oca-checks-po
   - repo: https://github.com/myint/autoflake
     rev: v2.0.1
     hooks:
