@@ -263,7 +263,6 @@ msgstr "Se marcada, novas mensagens requerem sua atenção."
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se marcada, algumas mensagens tem um erro de entrega."
 
@@ -492,12 +491,6 @@ msgid "Review Date"
 msgstr "Reveja Data"
 
 #. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_sms_error
-#, fuzzy
-msgid "SMS Delivery error"
-msgstr "Mensagem de erro de entrega"
-
-#. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_severity_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_severity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_severity_filter
@@ -588,6 +581,10 @@ msgstr "Mensagens"
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
 msgid "Website communication history"
 msgstr ""
+
+#, fuzzy
+#~ msgid "SMS Delivery error"
+#~ msgstr "Mensagem de erro de entrega"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Número de mensagens que requerem uma ação"

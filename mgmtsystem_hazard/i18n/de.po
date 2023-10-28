@@ -260,7 +260,6 @@ msgstr ""
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -486,11 +485,6 @@ msgstr "Verantwortlich"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__review_date
 msgid "Review Date"
 msgstr "Prüfdatum"
-
-#. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_severity_list
