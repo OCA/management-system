@@ -225,7 +225,6 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 
@@ -426,11 +425,6 @@ msgid "Reviews"
 msgstr "Revisioni"
 
 #. module: mgmtsystem_review
-#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Errore consegna SMS"
-
-#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__state
 msgid "State"
 msgstr "Stato"
@@ -483,6 +477,9 @@ msgstr "Messaggi sito web"
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__website_message_ids
 msgid "Website communication history"
 msgstr "Storico comunicazioni sito web"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Errore consegna SMS"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Numero di messaggi che richiedono un'azione"
