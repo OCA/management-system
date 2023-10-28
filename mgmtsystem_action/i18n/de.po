@@ -388,7 +388,6 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 "Wenn angewählt gibt es Nachrichten, die nicht zugestellt werden konnten."
@@ -604,12 +603,6 @@ msgid "Responsible User"
 msgstr "Verantwortlicher Benutzer"
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
-#, fuzzy
-msgid "SMS Delivery error"
-msgstr "Zustellungsfehler"
-
-#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__sequence
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__sequence
 msgid "Sequence"
@@ -749,6 +742,10 @@ msgstr ""
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "{{object.name}}"
 msgstr ""
+
+#, fuzzy
+#~ msgid "SMS Delivery error"
+#~ msgstr "Zustellungsfehler"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Anzahl Nachrichten, die Maßnahmen erfordern"
