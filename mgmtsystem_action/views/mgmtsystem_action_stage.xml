@@ -34,7 +34,7 @@
       <field name="name">Management System action Stage Tree</field>
       <field name="model">mgmtsystem.action.stage</field>
       <field name="arch" type="xml">
-        <tree string="Stages">
+        <tree>
           <field name="sequence" widget="handle" />
           <field name="name" />
           <field name="is_starting" />
