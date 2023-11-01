@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-  <data>
     <record id="stage_draft" model="mgmtsystem.nonconformity.stage">
       <field name="name">Draft</field>
       <field name="sequence">0</field>
@@ -31,5 +30,4 @@
       <field name="sequence">250</field>
       <field name="state">cancel</field>
     </record>
-  </data>
 </odoo>
