@@ -238,7 +238,6 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 
@@ -474,11 +473,6 @@ msgid "Results"
 msgstr "Risultati"
 
 #. module: mgmtsystem_evaluation
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Errore consegna SMS"
-
-#. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__sequence
 msgid "Sequence"
 msgstr "Sequenza"
@@ -546,3 +540,6 @@ msgstr "Cronologia comunicazioni sito web"
 #: model:ir.model.fields,help:mgmtsystem_evaluation.field_ir_model__is_mgmtsystem_evaluation
 msgid "Whether this model supports evaluations."
 msgstr "Se questo modello supporta le valutazioni."
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Errore consegna SMS"
