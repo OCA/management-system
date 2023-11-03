@@ -34,7 +34,7 @@ msgid ""
 "Thank you.\n"
 "--\n"
 "Odoo\n"
-"            "
+"        "
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -52,7 +52,7 @@ msgid ""
 "Thank you.\n"
 "--\n"
 "Odoo\n"
-"            "
+"        "
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -160,7 +160,6 @@ msgstr ""
 #: model:ir.ui.menu,name:mgmtsystem_audit.menu_report_mgmtsystem_audit_tree
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_audit_calendar
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_tree
 msgid "Audits"
 msgstr "Audits"
 
@@ -312,7 +311,6 @@ msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -486,11 +484,6 @@ msgid "Related Audits"
 msgstr "Gerelateerde Audits"
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model:mail.template,subject:mgmtsystem_audit.template_email_send_verification_list
 msgid "Send Verification List: \"${object.name}\""
 msgstr ""
@@ -546,7 +539,6 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_tree
 msgid "Verification Lines"
 msgstr ""
 

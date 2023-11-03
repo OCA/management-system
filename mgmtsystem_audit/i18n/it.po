@@ -34,22 +34,8 @@ msgid ""
 "Thank you.\n"
 "--\n"
 "Odoo\n"
-"            "
+"        "
 msgstr ""
-"\n"
-"Salve,\n"
-"\n"
-"L'audit \"${object.name}\" è programmato tra una settimana.\n"
-"Si prega di completare la lista delle verifiche e inviarla ai soggetti da "
-"controllare:\n"
-"\n"
-"${object.get_action_url()}\n"
-"\n"
-"\n"
-"Grazie.\n"
-"--\n"
-"Odoo\n"
-"            "
 
 #. module: mgmtsystem_audit
 #: model:mail.template,body_html:mgmtsystem_audit.template_email_prepare_to_audit
@@ -66,21 +52,8 @@ msgid ""
 "Thank you.\n"
 "--\n"
 "Odoo\n"
-"            "
+"        "
 msgstr ""
-"\n"
-"Salve,\n"
-"\n"
-"L'audit \"${object.name}\" è programmato tra due settimane.\n"
-"Si prega di preparare la lista delle verifiche:\n"
-"\n"
-"${object.get_action_url()}\n"
-"\n"
-"\n"
-"Grazie.\n"
-"--\n"
-"Odoo\n"
-"            "
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_audits
@@ -187,7 +160,6 @@ msgstr "Auditor:"
 #: model:ir.ui.menu,name:mgmtsystem_audit.menu_report_mgmtsystem_audit_tree
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_audit_calendar
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_tree
 msgid "Audits"
 msgstr "Audit"
 
@@ -341,7 +313,6 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 
@@ -515,11 +486,6 @@ msgid "Related Audits"
 msgstr "Audit collegati"
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Errore consegna SMS"
-
-#. module: mgmtsystem_audit
 #: model:mail.template,subject:mgmtsystem_audit.template_email_send_verification_list
 msgid "Send Verification List: \"${object.name}\""
 msgstr "Invia lista verifiche: \"${object.name}\""
@@ -575,7 +541,6 @@ msgstr "Riga di verifica"
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_filter
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_tree
 msgid "Verification Lines"
 msgstr "Righe di verifica"
 
@@ -609,3 +574,65 @@ msgstr "_Annulla"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
 msgid "_Copy"
 msgstr "_Copia"
+
+#~ msgid ""
+#~ "\n"
+#~ "Hello,\n"
+#~ "\n"
+#~ "The audit \"${object.name}\" is scheduled in 1 week.\n"
+#~ "Please finish the verification list and send it to the auditees:\n"
+#~ "\n"
+#~ "${object.get_action_url()}\n"
+#~ "\n"
+#~ "\n"
+#~ "Thank you.\n"
+#~ "--\n"
+#~ "Odoo\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Salve,\n"
+#~ "\n"
+#~ "L'audit \"${object.name}\" è programmato tra una settimana.\n"
+#~ "Si prega di completare la lista delle verifiche e inviarla ai soggetti da "
+#~ "controllare:\n"
+#~ "\n"
+#~ "${object.get_action_url()}\n"
+#~ "\n"
+#~ "\n"
+#~ "Grazie.\n"
+#~ "--\n"
+#~ "Odoo\n"
+#~ "            "
+
+#~ msgid ""
+#~ "\n"
+#~ "Hello,\n"
+#~ "\n"
+#~ "The audit \"${object.name}\" is scheduled in 2 weeks.\n"
+#~ "Please prepare the verification list:\n"
+#~ "\n"
+#~ "${object.get_action_url()}\n"
+#~ "\n"
+#~ "\n"
+#~ "Thank you.\n"
+#~ "--\n"
+#~ "Odoo\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Salve,\n"
+#~ "\n"
+#~ "L'audit \"${object.name}\" è programmato tra due settimane.\n"
+#~ "Si prega di preparare la lista delle verifiche:\n"
+#~ "\n"
+#~ "${object.get_action_url()}\n"
+#~ "\n"
+#~ "\n"
+#~ "Grazie.\n"
+#~ "--\n"
+#~ "Odoo\n"
+#~ "            "
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Errore consegna SMS"
