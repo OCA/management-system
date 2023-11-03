@@ -41,7 +41,7 @@ msgid ""
 "  Odoo\n"
 "</p>\n"
 "                \n"
-"            "
+"        "
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -69,7 +69,7 @@ msgid ""
 "  Odoo\n"
 "</p>\n"
 "                \n"
-"            "
+"        "
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -184,7 +184,6 @@ msgstr "Zahtevek/Opis ukrepa"
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_config_claim
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_mgmtsystem_claims
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_tree_view
 msgid "Claims"
 msgstr "Zahtevki"
 
@@ -360,7 +359,6 @@ msgstr "Če je označeno, zahtevajo nova sporočila vašo pozornost."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_sms_error
 #, fuzzy
 msgid "If checked, some messages have a delivery error."
 msgstr "Če je označeno, zahtevajo nova sporočila vašo pozornost."
@@ -541,20 +539,14 @@ msgstr "Prioriteta"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_action
-#, fuzzy
 msgid ""
 "Record and track your customers' claims. Claims may be linked to a sales "
 "order or a lot.\n"
-"                You can send emails with attachments and keep the full "
-"history for a claim (emails sent, intervention\n"
-"                type and so on). Claims may automatically be linked to an "
-"email address using the mail gateway module."
+"            You can send emails with attachments and keep the full history "
+"for a claim (emails sent, intervention\n"
+"            type and so on). Claims may automatically be linked to an email "
+"address using the mail gateway module."
 msgstr ""
-"Knjiženje in sledenje reklamacijskim zahtevkom kupcev. Zahtevki so lahko "
-"povezani s prodajnim nalogom ali lotom. Pošiljate lahko e-pošto s prilogami "
-"in vodite celotno zgodovino zahtevka (poslana e-pošta, tip intervencije "
-"itd.) Zahtevki se lahko samodejno povežejo z e-poštnim naslovom preko modula "
-"mail gateway."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__reference
@@ -613,11 +605,6 @@ msgid "Root Causes"
 msgstr "Korenski vzroki"
 
 #. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
-
-#. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__team_id
 msgid "Sales Team"
 msgstr "Prodajna ekipa"
@@ -644,7 +631,6 @@ msgstr "Naziv stopnje"
 
 #. module: mgmtsystem_claim
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_mgmtsystem_claim_stages
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claim_stage_tree_view
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Stages"
 msgstr "Stopnje"
@@ -735,10 +721,25 @@ msgstr "Kronologija komunikacij spletne strani"
 msgid ""
 "You can create Management System claim stages to categorize the status of "
 "every\n"
-"                    claim entered in the system. The stages define all the "
+"                claim entered in the system. The stages define all the "
 "steps\n"
-"                    required for the resolution of a claim."
+"                required for the resolution of a claim."
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "Record and track your customers' claims. Claims may be linked to a sales "
+#~ "order or a lot.\n"
+#~ "                You can send emails with attachments and keep the full "
+#~ "history for a claim (emails sent, intervention\n"
+#~ "                type and so on). Claims may automatically be linked to an "
+#~ "email address using the mail gateway module."
+#~ msgstr ""
+#~ "Knjiženje in sledenje reklamacijskim zahtevkom kupcev. Zahtevki so lahko "
+#~ "povezani s prodajnim nalogom ali lotom. Pošiljate lahko e-pošto s "
+#~ "prilogami in vodite celotno zgodovino zahtevka (poslana e-pošta, tip "
+#~ "intervencije itd.) Zahtevki se lahko samodejno povežejo z e-poštnim "
+#~ "naslovom preko modula mail gateway."
 
 #~ msgid ""
 #~ "\n"
