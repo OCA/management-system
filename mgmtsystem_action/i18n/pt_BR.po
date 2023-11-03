@@ -155,7 +155,6 @@ msgstr "${object.name}"
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_tree
 msgid "Action"
 msgstr "Ação"
 
@@ -428,7 +427,6 @@ msgstr "Se marcada, novas mensagens requerem sua atenção."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se marcada, algumas mensagens tem um erro de entrega."
 
@@ -637,12 +635,6 @@ msgid "Responsible User"
 msgstr "Usuário Responsável"
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
-#, fuzzy
-msgid "SMS Delivery error"
-msgstr "Mensagem de erro de entrega"
-
-#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__sequence
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__sequence
 msgid "Sequence"
@@ -668,7 +660,6 @@ msgstr "Nome estagio"
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.mgmtsystem_action_stage_action
 #: model:ir.ui.menu,name:mgmtsystem_action.menu_mgmtsystem_action_stages
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.mgmtsystem_action_stage_tree_view
 msgid "Stages"
 msgstr "Estágios"
 
@@ -783,6 +774,10 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
 msgstr "oe_kanban_text_red"
+
+#, fuzzy
+#~ msgid "SMS Delivery error"
+#~ msgstr "Mensagem de erro de entrega"
 
 #~ msgid "If checked new messages require your attention."
 #~ msgstr "Se marcada novas mensagens requerem sua atenção."

@@ -154,7 +154,6 @@ msgstr ""
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_tree
 msgid "Action"
 msgstr "Maßnahme"
 
@@ -428,7 +427,6 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 "Wenn angewählt gibt es Nachrichten, die nicht zugestellt werden konnten."
@@ -638,12 +636,6 @@ msgid "Responsible User"
 msgstr "Verantwortlicher Benutzer"
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
-#, fuzzy
-msgid "SMS Delivery error"
-msgstr "Zustellungsfehler"
-
-#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__sequence
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__sequence
 msgid "Sequence"
@@ -669,7 +661,6 @@ msgstr "Stufenname"
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.mgmtsystem_action_stage_action
 #: model:ir.ui.menu,name:mgmtsystem_action.menu_mgmtsystem_action_stages
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.mgmtsystem_action_stage_tree_view
 msgid "Stages"
 msgstr "Stufen"
 
@@ -784,6 +775,10 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
 msgstr ""
+
+#, fuzzy
+#~ msgid "SMS Delivery error"
+#~ msgstr "Zustellungsfehler"
 
 #~ msgid "If checked new messages require your attention."
 #~ msgstr ""
