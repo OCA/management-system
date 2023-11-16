@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class MgmtSystemSystem(models.Model):
-
     _name = "mgmtsystem.system"
     _description = "System"
 
