@@ -448,7 +448,6 @@ msgstr "Si está marcado, nuevos mensajes necesitan su atención."
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "si está marcada, algunos mensajes tienen un error de entrega."
 
@@ -816,11 +815,6 @@ msgid "Responsible User"
 msgstr "Usuario Responsable"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error en la entrega de SMS"
-
-#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__sequence
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__sequence
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__sequence
@@ -955,6 +949,9 @@ msgid ""
 msgstr ""
 "seleccione la casilla stis si esta es la etapa por defecto \n"
 "para nuevas disconformidades"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error en la entrega de SMS"
 
 #~ msgid "Immediate action"
 #~ msgstr "Acción inmediata"
