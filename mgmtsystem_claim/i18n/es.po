@@ -52,8 +52,8 @@ msgstr ""
 "<t t-out=\"object.description\"/>\n"
 "</p>\n"
 "\n"
-"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\""
-"/></a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -101,8 +101,8 @@ msgstr ""
 "El siguiente reclamo debe completarse en 10 días (<t t-out=\"object."
 "date_deadline\"/>):\n"
 "\n"
-"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\""
-"/></a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -392,7 +392,6 @@ msgstr "Si está marcada, los nuevos mensajes requieren su atención."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
 
@@ -650,11 +649,6 @@ msgid "Root Causes"
 msgstr "Causas de origen"
 
 #. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error de entrega de mensaje SMS"
-
-#. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__team_id
 msgid "Sales Team"
 msgstr "Equipos de Venta"
@@ -779,6 +773,9 @@ msgstr ""
 "                                    claim entered in the system. The stages "
 "define all the steps\n"
 "                                    required for the resolution of a claim."
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error de entrega de mensaje SMS"
 
 #~ msgid ""
 #~ "\n"
