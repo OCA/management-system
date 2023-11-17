@@ -399,7 +399,6 @@ msgstr "Si está marcada, nuevos mensajes requieren su atención."
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes han tenido un error de entrega."
 
@@ -607,11 +606,6 @@ msgid "Responsible User"
 msgstr "Usuario Responsable"
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error en la entrega de SMS"
-
-#. module: mgmtsystem_audit
 #: model:mail.template,name:mgmtsystem_audit.template_email_send_verification_list
 msgid "Send Verification List"
 msgstr "Enviar lista de verificación"
@@ -723,6 +717,9 @@ msgstr "_Cancelar"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
 msgid "_Copy"
 msgstr "_Copiar"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error en la entrega de SMS"
 
 #~ msgid ""
 #~ "\n"
