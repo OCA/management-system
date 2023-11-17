@@ -227,7 +227,6 @@ msgstr "Si está marcado, nuevos mensajes necesitan su atención."
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_error
-#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "si está marcada, algunos mensajes tienen un error de entrega."
 
@@ -433,11 +432,6 @@ msgid "Reviews"
 msgstr "Revisiones"
 
 #. module: mgmtsystem_review
-#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error de Entrega SMS"
-
-#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__state
 msgid "State"
 msgstr "Estado"
@@ -500,6 +494,9 @@ msgstr "Mensajes de la página web"
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de la comunicación en la web"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error de Entrega SMS"
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Seguidores/as (Canales)"
