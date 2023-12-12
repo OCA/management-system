@@ -56,6 +56,7 @@ class MgmtsytemEvaluationTemplate(models.Model):
         once the evaluation is started""",
     )
     note = fields.Html()
+    group_id = fields.Many2one("res.groups")
     recurrence_type = fields.Selection(
         lambda self: [
             (key, value[0]) for key, value in self._get_recurrence_type().items()
