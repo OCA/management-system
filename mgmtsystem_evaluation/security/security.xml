@@ -18,5 +18,13 @@
             <field name="groups" eval="[(6, 0, [ref('base.group_user')])]" />
             <field name="domain_force">[('manager_ids', '=', user.id)]</field>
         </record>
+        <record id="mgmtsystem_evaluation_group_rule" model="ir.rule">
+            <field name="name">Template group can access all related evaluations</field>
+            <field name="model_id" ref="model_mgmtsystem_evaluation" />
+            <field name="groups" eval="[(6, 0, [ref('base.group_user')])]" />
+            <field
+                name="domain_force"
+            >[('template_id.group_id.users', '=', user.id)]</field>
+        </record>
     </data>
 </odoo>
