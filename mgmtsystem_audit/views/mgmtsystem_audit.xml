@@ -144,15 +144,9 @@
                     </header>
                     <sheet string="Audit">
                         <group col="4" colspan="2">
-                            <field
-                            name="name"
-                            readonly="state == 'done'"
-                        />
+                            <field name="name" readonly="state == 'done'" />
                             <field name="reference" />
-                            <field
-                            name="date"
-                            readonly="state == 'done'"
-                        />
+                            <field name="date" readonly="state == 'done'" />
                             <field
                             name="user_id"
                             string="Audit Manager"
@@ -163,10 +157,7 @@
                             name="company_id"
                             groups="base.group_multi_company"
                         />
-                            <field
-                            name="system_id"
-                            readonly="state == 'done'"
-                        />
+                            <field name="system_id" readonly="state == 'done'" />
                         </group>
                         <notebook colspan="4">
                             <page string="Auditors">
