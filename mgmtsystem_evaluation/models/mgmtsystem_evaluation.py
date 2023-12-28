@@ -79,7 +79,10 @@ class MgmtsystemEvaluation(models.Model):
             record.is_manager = record._get_is_manager()
 
     def _get_is_manager(self):
-        return self.env.user in self.manager_ids
+        return self.env.user in self.manager_ids or (
+            self.template_id.group_id
+            and self.env.user in self.template_id.group_id.users
+        )
 
     def _get_is_user(self):
         return self.env.user == self.user_id
