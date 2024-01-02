@@ -56,6 +56,11 @@ class TestEvaluation(SavepointCase):
                 "password": "test_nanager_login_2",
             }
         )
+        cls.group = cls.env["res.groups"].create(
+            {
+                "name": "Group",
+            }
+        )
         cls.activity_1 = cls.env["mail.activity.type"].create({"name": "Activity 1"})
         cls.activity_2 = cls.env["mail.activity.type"].create({"name": "Activity 2"})
 
@@ -72,7 +77,7 @@ class TestEvaluation(SavepointCase):
             f.template_id = self.template
             f.resource = self.partner
         evaluation = f.save()
-        evaluation.manager_ids = self.manager | self.manager_2
+        evaluation.manager_ids = self.manager
         self.assertFalse(evaluation.user_id)
         self.assertFalse(
             self.env["mgmtsystem.evaluation"]
@@ -89,6 +94,42 @@ class TestEvaluation(SavepointCase):
         )
         self.assertTrue(evaluation.with_user(self.manager).is_manager)
         self.assertFalse(evaluation.with_user(self.manager).is_user)
+        self.assertFalse(
+            self.env["mgmtsystem.evaluation"]
+            .with_user(self.manager_2.id)
+            .search([("id", "=", evaluation.id)]),
+        )
+        self.assertFalse(evaluation.with_user(self.user).is_manager)
+        self.assertTrue(evaluation.with_user(self.user).is_user)
+        self.assertEqual(1, self.partner.mgmtsystem_evaluation_count)
+
+    def test_manager(self):
+        self.assertEqual(0, self.partner.mgmtsystem_evaluation_count)
+        self.group.users = self.manager_2
+        self.template.group_id = self.group
+        with Form(self.env["mgmtsystem.evaluation"]) as f:
+            f.template_id = self.template
+            f.resource = self.partner
+        evaluation = f.save()
+        evaluation.manager_ids = self.manager
+        self.assertFalse(evaluation.user_id)
+        self.assertFalse(
+            self.env["mgmtsystem.evaluation"]
+            .with_user(self.user.id)
+            .search([("id", "=", evaluation.id)])
+        )
+        evaluation.draft2progress()
+        self.assertEqual(evaluation.user_id, self.user)
+        self.assertEqual(
+            evaluation,
+            self.env["mgmtsystem.evaluation"]
+            .with_user(self.user.id)
+            .search([("id", "=", evaluation.id)]),
+        )
+        self.assertTrue(evaluation.with_user(self.manager).is_manager)
+        self.assertFalse(evaluation.with_user(self.manager).is_user)
+        self.assertTrue(evaluation.with_user(self.manager_2).is_manager)
+        self.assertFalse(evaluation.with_user(self.manager_2).is_user)
         self.assertFalse(evaluation.with_user(self.user).is_manager)
         self.assertTrue(evaluation.with_user(self.user).is_user)
         self.assertEqual(1, self.partner.mgmtsystem_evaluation_count)
