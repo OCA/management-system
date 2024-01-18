@@ -392,6 +392,23 @@
         <field name="context">{"search_default_user_id":uid}</field>
     </record>
 
+    <record
+        model="ir.actions.act_window"
+        id="open_mgmtsystem_nonconformity_thread_list"
+    >
+        <field name="name">Nonconformities</field>
+        <field name="res_model">mgmtsystem.nonconformity</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field
+            name="domain"
+        >[('res_id', '=', active_id), ('res_model', '=', active_model)]</field>
+        <field name="view_id" ref="view_mgmtsystem_nonconformity_kanban" />
+        <field name="search_view_id" ref="view_mgmtsystem_nonconformity_filter" />
+        <field
+            name="context"
+        >{"search_default_user_id":uid, "default_res_model": active_model, "default_res_id": active_id}</field>
+    </record>
+
     <menuitem
         id="menu_open_nonconformity"
         name="Nonconformities"
