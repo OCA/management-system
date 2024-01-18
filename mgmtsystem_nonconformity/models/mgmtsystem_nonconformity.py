@@ -43,7 +43,9 @@ class MgmtsystemNonconformity(models.Model):
     closing_date = fields.Datetime(readonly=True)
 
     partner_id = fields.Many2one("res.partner", "Partner", required=True)
-    reference = fields.Char("Related to")
+    reference = fields.Char(
+        "Related to", default=lambda self: self._default_reference()
+    )
     responsible_user_id = fields.Many2one(
         "res.users", "Responsible", required=True, tracking=True
     )
@@ -137,8 +139,19 @@ class MgmtsystemNonconformity(models.Model):
     company_id = fields.Many2one(
         "res.company", "Company", default=lambda self: self.env.company
     )
-    res_model = fields.Char()
+    res_model = fields.Char(index=True)
     res_id = fields.Integer(index=True)
+
+    @api.model
+    def _default_reference(self):
+        if self.env.context.get("active_model") and self.env.context.get("active_id"):
+            return (
+                self.env[self.env.context["active_model"]]
+                .browse(self.env.context.get("active_id"))
+                .exists()
+                .display_name
+            )
+        return ""
 
     def _get_all_actions(self):
         self.ensure_one()
