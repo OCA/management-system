@@ -3,7 +3,7 @@
 
 {
     "name": "Quality Manual",
-    "version": "16.0.1.0.0",
+    "version": "17.0.1.0.0",
     "category": "Management System",
     "author": "OpenERP SA, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
