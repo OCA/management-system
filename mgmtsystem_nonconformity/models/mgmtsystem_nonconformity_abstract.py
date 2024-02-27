@@ -23,8 +23,8 @@ class MgmtsystemNonconformityAbstract(models.AbstractModel):
 
     @api.depends("non_conformity_ids")
     def _compute_non_conformity_count(self):
-        self.ensure_one()
-        self.non_conformity_count = len(self.non_conformity_ids)
+        for record in self:
+            record.non_conformity_count = len(record.non_conformity_ids)
 
     def _get_non_conformities_domain(self):
         return [("res_model", "=", self._name), ("res_id", "=", self.id)]
