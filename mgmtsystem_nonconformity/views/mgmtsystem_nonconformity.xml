@@ -346,6 +346,7 @@
                                         name="action_comments"
                                         attrs="{'readonly':[('state','not in',['pending'])]}"
                                         nolabel="1"
+                                        colspan="2"
                                         placeholder="Action Plan Comments"
                                     />
                             </group>
@@ -360,6 +361,7 @@
                                         name="evaluation_comments"
                                         attrs="{'readonly':[('state','not in',['open'])]}"
                                         nolabel="1"
+                                        colspan="2"
                                         placeholder="Evaluation Comments"
                                     />
                             </group>
