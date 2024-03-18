@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 - TODAY, Kaynnan Lemes <kaynnan.lemes@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="mgmtsystem_nonconformity_form_view">
+        <field name="name">mgmtsystem.nonconformity.form (in
+            mgmtsystem_nonconformity_maintenance_equipment)</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field
+            name="inherit_id"
+            ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='create_date']" position="before">
+                <field name="equipment_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_nonconformity_tree_view">
+        <field name="name">mgmtsystem.nonconformity.tree (in
+            mgmtsystem_nonconformity_maintenance_equipment)</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field
+            name="inherit_id"
+            ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_tree"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="equipment_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_nonconformity_filter_view">
+        <field name="name">mgmtsystem.nonconformity.filter (in
+            mgmtsystem_nonconformity_maintenance_equipment)</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field
+            name="inherit_id"
+            ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='groupby_manager']" position="after">
+                <filter
+                    name="groupby_equipment"
+                    string="Equipment"
+                    icon="terp-personal"
+                    context="{'group_by':'equipment_id'}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
