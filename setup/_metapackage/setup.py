@@ -27,6 +27,7 @@ setuptools.setup(
         'odoo-addon-mgmtsystem_info_security_manual>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem_manual>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem_nonconformity>=16.0dev,<16.1dev',
+        'odoo-addon-mgmtsystem_nonconformity_hazard>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem_nonconformity_hr>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem_nonconformity_mrp>=16.0dev,<16.1dev',
         'odoo-addon-mgmtsystem_nonconformity_product>=16.0dev,<16.1dev',
