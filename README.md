@@ -42,6 +42,7 @@ addon | version | maintainers | summary
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 16.0.1.1.1 |  | Management System - Nonconformity
 [mgmtsystem_nonconformity_hazard](mgmtsystem_nonconformity_hazard/) | 16.0.1.0.0 |  | Management System - Nonconformity Hazard
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 16.0.1.0.0 |  | Bridge module between hr and mgmsystem and
+[mgmtsystem_nonconformity_maintenance_equipment](mgmtsystem_nonconformity_maintenance_equipment/) | 16.0.1.0.0 |  | Management System - Nonconformity Maintenance Equipment
 [mgmtsystem_nonconformity_mrp](mgmtsystem_nonconformity_mrp/) | 16.0.1.0.0 |  | Bridge module between mrp and mgmsystem
 [mgmtsystem_nonconformity_product](mgmtsystem_nonconformity_product/) | 16.0.1.0.0 |  | Bridge module between Product and Management System.
 [mgmtsystem_nonconformity_quality_control_oca](mgmtsystem_nonconformity_quality_control_oca/) | 16.0.1.0.0 |  | Bridge module between Quality Control and Non Conformities
