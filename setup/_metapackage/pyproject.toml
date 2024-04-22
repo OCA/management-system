@@ -1,7 +1,8 @@
 [project]
 name = "odoo-addons-oca-management-system"
-version = "17.0.20231127.0"
+version = "17.0.20240422.0"
 dependencies = [
+    "odoo-addon-document_page_procedure>=17.0dev,<17.1dev",
     "odoo-addon-mgmtsystem>=17.0dev,<17.1dev",
 ]
 classifiers=[
