@@ -10,6 +10,8 @@
 - [Tecnativa](https://www.tecnativa.com):
   - Ernesto Tejeda
   - Pedro M. Baeza
+- [Binhex](https://binhex.cloud//com):
+  - David Luis Mora \<<d.luis@binhex.cloud>\>
 
 Trobz
 
