@@ -101,6 +101,10 @@ Contributors
 
    -  Ernesto Tejeda
 
+-  ``Binhex <https://binhex.cloud/>``\ \_:
+
+   -  David Luis Mora d.luis@binhex.cloud
+
 Trobz
 
 -  Dung Tran <dungtd@trobz.com>

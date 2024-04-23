@@ -5,6 +5,8 @@
 - Jose Maria Alzaga \<<jose.alzaga@aselcis.com>\>
 - [Tecnativa](https://www.tecnativa.com):
   - Ernesto Tejeda
+* `Binhex <https://binhex.cloud/>`_:
+  * David Luis Mora <d.luis@binhex.cloud>
 
 Trobz
 
