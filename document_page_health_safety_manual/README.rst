@@ -77,6 +77,10 @@ Contributors
 
    -  Fernando La Chica <fernando.lachica@guadaltech.es>
 
+-  `Binhex <https://binhex.cloud//com>`__:
+
+   -  David Luis Mora <d.luis@binhex.cloud>
+
 Maintainers
 -----------
 
