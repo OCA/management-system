@@ -90,6 +90,10 @@ Contributors
    -  Ernesto Tejeda
    -  Pedro M. Baeza
 
+-  `Binhex <https://binhex.cloud//com>`__:
+
+   -  David Luis Mora <d.luis@binhex.cloud>
+
 Trobz
 
 -  Dung Tran <dungtd@trobz.com>
