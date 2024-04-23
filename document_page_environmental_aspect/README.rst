@@ -81,6 +81,9 @@ Contributors
    -  Fernando La Chica <fernando.lachica@guadaltech.es>
 
 -  Yvan Dotet <yvan.dotet@logicasoft.eu>
+-  `Binhex <https://binhex.cloud//com>`__:
+
+   -  David Luis Mora <d.luis@binhex.cloud>
 
 Maintainers
 -----------
