@@ -25,11 +25,11 @@ class MgmtsystemNonconformityCause(models.Model):
     )
     ref_code = fields.Char("Reference Code")
 
-    def name_get(self):
+    def _compute_display_name(self):
         res = []
         for obj in self:
             if obj.parent_id:
-                name = obj.parent_id.name_get()[0][1] + " / " + obj.name
+                name = obj.parent_id._compute_display_name()[0][1] + " / " + obj.name
             else:
                 name = obj.name
             res.append((obj.id, name))

@@ -10,12 +10,12 @@
       <field name="arch" type="xml">
         <form string="Origins of nonconformity">
           <sheet>
-            <field name="active" invisible="1" />
+            <field name="active" column_invisible="1" />
             <widget
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active = True"
                     />
             <group>
               <field name="name" />

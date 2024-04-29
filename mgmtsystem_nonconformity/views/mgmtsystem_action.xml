@@ -14,7 +14,7 @@
                     name="nonconformity_ids"
                     colspan="4"
                     nolabel="1"
-                    attrs="{'invisible':[('nonconformity_ids','=',False)]}"
+                    invisible="nonconformity_ids = False"
                 />
         </field>
 

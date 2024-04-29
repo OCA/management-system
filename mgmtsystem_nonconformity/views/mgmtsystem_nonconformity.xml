@@ -221,45 +221,33 @@
                     <field name="kanban_state" widget="kanban_state_selection" />
                     <group name="main">
                         <group name="config">
-                            <field
-                                name="name"
-                                attrs="{'readonly':[('state','not in',['draft'])]}"
-                            />
-                            <field
-                                name="ref"
-                                attrs="{'readonly':[('state','not in',['draft'])]}"
-                            />
+                            <field name="name" readonly="state not in ['draft']" />
+                            <field name="ref" readonly="state not in ['draft']" />
                             <field name="create_date" readonly="1" />
                             <field
                                 name="partner_id"
-                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}"
+                                readonly="state not in ['draft','analysis']"
                             />
-                            <field
-                                name="reference"
-                                attrs="{'readonly':[('state','not in',['draft'])]}"
-                            />
+                            <field name="reference" readonly="state not in ['draft']" />
                             <field
                                 name="origin_ids"
                                 widget="many2many_tags"
-                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}"
+                                readonly="state not in ['draft','analysis']"
                             />
                         </group>
                         <group name="meta">
                             <field
                                 name="responsible_user_id"
-                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}"
+                                readonly="state not in ['draft','analysis']"
                             />
                             <field
                                 name="manager_user_id"
-                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}"
+                                readonly="state not in ['draft','analysis']"
                             />
-                            <field
-                                name="user_id"
-                                attrs="{'readonly':[('state','not in',['draft'])]}"
-                            />
+                            <field name="user_id" readonly="state not in ['draft']" />
                             <field
                                 name="system_id"
-                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}"
+                                readonly="state not in ['draft','analysis']"
                             />
                             <field
                                 name="company_id"
@@ -274,13 +262,13 @@
                             <field
                                 name="description"
                                 placeholder="Add a description ..."
-                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}"
+                                readonly="state not in ['draft','analysis']"
                             />
                             <group name="state">
                                 <field
                                     name="immediate_action_id"
                                     domain="[('type_action','=','immediate')]"
-                                    attrs="{'readonly':[('state','not in',['draft', 'analysis'])]}"
+                                    readonly="state not in ['draft', 'analysis']"
                                 />
                             </group>
                         </page>
@@ -288,26 +276,26 @@
                         <page string="Procedures" name="procedures">
                             <field
                                 name="procedure_ids"
-                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}"
+                                readonly="state not in ['draft','analysis']"
                                 domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]"
                             />
                         </page>
 
                         <page
                             string="Causes and Analysis"
-                            attrs="{'invisible':[('state','in',['draft','cancel'])]}"
+                            invisible="state in ['draft','cancel']"
                             name="causes_analysis"
                         >
                             <separator string="Analysis" />
                             <field
                                 name="analysis"
-                                attrs="{'readonly':[('state','not in',['analysis'])]}"
+                                readonly="state not in ['analysis']"
                             />
 
                             <separator string="Causes" />
                             <field
                                 name="cause_ids"
-                                attrs="{'readonly':[('state','not in',['analysis'])]}"
+                                readonly="state not in ['analysis']"
                                 options="{'no_create': True}"
                             >
                             <tree create="1" delete="1" decoration-info="parent_id">
@@ -323,7 +311,7 @@
                             <group>
                                 <field
                                         name="severity_id"
-                                        attrs="{'readonly':[('state','not in',['analysis'])]}"
+                                        readonly="state not in ['analysis']"
                                     />
                             </group>
                         </group>
@@ -331,20 +319,17 @@
 
                     <page
                             string="Actions"
-                            attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}"
+                            invisible="state in ['draft','analysis','cancel']"
                             name="actions"
                         >
                         <separator string="Action Plan" />
-                        <field
-                                name="action_ids"
-                                attrs="{'readonly':[('state','not in',['pending'])]}"
-                            />
+                        <field name="action_ids" readonly="state not in ['pending']" />
 
                         <group string="Plan Review">
                             <group>
                                 <field
                                         name="action_comments"
-                                        attrs="{'readonly':[('state','not in',['pending'])]}"
+                                        readonly="state not in ['pending']"
                                         nolabel="1"
                                         placeholder="Action Plan Comments"
                                     />
@@ -352,13 +337,13 @@
                         </group>
 
                         <group
-                                attrs="{'invisible':[('state','not in',['open','done'])]}"
+                                invisible="state not in ['open','done']"
                                 string="Effectiveness Review"
                             >
                             <group>
                                 <field
                                         name="evaluation_comments"
-                                        attrs="{'readonly':[('state','not in',['open'])]}"
+                                        readonly="state not in ['open']"
                                         nolabel="1"
                                         placeholder="Evaluation Comments"
                                     />
@@ -401,12 +386,12 @@
         <field name="view_mode">kanban,tree,form</field>
         <field
             name="domain"
-        >[('res_id', '=', active_id), ('res_model', '=', active_model)]</field>
+        >[('res_id', '=', id), ('res_model', '=', active_model)]</field>
         <field name="view_id" ref="view_mgmtsystem_nonconformity_kanban" />
         <field name="search_view_id" ref="view_mgmtsystem_nonconformity_filter" />
         <field
             name="context"
-        >{"search_default_user_id":uid, "default_res_model": active_model, "default_res_id": active_id}</field>
+        >{"search_default_user_id":uid, "default_res_model": active_model, "default_res_id": id}</field>
     </record>
 
     <menuitem

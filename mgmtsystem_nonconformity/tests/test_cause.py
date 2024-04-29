@@ -23,16 +23,16 @@ class TestModelCause(common.TransactionCase):
         self.assertNotEqual(self.record.id, 0)
         self.assertNotEqual(self.record.id, None)
 
-    def test_name_get(self):
-        name_assoc = self.record.name_get()
+    def test_compute_display_name(self):
+        name_assoc = self.record._compute_display_name()
         self.assertEqual(name_assoc[0][1], "TestCause")
         self.assertEqual(name_assoc[0][0], self.record.id)
 
-        name_assoc = self.record2.name_get()
+        name_assoc = self.record2._compute_display_name()
         self.assertEqual(name_assoc[0][1], "TestCause / test2")
         self.assertEqual(name_assoc[0][0], self.record2.id)
 
-        name_assoc = self.record3.name_get()
+        name_assoc = self.record3._compute_display_name()
         self.assertEqual(name_assoc[0][1], "TestCause / test2 / test3")
         self.assertEqual(name_assoc[0][0], self.record3.id)
 
