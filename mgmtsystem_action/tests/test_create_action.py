@@ -13,7 +13,7 @@ def freeze_time(dt):
     return mock_time
 
 
-class TestModelAction(common.SavepointCase):
+class TestModelAction(common.TransactionCase):
     """Test class for mgmtsystem_action."""
 
     @classmethod
