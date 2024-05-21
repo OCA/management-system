@@ -127,7 +127,7 @@ class MgmtsystemAudit(models.Model):
             value.update(
                 {"reference": self.env["ir.sequence"].next_by_code("mgmtsystem.audit")}
             )
-        audit_id = super(MgmtsystemAudit, self).create(vals)
+        audit_id = super().create(vals)
         return audit_id
 
     def button_close(self):
