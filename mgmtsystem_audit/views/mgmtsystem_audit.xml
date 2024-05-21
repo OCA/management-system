@@ -79,8 +79,8 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name" attrs="{'readonly':[('state','=','done')]}" />
-                    <field name="date" attrs="{'readonly':[('state','=','done')]}" />
+                    <field name="name" readonly="state == 'done'" />
+                    <field name="date" readonly="state == 'done'" />
                     <field name="create_date" />
                     <field name="reference" />
                     <field name="system_id" />
@@ -132,7 +132,7 @@
                         <button
                         name="button_close"
                         string="Close"
-                        states="open"
+                        invisible="state not in ['open']"
                         type="object"
                     />
                         <field
@@ -144,36 +144,27 @@
                     </header>
                     <sheet string="Audit">
                         <group col="4" colspan="2">
-                            <field
-                            name="name"
-                            attrs="{'readonly':[('state','=','done')]}"
-                        />
+                            <field name="name" readonly="state == 'done'" />
                             <field name="reference" />
-                            <field
-                            name="date"
-                            attrs="{'readonly':[('state','=','done')]}"
-                        />
+                            <field name="date" readonly="state == 'done'" />
                             <field
                             name="user_id"
                             string="Audit Manager"
                             required="1"
-                            attrs="{'readonly':[('state','=','done')]}"
+                            readonly="state == 'done'"
                         />
                             <field
                             name="company_id"
                             groups="base.group_multi_company"
                         />
-                            <field
-                            name="system_id"
-                            attrs="{'readonly':[('state','=','done')]}"
-                        />
+                            <field name="system_id" readonly="state == 'done'" />
                         </group>
                         <notebook colspan="4">
                             <page string="Auditors">
                                 <field
                                 name="auditor_user_ids"
                                 nolabel="1"
-                                attrs="{'readonly':[('state','=','done')]}"
+                                readonly="state == 'done'"
                                 options="{'no_create': True}"
                                 context="{'tree_view_ref': 'mgmtsystem_audit.mgmtsystem_audit_res_users_x2m_tree'}"
                             />
@@ -182,7 +173,7 @@
                                 <field
                                 name="auditee_user_ids"
                                 nolabel="1"
-                                attrs="{'readonly':[('state','=','done')]}"
+                                readonly="state == 'done'"
                                 options="{'no_create': True}"
                                 context="{'tree_view_ref': 'mgmtsystem_audit.mgmtsystem_audit_res_users_x2m_tree'}"
                             />
@@ -191,21 +182,21 @@
                                 <field
                                 name="line_ids"
                                 nolabel="1"
-                                attrs="{'readonly':[('state','=','done')]}"
+                                readonly="state == 'done'"
                             />
                             </page>
                             <page string="Strong Points">
                                 <field
                                 name="strong_points"
                                 nolabel="1"
-                                attrs="{'readonly':[('state','=','done')]}"
+                                readonly="state == 'done'"
                             />
                             </page>
                             <page string="To Improve Points">
                                 <field
                                 name="to_improve_points"
                                 nolabel="1"
-                                attrs="{'readonly':[('state','=','done')]}"
+                                readonly="state == 'done'"
                             />
                             </page>
                             <page string="Improvement Opportunities">
@@ -213,14 +204,14 @@
                                 name="imp_opp_ids"
                                 domain="[('type_action','=','improvement')]"
                                 nolabel="1"
-                                attrs="{'readonly':[('state','=','done')]}"
+                                readonly="state == 'done'"
                             />
                             </page>
                             <page string="Nonconformities">
                                 <field
                                 name="nonconformity_ids"
                                 nolabel="1"
-                                attrs="{'readonly':[('state','=','done')]}"
+                                readonly="state == 'done'"
                             />
                             </page>
                         </notebook>

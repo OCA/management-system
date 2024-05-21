@@ -328,12 +328,12 @@ msgid "Display Name"
 msgstr "Nome visualizzato"
 
 #. module: mgmtsystem_audit
-#: model:ir.actions.server,name:mgmtsystem_audit.rule_set_prepare_to_audit_ir_actions_server
+#: model:base.automation,name:mgmtsystem_audit.rule_set_prepare_to_audit
 msgid "Email all auditors 2 weeks before audit."
 msgstr "Invia email agli auditori due settimane prima dell'audit."
 
 #. module: mgmtsystem_audit
-#: model:ir.actions.server,name:mgmtsystem_audit.rule_set_send_verification_list_ir_actions_server
+#: model:base.automation,name:mgmtsystem_audit.rule_set_send_verification_list
 msgid "Email all followers 1 week before audit."
 msgstr "Invia email a chi segue una settimana prima dell'audit."
 
@@ -390,6 +390,7 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 
@@ -416,13 +417,6 @@ msgid "Is Follower"
 msgstr "Segue"
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
-
-#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__write_uid
@@ -435,11 +429,6 @@ msgstr "Ultimo aggiornamento di"
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__write_date
 msgid "Last Updated on"
 msgstr "Ultimo aggiornamento il"
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "Allegato principale"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.action_report_mgmtsystem_audit
@@ -465,11 +454,6 @@ msgstr "Scadenza mia attività"
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__name
 msgid "Name"
 msgstr "Nome"
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
-msgstr "Evento calendario attività successiva"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_date_deadline
@@ -602,6 +586,11 @@ msgid "Responsible User"
 msgstr "Utente responsabile"
 
 #. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Errore consegna SMS"
+
+#. module: mgmtsystem_audit
 #: model:mail.template,name:mgmtsystem_audit.template_email_send_verification_list
 msgid "Send Verification List"
 msgstr "Invia lista verifica"
@@ -686,16 +675,6 @@ msgid "Verification list report"
 msgstr "Resoconto lista di verifica"
 
 #. module: mgmtsystem_audit
-#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__website_message_ids
-msgid "Website Messages"
-msgstr "Messaggi sito web"
-
-#. module: mgmtsystem_audit
-#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__website_message_ids
-msgid "Website communication history"
-msgstr "Cronologia comunicazioni sito web"
-
-#. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
 msgid "_Cancel"
 msgstr "_Annulla"
@@ -705,8 +684,20 @@ msgstr "_Annulla"
 msgid "_Copy"
 msgstr "Copia"
 
-#~ msgid "SMS Delivery error"
-#~ msgstr "Errore consegna SMS"
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
+
+#~ msgid "Main Attachment"
+#~ msgstr "Allegato principale"
+
+#~ msgid "Next Activity Calendar Event"
+#~ msgstr "Evento calendario attività successiva"
+
+#~ msgid "Website Messages"
+#~ msgstr "Messaggi sito web"
+
+#~ msgid "Website communication history"
+#~ msgstr "Cronologia comunicazioni sito web"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Numero di messaggi che richiedono un'azione"
