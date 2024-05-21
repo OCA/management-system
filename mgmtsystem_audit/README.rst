@@ -17,18 +17,19 @@ Management System - Audit
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fmanagement--system-lightgray.png?logo=github
-    :target: https://github.com/OCA/management-system/tree/16.0/mgmtsystem_audit
+    :target: https://github.com/OCA/management-system/tree/17.0/mgmtsystem_audit
     :alt: OCA/management-system
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/management-system-16-0/management-system-16-0-mgmtsystem_audit
+    :target: https://translation.odoo-community.org/projects/management-system-17-0/management-system-17-0-mgmtsystem_audit
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/management-system&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/management-system&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module was written to manage audits and verifications lists of your management system.
+This module was written to manage audits and verifications lists of your
+management system.
 
 **Table of contents**
 
@@ -40,25 +41,27 @@ Configuration
 
 Users must be added to the appropriate groups within Odoo as follows:
 
-* Creators: Settings > Users > Groups > Management System / User
-* Responsible Persons: Settings > Users > Groups > Management System / Approving User
+-  Creators: Settings > Users > Groups > Management System / User
+-  Responsible Persons: Settings > Users > Groups > Management System /
+   Approving User
 
 Usage
 =====
 
 To use this module, you need to:
 
-* go to Management Systems > Audits
-* create a new audit
-* fill up its name, its auditors and schedule the date
-* prepare your questions with the verification list and print it
-* drive the audit and log answers in your verification list
-* finish your audit by writing the strong points, points to improve and creating improvements opportunities and nonconformities
-* print the audit report and close the audit
+-  go to Management Systems > Audits
+-  create a new audit
+-  fill up its name, its auditors and schedule the date
+-  prepare your questions with the verification list and print it
+-  drive the audit and log answers in your verification list
+-  finish your audit by writing the strong points, points to improve and
+   creating improvements opportunities and nonconformities
+-  print the audit report and close the audit
 
 For further information, please visit:
 
-* http://fr.slideshare.net/max3903/iso-anmanagement-systemswithopenerpen
+-  http://fr.slideshare.net/max3903/iso-anmanagement-systemswithopenerpen
 
 Bug Tracker
 ===========
@@ -66,7 +69,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/management-system/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/management-system/issues/new?body=module:%20mgmtsystem_audit%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/management-system/issues/new?body=module:%20mgmtsystem_audit%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -74,34 +77,35 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Savoir-faire Linux
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Daniel Reis <dreis.pt@hotmail.com>
-* Joao Alfredo Gama Batista <joao.gama@savoirfairelinux.com>
-* Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
-* Sandy Carter <sandy.carter@savoirfairelinux.com>
-* Virgil Dupras <virgil.dupras@savoirfairelinux.com>
-* Loïc lacroix <loic.lacroix@savoirfairelinux.com>
-* Gervais Naoussi <gervaisnaoussi@gmail.com>
-* Luk Vermeylen <luk@allmas-it.be>
-* Maxime Chambreuil <mchambreuil@ursainfosystems.com>
-* Eugen Don <eugen.don@don-systems.de>
-* `Tecnativa <https://www.tecnativa.com>`_:
+-  Daniel Reis <dreis.pt@hotmail.com>
+-  Joao Alfredo Gama Batista <joao.gama@savoirfairelinux.com>
+-  Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
+-  Sandy Carter <sandy.carter@savoirfairelinux.com>
+-  Virgil Dupras <virgil.dupras@savoirfairelinux.com>
+-  Loïc lacroix <loic.lacroix@savoirfairelinux.com>
+-  Gervais Naoussi <gervaisnaoussi@gmail.com>
+-  Luk Vermeylen <luk@allmas-it.be>
+-  Maxime Chambreuil <mchambreuil@ursainfosystems.com>
+-  Eugen Don <eugen.don@don-systems.de>
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  * Ernesto Tejeda
+   -  Ernesto Tejeda
 
-* `Guadaltech <https://www.guadaltech.es>`_:
+-  `Guadaltech <https://www.guadaltech.es>`__:
 
-  * Fernando La Chica
-* Yvan Dotet <yvan.dotet@logicasoft.eu>
+   -  Fernando La Chica
+
+-  Yvan Dotet <yvan.dotet@logicasoft.eu>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -113,6 +117,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/management-system <https://github.com/OCA/management-system/tree/16.0/mgmtsystem_audit>`_ project on GitHub.
+This module is part of the `OCA/management-system <https://github.com/OCA/management-system/tree/17.0/mgmtsystem_audit>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
