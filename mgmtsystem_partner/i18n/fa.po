@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2024-05-29 11:34+0000\n"
+"Last-Translator: Mostafa Barmshory <mostafa.barmshory@gmail.com>\n"
 "Language-Team: none\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: mgmtsystem_partner
 #: model:ir.model.fields,help:mgmtsystem_partner.field_res_partner__type
@@ -24,19 +26,28 @@ msgid ""
 "- Private: Private addresses are only visible by authorized users and contain sensitive data (employee home addresses, ...).\n"
 "- Other: Other address for the company (e.g. subsidiary, ...)"
 msgstr ""
+"- مخاطبین: از این بخش برای سازماندهی اطلاعات تماس کارمندان یک شرکت استفاده "
+"می‌شود (مانند مدیرعامل، مدیر ارشد مالی و ...).\n"
+"- نشانی فاکتور: نشانی اصلی تمام فاکتورها. این نشانی هنگامی صدور فاکتور برای "
+"یک سفارش متعلق به شرکت، به صورت پیش‌فرض انتخاب می‌شود. \n"
+"- نشانی تحویل: نشانی اصلی برای تمام تحویل‌ها. که هنگام تحیل سفارش متعلق به "
+"این شرکت به صورت پیش‌فرض انتخاب می‌شود. \n"
+"- خصوصی: نشانی‌های خصوصی که تنها برای کاربران مجاز قابل رویت هستند و داده‌"
+"های حساسی را در بر می‌گیرند (نشانی‌های محل سکونت کارکنان، ...)\n"
+"- سایر: نشانی دیگر شرکت (مانند نشانی شرکت‌های تابعه، ...)"
 
 #. module: mgmtsystem_partner
 #: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_partner__type
 #: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_users__type
 msgid "Address Type"
-msgstr ""
+msgstr "نوع نشانی"
 
 #. module: mgmtsystem_partner
 #: model:ir.model,name:mgmtsystem_partner.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "مخاطب"
 
 #. module: mgmtsystem_partner
 #: model:ir.model.fields.selection,name:mgmtsystem_partner.selection__res_partner__type__quality
 msgid "Quality Address"
-msgstr ""
+msgstr "بررسی کیفیت نشانی"
