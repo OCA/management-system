@@ -53,10 +53,7 @@ class TestModelAction(common.TransactionCase):
         except exceptions.ValidationError:
             self.assertTrue(True)
         stage = self.env.ref("mgmtsystem_action.stage_close")
-        try:
-            self.record.write({"stage_id": stage.id})
-        except exceptions.ValidationError:
-            self.assertTrue(True)
+        self.record.write({"stage_id": stage.id})
 
     def test_get_action_url(self):
         """Test if action url start with http."""
@@ -92,3 +89,10 @@ class TestModelAction(common.TransactionCase):
         with mock.patch.object(type(tmpl_model), "send_mail") as mocked:
             self.record.send_mail_for_action()
             mocked.assert_called_with(self.record.id, force_send=True)
+
+    def test_case_open(self):
+        """Check if case_open work."""
+        stage_open = self.env.ref("mgmtsystem_action.stage_open")
+        self.record.case_open()
+        self.assertEqual(self.record.active, True)
+        self.assertEqual(self.record.stage_id, stage_open)
