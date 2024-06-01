@@ -2,7 +2,7 @@ import time
 from datetime import datetime, timedelta
 from unittest import mock
 
-from odoo import exceptions
+from odoo import _, exceptions
 from odoo.tests import common
 
 
@@ -39,6 +39,14 @@ class TestModelAction(common.TransactionCase):
         self.assertFalse(self.record.date_open)
         self.record.stage_id = stage
         self._assert_date_equal(self.record.date_open)
+        new_record = self.env["mgmtsystem.action"].create(
+            {
+                "reference": "SampleReference",
+                "name": "SampleAction",
+                "type_action": "immediate",
+            }
+        )
+        self.assertEqual(new_record.reference, _("SampleReference"))
 
     def test_case_close(self):
         """Test object close state."""
@@ -54,6 +62,7 @@ class TestModelAction(common.TransactionCase):
             self.assertTrue(True)
         stage = self.env.ref("mgmtsystem_action.stage_close")
         self.record.write({"stage_id": stage.id})
+        self.assertTrue(self.record.number_of_days_to_close <= 0)
 
     def test_get_action_url(self):
         """Test if action url start with http."""
@@ -74,6 +83,8 @@ class TestModelAction(common.TransactionCase):
             tmpl_model = self.env["mail.template"]
             with mock.patch.object(type(tmpl_model), "send_mail") as mocked:
                 self.env["mgmtsystem.action"].process_reminder_queue()
+                mocked.assert_called_with(self.record.id)
+                self.env["mgmtsystem.action"].process_reminder_queue(-100)
                 mocked.assert_called_with(self.record.id)
 
     def test_stage_groups(self):
