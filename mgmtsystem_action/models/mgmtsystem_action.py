@@ -163,5 +163,4 @@ class MgmtsystemAction(models.Model):
 
     def case_open(self):
         """Opens case."""
-        # TODO smk: is this used?
         return self.write({"active": True, "stage_id": self._get_stage_open().id})
