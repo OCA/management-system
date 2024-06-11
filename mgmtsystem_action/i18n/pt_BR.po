@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-15 18:09+0000\n"
-"PO-Revision-Date: 2024-05-29 21:36+0000\n"
+"PO-Revision-Date: 2024-06-11 17:37+0000\n"
 "Last-Translator: Rodrigo Macedo <sottomaiormacedotec@users.noreply."
 "translation.odoo-community.org>\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
@@ -45,6 +45,26 @@ msgid ""
 "            \n"
 "        "
 msgstr ""
+"\n"
+"            \n"
+"<p>Olá <t t-out=\"object.user_id.name\"/>,</p>\n"
+"\n"
+"<p>\n"
+"Esta é uma mensagem automática para lembrá-lo de que o\n"
+"A ação a seguir deverá ser concluída em 10 dias (<t t-out=\"object."
+"date_deadline\"/>):\n"
+"\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\""
+"/></a></b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Obrigado e tenha um bom dia.<br>\n"
+"--<br>\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.email_template_new_action_reminder
@@ -67,6 +87,24 @@ msgid ""
 "            \n"
 "        "
 msgstr ""
+"\n"
+"            \n"
+"<p>Olá <t t-out=\"object.user_id.name\"/>,</p>\n"
+"\n"
+"<p>Uma nova ação foi atribuída a você: <b><a t-att-href=\"object."
+"get_action_url()\"><t t-out=\"object.name\"/></a></b></p>\n"
+"<p><b>Deadline: </b><t t-out=\"object.date_deadline or ''\"/></p>\n"
+"\n"
+"<p>Por favor, use as etapas de ação e mensagens para registrar o "
+"progresso.</p>\n"
+"\n"
+"<p>\n"
+"Obrigado<br>\n"
+"--<br>\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__number_of_actions
@@ -120,7 +158,7 @@ msgstr "Ação"
 #. module: mgmtsystem_action
 #: model:mail.template,name:mgmtsystem_action.email_template_new_action_reminder
 msgid "Action Assigned"
-msgstr ""
+msgstr "Ação atribuída"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_needaction
@@ -165,7 +203,7 @@ msgstr "Atividades"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Decoração de exceção de atividade"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_state
@@ -292,7 +330,7 @@ msgstr "Rascunho"
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Dropdown menu"
-msgstr ""
+msgstr "Menu suspenso"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
@@ -353,7 +391,7 @@ msgstr "Agrupar por"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Tem Mensagem"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.actions.act_window,help:mgmtsystem_action.action_report_mgmtsystem_action
@@ -375,12 +413,12 @@ msgstr "Identificação"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Ícone"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Ícone para indicar uma atividade de exceção."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_needaction
@@ -506,7 +544,7 @@ msgstr "Novo"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Próximo evento do calendário de atividades"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_date_deadline
@@ -535,14 +573,13 @@ msgstr "Número de ações"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
-#, fuzzy
 msgid "Number of errors"
-msgstr "Número de erro"
+msgstr "Número de erros"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Número de mensagens que exigem ação"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
@@ -579,12 +616,12 @@ msgstr "Referência"
 #. module: mgmtsystem_action
 #: model:mail.template,subject:mgmtsystem_action.action_email_template_reminder_action
 msgid "Reminder on Action: \"{{object.name}}\""
-msgstr ""
+msgstr "Lembrete sobre ação: \"{{object.name}}\""
 
 #. module: mgmtsystem_action
 #: model:mail.template,name:mgmtsystem_action.action_email_template_reminder_action
 msgid "Reminder to Responsible"
-msgstr ""
+msgstr "Lembrete sobre responsabilidade"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__type_action
@@ -701,7 +738,7 @@ msgstr "Tipo"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo de atividade de exceção registrada."
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
@@ -724,14 +761,13 @@ msgstr "Não podemos trazer de volta a ação a fase de projeto"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-#, fuzzy
 msgid "Website Messages"
-msgstr "Última Mensagem"
+msgstr "Mensagens do website"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Histórico de mensagens do site"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
@@ -741,7 +777,7 @@ msgstr "oe_kanban_text_red"
 #. module: mgmtsystem_action
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "{{object.name}}"
-msgstr ""
+msgstr "{{object.name}}"
 
 #, fuzzy
 #~ msgid "SMS Delivery error"
