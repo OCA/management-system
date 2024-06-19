@@ -9,24 +9,25 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-17 02:42+0000\n"
-"PO-Revision-Date: 2017-06-17 02:42+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2024-06-19 16:36+0000\n"
+"Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
 "Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__number_of_days_to_close
 msgid "# of days to close"
-msgstr ""
+msgstr "# Antal dagar till stängning"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__number_of_nonconformities
 msgid "# of nonconformities"
-msgstr ""
+msgstr "# Antal avvikelser"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__kanban_state
@@ -37,6 +38,11 @@ msgid ""
 " * Ready for next stage indicates the task is ready to be pulled to the next "
 "stage"
 msgstr ""
+"En kanbanstatus anger speciella situationer som påverkar den:\n"
+" * Normal är standardsituationen\n"
+" * Blockerad indikerar att något hindrar uppgiften från att fortskrida\n"
+" * Klar för nästa steg indikerar att uppgiften är redo att flyttas till "
+"nästa steg"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_action
@@ -45,9 +51,8 @@ msgstr "Åtgärd"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_needaction
-#, fuzzy
 msgid "Action Needed"
-msgstr "Åtgärd"
+msgstr "Åtgärd krävs"
 
 #. module: mgmtsystem_nonconformity
 #. odoo-python
@@ -57,13 +62,13 @@ msgstr "Åtgärd"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 #, python-format
 msgid "Action Plan"
-msgstr ""
+msgstr "Handlingsplan"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__action_comments
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Action Plan Comments"
-msgstr ""
+msgstr "Kommentarer till handlingsplanen"
 
 #. module: mgmtsystem_nonconformity
 #. odoo-python
@@ -73,6 +78,8 @@ msgid ""
 "Action plan  comments are required in order to put a nonconformity In "
 "Progress."
 msgstr ""
+"Kommentarer till åtgärdsplanen krävs för att en avvikelse ska kunna läggas "
+"in i In Progress."
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__action_ids
@@ -83,44 +90,44 @@ msgstr "Åtgärder"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__active
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__active
 msgid "Active?"
-msgstr ""
+msgstr "Aktiv?"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Aktiviteter"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Aktivitet Undantag Dekoration"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Aktivitet Stat"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Aktivitetstyp Ikon"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Add a description ..."
-msgstr ""
+msgstr "Lägg till en beskrivning ..."
 
 #. module: mgmtsystem_nonconformity
 #. odoo-python
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:0
 #, python-format
 msgid "All actions must be done before closing a Nonconformity."
-msgstr ""
+msgstr "Alla åtgärder måste vidtas innan en avvikelse stängs."
 
 #. module: mgmtsystem_nonconformity
 #. odoo-python
@@ -139,17 +146,17 @@ msgstr "Analys"
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Analysis Confirmation"
-msgstr ""
+msgstr "Bekräftelse av analys"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_origin_form
 msgid "Archived"
-msgstr ""
+msgstr "Arkiverad"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Antal bifogade filer"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
@@ -159,22 +166,22 @@ msgstr "Upphovsman"
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.bad_communication
 msgid "Bad communication"
-msgstr ""
+msgstr "Dålig kommunikation"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.bad_partner_relation
 msgid "Bad customer/supplier relation"
-msgstr ""
+msgstr "Dålig relation till kund/leverantör"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.badly_defined_need
 msgid "Badly defined need"
-msgstr ""
+msgstr "Dåligt definierat behov"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity__kanban_state__blocked
 msgid "Blocked"
-msgstr ""
+msgstr "Blockerad"
 
 #. module: mgmtsystem_nonconformity
 #. odoo-python
@@ -183,7 +190,7 @@ msgstr ""
 #: model:mgmtsystem.nonconformity.stage,name:mgmtsystem_nonconformity.stage_cancel
 #, python-format
 msgid "Cancelled"
-msgstr ""
+msgstr "Avbruten"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__cause_ids
@@ -207,7 +214,7 @@ msgstr "Orsaker"
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Causes and Analysis"
-msgstr ""
+msgstr "Orsaker och analys"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_cause_form
@@ -217,12 +224,12 @@ msgstr "Orsaker till avvikelse"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__child_ids
 msgid "Child Causes"
-msgstr ""
+msgstr "Orsaker till barn"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__child_ids
 msgid "Childs"
-msgstr ""
+msgstr "Childs"
 
 #. module: mgmtsystem_nonconformity
 #. odoo-python
@@ -237,27 +244,27 @@ msgstr "Stängd"
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Closed Nonconformities"
-msgstr ""
+msgstr "Stängda avvikelser"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__closing_date
 msgid "Closing Date"
-msgstr ""
+msgstr "Sista ansökningsdag"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__action_comments
 msgid "Comments on the action plan."
-msgstr ""
+msgstr "Kommentarer till handlingsplanen."
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__company_id
 msgid "Company"
-msgstr ""
+msgstr "Företag"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__evaluation_comments
 msgid "Conclusions from the last effectiveness evaluation."
-msgstr ""
+msgstr "Slutsatser från den senaste utvärderingen av effektiviteten."
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__create_uid
@@ -266,7 +273,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Skapad av"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__create_date
@@ -275,18 +282,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Skapad på"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__days_since_updated
 msgid "Days Since Updated"
-msgstr ""
+msgstr "Dagar sedan uppdatering"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__sequence
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__sequence
 msgid "Defines the order to present items"
-msgstr ""
+msgstr "Definierar i vilken ordning artiklarna ska presenteras"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__description
@@ -300,7 +307,7 @@ msgstr "Beskrivnig"
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_dr
 msgid "Direction Review"
-msgstr ""
+msgstr "Riktningsöversikt"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__display_name
@@ -309,7 +316,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Visningsnamn"
 
 #. module: mgmtsystem_nonconformity
 #. odoo-python
@@ -319,55 +326,55 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 #, python-format
 msgid "Draft"
-msgstr ""
+msgstr "Utkast"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Draft/New nonconformities"
-msgstr ""
+msgstr "Utkast/nya avvikelser"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_kanban
 msgid "Dropdown menu"
-msgstr ""
+msgstr "Rullgardinsmeny"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_kanban
 msgid "Edit"
-msgstr ""
+msgstr "Redigera"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Effectiveness Review"
-msgstr ""
+msgstr "Effektivitetsgranskning"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mail_thread
 msgid "Email Thread"
-msgstr ""
+msgstr "E-post tråd"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__evaluation_comments
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Evaluation Comments"
-msgstr ""
+msgstr "Utvärdering Kommentarer"
 
 #. module: mgmtsystem_nonconformity
 #. odoo-python
 #: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:0
 #, python-format
 msgid "Evaluation Comments are required in order to close a Nonconformity."
-msgstr ""
+msgstr "Utvärderingskommentarer krävs för att en avvikelse ska kunna avslutas."
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_extenal_audit
 msgid "External Audit"
-msgstr ""
+msgstr "Extern revision"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_external_client
 msgid "External client complaint"
-msgstr ""
+msgstr "Klagomål från extern kund"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__user_id
@@ -377,28 +384,28 @@ msgstr "Ifylld av"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__fold
 msgid "Folded in Kanban"
-msgstr ""
+msgstr "Fälld i Kanban"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Följare"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Följare (Kontakter)"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Font awesome-ikon, t.ex. fa-tasks"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__parent_id
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__parent_id
 msgid "Group"
-msgstr ""
+msgstr "Grupp"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
@@ -408,7 +415,7 @@ msgstr "Gruppera efter..."
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Har meddelande"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.actions.act_window,help:mgmtsystem_nonconformity.action_report_mgmtsystem_nonconformity
@@ -416,11 +423,13 @@ msgid ""
 "Have a general overview of all non conformities processed in the system by "
 "sorting them with specific criteria."
 msgstr ""
+"Få en allmän överblick över alla avvikelser som behandlas i systemet genom "
+"att sortera dem efter specifika kriterier."
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.hr_unavailable_inadequate
 msgid "Human resource not available or inadequate"
-msgstr ""
+msgstr "Personalresurser saknas eller är otillräckliga"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__id
@@ -434,27 +443,27 @@ msgstr "ID"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Ikon"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Ikon för att indikera en undantagsaktivitet."
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Om den är markerad kräver nya meddelanden din uppmärksamhet."
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Om kryssrutan är markerad får vissa meddelanden ett leveransfel."
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__immediate_action_id
 msgid "Immediate Action"
-msgstr ""
+msgstr "Omedelbar åtgärd"
 
 #. module: mgmtsystem_nonconformity
 #. odoo-python
@@ -465,48 +474,48 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 #, python-format
 msgid "In Progress"
-msgstr ""
+msgstr "Pågående"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.information_not_available
 msgid "Information not available"
-msgstr ""
+msgstr "Information ej tillgänglig"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.instruction_not_respected
 msgid "Instruction not respected"
-msgstr ""
+msgstr "Instruktioner respekteras inte"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.demo_origin
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_internal_audit
 msgid "Internal Audit"
-msgstr ""
+msgstr "Internrevision"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_internal_client
 msgid "Internal client complaint"
-msgstr ""
+msgstr "Klagomål från intern kund"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Är följare"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__is_starting
 msgid "Is starting Stage"
-msgstr ""
+msgstr "Börjar Stage"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__kanban_state
 msgid "Kanban State"
-msgstr ""
+msgstr "Kanban-stat"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.demo_cause
 msgid "Lack of expertise"
-msgstr ""
+msgstr "Brist på expertis"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity____last_update
@@ -515,7 +524,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Senast ändrad den"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__write_uid
@@ -524,7 +533,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Senast uppdaterad av"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__write_date
@@ -533,22 +542,22 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Senast uppdaterad den"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Huvudfäste"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_maj
 msgid "Major"
-msgstr ""
+msgstr "Major"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.action_report_mgmtsystem_nonconformity
 msgid "Management System Analysis"
-msgstr ""
+msgstr "Analys av ledningssystem"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__manager_user_id
@@ -559,22 +568,22 @@ msgstr "Chef"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Fel vid leverans av meddelande"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Meddelanden"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_min
 msgid "Minor"
-msgstr ""
+msgstr "Mindre"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Min aktivitet Deadline"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__name
@@ -584,22 +593,22 @@ msgstr "Namn"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Nästa aktivitet i aktivitetskalendern"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Deadline för nästa aktivitet"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Nästa Aktivitet Sammanfattning"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Nästa aktivitetstyp"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_account__non_conformity_ids
@@ -659,7 +668,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_survey__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_user_input__non_conformity_ids
 msgid "Non Conformity"
-msgstr ""
+msgstr "Icke-överensstämmelse"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_account__non_conformity_count
@@ -719,25 +728,25 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_survey__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_user_input__non_conformity_count
 msgid "Non Conformity Count"
-msgstr ""
+msgstr "Non Conformity Count"
 
 #. module: mgmtsystem_nonconformity
 #. odoo-javascript
 #: code:addons/mgmtsystem_nonconformity/static/src/components/chatter_topbar/chatter_topbar.xml:0
 #, python-format
 msgid "Non conformities"
-msgstr ""
+msgstr "Icke överensstämmande"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_report_mgmtsystem_nonconformity_graph
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_report_mgmtsystem_nonconformity_pivot
 msgid "Non conformity"
-msgstr ""
+msgstr "Icke-överensstämmelse"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Non-Conformity"
-msgstr ""
+msgstr "Icke-konformitet"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list
@@ -752,7 +761,7 @@ msgstr "Avvikelser"
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Nonconformities pending review"
-msgstr ""
+msgstr "Avvikelser som väntar på granskning"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity
@@ -762,43 +771,42 @@ msgstr "Avvikelse"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_abstract
 msgid "Nonconformity Abstract"
-msgstr ""
+msgstr "Icke-konformitet Sammanfattning"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__nonconformity_immediate_id
-#, fuzzy
 msgid "Nonconformity Immediate"
-msgstr "Avvikelser"
+msgstr "Omedelbara avvikelser"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.mgmtsystem_nonconformity_stage_form_view
 msgid "Nonconformity Stage"
-msgstr ""
+msgstr "Steg för avvikelse"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_stage
 msgid "Nonconformity Stages"
-msgstr ""
+msgstr "Stadier för avvikelser"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Antal åtgärder"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Antal fel"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Antal meddelanden som kräver åtgärder"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Antal meddelanden med leveransfel"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
@@ -832,24 +840,24 @@ msgstr "Ursprung för avvikelse"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__parent_path
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__parent_path
 msgid "Parent Path"
-msgstr ""
+msgstr "Föräldrarnas väg"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__partner_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Partner"
-msgstr ""
+msgstr "Kontakt"
 
 #. module: mgmtsystem_nonconformity
 #: model:mail.message.subtype,description:mgmtsystem_nonconformity.subtype_pending
 #: model:mail.message.subtype,name:mgmtsystem_nonconformity.subtype_pending
 msgid "Pending Approval"
-msgstr ""
+msgstr "Avvaktar godkännande"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
 msgid "Plan Review"
-msgstr ""
+msgstr "Granskning av plan"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__procedure_ids
@@ -860,12 +868,12 @@ msgstr "Rutin"
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.procedure_not_defined
 msgid "Procedure not defined"
-msgstr ""
+msgstr "Procedur ej definierad"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.procedure_not_respected
 msgid "Procedure not respected"
-msgstr ""
+msgstr "Förfarandet inte respekterat"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
@@ -875,17 +883,17 @@ msgstr "Rutiner"
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_process
 msgid "Process Execution"
-msgstr ""
+msgstr "Verkställande av processer"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_qc
 msgid "Quality Committee"
-msgstr ""
+msgstr "Kvalitetskommittén"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity__kanban_state__done
 msgid "Ready for next stage"
-msgstr ""
+msgstr "Redo för nästa steg"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__ref
@@ -896,27 +904,27 @@ msgstr "Referens"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__ref_code
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__ref_code
 msgid "Reference Code"
-msgstr ""
+msgstr "Referens kod"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_action_form
 msgid "Related Nonconformities"
-msgstr ""
+msgstr "Relaterade avvikelser"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__reference
 msgid "Related to"
-msgstr ""
+msgstr "Relaterat till"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__res_id
 msgid "Res"
-msgstr ""
+msgstr "Res"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__res_model
 msgid "Res Model"
-msgstr ""
+msgstr "Res modell"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__responsible_user_id
@@ -926,9 +934,8 @@ msgstr "Ansvarig"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_user_id
-#, fuzzy
 msgid "Responsible User"
-msgstr "Ansvarig"
+msgstr "Ansvarig användare"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__sequence
@@ -943,13 +950,13 @@ msgstr "Sekvens"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__severity_id
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_severity
 msgid "Severity"
-msgstr ""
+msgstr "Allvarlighetsgrad"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_severity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_severity_form
 msgid "Severity of Complaints and Nonconformities"
-msgstr ""
+msgstr "Klagomålens och avvikelsernas allvarlighetsgrad"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__stage_id
@@ -959,13 +966,13 @@ msgstr "Läge"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__name
 msgid "Stage Name"
-msgstr ""
+msgstr "Scenens namn"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.mgmtsystem_nonconformity_stage_action
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_nonconformity_stages
 msgid "Stages"
-msgstr ""
+msgstr "Stadier"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__state
@@ -981,17 +988,21 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Status baserad på aktiviteter\n"
+"Försenad: Förfallodatumet har redan passerats\n"
+"Idag: Aktivitetsdatumet är idag\n"
+"Planerad: Framtida aktiviteter."
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__system_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "System"
-msgstr ""
+msgstr "System"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.technical_failure
 msgid "Technical failure"
-msgstr ""
+msgstr "Tekniskt fel"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__fold
@@ -999,6 +1010,8 @@ msgid ""
 "This stage is folded in the kanban view when there are \n"
 "no records in that stage to display."
 msgstr ""
+"Detta steg viks i kanbanvyn när det inte finns några\n"
+"inga poster i det steget som ska visas."
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__name
@@ -1008,22 +1021,22 @@ msgstr "Titel"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Typ av undantagsaktivitet som registreras."
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_no
 msgid "Unfounded"
-msgstr ""
+msgstr "Ogrundad"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_kanban
 msgid "Unread Messages"
-msgstr ""
+msgstr "Olästa meddelanden"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__sequence
 msgid "Used to order states. Lower is better."
-msgstr ""
+msgstr "Används för att beställa stater. Lägre är bättre."
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
@@ -1033,17 +1046,17 @@ msgstr "Användare"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Webbplatsmeddelanden"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Webbplatsens kommunikationshistorik"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
 msgid "Work conditions"
-msgstr ""
+msgstr "Arbetsförhållanden"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__is_starting
@@ -1051,6 +1064,8 @@ msgid ""
 "select stis checkbox if this is the default stage \n"
 "for new nonconformities"
 msgstr ""
+"välj kryssrutan stis om detta är standardstadiet\n"
+"för nya avvikelser"
 
 #~ msgid "Immediate action"
 #~ msgstr "Omedelbara åtgärder"
