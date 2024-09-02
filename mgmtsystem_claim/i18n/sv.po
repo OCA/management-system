@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: management-system (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-08-07 14:27+0000\n"
-"PO-Revision-Date: 2024-06-19 16:37+0000\n"
+"PO-Revision-Date: 2024-09-02 15:06+0000\n"
 "Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
 "Language-Team: Swedish (http://www.transifex.com/oca/"
 "OCA-management-system-8-0/language/sv/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. module: mgmtsystem_claim
 #: model:mail.template,body_html:mgmtsystem_claim.email_template_new_claim_reminder
@@ -47,7 +47,7 @@ msgstr ""
 "\n"
 "            \n"
 "<p>Hej <t t-out=\"object.user_id.name\"/>,</br>\n"
-"Ett nytt anspråk har tilldelats dig:\n"
+"En ny avvikelse har tilldelats dig:\n"
 "\n"
 "<p>\n"
 "<t t-out=\"objekt.beskrivning\"/>\n"
@@ -122,7 +122,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner__mgmtsystem_claim_count
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_users__mgmtsystem_claim_count
 msgid "# Mgmt Claims"
-msgstr "Mgmt påståenden"
+msgstr "# Avvikelser"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction
@@ -162,7 +162,7 @@ msgstr "Aktivitetstyp Ikon"
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "All pending Claims"
-msgstr "Alla pågående Reklamationer"
+msgstr "Alla pågående Krav"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_attachment_count
@@ -182,43 +182,43 @@ msgstr "Kategori"
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claim"
-msgstr "Reklamation"
+msgstr "Avvikelse"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__date
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.view_mgmtsystem_claims_filter
 msgid "Claim Date"
-msgstr "Reklamationsdatum"
+msgstr "Avvikelsedatum"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claim Description"
-msgstr "Reklamationsbeskrivning"
+msgstr "Avvikelsebeskrivning"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claim Reporter"
-msgstr "Reklamationsrapport"
+msgstr "Avvikelserapport"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__name
 msgid "Claim Subject"
-msgstr "Reklamationsämne"
+msgstr "Avvikelseämne"
 
 #. module: mgmtsystem_claim
 #: model:ir.model,name:mgmtsystem_claim.model_mgmtsystem_claim
 msgid "Claim for Management System"
-msgstr "Krav för ledningssystem"
+msgstr "Avvikelse för ledningssystem"
 
 #. module: mgmtsystem_claim
 #: model:ir.model,name:mgmtsystem_claim.model_mgmtsystem_claim_stage
 msgid "Claim stages for Management system"
-msgstr "Reklamationssteg för ledningssystem"
+msgstr "Avvikelse för ledningssystem"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claim/Action Description"
-msgstr "Reklamation / Åtgärd Beskrivning"
+msgstr "Avvikelse / Åtgärd Beskrivning"
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.act_window,name:mgmtsystem_claim.mgmtsystem_claim_action
@@ -226,15 +226,15 @@ msgstr "Reklamation / Åtgärd Beskrivning"
 #: model:ir.ui.menu,name:mgmtsystem_claim.menu_mgmtsystem_claims
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Claims"
-msgstr "Reklamationer"
+msgstr "Avvikelser"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.actions.act_window,help:mgmtsystem_claim.mgmtsystem_claim_stage_action
 msgid ""
 "Click to setup a new stage in the processing of the Management System claims."
 msgstr ""
-"Klicka för att starta ett nytt steg i behandlingen av anspråken från "
-"Management System."
+"Klicka för att starta en ny avvikelserapport av anspråken från "
+"ledningssystemet."
 
 #. module: mgmtsystem_claim
 #: model:mgmtsystem.claim.stage,name:mgmtsystem_claim.stage_close
@@ -254,7 +254,7 @@ msgstr "Stängning"
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage__case_default
 msgid "Common to All Teams"
-msgstr "Gemensamt för alla team"
+msgstr "Gemensamt för alla lag"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__company_id
