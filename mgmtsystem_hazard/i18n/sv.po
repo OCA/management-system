@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-18 05:26+0000\n"
-"PO-Revision-Date: 2024-09-04 10:06+0000\n"
+"PO-Revision-Date: 2024-09-04 14:06+0000\n"
 "Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
 "Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
 "Language: sv\n"
@@ -68,7 +68,7 @@ msgstr "Bolag"
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_containment
 msgid "Containment Failure"
-msgstr "Fel i inneslutningen"
+msgstr "Inneslutningsfel"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__name
@@ -79,7 +79,7 @@ msgstr "Kontrollåtgärd"
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_control_measure
 msgid "Control Measure of hazard"
-msgstr "Kontroll Åtgärd av risk"
+msgstr "Kontrollåtgärd av risk"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_control_measure_list
@@ -151,7 +151,7 @@ msgstr "Beskrivning"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__display_name
 msgid "Display Name"
-msgstr "Visa namn"
+msgstr "Visningsnamn"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ems_action
@@ -166,7 +166,7 @@ msgstr "EMS - Position"
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_electric_bilge
 msgid "Electric Bilge"
-msgstr "Elektrisk länsa"
+msgstr "Elektrisk läns"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__executed
@@ -257,12 +257,12 @@ msgstr "ID"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "Om den är markerad kräver nya meddelanden din uppmärksamhet."
+msgstr "Om markerad, nya meddelanden kräver din uppmärksamhet."
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr "Om kryssrutan är markerad får vissa meddelanden ett leveransfel."
+msgstr "Om markerad, vissa meddelanden får ett leveransfel."
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_ignition_gas
@@ -280,12 +280,12 @@ msgstr "Test av implementering"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_form
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_test_filter
 msgid "Implementation Tests"
-msgstr "Tester av implementering"
+msgstr "Implementationstester"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_test
 msgid "Implementation Tests of hazard"
-msgstr "Implementering Tester av risker"
+msgstr "Implementationstester av risk"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_intoxication
@@ -313,7 +313,7 @@ msgstr "Motivering"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage____last_update
 msgid "Last Modified on"
-msgstr "Senast redigerad"
+msgstr "Senast redigerad den"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__write_uid
@@ -339,7 +339,7 @@ msgstr "Senast uppdaterad av"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__write_date
 msgid "Last Updated on"
-msgstr "Senast uppdaterad"
+msgstr "Senast uppdaterad den"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_low
@@ -418,7 +418,7 @@ msgstr "OHSAS - Position"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__name
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_usage_form
 msgid "Occupation / Usage"
-msgstr "Yrke/användning"
+msgstr "Yrke / användning"
 
 #. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_usage_list
@@ -514,7 +514,7 @@ msgstr "Enkel"
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_spilling
 msgid "Spilling"
-msgstr "Capstan"
+msgstr "Spiller"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__name
