@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [document_page_procedure](document_page_procedure/) | 17.0.1.0.0 |  | Document Management - Wiki - Procedures
+[document_page_quality_manual](document_page_quality_manual/) | 17.0.1.0.0 |  | Quality Manual
 [mgmtsystem](mgmtsystem/) | 17.0.1.0.0 |  | Management System
 
 [//]: # (end addons)
