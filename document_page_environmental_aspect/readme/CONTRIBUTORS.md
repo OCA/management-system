@@ -1,0 +1,7 @@
+- Savoir-faire Linux \<<support@savoirfairelinux.com>\>
+- Gervais Naoussi \<<gervaisnaoussi@gmail.com>\>
+- [Guadaltech](https://www.guadaltech.es):
+  - Fernando La Chica \<<fernando.lachica@guadaltech.es>\>
+- Yvan Dotet \<<yvan.dotet@logicasoft.eu>\>
+- [Binhex](https://binhex.cloud//com):
+  - David Luis Mora \<<d.luis@binhex.cloud>\>
