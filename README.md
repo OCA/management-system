@@ -30,6 +30,7 @@ addon | version | maintainers | summary
 [mgmtsystem](mgmtsystem/) | 17.0.1.0.0 |  | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 17.0.1.0.0 |  | Management System - Action
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 17.0.1.0.0 |  | Hazard
+[mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 17.0.1.0.0 |  | Hazard Risk
 [mgmtsystem_manual](mgmtsystem_manual/) | 17.0.1.0.0 |  | Management System - Manual
 [mgmtsystem_survey](mgmtsystem_survey/) | 17.0.1.0.0 |  | Management System - Survey
 
