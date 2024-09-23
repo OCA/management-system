@@ -300,7 +300,6 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.actions.server,name:mgmtsystem_action.ir_cron_mgmtsystem_action_reminder_ir_actions_server
-#: model:ir.cron,cron_name:mgmtsystem_action.ir_cron_mgmtsystem_action_reminder
 msgid "Email Action Reminders 10 days before due date."
 msgstr ""
 
@@ -412,14 +411,6 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag____last_update
-msgid "Last Modified on"
-msgstr "Laatst bijgewerkt op"
-
-#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag__write_uid
@@ -441,11 +432,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__priority__0
 msgid "Low"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_main_attachment_id
-msgid "Main Attachment"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -499,11 +485,6 @@ msgstr ""
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 #, python-format
 msgid "New"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -597,6 +578,13 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_user_id
 msgid "Responsible User"
+msgstr ""
+
+#. module: mgmtsystem_action
+#. odoo-python
+#: code:addons/mgmtsystem_action/tests/test_create_action.py:0
+#, python-format
+msgid "SampleReference"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -714,16 +702,6 @@ msgid "We cannot bring back the action to draft stage"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-msgid "Website communication history"
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
 msgstr ""
@@ -732,3 +710,6 @@ msgstr ""
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "{{object.name}}"
 msgstr ""
+
+#~ msgid "Last Modified on"
+#~ msgstr "Laatst bijgewerkt op"
