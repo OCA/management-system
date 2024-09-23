@@ -21,6 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[document_page_environment_manual](document_page_environment_manual/) | 17.0.1.0.0 |  | Document Management - Wiki - Environment Manual
 [document_page_environmental_aspect](document_page_environmental_aspect/) | 17.0.1.0.0 |  | Environmental Aspects
 [document_page_health_safety_manual](document_page_health_safety_manual/) | 17.0.1.0.0 |  | Health and Safety Manual
 [document_page_procedure](document_page_procedure/) | 17.0.1.0.0 |  | Document Management - Wiki - Procedures
