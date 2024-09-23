@@ -1,12 +1,13 @@
 [project]
 name = "odoo-addons-oca-management-system"
-version = "17.0.20240923.2"
+version = "17.0.20240923.3"
 dependencies = [
     "odoo-addon-document_page_environmental_aspect>=17.0dev,<17.1dev",
     "odoo-addon-document_page_procedure>=17.0dev,<17.1dev",
     "odoo-addon-document_page_quality_manual>=17.0dev,<17.1dev",
     "odoo-addon-document_page_work_instruction>=17.0dev,<17.1dev",
     "odoo-addon-mgmtsystem>=17.0dev,<17.1dev",
+    "odoo-addon-mgmtsystem_action>=17.0dev,<17.1dev",
     "odoo-addon-mgmtsystem_survey>=17.0dev,<17.1dev",
 ]
 classifiers=[

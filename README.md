@@ -26,6 +26,7 @@ addon | version | maintainers | summary
 [document_page_quality_manual](document_page_quality_manual/) | 17.0.1.0.0 |  | Quality Manual
 [document_page_work_instruction](document_page_work_instruction/) | 17.0.1.0.0 |  | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 17.0.1.0.0 |  | Management System
+[mgmtsystem_action](mgmtsystem_action/) | 17.0.1.0.0 |  | Management System - Action
 [mgmtsystem_survey](mgmtsystem_survey/) | 17.0.1.0.0 |  | Management System - Survey
 
 [//]: # (end addons)
