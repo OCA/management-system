@@ -303,19 +303,6 @@ msgid "Justification"
 msgstr "Motivering"
 
 #. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage____last_update
-msgid "Last Modified on"
-msgstr "Senast redigerad den"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__write_uid
@@ -346,11 +333,6 @@ msgstr "Senast uppdaterad den"
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_low
 msgid "Low"
 msgstr "Låg"
-
-#. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "Huvudfäste"
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_aging
@@ -568,12 +550,14 @@ msgstr "Mycket sannolikt"
 msgid "Very low"
 msgstr "Mycket låg"
 
-#. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
-msgid "Website Messages"
-msgstr "Webbplatsmeddelanden"
+#~ msgid "Last Modified on"
+#~ msgstr "Senast redigerad den"
 
-#. module: mgmtsystem_hazard
-#: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
-msgid "Website communication history"
-msgstr "Webbplatsens kommunikationshistorik"
+#~ msgid "Main Attachment"
+#~ msgstr "Huvudfäste"
+
+#~ msgid "Website Messages"
+#~ msgstr "Webbplatsmeddelanden"
+
+#~ msgid "Website communication history"
+#~ msgstr "Webbplatsens kommunikationshistorik"

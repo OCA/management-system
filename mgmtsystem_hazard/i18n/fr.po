@@ -302,19 +302,6 @@ msgid "Justification"
 msgstr "Justification"
 
 #. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage____last_update
-msgid "Last Modified on"
-msgstr "Dernière modification le"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__write_uid
@@ -345,11 +332,6 @@ msgstr "Dernière mise à jour le"
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_low
 msgid "Low"
 msgstr "Faible"
-
-#. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_main_attachment_id
-msgid "Main Attachment"
-msgstr ""
 
 #. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_aging
@@ -567,12 +549,5 @@ msgstr "Très probable"
 msgid "Very low"
 msgstr "Très faible"
 
-#. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: mgmtsystem_hazard
-#: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
-msgid "Website communication history"
-msgstr ""
+#~ msgid "Last Modified on"
+#~ msgstr "Dernière modification le"

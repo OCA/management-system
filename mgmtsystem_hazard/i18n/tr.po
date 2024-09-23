@@ -302,19 +302,6 @@ msgid "Justification"
 msgstr ""
 
 #. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage____last_update
-msgid "Last Modified on"
-msgstr "Son değişiklik"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__write_uid
@@ -344,11 +331,6 @@ msgstr "Son güncelleme"
 #: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_low
 #: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_low
 msgid "Low"
-msgstr ""
-
-#. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_main_attachment_id
-msgid "Main Attachment"
 msgstr ""
 
 #. module: mgmtsystem_hazard
@@ -567,12 +549,5 @@ msgstr ""
 msgid "Very low"
 msgstr ""
 
-#. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: mgmtsystem_hazard
-#: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
-msgid "Website communication history"
-msgstr ""
+#~ msgid "Last Modified on"
+#~ msgstr "Son değişiklik"
