@@ -1,11 +1,10 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class MgmtsystemNonconformityOrigin(models.Model):
-
     _name = "mgmtsystem.nonconformity.origin"
     _description = "Origin of nonconformity of the management system"
     _order = "parent_id, sequence"
@@ -25,11 +24,10 @@ class MgmtsystemNonconformityOrigin(models.Model):
 
     active = fields.Boolean(default=True)
 
-    def name_get(self):
-        res = []
+    @api.depends("name", "parent_id.name")
+    def _compute_display_name(self):
         for obj in self:
             name = obj.name
             if obj.parent_id:
-                name = obj.parent_id.name_get()[0][1] + " / " + name
-            res.append((obj.id, name))
-        return res
+                name = f"{obj.parent_id.display_name} / {name}"
+            obj.display_name = name

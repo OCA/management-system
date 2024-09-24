@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <!-- Actions: add link to NCs -->
@@ -14,7 +13,8 @@
                     name="nonconformity_ids"
                     colspan="4"
                     nolabel="1"
-                    attrs="{'invisible':[('nonconformity_ids','=',False)]}"
+                    invisible="nonconformity_ids == False"
+                    readonly="1"
                 />
         </field>
 
