@@ -23,18 +23,21 @@ class TestModelCause(common.TransactionCase):
         self.assertNotEqual(self.record.id, 0)
         self.assertNotEqual(self.record.id, None)
 
-    def test_name_get(self):
-        name_assoc = self.record.name_get()
-        self.assertEqual(name_assoc[0][1], "TestCause")
-        self.assertEqual(name_assoc[0][0], self.record.id)
+    def test_display_name(self):
+        name_assoc = self.record
+        name_assoc._compute_display_name()
+        self.assertEqual(name_assoc.display_name, "TestCause")
+        self.assertEqual(name_assoc.id, self.record.id)
 
-        name_assoc = self.record2.name_get()
-        self.assertEqual(name_assoc[0][1], "TestCause / test2")
-        self.assertEqual(name_assoc[0][0], self.record2.id)
+        name_assoc = self.record2
+        name_assoc._compute_display_name()
+        self.assertEqual(name_assoc.display_name, "TestCause / test2")
+        self.assertEqual(name_assoc.id, self.record2.id)
 
-        name_assoc = self.record3.name_get()
-        self.assertEqual(name_assoc[0][1], "TestCause / test2 / test3")
-        self.assertEqual(name_assoc[0][0], self.record3.id)
+        name_assoc = self.record3
+        name_assoc._compute_display_name()
+        self.assertEqual(name_assoc.display_name, "TestCause / test2 / test3")
+        self.assertEqual(name_assoc.id, self.record3.id)
 
     def test_recursion(self):
         parent = self.env["mgmtsystem.nonconformity.cause"].create(

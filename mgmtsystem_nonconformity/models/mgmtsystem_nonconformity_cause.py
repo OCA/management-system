@@ -1,7 +1,7 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class MgmtsystemNonconformityCause(models.Model):
@@ -24,13 +24,12 @@ class MgmtsystemNonconformityCause(models.Model):
         "mgmtsystem.nonconformity.cause", "parent_id", "Child Causes"
     )
     ref_code = fields.Char("Reference Code")
+    display_name = fields.Char(compute="_compute_display_name", recursive=True)
 
-    def name_get(self):
-        res = []
+    @api.depends("name", "parent_id.display_name")
+    def _compute_display_name(self):
         for obj in self:
             if obj.parent_id:
-                name = obj.parent_id.name_get()[0][1] + " / " + obj.name
+                obj.display_name = f"{obj.parent_id.display_name} / {obj.name}"
             else:
-                name = obj.name
-            res.append((obj.id, name))
-        return res
+                obj.display_name = obj.name
