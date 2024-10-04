@@ -20,7 +20,7 @@ Management System - Nonconformity HR
     :target: https://github.com/OCA/management-system/tree/17.0/mgmtsystem_nonconformity_hr
     :alt: OCA/management-system
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/management-system-17-0/management-system-17-0-mgmtsystem_nonconformity_hr
+    :target: https://translation.odoo-community.org/projects/management-system-16-0/management-system-16-0-mgmtsystem_nonconformity_hr
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
     :target: https://runboat.odoo-community.org/builds?repo=OCA/management-system&target_branch=17.0
@@ -34,7 +34,7 @@ This module contains some new features for Management System modules.
 
 Nonconformity (NC)
 
--  Department: add a field to link a specific department.
+- Department: add a field to link a specific department.
 
 **Table of contents**
 
@@ -46,18 +46,18 @@ Usage
 
 NC Department
 
--  Go to Employees → Department → create a new one
--  Go to Management System → Nonconformity
--  Create new Nonconformity
--  Select a Departament on the list
+* Go to Employees → Department → create a new one
+* Go to Management System → Nonconformity
+* Create new Nonconformity
+* Select a Departament on the list
 
 Changelog
 =========
 
 13.0.1.0.0 (2020-04-01)
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
--  [INI] Initial development
+* [INI] Initial development
 
 Bug Tracker
 ===========
@@ -73,19 +73,19 @@ Credits
 =======
 
 Authors
--------
+~~~~~~~
 
 * Associazione PNLUG - Gruppo Odoo
 
 Contributors
-------------
+~~~~~~~~~~~~
 
--  Marcelo Frare <mf2965@gmail.com>
--  Stefano Consolaro <stefano.consolaro@mymage.it>
--  Yvan Dotet <yvan.dotet@logicasoft.eu>
+* Marcelo Frare <mf2965@gmail.com>
+* Stefano Consolaro <stefano.consolaro@mymage.it>
+* Yvan Dotet <yvan.dotet@logicasoft.eu>
 
 Maintainers
------------
+~~~~~~~~~~~
 
 This module is maintained by the OCA.
 
