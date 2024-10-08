@@ -287,7 +287,7 @@
 
                         <page
                             string="Causes and Analysis"
-                            invisible="state not in 'draft' and state not in 'cancel'"
+                            invisible="state in ('draft', 'cancel')"
                             name="causes_analysis"
                         >
                             <separator string="Analysis" />
@@ -320,7 +320,7 @@
 
                         <page
                             string="Actions"
-                            invisible="state not in 'draft' and state not in 'analysis' and state not in 'cancel'"
+                            invisible="state in ('draft', 'analysis', 'cancel')"
                             name="actions"
                         >
                             <separator string="Action Plan" />
@@ -347,7 +347,7 @@
                                 <group>
                                     <field
                                         name="evaluation_comments"
-                                        readonly="state not in 'open' and state not in 'done'"
+                                        readonly="state not in 'open'"
                                         nolabel="1"
                                         placeholder="Evaluation Comments"
                                     />
