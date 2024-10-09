@@ -13,22 +13,22 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="system_tree">
-      <field name="name">mgmtsystem_system_tree</field>
+    <record model="ir.ui.view" id="system_list">
+      <field name="name">mgmtsystem_system_list</field>
       <field name="model">mgmtsystem.system</field>
       <field name="arch" type="xml">
-        <tree>
+        <list>
           <field name="name" />
           <field name="company_id" groups="base.group_multi_company" />
-        </tree>
+        </list>
       </field>
     </record>
 
     <record id="system_action" model="ir.actions.act_window">
       <field name="name">Management Systems</field>
       <field name="res_model">mgmtsystem.system</field>
-      <field name="view_mode">tree,form</field>
-      <field name="view_id" ref="system_tree" />
+      <field name="view_mode">list,form</field>
+      <field name="view_id" ref="system_list" />
     </record>
 
     <menuitem
