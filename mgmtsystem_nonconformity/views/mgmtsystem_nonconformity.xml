@@ -230,28 +230,28 @@
                             <field name="create_date" readonly="1" />
                             <field
                                 name="partner_id"
-                                readonly="state not in 'draft' and state not in 'analysis'"
+                                readonly="state not in ('draft', 'analysis')"
                             />
                             <field name="reference" readonly="state not in 'draft'" />
                             <field
                                 name="origin_ids"
                                 widget="many2many_tags"
-                                readonly="state not in 'draft' and state not in 'analysis'"
+                                readonly="state not in ('draft', 'analysis')"
                             />
                         </group>
                         <group name="meta">
                             <field
                                 name="responsible_user_id"
-                                readonly="state not in 'draft' and state not in 'analysis'"
+                                readonly="state not in ('draft', 'analysis')"
                             />
                             <field
                                 name="manager_user_id"
-                                readonly="state not in 'draft' and state not in 'analysis'"
+                                readonly="state not in ('draft', 'analysis')"
                             />
                             <field name="user_id" readonly="state not in 'draft'" />
                             <field
                                 name="system_id"
-                                readonly="state not in 'draft' and state not in 'analysis'"
+                                readonly="state not in ('draft', 'analysis')"
                             />
                             <field
                                 name="company_id"
@@ -266,13 +266,13 @@
                             <field
                                 name="description"
                                 placeholder="Add a description ..."
-                                readonly="state not in 'draft' and state not in 'analysis'"
+                                readonly="state not in ('draft', 'analysis')"
                             />
                             <group name="state">
                                 <field
                                     name="immediate_action_id"
                                     domain="[('type_action','=','immediate')]"
-                                    readonly="state not in 'draft' and state not in 'analysis'"
+                                    readonly="state not in ('draft', 'analysis')"
                                 />
                             </group>
                         </page>
@@ -280,7 +280,7 @@
                         <page string="Procedures" name="procedures">
                             <field
                                 name="procedure_ids"
-                                readonly="state not in 'draft' and state not in 'analysis'"
+                                readonly="state not in ('draft', 'analysis')"
                                 domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]"
                             />
                         </page>
