@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <record id="view_mgmtsystem_configuration" model="ir.ui.view">
         <field name="name">res.config.settings.view.form.inherit.mgmtsystem</field>
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="base.res_config_settings_view_form" />
         <field name="priority" eval="95" />
         <field name="arch" type="xml">
-
             <xpath expr="//form[hasclass('oe_form_configuration')]" position="inside">
                 <div
                     class="app_settings_block"
@@ -16,13 +14,11 @@
                     data-key="mgmtsystem"
                     groups="mgmtsystem.group_mgmtsystem_user_manager"
                 >
-
                     <h2>Management Systems</h2>
                     <div
                         class="row mt16 o_settings_container"
                         id="mgmtsystem_systems_setting"
                     >
-
                         <div class="col-xs-12 col-md-6 o_setting_box">
                             <div class="o_setting_left_pane">
                                 <field name="module_mgmtsystem_quality" />
@@ -72,13 +68,11 @@
                         </div>
                     </div>
 
-
                     <h2>Applications</h2>
                     <div
                         class="row mt16 o_settings_container"
                         id="mgmtsystem_applications_setting"
                     >
-
                         <div class="col-xs-12 col-md-6 o_setting_box">
                             <div class="o_setting_left_pane">
                                 <field
@@ -172,7 +166,6 @@
                         class="row mt16 o_settings_container"
                         id="mgmtsystem_manuals_setting"
                     >
-
                         <div class="col-xs-12 col-md-6 o_setting_box">
                             <div class="o_setting_left_pane">
                                 <field
@@ -239,7 +232,6 @@
                         class="row mt16 o_settings_container"
                         id="mgmtsystem_documentation_setting"
                     >
-
                         <div class="col-xs-12 col-md-6 o_setting_box">
                             <div class="o_setting_left_pane">
                                 <field
@@ -316,9 +308,7 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </xpath>
         </field>
