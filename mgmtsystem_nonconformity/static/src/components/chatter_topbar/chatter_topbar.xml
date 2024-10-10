@@ -1,0 +1,29 @@
+<templates xml:space="preserve">
+
+    <t
+        t-name="mgmtsystem_nonconformity.ChatterTopbar"
+        t-inherit="mail.Chatter"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//Dropdown" position="before">
+            <button
+                class="o_ChatterTopbar_button o_ChatterTopbar_buttonNonConformities btn btn-light btn-primary"
+                type="button"
+            >
+<!--                t-att-disabled="!chatterTopbar.chatter.isTemporary and !chatterTopbar.chatter.hasWriteAccess"-->
+<!--                t-on-click="() => this.chatterTopbar.chatter.onClickShowNonConformities()"-->
+<!--                t-if="chatterTopbar.chatter.webRecord.data.non_conformity_count !== undefined"-->
+<!--            >-->
+                <i
+                    class="fa fa-exclamation-triangle fa-lg me-1"
+                    role="img"
+                    aria-label="Non conformities"
+                />
+<!--                <span-->
+<!--                    class="o_ChatterTopbar_buttonCount o_ChatterTopbar_buttonNonConformitiesCount"-->
+<!--                    t-esc="chatterTopbar.chatter.webRecord.data.non_conformity_count"-->
+<!--                />-->
+            </button>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,1097 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_nonconformity
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2018
+# enjolras <yo@miguelrevilla.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-10 07:38+0000\n"
+"PO-Revision-Date: 2024-02-08 20:34+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
+"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__number_of_days_to_close
+msgid "# of days to close"
+msgstr "# Días para el cierre"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__number_of_nonconformities
+msgid "# of nonconformities"
+msgstr "# de disconformidades"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__kanban_state
+msgid ""
+"A kanban state indicates special situations affecting it:\n"
+" * Normal is the default situation\n"
+" * Blocked indicates something is preventing the progress of this task\n"
+" * Ready for next stage indicates the task is ready to be pulled to the next "
+"stage"
+msgstr ""
+"Un estado kanban indica situaciones especiales que le afectan:\n"
+" * Normal es la situación por defecto\n"
+" * Bloqueado indica que algo está impidiendo el progreso de esta tarea\n"
+" * Listo para la siguiente fase indica que la tarea está lista para pasar a "
+"la siguiente fase"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_action
+msgid "Action"
+msgstr "Acción"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_needaction
+msgid "Action Needed"
+msgstr "acción necesaria"
+
+#. module: mgmtsystem_nonconformity
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:0
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity_stage__state__pending
+#: model:mgmtsystem.nonconformity.stage,name:mgmtsystem_nonconformity.stage_pending
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+#, python-format
+msgid "Action Plan"
+msgstr "Plan de acción"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__action_comments
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Action Plan Comments"
+msgstr "Comentarios plan de acción"
+
+#. module: mgmtsystem_nonconformity
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:0
+#, python-format
+msgid ""
+"Action plan  comments are required in order to put a nonconformity In "
+"Progress."
+msgstr ""
+"Los comentarios del plan    de acción son necesarios para poner una no "
+"conformidad En curso."
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__action_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Actions"
+msgstr "Acciones"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__active
+msgid "Active"
+msgstr "Activado"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__active
+msgid "Active?"
+msgstr "Activo?"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_ids
+msgid "Activities"
+msgstr "actividades"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de la actividad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_state
+msgid "Activity State"
+msgstr "Estado de actividad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Tipo Icono Actividad"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Add a description ..."
+msgstr "Añadir una descripción ..."
+
+#. module: mgmtsystem_nonconformity
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:0
+#, python-format
+msgid "All actions must be done before closing a Nonconformity."
+msgstr ""
+"Todas las acciones deben estar realizadas antes de cerrar una no conformidad."
+
+#. module: mgmtsystem_nonconformity
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:0
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__analysis
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity_stage__state__analysis
+#: model:mail.message.subtype,description:mgmtsystem_nonconformity.subtype_analysis
+#: model:mail.message.subtype,name:mgmtsystem_nonconformity.subtype_analysis
+#: model:mgmtsystem.nonconformity.stage,name:mgmtsystem_nonconformity.stage_analysis
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+#, python-format
+msgid "Analysis"
+msgstr "Análisis"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Analysis Confirmation"
+msgstr "Confirmación de análisis"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_origin_form
+msgid "Archived"
+msgstr "archivado"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_attachment_count
+msgid "Attachment Count"
+msgstr "recuento de archivos adjuntos"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Author"
+msgstr "Autor"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.bad_communication
+msgid "Bad communication"
+msgstr "Mala comunicación"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.bad_partner_relation
+msgid "Bad customer/supplier relation"
+msgstr "Mala relación cliente/proveedor"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.badly_defined_need
+msgid "Badly defined need"
+msgstr "Necesidad mal definida"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity__kanban_state__blocked
+msgid "Blocked"
+msgstr "Bloqueado"
+
+#. module: mgmtsystem_nonconformity
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:0
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity_stage__state__cancel
+#: model:mgmtsystem.nonconformity.stage,name:mgmtsystem_nonconformity.stage_cancel
+#, python-format
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__cause_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__name
+msgid "Cause"
+msgstr "Causa"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_cause
+msgid "Cause of the nonconformity of the management system"
+msgstr "Causa de la no conformidad del sistema de gestión"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_cause_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_cause
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_cause_filter
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Causes"
+msgstr "Causas"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Causes and Analysis"
+msgstr "Causas y análisis"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_cause_form
+msgid "Causes of nonconformity"
+msgstr "Causas de la no conformidad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__child_ids
+msgid "Child Causes"
+msgstr "Causas hijas"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__child_ids
+msgid "Childs"
+msgstr "Hijas"
+
+#. module: mgmtsystem_nonconformity
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:0
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity_stage__state__done
+#: model:mgmtsystem.nonconformity.stage,name:mgmtsystem_nonconformity.stage_done
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#, python-format
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Closed Nonconformities"
+msgstr "No conformidades cerradas"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__closing_date
+msgid "Closing Date"
+msgstr "Fecha de Cierre"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__action_comments
+msgid "Comments on the action plan."
+msgstr "Comentarios sobre el plan de acción."
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__evaluation_comments
+msgid "Conclusions from the last effectiveness evaluation."
+msgstr "Conclusiones de la última evaluación de la efectividad."
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__days_since_updated
+msgid "Days Since Updated"
+msgstr "Días transcurridos desde la actualización"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__sequence
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__sequence
+msgid "Defines the order to present items"
+msgstr "Define el orden para presentar los elementos"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__description
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__description
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__description
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__description
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_dr
+msgid "Direction Review"
+msgstr "Revisión de la administración"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: mgmtsystem_nonconformity
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:0
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity_stage__state__draft
+#: model:mgmtsystem.nonconformity.stage,name:mgmtsystem_nonconformity.stage_draft
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#, python-format
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Draft/New nonconformities"
+msgstr "Borrador/Nuevas no conformidades"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_kanban
+msgid "Dropdown menu"
+msgstr "Menú Desplegable"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_kanban
+msgid "Edit"
+msgstr "Editar"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Effectiveness Review"
+msgstr "Revisión de efectividad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mail_thread
+msgid "Email Thread"
+msgstr "Hilo de Correo Electrónico"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__evaluation_comments
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Evaluation Comments"
+msgstr "Comentarios de evaluación"
+
+#. module: mgmtsystem_nonconformity
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity.py:0
+#, python-format
+msgid "Evaluation Comments are required in order to close a Nonconformity."
+msgstr ""
+"Los comentarios de evaluación son necesarios para cerrar una no conformidad."
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_extenal_audit
+msgid "External Audit"
+msgstr "Auditor externo"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_external_client
+msgid "External client complaint"
+msgstr "Queja externa del cliente"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__user_id
+msgid "Filled in by"
+msgstr "Rellenado por"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__fold
+msgid "Folded in Kanban"
+msgstr "Doblado en Kanban"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_follower_ids
+msgid "Followers"
+msgstr "seguidores"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "seguidores(socios)"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "fuente iconos sorprendentes , por ejemplo fa-tasks"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__parent_id
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__parent_id
+msgid "Group"
+msgstr "Grupo"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__has_message
+msgid "Has Message"
+msgstr "Tienes un mensaje"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.actions.act_window,help:mgmtsystem_nonconformity.action_report_mgmtsystem_nonconformity
+msgid ""
+"Have a general overview of all non conformities processed in the system by "
+"sorting them with specific criteria."
+msgstr ""
+"Disponga de una visión general de todas las no conformidades procesadas en "
+"el sistema clasificándolas con criterios específicos."
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.hr_unavailable_inadequate
+msgid "Human resource not available or inadequate"
+msgstr "Recurso humano no disponibles o inadecuado"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__id
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__id
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__id
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__id
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__id
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar la excepción de la actividad."
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "si está marcada, los mensajes nuevos requieren su atención."
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "si está marcada, algunos mensajes tienen un error de entrega."
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__immediate_action_id
+msgid "Immediate Action"
+msgstr "Acción inmediata"
+
+#. module: mgmtsystem_nonconformity
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_nonconformity_stage.py:0
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity__kanban_state__normal
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity_stage__state__open
+#: model:mgmtsystem.nonconformity.stage,name:mgmtsystem_nonconformity.stage_open
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+#, python-format
+msgid "In Progress"
+msgstr "En progreso"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.information_not_available
+msgid "Information not available"
+msgstr "Información no disponible"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.instruction_not_respected
+msgid "Instruction not respected"
+msgstr "Instrucción no se respeta"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.demo_origin
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_internal_audit
+msgid "Internal Audit"
+msgstr "Auditoría interna"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_internal_client
+msgid "Internal client complaint"
+msgstr "Queja internal del cliente"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor/a"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__is_starting
+msgid "Is starting Stage"
+msgstr "Está comenzando la Etapa"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__kanban_state
+msgid "Kanban State"
+msgstr "Estado de Kanban"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.demo_cause
+msgid "Lack of expertise"
+msgstr "Falta de experiencia"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización por"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Archivo adjunto principal"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_maj
+msgid "Major"
+msgstr "Mayor"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.action_report_mgmtsystem_nonconformity
+msgid "Management System Analysis"
+msgstr "Análisis del sistema de gestión"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__manager_user_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Manager"
+msgstr "Gestor"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega del mensaje"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_min
+msgid "Minor"
+msgstr "Menor"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi fecha de límite de actividad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo evento del calendario de actividades"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha Límite para la Próxima Actividad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la Siguiente Actividad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo proxima actividad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_account__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_account_template__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_analytic_account__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_bank_statement_line__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_journal__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_move__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_payment__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_reconcile_model__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_setup_bank_manual_config__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_calendar_event__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_claim__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_lead__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_team__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_team_member__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_document_page__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_gamification_badge__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_gamification_challenge__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_hr_department__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_hr_employee__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_hr_job__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_blacklist__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_channel__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_blacklist__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_cc__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_phone__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_maintenance_equipment__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_maintenance_equipment_category__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_maintenance_request__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_hazard__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_abstract__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_bom__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_production__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_unbuild__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_phone_blacklist__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_product__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_template__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_inspection__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_test__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_line__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_product_category_line__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_product_line__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_product_template_line__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_repair_order__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_company__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_partner__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_partner_bank__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_users__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_sale_order__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_lot__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_picking__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_scrap__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_survey__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_user_input__non_conformity_ids
+msgid "Non Conformity"
+msgstr "disconformidad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_account__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_account_template__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_analytic_account__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_bank_statement_line__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_journal__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_move__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_payment__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_reconcile_model__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_setup_bank_manual_config__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_calendar_event__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_claim__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_lead__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_team__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_team_member__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_document_page__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_gamification_badge__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_gamification_challenge__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_hr_department__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_hr_employee__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_hr_job__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_blacklist__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_channel__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_blacklist__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_cc__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_phone__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_maintenance_equipment__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_maintenance_equipment_category__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_maintenance_request__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_hazard__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_abstract__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_bom__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_production__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_unbuild__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_phone_blacklist__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_product__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_template__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_inspection__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_test__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_line__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_product_category_line__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_product_line__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_product_template_line__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_repair_order__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_company__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_partner__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_partner_bank__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_users__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_sale_order__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_lot__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_picking__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_scrap__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_survey__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_user_input__non_conformity_count
+msgid "Non Conformity Count"
+msgstr "Recuento de disconformidades"
+
+#. module: mgmtsystem_nonconformity
+#. odoo-javascript
+#: code:addons/mgmtsystem_nonconformity/static/src/components/chatter_topbar/chatter_topbar.xml:0
+#, python-format
+msgid "Non conformities"
+msgstr "No conformidades"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_report_mgmtsystem_nonconformity_graph
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_report_mgmtsystem_nonconformity_pivot
+msgid "Non conformity"
+msgstr "Disconformidad"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Non-Conformity"
+msgstr "No conformidad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_thread_list
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__nonconformity_ids
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_report_mgmtsystem_nonconformity_tree
+msgid "Nonconformities"
+msgstr "No conformidades"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Nonconformities pending review"
+msgstr "No conformidades pendientes de revisión"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity
+msgid "Nonconformity"
+msgstr "No conformidad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_abstract
+msgid "Nonconformity Abstract"
+msgstr "Resumen de disconformidad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__nonconformity_immediate_id
+msgid "Nonconformity Immediate"
+msgstr "Disconformidad Inmediata"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.mgmtsystem_nonconformity_stage_form_view
+msgid "Nonconformity Stage"
+msgstr "Etapa de disconformidad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_stage
+msgid "Nonconformity Stages"
+msgstr "Etapas de la disconformidad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Open Nonconformities"
+msgstr "No conformidades abiertas"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__origin_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__name
+msgid "Origin"
+msgstr "Orígen"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_origin
+msgid "Origin of nonconformity of the management system"
+msgstr "Origen de la no conformidad del sistema de gestión"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_origin_list
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_origin
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_origin_filter
+msgid "Origins"
+msgstr "Orígenes"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_origin_form
+msgid "Origins of nonconformity"
+msgstr "Orígenes de la no conformidad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__parent_path
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__parent_path
+msgid "Parent Path"
+msgstr "recorrido parental"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__partner_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Partner"
+msgstr "Asociado"
+
+#. module: mgmtsystem_nonconformity
+#: model:mail.message.subtype,description:mgmtsystem_nonconformity.subtype_pending
+#: model:mail.message.subtype,name:mgmtsystem_nonconformity.subtype_pending
+msgid "Pending Approval"
+msgstr "Pendiente de aprobación"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Plan Review"
+msgstr "Plan de revisión"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__procedure_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Procedure"
+msgstr "Procedimiento"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.procedure_not_defined
+msgid "Procedure not defined"
+msgstr "Procedimiento no definido"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.procedure_not_respected
+msgid "Procedure not respected"
+msgstr "Procedimiento no respetado"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form
+msgid "Procedures"
+msgstr "Procedimientos"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_process
+msgid "Process Execution"
+msgstr "Proceso de ejecución"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.origin,name:mgmtsystem_nonconformity.nc_origin_qc
+msgid "Quality Committee"
+msgstr "Comité de Calidad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity.selection__mgmtsystem_nonconformity__kanban_state__done
+msgid "Ready for next stage"
+msgstr "Listo para la siguiente etapa"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__ref
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__ref_code
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__ref_code
+msgid "Reference Code"
+msgstr "Código referencia"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_action_form
+msgid "Related Nonconformities"
+msgstr "No conformidades relacionadas"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__reference
+msgid "Related to"
+msgstr "Relacionado con"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__res_id
+msgid "Res"
+msgstr "Resolución"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__res_model
+msgid "Res Model"
+msgstr "Modelo Res"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__responsible_user_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__sequence
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__sequence
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__sequence
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_severity_list
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__severity_id
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity_severity
+msgid "Severity"
+msgstr "Severidad"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_severity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_severity_form
+msgid "Severity of Complaints and Nonconformities"
+msgstr "Severidad de quejas y no conformidades"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__stage_id
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__name
+msgid "Stage Name"
+msgstr "Nombre de la etapa"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.actions.act_window,name:mgmtsystem_nonconformity.mgmtsystem_nonconformity_stage_action
+#: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_nonconformity_stages
+msgid "Stages"
+msgstr "Etapas"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__state
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__state
+msgid "State"
+msgstr "Estado"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Atrasado: La fecha de vencimiento ya ha pasado\n"
+"Hoy: La fecha de la actividad es hoy\n"
+"Planificado: Actividades futuras."
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__system_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "System"
+msgstr "Sistema"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.technical_failure
+msgid "Technical failure"
+msgstr "Falla técnica"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__fold
+msgid ""
+"This stage is folded in the kanban view when there are \n"
+"no records in that stage to display."
+msgstr ""
+"Esta etapa se pliega en la vista kanban cuando no hay \n"
+"registros en esa etapa para mostrar."
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity__name
+msgid "Title"
+msgstr "Título"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de la actividad de excepción registrada."
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_no
+msgid "Unfounded"
+msgstr "Infundado"
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_kanban
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__sequence
+msgid "Used to order states. Lower is better."
+msgstr "Se utiliza para ordenar los estados. Cuanto más bajo, mejor."
+
+#. module: mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
+msgid "User"
+msgstr "Usuario"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+msgid "Website Messages"
+msgstr "mensajes de la página web"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+msgid "Website communication history"
+msgstr "historial de la comunicación en la web"
+
+#. module: mgmtsystem_nonconformity
+#: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
+msgid "Work conditions"
+msgstr "Condiciones de trabajo"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__is_starting
+msgid ""
+"select stis checkbox if this is the default stage \n"
+"for new nonconformities"
+msgstr ""
+"seleccione la casilla stis si esta es la etapa por defecto \n"
+"para nuevas disconformidades"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error de entrega de SMS"
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Número de mensajes que requieren una acción"
+
+#, fuzzy
+#~ msgid "Number of unread messages"
+#~ msgstr "Mensajes no leídos"
+
+#, fuzzy
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Mensajes no leídos"
+
+#~ msgid "Immediate action"
+#~ msgstr "Acción inmediata"
+
+#~ msgid "Non-Conformities"
+#~ msgstr "No conformidades"
+
+#~ msgid "Error! Cannot create recursive cycle."
+#~ msgstr "Error! No se puede crear el ciclo recursivo."
+
+#~ msgid "Parent Right"
+#~ msgstr "Padres derecha"

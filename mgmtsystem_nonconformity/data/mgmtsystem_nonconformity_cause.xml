@@ -1,0 +1,44 @@
+<odoo noupdate="1">
+
+    <record id="badly_defined_need" model="mgmtsystem.nonconformity.cause">
+        <field name="name">Badly defined need</field>
+    </record>
+
+    <record id="work_conditions" model="mgmtsystem.nonconformity.cause">
+        <field name="name">Work conditions</field>
+    </record>
+
+    <record id="information_not_available" model="mgmtsystem.nonconformity.cause">
+        <field name="name">Information not available</field>
+    </record>
+
+    <record id="bad_communication" model="mgmtsystem.nonconformity.cause">
+        <field name="name">Bad communication</field>
+    </record>
+
+    <record id="bad_partner_relation" model="mgmtsystem.nonconformity.cause">
+        <field name="name">Bad customer/supplier relation</field>
+    </record>
+
+    <record id="hr_unavailable_inadequate" model="mgmtsystem.nonconformity.cause">
+        <field name="name">Human resource not available or inadequate</field>
+    </record>
+
+    <record id="instruction_not_respected" model="mgmtsystem.nonconformity.cause">
+        <field name="name">Instruction not respected</field>
+    </record>
+
+    <record id="procedure_not_respected" model="mgmtsystem.nonconformity.cause">
+        <field name="name">Procedure not respected</field>
+    </record>
+
+    <record id="technical_failure" model="mgmtsystem.nonconformity.cause">
+        <field name="name">Technical failure</field>
+    </record>
+
+    <record id="procedure_not_defined" model="mgmtsystem.nonconformity.cause">
+        <field name="name">Procedure not defined</field>
+    </record>
+
+
+</odoo>

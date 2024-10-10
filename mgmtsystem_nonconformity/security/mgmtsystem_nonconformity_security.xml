@@ -1,0 +1,14 @@
+<odoo noupdate="1">
+
+    <!-- Rule -->
+
+    <record model="ir.rule" id="mgmtsystem_nonconformity_rule">
+        <field name="name">mgmtsystem_nonconformity multi-company</field>
+        <field name="model_id" ref="model_mgmtsystem_nonconformity" />
+        <field name="global" eval="True" />
+        <field
+            name="domain_force"
+        >['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>
