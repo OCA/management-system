@@ -32,13 +32,13 @@ msgid ""
 "A kanban state indicates special situations affecting it:\n"
 " * Normal is the default situation\n"
 " * Blocked indicates something is preventing the progress of this task\n"
-" * Ready for next stage indicates the task is ready to be pulled to the next stage"
+" * Ready for next stage indicates the task is ready to be pulled to the next "
+"stage"
 msgstr ""
 "وضعیت کانبان نشان می‌دهد موقعیت‌های خاص بر آن تأثیر می‌گذارند.\n"
 "* نرمال، وضعیت پیش‌فرض است.\n"
 "* مسدود، نشان‌ می‌دهد چیزی مانع انجام این وظیفه است.\n"
-"* آماده برای مرحله‌‎ی بعد، نشان می‌دهد وظیفه آماده‌ی انتقال به مرحله‌ی بعد "
-"است"
+"* آماده برای مرحله‌‎ی بعد، نشان می‌دهد وظیفه آماده‌ی انتقال به مرحله‌ی بعد است"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_action
@@ -74,8 +74,7 @@ msgid ""
 "Action plan  comments are required in order to put a nonconformity In "
 "Progress."
 msgstr ""
-"توضیحات برنامه‌ی اجرایی برای در دست اقدام قرار دادن یک عدم تطابق موردنیاز "
-"است."
+"توضیحات برنامه‌ی اجرایی برای در دست اقدام قرار دادن یک عدم تطابق موردنیاز است."
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__action_ids
@@ -514,15 +513,6 @@ msgid "Lack of expertise"
 msgstr "عدم وجود تخصص"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_severity____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage____last_update
-msgid "Last Modified on"
-msgstr "آخرین تاریخ اصلاح"
-
-#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_cause__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__write_uid
@@ -539,11 +529,6 @@ msgstr "به روزرسانی شده توسط"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_stage__write_date
 msgid "Last Updated on"
 msgstr "تاریخ آخرین به روزرسانی"
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "پیوست اصلی"
 
 #. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.severity,name:mgmtsystem_nonconformity.nonconformity_severity_maj
@@ -587,11 +572,6 @@ msgid "Name"
 msgstr "نام"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
-msgstr "رویداد بعدی گاهشمار فعالیت‌ها"
-
-#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "سررسید فعالیت بعدی"
@@ -607,20 +587,7 @@ msgid "Next Activity Type"
 msgstr "نوع فعالیت بعدی"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_account__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_account_template__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_analytic_account__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_bank_statement_line__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_journal__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_move__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_payment__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_reconcile_model__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_setup_bank_manual_config__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_calendar_event__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_claim__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_lead__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_team__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_team_member__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_discuss_channel__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_document_page__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_gamification_badge__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_gamification_challenge__non_conformity_ids
@@ -628,59 +595,25 @@ msgstr "نوع فعالیت بعدی"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_hr_employee__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_hr_job__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_blacklist__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_channel__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_blacklist__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_cc__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_main_attachment__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_phone__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_maintenance_equipment__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_maintenance_equipment_category__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_maintenance_request__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_hazard__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_abstract__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_bom__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_production__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_unbuild__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_phone_blacklist__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_product__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_template__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_inspection__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_test__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_line__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_product_category_line__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_product_line__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_product_template_line__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_repair_order__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_company__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_partner__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_partner_bank__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_users__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_sale_order__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_lot__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_picking__non_conformity_ids
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_scrap__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_survey__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_user_input__non_conformity_ids
 msgid "Non Conformity"
 msgstr "عدم تطابق"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_account__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_account_template__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_analytic_account__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_bank_statement_line__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_journal__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_move__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_payment__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_reconcile_model__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_setup_bank_manual_config__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_calendar_event__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_claim__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_lead__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_team__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_team_member__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_discuss_channel__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_document_page__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_gamification_badge__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_gamification_challenge__non_conformity_count
@@ -688,39 +621,18 @@ msgstr "عدم تطابق"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_hr_employee__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_hr_job__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_blacklist__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_channel__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_blacklist__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_cc__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_main_attachment__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mail_thread_phone__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_maintenance_equipment__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_maintenance_equipment_category__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_maintenance_request__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_hazard__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_abstract__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_bom__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_production__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_unbuild__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_phone_blacklist__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_product__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_template__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_inspection__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_test__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_line__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_product_category_line__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_product_line__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_qc_trigger_product_template_line__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_repair_order__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_company__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_partner__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_partner_bank__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_users__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_sale_order__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_lot__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_picking__non_conformity_count
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_scrap__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_survey__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_user_input__non_conformity_count
 msgid "Non Conformity Count"
@@ -1040,16 +952,6 @@ msgid "User"
 msgstr "کاربر"
 
 #. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
-msgid "Website Messages"
-msgstr "پیام‌های وب‌سایت"
-
-#. module: mgmtsystem_nonconformity
-#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
-msgid "Website communication history"
-msgstr "تاریخچه‌ی ارتباطات وب‌سایت"
-
-#. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
 msgid "Work conditions"
 msgstr "شرایط کاری"
@@ -1062,3 +964,18 @@ msgid ""
 msgstr ""
 "اگر این مرحله به صورت پیش‌فرض برای عدم تطابق‌ها وجود دارد\n"
 "مربع را علامت بزنید"
+
+#~ msgid "Last Modified on"
+#~ msgstr "آخرین تاریخ اصلاح"
+
+#~ msgid "Main Attachment"
+#~ msgstr "پیوست اصلی"
+
+#~ msgid "Next Activity Calendar Event"
+#~ msgstr "رویداد بعدی گاهشمار فعالیت‌ها"
+
+#~ msgid "Website Messages"
+#~ msgstr "پیام‌های وب‌سایت"
+
+#~ msgid "Website communication history"
+#~ msgstr "تاریخچه‌ی ارتباطات وب‌سایت"
