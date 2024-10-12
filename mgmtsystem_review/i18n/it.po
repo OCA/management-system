@@ -1,0 +1,507 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_review
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-07 06:43+0000\n"
+"PO-Revision-Date: 2024-01-25 15:34+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Changes affecting the management systems:</strong>"
+msgstr "<strong>Modifiche che riguardano il sistema di gestione:</strong>"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Conclusion:</strong>"
+msgstr "<strong>Conclusione:</strong>"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Policies:</strong>"
+msgstr "<strong>Politiche:</strong>"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Review Report</strong>"
+msgstr "<strong>Relazione di revisione</strong>"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "<strong>Satisfaction Survey Answers:</strong>"
+msgstr "<strong>Risposte sondaggio di soddisfazione:</strong>"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__action_id
+#: model:ir.model.fields.selection,name:mgmtsystem_review.selection__mgmtsystem_review_line__type__action
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Action"
+msgstr "Azione"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_needaction
+msgid "Action Needed"
+msgstr "Azione richiesta"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Action:"
+msgstr "Azione:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_ids
+msgid "Activities"
+msgstr "Attività"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decorazione eccezione attività"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_state
+msgid "Activity State"
+msgstr "Stato attività"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icona tipo attività"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_attachment_count
+msgid "Attachment Count"
+msgstr "Numero allegati"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__changes
+msgid "Changes"
+msgstr "Modifiche"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Changes affecting the management systems"
+msgstr "Modifiche che riguardano il sistema di gestione"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Close"
+msgstr "Chiudi"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields.selection,name:mgmtsystem_review.selection__mgmtsystem_review__state__done
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
+msgid "Closed"
+msgstr "Chiusa"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
+msgid "Closed Reviews"
+msgstr "Revisione chiusa"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Comments:"
+msgstr "Commenti:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__company_id
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__company_id
+msgid "Company"
+msgstr "Azienda"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__conclusion
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Conclusion"
+msgstr "Conclusione"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Confidentiality:"
+msgstr "Riservatezza:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__date
+msgid "Date"
+msgstr "Data"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Date:"
+msgstr "Data:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__decision
+msgid "Decision"
+msgstr "Decisione"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Decision:"
+msgstr "Decisione:"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Direction Review"
+msgstr "Revisione della direzione"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Expectations:"
+msgstr "Aspettative:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_follower_ids
+msgid "Followers"
+msgstr "Seguito da"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguito da (partner)"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icona Font Awesome es. fa-tasks"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__has_message
+msgid "Has Message"
+msgstr "Ha un messaggio"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__id
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_exception_icon
+msgid "Icon"
+msgstr "Icona"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icona per indicare un'attività eccezione."
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Improvements:"
+msgstr "Miglioramenti:"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Inputs"
+msgstr "Suggerimenti"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_is_follower
+msgid "Is Follower"
+msgstr "Segue"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__line_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Lines"
+msgstr "Righe"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Allegato principale"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_has_error
+msgid "Message Delivery error"
+msgstr "Errore di consegna messaggio"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_ids
+msgid "Messages"
+msgstr "Messaggi"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Scadenza mia attività"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Evento calendario attività successiva"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Scadenza prossima attività"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_summary
+msgid "Next Activity Summary"
+msgstr "Riepilogo prossima attività"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo prossima attività"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__non_conformity_ids
+msgid "Non Conformity"
+msgstr "Non conformità"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__non_conformity_count
+msgid "Non Conformity Count"
+msgstr "Conteggio non conformità"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__nonconformity_id
+#: model:ir.model.fields.selection,name:mgmtsystem_review.selection__mgmtsystem_review_line__type__nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Nonconformity"
+msgstr "Non conformità"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Numero di azioni"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_has_error_counter
+msgid "Number of errors"
+msgstr "Numero di errori"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Numero di messaggi che richiedono un'azione"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Numero di messaggi con errore di consegna"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields.selection,name:mgmtsystem_review.selection__mgmtsystem_review__state__open
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
+msgid "Open"
+msgstr "Aperta"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
+msgid "Open Reviews"
+msgstr "Revisioni aperte"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__user_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Participants"
+msgstr "Partecipanti"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Participants:"
+msgstr "Partecipanti:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__policy
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Policy"
+msgstr "Politica"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__reference
+msgid "Reference"
+msgstr "Riferimento"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Reference :"
+msgstr "Riferimento:"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Reference:"
+msgstr "Riferimento:"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "Refrence:"
+msgstr "Riferimento:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_user_id
+msgid "Responsible User"
+msgstr "Utente responsabile"
+
+#. module: mgmtsystem_review
+#: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__review_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Review"
+msgstr "Revisione"
+
+#. module: mgmtsystem_review
+#: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review_line
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_form
+msgid "Review Line"
+msgstr "Revisione riga"
+
+#. module: mgmtsystem_review
+#: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_line_list
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_filter
+msgid "Review Lines"
+msgstr "Revisione righe"
+
+#. module: mgmtsystem_review
+#: model:ir.actions.report,name:mgmtsystem_review.review_report_mgmtsystem_review
+msgid "Review report"
+msgstr "Relazione di revisione"
+
+#. module: mgmtsystem_review
+#: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_list
+#: model:ir.ui.menu,name:mgmtsystem_review.menu_open_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_review_calendar
+msgid "Reviews"
+msgstr "Revisioni"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__state
+msgid "State"
+msgstr "Stato"
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
+msgid "State:"
+msgstr "Stato:"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Stato in base alle attività\n"
+"Scaduto: la data richiesta è trascorsa\n"
+"Oggi: la data attività è oggi\n"
+"Pianificato: attività future."
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__response_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Survey Answers"
+msgstr "Risposte sondaggio"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__name
+msgid "Title"
+msgstr "Titolo"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo di attività eccezione sul record."
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__website_message_ids
+msgid "Website Messages"
+msgstr "Messaggi sito web"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__website_message_ids
+msgid "Website communication history"
+msgstr "Storico comunicazioni sito web"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Errore consegna SMS"
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Numero di messaggi che richiedono un'azione"
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Iscritti (canali)"
+
+#~ msgid "Number of unread messages"
+#~ msgstr "Numero di messaggi non letti"
+
+#~ msgid "Unread Messages"
+#~ msgstr "Messaggi non letti"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Conteggio messaggi non letti"
