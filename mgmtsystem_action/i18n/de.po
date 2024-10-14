@@ -387,6 +387,7 @@ msgstr ""
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 "Wenn angewählt gibt es Nachrichten, die nicht zugestellt werden konnten."
@@ -584,6 +585,12 @@ msgid "Responsible User"
 msgstr "Verantwortlicher Benutzer"
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
+#, fuzzy
+msgid "SMS Delivery error"
+msgstr "Zustellungsfehler"
+
+#. module: mgmtsystem_action
 #. odoo-python
 #: code:addons/mgmtsystem_action/tests/test_create_action.py:0
 #, python-format
@@ -729,10 +736,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Website Messages"
 #~ msgstr "Letzte Nachricht"
-
-#, fuzzy
-#~ msgid "SMS Delivery error"
-#~ msgstr "Zustellungsfehler"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Anzahl Nachrichten, die Maßnahmen erfordern"
