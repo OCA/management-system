@@ -426,6 +426,7 @@ msgstr "Si está marcada, nuevos mensajes requieren tu atención."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes han tenido un error de entrega."
 
@@ -621,6 +622,11 @@ msgid "Responsible User"
 msgstr "Usuario Responsable"
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de Entrega SMS"
+
+#. module: mgmtsystem_action
 #. odoo-python
 #: code:addons/mgmtsystem_action/tests/test_create_action.py:0
 #, python-format
@@ -772,9 +778,6 @@ msgstr "{{object.name}}"
 
 #~ msgid "Website communication history"
 #~ msgstr "Historial de comunicación del Sitio Web"
-
-#~ msgid "SMS Delivery error"
-#~ msgstr "Error de Entrega SMS"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Número de mensajes que requieren una acción"

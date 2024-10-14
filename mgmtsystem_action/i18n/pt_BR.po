@@ -387,6 +387,7 @@ msgstr "Se marcada, novas mensagens requerem sua atenção."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se marcada, algumas mensagens tem um erro de entrega."
 
@@ -583,6 +584,12 @@ msgid "Responsible User"
 msgstr "Usuário Responsável"
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
+#, fuzzy
+msgid "SMS Delivery error"
+msgstr "Mensagem de erro de entrega"
+
+#. module: mgmtsystem_action
 #. odoo-python
 #: code:addons/mgmtsystem_action/tests/test_create_action.py:0
 #, python-format
@@ -728,10 +735,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Website Messages"
 #~ msgstr "Última Mensagem"
-
-#, fuzzy
-#~ msgid "SMS Delivery error"
-#~ msgstr "Mensagem de erro de entrega"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Número de mensagens que requerem uma ação"
