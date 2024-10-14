@@ -29,6 +29,7 @@ addon | version | maintainers | summary
 [document_page_work_instruction](document_page_work_instruction/) | 17.0.1.0.0 |  | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 17.0.1.0.1 |  | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 17.0.1.0.0 |  | Management System - Action
+[mgmtsystem_audit](mgmtsystem_audit/) | 17.0.1.0.0 |  | Management System - Audit
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 17.0.1.0.0 |  | Hazard
 [mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 17.0.1.0.0 |  | Hazard Risk
 [mgmtsystem_manual](mgmtsystem_manual/) | 17.0.1.0.0 |  | Management System - Manual
