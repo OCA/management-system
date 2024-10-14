@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2017 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="mgmtsystem_audit_res_users_x2m_tree">
+        <field
+            name="name"
+        >mgmtsystem.audit.res.users.x2m.tree (in mgmtsystem_audit)</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <tree create="1" delete="1">
+                <field name="name" />
+                <field name="login" />
+                <field name="lang" />
+                <field name="login_date" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

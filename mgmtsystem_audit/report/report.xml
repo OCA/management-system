@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="audit_report_mgmtsystem_audit" model="ir.actions.report">
+        <field name="name">Audit report</field>
+        <field name="model">mgmtsystem.audit</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mgmtsystem_audit.audit_report_template</field>
+    </record>
+
+    <record id="verification_report_mgmtsystem_audit" model="ir.actions.report">
+        <field name="name">Verification list report</field>
+        <field name="model">mgmtsystem.audit</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mgmtsystem_audit.verification_report_template</field>
+    </record>
+
+    <template id="audit_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t
+                    t-call="mgmtsystem_audit.audit_report"
+                    t-lang="doc.user_id.partner_id.lang"
+                />
+            </t>
+        </t>
+    </template>
+    <template id="verification_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t
+                    t-call="mgmtsystem_audit.verification_report"
+                    t-lang="doc.user_id.partner_id.lang"
+                />
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,800 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * mgmtsystem_audit
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-07 06:43+0000\n"
+"PO-Revision-Date: 2024-01-25 15:34+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: mgmtsystem_audit
+#: model:mail.template,body_html:mgmtsystem_audit.template_email_send_verification_list
+msgid ""
+"\n"
+"            \n"
+"<p>Hello,</p>\n"
+"\n"
+"<p>\n"
+"The audit <t t-out=\"object.name\" /> is scheduled in 1 week.\n"
+"Please finish the verification list and send it to the auditees:\n"
+"\n"
+"<a t-att-href=\"object.get_action_url()\">Link</a>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Thank you.\n"
+"--\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
+msgstr ""
+"\n"
+"            \n"
+"<p>Salve,</p>\n"
+"\n"
+"<p>\n"
+"L'audit <t t-out=\"object.name\" /> è programmato in una settimana.\n"
+"Completare la lista delle verifiche e inviarla alle persone in verifica:\n"
+"\n"
+"<a t-att-href=\"object.get_action_url()\">Link</a>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Grazie.\n"
+"--\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
+
+#. module: mgmtsystem_audit
+#: model:mail.template,body_html:mgmtsystem_audit.template_email_prepare_to_audit
+msgid ""
+"\n"
+"            \n"
+"<p>Hello,</p>\n"
+"\n"
+"<p>\n"
+"The audit <t t-out=\"object.name\" /> is scheduled in 2 weeks.\n"
+"Please prepare the verification list:\n"
+"\n"
+"<a t-att-href=\"object.get_action_url()\">Link</a>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Thank you.\n"
+"--\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
+msgstr ""
+"\n"
+"            \n"
+"<p>Salve,</p>\n"
+"\n"
+"<p>\n"
+"L'audit <t t-out=\"object.name\" /> è programmato in due settimane.\n"
+"Predisporre la lista delle verifiche:\n"
+"\n"
+"<a t-att-href=\"object.get_action_url()\">Link</a>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Grazie.\n"
+"--\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_audits
+msgid "# of audits"
+msgstr "Nr. di audit"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_days_to_close
+msgid "# of days to close"
+msgstr "Nr. di giornate da chiudere"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
+msgid "<strong>Audit Report</strong>"
+msgstr "<strong>Resoconto audit</strong>"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
+msgid "<strong>Improvement opportunities:</strong>"
+msgstr "<strong>Opportunità di miglioramento:</strong>"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
+msgid "<strong>Nonconformities:</strong>"
+msgstr "<strong>Non conformità:</strong>"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
+msgid "<strong>Points To Improve:</strong>"
+msgstr "<strong>Punti da migliorare:</strong>"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
+msgid "<strong>Strong points:</strong>"
+msgstr "<strong>Punti di forza:</strong>"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
+msgid "<strong>Verification List</strong>"
+msgstr "<strong>Elenco verifiche</strong>"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction
+msgid "Action Needed"
+msgstr "Azione richiesta"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_ids
+msgid "Activities"
+msgstr "Attività"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decorazione eccezione attività"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_state
+msgid "Activity State"
+msgstr "Stato attività"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icona tipo attività"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_attachment_count
+msgid "Attachment Count"
+msgstr "Numero allegati"
+
+#. module: mgmtsystem_audit
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__audit_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_report_mgmtsystem_audit_graph
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_report_mgmtsystem_audit_pivot
+msgid "Audit"
+msgstr "Audit"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__user_id
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
+msgid "Audit Manager"
+msgstr "Responsabile audit"
+
+#. module: mgmtsystem_audit
+#. odoo-python
+#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:0
+#, python-format
+msgid "Audit closed"
+msgstr "Audit chiuso"
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.report,name:mgmtsystem_audit.audit_report_mgmtsystem_audit
+msgid "Audit report"
+msgstr "Resoconto audit"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__auditee_user_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
+msgid "Auditees"
+msgstr "Oggetti dell'audit"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
+msgid "Auditees:"
+msgstr "Oggetti dell'audit:"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__auditor_user_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
+msgid "Auditors"
+msgstr "Auditori"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
+msgid "Auditors:"
+msgstr "Auditori:"
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_audit_list
+#: model:ir.ui.menu,name:mgmtsystem_audit.menu_open_audit
+#: model:ir.ui.menu,name:mgmtsystem_audit.menu_report_mgmtsystem_audit_tree
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_audit_calendar
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
+msgid "Audits"
+msgstr "Audit"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__audit_src
+msgid "Choose audit"
+msgstr "Scegliere l'audit"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
+msgid "Close"
+msgstr "Chiudi"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields.selection,name:mgmtsystem_audit.selection__mgmtsystem_audit__state__done
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
+msgid "Closed"
+msgstr "Chiuso"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
+msgid "Closed Audits"
+msgstr "Audit chiusi"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__closing_date
+msgid "Closing Date"
+msgstr "Data chiusura"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__comments
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
+msgid "Comments"
+msgstr "Commenti"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__company_id
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__company_id
+msgid "Company"
+msgstr "Azienda"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
+msgid "Confidentiality:"
+msgstr "Riservatezza:"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
+msgid "Confidentially:"
+msgstr "Confidenzialmente:"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
+msgid "Conformed?"
+msgstr "Conforme?"
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.act_window,name:mgmtsystem_audit.copy_verification_lines_act_window
+#: model:ir.model,name:mgmtsystem_audit.model_copy_verification_lines
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
+msgid "Copy Verification Lines"
+msgstr "Copia linee verifica"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__date
+msgid "Date"
+msgstr "Data"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
+msgid "Date:"
+msgstr "Data:"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__days_since_last_update
+msgid "Days Since Last Update"
+msgstr "Giorni dall'ultimo aggiornamento"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.server,name:mgmtsystem_audit.rule_set_prepare_to_audit_ir_actions_server
+msgid "Email all auditors 2 weeks before audit."
+msgstr "Invia email agli auditori due settimane prima dell'audit."
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.server,name:mgmtsystem_audit.rule_set_send_verification_list_ir_actions_server
+msgid "Email all followers 1 week before audit."
+msgstr "Invia email a chi segue una settimana prima dell'audit."
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_follower_ids
+msgid "Followers"
+msgstr "Seguito da"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguito da (partner)"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icona Font Awesome es. fa-tasks"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__has_message
+msgid "Has Message"
+msgstr "Ha un messaggio"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.actions.act_window,help:mgmtsystem_audit.action_report_mgmtsystem_audit
+msgid ""
+"Have a general overview of all audits processed in the system by sorting "
+"them with specific criteria."
+msgstr ""
+"Avere una panoramica di tutti gli audit eseguiti nel sistema ordinandoli con "
+"criteri specifici."
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__id
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__id
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_exception_icon
+msgid "Icon"
+msgstr "Icona"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icona per indicare un'attività eccezione."
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__imp_opp_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
+msgid "Improvement Opportunities"
+msgstr "Opportunità di miglioramento"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
+msgid "Internal"
+msgstr "Interno"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__is_conformed
+msgid "Is Conformed"
+msgstr "È conforme"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_is_follower
+msgid "Is Follower"
+msgstr "Segue"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Allegato principale"
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.act_window,name:mgmtsystem_audit.action_report_mgmtsystem_audit
+msgid "Management System Audit Analysis"
+msgstr "Analisi audit sistema di gestione"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error
+msgid "Message Delivery error"
+msgstr "Errore di consegna messaggio"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_ids
+msgid "Messages"
+msgstr "Messaggi"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Scadenza mia attività"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Evento calendario attività successiva"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Scadenza prossima attività"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_summary
+msgid "Next Activity Summary"
+msgstr "Riepilogo prossima attività"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo prossima attività"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__non_conformity_ids
+msgid "Non Conformity"
+msgstr "Non conformità"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__non_conformity_count
+msgid "Non Conformity Count"
+msgstr "Conteggio non conformità"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__nonconformity_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
+msgid "Nonconformities"
+msgstr "Non conformità"
+
+#. module: mgmtsystem_audit
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
+msgid "Nonconformity"
+msgstr "Non conformità"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_nonconformities
+msgid "Number Of Nonconformities"
+msgstr "Numero di non conformità"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_questions_in_verification_list
+msgid "Number Of Questions In Verification List"
+msgstr "Numero di domande nella lista di verifica"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Numero di azioni"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error_counter
+msgid "Number of errors"
+msgstr "Numero di errori"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_improvements_opportunity
+msgid "Number of improvements Opportunities"
+msgstr "Numero di opportunità di miglioramento"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Numero di messaggi che richiedono un'azione"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Numero di messaggi con errore di consegna"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields.selection,name:mgmtsystem_audit.selection__mgmtsystem_audit__state__open
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
+msgid "Open"
+msgstr "Aperta"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
+msgid "Open Audits"
+msgstr "Audit aperti"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__to_improve_points
+msgid "Points To Improve"
+msgstr "Punto da migliorare"
+
+#. module: mgmtsystem_audit
+#: model:mail.template,subject:mgmtsystem_audit.template_email_prepare_to_audit
+msgid "Prepare to Audit: \"{{object.name}}\""
+msgstr "Prepararsi all'audit: \"{{object.name}}\""
+
+#. module: mgmtsystem_audit
+#: model:mail.template,name:mgmtsystem_audit.template_email_prepare_to_audit
+msgid "Prepare to audit"
+msgstr "Prepararsi all'audit"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__procedure_id
+msgid "Procedure"
+msgstr "Procedura"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__name
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
+msgid "Question"
+msgstr "Domanda"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__reference
+msgid "Reference"
+msgstr "Riferimento"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
+msgid "Reference:"
+msgstr "Riferimento:"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_nonconformity__audit_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_nonconformity_form
+msgid "Related Audits"
+msgstr "Audit relativi"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_user_id
+msgid "Responsible User"
+msgstr "Utente responsabile"
+
+#. module: mgmtsystem_audit
+#: model:mail.template,name:mgmtsystem_audit.template_email_send_verification_list
+msgid "Send Verification List"
+msgstr "Invia lista verifica"
+
+#. module: mgmtsystem_audit
+#: model:mail.template,subject:mgmtsystem_audit.template_email_send_verification_list
+msgid "Send Verification List: \"{{object.name}}\""
+msgstr "Invia lista verifiche: \"{{object.name}}\""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__seq
+msgid "Sequence"
+msgstr "Sequenza"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__state
+msgid "State"
+msgstr "Stato"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Stato in base alle attività\n"
+"Scaduto: la data richiesta è trascorsa\n"
+"Oggi: la data attività è oggi\n"
+"Pianificato: attività future."
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__strong_points
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
+msgid "Strong Points"
+msgstr "Punti di forza"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__system_id
+msgid "System"
+msgstr "Sistema"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
+msgid "To Improve Points"
+msgstr "Punti da migliorare"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo di attività eccezione sul record."
+
+#. module: mgmtsystem_audit
+#. odoo-python
+#: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:0
+#, python-format
+msgid "Undefined"
+msgstr "Indefinito"
+
+#. module: mgmtsystem_audit
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_verification_line
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_form
+msgid "Verification Line"
+msgstr "Line di verifica"
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_verification_line_list
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_verification_line_filter
+msgid "Verification Lines"
+msgstr "Linee di verifica"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__line_ids
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
+msgid "Verification List"
+msgstr "Elenco di verifica"
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.report,name:mgmtsystem_audit.verification_report_mgmtsystem_audit
+msgid "Verification list report"
+msgstr "Resoconto lista di verifica"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__website_message_ids
+msgid "Website Messages"
+msgstr "Messaggi sito web"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__website_message_ids
+msgid "Website communication history"
+msgstr "Cronologia comunicazioni sito web"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
+msgid "_Cancel"
+msgstr "_Annulla"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
+msgid "_Copy"
+msgstr "Copia"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Errore consegna SMS"
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Numero di messaggi che richiedono un'azione"
+
+#~ msgid ""
+#~ "\n"
+#~ "Hello,\n"
+#~ "\n"
+#~ "The audit \"${object.name}\" is scheduled in 1 week.\n"
+#~ "Please finish the verification list and send it to the auditees:\n"
+#~ "\n"
+#~ "${object.get_action_url()}\n"
+#~ "\n"
+#~ "\n"
+#~ "Thank you.\n"
+#~ "--\n"
+#~ "Odoo\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Salve,\n"
+#~ "\n"
+#~ "L'audit \"${object.name}\" è pianificato tra una settimana.\n"
+#~ "Si prega di completare la lista delle verifiche e inviarla agli auditor:\n"
+#~ "\n"
+#~ "${object.get_action_url()}\n"
+#~ "\n"
+#~ "\n"
+#~ "Grazie.\n"
+#~ "--\n"
+#~ "Odoo\n"
+#~ "            "
+
+#~ msgid ""
+#~ "\n"
+#~ "Hello,\n"
+#~ "\n"
+#~ "The audit \"${object.name}\" is scheduled in 2 weeks.\n"
+#~ "Please prepare the verification list:\n"
+#~ "\n"
+#~ "${object.get_action_url()}\n"
+#~ "\n"
+#~ "\n"
+#~ "Thank you.\n"
+#~ "--\n"
+#~ "Odoo\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Salve,\n"
+#~ "\n"
+#~ "l'audit \"${object.name}\" è pianificato tra due settimane.\n"
+#~ "Si prega di predisporre la lista delle verifiche:\n"
+#~ "\n"
+#~ "${object.get_action_url()}\n"
+#~ "\n"
+#~ "\n"
+#~ "Grazie.\n"
+#~ "--\n"
+#~ "Odoo\n"
+#~ "            "
+
+#~ msgid "Days since last update"
+#~ msgstr "Giorni dall'ultimo aggiornamento"
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Iscritti (canali)"
+
+#~ msgid "Is conformed"
+#~ msgstr "È conforme"
+
+#~ msgid "Number of nonconformities"
+#~ msgstr "Numero di non conformità"
+
+#~ msgid "Number of questions in verification list"
+#~ msgstr "Numero di domande nella lista di verifica"
+
+#~ msgid "Number of unread messages"
+#~ msgstr "Numero di messaggi non letti"
+
+#~ msgid "Prepare to Audit: \"${object.name}\""
+#~ msgstr "Preparazione all'audit: \"${object.name}\""
+
+#~ msgid "Send Verification List: \"${object.name}\""
+#~ msgstr "Invia lista di verifica: \"${object.name}\""
+
+#~ msgid "Unread Messages"
+#~ msgstr "Messaggi non letti"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Conteggio messaggi non letti"
