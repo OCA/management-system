@@ -226,6 +226,7 @@ msgstr "Se marcada, novas mensagens requerem sua atenção."
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se marcada, algumas mensagens tem um erro de entrega."
 
@@ -418,6 +419,11 @@ msgstr "Relatório de revisão"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_review_calendar
 msgid "Reviews"
 msgstr "Reuniões"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__state
