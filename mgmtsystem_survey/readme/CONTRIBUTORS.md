@@ -12,8 +12,8 @@
   - Pedro M. Baeza
 - [Binhex](https://binhex.cloud//com):
   - David Luis Mora \<<d.luis@binhex.cloud>\>
-
-Trobz
-
-- Dung Tran \<<dungtd@trobz.com>\>
 - Yvan Dotet \<<yvan.dotet@logicasoft.eu>\>
+
+- [Trobz](https://www.trobz.com):
+  - Dung Tran \<<dungtd@trobz.com>\>
+  - Khoi (Kien Kim) \<<khoikk@trobz.com>\>
