@@ -7,10 +7,8 @@ from odoo import api, fields, models
 from odoo.tools.misc import frozendict
 
 
-class MgmtsystemNonconformityAbstract(models.AbstractModel):
-    # TODO: Remove this on 17.0 and move everything on mail.thread
-    _name = "mgmtsystem.nonconformity.abstract"
-    _description = "Nonconformity Abstract"
+class MailThread(models.AbstractModel):
+    _inherit = "mail.thread"
 
     non_conformity_ids = fields.One2many(
         "mgmtsystem.nonconformity",
@@ -41,11 +39,6 @@ class MgmtsystemNonconformityAbstract(models.AbstractModel):
         action["context"] = self._get_non_conformities_context()
         return action
 
-
-class MailThread(models.AbstractModel):
-    _name = "mail.thread"
-    _inherit = ["mail.thread", "mgmtsystem.nonconformity.abstract"]
-
     @api.model
     def get_view(self, view_id=None, view_type="form", **options):
         res = super().get_view(view_id=view_id, view_type=view_type, **options)
@@ -59,7 +52,7 @@ class MailThread(models.AbstractModel):
 
             # We need to copy, because it is a frozen dict
             all_models = res["models"].copy()
-            for node in doc.xpath("/form/div[hasclass('oe_chatter')]"):
+            for node in doc.xpath("/form/chatter"):
                 # _add_tier_validation_label process
                 new_node = etree.fromstring(
                     "<field name='non_conformity_count' invisible='1'/>"
@@ -83,6 +76,7 @@ class MailThread(models.AbstractModel):
         trees inside a form
         """
         result = super()._get_view_fields(view_type, models)
+
         if view_type == "form" and self.env.user.has_group(
             "mgmtsystem.group_mgmtsystem_viewer"
         ):
