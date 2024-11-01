@@ -19,16 +19,16 @@
     </record>
 
     <record id="view_mgmtsystem_nonconformity_cause_tree" model="ir.ui.view">
-        <field name="name">mgmtsystem.nonconformity.cause.tree</field>
+        <field name="name">mgmtsystem.nonconformity.cause.list</field>
         <field name="model">mgmtsystem.nonconformity.cause</field>
-        <field name="type">tree</field>
+        <field name="type">list</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="parent_id" />
                 <field name="name" />
                 <field name="description" />
                 <field name="sequence" />
-            </tree>
+            </list>
         </field>
     </record>
 

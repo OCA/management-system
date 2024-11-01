@@ -8,7 +8,7 @@ class MgmtsystemAction(models.Model):
     _inherit = "mgmtsystem.action"
 
     nonconformity_immediate_id = fields.One2many(
-        "mgmtsystem.nonconformity", "immediate_action_id", readonly=True
+        "mgmtsystem.nonconformity", "immediate_action_id"
     )
     nonconformity_ids = fields.Many2many(
         "mgmtsystem.nonconformity",
@@ -16,5 +16,4 @@ class MgmtsystemAction(models.Model):
         "action_id",
         "nonconformity_id",
         "Nonconformities",
-        readonly=True,
     )

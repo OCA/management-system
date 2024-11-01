@@ -1,16 +1,7 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import _, fields, models
-
-_STATES = [
-    ("draft", _("Draft")),
-    ("analysis", _("Analysis")),
-    ("pending", _("Action Plan")),
-    ("open", _("In Progress")),
-    ("done", _("Closed")),
-    ("cancel", _("Cancelled")),
-]
+from odoo import fields, models
 
 
 class MgmtsystemNonconformityStage(models.Model):
@@ -20,11 +11,21 @@ class MgmtsystemNonconformityStage(models.Model):
     _description = "Nonconformity Stages"
     _order = "sequence"
 
+    def _get_states(self):
+        return [
+            ("draft", self.env._("Draft")),
+            ("analysis", self.env._("Analysis")),
+            ("pending", self.env._("Action Plan")),
+            ("open", self.env._("In Progress")),
+            ("done", self.env._("Closed")),
+            ("cancel", self.env._("Cancelled")),
+        ]
+
     name = fields.Char("Stage Name", required=True, translate=True)
     sequence = fields.Integer(
         help="Used to order states. Lower is better.", default=100
     )
-    state = fields.Selection(_STATES, default="draft")
+    state = fields.Selection(selection=_get_states, default="draft")
     is_starting = fields.Boolean(
         string="Is starting Stage",
         help="select stis checkbox if this is the default stage \n"

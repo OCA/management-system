@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
 class MgmtsystemNonconformity(models.Model):
@@ -19,27 +19,24 @@ class MgmtsystemNonconformity(models.Model):
         ].search([("is_starting", "=", True)], limit=1)
 
     @api.model
-    def _stage_groups(self, stages, domain, order):
+    def _stage_groups(self, stages, domain):
         stage_ids = self.env["mgmtsystem.nonconformity.stage"].search([])
         return stage_ids
 
     # 1. Description
     name = fields.Char()
-    ref = fields.Char("Reference", required=True, readonly=True, default="NEW")
+    ref = fields.Char("Reference", required=True, default="NEW")
     # Compute data
-    number_of_nonconformities = fields.Integer(
-        "# of nonconformities", readonly=True, default=1
-    )
+    number_of_nonconformities = fields.Integer("# of nonconformities", default=1)
     days_since_updated = fields.Integer(
-        readonly=True, compute="_compute_days_since_updated", store=True
+        compute="_compute_days_since_updated", store=True
     )
     number_of_days_to_close = fields.Integer(
         "# of days to close",
         compute="_compute_number_of_days_to_close",
         store=True,
-        readonly=True,
     )
-    closing_date = fields.Datetime(readonly=True)
+    closing_date = fields.Datetime()
 
     partner_id = fields.Many2one("res.partner", "Partner", required=True)
     reference = fields.Char(
@@ -163,7 +160,7 @@ class MgmtsystemNonconformity(models.Model):
         for nc in self:
             if nc.state == "open" and not nc.action_comments:
                 raise models.ValidationError(
-                    _(
+                    self.env._(
                         "Action plan  comments are required "
                         "in order to put a nonconformity In Progress."
                     )
@@ -175,7 +172,7 @@ class MgmtsystemNonconformity(models.Model):
             if nc.state == "done":
                 if not nc.evaluation_comments:
                     raise models.ValidationError(
-                        _(
+                        self.env._(
                             "Evaluation Comments are required "
                             "in order to close a Nonconformity."
                         )
@@ -183,7 +180,10 @@ class MgmtsystemNonconformity(models.Model):
                 actions_are_closed = nc._get_all_actions().mapped("stage_id.is_ending")
                 if not all(actions_are_closed):
                     raise models.ValidationError(
-                        _("All actions must be done " "before closing a Nonconformity.")
+                        self.env._(
+                            "All actions must be done "
+                            "before closing a Nonconformity."
+                        )
                     )
 
     @api.model

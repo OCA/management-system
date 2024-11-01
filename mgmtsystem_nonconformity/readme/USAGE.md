@@ -11,14 +11,16 @@ To use this module:
 - Origins: The source of the NC, how was it discover
 - Procedures: Against which procedure is the NC
 - Description: Evidence, reference to the standards
-- Click on Save and then on Analysis.
+- Click on Save and then set state from Draft to Analysis.
 
-Go to the newly created NC and fill in the following information in the
-tab named Causes and Analysis:
+Go to the newly created NC and fill in the following information:
 
+In the Causes and Analysis tab:
 - Causes: Add root causes
 - Analysis: Describe the results of the investigation
 - Severity: Select the severity among unfounded, minor and major
+
+In the Description tab:
 - Immediate action: Create or select an immediate action if appropriate
 
 Click on the Save button and then on the "Action Plan" button in the top
@@ -31,7 +33,7 @@ following items:
   Rework, Re-grade, Repair
 - Deadline: Date by which the action must be completed
 - Responsible: Person in charge for implementing the action
-- Type: Immediate, corrective or preventive actions or improvement
+- Response Type: Immediate, corrective or preventive actions or improvement
   opportunity
 - Description: Details of the action
 

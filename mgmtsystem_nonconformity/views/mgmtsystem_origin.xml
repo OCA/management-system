@@ -8,7 +8,6 @@
         <field name="arch" type="xml">
             <form string="Origins of nonconformity">
                 <sheet>
-                    <field name="active" invisible="1" />
                     <widget
                         name="web_ribbon"
                         title="Archived"
@@ -28,16 +27,16 @@
     </record>
 
     <record id="view_mgmtsystem_nonconformity_origin_tree" model="ir.ui.view">
-        <field name="name">mgmtsystem.nonconformity.origin.tree</field>
+        <field name="name">mgmtsystem.nonconformity.origin.list</field>
         <field name="model">mgmtsystem.nonconformity.origin</field>
-        <field name="type">tree</field>
+        <field name="type">list</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="parent_id" />
                 <field name="name" />
                 <field name="description" />
                 <field name="sequence" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -58,7 +57,7 @@
     >
         <field name="name">Origins</field>
         <field name="res_model">mgmtsystem.nonconformity.origin</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="view_id" eval="False" />
         <field
             name="search_view_id"
