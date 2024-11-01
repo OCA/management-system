@@ -1,5 +1,4 @@
 <odoo>
-
     <menuitem
         id="menu_mgmtsystem_configuration_nonconformities"
         name="Nonconformities"
@@ -134,10 +133,8 @@
                 <field name="message_needaction_counter" />
                 <templates>
                     <t t-name="kanban-box">
-
                         <div t-attf-class="#{kanban_color(red)} oe_kanban_global_click">
                             <div class="o_dropdown_kanban dropdown">
-
                                 <a
                                     class="dropdown-toggle btn"
                                     role="button"
@@ -261,7 +258,6 @@
                     </group>
 
                     <notebook>
-
                         <page string="Description" name="description">
                             <field
                                 name="description"
@@ -354,7 +350,6 @@
                                 </group>
                             </group>
                         </page>
-
                     </notebook>
                 </sheet>
 
@@ -367,7 +362,6 @@
                     <field name="activity_ids" widget="mail_activity" />
                     <field name="message_ids" widget="mail_thread" />
                 </div>
-
             </form>
         </field>
     </record>
@@ -408,5 +402,4 @@
         sequence="30"
         groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
     />
-
 </odoo>
