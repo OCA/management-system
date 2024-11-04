@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-
     <record model="ir.actions.act_window" id="action_procedures">
         <field name="name">Procedures</field>
         <field name="res_model">document.page</field>
@@ -36,5 +35,4 @@
         sequence="10"
         groups="base.group_user"
     />
-
 </odoo>
