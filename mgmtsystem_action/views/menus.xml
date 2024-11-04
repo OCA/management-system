@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
-  <menuitem
+    <menuitem
         name="Actions"
         id="menu_config_action"
         parent="mgmtsystem.menu_mgmtsystem_configuration"
         sequence="20"
     />
 
-  <menuitem
+    <menuitem
         name="Actions"
         id="menu_report_mgmtsystem_action_tree"
         action="action_report_mgmtsystem_action"
@@ -16,7 +15,7 @@
         sequence="15"
     />
 
-  <menuitem
+    <menuitem
         id="menu_open_action"
         action="open_mgmtsystem_action_list"
         parent="mgmtsystem.menu_mgmtsystem_main"
@@ -24,7 +23,7 @@
         groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
     />
 
-  <menuitem
+    <menuitem
         id="menu_mgmtsystem_action_stages"
         name="Stages"
         parent="menu_config_action"
@@ -33,12 +32,11 @@
         groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
     />
 
-  <menuitem
+    <menuitem
         id="menu_mgmtsystem_action_tags"
         action="mgmtsystem_action_tag_action"
         parent="menu_config_action"
         sequence="100"
         groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
     />
-
 </odoo>
