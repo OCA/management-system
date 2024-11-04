@@ -35,7 +35,7 @@
     <record model="ir.actions.act_window" id="mgmtsystem_action_tag_action">
         <field name="name">Tags</field>
         <field name="res_model">mgmtsystem.action.tag</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="context">{}</field>
     </record>
 </odoo>
