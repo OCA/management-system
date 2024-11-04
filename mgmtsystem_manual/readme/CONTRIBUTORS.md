@@ -9,4 +9,5 @@
 Trobz
 
 - Dung Tran \<<dungtd@trobz.com>\>
+- Tuan Nguyen \<<tuanna@trobz.com>\>
 - Yvan Dotet \<<yvan.dotet@logicasoft.eu>\>
