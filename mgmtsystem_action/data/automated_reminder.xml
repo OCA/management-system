@@ -5,9 +5,7 @@
         <field name="user_id" ref="base.user_root" />
         <field name="interval_number">1</field>
         <field name="interval_type">days</field>
-        <field name="numbercall">-1</field>
         <field name="model_id" ref="model_mgmtsystem_action" />
-        <field name="doall" eval="False" />
         <field name="state">code</field>
         <field name="code">model.process_reminder_queue()</field>
     </record>

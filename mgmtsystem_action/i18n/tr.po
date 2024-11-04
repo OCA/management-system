@@ -19,53 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: mgmtsystem_action
-#: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
-msgid ""
-"\n"
-"            \n"
-"<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
-"\n"
-"<p>\n"
-"This is an automated message to remind you that the\n"
-"following action is due to be completed in 10 days (<t t-out=\"object."
-"date_deadline\"/>):\n"
-"\n"
-"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
-"b>\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Thank you and have a nice day.<br>\n"
-"--<br>\n"
-"Odoo\n"
-"</p>\n"
-"            \n"
-"        "
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model:mail.template,body_html:mgmtsystem_action.email_template_new_action_reminder
-msgid ""
-"\n"
-"            \n"
-"<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
-"\n"
-"<p>A new action has been assigned to you: <b><a t-att-href=\"object."
-"get_action_url()\"><t t-out=\"object.name\"/></a></b></p>\n"
-"<p><b>Deadline: </b><t t-out=\"object.date_deadline or ''\"/></p>\n"
-"\n"
-"<p>Please, use the action stages and messages to log progress.</p>\n"
-"\n"
-"<p>\n"
-"Thank you<br>\n"
-"--<br>\n"
-"Odoo\n"
-"</p>\n"
-"            \n"
-"        "
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__number_of_actions
 msgid "# of actions"
 msgstr ""
@@ -105,6 +58,49 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "#ffffff"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
+msgid ""
+"<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
+"\n"
+"<p>\n"
+"This is an automated message to remind you that the\n"
+"following action is due to be completed in 10 days (<t t-out=\"object."
+"date_deadline\"/>):\n"
+"\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Thank you and have a nice day.<br/>\n"
+"--<br/>\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:mail.template,body_html:mgmtsystem_action.email_template_new_action_reminder
+msgid ""
+"<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
+"\n"
+"<p>A new action has been assigned to you: <b><a t-att-href=\"object."
+"get_action_url()\"><t t-out=\"object.name\"/></a></b></p>\n"
+"<p><b>Deadline: </b><t t-out=\"object.date_deadline or ''\"/></p>\n"
+"\n"
+"<p>Please, use the action stages and messages to log progress.</p>\n"
+"\n"
+"<p>\n"
+"Thank you<br/>\n"
+"--<br/>\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -482,7 +478,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #. odoo-python
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
-#, python-format
 msgid "New"
 msgstr ""
 
@@ -587,7 +582,6 @@ msgstr ""
 #. module: mgmtsystem_action
 #. odoo-python
 #: code:addons/mgmtsystem_action/tests/test_create_action.py:0
-#, python-format
 msgid "SampleReference"
 msgstr ""
 
@@ -701,8 +695,18 @@ msgstr ""
 #. module: mgmtsystem_action
 #. odoo-python
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
-#, python-format
 msgid "We cannot bring back the action to draft stage"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Okunmamış Mesajlar"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+msgid "Website communication history"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -714,10 +718,6 @@ msgstr ""
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "{{object.name}}"
 msgstr ""
-
-#, fuzzy
-#~ msgid "Website Messages"
-#~ msgstr "Okunmamış Mesajlar"
 
 #, fuzzy
 #~ msgid "Number of unread messages"

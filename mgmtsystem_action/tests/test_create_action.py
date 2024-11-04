@@ -2,7 +2,7 @@ import time
 from datetime import datetime, timedelta
 from unittest import mock
 
-from odoo import _, exceptions
+from odoo import exceptions
 from odoo.tests import common
 
 
@@ -46,7 +46,7 @@ class TestModelAction(common.TransactionCase):
                 "type_action": "immediate",
             }
         )
-        self.assertEqual(new_record.reference, _("SampleReference"))
+        self.assertEqual(new_record.reference, self.env._("SampleReference"))
 
     def test_case_close(self):
         """Test object close state."""

@@ -3,7 +3,7 @@
 
 from datetime import datetime, timedelta
 
-from odoo import _, api, exceptions, fields, models
+from odoo import api, exceptions, fields, models
 
 
 class MgmtsystemAction(models.Model):
@@ -100,7 +100,7 @@ class MgmtsystemAction(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         for one_vals in vals_list:
-            if one_vals.get("reference", _("New")) == _("New"):
+            if one_vals.get("reference", self.env._("New")) == self.env._("New"):
                 Sequence = self.env["ir.sequence"]
                 one_vals["reference"] = Sequence.next_by_code("mgmtsystem.action")
         actions = super().create(vals_list)
@@ -113,7 +113,7 @@ class MgmtsystemAction(models.Model):
             # Do not allow to bring back actions to draft
             if rec.date_open and rec.stage_id.is_starting:
                 raise exceptions.ValidationError(
-                    _("We cannot bring back the action to draft stage")
+                    self.env._("We cannot bring back the action to draft stage")
                 )
             # If stage is changed, the action is opened
             if not rec.date_open and not rec.stage_id.is_starting:
