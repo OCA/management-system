@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-
     <record id="work_instructions_action" model="ir.actions.act_window">
-      <field name="name">Work Instructions</field>
-      <field name="res_model">document.page</field>
-      <field name="view_mode">tree,form</field>
-      <field name="help">Work instructions of your management system.</field>
-      <field
+        <field name="name">Work Instructions</field>
+        <field name="res_model">document.page</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help">Work instructions of your management system.</field>
+        <field
             name="domain"
             eval="[('parent_id','=',ref('document_page_group_work_instructions'))]"
         />
-      <field
+        <field
             name="context"
             eval="{'default_parent_id': ref('document_page_group_work_instructions')}"
         />
@@ -36,5 +35,4 @@
         sequence="90"
         groups="base.group_user"
     />
-
 </odoo>
