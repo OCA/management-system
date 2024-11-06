@@ -1,4 +1,7 @@
-To enter your quality manual, you need to:
+To enter your quality manual:
 
-- go to Management Systems \> Documentation \> Manuals
-- Create a new page and select the Quality Manual category.
+- Go to Management Systems \> Documentation \> Manuals
+- Create a new page
+- Enter a title
+- Select the Quality Manual category
+- Fill in the content
