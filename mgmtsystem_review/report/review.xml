@@ -85,29 +85,29 @@
                             <h3>
                                 <strong>
                                     <span
-                                    t-field="response.user_input_line_ids[0].value_text"
+                                    t-field="response.user_input_line_ids[0].value_char_box"
                                 />
                                     (<span
-                                    t-field="response.user_input_line_ids[1].value_text"
+                                    t-field="response.user_input_line_ids[1].value_char_box"
                                 />)
                                 </strong>
                             </h3>
                             <ul style="padding-left:15px">
                                 <li>Refrence:
                                     <span
-                                    t-field="response.user_input_line_ids[2].value_text"
+                                    t-field="response.user_input_line_ids[2].value_char_box"
                                 /></li>
                                 <li>Comments:
                                     <span
-                                    t-field="response.user_input_line_ids[3].value_free_text"
+                                    t-field="response.user_input_line_ids[3].value_text_box"
                                 /></li>
                                 <li>Expectations:
                                     <span
-                                    t-field="response.user_input_line_ids[4].value_free_text"
+                                    t-field="response.user_input_line_ids[4].value_text_box"
                                 /></li>
                                 <li>Improvements:
                                     <span
-                                    t-field="response.user_input_line_ids[5].value_free_text"
+                                    t-field="response.user_input_line_ids[5].value_text_box"
                                 /></li>
                             </ul>
                         </t>

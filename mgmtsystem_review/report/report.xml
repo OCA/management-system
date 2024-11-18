@@ -5,6 +5,11 @@
         <field name="model">mgmtsystem.review</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">mgmtsystem_review.review_report_template</field>
+        <field
+            name="binding_model_id"
+            ref="mgmtsystem_review.model_mgmtsystem_review"
+        />
+        <field name="binding_type">report</field>
     </record>
 
     <template id="review_report_template">

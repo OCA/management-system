@@ -7,8 +7,8 @@
 - Julien Coux \<<julien.coux@camptocamp.com>\>
 - [Tecnativa](https://www.tecnativa.com):
   - Ernesto Tejeda
-
-Trobz
-
-- Dung Tran \<<dungtd@trobz.com>\>
 - Yvan Dotet \<<yvan.dotet@logicasoft.eu>\>
+
+- [Trobz] (https://trobz.com/):
+  - Dung Tran \<<dungtd@trobz.com>\>
+  - Tuan Nguyen \<<tuanna@trobz.com>\>
