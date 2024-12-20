@@ -18,6 +18,7 @@
         "views/mgmtsystem_evaluation.xml",
         "templates/asset_backend.xml",
         "views/res_partner.xml",
+        "data/cron.xml",
     ],
     "demo": ["demo/demo.xml"],
 }
