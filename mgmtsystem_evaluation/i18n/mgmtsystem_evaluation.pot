@@ -72,6 +72,13 @@ msgid "Attachment Count"
 msgstr ""
 
 #. module: mgmtsystem_evaluation
+#: model:ir.actions.server,name:mgmtsystem_evaluation.cron_evaluation_ir_actions_server
+#: model:ir.cron,cron_name:mgmtsystem_evaluation.cron_evaluation
+#: model:ir.cron,name:mgmtsystem_evaluation.cron_evaluation
+msgid "Automatic evaluation generation"
+msgstr ""
+
+#. module: mgmtsystem_evaluation
 #: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__manager_activity_type_id
 msgid ""
 "Automatically schedule this activity to the Manager\n"
