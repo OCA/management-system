@@ -1,7 +1,7 @@
 # Copyright (C) 2004-2012 OpenERP S.A. (<http://openerp.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import _, exceptions, fields, models
 
 
 class MgmtsystemConfigSettings(models.TransientModel):
@@ -107,3 +107,26 @@ class MgmtsystemConfigSettings(models.TransientModel):
         help="Provide Work Instructions category.\n"
         "- This installs the module document_page_work_instruction.",
     )
+
+    def execute(self):
+        # Provide error in case the odule to install is not available in the system
+        # This avoids user confusion from the install failing silently
+        self = self.with_context(active_test=False)
+        classified = self._get_classified_fields()
+        to_install = [
+            f[7:] for f in self._fields.keys() if f.startswith("module_") and self[f]
+        ]
+        available = classified["module"].mapped("name")
+        not_available = set(to_install) - set(available)
+        if not_available:
+            url = (
+                "https://gthub.com/OCA/management-system/issues"
+                "?q=is%3Aissue%20state%3Aopen%20migration%20to%20version"
+            )
+            msg = _(
+                "The following modules are not available: %(addons)s"
+                "\nLearn more on the corresponding Github issue"
+                " and consider contributing:\n"
+            ) % {"addons": ", ".join(not_available)}
+            raise exceptions.UserError(msg + url)
+        return super().execute()
