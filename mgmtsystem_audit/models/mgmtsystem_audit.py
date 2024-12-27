@@ -13,7 +13,7 @@ class MgmtsystemAudit(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char()
-    reference = fields.Char(size=64, required=True, readonly=True, default="NEW")
+    reference = fields.Char(required=True, readonly=True, default="NEW")
     date = fields.Datetime()
     line_ids = fields.One2many(
         "mgmtsystem.verification.line", "audit_id", "Verification List"
@@ -137,32 +137,23 @@ class MgmtsystemAudit(models.Model):
 
     def get_action_url(self):
         """
-        Return a short link to the audit form view
-        eg. http://localhost:8069/?db=prod#id=1&model=mgmtsystem.audit
+        Return a link to the audit form view
         """
-
-        base_url = self.env["ir.config_parameter"].get_param(
-            "web.base.url", default="http://localhost:8069"
-        )
-        url = f"{base_url}/web#db={self.env.cr.dbname}&id={self.id}&model={self._name}"
-        return url
+        CfgParam = self.env["ir.config_parameter"]
+        base_url = CfgParam.get_param("web.base.url", default="http://localhost:8069")
+        return f"{base_url}/odoo/{self._name}/{self.id}"
 
     def get_lines_by_procedure(self):
-        p = []
-        for line in self.line_ids:
-            if line.procedure_id.id:
-                procedure_name = line.procedure_id.name
-            else:
-                procedure_name = _("Undefined")
-
-            p.append(
-                {
-                    "id": line.id,
-                    "procedure": procedure_name,
-                    "name": line.name,
-                    "yes_no": "Yes / No",
-                }
-            )
+        undefined = _("Undefined")
+        p = [
+            {
+                "id": line.id,
+                "procedure": line.procedure_id.name or undefined,
+                "name": line.name,
+                "yes_no": "Yes / No",
+            }
+            for line in self.line_ids
+        ]
         p = sorted(p, key=lambda k: k["procedure"])
         proc_line = False
         q = []
