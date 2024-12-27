@@ -3,6 +3,7 @@
 
 {
     "name": "Management System",
+    "summary": "Support for management systems, such as ISO compliance.",
     "version": "18.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
