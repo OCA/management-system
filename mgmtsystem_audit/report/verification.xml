@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template id="verification_report">
-
         <t
             t-set="doc"
             t-value="doc.with_context({'lang':doc.user_id.partner_id.lang})"
@@ -20,7 +19,9 @@
                 <div class="row" style="padding-top:10px">
                     <div class="col-12">
                         <div class="text-center">
-                            <h3><strong t-field="doc.name" /></h3>
+                            <h3>
+                                <strong t-field="doc.name" />
+                            </h3>
                         </div>
                     </div>
                 </div>
@@ -62,7 +63,9 @@
                                             t-foreach="doc.auditor_user_ids"
                                             t-as="auditor"
                                         >
-                                            <li><span t-field="auditor.name" /></li>
+                                            <li>
+                                                <span t-field="auditor.name" />
+                                            </li>
                                         </t>
                                     </ul>
                                 </td>
@@ -72,7 +75,9 @@
                                             t-foreach="doc.auditee_user_ids"
                                             t-as="auditee"
                                         >
-                                            <li><span t-field="auditee.name" /></li>
+                                            <li>
+                                                <span t-field="auditee.name" />
+                                            </li>
                                         </t>
                                     </ul>
                                 </td>
