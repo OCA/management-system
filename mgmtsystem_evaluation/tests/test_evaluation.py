@@ -3,10 +3,10 @@
 
 from freezegun import freeze_time
 
-from odoo.tests.common import Form, SavepointCase
+from odoo.tests.common import Form, TransactionCase
 
 
-class TestEvaluation(SavepointCase):
+class TestEvaluation(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
