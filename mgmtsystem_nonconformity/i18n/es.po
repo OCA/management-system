@@ -616,12 +616,18 @@ msgstr "Tipo proxima actividad"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_hazard__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_abstract__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_bom__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_production__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_unbuild__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_phone_blacklist__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_pricelist__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_product__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_template__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_partner__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_users__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_lot__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_picking__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_scrap__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_survey__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_user_input__non_conformity_ids
 msgid "Non Conformity"
@@ -648,12 +654,18 @@ msgstr "disconformidad"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_hazard__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_abstract__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_bom__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_production__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mrp_unbuild__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_phone_blacklist__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_pricelist__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_product__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_product_template__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_partner__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_res_users__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_lot__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_picking__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_stock_scrap__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_survey__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_survey_user_input__non_conformity_count
 msgid "Non Conformity Count"
@@ -978,6 +990,16 @@ msgid "User"
 msgstr "Usuario"
 
 #. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+msgid "Website Messages"
+msgstr "mensajes de la página web"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__website_message_ids
+msgid "Website communication history"
+msgstr "historial de la comunicación en la web"
+
+#. module: mgmtsystem_nonconformity
 #: model:mgmtsystem.nonconformity.cause,name:mgmtsystem_nonconformity.work_conditions
 msgid "Work conditions"
 msgstr "Condiciones de trabajo"
@@ -999,12 +1021,6 @@ msgstr ""
 
 #~ msgid "Next Activity Calendar Event"
 #~ msgstr "Próximo evento del calendario de actividades"
-
-#~ msgid "Website Messages"
-#~ msgstr "mensajes de la página web"
-
-#~ msgid "Website communication history"
-#~ msgstr "historial de la comunicación en la web"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Número de mensajes que requieren una acción"
