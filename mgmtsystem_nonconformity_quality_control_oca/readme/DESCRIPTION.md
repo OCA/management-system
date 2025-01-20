@@ -4,4 +4,5 @@ This module contains some new features for Management System modules.
 
 Nonconformity (NC)
 
-* Quality Control Inspection: add a field to link a specific quality control inspection.
+- Quality Control Inspection: add a field to link a specific quality
+  control inspection.

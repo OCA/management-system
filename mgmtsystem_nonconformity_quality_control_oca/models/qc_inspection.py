@@ -5,7 +5,6 @@ from odoo import api, fields, models
 
 
 class QcInspection(models.Model):
-
     _inherit = "qc.inspection"
 
     mgmtsystem_nonconformity_ids = fields.One2many(
