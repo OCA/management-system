@@ -717,6 +717,17 @@ msgid "We cannot bring back the action to draft stage"
 msgstr "Não podemos trazer de volta a ação a fase de projeto"
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Última Mensagem"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "oe_kanban_text_red"
 msgstr "oe_kanban_text_red"
@@ -731,10 +742,6 @@ msgstr ""
 
 #~ msgid "Main Attachment"
 #~ msgstr "Anexo Principal"
-
-#, fuzzy
-#~ msgid "Website Messages"
-#~ msgstr "Última Mensagem"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Número de mensagens que requerem uma ação"

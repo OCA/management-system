@@ -52,8 +52,8 @@ msgstr ""
 "följande åtgärd ska slutföras inom 10 dagar (<t t-out=\"object."
 "date_deadline\"/>):\n"
 "\n"
-"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\""
-"/></a></b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -749,6 +749,16 @@ msgstr "Användare"
 #, python-format
 msgid "We cannot bring back the action to draft stage"
 msgstr "Vi kan inte föra tillbaka handlingen till utkaststadiet"
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: mgmtsystem_action
+#: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
+msgid "Website communication history"
+msgstr ""
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
