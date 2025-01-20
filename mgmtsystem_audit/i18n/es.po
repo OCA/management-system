@@ -680,6 +680,16 @@ msgid "Verification list report"
 msgstr "Informe sobre la lista de verificación"
 
 #. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__website_message_ids
+msgid "Website Messages"
+msgstr "mensajes de la página web"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__website_message_ids
+msgid "Website communication history"
+msgstr "historial de la comunicación en la web"
+
+#. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.copy_verification_lines_form_view
 msgid "_Cancel"
 msgstr "_Cancelar"
@@ -697,12 +707,6 @@ msgstr "_Copiar"
 
 #~ msgid "Next Activity Calendar Event"
 #~ msgstr "Próximo evento del calendario de actividades"
-
-#~ msgid "Website Messages"
-#~ msgstr "mensajes de la página web"
-
-#~ msgid "Website communication history"
-#~ msgstr "historial de la comunicación en la web"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Número de mensajes que requieren una acción"
