@@ -469,6 +469,16 @@ msgstr "Tipo"
 msgid "Type of the exception activity on record."
 msgstr "Tipo (o clase) de actividad excepcional registrada."
 
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__website_message_ids
+msgid "Website Messages"
+msgstr "mensajes de la página web"
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__website_message_ids
+msgid "Website communication history"
+msgstr "historial de la comunicación en la web"
+
 #~ msgid "Last Modified on"
 #~ msgstr "Última modificación el"
 
@@ -477,12 +487,6 @@ msgstr "Tipo (o clase) de actividad excepcional registrada."
 
 #~ msgid "Next Activity Calendar Event"
 #~ msgstr "Próximo evento del calendario de actividades"
-
-#~ msgid "Website Messages"
-#~ msgstr "mensajes de la página web"
-
-#~ msgid "Website communication history"
-#~ msgstr "historial de la comunicación en la web"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "número de mensajes que requieren una acción"
