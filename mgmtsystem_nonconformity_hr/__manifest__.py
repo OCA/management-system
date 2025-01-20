@@ -5,7 +5,7 @@
 {
     "name": "Management System - Nonconformity HR",
     "summary": "Bridge module between hr and mgmsystem and",
-    "version": "16.0.1.0.0",
+    "version": "18.0.1.0.0",
     "author": "Associazione PNLUG - Gruppo Odoo, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
