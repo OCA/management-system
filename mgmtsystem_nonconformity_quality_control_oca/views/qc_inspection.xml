@@ -24,12 +24,13 @@
                         />
                         <span
                             class="o_stat_text"
-                            attrs="{'invisible': [('mgmtsystem_nonconformity_count', '&lt;', 2)]}"
+                            invisible="mgmtsystem_nonconformity_count &lt; 2"
                         > Nonconformities</span>
                         <span
                             class="o_stat_text"
-                            attrs="{'invisible': [('mgmtsystem_nonconformity_count', '&gt;', 1)]}"
+                            invisible="mgmtsystem_nonconformity_count &gt; 1"
                         > Nonconformity</span>
+
                     </div>
                 </button>
             </xpath>
