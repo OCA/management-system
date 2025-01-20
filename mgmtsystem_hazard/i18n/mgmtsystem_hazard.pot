@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -255,6 +255,7 @@ msgstr ""
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -297,19 +298,6 @@ msgid "Justification"
 msgstr ""
 
 #. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__write_uid
@@ -342,11 +330,6 @@ msgid "Low"
 msgstr ""
 
 #. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_main_attachment_id
-msgid "Main Attachment"
-msgstr ""
-
-#. module: mgmtsystem_hazard
 #: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_aging
 msgid "Materials Aging"
 msgstr ""
@@ -375,6 +358,16 @@ msgstr ""
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__name
 msgid "Name"
+msgstr ""
+
+#. module: mgmtsystem_hazard
+#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__non_conformity_ids
+msgid "Non Conformity"
+msgstr ""
+
+#. module: mgmtsystem_hazard
+#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__non_conformity_count
+msgid "Non Conformity Count"
 msgstr ""
 
 #. module: mgmtsystem_hazard
@@ -479,6 +472,11 @@ msgstr ""
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__review_date
 msgid "Review Date"
+msgstr ""
+
+#. module: mgmtsystem_hazard
+#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_sms_error
+msgid "SMS Delivery error"
 msgstr ""
 
 #. module: mgmtsystem_hazard

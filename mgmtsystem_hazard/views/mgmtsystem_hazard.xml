@@ -12,14 +12,14 @@
         <field name="name">mgmtsystem.hazard.tree</field>
         <field name="model">mgmtsystem.hazard</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="type_id" />
                 <field name="name" />
                 <field name="hazard_id" />
                 <field name="origin_id" />
                 <field name="acceptability" />
                 <field name="company_id" groups="base.group_multi_company" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -84,14 +84,7 @@
                         </page>
                     </notebook>
                 </sheet>
-                <div class="oe_chatter">
-                    <field
-                        name="message_follower_ids"
-                        widget="mail_followers"
-                        groups="base.group_user"
-                    />
-                    <field name="message_ids" widget="mail_thread" />
-                </div>
+                <chatter />
             </form>
         </field>
     </record>
@@ -99,7 +92,7 @@
     <record model="ir.actions.act_window" id="open_mgmtsystem_hazard_list">
         <field name="name">Hazards</field>
         <field name="res_model">mgmtsystem.hazard</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="view_id" ref="view_mgmtsystem_hazard_tree" />
         <field name="search_view_id" ref="view_mgmtsystem_hazard_filter" />
     </record>
