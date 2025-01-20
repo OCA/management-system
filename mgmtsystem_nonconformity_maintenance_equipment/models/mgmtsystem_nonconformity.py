@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class MgmtsystemNonconformity(models.Model):
-
     _inherit = "mgmtsystem.nonconformity"
 
     equipment_id = fields.Many2one("maintenance.equipment", string="Equipment")
