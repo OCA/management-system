@@ -9,7 +9,6 @@ from odoo.tests import common
 
 class TestActionEfficacy(common.TransactionCase):
     def test_change_efficacy(self):
-
         record = self.env["mgmtsystem.action"].search([])[0]
 
         record.efficacy_value = 50
