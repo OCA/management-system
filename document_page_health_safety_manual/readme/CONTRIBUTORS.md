@@ -4,3 +4,4 @@
   - Fernando La Chica \<<fernando.lachica@guadaltech.es>\>
 - [Binhex](https://binhex.cloud//com):
   - David Luis Mora \<<d.luis@binhex.cloud>\>
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
