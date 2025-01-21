@@ -20,7 +20,7 @@
                     type="object"
                     string="Send by Email"
                     class="oe_highlight"
-                    attrs="{'invisible':[('nc_type','!=','supplier')]}"
+                    invisible="nc_type != 'supplier'"
                     groups="base.group_user"
                 />
             </header>
