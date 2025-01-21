@@ -1,0 +1,55 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mgmtsystem_action_efficacy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-07-07 14:10+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: mgmtsystem_action_efficacy
+#: model:ir.model.fields,help:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_value
+msgid "0:not effective | 50:efficacy not complete | 100: effective"
+msgstr "0:no eficaz | 50:eficacia no completa | 100: eficaz"
+
+#. module: mgmtsystem_action_efficacy
+#: model:ir.model,name:mgmtsystem_action_efficacy.model_mgmtsystem_action
+msgid "Action"
+msgstr "Acción"
+
+#. module: mgmtsystem_action_efficacy
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_action_efficacy.view_mgmtsystem_action_form
+msgid "Efficacy"
+msgstr "Eficacia"
+
+#. module: mgmtsystem_action_efficacy
+#: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_user_id
+msgid "Inspector"
+msgstr "el inspector/a"
+
+#. module: mgmtsystem_action_efficacy
+#: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_description
+msgid "Notes"
+msgstr "Notas"
+
+#. module: mgmtsystem_action_efficacy
+#: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_value
+msgid "Rating"
+msgstr "valoración"
+
+#. module: mgmtsystem_action_efficacy
+#. odoo-python
+#: code:addons/mgmtsystem_action_efficacy/models/mgmtsystem_action.py:0
+#: code:addons/mgmtsystem_action_efficacy/tests/test_efficacy.py:0
+#, python-format
+msgid "Rating must be between 0 and 100"
+msgstr "La puntuación debe estar comprendida entre 0 y 100"
