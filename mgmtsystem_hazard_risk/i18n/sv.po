@@ -1,154 +1,153 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * mgmtsystem_hazard_risk
+# 	* mgmtsystem_hazard_risk
 #
-# Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: management-system (8.0)\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-05 19:53+0000\n"
-"PO-Revision-Date: 2015-11-03 19:11+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Norwegian Bokmål (http://www.transifex.com/oca/OCA-management-"
-"system-8-0/language/nb/)\n"
-"Language: nb\n"
+"PO-Revision-Date: 2024-09-03 08:06+0000\n"
+"Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
+"Language-Team: none\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. module: mgmtsystem_hazard_risk
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.res_config_settings_view_form
 msgid ""
 "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
-"\" groups=\"base.group_multi_company\"/>"
+"specific.\" role=\"img\" aria-label=\"Values set here are company-"
+"specific.\" groups=\"base.group_multi_company\"/>"
 msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Värden som anges här är "
+"företagsspecifika.\" role=\"img\" aria-label=\"Värden som anges här är "
+"företagsspecifika.\" groups=\"base.group_multi_company\"/>"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__acceptability
 msgid "Acceptability"
-msgstr "Akseptanse"
+msgstr "Godtagbarhet"
 
 #. module: mgmtsystem_hazard_risk
 #: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_chemical
 msgid "Chemical"
-msgstr "Kjemisk"
+msgstr "Kemisk"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model,name:mgmtsystem_hazard_risk.model_res_company
 msgid "Companies"
-msgstr "Firmaer"
+msgstr "Företag"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__company_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__company_id
-#, fuzzy
 msgid "Company"
-msgstr "Firmaer"
+msgstr "Företag"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_risk_computation
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__name
 msgid "Computation Risk"
-msgstr "Beregning av risiko"
+msgstr "Beräkningsrisk"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model,name:mgmtsystem_hazard_risk.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Konfigurationsinställningar"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Skapad av"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Skapad den"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__description
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__description
 msgid "Description"
-msgstr "Beskrivelse"
+msgstr "Beskrivning"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Visningsnamn"
 
 #. module: mgmtsystem_hazard_risk
 #: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_environment
 msgid "Environment"
-msgstr "Miljø"
+msgstr "Miljö"
 
 #. module: mgmtsystem_hazard_risk
 #: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_fire
 msgid "Fire"
-msgstr "Brann"
+msgstr "Eld"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__hazard_id
 msgid "Hazard"
-msgstr "Fare"
+msgstr "Risk"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard
 msgid "Hazards of the health and safety management system"
-msgstr "Farer i helse og sikkerhets-systemet"
+msgstr "Risker med ledningssystemet för hälsa och säkerhet"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__justification
 msgid "Justification"
-msgstr "Rettferdiggjøring"
+msgstr "Berättigande"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Senast ändrad den"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Senast uppdaterad av"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_computation__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Senast uppdaterad den"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__name
 msgid "Name"
-msgstr "Navn"
+msgstr "Namn"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__usage_id
 msgid "Occupation / Usage"
-msgstr "Opptatt / Bruk"
+msgstr "Yrke / Användning"
 
 #. module: mgmtsystem_hazard_risk
 #: model:mgmtsystem.hazard.risk.type,name:mgmtsystem_hazard_risk.risk_type_physical
@@ -158,96 +157,92 @@ msgstr "Fysisk"
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__probability_id
 msgid "Probability"
-msgstr "Sannsynlighet"
+msgstr "Sannolikhet"
 
 #. module: mgmtsystem_hazard_risk
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_residual_risk_form
 msgid "Residual Risk"
-msgstr "Restparti Risiko"
+msgstr "Kvarstående risk"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard__residual_risk_ids
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_form
 msgid "Residual Risk Evaluations"
-msgstr "Restparti Risikovurdering"
+msgstr "Restriskbedömningar"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.actions.act_window,name:mgmtsystem_hazard_risk.open_mgmtsystem_hazard_residual_risk_list
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_residual_risk_filter
 msgid "Residual Risks"
-msgstr "Restmateriale Risiko"
+msgstr "Kvarstående risker"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_residual_risk
 msgid "Residual Risks of hazard"
-msgstr "Restparti risiko av faren"
+msgstr "Återstående risker för fara"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard__risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__risk
-#, fuzzy
 msgid "Risk"
-msgstr "Risiko Type"
+msgstr "Risk"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_res_company__risk_computation_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_form
 msgid "Risk Computation"
-msgstr "Risikoberegning"
+msgstr "Riskberäkning"
 
 #. module: mgmtsystem_hazard_risk
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.res_config_settings_view_form
-#, fuzzy
 msgid "Risk Computation formula"
-msgstr "Risikoberegning"
+msgstr "Riskberäkningsformel"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.actions.act_window,name:mgmtsystem_hazard_risk.open_mgmtsystem_hazard_risk_computation_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard_risk.menu_open_hazard_risk_computation
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_computation_filter
 msgid "Risk Computations"
-msgstr "Risikoberegninger"
+msgstr "Riskberäkningar"
 
 #. module: mgmtsystem_hazard_risk
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_form
 msgid "Risk Evaluation"
-msgstr "Risikoevaluering"
+msgstr "Riskbedömning"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard__risk_type_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_risk_type__name
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_type_form
 msgid "Risk Type"
-msgstr "Risiko Type"
+msgstr "Risktyp"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.actions.act_window,name:mgmtsystem_hazard_risk.open_mgmtsystem_hazard_risk_type_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard_risk.menu_open_hazard_risk_type
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.view_mgmtsystem_hazard_risk_type_filter
 msgid "Risk Types"
-msgstr "Risikotyper"
+msgstr "Risktyper"
 
 #. module: mgmtsystem_hazard_risk
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.res_config_settings_view_form
-#, fuzzy
 msgid "Risk computation"
-msgstr "Risikoberegning"
+msgstr "Riskberäkning"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_res_config_settings__risk_computation_id
-#, fuzzy
 msgid "Risk formula"
-msgstr "Risikoberegning"
+msgstr "Riskformel"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model,name:mgmtsystem_hazard_risk.model_mgmtsystem_hazard_risk_type
 msgid "Risk type of the hazard"
-msgstr "Risikotyper av denne faren"
+msgstr "Risktyp för faran"
 
 #. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__severity_id
 msgid "Severity"
-msgstr "Alvorlighetsgrad"
+msgstr "Stränghet"
 
 #. module: mgmtsystem_hazard_risk
 #. odoo-python
@@ -255,9 +250,4 @@ msgstr "Alvorlighetsgrad"
 #, python-format
 msgid "You must define the company's risk computing formula. Go to settings"
 msgstr ""
-
-#~ msgid "Management System"
-#~ msgstr "Styringssystem"
-
-#~ msgid "Analysis"
-#~ msgstr "Analyse"
+"Du måste definiera företagets riskberäkningsformel. Gå till inställningar"

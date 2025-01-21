@@ -19,13 +19,13 @@
     <record id="view_mgmtsystem_hazard_risk_computation_tree" model="ir.ui.view">
         <field name="name">mgmtsystem.hazard.risk_computation.tree</field>
         <field name="model">mgmtsystem.hazard.risk.computation</field>
-        <field name="type">tree</field>
+        <field name="type">list</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="company_id" />
                 <field name="name" />
                 <field name="description" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -48,7 +48,7 @@
     >
         <field name="name">Risk Computations</field>
         <field name="res_model">mgmtsystem.hazard.risk.computation</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="view_id" eval="False" />
         <field
             name="search_view_id"
