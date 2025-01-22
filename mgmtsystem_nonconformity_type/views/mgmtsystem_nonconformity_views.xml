@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 Stefano Consolaro (Associazione PNLUG - Gruppo Odoo <http://odoo.pnlug.it>)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl) -->
+<odoo>
+
+    <!-- inherit NC form view
+            adding button to email nonconformity form
+            adding type and quantities -->
+    <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
+        <field name="name">view.mgmtsystem.nonconformity.department</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field
+            name="inherit_id"
+            ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"
+        />
+        <field name="arch" type="xml">
+            <header>
+                <button
+                    name="action_nc_sent"
+                    type="object"
+                    string="Send by Email"
+                    class="oe_highlight"
+                    invisible="nc_type != 'supplier'"
+                    groups="base.group_user"
+                />
+            </header>
+
+            <field name="create_date" position="after">
+                <field name="nc_type" />
+            </field>
+            <field name="partner_id" position="after">
+                <field name="qty_checked" style="text-align: right; width: 6em" />
+                <field name="qty_noncompliant" style="text-align: right; width: 6em" />
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- email template to sent to partner with nonconformity informations -->
+    <data noupdate="1">
+        <record id="email_template_nonconformity" model="mail.template">
+            <field name="name">Nonconformity</field>
+            <field name="email_from">test@test.it</field>
+            <field
+                name="subject"
+            >Nonconformity N° {{object.id}}: {{object.name}}</field>
+            <field name="partner_to">{{object.quality_contact_email}}</field>
+            <field
+                name="model_id"
+                ref="mgmtsystem_nonconformity.model_mgmtsystem_nonconformity"
+            />
+            <field name="auto_delete" eval="True" />
+            <field name="lang">{{object.partner_id.lang}}</field>
+             <field name="body_html" type="html">
+                <div>
+                    <p>
+                        Dear <t t-out="object.quality_contact_name or ''" />,<br /><br
+                        />
+                        In the attachment, you will find the Nonconformity report:<br />
+                        <strong>Nonconformity N°:</strong> <t
+                            t-out="object.id or ''"
+                        /><br />
+                        <strong>Name:</strong> <t t-out="object.name or ''" /><br />
+                        <strong>Description:</strong> <t
+                            t-out="object.description or ''"
+                        /><br />
+                        <br />
+                        Best regards,<br />
+                        <t t-if="user.signature">
+                            <t t-out="user.signature or ''" />
+                        </t>
+                    </p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

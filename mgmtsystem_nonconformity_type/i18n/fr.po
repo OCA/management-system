@@ -1,0 +1,133 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mgmtsystem_nonconformity_type
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-12-01 18:34+0000\n"
+"Last-Translator: yassine-rhimi <yassinrhimi67@gmail.com>\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:mail.template,body_html:mgmtsystem_nonconformity_type.email_template_nonconformity
+msgid ""
+"\n"
+"                \n"
+"                    <p>Dear ${object.quality_contact_name},<br/><br/>\n"
+"                    in attachment you have the Nonconformity report:<br/>\n"
+"                    <strong>Nonconformity N°</strong>: ${object.id}<br/>\n"
+"                    <strong>Name</strong>: ${object.name}<br/>\n"
+"                    <strong>Description</strong>: ${object.description}<br/>\n"
+"                    <br/>\n"
+"                    Best regards<br>\n"
+"                    </p>\n"
+"                      \n"
+"            "
+msgstr ""
+"\n"
+"                \n"
+"                    <p>Cher ${object.quality_contact_name},<br/><br/>\n"
+"                    En pièce jointe, vous trouverez le rapport de non-"
+"conformité :<br/>\n"
+"                    <strong>Non-conformité N°</strong> : ${object.id}<br/>\n"
+"                   <strong>Nom</strong> : ${object.name}<br/>\n"
+"                   <strong>Description</strong> : ${object.description}<br/>"
+"\n"
+"                   <br/>\n"
+"                   Cordialement<br>\n"
+"                    </p>\n"
+"                      \n"
+"            "
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__quality_contact_name
+msgid "Contact Name"
+msgstr "Nom du contact"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__customer
+msgid "Customer"
+msgstr "Client"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__quality_contact_email
+msgid "Email"
+msgstr "email"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__external
+msgid "External"
+msgstr "Externe"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__internal
+msgid "Internal"
+msgstr "Interne"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model,name:mgmtsystem_nonconformity_type.model_mgmtsystem_nonconformity
+#: model:mail.template,name:mgmtsystem_nonconformity_type.email_template_nonconformity
+msgid "Nonconformity"
+msgstr "Non-conformité"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:mail.template,subject:mgmtsystem_nonconformity_type.email_template_nonconformity
+msgid "Nonconformity N° ${object.id}: ${object.name}"
+msgstr "Non-conformité N° ${object.id} : ${object.name}"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__qty_checked
+msgid "Quantity checked"
+msgstr "Quantité vérifiée"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__qty_noncompliant
+msgid "Quantity non-compliant"
+msgstr "Quantité non conforme"
+
+#. module: mgmtsystem_nonconformity_type
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity_type.view_mgmtsystem_nonconformity_form
+msgid "Send by Email"
+msgstr "Envoyer par email"
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__supplier
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: mgmtsystem_nonconformity_type
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity.py:0
+#: code:addons/mgmtsystem_nonconformity_type/tests/test_nonconformity_type.py:0
+#, python-format
+msgid ""
+"The partner's contacts quality type isn't available.\n"
+" Check if module mgmtsystem_nonconformity_partner is installed."
+msgstr ""
+"Le type de qualité des contacts du partenaire n'est pas disponible.\n"
+" Vérifier si le module mgmtsystem_nonconformity_partner est installé."
+
+#. module: mgmtsystem_nonconformity_type
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity.py:0
+#: code:addons/mgmtsystem_nonconformity_type/tests/test_nonconformity_type.py:0
+#, python-format
+msgid ""
+"The partner's quality contact email is required in order to send the "
+"message."
+msgstr ""
+"L'email de contact de qualité du partenaire est nécessaire pour envoyer le "
+"message."
+
+#. module: mgmtsystem_nonconformity_type
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__nc_type
+msgid "Type"
+msgstr ""
