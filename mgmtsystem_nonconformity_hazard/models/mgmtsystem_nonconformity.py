@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class MgmtsystemNonconformity(models.Model):
-
     _inherit = "mgmtsystem.nonconformity"
 
     hazard_ids = fields.Many2many("mgmtsystem.hazard", string="Risk Analysis")
