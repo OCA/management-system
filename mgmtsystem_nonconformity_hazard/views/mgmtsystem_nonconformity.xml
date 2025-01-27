@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 - TODAY, Kaynnan Lemes <kaynnan.lemes@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="mgmtsystem_nonconformity_form_view">
+        <field
+            name="name"
+        >mgmtsystem.nonconformity.form (in mgmtsystem_nonconformity_hazard)</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field
+            name="inherit_id"
+            ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='procedures']" position="after">
+                <page string="Hazards" name="hazards">
+                    <field
+                        name="hazard_ids"
+                        readonly="state not in ('draft', 'analysis')"
+                    />
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
