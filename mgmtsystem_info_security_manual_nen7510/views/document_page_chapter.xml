@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_document_page_chapter">
+        <field name="name">view_document_page_chapter</field>
+        <field name="model">document.page.chapter</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field class="text-break" options="{'line_breaks': False}" widget="text" name="name"
+                                   placeholder="e.g. Context organisation..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="parent_id"/>
+                        </group>
+                        <group>
+                            <field name="nen_mandatory" widget="boolean_toggle"/>
+                            <field name="external_reference"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_document_page_chapter_list">
+        <field name="name">view_document_page_chapter_list</field>
+        <field name="model">document.page.chapter</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="display_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="document_page_chapter_action" model="ir.actions.act_window">
+      <field name="name">Document Chapters</field>
+      <field name="res_model">document.page.chapter</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="view_document_page_chapter_list" />
+    </record>
+
+    <menuitem
+        id="menu_document_page_chapter"
+        name="Document Chapters"
+        action="document_page_chapter_action"
+        parent="document_knowledge.menu_document_configuration"
+        sequence="15"
+        groups="mgmtsystem.group_mgmtsystem_manager"
+    />
+
+</odoo>

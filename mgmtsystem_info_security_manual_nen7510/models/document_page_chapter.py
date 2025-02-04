@@ -11,6 +11,7 @@ class DocumentPageChapter(models.Model):
     name = fields.Char("Name", required=True)
     parent_id = fields.Many2one("document.page.chapter", "Parent Chapter")
     display_name = fields.Char("Display Name", compute="_compute_display_name")
+    content = fields.Html("Content")
 
     def _compute_display_name(self):
         for record in self:

@@ -8,7 +8,12 @@
     "license": "AGPL-3",
     "category": "Generic Modules/Others",
     "depends": ["mgmtsystem_manual"],
-    "data": ["data/information_security_manual_nen7510.xml"],
+    "data": [
+        "views/document_page.xml",
+        "views/document_page_chapter.xml",
+        "data/document_page_chapter.xml",
+        "data/document_page.xml",
+    ],
     "demo": [],
     "installable": True,
 }

@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<odoo>
+  <data noupdate="1">
+     <record id="document_page_chapter_04" model="document.page.chapter">
+       <field name="code">4</field>
+       <field name="name">Context van de organisatie</field>
+     </record>
+     <record id="document_page_chapter_04_01" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_04"/>
+       <field name="code">4.1</field>
+       <field name="name">Inzicht verkrijgen in de organisatie en haar context</field>
+     </record>
+     <record id="document_page_chapter_04_02" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_04"/>
+       <field name="code">4.2</field>
+       <field name="name">Inzicht verkrijgen in de behoeften en verwachtingen van belanghebbenden. </field>
+     </record>
+     <record id="document_page_chapter_04_03" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_04"/>
+       <field name="code">4.3</field>
+       <field name="name">Het toepassingsgebied van het managementsysteem voor informatiebeveiliging vaststellen</field>
+     </record>
+     <record id="document_page_chapter_04_04" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_04"/>
+       <field name="code">4.4</field>
+       <field name="name">Managementsysteem voor informatiebeveiliging</field>
+     </record>
+     <record id="document_page_chapter_05" model="document.page.chapter">
+       <field name="code">5</field>
+       <field name="name">Leiderschap</field>
+     </record>
+     <record id="document_page_chapter_05_01" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_05"/>
+       <field name="code">5.1</field>
+       <field name="name">Leiderschap en betrokkenheid</field>
+     </record>
+     <record id="document_page_chapter_05_02" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_05"/>
+       <field name="code">5.2</field>
+       <field name="name">Beleid</field>
+     </record>
+     <record id="document_page_chapter_05_03" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_05"/>
+       <field name="code">5.3</field>
+       <field name="name">Rollen; verantwoordelijkheden en bevoegdheden binnen de organisatie</field>
+     </record>
+     <record id="document_page_chapter_06" model="document.page.chapter">
+       <field name="code">6</field>
+       <field name="name">Planning</field>
+     </record>
+     <record id="document_page_chapter_06_01" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_06"/>
+       <field name="code">6.1</field>
+       <field name="name">Maatregelen om risico’s te beperken en kansen te benutten</field>
+     </record>
+     <record id="document_page_chapter_06_02" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_06"/>
+       <field name="code">6.2</field>
+       <field name="name">Informatiebeveiligingsdoelstellingen en de planning om ze te bereiken</field>
+     </record>
+     <record id="document_page_chapter_07" model="document.page.chapter">
+       <field name="code">7</field>
+       <field name="name">Ondersteuning</field>
+     </record>
+     <record id="document_page_chapter_07_01" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_07"/>
+       <field name="code">7.1</field>
+       <field name="name">Middelen</field>
+     </record>
+     <record id="document_page_chapter_07_02" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_07"/>
+       <field name="code">7.2</field>
+       <field name="name">Competentie</field>
+     </record>
+     <record id="document_page_chapter_07_03" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_07"/>
+       <field name="code">7.3</field>
+       <field name="name">Bewustzijn</field>
+     </record>
+     <record id="document_page_chapter_07_04" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_07"/>
+       <field name="code">7.4</field>
+       <field name="name">Communicatie</field>
+     </record>
+     <record id="document_page_chapter_07_05" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_07"/>
+       <field name="code">7.5</field>
+       <field name="name">Gedocumenteerde informatie</field>
+     </record>
+     <record id="document_page_chapter_08" model="document.page.chapter">
+       <field name="code">8</field>
+       <field name="name">Uitvoering</field>
+     </record>
+     <record id="document_page_chapter_08_01" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_08"/>
+       <field name="code">8.1</field>
+       <field name="name">Operationele planning en beheersing</field>
+     </record>
+     <record id="document_page_chapter_08_02" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_08"/>
+       <field name="code">8.2</field>
+       <field name="name">Risicobeoordeling van informatiebeveiliging</field>
+     </record>
+     <record id="document_page_chapter_08_03" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_08"/>
+       <field name="code">8.3</field>
+       <field name="name">Informatiebeveiligingsrisico’s behandelen</field>
+     </record>
+     <record id="document_page_chapter_09" model="document.page.chapter">
+       <field name="code">9</field>
+       <field name="name">Evaluatie van de prestaties</field>
+     </record>
+     <record id="document_page_chapter_09_01" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_09"/>
+       <field name="code">9.1</field>
+       <field name="name">Monitoren; meten; analyseren en evalueren</field>
+     </record>
+     <record id="document_page_chapter_09_02" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_09"/>
+       <field name="code">9.2</field>
+       <field name="name">Interne audit</field>
+     </record>
+     <record id="document_page_chapter_09_03" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_09"/>
+       <field name="code">9.3</field>
+       <field name="name">Directiebeoordeling</field>
+     </record>
+     <record id="document_page_chapter_10" model="document.page.chapter">
+       <field name="code">10</field>
+       <field name="name">Verbetering</field>
+     </record>
+     <record id="document_page_chapter_10_01" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_10"/>
+       <field name="code">10.1</field>
+       <field name="name">Afwijkingen en corrigerende maatregelen</field>
+     </record>
+</odoo>

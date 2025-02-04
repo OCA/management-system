@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="document_page_information_security_manual_nen7510" model="document.page">
+            <field name="name">Information Security Manual NEN7510</field>
+            <field name="type">category</field>
+        </record>
+
+        <record id="document_page_group_procedure" model="document.page">
+            <field name="name">NEN7510</field>
+            <field name="type">content</field>
+            <field name="parent_id" ref="document_page_information_security_manual_nen7510"/>
+        </record>
+
+        <!-- content -->
+        <record id="id" model="document.page.chapter">
+            <field name="nen_chapter" ref="nen_chapter"/>
+            <field name="nen_control">control</field>
+            <field name="nen_mandatory">verplicht</field>
+            <field name="content" type="html">Tekst</field>
+        </record>
+        <record id="document_page_chapter_04_01_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_04_01"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet externe en interne onderwerpen vaststellen die relevant zijn voor haar
+                    doelstelling en die haar vermogen beïnvloeden om het (de) beoogde resulta(a)t(en) van haar
+                    managementsysteem voor informatiebeveiliging te behalen.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_04_02_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_04_02"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet vaststellen: welke belanghebbenden relevant zijn voor het managementsysteem voor
+                    informatiebeveiliging; en
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_04_02_b" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_04_02"/>
+            <field name="nen_control">b</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet vaststellen:welke eisen van deze belanghebbenden relevant zijn voor
+                    informatiebeveiliging.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_04_03_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_04_03"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet de grenzen en toepasselijkheid van het managementsysteem voor
+                    informatiebeveiliging bepalen om het toepassingsgebied ervan vast te stellen.<br/>Bij het
+                    vaststellen van dit toepassingsgebied moet de organisatie:<br/>a) de in 4.1 genoemde externe en
+                    interne onderwerpen overwegen; evenals;<br/>b) de in 4.2 genoemde eisen; en<br/>c) raakvlakken en
+                    afhankelijkheden tussen de activiteiten die door de organisatie en de activiteiten die door andere
+                    organisaties worden verricht.<br/>Het toepassingsgebied moet als gedocumenteerde informatie
+                    beschikbaar zijn.
+                    <br/>
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_04_04_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_04_04"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet een managementsysteem voor informatiebeveiliging inrichten; implementeren;
+                    onderhouden en continu verbeteren; in overeenstemming met de eisen van deze Internationale Norm.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_05_01_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_05_01"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De directie moet leiderschap en betrokkenheid tonen met betrekking tot het managementsysteem voor
+                    informatiebeveiliging door:<br/>a) te bewerkstelligen dat het informatiebeveiligingsbeleid en de
+                    informatiebeveiligingsdoelstellingen worden vastgesteld en aansluiten bij de strategische richting
+                    van de organisatie;<br/>b) te bewerkstelligen dat de eisen van het managementsysteem voor
+                    informatiebeveiliging in de processen van de organisatie worden geïntegreerd;<br/>c) te
+                    bewerkstelligen dat de voor het managementsysteem voor informatiebeveiliging benodigde middelen
+                    beschikbaar zijn;<br/>d) het belang van een doeltreffend informatiebeveiligingsmanagement en van het
+                    voldoen aan de eisen van het managementsysteem voor informatiebeveiliging te communiceren;<br/>e) te
+                    bewerkstelligen dat het managementsysteem voor informatiebeveiliging zijn beoogde resulta(a)t(en)
+                    behaalt;<br/>f) mensen aan te sturen en te ondersteunen om een bijdrage te leveren aan de
+                    doeltreffendheid van het managementsysteem voor informatiebeveiliging;<br/>g) continue verbetering
+                    te bevorderen; en<br/>h) andere relevante managementfuncties te ondersteunen om hun leiderschap te
+                    tonen binnen hun verantwoordelijkheidsgebieden.
+                    <br/>
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_05_02_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_05_02"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De directie moet een informatiebeveiligingsbeleid vaststellen dat:
+                    <br/>
+                    a) passend is voor het doel van de organisatie;<br/>b) informatiebeveiligingsdoelstellingen bevat
+                    (zie 6.2) of het kader biedt voor het vaststellen van informatiebeveiligingsdoelstellingen;<br/>c)
+                    een verbintenis bevat om te voldoen aan van toepassing zijnde eisen in verband met
+                    informatiebeveiliging; en<br/>d) een verbintenis bevat tot continue verbetering van het
+                    managementsysteem voor informatiebeveiliging.<br/>Het beleid voor informatiebeveiliging moet:<br/>e)
+                    beschikbaar zijn als gedocumenteerde informatie;<br/>f) worden gecommuniceerd binnen de organisatie;
+                    en<br/>g) beschikbaar zijn voor belanghebbenden; voor zover van toepassing.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_05_03_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_05_03"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De directie moet bewerkstelligen dat de verantwoordelijkheden en bevoegdheden voor rollen die
+                    relevant zijn voor informatiebeveiliging worden toegekend en gecommuniceerd.<br/>De directie moet de
+                    verantwoordelijkheid en bevoegdheid toekennen met betrekking tot:<br/>a) het bewerkstelligen dat het
+                    managementsysteem voor informatiebeveiliging voldoet aan de eisen van deze Internationale Norm; en
+                    <br/>b) het rapporteren over de prestaties van het managementsysteem voor informatiebeveiliging aan
+                    de directie.<br/>OPMERKING De directie kan ook verantwoordelijkheden en bevoegdheden toekennen met
+                    betrekking tot het rapporteren over de prestaties van het managementsysteem voor
+                    informatiebeveiliging binnen de organisatie.
+                    <br/>
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.1" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">1</field>
+            <field name="nen_mandatory"></field>
+            <field name="content" type="html">
+                <p>Algemeen</p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.1.1" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">1</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>Bij het plannen voor het managementsysteem voor informatiebeveiliging moet de organisatie de in 4.1
+                    genoemde onderwerpen en de in 4.2 genoemde eisen overwegen; en de risico’s en kansen vaststellen die
+                    moeten worden aangepakt om:<br/>a) te bewerkstelligen dat het managementsysteem voor
+                    informatiebeveiliging zijn beoogde resulta(a)t(en) behaalt;<br/>b) ongewenste effecten te voorkomen
+                    of te beperken; en<br/>c) continue verbetering te bereiken.
+                    <br/>
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.1.2" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">2</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet:<br/>d) maatregelen plannen om deze risico’s te beperken en kansen te benutten;
+                    <br/>e) plannen op welke wijze:<br/>1) de maatregelen in haar managementsysteemprocessen voor
+                    informatiebeveiliging worden geïntegreerd en geïmplementeerd; en<br/>2) de doeltreffendheid van deze
+                    maatregelen moet worden geëvalueerd.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.2" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">2</field>
+            <field name="nen_mandatory"></field>
+            <field name="content" type="html">
+                <p>Risicobeoordeling van informatiebeveiliging</p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.2.a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">2a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet een risicobeoordelingsprocedure voor informatiebeveiliging definiëren en
+                    toepassen die:<br/>a) risicocriteria voor informatiebeveiliging vaststelt en onderhoudt; waaronder:
+                    <br/>1) de risicoacceptatiecriteria; en<br/>2) criteria voor het verrichten van risicobeoordelingen
+                    van informatiebeveiliging;
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.2.b" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">2b</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>waarborgt dat herhaalde risicobeoordelingen van informatiebeveiliging consistente; geldige en
+                    vergelijkbare resultaten opleveren;
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.2.c" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">2c</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>de informatiebeveiligingsrisico’s identificeert:<br/>1) het risicobeoordelingsproces voor
+                    informatiebeveiliging toepassen om de risico’s in verband met het verlies van vertrouwen in;
+                    integriteit van en beschikbaarheid van informatie binnen het toepassingsgebied van het
+                    managementsysteem voor informatiebeveiliging te identificeren; en<br/>2) de risico-eigenaren
+                    identificeren;
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.2.d" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">2d</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>de informatiebeveiligingsrisico’s analyseert:<br/>1) de potentiële gevolgen beoordelen indien de
+                    risico’s die in 6.1.2 c) 1) zijn vastgesteld; zich zouden voordoen;<br/>2) de realistische
+                    waarschijnlijkheid beoordelen van het voorkomen van de risico’s die zijn vastgesteld in 6.1.2 c) 1);
+                    en<br/>3) de risiconiveaus vaststellen;
+                    <br/>
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.2.e" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">2e</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>de informatiebeveiligingsrisico’s evalueert:<br/>1) de resultaten vergelijken van risicoanalyses met
+                    de risicocriteria die zijn vastgesteld in 6.1.2 a); en<br/>2) de geanalyseerde risico’s prioriteren
+                    voor risicobehandeling.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.3" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">3</field>
+            <field name="nen_mandatory"></field>
+            <field name="content" type="html">
+                <p>Behandeling van informatiebeveiligingsrisico’s</p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.3.a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">3a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet een behandelprocedure voor informatiebeveiligingsrisico’s definiëren en toepassen
+                    om:<br/>a) passende opties voor het behandelen van informatiebeveiligingsrisico’s te kiezen;
+                    rekening houdend met de resultaten van de risicobeoordeling;
+                    <br/>
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.3.b" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">3b</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>b) alle beheersmaatregelen vast te stellen die nodig zijn om de gekozen optie(s) voor het behandelen
+                    van informatiebeveiligingsrisico’s te implementeren;<br/>OPMERKING Organisaties kunnen
+                    beheersmaatregelen naar behoefte ontwerpen of ze uit een bepaalde bron halen.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.3.c" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">3c</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>c) de beheersmaatregelen die hiervoor in 6.1.3 b) zijn vastgesteld te vergelijken met die in bijlage
+                    A; en om te verifiëren dat geen noodzakelijke beheersmaatregelen zijn weggelaten;
+                    <br/>
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.3.d" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">3d</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>d) een verklaring van toepasselijkheid op te stellen die de benodigde beheersmaatregelen bevat (zie
+                    6.1.3 b) en c)); een rechtvaardiging voor het opnemen ervan; de informatie of ze zijn
+                    geïmplementeerd of niet; en de rechtvaardiging om beheersmaatregelen van bijlage A uit te sluiten;
+                    <br/>
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.3.e" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">3e</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>e) een behandelplan voor informatiebeveiligingsrisico te formuleren; en</p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_01_6.1.3.f" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_01"/>
+            <field name="nen_control">3f</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>f) van de risico-eigenaren goedkeuring te verkrijgen voor het behandelplan voor
+                    informatiebeveiligingsrisico en acceptatie van de overblijvende informatiebeveiligingsrisico’s.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_02_6.2.a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_02"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet voor relevante functies en op relevante niveaus
+                    informatiebeveiligingsdoelstellingen vaststellen.<br/>De informatiebeveiligingsdoelstellingen
+                    moeten:<br/>a) consistent zijn met het informatiebeveiligingsbeleid;<br/>b) meetbaar zijn (indien
+                    praktisch uitvoerbaar);<br/>c) rekening houden met van toepassing zijnde informatiebeveiligingseisen
+                    en resultaten van risicobeoordeling en -behandeling;<br/>d) worden gecommuniceerd; en<br/>e) indien
+                    van toepassing; worden geactualiseerd.<br/>De organisatie moet gedocumenteerde informatie over de
+                    informatiebeveiligingsdoelstellingen bewaren.
+                    <br/>
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_06_02_6.2.f" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_06_02"/>
+            <field name="nen_control">f</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>Bij het opstellen van planningen voor het bereiken van de informatiebeveiligingsdoelstellingen moet
+                    de organisatie vaststellen:<br/>f) wat er moet worden gedaan;<br/>g) welke middelen er nodig zijn;
+                    <br/>h) wie er verantwoordelijk is;<br/>i) wanneer het moet zijn voltooid; en<br/>j) hoe de
+                    resultaten zullen worden geëvalueerd.
+                    <br/>
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_07_01_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_07_01"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet de middelen vaststellen en beschikbaar stellen die nodig zijn voor het inrichten;
+                    implementeren; onderhouden en continu verbeteren van het managementsysteem voor
+                    informatiebeveiliging.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_07_02_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_07_02"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet:<br/>a) de noodzakelijke competentie vaststellen van de perso(o)n(en) die onder
+                    haar gezag werkzaamheden verricht(en) die de prestaties van de organisatie op het gebied van
+                    informatiebeveiliging beïnvloeden;<br/>b) bewerkstelligen dat deze personen competent zijn op basis
+                    van de juiste scholing; opleiding of ervaring;<br/>c) waar van toepassing; maatregelen nemen om de
+                    benodigde competentie te verwerven; en de doeltreffendheid van de genomen maatregelen evalueren; en
+                    <br/>d) geschikte gedocumenteerde informatie als bewijsmateriaal van competentie bewaren.<br/>
+                    OPMERKING Geschikte maatregelen kunnen bijvoorbeeld zijn: het voorzien in training van; het
+                    begeleiden van; of het in een andere functie benoemen van mensen die al in dienst zijn; of het
+                    inhuren of contracteren van competente personen.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_07_03_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_07_03"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>Personen die werkzaamheden verrichten onder het gezag van de organisatie; moeten zich bewust zijn
+                    van:<br/>a) het informatiebeveiligingsbeleid;<br/>b) hun bijdrage aan de doeltreffendheid van het
+                    managementsysteem voor informatiebeveiliging; met inbegrip van de voordelen van verbeterde
+                    informatiebeveiligingsprestaties;<br/>c) de gevolgen van het niet voldoen aan de eisen van het
+                    managementsysteem voor informatiebeveiliging.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_07_04" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_07_04"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>Communicatie<br/>De organisatie moet de behoefte vaststellen aan interne en externe communicatie die
+                    relevant is voor het managementsysteem voor informatiebeveiliging; waaronder:<br/>a) waarover te
+                    communiceren;<br/>b) wanneer te communiceren;<br/>c) met wie te communiceren;<br/>d) wie moet
+                    communiceren; en<br/>e) volgens welke processen de communicatie moet plaatsvinden.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_07_05_7.5.1" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_07_05"/>
+            <field name="nen_control">1</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>7.5.1 Algemeen<br/>Het managementsysteem voor informatiebeveiliging van de organisatie moet onder
+                    andere bevatten:<br/>a) gedocumenteerde informatie die deze Internationale Norm vereist; en<br/>b)
+                    de gedocumenteerde informatie die de organisatie vaststelt als noodzakelijk voor de doeltreffendheid
+                    van het managementsysteem voor informatiebeveiliging.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_07_05_7.5.2" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_07_05"/>
+            <field name="nen_control">2</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>7.5.2 Creëren en actualiseren<br/>Bij het creëren en actualiseren van gedocumenteerde informatie moet
+                    de organisatie zorgen voor de/het passende:<br/>a) identificatie en beschrijving (bijv. een titel;
+                    datum; auteur of referentienummer);<br/>b) format (bijv. taal; softwareversie; afbeeldingen) en
+                    media (bijv. papier; elektronisch); en<br/>c) beoordeling en goedkeuring van geschiktheid en
+                    adequaatheid.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_07_05_7.5.3" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_07_05"/>
+            <field name="nen_control">3</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>7.5.3 Beheer van gedocumenteerde informatie<br/>Gedocumenteerde informatie zoals het
+                    managementsysteem voor informatiebeveiliging en deze Internationale Norm vereisen; moet worden
+                    beheerd om te bewerkstelligen dat:<br/>a) de informatie beschikbaar is en geschikt is voor gebruik;
+                    waar en wanneer het nodig is;<br/>b) de informatie adequaat is beveiligd (bijv. tegen verlies van
+                    vertrouwelijkheid; oneigenlijk gebruik en aantasting).<br/>Voor het beheren van gedocumenteerde
+                    informatie moet de organisatie; voor zover van toepassing; invulling geven aan de volgende
+                    activiteiten:<br/>c) distributie; toegang; het terugvinden alsmede het gebruik;<br/>d) opslag en
+                    behoud; waaronder behoud van leesbaarheid;<br/>e) beheersing van wijzigingen (bijv. versiebeheer);
+                    en<br/>f) bewaring en vernietiging.<br/>Gedocumenteerde informatie van externe oorsprong die de
+                    organisatie nodig acht voor de planning en uitvoering van het managementsysteem voor
+                    informatiebeveiliging; moet worden geïdentificeerd voor zover van toepassing en beheerd.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_08_01_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_08_01"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>Om te voldoen aan de informatiebeveiligingseisen en om de in 6.1 vastgestelde maatregelen te
+                    implementeren moet de organisatie de benodigde processen plannen; implementeren en beheersen. De
+                    <br/>organisatie moet ook plannen implementeren om de in 6.2 vastgestelde
+                    informatiebeveiligingsdoelstellingen te bereiken.<br/>De organisatie moet gedocumenteerde informatie
+                    bijhouden in de omvang die nodig is om het vertrouwen te hebben dat de processen volgens planning
+                    zijn uitgevoerd.<br/>De organisatie moet geplande wijzigingen beheersen en de consequenties van
+                    onbedoelde wijzigingen beoordelen; en zo nodig maatregelen treffen om nadelige effecten tegen te
+                    gaan.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_08_02_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_08_02"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet risicobeoordelingen van informatiebeveiliging met geplande tussenpozen uitvoeren;
+                    of als significante veranderingen worden voorgesteld of zich voordoen; rekening houdend met de
+                    criteria die zijn vastgesteld in 6.1.2 a).<br/>De organisatie moet gedocumenteerde informatie
+                    bewaren van de resultaten van de risicobeoordelingen van informatiebeveiliging.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_08_03_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_08_03"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet het behandelplan van informatiebeveiligingsrisico’s implementeren.<br/>De
+                    organisatie moet gedocumenteerde informatie bewaren van de resultaten van het behandelen van
+                    informatiebeveiligingsrisico’s.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_09_01_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_09_01"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet de informatiebeveiligingsprestaties en de doeltreffendheid van het
+                    managementsysteem voor informatiebeveiliging evalueren.<br/>De organisatie moet vaststellen:<br/>a)
+                    wat moet worden gemonitord en gemeten; met inbegrip van informatiebeveiligingsprocessen en
+                    -beheersmaatregelen;<br/>b) welke methoden worden toegepast voor het; voor zover van toepassing;
+                    monitoren; meten; analyseren en evalueren; om geldige resultaten te bewerkstelligen;<br/>OPMERKING
+                    De gekozen methoden behoren vergelijkbare en reproduceerbare resultaten op te leveren om als geldig
+                    te worden beschouwd.<br/>c) wanneer moet worden gemonitord en gemeten;<br/>d) wie moet monitoren en
+                    meten;<br/>e) wanneer de resultaten van het monitoren en meten moeten worden geanalyseerd en
+                    geëvalueerd; en<br/>f) wie deze resultaten moet analyseren en evalueren.<br/>De organisatie moet
+                    geschikte gedocumenteerde informatie bewaren als bewijsmateriaal van de resultaten van het monitoren
+                    en meten.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_09_02_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_09_02"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet met geplande tussenpozen interne audits uitvoeren om informatie te verkrijgen of
+                    het managementsysteem voor informatiebeveiliging:<br/>a) overeenkomt met:<br/>1) de eigen eisen van
+                    de organisatie voor haar managementsysteem voor informatiebeveiliging; en 2) de eisen van deze
+                    Internationale Norm;<br/>b) doeltreffend is geïmplementeerd en onderhouden.<br/>De organisatie moet:
+                    <br/>c) (een) auditprogramma(’s) plannen; vaststellen; implementeren en onderhouden; met inbegrip
+                    van de frequentie; methoden; verantwoordelijkheden; planningseisen en rapportage. Het auditprogramma
+                    moet rekening houden met het belang van de betrokken processen en de resultaten van voorgaande
+                    audits;<br/>d) de auditcriteria voor en de reikwijdte van elke audit definiëren;<br/>e) auditoren
+                    selecteren en audits uitvoeren zodanig dat de objectiviteit en de onpartijdigheid van het
+                    auditproces worden bewerkstelligd;<br/>f) bewerkstelligen dat de resultaten van de audits worden
+                    gerapporteerd aan het relevante management; en<br/>g) gedocumenteerde informatie bewaren als
+                    bewijsmateriaal van het auditprogramma en de auditresultaten.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_09_03_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_09_03"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De directie moet met geplande tussenpozen het managementsysteem voor informatiebeveiliging van de
+                    organisatie beoordelen; om de continue geschiktheid; adequaatheid en doeltreffendheid te
+                    bewerkstelligen.<br/>Bij de directiebeoordeling moet onder andere in overweging worden genomen:<br/>
+                    a) de status van acties als gevolg van voorgaande directiebeoordelingen;<br/>b) wijzigingen in
+                    externe en interne onderwerpen die relevant zijn voor het managementsysteem voor
+                    informatiebeveiliging;<br/>c) feedback over de informatiebeveiligingsprestaties; met inbegrip van
+                    trends in: 1) afwijkingen en corrigerende maatregelen;<br/>2) resultaten van monitoren en meten;
+                    <br/>3) auditresultaten; en<br/>4) voldoen aan informatiebeveiligingsdoelstellingen;<br/>d) feedback
+                    van belanghebbenden;<br/>e) resultaten van risicobeoordeling en de status van het
+                    risicobehandelplan; en<br/>f) kansen voor continue verbetering.<br/>De resultaten van de
+                    directiebeoordeling moeten beslissingen omvatten met betrekking tot kansen voor continue verbetering
+                    en de noodzaak voor wijzigingen in het managementsysteem voor informatiebeveiliging.<br/>De
+                    organisatie moet gedocumenteerde informatie bewaren als bewijsmateriaal van de resultaten van de
+                    directiebeoordeling.
+                    <br/>
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_10_01_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_10_01"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>Wanneer zich een afwijking voordoet; moet de organisatie:<br/>a) op de afwijking reageren; en indien
+                    van toepassing:<br/>1) maatregelen treffen om de afwijking te beheersen en te corrigeren; en<br/>2)
+                    de consequenties aanpakken;
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_10_01_b" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_10_01"/>
+            <field name="nen_control">b</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>de noodzaak evalueren om maatregelen te treffen om de oorzaken van de afwijking weg te nemen; zodat
+                    de afwijking zich niet herhaalt of zich elders voordoet; door:<br/>1) de afwijking te beoordelen;
+                    <br/>2) de oorzaken van de afwijking vast te stellen; en<br/>3) vast te stellen of zich
+                    gelijksoortige afwijkingen voordoen of zouden kunnen voordoen;
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_10_01_c" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_10_01"/>
+            <field name="nen_control">c</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>c) de benodigde maatregelen implementeren;<br/>d) de doeltreffendheid van getroffen corrigerende
+                    maatregelen beoordelen;<br/>e) zo nodig; wijzigingen aanbrengen in het managementsysteem voor
+                    informatiebeveiliging.<br/>Corrigerende maatregelen moeten passend zijn voor de effecten van de
+                    opgetreden afwijkingen.
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_10_01_f" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_10_01"/>
+            <field name="nen_control">f</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet gedocumenteerde informatie bewaren als bewijsmateriaal van:<br/>f) de aard van de
+                    afwijkingen en de vervolgens genomen maatregelen; en<br/>g) de resultaten van corrigerende
+                    maatregelen.
+                    <br/>
+                </p>
+            </field>
+        </record>
+        <record id="document_page_chapter_10_02_a" model="document.page.chapter">
+            <field name="nen_chapter" ref="document_page_chapter_10_02"/>
+            <field name="nen_control">a</field>
+            <field name="nen_mandatory">1</field>
+            <field name="content" type="html">
+                <p>De organisatie moet continu de geschiktheid; adequaatheid en doeltreffendheid van het
+                    managementsysteem voor informatiebeveiliging verbeteren.
+                </p>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>
