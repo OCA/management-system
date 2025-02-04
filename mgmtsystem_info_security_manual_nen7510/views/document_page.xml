@@ -44,5 +44,27 @@
       </field>
   </record>
 
+  <record model="ir.ui.view" id="view_wiki_tree">
+      <field name="name">view_wiki_tree</field>
+      <field name="model">document.page</field>
+      <field name="inherit_id" ref="document_page.view_wiki_tree"/>
+      <field name="arch" type="xml">
+          <xpath expr="//field[@name='parent_id']" position="replace">
+              <field name="parent_id" optional="hide"/>
+              <field name="nen_chapter" optional="show"/>
+              <field name="nen_control" optional="hide"/>
+          </xpath>
+      </field>
+  </record>
 
+  <record model="ir.ui.view" id="view_wiki_filter">
+      <field name="name">document.page.search</field>
+      <field name="model">document.page</field>
+      <field name="inherit_id" ref="document_page.view_wiki_filter"/>
+      <field name="arch" type="xml">
+          <xpath expr="//searchpanel" position="inside">
+              <field name="nen_chapter" icon="fa-shield" string="Chapter" enable_counters="1"/>
+          </xpath>
+      </field>
+  </record>
 </odoo>

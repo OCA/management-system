@@ -13,6 +13,7 @@
         "views/document_page_chapter.xml",
         "data/document_page_chapter.xml",
         "data/document_page.xml",
+        "security/ir_model_access.xml",
     ],
     "demo": [],
     "installable": True,

@@ -134,4 +134,10 @@
        <field name="code">10.1</field>
        <field name="name">Afwijkingen en corrigerende maatregelen</field>
      </record>
+     <record id="document_page_chapter_10_02" model="document.page.chapter">
+       <field name="parent_id" ref="document_page_chapter_10"/>
+       <field name="code">10.2</field>
+       <field name="name">Continue verbetering</field>
+     </record>
+  </data>
 </odoo>
