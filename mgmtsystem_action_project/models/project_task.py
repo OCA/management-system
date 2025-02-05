@@ -5,6 +5,6 @@ from odoo import _, api, exceptions, fields, models
 
 
 class MgmtsystemSystem(models.Model):
-    _inherits = "project.task"
+    _inherit = "project.task"
 
     mgmtsystem_action_id = fields.Many2one("mgmtsystem.action", string="Management System Action")

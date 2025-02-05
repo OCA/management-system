@@ -5,12 +5,12 @@ from odoo import _, api, exceptions, fields, models, SUPERUSER_ID
 
 
 class MgmtsystemAction(models.Model):
-    _inherits = "mgmtsystem.action"
+    _inherit = "mgmtsystem.action"
 
     def _get_default_project(self):
         self.ensure_one()
         if self.system_id and self.system_id.project_id:
-            return self.system_id.project_id
+            return self.system_id.project_id.id
         else:
             return False
 

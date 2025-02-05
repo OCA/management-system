@@ -5,6 +5,6 @@ from odoo import _, api, exceptions, fields, models
 
 
 class MgmtsystemSystem(models.Model):
-    _inherits = "mgmtsystem.system"
+    _inherit = "mgmtsystem.system"
 
     project_id = fields.Many2one("project.project", string="Project")
