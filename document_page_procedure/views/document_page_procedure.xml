@@ -5,6 +5,7 @@
         <field name="name">Procedures</field>
         <field name="res_model">document.page</field>
         <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="document_page.view_wiki_filter" />
         <field name="help">Procedures of your management system.</field>
         <field
             name="domain"

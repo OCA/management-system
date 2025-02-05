@@ -16,3 +16,13 @@ class DocumentPage(models.Model):
     internal_reference = fields.Char("Internal Reference(s)")
 
 
+    def action_open_childs(self):
+        for record in self:
+            return {
+                "type": "ir.actions.act_window",
+                "name": "Child Documents",
+                "res_model": "document.page",
+                "domain": [('parent_id', '=', record.id)],
+                "view_mode": "tree,form",
+                "target": "current",
+            }
