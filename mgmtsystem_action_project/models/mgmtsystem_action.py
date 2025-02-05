@@ -50,3 +50,8 @@ class MgmtsystemAction(models.Model):
             self.with_user(poster).message_post(
                 body=_("%s has been created", task_id._get_html_link(title=title)),
             )
+            task_id.with_user(poster).message_post_with_source(
+                'mail.message_origin_link',
+                render_values={'self': task_id, 'origin': self},
+                subtype_xmlid='mail.mt_note',
+            )
