@@ -8,7 +8,6 @@ class MgmtsystemAction(models.Model):
     _inherit = "mgmtsystem.action"
 
     def _get_default_project(self):
-        self.ensure_one()
         if self.system_id and self.system_id.project_id:
             return self.system_id.project_id.id
         else:
@@ -34,20 +33,13 @@ class MgmtsystemAction(models.Model):
                 'project_id': self.project_id.id,
                 'name': self.name,
                 'description': self.description,
-                'tag_ids': [(4, tag)]
+                'tag_ids': [(4, tag)],
+                "mgmtsystem_action_id": self.id,
             }
             user = self.user_id
             if user:
                 vals.update({'user_ids': [(4, self.user_id.id)]})
-            task_id = self.env["project.task"].create(
-                {
-                    "name": self.name,
-                    "project_id": self.project_id.id,
-                    "user_ids": self.user_id.id,
-                    "description": self.description,
-                    "mgmtsystem_action_id": self.id,
-                }
-            )
+            task_id = self.env["project.task"].create(vals)
             self.write({
                 'stage_id': ending_stage.id,
                 'task_id': task_id.id

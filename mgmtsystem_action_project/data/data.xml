@@ -2,12 +2,12 @@
 <odoo>
     <data>
         <record id="mgmtsystem_action_proj_tag" model="project.tags">
-            <field name="ManagementSystem Action"/>
+            <field name="name">ManagementSystem Action</field>
             <field name="color">1</field>
         </record>
 
         <record id="mgmtsystem_stage_task" model="mgmtsystem.action.stage">
-            <field name="Project Task created"/>
+            <field name="name">Project Task created</field>
             <field name="fold" eval="True"/>
         </record>
     </data>
