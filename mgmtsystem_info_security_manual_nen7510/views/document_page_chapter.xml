@@ -15,12 +15,14 @@
                     <group>
                         <group>
                             <field name="code"/>
-                            <field name="parent_id"/>
                         </group>
                         <group>
-                            <field name="nen_mandatory" widget="boolean_toggle"/>
-                            <field name="external_reference"/>
+                            <field name="parent_id"/>
                         </group>
+                    </group>
+                    <group>
+                        <label for="content"/>
+                        <field name="content" nolabel="1"/>
                     </group>
                 </sheet>
             </form>
