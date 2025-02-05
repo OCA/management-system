@@ -1,0 +1,61 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mgmtsystem_action_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-05 13:38+0000\n"
+"PO-Revision-Date: 2025-02-05 14:39+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: mgmtsystem_action_project
+#: model:ir.model,name:mgmtsystem_action_project.model_mgmtsystem_action
+msgid "Action"
+msgstr "Actie"
+
+#. module: mgmtsystem_action_project
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_action_project.view_mgmtsystem_action_form
+msgid "Create task"
+msgstr "Taak maken"
+
+#. module: mgmtsystem_action_project
+#: model:ir.model.fields,field_description:mgmtsystem_action_project.field_project_task__mgmtsystem_action_id
+#, fuzzy
+msgid "Management System Action"
+msgstr "Managementsysteem Actie"
+
+#. module: mgmtsystem_action_project
+#: model:project.tags,name:mgmtsystem_action_project.mgmtsystem_action_proj_tag
+msgid "ManagementSystem Action"
+msgstr "ManagementSystem Actie"
+
+#. module: mgmtsystem_action_project
+#: model:ir.model.fields,field_description:mgmtsystem_action_project.field_mgmtsystem_action__project_id
+#: model:ir.model.fields,field_description:mgmtsystem_action_project.field_mgmtsystem_system__project_id
+msgid "Project"
+msgstr "Project"
+
+#. module: mgmtsystem_action_project
+#: model:mgmtsystem.action.stage,name:mgmtsystem_action_project.mgmtsystem_stage_task
+msgid "Project Task created"
+msgstr "Taak gemaakt"
+
+#. module: mgmtsystem_action_project
+#: model:ir.model,name:mgmtsystem_action_project.model_mgmtsystem_system
+msgid "System"
+msgstr "Systeem"
+
+#. module: mgmtsystem_action_project
+#: model:ir.model,name:mgmtsystem_action_project.model_project_task
+#: model:ir.model.fields,field_description:mgmtsystem_action_project.field_mgmtsystem_action__task_id
+msgid "Task"
+msgstr "Taak"
