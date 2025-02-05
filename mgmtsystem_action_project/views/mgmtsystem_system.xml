@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <record model="ir.ui.view" id="system_form">
+      <field name="name">mgmtsystem_system_form</field>
+      <field name="model">mgmtsystem.system</field>
+      <field name="inherit_id" ref="mgmtsystem.system_form"/>
+      <field name="arch" type="xml">
+          <xpath expr="//field[@name='company_id']" position="after">
+            <field name="project_id"/>
+          </xpath>
+      </field>
+    </record>
+</odoo>

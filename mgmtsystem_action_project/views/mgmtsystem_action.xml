@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+        <record id="view_mgmtsystem_action_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.action.form</field>
+            <field name="model">mgmtsystem.action</field>
+            <field name="inherit_id" ref="mgmtsystem.view_mgmtsystem_action_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="action_create_task" class="oe_highlight"
+                            data-hotkey="t" string="Create task" type="object" invisible="task_id"/>
+                </xpath>
+                <xpath expr="//group[@name='main']" position="inside">
+                    <group name="project">
+                        <field name="project_id"/>
+                        <field name="task_id" readonly="1" invisible="not task_id"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+</odoo>

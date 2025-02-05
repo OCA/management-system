@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_task_form" model="ir.ui.view">
+        <field name="name">view_task_form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='extra_info']" position="inside">
+                <group>
+                    <field name="mgmtsystem_action_id" groups="mgmtsystem.group_mgmtsystem_user" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+</odoo>
