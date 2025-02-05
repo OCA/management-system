@@ -35,6 +35,7 @@ class MgmtsystemAction(models.Model):
                 'description': self.description,
                 'tag_ids': [(4, tag)],
                 "mgmtsystem_action_id": self.id,
+                'date_deadline': self.date_deadline or False,
             }
             user = self.user_id
             if user:
