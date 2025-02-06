@@ -16,6 +16,12 @@ class MgmtsystemAction(models.Model):
     project_id = fields.Many2one("project.project", string="Project", default=_get_default_project)
     task_id = fields.Many2one("project.task", string="Task")
 
+    def _get_closing_fase(self):
+        closing_fase = self.env['mgmtsystem.action.stage'].search([('is_ending', '=', True)], limit=1)
+        if not closing_fase:
+            closing_fase = self.env['mgmtsystem.action.stage'].search([('fold', '=', True)], limit=1)
+        return closing_fase or False
+
     def action_create_task(self):
         self.ensure_one()
         ending_stage = self.env.ref('mgmtsystem_action_project.mgmtsystem_stage_task')
