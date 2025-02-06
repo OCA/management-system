@@ -12,6 +12,7 @@ class MgmtsystemRiskCanvas(models.Model):
     _description = "Risk Model Canvas"
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
+    name = fields.Char(string='Canvas Name', required=True)
     system_id = fields.Many2one('mgmtsystem.system', 'System', required=True)
     company_id = fields.Many2one('res.company', 'Company', related="system_id.company_id", store=True)
 

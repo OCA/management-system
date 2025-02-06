@@ -6,6 +6,12 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="oe_title mb24">
+                        <h2>
+                            <field name="name" options="{'line_breaks': False}" widget="text" class="text-break"
+                                   default_focus="1" placeholder="e.g. Lumber Inc"/>
+                        </h2>
+                    </div>
                     <group>
                         <group>
                             <field name="system_id"/>
@@ -18,59 +24,159 @@
                         <page id="canvas" string="Canvas">
                             <group>
                                 <group string="Key Partners">
-                                    <field name="risks_key_partners" nolabel="1"/>
+                                    <field name="risks_key_partners" nolabel="1" colspan="2"/>
                                 </group>
                                 <group string="Key Activities">
-                                    <field name="risks_key_activities" nolabel="1"/>
+                                    <field name="risks_key_activities" nolabel="1" colspan="2"/>
                                 </group>
                                 <group string="Key Resources">
-                                    <field name="risks_key_resources" nolabel="1"/>
+                                    <field name="risks_key_resources" nolabel="1" colspan="2"/>
                                 </group>
                                 <group string="Key Value Proposition">
-                                    <field name="risks_key_value_prop" nolabel="1"/>
+                                    <field name="risks_key_value_prop" nolabel="1" colspan="2"/>
                                 </group>
                                 <group string="Key Customer Relations">
-                                    <field name="risks_key_cust_relations" nolabel="1"/>
-                                </group>
-                                <group string="Key Partners">
-                                    <field name="risks_key_partners" nolabel="1"/>
+                                    <field name="risks_key_cust_relations" nolabel="1" colspan="2"/>
                                 </group>
                                 <group string="Key Customer Segments">
-                                    <field name="risks_key_cust_segments" nolabel="1"/>
+                                    <field name="risks_key_cust_segments" nolabel="1" colspan="2"/>
                                 </group>
                                 <group string="Key Channels">
-                                    <field name="risks_key_channels" nolabel="1"/>
+                                    <field name="risks_key_channels" nolabel="1" colspan="2"/>
                                 </group>
                             </group>
+                            <seperator/>
                             <group>
                                 <group string="Cost structure">
-                                    <field name="risks_key_costs" nolabel="1"/>
+                                    <field name="risks_key_costs" nolabel="1" colspan="2"/>
                                 </group>
                                 <group string="Income structure">
-                                    <field name="risks_key_income" nolabel="1"/>
+                                    <field name="risks_key_income" nolabel="1" colspan="2"/>
                                 </group>
                             </group>
                         </page>
                         <page id="expl" string="Explanation">
                             <h3>Over Canvas</h3>
                             <p>
-                                Risk Model Canvas is gebaseerd op het Business Model Canvas dat door Alex Osterwalder (2010) is bedacht. Het is een visueel overzicht waarbij de belangrijke componenten van een bedrijf beschreven zijn op 1 pagina. Het canvas geeft weer hoe een bedrijf of organisatie waarde creëert, levert en ten gelde maakt en is een prima raamwerk dat gebruikt kan worden om risico’s op hoog niveau te analyseren.
+                                Risk Model Canvas is gebaseerd op het Business Model Canvas dat door Alex Osterwalder
+                                (2010) is bedacht. Het is een visueel overzicht waarbij de belangrijke componenten van
+                                een bedrijf beschreven zijn op 1 pagina. Het canvas geeft weer hoe een bedrijf of
+                                organisatie waarde creëert, levert en ten gelde maakt en is een prima raamwerk dat
+                                gebruikt kan worden om risico’s op hoog niveau te analyseren.
                             </p>
                             <p>
-                                <strong>Voordelen van het gebruik van Risk Model Canvas.</strong><br/>
-                                Breng je bedrijf en context met 1 pagina op overzichtelijke en transparante manier in kaart.
+                                <strong>Voordelen van het gebruik van Risk Model Canvas.</strong>
+                                <br/>
+                                Breng je bedrijf en context met 1 pagina op overzichtelijke en transparante manier in
+                                kaart.
                                 Éen plaatje zegt meer dan duizend woorden en communiceert makkelijk met derden.
                                 Het is een multifunctionele tool die én brug slaat tussen business en techniek.
                                 Het helpt je om je bedrijf van een afstandje te analyseren.
-                                Het is een methode die bruikbaar is om invulling te geven aan de basis vereisten van kwaliteitsnormen zoals ISO27001, NEN7510 of ISO9001
+                                Het is een methode die bruikbaar is om invulling te geven aan de basis vereisten van
+                                kwaliteitsnormen zoals ISO27001, NEN7510 of ISO9001
                                 Lees meer over Risk Model Canvas op: riskmodelcanvas.net
                                 Lees meer over the business model canvas op: strategyzer.com
-                                Risk Model © 2023 by Gilbert van Zeijl and Vincent van Dijk is licensed under CC BY-SA 4.0
+                                Risk Model © 2023 by Gilbert van Zeijl and Vincent van Dijk is licensed under CC BY-SA
+                                4.0
+                            </p>
+                            <hr/>
+                            <p>
+                                <strong>Klantsegmenten.</strong>
+                                <br/>
+                                Wie zijn je klanten? De meeste bedrijven richten zich op een deel van de markt; op één
+                                of meerdere segmenten.
+                                Waarde propositie
+                                De ”Waardeproposities” vormt de kern van je bedrijf. Richt je op de waarde die je voor
+                                je klanten creëert, de belofte aan je klanten; dat is meer dan een opsomming van
+                                producten. Wat is de kern van je product aanbod, welke elementen zijn uniek.
+                            </p>
+                            <p>
+                                <strong>Klantrelaties.</strong>
+                                <br/>
+                                In de bouwsteen ”klantrelaties” wordt er beschreven hoe de onderneming in contact staat
+                                met de klant en hoe relaties opgebouwd en onderhouden worden met ieder klantsegment. Er
+                                zijn verschillende type relaties die men aan kan gaan met klanten. Voor een onderneming
+                                is het belangrijk om te motiveren waarom men een bepaalde relatie aan wil gaan met een
+                                klantsegment. De keuze van het type klantrelatie heeft namelijk invloed op alles wat een
+                                bedrijf doet en beïnvloedt ook de andere bouwstenen in het Business Model Canvas. Er
+                                zijn de volgende soorten klantrelaties te onderscheiden: Persoonlijke relatie, digitale
+                                relatie, community, co-creatie en zelfservice.
+                            </p>
+                            <p>
+                                <strong>Kanalen.</strong>
+                                <br/>
+                                Met kanalen worden al de manieren waarmee een organisatie in contact staat met de klant
+                                bedoeld. Het vinden van de juiste mix van kanalen is cruciaal om klanten met de
+                                waardepropositie te bereiken. In de bouwsteen kanalen beschrijf je hoe je bedrijf met de
+                                verschillende klanten communiceert en hoe je deze klanten met de waardepropositie
+                                bereikt. De manieren hoe men in contact staat met de klant kunnen op diverse manieren
+                                onderverdeeld worden. Zo is er onderscheidt te maken in communicatie-, distributie- en
+                                verkoopkanalen. Ook kan er onderscheidt gemaakt worden tussen online- en fysieke
+                                kanalen.
+                            </p>
+                            <p>
+                                <strong>Inkomstenstromen.</strong>
+                                <br/>
+                                Om als bedrijf levensvatbaar te zijn moet het voldoende inkomsten genereren. De
+                                inkomsten die een bedrijf genereert moeten hoog genoeg zijn om de kosten te dekken en
+                                onder aan de streep een mooi bedrijfsresultaat(winst) over te houden. Een bedrijf zonder
+                                goed verdienmodel is gedoemd te falen! De kassa moet rinkelen, want een druppelende
+                                geldkraan is niet genoeg om te overleven.
+                            </p>
+                            <p>
+                                <strong>Kernprocessen.</strong>
+                                <br/>
+                                In de bouwsteen kernactiviteiten worden de belangrijkste activiteiten beschreven die een
+                                onderneming nodig heeft om goed te presteren. Het gaat dus om de kernactiviteiten die de
+                                organisatie moet uitvoeren om de waardepropositie te realiseren, klanten te bereiken,
+                                klantrelaties te onderhouden en inkomsten te verdienen. Welke activiteiten dit zijn
+                                hangt compleet af van de inrichting van het businessmodel.
+                            </p>
+                            <p>
+                                <strong>Kern (strategische) partners.</strong>
+                                <br/>
+                                De bouwsteen kern partners gaat over het netwerk van leveranciers en partners die nodig
+                                zijn om het businessmodel te laten werken. Bedrijven gaan om allerlei redenen
+                                partnerschappen aan. Het creëren van het juiste netwerk kan als een belangrijke factor
+                                voor succesvol ondernemerschap gezien worden. Een oude wijsheid luidt niet voor niks:
+                                ”Het geheel is meer dan de som der delen”. Partners kunnen een organisatie helpen om
+                                dingen te doen die alleen niet mogelijk zijn. De juiste partnerships helpen om succesvol
+                                te zijn, te groeien en te concurreren
+                            </p>
+                            <p>
+                                <strong>Kernmiddelen.</strong>
+                                <br/>
+                                De key resources Business Model Canvas bouwsteen beschrijft de belangrijkste middelen
+                                die nodig zijn om de waardepropositie te kunnen realiseren en het businessmodel te laten
+                                werken. Key resources kunnen in eigendom zijn van het bedrijf, maar kunnen ook geleased
+                                worden of bij key partners verkregen worden. Key resources kunnen in de volgende
+                                categorieën worden ingedeeld: fysiek, financieel, intellectueel en menselijk (human
+                                resources).
+                            </p>
+                            <p>
+                                <strong>Kostenstructuur.</strong>
+                                <br/>
+                                De bouwsteen kostenstructuur beschrijft al de belangrijke kosten die gemaakt worden bij
+                                het uitvoeren van een businessmodel. Kosten zijn onvermijdbaar! Het creëren van waarde,
+                                het onderhouden van klantrelaties en het genereren van inkomsten brengen allemaal kosten
+                                met zich mee. Zoals vanzelfsprekend is het belangrijk om de kosten binnen de perken te
+                                houden en te focussen op zaken die daadwerkelijk waarde toevoegen voor klanten. Voor het
+                                ene businessmodel is kostenreductie één van de belangrijkste zaken, terwijl dit in
+                                andere businessmodellen minder belangrijk is.
                             </p>
                         </page>
                     </notebook>
 
                 </sheet>
+                <div class="oe_chatter">
+                    <field
+                        name="message_follower_ids"
+                        widget="mail_followers"
+                        groups="base.group_user"
+                    />
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
             </form>
         </field>
     </record>
@@ -87,10 +193,10 @@
     </record>
 
     <record id="view_risk_canvas_action" model="ir.actions.act_window">
-      <field name="name">Risk Model Canvas</field>
-      <field name="res_model">mgmtsystem.risk.canvas</field>
-      <field name="view_mode">tree,form</field>
-      <field name="view_id" ref="view_risk_canvas_list" />
+        <field name="name">Risk Model Canvas</field>
+        <field name="res_model">mgmtsystem.risk.canvas</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_risk_canvas_list"/>
     </record>
 
     <menuitem
