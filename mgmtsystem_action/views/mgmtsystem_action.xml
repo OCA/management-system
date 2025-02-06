@@ -123,14 +123,15 @@
                     />
                     </header>
                     <sheet string="Action">
-                        <div class="oe_title" modifiers="{}">
-                            <h1 class="o_row" modifiers="{}">
-                                <field name="priority" widget="priority" />
-                                <field
-                                name="name"
-                                placeholder="Action title..."
-                                required="1"
-                            />
+                        <div class="oe_title pe-0">
+                            <h1 class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex w-100">
+                                    <field name="priority" widget="priority_switch" class="me-3"/>
+                                    <field name="name" options="{'line_breaks': False}"
+                                           widget="text"
+                                           class="o_task_name text-truncate w-md-75 w-100 pe-2"
+                                           placeholder="Action Title..."/>
+                                </div>
                             </h1>
                         </div>
                         <group name="main">

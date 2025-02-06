@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <record id="view_mgmtsystem_hazard_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.hazard.form</field>
+        <field name="model">mgmtsystem.hazard</field>
+        <field name="inherit_id" ref="mgmtsystem_hazard.view_mgmtsystem_hazard_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet[1]/group[1]" position="replace">
+                <div class="oe_title pe-0">
+                    <h1 class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex w-100">
+                            <field name="name" options="{'line_breaks': False}" widget="text"
+                                   class="o_task_name text-truncate w-md-75 w-100 pe-2" placeholder="Task Title..."/>
+                        </div>
+                    </h1>
+                </div>
+                <group>
+                    <group>
+                        <field name="code"/>
+                        <field name="type_id"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                    <group>
+                        <field name="canvas_name"/>
+                        <field name="hazard_id"/>
+                        <field name="origin_id"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

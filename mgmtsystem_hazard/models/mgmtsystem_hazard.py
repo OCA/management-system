@@ -9,7 +9,7 @@ class MgmtsystemHazard(models.Model):
 
     _name = "mgmtsystem.hazard"
     _description = __doc__
-    _inherit = ["mail.thread"]
+    _inherit = ["mail.thread", 'mail.activity.mixin']
 
     name = fields.Char(required=True, translate=True)
     type_id = fields.Many2one("mgmtsystem.hazard.type", "Type", required=True)

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_risk_canvas">
+        <field name="name">view_risk_canvas</field>
+        <field name="model">mgmtsystem.risk.canvas</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="system_id"/>
+                        </group>
+                        <group>
+                            <field name="company_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page id="canvas" string="Canvas">
+                            <group>
+                                <group string="Key Partners">
+                                    <field name="risks_key_partners" nolabel="1"/>
+                                </group>
+                                <group string="Key Activities">
+                                    <field name="risks_key_activities" nolabel="1"/>
+                                </group>
+                                <group string="Key Resources">
+                                    <field name="risks_key_resources" nolabel="1"/>
+                                </group>
+                                <group string="Key Value Proposition">
+                                    <field name="risks_key_value_prop" nolabel="1"/>
+                                </group>
+                                <group string="Key Customer Relations">
+                                    <field name="risks_key_cust_relations" nolabel="1"/>
+                                </group>
+                                <group string="Key Partners">
+                                    <field name="risks_key_partners" nolabel="1"/>
+                                </group>
+                                <group string="Key Customer Segments">
+                                    <field name="risks_key_cust_segments" nolabel="1"/>
+                                </group>
+                                <group string="Key Channels">
+                                    <field name="risks_key_channels" nolabel="1"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Cost structure">
+                                    <field name="risks_key_costs" nolabel="1"/>
+                                </group>
+                                <group string="Income structure">
+                                    <field name="risks_key_income" nolabel="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page id="expl" string="Explanation">
+                            <h3>Over Canvas</h3>
+                            <p>
+                                Risk Model Canvas is gebaseerd op het Business Model Canvas dat door Alex Osterwalder (2010) is bedacht. Het is een visueel overzicht waarbij de belangrijke componenten van een bedrijf beschreven zijn op 1 pagina. Het canvas geeft weer hoe een bedrijf of organisatie waarde creëert, levert en ten gelde maakt en is een prima raamwerk dat gebruikt kan worden om risico’s op hoog niveau te analyseren.
+                            </p>
+                            <p>
+                                <strong>Voordelen van het gebruik van Risk Model Canvas.</strong><br/>
+                                Breng je bedrijf en context met 1 pagina op overzichtelijke en transparante manier in kaart.
+                                Éen plaatje zegt meer dan duizend woorden en communiceert makkelijk met derden.
+                                Het is een multifunctionele tool die én brug slaat tussen business en techniek.
+                                Het helpt je om je bedrijf van een afstandje te analyseren.
+                                Het is een methode die bruikbaar is om invulling te geven aan de basis vereisten van kwaliteitsnormen zoals ISO27001, NEN7510 of ISO9001
+                                Lees meer over Risk Model Canvas op: riskmodelcanvas.net
+                                Lees meer over the business model canvas op: strategyzer.com
+                                Risk Model © 2023 by Gilbert van Zeijl and Vincent van Dijk is licensed under CC BY-SA 4.0
+                            </p>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_risk_canvas_list">
+        <field name="name">view_risk_canvas_list</field>
+        <field name="model">mgmtsystem.risk.canvas</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="system_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_risk_canvas_action" model="ir.actions.act_window">
+      <field name="name">Risk Model Canvas</field>
+      <field name="res_model">mgmtsystem.risk.canvas</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="view_risk_canvas_list" />
+    </record>
+
+    <menuitem
+        id="menu_view_risk_canvas"
+        name="Risk Model Canvas"
+        action="view_risk_canvas_action"
+        parent="mgmtsystem.menu_mgmtsystem_main"
+        sequence="25"
+    />
+
+</odoo>

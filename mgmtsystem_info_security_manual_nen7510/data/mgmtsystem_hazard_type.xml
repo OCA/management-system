@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+        <!-- type -->
+
+        <record id="type_information" model="mgmtsystem.hazard.type">
+            <field name="name">Information Risk</field>
+            <field name="description">Valt onder informatie Risico</field>
+        </record>
+        <record id="type_other" model="mgmtsystem.hazard.type">
+            <field name="name">NO Information Risk</field>
+            <field name="description">Valt NIET onder informatie Risico</field>
+        </record>
+
+
+        <record id="risk_type_information" model="mgmtsystem.hazard.risk.type">
+            <field name="name">Information Risk</field>
+            <field name="description">Valt onder informatie Risico</field>
+        </record>
+        <record id="risk_type_other" model="mgmtsystem.hazard.risk.type">
+            <field name="name">Other Risk</field>
+            <field name="description">Valt NIET onder informatie Risico</field>
+        </record>
+
+
+</odoo>
