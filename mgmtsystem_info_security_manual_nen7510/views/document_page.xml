@@ -87,4 +87,18 @@
           </xpath>
       </field>
   </record>
+  <record model="ir.ui.view" id="view_document_category_filter">
+      <field name="name">document.page.search</field>
+      <field name="model">document.page</field>
+      <field name="inherit_id" ref="document_page.view_document_category_filter"/>
+      <field name="arch" type="xml">
+          <xpath expr="//group" position="after">
+                <searchpanel>
+                    <field name="parent_id" icon="fa-folder" string="Categories" enable_counters="1"/>
+                    <field name="nen_chapter" icon="fa-shield" string="Chapter" enable_counters="1"/>
+                </searchpanel>
+          </xpath>
+      </field>
+  </record>
+
 </odoo>
