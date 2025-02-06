@@ -12,8 +12,12 @@ class DocumentPage(models.Model):
     nen_chapter = fields.Many2one("document.page.chapter", "NEN Chapter")
     nen_control = fields.Char("NEN Control")
     nen_mandatory = fields.Boolean("Mandatory")
-    external_reference = fields.Char("External Reference(s)")
-    internal_reference = fields.Char("Internal Reference(s)")
+    state_compliant = fields.Selection(
+        [('compliant', '=', 'Compliant'), ('non_compliant', '=', 'None Compliant')],
+        string="State Compliant"
+    )
+    external_reference = fields.Html("External Reference(s)")
+    internal_reference = fields.Html("Internal Reference(s)")
 
 
     def action_open_childs(self):

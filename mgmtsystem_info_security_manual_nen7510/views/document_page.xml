@@ -18,12 +18,17 @@
                       <group>
                           <field name="nen_chapter"/>
                           <field name="nen_control"/>
-                          <field name="internal_reference"/>
                       </group>
                       <group>
                           <field name="nen_mandatory" widget="boolean_toggle"/>
-                          <field name="external_reference"/>
+                          <field name="state_compliant"/>
                       </group>
+                  </group>
+                  <group>
+                      <label for="internal_reference"/>
+                      <field name="internal_reference" nolabel="1" colspan="2"/>
+                      <label for="external_reference"/>
+                      <field name="external_reference" nolabel="1" colspan="2"/>
                   </group>
               </page>
           </xpath>
@@ -40,13 +45,18 @@
                   <group>
                       <field name="nen_chapter" readonly="1"/>
                       <field name="nen_control" readonly="1"/>
-                      <field name="internal_reference" readonly="1"/>
                   </group>
                   <group>
                       <field name="nen_mandatory" readonly="1"/>
-                      <field name="external_reference" readonly="1"/>
+                      <field name="state_compliant"/>
                   </group>
               </group>
+                  <group>
+                      <label for="internal_reference"/>
+                      <field name="internal_reference" nolabel="1" colspan="2"/>
+                      <label for="external_reference"/>
+                      <field name="external_reference" nolabel="1" colspan="2"/>
+                  </group>
           </xpath>
       </field>
   </record>
