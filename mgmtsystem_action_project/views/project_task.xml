@@ -6,6 +6,10 @@
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_form2"/>
         <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']">
+                <button string="Create MgmtSyst Action" type="object" name="action_create_corr_action" invisible="mgmtsystem_action_id" icon="fa-play"/>
+                <button string="Open MgmtSyst Action" type="object" name="action_open_mgmtsystem_action" invisible="not mgmtsystem_action_id" icon="fa-play"/>
+            </xpath>
             <xpath expr="//page[@name='extra_info']" position="inside">
                 <group>
                     <field name="mgmtsystem_action_id" groups="mgmtsystem.group_mgmtsystem_user" readonly="1"/>
