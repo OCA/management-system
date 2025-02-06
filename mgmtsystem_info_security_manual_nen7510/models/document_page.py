@@ -13,7 +13,7 @@ class DocumentPage(models.Model):
     nen_control = fields.Char("NEN Control")
     nen_mandatory = fields.Boolean("Mandatory")
     state_compliant = fields.Selection(
-        [('compliant', '=', 'Compliant'), ('non_compliant', '=', 'None Compliant')],
+        [('compliant', 'Compliant'), ('non_compliant', 'None Compliant')],
         string="State Compliant"
     )
     external_reference = fields.Html("External Reference(s)")
