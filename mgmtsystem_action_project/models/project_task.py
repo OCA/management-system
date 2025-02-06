@@ -36,6 +36,28 @@ class MgmtsystemSystem(models.Model):
                     self.mgmtsystem_action_id.message_post(body=message)
 
     def action_create_corr_action(self):
+        """
+        Create a corrective action in the management system based on the current task.
+
+        This function creates a new corrective action in the management system,
+        linking it to the current task. It checks for existing actions, determines
+        the appropriate management system, and sets up the action with relevant
+        details from the task.
+
+        Parameters:
+        self (project.task): The current task instance.
+
+        Returns:
+        None
+
+        Raises:
+        UserError: If an action already exists for this task or if no management system is found.
+
+        Side effects:
+        - Creates a new mgmtsystem.action record
+        - Updates the current task with the new action ID
+        - Posts messages to the task and the new action for tracking purposes
+        """
         self.ensure_one()
         mgmt_system = self.env['mgmtsystem.system'].search([], limit=1)
         if self.mgmtsystem_action_id:

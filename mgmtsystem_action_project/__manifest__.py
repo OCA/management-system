@@ -1,6 +1,7 @@
 # Copyright 2025 Open2Bizz <info@open2bizz.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+# noinspection PyStatementEffect
 {
     'name': 'mgmtsystem_action_project',
     'summary': 'Create a task linked to a management system action and a project',

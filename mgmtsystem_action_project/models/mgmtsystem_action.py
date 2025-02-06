@@ -23,6 +23,25 @@ class MgmtsystemAction(models.Model):
         return closing_fase or False
 
     def action_create_task(self):
+        """
+        Create a project task based on the current management system action.
+
+        This method creates a new project task associated with the current management system action.
+        It sets up the task with details from the action, including project, name, description, tags,
+        and deadline. It also updates the action's stage and links the newly created task to the action.
+
+        The method performs several checks before creating the task:
+        - Ensures that the project tag and ending stage are properly set up.
+        - Verifies that a task doesn't already exist for this action.
+        - Checks that a project is set for the action.
+
+        After creating the task, it posts messages to both the action and the task to log the creation.
+
+        :raises UserError: If the project tag or stage is not known, if a task already exists,
+                           or if no project is set.
+
+        :return: None
+        """
         self.ensure_one()
         ending_stage = self.env.ref('mgmtsystem_action_project.mgmtsystem_stage_task')
         tag = self.env['ir.model.data'].sudo()._xmlid_to_res_id(
