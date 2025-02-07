@@ -17,6 +17,7 @@
         "views/document_page.xml",
         "views/document_page_chapter.xml",
         "views/mgmtsystem_risk_canvas.xml",
+        "views/mgmtsystem_action.xml",
         "views/mgmtsystem_hazard.xml",
         "data/document_page_chapter.xml",
         "data/document_page.xml",

@@ -20,6 +20,7 @@
                     <group>
                         <field name="code"/>
                         <field name="type_id"/>
+                        <field name="risk_type_id"/>
                         <field name="company_id" groups="base.group_multi_company"/>
                     </group>
                     <group>
@@ -28,6 +29,34 @@
                         <field name="origin_id"/>
                     </group>
                 </group>
+            </xpath>
+            <xpath expr="//page[@name='tests']" position="after">
+                <page name="procedures" string="Linked Procedures">
+                    <field name="linked_procecure_ids"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_tree" model="ir.ui.view">
+        <field name="name">mgmtsystem.hazard.tree</field>
+        <field name="model">mgmtsystem.hazard</field>
+        <field name="inherit_id" ref="mgmtsystem_hazard.view_mgmtsystem_hazard_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="type_id" position="before">
+                <field name="code"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_filter" model="ir.ui.view">
+        <field name="name">mgmtsystem.hazard.search</field>
+        <field name="model">mgmtsystem.hazard</field>
+        <field name="inherit_id" ref="mgmtsystem_hazard.view_mgmtsystem_hazard_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="name" position="replace"/>
+            <xpath expr="type_id" position="before">
+                <field name="name" string="Name" filter_domain="['|', ('name', 'ilike', self), ('code', 'ilike', self)]"/>
             </xpath>
         </field>
     </record>
