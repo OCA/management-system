@@ -32,7 +32,9 @@
             </xpath>
             <xpath expr="//page[@name='tests']" position="after">
                 <page name="procedures" string="Linked Procedures">
-                    <field name="linked_procecure_ids"/>
+                    <field name="linked_procecure_ids"
+                       domain="[('parent_id', '=', %(document_page_procedure.document_page_group_procedure)d)]"
+                       context="{'default_parent_id': %(document_page_procedure.document_page_group_procedure)d}"/>
                 </page>
             </xpath>
         </field>

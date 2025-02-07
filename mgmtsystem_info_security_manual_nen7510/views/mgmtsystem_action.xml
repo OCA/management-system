@@ -7,7 +7,9 @@
             <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//notebook" position="inside">
-                    <field name="linked_procecure_ids"/>
+                    <field name="linked_procecure_ids"
+                       domain="[('parent_id', '=', %(document_page_procedure.document_page_group_procedure)d)]"
+                       context="{'default_parent_id': %(document_page_procedure.document_page_group_procedure)d}"/>
                 </xpath>
             </field>
         </record>
