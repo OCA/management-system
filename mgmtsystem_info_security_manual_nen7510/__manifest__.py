@@ -22,6 +22,7 @@
         "data/document_page.xml",
         'data/mgmtsystem_hazard_type.xml',
         "data/mgmtsystem_hazard_hazard.xml",
+        "data/sequence_data.xml",
         "security/ir_model_access.xml",
 
     ],
