@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo noupdate="1">
+<odoo>
 
         <!-- Canvas model -->
-        <record id="hazard_income" model="mgmtsystem.hazard.hazard" forcecreate="0">
+        <record id="hazard_income" model="mgmtsystem.hazard.hazard" >
             <field name="name">Revenue Streams</field>
         </record>
-        <record id="hazard_core_activities" model="mgmtsystem.hazard.hazard" forcecreate="0">
+        <record id="hazard_core_activities" model="mgmtsystem.hazard.hazard" >
             <field name="name">Core Activities</field>
         </record>
-        <record id="hazard_core_resources" model="mgmtsystem.hazard.hazard" forcecreate="0">
+        <record id="hazard_core_resources" model="mgmtsystem.hazard.hazard" >
             <field name="name">Core Resources</field>
         </record>
-        <record id="hazard_core_resources_value" model="mgmtsystem.hazard.hazard" forcecreate="0">
+        <record id="hazard_core_resources_value" model="mgmtsystem.hazard.hazard" >
             <field name="name">Core Resources/Value Proposition</field>
         </record>
-        <record id="hazard_core_resources_channels" model="mgmtsystem.hazard.hazard" forcecreate="0">
+        <record id="hazard_core_resources_channels" model="mgmtsystem.hazard.hazard" >
             <field name="name">Core Resources/Channels</field>
         </record>
-        <record id="hazard_core_partners" model="mgmtsystem.hazard.hazard" forcecreate="0">
+        <record id="hazard_core_partners" model="mgmtsystem.hazard.hazard" >
             <field name="name">Core Partners</field>
         </record>
-        <record id="hazard_customers_value" model="mgmtsystem.hazard.hazard" forcecreate="0">
+        <record id="hazard_customers_core" model="mgmtsystem.hazard.hazard" >
+            <field name="name">Customer Relationships/Key Customers</field>
+        </record>
+        <record id="hazard_customers_segments" model="mgmtsystem.hazard.hazard" >
+            <field name="name">Customer Relationships/Key Customer Segments</field>
+        </record>
+        <record id="hazard_customers_value" model="mgmtsystem.hazard.hazard" >
             <field name="name">Customer Relationships/Value Proposition</field>
+        </record>
+
+        <record id="hazard_costs" model="mgmtsystem.hazard.hazard" >
+            <field name="name">Cost Structure</field>
+        </record>
+        <record id="hazard_income" model="mgmtsystem.hazard.hazard" >
+            <field name="name">Income Structure</field>
         </record>
 
 </odoo>
