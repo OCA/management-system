@@ -7,7 +7,7 @@ from odoo import fields, models
 class MgmtsystemAction(models.Model):
     _inherit = "mgmtsystem.action"
 
-    linked_procecure_ids = fields.Many2many(
+    linked_procedure_ids = fields.Many2many(
         "document.page",
         string="Linked Procedures"
     )
