@@ -48,6 +48,13 @@
             <xpath expr="//field[@name='type_id']" position="before">
                 <field name="code"/>
             </xpath>
+            <xpath expr="//field[@name='risk']" position="replace">
+                <field name="canvas_name" optional="show"/>
+                <field name="risk" optional="hide"/>
+            </xpath>
+            <xpath expr="//field[@name='acceptability']" position="replace">
+                <field name="acceptability" optional="hide" widget="boolean_toggle"/>
+            </xpath>
         </field>
     </record>
 
