@@ -18,7 +18,12 @@ class MgmtsystemEvaluation(models.Model):
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
-    model = fields.Char(index=True)
+    model = fields.Char(
+        index=True, compute="_compute_template_fields", store=True, readonly=False
+    )
+    model_id = fields.Many2one(
+        "ir.model", compute="_compute_template_fields", store=True, readonly=False
+    )
     res_id = fields.Many2oneReference(index=True, model_field="model")
     user_id = fields.Many2one("res.users", readonly=True, copy=False)
     result_id = fields.Many2one(
@@ -63,8 +68,18 @@ class MgmtsystemEvaluation(models.Model):
         states={"draft": [("readonly", False)]},
     )
     active = fields.Boolean(default=True)
-    feedback = fields.Html(readonly=False, states={"done": [("readonly", True)]})
-    note = fields.Html(readonly=False, states={"done": [("readonly", True)]})
+    feedback = fields.Html(
+        readonly=False,
+        states={"done": [("readonly", True)]},
+        compute="_compute_template_fields",
+        store=True,
+    )
+    note = fields.Html(
+        readonly=False,
+        states={"done": [("readonly", True)]},
+        compute="_compute_template_fields",
+        store=True,
+    )
     passed = fields.Boolean(readonly=True)
     is_user = fields.Boolean(compute="_compute_filter_views")
     is_manager = fields.Boolean(compute="_compute_filter_views")
@@ -96,7 +111,7 @@ class MgmtsystemEvaluation(models.Model):
     def _compute_resource(self):
         for record in self:
             if record.model:
-                record.resource = "%s,%s" % (record.model, record.res_id)
+                record.resource = "{},{}".format(record.model, record.res_id)
             else:
                 record.resource = False
 
@@ -104,18 +119,19 @@ class MgmtsystemEvaluation(models.Model):
         for record in self:
             record.res_id = record.resource
 
-    @api.onchange("template_id")
-    def _onchange_template(self):
-        if self.template_id and (
-            not self.model or self.template_id.model != self.model
-        ):
-            self.res_id = False
-            self.model = self.template_id.model
-            self.resource = False
-        if not self.feedback:
-            self.feedback = self.template_id.feedback
-        if not self.note:
-            self.note = self.template_id.note
+    @api.depends("template_id")
+    def _compute_template_fields(self):
+        for record in self:
+            if record.template_id and (
+                not record.model or record.template_id.model != record.model
+            ):
+                record.res_id = False
+                record.model = record.template_id.model
+                record.model_id = record.template_id.model_id
+            if not record.feedback:
+                record.feedback = record.template_id.feedback
+            if not record.note:
+                record.note = record.template_id.note
 
     @api.depends("template_id")
     def _compute_name(self):
