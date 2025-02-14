@@ -20,12 +20,4 @@
         "data/cron.xml",
     ],
     "demo": ["demo/demo.xml"],
-    "assets": {
-        "web.assets_backend": [
-            (
-                "mgmtsystem_evaluation/static/src/components/"
-                "evaluation_reference/evaluation_reference.js"
-            ),
-        ],
-    },
 }

@@ -63,13 +63,13 @@
                             options="{'no_create': True, 'no_open': True}"
                         />
                         <field name="manager_ids" widget="many2many_tags" />
+                        <field name="model_id" invisible="1" />
                         <field name="model" invisible="1" />
                         <field name="res_id" invisible="1" />
                         <field
                             name="resource"
-                            widget="evaluation_reference"
-                            options="{'hide_model': 1, 'model_field': 'model'}"
-                            attrs="{'invisible': [('template_id', '=', False)]}"
+                            options="{'hide_model': 1, 'model_field': 'model_id'}"
+                            attrs="{'invisible': [('template_id', '=', False), ('model_id', '=', False)]}"
                         />
                         <field
                             name="result_id"
