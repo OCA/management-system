@@ -5,7 +5,7 @@
     "name": "Mgmtsystem Evaluation Hr",
     "summary": """
         Allow to use evaluations on Employees""",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.0",
     "license": "AGPL-3",
     "author": "Dixmit,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
