@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 CreuBlanca
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="mgmtsystem_evaluation_template_form_view">
+        <field
+            name="name"
+        >mgmtsystem.evaluation.template.form (in mgmtsystem_evaluation)</field>
+        <field name="model">mgmtsystem.evaluation.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <header />
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <field name="active" invisible="1" />
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="model_id" />
+                            <field name="manager_activity_type_id" />
+                            <field name="user_activity_type_id" />
+                            <field name="group_id" />
+                        </group>
+                        <group>
+                            <field name="recurrence_type" />
+                            <field
+                                name="recurrence_period"
+                                attrs="{'invisible': [('recurrence_type', '=', False)]}"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="results" string="Results">
+                            <field name="result_ids" />
+                        </page>
+                        <page name="feedback" string="Feedback">
+                            <field name="feedback" />
+                        </page>
+                        <page name="note" string="Private notes">
+                            <field name="note" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter" />
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_evaluation_template_search_view">
+        <field
+            name="name"
+        >mgmtsystem.evaluation.template.search (in mgmtsystem_evaluation)</field>
+        <field name="model">mgmtsystem.evaluation.template</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="model_id" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_evaluation_template_tree_view">
+        <field
+            name="name"
+        >mgmtsystem.evaluation.template.tree (in mgmtsystem_evaluation)</field>
+        <field name="model">mgmtsystem.evaluation.template</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="model_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record
+        model="ir.actions.act_window"
+        id="mgmtsystem_evaluation_template_act_window"
+    >
+        <field name="name">Evaluation Template</field>
+        <field name="res_model">mgmtsystem.evaluation.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="mgmtsystem_evaluation_template_menu">
+        <field name="name">Evaluation Template</field>
+        <field name="parent_id" ref="mgmtsystem.menu_mgmtsystem_configuration" />
+        <field name="action" ref="mgmtsystem_evaluation_template_act_window" />
+        <field name="sequence" eval="16" />
+    </record>
+
+</odoo>

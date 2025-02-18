@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="0">
+
+    </data>
+    <data noupdate="1">
+        <record id="mgmtsystem_evaluation_user_rule" model="ir.rule">
+            <field name="name">Users can only access their own evaluations</field>
+            <field name="model_id" ref="model_mgmtsystem_evaluation" />
+            <field name="groups" eval="[(6, 0, [ref('base.group_user')])]" />
+            <field
+                name="domain_force"
+            >[('user_id', '=', user.id), ('state', '!=', 'draft')]</field>
+        </record>
+        <record id="mgmtsystem_evaluation_manager_rule" model="ir.rule">
+            <field name="name">Managers can only access their evaluations</field>
+            <field name="model_id" ref="model_mgmtsystem_evaluation" />
+            <field name="groups" eval="[(6, 0, [ref('base.group_user')])]" />
+            <field name="domain_force">[('manager_ids', '=', user.id)]</field>
+        </record>
+        <record id="mgmtsystem_evaluation_group_rule" model="ir.rule">
+            <field name="name">Template group can access all related evaluations</field>
+            <field name="model_id" ref="model_mgmtsystem_evaluation" />
+            <field name="groups" eval="[(6, 0, [ref('base.group_user')])]" />
+            <field
+                name="domain_force"
+            >[('template_id.group_id.users', '=', user.id)]</field>
+        </record>
+    </data>
+</odoo>

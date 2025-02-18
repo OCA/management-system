@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+        <record id="cron_evaluation" model="ir.cron">
+            <field name="name">Automatic evaluation generation</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field
+            name="nextcall"
+            eval="(datetime.now() + timedelta(minutes=5)).strftime('%Y-%m-%d %H:%M:%S')"
+        />
+            <field
+            name="model_id"
+            ref="mgmtsystem_evaluation.model_mgmtsystem_evaluation"
+        />
+            <field name="code">model._cron_new_evaluation()</field>
+            <field name="doall" eval="False" />
+            <field name="state">code</field>
+        </record>
+</odoo>
