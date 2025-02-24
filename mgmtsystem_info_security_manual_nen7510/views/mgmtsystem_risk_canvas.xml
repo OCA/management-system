@@ -25,33 +25,63 @@
                             <group>
                                 <group string="Key Partners">
                                     <field name="risks_key_partners" nolabel="1" colspan="2"/>
+                                    <button string="Risks" type="object" name="action_open_risks" class="oe_highlight"
+                                        context="{'default_hazard_id': %(hazard_core_partners)d,
+                                            'search_default_hazard_id': %(hazard_core_partners)d}"/>
                                 </group>
                                 <group string="Key Activities">
                                     <field name="risks_key_activities" nolabel="1" colspan="2"/>
+                                    <button string="Risks" type="object" name="action_open_risks" class="oe_highlight"
+                                        context="{'default_hazard_id': %(hazard_core_activities)d,
+                                            'search_default_hazard_id': %(hazard_core_activities)d}"/>
                                 </group>
                                 <group string="Key Resources">
                                     <field name="risks_key_resources" nolabel="1" colspan="2"/>
+                                    <button string="Risks" type="object" name="action_open_risks" class="oe_highlight"
+                                        context="{'default_hazard_id': %(hazard_core_resources)d,
+                                            'search_default_hazard_id': %(hazard_core_resources)d}"/>
                                 </group>
                                 <group string="Key Value Proposition">
                                     <field name="risks_key_value_prop" nolabel="1" colspan="2"/>
+                                    <button string="Risks" type="object" name="action_open_risks" class="oe_highlight"
+                                        context="{'default_hazard_id': %(hazard_core_resources_value)d,
+                                            'search_default_hazard_id': %(hazard_core_resources_value)d}"/>
                                 </group>
                                 <group string="Key Customer Relations">
                                     <field name="risks_key_cust_relations" nolabel="1" colspan="2"/>
+
+                                    <button string="Risks" type="object" name="action_open_risks" class="oe_highlight"
+                                        context="{'default_hazard_id': %(hazard_customers_core)d,
+                                            'search_default_hazard_id': %(hazard_customers_core)d}"/>
                                 </group>
                                 <group string="Key Customer Segments">
                                     <field name="risks_key_cust_segments" nolabel="1" colspan="2"/>
+
+                                    <button string="Risks" type="object" name="action_open_risks" class="oe_highlight"
+                                        context="{'default_hazard_id': %(hazard_customers_segments)d,
+                                            'search_default_hazard_id': %(hazard_customers_segments)d}"/>
                                 </group>
                                 <group string="Key Channels">
                                     <field name="risks_key_channels" nolabel="1" colspan="2"/>
+
+                                    <button string="Risks" type="object" name="action_open_risks" class="oe_highlight"
+                                        context="{'default_hazard_id': %(hazard_core_resources_channels)d,
+                                            'search_default_hazard_id': %(hazard_core_resources_channels)d}"/>
                                 </group>
                             </group>
                             <seperator/>
                             <group>
                                 <group string="Cost structure">
                                     <field name="risks_key_costs" nolabel="1" colspan="2"/>
+                                    <button string="Risks" type="object" name="action_open_risks" class="oe_highlight"
+                                        context="{'default_hazard_id': %(hazard_costs)d,
+                                            'search_default_hazard_id': %(hazard_costs)d}"/>
                                 </group>
                                 <group string="Income structure">
                                     <field name="risks_key_income" nolabel="1" colspan="2"/>
+                                    <button string="Risks" type="object" name="action_open_risks" class="oe_highlight"
+                                        context="{'default_hazard_id': %(hazard_income)d,
+                                            'search_default_hazard_id': %(hazard_income)d}"/>
                                 </group>
                             </group>
                         </page>

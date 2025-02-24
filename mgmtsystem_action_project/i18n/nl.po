@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-05 13:38+0000\n"
-"PO-Revision-Date: 2025-02-05 14:39+0100\n"
+"POT-Creation-Date: 2025-02-05 17:45+0000\n"
+"PO-Revision-Date: 2025-02-05 18:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -18,9 +18,23 @@ msgstr ""
 "X-Generator: Poedit 3.5\n"
 
 #. module: mgmtsystem_action_project
+#. odoo-python
+#: code:addons/mgmtsystem_action_project/models/mgmtsystem_action.py:0
+#, python-format
+msgid "%s has been created"
+msgstr "%s is aangemaakt"
+
+#. module: mgmtsystem_action_project
 #: model:ir.model,name:mgmtsystem_action_project.model_mgmtsystem_action
 msgid "Action"
 msgstr "Actie"
+
+#. module: mgmtsystem_action_project
+#. odoo-python
+#: code:addons/mgmtsystem_action_project/models/project_task.py:0
+#, python-format
+msgid "Action stage was closed because the linked task was set in closed stage"
+msgstr "Actiefase werd gesloten omdat de gekoppelde taak werd ingesteld in gesloten fase"
 
 #. module: mgmtsystem_action_project
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action_project.view_mgmtsystem_action_form
@@ -29,7 +43,6 @@ msgstr "Taak maken"
 
 #. module: mgmtsystem_action_project
 #: model:ir.model.fields,field_description:mgmtsystem_action_project.field_project_task__mgmtsystem_action_id
-#, fuzzy
 msgid "Management System Action"
 msgstr "Managementsysteem Actie"
 
@@ -50,6 +63,27 @@ msgid "Project Task created"
 msgstr "Taak gemaakt"
 
 #. module: mgmtsystem_action_project
+#. odoo-python
+#: code:addons/mgmtsystem_action_project/models/mgmtsystem_action.py:0
+#, python-format
+msgid "Project not set"
+msgstr "Project niet ingesteld"
+
+#. module: mgmtsystem_action_project
+#. odoo-python
+#: code:addons/mgmtsystem_action_project/models/mgmtsystem_action.py:0
+#, python-format
+msgid "Project tag or stage not known. please update module"
+msgstr "Project label of -fase niet bekend. Module moet bijgewerkt worden"
+
+#. module: mgmtsystem_action_project
+#. odoo-python
+#: code:addons/mgmtsystem_action_project/models/mgmtsystem_action.py:0
+#, python-format
+msgid "Project task"
+msgstr "Projecttaak"
+
+#. module: mgmtsystem_action_project
 #: model:ir.model,name:mgmtsystem_action_project.model_mgmtsystem_system
 msgid "System"
 msgstr "Systeem"
@@ -59,3 +93,10 @@ msgstr "Systeem"
 #: model:ir.model.fields,field_description:mgmtsystem_action_project.field_mgmtsystem_action__task_id
 msgid "Task"
 msgstr "Taak"
+
+#. module: mgmtsystem_action_project
+#. odoo-python
+#: code:addons/mgmtsystem_action_project/models/mgmtsystem_action.py:0
+#, python-format
+msgid "Task already exists"
+msgstr "Taak bestaat al"

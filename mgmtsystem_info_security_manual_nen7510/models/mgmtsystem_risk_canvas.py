@@ -97,4 +97,12 @@ class MgmtsystemRiskCanvas(models.Model):
              'geldkraan is niet genoeg om te overleven.'
     )
 
-
+    def action_open_risks(self):
+        return {
+            'name': 'Risks (Canvas)',
+            'type': 'ir.actions.act_window',
+            'view_mode': 'tree,form',
+            'res_model':'mgmtsystem.hazard',
+            'target': 'current',
+            'views': [(False, 'tree'),(False, 'form')]
+        }

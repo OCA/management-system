@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+        <record id="view_mgmtsystem_action_form" model="ir.ui.view">
+            <field name="name">mgmtsystem.action.form</field>
+            <field name="model">mgmtsystem.action</field>
+            <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="procedures" string="Procedures">
+                        <field name="linked_procedure_ids"
+                           domain="[('parent_id', '=', %(document_page_procedure.document_page_group_procedure)d)]"
+                           context="{'default_parent_id': %(document_page_procedure.document_page_group_procedure)d}"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+</odoo>

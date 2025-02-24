@@ -17,6 +17,11 @@ class MgmtsystemHazard(models.Model):
 
     canvas_name = fields.Char(string='Canvas Name')
 
+    linked_procedure_ids = fields.Many2many(
+        "document.page",
+        string="Linked Procedures"
+    )
+
     @api.model
     def create(self, vals):
         if vals.get('code', '/') == '/':

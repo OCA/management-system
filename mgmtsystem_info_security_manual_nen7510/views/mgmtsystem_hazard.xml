@@ -12,7 +12,7 @@
                     <h1 class="d-flex justify-content-between align-items-center">
                         <div class="d-flex w-100">
                             <field name="name" options="{'line_breaks': False}" widget="text"
-                                   class="o_task_name text-truncate w-md-75 w-100 pe-2" placeholder="Task Title..."/>
+                                   class="o_task_name text-truncate w-md-75 w-100 pe-2" placeholder="Risk subject..."/>
                         </div>
                     </h1>
                 </div>
@@ -20,6 +20,7 @@
                     <group>
                         <field name="code"/>
                         <field name="type_id"/>
+                        <field name="risk_type_id"/>
                         <field name="company_id" groups="base.group_multi_company"/>
                     </group>
                     <group>
@@ -28,6 +29,43 @@
                         <field name="origin_id"/>
                     </group>
                 </group>
+            </xpath>
+            <xpath expr="//page[@name='tests']" position="after">
+                <page name="procedures" string="Linked Procedures">
+                    <field name="linked_procedure_ids"
+                       domain="[('parent_id', '=', %(document_page_procedure.document_page_group_procedure)d)]"
+                       context="{'default_parent_id': %(document_page_procedure.document_page_group_procedure)d}"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_tree" model="ir.ui.view">
+        <field name="name">mgmtsystem.hazard.tree</field>
+        <field name="model">mgmtsystem.hazard</field>
+        <field name="inherit_id" ref="mgmtsystem_hazard.view_mgmtsystem_hazard_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type_id']" position="before">
+                <field name="code"/>
+            </xpath>
+            <xpath expr="//field[@name='risk']" position="replace">
+                <field name="canvas_name" optional="show"/>
+                <field name="risk" optional="hide"/>
+            </xpath>
+            <xpath expr="//field[@name='acceptability']" position="replace">
+                <field name="acceptability" optional="hide" widget="boolean_toggle"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_filter" model="ir.ui.view">
+        <field name="name">mgmtsystem.hazard.search</field>
+        <field name="model">mgmtsystem.hazard</field>
+        <field name="inherit_id" ref="mgmtsystem_hazard.view_mgmtsystem_hazard_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="replace"/>
+            <xpath expr="//field[@name='type_id']" position="before">
+                <field name="name" string="Name" filter_domain="['|', ('name', 'ilike', self), ('code', 'ilike', self)]"/>
             </xpath>
         </field>
     </record>

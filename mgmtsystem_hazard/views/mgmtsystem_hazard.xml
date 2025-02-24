@@ -70,17 +70,17 @@
             <field name="origin_id" />
           </group>
             <notebook name="mgmtsystem_hazard" colspan="4">
-            <page string="Analysis">
+            <page name="analyses" string="Analysis">
               <group>
                 <field name="department_id" />
                 <field name="responsible_user_id" />
                 <field name="analysis_date" />
               </group>
             </page>
-            <page string="Control Measures">
+            <page name="measures" string="Control Measures">
               <field name="control_measure_ids" nolabel="1" />
             </page>
-            <page string="Implementation Tests">
+            <page name="tests" string="Implementation Tests">
               <field name="test_ids" nolabel="1" />
             </page>
           </notebook>

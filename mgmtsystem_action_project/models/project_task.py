@@ -1,13 +1,28 @@
 # Copyright (C) 2025 Open2bizz BV www.open2bizz.nl
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import _, api, exceptions, fields, models
+from odoo import _, api, exceptions, fields, models, SUPERUSER_ID
 
 
 class MgmtsystemSystem(models.Model):
     _inherit = "project.task"
 
     mgmtsystem_action_id = fields.Many2one("mgmtsystem.action", string="Management System Action")
+
+    def action_open_mgmtsystem_action(self):
+        self.ensure_one()
+        if not self.mgmtsystem_action_id:
+            raise exceptions.UserError(_("No Management System Action linked to this task."))
+
+        return {
+            'name': _('Management System Action'),
+            'type': 'ir.actions.act_window',
+            'res_model': 'mgmtsystem.action',
+            'res_id': self.mgmtsystem_action_id.id,
+            'view_mode': 'form',
+            'view_type': 'form',
+            'target': 'current',
+        }
 
     @api.onchange("stage_id")
     def _onchange_mgmtsystem_stage_id(self):
@@ -19,3 +34,64 @@ class MgmtsystemSystem(models.Model):
                     self.mgmtsystem_action_id.write({'stage_id': close_stage.id})
                     message = _("Action stage was closed because the linked task was set in closed stage")
                     self.mgmtsystem_action_id.message_post(body=message)
+
+    def action_create_corr_action(self):
+        """
+        Create a corrective action in the management system based on the current task.
+
+        This function creates a new corrective action in the management system,
+        linking it to the current task. It checks for existing actions, determines
+        the appropriate management system, and sets up the action with relevant
+        details from the task.
+
+        Parameters:
+        self (project.task): The current task instance.
+
+        Returns:
+        None
+
+        Raises:
+        UserError: If an action already exists for this task or if no management system is found.
+
+        Side effects:
+        - Creates a new mgmtsystem.action record
+        - Updates the current task with the new action ID
+        - Posts messages to the task and the new action for tracking purposes
+        """
+        self.ensure_one()
+        mgmt_system = self.env['mgmtsystem.system'].search([], limit=1)
+        if self.mgmtsystem_action_id:
+            raise exceptions.UserError(_("Action already exists"))
+        if self.project_id:
+            mgmt_system_project = self.env['mgmtsystem.system'].search([('project_id', '=', self.project_id.id)], limit=1)
+            if mgmt_system_project:
+                mgmt_system = mgmt_system_project  # Use the project's mgmt system if it exists
+        if not mgmt_system:
+            raise exceptions.UserError(_("No Management System found"))
+        vals = {
+            'system_id': mgmt_system.id,
+            'type_action':'correction',
+            'project_id': self.project_id.id,
+            'task_id': self.id,
+            'name': self.name,
+            'description': self.description,
+            'date_deadline': self.date_deadline or False,
+        }
+        user = self.user_ids
+        if user:
+            vals.update({'user_id': user[0].id})
+        mgmtsystem_action_id = self.env["mgmtsystem.action"].create(vals)
+        self.write({
+            'mgmtsystem_action_id': mgmtsystem_action_id.id
+        })
+        poster = self.env.user._is_internal() and self.env.user.id or SUPERUSER_ID
+        title = _("Management system Action")
+        self.with_user(poster).message_post(
+            body=_("%s has been created", mgmtsystem_action_id._get_html_link(title=title)),
+        )
+        mgmtsystem_action_id.with_user(poster).message_post_with_source(
+            'mail.message_origin_link',
+            render_values={'self': mgmtsystem_action_id, 'origin': self},
+            subtype_xmlid='mail.mt_note',
+        )
+
