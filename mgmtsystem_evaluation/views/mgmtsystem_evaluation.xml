@@ -10,26 +10,26 @@
                 <header>
                     <button
                         name="draft2progress"
-                        states="draft"
+                        invisible="state != 'draft'"
                         string="Start"
                         type="object"
                     />
                     <button
                         name="progress2done"
                         string="Finish"
-                        attrs="{'invisible': ['|', ('state', '!=', 'progress'), ('result_id', '=', False)]}"
+                        invisible="state != 'progress' or not result_id"
                         type="object"
                     />
                     <button
                         name="cancel"
                         string="Cancel"
-                        states="draft,progress,done"
+                        invisible="state not in ['draft', 'progress', 'done']"
                         type="object"
                     />
                     <button
                         name="back_to_draft"
                         string="Back to draft"
-                        attrs="{'invisible': [('state', '=', 'draft')]}"
+                        invisible="state == 'draft'"
                         type="object"
                     />
                     <field name="state" widget="statusbar" />
@@ -39,23 +39,23 @@
                         name="web_ribbon"
                         title="Not passed"
                         bg_color="bg-danger"
-                        attrs="{'invisible': ['|', ('passed', '=', True), ('state', '!=', 'done')]}"
+                        invisible="passed or state != 'done'"
                     />
                     <widget
                         name="web_ribbon"
                         title="Passed"
                         bg_color="bg-success"
-                        attrs="{'invisible': ['|', ('passed', '=', False), ('state', '!=', 'done')]}"
+                        invisible="not passed or state != 'done'"
                     />
                     <field name="passed" invisible="1" />
                     <widget
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
                     <field name="active" invisible="1" />
-                    <group>
+                    <group readonly="state != 'draft'">
                         <field name="name" />
                         <field
                             name="template_id"
@@ -68,17 +68,18 @@
                         <field
                             name="resource"
                             options="{'hide_model': 1, 'model_field': 'model_id'}"
-                            attrs="{'invisible': [('template_id', '=', False), ('model_id', '=', False)]}"
+                            invisible="not template_id and not model_id"
                         />
                         <field
                             name="result_id"
-                            attrs="{'invisible': [('state', 'in', ['draft', 'cancel'])]}"
+                            invisible="state in ['draft', 'cancel']"
                             domain="[('id', 'in', result_ids)]"
                             options="{'no_create': True, 'no_open': True}"
+                            readonly="state != 'progress'"
                         />
                         <field
                             name="next_evaluation_date"
-                            attrs="{'invisible': ['|', '|', ('next_evaluation_date', '=', False), ('state', '!=', 'done'), ('next_evaluation_generated', '=', True)]}"
+                            invisible="not next_evaluation_date or state != 'done' or next_evaluation_generated"
                         />
                         <field name="next_evaluation_generated" invisible="1" />
                         <field name="result_ids" invisible="1" />
@@ -90,24 +91,22 @@
                         <page
                             name="feedback"
                             string="Feedback"
-                            attrs="{'invisible': [('is_manager', '=', False), ('is_user', '=', False)]}"
+                            invisible="not is_manager and not is_user"
+                            readonly="state != 'done'"
                         >
                             <field name="feedback" />
                         </page>
                         <page
                             name="note"
                             string="Private notes"
-                            attrs="{'invisible': [('is_manager', '=', False)]}"
+                            invisible="not is_manager"
+                            readonly="state == 'done'"
                         >
                             <field name="note" />
                         </page>
                     </notebook>
                 </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" groups="base.group_user" />
-                    <field name="activity_ids" />
-                    <field name="message_ids" />
-                </div>
+                <chatter />
             </form>
         </field>
     </record>
@@ -131,20 +130,20 @@
         <field name="name">mgmtsystem.evaluation.tree (in mgmtsystem_evaluation)</field>
         <field name="model">mgmtsystem.evaluation</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="template_id" />
                 <field name="res_id" />
                 <field name="model" invisible="1" />
                 <field name="state" />
-            </tree>
+            </list>
         </field>
     </record>
 
     <record model="ir.actions.act_window" id="mgmtsystem_evaluation_act_window">
         <field name="name">Evaluation</field>
         <field name="res_model">mgmtsystem.evaluation</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>
@@ -152,7 +151,7 @@
     <record model="ir.actions.act_window" id="mgmtsystem_evaluation_related_act_window">
         <field name="name">Evaluation</field>
         <field name="res_model">mgmtsystem.evaluation</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field
             name="domain"
         >[('model', '=', active_model), ('res_id', '=', active_id)]</field>

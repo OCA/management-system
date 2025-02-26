@@ -12,12 +12,7 @@ class MgmtsystemEvaluation(models.Model):
     ]
     _description = "Evaluation"
 
-    name = fields.Char(
-        compute="_compute_name",
-        store=True,
-        readonly=True,
-        states={"draft": [("readonly", False)]},
-    )
+    name = fields.Char(compute="_compute_name", store=True)
     model = fields.Char(
         index=True, compute="_compute_template_fields", store=True, readonly=False
     )
@@ -26,11 +21,7 @@ class MgmtsystemEvaluation(models.Model):
     )
     res_id = fields.Many2oneReference(index=True, model_field="model")
     user_id = fields.Many2one("res.users", readonly=True, copy=False)
-    result_id = fields.Many2one(
-        "mgmtsystem.evaluation.result",
-        readonly=True,
-        states={"progress": [("readonly", False)]},
-    )
+    result_id = fields.Many2one("mgmtsystem.evaluation.result")
     result_ids = fields.Many2many(
         related="template_id.result_ids", string="Possible results"
     )
@@ -38,16 +29,12 @@ class MgmtsystemEvaluation(models.Model):
         selection=lambda r: r._get_ref_selection(),
         inverse="_inverse_resource",
         compute="_compute_resource",
-        readonly=True,
-        states={"draft": [("readonly", False)]},
         required=True,
     )
     template_id = fields.Many2one(
         "mgmtsystem.evaluation.template",
         required=True,
         ondelete="cascade",
-        readonly=True,
-        states={"draft": [("readonly", False)]},
     )
     state = fields.Selection(
         [
@@ -64,22 +51,10 @@ class MgmtsystemEvaluation(models.Model):
     manager_ids = fields.Many2many(
         "res.users",
         required=True,
-        readonly=True,
-        states={"draft": [("readonly", False)]},
     )
     active = fields.Boolean(default=True)
-    feedback = fields.Html(
-        readonly=False,
-        states={"done": [("readonly", True)]},
-        compute="_compute_template_fields",
-        store=True,
-    )
-    note = fields.Html(
-        readonly=False,
-        states={"done": [("readonly", True)]},
-        compute="_compute_template_fields",
-        store=True,
-    )
+    feedback = fields.Html(compute="_compute_template_fields", store=True)
+    note = fields.Html(compute="_compute_template_fields", store=True)
     passed = fields.Boolean(readonly=True)
     is_user = fields.Boolean(compute="_compute_filter_views")
     is_manager = fields.Boolean(compute="_compute_filter_views")
