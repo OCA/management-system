@@ -18,8 +18,8 @@ class ResPartner(models.Model):
     @api.depends("claim_ids", "child_ids", "child_ids.claim_ids")
     def _compute_mgmtsystem_claim_count(self):
         partners = self | self.mapped("child_ids")
-        partner_data = self.env["mgmtsystem.claim"].read_group(
-            [("partner_id", "in", partners.ids)], ["partner_id"], ["partner_id"]
+        partner_data = self.env["mgmtsystem.claim"]._read_group(
+            [("partner_id", "in", partners.ids)], ["partner_id"], ["__count"]
         )
         mapped_data = {m["partner_id"][0]: m["partner_id_count"] for m in partner_data}
         for partner in self:

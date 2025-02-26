@@ -3,10 +3,10 @@
         <field name="name">Management System Claim Stage Tree</field>
         <field name="model">mgmtsystem.claim.stage</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="sequence" widget="handle" />
                 <field name="name" />
-            </tree>
+            </list>
         </field>
     </record>
     <record id="mgmtsystem_claim_stage_form" model="ir.ui.view">
