@@ -1,5 +1,4 @@
 <odoo>
-
     <record model="ir.ui.view" id="mgmtsystem_claim_stage_tree_view">
         <field name="name">Management System Claim Stage Tree</field>
         <field name="model">mgmtsystem.claim.stage</field>
@@ -50,5 +49,4 @@
         sequence="90"
         groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
     />
-
 </odoo>

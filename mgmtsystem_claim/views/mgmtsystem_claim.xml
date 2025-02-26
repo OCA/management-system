@@ -1,5 +1,4 @@
 <odoo>
-
     <!-- Claims -->
 
     <record model="ir.ui.view" id="mgmtsystem_claims_tree_view">
@@ -144,7 +143,6 @@
         <field name="model">mgmtsystem.claim</field>
         <field name="arch" type="xml">
             <search string="Search Claims">
-
                 <filter
                     icon="terp-check"
                     string="Current"
@@ -263,5 +261,4 @@
         sequence="90"
         groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
     />
-
 </odoo>

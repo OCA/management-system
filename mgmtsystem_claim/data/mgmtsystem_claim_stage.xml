@@ -1,5 +1,4 @@
 <odoo noupdate="1">
-
     <record id="stage_draft" model="mgmtsystem.claim.stage">
         <field name="name">Draft</field>
         <field name="sequence">0</field>
@@ -29,5 +28,4 @@
         <field name="sequence">750</field>
         <field name="case_default" eval="True" />
     </record>
-
 </odoo>
