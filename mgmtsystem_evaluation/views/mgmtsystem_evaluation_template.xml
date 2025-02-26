@@ -2,7 +2,6 @@
 <!-- Copyright 2023 CreuBlanca
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <record model="ir.ui.view" id="mgmtsystem_evaluation_template_form_view">
         <field
             name="name"
@@ -95,5 +94,4 @@
         <field name="action" ref="mgmtsystem_evaluation_template_act_window" />
         <field name="sequence" eval="16" />
     </record>
-
 </odoo>

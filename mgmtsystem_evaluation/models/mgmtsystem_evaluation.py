@@ -111,7 +111,7 @@ class MgmtsystemEvaluation(models.Model):
     def _compute_resource(self):
         for record in self:
             if record.model:
-                record.resource = "{},{}".format(record.model, record.res_id)
+                record.resource = f"{record.model},{record.res_id}"
             else:
                 record.resource = False
 

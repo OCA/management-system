@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <data noupdate="0">
-
-    </data>
+    <data noupdate="0" />
     <data noupdate="1">
         <record id="mgmtsystem_evaluation_user_rule" model="ir.rule">
             <field name="name">Users can only access their own evaluations</field>
