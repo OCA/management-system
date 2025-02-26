@@ -2,7 +2,6 @@
 <!-- Copyright 2024 - TODAY, Kaynnan Lemes <kaynnan.lemes@escodoo.com.br>
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <record model="ir.ui.view" id="mgmtsystem_hazard_form_view">
         <field
             name="name"
@@ -15,7 +14,6 @@
             </xpath>
         </field>
     </record>
-
 
     <record model="ir.ui.view" id="mgmtsystem_hazard_tree_view">
         <field
@@ -49,5 +47,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>
