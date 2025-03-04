@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 CreuBlanca
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="mgmtsystem_evaluation_form_view">
+        <field name="name">mgmtsystem.evaluation.form (in mgmtsystem_evaluation)</field>
+        <field name="model">mgmtsystem.evaluation</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="draft2progress"
+                        invisible="state != 'draft'"
+                        string="Start"
+                        type="object"
+                    />
+                    <button
+                        name="progress2done"
+                        string="Finish"
+                        invisible="state != 'progress' or not result_id"
+                        type="object"
+                    />
+                    <button
+                        name="cancel"
+                        string="Cancel"
+                        invisible="state not in ['draft', 'progress', 'done']"
+                        type="object"
+                    />
+                    <button
+                        name="back_to_draft"
+                        string="Back to draft"
+                        invisible="state == 'draft'"
+                        type="object"
+                    />
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Not passed"
+                        bg_color="bg-danger"
+                        invisible="passed or state != 'done'"
+                    />
+                    <widget
+                        name="web_ribbon"
+                        title="Passed"
+                        bg_color="bg-success"
+                        invisible="not passed or state != 'done'"
+                    />
+                    <field name="passed" invisible="1" />
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        invisible="active"
+                    />
+                    <field name="active" invisible="1" />
+                    <group readonly="state != 'draft'">
+                        <field name="name" />
+                        <field
+                            name="template_id"
+                            options="{'no_create': True, 'no_open': True}"
+                        />
+                        <field name="manager_ids" widget="many2many_tags" />
+                        <field name="model_id" invisible="1" />
+                        <field name="model" invisible="1" />
+                        <field name="res_id" invisible="1" />
+                        <field
+                            name="resource"
+                            options="{'hide_model': 1, 'model_field': 'model_id'}"
+                            invisible="not template_id and not model_id"
+                        />
+                        <field
+                            name="result_id"
+                            invisible="state in ['draft', 'cancel']"
+                            domain="[('id', 'in', result_ids)]"
+                            options="{'no_create': True, 'no_open': True}"
+                            readonly="state != 'progress'"
+                        />
+                        <field
+                            name="next_evaluation_date"
+                            invisible="not next_evaluation_date or state != 'done' or next_evaluation_generated"
+                        />
+                        <field name="next_evaluation_generated" invisible="1" />
+                        <field name="result_ids" invisible="1" />
+                        <field name="user_id" invisible="1" />
+                        <field name="is_user" invisible="1" />
+                        <field name="is_manager" invisible="1" />
+                    </group>
+                    <notebook>
+                        <page
+                            name="feedback"
+                            string="Feedback"
+                            invisible="not is_manager and not is_user"
+                            readonly="state != 'done'"
+                        >
+                            <field name="feedback" />
+                        </page>
+                        <page
+                            name="note"
+                            string="Private notes"
+                            invisible="not is_manager"
+                            readonly="state == 'done'"
+                        >
+                            <field name="note" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_evaluation_search_view">
+        <field
+            name="name"
+        >mgmtsystem.evaluation.search (in mgmtsystem_evaluation)</field>
+        <field name="model">mgmtsystem.evaluation</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="res_id" />
+                <field name="template_id" />
+                <field name="model" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_evaluation_tree_view">
+        <field name="name">mgmtsystem.evaluation.tree (in mgmtsystem_evaluation)</field>
+        <field name="model">mgmtsystem.evaluation</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="template_id" />
+                <field name="res_id" />
+                <field name="model" invisible="1" />
+                <field name="state" />
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mgmtsystem_evaluation_act_window">
+        <field name="name">Evaluation</field>
+        <field name="res_model">mgmtsystem.evaluation</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mgmtsystem_evaluation_related_act_window">
+        <field name="name">Evaluation</field>
+        <field name="res_model">mgmtsystem.evaluation</field>
+        <field name="view_mode">list,form</field>
+        <field
+            name="domain"
+        >[('model', '=', active_model), ('res_id', '=', active_id)]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="mgmtsystem_evaluation_menu">
+        <field name="name">Evaluation</field>
+        <field name="parent_id" ref="mgmtsystem.menu_mgmtsystem_main" />
+        <field name="action" ref="mgmtsystem_evaluation_act_window" />
+        <field name="sequence" eval="16" />
+    </record>
+</odoo>

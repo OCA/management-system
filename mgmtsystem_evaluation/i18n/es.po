@@ -1,0 +1,554 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mgmtsystem_evaluation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-02-26 15:35+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model,name:mgmtsystem_evaluation.model_mgmtsystem_evaluation_abstract
+msgid "Abstract model to inherit by objects that can be evaluated"
+msgstr "Modelo abstracto que heredan los objetos evaluables"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_needaction
+msgid "Action Needed"
+msgstr "Necesita Acción"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__active
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__active
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de Actividad de Excepción"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_state
+msgid "Activity State"
+msgstr "Estado de la Actividad"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono Tipo de Actividad"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__manager_activity_type_id
+msgid "Activity for manager"
+msgstr "Actividad para el gerente"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__user_activity_type_id
+msgid "Activity for user"
+msgstr "Actividad para el usuario"
+
+#. module: mgmtsystem_evaluation
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_template_form_view
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_attachment_count
+msgid "Attachment Count"
+msgstr "Recuento de Anexos"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.actions.server,name:mgmtsystem_evaluation.cron_evaluation_ir_actions_server
+#: model:ir.cron,cron_name:mgmtsystem_evaluation.cron_evaluation
+#: model:ir.cron,name:mgmtsystem_evaluation.cron_evaluation
+msgid "Automatic evaluation generation"
+msgstr ""
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__manager_activity_type_id
+msgid ""
+"Automatically schedule this activity to the Manager\n"
+"        once the evaluation is started"
+msgstr ""
+"Programar automáticamente esta actividad al Gestor\n"
+"        una vez iniciada la evaluación"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__user_activity_type_id
+msgid ""
+"Automatically schedule this activity to the user\n"
+"        (if exists) once the evaluation is started"
+msgstr ""
+"Programar automáticamente esta actividad al usuario\n"
+"        (si existe) una vez iniciada la evaluación"
+
+#. module: mgmtsystem_evaluation
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
+msgid "Back to draft"
+msgstr "Volver a borrador"
+
+#. module: mgmtsystem_evaluation
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields.selection,name:mgmtsystem_evaluation.selection__mgmtsystem_evaluation__state__cancel
+msgid "Cancelled"
+msgstr "Cancelado/a"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model,name:mgmtsystem_evaluation.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_ir_model__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_abstract__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields.selection,name:mgmtsystem_evaluation.selection__mgmtsystem_evaluation__state__done
+msgid "Done"
+msgstr "Hecho"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields.selection,name:mgmtsystem_evaluation.selection__mgmtsystem_evaluation__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.actions.act_window,name:mgmtsystem_evaluation.mgmtsystem_evaluation_act_window
+#: model:ir.actions.act_window,name:mgmtsystem_evaluation.mgmtsystem_evaluation_related_act_window
+#: model:ir.model,name:mgmtsystem_evaluation.model_mgmtsystem_evaluation
+#: model:ir.ui.menu,name:mgmtsystem_evaluation.mgmtsystem_evaluation_menu
+msgid "Evaluation"
+msgstr "Evaluación"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.actions.act_window,name:mgmtsystem_evaluation.mgmtsystem_evaluation_result_act_window
+#: model:ir.model,name:mgmtsystem_evaluation.model_mgmtsystem_evaluation_result
+msgid "Evaluation Result"
+msgstr "Resultado de la Evaluación"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.actions.act_window,name:mgmtsystem_evaluation.mgmtsystem_evaluation_template_act_window
+#: model:ir.model,name:mgmtsystem_evaluation.model_mgmtsystem_evaluation_template
+#: model:ir.ui.menu,name:mgmtsystem_evaluation.mgmtsystem_evaluation_template_menu
+msgid "Evaluation Template"
+msgstr "Plantilla de Evaluación"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__date
+msgid "Evaluation date"
+msgstr "Fecha de evaluación"
+
+#. module: mgmtsystem_evaluation
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.view_partner_form
+msgid "Evaluations"
+msgstr "Evaluaciones"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__feedback
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__feedback
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_template_form_view
+msgid "Feedback"
+msgstr "Opinión"
+
+#. module: mgmtsystem_evaluation
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
+msgid "Finish"
+msgstr "Finalizado"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores/as (Socios)"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Fuente Iconos Sorprendentes , por ejemplo fa-tasks"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__group_id
+msgid "Group"
+msgstr "Grupo"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_ir_model__id
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__id
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_abstract__id
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__id
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__id
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar la excepción de actividad."
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_needaction
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcada, nuevos mensajes requieren su atención."
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields.selection,name:mgmtsystem_evaluation.selection__mgmtsystem_evaluation__state__progress
+msgid "In progress"
+msgstr "En progreso"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_is_follower
+msgid "Is Follower"
+msgstr "Es Seguidor"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__is_manager
+msgid "Is Manager"
+msgstr "Es Gerente"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__is_user
+msgid "Is User"
+msgstr "Es Usuario"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_ir_model____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_abstract____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template____last_update
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__write_uid
+msgid "Last Updated by"
+msgstr "Última Actualización por"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__write_date
+msgid "Last Updated on"
+msgstr "Última Actualización el"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Archivo Adjunto Principal"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_ir_model__is_mgmtsystem_evaluation
+msgid "Management System Evaluation"
+msgstr "Evaluación del Sistema de Gestión"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__manager_ids
+msgid "Manager"
+msgstr "Gerente"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Entrega de Mensaje"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_abstract__mgmtsystem_evaluation_ids
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_res_partner__mgmtsystem_evaluation_ids
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_res_users__mgmtsystem_evaluation_ids
+msgid "Mgmtsystem Evaluation"
+msgstr "Evaluación del Sistema de Gestión"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_abstract__mgmtsystem_evaluation_count
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_res_partner__mgmtsystem_evaluation_count
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_res_users__mgmtsystem_evaluation_count
+msgid "Mgmtsystem Evaluation Count"
+msgstr "Recuento de Evaluación del Sistema de Gestión"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.ui.menu,name:mgmtsystem_evaluation.mgmtsystem_evaluation_result_menu
+msgid "Mgmtsystem Evaluation Result"
+msgstr "Resultado de la Evaluación del Sistema de Gestión"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__model
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__model_id
+msgid "Model"
+msgstr "Modelo"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__model
+msgid "Model technical name"
+msgstr "Nombre técnico del modelo"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model,name:mgmtsystem_evaluation.model_ir_model
+msgid "Models"
+msgstr "Modelos"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha límite de mi actividad"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__name
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__name
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha Límite de la Siguiente Actividad"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de Próxima Actividad"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de la Siguiente Actividad"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__next_evaluation_date
+msgid "Next Evaluation Date"
+msgstr "Fecha de la Próxima Evaluación"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__next_evaluation_generated
+msgid "Next Evaluation Generated"
+msgstr "Siguiente Evaluación Generada"
+
+#. module: mgmtsystem_evaluation
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
+msgid "Not passed"
+msgstr "No aprobado"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__note
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__note
+msgid "Note"
+msgstr "Nota"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Acciones"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de Errores"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leídos"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__passed
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__passed
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
+msgid "Passed"
+msgstr "Aprobado"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__result_ids
+msgid "Possible results"
+msgstr "Resultados posibles"
+
+#. module: mgmtsystem_evaluation
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_template_form_view
+msgid "Private notes"
+msgstr "Notas privadas"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__recurrence_period
+msgid "Recurrence Period"
+msgstr "Período de Recurrencia"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__recurrence_type
+msgid "Recurrence Type"
+msgstr "Tipo de Recurrencia"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__res_id
+msgid "Res"
+msgstr "Rec"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__resource
+msgid "Resource"
+msgstr "Recurso"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__result_id
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__result_ids
+msgid "Result"
+msgstr "Resultado"
+
+#. module: mgmtsystem_evaluation
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_template_form_view
+msgid "Results"
+msgstr "Resultados"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: mgmtsystem_evaluation
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_evaluation.mgmtsystem_evaluation_form_view
+msgid "Start"
+msgstr "Inicio"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__state
+msgid "State"
+msgstr "Estado"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: la fecha tope es hoy\n"
+"Planificada: actividades futuras."
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__template_id
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__template_ids
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de excepción de actividad registrada."
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes no Leídos"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de Mensajes no Leídos"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes de la Página Web"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de la comunicación en el sitio web"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,help:mgmtsystem_evaluation.field_ir_model__is_mgmtsystem_evaluation
+msgid "Whether this model supports evaluations."
+msgstr "Independientemente de que este modelo apoye las evaluaciones."
