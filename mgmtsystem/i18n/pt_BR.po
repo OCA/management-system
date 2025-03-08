@@ -23,11 +23,12 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_action
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Actions"
 msgstr "Ações"
 
 #. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Applications"
 msgstr "Aplicações"
 
@@ -43,11 +44,13 @@ msgstr "Auditor(a)"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Audits"
 msgstr "Auditorias"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_claim
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Claims"
 msgstr "Reclamações"
 
@@ -82,20 +85,31 @@ msgid "Display Name"
 msgstr "Exibir nome"
 
 #. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Document Approval"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_approval
 msgid "Document Page Approval"
 msgstr "Aprovação da Página do Documento"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_manuals
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Documentation"
 msgstr "Documentação"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_environment
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Environment"
 msgstr "Ambiente"
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Environment Manual"
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
@@ -104,18 +118,26 @@ msgstr "Modelo Manual do Ambiente"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_environmental_aspect
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Environmental Aspects"
 msgstr "Aspectos do ambiente"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_security_event
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Feared Events"
 msgstr "Eventos temidos"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_hazard
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Hazards"
 msgstr "Perigos"
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Health & Safety Manual"
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
@@ -124,6 +146,7 @@ msgstr "Modelo Manual de Saúde e Segurança"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Hygiene & Safety"
 msgstr "Higiene e Segurança"
 
@@ -134,8 +157,14 @@ msgstr "Identificação"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_information_security
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Information Security"
 msgstr "Segurança da Informação"
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Information Security Manual"
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_information_security_manual
@@ -153,23 +182,21 @@ msgid "Last Updated on"
 msgstr "Atualizado pela última vez em"
 
 #. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Manage audits and verification lists"
-msgstr "Gerenciar auditorias e listas de verificação"
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Manage audits and verification lists."
+msgstr ""
 
 #. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Manage customer claims as nonconformities"
-msgstr "Gerenciar reclamações de clientes como não conformidades"
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Manage customer claims as nonconformities."
+msgstr ""
 
 #. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid ""
 "Manage immediate, corrective, and preventive actions and improvement "
-"opportunities"
+"opportunities."
 msgstr ""
-"Gerenciar ações imediatas, corretivas e preventivas e oportunidades de "
-"melhoria"
 
 #. module: mgmtsystem
 #: model:ir.module.category,description:mgmtsystem.module_category_management_system
@@ -181,22 +208,52 @@ msgstr ""
 "feedbacks, auditorias, revisões."
 
 #. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Manage nonconformities analysis, planning and resolution"
-msgstr "Gerenciar análise, planejamento e resolução de não conformidades"
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Manage nonconformities analysis, planning and resolution."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Manage the approval workflow to control your documentation."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Manage your environment management systems (ISO 14001)."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid ""
+"Manage your health and safety management systems (ISO 45001, OHSAS 18001)."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Manage your information security management systems (ISO 27001)"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Manage your quality management systems (ISO 9001)."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Management Reviews"
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_main
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.system_form
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Management System"
 msgstr "Sistema de Gestão"
 
 #. module: mgmtsystem
 #: model:ir.actions.act_window,name:mgmtsystem.system_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Management Systems"
 msgstr "Sistemas de gestão"
 
@@ -206,7 +263,7 @@ msgid "Manager"
 msgstr "Gerente"
 
 #. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manuals"
 msgstr "Manuais"
 
@@ -241,18 +298,15 @@ msgstr "Módulo usuario com acesso de leitura e escrita."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_nonconformity
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Nonconformities"
 msgstr "Não Conformidades"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_procedure
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Procedures"
 msgstr "Procedimentos"
-
-#. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Provide Environment management tools (ISO 14001)"
-msgstr "Fornecer ferramentas de gerenciamento de ambiente (ISO 14001)"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environmental_aspect
@@ -282,23 +336,6 @@ msgstr ""
 "- Isso instala o módulo mgmtsystem_hazard."
 
 #. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Provide Health &amp; Safety management tools (OHSAS 18001)"
-msgstr ""
-"Fornecer Ferramentas de gerenciamento de segurança e saúde (OHSAS 18001)"
-
-#. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Provide Information Security management tools (ISO 27001)"
-msgstr ""
-"Fornecer ferramentas de gerenciamento de Segurança da Informação (ISO 27001)"
-
-#. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Provide Quality management tools (ISO 9001)"
-msgstr "Fornecer ferramentas de gerenciamento de qualidade (ISO 9001)"
-
-#. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
 msgid ""
 "Provide Work Instructions category.\n"
@@ -308,38 +345,44 @@ msgstr ""
 "- Isso instala o módulo document_page_work_instruction."
 
 #. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Provide a Feared Event documentation category and template"
-msgstr "Forneça uma categoria e modelo de documentação de evento com medo"
-
-#. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Provide a Hazards documentation category and template"
-msgstr "Forneça uma categoria e um modelo de documentação de riscos"
-
-#. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid ""
-"Provide a Health &amp; Safety Manual template based on the OHSAS 18001 "
-"standard"
+"Provide a Environment Manual template based on the ISO 14001:2004 standard."
 msgstr ""
-"Fornecer Modelo de manual de Saúde e Segurança baseado na norma OHSAS 18001"
 
 #. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Provide a Procedure documentation category and template"
-msgstr "Fornecer uma categoria e modelo de documentação do procedimento"
-
-#. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Provide a Quality Manual template based on the ISO 9001:2008 standard"
-msgstr "Modelo de manual da Qualidade baseado na norma ISO 9001: 2008"
-
-#. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Provide a Work Instructions documentation category and template"
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Provide a Feared Event documentation category and template."
 msgstr ""
-"Fornece um modelo e uma categoria de documentação de Instruções de Trabalho"
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid ""
+"Provide a Health & Safety Manual template based on the ISO 45001 / OHSAS "
+"18001 standard."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid ""
+"Provide a Information Security Manual template based on the ISO 27001 "
+"standard."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Provide a Procedure documentation category and template."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Provide a Quality Manual template based on the ISO 9001:2008 standard."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Provide a Work Instruction documentation category and template."
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
@@ -369,22 +412,14 @@ msgstr ""
 "-Este Instala o módulo mgmtsystem_action."
 
 #. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Provide an Envioronmental Aspect documentation category and template"
-msgstr "Forneça uma categoria e modelo de documentação do Aspecto Ambiental"
-
-#. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid ""
-"Provide an Environment Manual template based on the ISO 14001:2004 standard"
-msgstr "Modelo manual ambiental com base na norma ISO 14001: 2004"
-
-#. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Provide an Information Security Manual template based on ISO 27001"
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Provide an Environmental Aspect documentation category and template."
 msgstr ""
-"Fornecer um Modelo de manual de Segurança da Informação baseado na norma ISO "
-"27001"
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Provide an Hazards documentation category and template."
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
@@ -495,6 +530,16 @@ msgstr ""
 "-Este Instala o módulo mgmtsystem_review."
 
 #. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Quality"
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Quality Manual"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
 msgid "Quality Manual Template"
 msgstr "Modelo de Manual de Qualidade"
@@ -532,9 +577,9 @@ msgid "Systems"
 msgstr "Sistemas"
 
 #. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
-msgid "Top management reviews"
-msgstr "Top avaliações de gestão"
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Top management reviews."
+msgstr ""
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_user
@@ -548,8 +593,81 @@ msgstr "Visualizador"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Work Instructions"
 msgstr "Instruções de trabalho"
+
+#~ msgid "Manage audits and verification lists"
+#~ msgstr "Gerenciar auditorias e listas de verificação"
+
+#~ msgid "Manage customer claims as nonconformities"
+#~ msgstr "Gerenciar reclamações de clientes como não conformidades"
+
+#~ msgid ""
+#~ "Manage immediate, corrective, and preventive actions and improvement "
+#~ "opportunities"
+#~ msgstr ""
+#~ "Gerenciar ações imediatas, corretivas e preventivas e oportunidades de "
+#~ "melhoria"
+
+#~ msgid "Manage nonconformities analysis, planning and resolution"
+#~ msgstr "Gerenciar análise, planejamento e resolução de não conformidades"
+
+#~ msgid "Provide Environment management tools (ISO 14001)"
+#~ msgstr "Fornecer ferramentas de gerenciamento de ambiente (ISO 14001)"
+
+#~ msgid "Provide Health &amp; Safety management tools (OHSAS 18001)"
+#~ msgstr ""
+#~ "Fornecer Ferramentas de gerenciamento de segurança e saúde (OHSAS 18001)"
+
+#~ msgid "Provide Information Security management tools (ISO 27001)"
+#~ msgstr ""
+#~ "Fornecer ferramentas de gerenciamento de Segurança da Informação (ISO "
+#~ "27001)"
+
+#~ msgid "Provide Quality management tools (ISO 9001)"
+#~ msgstr "Fornecer ferramentas de gerenciamento de qualidade (ISO 9001)"
+
+#~ msgid "Provide a Feared Event documentation category and template"
+#~ msgstr "Forneça uma categoria e modelo de documentação de evento com medo"
+
+#~ msgid "Provide a Hazards documentation category and template"
+#~ msgstr "Forneça uma categoria e um modelo de documentação de riscos"
+
+#~ msgid ""
+#~ "Provide a Health &amp; Safety Manual template based on the OHSAS 18001 "
+#~ "standard"
+#~ msgstr ""
+#~ "Fornecer Modelo de manual de Saúde e Segurança baseado na norma OHSAS "
+#~ "18001"
+
+#~ msgid "Provide a Procedure documentation category and template"
+#~ msgstr "Fornecer uma categoria e modelo de documentação do procedimento"
+
+#~ msgid ""
+#~ "Provide a Quality Manual template based on the ISO 9001:2008 standard"
+#~ msgstr "Modelo de manual da Qualidade baseado na norma ISO 9001: 2008"
+
+#~ msgid "Provide a Work Instructions documentation category and template"
+#~ msgstr ""
+#~ "Fornece um modelo e uma categoria de documentação de Instruções de "
+#~ "Trabalho"
+
+#~ msgid "Provide an Envioronmental Aspect documentation category and template"
+#~ msgstr "Forneça uma categoria e modelo de documentação do Aspecto Ambiental"
+
+#~ msgid ""
+#~ "Provide an Environment Manual template based on the ISO 14001:2004 "
+#~ "standard"
+#~ msgstr "Modelo manual ambiental com base na norma ISO 14001: 2004"
+
+#~ msgid "Provide an Information Security Manual template based on ISO 27001"
+#~ msgstr ""
+#~ "Fornecer um Modelo de manual de Segurança da Informação baseado na norma "
+#~ "ISO 27001"
+
+#~ msgid "Top management reviews"
+#~ msgstr "Top avaliações de gestão"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Modificada pela última vez"
