@@ -61,11 +61,7 @@ repos:
         args:
           - --disable=po-pretty-format
   - repo: https://github.com/myint/autoflake
-<<<<<<< before updating
-    rev: v1.6.1
-=======
     rev: v1.5.3
->>>>>>> after updating
     hooks:
       - id: autoflake
         args:
@@ -79,12 +75,7 @@ repos:
     rev: 22.8.0
     hooks:
       - id: black
-<<<<<<< before updating
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v2.7.1
-=======
   - repo: local
->>>>>>> after updating
     hooks:
       - id: prettier
         name: prettier (with plugin-xml)
@@ -97,19 +88,10 @@ repos:
         files: \.(css|htm|html|js|json|jsx|less|md|scss|toml|ts|xml|yaml|yml)$
         language: node
         additional_dependencies:
-<<<<<<< before updating
-          - "prettier@2.7.1"
-          - "@prettier/plugin-xml@2.2.0"
-        args:
-          - --plugin=@prettier/plugin-xml
-        files: \.(css|htm|html|js|json|jsx|less|md|scss|toml|ts|xml|yaml|yml)$
-  - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v8.24.0
-=======
           - "prettier@2.4.1"
           - "@prettier/plugin-xml@1.1.0"
-  - repo: local
->>>>>>> after updating
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v8.24.0
     hooks:
       - id: eslint
         name: eslint
