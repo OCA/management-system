@@ -4,9 +4,9 @@
         <field name="name">res.config.settings.view.form.inherit.hazard.risk</field>
         <field name="model">res.config.settings</field>
         <field name="priority" eval="100" />
-        <field name="inherit_id" ref="mgmtsystem.view_mgmtsystem_configuration" />
+        <field name="inherit_id" ref="mgmtsystem.res_config_settings_view_form" />
         <field name="arch" type="xml">
-            <div id="mgmtsystem_documentation_setting" position="after">
+            <block name="mgmtsystem_documentation_setting" position="after">
                 <block title="Risk computation">
                     <setting>
                         <label for="risk_computation_id" />
@@ -36,7 +36,7 @@
                         </div>
                     </setting>
                 </block>
-            </div>
+            </block>
         </field>
     </record>
 </odoo>
