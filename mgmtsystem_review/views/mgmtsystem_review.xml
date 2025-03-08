@@ -11,11 +11,8 @@
             <tree>
                 <field name="name" />
                 <field name="type" />
-                <field name="action_id" column_invisible="type != 'action'" />
-                <field
-                    name="nonconformity_id"
-                    column_invisible="type != 'nonconformity'"
-                />
+                <field name="action_id" />
+                <field name="nonconformity_id" />
                 <field name="decision" />
                 <field name="company_id" groups="base.group_multi_company" />
             </tree>
@@ -209,7 +206,7 @@
                             <field
                                 name="conclusion"
                                 nolabel="1"
-                                readonly=" state == 'done'"
+                                readonly="state == 'done'"
                             />
                         </page>
                     </notebook>
