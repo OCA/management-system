@@ -61,11 +61,7 @@ repos:
         args:
           - --disable=po-pretty-format
   - repo: https://github.com/myint/autoflake
-<<<<<<< before updating
     rev: v2.0.1
-=======
-    rev: v1.5.3
->>>>>>> after updating
     hooks:
       - id: autoflake
         args:
@@ -79,12 +75,8 @@ repos:
     rev: 23.1.0
     hooks:
       - id: black
-<<<<<<< before updating
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v3.0.0-alpha.6
-=======
-  - repo: local
->>>>>>> after updating
     hooks:
       - id: prettier
         name: prettier (with plugin-xml)
@@ -99,15 +91,7 @@ repos:
         additional_dependencies:
           - "prettier@2.1.2"
           - "@prettier/plugin-xml@0.12.0"
-<<<<<<< before updating
-        args:
-          - --plugin=@prettier/plugin-xml
-        files: \.(css|htm|html|js|json|jsx|less|md|scss|toml|ts|xml|yaml|yml)$
-  - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v8.35.0
-=======
   - repo: local
->>>>>>> after updating
     hooks:
       - id: eslint
         name: eslint
@@ -167,11 +151,7 @@ repos:
           - --header
           - "# generated from manifests external_dependencies"
   - repo: https://github.com/PyCQA/flake8
-<<<<<<< before updating
-    rev: 6.0.0
-=======
     rev: 5.0.0
->>>>>>> after updating
     hooks:
       - id: flake8
         name: flake8
