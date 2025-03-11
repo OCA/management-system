@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: management-system (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-07 06:43+0000\n"
-"PO-Revision-Date: 2023-10-09 09:13+0000\n"
+"PO-Revision-Date: 2025-03-11 19:06+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
-"Language-Team: Italian (http://www.transifex.com/oca/OCA-management-"
-"system-9-0/language/it/)\n"
+"Language-Team: Italian (http://www.transifex.com/oca/"
+"OCA-management-system-9-0/language/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.10.2\n"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_action
@@ -37,7 +37,7 @@ msgstr "Utente approvazione"
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_auditor
 msgid "Auditor"
-msgstr "Auditor"
+msgstr "Revisore"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
@@ -171,7 +171,7 @@ msgstr "Gestione audit ed elenchi verifiche"
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Manage customer claims as nonconformities"
-msgstr "Gestione reclami clienti e non conformità"
+msgstr "Gestione reclami cliente e non conformità"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
@@ -188,8 +188,8 @@ msgid ""
 "Manage management systems, manuals, KPIs, nonconformities, actions, "
 "feedbacks, audits, reviews."
 msgstr ""
-"Gestione dei sistemi di gestione, manuali, indicatori KPI, non conformità, "
-"azioni, riscontri, audit, revisioni."
+"Gestione dei sistemi di gestione, manuali, KPI, non conformità, azioni, "
+"riscontri, audit, revisioni."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
@@ -282,7 +282,7 @@ msgid ""
 "Provide Feared Events.\n"
 "- This installs the module mgmtsystem_security_event."
 msgstr ""
-"Fornisce eventi temuti.\n"
+"Fornisce gli eventi temuti.\n"
 "- Verrà installato il modulo mgmtsystem_security_event."
 
 #. module: mgmtsystem
@@ -340,7 +340,7 @@ msgstr ""
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Provide a Procedure documentation category and template"
-msgstr "Fornisce una categoria e un modello di documentazione procedura"
+msgstr "Fornisce una categoria di documentazione e un modello di procedura"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
@@ -352,7 +352,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Provide a Work Instructions documentation category and template"
 msgstr ""
-"Fornisce una categoria e un modello di documentazione istruzioni di lavoro"
+"Fornisce una categoria di documentazione e un modello istruzioni di lavoro"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
@@ -360,7 +360,7 @@ msgid ""
 "Provide a health and safety manual template.\n"
 "- This installs the module mgmtsystem_health_safety_manual."
 msgstr ""
-"Fornisce un modello manuale di salute e sicurezza.\n"
+"Fornisce un modello di manuale salute e sicurezza.\n"
 "- Verrà installato il modulo mgmtsystem_health_safety_manual."
 
 #. module: mgmtsystem
@@ -427,7 +427,7 @@ msgid ""
 "Provide an information security manual.\n"
 "- This installs the module information_security_manual."
 msgstr ""
-"Fornisce un manuale sicurezza informazioni.\n"
+"Fornisce un manuale sicurezza delle informazioni.\n"
 "- Verrà installato il modulo information_security_manual."
 
 #. module: mgmtsystem
@@ -436,7 +436,7 @@ msgid ""
 "Provide audit tools.\n"
 "- This installs the module mgmtsystem_audit."
 msgstr ""
-"Fornisce strumenti audit.\n"
+"Fornisce strumenti di audit.\n"
 "- Verrà installato il modulo mgmtsystem_audit."
 
 #. module: mgmtsystem
@@ -445,7 +445,7 @@ msgid ""
 "Provide claim tools.\n"
 "- This installs the module mgmtsystem_claim."
 msgstr ""
-"Fornisce strumenti reclami.\n"
+"Fornisce strumenti per reclami.\n"
 "- Verrà installato il modulo mgmtsystem_claim."
 
 #. module: mgmtsystem
@@ -481,7 +481,7 @@ msgid ""
 "Provide information security tools.\n"
 "- This installs the module mgmtsystem_information_security."
 msgstr ""
-"Fornisce strumenti sicurezza informazioni.\n"
+"Fornisce strumenti di sicurezza delle informazioni.\n"
 "- Verrà installato il modulo mgmtsystem_information_security."
 
 #. module: mgmtsystem
@@ -490,7 +490,7 @@ msgid ""
 "Provide non conformity tools.\n"
 "- This installs the module mgmtsystem_nonconformity."
 msgstr ""
-"Fornisce strumenti non conformità.\n"
+"Fornisce strumenti delle non conformità.\n"
 "- Verrà installato il modulo mgmtsystem_nonconformity."
 
 #. module: mgmtsystem
@@ -517,13 +517,13 @@ msgid ""
 "Provide review tools.\n"
 "- This installs the module mgmtsystem_review."
 msgstr ""
-"Fornisce strumenti revisione.\n"
+"Fornisce strumenti di revisione.\n"
 "- Verrà installato il modulo mgmtsystem_review."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
 msgid "Quality Manual Template"
-msgstr "Modello del manuale qualità"
+msgstr "Modello manuale della qualità"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
