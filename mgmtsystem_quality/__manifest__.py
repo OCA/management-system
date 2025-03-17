@@ -3,8 +3,10 @@
 {
     "name": "Quality Management System",
     "summary": "Manage your quality management system",
-    "version": "16.0.1.0.1",
-    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
+    "version": "18.0.1.0.0",
+    "author": "Savoir-faire Linux, "
+    "Open Source Integrators, "
+    "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
@@ -12,6 +14,7 @@
         "mgmtsystem_manual",
         "mgmtsystem_audit",
         "document_page_quality_manual",
+        "mgmtsystem_kpi",
         "mgmtsystem_review",
     ],
     "data": ["data/mgmtsystem_system.xml"],
