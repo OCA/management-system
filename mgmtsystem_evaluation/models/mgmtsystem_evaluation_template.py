@@ -28,12 +28,8 @@ class MgmtsytemEvaluationTemplate(models.Model):
         string="Activity for user",
         domain=lambda self: [
             "|",
-            ("res_model_id", "=", False),
-            (
-                "res_model_id",
-                "=",
-                self.env["ir.model"]._get("mgmtsystem.evaluation").id,
-            ),
+            ("res_model", "=", False),
+            ("res_model", "=", "mgmtsystem.evaluation"),
         ],
         ondelete="set null",
         help="""Automatically schedule this activity to the user
@@ -44,12 +40,8 @@ class MgmtsytemEvaluationTemplate(models.Model):
         string="Activity for manager",
         domain=lambda self: [
             "|",
-            ("res_model_id", "=", False),
-            (
-                "res_model_id",
-                "=",
-                self.env["ir.model"]._get("mgmtsystem.evaluation").id,
-            ),
+            ("res_model", "=", False),
+            ("res_model", "=", "mgmtsystem.evaluation"),
         ],
         ondelete="set null",
         help="""Automatically schedule this activity to the Manager
