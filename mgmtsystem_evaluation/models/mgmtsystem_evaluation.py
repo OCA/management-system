@@ -26,7 +26,10 @@ class MgmtsystemEvaluation(models.Model):
         string="Model technical name",
     )
     model_id = fields.Many2one(
-        "ir.model", compute="_compute_template_fields", store=True, readonly=False
+        "ir.model",
+        compute="_compute_template_fields",
+        store=True,
+        readonly=False,
     )
     res_id = fields.Many2oneReference(index=True, model_field="model")
     user_id = fields.Many2one("res.users", readonly=True, copy=False)
