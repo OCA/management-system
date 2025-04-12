@@ -589,6 +589,14 @@ msgid "Systems"
 msgstr "Systeme"
 
 #. module: mgmtsystem
+#. odoo-python
+#: code:addons/mgmtsystem/models/res_config.py:0
+msgid ""
+"The following modules are not available: %(addons)s\n"
+"Learn more on the corresponding Github issue and consider contributing:\n"
+msgstr ""
+
+#. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Top management reviews."
 msgstr ""
