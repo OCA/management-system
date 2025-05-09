@@ -1,27 +1,22 @@
 <templates xml:space="preserve">
-
     <t
         t-name="mgmtsystem_nonconformity.ChatterTopbar"
         t-inherit="mail.Chatter"
-        t-inherit-mode="extension"
-    >
+        t-inherit-mode="extension">
         <xpath expr="//Dropdown" position="before">
             <button
                 class="o_ChatterTopbar_button o_ChatterTopbar_buttonNonConformities btn btn-light btn-primary"
                 type="button"
                 t-att-disabled="!state.thread.hasWriteAccess"
                 t-on-click="onClickShowNonConformities"
-                t-if="props.webRecord.data.non_conformity_count !== undefined"
-            >
+                t-if="props.webRecord.data.non_conformity_count !== undefined">
                 <i
                     class="fa fa-exclamation-triangle fa-lg me-1"
                     role="img"
-                    aria-label="Non conformities"
-                />
+                    aria-label="Non conformities"/>
                 <span
                     class="o_ChatterTopbar_buttonCount o_ChatterTopbar_buttonNonConformitiesCount"
-                    t-esc="props.webRecord.data.non_conformity_count"
-                />
+                    t-esc="props.webRecord.data.non_conformity_count"/>
             </button>
         </xpath>
     </t>
