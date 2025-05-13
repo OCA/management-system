@@ -18,13 +18,13 @@ class MgmtsystemAction(models.Model):
     efficacy_value = fields.Integer(
         "Rating",
         help="0:not effective | 50:efficacy not complete | 100: effective",
-        track_visibility=True,
+        tracking=True,
     )
     # user in charge of evaluation
     efficacy_user_id = fields.Many2one(
         "res.users",
         "Inspector",
-        track_visibility=True,
+        tracking=True,
     )
     # notes on the efficacy
     efficacy_description = fields.Text("Notes")
