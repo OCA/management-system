@@ -19,7 +19,11 @@ class MgmtsystemEvaluation(models.Model):
         states={"draft": [("readonly", False)]},
     )
     model = fields.Char(
-        index=True, compute="_compute_template_fields", store=True, readonly=False
+        index=True,
+        compute="_compute_template_fields",
+        store=True,
+        readonly=False,
+        string="Model Name",
     )
     model_id = fields.Many2one(
         "ir.model", compute="_compute_template_fields", store=True, readonly=False
