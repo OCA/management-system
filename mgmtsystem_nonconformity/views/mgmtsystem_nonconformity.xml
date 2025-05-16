@@ -284,29 +284,28 @@
                                 readonly="state not in 'pending'"
                             />
 
-                            <group string="Plan Review">
-                                <group>
-                                    <field
-                                        name="action_comments"
-                                        readonly="state not in 'pending'"
-                                        nolabel="1"
-                                        placeholder="Action Plan Comments"
-                                    />
-                                </group>
+                            <group string="Plan Review" name="plan_review">
+                                <field
+                                    name="action_comments"
+                                    readonly="state not in 'pending'"
+                                    nolabel="1"
+                                    colspan="2"
+                                    placeholder="Action Plan Comments"
+                                />
                             </group>
 
                             <group
+                                name="effectiveness_review"
                                 invisible="state not in 'open' and state not in 'done'"
                                 string="Effectiveness Review"
                             >
-                                <group>
-                                    <field
-                                        name="evaluation_comments"
-                                        readonly="state not in 'open'"
-                                        nolabel="1"
-                                        placeholder="Evaluation Comments"
-                                    />
-                                </group>
+                                <field
+                                    name="evaluation_comments"
+                                    readonly="state not in 'open'"
+                                    nolabel="1"
+                                    colspan="2"
+                                    placeholder="Evaluation Comments"
+                                />
                             </group>
                         </page>
                     </notebook>
