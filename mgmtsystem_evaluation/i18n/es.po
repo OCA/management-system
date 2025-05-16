@@ -77,7 +77,6 @@ msgstr "Recuento de Anexos"
 #. module: mgmtsystem_evaluation
 #: model:ir.actions.server,name:mgmtsystem_evaluation.cron_evaluation_ir_actions_server
 #: model:ir.cron,cron_name:mgmtsystem_evaluation.cron_evaluation
-#: model:ir.cron,name:mgmtsystem_evaluation.cron_evaluation
 msgid "Automatic evaluation generation"
 msgstr ""
 
@@ -134,12 +133,9 @@ msgid "Created on"
 msgstr "Creado el"
 
 #. module: mgmtsystem_evaluation
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_ir_model__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__display_name
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_abstract__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__display_name
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_res_partner__display_name
 msgid "Display Name"
 msgstr "Mostrar Nombre"
 
@@ -203,11 +199,6 @@ msgid "Followers"
 msgstr "Seguidores"
 
 #. module: mgmtsystem_evaluation
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Seguidores (Canales)"
-
-#. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Seguidores/as (Socios)"
@@ -223,12 +214,14 @@ msgid "Group"
 msgstr "Grupo"
 
 #. module: mgmtsystem_evaluation
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_ir_model__id
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__id
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_abstract__id
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result__id
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__id
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_res_partner__id
 msgid "ID"
 msgstr "ID"
 
@@ -244,7 +237,6 @@ msgstr "Icono para indicar la excepción de actividad."
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_needaction
-#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Si está marcada, nuevos mensajes requieren su atención."
 
@@ -274,12 +266,9 @@ msgid "Is User"
 msgstr "Es Usuario"
 
 #. module: mgmtsystem_evaluation
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_ir_model____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_abstract____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_result____last_update
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_res_partner____last_update
 msgid "Last Modified on"
 msgstr "Última Modificación el"
 
@@ -342,12 +331,13 @@ msgid "Mgmtsystem Evaluation Result"
 msgstr "Resultado de la Evaluación del Sistema de Gestión"
 
 #. module: mgmtsystem_evaluation
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__model
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__model_id
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__model_id
 msgid "Model"
 msgstr "Modelo"
 
 #. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__model
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__model
 msgid "Model technical name"
 msgstr "Nombre técnico del modelo"
@@ -368,6 +358,11 @@ msgstr "Fecha límite de mi actividad"
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation_template__name
 msgid "Name"
 msgstr "Nombre"
+
+#. module: mgmtsystem_evaluation
+#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__activity_date_deadline
@@ -417,18 +412,13 @@ msgstr "Número de Errores"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Número de mensajes que requieren una acción"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Número de mensajes con error de entrega"
-
-#. module: mgmtsystem_evaluation
-#: model:ir.model.fields,help:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_unread_counter
-msgid "Number of unread messages"
-msgstr "Número de mensajes no leídos"
 
 #. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__passed
@@ -524,16 +514,6 @@ msgid "Type of the exception activity on record."
 msgstr "Tipo de excepción de actividad registrada."
 
 #. module: mgmtsystem_evaluation
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_unread
-msgid "Unread Messages"
-msgstr "Mensajes no Leídos"
-
-#. module: mgmtsystem_evaluation
-#: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Contador de Mensajes no Leídos"
-
-#. module: mgmtsystem_evaluation
 #: model:ir.model.fields,field_description:mgmtsystem_evaluation.field_mgmtsystem_evaluation__user_id
 msgid "User"
 msgstr "Usuario"
@@ -552,3 +532,18 @@ msgstr "Historial de la comunicación en el sitio web"
 #: model:ir.model.fields,help:mgmtsystem_evaluation.field_ir_model__is_mgmtsystem_evaluation
 msgid "Whether this model supports evaluations."
 msgstr "Independientemente de que este modelo apoye las evaluaciones."
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Seguidores (Canales)"
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Número de mensajes que requieren una acción"
+
+#~ msgid "Number of unread messages"
+#~ msgstr "Número de mensajes no leídos"
+
+#~ msgid "Unread Messages"
+#~ msgstr "Mensajes no Leídos"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Contador de Mensajes no Leídos"
