@@ -19,10 +19,17 @@ class MgmtsystemEvaluation(models.Model):
         states={"draft": [("readonly", False)]},
     )
     model = fields.Char(
-        index=True, compute="_compute_template_fields", store=True, readonly=False
+        index=True,
+        compute="_compute_template_fields",
+        store=True,
+        readonly=False,
+        string="Model technical name",
     )
     model_id = fields.Many2one(
-        "ir.model", compute="_compute_template_fields", store=True, readonly=False
+        "ir.model",
+        compute="_compute_template_fields",
+        store=True,
+        readonly=False,
     )
     res_id = fields.Many2oneReference(index=True, model_field="model")
     user_id = fields.Many2one("res.users", readonly=True, copy=False)
@@ -104,7 +111,11 @@ class MgmtsystemEvaluation(models.Model):
 
     @api.model
     def _get_ref_selection(self):
-        models = self.env["ir.model"].sudo().search([])
+        models = (
+            self.env["ir.model"]
+            .sudo()
+            .search([("is_mgmtsystem_evaluation", "=", True)])
+        )
         return [(model.model, model.name) for model in models]
 
     @api.depends("template_id", "res_id", "model")
@@ -122,16 +133,15 @@ class MgmtsystemEvaluation(models.Model):
     @api.depends("template_id")
     def _compute_template_fields(self):
         for record in self:
-            if record.template_id and (
-                not record.model or record.template_id.model != record.model
-            ):
+            template = record.template_id
+            if template and (not record.model or template.model != record.model):
                 record.res_id = False
-                record.model = record.template_id.model
-                record.model_id = record.template_id.model_id
+                record.model = template.model
+                record.model_id = template.model_id
             if not record.feedback:
-                record.feedback = record.template_id.feedback
+                record.feedback = template.feedback
             if not record.note:
-                record.note = record.template_id.note
+                record.note = template.note
 
     @api.depends("template_id")
     def _compute_name(self):

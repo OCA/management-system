@@ -68,7 +68,7 @@
                         <field name="res_id" invisible="1" />
                         <field
                             name="resource"
-                            options="{'hide_model': 1, 'model_field': 'model_id'}"
+                            options="{'hide_model': 1, 'model_field_char': 'model'}"
                             attrs="{'invisible': [('template_id', '=', False), ('model_id', '=', False)]}"
                         />
                         <field
