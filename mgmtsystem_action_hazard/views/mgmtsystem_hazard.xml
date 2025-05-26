@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Dixmit
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="view_mgmtsystem_hazard_form">
+        <field name="name">mgmtsystem.hazard.form (in mgmtsystem_action_hazard)</field>
+        <field name="model">mgmtsystem.hazard</field>
+        <field name="inherit_id" ref="mgmtsystem_hazard.view_mgmtsystem_hazard_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Action" name="actinos">
+                    <field name="mgmtsystem_action_ids" />
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
