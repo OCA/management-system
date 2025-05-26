@@ -4,6 +4,7 @@
 from odoo import fields, models
 
 
+# This model is deprecated and must be removed in future versions.
 class MgmtsystemHazardHazard(models.Model):
     _name = "mgmtsystem.hazard.hazard"
     _description = "Hazard"

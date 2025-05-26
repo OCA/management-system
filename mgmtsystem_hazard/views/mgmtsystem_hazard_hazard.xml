@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- This model is deprecated and must be removed in future versions. -->
+    <record id="view_mgmtsystem_hazard_hazard_tree" model="ir.ui.view">
+        <field name="name">mgmtsystem.hazard.hazard.tree</field>
+        <field name="model">mgmtsystem.hazard.hazard</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_hazard_filter" model="ir.ui.view">
+      <field name="name">mgmtsystem.hazard.hazard.filter</field>
+      <field name="model">mgmtsystem.hazard.hazard</field>
+      <field name="arch" type="xml">
+        <search string="Hazard Hazard">
+            <group>
+                <field name="name" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </group>
+            <newline />
+        </search>
+      </field>
+    </record>
+
+    <record id="view_mgmtsystem_hazard_hazard_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.hazard.hazard.form</field>
+        <field name="model">mgmtsystem.hazard.hazard</field>
+        <field name="arch" type="xml">
+            <form string="Hazard Hazard">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="description" />
+                        </group>
+                        <group>
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="open_mgmtsystem_hazard_hazard_list">
+      <field name="name">Hazards Hazards</field>
+      <field name="res_model">mgmtsystem.hazard.hazard</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="view_mgmtsystem_hazard_hazard_tree" />
+      <field name="search_view_id" ref="view_mgmtsystem_hazard_hazard_filter" />
+    </record>
+
+    <menuitem
+        id="menu_open_hazard_hazard"
+        action="open_mgmtsystem_hazard_hazard_list"
+        parent="mgmtsystem.menu_mgmtsystem_manuals"
+        sequence="30"
+        groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
+    />
+
+</odoo>
