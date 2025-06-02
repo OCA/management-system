@@ -136,7 +136,9 @@
                 <templates>
                     <t t-name="kanban-box">
 
-                        <div t-attf-class="#{kanban_color(red)} oe_kanban_global_click">
+                        <div
+                            t-attf-class="#{kanban_color(red)} oe_kanban_global_click oe_kanban_content"
+                        >
                             <div class="o_dropdown_kanban dropdown">
 
                                 <a
@@ -168,15 +170,12 @@
                                     </t>
                                 </ul>
                             </div>
-                            <div class="oe_kanban_content">
                                 <div>
                                     <strong><field name="ref" /> - <field
-                                            name="name"
-                                        /></strong>
+                                        name="name"
+                                    /></strong>
                                 </div>
-                                <div>
-                                    <br />
-                                </div>
+                                <div class="o_kanban_record_bottom">
                                 <div class="oe_kanban_bottom_left">
                                     <span
                                         class='oe_kanban_mail_new'
@@ -195,7 +194,7 @@
                                         widget="many2one_avatar_user"
                                     />
                                 </div>
-                            </div>
+                                </div>
                         </div>
                     </t>
                 </templates>
@@ -340,29 +339,28 @@
                                 attrs="{'readonly':[('state','not in',['pending'])]}"
                             />
 
-                        <group string="Plan Review">
-                            <group>
-                                <field
-                                        name="action_comments"
-                                        attrs="{'readonly':[('state','not in',['pending'])]}"
-                                        nolabel="1"
-                                        placeholder="Action Plan Comments"
-                                    />
-                            </group>
+                        <group string="Plan Review" name="plan_review">
+                            <field
+                                    name="action_comments"
+                                    attrs="{'readonly':[('state','not in',['pending'])]}"
+                                    nolabel="1"
+                                    colspan="2"
+                                    placeholder="Action Plan Comments"
+                                />
                         </group>
 
                         <group
+                                name="effectiveness_review"
                                 attrs="{'invisible':[('state','not in',['open','done'])]}"
                                 string="Effectiveness Review"
                             >
-                            <group>
-                                <field
-                                        name="evaluation_comments"
-                                        attrs="{'readonly':[('state','not in',['open'])]}"
-                                        nolabel="1"
-                                        placeholder="Evaluation Comments"
-                                    />
-                            </group>
+                            <field
+                                    name="evaluation_comments"
+                                    attrs="{'readonly':[('state','not in',['open'])]}"
+                                    nolabel="1"
+                                    colspan="2"
+                                    placeholder="Evaluation Comments"
+                                />
                         </group>
                     </page>
 
