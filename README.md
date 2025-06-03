@@ -36,7 +36,7 @@ addon | version | maintainers | summary
 [mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 18.0.1.1.0 |  | Hazard Risk
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 18.0.1.0.0 |  | Information Security Management System Manual
 [mgmtsystem_manual](mgmtsystem_manual/) | 18.0.1.0.0 |  | Management System - Manual
-[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 18.0.1.0.0 |  | Management System - Nonconformity
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 18.0.1.1.0 |  | Management System - Nonconformity
 [mgmtsystem_nonconformity_hazard](mgmtsystem_nonconformity_hazard/) | 18.0.1.0.0 |  | Management System - Nonconformity Hazard
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 18.0.1.0.0 |  | Bridge module between hr and mgmsystem and
 [mgmtsystem_nonconformity_maintenance_equipment](mgmtsystem_nonconformity_maintenance_equipment/) | 18.0.1.0.0 |  | Management System - Nonconformity Maintenance Equipment
@@ -45,9 +45,9 @@ addon | version | maintainers | summary
 [mgmtsystem_nonconformity_repair](mgmtsystem_nonconformity_repair/) | 18.0.1.0.0 |  | Bridge module between Repair and Non Conformities
 [mgmtsystem_nonconformity_type](mgmtsystem_nonconformity_type/) | 18.0.1.0.0 |  | Add Nonconformity classification for the root context.
 [mgmtsystem_partner](mgmtsystem_partner/) | 18.0.1.0.0 |  | Add Management System reference on Partner's Contacts.
-[mgmtsystem_quality](mgmtsystem_quality/) | 18.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Manage your quality management system
+[mgmtsystem_quality](mgmtsystem_quality/) | 18.0.1.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Manage your quality management system
 [mgmtsystem_review](mgmtsystem_review/) | 18.0.1.0.0 |  | Management System - Review
-[mgmtsystem_survey](mgmtsystem_survey/) | 18.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Management System - Survey
+[mgmtsystem_survey](mgmtsystem_survey/) | 18.0.1.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Management System - Survey
 
 [//]: # (end addons)
 
