@@ -33,7 +33,7 @@
     "assets": {
         "web.assets_backend": [
             "mgmtsystem_nonconformity/static/src/**/*.xml",
-            # "mgmtsystem_nonconformity/static/src/**/*.js",
+            "mgmtsystem_nonconformity/static/src/**/*.esm.js",
         ],
     },
     "installable": True,
