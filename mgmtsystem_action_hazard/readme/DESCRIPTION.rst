@@ -1,0 +1,1 @@
+"This addon allows you to associate an action with multiple hazards, and from each hazard, you can view the related actions."
