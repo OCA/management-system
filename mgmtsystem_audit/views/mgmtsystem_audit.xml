@@ -86,7 +86,7 @@
                     <field name="system_id" />
                     <field name="company_id" groups="base.group_multi_company" />
                     <!-- Invisible fields below are to allow their use in domains of this view -->
-                    <field name="state" invisible="1" />
+                    <field name="state" column_invisible="True" />
                 </tree>
             </field>
         </record>
