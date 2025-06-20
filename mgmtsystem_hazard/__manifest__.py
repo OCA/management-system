@@ -20,6 +20,7 @@
         "views/mgmtsystem_hazard_usage.xml",
         "views/mgmtsystem_hazard_control_measure.xml",
         "views/mgmtsystem_hazard_test.xml",
+        "views/mgmtsystem_hazard_hazard.xml",
     ],
     "demo": [
         "demo/mgmtsystem_hazard_hazard.xml",
