@@ -33,18 +33,18 @@ msgstr "Anwendungen"
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_user_manager
 msgid "Approving User"
-msgstr "Zustimmender Benutzer"
+msgstr "Genehmigender Benutzer"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_auditor
 msgid "Auditor"
-msgstr "Prüfer"
+msgstr "Auditor"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Audits"
-msgstr "Prüfungen"
+msgstr "Audits"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_claim
@@ -211,7 +211,7 @@ msgid ""
 "Manage management systems, manuals, KPIs, nonconformities, actions, "
 "feedbacks, audits, reviews."
 msgstr ""
-"Verwalte Managementsysteme, Handbücher, KPI's, Mängelprüfungen, Handlungen, "
+"Verwalte Managementsysteme, Handbücher, KPIs, Mängelprüfungen, Handlungen, "
 "Rückmeldungen, Audits, Reviews."
 
 #. module: mgmtsystem
@@ -307,7 +307,7 @@ msgstr "Modul-Anwender mit Lese- und Schreibzugriffs-Berechtigung."
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Nonconformities"
-msgstr "Nichteinhaltungen"
+msgstr "Nichtkonformitäten"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_procedure
@@ -543,12 +543,12 @@ msgstr ""
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Quality"
-msgstr ""
+msgstr "Qualität"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Quality Manual"
-msgstr ""
+msgstr "Qualitätshandbuch"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
@@ -557,9 +557,8 @@ msgstr "Qualitätsmanagementhandbuch Vorlage"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
-#, fuzzy
 msgid "Quality Tools"
-msgstr "Qualität"
+msgstr "Qualitätstools"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_report
@@ -599,7 +598,7 @@ msgstr ""
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Top management reviews."
-msgstr ""
+msgstr "Managementbewertungen"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_user
@@ -615,7 +614,7 @@ msgstr "Betrachter"
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Work Instructions"
-msgstr ""
+msgstr "Arbeitsanweisungen"
 
 #~ msgid "Manage audits and verification lists"
 #~ msgstr "Verwalte Prüfungen und Verifikationslisten"

@@ -68,7 +68,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_audits
 msgid "# of audits"
-msgstr "Anzahl Prüfungen"
+msgstr "Anzahl Audits"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_days_to_close
@@ -78,7 +78,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "<strong>Audit Report</strong>"
-msgstr "<strong>Prüfungsbericht</strong>"
+msgstr "<strong>Auditbericht</strong>"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
@@ -88,7 +88,7 @@ msgstr "<strong>Verbesserungsmöglichkeiten:</strong>"
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 msgid "<strong>Nonconformities:</strong>"
-msgstr "<strong>Nichteinhaltungen:</strong>"
+msgstr "<strong>Nichtkonformitäten:</strong>"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
@@ -142,48 +142,48 @@ msgstr "Anzahl Anhänge"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_report_mgmtsystem_audit_graph
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_report_mgmtsystem_audit_pivot
 msgid "Audit"
-msgstr "Prüfung"
+msgstr "Audit"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__user_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Audit Manager"
-msgstr "Prüfungsmanager"
+msgstr "Manager des Audits"
 
 #. module: mgmtsystem_audit
 #. odoo-python
 #: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:0
 #, python-format
 msgid "Audit closed"
-msgstr "Prüfung abgeschlossen"
+msgstr "Audit abgeschlossen"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.report,name:mgmtsystem_audit.audit_report_mgmtsystem_audit
 msgid "Audit report"
-msgstr "Prüfungsbericht"
+msgstr "Auditbericht"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__auditee_user_ids
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Auditees"
-msgstr "Geprüfte"
+msgstr "Auditierte"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Auditees:"
-msgstr "Geprüfte:"
+msgstr "Auditierte:"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__auditor_user_ids
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Auditors"
-msgstr "Prüfer"
+msgstr "Auditoren"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Auditors:"
-msgstr "Prüfer:"
+msgstr "Auditoren:"
 
 #. module: mgmtsystem_audit
 #: model:ir.actions.act_window,name:mgmtsystem_audit.open_mgmtsystem_audit_list
@@ -192,12 +192,12 @@ msgstr "Prüfer:"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_audit_calendar
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
 msgid "Audits"
-msgstr "Prüfungen"
+msgstr "Audits"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__audit_src
 msgid "Choose audit"
-msgstr "Prüfung wählen"
+msgstr "Audit wählen"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
@@ -213,7 +213,7 @@ msgstr "Abgeschlossen"
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
 msgid "Closed Audits"
-msgstr "Abgeschlossene Prüfungen"
+msgstr "Abgeschlossene Audits"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__closing_date
@@ -446,17 +446,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__nonconformity_ids
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
 msgid "Nonconformities"
-msgstr "Nichteinhaltungen"
+msgstr "Nichtkonformitäten"
 
 #. module: mgmtsystem_audit
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
 msgid "Nonconformity"
-msgstr "Mangel/Nichteinhaltung"
+msgstr "Nichtkonformität"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_nonconformities
 msgid "Number Of Nonconformities"
-msgstr ""
+msgstr "Anzahl von Nichtkonformitäten"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_questions_in_verification_list
@@ -497,7 +497,7 @@ msgstr "In Bearbeitung"
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_filter
 msgid "Open Audits"
-msgstr "Laufende Prüfungen"
+msgstr "Laufende Audits"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__to_improve_points
@@ -528,24 +528,24 @@ msgstr "Frage"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__reference
 msgid "Reference"
-msgstr "Bezug"
+msgstr "Referenz"
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.audit_report
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Reference:"
-msgstr "Verweis:"
+msgstr "Referenz:"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_nonconformity__audit_ids
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_nonconformity_form
 msgid "Related Audits"
-msgstr ""
+msgstr "Relevante Audits"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Verantwortlichkeit"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_sms_error
