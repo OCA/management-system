@@ -2,21 +2,17 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    "name": "Management System - Review",
-    "version": "18.0.1.0.2",
+    "name": "Management System - Review Survey",
+    "version": "18.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": ["mgmtsystem_nonconformity"],
+    "depends": ["mgmtsystem_review", "survey"],
     "data": [
-        "security/ir.model.access.csv",
-        "security/mgmtsystem_review_security.xml",
-        "data/ir_sequence.xml",
-        "views/mgmtsystem_review.xml",
-        "views/res_users.xml",
+        "views/mgmtsystem_review_views.xml",
         "report/review.xml",
-        "report/report.xml",
     ],
     "installable": True,
+    "auto_install": True,
 }

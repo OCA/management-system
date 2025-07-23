@@ -149,7 +149,7 @@
                                 context="{'tree_view_ref': 'mgmtsystem_review.mgmtsystem_review_res_users_x2m_tree'}"
                             />
                         </page>
-                        <page string="Inputs">
+                        <page name="inputs" string="Inputs">
                             <group colspan="4">
                                 <separator string="Policy" colspan="2" />
                                 <field
@@ -169,28 +169,6 @@
                                     nolabel="1"
                                 />
                             </group>
-                            <newline />
-                            <separator string="Survey Answers" colspan="4" />
-                            <field
-                                name="response_ids"
-                                colspan="4"
-                                nolabel="1"
-                                readonly="state == 'done'"
-                            >
-                                <list create="true">
-                                    <field name="survey_id" />
-                                    <field name="create_date" />
-                                    <field name="deadline" />
-                                    <field name="partner_id" />
-                                    <field name="email" />
-                                    <field name="state" />
-                                    <field name="test_entry" column_invisible="True" />
-                                    <field
-                                        name="scoring_percentage"
-                                        groups="base.group_no_one"
-                                    />
-                                </list>
-                            </field>
                         </page>
                         <page string="Lines">
                             <field

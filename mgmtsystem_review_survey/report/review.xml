@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="review_report" inherit_id="mgmtsystem_review.review_report">
+        <t t-foreach="doc.line_ids" position="before">
+            <h2>
+                <strong>Satisfaction Survey Answers:</strong>
+            </h2>
+            <t t-foreach="doc.response_ids" t-as="response">
+                <h3>
+                    <strong>
+                        <span t-field="response.user_input_line_ids[0].value_text" />
+                        (<span t-field="response.user_input_line_ids[1].value_text" />)
+                    </strong>
+                </h3>
+                <ul style="padding-left:15px">
+                    <li>Refrence:
+                        <span
+                        t-field="response.user_input_line_ids[2].value_text"
+                    /></li>
+                    <li>Comments:
+                        <span
+                        t-field="response.user_input_line_ids[3].value_free_text"
+                    /></li>
+                    <li>Expectations:
+                        <span
+                        t-field="response.user_input_line_ids[4].value_free_text"
+                    /></li>
+                    <li>Improvements:
+                        <span
+                        t-field="response.user_input_line_ids[5].value_free_text"
+                    /></li>
+                </ul>
+            </t>
+        </t>
+    </template>
+</odoo>
