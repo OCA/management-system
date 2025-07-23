@@ -3,12 +3,12 @@
 
 {
     "name": "Management System - Review",
-    "version": "18.0.1.0.2",
+    "version": "18.0.2.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": ["mgmtsystem_nonconformity", "mgmtsystem_survey"],
+    "depends": ["mgmtsystem_nonconformity"],
     "data": [
         "security/ir.model.access.csv",
         "security/mgmtsystem_review_security.xml",
