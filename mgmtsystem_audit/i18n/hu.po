@@ -19,52 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_audit
-#: model:mail.template,body_html:mgmtsystem_audit.template_email_send_verification_list
-msgid ""
-"\n"
-"            \n"
-"<p>Hello,</p>\n"
-"\n"
-"<p>\n"
-"The audit <t t-out=\"object.name\" /> is scheduled in 1 week.\n"
-"Please finish the verification list and send it to the auditees:\n"
-"\n"
-"<a t-att-href=\"object.get_action_url()\">Link</a>\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Thank you.\n"
-"--\n"
-"Odoo\n"
-"</p>\n"
-"            \n"
-"        "
-msgstr ""
-
-#. module: mgmtsystem_audit
-#: model:mail.template,body_html:mgmtsystem_audit.template_email_prepare_to_audit
-msgid ""
-"\n"
-"            \n"
-"<p>Hello,</p>\n"
-"\n"
-"<p>\n"
-"The audit <t t-out=\"object.name\" /> is scheduled in 2 weeks.\n"
-"Please prepare the verification list:\n"
-"\n"
-"<a t-att-href=\"object.get_action_url()\">Link</a>\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Thank you.\n"
-"--\n"
-"Odoo\n"
-"</p>\n"
-"            \n"
-"        "
-msgstr ""
-
-#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_audits
 msgid "# of audits"
 msgstr ""
@@ -72,6 +26,48 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_days_to_close
 msgid "# of days to close"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:mail.template,body_html:mgmtsystem_audit.template_email_send_verification_list
+msgid ""
+"<p>Hello,</p>\n"
+"\n"
+"<p>\n"
+"The audit <t t-out=\"object.name\"/> is scheduled in 1 week.\n"
+"Please finish the verification list and send it to the auditees:\n"
+"\n"
+"<a t-att-href=\"object.get_action_url()\">Link</a>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Thank you.<span data-o-mail-quote=\"1\">\n"
+"--\n"
+"Odoo\n"
+"</span></p>\n"
+"            \n"
+"        "
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:mail.template,body_html:mgmtsystem_audit.template_email_prepare_to_audit
+msgid ""
+"<p>Hello,</p>\n"
+"\n"
+"<p>\n"
+"The audit <t t-out=\"object.name\"/> is scheduled in 2 weeks.\n"
+"Please prepare the verification list:\n"
+"\n"
+"<a t-att-href=\"object.get_action_url()\">Link</a>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Thank you.<span data-o-mail-quote=\"1\">\n"
+"--\n"
+"Odoo\n"
+"</span></p>\n"
+"            \n"
+"        "
 msgstr ""
 
 #. module: mgmtsystem_audit
@@ -152,7 +148,6 @@ msgstr ""
 #. module: mgmtsystem_audit
 #. odoo-python
 #: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:0
-#, python-format
 msgid "Audit closed"
 msgstr ""
 
@@ -417,6 +412,11 @@ msgid "Name"
 msgstr ""
 
 #. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr ""
@@ -604,7 +604,6 @@ msgstr ""
 #. module: mgmtsystem_audit
 #. odoo-python
 #: code:addons/mgmtsystem_audit/models/mgmtsystem_audit.py:0
-#, python-format
 msgid "Undefined"
 msgstr ""
 
@@ -629,6 +628,16 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.actions.report,name:mgmtsystem_audit.verification_report_mgmtsystem_audit
 msgid "Verification list report"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__website_message_ids
+msgid "Website communication history"
 msgstr ""
 
 #. module: mgmtsystem_audit
