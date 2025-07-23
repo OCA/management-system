@@ -554,6 +554,11 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Evento calendario attività successiva"
+
+#. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Scadenza prossima attività"
@@ -578,6 +583,9 @@ msgstr "Tipo prossima attività"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_reconcile_model__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_setup_bank_manual_config__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_tax__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_calendar_event__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_claim__non_conformity_ids
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_lead__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_team__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_team_member__non_conformity_ids
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_discuss_channel__non_conformity_ids
@@ -633,6 +641,9 @@ msgstr "Non conformità"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_reconcile_model__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_setup_bank_manual_config__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_account_tax__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_calendar_event__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_claim__non_conformity_count
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_lead__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_team__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_crm_team_member__non_conformity_count
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_discuss_channel__non_conformity_count
@@ -1028,9 +1039,6 @@ msgstr ""
 
 #~ msgid "Main Attachment"
 #~ msgstr "Allegato principale"
-
-#~ msgid "Next Activity Calendar Event"
-#~ msgstr "Evento calendario attività successiva"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Numero di messaggi che richiedono un'azione"
