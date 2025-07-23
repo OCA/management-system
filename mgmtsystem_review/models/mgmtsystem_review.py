@@ -19,13 +19,6 @@ class MgmtsystemReview(models.Model):
         "mgmtsystem_review_id",
         "Participants",
     )
-    response_ids = fields.Many2many(
-        "survey.user_input",
-        "mgmtsystem_review_response_rel",
-        "response_id",
-        "mgmtsystem_review_id",
-        "Survey Answers",
-    )
     policy = fields.Html()
     changes = fields.Html()
     line_ids = fields.One2many("mgmtsystem.review.line", "review_id", "Lines")
