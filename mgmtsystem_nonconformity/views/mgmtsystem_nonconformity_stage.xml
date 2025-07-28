@@ -4,8 +4,8 @@
         <field name="model">mgmtsystem.nonconformity.stage</field>
         <field name="arch" type="xml">
             <list>
-                <field name="name" />
                 <field name="sequence" widget="handle" />
+                <field name="name" />
                 <field name="state" />
             </list>
         </field>
