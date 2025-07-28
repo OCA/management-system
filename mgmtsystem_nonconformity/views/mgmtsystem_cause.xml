@@ -22,10 +22,10 @@
         <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="sequence" widget="handle" />
                 <field name="parent_id" />
                 <field name="name" />
                 <field name="description" />
-                <field name="sequence" />
             </tree>
         </field>
     </record>
