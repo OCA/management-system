@@ -266,9 +266,7 @@
                             />
                         </group>
                     </group>
-
                     <notebook>
-
                         <page string="Description" name="description">
                             <field
                                 name="description"
@@ -283,7 +281,6 @@
                                 />
                             </group>
                         </page>
-
                         <page string="Procedures" name="procedures">
                             <field
                                 name="procedure_ids"
@@ -291,7 +288,6 @@
                                 domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]"
                             />
                         </page>
-
                         <page
                             string="Causes and Analysis"
                             attrs="{'invisible':[('state','in',['draft','cancel'])]}"
@@ -309,79 +305,71 @@
                                 attrs="{'readonly':[('state','not in',['analysis'])]}"
                                 options="{'no_create': True}"
                             >
-                            <tree create="1" delete="1" decoration-info="parent_id">
-                                <field name="parent_id" />
-                                <field name="name" />
-                                <field name="description" />
-                                <field name="sequence" />
-                            </tree>
-                        </field>
-
-                        <separator string="Analysis Confirmation" />
-                        <group>
+                                <tree create="1" delete="1" decoration-info="parent_id">
+                                    <field name="parent_id" />
+                                    <field name="name" />
+                                    <field name="description" />
+                                    <field name="sequence" />
+                                </tree>
+                            </field>
+                            <separator string="Analysis Confirmation" />
                             <group>
-                                <field
+                                <group>
+                                    <field
                                         name="severity_id"
                                         attrs="{'readonly':[('state','not in',['analysis'])]}"
                                     />
+                                </group>
                             </group>
-                        </group>
-                    </page>
-
-                    <page
+                        </page>
+                        <page
                             string="Actions"
                             attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}"
                             name="actions"
                         >
-                        <separator string="Action Plan" />
-                        <field
+                            <separator string="Action Plan" />
+                            <field
                                 name="action_ids"
                                 attrs="{'readonly':[('state','not in',['pending'])]}"
                             />
-
-                        <group string="Plan Review">
-                            <group>
-                                <field
+                            <group string="Plan Review">
+                                <group>
+                                    <field
                                         name="action_comments"
                                         attrs="{'readonly':[('state','not in',['pending'])]}"
                                         nolabel="1"
                                         placeholder="Action Plan Comments"
                                     />
+                                </group>
                             </group>
-                        </group>
-
-                        <group
+                            <group
                                 attrs="{'invisible':[('state','not in',['open','done'])]}"
                                 string="Effectiveness Review"
                             >
-                            <group>
-                                <field
+                                <group>
+                                    <field
                                         name="evaluation_comments"
                                         attrs="{'readonly':[('state','not in',['open'])]}"
                                         nolabel="1"
                                         placeholder="Evaluation Comments"
                                     />
+                                </group>
                             </group>
-                        </group>
-                    </page>
-
-                </notebook>
-            </sheet>
-
-            <div class="oe_chatter">
-                <field
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field
                         name="message_follower_ids"
                         widget="mail_followers"
                         groups="base.group_user"
                     />
-                <field name="activity_ids" widget="mail_activity" />
-                <field name="message_ids" widget="mail_thread" />
-            </div>
-
-        </form>
-    </field>
-</record>
-
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
     <record model="ir.actions.act_window" id="open_mgmtsystem_nonconformity_list">
         <field name="name">Nonconformities</field>
         <field name="res_model">mgmtsystem.nonconformity</field>
