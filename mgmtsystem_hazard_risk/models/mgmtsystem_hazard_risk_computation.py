@@ -9,7 +9,7 @@ class MgmtsystemHazardRiskComputation(models.Model):
     _description = "Computation Risk"
 
     company_id = fields.Many2one(
-        "res.company", "Company", required=True, default=lambda self: self.env.company
+        "res.company", "Company", default=lambda self: self.env.company
     )
     name = fields.Char("Computation Risk", required=True)
     description = fields.Text()
