@@ -32,10 +32,11 @@
         <field name="type">list</field>
         <field name="arch" type="xml">
             <list>
+                <field name="sequence" widget="handle" />
                 <field name="parent_id" />
                 <field name="name" />
                 <field name="description" />
-                <field name="sequence" />
+                <field name="active" column_invisible="1" />
             </list>
         </field>
     </record>
