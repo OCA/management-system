@@ -24,10 +24,10 @@
         <field name="type">list</field>
         <field name="arch" type="xml">
             <list>
+                <field name="sequence" widget="handle" />
                 <field name="parent_id" />
                 <field name="name" />
                 <field name="description" />
-                <field name="sequence" />
             </list>
         </field>
     </record>
