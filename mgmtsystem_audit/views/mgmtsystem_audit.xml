@@ -7,7 +7,7 @@
         <field name="type">list</field>
         <field name="arch" type="xml">
             <list>
-                <field name="seq" />
+                <field name="seq" widget="handle" />
                 <field name="name" />
                 <field name="is_conformed" />
                 <field name="procedure_id" />
