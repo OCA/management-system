@@ -32,10 +32,11 @@
         <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="sequence" widget="handle" />
                 <field name="parent_id" />
                 <field name="name" />
                 <field name="description" />
-                <field name="sequence" />
+                <field name="active" invisible="1" />
             </tree>
         </field>
     </record>
