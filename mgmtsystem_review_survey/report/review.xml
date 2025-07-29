@@ -8,27 +8,23 @@
             <t t-foreach="doc.response_ids" t-as="response">
                 <h3>
                     <strong>
-                        <span t-field="response.user_input_line_ids[0].value_text" />
-                        (<span t-field="response.user_input_line_ids[1].value_text" />)
+                        <span t-field="response.survey_id.title" />
                     </strong>
                 </h3>
                 <ul style="padding-left:15px">
-                    <li>Refrence:
-                        <span
-                        t-field="response.user_input_line_ids[2].value_text"
-                    /></li>
-                    <li>Comments:
-                        <span
-                        t-field="response.user_input_line_ids[3].value_free_text"
-                    /></li>
-                    <li>Expectations:
-                        <span
-                        t-field="response.user_input_line_ids[4].value_free_text"
-                    /></li>
-                    <li>Improvements:
-                        <span
-                        t-field="response.user_input_line_ids[5].value_free_text"
-                    /></li>
+                    <t t-foreach="response.user_input_line_ids" t-as="user_input">
+                        <t
+                            t-if="user_input.answer_type and user_input.answer_type!='suggestion'"
+                        >
+                            <t
+                                t-set="user_input_key"
+                                t-value="'value_'+str(user_input.answer_type)"
+                            />
+                            <li><span t-field="user_input.question_id.title" />:
+                                <span t-esc="user_input[user_input_key]" />
+                            </li>
+                        </t>
+                    </t>
                 </ul>
             </t>
         </t>
