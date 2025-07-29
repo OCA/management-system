@@ -27,7 +27,6 @@
                             <div class="mt16">
                                 <field
                                     name="risk_computation_id"
-                                    required="1"
                                     class="o_light_label"
                                     domain="[('company_id', '=', company_id)]"
                                     context="{'default_company_id': company_id}"
