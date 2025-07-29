@@ -36,6 +36,7 @@ setuptools.setup(
         'odoo-addon-mgmtsystem_partner>=15.0dev,<15.1dev',
         'odoo-addon-mgmtsystem_quality>=15.0dev,<15.1dev',
         'odoo-addon-mgmtsystem_review>=15.0dev,<15.1dev',
+        'odoo-addon-mgmtsystem_review_survey>=15.0dev,<15.1dev',
         'odoo-addon-mgmtsystem_survey>=15.0dev,<15.1dev',
     ],
     classifiers=[
