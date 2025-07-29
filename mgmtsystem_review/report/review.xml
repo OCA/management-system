@@ -77,40 +77,6 @@
                 </div>
                 <div class="row" style="padding-top:10px">
                     <div class="col-12">
-                        <h2>
-                            <strong>Satisfaction Survey Answers:</strong>
-                        </h2>
-
-                        <t t-foreach="doc.response_ids" t-as="response">
-                            <h3>
-                                <strong>
-                                    <span
-                                        t-field="response.user_input_line_ids[0].value_text"
-                                    />
-                                    (<span
-                                        t-field="response.user_input_line_ids[1].value_text"
-                                    />)
-                                </strong>
-                            </h3>
-                            <ul style="padding-left:15px">
-                                <li>Refrence:
-                                    <span
-                                        t-field="response.user_input_line_ids[2].value_text"
-                                    /></li>
-                                <li>Comments:
-                                    <span
-                                        t-field="response.user_input_line_ids[3].value_free_text"
-                                    /></li>
-                                <li>Expectations:
-                                    <span
-                                        t-field="response.user_input_line_ids[4].value_free_text"
-                                    /></li>
-                                <li>Improvements:
-                                    <span
-                                        t-field="response.user_input_line_ids[5].value_free_text"
-                                    /></li>
-                            </ul>
-                        </t>
                         <t t-foreach="doc.line_ids" t-as="line">
                             <h3>
                                 <strong>
@@ -151,7 +117,6 @@
                                 </li>
                             </ul>
                         </t>
-
                     </div>
                 </div>
                 <div class="row" style="padding-top:10px">
