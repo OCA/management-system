@@ -3,7 +3,7 @@
 
 {
     "name": "Management System - Review Survey",
-    "version": "16.0.1.0.0",
+    "version": "16.0.2.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
