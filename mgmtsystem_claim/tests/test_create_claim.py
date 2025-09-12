@@ -47,7 +47,7 @@ class TestModelClaim(common.TransactionCase):
         tmpl_model = self.env["mail.template"]
         with mock.patch.object(type(tmpl_model), "send_mail") as mocked:
             new_claim = self.claim.copy()
-            new_claim.refresh()
+            self.partner._compute_mgmtsystem_claim_count()
             self.assertEqual(new_claim.stage_id.id, 1)
             self.assertIn("copy", new_claim.name)
             self.assertTrue(new_claim.stage_id.id)
