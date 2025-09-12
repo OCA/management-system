@@ -62,9 +62,7 @@ class MgmtsystemClaim(models.Model):
             .sudo()
             .get_param("web.base.url", default="http://localhost:8069")
         )
-        url = ("{}/web#db={}&id={}&model={}").format(
-            base_url, self.env.cr.dbname, self.id, self._name
-        )
+        url = f"{base_url}/web#db={self.env.cr.dbname}&id={self.id}&model={self._name}"
         return url
 
     def send_mail_for_action(self, force_send=True):
