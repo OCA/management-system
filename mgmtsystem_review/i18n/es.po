@@ -284,6 +284,11 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo evento del calendario de actividades"
+
+#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Fecha Límite para la Próxima Actividad"
@@ -484,9 +489,6 @@ msgstr "historial de la comunicación en la web"
 
 #~ msgid "Main Attachment"
 #~ msgstr "Archivo adjunto principal"
-
-#~ msgid "Next Activity Calendar Event"
-#~ msgstr "Próximo evento del calendario de actividades"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "número de mensajes que requieren una acción"

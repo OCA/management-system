@@ -283,6 +283,11 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Evento calendario attività successiva"
+
+#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Scadenza prossima attività"
@@ -483,9 +488,6 @@ msgstr "Storico comunicazioni sito web"
 
 #~ msgid "Main Attachment"
 #~ msgstr "Allegato principale"
-
-#~ msgid "Next Activity Calendar Event"
-#~ msgstr "Evento calendario attività successiva"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Numero di messaggi che richiedono un'azione"
