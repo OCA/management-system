@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="review_report" inherit_id="mgmtsystem_review.review_report">
+        <t t-foreach="doc.line_ids" position="before">
+            <h2>
+                <strong>Satisfaction Survey Answers:</strong>
+            </h2>
+            <t t-foreach="doc.response_ids" t-as="response">
+                <h3>
+                    <strong>
+                        <span t-field="response.survey_id.title" />
+                    </strong>
+                </h3>
+                <ul style="padding-left:15px">
+                    <t t-foreach="response.user_input_line_ids" t-as="user_input">
+                        <t
+                            t-if="user_input.answer_type and user_input.answer_type!='suggestion'"
+                        >
+                            <t
+                                t-set="user_input_key"
+                                t-value="'value_'+str(user_input.answer_type)"
+                            />
+                            <li><span t-field="user_input.question_id.title" />:
+                                <span t-esc="user_input[user_input_key]" />
+                            </li>
+                        </t>
+                    </t>
+                </ul>
+            </t>
+        </t>
+    </template>
+</odoo>
