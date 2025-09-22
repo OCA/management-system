@@ -3,7 +3,7 @@
 {
     "name": "Management System - Nonconformity Type",
     "summary": "Add Nonconformity classification for the root context.",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.1.0",
     "development_status": "Beta",
     "author": "Associazione PNLUG - Gruppo Odoo, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
