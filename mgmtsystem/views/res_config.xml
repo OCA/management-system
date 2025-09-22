@@ -31,12 +31,14 @@
                         >
                             <field name="module_mgmtsystem_health_safety" />
                         </setting>
+                        <!-- not available since version 7.0
                         <setting
                             string="Information Security"
                             help="Manage your information security management systems (ISO 27001)"
                         >
                             <field name="module_mgmtsystem_information_security" />
                         </setting>
+                        -->
                     </block>
 
                     <block title="Applications" name="mgmtsystem_applications_setting">
@@ -49,12 +51,6 @@
                         <setting
                             string="Nonconformities"
                             help="Manage nonconformities analysis, planning and resolution."
-                        >
-                            <field name="module_mgmtsystem_nonconformity" />
-                        </setting>
-                        <setting
-                            string="Claims"
-                            help="Manage customer claims as nonconformities."
                         >
                             <field name="module_mgmtsystem_nonconformity" />
                         </setting>
@@ -96,13 +92,13 @@
                             string="Health &amp; Safety Manual"
                             help="Provide a Health &amp; Safety Manual template based on the ISO 45001 / OHSAS 18001 standard."
                         >
-                            <field name="module_mgmtsystem_health_safety_manual" />
+                            <field name="module_document_page_health_safety_manual" />
                         </setting>
                         <setting
                             string="Information Security Manual"
                             help="Provide a Information Security Manual template based on the ISO 27001 standard."
                         >
-                            <field name="module_information_security_manual" />
+                            <field name="module_mgmtsystem_info_security_manual" />
                         </setting>
                     </block>
                     <block
@@ -127,12 +123,14 @@
                         >
                             <field name="module_mgmtsystem_hazard" />
                         </setting>
+                        <!-- Discontinued since version 7.0
                         <setting
                             string="Feared Events"
                             help="Provide a Feared Event documentation category and template."
                         >
                             <field name="module_mgmtsystem_security_event" />
                         </setting>
+                        -->
                         <setting
                             string="Work Instructions"
                             help="Provide a Work Instruction documentation category and template."

@@ -42,10 +42,10 @@ class MgmtsystemConfigSettings(models.TransientModel):
         help="Provide non conformity tools.\n"
         "- This installs the module mgmtsystem_nonconformity.",
     )
-    module_mgmtsystem_claim = fields.Boolean(
-        "Claims",
-        help="Provide claim tools.\n" "- This installs the module mgmtsystem_claim.",
-    )
+    # module_mgmtsystem_claim = fields.Boolean(
+    #     "Claims",
+    #     help="Provide claim tools.\n" "- This installs the module mgmtsystem_claim.",
+    # )
     module_mgmtsystem_audit = fields.Boolean(
         "Audits",
         help="Provide audit tools.\n" "- This installs the module mgmtsystem_audit.",
@@ -66,12 +66,12 @@ class MgmtsystemConfigSettings(models.TransientModel):
         help="Provide an environment manual template.\n"
         "- This installs the module mgmtsystem_environment_manual.",
     )
-    module_mgmtsystem_health_safety_manual = fields.Boolean(
+    module_document_page_health_safety_manual = fields.Boolean(
         "Health & Safety Manual Template",
         help="Provide a health and safety manual template.\n"
         "- This installs the module mgmtsystem_health_safety_manual.",
     )
-    module_information_security_manual = fields.Boolean(
+    module_mgmtsystem_info_security_manual = fields.Boolean(
         "Information Security Manual Template",
         help="Provide an information security manual.\n"
         "- This installs the module information_security_manual.",
@@ -92,11 +92,11 @@ class MgmtsystemConfigSettings(models.TransientModel):
         "Hazards",
         help="Provide Hazards.\n" "- This installs the module mgmtsystem_hazard.",
     )
-    module_mgmtsystem_security_event = fields.Boolean(
-        "Feared Events",
-        help="Provide Feared Events.\n"
-        "- This installs the module mgmtsystem_security_event.",
-    )
+    # module_mgmtsystem_security_event = fields.Boolean(
+    #     "Feared Events",
+    #     help="Provide Feared Events.\n"
+    #     "- This installs the module mgmtsystem_security_event.",
+    # )
     module_document_page_approval = fields.Boolean(
         "Document Page Approval",
         help="Provide document approval and history. \n"
