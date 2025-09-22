@@ -32,7 +32,7 @@ addon | version | maintainers | summary
 [mgmtsystem_action_efficacy](mgmtsystem_action_efficacy/) | 16.0.1.0.0 |  | Add information on the application of the Action.
 [mgmtsystem_action_hazard](mgmtsystem_action_hazard/) | 16.0.1.0.0 |  | Get access to actions related to a hazard
 [mgmtsystem_action_template](mgmtsystem_action_template/) | 16.0.1.0.0 |  | Add Template management for Actions.
-[mgmtsystem_audit](mgmtsystem_audit/) | 16.0.1.0.2 |  | Management System - Audit
+[mgmtsystem_audit](mgmtsystem_audit/) | 16.0.1.0.3 |  | Management System - Audit
 [mgmtsystem_claim](mgmtsystem_claim/) | 16.0.1.1.1 |  | Management System - Claim
 [mgmtsystem_environment](mgmtsystem_environment/) | 16.0.1.0.0 |  | Environment Management System
 [mgmtsystem_evaluation](mgmtsystem_evaluation/) | 16.0.1.0.2 |  | Evaluate records within your management system
