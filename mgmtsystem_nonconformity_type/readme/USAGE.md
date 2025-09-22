@@ -12,5 +12,4 @@ NC Partner Quality E-mail
   Address
 - Go to Management System → Management System → Nonconformity
 - Create a new Nonconformity
-- Set Type as Partner
 - Click «Send by Email»
