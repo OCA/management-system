@@ -4,6 +4,7 @@
     <record id="document_page_environment_manual" model="document.page">
         <field name="name">Environment Manual</field>
         <field name="type">category</field>
+        <field name="company_id" eval="False" />
         <field name="template">
             <![CDATA[
 <h1>Application Domain</h1>
