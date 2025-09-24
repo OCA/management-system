@@ -21,25 +21,25 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[document_page_environment_manual](document_page_environment_manual/) | 15.0.1.0.0 |  | Document Management - Wiki - Environment Manual
-[document_page_environmental_aspect](document_page_environmental_aspect/) | 15.0.1.0.0 |  | Environmental Aspects
-[document_page_health_safety_manual](document_page_health_safety_manual/) | 15.0.1.0.0 |  | Health and Safety Manual
-[document_page_procedure](document_page_procedure/) | 15.0.1.0.0 |  | Document Management - Wiki - Procedures
-[document_page_quality_manual](document_page_quality_manual/) | 15.0.1.0.0 |  | Quality Manual
-[document_page_work_instruction](document_page_work_instruction/) | 15.0.1.0.0 |  | Document Management - Wiki - Work Instructions
-[mgmtsystem](mgmtsystem/) | 15.0.1.0.1 |  | Management System
+[document_page_environment_manual](document_page_environment_manual/) | 15.0.1.1.0 |  | Document Management - Wiki - Environment Manual
+[document_page_environmental_aspect](document_page_environmental_aspect/) | 15.0.1.1.0 |  | Environmental Aspects
+[document_page_health_safety_manual](document_page_health_safety_manual/) | 15.0.1.1.0 |  | Health and Safety Manual
+[document_page_procedure](document_page_procedure/) | 15.0.1.1.0 |  | Document Management - Wiki - Procedures
+[document_page_quality_manual](document_page_quality_manual/) | 15.0.1.1.0 |  | Quality Manual
+[document_page_work_instruction](document_page_work_instruction/) | 15.0.1.1.0 |  | Document Management - Wiki - Work Instructions
+[mgmtsystem](mgmtsystem/) | 15.0.1.1.0 |  | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 15.0.1.0.2 |  | Management System - Action
 [mgmtsystem_action_efficacy](mgmtsystem_action_efficacy/) | 15.0.1.0.0 |  | Add information on the application of the Action.
 [mgmtsystem_action_template](mgmtsystem_action_template/) | 15.0.1.1.0 |  | Add Template management for Actions.
-[mgmtsystem_audit](mgmtsystem_audit/) | 15.0.1.0.1 |  | Management System - Audit
+[mgmtsystem_audit](mgmtsystem_audit/) | 15.0.1.1.0 |  | Management System - Audit
 [mgmtsystem_claim](mgmtsystem_claim/) | 15.0.1.0.1 |  | Management System - Claim
 [mgmtsystem_environment](mgmtsystem_environment/) | 15.0.1.0.0 |  | Environment Management System
-[mgmtsystem_hazard](mgmtsystem_hazard/) | 15.0.1.0.0 |  | Hazard
-[mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 15.0.1.0.1 |  | Hazard Risk
+[mgmtsystem_hazard](mgmtsystem_hazard/) | 15.0.1.1.0 |  | Hazard
+[mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 15.0.1.1.0 |  | Hazard Risk
 [mgmtsystem_health_safety](mgmtsystem_health_safety/) | 15.0.1.0.0 |  | Health and Safety Management System
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 15.0.1.0.0 |  | Information Security Management System Manual
-[mgmtsystem_manual](mgmtsystem_manual/) | 15.0.1.0.0 |  | Management System - Manual
-[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 15.0.1.1.3 |  | Management System - Nonconformity
+[mgmtsystem_manual](mgmtsystem_manual/) | 15.0.1.1.0 |  | Management System - Manual
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 15.0.1.2.0 |  | Management System - Nonconformity
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 15.0.1.0.0 |  | Bridge module between hr and mgmsystem and
 [mgmtsystem_nonconformity_mrp](mgmtsystem_nonconformity_mrp/) | 15.0.1.0.0 |  | Bridge module between mrp and mgmsystem
 [mgmtsystem_nonconformity_product](mgmtsystem_nonconformity_product/) | 15.0.1.0.0 |  | Bridge module between Product and Management System.
@@ -47,7 +47,7 @@ addon | version | maintainers | summary
 [mgmtsystem_nonconformity_repair](mgmtsystem_nonconformity_repair/) | 15.0.1.0.0 |  | Bridge module between Repair and Non Conformities
 [mgmtsystem_nonconformity_type](mgmtsystem_nonconformity_type/) | 15.0.1.0.0 |  | Add Nonconformity classification for the root context.
 [mgmtsystem_partner](mgmtsystem_partner/) | 15.0.1.0.0 |  | Add Management System reference on Partner's Contacts.
-[mgmtsystem_quality](mgmtsystem_quality/) | 15.0.1.0.1 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Manage your quality management system
+[mgmtsystem_quality](mgmtsystem_quality/) | 15.0.1.1.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Manage your quality management system
 [mgmtsystem_review](mgmtsystem_review/) | 15.0.2.0.0 |  | Management System - Review
 [mgmtsystem_review_survey](mgmtsystem_review_survey/) | 15.0.2.0.0 |  | Management System - Review Survey
 [mgmtsystem_survey](mgmtsystem_survey/) | 15.0.1.0.0 |  | Management System - Survey
