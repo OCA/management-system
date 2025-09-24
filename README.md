@@ -43,7 +43,7 @@ addon | version | maintainers | summary
 [mgmtsystem_health_safety](mgmtsystem_health_safety/) | 16.0.1.0.1 |  | Health and Safety Management System
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 16.0.1.0.0 |  | Information Security Management System Manual
 [mgmtsystem_manual](mgmtsystem_manual/) | 16.0.1.0.1 |  | Management System - Manual
-[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 16.0.1.3.1 |  | Management System - Nonconformity
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 16.0.1.4.0 |  | Management System - Nonconformity
 [mgmtsystem_nonconformity_hazard](mgmtsystem_nonconformity_hazard/) | 16.0.1.0.0 |  | Management System - Nonconformity Hazard
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 16.0.1.0.0 |  | Bridge module between hr and mgmsystem and
 [mgmtsystem_nonconformity_maintenance_equipment](mgmtsystem_nonconformity_maintenance_equipment/) | 16.0.1.0.0 |  | Management System - Nonconformity Maintenance Equipment
