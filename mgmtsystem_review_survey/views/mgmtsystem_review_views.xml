@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_mgmtsystem_review_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.review.form</field>
+        <field name="model">mgmtsystem.review</field>
+        <field name="inherit_id" ref="mgmtsystem_review.view_mgmtsystem_review_form" />
+        <field name="arch" type="xml">
+            <page name="inputs" position="inside">
+                <separator string="Survey Answers" colspan="4" />
+                <field
+                    name="response_ids"
+                    colspan="4"
+                    nolabel="1"
+                    readonly="state == 'done'"
+                >
+                    <list>
+                        <field name="survey_id" />
+                        <field name="create_date" />
+                        <field name="deadline" />
+                        <field name="partner_id" />
+                        <field name="email" />
+                        <field name="state" />
+                        <field name="test_entry" column_invisible="True" />
+                        <field name="scoring_percentage" groups="base.group_no_one" />
+                    </list>
+                </field>
+            </page>
+        </field>
+    </record>
+</odoo>
