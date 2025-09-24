@@ -41,11 +41,6 @@ msgid "<strong>Review Report</strong>"
 msgstr "<strong>Relatório de revisão</strong>"
 
 #. module: mgmtsystem_review
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
-msgid "<strong>Satisfaction Survey Answers:</strong>"
-msgstr "<strong>Respostas de Pesquisa de Satisfação:</strong>"
-
-#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__action_id
 #: model:ir.model.fields.selection,name:mgmtsystem_review.selection__mgmtsystem_review_line__type__action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
@@ -114,11 +109,6 @@ msgid "Closed Reviews"
 msgstr "Reuniões Fechadas"
 
 #. module: mgmtsystem_review
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
-msgid "Comments:"
-msgstr "Comentários:"
-
-#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__company_id
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__company_id
 msgid "Company"
@@ -179,11 +169,6 @@ msgid "Display Name"
 msgstr "Mostrar nome"
 
 #. module: mgmtsystem_review
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
-msgid "Expectations:"
-msgstr "Expectativas:"
-
-#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_follower_ids
 msgid "Followers"
 msgstr "Seguidores"
@@ -229,11 +214,6 @@ msgstr "Se marcada, novas mensagens requerem sua atenção."
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se marcada, algumas mensagens tem um erro de entrega."
-
-#. module: mgmtsystem_review
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
-msgid "Improvements:"
-msgstr "Melhorias:"
 
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
@@ -384,11 +364,6 @@ msgid "Reference:"
 msgstr "Referência:"
 
 #. module: mgmtsystem_review
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
-msgid "Refrence:"
-msgstr "Referência:"
-
-#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_user_id
 msgid "Responsible User"
 msgstr "Usuário Responsável"
@@ -454,12 +429,6 @@ msgstr ""
 "Planejado: Atividades futuras."
 
 #. module: mgmtsystem_review
-#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__response_ids
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
-msgid "Survey Answers"
-msgstr "Respostas da Pesquisa"
-
-#. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__name
 msgid "Title"
 msgstr "Título"
@@ -483,6 +452,24 @@ msgstr "Mensagens do website"
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__website_message_ids
 msgid "Website communication history"
 msgstr "Histórico de mensagens do site"
+
+#~ msgid "<strong>Satisfaction Survey Answers:</strong>"
+#~ msgstr "<strong>Respostas de Pesquisa de Satisfação:</strong>"
+
+#~ msgid "Comments:"
+#~ msgstr "Comentários:"
+
+#~ msgid "Expectations:"
+#~ msgstr "Expectativas:"
+
+#~ msgid "Improvements:"
+#~ msgstr "Melhorias:"
+
+#~ msgid "Refrence:"
+#~ msgstr "Referência:"
+
+#~ msgid "Survey Answers"
+#~ msgstr "Respostas da Pesquisa"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Modificada pela última vez"
