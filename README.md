@@ -27,7 +27,7 @@ addon | version | maintainers | summary
 [document_page_procedure](document_page_procedure/) | 17.0.1.0.0 |  | Document Management - Wiki - Procedures
 [document_page_quality_manual](document_page_quality_manual/) | 17.0.1.0.0 |  | Quality Manual
 [document_page_work_instruction](document_page_work_instruction/) | 17.0.1.0.0 |  | Document Management - Wiki - Work Instructions
-[mgmtsystem](mgmtsystem/) | 17.0.1.1.0 |  | Management System
+[mgmtsystem](mgmtsystem/) | 17.0.1.1.1 |  | Management System
 [mgmtsystem_action](mgmtsystem_action/) | 17.0.1.0.1 |  | Management System - Action
 [mgmtsystem_action_efficacy](mgmtsystem_action_efficacy/) | 17.0.1.0.1 |  | Add information on the application of the Action.
 [mgmtsystem_action_template](mgmtsystem_action_template/) | 17.0.1.0.0 |  | Add Template management for Actions.
