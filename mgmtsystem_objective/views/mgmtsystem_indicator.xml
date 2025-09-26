@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Dixmit
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="mgmtsystem_indicator_form_view">
+        <field name="model">mgmtsystem.indicator</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': 1}" />
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="frequency" />
+                        <field name="has_min_target" />
+                        <field name="min_target_value" invisible="not has_min_target" />
+                        <field name="has_max_target" />
+                        <field name="max_target_value" invisible="not has_max_target" />
+                        <field name="value" />
+                        <field name="uom_id" />
+                    </group>
+                    <notebook>
+                        <page string="Values">
+                            <field name="value_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_indicator_search_view">
+        <field name="model">mgmtsystem.indicator</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="objective_id" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_indicator_tree_view">
+        <field name="model">mgmtsystem.indicator</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="value" />
+                <field name="uom_id" />
+                <field name="value_state" widget="objective_state_selection" />
+                <field name="state" />
+                <button
+                    name="get_formview_action"
+                    type="object"
+                    icon="fa-pencil-square-o"
+                    title="open"
+                    help="Open"
+                />
+            </list>
+        </field>
+    </record>
+</odoo>
