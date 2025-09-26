@@ -1,0 +1,8 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_mgmtsystem_objective_user","mgmtsystem.objective.user","model_mgmtsystem_objective","mgmtsystem.group_mgmtsystem_viewer",1,0,0,0
+"access_mgmtsystem_indicator_user","mgmtsystem.indicator.user","model_mgmtsystem_indicator","mgmtsystem.group_mgmtsystem_viewer",1,0,0,0
+"access_mgmtsystem_indicator_value_user","mgmtsystem.indicator.value.user","model_mgmtsystem_indicator_value","mgmtsystem.group_mgmtsystem_viewer",1,0,0,0
+"access_mgmtsystem_indicator_value_editor","mgmtsystem.indicator.value.user","model_mgmtsystem_indicator_value","mgmtsystem.group_mgmtsystem_user",1,1,1,0
+"access_mgmtsystem_objective_manager","mgmtsystem.objective.user","model_mgmtsystem_objective","mgmtsystem.group_mgmtsystem_manager",1,1,1,1
+"access_mgmtsystem_indicator_manager","mgmtsystem.indicator.user","model_mgmtsystem_indicator","mgmtsystem.group_mgmtsystem_manager",1,1,1,1
+"access_mgmtsystem_indicator_value_manager","mgmtsystem.indicator.value.user","model_mgmtsystem_indicator_value","mgmtsystem.group_mgmtsystem_manager",1,1,1,1
