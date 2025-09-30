@@ -19,7 +19,7 @@
 ##############################################################################
 {
     "name": "Document Management - Wiki - Environment Manual",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
