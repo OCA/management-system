@@ -5,6 +5,7 @@
         <field name="model">mgmtsystem.audit</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">mgmtsystem_audit.audit_report_template</field>
+        <field name="binding_model_id" ref="model_mgmtsystem_audit" />
     </record>
 
     <record id="verification_report_mgmtsystem_audit" model="ir.actions.report">
@@ -12,6 +13,7 @@
         <field name="model">mgmtsystem.audit</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">mgmtsystem_audit.verification_report_template</field>
+        <field name="binding_model_id" ref="model_mgmtsystem_audit" />
     </record>
 
     <template id="audit_report_template">
