@@ -9,7 +9,7 @@ class MgmtsystemHazardRiskType(models.Model):
     _description = "Risk type of the hazard"
 
     company_id = fields.Many2one(
-        "res.company", "Company", required=True, default=lambda self: self.env.company
+        "res.company", "Company", default=lambda self: self.env.company
     )
     name = fields.Char("Risk Type", required=True, translate=True)
     description = fields.Text()
