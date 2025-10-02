@@ -6,7 +6,8 @@ from odoo import fields, models
 
 class MgmtsystemNonconformity(models.Model):
 
-    _inherit = 'mgmtsystem.nonconformity'
+    _inherit = "mgmtsystem.nonconformity"
 
-    maintenance_request_id = fields.Many2one('maintenance.request',
-                                             'Maintenance Request')
+    maintenance_request_id = fields.Many2one(
+        "maintenance.request", "Maintenance Request"
+    )
