@@ -35,6 +35,9 @@
             "mgmtsystem_nonconformity/static/src/**/*.xml",
             "mgmtsystem_nonconformity/static/src/**/*.esm.js",
         ],
+        "web.assets_unit_tests": [
+            "mgmtsystem_nonconformity/static/tests/**/*",
+        ],
     },
     "installable": True,
 }
