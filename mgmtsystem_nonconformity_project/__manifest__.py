@@ -10,28 +10,24 @@
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 {
     "name": "Management System - Project",
-    "version": "12.0.1.0.0",
+    "version": "16.0.1.0.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": [
-        'mgmtsystem_nonconformity',
-        'mgmtsystem_action',
-        'project'
-    ],
+    "depends": ["mgmtsystem_nonconformity", "mgmtsystem_action", "project"],
     "data": [
-        'views/mgmtsystem_nonconformity_project.xml',
+        "views/mgmtsystem_nonconformity_project.xml",
     ],
     "demo": [],
-    'installable': True,
+    "installable": True,
 }

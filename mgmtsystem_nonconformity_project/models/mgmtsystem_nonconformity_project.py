@@ -10,11 +10,11 @@
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
@@ -27,14 +27,17 @@ class MgmtsystemAction(models.Model):
     def _compute_complete_name(self):
         for o in self:
             o.complete_name = o.name
-            if o.action_type == 'project' and o.project_id:
+            if o.action_type == "project" and o.project_id:
                 o.complete_name = o.project_id.name
 
     action_type = fields.Selection(
         [
-            ('action', 'Action'),
-            ('project', 'Project'),
-        ], required=True, default='action')
-    project_id = fields.Many2one('project.project', 'Project')
+            ("action", "Action"),
+            ("project", "Project"),
+        ],
+        required=True,
+        default="action",
+    )
+    project_id = fields.Many2one("project.project", "Project")
     complete_name = fields.Char(compute=_compute_complete_name)
-    name = fields.Char('Claim Subject')
+    name = fields.Char("Claim Subject")
