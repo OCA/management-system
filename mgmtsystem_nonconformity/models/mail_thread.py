@@ -1,10 +1,9 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from lxml import etree
-
 from odoo import api, fields, models
-from odoo.tools.misc import frozendict
+
+from odoo.addons.mail.tools.discuss import Store
 
 
 class MailThread(models.AbstractModel):
@@ -39,46 +38,12 @@ class MailThread(models.AbstractModel):
         action["context"] = self._get_non_conformities_context()
         return action
 
-    @api.model
-    def get_view(self, view_id=None, view_type="form", **options):
-        res = super().get_view(view_id=view_id, view_type=view_type, **options)
-        if view_type == "form" and self.env.user.has_group(
-            "mgmtsystem.group_mgmtsystem_viewer"
-        ):
-            View = self.env["ir.ui.view"]
-            if view_id and res.get("base_model", self._name) != self._name:
-                View = View.with_context(base_model_name=res["base_model"])
-            doc = etree.XML(res["arch"])
-
-            # We need to copy, because it is a frozen dict
-            all_models = res["models"].copy()
-            for node in doc.xpath("/form/chatter"):
-                # _add_tier_validation_label process
-                new_node = etree.fromstring(
-                    "<field name='non_conformity_count' invisible='1'/>"
-                )
-                new_arch, new_models = View.postprocess_and_fields(new_node, self._name)
-                new_node = etree.fromstring(new_arch)
-                for model in list(filter(lambda x: x not in all_models, new_models)):
-                    if model not in res["models"]:
-                        all_models[model] = new_models[model]
-                    else:
-                        all_models[model] = res["models"][model]
-                node.addprevious(new_node)
-            res["arch"] = etree.tostring(doc)
-            res["models"] = frozendict(all_models)
-        return res
-
-    @api.model
-    def _get_view_fields(self, view_type, models):
-        """
-        We need to add this in order to fix the usage of form opening from
-        trees inside a form
-        """
-        result = super()._get_view_fields(view_type, models)
-
-        if view_type == "form" and self.env.user.has_group(
-            "mgmtsystem.group_mgmtsystem_viewer"
-        ):
-            result[self._name].add("non_conformity_count")
+    def _thread_to_store(self, store: Store, /, *, request_list=None, **kwargs):
+        result = super()._thread_to_store(store, request_list=request_list, **kwargs)
+        for thread in self:
+            store.add(
+                thread,
+                {"non_conformity_count": thread.non_conformity_count},
+                as_thread=True,
+            )
         return result
