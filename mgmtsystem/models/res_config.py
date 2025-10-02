@@ -44,15 +44,15 @@ class MgmtsystemConfigSettings(models.TransientModel):
     )
     module_mgmtsystem_claim = fields.Boolean(
         "Claims",
-        help="Provide claim tools.\n" "- This installs the module mgmtsystem_claim.",
+        help="Provide claim tools.\n- This installs the module mgmtsystem_claim.",
     )
     module_mgmtsystem_audit = fields.Boolean(
         "Audits",
-        help="Provide audit tools.\n" "- This installs the module mgmtsystem_audit.",
+        help="Provide audit tools.\n- This installs the module mgmtsystem_audit.",
     )
     module_mgmtsystem_review = fields.Boolean(
         "Reviews",
-        help="Provide review tools.\n" "- This installs the module mgmtsystem_review.",
+        help="Provide review tools.\n- This installs the module mgmtsystem_review.",
     )
 
     # Manuals
@@ -90,7 +90,7 @@ class MgmtsystemConfigSettings(models.TransientModel):
     )
     module_mgmtsystem_hazard = fields.Boolean(
         "Hazards",
-        help="Provide Hazards.\n" "- This installs the module mgmtsystem_hazard.",
+        help="Provide Hazards.\n- This installs the module mgmtsystem_hazard.",
     )
     module_mgmtsystem_security_event = fields.Boolean(
         "Feared Events",
@@ -120,7 +120,7 @@ class MgmtsystemConfigSettings(models.TransientModel):
         not_available = set(to_install) - set(available)
         if not_available:
             url = (
-                "https://gthub.com/OCA/management-system/issues"
+                "https://github.com/OCA/management-system/issues"
                 "?q=is%3Aissue%20state%3Aopen%20migration%20to%20version"
             )
             msg = _(
