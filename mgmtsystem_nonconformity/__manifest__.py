@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Management System - Nonconformity",
-    "version": "18.0.1.2.0",
+    "version": "18.0.1.2.1",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
@@ -34,6 +34,9 @@
         "web.assets_backend": [
             "mgmtsystem_nonconformity/static/src/**/*.xml",
             "mgmtsystem_nonconformity/static/src/**/*.esm.js",
+        ],
+        "web.assets_unit_tests": [
+            "mgmtsystem_nonconformity/static/tests/**/*",
         ],
     },
     "installable": True,

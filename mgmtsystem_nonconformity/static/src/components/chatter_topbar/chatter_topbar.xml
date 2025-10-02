@@ -11,16 +11,16 @@
                 type="button"
                 t-att-disabled="!state.thread.isTemporary and !state.thread.hasWriteAccess"
                 t-on-click="onClickShowNonConformities"
-                t-if="props.webRecord.data.non_conformity_count !== undefined"
+                t-if="state.thread.non_conformity_count !== undefined"
             >
                 <i
                     class="fa fa-exclamation-triangle fa-lg me-1"
                     role="img"
                     aria-label="Non conformities"
                 />
-                <span
+                <sup
                     class="o_ChatterTopbar_buttonCount o_ChatterTopbar_buttonNonConformitiesCount"
-                    t-esc="props.webRecord.data.non_conformity_count"
+                    t-esc="state.thread.non_conformity_count"
                 />
             </button>
         </xpath>
