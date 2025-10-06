@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Dixmit
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="mgmtsystem_indicator_value_pivot_view">
+        <field name="model">mgmtsystem.indicator.value</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="date" type="row" interval="day" />
+                <field name="indicator_id" type="col" />
+                <field name="value" type="measure" />
+            </pivot>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="mgmtsystem_indicator_value_action">
+        <field name="name">Review Objectives</field>
+        <field name="res_model">mgmtsystem.indicator.value</field>
+        <field name="view_mode">pivot</field>
+    </record>
+</odoo>
