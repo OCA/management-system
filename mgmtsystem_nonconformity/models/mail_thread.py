@@ -40,10 +40,11 @@ class MailThread(models.AbstractModel):
 
     def _thread_to_store(self, store: Store, /, *, request_list=None, **kwargs):
         result = super()._thread_to_store(store, request_list=request_list, **kwargs)
-        for thread in self:
-            store.add(
-                thread,
-                {"non_conformity_count": thread.non_conformity_count},
-                as_thread=True,
-            )
+        if self.env.user.has_group("mgmtsystem.group_mgmtsystem_viewer"):
+            for thread in self:
+                store.add(
+                    thread,
+                    {"non_conformity_count": thread.non_conformity_count},
+                    as_thread=True,
+                )
         return result
