@@ -64,11 +64,12 @@ class MgmtsystemNonconformity(models.Model):
         required=True,
     )
     procedure_ids = fields.Many2many(
-        "document.page",
-        "mgmtsystem_nonconformity_procedure_rel",
+        "mgmtsystem.document",
+        "mgmtsystem_nonconformity_document_procedure_rel",
         "nonconformity_id",
         "procedure_id",
         "Procedure",
+        domain=[("kind", "=", "procedure")],
     )
     description = fields.Text(required=True)
     system_id = fields.Many2one("mgmtsystem.system", "System")

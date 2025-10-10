@@ -236,8 +236,19 @@
                             <field
                                 name="procedure_ids"
                                 readonly="state not in ('draft', 'analysis')"
-                                domain="[('parent_id','child_of',('Procedure','Environmental Aspect','Manuals'))]"
-                            />
+                                widget="document_page_widget"
+                            >
+                                <list>
+                                    <field name="name" />
+                                    <field name="system_id" />
+                                    <button
+                                        name="get_formview_action"
+                                        type="object"
+                                        string="Open"
+                                        class="btn btn-primary"
+                                    />
+                                </list>
+                            </field>
                         </page>
 
                         <page
