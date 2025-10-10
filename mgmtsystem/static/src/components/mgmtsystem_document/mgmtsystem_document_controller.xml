@@ -1,0 +1,19 @@
+<templates>
+    <t
+        t-name="mgmtsystem.MgmtsystemDocumentView.Buttons"
+        t-inherit="web.ListView.Buttons"
+        t-inherit-mode="primary"
+    >
+        <xpath expr="//div[hasclass('o_list_buttons')]" position="inside">
+            <t t-foreach="this.documentTypes" t-as="docType" t-key="docType.id">
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    t-on-click="() => this.onAddElement(docType.id)"
+                >
+                    <t t-esc="docType.add_label" />
+                </button>
+            </t>
+        </xpath>
+    </t>
+</templates>

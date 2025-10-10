@@ -8,3 +8,5 @@
 - [Trobz](https://trobz.com):
   - Dung Tran \<<dungtd@trobz.com>\>
 - Yvan Dotet \<<yvan.dotet@logicasoft.eu>\>
+- [Dixmit](https://www.dixmit.com)
+  - Enric Tobella

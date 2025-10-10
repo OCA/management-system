@@ -9,13 +9,20 @@
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": ["base"],
+    "depends": ["web"],
     "data": [
         "security/mgmtsystem_security.xml",
         "security/ir.model.access.csv",
         "views/menus.xml",
+        "views/mgmtsystem_document.xml",
         "views/mgmtsystem_system.xml",
         "views/res_config.xml",
     ],
     "application": True,
+    "assets": {
+        "web.assets_backend": [
+            "mgmtsystem/static/src/**/*.esm.js",
+            "mgmtsystem/static/src/**/*.xml",
+        ],
+    },
 }
