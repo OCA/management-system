@@ -18,4 +18,10 @@
 ]]>
         </field>
     </record>
+    <record id="demo_document_procedure" model="mgmtsystem.document">
+        <field name="name">Procedure</field>
+        <field name="kind">procedure</field>
+        <field name="document_type">document</field>
+        <field name="document_page_id" ref="document_page_procedure" />
+    </record>
 </odoo>

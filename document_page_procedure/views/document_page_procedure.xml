@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+    <record model="ir.ui.view" id="view_wiki_form">
+        <field name="name">mgmtsystem.document.tree.procedures</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    type="object"
+                    name="toggle_procedure"
+                    string="Add Procedure"
+                    groups="mgmtsystem.group_mgmtsystem_manager"
+                    invisible="not active or mgmtsystem_document_procedure_ids"
+                />
+                <button
+                    type="object"
+                    name="toggle_procedure"
+                    string="Remove Procedure"
+                    groups="mgmtsystem.group_mgmtsystem_manager"
+                    invisible="not active or not mgmtsystem_document_procedure_ids"
+                />
+            </xpath>
+        </field>
+    </record>
     <record model="ir.actions.act_window" id="action_procedures">
         <field name="name">Procedures</field>
-        <field name="res_model">document.page</field>
+        <field name="res_model">mgmtsystem.document</field>
         <field name="view_mode">list,form</field>
         <field name="help">Procedures of your management system.</field>
-        <field
-            name="domain"
-            eval="[('parent_id','=',ref('document_page_group_procedure'))]"
-        />
-        <field
-            name="context"
-            eval="{'default_parent_id': ref('document_page_group_procedure')}"
-        />
+        <field name="domain" eval="[('kind','=','procedure')]" />
+        <field name="context">{'default_kind': 'procedure'}</field>
+        <field name="path">mgmtsystem-procedures</field>
     </record>
-    <record id="action_procedures_tree" model="ir.actions.act_window.view">
-        <field name="sequence" eval="0" />
-        <field name="view_mode">list</field>
-        <field name="view_id" ref="document_page.view_wiki_tree" />
-        <field name="act_window_id" ref="action_procedures" />
-    </record>
-    <record id="action_procedures_form" model="ir.actions.act_window.view">
-        <field name="sequence" eval="5" />
-        <field name="view_mode">form</field>
-        <field name="view_id" ref="document_page.view_wiki_form" />
-        <field name="act_window_id" ref="action_procedures" />
-    </record>
-
     <menuitem
         id="menu_mgmtsystem_manuals_procedures"
         name="Procedures"
