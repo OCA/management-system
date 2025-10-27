@@ -12,6 +12,7 @@ class MgmtsystemReview(models.Model):
     name = fields.Char(size=50, required=True)
     reference = fields.Char(size=64, required=True, default="NEW")
     date = fields.Datetime(required=True)
+    system_id = fields.Many2one("mgmtsystem.system")
     user_ids = fields.Many2many(
         "res.users",
         "mgmtsystem_review_user_rel",

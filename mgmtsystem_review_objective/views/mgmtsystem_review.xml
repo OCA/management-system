@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Dixmit
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="mgmtsystem_review_form_view">
+        <field name="model">mgmtsystem.review</field>
+        <field name="inherit_id" ref="mgmtsystem_review.view_mgmtsystem_review_form" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+                    name="action_open_objectives"
+                    string="Objectives"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-table"
+                    invisible="not objective_ids"
+                />
+            </div>
+            <notebook position="inside">
+                <page string="Objectives">
+                    <group>
+                        <label for="start_date" class="o_form_label" string="Period" />
+                        <div class="o_row">
+                            <field
+                                name="start_date"
+                                widget="daterange"
+                                readonly="state == 'done'"
+                                options="{'end_date_field': 'end_date', 'always_range': True}"
+                            />
+                            <field name="end_date" invisible="1" />
+                        </div>
+                        <field name="objective_domain" invisible="1" />
+                        <field
+                            name="objective_ids"
+                            domain="objective_domain"
+                            widget="many2many_tags"
+                            readonly="state == 'done'"
+                            options="{'no_create': True, 'edit_tags': True}"
+                        />
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

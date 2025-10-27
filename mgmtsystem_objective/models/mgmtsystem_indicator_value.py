@@ -10,6 +10,7 @@ class MgmtsystemIndicatorValue(models.Model):
     _order = "date desc"
 
     indicator_id = fields.Many2one("mgmtsystem.indicator", required=True)
+    objective_id = fields.Many2one(related="indicator_id.objective_id")
     date = fields.Date(required=True)
     value = fields.Float(required=True)
     uom_id = fields.Many2one(related="indicator_id.uom_id")
