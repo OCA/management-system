@@ -1,18 +1,42 @@
 import {
     assertSteps,
     contains,
-    defineMailModels,
+    mailModels,
     onRpcBefore,
     openFormView,
     start,
     startServer,
     step,
 } from "@mail/../tests/mail_test_helpers";
+
+import {
+    defineModels,
+    getKwArgs,
+    makeKwArgs,
+    serverState,
+} from "@web/../tests/web_test_helpers";
 import {describe, test} from "@odoo/hoot";
-import {serverState} from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");
-defineMailModels();
+
+class MailThreadNonConformity extends mailModels.MailThread {
+    _thread_to_store() {
+        const result = super._thread_to_store(...arguments);
+        const kwargs = getKwArgs(arguments, "ids", "store", "fields", "request_list");
+        const store = kwargs.store;
+        const id = kwargs.ids[0];
+        store.add(
+            this.env[this._name].browse(id),
+            {
+                non_conformity_count: 0,
+            },
+            makeKwArgs({as_thread: true})
+        );
+        return result;
+    }
+}
+
+defineModels({...mailModels, MailThread: MailThreadNonConformity});
 
 test("simple chatter on a record", async () => {
     const pyEnv = await startServer();
