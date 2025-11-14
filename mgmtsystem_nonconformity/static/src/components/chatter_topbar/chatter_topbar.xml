@@ -16,7 +16,7 @@
                 type="button"
                 t-att-disabled="!chatterTopbar.chatter.isTemporary and !chatterTopbar.chatter.hasWriteAccess"
                 t-on-click="() => this.chatterTopbar.chatter.onClickShowNonConformities()"
-                t-if="chatterTopbar.chatter.webRecord.data.non_conformity_count !== undefined"
+                t-if="chatterTopbar.chatter.webRecord and chatterTopbar.chatter.webRecord.data.non_conformity_count !== undefined"
             >
                 <i
                     class="fa fa-exclamation-triangle fa-lg me-1"
