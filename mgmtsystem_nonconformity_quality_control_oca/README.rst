@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 ============================================
 Mgmtsystem Nonconformity Quality Control Oca
 ============================================
@@ -17,7 +13,7 @@ Mgmtsystem Nonconformity Quality Control Oca
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fmanagement--system-lightgray.png?logo=github
@@ -39,11 +35,20 @@ This module contains some new features for Management System modules.
 Nonconformity (NC)
 
 * Quality Control Inspection: add a field to link a specific quality control inspection.
+* Automatic Nonconformity is created on an inspection when inspection related to a product fails.
 
 **Table of contents**
 
 .. contents::
    :local:
+
+Configuration
+=============
+
+Automatic Nonconformity (NC) creation for products:
+
+* Go to Inventory > Products > Products and select "Create Nonconformity" flag under Inventory tab of a product.
+* Add a trigger for product in order to create inspections when product is used in any Transfers such as Receipts/Internal etc
 
 Usage
 =====
@@ -54,6 +59,12 @@ NC QC Inspection
 * Go to Management System → Nonconformity
 * Create new Nonconformity
 * Select a Quality Control Inspection on the list
+
+NC Automatic Creation for Products
+
+* If "Create Nonconformity" flag configured on a product, a failed inspection creates an automatic nonconformity.
+* Use Quality Control > Inspections or Management System > Nonconformities to view automatically created nonconformity.
+
 
 Bug Tracker
 ===========
