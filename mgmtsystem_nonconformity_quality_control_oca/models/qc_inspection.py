@@ -47,3 +47,34 @@ class QcInspection(models.Model):
                 "default_company_id": self.company_id.id,
             }
         return action
+
+    def action_approve(self):
+        res = super().action_approve()
+        for inspection in self:
+            if (
+                inspection.state == "failed"
+                and inspection.product_id
+                and inspection.product_id.create_nonconformity
+            ):
+                inspection.create_nonconformity()
+
+        return res
+
+    def create_nonconformity(self):
+        self.ensure_one()
+        description = self.env._(
+            "Automatically created due to failure of the linked inspection."
+        )
+        self.env["mgmtsystem.nonconformity"].create(
+            {
+                "name": self.name,
+                "partner_id": self.user.partner_id.id,
+                "origin_ids": [
+                    (4, self.env.ref("mgmtsystem_nonconformity.nc_origin_qc").id)
+                ],
+                "responsible_user_id": self.user.id,
+                "manager_user_id": self.user.id,
+                "description": description,
+                "qc_inspection_id": self.id,
+            }
+        )
