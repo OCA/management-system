@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+       <record id="account_report_general_ledger_webkit" model="ir.actions.report.xml">
+            <field name="report_type">webkit</field>
+            <field name="report_name">mgmtsystem_security_event.risk_matrix_webkit</field>
+            <field name="groups_id" eval="[(6,0,[])]"/>
+            <field name="multi" eval="0"/>
+            <field name="auto" eval="0"/>
+            <field name="header" eval="0"/>
+            <field name="webkit_header" ref="risk_matrix_header"/>
+            <field name="model">mgmtsystem.risk.matrix</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="name">Management System Risk Matrix</field>
+            <field name="report_rml">mgmtsystem_security_event/report/risk_matrix_webkit.mako</field>
+            <field name="report_file">mgmtsystem_security_event/report/risk_matrix_webkit.mako</field>
+        </record>
+
+    </data>
+</openerp>

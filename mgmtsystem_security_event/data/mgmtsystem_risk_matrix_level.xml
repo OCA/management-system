@@ -1,0 +1,69 @@
+<openerp>
+    <data noupdate="1">
+
+        <record id="risk_level_1" model="mgmtsystem.risk.matrix.level">
+            <field name="probability_min">1</field>
+            <field name="probability_max">4</field>
+            <field name="severity_min">1</field>
+            <field name="severity_max">1</field>
+            <field name="color">green</field>
+        </record>
+
+        <record id="risk_level_2" model="mgmtsystem.risk.matrix.level">
+            <field name="probability_min">1</field>
+            <field name="probability_max">2</field>
+            <field name="severity_min">2</field>
+            <field name="severity_max">2</field>
+            <field name="color">green</field>
+        </record>
+
+        <record id="risk_level_3" model="mgmtsystem.risk.matrix.level">
+            <field name="probability_min">3</field>
+            <field name="probability_max">4</field>
+            <field name="severity_min">2</field>
+            <field name="severity_max">2</field>
+            <field name="color">orange</field>
+        </record>
+
+        <record id="risk_level_4" model="mgmtsystem.risk.matrix.level">
+            <field name="probability_min">1</field>
+            <field name="probability_max">1</field>
+            <field name="severity_min">3</field>
+            <field name="severity_max">3</field>
+            <field name="color">green</field>
+        </record>
+
+        <record id="risk_level_5" model="mgmtsystem.risk.matrix.level">
+            <field name="probability_min">2</field>
+            <field name="probability_max">2</field>
+            <field name="severity_min">3</field>
+            <field name="severity_max">3</field>
+            <field name="color">orange</field>
+        </record>
+
+        <record id="risk_level_6" model="mgmtsystem.risk.matrix.level">
+            <field name="probability_min">3</field>
+            <field name="probability_max">4</field>
+            <field name="severity_min">3</field>
+            <field name="severity_max">3</field>
+            <field name="color">red</field>
+        </record>
+
+        <record id="risk_level_7" model="mgmtsystem.risk.matrix.level">
+            <field name="probability_min">1</field>
+            <field name="probability_max">1</field>
+            <field name="severity_min">4</field>
+            <field name="severity_max">4</field>
+            <field name="color">orange</field>
+        </record>
+
+        <record id="risk_level_8" model="mgmtsystem.risk.matrix.level">
+            <field name="probability_min">2</field>
+            <field name="probability_max">4</field>
+            <field name="severity_min">4</field>
+            <field name="severity_max">4</field>
+            <field name="color">red</field>
+        </record>
+
+    </data>
+</openerp>
