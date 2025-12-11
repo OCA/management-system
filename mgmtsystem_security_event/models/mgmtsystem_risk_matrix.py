@@ -97,4 +97,4 @@ class MgmtsystemRiskMatrix(models.TransientModel):
         }.get(level.color, '#B6D7A8')
 
     def print_report(self):
-        return self.env.ref('mgmtsystem_security_event.risk_matrix_webkit').report_action(self)
+        return self.env.ref('mgmtsystem_security_event.action_report_risk_matrix').report_action(self)
