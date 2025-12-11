@@ -22,7 +22,7 @@
 {
     "name": "Feared Events",
     "summary": "Manage your security events",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.0.2",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA), Trixocom",
     "website": "https://trixocom.com",
     "license": "AGPL-3",
