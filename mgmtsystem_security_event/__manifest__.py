@@ -22,7 +22,7 @@
 {
     "name": "Feared Events",
     "summary": "Manage your security events",
-    "version": "18.0.1.0.2",
+    "version": "18.0.1.0.3",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA), Trixocom",
     "website": "https://trixocom.com",
     "license": "AGPL-3",
@@ -54,7 +54,7 @@ Management System (ISMS).
         # "views/mgmtsystem_security_control.xml",
         # "views/mgmtsystem_security_threat_source.xml",
         # "views/mgmtsystem_security_vector.xml",
-        # 'views/mgmtsystem_risk_matrix.xml',
+        'views/mgmtsystem_risk_matrix.xml',
         # 'views/mgmtsystem_risk_matrix_level.xml',
         'report/report.xml',
         'report/report_risk_matrix.xml',
