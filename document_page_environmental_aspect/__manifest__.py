@@ -20,12 +20,12 @@
 ##############################################################################
 {
     "name": "Environmental Aspects",
-    "version": "19.0.1.0.1",
+    "version": "19.0.1.1.0",
     "author": "Savoir-faire Linux, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
-    "category": "Management Systems",
-    "depends": ["document_page", "mgmtsystem"],
+    "category": "Generic Modules/Others",
+    "depends": ["document_page_mgmtsystem", "mgmtsystem"],
     "data": ["data/document_page.xml", "views/document_page.xml"],
     "installable": True,
 }
