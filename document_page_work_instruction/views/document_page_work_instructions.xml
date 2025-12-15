@@ -7,7 +7,7 @@
         <field name="help">Work instructions of your management system.</field>
         <field
             name="domain"
-            eval="[('parent_id','=',ref('document_page_group_work_instructions'))]"
+            eval="[('mgmtsystem_page_type','=','work_instruction'), ('type', '=', 'content')]"
         />
         <field
             name="context"
