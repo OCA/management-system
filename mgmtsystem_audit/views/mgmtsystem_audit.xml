@@ -28,7 +28,7 @@
                     <field name="name" />
                     <field
                         name="procedure_id"
-                        domain="[('parent_id','in',['Procedure', 'Environmental Aspect', 'Quality Manual', 'Environment Manual'])]"
+                        domain="[('mgmtsystem_page_type','in',['procedure', 'environmental_aspect', 'quality_manual', 'environment_manual']), ('type', '=', 'content')]"
                     />
                     <field name="is_conformed" />
                     <field name="comments" />
@@ -50,7 +50,7 @@
                     <newline />
                     <field
                         name="procedure_id"
-                        domain="[('parent_id','in',['Procedure', 'Environmental Aspect', 'Quality Manual', 'Environment Manual'])]"
+                        domain="[('mgmtsystem_page_type','in',['procedure', 'environmental_aspect', 'quality_manual', 'environment_manual']), ('type', '=', 'content')]"
                     />
                     <field name="seq" />
                     <newline />
