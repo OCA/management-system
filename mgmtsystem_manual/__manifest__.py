@@ -7,8 +7,8 @@
     "author": "Savoir-faire Linux,Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
-    "category": "Management Systems",
-    "depends": ["document_page", "mgmtsystem"],
+    "category": "Management System",
+    "depends": ["document_page_mgmtsystem", "mgmtsystem"],
     "data": [
         "data/mgmtsystem_manual.xml",
         "views/mgmtsystem_manual.xml",
