@@ -32,6 +32,7 @@
                         string="Back to draft"
                         attrs="{'invisible': [('state', '=', 'draft')]}"
                         type="object"
+                        groups="mgmtsystem.group_mgmtsystem_manager"
                     />
                     <field name="state" widget="statusbar" />
                 </header>
