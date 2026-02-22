@@ -42,34 +42,14 @@ msgid "# of exceedings days"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "#0000ff"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "#00ff00"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "#ffa500"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "#ffffff"
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
 msgid ""
 "<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
 "\n"
 "<p>\n"
 "This is an automated message to remind you that the\n"
-"following action is due to be completed in 10 days (<t t-out=\"object."
-"date_deadline\"/>):\n"
+"following action is due to be completed in 10 days (<t t-"
+"out=\"object.date_deadline\"/>):\n"
 "\n"
 "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
 "b>\n"
@@ -89,8 +69,8 @@ msgstr ""
 msgid ""
 "<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
 "\n"
-"<p>A new action has been assigned to you: <b><a t-att-href=\"object."
-"get_action_url()\"><t t-out=\"object.name\"/></a></b></p>\n"
+"<p>A new action has been assigned to you: <b><a t-att-"
+"href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b></p>\n"
 "<p><b>Deadline: </b><t t-out=\"object.date_deadline or ''\"/></p>\n"
 "\n"
 "<p>Please, use the action stages and messages to log progress.</p>\n"
@@ -217,6 +197,7 @@ msgid "Closed Date"
 msgstr "Abschlussdatum"
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__color
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag__color
 msgid "Color Index"
 msgstr "Farbindex"
@@ -285,12 +266,7 @@ msgstr "Entwurf"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "Dropdown menu"
-msgstr ""
-
-#. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "Edit Task"
+msgid "Edit"
 msgstr ""
 
 #. module: mgmtsystem_action
@@ -727,11 +703,6 @@ msgid "Website communication history"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "oe_kanban_text_red"
-msgstr ""
-
-#. module: mgmtsystem_action
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "{{object.name}}"
 msgstr ""
@@ -759,8 +730,8 @@ msgstr ""
 #~ "\n"
 #~ "<p>\n"
 #~ "  This is an automated message to remind you that the\n"
-#~ "  following action is due to be completed in 10 days (${object."
-#~ "date_deadline}):\n"
+#~ "  following action is due to be completed in 10 days ($"
+#~ "{object.date_deadline}):\n"
 #~ "\n"
 #~ "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
 #~ "</p>\n"
@@ -779,8 +750,8 @@ msgstr ""
 #~ "\n"
 #~ "<p>\n"
 #~ "  Dies ist eine automatisch erzeugte Nachricht um Sie daran zu erinnern, "
-#~ "dass die folgende Maßnahme in den nächsten 10 Tagen fällig wird (${object."
-#~ "date_deadline}):\n"
+#~ "dass die folgende Maßnahme in den nächsten 10 Tagen fällig wird ($"
+#~ "{object.date_deadline}):\n"
 #~ "\n"
 #~ "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
 #~ "</p>\n"
@@ -798,8 +769,8 @@ msgstr ""
 #~ "                \n"
 #~ "<p>Hello ${object.user_id.name},</p>\n"
 #~ "\n"
-#~ "<p>A new action has been assigned to you: <b><a href=\"${object."
-#~ "get_action_url()}\">${object.name}</a></b></p>\n"
+#~ "<p>A new action has been assigned to you: <b><a href=\"$"
+#~ "{object.get_action_url()}\">${object.name}</a></b></p>\n"
 #~ "<p><b>Deadline: </b>${object.date_deadline or ''}</p>\n"
 #~ "\n"
 #~ "<p>Please, use the action stages and messages to log progress.</p>\n"
@@ -816,8 +787,8 @@ msgstr ""
 #~ "                \n"
 #~ "<p>Hallo ${object.user_id.name},</p>\n"
 #~ "\n"
-#~ "<p>Ihnen wurde eine neue Maßnahme zugewiesen: <b><a href=\"${object."
-#~ "get_action_url()}\">${object.name}</a></b></p>\n"
+#~ "<p>Ihnen wurde eine neue Maßnahme zugewiesen: <b><a href=\"$"
+#~ "{object.get_action_url()}\">${object.name}</a></b></p>\n"
 #~ "<p><b>Deadline: </b>${object.date_deadline or ''}</p>\n"
 #~ "\n"
 #~ "<p>Bitte nutzen Sie Maßnahmen Stufen und Nachrichten um den Fortschritt "

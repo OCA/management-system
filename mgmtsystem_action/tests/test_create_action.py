@@ -47,6 +47,7 @@ class TestModelAction(common.TransactionCase):
             }
         )
         self.assertEqual(new_record.reference, self.env._("SampleReference"))
+        self.assertEqual(self.record.color, 1)
 
     def test_case_close(self):
         """Test object close state."""
