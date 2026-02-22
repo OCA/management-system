@@ -5,6 +5,13 @@ from datetime import datetime, timedelta
 
 from odoo import api, exceptions, fields, models
 
+TYPE_COLOR_MAP = {
+    "immediate": 1,
+    "correction": 2,
+    "prevention": 4,
+    "improvement": 10,
+}
+
 
 class MgmtsystemAction(models.Model):
     _name = "mgmtsystem.action"
@@ -53,6 +60,11 @@ class MgmtsystemAction(models.Model):
         "Response Type",
         required=True,
     )
+    color = fields.Integer(
+        "Color Index",
+        compute="_compute_color",
+        default=0,
+    )
     stage_id = fields.Many2one(
         "mgmtsystem.action.stage",
         "Stage",
@@ -92,6 +104,11 @@ class MgmtsystemAction(models.Model):
             action.number_of_days_to_close = action._elapsed_days(
                 action.create_date, action.date_closed
             )
+
+    @api.depends("type_action")
+    def _compute_color(self):
+        for action in self:
+            action.color = TYPE_COLOR_MAP[action.type_action]
 
     @api.model
     def _stage_groups(self, stages=None, domain=None, order=None):
