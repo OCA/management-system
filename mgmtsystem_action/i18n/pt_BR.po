@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2018-01-15 18:09+0000\n"
 "PO-Revision-Date: 2019-08-26 15:01+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
-"teams/23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
+"23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,34 +43,14 @@ msgid "# of exceedings days"
 msgstr "Nº de dias em excesso"
 
 #. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "#0000ff"
-msgstr "#0000ff"
-
-#. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "#00ff00"
-msgstr "#00ff00"
-
-#. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "#ffa500"
-msgstr "#ffa500"
-
-#. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "#ffffff"
-msgstr "#ffffff"
-
-#. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
 msgid ""
 "<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
 "\n"
 "<p>\n"
 "This is an automated message to remind you that the\n"
-"following action is due to be completed in 10 days (<t t-out=\"object."
-"date_deadline\"/>):\n"
+"following action is due to be completed in 10 days (<t t-"
+"out=\"object.date_deadline\"/>):\n"
 "\n"
 "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
 "b>\n"
@@ -90,8 +70,8 @@ msgstr ""
 msgid ""
 "<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
 "\n"
-"<p>A new action has been assigned to you: <b><a t-att-href=\"object."
-"get_action_url()\"><t t-out=\"object.name\"/></a></b></p>\n"
+"<p>A new action has been assigned to you: <b><a t-att-"
+"href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b></p>\n"
 "<p><b>Deadline: </b><t t-out=\"object.date_deadline or ''\"/></p>\n"
 "\n"
 "<p>Please, use the action stages and messages to log progress.</p>\n"
@@ -218,6 +198,7 @@ msgid "Closed Date"
 msgstr "Fechado Data"
 
 #. module: mgmtsystem_action
+#: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__color
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag__color
 msgid "Color Index"
 msgstr "Índice de cor"
@@ -286,13 +267,8 @@ msgstr "Rascunho"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "Dropdown menu"
+msgid "Edit"
 msgstr ""
-
-#. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "Edit Task"
-msgstr "Editar Tarefa"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.server,name:mgmtsystem_action.ir_cron_mgmtsystem_action_reminder_ir_actions_server
@@ -726,14 +702,27 @@ msgid "Website communication history"
 msgstr ""
 
 #. module: mgmtsystem_action
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
-msgid "oe_kanban_text_red"
-msgstr "oe_kanban_text_red"
-
-#. module: mgmtsystem_action
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "{{object.name}}"
 msgstr ""
+
+#~ msgid "#0000ff"
+#~ msgstr "#0000ff"
+
+#~ msgid "#00ff00"
+#~ msgstr "#00ff00"
+
+#~ msgid "#ffa500"
+#~ msgstr "#ffa500"
+
+#~ msgid "#ffffff"
+#~ msgstr "#ffffff"
+
+#~ msgid "Edit Task"
+#~ msgstr "Editar Tarefa"
+
+#~ msgid "oe_kanban_text_red"
+#~ msgstr "oe_kanban_text_red"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Modificada pela última vez"
@@ -758,8 +747,8 @@ msgstr ""
 #~ "\n"
 #~ "<p>\n"
 #~ "  This is an automated message to remind you that the\n"
-#~ "  following action is due to be completed in 10 days (${object."
-#~ "date_deadline}):\n"
+#~ "  following action is due to be completed in 10 days ($"
+#~ "{object.date_deadline}):\n"
 #~ "\n"
 #~ "  <b><a href=\"${object.get_action_url()}\">${object.name}</a></b>\n"
 #~ "</p>\n"
@@ -778,8 +767,8 @@ msgstr ""
 #~ "\n"
 #~ "     <p>\n"
 #~ "       Esta é uma mensagem automática para lembrá-lo de que o\n"
-#~ "       após a ação deverá ser concluída em 10 dias (${object."
-#~ "date_deadline}):\n"
+#~ "       após a ação deverá ser concluída em 10 dias ($"
+#~ "{object.date_deadline}):\n"
 #~ "\n"
 #~ "       <b><a href=\"${object.get_action_url()}\"> ${object.name} </a></"
 #~ "b>\n"
@@ -798,8 +787,8 @@ msgstr ""
 #~ "                \n"
 #~ "<p>Hello ${object.user_id.name},</p>\n"
 #~ "\n"
-#~ "<p>A new action has been assigned to you: <b><a href=\"${object."
-#~ "get_action_url()}\">${object.name}</a></b></p>\n"
+#~ "<p>A new action has been assigned to you: <b><a href=\"$"
+#~ "{object.get_action_url()}\">${object.name}</a></b></p>\n"
 #~ "<p><b>Deadline: </b>${object.date_deadline or ''}</p>\n"
 #~ "\n"
 #~ "<p>Please, use the action stages and messages to log progress.</p>\n"
@@ -816,8 +805,8 @@ msgstr ""
 #~ "                \n"
 #~ "<p> Olá, $ {object.user_id.name}, </p>\n"
 #~ "\n"
-#~ "<p>Uma nova ação foi atribuída a você: <b><a href=\"${object."
-#~ "get_action_url()}\">${object.name} </a> </b> </p>\n"
+#~ "<p>Uma nova ação foi atribuída a você: <b><a href=\"$"
+#~ "{object.get_action_url()}\">${object.name} </a> </b> </p>\n"
 #~ "<p><b>Prazo final:</b>${object.date_deadline ou ''} </p>\n"
 #~ "\n"
 #~ "<p>Por favor, use os estágios de ação e as mensagens para registrar o "
