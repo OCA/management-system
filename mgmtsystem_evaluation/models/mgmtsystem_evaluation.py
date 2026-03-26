@@ -138,9 +138,9 @@ class MgmtsystemEvaluation(models.Model):
                 record.res_id = False
                 record.model = template.model
                 record.model_id = template.model_id
-            if not record.feedback:
+            if record.feedback == "<p><br></p>" or not record.feedback:
                 record.feedback = template.feedback
-            if not record.note:
+            if record.note == "<p><br></p>" or not record.note:
                 record.note = template.note
 
     @api.depends("template_id")
