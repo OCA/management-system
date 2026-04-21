@@ -9,7 +9,14 @@ class TestModelAudit(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.page = cls.env.ref("document_page.demo_page1")
+        cls.page = cls.env["document.page"].create(
+            {
+                "name": "Test procedure",
+                "draft_name": "1.0",
+                "draft_summary": "Init",
+                "content": "<p>Test procedure content</p>",
+            }
+        )
         cls.audit = cls.env["mgmtsystem.audit"].create(
             {
                 "name": "Test audit",

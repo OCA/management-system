@@ -14,9 +14,9 @@ class CopyVerificationLines(models.TransientModel):
 
     def copyVerificationLines(self):
         # Copy verification lines from the chosen audit to the current one
-        audit_proxy = self.env[self._context.get("active_model")]
+        audit_proxy = self.env[self.env.context.get("active_model")]
         verification_line_proxy = self.env["mgmtsystem.verification.line"]
-        audit_id = self._context.get("active_id")
+        audit_id = self.env.context.get("active_id")
         src_id = self.read(["audit_src"])[0]["audit_src"][0]
         for line in audit_proxy.browse(src_id).line_ids:
             verification_line_proxy.create(

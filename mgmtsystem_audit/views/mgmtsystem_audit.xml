@@ -63,6 +63,7 @@
 
     <record id="open_mgmtsystem_verification_line_list" model="ir.actions.act_window">
         <field name="name">Verification Lines</field>
+        <field name="path">mgmtsystem-verification-lines</field>
         <field name="res_model">mgmtsystem.verification.line</field>
         <field name="view_mode">list,form</field>
     </record>
@@ -222,6 +223,7 @@
 
     <record id="open_mgmtsystem_audit_list" model="ir.actions.act_window">
         <field name="name">Audits</field>
+        <field name="path">mgmtsystem-audits</field>
         <field name="res_model">mgmtsystem.audit</field>
         <field name="view_mode">list,form,calendar</field>
         <field name="view_id" ref="view_mgmtsystem_audit_tree" />
