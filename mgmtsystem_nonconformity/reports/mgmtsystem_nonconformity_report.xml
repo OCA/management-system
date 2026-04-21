@@ -28,6 +28,7 @@
     <!-- Management system Non Conformity Report Action -->
     <record id="action_report_mgmtsystem_nonconformity" model="ir.actions.act_window">
         <field name="name">Management System Analysis</field>
+        <field name="path">mgmtsystem-nonconformity-analysis</field>
         <field name="res_model">mgmtsystem.nonconformity</field>
         <field name="view_mode">pivot,graph</field>
         <field name="view_id" />

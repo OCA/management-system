@@ -33,6 +33,7 @@
 
     <record model="ir.actions.act_window" id="mgmtsystem_nonconformity_stage_action">
         <field name="name">Stages</field>
+        <field name="path">mgmtsystem-nonconformity-stages</field>
         <field name="res_model">mgmtsystem.nonconformity.stage</field>
         <field name="view_mode">list,form</field>
         <field name="context">{}</field>

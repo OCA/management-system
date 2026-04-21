@@ -25,8 +25,10 @@ class TestModelNonConformity(common.TransactionCase):
 
     def test_stage_group(self):
         """Group by Stage shows all stages"""
-        group_stages = self.nc_test.read_group(
-            domain=[], fields=["stage_id"], groupby=["stage_id"]
+        group_stages = self.nc_test.with_context(
+            read_group_expand=True
+        ).formatted_read_group(
+            domain=[], groupby=["stage_id"], aggregates=["stage_id:count"]
         )
         num_stages = len(self.nc_model.stage_id.search([]))
         self.assertEqual(len(group_stages), num_stages)

@@ -72,7 +72,7 @@
                     <field name="company_id" groups="base.group_multi_company" />
                 </group>
                 <newline />
-                <group expand="0" string="Group By...">
+                <group>
                     <filter
                         name="groupby_author"
                         string="Author"
@@ -318,6 +318,7 @@
 
     <record model="ir.actions.act_window" id="open_mgmtsystem_nonconformity_list">
         <field name="name">Nonconformities</field>
+        <field name="path">mgmtsystem-nonconformities</field>
         <field name="res_model">mgmtsystem.nonconformity</field>
         <field name="view_mode">kanban,list,form</field>
         <field name="view_id" ref="view_mgmtsystem_nonconformity_kanban" />
@@ -330,6 +331,7 @@
         id="open_mgmtsystem_nonconformity_thread_list"
     >
         <field name="name">Nonconformities</field>
+        <field name="path">mgmtsystem-nonconformities-thread</field>
         <field name="res_model">mgmtsystem.nonconformity</field>
         <field name="view_mode">kanban,list,form</field>
         <field

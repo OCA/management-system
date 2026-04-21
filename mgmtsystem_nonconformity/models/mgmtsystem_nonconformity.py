@@ -3,6 +3,7 @@
 
 
 from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class MgmtsystemNonconformity(models.Model):
@@ -20,6 +21,7 @@ class MgmtsystemNonconformity(models.Model):
 
     @api.model
     def _stage_groups(self, stages, domain):
+        # pylint: disable=no-search-all
         stage_ids = self.env["mgmtsystem.nonconformity.stage"].search([])
         return stage_ids
 
@@ -77,7 +79,7 @@ class MgmtsystemNonconformity(models.Model):
         "Stage",
         tracking=True,
         copy=False,
-        default=_default_stage,
+        default=lambda self: self._default_stage(),
         group_expand="_stage_groups",
     )
     state = fields.Selection(related="stage_id.state", store=True)
@@ -159,7 +161,7 @@ class MgmtsystemNonconformity(models.Model):
     def _check_open_with_action_comments(self):
         for nc in self:
             if nc.state == "open" and not nc.action_comments:
-                raise models.ValidationError(
+                raise ValidationError(
                     self.env._(
                         "Action plan  comments are required "
                         "in order to put a nonconformity In Progress."
@@ -171,7 +173,7 @@ class MgmtsystemNonconformity(models.Model):
         for nc in self:
             if nc.state == "done":
                 if not nc.evaluation_comments:
-                    raise models.ValidationError(
+                    raise ValidationError(
                         self.env._(
                             "Evaluation Comments are required "
                             "in order to close a Nonconformity."
@@ -179,7 +181,7 @@ class MgmtsystemNonconformity(models.Model):
                     )
                 actions_are_closed = nc._get_all_actions().mapped("stage_id.is_ending")
                 if not all(actions_are_closed):
-                    raise models.ValidationError(
+                    raise ValidationError(
                         self.env._(
                             "All actions must be done before closing a Nonconformity."
                         )
