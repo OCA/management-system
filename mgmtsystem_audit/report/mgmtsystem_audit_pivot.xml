@@ -31,6 +31,7 @@
 
     <record id="action_report_mgmtsystem_audit" model="ir.actions.act_window">
         <field name="name">Management System Audit Analysis</field>
+        <field name="path">mgmtsystem-audit-analysis</field>
         <field name="res_model">mgmtsystem.audit</field>
         <field name="view_mode">pivot,graph</field>
         <field

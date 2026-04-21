@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
 class MgmtsystemAudit(models.Model):
@@ -132,7 +132,7 @@ class MgmtsystemAudit(models.Model):
 
     def button_close(self):
         """When Audit is closed, post a message to followers' chatter."""
-        self.message_post(body=_("Audit closed"))
+        self.message_post(body=self.env._("Audit closed"))
         return self.write({"state": "done", "closing_date": fields.Datetime.now()})
 
     def get_action_url(self):
@@ -144,7 +144,7 @@ class MgmtsystemAudit(models.Model):
         return f"{base_url}/odoo/{self._name}/{self.id}"
 
     def get_lines_by_procedure(self):
-        undefined = _("Undefined")
+        undefined = self.env._("Undefined")
         p = [
             {
                 "id": line.id,
