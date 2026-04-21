@@ -1,7 +1,7 @@
 # Copyright (C) 2004-2012 OpenERP S.A. (<http://openerp.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import _, exceptions, fields, models
+from odoo import exceptions, fields, models
 
 
 class MgmtsystemConfigSettings(models.TransientModel):
@@ -123,10 +123,11 @@ class MgmtsystemConfigSettings(models.TransientModel):
                 "https://github.com/OCA/management-system/issues"
                 "?q=is%3Aissue%20state%3Aopen%20migration%20to%20version"
             )
-            msg = _(
+            msg = self.env._(
                 "The following modules are not available: %(addons)s"
                 "\nLearn more on the corresponding Github issue"
-                " and consider contributing:\n"
-            ) % {"addons": ", ".join(not_available)}
+                " and consider contributing:\n",
+                addons=", ".join(not_available),
+            )
             raise exceptions.UserError(msg + url)
         return super().execute()

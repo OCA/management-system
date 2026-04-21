@@ -147,10 +147,10 @@
 
     <record id="action_mgmtsystem_configuration" model="ir.actions.act_window">
         <field name="name">Settings</field>
+        <field name="path">mgmtsystem-settings</field>
         <field name="res_model">res.config.settings</field>
         <field name="view_mode">form</field>
-        <field name="target">inline</field>
-        <field name="context">{'module': 'mgmtsystem'}</field>
+        <field name="context">{'module': 'mgmtsystem', 'bin_size': False}</field>
     </record>
 
     <menuitem
