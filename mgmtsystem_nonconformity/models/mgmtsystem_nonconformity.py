@@ -181,8 +181,7 @@ class MgmtsystemNonconformity(models.Model):
                 if not all(actions_are_closed):
                     raise models.ValidationError(
                         self.env._(
-                            "All actions must be done "
-                            "before closing a Nonconformity."
+                            "All actions must be done before closing a Nonconformity."
                         )
                     )
 
