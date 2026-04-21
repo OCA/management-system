@@ -112,6 +112,7 @@ class MgmtsystemAction(models.Model):
 
     @api.model
     def _stage_groups(self, stages=None, domain=None, order=None):
+        # pylint: disable=no-search-all
         return self.env["mgmtsystem.action.stage"].search([], order=order)
 
     @api.model_create_multi

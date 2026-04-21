@@ -74,7 +74,7 @@ class MgmtsystemtActionReport(models.Model):
 
     def init(self):
         """Display a pivot view of action."""
-        tools.drop_view_if_exists(self._cr, "mgmtsystem_action_report")
+        tools.drop_view_if_exists(self.env.cr, "mgmtsystem_action_report")
         self.env.cr.execute(  # pylint: disable=E8103
             f"CREATE or REPLACE VIEW {self._table} as ({self._query()})"
         )
