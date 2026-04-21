@@ -45,9 +45,9 @@
 
     <record id="open_mgmtsystem_nonconformity_cause_list" model="ir.actions.act_window">
         <field name="name">Causes</field>
-        <field name="type">ir.actions.act_window</field>
+        <field name="path">mgmtsystem-nonconformity-causes</field>
         <field name="res_model">mgmtsystem.nonconformity.cause</field>
-        <field name="view_id" eval="view_mgmtsystem_nonconformity_cause_tree" />
+        <field name="view_id" ref="view_mgmtsystem_nonconformity_cause_tree" />
         <field name="search_view_id" ref="view_mgmtsystem_nonconformity_cause_filter" />
     </record>
 
