@@ -21,36 +21,36 @@ Management System
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fmanagement--system-lightgray.png?logo=github
-    :target: https://github.com/OCA/management-system/tree/18.0/mgmtsystem
+    :target: https://github.com/OCA/management-system/tree/19.0/mgmtsystem
     :alt: OCA/management-system
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/management-system-18-0/management-system-18-0-mgmtsystem
+    :target: https://translation.odoo-community.org/projects/management-system-19-0/management-system-19-0-mgmtsystem
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/management-system&target_branch=18.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/management-system&target_branch=19.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module is the basis of any management system applications:
 
-- audit reports
-- nonconformities
-- immediate actions
-- preventive actions
-- corrective actions
-- improvement opportunities
+-  audit reports
+-  nonconformities
+-  immediate actions
+-  preventive actions
+-  corrective actions
+-  improvement opportunities
 
 Videos and presentations from past OCA Days:
 
-- 2022: `Using the Management Systems to drive your ISO norm
-  compliance <https://www.youtube.com/watch?v=w2nf_O9TajM>`__
-- 2015: `Manage your ISO 27001-certified ISMS with
-  Odoo <https://es.slideshare.net/slideshow/manage-your-information-security-management-system-with-odoo/49101147>`__
-- 2013: `ISO & Standards Management with
-  OpenERP <https://es.slideshare.net/slideshow/iso-anmanagement-systemswithopenerpen/23915296>`__
-- 2012: `OpenERP Management System
-  Modules <https://es.slideshare.net/slideshow/openerp-management-system-modules/13058968#2>`__
+-  2022: `Using the Management Systems to drive your ISO norm
+   compliance <https://www.youtube.com/watch?v=w2nf_O9TajM>`__
+-  2015: `Manage your ISO 27001-certified ISMS with
+   Odoo <https://es.slideshare.net/slideshow/manage-your-information-security-management-system-with-odoo/49101147>`__
+-  2013: `ISO & Standards Management with
+   OpenERP <https://es.slideshare.net/slideshow/iso-anmanagement-systemswithopenerpen/23915296>`__
+-  2012: `OpenERP Management System
+   Modules <https://es.slideshare.net/slideshow/openerp-management-system-modules/13058968#2>`__
 
 **Table of contents**
 
@@ -74,7 +74,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/management-system/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/management-system/issues/new?body=module:%20mgmtsystem%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/management-system/issues/new?body=module:%20mgmtsystem%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -89,20 +89,20 @@ Authors
 Contributors
 ------------
 
-- Savoir-faire Linux <support@savoirfairelinux.com>
-- Gervais Naoussi <gervaisnaoussi@gmail.com>
-- Eugen Don <eugen.don@don-systems.de>
-- Jose Maria Alzaga <jose.alzaga@aselcis.com>
-- Iván Todorovich <ivan.todorovich@gmail.com>
-- `Tecnativa <https://www.tecnativa.com>`__:
+-  Savoir-faire Linux <support@savoirfairelinux.com>
+-  Gervais Naoussi <gervaisnaoussi@gmail.com>
+-  Eugen Don <eugen.don@don-systems.de>
+-  Jose Maria Alzaga <jose.alzaga@aselcis.com>
+-  Iván Todorovich <ivan.todorovich@gmail.com>
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  - Ernesto Tejeda
+   -  Ernesto Tejeda
 
-- `Trobz <https://trobz.com>`__:
+-  `Trobz <https://trobz.com>`__:
 
-  - Dung Tran <dungtd@trobz.com>
+   -  Dung Tran <dungtd@trobz.com>
 
-- Yvan Dotet <yvan.dotet@logicasoft.eu>
+-  Yvan Dotet <yvan.dotet@logicasoft.eu>
 
 Other credits
 -------------
@@ -123,6 +123,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/management-system <https://github.com/OCA/management-system/tree/18.0/mgmtsystem>`_ project on GitHub.
+This module is part of the `OCA/management-system <https://github.com/OCA/management-system/tree/19.0/mgmtsystem>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.

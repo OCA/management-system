@@ -28,6 +28,7 @@
 
     <record id="system_action" model="ir.actions.act_window">
         <field name="name">Management Systems</field>
+        <field name="path">mgmtsystem-system</field>
         <field name="res_model">mgmtsystem.system</field>
         <field name="view_mode">list,form</field>
         <field name="view_id" ref="system_list" />
