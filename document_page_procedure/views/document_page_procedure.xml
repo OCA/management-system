@@ -2,6 +2,7 @@
 <odoo>
     <record model="ir.actions.act_window" id="action_procedures">
         <field name="name">Procedures</field>
+        <field name="path">mgmtsystem-procedures</field>
         <field name="res_model">document.page</field>
         <field name="view_mode">list,form</field>
         <field name="help">Procedures of your management system.</field>
