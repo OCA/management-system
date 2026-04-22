@@ -6,6 +6,6 @@ from odoo import fields, models
 
 
 class MgmtsystemMgmHR(models.Model):
-    _inherit = ["mgmtsystem.nonconformity"]
+    _inherit = "mgmtsystem.nonconformity"
 
     department_id = fields.Many2one("hr.department", "Department")
