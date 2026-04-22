@@ -2,6 +2,7 @@
 <odoo>
     <record id="work_instructions_action" model="ir.actions.act_window">
         <field name="name">Work Instructions</field>
+        <field name="path">work-instructions</field>
         <field name="res_model">document.page</field>
         <field name="view_mode">list,form</field>
         <field name="help">Work instructions of your management system.</field>
