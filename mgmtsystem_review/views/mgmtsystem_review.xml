@@ -57,6 +57,7 @@
 
     <record id="open_mgmtsystem_review_line_list" model="ir.actions.act_window">
         <field name="name">Review Lines</field>
+        <field name="path">mgmtsystem-review-lines</field>
         <field name="res_model">mgmtsystem.review.line</field>
         <field name="view_mode">list,form</field>
     </record>
@@ -208,6 +209,7 @@
 
     <record id="open_mgmtsystem_review_list" model="ir.actions.act_window">
         <field name="name">Reviews</field>
+        <field name="path">mgmtsystem-reviews</field>
         <field name="res_model">mgmtsystem.review</field>
         <field name="view_mode">list,form,calendar</field>
         <field name="view_id" ref="view_mgmtsystem_review_tree" />
