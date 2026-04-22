@@ -37,7 +37,7 @@
                     <field name="company_id" groups="base.group_multi_company" />
                 </group>
                 <newline />
-                <group expand="0" string="Group By...">
+                <group>
                     <filter
                         name="group_by_acceptability"
                         string="Accepted"
@@ -90,6 +90,7 @@
 
     <record model="ir.actions.act_window" id="open_mgmtsystem_hazard_list">
         <field name="name">Hazards</field>
+        <field name="path">mgmtsystem-hazards</field>
         <field name="res_model">mgmtsystem.hazard</field>
         <field name="view_mode">list,form</field>
         <field name="view_id" ref="view_mgmtsystem_hazard_tree" />

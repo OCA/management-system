@@ -45,11 +45,6 @@ msgid "Attachment Count"
 msgstr "Antal bifogade filer"
 
 #. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_breakage
-msgid "Breakage"
-msgstr "Brott"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__comments
 msgid "Comments"
 msgstr "Kommentarer"
@@ -64,11 +59,6 @@ msgstr "Kommentarer"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__company_id
 msgid "Company"
 msgstr "Bolag"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_containment
-msgid "Containment Failure"
-msgstr "Inneslutningsfel"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__name
@@ -116,11 +106,6 @@ msgid "Created on"
 msgstr "Skapad den"
 
 #. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_critical
-msgid "Critical"
-msgstr "Kritisk"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__analysis_date
 msgid "Date"
 msgstr "Datum"
@@ -154,34 +139,9 @@ msgid "Display Name"
 msgstr "Visningsnamn"
 
 #. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ems_action
-msgid "EMS - Action"
-msgstr "EMS - Åtgärder"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ems_position
-msgid "EMS - Position"
-msgstr "EMS - Position"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_electric_bilge
-msgid "Electric Bilge"
-msgstr "Elektrisk läns"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__executed
 msgid "Executed"
 msgstr "Utförd"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_exposure
-msgid "Exposure to Hazardous Materials"
-msgstr "Exponering för farliga material"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_fire_explosion
-msgid "Fire / Explosion"
-msgstr "Brand/explosion"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_follower_ids
@@ -192,16 +152,6 @@ msgstr "Följare"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Följare (Partners)"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_leak
-msgid "Gas Leak"
-msgstr "Gasläcka"
-
-#. module: mgmtsystem_hazard
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_filter
-msgid "Group By..."
-msgstr "Gruppera genom..."
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__has_message
@@ -232,16 +182,6 @@ msgid "Hazards of the health and safety management system"
 msgstr "Risker med ledningssystemet för hälsa och säkerhet"
 
 #. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_heavy
-msgid "Heavy"
-msgstr "Tung"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_high
-msgid "High"
-msgstr "Hög"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__id
@@ -266,11 +206,6 @@ msgid "If checked, some messages have a delivery error."
 msgstr "Om markerad, vissa meddelanden får ett leveransfel."
 
 #. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_ignition_gas
-msgid "Ignition of Flammable Gas"
-msgstr "Antändning av brandfarlig gas"
-
-#. module: mgmtsystem_hazard
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_test_form
 msgid "Implementation Test"
 msgstr "Test av implementering"
@@ -287,11 +222,6 @@ msgstr "Implementationstester"
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_test
 msgid "Implementation Tests of hazard"
 msgstr "Implementationstester av risk"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_intoxication
-msgid "Intoxication"
-msgstr "Berusning"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_is_follower
@@ -330,28 +260,6 @@ msgid "Last Updated on"
 msgstr "Senast uppdaterad den"
 
 #. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_low
-#: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_low
-msgid "Low"
-msgstr "Låg"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_aging
-msgid "Materials Aging"
-msgstr "Materialets åldrande"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_maybe
-msgid "Maybe"
-msgstr "Kanske"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_medium
-#: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_medium
-msgid "Medium"
-msgstr "Medium"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__message_has_error
 msgid "Message Delivery error"
 msgstr "Fel vid leverans av meddelande"
@@ -387,16 +295,6 @@ msgid "Number of messages with delivery error"
 msgstr "Antal meddelanden med leveransfel"
 
 #. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ohsas_action
-msgid "OHSAS - Action"
-msgstr "OHSAS - Åtgärder"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.type,name:mgmtsystem_hazard.type_ohsas_position
-msgid "OHSAS - Position"
-msgstr "OHSAS - Position"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__usage_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__name
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_usage_form
@@ -430,11 +328,6 @@ msgid "Origins"
 msgstr "Ursprung"
 
 #. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.origin,name:mgmtsystem_hazard.origin_panic
-msgid "Panic"
-msgstr "Panik"
-
-#. module: mgmtsystem_hazard
 #: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_probability_list
 #: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_probability
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_probability_filter
@@ -452,11 +345,6 @@ msgstr "Sannolikhet"
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_probability
 msgid "Probability of hazard"
 msgstr "Sannolikhet för risk"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_probably
-msgid "Probably"
-msgstr "Förmodligen"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__responsible_user_id
@@ -493,16 +381,6 @@ msgstr "Allvarlighetsgrad"
 #: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_severity
 msgid "Severity of hazard"
 msgstr "Riskens allvarlighetsgrad"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.severity,name:mgmtsystem_hazard.severity_simple
-msgid "Simple"
-msgstr "Enkel"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.hazard,name:mgmtsystem_hazard.hazard_spilling
-msgid "Spilling"
-msgstr "Spiller"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__name
@@ -542,21 +420,6 @@ msgid "Value"
 msgstr "Värde"
 
 #. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_very_high
-msgid "Very High"
-msgstr "Mycket hög"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.probability,name:mgmtsystem_hazard.probability_very_likely
-msgid "Very likely"
-msgstr "Mycket sannolikt"
-
-#. module: mgmtsystem_hazard
-#: model:mgmtsystem.hazard.usage,name:mgmtsystem_hazard.usage_very_low
-msgid "Very low"
-msgstr "Mycket låg"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
 msgid "Website Messages"
 msgstr "Webbplatsmeddelanden"
@@ -565,6 +428,87 @@ msgstr "Webbplatsmeddelanden"
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
 msgid "Website communication history"
 msgstr "Webbplatsens kommunikationshistorik"
+
+#~ msgid "Breakage"
+#~ msgstr "Brott"
+
+#~ msgid "Containment Failure"
+#~ msgstr "Inneslutningsfel"
+
+#~ msgid "Critical"
+#~ msgstr "Kritisk"
+
+#~ msgid "EMS - Action"
+#~ msgstr "EMS - Åtgärder"
+
+#~ msgid "EMS - Position"
+#~ msgstr "EMS - Position"
+
+#~ msgid "Electric Bilge"
+#~ msgstr "Elektrisk läns"
+
+#~ msgid "Exposure to Hazardous Materials"
+#~ msgstr "Exponering för farliga material"
+
+#~ msgid "Fire / Explosion"
+#~ msgstr "Brand/explosion"
+
+#~ msgid "Gas Leak"
+#~ msgstr "Gasläcka"
+
+#~ msgid "Group By..."
+#~ msgstr "Gruppera genom..."
+
+#~ msgid "Heavy"
+#~ msgstr "Tung"
+
+#~ msgid "High"
+#~ msgstr "Hög"
+
+#~ msgid "Ignition of Flammable Gas"
+#~ msgstr "Antändning av brandfarlig gas"
+
+#~ msgid "Intoxication"
+#~ msgstr "Berusning"
+
+#~ msgid "Low"
+#~ msgstr "Låg"
+
+#~ msgid "Materials Aging"
+#~ msgstr "Materialets åldrande"
+
+#~ msgid "Maybe"
+#~ msgstr "Kanske"
+
+#~ msgid "Medium"
+#~ msgstr "Medium"
+
+#~ msgid "OHSAS - Action"
+#~ msgstr "OHSAS - Åtgärder"
+
+#~ msgid "OHSAS - Position"
+#~ msgstr "OHSAS - Position"
+
+#~ msgid "Panic"
+#~ msgstr "Panik"
+
+#~ msgid "Probably"
+#~ msgstr "Förmodligen"
+
+#~ msgid "Simple"
+#~ msgstr "Enkel"
+
+#~ msgid "Spilling"
+#~ msgstr "Spiller"
+
+#~ msgid "Very High"
+#~ msgstr "Mycket hög"
+
+#~ msgid "Very likely"
+#~ msgstr "Mycket sannolikt"
+
+#~ msgid "Very low"
+#~ msgstr "Mycket låg"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Senast redigerad den"

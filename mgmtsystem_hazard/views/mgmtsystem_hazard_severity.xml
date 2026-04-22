@@ -45,6 +45,7 @@
 
     <record id="open_mgmtsystem_hazard_severity_list" model="ir.actions.act_window">
         <field name="name">Severities</field>
+        <field name="path">mgmtsystem-hazard-severities</field>
         <field name="res_model">mgmtsystem.hazard.severity</field>
         <field name="view_mode">list,form</field>
         <field name="view_id" eval="False" />

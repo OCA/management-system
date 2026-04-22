@@ -44,6 +44,7 @@
 
     <record id="open_mgmtsystem_hazard_test_list" model="ir.actions.act_window">
         <field name="name">Implementation Tests</field>
+        <field name="path">mgmtsystem-hazard-tests</field>
         <field name="res_model">mgmtsystem.hazard.test</field>
         <field name="view_mode">list,form</field>
         <field name="view_id" eval="False" />

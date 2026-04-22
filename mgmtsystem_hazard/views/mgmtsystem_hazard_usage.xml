@@ -45,6 +45,7 @@
 
     <record id="open_mgmtsystem_hazard_usage_list" model="ir.actions.act_window">
         <field name="name">Occupations / Usages</field>
+        <field name="path">mgmtsystem-hazard-usages</field>
         <field name="res_model">mgmtsystem.hazard.usage</field>
         <field name="view_mode">list,form</field>
         <field name="view_id" eval="False" />
