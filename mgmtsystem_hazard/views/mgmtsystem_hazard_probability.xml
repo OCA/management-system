@@ -45,6 +45,7 @@
 
     <record id="open_mgmtsystem_hazard_probability_list" model="ir.actions.act_window">
         <field name="name">Probabilities</field>
+        <field name="path">mgmtsystem-hazard-probabilities</field>
         <field name="res_model">mgmtsystem.hazard.probability</field>
         <field name="view_mode">list,form</field>
         <field name="view_id" eval="False" />

@@ -44,6 +44,7 @@
         model="ir.actions.act_window"
     >
         <field name="name">Control Measures</field>
+        <field name="path">mgmtsystem-hazard-control-measures</field>
         <field name="res_model">mgmtsystem.hazard.control_measure</field>
         <field name="view_mode">list,form</field>
         <field name="view_id" eval="False" />

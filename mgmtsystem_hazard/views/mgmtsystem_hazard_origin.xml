@@ -42,6 +42,7 @@
 
     <record id="open_mgmtsystem_hazard_origin_list" model="ir.actions.act_window">
         <field name="name">Origins</field>
+        <field name="path">mgmtsystem-hazard-origins</field>
         <field name="res_model">mgmtsystem.hazard.origin</field>
         <field name="view_mode">list,form</field>
         <field name="view_id" eval="False" />
