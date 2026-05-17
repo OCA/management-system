@@ -14,6 +14,14 @@
             <list>
                 <field name="ref" readonly="True" />
                 <field name="create_date" />
+                <field name="opened_date" />
+                <field name="closed_date" />
+                <field
+                    name="deadline_date"
+                    decoration-info="deadline_date &gt; context_today().strftime('%Y-%m-%d')"
+                    decoration-warning="deadline_date == context_today().strftime('%Y-%m-%d')"
+                    decoration-danger="deadline_date &lt; context_today().strftime('%Y-%m-%d')"
+                />
                 <field name="partner_id" />
                 <field name="description" />
                 <field name="user_id" />
@@ -220,6 +228,11 @@
                                         widget="many2many_tags"
                                         readonly="state not in ('draft', 'analysis')"
                                     />
+                                    <field name="event_type" />
+                                    <field
+                                        name="system_id"
+                                        readonly="state not in ('draft', 'analysis')"
+                                    />
                                     <field
                                         name="immediate_action_id"
                                         domain="[('type_action','=','immediate')]"
@@ -228,9 +241,13 @@
                                 </group>
                                 <group>
                                     <field
-                                        name="system_id"
-                                        readonly="state not in ('draft', 'analysis')"
+                                        name="deadline_date"
+                                        decoration-info="deadline_date &gt; context_today().strftime('%Y-%m-%d')"
+                                        decoration-warning="deadline_date == context_today().strftime('%Y-%m-%d')"
+                                        decoration-danger="deadline_date &lt; context_today().strftime('%Y-%m-%d')"
                                     />
+                                    <field name="opened_date" />
+                                    <field name="closed_date" />
                                     <field
                                         name="responsible_user_id"
                                         readonly="state not in ('draft', 'analysis')"

@@ -29,4 +29,9 @@
         <field name="sequence">250</field>
         <field name="state">cancel</field>
     </record>
+    <record id="stage_rejected" model="mgmtsystem.event.stage">
+        <field name="name">Rejected</field>
+        <field name="sequence">300</field>
+        <field name="state">cancel</field>
+    </record>
 </odoo>

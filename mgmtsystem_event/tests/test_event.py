@@ -79,8 +79,8 @@ class TestModelEvent(common.TransactionCase):
         )
         self.nc_test.stage_id = self.env.ref("mgmtsystem_event.stage_done")
         self.assertEqual(self.nc_test.state, "done")
-        self.assertTrue(self.nc_test.closing_date, "Set close date on Done")
+        self.assertTrue(self.nc_test.closed_date, "Set close date on Done")
 
         self.nc_test.stage_id = self.env.ref("mgmtsystem_event.stage_open")
         self.assertEqual(self.nc_test.state, "open")
-        self.assertFalse(self.nc_test.closing_date, "Reset close date on reopen")
+        self.assertFalse(self.nc_test.closed_date, "Reset close date on reopen")

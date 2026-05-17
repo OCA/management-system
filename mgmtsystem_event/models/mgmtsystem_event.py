@@ -24,25 +24,48 @@ class MgmtsystemEvent(models.Model):
         return stage_ids
 
     # 1. Description
-    name = fields.Char(required=True)
+    name = fields.Char(required=True, tracking=True)
     ref = fields.Char("Reference", required=True, default="NEW")
     # Compute data
     number_of_events = fields.Integer("# of events", default=1)
+    opened_date = fields.Datetime("Date Opened", readonly=True, tracking=True)
+    deadline_date = fields.Datetime(
+        "Deadline", help="Deadline to handle and close event", tracking=True
+    )
+    closed_date = fields.Datetime("Date Closed", readonly=True, tracking=True)
     days_since_updated = fields.Integer(
         compute="_compute_days_since_updated", store=True
+    )
+    number_of_days_to_open = fields.Integer(
+        "# of days to open", compute="_compute_number_of_days_to_open", store=True
     )
     number_of_days_to_close = fields.Integer(
         "# of days to close",
         compute="_compute_number_of_days_to_close",
         store=True,
     )
-    closing_date = fields.Datetime()
 
     partner_id = fields.Many2one(
-        "res.partner", "Partner", required=True, default=lambda self: self.env.company
+        "res.partner",
+        "Partner",
+        required=True,
+        default=lambda self: self.env.company,
+        tracking=True,
     )
     reference = fields.Char(
-        "Related to", default=lambda self: self._default_reference()
+        "Related to", default=lambda self: self._default_reference(), tracking=True
+    )
+    event_type = fields.Selection(
+        [
+            ("improvement", "Improvement"),
+            ("prevention", "Preventive"),
+            ("correction", "Corrective"),
+            ("immediate", "Immediate"),
+        ],
+        "Type",
+        required=True,
+        default="improvement",
+        tracking=True,
     )
     responsible_user_id = fields.Many2one("res.users", "Responsible", tracking=True)
     manager_user_id = fields.Many2one("res.users", "Manager", tracking=True)
@@ -59,6 +82,7 @@ class MgmtsystemEvent(models.Model):
         "event_id",
         "origin_id",
         "Origin",
+        tracking=True,
     )
     procedure_ids = fields.Many2many(
         "document.page",
@@ -184,11 +208,18 @@ class MgmtsystemEvent(models.Model):
     def _elapsed_days(self, dt1, dt2):
         return (dt2 - dt1).days if dt1 and dt2 else 0
 
-    @api.depends("closing_date", "create_date")
+    @api.depends("create_date", "opened_date")
+    def _compute_number_of_days_to_open(self):
+        for event in self:
+            event.number_of_days_to_open = self._elapsed_days(
+                event.create_date, event.opened_date
+            )
+
+    @api.depends("opened_date", "closed_date")
     def _compute_number_of_days_to_close(self):
-        for nc in self:
-            nc.number_of_days_to_close = self._elapsed_days(
-                nc.create_date, nc.closing_date
+        for event in self:
+            event.number_of_days_to_close = self._elapsed_days(
+                event.opened_date, event.closed_date
             )
 
     @api.depends("write_date")
@@ -221,14 +252,29 @@ class MgmtsystemEvent(models.Model):
         if not is_writing and is_state_change:
             for nc in self.with_context(is_writing=True):
                 # On Close set Closing Date
-                if nc.state == "done" and not nc.closing_date:
-                    nc.closing_date = fields.Datetime.now()
+                if nc.state == "done" and not nc.closed_date:
+                    nc.closed_date = fields.Datetime.now()
                 # On reopen resete Closing Date
-                elif nc.state != "done" and nc.closing_date:
-                    nc.closing_date = None
+                elif nc.state != "done" and nc.closed_date:
+                    nc.closed_date = None
                 # On action plan approval, Open the Actions
                 if nc.state == "open" and was_not_open[nc.id]:
                     for action in nc._get_all_actions():
                         if action.stage_id.is_starting:
                             action.case_open()
+
+        # Update followers
+        if "responsible_user_id" in vals:
+            for record in self:
+                if record.responsible_user_id and record.responsible_user_id.partner_id:
+                    record.message_subscribe(
+                        partner_ids=[record.responsible_user_id.partner_id.id]
+                    )
+        if "manager_user_id" in vals:
+            for record in self:
+                if record.manager_user_id and record.manager_user_id.partner_id:
+                    record.message_subscribe(
+                        partner_ids=[record.manager_user_id.partner_id.id]
+                    )
+
         return result
