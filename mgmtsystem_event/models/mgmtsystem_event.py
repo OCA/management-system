@@ -24,7 +24,7 @@ class MgmtsystemEvent(models.Model):
         return stage_ids
 
     # 1. Description
-    name = fields.Char()
+    name = fields.Char(required=True)
     ref = fields.Char("Reference", required=True, default="NEW")
     # Compute data
     number_of_events = fields.Integer("# of events", default=1)
@@ -38,16 +38,14 @@ class MgmtsystemEvent(models.Model):
     )
     closing_date = fields.Datetime()
 
-    partner_id = fields.Many2one("res.partner", "Partner", required=True)
+    partner_id = fields.Many2one(
+        "res.partner", "Partner", required=True, default=lambda self: self.env.company
+    )
     reference = fields.Char(
         "Related to", default=lambda self: self._default_reference()
     )
-    responsible_user_id = fields.Many2one(
-        "res.users", "Responsible", required=True, tracking=True
-    )
-    manager_user_id = fields.Many2one(
-        "res.users", "Manager", required=True, tracking=True
-    )
+    responsible_user_id = fields.Many2one("res.users", "Responsible", tracking=True)
+    manager_user_id = fields.Many2one("res.users", "Manager", tracking=True)
     user_id = fields.Many2one(
         "res.users",
         "Filled in by",
@@ -61,7 +59,6 @@ class MgmtsystemEvent(models.Model):
         "event_id",
         "origin_id",
         "Origin",
-        required=True,
     )
     procedure_ids = fields.Many2many(
         "document.page",

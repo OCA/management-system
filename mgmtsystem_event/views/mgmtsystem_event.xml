@@ -168,7 +168,7 @@
         <field name="name">mgmtsystem.event.form</field>
         <field name="model">mgmtsystem.event</field>
         <field name="arch" type="xml">
-            <form string="Non-Conformity">
+            <form string="Event">
                 <header>
                     <field
                         name="stage_id"
@@ -176,39 +176,26 @@
                         options="{'clickable': 1}"
                     />
                 </header>
-                <sheet string="Non-Conformity">
+                <sheet string="Event">
                     <div class="oe_button_box" name="button_box" />
                     <field name="kanban_state" widget="state_selection" />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="ref" readonly="1" />
+                        </h1>
+                    </div>
                     <group name="main">
                         <group name="config">
                             <field name="name" readonly="state not in 'draft'" />
-                            <field name="ref" readonly="state not in 'draft'" />
-                            <field name="create_date" readonly="1" />
+                            <field name="reference" readonly="state not in 'draft'" />
                             <field
                                 name="partner_id"
                                 readonly="state not in ('draft', 'analysis')"
                             />
-                            <field name="reference" readonly="state not in 'draft'" />
-                            <field
-                                name="origin_ids"
-                                widget="many2many_tags"
-                                readonly="state not in ('draft', 'analysis')"
-                            />
                         </group>
                         <group name="meta">
-                            <field
-                                name="responsible_user_id"
-                                readonly="state not in ('draft', 'analysis')"
-                            />
-                            <field
-                                name="manager_user_id"
-                                readonly="state not in ('draft', 'analysis')"
-                            />
-                            <field name="user_id" readonly="state not in 'draft'" />
-                            <field
-                                name="system_id"
-                                readonly="state not in ('draft', 'analysis')"
-                            />
+                            <field name="create_date" readonly="1" />
+                            <field name="user_id" readonly="1" />
                             <field
                                 name="company_id"
                                 groups="base.group_multi_company"
@@ -223,16 +210,52 @@
                                 placeholder="Add a description ..."
                                 readonly="state not in ('draft', 'analysis')"
                             />
-                            <group name="state">
-                                <field
-                                    name="immediate_action_id"
-                                    domain="[('type_action','=','immediate')]"
-                                    readonly="state not in ('draft', 'analysis')"
-                                />
+                        </page>
+
+                        <page string="Triage" name="triage">
+                            <group>
+                                <group>
+                                    <field
+                                        name="origin_ids"
+                                        widget="many2many_tags"
+                                        readonly="state not in ('draft', 'analysis')"
+                                    />
+                                    <field
+                                        name="immediate_action_id"
+                                        domain="[('type_action','=','immediate')]"
+                                        readonly="state not in ('draft', 'analysis')"
+                                    />
+                                </group>
+                                <group>
+                                    <field
+                                        name="system_id"
+                                        readonly="state not in ('draft', 'analysis')"
+                                    />
+                                    <field
+                                        name="responsible_user_id"
+                                        readonly="state not in ('draft', 'analysis')"
+                                    />
+                                    <field
+                                        name="manager_user_id"
+                                        readonly="state not in ('draft', 'analysis')"
+                                    />
+                                </group>
                             </group>
                         </page>
 
-                        <page string="Procedures" name="procedures">
+                        <page
+                            string="Procedures"
+                            readonly="state == 'draft'"
+                            name="procedures"
+                        >
+                            <div
+                                invisible="state != 'draft'"
+                                class="alert alert-warning"
+                                role="status"
+                            >
+                                <p
+                                >You cannot edit this page if the event is in Draft state</p>
+                            </div>
                             <field
                                 name="procedure_ids"
                                 readonly="state not in ('draft', 'analysis')"
@@ -242,9 +265,18 @@
 
                         <page
                             string="Causes and Analysis"
-                            invisible="state in ('draft', 'cancel')"
+                            readonly="state in ('draft', 'cancel')"
                             name="causes_analysis"
                         >
+                            <div
+                                invisible="state not in ('draft', 'cancel')"
+                                class="alert alert-warning"
+                                role="status"
+                            >
+                                <p
+                                >You cannot edit this page if the event is in Draft or Cancel state</p>
+                            </div>
+
                             <separator string="Analysis" />
                             <field name="analysis" readonly="state not in 'analysis'" />
 
@@ -275,9 +307,18 @@
 
                         <page
                             string="Actions"
-                            invisible="state in ('draft', 'analysis', 'cancel')"
+                            readonly="state in ('draft', 'analysis', 'cancel')"
                             name="actions"
                         >
+                            <div
+                                invisible="state not in ('draft', 'analysis', 'cancel')"
+                                class="alert alert-warning"
+                                role="status"
+                            >
+                                <p
+                                >You cannot edit this page if the event is in Draft, Analysis or Cancel state</p>
+                            </div>
+
                             <separator string="Action Plan" />
                             <field
                                 name="action_ids"
