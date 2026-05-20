@@ -27,8 +27,8 @@ addon | version | maintainers | summary
 [document_page_procedure](document_page_procedure/) | 18.0.1.0.1 |  | Document Management - Wiki - Procedures
 [document_page_quality_manual](document_page_quality_manual/) | 18.0.1.0.1 |  | Quality Manual
 [document_page_work_instruction](document_page_work_instruction/) | 18.0.1.0.1 |  | Document Management - Wiki - Work Instructions
-[mgmtsystem](mgmtsystem/) | 18.0.1.1.4 |  | Support for management systems, such as ISO compliance.
-[mgmtsystem_action](mgmtsystem_action/) | 18.0.1.0.1 |  | Management System - Action
+[mgmtsystem](mgmtsystem/) | 18.0.1.2.0 |  | Support for management systems, such as ISO compliance.
+[mgmtsystem_action](mgmtsystem_action/) | 18.0.1.0.2 |  | Management System - Action
 [mgmtsystem_action_efficacy](mgmtsystem_action_efficacy/) | 18.0.1.0.0 |  | Add information on the application of the Action.
 [mgmtsystem_action_template](mgmtsystem_action_template/) | 18.0.1.0.0 |  | Add Template management for Actions.
 [mgmtsystem_audit](mgmtsystem_audit/) | 18.0.1.1.0 |  | Management System - Audit
@@ -37,7 +37,7 @@ addon | version | maintainers | summary
 [mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 18.0.1.2.0 |  | Hazard Risk
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 18.0.1.0.0 |  | Information Security Management System Manual
 [mgmtsystem_manual](mgmtsystem_manual/) | 18.0.1.0.1 |  | Management System - Manual
-[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 18.0.1.2.2 |  | Management System - Nonconformity
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 18.0.1.3.0 |  | Management System - Nonconformity
 [mgmtsystem_nonconformity_hazard](mgmtsystem_nonconformity_hazard/) | 18.0.1.0.0 |  | Management System - Nonconformity Hazard
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 18.0.1.0.0 |  | Bridge module between hr and mgmsystem and
 [mgmtsystem_nonconformity_maintenance_equipment](mgmtsystem_nonconformity_maintenance_equipment/) | 18.0.1.0.0 |  | Management System - Nonconformity Maintenance Equipment

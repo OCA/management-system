@@ -20,24 +20,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner__mgmtsystem_claim_count
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_users__mgmtsystem_claim_count
+#, fuzzy
+msgid "# Mgmt Claims"
+msgstr "Forderungen"
+
+#. module: mgmtsystem_claim
 #: model:mail.template,body_html:mgmtsystem_claim.email_template_new_claim_reminder
 msgid ""
-"\n"
-"            \n"
-"<p>Hello <t t-out=\"object.user_id.name\"/>,</br>\n"
+"<p>Hello <t t-out=\"object.user_id.name\"/>,\n"
 "A new claim has been assigned to you:\n"
 "\n"
-"<p>\n"
+"</p><p>\n"
 "<t t-out=\"object.description\"/>\n"
 "</p>\n"
 "\n"
 "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
 "b>\n"
-"</p>\n"
+"\n"
 "\n"
 "<p>\n"
-"Thank you and have a nice day.<br>\n"
-"--<br>\n"
+"Thank you and have a nice day.<br/>\n"
+"--<br/>\n"
 "Odoo\n"
 "</p>\n"
 "            \n"
@@ -47,14 +52,12 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: model:mail.template,body_html:mgmtsystem_claim.email_template_remain_claim_reminder
 msgid ""
-"\n"
-"            \n"
 "<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
 "\n"
 "<p>\n"
 "This is an automated message to remind you that the\n"
-"following claim is due to be completed in 10 days (<t t-out=\"object."
-"date_deadline\"/>):\n"
+"following claim is due to be completed in 10 days (<t t-"
+"out=\"object.date_deadline\"/>):\n"
 "\n"
 "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
 "b>\n"
@@ -65,20 +68,13 @@ msgid ""
 "</p>\n"
 "\n"
 "<p>\n"
-"Thank you and have a nice day.<br>\n"
-"--<br>\n"
+"Thank you and have a nice day.<br/>\n"
+"--<br/>\n"
 "Odoo\n"
 "</p>\n"
 "            \n"
 "        "
 msgstr ""
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner__mgmtsystem_claim_count
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_users__mgmtsystem_claim_count
-#, fuzzy
-msgid "# Mgmt Claims"
-msgstr "Forderungen"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction
@@ -288,7 +284,6 @@ msgstr "EMail"
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.server,name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder_ir_actions_server
-#: model:ir.cron,cron_name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder
 msgid "Email Claim Reminders 10 days before due date."
 msgstr ""
 
@@ -345,6 +340,7 @@ msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -360,12 +356,6 @@ msgstr ""
 #, fuzzy
 msgid "Is Follower"
 msgstr "Nachverfolgung"
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage____last_update
-msgid "Last Modified on"
-msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__write_uid
@@ -384,11 +374,6 @@ msgstr ""
 msgid ""
 "Link between stages and sales teams. When set, this limitate the current "
 "stage to the selected sales teams."
-msgstr ""
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_main_attachment_id
-msgid "Main Attachment"
 msgstr ""
 
 #. module: mgmtsystem_claim
@@ -442,7 +427,6 @@ msgstr ""
 #. module: mgmtsystem_claim
 #. odoo-python
 #: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
-#, python-format
 msgid "New"
 msgstr ""
 
@@ -467,16 +451,6 @@ msgstr ""
 #, fuzzy
 msgid "Next Activity Type"
 msgstr "Datum der nächsten Maßnahme"
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__non_conformity_ids
-msgid "Non Conformity"
-msgstr ""
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__non_conformity_count
-msgid "Non Conformity Count"
-msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction_counter
@@ -598,6 +572,11 @@ msgstr "Hauptursache"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claims_form_view
 msgid "Root Causes"
 msgstr "Hauptursachen"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__team_id

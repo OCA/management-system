@@ -22,17 +22,6 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: mgmtsystem_hazard_risk
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.res_config_settings_view_form
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
-"\" groups=\"base.group_multi_company\"/>"
-msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
-"\" groups=\"base.group_multi_company\"/>"
-
-#. module: mgmtsystem_hazard_risk
 #: model:ir.model.fields,field_description:mgmtsystem_hazard_risk.field_mgmtsystem_hazard_residual_risk__acceptability
 msgid "Acceptability"
 msgstr "Aceptabilidad"
@@ -243,12 +232,26 @@ msgid "Severity"
 msgstr "Severidad"
 
 #. module: mgmtsystem_hazard_risk
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard_risk.res_config_settings_view_form
+msgid "Values set here are company-specific."
+msgstr ""
+
+#. module: mgmtsystem_hazard_risk
 #. odoo-python
 #: code:addons/mgmtsystem_hazard_risk/models/common.py:0
 msgid "You must define the company's risk computing formula. Go to settings"
 msgstr ""
 "Debe definir la fórmula de cálculo del riesgo de la empresa. Ir a "
 "configuración"
+
+#~ msgid ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are "
+#~ "company-specific.\" role=\"img\" aria-label=\"Values set here are company-"
+#~ "specific.\" groups=\"base.group_multi_company\"/>"
+#~ msgstr ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are "
+#~ "company-specific.\" role=\"img\" aria-label=\"Values set here are company-"
+#~ "specific.\" groups=\"base.group_multi_company\"/>"
 
 #~ msgid "Last Modified on"
 #~ msgstr "modificado por última vez el"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-01-25 15:34+0000\n"
+"PO-Revision-Date: 2026-01-19 13:50+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,48 +14,50 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner__mgmtsystem_claim_count
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_users__mgmtsystem_claim_count
+msgid "# Mgmt Claims"
+msgstr "Nr. reclami gestione"
 
 #. module: mgmtsystem_claim
 #: model:mail.template,body_html:mgmtsystem_claim.email_template_new_claim_reminder
 msgid ""
-"\n"
-"            \n"
-"<p>Hello <t t-out=\"object.user_id.name\"/>,</br>\n"
+"<p>Hello <t t-out=\"object.user_id.name\"/>,\n"
 "A new claim has been assigned to you:\n"
 "\n"
-"<p>\n"
+"</p><p>\n"
 "<t t-out=\"object.description\"/>\n"
 "</p>\n"
 "\n"
 "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
 "b>\n"
-"</p>\n"
+"\n"
 "\n"
 "<p>\n"
-"Thank you and have a nice day.<br>\n"
-"--<br>\n"
+"Thank you and have a nice day.<br/>\n"
+"--<br/>\n"
 "Odoo\n"
 "</p>\n"
 "            \n"
 "        "
 msgstr ""
+"<p>Hello <t t-out=\"object.user_id.name\"/>,\n"
+"Ti è stato assegnato un nuovo reclamo:\n"
 "\n"
-"            \n"
-"<p>Salve<t t-out=\"object.user_id.name\"/>,</br>\n"
-"Ti è stato assegnato un reclamo:\n"
-"\n"
-"<p>\n"
+"</p><p>\n"
 "<t t-out=\"object.description\"/>\n"
 "</p>\n"
 "\n"
 "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
 "b>\n"
-"</p>\n"
+"\n"
 "\n"
 "<p>\n"
-"Grazie e buona giornata.<br>\n"
-"--<br>\n"
+"Grazie e buona giornata.<br/>\n"
+"--<br/>\n"
 "Odoo\n"
 "</p>\n"
 "            \n"
@@ -64,14 +66,12 @@ msgstr ""
 #. module: mgmtsystem_claim
 #: model:mail.template,body_html:mgmtsystem_claim.email_template_remain_claim_reminder
 msgid ""
-"\n"
-"            \n"
 "<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
 "\n"
 "<p>\n"
 "This is an automated message to remind you that the\n"
-"following claim is due to be completed in 10 days (<t t-out=\"object."
-"date_deadline\"/>):\n"
+"following claim is due to be completed in 10 days (<t t-"
+"out=\"object.date_deadline\"/>):\n"
 "\n"
 "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
 "b>\n"
@@ -82,21 +82,18 @@ msgid ""
 "</p>\n"
 "\n"
 "<p>\n"
-"Thank you and have a nice day.<br>\n"
-"--<br>\n"
+"Thank you and have a nice day.<br/>\n"
+"--<br/>\n"
 "Odoo\n"
 "</p>\n"
 "            \n"
 "        "
 msgstr ""
-"\n"
-"            \n"
-"<p>Salve<t t-out=\"object.user_id.name\"/>,</p>\n"
+"<p>Salve <t t-out=\"object.user_id.name\"/>,</p>\n"
 "\n"
 "<p>\n"
-"Questo è un messaggio automatico per ricordarti che il\n"
-"reclamo seguente deve essere completato entro 10 giorni (<t t-out=\"object."
-"date_deadline\"/>):\n"
+"Questo è un messaggio automatico per ricordarti che il seguente reclamo\n"
+"deve essere completato in 10 giorni  (<t t-out=\"object.date_deadline\"/>):\n"
 "\n"
 "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
 "b>\n"
@@ -107,18 +104,12 @@ msgstr ""
 "</p>\n"
 "\n"
 "<p>\n"
-"Grazie e buona giornata.<br>\n"
-"--<br>\n"
+"Grazie e buona giornata.<br/>\n"
+"--<br/>\n"
 "Odoo\n"
 "</p>\n"
 "            \n"
 "        "
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_partner__mgmtsystem_claim_count
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_res_users__mgmtsystem_claim_count
-msgid "# Mgmt Claims"
-msgstr "Nr. reclami gestione"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction
@@ -328,7 +319,6 @@ msgstr "E-mail"
 
 #. module: mgmtsystem_claim
 #: model:ir.actions.server,name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder_ir_actions_server
-#: model:ir.cron,cron_name:mgmtsystem_claim.ir_cron_mgmtsystem_claim_reminder
 msgid "Email Claim Reminders 10 days before due date."
 msgstr "Promemoria email reclami 10 giorni prima della scadenza."
 
@@ -385,6 +375,7 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_error
+#: model:ir.model.fields,help:mgmtsystem_claim.field_mgmtsystem_claim__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 
@@ -401,12 +392,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_is_follower
 msgid "Is Follower"
 msgstr "Segue"
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim____last_update
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim_stage____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__write_uid
@@ -428,11 +413,6 @@ msgid ""
 msgstr ""
 "Collegamento tra fasi e team vendite. Quando impostato, limita la fase "
 "attuale ai team di vendita selezionati."
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "Allegato principale"
 
 #. module: mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_claim.mgmtsystem_claim_stage_form
@@ -483,7 +463,6 @@ msgstr "Scadenza mia attività"
 #. module: mgmtsystem_claim
 #. odoo-python
 #: code:addons/mgmtsystem_claim/models/mgmtsystem_claim.py:0
-#, python-format
 msgid "New"
 msgstr "Nuovo"
 
@@ -506,16 +485,6 @@ msgstr "Riepilogo prossima attività"
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__activity_type_id
 msgid "Next Activity Type"
 msgstr "Tipo prossima attività"
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__non_conformity_ids
-msgid "Non Conformity"
-msgstr "Non conformità"
-
-#. module: mgmtsystem_claim
-#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__non_conformity_count
-msgid "Non Conformity Count"
-msgstr "Conteggio non conformità"
 
 #. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_needaction_counter
@@ -646,6 +615,11 @@ msgid "Root Causes"
 msgstr "Cause radice"
 
 #. module: mgmtsystem_claim
+#: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Errore consegna SMS"
+
+#. module: mgmtsystem_claim
 #: model:ir.model.fields,field_description:mgmtsystem_claim.field_mgmtsystem_claim__team_id
 msgid "Sales Team"
 msgstr "Team di vendita"
@@ -761,8 +735,111 @@ msgstr ""
 "passi richiesti\n"
 "                per la soluzione di un reclamo."
 
-#~ msgid "SMS Delivery error"
-#~ msgstr "Errore consegna SMS"
+#~ msgid ""
+#~ "\n"
+#~ "            \n"
+#~ "<p>Hello <t t-out=\"object.user_id.name\"/>,</br>\n"
+#~ "A new claim has been assigned to you:\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "<t t-out=\"object.description\"/>\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></"
+#~ "a></b>\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "Thank you and have a nice day.<br>\n"
+#~ "--<br>\n"
+#~ "Odoo\n"
+#~ "</p>\n"
+#~ "            \n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "            \n"
+#~ "<p>Salve<t t-out=\"object.user_id.name\"/>,</br>\n"
+#~ "Ti è stato assegnato un reclamo:\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "<t t-out=\"object.description\"/>\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></"
+#~ "a></b>\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "Grazie e buona giornata.<br>\n"
+#~ "--<br>\n"
+#~ "Odoo\n"
+#~ "</p>\n"
+#~ "            \n"
+#~ "        "
+
+#~ msgid ""
+#~ "\n"
+#~ "            \n"
+#~ "<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "This is an automated message to remind you that the\n"
+#~ "following claim is due to be completed in 10 days (<t t-"
+#~ "out=\"object.date_deadline\"/>):\n"
+#~ "\n"
+#~ "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></"
+#~ "a></b>\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "<t t-out=\"object.description\"/>\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "Thank you and have a nice day.<br>\n"
+#~ "--<br>\n"
+#~ "Odoo\n"
+#~ "</p>\n"
+#~ "            \n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "            \n"
+#~ "<p>Salve<t t-out=\"object.user_id.name\"/>,</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "Questo è un messaggio automatico per ricordarti che il\n"
+#~ "reclamo seguente deve essere completato entro 10 giorni (<t t-"
+#~ "out=\"object.date_deadline\"/>):\n"
+#~ "\n"
+#~ "<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></"
+#~ "a></b>\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "<t t-out=\"object.description\"/>\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "Grazie e buona giornata.<br>\n"
+#~ "--<br>\n"
+#~ "Odoo\n"
+#~ "</p>\n"
+#~ "            \n"
+#~ "        "
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
+
+#~ msgid "Main Attachment"
+#~ msgstr "Allegato principale"
+
+#~ msgid "Non Conformity"
+#~ msgstr "Non conformità"
+
+#~ msgid "Non Conformity Count"
+#~ msgstr "Conteggio non conformità"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Numero di messaggi che richiedono un'azione"
