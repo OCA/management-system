@@ -13,6 +13,7 @@
         "data/mgmtsystem_action_stage.xml",
         "data/automated_reminder.xml",
         "data/email_template.xml",
+        "data/mail_template_fix.xml",
         "security/ir.model.access.csv",
         "security/mgmtsystem_action_security.xml",
         "data/action_sequence.xml",
