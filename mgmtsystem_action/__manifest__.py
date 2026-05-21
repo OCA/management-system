@@ -3,7 +3,7 @@
 
 {
     "name": "Management System - Action",
-    "version": "18.0.1.0.2",
+    "version": "18.0.1.0.1",
     "author": "Savoir-faire Linux, Camptocamp, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
@@ -13,7 +13,6 @@
         "data/mgmtsystem_action_stage.xml",
         "data/automated_reminder.xml",
         "data/email_template.xml",
-        "data/mail_template_fix.xml",
         "security/ir.model.access.csv",
         "security/mgmtsystem_action_security.xml",
         "data/action_sequence.xml",
