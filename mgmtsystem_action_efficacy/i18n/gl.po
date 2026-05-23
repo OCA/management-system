@@ -6,43 +6,45 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-05-23 17:46+0000\n"
+"Last-Translator: Pablo Castelo <pablocv@gmx.es>\n"
 "Language-Team: none\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: mgmtsystem_action_efficacy
 #: model:ir.model.fields,help:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_value
 msgid "0:not effective | 50:efficacy not complete | 100: effective"
-msgstr ""
+msgstr "0:non eficaz | 50:eficacia non completa | 100: eficaz"
 
 #. module: mgmtsystem_action_efficacy
 #: model:ir.model,name:mgmtsystem_action_efficacy.model_mgmtsystem_action
 msgid "Action"
-msgstr ""
+msgstr "Acción"
 
 #. module: mgmtsystem_action_efficacy
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action_efficacy.view_mgmtsystem_action_form
 msgid "Efficacy"
-msgstr ""
+msgstr "Eficacia"
 
 #. module: mgmtsystem_action_efficacy
 #: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_user_id
 msgid "Inspector"
-msgstr ""
+msgstr "o inspector/a"
 
 #. module: mgmtsystem_action_efficacy
 #: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_description
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #. module: mgmtsystem_action_efficacy
 #: model:ir.model.fields,field_description:mgmtsystem_action_efficacy.field_mgmtsystem_action__efficacy_value
 msgid "Rating"
-msgstr ""
+msgstr "valoración"
 
 #. module: mgmtsystem_action_efficacy
 #. odoo-python
@@ -50,4 +52,4 @@ msgstr ""
 #: code:addons/mgmtsystem_action_efficacy/tests/test_efficacy.py:0
 #, python-format
 msgid "Rating must be between 0 and 100"
-msgstr ""
+msgstr "A puntuación debe estar comprendida entre 0 e 100"
