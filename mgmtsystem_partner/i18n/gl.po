@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-05-23 17:46+0000\n"
+"Last-Translator: Pablo Castelo <pablocv@gmx.es>\n"
 "Language-Team: none\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: mgmtsystem_partner
 #: model:ir.model.fields,help:mgmtsystem_partner.field_res_partner__type
@@ -24,19 +26,31 @@ msgid ""
 "- Private: Private addresses are only visible by authorized users and contain sensitive data (employee home addresses, ...).\n"
 "- Other: Other address for the company (e.g. subsidiary, ...)"
 msgstr ""
+"- Contactos: Utilice esta opción para organizar os datos de contacto dos "
+"empregados dunha empresa determinada (por exemplo, director xeral, director "
+"financeiro, ...).\n"
+"- Dirección de facturación : Dirección preferida para todas as facturas. "
+"Selecciónase por defecto cando se factura un pedido que pertence a esta "
+"empresa.\n"
+"- Dirección de entrega : Dirección preferida para todas as entregas. "
+"Selecciónase por defecto cando entrega un pedido que pertence a esta "
+"empresa.\n"
+"- Privada: As direccións privadas só son visibles polos usuarios autorizados "
+"e conteñen datos sensibles (direccións particulares dos empregados, ...).\n"
+"- Outra: distinta dirección da empresa (por exemplo, filial, ...)"
 
 #. module: mgmtsystem_partner
 #: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_partner__type
 #: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_users__type
 msgid "Address Type"
-msgstr ""
+msgstr "Tipo de dirección"
 
 #. module: mgmtsystem_partner
 #: model:ir.model,name:mgmtsystem_partner.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: mgmtsystem_partner
 #: model:ir.model.fields.selection,name:mgmtsystem_partner.selection__res_partner__type__quality
 msgid "Quality Address"
-msgstr ""
+msgstr "Dirección de calidade"
