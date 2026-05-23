@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-05-23 16:53+0000\n"
+"Last-Translator: Pablo Castelo <pablocv@gmx.es>\n"
 "Language-Team: none\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: mgmtsystem_nonconformity_type
 #: model:mail.template,body_html:mgmtsystem_nonconformity_type.email_template_nonconformity
@@ -30,62 +32,75 @@ msgid ""
 "                      \n"
 "            "
 msgstr ""
+"\n"
+"                \n"
+"                    <p>Estimado ${object.quality_contact_name}:<br/>><br/>\n"
+"                    adxunto ten o informe de Non Conformidade:<br/>\n"
+"                    <strong>N° de Non Conformidade</strong>: ${object.ide}"
+"<br/>\n"
+"                    <strong>Nome</strong>: ${object.name}<br/>\n"
+"                    <strong>Descrición</strong>: ${object.description}<br/>\n"
+"                    <br/>\n"
+"                    Saúdos cordiais<br>\n"
+"                    </p>\n"
+"                      \n"
+"            "
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__quality_contact_name
 msgid "Contact Name"
-msgstr ""
+msgstr "Nomee Contacto"
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__customer
 msgid "Customer"
-msgstr ""
+msgstr "Cliente"
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__quality_contact_email
 msgid "Email"
-msgstr ""
+msgstr "Correo Electrónico"
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__external
 msgid "External"
-msgstr ""
+msgstr "Externo"
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__internal
 msgid "Internal"
-msgstr ""
+msgstr "Interno"
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model,name:mgmtsystem_nonconformity_type.model_mgmtsystem_nonconformity
 #: model:mail.template,name:mgmtsystem_nonconformity_type.email_template_nonconformity
 msgid "Nonconformity"
-msgstr ""
+msgstr "Desconformidade"
 
 #. module: mgmtsystem_nonconformity_type
 #: model:mail.template,subject:mgmtsystem_nonconformity_type.email_template_nonconformity
 msgid "Nonconformity N° ${object.id}: ${object.name}"
-msgstr ""
+msgstr "Desconformidade N° ${object.ide}: ${object.name}"
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__qty_checked
 msgid "Quantity checked"
-msgstr ""
+msgstr "Cantidade verificada"
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__qty_noncompliant
 msgid "Quantity non-compliant"
-msgstr ""
+msgstr "Cantidade non conformada"
 
 #. module: mgmtsystem_nonconformity_type
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity_type.view_mgmtsystem_nonconformity_form
 msgid "Send by Email"
-msgstr ""
+msgstr "Enviar por correo electrónico"
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields.selection,name:mgmtsystem_nonconformity_type.selection__mgmtsystem_nonconformity__nc_type__supplier
 msgid "Supplier"
-msgstr ""
+msgstr "Provedor"
 
 #. module: mgmtsystem_nonconformity_type
 #: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity.py:0
@@ -95,6 +110,8 @@ msgid ""
 "The partner's contacts quality type isn't available.\n"
 " Check if module mgmtsystem_nonconformity_partner is installed."
 msgstr ""
+"O tipo de calidade dos contactos do interlocutor non está dispoñible.\n"
+" Comprobe se o módulo mgmtsystem_nonconformity_partner está instalado."
 
 #. module: mgmtsystem_nonconformity_type
 #: code:addons/mgmtsystem_nonconformity_type/models/mgmtsystem_nonconformity.py:0
@@ -104,8 +121,10 @@ msgid ""
 "The partner's quality contact email is required in order to send the "
 "message."
 msgstr ""
+"Para enviar a mensaxe, necesítase o correo electrónico de contacto de "
+"calidade do socio."
 
 #. module: mgmtsystem_nonconformity_type
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity_type.field_mgmtsystem_nonconformity__nc_type
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
