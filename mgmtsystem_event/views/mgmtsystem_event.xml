@@ -111,9 +111,9 @@
                         context="{'group_by':'partner_id'}"
                     />
                     <filter
-                        name="groupby_procedure"
-                        string="Procedure"
-                        context="{'group_by':'procedure_ids'}"
+                        name="groupby_document"
+                        string="Document"
+                        context="{'group_by':'document_ids'}"
                     />
                 </group>
             </search>
@@ -267,9 +267,9 @@
                         </page>
 
                         <page
-                            string="Procedures"
+                            string="Documents"
                             readonly="state == 'draft'"
-                            name="procedures"
+                            name="documents"
                         >
                             <div
                                 invisible="state != 'draft'"
@@ -280,9 +280,9 @@
                                 >You cannot edit this page if the event is in Draft state</p>
                             </div>
                             <field
-                                name="procedure_ids"
+                                name="document_ids"
                                 readonly="state not in ('draft', 'analysis')"
-                                domain="[('parent_id','child_of',('Procedure','Environmental Aspect','Manuals'))]"
+                                domain="[('type', '=', 'content')]"
                             />
                         </page>
 

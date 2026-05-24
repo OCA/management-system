@@ -8,15 +8,12 @@
         <field name="user_id" ref="base.user_demo" />
         <field
             name="description"
-        >The procedure has changed with no comments on the revision.</field>
+        >The document has changed with no comments on the revision.</field>
         <field
             name="analysis"
-        >Administrator didn't know he had to add a comment when changing the procedure.</field>
+        >Administrator didn't know he had to add a comment when changing the document.</field>
         <field name="origin_ids" eval="[(6,0,[ref('demo_origin')])]" />
-        <field
-            name="procedure_ids"
-            eval="[(6,0,[ref('document_page_procedure.document_page_procedure')])]"
-        />
+        <field name="document_ids" eval="[(6,0,[ref('document_page.demo_page2')])]" />
         <field name="cause_ids" eval="[(6,0,[ref('demo_cause')])]" />
         <field name="immediate_action_id" ref="mgmtsystem_action.demo_immediate" />
         <field

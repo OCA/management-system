@@ -7,7 +7,7 @@
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": ["mgmtsystem_action", "document_page_procedure"],
+    "depends": ["mgmtsystem_action", "document_page"],
     "data": [
         "security/ir.model.access.csv",
         "security/mgmtsystem_event_security.xml",

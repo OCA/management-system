@@ -77,12 +77,13 @@ class MgmtsystemEvent(models.Model):
         "Origin",
         tracking=True,
     )
-    procedure_ids = fields.Many2many(
+    document_ids = fields.Many2many(
         "document.page",
-        "mgmtsystem_event_procedure_rel",
+        "mgmtsystem_event_document_rel",
         "event_id",
-        "procedure_id",
-        "Procedure",
+        "document_id",
+        "Documents",
+        help="Against which document is the event. Usually a Procedure.",
     )
     description = fields.Text(required=True)
     system_id = fields.Many2one("mgmtsystem.system", "System")

@@ -62,7 +62,7 @@ To use this module:
 - Manager : Person managing the department or owner of the procedure
 - Filled in by: Originator of NC report
 - Origins: The source of the NC, how was it discover
-- Procedures: Against which procedure is the NC
+- Documents: Against which document is the NC
 - Description: Evidence, reference to the standards
 - Click on Save and then set state from Draft to Analysis.
 
