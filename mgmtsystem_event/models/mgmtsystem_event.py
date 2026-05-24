@@ -12,13 +12,6 @@ class MgmtsystemEvent(models.Model):
     _order = "create_date desc"
 
     @api.model
-    def _default_stage(self):
-        """Return the default stage."""
-        return self.env.ref("mgmtsystem_event.stage_draft", False) or self.env[
-            "mgmtsystem.event.stage"
-        ].search([("is_starting", "=", True)], limit=1)
-
-    @api.model
     def _stage_groups(self, stages, domain):
         stage_ids = self.env["mgmtsystem.event.stage"].search([])
         return stage_ids
@@ -98,7 +91,7 @@ class MgmtsystemEvent(models.Model):
         "Stage",
         tracking=True,
         copy=False,
-        default=_default_stage,
+        default=lambda self: self._default_stage(),
         group_expand="_stage_groups",
     )
     state = fields.Selection(related="stage_id.state", store=True)
@@ -158,6 +151,34 @@ class MgmtsystemEvent(models.Model):
     )
     res_model = fields.Char(index=True)
     res_id = fields.Integer(index=True)
+    res_ref = fields.Reference(
+        string="Related Record",
+        selection="_referenceable_models",
+        compute="_compute_res_ref",
+    )
+
+    @api.model
+    def _default_stage(self):
+        """Return the default stage."""
+        return self.env.ref("mgmtsystem_event.stage_draft", False) or self.env[
+            "mgmtsystem.event.stage"
+        ].search([("is_starting", "=", True)], limit=1)
+
+    @api.model
+    def _referenceable_models(self):
+        return [
+            (x.model, f"{x.name} ({x.model})")
+            for x in self.env["ir.model"]
+            .sudo()
+            .search(
+                [
+                    ("model", "!=", "mail.thread"),
+                    ("model", "not ilike", "ir."),
+                    ("transient", "=", False),
+                ],
+                order="name",
+            )
+        ]
 
     @api.model
     def _default_reference(self):
@@ -226,6 +247,14 @@ class MgmtsystemEvent(models.Model):
     def _compute_days_since_updated(self):
         for nc in self:
             nc.days_since_updated = self._elapsed_days(nc.create_date, nc.write_date)
+
+    @api.depends("res_model", "res_id")
+    def _compute_res_ref(self):
+        for rec in self:
+            if rec.res_model and rec.res_id:
+                rec.res_ref = f"{rec.res_model},{rec.res_id}"
+            else:
+                rec.res_ref = False
 
     @api.model_create_multi
     def create(self, vals):

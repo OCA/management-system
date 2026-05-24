@@ -196,6 +196,7 @@
                         <group name="config">
                             <field name="name" readonly="state not in 'draft'" />
                             <field name="reference" readonly="state not in 'draft'" />
+                            <field name="res_ref" readonly="state not in 'draft'" />
                             <field
                                 name="partner_id"
                                 readonly="state not in ('draft', 'analysis')"
