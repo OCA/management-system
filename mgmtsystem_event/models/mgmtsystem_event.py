@@ -156,6 +156,7 @@ class MgmtsystemEvent(models.Model):
         selection="_referenceable_models",
         compute="_compute_res_ref",
     )
+    tag_ids = fields.Many2many("mgmtsystem.event.tag", string="Tags")
 
     @api.model
     def _default_stage(self):

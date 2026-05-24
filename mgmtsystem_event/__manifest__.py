@@ -17,6 +17,7 @@
         "views/mgmtsystem_severity.xml",
         "views/mgmtsystem_action.xml",
         "views/mgmtsystem_event_stage.xml",
+        "views/mgmtsystem_event_tag.xml",
         "data/sequence.xml",
         "data/mgmtsystem_event_severity.xml",
         "data/mgmtsystem_event_origin.xml",
