@@ -1,0 +1,163 @@
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.mgmtsystem</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="priority" eval="95" />
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app
+                    data-string="Management Systems"
+                    string="Management Systems"
+                    name="mgmtsystem"
+                    groups="mgmtsystem.group_mgmtsystem_user_manager"
+                >
+                    <block title="Management Systems" name="mgmtsystem_systems_setting">
+                        <setting
+                            string="Quality"
+                            help="Manage your quality management systems (ISO 9001)."
+                        >
+                            <field name="module_mgmtsystem_quality" />
+                        </setting>
+                        <setting
+                            string="Environment"
+                            help="Manage your environment management systems (ISO 14001)."
+                        >
+                            <field name="module_mgmtsystem_environment" />
+                        </setting>
+                        <setting
+                            string="Hygiene &amp; Safety"
+                            help="Manage your health and safety management systems (ISO 45001, OHSAS 18001)."
+                        >
+                            <field name="module_mgmtsystem_health_safety" />
+                        </setting>
+                        <setting
+                            string="Information Security"
+                            help="Manage your information security management systems (ISO 27001)"
+                        >
+                            <field name="module_mgmtsystem_information_security" />
+                        </setting>
+                    </block>
+
+                    <block title="Applications" name="mgmtsystem_applications_setting">
+                        <setting
+                            string="Actions"
+                            help="Manage immediate, corrective, and preventive actions and improvement opportunities."
+                        >
+                            <field name="module_mgmtsystem_action" />
+                        </setting>
+                        <setting
+                            string="Nonconformities"
+                            help="Manage nonconformities analysis, planning and resolution."
+                        >
+                            <field name="module_mgmtsystem_nonconformity" />
+                        </setting>
+                        <setting
+                            string="Claims"
+                            help="Manage customer claims as nonconformities."
+                        >
+                            <field name="module_mgmtsystem_nonconformity" />
+                        </setting>
+                        <setting
+                            string="Audits"
+                            help="Manage audits and verification lists."
+                        >
+                            <field name="module_mgmtsystem_audit" />
+                        </setting>
+
+                        <setting
+                            string="Management Reviews"
+                            help="Top management reviews."
+                        >
+                            <field name="module_mgmtsystem_review" />
+                        </setting>
+
+                        <setting
+                            string="Document Approval"
+                            help="Manage the approval workflow to control your documentation."
+                        >
+                            <field name="module_document_page_approval" />
+                        </setting>
+                    </block>
+                    <block title="Manuals" name="mgmtsystem_manuals_setting">
+                        <setting
+                            string="Quality Manual"
+                            help="Provide a Quality Manual template based on the ISO 9001:2008 standard."
+                        >
+                            <field name="module_document_page_quality_manual" />
+                        </setting>
+                        <setting
+                            string="Environment Manual"
+                            help="Provide a Environment Manual template based on the ISO 14001:2004 standard."
+                        >
+                            <field name="module_document_page_environment_manual" />
+                        </setting>
+                        <setting
+                            string="Health &amp; Safety Manual"
+                            help="Provide a Health &amp; Safety Manual template based on the ISO 45001 / OHSAS 18001 standard."
+                        >
+                            <field name="module_mgmtsystem_health_safety_manual" />
+                        </setting>
+                        <setting
+                            string="Information Security Manual"
+                            help="Provide a Information Security Manual template based on the ISO 27001 standard."
+                        >
+                            <field name="module_information_security_manual" />
+                        </setting>
+                    </block>
+                    <block
+                        title="Documentation"
+                        name="mgmtsystem_documentation_setting"
+                    >
+                        <setting
+                            string="Procedures"
+                            help="Provide a Procedure documentation category and template."
+                        >
+                            <field name="module_document_page_procedure" />
+                        </setting>
+                        <setting
+                            string="Environmental Aspects"
+                            help="Provide an Environmental Aspect documentation category and template."
+                        >
+                            <field name="module_document_page_environmental_aspect" />
+                        </setting>
+                        <setting
+                            string="Hazards"
+                            help="Provide an Hazards documentation category and template."
+                        >
+                            <field name="module_mgmtsystem_hazard" />
+                        </setting>
+                        <setting
+                            string="Feared Events"
+                            help="Provide a Feared Event documentation category and template."
+                        >
+                            <field name="module_mgmtsystem_security_event" />
+                        </setting>
+                        <setting
+                            string="Work Instructions"
+                            help="Provide a Work Instruction documentation category and template."
+                        >
+                            <field name="module_document_page_work_instruction" />
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_mgmtsystem_configuration" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="path">mgmtsystem-settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'module': 'mgmtsystem', 'bin_size': False}</field>
+    </record>
+
+    <menuitem
+        id="menu_mgmtsystem_settings"
+        name="Settings"
+        parent="menu_mgmtsystem_configuration"
+        sequence="0"
+        action="action_mgmtsystem_configuration"
+    />
+</odoo>
