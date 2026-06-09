@@ -20,11 +20,11 @@
 ##############################################################################
 {
     "name": "Environmental Aspects",
-    "version": "18.0.1.0.1",
+    "version": "19.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
-    "category": "Generic Modules/Others",
+    "category": "Management System",
     "depends": ["document_page", "mgmtsystem"],
     "data": ["data/document_page.xml", "views/document_page.xml"],
     "installable": True,
