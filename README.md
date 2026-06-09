@@ -24,6 +24,7 @@ addon | version | maintainers | summary
 [mgmtsystem](mgmtsystem/) | 19.0.1.0.0 |  | Support for management systems, such as ISO compliance.
 [mgmtsystem_action](mgmtsystem_action/) | 19.0.1.0.0 |  | Management System - Action
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 19.0.1.0.0 |  | Hazard
+[mgmtsystem_manual](mgmtsystem_manual/) | 19.0.1.0.0 |  | Management System - Manual
 
 [//]: # (end addons)
 
