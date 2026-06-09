@@ -86,6 +86,9 @@ Contributors
 
 - Yvan Dotet <yvan.dotet@logicasoft.eu>
 - [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+- `Gray Matter Logic <https://www.graymatterlogic.com>`__:
+
+  - Maxime Chambreuil <maxime.chambreuil@graymatterlogic.com>
 
 Maintainers
 -----------
