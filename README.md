@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [document_page_procedure](document_page_procedure/) | 19.0.1.0.0 |  | Document Management - Wiki - Procedures
+[document_page_work_instruction](document_page_work_instruction/) | 19.0.1.0.0 |  | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 19.0.1.0.0 |  | Support for management systems, such as ISO compliance.
 [mgmtsystem_action](mgmtsystem_action/) | 19.0.1.0.0 |  | Management System - Action
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 19.0.1.0.0 |  | Hazard
