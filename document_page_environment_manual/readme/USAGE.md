@@ -1,4 +1,7 @@
-To use this module, you need to:
+To enter your environment manual:
 
-- go to Management Systems \> Documentation \> Manuals
-- Create a new page and select the environment category.
+- Go to Management Systems \> Documentation \> Manuals
+- Create a new page
+- Enter a title
+- Select the Environment Manual category
+- Fill in the content

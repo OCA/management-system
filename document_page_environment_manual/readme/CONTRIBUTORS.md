@@ -5,3 +5,5 @@
   - Fernando La Chica \<<fernando.lachica@guadaltech.es>\>
 - Yvan Dotet \<<yvan.dotet@logicasoft.eu>\>
 - \[Heliconia Solutions Pvt. Ltd.\](<https://www.heliconia.io>)
+- [Gray Matter Logic](https://www.graymatterlogic.com):
+  - Maxime Chambreuil \<<maxime.chambreuil@graymatterlogic.com>\>
