@@ -12,8 +12,8 @@ msgstr ""
 "POT-Creation-Date: 2018-01-15 18:09+0000\n"
 "PO-Revision-Date: 2020-08-12 19:00+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
-"teams/23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
+"23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -140,7 +140,7 @@ msgid "Health & Safety Manual"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
 msgid "Health & Safety Manual Template"
 msgstr "Modelo Manual de Saúde e Segurança"
 
@@ -167,7 +167,7 @@ msgid "Information Security Manual"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_information_security_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
 msgid "Information Security Manual Template"
 msgstr "Modelo de manual de Segurança da Informação"
 
@@ -385,13 +385,11 @@ msgid "Provide a Work Instruction documentation category and template."
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
 msgid ""
 "Provide a health and safety manual template.\n"
-"- This installs the module mgmtsystem_health_safety_manual."
+"- This installs the module document_page_health_safety_manual."
 msgstr ""
-"Fornecer um modelo manual de saúde e segurança.\n"
-"- Isso instala o módulo mgmtsystem_health_safety_manual."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
@@ -425,19 +423,15 @@ msgstr ""
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
 msgid ""
 "Provide an environment manual template.\n"
-"- This installs the module mgmtsystem_environment_manual."
+"- This installs the module document_page_environment_manual."
 msgstr ""
-"Fornecer um modelo manual do meio ambiente.\n"
-"- Isso instala o mgmtsystem_environment_manual módulo."
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_information_security_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
 msgid ""
 "Provide an information security manual.\n"
-"- This installs the module information_security_manual."
+"- This installs the module mgmtsystem_info_security_manual."
 msgstr ""
-"Fornecer um manual de segurança da informação.\n"
-"- Isso instala o manual de segurança da informação módulo."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
@@ -604,6 +598,27 @@ msgstr "Visualizador"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Work Instructions"
 msgstr "Instruções de trabalho"
+
+#~ msgid ""
+#~ "Provide a health and safety manual template.\n"
+#~ "- This installs the module mgmtsystem_health_safety_manual."
+#~ msgstr ""
+#~ "Fornecer um modelo manual de saúde e segurança.\n"
+#~ "- Isso instala o módulo mgmtsystem_health_safety_manual."
+
+#~ msgid ""
+#~ "Provide an environment manual template.\n"
+#~ "- This installs the module mgmtsystem_environment_manual."
+#~ msgstr ""
+#~ "Fornecer um modelo manual do meio ambiente.\n"
+#~ "- Isso instala o mgmtsystem_environment_manual módulo."
+
+#~ msgid ""
+#~ "Provide an information security manual.\n"
+#~ "- This installs the module information_security_manual."
+#~ msgstr ""
+#~ "Fornecer um manual de segurança da informação.\n"
+#~ "- Isso instala o manual de segurança da informação módulo."
 
 #~ msgid "Manage audits and verification lists"
 #~ msgstr "Gerenciar auditorias e listas de verificação"
