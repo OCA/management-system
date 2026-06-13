@@ -205,12 +205,14 @@
                         <div class="col-xs-12 col-md-6 o_setting_box">
                             <div class="o_setting_left_pane">
                                 <field
-                                    name="module_mgmtsystem_health_safety_manual"
+                                    name="module_document_page_health_safety_manual"
                                     class="oe_inline"
                                 />
                             </div>
                             <div class="o_setting_right_pane">
-                                <label for="module_mgmtsystem_health_safety_manual" />
+                                <label
+                                    for="module_document_page_health_safety_manual"
+                                />
                                 <div class="text-muted">
                                     Provide a Health &amp; Safety Manual template based on the OHSAS 18001 standard
                                 </div>
@@ -220,12 +222,12 @@
                         <div class="col-xs-12 col-md-6 o_setting_box">
                             <div class="o_setting_left_pane">
                                 <field
-                                    name="module_information_security_manual"
+                                    name="module_mgmtsystem_info_security_manual"
                                     class="oe_inline"
                                 />
                             </div>
                             <div class="o_setting_right_pane">
-                                <label for="module_information_security_manual" />
+                                <label for="module_mgmtsystem_info_security_manual" />
                                 <div class="text-muted">
                                     Provide an Information Security Manual template based on ISO 27001
                                 </div>
