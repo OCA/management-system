@@ -17,37 +17,53 @@ Health and Safety Management System
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fmanagement--system-lightgray.png?logo=github
-    :target: https://github.com/OCA/management-system/tree/16.0/mgmtsystem_health_safety
+    :target: https://github.com/OCA/management-system/tree/17.0/mgmtsystem_health_safety
     :alt: OCA/management-system
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/management-system-16-0/management-system-16-0-mgmtsystem_health_safety
+    :target: https://translation.odoo-community.org/projects/management-system-17-0/management-system-17-0-mgmtsystem_health_safety
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/management-system&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/management-system&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module provides an Health and Safety Manual template.
+This module was written to allow you to manage your Health and Safety
+Management System (OHSMS) within Odoo. It installs a management system
+linked to the Health and Safety Manual template and depends on modules
+for audits, reviews, hazard and risk management, and documentation.
 
 **Table of contents**
 
 .. contents::
    :local:
 
+Configuration
+=============
+
+To configure this module, you need to:
+
+- Add users to the Management System groups (Manager, Auditor, NC
+  Approver)
+- Import or customize your Health and Safety Manual documentation
+- Review the default management system record created at installation
+
 Usage
 =====
 
-To enter your information security manual, you need to:
+To use this module, you need to:
 
-* go to Management Systems > Documentation > Manuals
-* click on Create and select the Health and Safety Manual category
-* enter your content
+- Go to Management Systems > Documentation > Manuals
+- Create or update pages based on the Health and Safety Manual template
+- Schedule audits and management reviews for your health and safety
+  system
+- Manage hazards, risks, and related actions through the linked modules
 
 Known issues / Roadmap
 ======================
 
-* Report any issue or ideas to https://github.com/OCA/management-system/issues
+- Report any issue or ideas to
+  https://github.com/OCA/management-system/issues
 
 Bug Tracker
 ===========
@@ -55,7 +71,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/management-system/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/management-system/issues/new?body=module:%20mgmtsystem_health_safety%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/management-system/issues/new?body=module:%20mgmtsystem_health_safety%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -63,22 +79,25 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Savoir-faire Linux
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Loïc Faure-Lacroix <loic.lacroix@savoirfairelinux.com>
-* Gervais Naoussi <gervaisnaoussi@gmail.com>
+- Loïc Faure-Lacroix <loic.lacroix@savoirfairelinux.com>
+- Gervais Naoussi <gervaisnaoussi@gmail.com>
+- `Guadaltech <https://www.guadaltech.es>`__:
 
-* `Guadaltech <https://www.guadaltech.es>`_:
+  - Fernando La Chica <fernando.lachica@guadaltech.es>
 
-  * Fernando La Chica <fernando.lachica@guadaltech.es>
+- `Gray Matter Logic <https://www.graymatterlogic.com>`__:
+
+  - Maxime Chambreuil <maxime.chambreuil@graymatterlogic.com>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -90,6 +109,14 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/management-system <https://github.com/OCA/management-system/tree/16.0/mgmtsystem_health_safety>`_ project on GitHub.
+.. |maintainer-max3903| image:: https://github.com/max3903.png?size=40px
+    :target: https://github.com/max3903
+    :alt: max3903
+
+Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-max3903| 
+
+This module is part of the `OCA/management-system <https://github.com/OCA/management-system/tree/17.0/mgmtsystem_health_safety>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
