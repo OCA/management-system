@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
+<odoo noupdate="1">
     <record id="document_page_information_security_manual" model="document.page">
         <field name="name">Information Security Manual</field>
         <field name="type">category</field>
-        <field name="content">
-<![CDATA[
+        <field name="company_id" eval="False" />
+        <field name="template">
+            <![CDATA[
 <h1>Application Domain</h1>
 
 <h2>General</h2>
