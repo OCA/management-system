@@ -64,12 +64,12 @@ class MgmtsystemConfigSettings(models.TransientModel):
     module_document_page_environment_manual = fields.Boolean(
         "Environment Manual Template",
         help="Provide an environment manual template.\n"
-        "- This installs the module mgmtsystem_environment_manual.",
+        "- This installs the module document_page_environment_manual.",
     )
-    module_mgmtsystem_health_safety_manual = fields.Boolean(
+    module_document_page_health_safety_manual = fields.Boolean(
         "Health & Safety Manual Template",
         help="Provide a health and safety manual template.\n"
-        "- This installs the module mgmtsystem_health_safety_manual.",
+        "- This installs the module document_page_health_safety_manual.",
     )
     module_information_security_manual = fields.Boolean(
         "Information Security Manual Template",
