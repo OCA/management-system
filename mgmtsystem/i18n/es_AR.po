@@ -76,6 +76,7 @@ msgstr "Creado el"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__display_name
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
 
@@ -135,7 +136,7 @@ msgid "Health & Safety Manual"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
 msgid "Health & Safety Manual Template"
 msgstr "Plantilla del Manual de Higiene y Seguridad"
 
@@ -147,6 +148,7 @@ msgstr "Higiene y Seguridad"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__id
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__id
 msgid "ID"
 msgstr "ID"
 
@@ -162,7 +164,7 @@ msgid "Information Security Manual"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_information_security_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
 msgid "Information Security Manual Template"
 msgstr "Plantilla del Manual de Información de Seguridad"
 
@@ -242,6 +244,7 @@ msgstr ""
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_main
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
+#: model:res.groups.privilege,name:mgmtsystem.res_groups_privilege_management_system
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.system_form
 msgid "Management System"
 msgstr "Sistema de gestión"
@@ -381,13 +384,11 @@ msgid "Provide a Work Instruction documentation category and template."
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
 msgid ""
 "Provide a health and safety manual template.\n"
-"- This installs the module mgmtsystem_health_safety_manual."
+"- This installs the module document_page_health_safety_manual."
 msgstr ""
-"Proporcionar una plantilla de manual de salud y seguridad.\n"
-"- Esto instala el módulo mgmtsystem_health_safety_manual."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
@@ -421,19 +422,15 @@ msgstr ""
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
 msgid ""
 "Provide an environment manual template.\n"
-"- This installs the module mgmtsystem_environment_manual."
+"- This installs the module document_page_environment_manual."
 msgstr ""
-"Proporcionar una plantilla de manual de entorno.\n"
-"- Esto instala el módulo mgmtsystem_environment_manual."
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_information_security_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
 msgid ""
 "Provide an information security manual.\n"
-"- This installs the module information_security_manual."
+"- This installs the module mgmtsystem_info_security_manual."
 msgstr ""
-"Proporcionar un manual de seguridad de la información.\n"
-"- Esto instala el módulo information_security_manual."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
@@ -601,6 +598,27 @@ msgstr "Espectador"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Work Instructions"
 msgstr "Instrucciones de Trabajo"
+
+#~ msgid ""
+#~ "Provide a health and safety manual template.\n"
+#~ "- This installs the module mgmtsystem_health_safety_manual."
+#~ msgstr ""
+#~ "Proporcionar una plantilla de manual de salud y seguridad.\n"
+#~ "- Esto instala el módulo mgmtsystem_health_safety_manual."
+
+#~ msgid ""
+#~ "Provide an environment manual template.\n"
+#~ "- This installs the module mgmtsystem_environment_manual."
+#~ msgstr ""
+#~ "Proporcionar una plantilla de manual de entorno.\n"
+#~ "- Esto instala el módulo mgmtsystem_environment_manual."
+
+#~ msgid ""
+#~ "Provide an information security manual.\n"
+#~ "- This installs the module information_security_manual."
+#~ msgstr ""
+#~ "Proporcionar un manual de seguridad de la información.\n"
+#~ "- Esto instala el módulo information_security_manual."
 
 #~ msgid "Manage audits and verification lists"
 #~ msgstr "Gestionar auditorías y listas de verificación"

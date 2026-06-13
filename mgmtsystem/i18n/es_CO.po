@@ -10,8 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-16 07:18+0000\n"
 "PO-Revision-Date: 2018-01-16 07:18+0000\n"
-"Last-Translator: JOSE ALEJANDRO ECHEVERRI VALENCIA <josealejandroeche@gmail."
-"com>, 2018\n"
+"Last-Translator: JOSE ALEJANDRO ECHEVERRI VALENCIA "
+"<josealejandroeche@gmail.com>, 2018\n"
 "Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/"
 "es_CO/)\n"
 "Language: es_CO\n"
@@ -82,6 +82,7 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__display_name
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -141,7 +142,7 @@ msgid "Health & Safety Manual"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
 msgid "Health & Safety Manual Template"
 msgstr ""
 
@@ -153,6 +154,7 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__id
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__id
 msgid "ID"
 msgstr ""
 
@@ -168,7 +170,7 @@ msgid "Information Security Manual"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_information_security_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
 msgid "Information Security Manual Template"
 msgstr ""
 
@@ -246,6 +248,7 @@ msgstr ""
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_main
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
+#: model:res.groups.privilege,name:mgmtsystem.res_groups_privilege_management_system
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.system_form
 msgid "Management System"
 msgstr "Sistema de Gestión"
@@ -374,10 +377,10 @@ msgid "Provide a Work Instruction documentation category and template."
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
 msgid ""
 "Provide a health and safety manual template.\n"
-"- This installs the module mgmtsystem_health_safety_manual."
+"- This installs the module document_page_health_safety_manual."
 msgstr ""
 
 #. module: mgmtsystem
@@ -408,14 +411,14 @@ msgstr ""
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
 msgid ""
 "Provide an environment manual template.\n"
-"- This installs the module mgmtsystem_environment_manual."
+"- This installs the module document_page_environment_manual."
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_information_security_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
 msgid ""
 "Provide an information security manual.\n"
-"- This installs the module information_security_manual."
+"- This installs the module mgmtsystem_info_security_manual."
 msgstr ""
 
 #. module: mgmtsystem
