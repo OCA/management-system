@@ -1,5 +1,7 @@
-To enter your information security manual, you need to:
+To enter your health and safety manual:
 
-- go to Management Systems \> Documentation \> Manuals
-- click on Create and select the Health and Safety Manual category
-- enter your content
+- Go to Management Systems \> Documentation \> Manuals
+- Create a new page
+- Enter a title
+- Select the Health and Safety Manual category
+- Fill in the content

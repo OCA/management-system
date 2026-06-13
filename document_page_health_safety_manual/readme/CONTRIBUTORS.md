@@ -5,3 +5,5 @@
 - [Binhex](https://binhex.cloud//com):
   - David Luis Mora \<<d.luis@binhex.cloud>\>
 - [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+- [Gray Matter Logic](https://www.graymatterlogic.com):
+  - Maxime Chambreuil \<<maxime.chambreuil@graymatterlogic.com>\>
