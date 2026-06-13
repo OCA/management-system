@@ -3,7 +3,7 @@
 
 {
     "name": "Management System",
-    "version": "17.0.1.2.0",
+    "version": "17.0.1.3.0",
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
