@@ -76,6 +76,7 @@ msgstr "ایجاد شده در"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__display_name
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__display_name
 msgid "Display Name"
 msgstr "نام نمایشی"
 
@@ -137,7 +138,7 @@ msgid "Health & Safety Manual"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
 msgid "Health & Safety Manual Template"
 msgstr "الگوی راهنمای بهداشت و ایمنی"
 
@@ -150,6 +151,7 @@ msgstr "بهداشت و ایمنی"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__id
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__id
 msgid "ID"
 msgstr "شناسه"
 
@@ -165,7 +167,7 @@ msgid "Information Security Manual"
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_information_security_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
 msgid "Information Security Manual Template"
 msgstr "الگوی راهنمای امنیت اطلاعات"
 
@@ -245,6 +247,7 @@ msgstr ""
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_main
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
+#: model:res.groups.privilege,name:mgmtsystem.res_groups_privilege_management_system
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.system_form
 msgid "Management System"
 msgstr "سیستم مدیریت"
@@ -382,13 +385,11 @@ msgid "Provide a Work Instruction documentation category and template."
 msgstr ""
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
 msgid ""
 "Provide a health and safety manual template.\n"
-"- This installs the module mgmtsystem_health_safety_manual."
+"- This installs the module document_page_health_safety_manual."
 msgstr ""
-"فراهم کردن الگوی راهنمای بهداشت و ایمنی.\n"
-"-این ماژول mgmtsystem_health_safety_manual را نصب می‌کند."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
@@ -422,19 +423,15 @@ msgstr ""
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
 msgid ""
 "Provide an environment manual template.\n"
-"- This installs the module mgmtsystem_environment_manual."
+"- This installs the module document_page_environment_manual."
 msgstr ""
-"فراهم کردن الگوی راهنمای محیط زیست.\n"
-"- این ماژول mgmtsystem_environment_manual را نصب می‌کند."
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_information_security_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
 msgid ""
 "Provide an information security manual.\n"
-"- This installs the module information_security_manual."
+"- This installs the module mgmtsystem_info_security_manual."
 msgstr ""
-"فراهم کردن راهنمای امنیت اطلاعات.\n"
-"-این ماژول information_security_manual را نصب می‌کند."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
@@ -602,6 +599,27 @@ msgstr "مشاهده‌گر"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Work Instructions"
 msgstr "دستورالعمل‌های کاری"
+
+#~ msgid ""
+#~ "Provide a health and safety manual template.\n"
+#~ "- This installs the module mgmtsystem_health_safety_manual."
+#~ msgstr ""
+#~ "فراهم کردن الگوی راهنمای بهداشت و ایمنی.\n"
+#~ "-این ماژول mgmtsystem_health_safety_manual را نصب می‌کند."
+
+#~ msgid ""
+#~ "Provide an environment manual template.\n"
+#~ "- This installs the module mgmtsystem_environment_manual."
+#~ msgstr ""
+#~ "فراهم کردن الگوی راهنمای محیط زیست.\n"
+#~ "- این ماژول mgmtsystem_environment_manual را نصب می‌کند."
+
+#~ msgid ""
+#~ "Provide an information security manual.\n"
+#~ "- This installs the module information_security_manual."
+#~ msgstr ""
+#~ "فراهم کردن راهنمای امنیت اطلاعات.\n"
+#~ "-این ماژول information_security_manual را نصب می‌کند."
 
 #~ msgid "Manage audits and verification lists"
 #~ msgstr "مدیریت ممیزی‌ها و فهرست‌های تأیید"

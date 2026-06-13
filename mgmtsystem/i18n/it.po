@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2016-08-07 06:43+0000\n"
 "PO-Revision-Date: 2025-06-21 13:27+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
-"Language-Team: Italian (http://www.transifex.com/oca/"
-"OCA-management-system-9-0/language/it/)\n"
+"Language-Team: Italian (http://www.transifex.com/oca/OCA-management-"
+"system-9-0/language/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -79,6 +79,7 @@ msgstr "Creato il"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__display_name
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__display_name
 msgid "Display Name"
 msgstr "Nome visualizzato"
 
@@ -138,7 +139,7 @@ msgid "Health & Safety Manual"
 msgstr "Manuale salute e sicurezza"
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
 msgid "Health & Safety Manual Template"
 msgstr "Modello del manuale salute e sicurezza"
 
@@ -150,6 +151,7 @@ msgstr "Igiene e sicurezza"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__id
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__id
 msgid "ID"
 msgstr "ID"
 
@@ -165,7 +167,7 @@ msgid "Information Security Manual"
 msgstr "Manuale sicurezza informazioni"
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_information_security_manual
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
 msgid "Information Security Manual Template"
 msgstr "Modello del manuale sicurezza informazioni"
 
@@ -248,6 +250,7 @@ msgstr "Revisioni gestione"
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_main
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
+#: model:res.groups.privilege,name:mgmtsystem.res_groups_privilege_management_system
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.system_form
 msgid "Management System"
 msgstr "Sistema di gestione"
@@ -397,13 +400,11 @@ msgstr ""
 "Fornisce una categoria documentazione e un modello istruzioni di lavoro."
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
 msgid ""
 "Provide a health and safety manual template.\n"
-"- This installs the module mgmtsystem_health_safety_manual."
+"- This installs the module document_page_health_safety_manual."
 msgstr ""
-"Fornisce un modello di manuale salute e sicurezza.\n"
-"- Verrà installato il modulo mgmtsystem_health_safety_manual."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
@@ -438,19 +439,15 @@ msgstr "Fornisce una categoria di documentazione e un modello dei rischi."
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
 msgid ""
 "Provide an environment manual template.\n"
-"- This installs the module mgmtsystem_environment_manual."
+"- This installs the module document_page_environment_manual."
 msgstr ""
-"Fornisce un modello di manuale ambientale.\n"
-"- Verrà installato il modulo mgmtsystem_environment_manual."
 
 #. module: mgmtsystem
-#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_information_security_manual
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
 msgid ""
 "Provide an information security manual.\n"
-"- This installs the module information_security_manual."
+"- This installs the module mgmtsystem_info_security_manual."
 msgstr ""
-"Fornisce un manuale sicurezza delle informazioni.\n"
-"- Verrà installato il modulo information_security_manual."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
@@ -620,6 +617,27 @@ msgstr "Visualizzatore"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Work Instructions"
 msgstr "Istruzioni di lavoro"
+
+#~ msgid ""
+#~ "Provide a health and safety manual template.\n"
+#~ "- This installs the module mgmtsystem_health_safety_manual."
+#~ msgstr ""
+#~ "Fornisce un modello di manuale salute e sicurezza.\n"
+#~ "- Verrà installato il modulo mgmtsystem_health_safety_manual."
+
+#~ msgid ""
+#~ "Provide an environment manual template.\n"
+#~ "- This installs the module mgmtsystem_environment_manual."
+#~ msgstr ""
+#~ "Fornisce un modello di manuale ambientale.\n"
+#~ "- Verrà installato il modulo mgmtsystem_environment_manual."
+
+#~ msgid ""
+#~ "Provide an information security manual.\n"
+#~ "- This installs the module information_security_manual."
+#~ msgstr ""
+#~ "Fornisce un manuale sicurezza delle informazioni.\n"
+#~ "- Verrà installato il modulo information_security_manual."
 
 #~ msgid "Manage audits and verification lists"
 #~ msgstr "Gestione revisioni ed elenchi verifiche"
