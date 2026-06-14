@@ -1,0 +1,6 @@
+- Loïc Faure-Lacroix \<<loic.lacroix@savoirfairelinux.com>\>
+- David Dufresne \<<david.dufresne@savoirfairelinux.com>\>
+- Maxime Chambreuil \<<maxime.chambreuil@savoirfairelinux.com>\>
+- Nicolas Zin \<<nicolas.zin@savoirfairelinux.com>\>
+- [Gray Matter Logic](https://graymatterlogic.com):
+  - Maxime Chambreuil

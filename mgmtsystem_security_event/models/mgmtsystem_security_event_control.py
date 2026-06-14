@@ -1,63 +1,29 @@
-# -*- coding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2015 - Present
-#    Savoir-faire Linux (<http://www.savoirfairelinux.com>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright (C) 2015 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import models, fields, api, _
+from odoo import api, fields, models
 
 
 class EventControlLine(models.Model):
-    """
-    Event Control line.
-    Event control lines are used inside the feared event model.
-    """
     _name = "mgmtsystem.security.event.control"
     _description = "Feared Events - Control Lines"
 
-    control_id = fields.Many2one(
-        "mgmtsystem.security.control",
-        string="Control",
-    )
-    supporting_asset_id = fields.Many2one(
-        "mgmtsystem.security.asset.supporting",
-        string="Supporting Assets",
-    )
-    security_event_id = fields.Many2one(
-        "mgmtsystem.security.event",
-        string="Feared Event",
-    )
-    prevention = fields.Boolean("Prevention")
-    protection = fields.Boolean("Protection")
-    recovery = fields.Boolean("Recovery")
+    control_id = fields.Many2one("mgmtsystem.security.control")
+    supporting_asset_id = fields.Many2one("mgmtsystem.security.asset.supporting")
+    security_event_id = fields.Many2one("mgmtsystem.security.event")
+    prevention = fields.Boolean()
+    protection = fields.Boolean()
+    recovery = fields.Boolean()
     system_id = fields.Many2one(
-        'mgmtsystem.system',
-        related='security_event_id.system_id',
-        string='System',
+        related="security_event_id.system_id",
         readonly=True,
         store=True,
     )
 
-    @api.depends('control_id.name', 'supporting_asset_id.name')
+    @api.depends("control_id.name", "supporting_asset_id.name")
     def _compute_display_name(self):
         for record in self:
-            parts = [_("Events")]
+            parts = [record.env._("Events")]
             if record.control_id.name:
                 parts.append(record.control_id.name)
             if record.supporting_asset_id.name:

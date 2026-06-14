@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template id="report_risk_matrix">
         <t t-call="web.html_container">
@@ -6,8 +6,8 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <h2>Risk Matrix</h2>
-                        <h4 t-field="matrix.type"/>
-                        
+                        <h4 t-field="matrix.type" />
+
                         <style>
                             .matrix_wrapper {
                                 border: 1px solid black;
@@ -40,24 +40,36 @@
 
                         <table class="table table-bordered mt-4">
                             <tr>
-                                <td rowspan="99" style="width: 50px; vertical-align: middle; text-align: center; font-weight: bold; background-color: #f0f0f0;">
+                                <td
+                                    rowspan="99"
+                                    style="width: 50px; vertical-align: middle; text-align: center; font-weight: bold; background-color: #f0f0f0;"
+                                >
                                     <div class="vertical_text">Severity</div>
                                 </td>
                             </tr>
-                            
+
                             <t t-foreach="matrix.get_severities()" t-as="s">
                                 <tr>
-                                    <td style="width: 50px; vertical-align: middle; font-weight: bold; background-color: #f0f0f0;">
+                                    <td
+                                        style="width: 50px; vertical-align: middle; font-weight: bold; background-color: #f0f0f0;"
+                                    >
                                         <div class="severity_label">
-                                            <t t-esc="matrix.severity_name(s)"/>
+                                            <t t-esc="matrix.severity_name(s)" />
                                         </div>
                                     </td>
-                                    
+
                                     <t t-foreach="matrix.get_probabilities()" t-as="p">
-                                        <td t-attf-style="background-color: #{matrix.get_cell_color(s, p)}; min-width: 100px; height: 80px; vertical-align: top; text-align: left;">
-                                            <t t-foreach="matrix.get_event_list(s, p)" t-as="e">
-                                                <div style="font-size: 10px; margin-bottom: 2px;">
-                                                    <span t-field="e.name"/>
+                                        <td
+                                            t-attf-style="background-color: #{matrix.get_cell_color(s, p)}; min-width: 100px; height: 80px; vertical-align: top; text-align: left;"
+                                        >
+                                            <t
+                                                t-foreach="matrix.get_event_list(s, p)"
+                                                t-as="e"
+                                            >
+                                                <div
+                                                    style="font-size: 10px; margin-bottom: 2px;"
+                                                >
+                                                    <span t-field="e.name" />
                                                 </div>
                                             </t>
                                         </td>
@@ -67,18 +79,24 @@
 
                             <!-- Probability Header Row -->
                             <tr>
-                                <td style="background-color: #f0f0f0;"></td> <!-- Corner cell -->
+                                <td style="background-color: #f0f0f0;" />
+                                <!-- Corner cell -->
                                 <t t-foreach="matrix.get_probabilities()" t-as="p">
-                                    <td style="text-align: center; font-weight: bold; background-color: #f0f0f0;">
-                                        <t t-esc="matrix.probability_name(p)"/>
+                                    <td
+                                        style="text-align: center; font-weight: bold; background-color: #f0f0f0;"
+                                    >
+                                        <t t-esc="matrix.probability_name(p)" />
                                     </td>
                                 </t>
                             </tr>
-                            
+
                             <!-- Probability Label Row -->
                             <tr>
-                                <td style="background-color: #f0f0f0;"></td>
-                                <td t-att-colspan="len(matrix.get_probabilities())" style="text-align: center; font-weight: bold; background-color: #f0f0f0;">
+                                <td style="background-color: #f0f0f0;" />
+                                <td
+                                    t-att-colspan="len(matrix.get_probabilities())"
+                                    style="text-align: center; font-weight: bold; background-color: #f0f0f0;"
+                                >
                                     Probability
                                 </td>
                             </tr>
