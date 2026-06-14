@@ -1,2 +1,4 @@
-This module enables you to manage the risks of your health and safety
-management system. This is a sub module of management system hazard.
+This module extends **Hazard** with risk evaluation: risk types, configurable
+risk computation formulas, computed risk scores, and residual risk evaluations.
+Install it alongside `mgmtsystem_hazard` to quantify and track hazard risks in
+your health and safety management system.

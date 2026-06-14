@@ -29,6 +29,7 @@ class MgmtsystemHazardResidualRisk(models.Model):
         for record in self:
             if record.probability_id and record.severity_id and record.usage_id:
                 record.risk = _parse_risk_formula(
+                    record.env,
                     record.env.company.risk_computation_id.name,
                     record.probability_id.value,
                     record.severity_id.value,
@@ -37,4 +38,4 @@ class MgmtsystemHazardResidualRisk(models.Model):
             else:
                 record.risk = False
 
-    risk = fields.Integer(compute=_compute_risk)
+    risk = fields.Integer(compute="_compute_risk")

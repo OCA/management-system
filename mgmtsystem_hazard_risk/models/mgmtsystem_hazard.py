@@ -22,6 +22,7 @@ class MgmtsystemHazard(models.Model):
         for hazard in self:
             if hazard.probability_id and hazard.severity_id and hazard.usage_id:
                 hazard.risk = _parse_risk_formula(
+                    self.env,
                     self.env.company.risk_computation_id.name,
                     hazard.probability_id.value,
                     hazard.severity_id.value,

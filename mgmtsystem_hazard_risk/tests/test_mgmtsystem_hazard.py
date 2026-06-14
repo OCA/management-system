@@ -1,83 +1,61 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from datetime import datetime
 
-from odoo import tools
-from odoo.tests import common
-
-DATE_FORMAT = tools.DEFAULT_SERVER_DATE_FORMAT
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestMgmtsystemHazard(common.TransactionCase):
-    """
-    Unit Test For mgmtsystem.hazard model
-    """
-
-    def test_hazard_risk(self):
-        """
-        Test Hazard Risk creation
-        :return: (None)
-        """
-        type_rec = self.env.ref("mgmtsystem_hazard.type_ohsas_position")
-        hazard_rec = self.env.ref("mgmtsystem_hazard.hazard_spilling")
-        origin_rec = self.env.ref("mgmtsystem_hazard.origin_ignition_gas")
-        department_rec = self.env["hr.department"].create({"name": "Department 01"})
-        r_type_rec = self.env.ref("mgmtsystem_hazard_risk.risk_type_physical")
-
-        record = self.env["mgmtsystem.hazard"].create(
-            {
-                "name": "Hazard Test 01",
-                "type_id": type_rec.id,
-                "hazard_id": hazard_rec.id,
-                "origin_id": origin_rec.id,
-                "department_id": department_rec.id,
-                "responsible_user_id": self.env.user.id,
-                "analysis_date": datetime.now().strftime(DATE_FORMAT),
-                "risk_type_id": r_type_rec.id,
-            }
+class TestMgmtsystemHazard(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.department = cls.env["hr.department"].create({"name": "Test Department"})
+        cls.hazard_type = cls.env["mgmtsystem.hazard.type"].create({"name": "Type"})
+        cls.hazard_hazard = cls.env["mgmtsystem.hazard.hazard"].create(
+            {"name": "Hazard"}
         )
-        self.assertEqual(record.name, "Hazard Test 01")
-        self.assertEqual(record.risk, False)
-
-    def test_hazard_risk_computation_a_time_b_time_c(self):
-        """
-        Test the hazard risk computation A * B * C
-        :return: (None)
-        """
-        # A * B * C
-        computation_risk = self.env.ref(
-            "mgmtsystem_hazard_risk" ".risk_computation_a_times_b_times_c"
+        cls.hazard_origin = cls.env["mgmtsystem.hazard.origin"].create(
+            {"name": "Origin"}
         )
-        self.env.user.company_id.risk_computation_id = computation_risk
-
-        type_rec = self.env.ref("mgmtsystem_hazard.type_ohsas_position")
-        hazard_rec = self.env.ref("mgmtsystem_hazard.hazard_spilling")
-        origin_rec = self.env.ref("mgmtsystem_hazard.origin_ignition_gas")
-        department_rec = self.env["hr.department"].create({"name": "Department 01"})
-
-        # Probability = 2
-        probability_rec = self.env.ref("mgmtsystem_hazard.probability_maybe")
-
-        # Severity = 3
-        severity_rec = self.env.ref("mgmtsystem_hazard.severity_heavy")
-
-        # Usage = 5
-        usage_rec = self.env.ref("mgmtsystem_hazard.usage_very_high")
-        r_type_rec = self.env.ref("mgmtsystem_hazard_risk.risk_type_physical")
-
-        record = self.env["mgmtsystem.hazard"].create(
-            {
-                "name": "Hazard Test 02",
-                "type_id": type_rec.id,
-                "hazard_id": hazard_rec.id,
-                "origin_id": origin_rec.id,
-                "department_id": department_rec.id,
-                "responsible_user_id": self.env.user.id,
-                "analysis_date": datetime.now().strftime(DATE_FORMAT),
-                "probability_id": probability_rec.id,
-                "severity_id": severity_rec.id,
-                "usage_id": usage_rec.id,
-                "risk_type_id": r_type_rec.id,
-            }
+        cls.risk_type = cls.env["mgmtsystem.hazard.risk.type"].create(
+            {"name": "Physical"}
         )
-        self.assertEqual(record.risk, 30)  # 2 * 3 * 5
+        cls.probability = cls.env["mgmtsystem.hazard.probability"].create(
+            {"name": "Maybe", "value": 2}
+        )
+        cls.severity = cls.env["mgmtsystem.hazard.severity"].create(
+            {"name": "Heavy", "value": 3}
+        )
+        cls.usage = cls.env["mgmtsystem.hazard.usage"].create(
+            {"name": "Very high", "value": 5}
+        )
+        cls.computation = cls.env["mgmtsystem.hazard.risk.computation"].create(
+            {"name": "A * B * C"}
+        )
+
+    def _create_hazard(self, **extra):
+        values = {
+            "name": "Hazard Test",
+            "type_id": self.hazard_type.id,
+            "hazard_id": self.hazard_hazard.id,
+            "origin_id": self.hazard_origin.id,
+            "department_id": self.department.id,
+            "responsible_user_id": self.env.user.id,
+            "analysis_date": "2026-01-01",
+            "risk_type_id": self.risk_type.id,
+        }
+        values.update(extra)
+        return self.env["mgmtsystem.hazard"].create(values)
+
+    def test_hazard_risk_without_formula_inputs(self):
+        record = self._create_hazard()
+        self.assertFalse(record.risk)
+
+    def test_hazard_risk_computation_a_times_b_times_c(self):
+        self.env.company.risk_computation_id = self.computation
+        record = self._create_hazard(
+            probability_id=self.probability.id,
+            severity_id=self.severity.id,
+            usage_id=self.usage.id,
+        )
+        self.assertEqual(record.risk, 30)

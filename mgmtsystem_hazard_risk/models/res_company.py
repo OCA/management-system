@@ -1,5 +1,5 @@
 # Copyright (C) 2020 Guadaltech Soluciones Tecnológicas (<http://www.guadaltech.es>).
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import fields, models
 
