@@ -3,8 +3,8 @@
 {
     "name": "Health and Safety Management System",
     "summary": "Manage your health and safety management system",
-    "version": "17.0.1.0.0",
-    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
+    "version": "19.0.1.0.0",
+    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
