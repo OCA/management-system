@@ -1,7 +1,10 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+from odoo.exceptions import UserError
+
 from odoo.addons.base.tests.common import BaseCommon
+from odoo.addons.mgmtsystem_hazard_risk.models.common import _parse_risk_formula
 
 
 class TestMgmtsystemHazard(BaseCommon):
@@ -32,6 +35,9 @@ class TestMgmtsystemHazard(BaseCommon):
         cls.computation = cls.env["mgmtsystem.hazard.risk.computation"].create(
             {"name": "A * B * C"}
         )
+        cls.computation_ab = cls.env["mgmtsystem.hazard.risk.computation"].create(
+            {"name": "A * B"}
+        )
 
     def _create_hazard(self, **extra):
         values = {
@@ -59,3 +65,43 @@ class TestMgmtsystemHazard(BaseCommon):
             usage_id=self.usage.id,
         )
         self.assertEqual(record.risk, 30)
+
+    def test_hazard_risk_computation_a_times_b(self):
+        self.env.company.risk_computation_id = self.computation_ab
+        record = self._create_hazard(
+            probability_id=self.probability.id,
+            severity_id=self.severity.id,
+            usage_id=self.usage.id,
+        )
+        self.assertEqual(record.risk, 6)
+
+    def test_residual_risk_computation(self):
+        self.env.company.risk_computation_id = self.computation
+        hazard = self._create_hazard()
+        residual = self.env["mgmtsystem.hazard.residual_risk"].create(
+            {
+                "name": "Residual 1",
+                "hazard_id": hazard.id,
+                "probability_id": self.probability.id,
+                "severity_id": self.severity.id,
+                "usage_id": self.usage.id,
+            }
+        )
+        self.assertEqual(residual.risk, 30)
+
+    def test_residual_risk_without_usage(self):
+        self.env.company.risk_computation_id = self.computation
+        hazard = self._create_hazard()
+        residual = self.env["mgmtsystem.hazard.residual_risk"].create(
+            {
+                "name": "Residual 2",
+                "hazard_id": hazard.id,
+                "probability_id": self.probability.id,
+                "severity_id": self.severity.id,
+            }
+        )
+        self.assertFalse(residual.risk)
+
+    def test_parse_risk_formula_missing(self):
+        with self.assertRaises(UserError):
+            _parse_risk_formula(self.env, False, 1, 2, 3)
