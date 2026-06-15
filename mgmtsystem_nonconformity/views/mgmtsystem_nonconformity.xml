@@ -1,0 +1,357 @@
+<odoo>
+    <menuitem
+        id="menu_mgmtsystem_configuration_nonconformities"
+        name="Nonconformities"
+        parent="mgmtsystem.menu_mgmtsystem_configuration"
+        groups="mgmtsystem.group_mgmtsystem_manager"
+        sequence="10"
+    />
+
+    <record id="view_mgmtsystem_nonconformity_tree" model="ir.ui.view">
+        <field name="name">mgmtsystem.nonconformity.list</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="ref" readonly="True" />
+                <field name="create_date" />
+                <field name="partner_id" />
+                <field name="description" />
+                <field name="user_id" />
+                <field name="responsible_user_id" />
+                <field name="manager_user_id" />
+                <field name="system_id" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="stage_id" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_nonconformity_filter" model="ir.ui.view">
+        <field name="name">mgmtsystem.nonconformity.filter</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field name="arch" type="xml">
+            <search>
+                <group name="filters">
+                    <filter
+                        name="draft"
+                        icon="terp-document-new"
+                        domain="[('state','=','draft')]"
+                        string="Draft"
+                        help="Draft/New nonconformities"
+                    />
+                    <filter
+                        name="pending"
+                        icon="terp-gtk-media-pause"
+                        domain="[('state','in',['analysis','pending'])]"
+                        string="Analysis"
+                        help="Nonconformities pending review"
+                    />
+                    <filter
+                        name="current"
+                        icon="terp-check"
+                        domain="[('state','=','open')]"
+                        string="In Progress"
+                        help="Open Nonconformities"
+                    />
+                    <filter
+                        name="icon"
+                        icon="terp-camera_test"
+                        domain="[('state','=','done')]"
+                        string="Closed"
+                        help="Closed Nonconformities"
+                    />
+                    <separator orientation="vertical" />
+                    <field name="ref" />
+                    <field name="create_date" />
+                    <filter
+                        name="current_user"
+                        string="User"
+                        domain="['|','|',('user_id','=',uid),('responsible_user_id','=',uid),('manager_user_id','=',uid)]"
+                    />
+                    <field name="system_id" />
+                    <field name="company_id" groups="base.group_multi_company" />
+                </group>
+                <newline />
+                <group>
+                    <filter
+                        name="groupby_author"
+                        string="Author"
+                        icon="gtk-edit"
+                        context="{'group_by':'user_id'}"
+                    />
+                    <filter
+                        name="groupby_responsible"
+                        string="Responsible"
+                        icon="terp-personal"
+                        context="{'group_by':'responsible_user_id'}"
+                    />
+                    <filter
+                        name="groupby_manager"
+                        string="Manager"
+                        icon="terp-personal+"
+                        context="{'group_by':'manager_user_id'}"
+                    />
+                    <separator orientation="vertical" />
+                    <filter
+                        name="groupby_system"
+                        string="System"
+                        icon="gtk-execute"
+                        context="{'group_by':'system_id'}"
+                    />
+                    <filter
+                        name="groupby_partner"
+                        string="Partner"
+                        icon="terp-personal+"
+                        domain="[]"
+                        context="{'group_by':'partner_id'}"
+                    />
+                    <filter
+                        name="groupby_procedure"
+                        string="Procedure"
+                        icon="terp-stock_symbol-selection"
+                        context="{'group_by':'procedure_ids'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Kanban view -->
+    <record id="view_mgmtsystem_nonconformity_kanban" model="ir.ui.view">
+        <field name="name">mgmtsystem.nonconformity.kanban</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field name="arch" type="xml">
+            <kanban
+                quick_create="false"
+                default_group_by="stage_id"
+                class="o_kanban_small_column"
+            >
+                <field name="stage_id" />
+                <field name="responsible_user_id" />
+                <field name="ref" />
+                <field name="name" />
+                <field name="message_needaction_counter" />
+                <templates>
+                    <t t-name="card">
+                        <div>
+                            <div class="d-flex justify-content-between">
+                                <strong>
+                                    <field name="ref" />
+                                    -
+                                    <field name="name" />
+                                </strong>
+                                <field name="kanban_state" widget="state_selection" />
+                            </div>
+                            <div>
+                                <br />
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span title='Unread Messages'>
+                                    <i class='fa fa-comments' />
+                                    <t
+                                        t-esc="record.message_needaction_counter.raw_value"
+                                    />
+                                </span>
+                                <field
+                                    name="responsible_user_id"
+                                    widget="many2one_avatar_user"
+                                />
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_nonconformity_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.nonconformity.form</field>
+        <field name="model">mgmtsystem.nonconformity</field>
+        <field name="arch" type="xml">
+            <form string="Non-Conformity">
+                <header>
+                    <field
+                        name="stage_id"
+                        widget="statusbar"
+                        options="{'clickable': 1}"
+                    />
+                </header>
+                <sheet string="Non-Conformity">
+                    <div class="oe_button_box" name="button_box" />
+                    <field name="kanban_state" widget="state_selection" />
+                    <group name="main">
+                        <group name="config">
+                            <field name="name" readonly="state not in 'draft'" />
+                            <field name="ref" readonly="state not in 'draft'" />
+                            <field name="create_date" readonly="1" />
+                            <field
+                                name="partner_id"
+                                readonly="state not in ('draft', 'analysis')"
+                            />
+                            <field name="reference" readonly="state not in 'draft'" />
+                            <field
+                                name="origin_ids"
+                                widget="many2many_tags"
+                                readonly="state not in ('draft', 'analysis')"
+                            />
+                        </group>
+                        <group name="meta">
+                            <field
+                                name="responsible_user_id"
+                                readonly="state not in ('draft', 'analysis')"
+                            />
+                            <field
+                                name="manager_user_id"
+                                readonly="state not in ('draft', 'analysis')"
+                            />
+                            <field name="user_id" readonly="state not in 'draft'" />
+                            <field
+                                name="system_id"
+                                readonly="state not in ('draft', 'analysis')"
+                            />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Description" name="description">
+                            <field
+                                name="description"
+                                placeholder="Add a description ..."
+                                readonly="state not in ('draft', 'analysis')"
+                            />
+                            <group name="state">
+                                <field
+                                    name="immediate_action_id"
+                                    domain="[('type_action','=','immediate')]"
+                                    readonly="state not in ('draft', 'analysis')"
+                                />
+                            </group>
+                        </page>
+
+                        <page string="Procedures" name="procedures">
+                            <field
+                                name="procedure_ids"
+                                readonly="state not in ('draft', 'analysis')"
+                                domain="[('parent_id','child_of',('Procedure','Environmental Aspect','Manuals'))]"
+                            />
+                        </page>
+
+                        <page
+                            string="Causes and Analysis"
+                            invisible="state in ('draft', 'cancel')"
+                            name="causes_analysis"
+                        >
+                            <separator string="Analysis" />
+                            <field name="analysis" readonly="state not in 'analysis'" />
+
+                            <separator string="Causes" />
+                            <field
+                                name="cause_ids"
+                                readonly="state not in 'analysis'"
+                                options="{'no_create': True}"
+                            >
+                                <list create="1" delete="1" decoration-info="parent_id">
+                                    <field name="parent_id" />
+                                    <field name="name" />
+                                    <field name="description" />
+                                    <field name="sequence" />
+                                </list>
+                            </field>
+
+                            <separator string="Analysis Confirmation" />
+                            <group>
+                                <group>
+                                    <field
+                                        name="severity_id"
+                                        readonly="state not in 'analysis'"
+                                    />
+                                </group>
+                            </group>
+                        </page>
+
+                        <page
+                            string="Actions"
+                            invisible="state in ('draft', 'analysis', 'cancel')"
+                            name="actions"
+                        >
+                            <separator string="Action Plan" />
+                            <field
+                                name="action_ids"
+                                readonly="state not in 'pending'"
+                            />
+
+                            <group string="Plan Review" name="plan_review">
+                                <field
+                                    name="action_comments"
+                                    readonly="state not in 'pending'"
+                                    nolabel="1"
+                                    colspan="2"
+                                    placeholder="Action Plan Comments"
+                                />
+                            </group>
+
+                            <group
+                                name="effectiveness_review"
+                                invisible="state not in 'open' and state not in 'done'"
+                                string="Effectiveness Review"
+                            >
+                                <field
+                                    name="evaluation_comments"
+                                    readonly="state not in 'open'"
+                                    nolabel="1"
+                                    colspan="2"
+                                    placeholder="Evaluation Comments"
+                                />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="open_mgmtsystem_nonconformity_list">
+        <field name="name">Nonconformities</field>
+        <field name="path">mgmtsystem-nonconformities</field>
+        <field name="res_model">mgmtsystem.nonconformity</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="view_id" ref="view_mgmtsystem_nonconformity_kanban" />
+        <field name="search_view_id" ref="view_mgmtsystem_nonconformity_filter" />
+        <field name="context">{"search_default_user_id":uid}</field>
+    </record>
+
+    <record
+        model="ir.actions.act_window"
+        id="open_mgmtsystem_nonconformity_thread_list"
+    >
+        <field name="name">Nonconformities</field>
+        <field name="path">mgmtsystem-nonconformities-thread</field>
+        <field name="res_model">mgmtsystem.nonconformity</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field
+            name="domain"
+        >[('res_id', '=', id), ('res_model', '=', mgmtsystem_nonconformity)]
+        </field>
+        <field name="view_id" ref="view_mgmtsystem_nonconformity_kanban" />
+        <field name="search_view_id" ref="view_mgmtsystem_nonconformity_filter" />
+        <field
+            name="context"
+        >{"search_default_user_id":uid, "default_res_model": mgmtsystem_nonconformity, "default_res_id": id}
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_open_nonconformity"
+        name="Nonconformities"
+        action="open_mgmtsystem_nonconformity_list"
+        parent="mgmtsystem.menu_mgmtsystem_main"
+        sequence="30"
+        groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
+    />
+</odoo>
