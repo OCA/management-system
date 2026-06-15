@@ -1,6 +1,6 @@
 [project]
 name = "odoo-addons-oca-management-system"
-version = "19.0.20260613.1"
+version = "19.0.20260615.0"
 dependencies = [
     "odoo-addon-document_page_environment_manual==19.0.*",
     "odoo-addon-document_page_environmental_aspect==19.0.*",
@@ -11,6 +11,7 @@ dependencies = [
     "odoo-addon-mgmtsystem_action==19.0.*",
     "odoo-addon-mgmtsystem_hazard==19.0.*",
     "odoo-addon-mgmtsystem_manual==19.0.*",
+    "odoo-addon-mgmtsystem_nonconformity==19.0.*",
     "odoo-addon-mgmtsystem_survey==19.0.*",
 ]
 classifiers=[

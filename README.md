@@ -30,6 +30,7 @@ addon | version | maintainers | summary
 [mgmtsystem_action](mgmtsystem_action/) | 19.0.1.0.0 |  | Management System - Action
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 19.0.1.0.0 |  | Hazard
 [mgmtsystem_manual](mgmtsystem_manual/) | 19.0.1.0.0 |  | Management System - Manual
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 19.0.1.0.0 |  | Management System - Nonconformity
 [mgmtsystem_survey](mgmtsystem_survey/) | 19.0.1.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Management System - Survey
 
 [//]: # (end addons)
