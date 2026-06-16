@@ -1,0 +1,10 @@
+<odoo noupdate="1">
+    <record id="system_quality" model="mgmtsystem.system">
+        <field name="name">Quality</field>
+        <field
+            name="manual_id"
+            ref="document_page_quality_manual.document_page_quality_manual"
+        />
+        <field name="company_id" eval="False" />
+    </record>
+</odoo>
