@@ -8,4 +8,4 @@ from . import mgmtsystem_nonconformity_origin
 from . import mgmtsystem_nonconformity_severity
 from . import mgmtsystem_nonconformity
 from . import mgmtsystem_action
-from . import mgmtsystem_nonconformity_abstract
+from . import mail_thread
