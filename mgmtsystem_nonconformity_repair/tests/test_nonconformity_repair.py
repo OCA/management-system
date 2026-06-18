@@ -9,7 +9,6 @@ class TestRepairOrder(common.TransactionCase):
             {
                 "name": "Product Test",
                 "uom_id": self.env.ref("uom.product_uom_unit").id,
-                "uom_po_id": self.env.ref("uom.product_uom_unit").id,
             }
         )
 
