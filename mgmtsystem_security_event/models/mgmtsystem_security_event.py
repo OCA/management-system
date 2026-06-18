@@ -98,6 +98,8 @@ class FearedEvents(models.Model):
                 selected = self.env[event._fields[field_name].comodel_name]
                 for vector in vectors:
                     record = vector[field_name]
+                    # Strict > keeps the first vector seen when values tie,
+                    # which is deterministic because scenario_ids is ordered by id.
                     if record and record.value > max_value:
                         max_value = record.value
                         selected = record

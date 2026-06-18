@@ -33,7 +33,7 @@
     </record>
 
     <record id="open_mgmtsystem_primary_asset_list" model="ir.actions.act_window">
-        <field name="name">Primary</field>
+        <field name="name">Primary Assets</field>
         <field name="res_model">mgmtsystem.security.asset.primary</field>
         <field name="view_mode">list,form</field>
         <field name="view_id" eval="False" />
@@ -43,6 +43,6 @@
         id="menu_open_mgmtsystem_primary_asset"
         action="open_mgmtsystem_primary_asset_list"
         parent="menu_mgmtsystem_asset"
-        sequence="20"
+        sequence="10"
     />
 </odoo>

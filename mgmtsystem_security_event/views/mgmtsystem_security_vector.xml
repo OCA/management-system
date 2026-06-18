@@ -5,22 +5,41 @@
         <field name="model">mgmtsystem.security.vector</field>
         <field name="arch" type="xml">
             <form string="Vector">
-                <group col="4">
-                    <field name="name" />
-                    <field name="system_id" />
-                    <field name="company_id" groups="base.group_multi_company" />
-                    <newline />
-                    <field name="original_probability_id" />
-                    <field name="original_severity_id" />
-                    <field name="current_probability_id" />
-                    <field name="current_severity_id" />
-                    <field name="residual_probability_id" />
-                    <field name="residual_severity_id" />
-                    <label for="description" />
-                    <newline />
-                    <field name="description" colspan="4" nolabel="1" />
+                <group>
+                    <group>
+                        <field name="name" />
+                        <field name="system_id" />
+                        <field name="company_id" groups="base.group_multi_company" />
+                    </group>
                 </group>
-                <notebook colspan="4">
+                <group string="Original Risk">
+                    <group>
+                        <field name="original_probability_id" />
+                    </group>
+                    <group>
+                        <field name="original_severity_id" />
+                    </group>
+                </group>
+                <group string="Current Risk">
+                    <group>
+                        <field name="current_probability_id" />
+                    </group>
+                    <group>
+                        <field name="current_severity_id" />
+                    </group>
+                </group>
+                <group string="Residual Risk">
+                    <group>
+                        <field name="residual_probability_id" />
+                    </group>
+                    <group>
+                        <field name="residual_severity_id" />
+                    </group>
+                </group>
+                <group>
+                    <field name="description" />
+                </group>
+                <notebook>
                     <page string="Supporting Assets">
                         <field name="supporting_asset_ids" nolabel="1">
                             <list>

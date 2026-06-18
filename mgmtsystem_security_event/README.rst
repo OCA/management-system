@@ -32,8 +32,39 @@ Feared Events
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module allows you to manage feared events of your Information
-Security Management System (ISMS).
+This module allows you to manage **feared events** (security incidents)
+of your Information Security Management System (ISMS) and assess their
+risk using a configurable risk matrix.
+
+Key concepts:
+
+- **Feared Events** — Security incidents that could impact your
+  organization, each classified by the security properties they
+  threaten: Confidentiality, Integrity, and/or Availability (CIA triad).
+
+- **Attack Vectors** — The means by which a threat could materialize.
+  Each vector carries three risk ratings (probability × severity):
+  *Original* (before any control), *Current* (with controls already in
+  place), and *Residual* (after planned remediation). A feared event's
+  overall rating is automatically computed as the maximum across all its
+  vectors.
+
+- **Scenarios** — Links between a feared event, an attack vector, and a
+  threat source, with a description of how the attack could unfold.
+
+- **Threat Sources** — The origin of a threat (e.g. external attacker,
+  malicious insider, compromised supplier).
+
+- **Security Controls** — Countermeasures applied to reduce risk, each
+  flagged as *Prevention*, *Protection*, and/or *Recovery*.
+
+- **Assets** — Primary assets (the information or processes to protect)
+  and Supporting assets (the infrastructure that hosts them), organized
+  by category.
+
+- **Risk Matrix** — A visual heat-map report that plots feared events by
+  probability and severity for a chosen risk type (original, current, or
+  residual), with color-coded cells (green / orange / red).
 
 **Table of contents**
 
@@ -43,36 +74,87 @@ Security Management System (ISMS).
 Configuration
 =============
 
-You may customize the colors to be displayed on the risk matrix.
+Risk Matrix Levels
+------------------
+
+Define which cells in the risk matrix are green, orange, or red.
 
 Go to **Management System > Configuration > Security > Risk Matrix
-Levels** and define the colors related to a range of cells in the risk
-matrix.
+Levels** and create one record per zone. Each level covers a rectangular
+region of the matrix defined by a probability range and a severity
+range. Ranges must not overlap.
+
+A default 4 × 4 matrix configuration is installed with the module.
+Adjust it to match your organization's risk appetite.
+
+Assets and Threat Sources
+-------------------------
+
+Before creating vectors and events, populate the reference data:
+
+- **Management System > Manuals > Security > Assets > Primary Assets** —
+  the information assets or business processes you need to protect.
+- **Management System > Manuals > Security > Assets > Supporting
+  Assets** — the servers, software, and infrastructure that host primary
+  assets. Link each supporting asset to the primary assets it carries.
+- **Management System > Manuals > Security > Threat Sources** — the
+  actors or causes that could exploit a vector (e.g. external attacker,
+  malicious insider).
 
 Usage
 =====
 
-To use this module:
+Typical workflow
+----------------
 
-- Go to **Management System > Manuals > Security > Vectors**
+1. Create attack vectors
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-  - Create a scenario (S1)
-  - Select the actual, original and residual probability and severity of
-    the scenario
+Go to **Management System > Manuals > Security > Vectors** and create
+one record per attack vector. For each vector:
 
-- Go to **Management System > Manuals > Security > Controls**
+- Set the **Original** probability and severity (risk without any
+  control).
+- Set the **Current** probability and severity (risk with existing
+  controls).
+- Set the **Residual** probability and severity (risk after planned
+  remediation).
+- Optionally link the supporting assets that are exposed by this vector.
 
-  - Create a control (M1)
+2. Create security controls
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Go to **Management System > Manuals > Security > Feared Events**
+Go to **Management System > Manuals > Security > Controls** and create
+the countermeasures available in your organization.
 
-  - Create a feared event (E1)
-  - Add scenario S1 on the event
-  - Add control M1 on the event
+3. Create feared events
+~~~~~~~~~~~~~~~~~~~~~~~
 
-- Go to **Management System > Security > Risk Matrix**
+Go to **Management System > Manuals > Security > Feared Events** and
+create one record per feared event. For each event:
 
-  - Select the type of matrix to generate and click on **Done**
+- Tick the **Confidentiality**, **Integrity**, and/or **Availability**
+  flags that the event threatens.
+- In the **Scenarios** tab, add one line per attack scenario: select the
+  vector and threat source, and describe how the attack could unfold.
+  The event's risk ratings (probability and severity) are automatically
+  computed as the maximum across all linked vectors.
+- In the **Controls** tab, add the controls that mitigate this event.
+  For each control line, indicate whether it acts as **Prevention**,
+  **Protection**, and/or **Recovery**, and optionally link the specific
+  supporting asset it protects.
+
+Use the search bar to filter events by **Confidentiality**,
+**Integrity**, or **Availability**, or group them by system or severity.
+
+4. Generate the risk matrix
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Go to **Management System > Manuals > Security > Risk Matrix**, select
+the risk type (**Original**, **Current**, or **Residual**), and click
+**Done** to generate the PDF report. Each cell shows the feared events
+at that probability/severity intersection, color-coded by the configured
+risk level.
 
 Bug Tracker
 ===========
@@ -95,13 +177,16 @@ Authors
 Contributors
 ------------
 
-- Loïc Faure-Lacroix <loic.lacroix@savoirfairelinux.com>
-- David Dufresne <david.dufresne@savoirfairelinux.com>
-- Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
-- Nicolas Zin <nicolas.zin@savoirfairelinux.com>
-- `Gray Matter Logic <https://graymatterlogic.com>`__:
+- `Savoir-faire Linux <https://www.savoirfairelinux.com>`__:
 
-  - Maxime Chambreuil
+  - Loïc Faure-Lacroix loic.lacroix@savoirfairelinux.com
+  - David Dufresne david.dufresne@savoirfairelinux.com
+  - Maxime Chambreuil maxime.chambreuil@savoirfairelinux.com
+  - Nicolas Zin nicolas.zin@savoirfairelinux.com
+
+- `Gray Matter Logic <https://www.graymatterlogic.com>`__:
+
+  - Maxime Chambreuil maxime.chambreuil@graymatterlogic.com
 
 Maintainers
 -----------

@@ -4,16 +4,25 @@
         <field name="model">mgmtsystem.security.event.control</field>
         <field name="arch" type="xml">
             <form string="Control Line">
-                <field name="system_id" />
-                <field name="control_id" domain="[('system_id', '=', system_id)]" />
-                <field name="prevention" />
-                <field
-                    name="supporting_asset_id"
-                    domain="[('system_id', '=', system_id)]"
-                />
-                <field name="recovery" />
+                <field name="system_id" invisible="1" />
                 <field name="security_event_id" invisible="1" />
-                <field name="protection" />
+                <group>
+                    <group>
+                        <field
+                            name="control_id"
+                            domain="[('system_id', '=', system_id)]"
+                        />
+                        <field
+                            name="supporting_asset_id"
+                            domain="[('system_id', '=', system_id)]"
+                        />
+                    </group>
+                    <group string="Applies As">
+                        <field name="prevention" />
+                        <field name="protection" />
+                        <field name="recovery" />
+                    </group>
+                </group>
             </form>
         </field>
     </record>

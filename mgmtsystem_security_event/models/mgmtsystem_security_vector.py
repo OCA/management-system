@@ -8,11 +8,11 @@ class Vector(models.Model):
     _name = "mgmtsystem.security.vector"
     _description = "Vector"
 
-    name = fields.Char()
+    name = fields.Char(required=True)
     description = fields.Text()
     supporting_asset_ids = fields.Many2many(
         "mgmtsystem.security.asset.supporting",
-        "mgmtststem_security_asset_supporting_rel",
+        "mgmtsystem_security_asset_supporting_rel",
         "vector_id",
         "supporting_asset_id",
     )

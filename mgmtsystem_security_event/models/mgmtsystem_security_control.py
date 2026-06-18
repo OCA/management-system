@@ -8,7 +8,7 @@ class SecurityControl(models.Model):
     _name = "mgmtsystem.security.control"
     _description = "Security Control"
 
-    name = fields.Char()
+    name = fields.Char(required=True)
     description = fields.Text()
     work_instruction_id = fields.Many2one("document.page")
 

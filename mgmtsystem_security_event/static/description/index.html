@@ -375,57 +375,141 @@ ul.auto-toc {
 !! source digest: sha256:9fdd658f8a8d916849d67c409b1a3d768b6e07c4774b346ecb64fb9c2f1f8316
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/license-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/management-system/tree/19.0/mgmtsystem_security_event"><img alt="OCA/management-system" src="https://img.shields.io/badge/github-OCA%2Fmanagement--system-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/management-system-19-0/management-system-19-0-mgmtsystem_security_event"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/management-system&amp;target_branch=19.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
-<p>This module allows you to manage feared events of your Information
-Security Management System (ISMS).</p>
+<p>This module allows you to manage <strong>feared events</strong> (security incidents)
+of your Information Security Management System (ISMS) and assess their
+risk using a configurable risk matrix.</p>
+<p>Key concepts:</p>
+<ul class="simple">
+<li><strong>Feared Events</strong> — Security incidents that could impact your
+organization, each classified by the security properties they
+threaten: Confidentiality, Integrity, and/or Availability (CIA triad).</li>
+<li><strong>Attack Vectors</strong> — The means by which a threat could materialize.
+Each vector carries three risk ratings (probability × severity):
+<em>Original</em> (before any control), <em>Current</em> (with controls already in
+place), and <em>Residual</em> (after planned remediation). A feared event’s
+overall rating is automatically computed as the maximum across all its
+vectors.</li>
+<li><strong>Scenarios</strong> — Links between a feared event, an attack vector, and a
+threat source, with a description of how the attack could unfold.</li>
+<li><strong>Threat Sources</strong> — The origin of a threat (e.g. external attacker,
+malicious insider, compromised supplier).</li>
+<li><strong>Security Controls</strong> — Countermeasures applied to reduce risk, each
+flagged as <em>Prevention</em>, <em>Protection</em>, and/or <em>Recovery</em>.</li>
+<li><strong>Assets</strong> — Primary assets (the information or processes to protect)
+and Supporting assets (the infrastructure that hosts them), organized
+by category.</li>
+<li><strong>Risk Matrix</strong> — A visual heat-map report that plots feared events by
+probability and severity for a chosen risk type (original, current, or
+residual), with color-coded cells (green / orange / red).</li>
+</ul>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#configuration" id="toc-entry-1">Configuration</a></li>
-<li><a class="reference internal" href="#usage" id="toc-entry-2">Usage</a></li>
-<li><a class="reference internal" href="#bug-tracker" id="toc-entry-3">Bug Tracker</a></li>
-<li><a class="reference internal" href="#credits" id="toc-entry-4">Credits</a><ul>
-<li><a class="reference internal" href="#authors" id="toc-entry-5">Authors</a></li>
-<li><a class="reference internal" href="#contributors" id="toc-entry-6">Contributors</a></li>
-<li><a class="reference internal" href="#maintainers" id="toc-entry-7">Maintainers</a></li>
+<li><a class="reference internal" href="#configuration" id="toc-entry-1">Configuration</a><ul>
+<li><a class="reference internal" href="#risk-matrix-levels" id="toc-entry-2">Risk Matrix Levels</a></li>
+<li><a class="reference internal" href="#assets-and-threat-sources" id="toc-entry-3">Assets and Threat Sources</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usage" id="toc-entry-4">Usage</a><ul>
+<li><a class="reference internal" href="#typical-workflow" id="toc-entry-5">Typical workflow</a><ul>
+<li><a class="reference internal" href="#create-attack-vectors" id="toc-entry-6">1. Create attack vectors</a></li>
+<li><a class="reference internal" href="#create-security-controls" id="toc-entry-7">2. Create security controls</a></li>
+<li><a class="reference internal" href="#create-feared-events" id="toc-entry-8">3. Create feared events</a></li>
+<li><a class="reference internal" href="#generate-the-risk-matrix" id="toc-entry-9">4. Generate the risk matrix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bug-tracker" id="toc-entry-10">Bug Tracker</a></li>
+<li><a class="reference internal" href="#credits" id="toc-entry-11">Credits</a><ul>
+<li><a class="reference internal" href="#authors" id="toc-entry-12">Authors</a></li>
+<li><a class="reference internal" href="#contributors" id="toc-entry-13">Contributors</a></li>
+<li><a class="reference internal" href="#maintainers" id="toc-entry-14">Maintainers</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="configuration">
 <h2><a class="toc-backref" href="#toc-entry-1">Configuration</a></h2>
-<p>You may customize the colors to be displayed on the risk matrix.</p>
+<div class="section" id="risk-matrix-levels">
+<h3><a class="toc-backref" href="#toc-entry-2">Risk Matrix Levels</a></h3>
+<p>Define which cells in the risk matrix are green, orange, or red.</p>
 <p>Go to <strong>Management System &gt; Configuration &gt; Security &gt; Risk Matrix
-Levels</strong> and define the colors related to a range of cells in the risk
-matrix.</p>
+Levels</strong> and create one record per zone. Each level covers a rectangular
+region of the matrix defined by a probability range and a severity
+range. Ranges must not overlap.</p>
+<p>A default 4 × 4 matrix configuration is installed with the module.
+Adjust it to match your organization’s risk appetite.</p>
+</div>
+<div class="section" id="assets-and-threat-sources">
+<h3><a class="toc-backref" href="#toc-entry-3">Assets and Threat Sources</a></h3>
+<p>Before creating vectors and events, populate the reference data:</p>
+<ul class="simple">
+<li><strong>Management System &gt; Manuals &gt; Security &gt; Assets &gt; Primary Assets</strong> —
+the information assets or business processes you need to protect.</li>
+<li><strong>Management System &gt; Manuals &gt; Security &gt; Assets &gt; Supporting
+Assets</strong> — the servers, software, and infrastructure that host primary
+assets. Link each supporting asset to the primary assets it carries.</li>
+<li><strong>Management System &gt; Manuals &gt; Security &gt; Threat Sources</strong> — the
+actors or causes that could exploit a vector (e.g. external attacker,
+malicious insider).</li>
+</ul>
+</div>
 </div>
 <div class="section" id="usage">
-<h2><a class="toc-backref" href="#toc-entry-2">Usage</a></h2>
-<p>To use this module:</p>
+<h2><a class="toc-backref" href="#toc-entry-4">Usage</a></h2>
+<div class="section" id="typical-workflow">
+<h3><a class="toc-backref" href="#toc-entry-5">Typical workflow</a></h3>
+<div class="section" id="create-attack-vectors">
+<h4><a class="toc-backref" href="#toc-entry-6">1. Create attack vectors</a></h4>
+<p>Go to <strong>Management System &gt; Manuals &gt; Security &gt; Vectors</strong> and create
+one record per attack vector. For each vector:</p>
 <ul class="simple">
-<li>Go to <strong>Management System &gt; Manuals &gt; Security &gt; Vectors</strong><ul>
-<li>Create a scenario (S1)</li>
-<li>Select the actual, original and residual probability and severity of
-the scenario</li>
-</ul>
-</li>
-<li>Go to <strong>Management System &gt; Manuals &gt; Security &gt; Controls</strong><ul>
-<li>Create a control (M1)</li>
-</ul>
-</li>
-<li>Go to <strong>Management System &gt; Manuals &gt; Security &gt; Feared Events</strong><ul>
-<li>Create a feared event (E1)</li>
-<li>Add scenario S1 on the event</li>
-<li>Add control M1 on the event</li>
-</ul>
-</li>
-<li>Go to <strong>Management System &gt; Security &gt; Risk Matrix</strong><ul>
-<li>Select the type of matrix to generate and click on <strong>Done</strong></li>
-</ul>
-</li>
+<li>Set the <strong>Original</strong> probability and severity (risk without any
+control).</li>
+<li>Set the <strong>Current</strong> probability and severity (risk with existing
+controls).</li>
+<li>Set the <strong>Residual</strong> probability and severity (risk after planned
+remediation).</li>
+<li>Optionally link the supporting assets that are exposed by this vector.</li>
 </ul>
 </div>
+<div class="section" id="create-security-controls">
+<h4><a class="toc-backref" href="#toc-entry-7">2. Create security controls</a></h4>
+<p>Go to <strong>Management System &gt; Manuals &gt; Security &gt; Controls</strong> and create
+the countermeasures available in your organization.</p>
+</div>
+<div class="section" id="create-feared-events">
+<h4><a class="toc-backref" href="#toc-entry-8">3. Create feared events</a></h4>
+<p>Go to <strong>Management System &gt; Manuals &gt; Security &gt; Feared Events</strong> and
+create one record per feared event. For each event:</p>
+<ul class="simple">
+<li>Tick the <strong>Confidentiality</strong>, <strong>Integrity</strong>, and/or <strong>Availability</strong>
+flags that the event threatens.</li>
+<li>In the <strong>Scenarios</strong> tab, add one line per attack scenario: select the
+vector and threat source, and describe how the attack could unfold.
+The event’s risk ratings (probability and severity) are automatically
+computed as the maximum across all linked vectors.</li>
+<li>In the <strong>Controls</strong> tab, add the controls that mitigate this event.
+For each control line, indicate whether it acts as <strong>Prevention</strong>,
+<strong>Protection</strong>, and/or <strong>Recovery</strong>, and optionally link the specific
+supporting asset it protects.</li>
+</ul>
+<p>Use the search bar to filter events by <strong>Confidentiality</strong>,
+<strong>Integrity</strong>, or <strong>Availability</strong>, or group them by system or severity.</p>
+</div>
+<div class="section" id="generate-the-risk-matrix">
+<h4><a class="toc-backref" href="#toc-entry-9">4. Generate the risk matrix</a></h4>
+<p>Go to <strong>Management System &gt; Manuals &gt; Security &gt; Risk Matrix</strong>, select
+the risk type (<strong>Original</strong>, <strong>Current</strong>, or <strong>Residual</strong>), and click
+<strong>Done</strong> to generate the PDF report. Each cell shows the feared events
+at that probability/severity intersection, color-coded by the configured
+risk level.</p>
+</div>
+</div>
+</div>
 <div class="section" id="bug-tracker">
-<h2><a class="toc-backref" href="#toc-entry-3">Bug Tracker</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-10">Bug Tracker</a></h2>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/management-system/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
@@ -433,28 +517,31 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
-<h2><a class="toc-backref" href="#toc-entry-4">Credits</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-11">Credits</a></h2>
 <div class="section" id="authors">
-<h3><a class="toc-backref" href="#toc-entry-5">Authors</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-12">Authors</a></h3>
 <ul class="simple">
 <li>Savoir-faire Linux</li>
 </ul>
 </div>
 <div class="section" id="contributors">
-<h3><a class="toc-backref" href="#toc-entry-6">Contributors</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-13">Contributors</a></h3>
 <ul class="simple">
-<li>Loïc Faure-Lacroix &lt;<a class="reference external" href="mailto:loic.lacroix&#64;savoirfairelinux.com">loic.lacroix&#64;savoirfairelinux.com</a>&gt;</li>
-<li>David Dufresne &lt;<a class="reference external" href="mailto:david.dufresne&#64;savoirfairelinux.com">david.dufresne&#64;savoirfairelinux.com</a>&gt;</li>
-<li>Maxime Chambreuil &lt;<a class="reference external" href="mailto:maxime.chambreuil&#64;savoirfairelinux.com">maxime.chambreuil&#64;savoirfairelinux.com</a>&gt;</li>
-<li>Nicolas Zin &lt;<a class="reference external" href="mailto:nicolas.zin&#64;savoirfairelinux.com">nicolas.zin&#64;savoirfairelinux.com</a>&gt;</li>
-<li><a class="reference external" href="https://graymatterlogic.com">Gray Matter Logic</a>:<ul>
-<li>Maxime Chambreuil</li>
+<li><a class="reference external" href="https://www.savoirfairelinux.com">Savoir-faire Linux</a>:<ul>
+<li>Loïc Faure-Lacroix <a class="reference external" href="mailto:loic.lacroix&#64;savoirfairelinux.com">loic.lacroix&#64;savoirfairelinux.com</a></li>
+<li>David Dufresne <a class="reference external" href="mailto:david.dufresne&#64;savoirfairelinux.com">david.dufresne&#64;savoirfairelinux.com</a></li>
+<li>Maxime Chambreuil <a class="reference external" href="mailto:maxime.chambreuil&#64;savoirfairelinux.com">maxime.chambreuil&#64;savoirfairelinux.com</a></li>
+<li>Nicolas Zin <a class="reference external" href="mailto:nicolas.zin&#64;savoirfairelinux.com">nicolas.zin&#64;savoirfairelinux.com</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="https://www.graymatterlogic.com">Gray Matter Logic</a>:<ul>
+<li>Maxime Chambreuil <a class="reference external" href="mailto:maxime.chambreuil&#64;graymatterlogic.com">maxime.chambreuil&#64;graymatterlogic.com</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="maintainers">
-<h3><a class="toc-backref" href="#toc-entry-7">Maintainers</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-14">Maintainers</a></h3>
 <p>This module is maintained by the OCA.</p>
 <a class="reference external image-reference" href="https://odoo-community.org">
 <img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" />

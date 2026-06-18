@@ -5,13 +5,17 @@
         <field name="arch" type="xml">
             <form string="Feared Event">
                 <group>
-                    <field name="name" />
-                    <field name="system_id" />
-                    <field name="company_id" groups="base.group_multi_company" />
-                    <field name="severity_id" />
-                    <field name="confidentiality" />
-                    <field name="integrity" />
-                    <field name="availability" />
+                    <group>
+                        <field name="name" />
+                        <field name="system_id" />
+                        <field name="company_id" groups="base.group_multi_company" />
+                        <field name="severity_id" />
+                    </group>
+                    <group string="Security Properties">
+                        <field name="confidentiality" />
+                        <field name="integrity" />
+                        <field name="availability" />
+                    </group>
                 </group>
                 <notebook>
                     <page string="Description">
@@ -21,12 +25,6 @@
                             class="oe_edit_only"
                             nolabel="1"
                         />
-                        <!-- display_content usually computed from content in document_page,
-                                 if not present in model, removing it might be safer,
-                                 but trusting it exists in document.page -->
-                        <!-- <div class="oe_document_page">
-                                <field name="display_content" widget="html" class="oe_view_only" options='{"safe": True}'/>
-                            </div> -->
                     </page>
                     <page string="Scenarios">
                         <field
@@ -76,9 +74,52 @@
         <field name="arch" type="xml">
             <list string="Feared Events">
                 <field name="name" />
-                <field name="severity_id" />
                 <field name="system_id" />
+                <field name="severity_id" />
+                <field name="confidentiality" />
+                <field name="integrity" />
+                <field name="availability" />
+                <field name="current_probability_id" />
+                <field name="current_severity_id" />
             </list>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_security_event_search" model="ir.ui.view">
+        <field name="name">mgmtsystem.security.event.search</field>
+        <field name="model">mgmtsystem.security.event</field>
+        <field name="arch" type="xml">
+            <search string="Feared Events">
+                <field name="name" />
+                <field name="system_id" />
+                <filter
+                    string="Confidentiality"
+                    name="confidentiality"
+                    domain="[('confidentiality', '=', True)]"
+                />
+                <filter
+                    string="Integrity"
+                    name="integrity"
+                    domain="[('integrity', '=', True)]"
+                />
+                <filter
+                    string="Availability"
+                    name="availability"
+                    domain="[('availability', '=', True)]"
+                />
+                <group>
+                    <filter
+                        string="System"
+                        name="group_by_system"
+                        context="{'group_by': 'system_id'}"
+                    />
+                    <filter
+                        string="Severity"
+                        name="group_by_severity"
+                        context="{'group_by': 'severity_id'}"
+                    />
+                </group>
+            </search>
         </field>
     </record>
 

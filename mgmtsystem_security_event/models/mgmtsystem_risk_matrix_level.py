@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class MgmtsystemRiskMatrixLevel(models.Model):
@@ -40,6 +41,6 @@ class MgmtsystemRiskMatrixLevel(models.Model):
                 ("severity_max", ">=", level.severity_min),
             ]
             if self.search_count(domain):
-                raise models.ValidationError(
+                raise ValidationError(
                     self.env._("You can not have overlapping risk matrix levels.")
                 )

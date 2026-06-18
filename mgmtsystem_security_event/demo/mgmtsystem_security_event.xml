@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="demo_security_system" model="mgmtsystem.system">
+        <field name="name">Information Security Management System</field>
+    </record>
+
+    <record
+        id="demo_asset_category_hardware"
+        model="mgmtsystem.security.asset.category"
+    >
+        <field name="name">Hardware</field>
+    </record>
+
+    <record
+        id="demo_asset_category_software"
+        model="mgmtsystem.security.asset.category"
+    >
+        <field name="name">Software</field>
+    </record>
+
+    <record
+        id="demo_primary_asset_customer_db"
+        model="mgmtsystem.security.asset.primary"
+    >
+        <field name="name">Customer database</field>
+        <field name="description">Stores personal and billing information.</field>
+        <field name="system_id" ref="demo_security_system" />
+    </record>
+
+    <record
+        id="demo_supporting_asset_app_server"
+        model="mgmtsystem.security.asset.supporting"
+    >
+        <field name="name">Application server</field>
+        <field name="category_id" ref="demo_asset_category_hardware" />
+        <field name="system_id" ref="demo_security_system" />
+        <field
+            name="primary_asset_ids"
+            eval="[(4, ref('demo_primary_asset_customer_db'))]"
+        />
+    </record>
+
+    <record
+        id="demo_supporting_asset_db_server"
+        model="mgmtsystem.security.asset.supporting"
+    >
+        <field name="name">Database server</field>
+        <field name="category_id" ref="demo_asset_category_software" />
+        <field name="system_id" ref="demo_security_system" />
+        <field
+            name="primary_asset_ids"
+            eval="[(4, ref('demo_primary_asset_customer_db'))]"
+        />
+    </record>
+
+    <record id="demo_threat_source_external" model="mgmtsystem.security.threat.source">
+        <field name="name">External attacker</field>
+        <field name="system_id" ref="demo_security_system" />
+    </record>
+
+    <record id="demo_threat_source_insider" model="mgmtsystem.security.threat.source">
+        <field name="name">Malicious insider</field>
+        <field name="system_id" ref="demo_security_system" />
+    </record>
+
+    <record id="demo_threat_source_supplier" model="mgmtsystem.security.threat.source">
+        <field name="name">Compromised supplier</field>
+        <field name="system_id" ref="demo_security_system" />
+    </record>
+
+    <record id="demo_vector_unauthorized_access" model="mgmtsystem.security.vector">
+        <field name="name">Unauthorized database access</field>
+        <field
+            name="description"
+        >Attacker gains access to the customer database.</field>
+        <field
+            name="original_probability_id"
+            ref="mgmtsystem_hazard.probability_probably"
+        />
+        <field name="original_severity_id" ref="mgmtsystem_hazard.severity_critical" />
+        <field
+            name="current_probability_id"
+            ref="mgmtsystem_hazard.probability_maybe"
+        />
+        <field name="current_severity_id" ref="mgmtsystem_hazard.severity_heavy" />
+        <field name="residual_probability_id" ref="mgmtsystem_hazard.probability_low" />
+        <field name="residual_severity_id" ref="mgmtsystem_hazard.severity_medium" />
+        <field name="system_id" ref="demo_security_system" />
+        <field
+            name="supporting_asset_ids"
+            eval="[(4, ref('demo_supporting_asset_app_server'))]"
+        />
+    </record>
+
+    <record id="demo_vector_service_disruption" model="mgmtsystem.security.vector">
+        <field name="name">Service disruption</field>
+        <field name="description">Application server becomes unavailable.</field>
+        <field
+            name="original_probability_id"
+            ref="mgmtsystem_hazard.probability_maybe"
+        />
+        <field name="original_severity_id" ref="mgmtsystem_hazard.severity_heavy" />
+        <field name="current_probability_id" ref="mgmtsystem_hazard.probability_low" />
+        <field name="current_severity_id" ref="mgmtsystem_hazard.severity_medium" />
+        <field name="residual_probability_id" ref="mgmtsystem_hazard.probability_low" />
+        <field name="residual_severity_id" ref="mgmtsystem_hazard.severity_simple" />
+        <field name="system_id" ref="demo_security_system" />
+        <field
+            name="supporting_asset_ids"
+            eval="[(4, ref('demo_supporting_asset_app_server'))]"
+        />
+    </record>
+
+    <record id="demo_vector_data_modification" model="mgmtsystem.security.vector">
+        <field name="name">Unauthorized data modification</field>
+        <field
+            name="description"
+        >Attacker alters records in the customer database.</field>
+        <field
+            name="original_probability_id"
+            ref="mgmtsystem_hazard.probability_maybe"
+        />
+        <field name="original_severity_id" ref="mgmtsystem_hazard.severity_heavy" />
+        <field name="current_probability_id" ref="mgmtsystem_hazard.probability_low" />
+        <field name="current_severity_id" ref="mgmtsystem_hazard.severity_medium" />
+        <field name="residual_probability_id" ref="mgmtsystem_hazard.probability_low" />
+        <field name="residual_severity_id" ref="mgmtsystem_hazard.severity_simple" />
+        <field name="system_id" ref="demo_security_system" />
+        <field
+            name="supporting_asset_ids"
+            eval="[(4, ref('demo_supporting_asset_db_server'))]"
+        />
+    </record>
+
+    <record id="demo_control_access_policy" model="mgmtsystem.security.control">
+        <field name="name">Access control policy</field>
+        <field
+            name="description"
+        >Role-based access control for production systems.</field>
+        <field name="system_id" ref="demo_security_system" />
+    </record>
+
+    <record id="demo_control_backup" model="mgmtsystem.security.control">
+        <field name="name">Daily backup</field>
+        <field name="description">Encrypted backups stored off-site.</field>
+        <field name="system_id" ref="demo_security_system" />
+    </record>
+
+    <record id="demo_control_integrity_checks" model="mgmtsystem.security.control">
+        <field name="name">Data integrity checks</field>
+        <field
+            name="description"
+        >Automated hash verification of database records after each transaction.</field>
+        <field name="system_id" ref="demo_security_system" />
+    </record>
+
+    <record id="demo_event_data_breach" model="mgmtsystem.security.event">
+        <field name="name">Data breach</field>
+        <field name="type">content</field>
+        <field name="parent_id" ref="document_page_group_feared_event" />
+        <field name="system_id" ref="demo_security_system" />
+        <field name="confidentiality" eval="True" />
+        <field name="integrity" eval="True" />
+        <field name="availability" eval="False" />
+        <field name="severity_id" ref="mgmtsystem_hazard.severity_critical" />
+        <field
+            name="content"
+        ><![CDATA[
+<p>Unauthorized disclosure of customer personal data.</p>
+        ]]></field>
+    </record>
+
+    <record id="demo_scenario_data_breach" model="mgmtsystem.security.event.scenario">
+        <field name="security_event_id" ref="demo_event_data_breach" />
+        <field name="vector_id" ref="demo_vector_unauthorized_access" />
+        <field name="source_id" ref="demo_threat_source_external" />
+        <field
+            name="description"
+        >External attacker exploits a web vulnerability to read database records.</field>
+    </record>
+
+    <record
+        id="demo_control_line_data_breach"
+        model="mgmtsystem.security.event.control"
+    >
+        <field name="security_event_id" ref="demo_event_data_breach" />
+        <field name="control_id" ref="demo_control_access_policy" />
+        <field name="supporting_asset_id" ref="demo_supporting_asset_app_server" />
+        <field name="prevention" eval="True" />
+        <field name="protection" eval="True" />
+        <field name="recovery" eval="False" />
+    </record>
+
+    <record id="demo_event_service_outage" model="mgmtsystem.security.event">
+        <field name="name">Service outage</field>
+        <field name="type">content</field>
+        <field name="parent_id" ref="document_page_group_feared_event" />
+        <field name="system_id" ref="demo_security_system" />
+        <field name="confidentiality" eval="False" />
+        <field name="integrity" eval="False" />
+        <field name="availability" eval="True" />
+        <field name="severity_id" ref="mgmtsystem_hazard.severity_heavy" />
+        <field
+            name="content"
+        ><![CDATA[
+<p>Critical business service becomes unavailable for customers.</p>
+        ]]></field>
+    </record>
+
+    <record
+        id="demo_scenario_service_outage"
+        model="mgmtsystem.security.event.scenario"
+    >
+        <field name="security_event_id" ref="demo_event_service_outage" />
+        <field name="vector_id" ref="demo_vector_service_disruption" />
+        <field name="source_id" ref="demo_threat_source_insider" />
+        <field
+            name="description"
+        >Misconfiguration during maintenance causes application downtime.</field>
+    </record>
+
+    <record
+        id="demo_control_line_service_outage"
+        model="mgmtsystem.security.event.control"
+    >
+        <field name="security_event_id" ref="demo_event_service_outage" />
+        <field name="control_id" ref="demo_control_backup" />
+        <field name="prevention" eval="False" />
+        <field name="protection" eval="False" />
+        <field name="recovery" eval="True" />
+    </record>
+
+    <record id="demo_event_data_tampering" model="mgmtsystem.security.event">
+        <field name="name">Data tampering</field>
+        <field name="type">content</field>
+        <field name="parent_id" ref="document_page_group_feared_event" />
+        <field name="system_id" ref="demo_security_system" />
+        <field name="confidentiality" eval="False" />
+        <field name="integrity" eval="True" />
+        <field name="availability" eval="False" />
+        <field name="severity_id" ref="mgmtsystem_hazard.severity_heavy" />
+        <field
+            name="content"
+        ><![CDATA[
+<p>Unauthorized modification of customer records by a compromised third-party supplier.</p>
+        ]]></field>
+    </record>
+
+    <record
+        id="demo_scenario_data_tampering"
+        model="mgmtsystem.security.event.scenario"
+    >
+        <field name="security_event_id" ref="demo_event_data_tampering" />
+        <field name="vector_id" ref="demo_vector_data_modification" />
+        <field name="source_id" ref="demo_threat_source_supplier" />
+        <field
+            name="description"
+        >Supplier with write access to the database alters records during a maintenance window.</field>
+    </record>
+
+    <record
+        id="demo_control_line_data_tampering"
+        model="mgmtsystem.security.event.control"
+    >
+        <field name="security_event_id" ref="demo_event_data_tampering" />
+        <field name="control_id" ref="demo_control_integrity_checks" />
+        <field name="supporting_asset_id" ref="demo_supporting_asset_db_server" />
+        <field name="prevention" eval="True" />
+        <field name="protection" eval="True" />
+        <field name="recovery" eval="False" />
+    </record>
+</odoo>

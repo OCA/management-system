@@ -5,11 +5,17 @@
         <field name="model">mgmtsystem.security.control</field>
         <field name="arch" type="xml">
             <form string="Security Control">
-                <field name="name" />
-                <field name="system_id" />
-                <field name="company_id" groups="base.group_multi_company" />
-                <field name="work_instruction_id" />
-                <field name="description" colspan="4" />
+                <group>
+                    <group>
+                        <field name="name" />
+                        <field name="system_id" />
+                        <field name="company_id" groups="base.group_multi_company" />
+                        <field name="work_instruction_id" />
+                    </group>
+                </group>
+                <group>
+                    <field name="description" />
+                </group>
             </form>
         </field>
     </record>

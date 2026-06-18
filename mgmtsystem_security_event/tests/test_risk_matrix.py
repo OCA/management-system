@@ -29,22 +29,22 @@ class TestRiskMatrix(TestSecurityEventBase):
         res = self.matrix.get_event_list(self.severities[3], self.probabilities[2])
         self.assertEqual(len(res), 0)
 
+    def _render_risk_matrix_pdf(self):
+        return self.env["ir.actions.report"]._render_qweb_pdf(
+            "mgmtsystem_security_event.action_report_risk_matrix",
+            res_ids=self.matrix.ids,
+        )
+
     def test_generate_risk_matrix_report(self):
-        report = self.env.ref(
-            "mgmtsystem_security_event.action_report_risk_matrix"
-        )._render_qweb_pdf(self.matrix.ids)
+        report = self._render_risk_matrix_pdf()
         self.assertTrue(report[0])
 
     def test_generate_risk_matrix_original(self):
         self.matrix.type = "original"
-        report = self.env.ref(
-            "mgmtsystem_security_event.action_report_risk_matrix"
-        )._render_qweb_pdf(self.matrix.ids)
+        report = self._render_risk_matrix_pdf()
         self.assertTrue(report[0])
 
     def test_generate_risk_matrix_residual(self):
         self.matrix.type = "residual"
-        report = self.env.ref(
-            "mgmtsystem_security_event.action_report_risk_matrix"
-        )._render_qweb_pdf(self.matrix.ids)
+        report = self._render_risk_matrix_pdf()
         self.assertTrue(report[0])

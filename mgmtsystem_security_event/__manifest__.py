@@ -7,7 +7,7 @@
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
-    "category": "Management System",
+    "category": "Management Systems",
     "depends": [
         "mgmtsystem",
         "document_page",
@@ -32,6 +32,6 @@
         "report/report.xml",
         "report/report_risk_matrix.xml",
     ],
-    "demo": [],
+    "demo": ["demo/mgmtsystem_security_event.xml"],
     "installable": True,
 }
