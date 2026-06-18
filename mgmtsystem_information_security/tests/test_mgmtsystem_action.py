@@ -15,7 +15,9 @@ class TestMgmtSystemActionInformationSecurity(BaseCommon):
                 "company_id": cls.env.company.id,
             }
         )
-        cls.action = cls.env["mgmtsystem.action"].create({"name": "Test Action"})
+        cls.action = cls.env["mgmtsystem.action"].create(
+            {"name": "Test Action", "type_action": "immediate"}
+        )
         cls.control = cls.env["mgmtsystem.security.control"].create(
             {
                 "name": "Test Control",
