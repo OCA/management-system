@@ -1,0 +1,6 @@
+- Maxime Chambreuil \<<maxime.chambreuil@savoirfairelinux.com>\>
+- Loïc Faure-Lacroix \<<loic.lacroix@savoirfairelinux.com>\>
+- [Guadaltech](https://www.guadaltech.es):
+  - Fernando La Chica \<<fernando.lachica@guadaltech.es>\>
+- [Gray Matter Logic](https://www.graymatterlogic.com):
+  - Maxime Chambreuil \<<maxime.chambreuil@graymatterlogic.com>\>
