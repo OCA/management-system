@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="system_audit" model="mgmtsystem.system">
+        <field name="name">Health and Safety</field>
+        <field
+            name="manual_id"
+            ref="document_page_health_safety_manual.document_page_health_safety_manual"
+        />
+        <field name="company_id" eval="False" />
+    </record>
+</odoo>
