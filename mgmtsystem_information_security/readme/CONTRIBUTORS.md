@@ -1,0 +1,6 @@
+- [Savoir-faire Linux](https://www.savoirfairelinux.com):
+  - Maxime Chambreuil \<<maxime.chambreuil@savoirfairelinux.com>\>
+  - David Dufresne \<<david.dufresne@savoirfairelinux.com>\>
+  - Nicolas Zin \<<nicolas.zin@savoirfairelinux.com>\>
+- [Gray Matter Logic](https://www.graymatterlogic.com):
+  - Maxime Chambreuil \<<maxime.chambreuil@graymatterlogic.com>\>
