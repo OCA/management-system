@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="probability_low" model="mgmtsystem.risk.probability">
+        <field name="name">Low</field>
+        <field name="value">1</field>
+        <field name="description">Rare — unlikely to occur</field>
+    </record>
+
+    <record id="probability_medium" model="mgmtsystem.risk.probability">
+        <field name="name">Medium</field>
+        <field name="value">2</field>
+        <field name="description">Possible — may occur occasionally</field>
+    </record>
+
+    <record id="probability_high" model="mgmtsystem.risk.probability">
+        <field name="name">High</field>
+        <field name="value">3</field>
+        <field name="description">Likely — expected to occur</field>
+    </record>
+
+    <record id="probability_very_high" model="mgmtsystem.risk.probability">
+        <field name="name">Very High</field>
+        <field name="value">4</field>
+        <field name="description">Almost certain — will occur frequently</field>
+    </record>
+</odoo>
