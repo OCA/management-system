@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_mgmtsystem_action_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.action.form.inherit.information.security</field>
+        <field name="model">mgmtsystem.action</field>
+        <field name="inherit_id" ref="mgmtsystem_action.view_mgmtsystem_action_form" />
+        <field name="arch" type="xml">
+            <page name="desc" position="after">
+                <page name="security_controls" string="Security Controls">
+                    <field name="control_ids" nolabel="1" />
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>

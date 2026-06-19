@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="system_information_security" model="mgmtsystem.system">
+        <field name="name">Information Security</field>
+        <field
+            name="manual_id"
+            ref="mgmtsystem_info_security_manual.document_page_information_security_manual"
+        />
+        <field name="company_id" eval="False" />
+    </record>
+</odoo>
