@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_report_risk_matrix" model="ir.actions.report">
+        <field name="name">Risk Matrix</field>
+        <field name="model">mgmtsystem.risk.matrix</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mgmtsystem_security_event.report_risk_matrix</field>
+        <field name="report_file">mgmtsystem_security_event.report_risk_matrix</field>
+        <field
+            name="print_report_name"
+        >'Risk Matrix - %s' % (object.system_id.name or '')</field>
+        <field name="binding_model_id" ref="model_mgmtsystem_risk_matrix" />
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

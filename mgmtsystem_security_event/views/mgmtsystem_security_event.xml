@@ -1,0 +1,139 @@
+<odoo>
+    <record id="view_mgmtsystem_security_event_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.security.event.form</field>
+        <field name="model">mgmtsystem.security.event</field>
+        <field name="arch" type="xml">
+            <form string="Feared Event">
+                <group>
+                    <group>
+                        <field name="name" />
+                        <field name="system_id" />
+                        <field name="company_id" groups="base.group_multi_company" />
+                        <field name="severity_id" />
+                    </group>
+                    <group string="Security Properties">
+                        <field name="confidentiality" />
+                        <field name="integrity" />
+                        <field name="availability" />
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Description">
+                        <field
+                            name="content"
+                            widget="html"
+                            class="oe_edit_only"
+                            nolabel="1"
+                        />
+                    </page>
+                    <page string="Scenarios">
+                        <field
+                            name="scenario_ids"
+                            nolabel="1"
+                            context="{
+                                    'default_security_event_id': id,
+                                    'default_system_id': system_id,
+                                }"
+                        >
+                            <list>
+                                <field name="system_id" column_invisible="True" />
+                                <field name="description" />
+                                <field name="vector_id" />
+                                <field name="source_id" />
+                                <field name="probability_id" />
+                            </list>
+                        </field>
+                    </page>
+                    <page string="Controls">
+                        <field
+                            name="control_ids"
+                            nolabel="1"
+                            context="{
+                                    'default_security_event_id': id,
+                                    'default_system_id': system_id,
+                                }"
+                        >
+                            <list>
+                                <field name="system_id" column_invisible="True" />
+                                <field name="control_id" />
+                                <field name="supporting_asset_id" />
+                                <field name="prevention" />
+                                <field name="recovery" />
+                                <field name="protection" />
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_security_event_tree" model="ir.ui.view">
+        <field name="name">mgmtsystem.security.event.tree</field>
+        <field name="model">mgmtsystem.security.event</field>
+        <field name="arch" type="xml">
+            <list string="Feared Events">
+                <field name="name" />
+                <field name="system_id" />
+                <field name="severity_id" />
+                <field name="confidentiality" />
+                <field name="integrity" />
+                <field name="availability" />
+                <field name="current_probability_id" />
+                <field name="current_severity_id" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_security_event_search" model="ir.ui.view">
+        <field name="name">mgmtsystem.security.event.search</field>
+        <field name="model">mgmtsystem.security.event</field>
+        <field name="arch" type="xml">
+            <search string="Feared Events">
+                <field name="name" />
+                <field name="system_id" />
+                <filter
+                    string="Confidentiality"
+                    name="confidentiality"
+                    domain="[('confidentiality', '=', True)]"
+                />
+                <filter
+                    string="Integrity"
+                    name="integrity"
+                    domain="[('integrity', '=', True)]"
+                />
+                <filter
+                    string="Availability"
+                    name="availability"
+                    domain="[('availability', '=', True)]"
+                />
+                <group>
+                    <filter
+                        string="System"
+                        name="group_by_system"
+                        context="{'group_by': 'system_id'}"
+                    />
+                    <filter
+                        string="Severity"
+                        name="group_by_severity"
+                        context="{'group_by': 'severity_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="open_mgmtsystem_security_event_list" model="ir.actions.act_window">
+        <field name="name">Feared Events</field>
+        <field name="res_model">mgmtsystem.security.event</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" eval="False" />
+    </record>
+
+    <menuitem
+        id="menu_open_mgmtsystem_security_event"
+        action="open_mgmtsystem_security_event_list"
+        parent="menu_mgmtsystem_manual_security"
+        sequence="25"
+    />
+</odoo>

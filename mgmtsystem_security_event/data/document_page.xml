@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <record id="document_page_group_feared_event" model="document.page">
+        <field name="name">Feared Events</field>
+        <field name="type">category</field>
+        <field name="company_id" eval="False" />
+    </record>
+</odoo>

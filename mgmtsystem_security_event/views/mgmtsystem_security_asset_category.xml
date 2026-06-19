@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_mgmtsystem_category_asset_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.security.asset.category.form</field>
+        <field name="model">mgmtsystem.security.asset.category</field>
+        <field name="arch" type="xml">
+            <form string="Asset Category">
+                <group>
+                    <field name="name" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_category_asset_tree" model="ir.ui.view">
+        <field name="name">mgmtsystem.security.asset.category.tree</field>
+        <field name="model">mgmtsystem.security.asset.category</field>
+        <field name="arch" type="xml">
+            <list string="Asset Categories">
+                <field name="name" />
+            </list>
+        </field>
+    </record>
+
+    <record id="open_mgmtsystem_category_asset_list" model="ir.actions.act_window">
+        <field name="name">Asset Categories</field>
+        <field name="res_model">mgmtsystem.security.asset.category</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" eval="False" />
+    </record>
+
+    <menuitem
+        id="menu_open_mgmtsystem_category_asset"
+        action="open_mgmtsystem_category_asset_list"
+        parent="menu_mgmtsystem_security"
+        sequence="20"
+    />
+</odoo>

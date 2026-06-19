@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_mgmtsystem_vector_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.security.vector.form</field>
+        <field name="model">mgmtsystem.security.vector</field>
+        <field name="arch" type="xml">
+            <form string="Vector">
+                <group>
+                    <group>
+                        <field name="name" />
+                        <field name="system_id" />
+                        <field name="company_id" groups="base.group_multi_company" />
+                    </group>
+                </group>
+                <group string="Original Risk">
+                    <group>
+                        <field name="original_probability_id" />
+                    </group>
+                    <group>
+                        <field name="original_severity_id" />
+                    </group>
+                </group>
+                <group string="Current Risk">
+                    <group>
+                        <field name="current_probability_id" />
+                    </group>
+                    <group>
+                        <field name="current_severity_id" />
+                    </group>
+                </group>
+                <group string="Residual Risk">
+                    <group>
+                        <field name="residual_probability_id" />
+                    </group>
+                    <group>
+                        <field name="residual_severity_id" />
+                    </group>
+                </group>
+                <group>
+                    <field name="description" />
+                </group>
+                <notebook>
+                    <page string="Supporting Assets">
+                        <field name="supporting_asset_ids" nolabel="1">
+                            <list>
+                                <field name="name" />
+                                <field name="category_id" />
+                                <field name="system_id" />
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_vector_list" model="ir.ui.view">
+        <field name="name">mgmtsystem.security.vector.list</field>
+        <field name="model">mgmtsystem.security.vector</field>
+        <field name="arch" type="xml">
+            <list string="Vectors">
+                <field name="name" />
+                <field name="description" />
+                <field name="original_probability_id" />
+                <field name="original_severity_id" />
+                <field name="current_probability_id" />
+                <field name="current_severity_id" />
+                <field name="residual_probability_id" />
+                <field name="residual_severity_id" />
+                <field name="system_id" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </list>
+        </field>
+    </record>
+
+    <record id="open_mgmtsystem_vector_list" model="ir.actions.act_window">
+        <field name="name">Vectors</field>
+        <field name="res_model">mgmtsystem.security.vector</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" eval="False" />
+    </record>
+
+    <menuitem
+        id="menu_open_mgmtsystem_vector"
+        action="open_mgmtsystem_vector_list"
+        parent="menu_mgmtsystem_manual_security"
+        sequence="20"
+    />
+</odoo>

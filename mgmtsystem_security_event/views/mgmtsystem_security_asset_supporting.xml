@@ -1,0 +1,53 @@
+<odoo>
+    <record id="view_mgmtsystem_supporting_asset_form" model="ir.ui.view">
+        <field name="name">mgmtsystem.security.asset.supporting.form</field>
+        <field name="model">mgmtsystem.security.asset.supporting</field>
+        <field name="arch" type="xml">
+            <form string="Supporting Asset">
+                <group>
+                    <field name="name" />
+                    <field name="system_id" />
+                    <field name="company_id" groups="base.group_multi_company" />
+                    <field name="category_id" />
+                </group>
+
+                <notebook>
+                    <page string="Primary Assets">
+                        <field name="primary_asset_ids" nolabel="1">
+                            <list>
+                                <field name="name" />
+                                <field name="description" />
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mgmtsystem_supporting_asset_tree" model="ir.ui.view">
+        <field name="name">mgmtsystem.security.asset.supporting.tree</field>
+        <field name="model">mgmtsystem.security.asset.supporting</field>
+        <field name="arch" type="xml">
+            <list string="Supporting Assets">
+                <field name="name" />
+                <field name="system_id" />
+                <field name="category_id" />
+            </list>
+        </field>
+    </record>
+
+    <record id="open_mgmtsystem_supporting_asset_list" model="ir.actions.act_window">
+        <field name="name">Supporting Assets</field>
+        <field name="res_model">mgmtsystem.security.asset.supporting</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" eval="False" />
+    </record>
+
+    <menuitem
+        id="menu_open_mgmtsystem_supporting_asset"
+        action="open_mgmtsystem_supporting_asset_list"
+        parent="menu_mgmtsystem_asset"
+        sequence="20"
+    />
+</odoo>
