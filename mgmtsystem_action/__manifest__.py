@@ -3,11 +3,14 @@
 
 {
     "name": "Management System - Action",
-    "version": "19.0.1.0.0",
-    "author": "Savoir-faire Linux, Camptocamp, Odoo Community Association (OCA)",
+    "version": "19.0.1.0.1",
+    "author": (
+        "Savoir-faire Linux, Camptocamp, Gray Matter Logic, "
+        "Odoo Community Association (OCA)"
+    ),
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
-    "category": "Management System",
+    "category": "Management Systems",
     "depends": ["mgmtsystem", "mail"],
     "data": [
         "data/mgmtsystem_action_stage.xml",
