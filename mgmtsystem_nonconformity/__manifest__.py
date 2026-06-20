@@ -3,10 +3,10 @@
 {
     "name": "Management System - Nonconformity",
     "version": "19.0.1.0.0",
-    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
+    "author": "Savoir-faire Linux, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
-    "category": "Management System",
+    "category": "Management Systems",
     "depends": ["mgmtsystem_action", "document_page_procedure"],
     "data": [
         "security/ir.model.access.csv",
