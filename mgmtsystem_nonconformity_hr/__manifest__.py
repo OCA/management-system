@@ -5,7 +5,7 @@
 {
     "name": "Management System - Nonconformity HR",
     "summary": "Bridge module between hr and mgmsystem and",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "author": (
         "Associazione PNLUG - Gruppo Odoo, Gray Matter Logic, "
         "Odoo Community Association (OCA)"
