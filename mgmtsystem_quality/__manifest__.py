@@ -3,7 +3,7 @@
 {
     "name": "Quality Management System",
     "summary": "Manage your quality management system",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "author": "Savoir-faire Linux, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
