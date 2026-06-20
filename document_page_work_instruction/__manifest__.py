@@ -4,10 +4,10 @@
 {
     "name": "Document Management - Wiki - Work Instructions",
     "version": "19.0.1.0.0",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "author": "Savoir-faire Linux,Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
-    "category": "Management System",
+    "category": "Management Systems",
     "depends": ["document_page", "mgmtsystem"],
     "data": ["data/document_page.xml", "views/document_page_work_instructions.xml"],
     "installable": True,
