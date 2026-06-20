@@ -77,6 +77,7 @@ Authors
 -------
 
 * OpenERP SA
+* Gray Matter Logic
 
 Contributors
 ------------
