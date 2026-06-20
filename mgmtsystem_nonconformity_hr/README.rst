@@ -80,6 +80,7 @@ Authors
 -------
 
 * Associazione PNLUG - Gruppo Odoo
+* Gray Matter Logic
 
 Contributors
 ------------
