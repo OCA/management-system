@@ -6,10 +6,13 @@
     "name": "Management System - Nonconformity HR",
     "summary": "Bridge module between hr and mgmsystem and",
     "version": "19.0.1.0.0",
-    "author": "Associazione PNLUG - Gruppo Odoo, Odoo Community Association (OCA)",
+    "author": (
+        "Associazione PNLUG - Gruppo Odoo, Gray Matter Logic, "
+        "Odoo Community Association (OCA)"
+    ),
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
-    "category": "Management System",
+    "category": "Management Systems",
     "depends": ["hr", "mgmtsystem_nonconformity"],
     "data": ["views/mgmtsystem_nonconformity_views.xml"],
     "application": False,
