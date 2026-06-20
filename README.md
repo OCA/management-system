@@ -26,7 +26,7 @@ addon | version | maintainers | summary
 [document_page_health_safety_manual](document_page_health_safety_manual/) | 19.0.1.0.1 |  | Document Management - Wiki - Health and Safety Manual
 [document_page_procedure](document_page_procedure/) | 19.0.1.0.1 |  | Document Management - Wiki - Procedures
 [document_page_quality_manual](document_page_quality_manual/) | 19.0.1.0.1 |  | Quality Manual
-[document_page_work_instruction](document_page_work_instruction/) | 19.0.1.0.0 |  | Document Management - Wiki - Work Instructions
+[document_page_work_instruction](document_page_work_instruction/) | 19.0.1.0.1 |  | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 19.0.1.1.0 |  | Support for management systems, such as ISO compliance.
 [mgmtsystem_action](mgmtsystem_action/) | 19.0.1.0.0 |  | Management System - Action
 [mgmtsystem_audit](mgmtsystem_audit/) | 19.0.1.0.0 |  | Management System - Audit
