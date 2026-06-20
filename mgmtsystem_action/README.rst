@@ -81,6 +81,7 @@ Authors
 
 * Savoir-faire Linux
 * Camptocamp
+* Gray Matter Logic
 
 Contributors
 ------------
