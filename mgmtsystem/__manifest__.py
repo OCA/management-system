@@ -2,13 +2,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    "name": "Management System",
-    "version": "19.0.1.1.0",
+    "name": "Management Systems",
+    "version": "19.0.1.2.0",
     "summary": "Support for management systems, such as ISO compliance.",
-    "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
+    "author": "Savoir-faire Linux, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
-    "category": "Management System",
+    "category": "Management Systems",
     "depends": ["base"],
     "data": [
         "security/mgmtsystem_security.xml",
