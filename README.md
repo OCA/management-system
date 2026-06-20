@@ -39,6 +39,7 @@ addon | version | maintainers | summary
 [mgmtsystem_manual](mgmtsystem_manual/) | 19.0.1.0.1 |  | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 19.0.1.0.1 |  | Management System - Nonconformity
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 19.0.1.0.1 |  | Bridge module between hr and mgmsystem and
+[mgmtsystem_partner](mgmtsystem_partner/) | 19.0.1.0.0 |  | Add Management System reference on Partner's Contacts.
 [mgmtsystem_quality](mgmtsystem_quality/) | 19.0.1.0.1 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Manage your quality management system
 [mgmtsystem_review](mgmtsystem_review/) | 19.0.1.0.0 |  | Management System - Review
 [mgmtsystem_security_event](mgmtsystem_security_event/) | 19.0.1.0.0 |  | Feared Events
