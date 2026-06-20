@@ -69,6 +69,7 @@ Authors
 -------
 
 * Savoir-faire Linux
+* Gray Matter Logic
 
 Contributors
 ------------
