@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-15 18:09+0000\n"
-"PO-Revision-Date: 2026-06-16 18:50+0000\n"
+"PO-Revision-Date: 2026-06-21 08:16+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -604,48 +604,47 @@ msgstr "Neustreznosti pred revizijo"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity
 msgid "Nonconformity"
-msgstr "Neustreznost"
+msgstr "Neskladnost"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__nonconformity_immediate_id
-#, fuzzy
 msgid "Nonconformity Immediate"
-msgstr "Takojšen ID neustreznosti"
+msgstr "Takojšnja neskladnost"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.mgmtsystem_nonconformity_stage_form_view
 msgid "Nonconformity Stage"
-msgstr ""
+msgstr "Stopnja neskladnosti"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_stage
 msgid "Nonconformity Stages"
-msgstr ""
+msgstr "Stopnje neskladnosti"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Število ukrepov"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Število napak"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Število sporočil, ki zahtevajo ukrepanje"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Število sporočil, ki niso bila pravilno dostavljena"
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
 msgid "Open Nonconformities"
-msgstr "Odprte neustreznosti"
+msgstr "Odprte neskladnosti"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__origin_ids
@@ -656,7 +655,7 @@ msgstr "Izvor"
 #. module: mgmtsystem_nonconformity
 #: model:ir.model,name:mgmtsystem_nonconformity.model_mgmtsystem_nonconformity_origin
 msgid "Origin of nonconformity of the management system"
-msgstr "Izvor neustreznosti sistema upravljanja"
+msgstr "Izvor neskladnosti sistema upravljanja"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_origin_list
