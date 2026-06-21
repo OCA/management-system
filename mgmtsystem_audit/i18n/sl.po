@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-17 02:42+0000\n"
-"PO-Revision-Date: 2026-06-16 18:50+0000\n"
+"PO-Revision-Date: 2026-06-21 08:16+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -442,12 +442,12 @@ msgstr "Neustreznosti"
 #. module: mgmtsystem_audit
 #: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_nonconformity
 msgid "Nonconformity"
-msgstr "Neustreznost"
+msgstr "Neskladnost"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_nonconformities
 msgid "Number Of Nonconformities"
-msgstr ""
+msgstr "Št. neskladnosti"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_questions_in_verification_list
@@ -457,12 +457,12 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Število ukrepov"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Število napak"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__number_of_improvements_opportunity
@@ -472,12 +472,12 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Število sporočil, ki zahtevajo ukrepanje"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,help:mgmtsystem_audit.field_mgmtsystem_audit__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Število sporočil, ki niso bila pravilno dostavljena"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields.selection,name:mgmtsystem_audit.selection__mgmtsystem_audit__state__open
