@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-21 18:16+0000\n"
-"PO-Revision-Date: 2026-06-21 05:44+0000\n"
+"PO-Revision-Date: 2026-06-21 08:16+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -29,7 +29,7 @@ msgstr "Ukrepi"
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Applications"
-msgstr ""
+msgstr "Aplikacije"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_user_manager
@@ -109,7 +109,7 @@ msgstr "Okoljsko"
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Environment Manual"
-msgstr ""
+msgstr "Priročnik za okolje"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
@@ -137,12 +137,12 @@ msgstr "Nevarnosti"
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Health & Safety Manual"
-msgstr ""
+msgstr "Priročnik za zdravje in varnost"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
 msgid "Health & Safety Manual Template"
-msgstr ""
+msgstr "Predloga priročnika za zdravje in varnost"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety
@@ -225,28 +225,31 @@ msgstr ""
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage your environment management systems (ISO 14001)."
-msgstr ""
+msgstr "Upravljajte svoje sisteme okoljskega upravljanja (ISO 14001)."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid ""
 "Manage your health and safety management systems (ISO 45001, OHSAS 18001)."
 msgstr ""
+"Upravljajte svoje sisteme vodenja varnosti in zdravja pri delu (ISO 45001, "
+"OHSAS 18001)."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage your information security management systems (ISO 27001)"
 msgstr ""
+"Upravljajte svoje sisteme upravljanja informacijske varnosti (ISO 27001)"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage your quality management systems (ISO 9001)."
-msgstr ""
+msgstr "Upravljajte svoje sisteme vodenja kakovosti (ISO 9001)."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Management Reviews"
-msgstr ""
+msgstr "Pregledi vodstva"
 
 #. module: mgmtsystem
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
@@ -290,7 +293,7 @@ msgid ""
 "effectiveness reviews."
 msgstr ""
 "Uporabnik modula z dodatnim dovoljenjem za specifično revizorsko delovno "
-"mesto, kot npr. pregled učinkovitosti"
+"mesto, kot npr. pregled učinkovitosti."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_viewer
@@ -347,12 +350,15 @@ msgid ""
 "Provide Work Instructions category.\n"
 "- This installs the module document_page_work_instruction."
 msgstr ""
+"Kategorija delovnih navodil.\n"
+"- Namesti modul document_page_work_instruction."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid ""
 "Provide a Environment Manual template based on the ISO 14001:2004 standard."
 msgstr ""
+"Zagotovi predlogo priročnika za okolje na osnovi standarda ISO 14001:2004."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
@@ -366,6 +372,8 @@ msgid ""
 "Provide a Health & Safety Manual template based on the ISO 45001 / OHSAS "
 "18001 standard."
 msgstr ""
+"Zagotovi predlogo priročnika za zdravje in varnost na osnovi standarda ISO "
+"45001 / OHSAS 18001."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
@@ -373,21 +381,24 @@ msgid ""
 "Provide a Information Security Manual template based on the ISO 27001 "
 "standard."
 msgstr ""
+"Zagotovi predlogo priročnika informacijske varnosti na osnovi standarda ISO "
+"27001."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Provide a Procedure documentation category and template."
-msgstr ""
+msgstr "Zagotovi kategorijo dokumentacije za postopek in predlogo."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Provide a Quality Manual template based on the ISO 9001:2008 standard."
 msgstr ""
+"Zagotovi predlogo priročnika kakovosti na osnovi standarda ISO 9001:2008."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Provide a Work Instruction documentation category and template."
-msgstr ""
+msgstr "Zagotovi kategorijo dokumentacije delovnih navodil in predlogo."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
@@ -395,6 +406,8 @@ msgid ""
 "Provide a health and safety manual template.\n"
 "- This installs the module document_page_health_safety_manual."
 msgstr ""
+"Predloga priročnika za zdravje in varnost.\n"
+"- Namesti modul document_page_health_safety_manual."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
@@ -402,6 +415,8 @@ msgid ""
 "Provide a quality manual template.\n"
 "- This installs the module document_page_quality_manual."
 msgstr ""
+"Predloga priročnika kakovosti.\n"
+"- Namesti modul document_page_quality_manual."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_action
@@ -409,16 +424,18 @@ msgid ""
 "Provide actions and improvement opportunities tools.\n"
 "- This installs the module mgmtsystem_action."
 msgstr ""
+"Orodja za ukrepe in priložnosti za izboljšave.\n"
+"- Namesti modul mgmtsystem_action."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Provide an Environmental Aspect documentation category and template."
-msgstr ""
+msgstr "Zagotovi kategorijo dokumentacije okoljskih vidikov in predlogo."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Provide an Hazards documentation category and template."
-msgstr ""
+msgstr "Zagotovi kategorijo dokumentacije nevarnosti in predlogo."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
@@ -426,6 +443,8 @@ msgid ""
 "Provide an environment manual template.\n"
 "- This installs the module document_page_environment_manual."
 msgstr ""
+"Predloga priročnika za okolje.\n"
+"- Namesti modul document_page_environment_manual."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
@@ -433,6 +452,8 @@ msgid ""
 "Provide an information security manual.\n"
 "- This installs the module mgmtsystem_info_security_manual."
 msgstr ""
+"Priročnik informacijske varnosti.\n"
+"- Namesti modul mgmtsystem_info_security_manual."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
@@ -440,6 +461,8 @@ msgid ""
 "Provide audit tools.\n"
 "- This installs the module mgmtsystem_audit."
 msgstr ""
+"Orodja za revizije.\n"
+"- Namesti modul mgmtsystem_audit."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_claim
@@ -447,6 +470,8 @@ msgid ""
 "Provide claim tools.\n"
 "- This installs the module mgmtsystem_claim."
 msgstr ""
+"Orodja za zahtevke.\n"
+"- Namesti modul mgmtsystem_claim."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_approval
@@ -454,6 +479,8 @@ msgid ""
 "Provide document approval and history. \n"
 "- This installs the module document_page_approval."
 msgstr ""
+"Odobritev dokumentov in zgodovina.\n"
+"- Namesti modul document_page_approval."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_environment
@@ -461,6 +488,8 @@ msgid ""
 "Provide environment management tools.\n"
 "- This installs the module mgmtsystem_environment."
 msgstr ""
+"Orodja za upravljanje okolja.\n"
+"- Namesti modul mgmtsystem_environment."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety
@@ -468,6 +497,8 @@ msgid ""
 "Provide health and safety management tools.\n"
 "- This installs the module mgmtsystem_health_safety."
 msgstr ""
+"Orodja za upravljanje zdravja in varnosti.\n"
+"- Namesti modul mgmtsystem_health_safety."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_information_security
@@ -475,6 +506,8 @@ msgid ""
 "Provide information security tools.\n"
 "- This installs the module mgmtsystem_information_security."
 msgstr ""
+"Orodja za informacijsko varnost.\n"
+"- Namesti modul mgmtsystem_information_security."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_nonconformity
@@ -482,6 +515,8 @@ msgid ""
 "Provide non conformity tools.\n"
 "- This installs the module mgmtsystem_nonconformity."
 msgstr ""
+"Orodja za neskladnosti.\n"
+"- Namesti modul mgmtsystem_nonconformity."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_procedure
@@ -489,6 +524,8 @@ msgid ""
 "Provide procedures category.\n"
 "- This installs the module document_page_procedure."
 msgstr ""
+"Kategorija postopkov.\n"
+"- Namesti modul document_page_procedure."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
@@ -496,6 +533,8 @@ msgid ""
 "Provide quality management tools.\n"
 "- This installs the module mgmtsystem_quality."
 msgstr ""
+"Orodja za upravljanje kakovosti.\n"
+"- Namesti modul mgmtsystem_quality."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_review
@@ -503,42 +542,44 @@ msgid ""
 "Provide review tools.\n"
 "- This installs the module mgmtsystem_review."
 msgstr ""
+"Orodja za preglede.\n"
+"- Namesti modul mgmtsystem_review."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Quality"
-msgstr ""
+msgstr "Kakovost"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Quality Manual"
-msgstr ""
+msgstr "Priročnik kakovosti"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
 msgid "Quality Manual Template"
-msgstr ""
+msgstr "Predloga priročnika kakovosti"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
 msgid "Quality Tools"
-msgstr ""
+msgstr "Orodja kakovosti"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_report
 msgid "Reports"
-msgstr ""
+msgstr "Poročila"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_review
 msgid "Reviews"
-msgstr ""
+msgstr "Pregledi"
 
 #. module: mgmtsystem
 #: model:ir.actions.act_window,name:mgmtsystem.action_mgmtsystem_configuration
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_settings
 msgid "Settings"
-msgstr ""
+msgstr "Nastavitve"
 
 #. module: mgmtsystem
 #: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
@@ -558,11 +599,13 @@ msgid ""
 "The following modules are not available: %(addons)s\n"
 "Learn more on the corresponding Github issue and consider contributing:\n"
 msgstr ""
+"Naslednji moduli niso na voljo: %(addons)s\n"
+"Več informacij v ustrezni zadevi na Githubu in razmislite o prispevku:\n"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Top management reviews."
-msgstr ""
+msgstr "Pregledi najvišjega vodstva."
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_user
@@ -578,7 +621,7 @@ msgstr "Gledalec"
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Work Instructions"
-msgstr ""
+msgstr "Delovni napotki"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Zadnjič spremenjeno"
