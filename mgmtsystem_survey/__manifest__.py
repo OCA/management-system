@@ -4,12 +4,15 @@
 {
     "name": "Management System - Survey",
     "version": "19.0.1.0.0",
-    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
+    "author": "Savoir-faire Linux, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
-    "category": "Management System",
+    "category": "Management Systems",
     "depends": ["mgmtsystem", "survey"],
-    "data": ["views/survey_survey.xml"],
+    "data": [
+        "data/survey_customer_satisfaction.xml",
+        "views/survey_survey.xml",
+    ],
     "installable": True,
     "development_status": "Beta",
     "maintainers": ["max3903"],
