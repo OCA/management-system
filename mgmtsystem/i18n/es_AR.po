@@ -169,6 +169,12 @@ msgid "Information Security Manual Template"
 msgstr "Plantilla del Manual de Información de Seguridad"
 
 #. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_kpi
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Key Performance Indicators"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__write_uid
 msgid "Last Updated by"
 msgstr "Ultima actualización por"
@@ -177,6 +183,11 @@ msgstr "Ultima actualización por"
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__write_date
 msgid "Last Updated on"
 msgstr "Ultima actualización el"
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Manage KPIs."
+msgstr ""
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
@@ -485,6 +496,13 @@ msgid ""
 msgstr ""
 "Proporcionar herramientas de seguridad de la información.\n"
 "- Esto instala el módulo mgmtsystem_information_security."
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_kpi
+msgid ""
+"Provide key performance indicators.\n"
+"- This installs the module mgmtsystem_kpi."
+msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_nonconformity

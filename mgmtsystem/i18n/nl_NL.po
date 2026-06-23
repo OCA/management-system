@@ -173,6 +173,12 @@ msgid "Information Security Manual Template"
 msgstr ""
 
 #. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_kpi
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Key Performance Indicators"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__write_uid
 msgid "Last Updated by"
 msgstr "Laatst bijgewerkt door"
@@ -181,6 +187,11 @@ msgstr "Laatst bijgewerkt door"
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__write_date
 msgid "Last Updated on"
 msgstr "Laatst bijgewerkt op"
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Manage KPIs."
+msgstr ""
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
@@ -459,6 +470,13 @@ msgstr ""
 msgid ""
 "Provide information security tools.\n"
 "- This installs the module mgmtsystem_information_security."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_kpi
+msgid ""
+"Provide key performance indicators.\n"
+"- This installs the module mgmtsystem_kpi."
 msgstr ""
 
 #. module: mgmtsystem
