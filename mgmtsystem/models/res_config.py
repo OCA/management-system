@@ -50,6 +50,11 @@ class MgmtsystemConfigSettings(models.TransientModel):
         "Audits",
         help="Provide audit tools.\n- This installs the module mgmtsystem_audit.",
     )
+    module_mgmtsystem_kpi = fields.Boolean(
+        "Key Performance Indicators",
+        help="Provide key performance indicators.\n"
+        "- This installs the module mgmtsystem_kpi.",
+    )
     module_mgmtsystem_review = fields.Boolean(
         "Reviews",
         help="Provide review tools.\n- This installs the module mgmtsystem_review.",
