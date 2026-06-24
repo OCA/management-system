@@ -116,6 +116,12 @@
             <form string="Review">
                 <header>
                     <button
+                        name="button_update_kpi_history"
+                        string="Update KPI History"
+                        invisible="state != 'open'"
+                        type="object"
+                    />
+                    <button
                         name="button_close"
                         string="Close"
                         invisible="state != 'open'"
@@ -172,6 +178,21 @@
                                     nolabel="1"
                                 />
                             </group>
+                        </page>
+                        <page string="KPI">
+                            <field
+                                name="kpi_history_ids"
+                                nolabel="1"
+                                readonly="state == 'done'"
+                            >
+                                <list>
+                                    <field name="name" />
+                                    <field name="kpi_id" />
+                                    <field name="date" />
+                                    <field name="value" />
+                                    <field name="color" widget="color" />
+                                </list>
+                            </field>
                         </page>
                         <page string="Lines">
                             <field
