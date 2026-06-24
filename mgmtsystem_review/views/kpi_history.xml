@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="kpi_history_form_view_inherit_review" model="ir.ui.view">
+        <field name="name">kpi.history.form.inherit.mgmtsystem.review</field>
+        <field name="model">kpi.history</field>
+        <field name="inherit_id" ref="kpi.view_kpi_history_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet" position="inside">
+                <notebook>
+                    <page string="Reviews">
+                        <field name="review_ids" nolabel="1">
+                            <list>
+                                <field name="name" />
+                                <field name="reference" />
+                                <field name="date" />
+                                <field name="state" />
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+</odoo>
