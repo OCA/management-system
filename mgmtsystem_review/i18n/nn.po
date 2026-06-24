@@ -162,6 +162,7 @@ msgid "Direction Review"
 msgstr ""
 
 #. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_kpi_history__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__display_name
 msgid "Display Name"
@@ -188,6 +189,12 @@ msgid "Has Message"
 msgstr ""
 
 #. module: mgmtsystem_review
+#: model:ir.model,name:mgmtsystem_review.model_kpi_history
+msgid "History of the KPI"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_kpi_history__id
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__id
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__id
 msgid "ID"
@@ -222,6 +229,16 @@ msgstr ""
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_is_follower
 msgid "Is Follower"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "KPI"
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__kpi_history_ids
+msgid "KPI History"
 msgstr ""
 
 #. module: mgmtsystem_review
@@ -261,11 +278,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__name
 msgid "Name"
 msgstr "Namn"
-
-#. module: mgmtsystem_review
-#: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
-msgstr ""
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_date_deadline
@@ -383,7 +395,9 @@ msgstr ""
 
 #. module: mgmtsystem_review
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_list
+#: model:ir.model.fields,field_description:mgmtsystem_review.field_kpi_history__review_ids
 #: model:ir.ui.menu,name:mgmtsystem_review.menu_open_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.kpi_history_form_view_inherit_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_review_calendar
 msgid "Reviews"
@@ -431,6 +445,11 @@ msgstr "Type"
 #. module: mgmtsystem_review
 #: model:ir.model.fields,help:mgmtsystem_review.field_mgmtsystem_review__activity_exception_decoration
 msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: mgmtsystem_review
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
+msgid "Update KPI History"
 msgstr ""
 
 #. module: mgmtsystem_review
