@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="demo_kpi_category" model="kpi.category">
+        <field name="name">Quality</field>
+    </record>
+
+    <record id="demo_kpi_threshold_range" model="kpi.threshold.range">
+        <field name="name">Good</field>
+        <field name="min_value">0</field>
+        <field name="max_value">100</field>
+        <field name="color">#00FF00</field>
+    </record>
+
+    <record id="demo_kpi_threshold" model="kpi.threshold">
+        <field name="name">Standard</field>
+        <field name="range_ids" eval="[(6, 0, [ref('demo_kpi_threshold_range')])]" />
+    </record>
+
+    <record id="demo_kpi_1" model="kpi">
+        <field name="name">Customer Satisfaction</field>
+        <field name="category_id" ref="demo_kpi_category" />
+        <field name="threshold_id" ref="demo_kpi_threshold" />
+        <field name="periodicity">1</field>
+        <field name="periodicity_uom">month</field>
+    </record>
+
+    <record id="demo_kpi_2" model="kpi">
+        <field name="name">On-Time Delivery</field>
+        <field name="category_id" ref="demo_kpi_category" />
+        <field name="threshold_id" ref="demo_kpi_threshold" />
+        <field name="periodicity">1</field>
+        <field name="periodicity_uom">month</field>
+    </record>
+
+    <record id="demo_kpi_history_1" model="kpi.history">
+        <field name="name">Customer Satisfaction - Jan 2026</field>
+        <field name="kpi_id" ref="demo_kpi_1" />
+        <field name="date">2026-01-31 00:00:00</field>
+        <field name="value">92.5</field>
+        <field name="color">#00FF00</field>
+    </record>
+
+    <record id="demo_kpi_history_2" model="kpi.history">
+        <field name="name">On-Time Delivery - Jan 2026</field>
+        <field name="kpi_id" ref="demo_kpi_2" />
+        <field name="date">2026-01-31 00:00:00</field>
+        <field name="value">87.0</field>
+        <field name="color">#00FF00</field>
+    </record>
+
+    <record id="demo_review" model="mgmtsystem.review">
+        <field name="name">Q1 2026 Management Review</field>
+        <field name="date">2026-03-31 09:00:00</field>
+        <field name="user_ids" eval="[(6, 0, [ref('base.user_demo')])]" />
+    </record>
+</odoo>
