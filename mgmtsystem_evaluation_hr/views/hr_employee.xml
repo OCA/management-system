@@ -2,7 +2,6 @@
 <!-- Copyright 2023 Dixmit
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <record model="ir.ui.view" id="hr_employee_form_view">
         <field name="name">hr.employee.form (in mgmtsystem_evaluation_hr)</field>
         <field name="model">hr.employee</field>
@@ -25,7 +24,4 @@
             </div>
         </field>
     </record>
-
-
-
 </odoo>
