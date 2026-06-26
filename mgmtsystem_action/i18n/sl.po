@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-15 18:09+0000\n"
-"PO-Revision-Date: 2026-06-21 08:16+0000\n"
+"PO-Revision-Date: 2026-06-26 11:06+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -23,24 +23,24 @@ msgstr ""
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__number_of_actions
 msgid "# of actions"
-msgstr ""
+msgstr "# ukrepov"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__number_of_days_to_close
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__number_of_days_to_close
 msgid "# of days to close"
-msgstr ""
+msgstr "# dni do zaprtja"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__number_of_days_to_open
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__number_of_days_to_open
 msgid "# of days to open"
-msgstr ""
+msgstr "# dni do odprtja"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__number_of_exceedings_days
 msgid "# of exceedings days"
-msgstr ""
+msgstr "# prekoračenih dni"
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
@@ -64,6 +64,24 @@ msgid ""
 "            \n"
 "        "
 msgstr ""
+"<p>Pozdravljeni <t t-out=\"object.user_id.name\"/>,</p>\n"
+"\n"
+"<p>\n"
+"To je samodejno sporočilo, ki vas opomni, da je\n"
+"naslednji ukrep potrebno zaključiti v 10 dneh (<t t-"
+"out=\"object.date_deadline\"/>):\n"
+"\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
+"b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Hvala in lep dan.<br/>\n"
+"--<br/>\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.email_template_new_action_reminder
@@ -84,6 +102,22 @@ msgid ""
 "            \n"
 "        "
 msgstr ""
+"<p>Pozdravljeni <t t-out=\"object.user_id.name\"/>,</p>\n"
+"\n"
+"<p>Dodeljen vam je nov ukrep: <b><a t-att-href=\"object.get_action_url()\">"
+"<t t-out=\"object.name\"/></a></b></p>\n"
+"<p><b>Rok: </b><t t-out=\"object.date_deadline or ''\"/></p>\n"
+"\n"
+"<p>Prosimo, uporabljajte stopnje ukrepa in sporočila za beleženje napredka.</"
+"p>\n"
+"\n"
+"<p>\n"
+"Hvala<br/>\n"
+"--<br/>\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
@@ -95,30 +129,27 @@ msgstr "Ukrep"
 #. module: mgmtsystem_action
 #: model:mail.template,name:mgmtsystem_action.email_template_new_action_reminder
 msgid "Action Assigned"
-msgstr ""
+msgstr "Ukrep dodeljen"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_needaction
-#, fuzzy
 msgid "Action Needed"
-msgstr "Ukrep"
+msgstr "Potrebno ukrepanje"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_stage
-#, fuzzy
 msgid "Action Stage"
-msgstr "Ukrep"
+msgstr "Stanje ukrepa"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_tag
-#, fuzzy
 msgid "Action Tags"
-msgstr "Ukrepi"
+msgstr "Oznake ukrepa"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 msgid "Action title..."
-msgstr ""
+msgstr "Naziv ukrepa..."
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.open_mgmtsystem_action_list
@@ -137,46 +168,43 @@ msgstr "Aktivno"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_ids
-#, fuzzy
 msgid "Activities"
-msgstr "Aktivno"
+msgstr "Aktivnosti"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Dekoracija izjeme"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_state
-#, fuzzy
 msgid "Activity State"
-msgstr "Ukrep"
+msgstr "Stanje aktivnosti"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Ikona tipa aktivnosti"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_stage_form
-#, fuzzy
 msgid "Add a description..."
-msgstr "Opis"
+msgstr "Dodaj opis..."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__age
 msgid "Age"
-msgstr ""
+msgstr "Starost"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Archived"
-msgstr ""
+msgstr "Arhivirano"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Št. priponk"
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_cancel
@@ -186,12 +214,12 @@ msgstr "Preklicano"
 #. module: mgmtsystem_action
 #: model_terms:ir.actions.act_window,help:mgmtsystem_action.project_tags_action
 msgid "Click to add a new tag."
-msgstr ""
+msgstr "Kliknite za dodajanje nove oznake."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__date_closed
 msgid "Close Date"
-msgstr ""
+msgstr "Datum zaključka"
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_close
@@ -201,13 +229,13 @@ msgstr "Zaključeno"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__date_closed
 msgid "Closed Date"
-msgstr ""
+msgstr "Datum zaključka"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__color
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag__color
 msgid "Color Index"
-msgstr ""
+msgstr "Barvni indeks"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__company_id
@@ -224,7 +252,7 @@ msgstr "Korektivni ukrep"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__create_date
 msgid "Create Date"
-msgstr ""
+msgstr "Datum nastanka"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__create_uid
@@ -249,7 +277,7 @@ msgstr "Rok izvedbe"
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Delete"
-msgstr ""
+msgstr "Izbriši"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__description
@@ -274,12 +302,12 @@ msgstr "Osnutek"
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Edit"
-msgstr ""
+msgstr "Uredi"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.server,name:mgmtsystem_action.ir_cron_mgmtsystem_action_reminder_ir_actions_server
 msgid "Email Action Reminders 10 days before due date."
-msgstr ""
+msgstr "E-poštni opomniki za ukrep 10 dni pred rokom."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__is_ending
@@ -289,42 +317,42 @@ msgstr "Zaključna stopnja"
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 msgid "Extra Information"
-msgstr ""
+msgstr "Dodatne informacije"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__fold
 msgid "Folded in Kanban"
-msgstr ""
+msgstr "Prepognjeno v kanban"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Sledilci"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Sledilci (partnerji)"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Font awesome ikona, npr. fa-tasks"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Future Activities"
-msgstr ""
+msgstr "Bodoče aktivnosti"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__sequence
 msgid "Gives the sequence order when displaying a list of actions."
-msgstr ""
+msgstr "Določa vrstni red pri prikazu seznama ukrepov."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Vsebuje sporočilo"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.actions.act_window,help:mgmtsystem_action.action_report_mgmtsystem_action
@@ -332,6 +360,8 @@ msgid ""
 "Have a general overview of all actions processed in the system by sorting "
 "them with specific criteria."
 msgstr ""
+"Pridobite splošen pregled vseh ukrepov, obdelanih v sistemu, z razvrščanjem "
+"po določenih merilih."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__id
@@ -344,23 +374,25 @@ msgstr "ID"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Ikona"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Ikona za prikaz izjem pri aktivnostih."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Če je označeno, nova sporočila zahtevajo vašo pozornost."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
+"Kadar je označeno, pomeni, da je pri nekaterih sporočilih prišlo do napake "
+"pri dostavi."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__immediate
@@ -382,7 +414,7 @@ msgstr "V teku"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Je sledilec"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__write_uid
@@ -401,117 +433,114 @@ msgstr "Zadnjič posodobljeno"
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Late Activities"
-msgstr ""
+msgstr "Zamujene aktivnosti"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__priority__0
 msgid "Low"
-msgstr ""
+msgstr "Nizka"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_report
 msgid "Management System Action Report"
-msgstr ""
+msgstr "Poročilo o ukrepih sistema vodenja"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.action_report_mgmtsystem_action
 msgid "Management System Analysis"
-msgstr ""
+msgstr "Analiza sistema vodenja"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Napaka ob dostavi sporočila"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_ids
-#, fuzzy
 msgid "Messages"
-msgstr "Neprebrana sporočila"
+msgstr "Sporočila"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
-#, fuzzy
 msgid "My Actions"
-msgstr "Ukrepi"
+msgstr "Moji ukrepi"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
-#, fuzzy
 msgid "My Activities"
-msgstr "Aktivno"
+msgstr "Moje aktivnosti"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Rok mojih aktivnosti"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "My Followed Actions"
-msgstr ""
+msgstr "Moji spremljani ukrepi"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag__name
 msgid "Name"
-msgstr ""
+msgstr "Naziv"
 
 #. module: mgmtsystem_action
 #. odoo-python
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 msgid "New"
-msgstr ""
+msgstr "Novo"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Rok naslednje aktivnosti"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Povzetek naslednje aktivnosti"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Tip naslednje aktivnosti"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__priority__1
 msgid "Normal"
-msgstr ""
+msgstr "Običajna"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Število ukrepov"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Število napak"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Število sporočil, ki zahtevajo ukrepanje"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Število sporočil, ki niso bila pravilno dostavljena"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__date_open
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__date_open
 msgid "Opening Date"
-msgstr ""
+msgstr "Datum otvoritve"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Pending"
-msgstr ""
+msgstr "Na čakanju"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__prevention
@@ -522,7 +551,7 @@ msgstr "Preventivni ukrep"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__priority
 msgid "Priority"
-msgstr ""
+msgstr "Prioriteta"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__reference
@@ -532,12 +561,12 @@ msgstr "Sklic"
 #. module: mgmtsystem_action
 #: model:mail.template,subject:mgmtsystem_action.action_email_template_reminder_action
 msgid "Reminder on Action: \"{{object.name}}\""
-msgstr ""
+msgstr "Opomnik za ukrep: \"{{object.name}}\""
 
 #. module: mgmtsystem_action
 #: model:mail.template,name:mgmtsystem_action.action_email_template_reminder_action
 msgid "Reminder to Responsible"
-msgstr ""
+msgstr "Opomnik odgovornemu"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__type_action
@@ -552,20 +581,19 @@ msgstr "Odgovorni"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_user_id
-#, fuzzy
 msgid "Responsible User"
-msgstr "Odgovorni"
+msgstr "Odgovorni uporabnik"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "Napaka pri dostavi SMS"
 
 #. module: mgmtsystem_action
 #. odoo-python
 #: code:addons/mgmtsystem_action/tests/test_create_action.py:0
 msgid "SampleReference"
-msgstr ""
+msgstr "Vzorčni sklic"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__sequence
@@ -577,6 +605,8 @@ msgstr "Zaporedje"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Show all records which has next action date is before today"
 msgstr ""
+"Prikaži vse zapise, ki imajo datum naslednjega ukrepa nastavljen pred "
+"današnjim datumom"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__stage_id
@@ -609,6 +639,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Status glede na aktivnosti\n"
+"Prekoračeno: rok izvedbe je že prekoračen\n"
+"Danes: Datum aktivnosti je današnji dan\n"
+"Planirano: Bodoče aktivnosti."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__name
@@ -624,7 +658,7 @@ msgstr "Sistem"
 #. module: mgmtsystem_action
 #: model:ir.model.constraint,message:mgmtsystem_action.constraint_mgmtsystem_action_tag_name_uniq
 msgid "Tag name already exists !"
-msgstr ""
+msgstr "Naziv oznake že obstaja!"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.mgmtsystem_action_tag_action
@@ -633,13 +667,12 @@ msgstr ""
 #: model:ir.ui.menu,name:mgmtsystem_action.menu_mgmtsystem_action_tags
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.project_tags_form_view
 msgid "Tags"
-msgstr ""
+msgstr "Oznake"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_stage_form
-#, fuzzy
 msgid "Task Stage"
-msgstr "Stopnja"
+msgstr "Stopnja opravila"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_stage__fold
@@ -647,11 +680,13 @@ msgid ""
 "This stage is folded in the kanban view when there are no records in that "
 "stage to display."
 msgstr ""
+"Ta stopnja je v pogledu kanban zložena, ko v tej stopnji ni zapisov za "
+"prikaz."
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Today Activities"
-msgstr ""
+msgstr "Današnje aktivnosti"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
@@ -661,7 +696,7 @@ msgstr "Tip"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tip izjeme pri aktivnosti na zapisu."
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
@@ -679,23 +714,22 @@ msgstr "Uporabnik"
 #. odoo-python
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 msgid "We cannot bring back the action to draft stage"
-msgstr ""
+msgstr "Ukrepa ni mogoče vrniti v stopnjo osnutek"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-#, fuzzy
 msgid "Website Messages"
-msgstr "Neprebrana sporočila"
+msgstr "Sporočila spletne strani"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Kronologija komunikacij spletne strani"
 
 #. module: mgmtsystem_action
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "{{object.name}}"
-msgstr ""
+msgstr "{{object.name}}"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Zadnjič spremenjeno"
