@@ -65,13 +65,13 @@ class MgmtsystemRiskMatrix(models.TransientModel):
         )
 
     def get_probabilities(self):
-        return self.env["mgmtsystem.hazard.probability"].search(
+        return self.env["mgmtsystem.risk.probability"].search(
             [("company_id", "in", (False, self.env.company.id))],
             order="value",
         )
 
     def get_severities(self):
-        return self.env["mgmtsystem.hazard.severity"].search(
+        return self.env["mgmtsystem.risk.severity"].search(
             [("company_id", "in", (False, self.env.company.id))],
             order="value desc",
         )

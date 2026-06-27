@@ -98,10 +98,10 @@ class TestScenarioDisplayName(TestModelsBase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        prob = cls.env["mgmtsystem.hazard.probability"].create(
+        prob = cls.env["mgmtsystem.risk.probability"].create(
             {"name": "Low", "value": 1}
         )
-        sev = cls.env["mgmtsystem.hazard.severity"].create({"name": "Low", "value": 1})
+        sev = cls.env["mgmtsystem.risk.severity"].create({"name": "Low", "value": 1})
         cls.vector = cls.env["mgmtsystem.security.vector"].create(
             {
                 "name": "Phishing",
@@ -249,12 +249,10 @@ class TestSecurityEventNoScenarios(TestModelsBase):
         self.assertFalse(event.residual_severity_id)
 
     def test_ratings_clear_when_scenarios_removed(self):
-        prob = self.env["mgmtsystem.hazard.probability"].create(
+        prob = self.env["mgmtsystem.risk.probability"].create(
             {"name": "High", "value": 4}
         )
-        sev = self.env["mgmtsystem.hazard.severity"].create(
-            {"name": "High", "value": 4}
-        )
+        sev = self.env["mgmtsystem.risk.severity"].create({"name": "High", "value": 4})
         vector = self.env["mgmtsystem.security.vector"].create(
             {
                 "name": "Test vector",

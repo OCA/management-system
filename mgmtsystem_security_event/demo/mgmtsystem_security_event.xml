@@ -73,18 +73,12 @@
         <field
             name="description"
         >Attacker gains access to the customer database.</field>
-        <field
-            name="original_probability_id"
-            ref="mgmtsystem_hazard.probability_probably"
-        />
-        <field name="original_severity_id" ref="mgmtsystem_hazard.severity_critical" />
-        <field
-            name="current_probability_id"
-            ref="mgmtsystem_hazard.probability_maybe"
-        />
-        <field name="current_severity_id" ref="mgmtsystem_hazard.severity_heavy" />
-        <field name="residual_probability_id" ref="mgmtsystem_hazard.probability_low" />
-        <field name="residual_severity_id" ref="mgmtsystem_hazard.severity_medium" />
+        <field name="original_probability_id" ref="mgmtsystem_risk.probability_high" />
+        <field name="original_severity_id" ref="mgmtsystem_risk.severity_critical" />
+        <field name="current_probability_id" ref="mgmtsystem_risk.probability_medium" />
+        <field name="current_severity_id" ref="mgmtsystem_risk.severity_high" />
+        <field name="residual_probability_id" ref="mgmtsystem_risk.probability_low" />
+        <field name="residual_severity_id" ref="mgmtsystem_risk.severity_medium" />
         <field name="system_id" ref="demo_security_system" />
         <field
             name="supporting_asset_ids"
@@ -97,13 +91,13 @@
         <field name="description">Application server becomes unavailable.</field>
         <field
             name="original_probability_id"
-            ref="mgmtsystem_hazard.probability_maybe"
+            ref="mgmtsystem_risk.probability_medium"
         />
-        <field name="original_severity_id" ref="mgmtsystem_hazard.severity_heavy" />
-        <field name="current_probability_id" ref="mgmtsystem_hazard.probability_low" />
-        <field name="current_severity_id" ref="mgmtsystem_hazard.severity_medium" />
-        <field name="residual_probability_id" ref="mgmtsystem_hazard.probability_low" />
-        <field name="residual_severity_id" ref="mgmtsystem_hazard.severity_simple" />
+        <field name="original_severity_id" ref="mgmtsystem_risk.severity_high" />
+        <field name="current_probability_id" ref="mgmtsystem_risk.probability_low" />
+        <field name="current_severity_id" ref="mgmtsystem_risk.severity_medium" />
+        <field name="residual_probability_id" ref="mgmtsystem_risk.probability_low" />
+        <field name="residual_severity_id" ref="mgmtsystem_risk.severity_low" />
         <field name="system_id" ref="demo_security_system" />
         <field
             name="supporting_asset_ids"
@@ -118,13 +112,13 @@
         >Attacker alters records in the customer database.</field>
         <field
             name="original_probability_id"
-            ref="mgmtsystem_hazard.probability_maybe"
+            ref="mgmtsystem_risk.probability_medium"
         />
-        <field name="original_severity_id" ref="mgmtsystem_hazard.severity_heavy" />
-        <field name="current_probability_id" ref="mgmtsystem_hazard.probability_low" />
-        <field name="current_severity_id" ref="mgmtsystem_hazard.severity_medium" />
-        <field name="residual_probability_id" ref="mgmtsystem_hazard.probability_low" />
-        <field name="residual_severity_id" ref="mgmtsystem_hazard.severity_simple" />
+        <field name="original_severity_id" ref="mgmtsystem_risk.severity_high" />
+        <field name="current_probability_id" ref="mgmtsystem_risk.probability_low" />
+        <field name="current_severity_id" ref="mgmtsystem_risk.severity_medium" />
+        <field name="residual_probability_id" ref="mgmtsystem_risk.probability_low" />
+        <field name="residual_severity_id" ref="mgmtsystem_risk.severity_low" />
         <field name="system_id" ref="demo_security_system" />
         <field
             name="supporting_asset_ids"
@@ -162,7 +156,7 @@
         <field name="confidentiality" eval="True" />
         <field name="integrity" eval="True" />
         <field name="availability" eval="False" />
-        <field name="severity_id" ref="mgmtsystem_hazard.severity_critical" />
+        <field name="severity_id" ref="mgmtsystem_risk.severity_critical" />
         <field
             name="content"
         ><![CDATA[
@@ -199,7 +193,7 @@
         <field name="confidentiality" eval="False" />
         <field name="integrity" eval="False" />
         <field name="availability" eval="True" />
-        <field name="severity_id" ref="mgmtsystem_hazard.severity_heavy" />
+        <field name="severity_id" ref="mgmtsystem_risk.severity_high" />
         <field
             name="content"
         ><![CDATA[
@@ -238,7 +232,7 @@
         <field name="confidentiality" eval="False" />
         <field name="integrity" eval="True" />
         <field name="availability" eval="False" />
-        <field name="severity_id" ref="mgmtsystem_hazard.severity_heavy" />
+        <field name="severity_id" ref="mgmtsystem_risk.severity_high" />
         <field
             name="content"
         ><![CDATA[

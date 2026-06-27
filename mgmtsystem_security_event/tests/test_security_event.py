@@ -10,8 +10,8 @@ class TestSecurityEventBase(common.TransactionCase):
         super().setUpClass()
         cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
         cls.system = cls.env["mgmtsystem.system"].create({"name": "Security System"})
-        cls.probability_model = cls.env["mgmtsystem.hazard.probability"]
-        cls.severity_model = cls.env["mgmtsystem.hazard.severity"]
+        cls.probability_model = cls.env["mgmtsystem.risk.probability"]
+        cls.severity_model = cls.env["mgmtsystem.risk.severity"]
         cls.vector_model = cls.env["mgmtsystem.security.vector"]
         cls.event_model = cls.env["mgmtsystem.security.event"]
 

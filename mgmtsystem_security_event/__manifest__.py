@@ -3,15 +3,17 @@
 
 {
     "name": "Feared Events",
-    "version": "19.0.1.0.0",
-    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
+    "version": "19.0.2.0.0",
+    "author": "Savoir-faire Linux, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management Systems",
+    "development_status": "Beta",
+    "maintainers": ["max3903"],
     "depends": [
         "mgmtsystem",
         "document_page",
-        "mgmtsystem_hazard",
+        "mgmtsystem_risk",
     ],
     "data": [
         "data/document_page.xml",

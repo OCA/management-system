@@ -31,7 +31,7 @@ class FearedEvents(models.Model):
         readonly=True,
         store=True,
     )
-    severity_id = fields.Many2one("mgmtsystem.hazard.severity")
+    severity_id = fields.Many2one("mgmtsystem.risk.severity")
     scenario_ids = fields.One2many(
         "mgmtsystem.security.event.scenario",
         "security_event_id",
@@ -44,32 +44,32 @@ class FearedEvents(models.Model):
     integrity = fields.Boolean()
     availability = fields.Boolean()
     original_probability_id = fields.Many2one(
-        "mgmtsystem.hazard.probability",
+        "mgmtsystem.risk.probability",
         compute="_compute_ratings",
         store=True,
     )
     original_severity_id = fields.Many2one(
-        "mgmtsystem.hazard.severity",
+        "mgmtsystem.risk.severity",
         compute="_compute_ratings",
         store=True,
     )
     current_probability_id = fields.Many2one(
-        "mgmtsystem.hazard.probability",
+        "mgmtsystem.risk.probability",
         compute="_compute_ratings",
         store=True,
     )
     current_severity_id = fields.Many2one(
-        "mgmtsystem.hazard.severity",
+        "mgmtsystem.risk.severity",
         compute="_compute_ratings",
         store=True,
     )
     residual_probability_id = fields.Many2one(
-        "mgmtsystem.hazard.probability",
+        "mgmtsystem.risk.probability",
         compute="_compute_ratings",
         store=True,
     )
     residual_severity_id = fields.Many2one(
-        "mgmtsystem.hazard.severity",
+        "mgmtsystem.risk.severity",
         compute="_compute_ratings",
         store=True,
     )

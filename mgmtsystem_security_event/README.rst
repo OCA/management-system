@@ -173,6 +173,7 @@ Authors
 -------
 
 * Savoir-faire Linux
+* Gray Matter Logic
 
 Contributors
 ------------
@@ -200,6 +201,14 @@ This module is maintained by the OCA.
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
+
+.. |maintainer-max3903| image:: https://github.com/max3903.png?size=40px
+    :target: https://github.com/max3903
+    :alt: max3903
+
+Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-max3903| 
 
 This module is part of the `OCA/management-system <https://github.com/OCA/management-system/tree/19.0/mgmtsystem_security_event>`_ project on GitHub.
 
