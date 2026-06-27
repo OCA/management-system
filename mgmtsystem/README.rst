@@ -2,9 +2,9 @@
    :target: https://odoo-community.org/get-involved?utm_source=readme
    :alt: Odoo Community Association
 
-=================
-Management System
-=================
+==================
+Management Systems
+==================
 
 .. 
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -85,6 +85,7 @@ Authors
 -------
 
 * Savoir-faire Linux
+* Gray Matter Logic
 
 Contributors
 ------------
