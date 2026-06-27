@@ -54,8 +54,6 @@ msgstr "Komentarji"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__company_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__company_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin__company_id
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__company_id
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__company_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type__company_id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__company_id
 msgid "Company"
@@ -85,8 +83,6 @@ msgstr "Kontrolne izmere"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin__create_uid
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__create_uid
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__create_uid
@@ -98,8 +94,6 @@ msgstr "Ustvaril"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin__create_date
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__create_date
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__create_date
@@ -119,8 +113,6 @@ msgstr "Oddelek"
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__description
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin__description
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__description
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__description
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type__description
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__description
 msgid "Description"
@@ -131,8 +123,6 @@ msgstr "Opis"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin__display_name
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__display_name
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__display_name
@@ -187,8 +177,6 @@ msgstr "Nevarnosti v sistemu upravljanja zdravja in varnosti"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin__id
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__id
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type__id
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__id
@@ -241,8 +229,6 @@ msgstr "Razlog"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin__write_uid
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__write_uid
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__write_uid
@@ -254,8 +240,6 @@ msgstr "Zadnji posodobil"
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_control_measure__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_hazard__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_origin__write_date
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__write_date
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_type__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__write_date
@@ -331,23 +315,9 @@ msgid "Origins"
 msgstr "Izvori"
 
 #. module: mgmtsystem_hazard
-#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_probability_list
-#: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_probability
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_probability_filter
-msgid "Probabilities"
-msgstr "Verjetnost"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__probability_id
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__name
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_probability_form
 msgid "Probability"
 msgstr "Verjetnost"
-
-#. module: mgmtsystem_hazard
-#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_probability
-msgid "Probability of hazard"
-msgstr "Verjetnost nevarnosti"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__responsible_user_id
@@ -367,23 +337,9 @@ msgid "SMS Delivery error"
 msgstr "Napaka pri dostavi SMS"
 
 #. module: mgmtsystem_hazard
-#: model:ir.actions.act_window,name:mgmtsystem_hazard.open_mgmtsystem_hazard_severity_list
-#: model:ir.ui.menu,name:mgmtsystem_hazard.menu_open_hazard_severity
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_severity_filter
-msgid "Severities"
-msgstr "Resnost"
-
-#. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard__severity_id
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__name
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_hazard.view_mgmtsystem_hazard_severity_form
 msgid "Severity"
 msgstr "Resnost"
-
-#. module: mgmtsystem_hazard
-#: model:ir.model,name:mgmtsystem_hazard.model_mgmtsystem_hazard_severity
-msgid "Severity of hazard"
-msgstr "Resnost nevarnosti"
 
 #. module: mgmtsystem_hazard
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_test__name
@@ -416,8 +372,6 @@ msgid "Usage of hazard"
 msgstr "Raba nevarnosti"
 
 #. module: mgmtsystem_hazard
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_probability__value
-#: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_severity__value
 #: model:ir.model.fields,field_description:mgmtsystem_hazard.field_mgmtsystem_hazard_usage__value
 msgid "Value"
 msgstr "Vrednost"
@@ -431,6 +385,18 @@ msgstr "Sporočila spletne strani"
 #: model:ir.model.fields,help:mgmtsystem_hazard.field_mgmtsystem_hazard__website_message_ids
 msgid "Website communication history"
 msgstr "Kronologija komunikacij spletne strani"
+
+#~ msgid "Probabilities"
+#~ msgstr "Verjetnost"
+
+#~ msgid "Probability of hazard"
+#~ msgstr "Verjetnost nevarnosti"
+
+#~ msgid "Severities"
+#~ msgstr "Resnost"
+
+#~ msgid "Severity of hazard"
+#~ msgstr "Resnost nevarnosti"
 
 #~ msgid "Breakage"
 #~ msgstr "Zlom"

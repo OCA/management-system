@@ -5,8 +5,6 @@ from . import (
     mgmtsystem_hazard_type,
     mgmtsystem_hazard_origin,
     mgmtsystem_hazard_hazard,
-    mgmtsystem_hazard_probability,
-    mgmtsystem_hazard_severity,
     mgmtsystem_hazard_usage,
     mgmtsystem_hazard_control_measure,
     mgmtsystem_hazard_test,
