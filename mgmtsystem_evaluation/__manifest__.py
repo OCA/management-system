@@ -5,7 +5,7 @@
     "name": "Mgmtsystem Evaluation",
     "summary": """
         Evaluate records within your management system""",
-    "version": "16.0.1.0.2",
+    "version": "16.0.1.1.0",
     "license": "AGPL-3",
     "author": "CreuBlanca,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
