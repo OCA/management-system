@@ -27,7 +27,7 @@ addon | version | maintainers | summary
 [document_page_procedure](document_page_procedure/) | 19.0.1.0.1 |  | Document Management - Wiki - Procedures
 [document_page_quality_manual](document_page_quality_manual/) | 19.0.1.0.1 |  | Quality Manual
 [document_page_work_instruction](document_page_work_instruction/) | 19.0.1.0.1 |  | Document Management - Wiki - Work Instructions
-[mgmtsystem](mgmtsystem/) | 19.0.1.1.0 |  | Support for management systems, such as ISO compliance.
+[mgmtsystem](mgmtsystem/) | 19.0.1.2.0 |  | Support for management systems, such as ISO compliance.
 [mgmtsystem_action](mgmtsystem_action/) | 19.0.1.0.1 |  | Management System - Action
 [mgmtsystem_audit](mgmtsystem_audit/) | 19.0.1.0.1 |  | Management System - Audit
 [mgmtsystem_environment](mgmtsystem_environment/) | 19.0.1.0.1 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Manage your environment management system
