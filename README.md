@@ -45,7 +45,7 @@ addon | version | maintainers | summary
 [mgmtsystem_quality](mgmtsystem_quality/) | 19.0.1.0.1 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Manage your quality management system
 [mgmtsystem_review](mgmtsystem_review/) | 19.0.1.1.0 |  | Management System - Review
 [mgmtsystem_risk](mgmtsystem_risk/) | 19.0.1.0.0 |  | Manage risks probability and severity
-[mgmtsystem_security_event](mgmtsystem_security_event/) | 19.0.1.0.0 |  | Feared Events
+[mgmtsystem_security_event](mgmtsystem_security_event/) | 19.0.2.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Feared Events
 [mgmtsystem_survey](mgmtsystem_survey/) | 19.0.1.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Management System - Survey
 
 [//]: # (end addons)
