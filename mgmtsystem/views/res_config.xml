@@ -12,6 +12,20 @@
                     name="mgmtsystem"
                     groups="mgmtsystem.group_mgmtsystem_user_manager"
                 >
+                    <block title="Industries" name="mgmtsystem_industries_setting">
+                        <setting
+                            string="Automotive"
+                            help="Manage your automotive quality management system (IATF 16949)."
+                        >
+                            <field name="module_mgmtsystem_iatf16949" />
+                        </setting>
+                        <setting
+                            string="Laboratories"
+                            help="Manage your laboratory quality management system (ISO 17025)."
+                        >
+                            <field name="module_mgmtsystem_iso17025" />
+                        </setting>
+                    </block>
                     <block title="Management Systems" name="mgmtsystem_systems_setting">
                         <setting
                             string="Quality"
@@ -38,7 +52,6 @@
                             <field name="module_mgmtsystem_information_security" />
                         </setting>
                     </block>
-
                     <block title="Applications" name="mgmtsystem_applications_setting">
                         <setting
                             string="Actions"
@@ -64,7 +77,6 @@
                         >
                             <field name="module_mgmtsystem_audit" />
                         </setting>
-
                         <setting
                             string="Key Performance Indicators"
                             help="Manage KPIs."
@@ -77,13 +89,6 @@
                             help="Top management reviews."
                         >
                             <field name="module_mgmtsystem_review" />
-                        </setting>
-
-                        <setting
-                            string="Document Approval"
-                            help="Manage the approval workflow to control your documentation."
-                        >
-                            <field name="module_document_page_approval" />
                         </setting>
                     </block>
                     <block title="Manuals" name="mgmtsystem_manuals_setting">
@@ -145,6 +150,12 @@
                             help="Provide a Work Instruction documentation category and template."
                         >
                             <field name="module_document_page_work_instruction" />
+                        </setting>
+                        <setting
+                            string="Document Approval"
+                            help="Manage the approval workflow to control your documentation."
+                        >
+                            <field name="module_document_page_approval" />
                         </setting>
                     </block>
                 </app>
