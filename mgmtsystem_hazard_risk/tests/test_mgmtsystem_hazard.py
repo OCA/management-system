@@ -23,10 +23,16 @@ class TestMgmtsystemHazard(BaseCommon):
         cls.risk_type = cls.env["mgmtsystem.hazard.risk.type"].create(
             {"name": "Physical"}
         )
-        cls.probability = cls.env["mgmtsystem.hazard.probability"].create(
+        cls.hazard_probability = cls.env["mgmtsystem.hazard.probability"].create(
             {"name": "Maybe", "value": 2}
         )
-        cls.severity = cls.env["mgmtsystem.hazard.severity"].create(
+        cls.hazard_severity = cls.env["mgmtsystem.hazard.severity"].create(
+            {"name": "Heavy", "value": 3}
+        )
+        cls.probability = cls.env["mgmtsystem.risk.probability"].create(
+            {"name": "Maybe", "value": 2}
+        )
+        cls.severity = cls.env["mgmtsystem.risk.severity"].create(
             {"name": "Heavy", "value": 3}
         )
         cls.usage = cls.env["mgmtsystem.hazard.usage"].create(
@@ -60,8 +66,8 @@ class TestMgmtsystemHazard(BaseCommon):
     def test_hazard_risk_computation_a_times_b_times_c(self):
         self.env.company.risk_computation_id = self.computation
         record = self._create_hazard(
-            probability_id=self.probability.id,
-            severity_id=self.severity.id,
+            probability_id=self.hazard_probability.id,
+            severity_id=self.hazard_severity.id,
             usage_id=self.usage.id,
         )
         self.assertEqual(record.risk, 30)
@@ -69,8 +75,8 @@ class TestMgmtsystemHazard(BaseCommon):
     def test_hazard_risk_computation_a_times_b(self):
         self.env.company.risk_computation_id = self.computation_ab
         record = self._create_hazard(
-            probability_id=self.probability.id,
-            severity_id=self.severity.id,
+            probability_id=self.hazard_probability.id,
+            severity_id=self.hazard_severity.id,
             usage_id=self.usage.id,
         )
         self.assertEqual(record.risk, 6)
