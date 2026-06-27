@@ -22,9 +22,9 @@ class QcInspection(models.Model):
             rec.mgmtsystem_nonconformity_count = len(rec.mgmtsystem_nonconformity_ids)
 
     def action_view_nonconformities(self):
-        action = self.env.ref(
+        action = self.env["ir.actions.act_window"]._for_xml_id(
             "mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list"
-        ).read()[0]
+        )
         if self.mgmtsystem_nonconformity_count > 1:
             action["domain"] = [("id", "in", self.mgmtsystem_nonconformity_ids.ids)]
         else:
