@@ -46,6 +46,12 @@ msgid "Audits"
 msgstr ""
 
 #. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_iatf16949
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Automotive"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Claims"
@@ -157,6 +163,11 @@ msgid "ID"
 msgstr ""
 
 #. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Industries"
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_information_security
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Information Security"
@@ -176,6 +187,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_kpi
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Key Performance Indicators"
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_iso17025
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Laboratories"
 msgstr ""
 
 #. module: mgmtsystem
@@ -229,6 +246,11 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Manage your automotive quality management system (IATF 16949)."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage your environment management systems (ISO 14001)."
 msgstr ""
 
@@ -245,6 +267,11 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Manage your laboratory quality management system (ISO 17025)."
+msgstr ""
+
+#. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage your quality management systems (ISO 9001)."
 msgstr ""
 
@@ -256,7 +283,6 @@ msgstr ""
 #. module: mgmtsystem
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_main
-#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
 #: model:res.groups.privilege,name:mgmtsystem.res_groups_privilege_management_system
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.system_form
 msgid "Management System"
@@ -264,6 +290,7 @@ msgstr ""
 
 #. module: mgmtsystem
 #: model:ir.actions.act_window,name:mgmtsystem.system_action
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Management Systems"
 msgstr ""
@@ -438,6 +465,13 @@ msgid ""
 msgstr ""
 
 #. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_iatf16949
+msgid ""
+"Provide automotive quality management tools.\n"
+"- This installs the module mgmtsystem_iatf16949."
+msgstr ""
+
+#. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_claim
 msgid ""
 "Provide claim tools.\n"
@@ -477,6 +511,13 @@ msgstr ""
 msgid ""
 "Provide key performance indicators.\n"
 "- This installs the module mgmtsystem_kpi."
+msgstr ""
+
+#. module: mgmtsystem
+#: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_iso17025
+msgid ""
+"Provide laboratory quality management tools.\n"
+"- This installs the module mgmtsystem_iso17025."
 msgstr ""
 
 #. module: mgmtsystem
