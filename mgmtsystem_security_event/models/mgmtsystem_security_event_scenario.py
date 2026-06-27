@@ -11,7 +11,7 @@ class EventScenarioLines(models.Model):
     description = fields.Text()
     vector_id = fields.Many2one("mgmtsystem.security.vector")
     source_id = fields.Many2one("mgmtsystem.security.threat.source")
-    probability_id = fields.Many2one("mgmtsystem.hazard.probability")
+    probability_id = fields.Many2one("mgmtsystem.risk.probability")
     security_event_id = fields.Many2one("mgmtsystem.security.event")
     system_id = fields.Many2one(
         related="security_event_id.system_id",

@@ -17,27 +17,27 @@ class Vector(models.Model):
         "supporting_asset_id",
     )
     original_probability_id = fields.Many2one(
-        "mgmtsystem.hazard.probability",
+        "mgmtsystem.risk.probability",
         help="Probability without any control",
     )
     original_severity_id = fields.Many2one(
-        "mgmtsystem.hazard.severity",
+        "mgmtsystem.risk.severity",
         help="Severity without any control",
     )
     current_probability_id = fields.Many2one(
-        "mgmtsystem.hazard.probability",
+        "mgmtsystem.risk.probability",
         help="Probability with existing controls",
     )
     current_severity_id = fields.Many2one(
-        "mgmtsystem.hazard.severity",
+        "mgmtsystem.risk.severity",
         help="Severity with existing controls",
     )
     residual_probability_id = fields.Many2one(
-        "mgmtsystem.hazard.probability",
+        "mgmtsystem.risk.probability",
         help="Probability after remediation",
     )
     residual_severity_id = fields.Many2one(
-        "mgmtsystem.hazard.severity",
+        "mgmtsystem.risk.severity",
         help="Severity after remediation",
     )
 
