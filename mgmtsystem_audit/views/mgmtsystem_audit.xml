@@ -143,6 +143,7 @@
                     />
                     </header>
                     <sheet string="Audit">
+                        <div class="oe_button_box" name="button_box" />
                         <group col="4" colspan="2">
                             <field name="name" readonly="state == 'done'" />
                             <field name="reference" />
