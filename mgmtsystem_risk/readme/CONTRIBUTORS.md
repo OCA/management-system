@@ -1,0 +1,2 @@
+- [Gray Matter Logic](https://www.graymatterlogic.com):
+  - Maxime Chambreuil \<<mchambreuil@opensourceintegrators.com>\>

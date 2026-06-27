@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="severity_low" model="mgmtsystem.risk.severity">
+        <field name="name">Low</field>
+        <field name="value">1</field>
+        <field name="description">Negligible impact</field>
+    </record>
+
+    <record id="severity_medium" model="mgmtsystem.risk.severity">
+        <field name="name">Medium</field>
+        <field name="value">2</field>
+        <field name="description">Minor impact with limited consequences</field>
+    </record>
+
+    <record id="severity_high" model="mgmtsystem.risk.severity">
+        <field name="name">High</field>
+        <field name="value">3</field>
+        <field name="description">Significant impact requiring corrective action</field>
+    </record>
+
+    <record id="severity_critical" model="mgmtsystem.risk.severity">
+        <field name="name">Critical</field>
+        <field name="value">4</field>
+        <field name="description">Severe impact with major consequences</field>
+    </record>
+</odoo>
