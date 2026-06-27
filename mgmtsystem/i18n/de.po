@@ -41,16 +41,16 @@ msgid "Auditor"
 msgstr "Prüfer"
 
 #. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_iatf16949
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
-msgid "Automotive"
-msgstr "Automobil"
-
-#. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Audits"
 msgstr "Prüfungen"
+
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_iatf16949
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Automotive"
+msgstr "Automobil"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_claim
@@ -167,6 +167,11 @@ msgid "ID"
 msgstr "ID"
 
 #. module: mgmtsystem
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Industries"
+msgstr "Branchen"
+
+#. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_information_security
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 #, fuzzy
@@ -187,16 +192,16 @@ msgstr ""
 "den Vorgaben gem. ISO 27001"
 
 #. module: mgmtsystem
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
-msgid "Industries"
-msgstr "Branchen"
-
-#. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_kpi
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Key Performance Indicators"
 msgstr ""
 
+#. module: mgmtsystem
+#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_iso17025
+#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
+msgid "Laboratories"
+msgstr "Laboratorien"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__write_uid
@@ -207,12 +212,6 @@ msgstr "Zuletzt aktualisiert von"
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__write_date
 msgid "Last Updated on"
 msgstr "Zuletzt aktualisiert am"
-
-#. module: mgmtsystem
-#: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_iso17025
-#: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
-msgid "Laboratories"
-msgstr "Laboratorien"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
@@ -258,7 +257,9 @@ msgstr ""
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage your automotive quality management system (IATF 16949)."
-msgstr "Verwalten Sie Ihr Qualitätsmanagementsystem für die Automobilindustrie (IATF 16949)."
+msgstr ""
+"Verwalten Sie Ihr Qualitätsmanagementsystem für die Automobilindustrie (IATF "
+"16949)."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
@@ -294,7 +295,6 @@ msgstr ""
 #. module: mgmtsystem
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_main
-#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
 #: model:res.groups.privilege,name:mgmtsystem.res_groups_privilege_management_system
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.system_form
 msgid "Management System"
@@ -302,6 +302,7 @@ msgstr "Management-System"
 
 #. module: mgmtsystem
 #: model:ir.actions.act_window,name:mgmtsystem.system_action
+#: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Management Systems"
 msgstr "Managementsysteme"
@@ -499,7 +500,8 @@ msgid ""
 "Provide automotive quality management tools.\n"
 "- This installs the module mgmtsystem_iatf16949."
 msgstr ""
-"Werkzeuge für das Qualitätsmanagement in der Automobilindustrie bereitstellen.\n"
+"Werkzeuge für das Qualitätsmanagement in der Automobilindustrie "
+"bereitstellen.\n"
 "- Dies installiert das Modul mgmtsystem_iatf16949."
 
 #. module: mgmtsystem
@@ -562,7 +564,6 @@ msgid ""
 msgstr ""
 "Werkzeuge für das Qualitätsmanagement in Laboratorien bereitstellen.\n"
 "- Dies installiert das Modul mgmtsystem_iso17025."
-
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_nonconformity
