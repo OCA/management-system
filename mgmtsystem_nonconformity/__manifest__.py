@@ -17,6 +17,7 @@
         "views/mgmtsystem_severity.xml",
         "views/mgmtsystem_action.xml",
         "views/mgmtsystem_nonconformity_stage.xml",
+        "views/report_mgmtsystem_nonconformity.xml",
         "data/sequence.xml",
         "data/mgmtsystem_nonconformity_severity.xml",
         "data/mgmtsystem_nonconformity_origin.xml",

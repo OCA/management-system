@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 =================================
 Management System - Nonconformity
 =================================
@@ -17,7 +13,7 @@ Management System - Nonconformity
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fmanagement--system-lightgray.png?logo=github
@@ -35,11 +31,11 @@ Management System - Nonconformity
 This module enables you to manage the nonconformities of your management
 systems:
 
-- Quality (ISO 9001)
-- Environment (ISO 14001)
-- Information Security (ISO 27001)
-- Health and Safety (ISO 45001)
-- IT Services (ISO 20000)
+-  Quality (ISO 9001)
+-  Environment (ISO 14001)
+-  Information Security (ISO 27001)
+-  Health and Safety (ISO 45001)
+-  IT Services (ISO 20000)
 
 **Table of contents**
 
@@ -51,37 +47,37 @@ Configuration
 
 Users must be added to the appropriate groups within Odoo as follows:
 
-- Creators: Settings > Users > Groups > Management System / User
+-  Creators: Settings > Users > Groups > Management System / User
 
 Usage
 =====
 
 To use this module:
 
-- Go to Management System > Nonconformities
-- Click on Create to enter the following information:
-- Partner : Customer, supplier or internal personnel
-- Related to: Any reference pointing to the NC (order id, project id,
-  task id, etc.)
-- Responsible: Person responsible for the NC
-- Manager : Person managing the department or owner of the procedure
-- Filled in by: Originator of NC report
-- Origins: The source of the NC, how was it discover
-- Procedures: Against which procedure is the NC
-- Description: Evidence, reference to the standards
-- Click on Save and then set state from Draft to Analysis.
+-  Go to Management System > Nonconformities
+-  Click on Create to enter the following information:
+-  Partner : Customer, supplier or internal personnel
+-  Related to: Any reference pointing to the NC (order id, project id,
+   task id, etc.)
+-  Responsible: Person responsible for the NC
+-  Manager : Person managing the department or owner of the procedure
+-  Filled in by: Originator of NC report
+-  Origins: The source of the NC, how was it discover
+-  Procedures: Against which procedure is the NC
+-  Description: Evidence, reference to the standards
+-  Click on Save and then set state from Draft to Analysis.
 
 Go to the newly created NC and fill in the following information:
 
 In the Causes and Analysis tab:
 
-- Causes: Add root causes
-- Analysis: Describe the results of the investigation
-- Severity: Select the severity among unfounded, minor and major
+-  Causes: Add root causes
+-  Analysis: Describe the results of the investigation
+-  Severity: Select the severity among unfounded, minor and major
 
 In the Description tab:
 
-- Immediate action: Create or select an immediate action if appropriate
+-  Immediate action: Create or select an immediate action if appropriate
 
 Click on the Save button and then on the "Action Plan" button in the top
 right corner.
@@ -89,13 +85,13 @@ right corner.
 In the Actions tab, select or create new actions by entering the
 following items:
 
-- Subject: What must be done - Return to Supplier, Use As Is, Scrap,
-  Rework, Re-grade, Repair
-- Deadline: Date by which the action must be completed
-- Responsible: Person in charge for implementing the action
-- Response Type: Immediate, corrective or preventive actions or
-  improvement opportunity
-- Description: Details of the action
+-  Subject: What must be done - Return to Supplier, Use As Is, Scrap,
+   Rework, Re-grade, Repair
+-  Deadline: Date by which the action must be completed
+-  Responsible: Person in charge for implementing the action
+-  Response Type: Immediate, corrective or preventive actions or
+   improvement opportunity
+-  Description: Details of the action
 
 When the action is created, a notification is sent to the person
 responsible for the action.
@@ -112,10 +108,10 @@ evaluated before closing the NC.
 Known issues / Roadmap
 ======================
 
-- The custom emails should be replaced by Mail Tracking features and
-  Subtypes (like in Project Tasks and Project Issues)
-- Automatically add responsible_user_id._uid, manager_user_id._uid,
-  author_user_id._uid to chatter
+-  The custom emails should be replaced by Mail Tracking features and
+   Subtypes (like in Project Tasks and Project Issues)
+-  Automatically add responsible_user_id._uid, manager_user_id._uid,
+   author_user_id._uid to chatter
 
 Bug Tracker
 ===========
@@ -138,28 +134,28 @@ Authors
 Contributors
 ------------
 
-- Daniel Reis <dreis.pt@hotmail.com>
-- Glen Dromgoole <gdromgoole@tier1engineering.com>
-- Loic Lacroix <loic.lacroix@savoirfairelinux.com>
-- Sandy Carter <sandy.carter@savoirfairelinux.com>
-- Gervais Naoussi <gervaisnaoussi@gmail.com>
-- Eugen Don <eugen.don@don-systems.de>
-- Jose Maria Alzaga <jose.alzaga@aselcis.com>
-- `Tecnativa <https://www.tecnativa.com>`__:
+-  Daniel Reis <dreis.pt@hotmail.com>
+-  Glen Dromgoole <gdromgoole@tier1engineering.com>
+-  Loic Lacroix <loic.lacroix@savoirfairelinux.com>
+-  Sandy Carter <sandy.carter@savoirfairelinux.com>
+-  Gervais Naoussi <gervaisnaoussi@gmail.com>
+-  Eugen Don <eugen.don@don-systems.de>
+-  Jose Maria Alzaga <jose.alzaga@aselcis.com>
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  - Ernesto Tejeda
+   -  Ernesto Tejeda
 
 Trobz
 
-- Dung Tran <dungtd@trobz.com>
-- Tuan Nguyen <tuanna@trobz.com>
+-  Dung Tran <dungtd@trobz.com>
+-  Tuan Nguyen <tuanna@trobz.com>
 
 Other credits
 -------------
 
 The development of this module has been financially supported by:
 
-- Camptocamp
+-  Camptocamp
 
 Maintainers
 -----------
