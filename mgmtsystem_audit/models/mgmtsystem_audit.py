@@ -135,6 +135,11 @@ class MgmtsystemAudit(models.Model):
         self.message_post(body=_("Audit closed"))
         return self.write({"state": "done", "closing_date": fields.Datetime.now()})
 
+    def button_open(self):
+        """Reopen a closed audit."""
+        self.message_post(body=_("Audit reopened"))
+        return self.write({"state": "open", "closing_date": False})
+
     def get_action_url(self):
         """
         Return a short link to the audit form view

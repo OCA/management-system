@@ -135,6 +135,12 @@
                         invisible="state not in ['open']"
                         type="object"
                     />
+                        <button
+                        name="button_open"
+                        string="Open"
+                        invisible="state not in ['done']"
+                        type="object"
+                    />
                         <field
                         name="state"
                         widget="statusbar"

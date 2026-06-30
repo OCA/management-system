@@ -33,6 +33,15 @@ class TestModelAudit(BaseCommon):
         self.audit.button_close()
         self.assertEqual(self.audit.state, "done")
 
+    def test_button_open(self):
+        """Test if button open reopens a closed audit."""
+        self.audit.button_close()
+        self.assertEqual(self.audit.state, "done")
+        self.assertTrue(self.audit.closing_date)
+        self.audit.button_open()
+        self.assertEqual(self.audit.state, "open")
+        self.assertFalse(self.audit.closing_date)
+
     def test_get_lines_by_procedure(self):
         self.assertTrue(self.audit.get_lines_by_procedure())
 
