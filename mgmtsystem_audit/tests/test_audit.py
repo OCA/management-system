@@ -63,10 +63,10 @@ class TestModelAudit(BaseCommon):
         self.assertRegex(str(res[0]), "Test audit")
 
     def test_audit_partner_fields(self):
-        """Test that audited and auditee partner fields can be set."""
-        partner = self.env["res.partner"].create({"name": "Audited Partner"})
-        auditee = self.env["res.partner"].create({"name": "Notified Body"})
-        self.audit.partner_id = partner
-        self.audit.auditee_partner_id = auditee
-        self.assertEqual(self.audit.partner_id, partner)
-        self.assertEqual(self.audit.auditee_partner_id, auditee)
+        """Test that auditee and auditor partner fields can be set."""
+        partner = self.env["res.partner"].create({"name": "Auditee Partner"})
+        auditor = self.env["res.partner"].create({"name": "Notified Body"})
+        self.audit.auditee_partner_ids = partner
+        self.audit.auditor_partner_ids = auditor
+        self.assertIn(partner, self.audit.auditee_partner_ids)
+        self.assertIn(auditor, self.audit.auditor_partner_ids)

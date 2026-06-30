@@ -76,15 +76,24 @@ class MgmtsystemAudit(models.Model):
         [("open", "Open"), ("done", "Closed")], default="open", required=True
     )
     system_id = fields.Many2one("mgmtsystem.system", "System")
-    partner_id = fields.Many2one(
+    auditee_partner_ids = fields.Many2many(
         "res.partner",
-        string="Audited partner",
-        help="External partner or organization being audited.",
+        "mgmtsystem_audit_auditee_partner_rel",
+        "audit_id",
+        "partner_id",
+        string="Auditee Partners",
+        help="Organizations or partners being audited.",
+        domain="[('is_company', '=', True)]",
+        default=lambda self: self.env.company.partner_id,
     )
-    auditee_partner_id = fields.Many2one(
+    auditor_partner_ids = fields.Many2many(
         "res.partner",
-        string="Auditee partner",
-        help="Auditee partner involved in the audit.",
+        "mgmtsystem_audit_auditor_partner_rel",
+        "audit_id",
+        "partner_id",
+        string="Auditor Partners",
+        help="External auditing organizations, e.g. notified bodies.",
+        domain="[('is_company', '=', True)]",
     )
     company_id = fields.Many2one(
         "res.company", "Company", default=lambda self: self.env.company
