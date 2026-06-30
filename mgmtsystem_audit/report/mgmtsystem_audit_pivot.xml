@@ -8,7 +8,6 @@
                 <pivot string="Audit" disable_linking="True">
                     <field name="state" type="row" />
                     <field name="user_id" type="col" />
-                    <field name="number_of_audits" type="measure" />
                 </pivot>
             </field>
         </record>
@@ -22,7 +21,6 @@
                 <graph string="Audit">
                     <field name="state" />
                     <field name="user_id" />
-                    <field name="number_of_audits" type="measure" />
                 </graph>
             </field>
         </record>
