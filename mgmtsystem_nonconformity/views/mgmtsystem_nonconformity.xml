@@ -12,7 +12,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="ref" />
-                <field name="create_date" />
+                <field name="date" />
                 <field name="partner_id" />
                 <field name="description" />
                 <field name="user_id" />
@@ -60,7 +60,7 @@
                     />
                     <separator orientation="vertical" />
                     <field name="ref" />
-                    <field name="create_date" />
+                    <field name="date" />
                     <filter
                         name="current_user"
                         string="User"
@@ -219,7 +219,10 @@
                         <group name="config">
                             <field name="name" readonly="state not in 'draft'" />
                             <field name="ref" readonly="state not in 'draft'" />
-                            <field name="create_date" readonly="1" />
+                            <field
+                                name="date"
+                                readonly="state not in ('draft', 'analysis')"
+                            />
                             <field
                                 name="partner_id"
                                 readonly="state not in ('draft', 'analysis')"

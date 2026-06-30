@@ -14,7 +14,7 @@
             ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"
         />
         <field name="arch" type="xml">
-            <field name="create_date" position="after">
+            <field name="date" position="after">
                 <field name="workcenter_id" groups="mrp.group_mrp_routings" />
             </field>
         </field>
