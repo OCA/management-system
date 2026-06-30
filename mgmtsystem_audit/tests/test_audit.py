@@ -61,3 +61,12 @@ class TestModelAudit(BaseCommon):
             "mgmtsystem_audit.verification_report_template", self.audit.ids
         )
         self.assertRegex(str(res[0]), "Test audit")
+
+    def test_audit_partner_fields(self):
+        """Test that audited and auditee partner fields can be set."""
+        partner = self.env["res.partner"].create({"name": "Audited Partner"})
+        auditee = self.env["res.partner"].create({"name": "Notified Body"})
+        self.audit.partner_id = partner
+        self.audit.auditee_partner_id = auditee
+        self.assertEqual(self.audit.partner_id, partner)
+        self.assertEqual(self.audit.auditee_partner_id, auditee)
