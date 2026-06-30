@@ -76,6 +76,11 @@ class MgmtsystemAudit(models.Model):
         [("open", "Open"), ("done", "Closed")], default="open", required=True
     )
     system_id = fields.Many2one("mgmtsystem.system", "System")
+    audit_type = fields.Selection(
+        [("internal", "Internal"), ("external", "External")],
+        string="Audit type",
+        help="Whether the audit is performed internally or by an external party.",
+    )
     company_id = fields.Many2one(
         "res.company", "Company", default=lambda self: self.env.company
     )

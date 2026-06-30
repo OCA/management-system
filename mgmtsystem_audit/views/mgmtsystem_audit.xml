@@ -85,6 +85,7 @@
                     <field name="reference" />
                     <field name="system_id" />
                     <field name="company_id" groups="base.group_multi_company" />
+                    <field name="audit_type" optional="show" />
                     <!-- Invisible fields below are to allow their use in domains of this view -->
                     <field name="state" column_invisible="True" />
                 </tree>
@@ -118,6 +119,14 @@
                         <field name="reference" />
                         <field name="system_id" />
                         <field name="company_id" groups="base.group_multi_company" />
+                        <field name="audit_type" />
+                    </group>
+                    <group>
+                        <filter
+                        name="group_by_audit_type"
+                        string="Audit type"
+                        context="{'group_by':'audit_type'}"
+                    />
                     </group>
                 </search>
             </field>
@@ -159,6 +168,12 @@
                             groups="base.group_multi_company"
                         />
                             <field name="system_id" readonly="state == 'done'" />
+                            <field
+                            name="audit_type"
+                            widget="radio"
+                            options="{'horizontal': true}"
+                            readonly="state == 'done'"
+                        />
                         </group>
                         <notebook colspan="4">
                             <page string="Auditors">

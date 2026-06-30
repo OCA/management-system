@@ -61,3 +61,9 @@ class TestModelAudit(BaseCommon):
             "mgmtsystem_audit.verification_report_template", self.audit.ids
         )
         self.assertRegex(str(res[0]), "Test audit")
+
+    def test_audit_type(self):
+        """Test that audit type can be set."""
+        self.assertFalse(self.audit.audit_type)
+        self.audit.audit_type = "external"
+        self.assertEqual(self.audit.audit_type, "external")
