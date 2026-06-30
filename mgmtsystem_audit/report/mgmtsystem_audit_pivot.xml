@@ -9,6 +9,9 @@
                     <field name="state" type="row" />
                     <field name="user_id" type="col" />
                     <field name="number_of_audits" type="measure" />
+                    <field name="number_of_nonconformities" type="measure" />
+                    <field name="number_of_improvements_opportunity" type="measure" />
+                    <field name="number_of_days_to_close" type="measure" />
                 </pivot>
             </field>
         </record>
@@ -23,6 +26,9 @@
                     <field name="state" />
                     <field name="user_id" />
                     <field name="number_of_audits" type="measure" />
+                    <field name="number_of_nonconformities" type="measure" />
+                    <field name="number_of_improvements_opportunity" type="measure" />
+                    <field name="number_of_days_to_close" type="measure" />
                 </graph>
             </field>
         </record>
