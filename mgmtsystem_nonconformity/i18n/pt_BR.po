@@ -617,12 +617,16 @@ msgid "Non-Conformity"
 msgstr "Não-Conformidade"
 
 #. module: mgmtsystem_nonconformity
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_action.py:0
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_thread_list
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__nonconformity_ids
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_report_mgmtsystem_nonconformity_tree
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_action_form
+#, python-format
 msgid "Nonconformities"
 msgstr "Não Conformidades"
 
@@ -670,6 +674,11 @@ msgstr "Número de mensagens que exigem ação"
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Número de mensagens com erro de entrega"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__nonconformity_count
+msgid "Number of nonconformities"
+msgstr ""
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
@@ -768,11 +777,6 @@ msgstr "Referência"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__ref_code
 msgid "Reference Code"
 msgstr "Código de Referência"
-
-#. module: mgmtsystem_nonconformity
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_action_form
-msgid "Related Nonconformities"
-msgstr "Não conformidades relacionadas"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__reference
@@ -934,6 +938,9 @@ msgid ""
 msgstr ""
 "marque a caixa de seleção se este é o estágio padrão\n"
 "para novas não conformidades"
+
+#~ msgid "Related Nonconformities"
+#~ msgstr "Não conformidades relacionadas"
 
 #~ msgid "Non Conformity"
 #~ msgstr "Não conformidade"

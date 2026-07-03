@@ -612,12 +612,16 @@ msgid "Non-Conformity"
 msgstr "Icke-konformitet"
 
 #. module: mgmtsystem_nonconformity
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity/models/mgmtsystem_action.py:0
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_list
 #: model:ir.actions.act_window,name:mgmtsystem_nonconformity.open_mgmtsystem_nonconformity_thread_list
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__nonconformity_ids
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_mgmtsystem_configuration_nonconformities
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_open_nonconformity
 #: model:ir.ui.menu,name:mgmtsystem_nonconformity.menu_report_mgmtsystem_nonconformity_tree
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_action_form
+#, python-format
 msgid "Nonconformities"
 msgstr "Avvikelser"
 
@@ -665,6 +669,11 @@ msgstr "Antal meddelanden som kräver åtgärder"
 #: model:ir.model.fields,help:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Antal meddelanden med leveransfel"
+
+#. module: mgmtsystem_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_action__nonconformity_count
+msgid "Number of nonconformities"
+msgstr ""
 
 #. module: mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_filter
@@ -763,11 +772,6 @@ msgstr "Referens"
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity_origin__ref_code
 msgid "Reference Code"
 msgstr "Referens kod"
-
-#. module: mgmtsystem_nonconformity
-#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity.view_mgmtsystem_action_form
-msgid "Related Nonconformities"
-msgstr "Relaterade avvikelser"
 
 #. module: mgmtsystem_nonconformity
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity.field_mgmtsystem_nonconformity__reference
@@ -929,6 +933,9 @@ msgid ""
 msgstr ""
 "välj kryssrutan stis om detta är standardstadiet\n"
 "för nya avvikelser"
+
+#~ msgid "Related Nonconformities"
+#~ msgstr "Relaterade avvikelser"
 
 #~ msgid "Non Conformity"
 #~ msgstr "Icke-överensstämmelse"
