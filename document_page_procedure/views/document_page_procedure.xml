@@ -7,7 +7,7 @@
         <field name="help">Procedures of your management system.</field>
         <field
             name="domain"
-            eval="[('parent_id','=',ref('document_page_group_procedure'))]"
+            eval="[('mgmtsystem_page_type','=','procedure'), ('type', '=', 'content')]"
         />
         <field
             name="context"
