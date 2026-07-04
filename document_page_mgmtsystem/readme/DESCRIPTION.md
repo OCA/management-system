@@ -1,0 +1,1 @@
+Adds a new field in categories to be used later on.
