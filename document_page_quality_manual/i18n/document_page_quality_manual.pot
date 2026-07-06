@@ -1,5 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
+# 	* document_page_quality_manual
 #
 msgid ""
 msgstr ""
@@ -11,3 +12,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: document_page_quality_manual
+#: model:ir.model.fields,help:document_page_quality_manual.field_document_page__mgmtsystem_page_type
+msgid "Classification of the management system document page."
+msgstr ""
+
+#. module: document_page_quality_manual
+#: model:ir.model,name:document_page_quality_manual.model_document_page
+msgid "Document Page"
+msgstr ""
+
+#. module: document_page_quality_manual
+#: model:ir.model.fields,field_description:document_page_quality_manual.field_document_page__mgmtsystem_page_type
+msgid "Management System Page Type"
+msgstr ""
+
+#. module: document_page_quality_manual
+#: model:ir.model.fields.selection,name:document_page_quality_manual.selection__document_page__mgmtsystem_page_type__quality_manual
+msgid "Quality Manual"
+msgstr ""
