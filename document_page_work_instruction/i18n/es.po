@@ -19,6 +19,26 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: document_page_work_instruction
+#: model:ir.model.fields,help:document_page_work_instruction.field_document_page__mgmtsystem_page_type
+msgid "Classification of the management system document page."
+msgstr ""
+
+#. module: document_page_work_instruction
+#: model:ir.model,name:document_page_work_instruction.model_document_page
+msgid "Document Page"
+msgstr ""
+
+#. module: document_page_work_instruction
+#: model:ir.model.fields,field_description:document_page_work_instruction.field_document_page__mgmtsystem_page_type
+msgid "Management System Page Type"
+msgstr ""
+
+#. module: document_page_work_instruction
+#: model:ir.model.fields.selection,name:document_page_work_instruction.selection__document_page__mgmtsystem_page_type__work_instruction
+msgid "Work Instruction"
+msgstr ""
+
+#. module: document_page_work_instruction
 #: model:ir.actions.act_window,name:document_page_work_instruction.work_instructions_action
 #: model:ir.ui.menu,name:document_page_work_instruction.menu_mgmtsystem_manuals_work_instructions
 msgid "Work Instructions"
