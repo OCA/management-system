@@ -10,8 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-16 07:18+0000\n"
 "PO-Revision-Date: 2018-01-16 07:18+0000\n"
-"Last-Translator: JOSE ALEJANDRO ECHEVERRI VALENCIA <josealejandroeche@gmail."
-"com>, 2018\n"
+"Last-Translator: JOSE ALEJANDRO ECHEVERRI VALENCIA "
+"<josealejandroeche@gmail.com>, 2018\n"
 "Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/"
 "es_CO/)\n"
 "Language: es_CO\n"
@@ -19,6 +19,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: document_page_procedure
+#: model:ir.model.fields,help:document_page_procedure.field_document_page__mgmtsystem_page_type
+msgid "Classification of the management system document page."
+msgstr ""
+
+#. module: document_page_procedure
+#: model:ir.model,name:document_page_procedure.model_document_page
+msgid "Document Page"
+msgstr ""
+
+#. module: document_page_procedure
+#: model:ir.model.fields,field_description:document_page_procedure.field_document_page__mgmtsystem_page_type
+msgid "Management System Page Type"
+msgstr ""
+
+#. module: document_page_procedure
+#: model:ir.model.fields.selection,name:document_page_procedure.selection__document_page__mgmtsystem_page_type__procedure
+msgid "Procedure"
+msgstr ""
 
 #. module: document_page_procedure
 #: model:ir.actions.act_window,name:document_page_procedure.action_procedures
