@@ -21,12 +21,13 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[document_page_environment_manual](document_page_environment_manual/) | 18.0.1.0.1 |  | Document Management - Wiki - Environment Manual
+[document_page_environment_manual](document_page_environment_manual/) | 18.0.1.1.0 |  | Document Management - Wiki - Environment Manual
 [document_page_environmental_aspect](document_page_environmental_aspect/) | 18.0.1.0.1 |  | Environmental Aspects
-[document_page_health_safety_manual](document_page_health_safety_manual/) | 18.0.1.0.1 |  | Health and Safety Manual
-[document_page_procedure](document_page_procedure/) | 18.0.1.0.1 |  | Document Management - Wiki - Procedures
-[document_page_quality_manual](document_page_quality_manual/) | 18.0.1.0.1 |  | Quality Manual
-[document_page_work_instruction](document_page_work_instruction/) | 18.0.1.0.1 |  | Document Management - Wiki - Work Instructions
+[document_page_health_safety_manual](document_page_health_safety_manual/) | 18.0.1.1.0 |  | Health and Safety Manual
+[document_page_mgmtsystem](document_page_mgmtsystem/) | 18.0.1.0.0 |  | Add a new mgmtsystem type field for classification
+[document_page_procedure](document_page_procedure/) | 18.0.1.1.0 |  | Document Management - Wiki - Procedures
+[document_page_quality_manual](document_page_quality_manual/) | 18.0.1.1.0 |  | Quality Manual
+[document_page_work_instruction](document_page_work_instruction/) | 18.0.1.1.0 |  | Document Management - Wiki - Work Instructions
 [mgmtsystem](mgmtsystem/) | 18.0.1.3.0 |  | Support for management systems, such as ISO compliance.
 [mgmtsystem_action](mgmtsystem_action/) | 18.0.1.0.2 |  | Management System - Action
 [mgmtsystem_action_efficacy](mgmtsystem_action_efficacy/) | 18.0.1.0.0 |  | Add information on the application of the Action.
