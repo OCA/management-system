@@ -20,6 +20,21 @@ msgstr ""
 "X-Launchpad-Export-Date: 2014-04-24 06:29+0000\n"
 
 #. module: document_page_environmental_aspect
+#: model:ir.model.fields,help:document_page_environmental_aspect.field_document_page__mgmtsystem_page_type
+msgid "Classification of the management system document page."
+msgstr ""
+
+#. module: document_page_environmental_aspect
+#: model:ir.model,name:document_page_environmental_aspect.model_document_page
+msgid "Document Page"
+msgstr ""
+
+#. module: document_page_environmental_aspect
+#: model:ir.model.fields.selection,name:document_page_environmental_aspect.selection__document_page__mgmtsystem_page_type__environmental_aspect
+msgid "Environmental Aspect"
+msgstr ""
+
+#. module: document_page_environmental_aspect
 #: model:ir.actions.act_window,name:document_page_environmental_aspect.action_environmental_aspects
 #: model:ir.ui.menu,name:document_page_environmental_aspect.menu_mgmtsystem_manuals_environmental_aspects
 msgid "Environmental Aspects"
@@ -29,6 +44,11 @@ msgstr "Miljöaspekter"
 #: model_terms:ir.actions.act_window,help:document_page_environmental_aspect.action_environmental_aspects
 msgid "Environmental aspects of your management system."
 msgstr "Miljöaspekter av ditt ledningssystem."
+
+#. module: document_page_environmental_aspect
+#: model:ir.model.fields,field_description:document_page_environmental_aspect.field_document_page__mgmtsystem_page_type
+msgid "Management System Page Type"
+msgstr ""
 
 #~ msgid "Document Management - Wiki - Environmental Aspects"
 #~ msgstr "Dokumenthantering - Wiki - Miljöaspekter"
