@@ -37,15 +37,15 @@ addon | version | maintainers | summary
 [mgmtsystem_health_safety](mgmtsystem_health_safety/) | 17.0.1.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Manage your health and safety management system
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 17.0.1.0.0 |  | Information Security Management System Manual
 [mgmtsystem_manual](mgmtsystem_manual/) | 17.0.1.0.1 |  | Management System - Manual
-[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 17.0.1.3.0 |  | Management System - Nonconformity
+[mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 17.0.1.4.0 |  | Management System - Nonconformity
 [mgmtsystem_nonconformity_hazard](mgmtsystem_nonconformity_hazard/) | 17.0.1.0.0 |  | Management System - Nonconformity Hazard
-[mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 17.0.1.0.0 |  | Bridge module between hr and mgmsystem and
-[mgmtsystem_nonconformity_maintenance_equipment](mgmtsystem_nonconformity_maintenance_equipment/) | 17.0.1.0.0 |  | Management System - Nonconformity Maintenance Equipment
-[mgmtsystem_nonconformity_mrp](mgmtsystem_nonconformity_mrp/) | 17.0.1.0.0 |  | Bridge module between mrp and mgmsystem
-[mgmtsystem_nonconformity_product](mgmtsystem_nonconformity_product/) | 17.0.1.0.0 |  | Bridge module between Product and Management System.
+[mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 17.0.1.1.0 |  | Bridge module between hr and mgmsystem and
+[mgmtsystem_nonconformity_maintenance_equipment](mgmtsystem_nonconformity_maintenance_equipment/) | 17.0.1.1.0 |  | Management System - Nonconformity Maintenance Equipment
+[mgmtsystem_nonconformity_mrp](mgmtsystem_nonconformity_mrp/) | 17.0.1.1.0 |  | Bridge module between mrp and mgmsystem
+[mgmtsystem_nonconformity_product](mgmtsystem_nonconformity_product/) | 17.0.1.1.0 |  | Bridge module between Product and Management System.
 [mgmtsystem_nonconformity_quality_control_oca](mgmtsystem_nonconformity_quality_control_oca/) | 17.0.1.0.0 |  | Bridge module between Quality Control and Non Conformities
 [mgmtsystem_nonconformity_repair](mgmtsystem_nonconformity_repair/) | 17.0.1.0.0 |  | Bridge module between Repair and Non Conformities
-[mgmtsystem_nonconformity_type](mgmtsystem_nonconformity_type/) | 17.0.1.0.0 |  | Add Nonconformity classification for the root context.
+[mgmtsystem_nonconformity_type](mgmtsystem_nonconformity_type/) | 17.0.1.1.0 |  | Add Nonconformity classification for the root context.
 [mgmtsystem_partner](mgmtsystem_partner/) | 17.0.1.0.0 |  | Add Management System reference on Partner's Contacts.
 [mgmtsystem_quality](mgmtsystem_quality/) | 17.0.1.0.1 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Manage your quality management system
 [mgmtsystem_review](mgmtsystem_review/) | 17.0.2.0.0 |  | Management System - Review
