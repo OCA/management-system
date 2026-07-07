@@ -9,7 +9,7 @@ class MgmtsystemNonconformity(models.Model):
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity"
     _inherit = ["mail.thread", "mail.activity.mixin"]
-    _order = "create_date desc"
+    _order = "date desc"
 
     @api.model
     def _default_stage(self):
@@ -40,6 +40,7 @@ class MgmtsystemNonconformity(models.Model):
         readonly=True,
     )
     closing_date = fields.Datetime(readonly=True)
+    date = fields.Datetime(default=fields.Datetime.now, required=True)
 
     partner_id = fields.Many2one("res.partner", "Partner", required=True)
     reference = fields.Char(
@@ -190,17 +191,15 @@ class MgmtsystemNonconformity(models.Model):
     def _elapsed_days(self, dt1, dt2):
         return (dt2 - dt1).days if dt1 and dt2 else 0
 
-    @api.depends("closing_date", "create_date")
+    @api.depends("closing_date", "date")
     def _compute_number_of_days_to_close(self):
         for nc in self:
-            nc.number_of_days_to_close = self._elapsed_days(
-                nc.create_date, nc.closing_date
-            )
+            nc.number_of_days_to_close = self._elapsed_days(nc.date, nc.closing_date)
 
-    @api.depends("write_date")
+    @api.depends("write_date", "date")
     def _compute_days_since_updated(self):
         for nc in self:
-            nc.days_since_updated = self._elapsed_days(nc.create_date, nc.write_date)
+            nc.days_since_updated = self._elapsed_days(nc.date, nc.write_date)
 
     @api.model_create_multi
     def create(self, vals):

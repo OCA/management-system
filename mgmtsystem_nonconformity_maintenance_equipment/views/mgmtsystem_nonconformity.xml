@@ -12,7 +12,7 @@
             ref="mgmtsystem_nonconformity.view_mgmtsystem_nonconformity_form"
         />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='create_date']" position="before">
+            <xpath expr="//field[@name='date']" position="before">
                 <field name="equipment_id" />
             </xpath>
         </field>

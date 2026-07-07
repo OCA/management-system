@@ -84,3 +84,22 @@ class TestModelNonConformity(common.TransactionCase):
         self.nc_test.stage_id = self.env.ref("mgmtsystem_nonconformity.stage_open")
         self.assertEqual(self.nc_test.state, "open")
         self.assertFalse(self.nc_test.closing_date, "Reset close date on reopen")
+
+    def test_date_default(self):
+        """New nonconformities get a default date."""
+        self.assertTrue(self.nc_test.date)
+
+    def test_date_used_for_days_since_updated(self):
+        """days_since_updated is computed from the editable date field."""
+        self.nc_test.date = "2020-01-01 00:00:00"
+        self.nc_test.flush_recordset(["date", "days_since_updated"])
+        self.assertGreaterEqual(self.nc_test.days_since_updated, 0)
+
+    def test_date_used_for_number_of_days_to_close(self):
+        """number_of_days_to_close is computed from the editable date field."""
+        self.nc_test.date = "2020-01-01 00:00:00"
+        self.nc_test.closing_date = "2020-01-10 00:00:00"
+        self.nc_test.flush_recordset(
+            ["date", "closing_date", "number_of_days_to_close"]
+        )
+        self.assertEqual(self.nc_test.number_of_days_to_close, 9)

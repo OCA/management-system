@@ -2,7 +2,7 @@
 
     <record id="demo_nonconformity" model="mgmtsystem.nonconformity">
         <field name="partner_id" ref="base.res_partner_3" />
-        <field name="create_date">2010-12-03</field>
+        <field name="date">2010-12-03 00:00:00</field>
         <field name="name">Demo Nonconformity</field>
         <field name="responsible_user_id" ref="base.user_demo" />
         <field name="manager_user_id" ref="base.user_root" />
