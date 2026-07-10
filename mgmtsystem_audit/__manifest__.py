@@ -14,6 +14,7 @@
         "data/audit_sequence.xml",
         "data/audit_automated_actions.xml",
         "views/mgmtsystem_audit.xml",
+        "views/mgmtsystem_audit_tag.xml",
         "views/res_users.xml",
         "report/audit.xml",
         "report/verification.xml",
