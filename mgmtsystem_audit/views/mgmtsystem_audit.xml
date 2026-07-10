@@ -85,6 +85,11 @@
                     <field name="reference" />
                     <field name="system_id" />
                     <field name="company_id" groups="base.group_multi_company" />
+                    <field
+                    name="tag_ids"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color'}"
+                />
                     <!-- Invisible fields below are to allow their use in domains of this view -->
                     <field name="state" column_invisible="True" />
                 </tree>
@@ -118,6 +123,7 @@
                         <field name="reference" />
                         <field name="system_id" />
                         <field name="company_id" groups="base.group_multi_company" />
+                        <field name="tag_ids" />
                     </group>
                 </search>
             </field>
@@ -159,6 +165,12 @@
                             groups="base.group_multi_company"
                         />
                             <field name="system_id" readonly="state == 'done'" />
+                            <field
+                            name="tag_ids"
+                            widget="many2many_tags"
+                            options="{'color_field': 'color', 'no_create_edit': True}"
+                            readonly="state == 'done'"
+                        />
                         </group>
                         <notebook colspan="4">
                             <page string="Auditors">

@@ -1,6 +1,8 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+import psycopg2
+
 from odoo.addons.base.tests.common import BaseCommon
 
 
@@ -61,3 +63,19 @@ class TestModelAudit(BaseCommon):
             "mgmtsystem_audit.verification_report_template", self.audit.ids
         )
         self.assertRegex(str(res[0]), "Test audit")
+
+    def test_audit_tags(self):
+        """Test that tags can be created and assigned to audits."""
+        tag = self.env["mgmtsystem.audit.tag"].create(
+            {"name": "Compliance", "color": 1}
+        )
+        self.assertTrue(tag.active)
+        self.assertEqual(tag.color, 1)
+        self.audit.tag_ids = tag
+        self.assertIn(tag, self.audit.tag_ids)
+
+    def test_audit_tag_unique_name(self):
+        """Test that audit tag names must be unique."""
+        self.env["mgmtsystem.audit.tag"].create({"name": "Duplicate"})
+        with self.assertRaises(psycopg2.IntegrityError):
+            self.env["mgmtsystem.audit.tag"].create({"name": "Duplicate"})

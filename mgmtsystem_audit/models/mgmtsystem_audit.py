@@ -76,6 +76,10 @@ class MgmtsystemAudit(models.Model):
         [("open", "Open"), ("done", "Closed")], default="open", required=True
     )
     system_id = fields.Many2one("mgmtsystem.system", "System")
+    tag_ids = fields.Many2many(
+        "mgmtsystem.audit.tag",
+        string="Tags",
+    )
     company_id = fields.Many2one(
         "res.company", "Company", default=lambda self: self.env.company
     )
