@@ -147,6 +147,11 @@ msgid "Action Needed"
 msgstr "Åtgärd behövs"
 
 #. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_tag__active
+msgid "Active"
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_ids
 msgid "Activities"
 msgstr "Aktiviteter"
@@ -165,6 +170,12 @@ msgstr "Aktivitetsläge"
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__activity_type_icon
 msgid "Activity Type Icon"
 msgstr "Ikon för aktivitetstyp"
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_tag_form
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_tag_search
+msgid "Archived"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__message_attachment_count
@@ -197,6 +208,23 @@ msgstr "Granskning stängd"
 #: model:ir.actions.report,name:mgmtsystem_audit.audit_report_mgmtsystem_audit
 msgid "Audit report"
 msgstr "Revisionsberättelse"
+
+#. module: mgmtsystem_audit
+#: model:ir.model,name:mgmtsystem_audit.model_mgmtsystem_audit_tag
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_tag_form
+msgid "Audit tag"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_tag_search
+msgid "Audit tag search"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.actions.act_window,name:mgmtsystem_audit.action_mgmtsystem_audit_tag
+#: model:ir.ui.menu,name:mgmtsystem_audit.menu_mgmtsystem_audit_tag
+msgid "Audit tags"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__auditee_user_ids
@@ -257,6 +285,16 @@ msgid "Closing Date"
 msgstr "Slutdatum"
 
 #. module: mgmtsystem_audit
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_tag_tree
+msgid "Color"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_tag__color
+msgid "Color index"
+msgstr ""
+
+#. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__comments
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.verification_report
 msgid "Comments"
@@ -293,6 +331,7 @@ msgstr "Kopiera Verifieringsrader"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__create_uid
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_tag__create_uid
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__create_uid
 msgid "Created by"
 msgstr "Skapad av"
@@ -300,6 +339,7 @@ msgstr "Skapad av"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__create_date
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_tag__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__create_date
 msgid "Created on"
 msgstr "Skapat den"
@@ -323,6 +363,7 @@ msgstr "Dagar sedan senaste uppdatering"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__display_name
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_tag__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__display_name
 msgid "Display Name"
 msgstr "Visningsnamn"
@@ -369,6 +410,7 @@ msgstr ""
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__id
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__id
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_tag__id
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__id
 msgid "ID"
 msgstr "ID"
@@ -419,6 +461,7 @@ msgstr "Är följare"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__write_uid
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_tag__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__write_uid
 msgid "Last Updated by"
 msgstr "Senast uppdaterad av"
@@ -426,6 +469,7 @@ msgstr "Senast uppdaterad av"
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_copy_verification_lines__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__write_date
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_tag__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_verification_line__write_date
 msgid "Last Updated on"
 msgstr "Senast uppdaterad den"
@@ -452,6 +496,7 @@ msgstr "Återkoppling för min aktivitet"
 
 #. module: mgmtsystem_audit
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__name
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit_tag__name
 msgid "Name"
 msgstr "Namn"
 
@@ -623,6 +668,16 @@ msgstr "Starka punkter"
 #: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__system_id
 msgid "System"
 msgstr "System"
+
+#. module: mgmtsystem_audit
+#: model:ir.model.constraint,message:mgmtsystem_audit.constraint_mgmtsystem_audit_tag_name_uniq
+msgid "Tag name already exists!"
+msgstr ""
+
+#. module: mgmtsystem_audit
+#: model:ir.model.fields,field_description:mgmtsystem_audit.field_mgmtsystem_audit__tag_ids
+msgid "Tags"
+msgstr ""
 
 #. module: mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_audit.view_mgmtsystem_audit_form
