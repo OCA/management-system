@@ -8,6 +8,10 @@
         <field name="view_id" ref="document_page.view_wiki_tree" />
         <field name="search_view_id" ref="document_page.view_wiki_filter" />
         <field name="help">Manuals of your management systems.</field>
+        <field
+            name="context"
+            eval="{'default_parent_id': ref('document_page_quality_manual.document_page_quality_manual')}"
+        />
         <field name="domain" eval="[('mgmtsystem_page_type', '=', 'quality_manual')]" />
     </record>
     <record id="action_manuals_tree" model="ir.actions.act_window.view">
