@@ -8,7 +8,11 @@
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
-    "depends": ["document_page_mgmtsystem", "mgmtsystem"],
+    "depends": [
+        "document_page_mgmtsystem",
+        "document_page_quality_manual",
+        "mgmtsystem",
+    ],
     "data": [
         "data/mgmtsystem_manual.xml",
         "views/mgmtsystem_manual.xml",
