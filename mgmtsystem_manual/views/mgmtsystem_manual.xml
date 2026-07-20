@@ -12,7 +12,10 @@
             name="context"
             eval="{'default_parent_id': ref('document_page_quality_manual.document_page_quality_manual')}"
         />
-        <field name="domain" eval="[('mgmtsystem_page_type', '=', 'quality_manual')]" />
+        <field
+            name="domain"
+            eval="[('mgmtsystem_page_type', '=', 'quality_manual'), ('type', '=', 'content')]"
+        />
     </record>
     <record id="action_manuals_tree" model="ir.actions.act_window.view">
         <field name="sequence" eval="0" />
