@@ -17,7 +17,7 @@ class DocumentPage(models.Model):
         readonly=False,
     )
 
-    @api.depends("parent_id.mgmtsystem_page_type")
+    @api.depends("parent_id.mgmtsystem_page_type", "parent_id")
     def _compute_mgmtsystem_page_type(self):
         for record in self:
             mgmtsystem_page_type = record.parent_id.mgmtsystem_page_type
