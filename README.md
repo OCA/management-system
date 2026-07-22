@@ -34,6 +34,7 @@ addon | version | maintainers | summary
 [mgmtsystem_action_template](mgmtsystem_action_template/) | 18.0.1.0.0 |  | Add Template management for Actions.
 [mgmtsystem_audit](mgmtsystem_audit/) | 18.0.1.1.0 |  | Management System - Audit
 [mgmtsystem_claim](mgmtsystem_claim/) | 18.0.1.0.0 |  | Management System - Claim
+[mgmtsystem_environment](mgmtsystem_environment/) | 18.0.1.0.0 |  | Environment Management System
 [mgmtsystem_hazard](mgmtsystem_hazard/) | 18.0.1.1.0 |  | Hazard
 [mgmtsystem_hazard_risk](mgmtsystem_hazard_risk/) | 18.0.1.2.0 |  | Hazard Risk
 [mgmtsystem_health_safety](mgmtsystem_health_safety/) | 18.0.1.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Manage your health and safety management system
