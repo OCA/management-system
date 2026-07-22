@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-17 02:42+0000\n"
-"PO-Revision-Date: 2024-09-02 23:06+0000\n"
-"Last-Translator: Antônio Neto <netosjb@yahoo.com.br>\n"
+"PO-Revision-Date: 2026-07-22 02:03+0000\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
 "23907/pt_BR/)\n"
 "Language: pt_BR\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
@@ -38,7 +38,7 @@ msgstr "<strong>Políticas:</strong>"
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "<strong>Review Report</strong>"
-msgstr "<strong>Relatório de revisão</strong>"
+msgstr "<strong>Relatório de Revisão</strong>"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__action_id
@@ -90,7 +90,7 @@ msgstr "Alterações"
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Changes affecting the management systems"
-msgstr "Mudanças que afetam o Sistemas de Gestão"
+msgstr "Mudanças que afetam os sistemas de gestão"
 
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
@@ -106,7 +106,7 @@ msgstr "Fechado"
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 msgid "Closed Reviews"
-msgstr "Reuniões Fechadas"
+msgstr "Revisões Fechadas"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__company_id
@@ -160,13 +160,13 @@ msgstr "Decisão:"
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.review_report
 msgid "Direction Review"
-msgstr "Revisão da direção"
+msgstr "Diretriz da Revisão"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__display_name
 msgid "Display Name"
-msgstr "Mostrar nome"
+msgstr "Nome Exibido"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_follower_ids
@@ -192,7 +192,7 @@ msgstr "Tem Mensagem"
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__id
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__id
 msgid "ID"
-msgstr "Identificação"
+msgstr "ID"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__activity_exception_icon
@@ -319,7 +319,7 @@ msgstr "Abrir"
 #. module: mgmtsystem_review
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 msgid "Open Reviews"
-msgstr "Reuniões Abertas"
+msgstr "Revisões Abertas"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__user_ids
@@ -363,19 +363,19 @@ msgstr "Usuário Responsável"
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__review_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_form
 msgid "Review"
-msgstr "Reunião"
+msgstr "Revisão"
 
 #. module: mgmtsystem_review
 #: model:ir.model,name:mgmtsystem_review.model_mgmtsystem_review_line
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_form
 msgid "Review Line"
-msgstr "Linha da reunião"
+msgstr "Linha da Revisão"
 
 #. module: mgmtsystem_review
 #: model:ir.actions.act_window,name:mgmtsystem_review.open_mgmtsystem_review_line_list
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_line_filter
 msgid "Review Lines"
-msgstr "linhas da reunião"
+msgstr "Linhas da Revisão"
 
 #. module: mgmtsystem_review
 #: model:ir.actions.report,name:mgmtsystem_review.review_report_mgmtsystem_review
@@ -388,12 +388,12 @@ msgstr "Relatório de revisão"
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_mgmtsystem_review_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_review.view_review_calendar
 msgid "Reviews"
-msgstr "Reuniões"
+msgstr "Revisões"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "Erro de entrega de SMS"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__state
@@ -421,7 +421,7 @@ msgstr ""
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review__system_id
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #. module: mgmtsystem_review
 #: model:ir.model.fields,field_description:mgmtsystem_review.field_mgmtsystem_review_line__name
