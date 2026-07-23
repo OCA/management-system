@@ -28,7 +28,7 @@
                     <field name="name" />
                     <field
                         name="procedure_id"
-                        domain="[('mgmtsystem_page_type','in',['procedure', 'environmental_aspect', 'quality_manual', 'environment_manual']), ('type', '=', 'content')]"
+                        domain="[('mgmtsystem_page_type','in',['procedure', 'environmental_aspect', 'quality_manual']), ('type', '=', 'content')]"
                     />
                     <field name="is_conformed" />
                     <field name="comments" />
