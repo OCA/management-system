@@ -24,15 +24,34 @@ msgstr "# Uygunsuzluklar"
 #. module: mgmtsystem_nonconformity_quality_control_oca
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity_quality_control_oca.qc_inspection_form_view
 msgid ""
-"<span class=\"o_stat_text\" attrs=\"{'invisible': [('mgmtsystem_nonconformity_count', '&lt;', 2)]}\"> Nonconformities</span>\n"
-"                        <span class=\"o_stat_text\" attrs=\"{'invisible': [('mgmtsystem_nonconformity_count', '&gt;', 1)]}\"> Nonconformity</span>"
+"<span class=\"o_stat_text\" attrs=\"{'invisible': "
+"[('mgmtsystem_nonconformity_count', '&lt;', 2)]}\"> Nonconformities</span>\n"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+"[('mgmtsystem_nonconformity_count', '&gt;', 1)]}\"> Nonconformity</span>"
 msgstr ""
-"<span class=\"o_stat_text\" attrs="
-"\"{'invisible': [('mgmtsystem_nonconformity_count', '&lt;', 2)]}\"> "
-"Uygunsuzluklar</span>\n"
-"                        <span class=\"o_stat_text\" attrs="
-"\"{'invisible': [('mgmtsystem_nonconformity_count', '&gt;', 1)]}\"> "
-"Uygunsuzluk</span>"
+"<span class=\"o_stat_text\" attrs=\"{'invisible': "
+"[('mgmtsystem_nonconformity_count', '&lt;', 2)]}\"> Uygunsuzluklar</span>\n"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+"[('mgmtsystem_nonconformity_count', '&gt;', 1)]}\"> Uygunsuzluk</span>"
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity_quality_control_oca/models/qc_inspection.py:0
+#, python-format
+msgid "Automatically created due to failure of the linked inspection."
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_quality_control_oca.field_product_product__create_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_quality_control_oca.field_product_template__create_nonconformity
+msgid "Create Non-Conformity"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#: model:ir.model.fields,help:mgmtsystem_nonconformity_quality_control_oca.field_product_product__create_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity_quality_control_oca.field_product_template__create_nonconformity
+msgid "If selected, automatically creates Nonconformity when inspections fail"
+msgstr ""
 
 #. module: mgmtsystem_nonconformity_quality_control_oca
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity_quality_control_oca.field_qc_inspection__mgmtsystem_nonconformity_ids
@@ -43,6 +62,11 @@ msgstr "Uygunsuzluklar"
 #: model:ir.model,name:mgmtsystem_nonconformity_quality_control_oca.model_mgmtsystem_nonconformity
 msgid "Nonconformity"
 msgstr "Uygunsuzluk"
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#: model:ir.model,name:mgmtsystem_nonconformity_quality_control_oca.model_product_template
+msgid "Product"
+msgstr ""
 
 #. module: mgmtsystem_nonconformity_quality_control_oca
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity_quality_control_oca.field_mgmtsystem_nonconformity__qc_inspection_id
