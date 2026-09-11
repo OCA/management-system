@@ -26,6 +26,25 @@ msgid ""
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_quality_control_oca
+#. odoo-python
+#: code:addons/mgmtsystem_nonconformity_quality_control_oca/models/qc_inspection.py:0
+#, python-format
+msgid "Automatically created due to failure of the linked inspection."
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_quality_control_oca.field_product_product__create_nonconformity
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_quality_control_oca.field_product_template__create_nonconformity
+msgid "Create Non-Conformity"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#: model:ir.model.fields,help:mgmtsystem_nonconformity_quality_control_oca.field_product_product__create_nonconformity
+#: model:ir.model.fields,help:mgmtsystem_nonconformity_quality_control_oca.field_product_template__create_nonconformity
+msgid "If selected, automatically creates Nonconformity when inspections fail"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
 #: model:ir.model.fields,field_description:mgmtsystem_nonconformity_quality_control_oca.field_qc_inspection__mgmtsystem_nonconformity_ids
 msgid "Non-Conformities"
 msgstr ""
@@ -33,6 +52,11 @@ msgstr ""
 #. module: mgmtsystem_nonconformity_quality_control_oca
 #: model:ir.model,name:mgmtsystem_nonconformity_quality_control_oca.model_mgmtsystem_nonconformity
 msgid "Nonconformity"
+msgstr ""
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#: model:ir.model,name:mgmtsystem_nonconformity_quality_control_oca.model_product_template
+msgid "Product"
 msgstr ""
 
 #. module: mgmtsystem_nonconformity_quality_control_oca
