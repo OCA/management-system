@@ -37,7 +37,7 @@ addon | version | maintainers | summary
 [mgmtsystem_info_security_manual](mgmtsystem_info_security_manual/) | 19.0.1.0.1 |  | Information Security Management System Manual
 [mgmtsystem_information_security](mgmtsystem_information_security/) | 19.0.1.0.1 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Manage your ISMS
 [mgmtsystem_kpi](mgmtsystem_kpi/) | 19.0.1.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Key Performance Indicators
-[mgmtsystem_manual](mgmtsystem_manual/) | 19.0.1.0.1 |  | Management System - Manual
+[mgmtsystem_manual](mgmtsystem_manual/) | 19.0.1.0.2 |  | Management System - Manual
 [mgmtsystem_nonconformity](mgmtsystem_nonconformity/) | 19.0.1.0.1 |  | Management System - Nonconformity
 [mgmtsystem_nonconformity_hr](mgmtsystem_nonconformity_hr/) | 19.0.1.0.1 |  | Bridge module between hr and mgmsystem and
 [mgmtsystem_nonconformity_repair](mgmtsystem_nonconformity_repair/) | 19.0.1.0.0 |  | Bridge module between Repair and Non Conformities
