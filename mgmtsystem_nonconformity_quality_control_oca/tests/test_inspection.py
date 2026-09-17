@@ -36,6 +36,12 @@ class TestQualityControl(common.TransactionCase):
             }
         )
         cls.inspection1.mgmtsystem_nonconformity_ids = [cls.nc_test.id]
+        cls.user = common.new_test_user(
+            cls.env,
+            login="user_1",
+            groups="""mgmtsystem.group_mgmtsystem_viewer,
+            quality_control_oca.group_quality_control_user""",
+        )
 
     def test_compute_mgmtsystem_nonconformity_count(self):
         nc_count = len(self.inspection1.mgmtsystem_nonconformity_ids)
@@ -43,6 +49,7 @@ class TestQualityControl(common.TransactionCase):
         self.assertEqual(nc_count, self.inspection1.mgmtsystem_nonconformity_count)
 
     def test_action_view_nonconformities(self):
+        self.assertTrue(self.env.user.has_group("mgmtsystem.group_mgmtsystem_manager"))
         action = self.inspection1.action_view_nonconformities()
         self.assertEqual(self.nc_test.id, action["res_id"])
 
@@ -55,4 +62,20 @@ class TestQualityControl(common.TransactionCase):
         for nc in self.inspection1.mgmtsystem_nonconformity_ids:
             nc_ids.append(nc.id)
 
+        self.assertEqual(nc_ids, action["domain"][0][2])
+
+    def test_action_view_nonconformities_by_viewer_group(self):
+        self.assertFalse(self.user.has_group("mgmtsystem.group_mgmtsystem_manager"))
+        self.assertNotEqual(self.nc_test.user_id.id, self.user.id)
+        action = self.inspection1.with_user(self.user.id).action_view_nonconformities()
+        self.assertEqual(self.nc_test.id, action["res_id"])
+
+        self.inspection1.mgmtsystem_nonconformity_ids = [
+            self.nc_test.id,
+            self.nc_test2.id,
+        ]
+        action = self.inspection1.with_user(self.user.id).action_view_nonconformities()
+        nc_ids = []
+        for nc in self.inspection1.mgmtsystem_nonconformity_ids:
+            nc_ids.append(nc.id)
         self.assertEqual(nc_ids, action["domain"][0][2])
