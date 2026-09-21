@@ -135,3 +135,22 @@ class TestQualityControl(common.TransactionCase):
         )
         self.assertEqual(len(nc), 1)
         self.assertEqual(inspection3.id, nc.qc_inspection_id.id)
+
+    def test_create_nonconformity_by_qc_manager_with_mgmtsystem_viewer(self):
+        qc_manager = self.env.ref("quality_control_oca.group_quality_control_manager")
+        self.user.write({"groups_id": [(4, qc_manager.id)]})
+        self.assertTrue(self.user.has_group(qc_manager.id))
+        self.product.create_nonconformity = True
+        nc = self.env["mgmtsystem.nonconformity"].search(
+            [("qc_inspection_id", "=", self.inspection2.id)]
+        )
+        self.assertFalse(nc)
+        self.assertFalse(self.user.has_group("mgmtsystem.group_mgmtsystem_user"))
+        self.inspection2.write({"state": "failed"})
+        self.inspection2.with_user(self.user.id).action_approve()
+
+        nc = self.env["mgmtsystem.nonconformity"].search(
+            [("qc_inspection_id", "=", self.inspection2.id)]
+        )
+        self.assertEqual(len(nc), 1)
+        self.assertEqual(self.inspection2.id, nc.qc_inspection_id.id)
