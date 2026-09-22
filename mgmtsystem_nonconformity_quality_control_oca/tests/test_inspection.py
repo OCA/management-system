@@ -73,6 +73,22 @@ class TestQualityControl(common.TransactionCase):
 
         self.assertEqual(nc_ids, action["domain"][0][2])
 
+    def test_action_view_nonconformities_by_viewer_group(self):
+        self.assertFalse(self.user.has_group("mgmtsystem.group_mgmtsystem_manager"))
+        self.assertNotEqual(self.nc_test.user_id.id, self.user.id)
+        action = self.inspection1.with_user(self.user.id).action_view_nonconformities()
+        self.assertEqual(self.nc_test.id, action["res_id"])
+
+        self.inspection1.mgmtsystem_nonconformity_ids = [
+            self.nc_test.id,
+            self.nc_test2.id,
+        ]
+        action = self.inspection1.with_user(self.user.id).action_view_nonconformities()
+        nc_ids = []
+        for nc in self.inspection1.mgmtsystem_nonconformity_ids:
+            nc_ids.append(nc.id)
+        self.assertEqual(nc_ids, action["domain"][0][2])
+
     def test_no_create_nonconformity(self):
         """
         Test Nonconformity is not created when inspection
