@@ -66,7 +66,7 @@ class QcInspection(models.Model):
         description = _(
             "Automatically created due to failure of the linked inspection."
         )
-        self.env["mgmtsystem.nonconformity"].create(
+        self.env["mgmtsystem.nonconformity"].sudo().create(
             {
                 "name": self.name,
                 "partner_id": self.user.partner_id.id,
