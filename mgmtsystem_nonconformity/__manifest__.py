@@ -30,11 +30,5 @@
         "demo/mgmtsystem_nonconformity_cause.xml",
         "demo/mgmtsystem_nonconformity.xml",
     ],
-    "assets": {
-        "web.assets_backend": [
-            "mgmtsystem_nonconformity/static/src/**/*.xml",
-            "mgmtsystem_nonconformity/static/src/**/*.js",
-        ],
-    },
     "installable": True,
 }
