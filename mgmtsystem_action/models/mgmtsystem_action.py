@@ -20,10 +20,8 @@ class MgmtsystemAction(models.Model):
     _order = "priority desc, sequence, id desc"
 
     name = fields.Char("Subject", required=True)
-    system_id = fields.Many2one("mgmtsystem.system", "System")
-    company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self.env.company
-    )
+    system_id = fields.Many2one("mgmtsystem.system")
+    company_id = fields.Many2one("res.company", default=lambda self: self.env.company)
     active = fields.Boolean(default=True)
     priority = fields.Selection(
         [("0", "Low"), ("1", "Normal")], default="0", index=True
@@ -67,7 +65,6 @@ class MgmtsystemAction(models.Model):
     )
     stage_id = fields.Many2one(
         "mgmtsystem.action.stage",
-        "Stage",
         tracking=True,
         index=True,
         copy=False,
