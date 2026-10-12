@@ -30,9 +30,7 @@ class MgmtsystemReview(models.Model):
         tracking=True,
     )
 
-    company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self.env.company
-    )
+    company_id = fields.Many2one("res.company", default=lambda self: self.env.company)
 
     @api.model_create_multi
     def create(self, vals_list):

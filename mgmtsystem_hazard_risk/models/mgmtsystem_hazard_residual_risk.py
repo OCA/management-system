@@ -11,16 +11,12 @@ class MgmtsystemHazardResidualRisk(models.Model):
     _description = "Residual Risks of hazard"
 
     name = fields.Char(required=True, translate=True)
-    probability_id = fields.Many2one(
-        "mgmtsystem.risk.probability", "Probability", required=True
-    )
-    severity_id = fields.Many2one("mgmtsystem.risk.severity", "Severity", required=True)
+    probability_id = fields.Many2one("mgmtsystem.risk.probability", required=True)
+    severity_id = fields.Many2one("mgmtsystem.risk.severity", required=True)
     usage_id = fields.Many2one("mgmtsystem.hazard.usage", "Occupation / Usage")
     acceptability = fields.Boolean()
     justification = fields.Text()
-    hazard_id = fields.Many2one(
-        "mgmtsystem.hazard", "Hazard", ondelete="cascade", index=True
-    )
+    hazard_id = fields.Many2one("mgmtsystem.hazard", ondelete="cascade", index=True)
 
     @api.depends("probability_id", "severity_id", "usage_id")
     def _compute_risk(self):

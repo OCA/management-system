@@ -7,6 +7,4 @@ from odoo import fields, models
 class ResCompany(models.Model):
     _inherit = "res.company"
 
-    risk_computation_id = fields.Many2one(
-        "mgmtsystem.hazard.risk.computation", string="Risk Computation"
-    )
+    risk_computation_id = fields.Many2one("mgmtsystem.hazard.risk.computation")
