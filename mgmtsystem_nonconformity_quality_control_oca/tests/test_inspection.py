@@ -46,6 +46,12 @@ class TestQualityControl(common.TransactionCase):
             }
         )
         cls.inspection1.mgmtsystem_nonconformity_ids = [cls.nc_test.id]
+        cls.user = common.new_test_user(
+            cls.env,
+            login="user_1",
+            groups="""mgmtsystem.group_mgmtsystem_viewer,
+            quality_control_oca.group_quality_control_user""",
+        )
 
     def test_compute_mgmtsystem_nonconformity_count(self):
         nc_count = len(self.inspection1.mgmtsystem_nonconformity_ids)
@@ -65,6 +71,22 @@ class TestQualityControl(common.TransactionCase):
         for nc in self.inspection1.mgmtsystem_nonconformity_ids:
             nc_ids.append(nc.id)
 
+        self.assertEqual(nc_ids, action["domain"][0][2])
+
+    def test_action_view_nonconformities_by_viewer_group(self):
+        self.assertFalse(self.user.has_group("mgmtsystem.group_mgmtsystem_manager"))
+        self.assertNotEqual(self.nc_test.user_id.id, self.user.id)
+        action = self.inspection1.with_user(self.user.id).action_view_nonconformities()
+        self.assertEqual(self.nc_test.id, action["res_id"])
+
+        self.inspection1.mgmtsystem_nonconformity_ids = [
+            self.nc_test.id,
+            self.nc_test2.id,
+        ]
+        action = self.inspection1.with_user(self.user.id).action_view_nonconformities()
+        nc_ids = []
+        for nc in self.inspection1.mgmtsystem_nonconformity_ids:
+            nc_ids.append(nc.id)
         self.assertEqual(nc_ids, action["domain"][0][2])
 
     def test_no_create_nonconformity(self):
@@ -135,3 +157,24 @@ class TestQualityControl(common.TransactionCase):
         )
         self.assertEqual(len(nc), 1)
         self.assertEqual(inspection3.id, nc.qc_inspection_id.id)
+
+    def test_create_nonconformity_by_qc_manager_with_mgmtsystem_viewer(self):
+        qc_manager = self.env.ref("quality_control_oca.group_quality_control_manager")
+        self.user.write({"groups_id": [(4, qc_manager.id)]})
+        self.assertTrue(
+            self.user.has_group("quality_control_oca.group_quality_control_manager")
+        )
+        self.product.create_nonconformity = True
+        nc = self.env["mgmtsystem.nonconformity"].search(
+            [("qc_inspection_id", "=", self.inspection2.id)]
+        )
+        self.assertFalse(nc)
+        self.assertFalse(self.user.has_group("mgmtsystem.group_mgmtsystem_user"))
+        self.inspection2.write({"state": "failed"})
+        self.inspection2.with_user(self.user.id).action_approve()
+
+        nc = self.env["mgmtsystem.nonconformity"].search(
+            [("qc_inspection_id", "=", self.inspection2.id)]
+        )
+        self.assertEqual(len(nc), 1)
+        self.assertEqual(self.inspection2.id, nc.qc_inspection_id.id)

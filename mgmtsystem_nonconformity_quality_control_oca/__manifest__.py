@@ -9,6 +9,7 @@
     "license": "AGPL-3",
     "author": "Escodoo,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
+    "development_status": "Beta",
     "depends": [
         "mgmtsystem_nonconformity",
         "quality_control_oca",
@@ -17,6 +18,5 @@
         "views/qc_inspection.xml",
         "views/mgmtsystem_nonconformity.xml",
         "views/product_template.xml",
-    ],
-    "demo": [],
+    ]
 }
