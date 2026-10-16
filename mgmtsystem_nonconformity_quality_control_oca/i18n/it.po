@@ -1,0 +1,77 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mgmtsystem_nonconformity_quality_control_oca
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2025-01-22 11:38+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_quality_control_oca.field_qc_inspection__mgmtsystem_nonconformity_count
+msgid "# Non-Conformities"
+msgstr "Nr. Non conformità"
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#: model_terms:ir.ui.view,arch_db:mgmtsystem_nonconformity_quality_control_oca.qc_inspection_form_view
+msgid ""
+"<span class=\"o_stat_text\" invisible=\"mgmtsystem_nonconformity_count &lt; "
+"2\"> Nonconformities</span>\n"
+"                        <span class=\"o_stat_text\" "
+"invisible=\"mgmtsystem_nonconformity_count &gt; 1\"> Nonconformity</span>"
+msgstr ""
+"<span class=\"o_stat_text\" invisible=\"mgmtsystem_nonconformity_count &lt; "
+"2\"> Nonconformità</span>\n"
+"                        <span class=\"o_stat_text\" invisible="
+"\"mgmtsystem_nonconformity_count &gt; 1\"> Nonconformità</span>"
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_quality_control_oca.field_qc_inspection__mgmtsystem_nonconformity_ids
+msgid "Non-Conformities"
+msgstr "Non conformità"
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#: model:ir.model,name:mgmtsystem_nonconformity_quality_control_oca.model_mgmtsystem_nonconformity
+msgid "Nonconformity"
+msgstr "Non conformità"
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#: model:ir.model.fields,field_description:mgmtsystem_nonconformity_quality_control_oca.field_mgmtsystem_nonconformity__qc_inspection_id
+msgid "Quality Control Inspection"
+msgstr "Ispezione controllo qualità"
+
+#. module: mgmtsystem_nonconformity_quality_control_oca
+#: model:ir.model,name:mgmtsystem_nonconformity_quality_control_oca.model_qc_inspection
+msgid "Quality control inspection"
+msgstr "Ispezione controllo qualità"
+
+#~ msgid ""
+#~ "<span class=\"o_stat_text\" attrs=\"{'invisible': "
+#~ "[('mgmtsystem_nonconformity_count', '&lt;', 2)]}\"> Nonconformities</"
+#~ "span>\n"
+#~ "                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+#~ "[('mgmtsystem_nonconformity_count', '&gt;', 1)]}\"> Nonconformity</span>"
+#~ msgstr ""
+#~ "<span class=\"o_stat_text\" attrs=\"{'invisible': "
+#~ "[('mgmtsystem_nonconformity_count', '&lt;', 2)]}\"> Non conformità</"
+#~ "span>\n"
+#~ "                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+#~ "[('mgmtsystem_nonconformity_count', '&gt;', 1)]}\"> Non conformità</span>"
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
