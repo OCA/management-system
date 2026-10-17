@@ -1,0 +1,16 @@
+<odoo noupdate="1">
+    <record id="event_severity_maj" model="mgmtsystem.event.severity">
+        <field name="name">Major</field>
+        <field name="active" eval="True" />
+    </record>
+
+    <record id="event_severity_min" model="mgmtsystem.event.severity">
+        <field name="name">Minor</field>
+        <field name="active" eval="True" />
+    </record>
+
+    <record id="event_severity_no" model="mgmtsystem.event.severity">
+        <field name="name">Unfounded</field>
+        <field name="active" eval="True" />
+    </record>
+</odoo>
