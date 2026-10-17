@@ -11,10 +11,20 @@ class TestQualityControl(common.TransactionCase):
         """
         super().setUpClass()
         cls.test = cls.env.ref("quality_control_oca.qc_test_1")
+        cls.val_ok = cls.env.ref("quality_control_oca.qc_test_question_value_1")
         cls.inspection_model = cls.env["qc.inspection"]
-        inspection_lines = cls.inspection_model._prepare_inspection_lines(cls.test)
+        cls.inspection_lines = cls.inspection_model._prepare_inspection_lines(cls.test)
         cls.inspection1 = cls.inspection_model.create(
-            {"name": "Test Inspection", "inspection_lines": inspection_lines}
+            {"name": "Test Inspection", "inspection_lines": cls.inspection_lines}
+        )
+
+        cls.product = cls.env["product.product"].create({"name": "Test product"})
+        cls.inspection2 = cls.inspection_model.create(
+            {
+                "name": "Test Inspection 2",
+                "inspection_lines": cls.inspection_lines,
+                "object_id": cls.product,
+            }
         )
 
         cls.nc_model = cls.env["mgmtsystem.nonconformity"]
@@ -56,3 +66,72 @@ class TestQualityControl(common.TransactionCase):
             nc_ids.append(nc.id)
 
         self.assertEqual(nc_ids, action["domain"][0][2])
+
+    def test_no_create_nonconformity(self):
+        """
+        Test Nonconformity is not created when inspection
+        fails with relative flag is off
+        """
+        self.inspection2.write({"state": "failed"})
+        self.inspection2.action_approve()
+
+        nc = self.env["mgmtsystem.nonconformity"].search(
+            [("qc_inspection_id", "=", self.inspection2.id)]
+        )
+        self.assertFalse(nc)
+
+    def test_create_nonconformity(self):
+        """
+        Test Nonconformity is created when inspection fails
+        if relative flag is on
+        """
+        self.product.create_nonconformity = True
+        nc = self.env["mgmtsystem.nonconformity"].search(
+            [("qc_inspection_id", "=", self.inspection2.id)]
+        )
+        self.assertFalse(nc)
+        self.inspection2.write({"state": "failed"})
+        self.inspection2.action_approve()
+
+        nc = self.env["mgmtsystem.nonconformity"].search(
+            [("qc_inspection_id", "=", self.inspection2.id)]
+        )
+        self.assertEqual(len(nc), 1)
+        self.assertEqual(self.inspection2.id, nc.qc_inspection_id.id)
+
+    def test_create_nonconformity_with_no_product(self):
+        self.inspection2.write({"state": "failed", "object_id": False})
+        self.inspection2.action_approve()
+        nc = self.env["mgmtsystem.nonconformity"].search(
+            [("qc_inspection_id", "=", self.inspection2.id)]
+        )
+        self.assertFalse(nc)
+
+    def test_create_nonconformity_with_multiple_inspections(self):
+        self.product.create_nonconformity = True
+        for line in self.inspection2.inspection_lines:
+            if line.question_type == "qualitative":
+                line.qualitative_value = self.val_ok
+            if line.question_type == "quantitative":
+                line.quantitative_value = 5.0
+        self.inspection2.action_confirm()
+        self.assertEqual(self.inspection2.state, "success")
+        inspection3 = self.inspection_model.create(
+            {
+                "name": "Test Inspection 3",
+                "inspection_lines": self.inspection_lines,
+                "object_id": self.product,
+            }
+        )
+        inspection3.write({"state": "failed"})
+        multiple_inspections = inspection3 + self.inspection2
+        nc = self.env["mgmtsystem.nonconformity"].search(
+            [("qc_inspection_id", "in", (self.inspection2.id, inspection3.id))]
+        )
+        self.assertFalse(nc)
+        multiple_inspections.action_approve()
+        nc = self.env["mgmtsystem.nonconformity"].search(
+            [("qc_inspection_id", "in", (self.inspection2.id, inspection3.id))]
+        )
+        self.assertEqual(len(nc), 1)
+        self.assertEqual(inspection3.id, nc.qc_inspection_id.id)
