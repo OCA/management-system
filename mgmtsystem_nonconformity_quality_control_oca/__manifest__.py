@@ -17,5 +17,6 @@
     "data": [
         "views/qc_inspection.xml",
         "views/mgmtsystem_nonconformity.xml",
+        "views/product_template.xml",
     ],
 }
