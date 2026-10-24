@@ -1,7 +1,8 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from datetime import datetime, timedelta
+from datetime import timedelta
+from typing import ClassVar
 
 from odoo import api, exceptions, fields, models
 
@@ -15,15 +16,13 @@ TYPE_COLOR_MAP = {
 
 class MgmtsystemAction(models.Model):
     _name = "mgmtsystem.action"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit: ClassVar[list[str]] = ["mail.thread", "mail.activity.mixin"]
     _description = "Action"
     _order = "priority desc, sequence, id desc"
 
     name = fields.Char("Subject", required=True)
-    system_id = fields.Many2one("mgmtsystem.system", "System")
-    company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self.env.company
-    )
+    system_id = fields.Many2one("mgmtsystem.system")
+    company_id = fields.Many2one("res.company", default=lambda self: self.env.company)
     active = fields.Boolean(default=True)
     priority = fields.Selection(
         [("0", "Low"), ("1", "Normal")], default="0", index=True
@@ -67,7 +66,6 @@ class MgmtsystemAction(models.Model):
     )
     stage_id = fields.Many2one(
         "mgmtsystem.action.stage",
-        "Stage",
         tracking=True,
         index=True,
         copy=False,
@@ -151,7 +149,7 @@ class MgmtsystemAction(models.Model):
         base_url = (
             self.env["ir.config_parameter"]
             .sudo()
-            .get_param("web.base.url", default="http://localhost:8069")
+            .get_str("web.base.url", default="http://localhost:8069")
         )
         url = f"{base_url}/web#db={self.env.cr.dbname}&id={self.id}&model={self._name}"
         return url
@@ -159,7 +157,7 @@ class MgmtsystemAction(models.Model):
     @api.model
     def process_reminder_queue(self, reminder_days=10):
         """Notify user when we are 10 days close to a deadline."""
-        cur_date = datetime.now().date() + timedelta(days=reminder_days)
+        cur_date = fields.Date.today() + timedelta(days=reminder_days)
         stage_close = self.env.ref("mgmtsystem_action.stage_close")
         actions = self.search(
             [("stage_id", "!=", stage_close.id), ("date_deadline", "=", cur_date)]

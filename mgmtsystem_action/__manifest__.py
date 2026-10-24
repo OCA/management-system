@@ -3,7 +3,7 @@
 
 {
     "name": "Management System - Action",
-    "version": "19.0.1.0.1",
+    "version": "20.0.1.0.0",
     "author": (
         "Savoir-faire Linux, Camptocamp, Gray Matter Logic, "
         "Odoo Community Association (OCA)"
@@ -16,7 +16,7 @@
         "data/mgmtsystem_action_stage.xml",
         "data/automated_reminder.xml",
         "data/email_template.xml",
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "security/mgmtsystem_action_security.xml",
         "data/action_sequence.xml",
         "views/mgmtsystem_action.xml",

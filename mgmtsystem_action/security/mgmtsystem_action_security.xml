@@ -2,12 +2,12 @@
 <odoo noupdate="1">
     <!-- Rule -->
 
-    <record id="mgmtsystem_action_rule" model="ir.rule">
+    <record id="mgmtsystem_action_rule" model="ir.access">
         <field name="name">mgmtsystem_action multi-company</field>
         <field name="model_id" ref="model_mgmtsystem_action" />
-        <field name="global" eval="True" />
+        <field name="operation">crud</field>
         <field
-            name="domain_force"
+            name="domain"
         >['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
     </record>
 </odoo>

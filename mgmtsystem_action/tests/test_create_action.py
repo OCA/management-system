@@ -1,15 +1,8 @@
-import time
-from datetime import datetime, timedelta
+from datetime import timedelta
 from unittest import mock
 
-from odoo import exceptions
+from odoo import exceptions, fields
 from odoo.tests import common
-
-
-def freeze_time(dt):
-    mock_time = mock.Mock()
-    mock_time.return_value = time.mktime(dt.timetuple())
-    return mock_time
 
 
 class TestModelAction(common.TransactionCase):
@@ -25,7 +18,7 @@ class TestModelAction(common.TransactionCase):
         )
 
     def _assert_date_equal(self, val, expected=None):
-        expected = expected or datetime.now()
+        expected = expected or fields.Datetime.now()
         self.assertEqual(tuple(val.timetuple())[:5], tuple(expected.timetuple())[:5])
 
     def test_create_action(self):
@@ -73,20 +66,20 @@ class TestModelAction(common.TransactionCase):
 
     def test_process_reminder_queue(self):
         """Check if process_reminder_queue work when days reminder are 10."""
-        ten_days_date = datetime.now().date() + timedelta(days=10)
+        ten_days_date = fields.Date.today() + timedelta(days=10)
         self.record.write(
             {
                 "date_deadline": ten_days_date,  # 10 days from now
                 "stage_id": self.env.ref("mgmtsystem_action.stage_open").id,
             }
         )
-        with mock.patch("time.time", freeze_time(ten_days_date)):
-            tmpl_model = self.env["mail.template"]
-            with mock.patch.object(type(tmpl_model), "send_mail") as mocked:
-                self.env["mgmtsystem.action"].process_reminder_queue()
-                mocked.assert_called_with(self.record.id)
-                self.env["mgmtsystem.action"].process_reminder_queue(-100)
-                mocked.assert_called_with(self.record.id)
+        tmpl_model = self.env["mail.template"]
+        with mock.patch.object(type(tmpl_model), "send_mail") as mocked:
+            self.assertTrue(self.env["mgmtsystem.action"].process_reminder_queue())
+            mocked.assert_called_once_with(self.record.id)
+            mocked.reset_mock()
+            self.assertFalse(self.env["mgmtsystem.action"].process_reminder_queue(-100))
+            mocked.assert_not_called()
 
     def test_stage_groups(self):
         """Check if stage_groups return all stages."""
