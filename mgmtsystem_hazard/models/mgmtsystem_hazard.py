@@ -9,17 +9,17 @@ class MgmtsystemHazard(models.Model):
 
     _name = "mgmtsystem.hazard"
     _description = __doc__
-    _inherit = ["mail.thread"]
+    _inherit = "mail.thread"
 
     name = fields.Char(required=True, translate=True)
-    type_id = fields.Many2one("mgmtsystem.hazard.type", "Type", required=True)
-    hazard_id = fields.Many2one("mgmtsystem.hazard.hazard", "Hazard", required=True)
-    origin_id = fields.Many2one("mgmtsystem.hazard.origin", "Origin", required=True)
-    department_id = fields.Many2one("hr.department", "Department", required=True)
+    type_id = fields.Many2one("mgmtsystem.hazard.type", required=True)
+    hazard_id = fields.Many2one("mgmtsystem.hazard.hazard", required=True)
+    origin_id = fields.Many2one("mgmtsystem.hazard.origin", required=True)
+    department_id = fields.Many2one("hr.department", required=True)
     responsible_user_id = fields.Many2one("res.users", "Responsible", required=True)
     analysis_date = fields.Date("Date", required=True)
-    probability_id = fields.Many2one("mgmtsystem.risk.probability", "Probability")
-    severity_id = fields.Many2one("mgmtsystem.risk.severity", "Severity")
+    probability_id = fields.Many2one("mgmtsystem.risk.probability")
+    severity_id = fields.Many2one("mgmtsystem.risk.severity")
     usage_id = fields.Many2one("mgmtsystem.hazard.usage", "Occupation / Usage")
     acceptability = fields.Boolean()
     justification = fields.Text()
@@ -29,6 +29,4 @@ class MgmtsystemHazard(models.Model):
     test_ids = fields.One2many(
         "mgmtsystem.hazard.test", "hazard_id", "Implementation Tests"
     )
-    company_id = fields.Many2one(
-        "res.company", "Company", default=lambda s: s.env.user.company_id
-    )
+    company_id = fields.Many2one("res.company", default=lambda s: s.env.user.company_id)

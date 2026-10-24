@@ -12,5 +12,5 @@ class MgmtsystemHazardControlMeasure(models.Model):
     responsible_user_id = fields.Many2one("res.users", "Responsible", required=True)
     comments = fields.Text()
     hazard_id = fields.Many2one(
-        "mgmtsystem.hazard", "Hazard", ondelete="cascade", required=False, index=True
+        "mgmtsystem.hazard", ondelete="cascade", required=False, index=True
     )

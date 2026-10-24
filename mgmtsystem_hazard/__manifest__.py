@@ -3,14 +3,14 @@
 
 {
     "name": "Hazard",
-    "version": "19.0.2.0.0",
+    "version": "20.0.1.0.0",
     "author": "Savoir-faire Linux, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management Systems",
     "depends": ["mgmtsystem", "hr", "mgmtsystem_risk"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "security/mgmtsystem_hazard_security.xml",
         "views/mgmtsystem_hazard.xml",
         "views/mgmtsystem_hazard_origin.xml",
