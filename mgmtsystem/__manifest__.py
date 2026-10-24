@@ -3,7 +3,7 @@
 
 {
     "name": "Management Systems",
-    "version": "19.0.1.2.0",
+    "version": "20.0.1.0.0",
     "summary": "Support for management systems, such as ISO compliance.",
     "author": "Savoir-faire Linux, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
@@ -12,7 +12,7 @@
     "depends": ["base"],
     "data": [
         "security/mgmtsystem_security.xml",
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "views/menus.xml",
         "views/mgmtsystem_system.xml",
         "views/res_config.xml",

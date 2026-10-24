@@ -9,6 +9,4 @@ class MgmtSystemSystem(models.Model):
     _description = "System"
 
     name = fields.Char("System", required=True)
-    company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self.env.company
-    )
+    company_id = fields.Many2one("res.company", default=lambda self: self.env.company)

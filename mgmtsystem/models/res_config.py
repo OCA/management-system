@@ -126,12 +126,12 @@ class MgmtsystemConfigSettings(models.TransientModel):
     )
 
     def execute(self):
-        # Provide error in case the odule to install is not available in the system
+        # Provide error in case the module to install is not available in the system
         # This avoids user confusion from the install failing silently
-        self = self.with_context(active_test=False)
-        classified = self._get_classified_fields()
+        settings = self.with_context(active_test=False)
+        classified = settings._get_classified_fields()
         to_install = [
-            f[7:] for f in self._fields.keys() if f.startswith("module_") and self[f]
+            f[7:] for f in settings._fields if f.startswith("module_") and settings[f]
         ]
         available = classified["module"].mapped("name")
         not_available = set(to_install) - set(available)
@@ -147,4 +147,4 @@ class MgmtsystemConfigSettings(models.TransientModel):
                 addons=", ".join(not_available),
             )
             raise exceptions.UserError(msg + url)
-        return super().execute()
+        return super(MgmtsystemConfigSettings, settings).execute()
