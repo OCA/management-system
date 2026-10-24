@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record model="ir.ui.view" id="mgmtsystem_nonconformity_stage_tree_view">
+    <record id="mgmtsystem_nonconformity_stage_tree_view" model="ir.ui.view">
         <field name="name">Management System Nonconformity Stage List</field>
         <field name="model">mgmtsystem.nonconformity.stage</field>
         <field name="arch" type="xml">
@@ -31,7 +32,7 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="mgmtsystem_nonconformity_stage_action">
+    <record id="mgmtsystem_nonconformity_stage_action" model="ir.actions.act_window">
         <field name="name">Stages</field>
         <field name="path">mgmtsystem-nonconformity-stages</field>
         <field name="res_model">mgmtsystem.nonconformity.stage</field>

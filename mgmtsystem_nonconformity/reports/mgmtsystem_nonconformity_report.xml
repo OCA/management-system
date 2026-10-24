@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- Management System Non Conformity Report Pivot View -->
     <record id="view_report_mgmtsystem_nonconformity_pivot" model="ir.ui.view">
@@ -39,8 +40,8 @@
     </record>
 
     <menuitem
-        name="Nonconformities"
         id="menu_report_mgmtsystem_nonconformity_tree"
+        name="Nonconformities"
         action="action_report_mgmtsystem_nonconformity"
         parent="mgmtsystem.menu_mgmtsystem_report"
         sequence="15"

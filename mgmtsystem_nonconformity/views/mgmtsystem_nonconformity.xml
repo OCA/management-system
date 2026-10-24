@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <menuitem
         id="menu_mgmtsystem_configuration_nonconformities"
@@ -316,7 +317,7 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="open_mgmtsystem_nonconformity_list">
+    <record id="open_mgmtsystem_nonconformity_list" model="ir.actions.act_window">
         <field name="name">Nonconformities</field>
         <field name="path">mgmtsystem-nonconformities</field>
         <field name="res_model">mgmtsystem.nonconformity</field>
@@ -327,8 +328,8 @@
     </record>
 
     <record
-        model="ir.actions.act_window"
         id="open_mgmtsystem_nonconformity_thread_list"
+        model="ir.actions.act_window"
     >
         <field name="name">Nonconformities</field>
         <field name="path">mgmtsystem-nonconformities-thread</field>
