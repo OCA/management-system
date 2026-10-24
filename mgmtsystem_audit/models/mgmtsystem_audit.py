@@ -2,6 +2,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
+from typing import ClassVar
+
 from odoo import api, fields, models
 
 
@@ -10,7 +12,7 @@ class MgmtsystemAudit(models.Model):
 
     _name = "mgmtsystem.audit"
     _description = "Audit"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit: ClassVar[list[str]] = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char()
     reference = fields.Char(required=True, readonly=True, default="NEW")
@@ -69,16 +71,12 @@ class MgmtsystemAudit(models.Model):
         "Improvement Opportunities",
     )
 
-    nonconformity_ids = fields.Many2many(
-        "mgmtsystem.nonconformity", string="Nonconformities"
-    )
+    nonconformity_ids = fields.Many2many("mgmtsystem.nonconformity")
     state = fields.Selection(
         [("open", "Open"), ("done", "Closed")], default="open", required=True
     )
-    system_id = fields.Many2one("mgmtsystem.system", "System")
-    company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self.env.company
-    )
+    system_id = fields.Many2one("mgmtsystem.system")
+    company_id = fields.Many2one("res.company", default=lambda self: self.env.company)
 
     @api.depends("nonconformity_ids")
     def _compute_number_of_nonconformities(self):
@@ -139,8 +137,7 @@ class MgmtsystemAudit(models.Model):
         """
         Return a link to the audit form view
         """
-        CfgParam = self.env["ir.config_parameter"]
-        base_url = CfgParam.get_param("web.base.url", default="http://localhost:8069")
+        base_url = self.get_base_url()
         return f"{base_url}/odoo/{self._name}/{self.id}"
 
     def get_lines_by_procedure(self):

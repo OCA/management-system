@@ -2,14 +2,14 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Management System - Audit",
-    "version": "19.0.1.0.1",
+    "version": "20.0.1.0.0",
     "author": "Savoir-faire Linux, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management Systems",
     "depends": ["mgmtsystem_nonconformity", "base_automation"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "security/mgmtsystem_audit_security.xml",
         "data/audit_sequence.xml",
         "data/audit_automated_actions.xml",

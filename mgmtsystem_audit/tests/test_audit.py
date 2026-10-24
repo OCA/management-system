@@ -6,6 +6,12 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestModelAudit(BaseCommon):
+    _test_user_groups = (
+        "base.group_user",
+        "mgmtsystem.group_mgmtsystem_manager",
+        "document_page.group_document_manager",
+    )
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
