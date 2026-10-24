@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <menuitem
         id="menu_mgmtsystem_configuration_hazards"
@@ -88,7 +88,7 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="open_mgmtsystem_hazard_list">
+    <record id="open_mgmtsystem_hazard_list" model="ir.actions.act_window">
         <field name="name">Hazards</field>
         <field name="path">mgmtsystem-hazards</field>
         <field name="res_model">mgmtsystem.hazard</field>
