@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo noupdate="1">
     <!-- Rule -->
 
-    <record model="ir.rule" id="mgmtsystem_action_rule">
+    <record id="mgmtsystem_action_rule" model="ir.rule">
         <field name="name">mgmtsystem_action multi-company</field>
         <field name="model_id" ref="model_mgmtsystem_action" />
         <field name="global" eval="True" />

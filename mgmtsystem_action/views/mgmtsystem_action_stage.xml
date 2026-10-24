@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="view_mgmtsystem_action_stage_form" model="ir.ui.view">
         <field name="name">mgmtsystem.action.stage.form</field>
@@ -30,7 +30,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="mgmtsystem_action_stage_tree_view">
+    <record id="mgmtsystem_action_stage_tree_view" model="ir.ui.view">
         <field name="name">Management System action Stage Tree</field>
         <field name="model">mgmtsystem.action.stage</field>
         <field name="arch" type="xml">
@@ -44,7 +44,7 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="mgmtsystem_action_stage_action">
+    <record id="mgmtsystem_action_stage_action" model="ir.actions.act_window">
         <field name="name">Stages</field>
         <field name="path">mgmtsystem-action-stages</field>
         <field name="res_model">mgmtsystem.action.stage</field>
