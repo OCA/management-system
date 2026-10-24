@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem
+        id="menu_mgmtsystem_categories"
+        name="Categories"
+        action="document_page.action_category"
+        parent="mgmtsystem.menu_mgmtsystem_configuration"
+        sequence="20"
+        groups="mgmtsystem.group_mgmtsystem_manager"
+    />
+</odoo>
