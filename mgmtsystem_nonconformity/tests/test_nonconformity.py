@@ -2,7 +2,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo.exceptions import ValidationError
-from odoo.tests import common
+from odoo.tests import common, new_test_user
+
+from odoo.addons.mail.tools.discuss import Store
 
 
 class TestModelNonConformity(common.TransactionCase):
@@ -32,6 +34,31 @@ class TestModelNonConformity(common.TransactionCase):
         )
         num_stages = len(self.nc_model.stage_id.search([]))
         self.assertEqual(len(group_stages), num_stages)
+
+    def test_chatter_count_respects_management_system_access(self):
+        partner = self.env["res.partner"].create({"name": "Nonconformity document"})
+        self.nc_test.write({"res_model": partner._name, "res_id": partner.id})
+        viewer = new_test_user(
+            self.env,
+            login="nonconformity_viewer_test",
+            groups="mgmtsystem.group_mgmtsystem_viewer",
+        )
+        user = new_test_user(self.env, login="nonconformity_regular_test")
+        for current_user, expected_count in ((viewer, 1), (user, 0)):
+            with self.subTest(user=current_user.login):
+                data = (
+                    Store()
+                    .add(
+                        partner.with_user(current_user),
+                        "_store_thread_fields",
+                        as_thread=True,
+                        fields_params={"request_list": ["followers"]},
+                    )
+                    .as_dict()
+                )
+                self.assertEqual(
+                    data["mail.thread"][0]["non_conformity_count"], expected_count
+                )
 
     def test_reset_kanban_state(self):
         """Reset Kanban State on Stage change"""

@@ -24,30 +24,18 @@ class MailThread(models.AbstractModel):
         action["context"] = self._get_non_conformities_context()
         return action
 
-    def _thread_to_store(self, store: Store, fields, *, request_list=None):
-        result = super()._thread_to_store(store, fields, request_list=request_list)
+    def _store_thread_fields(self, res: Store.FieldList, *, request_list, **kwargs):
+        result = super()._store_thread_fields(res, request_list=request_list, **kwargs)
         if request_list:
             if self.env.user.has_group("mgmtsystem.group_mgmtsystem_viewer"):
-                nonconformity_count = {
-                    res_id: res_count
-                    for res_id, res_count in self.env[
-                        "mgmtsystem.nonconformity"
-                    ]._read_group(
-                        [
-                            ("res_model", "=", self._name),
-                            ("res_id", "in", self.ids),
-                        ],
+                counts = dict(
+                    self.env["mgmtsystem.nonconformity"]._read_group(
+                        [("res_model", "=", self._name), ("res_id", "in", self.ids)],
                         ["res_id"],
-                        ["res_id:count"],
+                        ["__count"],
                     )
-                }
-            else:
-                nonconformity_count = {}
-
-            for thread in self:
-                store.add(
-                    thread,
-                    {"non_conformity_count": nonconformity_count.get(thread.id, 0)},
-                    as_thread=True,
                 )
+            else:
+                counts = {}
+            res.attr("non_conformity_count", lambda thread: counts.get(thread.id, 0))
         return result

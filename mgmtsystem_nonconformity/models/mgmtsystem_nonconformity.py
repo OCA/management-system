@@ -2,6 +2,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
+from typing import ClassVar
+
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
@@ -9,7 +11,7 @@ from odoo.exceptions import ValidationError
 class MgmtsystemNonconformity(models.Model):
     _name = "mgmtsystem.nonconformity"
     _description = "Nonconformity"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit: ClassVar[list[str]] = ["mail.thread", "mail.activity.mixin"]
     _order = "create_date desc"
 
     @api.model
@@ -40,7 +42,7 @@ class MgmtsystemNonconformity(models.Model):
     )
     closing_date = fields.Datetime()
 
-    partner_id = fields.Many2one("res.partner", "Partner", required=True)
+    partner_id = fields.Many2one("res.partner", required=True)
     reference = fields.Char(
         "Related to", default=lambda self: self._default_reference()
     )
@@ -62,7 +64,6 @@ class MgmtsystemNonconformity(models.Model):
         "mgmtsystem_nonconformity_origin_rel",
         "nonconformity_id",
         "origin_id",
-        "Origin",
         required=True,
     )
     procedure_ids = fields.Many2many(
@@ -70,13 +71,11 @@ class MgmtsystemNonconformity(models.Model):
         "mgmtsystem_nonconformity_procedure_rel",
         "nonconformity_id",
         "procedure_id",
-        "Procedure",
     )
     description = fields.Text(required=True)
-    system_id = fields.Many2one("mgmtsystem.system", "System")
+    system_id = fields.Many2one("mgmtsystem.system")
     stage_id = fields.Many2one(
         "mgmtsystem.nonconformity.stage",
-        "Stage",
         tracking=True,
         copy=False,
         default=lambda self: self._default_stage(),
@@ -107,9 +106,8 @@ class MgmtsystemNonconformity(models.Model):
         "mgmtsystem_nonconformity_cause_rel",
         "nonconformity_id",
         "cause_id",
-        "Cause",
     )
-    severity_id = fields.Many2one("mgmtsystem.nonconformity.severity", "Severity")
+    severity_id = fields.Many2one("mgmtsystem.nonconformity.severity")
     analysis = fields.Text()
     immediate_action_id = fields.Many2one(
         "mgmtsystem.action",
@@ -134,9 +132,7 @@ class MgmtsystemNonconformity(models.Model):
     )
 
     # Multi-company
-    company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self.env.company
-    )
+    company_id = fields.Many2one("res.company", default=lambda self: self.env.company)
     res_model = fields.Char(index=True)
     res_id = fields.Integer(index=True)
 

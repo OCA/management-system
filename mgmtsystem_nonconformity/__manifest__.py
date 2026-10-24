@@ -2,14 +2,14 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Management System - Nonconformity",
-    "version": "19.0.1.0.1",
+    "version": "20.0.1.0.0",
     "author": "Savoir-faire Linux, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management Systems",
     "depends": ["mgmtsystem_action", "document_page_procedure"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "security/mgmtsystem_nonconformity_security.xml",
         "views/mgmtsystem_nonconformity.xml",
         "views/mgmtsystem_origin.xml",
