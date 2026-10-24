@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record model="ir.actions.act_window" id="action_procedures">
+    <record id="action_procedures" model="ir.actions.act_window">
         <field name="name">Procedures</field>
         <field name="path">mgmtsystem-procedures</field>
         <field name="res_model">document.page</field>
