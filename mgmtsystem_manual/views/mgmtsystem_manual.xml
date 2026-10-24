@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record model="ir.actions.act_window" id="action_manuals">
+    <record id="action_manuals" model="ir.actions.act_window">
         <field name="name">Manuals</field>
         <field name="path">mgmtsystem-manuals</field>
         <field name="res_model">document.page</field>
