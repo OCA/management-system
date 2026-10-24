@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <template id="verification_report">
         <t
@@ -97,7 +97,7 @@
                                 <t t-if="line['procedure']">
                                     <tr>
                                         <td>
-                                            <span t-esc="line['procedure']" />
+                                            <span t-out="line['procedure']" />
                                         </td>
                                         <td />
                                         <td />
@@ -106,10 +106,10 @@
                                 <t t-if="not line['procedure']">
                                     <tr>
                                         <td>
-                                            <span t-esc="line['name']" />
+                                            <span t-out="line['name']" />
                                         </td>
                                         <td>
-                                            <span t-esc="line['yes_no']" />
+                                            <span t-out="line['yes_no']" />
                                         </td>
                                         <td />
                                     </tr>

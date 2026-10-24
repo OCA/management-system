@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- Management System Audit Report Pivot View -->
     <record id="view_report_mgmtsystem_audit_pivot" model="ir.ui.view">
@@ -45,8 +45,8 @@
     </record>
 
     <menuitem
-        name="Audits"
         id="menu_report_mgmtsystem_audit_tree"
+        name="Audits"
         action="action_report_mgmtsystem_audit"
         parent="mgmtsystem.menu_mgmtsystem_report"
         sequence="20"
