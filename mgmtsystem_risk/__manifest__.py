@@ -4,7 +4,7 @@
 {
     "name": "Risks",
     "summary": "Manage risks probability and severity",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "author": "Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
@@ -13,7 +13,7 @@
         "mgmtsystem",
     ],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "views/menus.xml",
         "views/mgmtsystem_risk_probability.xml",
         "views/mgmtsystem_risk_severity.xml",
