@@ -1,12 +1,14 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+from typing import ClassVar
+
 from odoo import api, fields, models
 
 
 class MgmtsystemReview(models.Model):
     _name = "mgmtsystem.review"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit: ClassVar[list[str]] = ["mail.thread", "mail.activity.mixin"]
     _description = "Review"
 
     name = fields.Char(size=50, required=True)
@@ -22,7 +24,7 @@ class MgmtsystemReview(models.Model):
     )
     policy = fields.Html()
     changes = fields.Html()
-    line_ids = fields.One2many("mgmtsystem.review.line", "review_id", "Lines")
+    line_ids = fields.One2many("mgmtsystem.review.line", "review_id")
     conclusion = fields.Html()
     state = fields.Selection(
         [("open", "Open"), ("done", "Closed")],
@@ -30,9 +32,7 @@ class MgmtsystemReview(models.Model):
         tracking=True,
     )
 
-    company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self.env.company
-    )
+    company_id = fields.Many2one("res.company", default=lambda self: self.env.company)
 
     @api.model_create_multi
     def create(self, vals_list):

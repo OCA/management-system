@@ -3,14 +3,14 @@
 
 {
     "name": "Management System - Review",
-    "version": "19.0.1.2.1",
+    "version": "20.0.1.0.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
     "category": "Management System",
     "depends": ["mgmtsystem_nonconformity"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "security/mgmtsystem_review_security.xml",
         "data/ir_sequence.xml",
         "views/mgmtsystem_review.xml",
