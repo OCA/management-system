@@ -3,7 +3,7 @@
 
 {
     "name": "Management System - Survey",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "author": "Savoir-faire Linux, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
