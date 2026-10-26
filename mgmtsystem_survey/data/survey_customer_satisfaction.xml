@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo noupdate="1">
-    <record model="survey.survey" id="survey_customer_satisfaction">
+    <record id="survey_customer_satisfaction" model="survey.survey">
         <field name="title">Customer Satisfaction Survey</field>
         <field name="access_mode">public</field>
         <field name="users_can_go_back" eval="True" />
@@ -15,7 +15,7 @@ quality management system.</p>
     </record>
 
     <!-- Page 1: Customer Information -->
-    <record model="survey.question" id="survey_cs_p1">
+    <record id="survey_cs_p1" model="survey.question">
         <field name="title">About You</field>
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">1</field>
@@ -23,35 +23,35 @@ quality management system.</p>
         <field name="question_type" eval="False" />
     </record>
 
-    <record model="survey.question" id="survey_cs_p1_q1">
+    <record id="survey_cs_p1_q1" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">2</field>
         <field name="title">How long have you been our customer?</field>
         <field name="question_type">simple_choice</field>
         <field name="constr_mandatory" eval="False" />
     </record>
-    <record model="survey.question.answer" id="survey_cs_p1_q1_a1">
+    <record id="survey_cs_p1_q1_a1" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p1_q1" />
         <field name="sequence">1</field>
         <field name="value">Less than 1 year</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p1_q1_a2">
+    <record id="survey_cs_p1_q1_a2" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p1_q1" />
         <field name="sequence">2</field>
         <field name="value">1 to 3 years</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p1_q1_a3">
+    <record id="survey_cs_p1_q1_a3" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p1_q1" />
         <field name="sequence">3</field>
         <field name="value">3 to 5 years</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p1_q1_a4">
+    <record id="survey_cs_p1_q1_a4" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p1_q1" />
         <field name="sequence">4</field>
         <field name="value">More than 5 years</field>
     </record>
 
-    <record model="survey.question" id="survey_cs_p1_q2">
+    <record id="survey_cs_p1_q2" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">3</field>
         <field
@@ -60,29 +60,29 @@ quality management system.</p>
         <field name="question_type">multiple_choice</field>
         <field name="constr_mandatory" eval="False" />
     </record>
-    <record model="survey.question.answer" id="survey_cs_p1_q2_a1">
+    <record id="survey_cs_p1_q2_a1" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p1_q2" />
         <field name="sequence">1</field>
         <field name="value">Phone</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p1_q2_a2">
+    <record id="survey_cs_p1_q2_a2" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p1_q2" />
         <field name="sequence">2</field>
         <field name="value">Email</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p1_q2_a3">
+    <record id="survey_cs_p1_q2_a3" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p1_q2" />
         <field name="sequence">3</field>
         <field name="value">In person / on-site</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p1_q2_a4">
+    <record id="survey_cs_p1_q2_a4" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p1_q2" />
         <field name="sequence">4</field>
         <field name="value">Online portal / website</field>
     </record>
 
     <!-- Page 2: Product and Service Quality -->
-    <record model="survey.question" id="survey_cs_p2">
+    <record id="survey_cs_p2" model="survey.question">
         <field name="title">Product and Service Quality</field>
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">4</field>
@@ -93,7 +93,7 @@ quality management system.</p>
         </field>
     </record>
 
-    <record model="survey.question" id="survey_cs_p2_q1">
+    <record id="survey_cs_p2_q1" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">5</field>
         <field
@@ -108,7 +108,7 @@ quality management system.</p>
         <field name="constr_mandatory" eval="True" />
     </record>
 
-    <record model="survey.question" id="survey_cs_p2_q2">
+    <record id="survey_cs_p2_q2" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">6</field>
         <field
@@ -118,56 +118,56 @@ quality management system.</p>
         <field name="matrix_subtype">simple</field>
         <field name="constr_mandatory" eval="True" />
     </record>
-    <record model="survey.question.answer" id="survey_cs_p2_q2_col1">
+    <record id="survey_cs_p2_q2_col1" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p2_q2" />
         <field name="sequence">1</field>
         <field name="value">Strongly Disagree</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p2_q2_col2">
+    <record id="survey_cs_p2_q2_col2" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p2_q2" />
         <field name="sequence">2</field>
         <field name="value">Disagree</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p2_q2_col3">
+    <record id="survey_cs_p2_q2_col3" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p2_q2" />
         <field name="sequence">3</field>
         <field name="value">Neutral</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p2_q2_col4">
+    <record id="survey_cs_p2_q2_col4" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p2_q2" />
         <field name="sequence">4</field>
         <field name="value">Agree</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p2_q2_col5">
+    <record id="survey_cs_p2_q2_col5" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p2_q2" />
         <field name="sequence">5</field>
         <field name="value">Strongly Agree</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p2_q2_row1">
+    <record id="survey_cs_p2_q2_row1" model="survey.question.answer">
         <field name="matrix_question_id" ref="survey_cs_p2_q2" />
         <field name="sequence">1</field>
         <field name="value">Products/services are delivered on time</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p2_q2_row2">
+    <record id="survey_cs_p2_q2_row2" model="survey.question.answer">
         <field name="matrix_question_id" ref="survey_cs_p2_q2" />
         <field name="sequence">2</field>
         <field name="value">Products/services conform to agreed specifications</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p2_q2_row3">
+    <record id="survey_cs_p2_q2_row3" model="survey.question.answer">
         <field name="matrix_question_id" ref="survey_cs_p2_q2" />
         <field name="sequence">3</field>
         <field
             name="value"
         >Documentation and communication are clear and accurate</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p2_q2_row4">
+    <record id="survey_cs_p2_q2_row4" model="survey.question.answer">
         <field name="matrix_question_id" ref="survey_cs_p2_q2" />
         <field name="sequence">4</field>
         <field name="value">Pricing is fair and transparent</field>
     </record>
 
     <!-- Page 3: Customer Service -->
-    <record model="survey.question" id="survey_cs_p3">
+    <record id="survey_cs_p3" model="survey.question">
         <field name="title">Customer Service</field>
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">7</field>
@@ -178,7 +178,7 @@ quality management system.</p>
         </field>
     </record>
 
-    <record model="survey.question" id="survey_cs_p3_q1">
+    <record id="survey_cs_p3_q1" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">8</field>
         <field
@@ -193,7 +193,7 @@ quality management system.</p>
         <field name="constr_mandatory" eval="True" />
     </record>
 
-    <record model="survey.question" id="survey_cs_p3_q2">
+    <record id="survey_cs_p3_q2" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">9</field>
         <field
@@ -202,33 +202,33 @@ quality management system.</p>
         <field name="question_type">simple_choice</field>
         <field name="constr_mandatory" eval="True" />
     </record>
-    <record model="survey.question.answer" id="survey_cs_p3_q2_a1">
+    <record id="survey_cs_p3_q2_a1" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p3_q2" />
         <field name="sequence">1</field>
         <field name="value">Strongly Agree</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p3_q2_a2">
+    <record id="survey_cs_p3_q2_a2" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p3_q2" />
         <field name="sequence">2</field>
         <field name="value">Agree</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p3_q2_a3">
+    <record id="survey_cs_p3_q2_a3" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p3_q2" />
         <field name="sequence">3</field>
         <field name="value">Neutral</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p3_q2_a4">
+    <record id="survey_cs_p3_q2_a4" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p3_q2" />
         <field name="sequence">4</field>
         <field name="value">Disagree</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p3_q2_a5">
+    <record id="survey_cs_p3_q2_a5" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p3_q2" />
         <field name="sequence">5</field>
         <field name="value">Strongly Disagree</field>
     </record>
 
-    <record model="survey.question" id="survey_cs_p3_q3">
+    <record id="survey_cs_p3_q3" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">10</field>
         <field
@@ -237,34 +237,34 @@ quality management system.</p>
         <field name="question_type">simple_choice</field>
         <field name="constr_mandatory" eval="False" />
     </record>
-    <record model="survey.question.answer" id="survey_cs_p3_q3_a1">
+    <record id="survey_cs_p3_q3_a1" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p3_q3" />
         <field name="sequence">1</field>
         <field name="value">Same day</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p3_q3_a2">
+    <record id="survey_cs_p3_q3_a2" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p3_q3" />
         <field name="sequence">2</field>
         <field name="value">Within 2 to 3 days</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p3_q3_a3">
+    <record id="survey_cs_p3_q3_a3" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p3_q3" />
         <field name="sequence">3</field>
         <field name="value">Within 1 week</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p3_q3_a4">
+    <record id="survey_cs_p3_q3_a4" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p3_q3" />
         <field name="sequence">4</field>
         <field name="value">More than 1 week</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p3_q3_a5">
+    <record id="survey_cs_p3_q3_a5" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p3_q3" />
         <field name="sequence">5</field>
         <field name="value">Issue is still unresolved</field>
     </record>
 
     <!-- Page 4: Overall Experience -->
-    <record model="survey.question" id="survey_cs_p4">
+    <record id="survey_cs_p4" model="survey.question">
         <field name="title">Overall Experience</field>
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">11</field>
@@ -272,7 +272,7 @@ quality management system.</p>
         <field name="question_type" eval="False" />
     </record>
 
-    <record model="survey.question" id="survey_cs_p4_q1">
+    <record id="survey_cs_p4_q1" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">12</field>
         <field
@@ -287,7 +287,7 @@ quality management system.</p>
         <field name="constr_mandatory" eval="True" />
     </record>
 
-    <record model="survey.question" id="survey_cs_p4_q2">
+    <record id="survey_cs_p4_q2" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">13</field>
         <field
@@ -296,57 +296,57 @@ quality management system.</p>
         <field name="question_type">simple_choice</field>
         <field name="constr_mandatory" eval="True" />
     </record>
-    <record model="survey.question.answer" id="survey_cs_p4_q2_a1">
+    <record id="survey_cs_p4_q2_a1" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p4_q2" />
         <field name="sequence">1</field>
         <field name="value">Exceeds expectations</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p4_q2_a2">
+    <record id="survey_cs_p4_q2_a2" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p4_q2" />
         <field name="sequence">2</field>
         <field name="value">Meets expectations</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p4_q2_a3">
+    <record id="survey_cs_p4_q2_a3" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p4_q2" />
         <field name="sequence">3</field>
         <field name="value">Below expectations</field>
     </record>
 
-    <record model="survey.question" id="survey_cs_p4_q3">
+    <record id="survey_cs_p4_q3" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">14</field>
         <field name="title">Do you intend to continue doing business with us?</field>
         <field name="question_type">simple_choice</field>
         <field name="constr_mandatory" eval="True" />
     </record>
-    <record model="survey.question.answer" id="survey_cs_p4_q3_a1">
+    <record id="survey_cs_p4_q3_a1" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p4_q3" />
         <field name="sequence">1</field>
         <field name="value">Yes, definitely</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p4_q3_a2">
+    <record id="survey_cs_p4_q3_a2" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p4_q3" />
         <field name="sequence">2</field>
         <field name="value">Yes, probably</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p4_q3_a3">
+    <record id="survey_cs_p4_q3_a3" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p4_q3" />
         <field name="sequence">3</field>
         <field name="value">Unsure</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p4_q3_a4">
+    <record id="survey_cs_p4_q3_a4" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p4_q3" />
         <field name="sequence">4</field>
         <field name="value">Probably not</field>
     </record>
-    <record model="survey.question.answer" id="survey_cs_p4_q3_a5">
+    <record id="survey_cs_p4_q3_a5" model="survey.question.answer">
         <field name="question_id" ref="survey_cs_p4_q3" />
         <field name="sequence">5</field>
         <field name="value">No</field>
     </record>
 
     <!-- Page 5: Comments and Suggestions -->
-    <record model="survey.question" id="survey_cs_p5">
+    <record id="survey_cs_p5" model="survey.question">
         <field name="title">Comments and Suggestions</field>
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">15</field>
@@ -357,7 +357,7 @@ quality management system.</p>
         </field>
     </record>
 
-    <record model="survey.question" id="survey_cs_p5_q1">
+    <record id="survey_cs_p5_q1" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">16</field>
         <field
@@ -367,7 +367,7 @@ quality management system.</p>
         <field name="constr_mandatory" eval="False" />
     </record>
 
-    <record model="survey.question" id="survey_cs_p5_q2">
+    <record id="survey_cs_p5_q2" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">17</field>
         <field
@@ -377,7 +377,7 @@ quality management system.</p>
         <field name="constr_mandatory" eval="False" />
     </record>
 
-    <record model="survey.question" id="survey_cs_p5_q3">
+    <record id="survey_cs_p5_q3" model="survey.question">
         <field name="survey_id" ref="survey_customer_satisfaction" />
         <field name="sequence">18</field>
         <field name="title">Any other comments or suggestions?</field>
