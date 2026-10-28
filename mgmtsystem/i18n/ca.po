@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: management-system (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-07 06:43+0000\n"
-"PO-Revision-Date: 2016-03-04 19:38+0000\n"
-"Last-Translator: <>\n"
-"Language-Team: Catalan (http://www.transifex.com/oca/OCA-management-"
-"system-9-0/language/ca/)\n"
+"PO-Revision-Date: 2026-10-28 16:46+0000\n"
+"Last-Translator: Eric Antones <eantones@nuobit.com>\n"
+"Language-Team: Catalan (http://www.transifex.com/oca/OCA-management-system-9-"
+"0/language/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_action
@@ -31,12 +32,12 @@ msgstr ""
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_user_manager
 msgid "Approving User"
-msgstr ""
+msgstr "Usuari aprovador"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_auditor
 msgid "Auditor"
-msgstr ""
+msgstr "Auditor"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
@@ -185,6 +186,8 @@ msgid ""
 "Manage management systems, manuals, KPIs, nonconformities, actions, "
 "feedbacks, audits, reviews."
 msgstr ""
+"Gestiona sistemes de gestió, manuals, KPI, no conformitats, accions, "
+"comentaris, auditories i revisions."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
@@ -198,7 +201,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.system_form
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
 msgid "Management System"
-msgstr ""
+msgstr "Sistema de gestió"
 
 #. module: mgmtsystem
 #: model:ir.actions.act_window,name:mgmtsystem.system_action
@@ -209,7 +212,7 @@ msgstr ""
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_manager
 msgid "Manager"
-msgstr ""
+msgstr "Gestor"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.view_mgmtsystem_configuration
@@ -219,12 +222,12 @@ msgstr ""
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_manager
 msgid "Module administrator, able to modify configuration data."
-msgstr ""
+msgstr "Administrador del mòdul, que pot modificar les dades de configuració."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_user_manager
 msgid "Module user with additional permission for approvals."
-msgstr ""
+msgstr "Usuari del mòdul amb permís addicional per a les aprovacions."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_auditor
@@ -232,16 +235,18 @@ msgid ""
 "Module user with additional permission specific for the auditor job, such as "
 "effectiveness reviews."
 msgstr ""
+"Usuari del mòdul amb permís addicional específic per a la feina d'auditor, "
+"com ara les revisions d'eficàcia."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_viewer
 msgid "Module user with general read only access."
-msgstr ""
+msgstr "Usuari del mòdul amb accés general només de lectura."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_user
 msgid "Module user, with general read and write."
-msgstr ""
+msgstr "Usuari del mòdul, amb lectura i escriptura generals."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_nonconformity
@@ -506,12 +511,12 @@ msgstr ""
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_user
 msgid "User"
-msgstr ""
+msgstr "Usuari"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_viewer
 msgid "Viewer"
-msgstr ""
+msgstr "Lector"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
