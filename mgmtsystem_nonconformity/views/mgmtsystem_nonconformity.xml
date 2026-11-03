@@ -288,6 +288,7 @@
                                 <field
                                     name="action_comments"
                                     readonly="state not in 'pending'"
+                                    force_save="1"
                                     nolabel="1"
                                     colspan="2"
                                     placeholder="Action Plan Comments"
@@ -302,6 +303,7 @@
                                 <field
                                     name="evaluation_comments"
                                     readonly="state not in 'open'"
+                                    force_save="1"
                                     nolabel="1"
                                     colspan="2"
                                     placeholder="Evaluation Comments"
