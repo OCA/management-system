@@ -1,0 +1,44 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mgmtsystem_partner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-06-21 05:44+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
+"Language-Team: none\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: mgmtsystem_partner
+#: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_partner__type
+#: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_users__type
+msgid "Address Type"
+msgstr "Tip naslova"
+
+#. module: mgmtsystem_partner
+#: model:ir.model,name:mgmtsystem_partner.model_res_partner
+msgid "Contact"
+msgstr "Stik"
+
+#. module: mgmtsystem_partner
+#: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Prikazani naziv"
+
+#. module: mgmtsystem_partner
+#: model:ir.model.fields,field_description:mgmtsystem_partner.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: mgmtsystem_partner
+#: model:ir.model.fields.selection,name:mgmtsystem_partner.selection__res_partner__type__quality
+msgid "Quality Address"
+msgstr "Oddelek za kakovost"
