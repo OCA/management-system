@@ -3,7 +3,7 @@
 
 {
     "name": "Management Systems",
-    "version": "19.0.1.2.0",
+    "version": "19.0.1.2.1",
     "summary": "Support for management systems, such as ISO compliance.",
     "author": "Savoir-faire Linux, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
