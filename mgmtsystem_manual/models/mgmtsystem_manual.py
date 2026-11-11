@@ -7,4 +7,4 @@ from odoo import fields, models
 class MgmtSystemManual(models.Model):
     _inherit = "mgmtsystem.system"
 
-    manual_id = fields.Many2one("document.page", string="Manual")
+    manual_id = fields.Many2one("document.page")

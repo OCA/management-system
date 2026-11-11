@@ -9,7 +9,7 @@ class MgmtsystemRiskSeverity(models.Model):
     _description = "Risk Severity"
 
     company_id = fields.Many2one(
-        "res.company", "Company", required=True, default=lambda self: self.env.company
+        "res.company", required=True, default=lambda self: self.env.company
     )
     name = fields.Char("Severity", required=True, translate=True)
     value = fields.Integer(required=True)

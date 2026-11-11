@@ -9,15 +9,9 @@ class MgmtsystemVerificationLine(models.Model):
     _order = "seq"
 
     name = fields.Char("Question", required=True)
-    audit_id = fields.Many2one(
-        "mgmtsystem.audit", "Audit", ondelete="cascade", index=True
-    )
-    procedure_id = fields.Many2one(
-        "document.page", "Procedure", ondelete="restrict", index=True
-    )
+    audit_id = fields.Many2one("mgmtsystem.audit", ondelete="cascade", index=True)
+    procedure_id = fields.Many2one("document.page", ondelete="restrict", index=True)
     is_conformed = fields.Boolean(default=False)
     comments = fields.Text()
     seq = fields.Integer("Sequence")
-    company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self.env.company
-    )
+    company_id = fields.Many2one("res.company", default=lambda self: self.env.company)

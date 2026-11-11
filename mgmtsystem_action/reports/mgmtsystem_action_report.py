@@ -30,9 +30,9 @@ class MgmtsystemtActionReport(models.Model):
     date_open = fields.Datetime("Opening Date", readonly=True, index=True)
     date_closed = fields.Datetime("Close Date", readonly=True, index=True)
     date_deadline = fields.Date("Deadline", readonly=True, index=True)
-    user_id = fields.Many2one("res.users", "User", readonly=True)
-    stage_id = fields.Many2one("mgmtsystem.action.stage", "Stage", readonly=True)
-    system_id = fields.Many2one("mgmtsystem.system", "System", readonly=True)
+    user_id = fields.Many2one("res.users", readonly=True)
+    stage_id = fields.Many2one("mgmtsystem.action.stage", readonly=True)
+    system_id = fields.Many2one("mgmtsystem.system", readonly=True)
 
     def _query(
         self, with_clause="", fields="", where_clause="", groupby="", from_clause=""
