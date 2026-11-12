@@ -236,7 +236,7 @@
                             <field
                                 name="procedure_ids"
                                 readonly="state not in ('draft', 'analysis')"
-                                domain="[('parent_id','child_of',('Procedure','Environmental Aspect','Manuals'))]"
+                                domain="[('mgmtsystem_page_type','in',('procedure','environmental_aspect','quality_manual')), ('type', '=', 'content')]"
                             />
                         </page>
 
