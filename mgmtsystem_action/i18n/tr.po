@@ -1,44 +1,38 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# * mgmtsystem_action
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-17 02:42+0000\n"
-"PO-Revision-Date: 2017-06-17 02:42+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
+"PO-Revision-Date: 2026-11-04 12:00+0000\n"
+"Last-Translator: Ömer Furkan Yılmaz <furkanylm30@gmail.com>\n"
+"Language-Team: none\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__number_of_actions
 msgid "# of actions"
-msgstr ""
+msgstr "Faaliyet sayısı"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__number_of_days_to_close
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__number_of_days_to_close
 msgid "# of days to close"
-msgstr ""
+msgstr "Kapanışa kadar geçen gün"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__number_of_days_to_open
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__number_of_days_to_open
 msgid "# of days to open"
-msgstr ""
+msgstr "Açılışa kadar geçen gün"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__number_of_exceedings_days
 msgid "# of exceedings days"
-msgstr ""
+msgstr "Gecikme gün sayısı"
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.action_email_template_reminder_action
@@ -47,11 +41,9 @@ msgid ""
 "\n"
 "<p>\n"
 "This is an automated message to remind you that the\n"
-"following action is due to be completed in 10 days (<t t-"
-"out=\"object.date_deadline\"/>):\n"
+"following action is due to be completed in 10 days (<t t-out=\"object.date_deadline\"/>):\n"
 "\n"
-"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></"
-"b>\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b>\n"
 "</p>\n"
 "\n"
 "<p>\n"
@@ -62,14 +54,29 @@ msgid ""
 "            \n"
 "        "
 msgstr ""
+"<p>Merhaba <t t-out=\"object.user_id.name\"/>,</p>\n"
+"\n"
+"<p>\n"
+"Bu otomatik bir hatırlatma mesajıdır;\n"
+"aşağıdaki faaliyetin 10 gün içinde (<t t-out=\"object.date_deadline\"/>) tamamlanması gerekmektedir:\n"
+"\n"
+"<b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Teşekkürler, iyi günler dileriz.<br/>\n"
+"--<br/>\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
 
 #. module: mgmtsystem_action
 #: model:mail.template,body_html:mgmtsystem_action.email_template_new_action_reminder
 msgid ""
 "<p>Hello <t t-out=\"object.user_id.name\"/>,</p>\n"
 "\n"
-"<p>A new action has been assigned to you: <b><a t-att-"
-"href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b></p>\n"
+"<p>A new action has been assigned to you: <b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b></p>\n"
 "<p><b>Deadline: </b><t t-out=\"object.date_deadline or ''\"/></p>\n"
 "\n"
 "<p>Please, use the action stages and messages to log progress.</p>\n"
@@ -82,38 +89,52 @@ msgid ""
 "            \n"
 "        "
 msgstr ""
+"<p>Merhaba <t t-out=\"object.user_id.name\"/>,</p>\n"
+"\n"
+"<p>Size yeni bir faaliyet atandı: <b><a t-att-href=\"object.get_action_url()\"><t t-out=\"object.name\"/></a></b></p>\n"
+"<p><b>Son Tarih: </b><t t-out=\"object.date_deadline or ''\"/></p>\n"
+"\n"
+"<p>Lütfen ilerlemeyi kaydetmek için faaliyet aşamalarını ve mesajları kullanın.</p>\n"
+"\n"
+"<p>\n"
+"Teşekkürler<br/>\n"
+"--<br/>\n"
+"Odoo\n"
+"</p>\n"
+"            \n"
+"        "
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 msgid "Action"
-msgstr ""
+msgstr "Faaliyet"
 
 #. module: mgmtsystem_action
 #: model:mail.template,name:mgmtsystem_action.email_template_new_action_reminder
 msgid "Action Assigned"
-msgstr ""
+msgstr "Faaliyet Atandı"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Aksiyon Gerekiyor"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_stage
 msgid "Action Stage"
-msgstr ""
+msgstr "Faaliyet Aşaması"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_tag
 msgid "Action Tags"
-msgstr ""
+msgstr "Faaliyet Etiketleri"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 msgid "Action title..."
-msgstr ""
+msgstr "Faaliyet başlığı..."
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.open_mgmtsystem_action_list
@@ -123,100 +144,100 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_report_mgmtsystem_action_graph
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_report_mgmtsystem_action_pivot
 msgid "Actions"
-msgstr ""
+msgstr "Faaliyetler"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__active
 msgid "Active"
-msgstr ""
+msgstr "Etkin"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Aktiviteler"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Aktivite İstisna Dekorasyonu"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Aktivite Durumu"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Aktivite Türü Simgesi"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_stage_form
 msgid "Add a description..."
-msgstr ""
+msgstr "Açıklama ekleyin..."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__age
 msgid "Age"
-msgstr ""
+msgstr "Geçen Süre"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Archived"
-msgstr ""
+msgstr "Arşivlenmiş"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Ek Sayısı"
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_cancel
 msgid "Cancelled"
-msgstr ""
+msgstr "İptal Edildi"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.actions.act_window,help:mgmtsystem_action.project_tags_action
 msgid "Click to add a new tag."
-msgstr ""
+msgstr "Yeni bir etiket eklemek için tıklayın."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__date_closed
 msgid "Close Date"
-msgstr ""
+msgstr "Kapanış Tarihi"
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_close
 msgid "Closed"
-msgstr ""
+msgstr "Kapalı"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__date_closed
 msgid "Closed Date"
-msgstr ""
+msgstr "Kapanış Tarihi"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__color
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag__color
 msgid "Color Index"
-msgstr ""
+msgstr "Renk İndeksi"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__company_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Company"
-msgstr ""
+msgstr "Şirket"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__correction
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__correction
 msgid "Corrective Action"
-msgstr ""
+msgstr "Düzeltici Faaliyet"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__create_date
 msgid "Create Date"
-msgstr ""
+msgstr "Oluşturma Tarihi"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__create_uid
@@ -230,25 +251,25 @@ msgstr "Oluşturan"
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__create_date
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag__create_date
 msgid "Created on"
-msgstr "Oluşturuldu"
+msgstr "Oluşturulma"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__date_deadline
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__date_deadline
 msgid "Deadline"
-msgstr ""
+msgstr "Son Tarih"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Delete"
-msgstr ""
+msgstr "Sil"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__description
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__description
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 msgid "Description"
-msgstr ""
+msgstr "Açıklama"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__display_name
@@ -256,67 +277,67 @@ msgstr ""
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__display_name
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Görünen Ad"
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_draft
 msgid "Draft"
-msgstr ""
+msgstr "Taslak"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_kanban
 msgid "Edit"
-msgstr ""
+msgstr "Düzenle"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.server,name:mgmtsystem_action.ir_cron_mgmtsystem_action_reminder_ir_actions_server
 msgid "Email Action Reminders 10 days before due date."
-msgstr ""
+msgstr "Son tarihten 10 gün önce faaliyet hatırlatma e-postası gönder."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__is_ending
 msgid "Ending stage"
-msgstr ""
+msgstr "Bitiş aşaması"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_form
 msgid "Extra Information"
-msgstr ""
+msgstr "Ek Bilgiler"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__fold
 msgid "Folded in Kanban"
-msgstr ""
+msgstr "Kanban'da Katlanmış"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Takipçiler"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Takipçiler (İş Ortakları)"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Font Awesome simgesi, ör. fa-tasks"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Future Activities"
-msgstr ""
+msgstr "Gelecekteki Aktiviteler"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__sequence
 msgid "Gives the sequence order when displaying a list of actions."
-msgstr ""
+msgstr "Faaliyet listesi görüntülenirken sıralama düzenini belirler."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Mesaj Var"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.actions.act_window,help:mgmtsystem_action.action_report_mgmtsystem_action
@@ -324,6 +345,8 @@ msgid ""
 "Have a general overview of all actions processed in the system by sorting "
 "them with specific criteria."
 msgstr ""
+"Sistemde işlenen tüm faaliyetleri belirli kriterlere göre sıralayarak genel "
+"bir bakış elde edin."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__id
@@ -336,259 +359,258 @@ msgstr "ID"
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Simge"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "İstisnai bir aktiviteyi belirten simge."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "İşaretliyse, yeni mesajlar ilginizi gerektirir."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "İşaretliyse, bazı mesajlarda iletim hatası vardır."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__immediate
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__immediate
 msgid "Immediate Action"
-msgstr ""
+msgstr "Acil Faaliyet"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__improvement
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__improvement
 msgid "Improvement Opportunity"
-msgstr ""
+msgstr "İyileştirme Fırsatı"
 
 #. module: mgmtsystem_action
 #: model:mgmtsystem.action.stage,name:mgmtsystem_action.stage_open
 msgid "In Progress"
-msgstr ""
+msgstr "Devam Ediyor"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Takipçi mi"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__write_uid
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag__write_uid
 msgid "Last Updated by"
-msgstr "Son güncelleyen"
+msgstr "Son Güncelleyen"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__write_date
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag__write_date
 msgid "Last Updated on"
-msgstr "Son güncelleme"
+msgstr "Son Güncelleme"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Late Activities"
-msgstr ""
+msgstr "Geciken Aktiviteler"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__priority__0
 msgid "Low"
-msgstr ""
+msgstr "Düşük"
 
 #. module: mgmtsystem_action
 #: model:ir.model,name:mgmtsystem_action.model_mgmtsystem_action_report
 msgid "Management System Action Report"
-msgstr ""
+msgstr "Yönetim Sistemi Faaliyet Raporu"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.action_report_mgmtsystem_action
 msgid "Management System Analysis"
-msgstr ""
+msgstr "Yönetim Sistemi Analizi"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Mesaj İletim Hatası"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_ids
-#, fuzzy
 msgid "Messages"
-msgstr "Okunmamış Mesajlar"
+msgstr "Mesajlar"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "My Actions"
-msgstr ""
+msgstr "Faaliyetlerim"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "My Activities"
-msgstr ""
+msgstr "Aktivitelerim"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Aktivite Son Tarihim"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "My Followed Actions"
-msgstr ""
+msgstr "Takip Ettiğim Faaliyetler"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_tag__name
 msgid "Name"
-msgstr ""
+msgstr "Ad"
 
 #. module: mgmtsystem_action
 #. odoo-python
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 msgid "New"
-msgstr ""
+msgstr "Yeni"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Sonraki Aktivite Son Tarihi"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Sonraki Aktivite Özeti"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Sonraki Aktivite Türü"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__priority__1
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Aksiyon Sayısı"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Hata Sayısı"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Aksiyon gerektiren mesaj sayısı"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "İletim hatası olan mesaj sayısı"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__date_open
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__date_open
 msgid "Opening Date"
-msgstr ""
+msgstr "Açılış Tarihi"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Pending"
-msgstr ""
+msgstr "Beklemede"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action__type_action__prevention
 #: model:ir.model.fields.selection,name:mgmtsystem_action.selection__mgmtsystem_action_report__type_action__prevention
 msgid "Preventive Action"
-msgstr ""
+msgstr "Önleyici Faaliyet"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__priority
 msgid "Priority"
-msgstr ""
+msgstr "Öncelik"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__reference
 msgid "Reference"
-msgstr ""
+msgstr "Referans"
 
 #. module: mgmtsystem_action
 #: model:mail.template,subject:mgmtsystem_action.action_email_template_reminder_action
 msgid "Reminder on Action: \"{{object.name}}\""
-msgstr ""
+msgstr "Faaliyet Hatırlatması: \"{{object.name}}\""
 
 #. module: mgmtsystem_action
 #: model:mail.template,name:mgmtsystem_action.action_email_template_reminder_action
 msgid "Reminder to Responsible"
-msgstr ""
+msgstr "Sorumluya Hatırlatma"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__type_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__type_action
 msgid "Response Type"
-msgstr ""
+msgstr "Faaliyet Türü"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__user_id
 msgid "Responsible"
-msgstr ""
+msgstr "Sorumlu"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Sorumlu Kullanıcı"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "SMS İletim Hatası"
 
 #. module: mgmtsystem_action
 #. odoo-python
 #: code:addons/mgmtsystem_action/tests/test_create_action.py:0
 msgid "SampleReference"
-msgstr ""
+msgstr "ÖrnekReferans"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__sequence
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Sıra"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Show all records which has next action date is before today"
-msgstr ""
+msgstr "Sonraki aktivite tarihi bugünden önce olan tüm kayıtları göster"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__stage_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__stage_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Stage"
-msgstr ""
+msgstr "Aşama"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__name
 msgid "Stage Name"
-msgstr ""
+msgstr "Aşama Adı"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.mgmtsystem_action_stage_action
 #: model:ir.ui.menu,name:mgmtsystem_action.menu_mgmtsystem_action_stages
 msgid "Stages"
-msgstr ""
+msgstr "Aşamalar"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_stage__is_starting
 msgid "Starting stage"
-msgstr ""
+msgstr "Başlangıç aşaması"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_state
@@ -598,22 +620,26 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Aktivitelere göre durum\n"
+"Gecikmiş: Son tarih geçti\n"
+"Bugün: Aktivite tarihi bugün\n"
+"Planlanmış: Gelecekteki aktiviteler."
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__name
 msgid "Subject"
-msgstr ""
+msgstr "Konu"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__system_id
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__system_id
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #. module: mgmtsystem_action
 #: model:ir.model.constraint,message:mgmtsystem_action.constraint_mgmtsystem_action_tag_name_uniq
 msgid "Tag name already exists !"
-msgstr ""
+msgstr "Bu etiket adı zaten mevcut!"
 
 #. module: mgmtsystem_action
 #: model:ir.actions.act_window,name:mgmtsystem_action.mgmtsystem_action_tag_action
@@ -622,12 +648,12 @@ msgstr ""
 #: model:ir.ui.menu,name:mgmtsystem_action.menu_mgmtsystem_action_tags
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.project_tags_form_view
 msgid "Tags"
-msgstr ""
+msgstr "Etiketler"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_stage_form
 msgid "Task Stage"
-msgstr ""
+msgstr "Faaliyet Aşaması"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action_stage__fold
@@ -635,21 +661,23 @@ msgid ""
 "This stage is folded in the kanban view when there are no records in that "
 "stage to display."
 msgstr ""
+"Bu aşamada görüntülenecek kayıt olmadığında aşama kanban görünümünde "
+"katlanır."
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Today Activities"
-msgstr ""
+msgstr "Bugünkü Aktiviteler"
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "Type"
-msgstr ""
+msgstr "Tür"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Kayıttaki istisna aktivitesinin türü."
 
 #. module: mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
@@ -661,34 +689,25 @@ msgstr "Okunmamış Mesajlar"
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action_report__user_id
 #: model_terms:ir.ui.view,arch_db:mgmtsystem_action.view_mgmtsystem_action_filter
 msgid "User"
-msgstr ""
+msgstr "Kullanıcı"
 
 #. module: mgmtsystem_action
 #. odoo-python
 #: code:addons/mgmtsystem_action/models/mgmtsystem_action.py:0
 msgid "We cannot bring back the action to draft stage"
-msgstr ""
+msgstr "Faaliyet taslak aşamasına geri alınamaz"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,field_description:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
-#, fuzzy
 msgid "Website Messages"
-msgstr "Okunmamış Mesajlar"
+msgstr "Web Sitesi Mesajları"
 
 #. module: mgmtsystem_action
 #: model:ir.model.fields,help:mgmtsystem_action.field_mgmtsystem_action__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Web sitesi iletişim geçmişi"
 
 #. module: mgmtsystem_action
 #: model:mail.template,subject:mgmtsystem_action.email_template_new_action_reminder
 msgid "{{object.name}}"
-msgstr ""
-
-#, fuzzy
-#~ msgid "Number of unread messages"
-#~ msgstr "Okunmamış Mesajlar"
-
-#, fuzzy
-#~ msgid "Unread Messages Counter"
-#~ msgstr "Okunmamış Mesajlar"
+msgstr "{{object.name}}"

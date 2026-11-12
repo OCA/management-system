@@ -1,50 +1,43 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# * mgmtsystem
 #
-# Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: management-system (9.0)\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-07 06:43+0000\n"
-"PO-Revision-Date: 2016-09-09 12:26+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Turkish (http://www.transifex.com/oca/OCA-management-"
-"system-9-0/language/tr/)\n"
+"PO-Revision-Date: 2026-11-04 12:00+0000\n"
+"Last-Translator: Ömer Furkan Yılmaz <furkanylm30@gmail.com>\n"
+"Language-Team: none\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_action
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Actions"
-msgstr ""
+msgstr "Faaliyetler"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Applications"
-msgstr ""
+msgstr "Uygulamalar"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_user_manager
 msgid "Approving User"
-msgstr ""
+msgstr "Onaylayan Kullanıcı"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_auditor
 msgid "Auditor"
-msgstr ""
+msgstr "Denetçi"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Audits"
-msgstr ""
+msgstr "Denetimler"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_iatf16949
@@ -56,18 +49,17 @@ msgstr "Otomotiv"
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_claim
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Claims"
-msgstr ""
+msgstr "Şikayetler"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__company_id
 msgid "Company"
-msgstr ""
+msgstr "Şirket"
 
 #. module: mgmtsystem
 #: model:ir.model,name:mgmtsystem.model_res_config_settings
-#, fuzzy
 msgid "Config Settings"
-msgstr "Yapılandırma"
+msgstr "Yapılandırma Ayarları"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_configuration
@@ -82,79 +74,79 @@ msgstr "Oluşturan"
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__create_date
 msgid "Created on"
-msgstr "Oluşturuldu"
+msgstr "Oluşturulma"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__display_name
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Görünen Ad"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Document Approval"
-msgstr ""
+msgstr "Doküman Onayı"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_approval
 msgid "Document Page Approval"
-msgstr ""
+msgstr "Doküman Sayfası Onayı"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_manuals
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Documentation"
-msgstr ""
+msgstr "Dokümantasyon"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_environment
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Environment"
-msgstr ""
+msgstr "Çevre"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Environment Manual"
-msgstr ""
+msgstr "Çevre El Kitabı"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
 msgid "Environment Manual Template"
-msgstr ""
+msgstr "Çevre El Kitabı Şablonu"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_environmental_aspect
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Environmental Aspects"
-msgstr ""
+msgstr "Çevre Boyutları"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_security_event
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Feared Events"
-msgstr ""
+msgstr "İstenmeyen Olaylar"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_hazard
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Hazards"
-msgstr ""
+msgstr "Tehlikeler"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Health & Safety Manual"
-msgstr ""
+msgstr "İş Sağlığı ve Güvenliği El Kitabı"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
 msgid "Health & Safety Manual Template"
-msgstr ""
+msgstr "İş Sağlığı ve Güvenliği El Kitabı Şablonu"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Hygiene & Safety"
-msgstr ""
+msgstr "İş Sağlığı ve Güvenliği"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__id
@@ -165,29 +157,29 @@ msgstr "ID"
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Industries"
-msgstr "Endüstriler"
+msgstr "Sektörler"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_information_security
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Information Security"
-msgstr ""
+msgstr "Bilgi Güvenliği"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Information Security Manual"
-msgstr ""
+msgstr "Bilgi Güvenliği El Kitabı"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
 msgid "Information Security Manual Template"
-msgstr ""
+msgstr "Bilgi Güvenliği El Kitabı Şablonu"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_kpi
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Key Performance Indicators"
-msgstr ""
+msgstr "Temel Performans Göstergeleri"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_iso17025
@@ -198,27 +190,27 @@ msgstr "Laboratuvarlar"
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__write_uid
 msgid "Last Updated by"
-msgstr "Son güncelleyen"
+msgstr "Son Güncelleyen"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__write_date
 msgid "Last Updated on"
-msgstr "Son güncelleme"
+msgstr "Son Güncelleme"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage KPIs."
-msgstr ""
+msgstr "Temel performans göstergelerini (KPI) yönetin."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage audits and verification lists."
-msgstr ""
+msgstr "Denetimleri ve kontrol listelerini yönetin."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage customer claims as nonconformities."
-msgstr ""
+msgstr "Müşteri şikayetlerini uygunsuzluk olarak yönetin."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
@@ -226,6 +218,8 @@ msgid ""
 "Manage immediate, corrective, and preventive actions and improvement "
 "opportunities."
 msgstr ""
+"Acil, düzeltici ve önleyici faaliyetleri ve iyileştirme fırsatlarını "
+"yönetin."
 
 #. module: mgmtsystem
 #: model:ir.module.category,description:mgmtsystem.module_category_management_system
@@ -233,16 +227,19 @@ msgid ""
 "Manage management systems, manuals, KPIs, nonconformities, actions, "
 "feedbacks, audits, reviews."
 msgstr ""
+"Yönetim sistemlerini, el kitaplarını, KPI'ları, uygunsuzlukları, "
+"faaliyetleri, geri bildirimleri, denetimleri ve gözden geçirmeleri yönetin."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage nonconformities analysis, planning and resolution."
-msgstr ""
+msgstr "Uygunsuzlukların analizini, planlamasını ve çözümünü yönetin."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage the approval workflow to control your documentation."
 msgstr ""
+"Dokümantasyonunuzu kontrol altında tutmak için onay iş akışını yönetin."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
@@ -252,18 +249,20 @@ msgstr "Otomotiv kalite yönetim sisteminizi yönetin (IATF 16949)."
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage your environment management systems (ISO 14001)."
-msgstr ""
+msgstr "Çevre yönetim sistemlerinizi yönetin (ISO 14001)."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid ""
 "Manage your health and safety management systems (ISO 45001, OHSAS 18001)."
 msgstr ""
+"İş sağlığı ve güvenliği yönetim sistemlerinizi yönetin (ISO 45001, OHSAS "
+"18001)."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage your information security management systems (ISO 27001)"
-msgstr ""
+msgstr "Bilgi güvenliği yönetim sistemlerinizi yönetin (ISO 27001)"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
@@ -273,12 +272,12 @@ msgstr "Laboratuvar kalite yönetim sisteminizi yönetin (ISO 17025)."
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manage your quality management systems (ISO 9001)."
-msgstr ""
+msgstr "Kalite yönetim sistemlerinizi yönetin (ISO 9001)."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Management Reviews"
-msgstr ""
+msgstr "Yönetimin Gözden Geçirmeleri"
 
 #. module: mgmtsystem
 #: model:ir.module.category,name:mgmtsystem.module_category_management_system
@@ -293,56 +292,58 @@ msgstr "Yönetim Sistemi"
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_root
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Management Systems"
-msgstr ""
+msgstr "Yönetim Sistemleri"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_manager
 msgid "Manager"
-msgstr ""
+msgstr "Yönetici"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Manuals"
-msgstr ""
+msgstr "El Kitapları"
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_manager
 msgid "Module administrator, able to modify configuration data."
-msgstr ""
+msgstr "Modül yöneticisi; yapılandırma verilerini değiştirebilir."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_user_manager
 msgid "Module user with additional permission for approvals."
-msgstr ""
+msgstr "Onay işlemleri için ek yetkiye sahip modül kullanıcısı."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_auditor
 msgid ""
-"Module user with additional permission specific for the auditor job, such as "
-"effectiveness reviews."
+"Module user with additional permission specific for the auditor job, such as"
+" effectiveness reviews."
 msgstr ""
+"Etkinlik değerlendirmeleri gibi denetçi görevine özgü ek yetkilere sahip "
+"modül kullanıcısı."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_viewer
 msgid "Module user with general read only access."
-msgstr ""
+msgstr "Genel olarak salt okuma erişimine sahip modül kullanıcısı."
 
 #. module: mgmtsystem
 #: model:res.groups,comment:mgmtsystem.group_mgmtsystem_user
 msgid "Module user, with general read and write."
-msgstr ""
+msgstr "Genel okuma ve yazma erişimine sahip modül kullanıcısı."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_nonconformity
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Nonconformities"
-msgstr ""
+msgstr "Uygunsuzluklar"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_procedure
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Procedures"
-msgstr ""
+msgstr "Prosedürler"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environmental_aspect
@@ -350,6 +351,8 @@ msgid ""
 "Provide Environmental Aspect category.\n"
 "- This installs the module mgmtsystem_environmental_aspect."
 msgstr ""
+"Çevre boyutu kategorisi sağlar.\n"
+"- mgmtsystem_environmental_aspect modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_security_event
@@ -357,6 +360,8 @@ msgid ""
 "Provide Feared Events.\n"
 "- This installs the module mgmtsystem_security_event."
 msgstr ""
+"İstenmeyen olaylar sağlar.\n"
+"- mgmtsystem_security_event modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_hazard
@@ -364,6 +369,8 @@ msgid ""
 "Provide Hazards.\n"
 "- This installs the module mgmtsystem_hazard."
 msgstr ""
+"Tehlikeler sağlar.\n"
+"- mgmtsystem_hazard modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
@@ -371,17 +378,19 @@ msgid ""
 "Provide Work Instructions category.\n"
 "- This installs the module document_page_work_instruction."
 msgstr ""
+"İş talimatları kategorisi sağlar.\n"
+"- document_page_work_instruction modülünü kurar."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid ""
 "Provide a Environment Manual template based on the ISO 14001:2004 standard."
-msgstr ""
+msgstr "ISO 14001:2004 standardına dayalı bir Çevre El Kitabı şablonu sağlar."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Provide a Feared Event documentation category and template."
-msgstr ""
+msgstr "İstenmeyen olaylar için doküman kategorisi ve şablonu sağlar."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
@@ -389,6 +398,8 @@ msgid ""
 "Provide a Health & Safety Manual template based on the ISO 45001 / OHSAS "
 "18001 standard."
 msgstr ""
+"ISO 45001 / OHSAS 18001 standardına dayalı bir İş Sağlığı ve Güvenliği El "
+"Kitabı şablonu sağlar."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
@@ -396,21 +407,22 @@ msgid ""
 "Provide a Information Security Manual template based on the ISO 27001 "
 "standard."
 msgstr ""
+"ISO 27001 standardına dayalı bir Bilgi Güvenliği El Kitabı şablonu sağlar."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Provide a Procedure documentation category and template."
-msgstr ""
+msgstr "Prosedürler için doküman kategorisi ve şablonu sağlar."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Provide a Quality Manual template based on the ISO 9001:2008 standard."
-msgstr ""
+msgstr "ISO 9001:2008 standardına dayalı bir Kalite El Kitabı şablonu sağlar."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Provide a Work Instruction documentation category and template."
-msgstr ""
+msgstr "İş talimatları için doküman kategorisi ve şablonu sağlar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_health_safety_manual
@@ -418,6 +430,8 @@ msgid ""
 "Provide a health and safety manual template.\n"
 "- This installs the module document_page_health_safety_manual."
 msgstr ""
+"İş sağlığı ve güvenliği el kitabı şablonu sağlar.\n"
+"- document_page_health_safety_manual modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
@@ -425,6 +439,8 @@ msgid ""
 "Provide a quality manual template.\n"
 "- This installs the module document_page_quality_manual."
 msgstr ""
+"Kalite el kitabı şablonu sağlar.\n"
+"- document_page_quality_manual modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_action
@@ -432,16 +448,18 @@ msgid ""
 "Provide actions and improvement opportunities tools.\n"
 "- This installs the module mgmtsystem_action."
 msgstr ""
+"Faaliyet ve iyileştirme fırsatı araçları sağlar.\n"
+"- mgmtsystem_action modülünü kurar."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Provide an Environmental Aspect documentation category and template."
-msgstr ""
+msgstr "Çevre boyutları için doküman kategorisi ve şablonu sağlar."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Provide an Hazards documentation category and template."
-msgstr ""
+msgstr "Tehlikeler için doküman kategorisi ve şablonu sağlar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_environment_manual
@@ -449,6 +467,8 @@ msgid ""
 "Provide an environment manual template.\n"
 "- This installs the module document_page_environment_manual."
 msgstr ""
+"Çevre el kitabı şablonu sağlar.\n"
+"- document_page_environment_manual modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_info_security_manual
@@ -456,6 +476,8 @@ msgid ""
 "Provide an information security manual.\n"
 "- This installs the module mgmtsystem_info_security_manual."
 msgstr ""
+"Bilgi güvenliği el kitabı sağlar.\n"
+"- mgmtsystem_info_security_manual modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_audit
@@ -463,6 +485,8 @@ msgid ""
 "Provide audit tools.\n"
 "- This installs the module mgmtsystem_audit."
 msgstr ""
+"Denetim araçları sağlar.\n"
+"- mgmtsystem_audit modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_iatf16949
@@ -470,7 +494,7 @@ msgid ""
 "Provide automotive quality management tools.\n"
 "- This installs the module mgmtsystem_iatf16949."
 msgstr ""
-"Otomotiv kalite yönetimi araçları sağlayın.\n"
+"Otomotiv kalite yönetimi araçları sağlar.\n"
 "- mgmtsystem_iatf16949 modülünü kurar."
 
 #. module: mgmtsystem
@@ -479,6 +503,8 @@ msgid ""
 "Provide claim tools.\n"
 "- This installs the module mgmtsystem_claim."
 msgstr ""
+"Şikayet yönetimi araçları sağlar.\n"
+"- mgmtsystem_claim modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_approval
@@ -486,6 +512,8 @@ msgid ""
 "Provide document approval and history. \n"
 "- This installs the module document_page_approval."
 msgstr ""
+"Doküman onayı ve geçmişi sağlar. \n"
+"- document_page_approval modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_environment
@@ -493,6 +521,8 @@ msgid ""
 "Provide environment management tools.\n"
 "- This installs the module mgmtsystem_environment."
 msgstr ""
+"Çevre yönetimi araçları sağlar.\n"
+"- mgmtsystem_environment modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_health_safety
@@ -500,6 +530,8 @@ msgid ""
 "Provide health and safety management tools.\n"
 "- This installs the module mgmtsystem_health_safety."
 msgstr ""
+"İş sağlığı ve güvenliği yönetimi araçları sağlar.\n"
+"- mgmtsystem_health_safety modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_information_security
@@ -507,6 +539,8 @@ msgid ""
 "Provide information security tools.\n"
 "- This installs the module mgmtsystem_information_security."
 msgstr ""
+"Bilgi güvenliği araçları sağlar.\n"
+"- mgmtsystem_information_security modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_kpi
@@ -514,6 +548,8 @@ msgid ""
 "Provide key performance indicators.\n"
 "- This installs the module mgmtsystem_kpi."
 msgstr ""
+"Temel performans göstergeleri sağlar.\n"
+"- mgmtsystem_kpi modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_iso17025
@@ -521,7 +557,7 @@ msgid ""
 "Provide laboratory quality management tools.\n"
 "- This installs the module mgmtsystem_iso17025."
 msgstr ""
-"Laboratuvar kalite yönetimi araçları sağlayın.\n"
+"Laboratuvar kalite yönetimi araçları sağlar.\n"
 "- mgmtsystem_iso17025 modülünü kurar."
 
 #. module: mgmtsystem
@@ -530,6 +566,8 @@ msgid ""
 "Provide non conformity tools.\n"
 "- This installs the module mgmtsystem_nonconformity."
 msgstr ""
+"Uygunsuzluk araçları sağlar.\n"
+"- mgmtsystem_nonconformity modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_document_page_procedure
@@ -537,6 +575,8 @@ msgid ""
 "Provide procedures category.\n"
 "- This installs the module document_page_procedure."
 msgstr ""
+"Prosedürler kategorisi sağlar.\n"
+"- document_page_procedure modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
@@ -544,6 +584,8 @@ msgid ""
 "Provide quality management tools.\n"
 "- This installs the module mgmtsystem_quality."
 msgstr ""
+"Kalite yönetimi araçları sağlar.\n"
+"- mgmtsystem_quality modülünü kurar."
 
 #. module: mgmtsystem
 #: model:ir.model.fields,help:mgmtsystem.field_res_config_settings__module_mgmtsystem_review
@@ -551,53 +593,55 @@ msgid ""
 "Provide review tools.\n"
 "- This installs the module mgmtsystem_review."
 msgstr ""
+"Gözden geçirme araçları sağlar.\n"
+"- mgmtsystem_review modülünü kurar."
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Quality"
-msgstr ""
+msgstr "Kalite"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Quality Manual"
-msgstr ""
+msgstr "Kalite El Kitabı"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_quality_manual
 msgid "Quality Manual Template"
-msgstr ""
+msgstr "Kalite El Kitabı Şablonu"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_quality
 msgid "Quality Tools"
-msgstr ""
+msgstr "Kalite Araçları"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_report
 msgid "Reports"
-msgstr ""
+msgstr "Raporlar"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_mgmtsystem_review
 msgid "Reviews"
-msgstr ""
+msgstr "Gözden Geçirmeler"
 
 #. module: mgmtsystem
 #: model:ir.actions.act_window,name:mgmtsystem.action_mgmtsystem_configuration
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_settings
 msgid "Settings"
-msgstr ""
+msgstr "Ayarlar"
 
 #. module: mgmtsystem
 #: model:ir.model,name:mgmtsystem.model_mgmtsystem_system
 #: model:ir.model.fields,field_description:mgmtsystem.field_mgmtsystem_system__name
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #. module: mgmtsystem
 #: model:ir.ui.menu,name:mgmtsystem.menu_mgmtsystem_configuration_system
 msgid "Systems"
-msgstr ""
+msgstr "Sistemler"
 
 #. module: mgmtsystem
 #. odoo-python
@@ -606,27 +650,26 @@ msgid ""
 "The following modules are not available: %(addons)s\n"
 "Learn more on the corresponding Github issue and consider contributing:\n"
 msgstr ""
+"Aşağıdaki modüller mevcut değil: %(addons)s\n"
+"İlgili GitHub kaydından daha fazla bilgi edinin ve katkıda bulunmayı düşünün:\n"
 
 #. module: mgmtsystem
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Top management reviews."
-msgstr ""
+msgstr "Üst yönetim tarafından gözden geçirmeler."
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_user
 msgid "User"
-msgstr ""
+msgstr "Kullanıcı"
 
 #. module: mgmtsystem
 #: model:res.groups,name:mgmtsystem.group_mgmtsystem_viewer
 msgid "Viewer"
-msgstr ""
+msgstr "Görüntüleyici"
 
 #. module: mgmtsystem
 #: model:ir.model.fields,field_description:mgmtsystem.field_res_config_settings__module_document_page_work_instruction
 #: model_terms:ir.ui.view,arch_db:mgmtsystem.res_config_settings_view_form
 msgid "Work Instructions"
-msgstr ""
-
-#~ msgid "Cancel"
-#~ msgstr "Vazgeç"
+msgstr "İş Talimatları"
