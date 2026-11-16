@@ -6,6 +6,7 @@
     "summary": """
         Bridge module between Quality Control and Non Conformities""",
     "version": "17.0.1.0.0",
+    "development_status": "Beta",
     "license": "AGPL-3",
     "author": "Escodoo,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
@@ -16,6 +17,7 @@
     "data": [
         "views/qc_inspection.xml",
         "views/mgmtsystem_nonconformity.xml",
+        "views/product_template.xml",
     ],
     "demo": [],
 }
