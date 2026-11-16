@@ -57,16 +57,16 @@ class QcInspection(models.Model):
                 and inspection.product_id
                 and inspection.product_id.create_nonconformity
             ):
-                inspection.create_nonconformity()
+                inspection._create_nonconformity()
 
         return res
 
-    def create_nonconformity(self):
+    def _create_nonconformity(self):
         self.ensure_one()
         description = _(
             "Automatically created due to failure of the linked inspection."
         )
-        self.env["mgmtsystem.nonconformity"].create(
+        self.env["mgmtsystem.nonconformity"].sudo().create(
             {
                 "name": self.name,
                 "partner_id": self.user.partner_id.id,
@@ -77,5 +77,6 @@ class QcInspection(models.Model):
                 "manager_user_id": self.user.id,
                 "description": description,
                 "qc_inspection_id": self.id,
+                "company_id": self.company_id.id,
             }
         )
