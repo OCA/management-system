@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Dixmit
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="mgmtsystem_indicator_value_search_view">
+        <field name="model">mgmtsystem.indicator.value</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="indicator_id" />
+                <field name="value" />
+                <field name="date" />
+                <field name="comment" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_indicator_value_tree_view">
+        <field name="model">mgmtsystem.indicator.value</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="date" readonly="state != 'draft'" />
+                <field name="value" readonly="state != 'draft'" />
+                <field name="uom_id" readonly="1" />
+                <field name="comment" readonly="state != 'draft'" />
+                <field name="state" />
+                <field name="value_state" widget="objective_state_selection" />
+                <button
+                    name="post"
+                    type="object"
+                    string="Post"
+                    invisible="state != 'draft'"
+                    class="oe_highlight"
+                />
+            </list>
+        </field>
+    </record>
+</odoo>

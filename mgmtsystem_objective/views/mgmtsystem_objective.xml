@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Dixmit
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="mgmtsystem_objective_form_view">
+        <field name="model">mgmtsystem.objective</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': 1}" />
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="system_id" />
+                        <field name="date_start" />
+                        <field name="date_end" />
+                    </group>
+                    <notebook>
+                        <page string="Indicators">
+                            <field name="indicator_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_objective_search_view">
+        <field name="model">mgmtsystem.objective</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="system_id" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mgmtsystem_objective_tree_view">
+        <field name="model">mgmtsystem.objective</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="system_id" />
+                <field name="date_start" />
+                <field name="date_end" />
+                <field name="state" />
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mgmtsystem_objective_act_window">
+        <field name="name">Objectives</field>
+        <field name="res_model">mgmtsystem.objective</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="mgmtsystem_objective_menu">
+        <field name="name">Objectives</field>
+        <field name="parent_id" ref="mgmtsystem.menu_mgmtsystem_main" />
+        <field name="action" ref="mgmtsystem_objective_act_window" />
+        <field name="sequence" eval="80" />
+    </record>
+</odoo>
