@@ -36,11 +36,23 @@ Nonconformity (NC)
 
 - Quality Control Inspection: add a field to link a specific quality
   control inspection.
+- Automatic Nonconformity is created on an inspection when inspection
+  related to a product fails.
 
 **Table of contents**
 
 .. contents::
    :local:
+
+Configuration
+=============
+
+Automatic Nonconformity (NC) creation for products:
+
+- Go to Inventory > Products > Products and select "Create
+  Nonconformity" flag under Inventory tab of a product.
+- Add a trigger for product in order to create inspections when product
+  is used in any Transfers such as Receipts,Internal etc
 
 Usage
 =====
@@ -51,6 +63,13 @@ NC QC Inspection
 - Go to Management System → Nonconformity
 - Create new Nonconformity
 - Select a Quality Control Inspection on the list
+
+NC Automatic Creation for Products
+
+- If "Create Nonconformity" flag configured on a product, a failed
+  inspection creates an automatic nonconformity.
+- Use Quality Control > Inspections or Management System >
+  Nonconformities to view automatically created nonconformity.
 
 Bug Tracker
 ===========
@@ -91,6 +110,17 @@ This module is maintained by the OCA.
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
+
+.. |maintainer-anusriNPS| image:: https://github.com/anusriNPS.png?size=40px
+    :target: https://github.com/anusriNPS
+    :alt: anusriNPS
+.. |maintainer-SirPyTech| image:: https://github.com/SirPyTech.png?size=40px
+    :target: https://github.com/SirPyTech
+    :alt: SirPyTech
+
+Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-anusriNPS| |maintainer-SirPyTech| 
 
 This module is part of the `OCA/management-system <https://github.com/OCA/management-system/tree/17.0/mgmtsystem_nonconformity_quality_control_oca>`_ project on GitHub.
 
