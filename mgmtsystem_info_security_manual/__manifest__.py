@@ -27,5 +27,7 @@
     "depends": ["mgmtsystem_manual"],
     "data": ["data/information_security_manual.xml"],
     "demo": [],
+    "development_status": "Beta",
+    "maintainers": ["max3903"],
     "installable": True,
 }

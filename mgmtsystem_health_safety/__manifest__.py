@@ -15,6 +15,8 @@
         "mgmtsystem_hazard_risk",
     ],
     "data": ["data/health_safety.xml"],
+    "development_status": "Beta",
+    "maintainers": ["max3903"],
     "installable": True,
     "application": True,
 }

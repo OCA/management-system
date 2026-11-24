@@ -27,4 +27,5 @@
     "depends": ["mgmtsystem_manual"],
     "data": ["data/document_page_environment_manual.xml"],
     "development_status": "Production/Stable",
+    "maintainers": ["max3903"],
 }

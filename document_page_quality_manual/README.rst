@@ -10,9 +10,9 @@ Quality Manual
    !! source digest: sha256:f96c0552ef899bfc1a948bc9d3e0e4fe76fca1d9b07d932c2c9cada2ff94217a
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-.. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
+.. |badge1| image:: https://img.shields.io/badge/maturity-Production%2FStable-green.png
     :target: https://odoo-community.org/page/development-status
-    :alt: Beta
+    :alt: Production/Stable
 .. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
@@ -105,6 +105,14 @@ This module is maintained by the OCA.
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
+
+.. |maintainer-max3903| image:: https://github.com/max3903.png?size=40px
+    :target: https://github.com/max3903
+    :alt: max3903
+
+Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-max3903| 
 
 This module is part of the `OCA/management-system <https://github.com/OCA/management-system/tree/14.0/document_page_quality_manual>`_ project on GitHub.
 

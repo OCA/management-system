@@ -28,4 +28,5 @@
     "depends": ["document_page", "mgmtsystem"],
     "data": ["data/document_page.xml", "views/document_page.xml"],
     "development_status": "Production/Stable",
+    "maintainers": ["max3903"],
 }
