@@ -11,5 +11,7 @@
     "depends": ["document_page", "mgmtsystem"],
     "data": ["data/document_page_procedure.xml", "views/document_page_procedure.xml"],
     "demo": ["demo/document_page_procedure.xml"],
+    "development_status": "Beta",
+    "maintainers": ["max3903"],
     "installable": True,
 }
