@@ -32,6 +32,8 @@
     ],
     "data": ["data/environment.xml"],
     "demo": [],
+    "development_status": "Beta",
+    "maintainers": ["max3903"],
     "installable": True,
     "application": True,
 }
