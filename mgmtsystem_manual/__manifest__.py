@@ -15,4 +15,5 @@
         "views/document_page.xml",
     ],
     "development_status": "Production/Stable",
+    "maintainers": ["max3903"],
 }
