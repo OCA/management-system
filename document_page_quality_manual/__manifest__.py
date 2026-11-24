@@ -10,6 +10,8 @@
     "license": "AGPL-3",
     "depends": ["document_page"],
     "data": ["data/document_page.xml"],
+    "development_status": "Production/Stable",
+    "maintainers": ["max3903"],
     "installable": True,
     "auto_install": False,
     "images": ["images/wiki_pages_quality_manual.jpeg"],
