@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="event_tags_search_view">
+        <field name="name">Tags</field>
+        <field name="model">mgmtsystem.event.tag</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="event_tags_list_view">
+        <field name="name">Tags</field>
+        <field name="model">mgmtsystem.event.tag</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="name" />
+                <field name="color" widget="color_picker" />
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="event_tags_form_view">
+        <field name="name">Tags</field>
+        <field name="model">mgmtsystem.event.tag</field>
+        <field name="arch" type="xml">
+            <form string="Tags">
+                <group name="main">
+                    <field name="name" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="event_tags_action" model="ir.actions.act_window">
+        <field name="name">Tags</field>
+        <field name="res_model">mgmtsystem.event.tag</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            Click to add a new tag.
+          </p>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mgmtsystem_event_tag_action">
+        <field name="name">Tags</field>
+        <field name="res_model">mgmtsystem.event.tag</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="menu_mgmtsystem_event_tags"
+        action="mgmtsystem_event_tag_action"
+        parent="menu_mgmtsystem_configuration_events"
+        sequence="100"
+        groups="mgmtsystem.group_mgmtsystem_manager,mgmtsystem.group_mgmtsystem_auditor,base.group_user"
+    />
+</odoo>
