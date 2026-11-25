@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Dixmit
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="document_page_form_view">
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_category_form" />
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <field name="mgmtsystem_page_type" />
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="document_page_search_view">
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_filter" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="mgmtsystem_page_type" />
+            </field>
+        </field>
+    </record>
+</odoo>

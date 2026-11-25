@@ -3,12 +3,12 @@
 
 {
     "name": "Quality Manual",
-    "version": "19.0.1.0.1",
+    "version": "19.0.1.1.0",
     "category": "Management Systems",
     "author": "OpenERP SA, Gray Matter Logic, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/management-system",
     "license": "AGPL-3",
-    "depends": ["mgmtsystem_manual"],
+    "depends": ["document_page_mgmtsystem"],
     "data": ["data/document_page.xml"],
     "installable": True,
     "auto_install": False,
