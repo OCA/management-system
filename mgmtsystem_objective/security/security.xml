@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.rule" id="mgmtsystem_indicator_value_rule">
+        <field name="name">mgmtsystem_nonconformity multi-company</field>
+        <field name="model_id" ref="model_mgmtsystem_indicator_value" />
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="False" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_unlink" eval="False" />
+        <field
+            name="groups"
+            eval="[Command.link(ref('mgmtsystem.group_mgmtsystem_user'))]"
+        />
+        <field
+            name="domain_force"
+        >[('indicator_id.objective_id.user_id', '=', user.id)]</field>
+    </record>
+    <record model="ir.rule" id="mgmtsystem_indicator_value_rule_manager">
+        <field name="name">mgmtsystem_indicator_value multi-company</field>
+        <field name="model_id" ref="model_mgmtsystem_indicator_value" />
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="False" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_unlink" eval="False" />
+        <field
+            name="groups"
+            eval="[Command.link(ref('mgmtsystem.group_mgmtsystem_manager'))]"
+        />
+        <field name="domain_force">[(1, '=', 1)]</field>
+    </record>
+</odoo>
