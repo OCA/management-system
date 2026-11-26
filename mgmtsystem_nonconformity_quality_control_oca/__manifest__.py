@@ -8,6 +8,10 @@
     "version": "18.0.1.0.0",
     "license": "AGPL-3",
     "author": "Escodoo,Odoo Community Association (OCA)",
+    "maintainers": [
+        "anusriNPS",
+        "SirPyTech",
+    ],
     "website": "https://github.com/OCA/management-system",
     "development_status": "Beta",
     "depends": [
@@ -17,5 +21,6 @@
     "data": [
         "views/qc_inspection.xml",
         "views/mgmtsystem_nonconformity.xml",
+        "views/product_template.xml",
     ],
 }
